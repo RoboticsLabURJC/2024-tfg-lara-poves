@@ -15,8 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 
 title: ROBOTICS LAB URJC
-email: c.sanchezro.2018@alumnos.urjc.es
-description: "Bitacora for my bachelor's degree final project"
+email: poveslara@gmail.com
+description: "Bitácora para mi trabajo de fin de grado"
 twitter_username: csanrobotics
 github_username: csanrod
 minimal_mistakes_skin: dark
@@ -57,31 +57,25 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Cristian Sanchez Rodriguez"
+  name   : "Lara Poves Martínez"
   avatar : "/assets/images/bio-photo.jpeg"
-  bio    : "Software robotics engineer at URJC"
+  bio    : "Ingeniería robótica software en la URJC"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/csanrod"
+      url: "https://github.com/larapoves"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/csanrod/"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/csanrobotics"
+      url: "https://www.linkedin.com/in/lara-poves-mart%C3%ADnez-147ba62a7/"
 
 footer:
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/csanrod/"
+      url: "https://www.linkedin.com/in/lara-poves-mart%C3%ADnez-147ba62a7/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/csanrod"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/csanrobotics"
+      url: "https://github.com/larapoves"
 
 defaults:
   # _posts
