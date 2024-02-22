@@ -1,45 +1,69 @@
-import pygame
-import sys
 import carla
+import math
 
-WIDTH, HEIGHT = 800, 600
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
+SCALE = 7.0
+camera = None
 
-pygame.init()
+def center_spectator(spectator):
+    transform = spectator.get_transform()
+    yaw = math.radians(transform.rotation.yaw)
 
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Teleoperator")
+    transform.location.z += 0.3
+    transform.location.x -= SCALE * math.cos(yaw)
+    transform.location.y -= SCALE * math.sin(yaw)
+    transform.rotation.pitch = -15.0
 
-operator_width, operator_height = 50, 50
-operator_x, operator_y = WIDTH // 2 - operator_width // 2, HEIGHT // 2 - operator_height // 2
+    spectator.set_transform(transform)
 
-operator_speed = 5
+def setup_carla(port=2000, name_world='Town01', vehicle='vehicle.lincoln.mkz_2020', transform=carla.Transform()):
+    client = carla.Client('localhost', port)
+    world = client.get_world()
+    client.load_world(name_world)
 
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+    # Retrieve and locate spectator object
+    spectator = world.get_spectator()
+    transform.rotation.pitch = 0.0
+    transform.rotation.roll = 0.0
+    transform.rotation.yaw = 0.0 # cmabiar
+    spectator.set_transform(transform)
 
-    keys = pygame.key.get_pressed()
+    # Define Ego Vehicle and spawn it at spectator's location
+    ego_bp = world.get_blueprint_library().find(vehicle)
+    ego_bp.set_attribute('role_name', 'hero')
+    transform.location.z = 1.0
+    ego_vehicle = world.spawn_actor(ego_bp, transform)
 
-    if keys[pygame.K_LEFT]:
-        operator_x -= operator_speed
-    if keys[pygame.K_RIGHT]:
-        operator_x += operator_speed
-    if keys[pygame.K_UP]:
-        operator_y -= operator_speed
-    if keys[pygame.K_DOWN]:
-        operator_y += operator_speed
+    return world, spectator, ego_vehicle
 
-    operator_x = max(0, min(WIDTH - operator_width, operator_x))
-    operator_y = max(0, min(HEIGHT - operator_height, operator_y))
+def add_camera(vehicle, world):
+    # Create a transform to place the camera on top of the vehicle
+    camera_init_trans = carla.Transform(carla.Location(z=2.5, x=0.5), carla.Rotation(pitch=-10.0))
 
-    screen.fill(BLACK)
+    # We create the camera through a blueprint that defines its properties
+    camera_bp = world.get_blueprint_library().find('sensor.camera.rgb')
 
-    pygame.draw.rect(screen, WHITE, (operator_x, operator_y, operator_width, operator_height))
+    # We spawn the camera and attach it to our ego vehicle
+    camera = world.spawn_actor(camera_bp, camera_init_trans, attach_to=vehicle)
 
-    pygame.display.flip()
+    return camera
 
-    pygame.time.Clock().tick(30)
+def main():
+    global camera
+
+    world, spectator, ego_vehicle = setup_carla(name_world='Town03', transform=carla.Transform(carla.Location(x=100.0, y=-6.0, z=4.0)))
+    center_spectator(spectator)
+    camera = add_camera(vehicle=ego_vehicle, world=world)
+
+    camera.listen(lambda image: image.save_to_disk('out/%06d.png' % image.frame))
+    import time
+    time.sleep(3)
+
+if __name__ == "__main__":
+    main()
+
+# Start camera with PyGame callback
+#camera.listen(lambda image: image.save_to_disk('out/%06d.png' % image.frame))
+
+# Teleoperador
+# Añadir vehiculos con autopilo
+
