@@ -1,17 +1,26 @@
 import carla
 import math
+import pygame
+import numpy as np
 
-SCALE = 7.0
+# Spectator
+SCALE = 6.0
+ELEVATION = 4.0
+PITCH = -10.0
+
+# Screen
+HEIGHT = 500
+WIDTH = 700
+
 camera = None
 
 def center_spectator(spectator):
     transform = spectator.get_transform()
     yaw = math.radians(transform.rotation.yaw)
 
-    transform.location.z += 0.3
     transform.location.x -= SCALE * math.cos(yaw)
     transform.location.y -= SCALE * math.sin(yaw)
-    transform.rotation.pitch = -15.0
+    transform.rotation.pitch = PITCH
 
     spectator.set_transform(transform)
 
@@ -24,20 +33,21 @@ def setup_carla(port=2000, name_world='Town01', vehicle='vehicle.lincoln.mkz_202
     spectator = world.get_spectator()
     transform.rotation.pitch = 0.0
     transform.rotation.roll = 0.0
-    transform.rotation.yaw = 0.0 # cmabiar
+    transform.location.z = ELEVATION
     spectator.set_transform(transform)
 
     # Define Ego Vehicle and spawn it at spectator's location
     ego_bp = world.get_blueprint_library().find(vehicle)
     ego_bp.set_attribute('role_name', 'hero')
-    transform.location.z = 1.0
     ego_vehicle = world.spawn_actor(ego_bp, transform)
 
     return world, spectator, ego_vehicle
 
 def add_camera(vehicle, world):
+    global camera
+
     # Create a transform to place the camera on top of the vehicle
-    camera_init_trans = carla.Transform(carla.Location(z=2.5, x=0.5), carla.Rotation(pitch=-10.0))
+    camera_init_trans = carla.Transform(carla.Location(z=2.5, x=0.5), carla.Rotation(pitch=-10.0, roll=90.0))
 
     # We create the camera through a blueprint that defines its properties
     camera_bp = world.get_blueprint_library().find('sensor.camera.rgb')
@@ -47,16 +57,61 @@ def add_camera(vehicle, world):
 
     return camera
 
+def setup_pygame():
+    pygame.init()
+    pygame.display.set_caption('Camera stream')
+    screen = pygame.display.set_mode((WIDTH, HEIGHT), 0)
+    clock = pygame.time.Clock()
+
+    return screen, clock
+
+def show_image(image, screen):
+    if image is not None:
+        # Convert the image to a numpy array
+        array = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
+        array = np.reshape(array, (image.height, image.width, 4))
+
+        # Convert RGBA to RGB
+        array = array[:, :, :3]
+
+        # Create a Pygame surface from the array
+        image_surface = pygame.surfarray.make_surface(array)
+
+        # Resize the image to match the screen resolution
+        screen_surface = pygame.transform.scale(image_surface, (WIDTH, HEIGHT))
+
+        # Draw the image on the screen
+        screen.blit(screen_surface, (0, 0))
+
+        # Update the display
+        pygame.display.flip()
+
 def main():
     global camera
 
-    world, spectator, ego_vehicle = setup_carla(name_world='Town03', transform=carla.Transform(carla.Location(x=100.0, y=-6.0, z=4.0)))
+    # Setup CARLA
+    world, spectator, ego_vehicle = setup_carla(name_world='Town03', transform=carla.Transform(carla.Location(x=100.0, y=-6.0)))
     center_spectator(spectator)
-    camera = add_camera(vehicle=ego_vehicle, world=world)
 
-    camera.listen(lambda image: image.save_to_disk('out/%06d.png' % image.frame))
-    import time
-    time.sleep(3)
+    # Init pygame
+    screen, clock = setup_pygame()
+
+    # Add camera
+    camera = add_camera(vehicle=ego_vehicle, world=world)
+    camera.listen(lambda image: show_image(image, screen))
+
+    try:
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    return
+
+            clock.tick(60)
+
+    finally:
+        pygame.quit()
+
 
 if __name__ == "__main__":
     main()
