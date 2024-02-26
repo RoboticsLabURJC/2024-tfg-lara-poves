@@ -4,8 +4,8 @@ import pygame
 import numpy as np
 
 # Spectator
-SCALE = 6.0
-ELEVATION = 4.0
+SCALE = 5.0
+ELEVATION = 3.0
 PITCH = -10.0
 
 # Screen
@@ -66,26 +66,21 @@ def setup_pygame():
     return screen, clock
 
 def show_image(image, screen):
-    try:
-        if image is not None:
-            # Convert the image to a numpy array
-            array = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
-            array = np.reshape(array, (image.height, image.width, 4))
+    # Convert the image to a numpy array
+    array = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
+    array = np.reshape(array, (image.height, image.width, 4))
 
-            # Convert RGBA to RGB
-            array = array[:, :, :3]
+    # Convert RGBA to RGB
+    array = array[:, :, :3]
 
-            # Create a Pygame surface 
-            image_surface = pygame.surfarray.make_surface(array)
+    # Create a Pygame surface 
+    image_surface = pygame.surfarray.make_surface(array)
 
-            # Resize the image
-            screen_surface = pygame.transform.scale(image_surface, (WIDTH, HEIGHT))
+    # Resize the image
+    screen_surface = pygame.transform.scale(image_surface, (WIDTH, HEIGHT))
 
-            screen.blit(screen_surface, (0, 0))
-            pygame.display.flip()
-            
-    except Exception as e:
-        pass
+    screen.blit(screen_surface, (0, 0))
+    pygame.display.flip()
 
 def main():
     global camera
@@ -101,6 +96,8 @@ def main():
     camera = add_camera(vehicle=ego_vehicle, world=world)
     camera.listen(lambda image: show_image(image, screen))
 
+    # problemas al cerrar a veces
+
     try:
         while True:
             for event in pygame.event.get():
@@ -108,17 +105,16 @@ def main():
                     pygame.quit()
                     return
 
-            clock.tick(60)
+            clock.tick(5)
+
+    except KeyboardInterrupt:
+        return
 
     finally:
         pygame.quit()
 
-
 if __name__ == "__main__":
     main()
-
-# Start camera with PyGame callback
-#camera.listen(lambda image: image.save_to_disk('out/%06d.png' % image.frame))
 
 # Teleoperador
 # Añadir vehiculos con autopilo
