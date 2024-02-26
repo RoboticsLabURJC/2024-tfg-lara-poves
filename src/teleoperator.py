@@ -13,6 +13,7 @@ HEIGHT = 500
 WIDTH = 700
 
 camera = None
+image_stream = None
 
 def center_spectator(spectator):
     transform = spectator.get_transform()
@@ -65,22 +66,29 @@ def setup_pygame():
 
     return screen, clock
 
-def show_image(image, screen):
-    # Convert the image to a numpy array
-    array = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
-    array = np.reshape(array, (image.height, image.width, 4))
+def update_image(image):
+    global image_stream
+    image_stream = image
 
-    # Convert RGBA to RGB
-    array = array[:, :, :3]
+def show_camera(screen):
+    global image_stream
 
-    # Create a Pygame surface 
-    image_surface = pygame.surfarray.make_surface(array)
+    if image_stream is not None:
+        # Convert the image to a numpy array
+        array = np.frombuffer(image_stream.raw_data, dtype=np.dtype("uint8"))
+        array = np.reshape(array, (image_stream.height, image_stream.width, 4))
 
-    # Resize the image
-    screen_surface = pygame.transform.scale(image_surface, (WIDTH, HEIGHT))
+        # Convert RGBA to RGB
+        array = array[:, :, :3]
 
-    screen.blit(screen_surface, (0, 0))
-    pygame.display.flip()
+        # Create a Pygame surface 
+        image_surface = pygame.surfarray.make_surface(array)
+
+        # Resize the image
+        screen_surface = pygame.transform.scale(image_surface, (WIDTH, HEIGHT))
+
+        screen.blit(screen_surface, (0, 0))
+        pygame.display.flip()
 
 def main():
     global camera
@@ -94,9 +102,7 @@ def main():
 
     # Add camera
     camera = add_camera(vehicle=ego_vehicle, world=world)
-    camera.listen(lambda image: show_image(image, screen))
-
-    # problemas al cerrar a veces
+    camera.listen(lambda image: update_image(image))
 
     try:
         while True:
@@ -104,8 +110,11 @@ def main():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     return
+                
+            show_camera(screen)
 
-            clock.tick(5)
+            # Frame rate
+            clock.tick(60)
 
     except KeyboardInterrupt:
         return
