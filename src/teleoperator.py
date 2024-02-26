@@ -66,25 +66,26 @@ def setup_pygame():
     return screen, clock
 
 def show_image(image, screen):
-    if image is not None:
-        # Convert the image to a numpy array
-        array = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
-        array = np.reshape(array, (image.height, image.width, 4))
+    try:
+        if image is not None:
+            # Convert the image to a numpy array
+            array = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
+            array = np.reshape(array, (image.height, image.width, 4))
 
-        # Convert RGBA to RGB
-        array = array[:, :, :3]
+            # Convert RGBA to RGB
+            array = array[:, :, :3]
 
-        # Create a Pygame surface from the array
-        image_surface = pygame.surfarray.make_surface(array)
+            # Create a Pygame surface 
+            image_surface = pygame.surfarray.make_surface(array)
 
-        # Resize the image to match the screen resolution
-        screen_surface = pygame.transform.scale(image_surface, (WIDTH, HEIGHT))
+            # Resize the image
+            screen_surface = pygame.transform.scale(image_surface, (WIDTH, HEIGHT))
 
-        # Draw the image on the screen
-        screen.blit(screen_surface, (0, 0))
-
-        # Update the display
-        pygame.display.flip()
+            screen.blit(screen_surface, (0, 0))
+            pygame.display.flip()
+            
+    except Exception as e:
+        pass
 
 def main():
     global camera
