@@ -15,9 +15,9 @@
 # in the templates via {{ site.myvariable }}.
 
 title: ROBOTICS LAB URJC
-email: b.villalba.2019@alumnos.urjc.es
-description: "Bitacora for my University degree final project"
-github_username: bb6698
+email: l.poves.2020@alumnos.urjc.es
+description: "Bitácora para mi TFG"
+github_username: larapoves
 minimal_mistakes_skin: dark
 search: true
 logo: ./logo.png
@@ -27,7 +27,7 @@ markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
+paginate: 1 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
@@ -56,19 +56,19 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Barbara Villalba Herreros"
-  avatar : "/assets/images/bio-photo.jpeg"
-  bio    : "Software robotics engineer at URJC"
+  name   : "Lara Poves Martínez"
+  avatar : "/assets/images/bio-photo.jpg"
+  bio    : "Ingeniería Robótica Software en la URJC"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/bb6698"
+      url: "https://github.com/larapoves
 footer:
   links:
    
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/bb6698"
+      url: "https://github.com/larapoves"
 
 defaults:
   # _posts
