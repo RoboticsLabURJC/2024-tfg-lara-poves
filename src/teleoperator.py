@@ -2,6 +2,7 @@ import carla
 import math
 import pygame
 import numpy as np
+import os
 
 # Spectator
 SCALE = 5.0
@@ -9,11 +10,20 @@ ELEVATION = 3.0
 PITCH = -10.0
 
 # Screen
-HEIGHT = 500
-WIDTH = 700
+HEIGHT_SCREEN = 500
+WIDTH_SCREEN = 700
+
+# Velocity 
+PRECISION = 1
+INCREMENT_VEL = 1 / 10 ** PRECISION
+MAX_VEL = 1.0
+MIN_VEL = -1.0
 
 camera = None
 image_stream = None
+
+v = 0.0
+w = 0.0
 
 def center_spectator(spectator):
     transform = spectator.get_transform()
@@ -61,7 +71,7 @@ def add_camera(vehicle, world):
 def setup_pygame():
     pygame.init()
     pygame.display.set_caption('Camera stream')
-    screen = pygame.display.set_mode((WIDTH, HEIGHT), 0)
+    screen = pygame.display.set_mode((WIDTH_SCREEN, HEIGHT_SCREEN), 0)
     clock = pygame.time.Clock()
 
     return screen, clock
@@ -85,10 +95,36 @@ def show_camera(screen):
         image_surface = pygame.surfarray.make_surface(array)
 
         # Resize the image
-        screen_surface = pygame.transform.scale(image_surface, (WIDTH, HEIGHT))
+        screen_surface = pygame.transform.scale(image_surface, (WIDTH_SCREEN, HEIGHT_SCREEN))
 
         screen.blit(screen_surface, (0, 0))
         pygame.display.flip()
+
+def print_vel():   
+    global v, w
+
+    os.system("clear")
+    print("v =", v)
+    print("w =", w)
+
+def update_vel(event):
+    global v, w
+
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_LEFT and w > MIN_VEL:
+            w = round(w - INCREMENT_VEL, PRECISION)
+        elif event.key == pygame.K_RIGHT and w < MAX_VEL:
+            w = round(w + INCREMENT_VEL, PRECISION)
+        elif event.key == pygame.K_UP and v < MAX_VEL:
+            v = round(v + INCREMENT_VEL, PRECISION)
+        elif event.key == pygame.K_DOWN and v > MIN_VEL:
+            v = round(v - INCREMENT_VEL, PRECISION)
+        else:
+            return 
+    else:
+        return
+    
+    print_vel()
 
 def main():
     global camera
@@ -97,12 +133,13 @@ def main():
     world, spectator, ego_vehicle = setup_carla(name_world='Town03', transform=carla.Transform(carla.Location(x=100.0, y=-6.0)))
     center_spectator(spectator)
 
-    # Init pygame
-    screen, clock = setup_pygame()
-
     # Add camera
     camera = add_camera(vehicle=ego_vehicle, world=world)
     camera.listen(lambda image: update_image(image))
+
+    # Init teleoperator with pygame
+    screen, clock = setup_pygame()
+    print_vel()
 
     try:
         while True:
@@ -111,20 +148,13 @@ def main():
                     pygame.quit()
                     return
                 
-            show_camera(screen)
+                update_vel(event)
 
-            # Frame rate
-            clock.tick(60)
+            show_camera(screen)
+            clock.tick(60) # Frame rate
 
     except KeyboardInterrupt:
-        return
-
-    finally:
         pygame.quit()
 
 if __name__ == "__main__":
     main()
-
-# Teleoperador
-# Añadir vehiculos con autopilo
-
