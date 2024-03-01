@@ -2,7 +2,7 @@ import carla
 import math
 import pygame
 import numpy as np
-import os
+import time
 
 # Spectator
 SCALE = 5.0
@@ -13,22 +13,19 @@ PITCH = -10.0
 HEIGHT_SCREEN = 500
 WIDTH_SCREEN = 700
 
-# Velocity 
-PRECISION = 1
-INCREMENT_VEL = 1 / 10 ** PRECISION
-MAX_VEL = 1.0
-MIN_VEL = -1.0
+# Control velocity 
+BRAKE = 1.0
+STEER = 0.3
+INCREMENT = 0.1
 
+# Global variables
 camera = None
 image_stream = None
 
-v = 0.0
-w = 0.0
-
-def center_spectator(spectator):
-    transform = spectator.get_transform()
+def center_spectator(spectator, transform):
     yaw = math.radians(transform.rotation.yaw)
 
+    transform.location.z = ELEVATION
     transform.location.x -= SCALE * math.cos(yaw)
     transform.location.y -= SCALE * math.sin(yaw)
     transform.rotation.pitch = PITCH
@@ -46,12 +43,22 @@ def setup_carla(port=2000, name_world='Town01', vehicle='vehicle.lincoln.mkz_202
     transform.rotation.roll = 0.0
     transform.location.z = ELEVATION
     spectator.set_transform(transform)
+    center_spectator(spectator, transform)  #no va
 
-    # Define Ego Vehicle and spawn it at spectator's location
+    # Create Ego Vehicle and spawn it at spectator's location
     ego_bp = world.get_blueprint_library().find(vehicle)
     ego_bp.set_attribute('role_name', 'hero')
     ego_vehicle = world.spawn_actor(ego_bp, transform)
 
+    # Configure Ego Vehicle
+    control = carla.VehicleControl()
+    control.throttle = 0.0  
+    control.steer = 0.0     
+    control.brake = 0.0     
+    control.hand_brake = True  # cambiar y mirar si luego s equita soloß
+    control.reverse = False  
+    control.manual_gear_shift = False
+    ego_vehicle.apply_control(control)
     return world, spectator, ego_vehicle
 
 def add_camera(vehicle, world):
@@ -100,46 +107,41 @@ def show_camera(screen):
         screen.blit(screen_surface, (0, 0))
         pygame.display.flip()
 
-def print_vel():   
-    global v, w
-
-    os.system("clear")
-    print("v =", v)
-    print("w =", w)
-
-def update_vel(event):
-    global v, w
+def update_vel(vehicle, event):
+    control = vehicle.get_control()
+    control.steer = 0.0     
+    control.brake = 0.0  
 
     if event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_LEFT and w > MIN_VEL:
-            w = round(w - INCREMENT_VEL, PRECISION)
-        elif event.key == pygame.K_RIGHT and w < MAX_VEL:
-            w = round(w + INCREMENT_VEL, PRECISION)
-        elif event.key == pygame.K_UP and v < MAX_VEL:
-            v = round(v + INCREMENT_VEL, PRECISION)
-        elif event.key == pygame.K_DOWN and v > MIN_VEL:
-            v = round(v - INCREMENT_VEL, PRECISION)
-        else:
-            return 
-    else:
-        return
-    
-    print_vel()
+        if event.key == pygame.K_LEFT:
+            control.steer = STEER
+        elif event.key == pygame.K_RIGHT:
+            control.steer = -STEER
+        elif event.key == pygame.K_UP:
+            control.throttle = min(1.0, control.throttle + INCREMENT)
+        elif event.key == pygame.K_DOWN:
+            control.brake = BRAKE
+            control.throttle = max(0.0, control.throttle - INCREMENT)
 
+    vehicle.apply_control(control)
+
+    # Imprimir por pantalla, como el ejemplo que vi
+    #print(control.throttle)
+    
 def main():
     global camera
 
-    # Setup CARLA
+    # Setup CARLA and pygame
     world, spectator, ego_vehicle = setup_carla(name_world='Town03', transform=carla.Transform(carla.Location(x=100.0, y=-6.0)))
-    center_spectator(spectator)
+    screen, clock = setup_pygame()
+
+    print("Preparing Carla and pygame...")
+    time.sleep(3)
+    print("Setup completed")
 
     # Add camera
     camera = add_camera(vehicle=ego_vehicle, world=world)
     camera.listen(lambda image: update_image(image))
-
-    # Init teleoperator with pygame
-    screen, clock = setup_pygame()
-    print_vel()
 
     try:
         while True:
@@ -148,7 +150,8 @@ def main():
                     pygame.quit()
                     return
                 
-                update_vel(event)
+                update_vel(ego_vehicle, event)
+                #center_spectator()
 
             show_camera(screen)
             clock.tick(60) # Frame rate
