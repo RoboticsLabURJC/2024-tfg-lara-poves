@@ -15,7 +15,7 @@ WIDTH_SCREEN = 700
 
 # Control velocity 
 BRAKE = 1.0
-STEER = 0.3
+STEER = 0.4
 INCREMENT = 0.1
 
 # Global variables
@@ -23,14 +23,16 @@ camera = None
 image_stream = None
 
 def center_spectator(spectator, transform):
+    spectator_transform = carla.Transform()
     yaw = math.radians(transform.rotation.yaw)
 
-    transform.location.z = ELEVATION
-    transform.location.x -= SCALE * math.cos(yaw)
-    transform.location.y -= SCALE * math.sin(yaw)
-    transform.rotation.pitch = PITCH
+    spectator_transform.location.z = transform.location.z + ELEVATION
+    spectator_transform.location.x = transform.location.x - SCALE * math.cos(yaw)
+    spectator_transform.location.y = transform.location.y - SCALE * math.sin(yaw)
+    spectator_transform.rotation.pitch = PITCH
+    spectator_transform.rotation.yaw = transform.rotation.yaw 
 
-    spectator.set_transform(transform)
+    spectator.set_transform(spectator_transform)
 
 def setup_carla(port=2000, name_world='Town01', vehicle='vehicle.lincoln.mkz_2020', transform=carla.Transform()):
     client = carla.Client('localhost', port)
@@ -41,9 +43,9 @@ def setup_carla(port=2000, name_world='Town01', vehicle='vehicle.lincoln.mkz_202
     spectator = world.get_spectator()
     transform.rotation.pitch = 0.0
     transform.rotation.roll = 0.0
+    transform.location.z = 0.0
+    center_spectator(spectator, transform)
     transform.location.z = ELEVATION
-    spectator.set_transform(transform)
-    center_spectator(spectator, transform)  #no va
 
     # Create Ego Vehicle and spawn it at spectator's location
     ego_bp = world.get_blueprint_library().find(vehicle)
@@ -55,7 +57,7 @@ def setup_carla(port=2000, name_world='Town01', vehicle='vehicle.lincoln.mkz_202
     control.throttle = 0.0  
     control.steer = 0.0     
     control.brake = 0.0     
-    control.hand_brake = True  # cambiar y mirar si luego s equita soloß
+    control.hand_brake = False
     control.reverse = False  
     control.manual_gear_shift = False
     ego_vehicle.apply_control(control)
@@ -126,7 +128,7 @@ def update_vel(vehicle, event):
     vehicle.apply_control(control)
 
     # Imprimir por pantalla, como el ejemplo que vi
-    #print(control.throttle)
+    print(control)
     
 def main():
     global camera
@@ -135,7 +137,7 @@ def main():
     world, spectator, ego_vehicle = setup_carla(name_world='Town03', transform=carla.Transform(carla.Location(x=100.0, y=-6.0)))
     screen, clock = setup_pygame()
 
-    print("Preparing Carla and pygame...")
+    print("Preparing Carla and Pygame...")
     time.sleep(3)
     print("Setup completed")
 
@@ -151,8 +153,8 @@ def main():
                     return
                 
                 update_vel(ego_vehicle, event)
-                #center_spectator()
 
+            center_spectator(spectator, ego_vehicle.get_transform())
             show_camera(screen)
             clock.tick(60) # Frame rate
 
