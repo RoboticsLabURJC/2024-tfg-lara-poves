@@ -16,6 +16,7 @@ WIDTH_SCREEN = 700
 # Control velocity 
 BRAKE = 1.0
 STEER = 0.4
+THROTTLE = 0.7
 INCREMENT = 0.1
 
 # Global variables
@@ -105,30 +106,27 @@ def show_camera(screen):
 
         # Resize the image
         screen_surface = pygame.transform.scale(image_surface, (WIDTH_SCREEN, HEIGHT_SCREEN))
-
+        
         screen.blit(screen_surface, (0, 0))
         pygame.display.flip()
 
-def update_vel(vehicle, event):
+def update_vel(vehicle):
     control = vehicle.get_control()
     control.steer = 0.0     
     control.brake = 0.0  
+    control.throttle = 0.0
 
-    if event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_LEFT:
-            control.steer = STEER
-        elif event.key == pygame.K_RIGHT:
-            control.steer = -STEER
-        elif event.key == pygame.K_UP:
-            control.throttle = min(1.0, control.throttle + INCREMENT)
-        elif event.key == pygame.K_DOWN:
-            control.brake = BRAKE
-            control.throttle = max(0.0, control.throttle - INCREMENT)
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        control.steer = -STEER
+    if keys[pygame.K_RIGHT]:
+        control.steer = STEER
+    if keys[pygame.K_UP]:
+        control.throttle = THROTTLE
+    if keys[pygame.K_DOWN]:
+        control.brake = BRAKE
 
     vehicle.apply_control(control)
-
-    # Imprimir por pantalla, como el ejemplo que vi
-    print(control)
     
 def main():
     global camera
@@ -151,12 +149,12 @@ def main():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     return
-                
-                update_vel(ego_vehicle, event)
+                elif event.type == pygame.KEYDOWN:
+                    update_vel(ego_vehicle)
 
             center_spectator(spectator, ego_vehicle.get_transform())
             show_camera(screen)
-            clock.tick(60) # Frame rate
+            clock.tick(600) # Frame rate
 
     except KeyboardInterrupt:
         pygame.quit()
