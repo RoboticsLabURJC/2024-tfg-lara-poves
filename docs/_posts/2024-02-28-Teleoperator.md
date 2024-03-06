@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-03-06T15:30:00
+last_modified_at: 2024-03-06T22:29:00
 categories:
   - Blog
 tags:
@@ -14,7 +14,7 @@ Durante las primeras semanas, el objetivo ha sido familiarizarse con el simulado
 
 Se ha estado investigando la ejecución de acciones básicas, como la apertura de diversos mundos, el desplazamiento del espectador y la ubicación de uno o varios vehículos con la posibilidad de elegir su modelo.
 
-Posteriormente, se ha definido el vehículo que deseamos controlar, denominado "Ego vehicle" en CARLA, al que hemos incorporado sensores. En esta funcionalidad, solamente se han añadido dos cámaras: una que simula la vista del conductor y otra para visualizar el vehículo en el mundo.
+Posteriormente, se ha definido el vehículo que deseamos controlar, denominado "Ego Vehicle" en CARLA, al que hemos incorporado sensores. En esta funcionalidad, solamente se han añadido dos cámaras: una que simula la vista del conductor y otra para visualizar el vehículo en el mundo.
 
 ## Interfaz
 
