@@ -10,8 +10,8 @@ ELEVATION = 2.5
 
 # Control velocity 
 BRAKE = 1.0
-STEER = 0.4
-THROTTLE = 0.7
+STEER = 0.3
+THROTTLE = 0.6
 
 class Camera_screen:
     def __init__(self, name, vehicle, world, num_screen, transform=carla.Transform()):
@@ -78,16 +78,13 @@ def setup_pygame(num_screen):
     return screen, clock
 
 def update_vel(vehicle):
-    control = vehicle.get_control()
-    control.steer = 0.0     
-    control.brake = 0.0  
-    control.throttle = 0.0
+    control = carla.VehicleControl()
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        control.steer = -STEER
-    if keys[pygame.K_RIGHT]:
         control.steer = STEER
+    if keys[pygame.K_RIGHT]:
+        control.steer = -STEER
     if keys[pygame.K_UP]:
         control.throttle = THROTTLE
     if keys[pygame.K_DOWN]:
