@@ -1,6 +1,6 @@
 import pygame
 import carla
-from configcarla import setup_carla, setup_pygame, Camera_stream, teleoperator
+from configcarla import setup_carla, setup_pygame, Camera_stream
 
 # Screen
 HEIGHT= 600
@@ -11,7 +11,7 @@ def main():
     # Setup CARLA and pygame
     vehicle_transform = carla.Transform(carla.Location(x=100.0, y=-6.0, z=ELEVATION))
     world, ego_vehicle = setup_carla(name_world='Town03', transform=vehicle_transform)
-    screen, clock = setup_pygame(width=WIDTH * 2, height=HEIGHT, name='Teleoperator')
+    screen, clock = setup_pygame(width=WIDTH * 2, height=HEIGHT, name='autopilot')
 
     # Create cameras' screens
     sub_screen = pygame.Surface((WIDTH, HEIGHT))
@@ -31,8 +31,6 @@ def main():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     return
-                elif event.type == pygame.KEYDOWN:
-                    teleoperator(ego_vehicle)
 
             driver.show_camera(screen)
             spectator.show_camera(screen)
@@ -44,3 +42,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# lidar - 3 -> añadir lidar y visualizarlo
+# traffic manager - 2 -> ver que no se chocan, generar trafico en una zona
+# autopilot - 1 -> teleoperador pero con autopilot
+# colocar varios coches - 0
