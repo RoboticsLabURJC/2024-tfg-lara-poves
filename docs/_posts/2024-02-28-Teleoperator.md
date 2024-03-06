@@ -20,6 +20,10 @@ Posteriormente, se ha definido el vehiculo el cual deaseamos controlar, en CARLA
 
 Para la HRI se ha usado la libreria Pygame, se ha creado una pantalla grande en la que visualizaremos el contenido de ambas camaras.
 
+<figure class="align-center" style="width:60%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/post14/interface.png" alt="">
+</figure>
+
 ## Control 
 
 El teleoperador tambien se ha desarrollado usando Pygame, dependiendo de la tecla pulsada, el vehiculo es comando con el control correspondiente. La flecha alante es para avanzar, las laterales para girar y la de abajo para frenar.
