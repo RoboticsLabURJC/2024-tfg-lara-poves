@@ -20,7 +20,7 @@ Posteriormente, se ha definido el vehículo que deseamos controlar, denominado "
 
 Para la Interacción Humano-Robot (HRI), se ha utilizado la biblioteca Pygame y se ha creado una pantalla que permite visualizar el contenido de ambas cámaras de manera simultánea.
 
-<figure class="align-center" style="width:60%">
+<figure class="align-center" style="width:100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/interface.png" alt="">
 </figure>
 
