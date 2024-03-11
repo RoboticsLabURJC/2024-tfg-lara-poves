@@ -1,7 +1,7 @@
 import pygame
 import carla
-import time
-from configcarla import setup_carla, setup_pygame, Camera_stream
+import configcarla
+from configcarla import Camera_stream as CS
 
 # Screen
 HEIGHT= 600
@@ -10,25 +10,26 @@ ELEVATION = 2.5
     
 def main():
     # Setup CARLA and pygame
-    vehicle_transform = carla.Transform(carla.Location(x=100.0, y=-6.0, z=ELEVATION))
-    world, ego_vehicle = setup_carla(name_world='Town03', transform=vehicle_transform)
-    screen, clock = setup_pygame(width=WIDTH * 2, height=HEIGHT, name='autopilot')
+    world, ego_vehicle, client = configcarla.setup_carla(name_world='Town03')
+    screen, clock = configcarla.setup_pygame(width=WIDTH * 2, height=HEIGHT, 
+                                             name='Teleoperator')
 
     # Create cameras' screens
     sub_screen = pygame.Surface((WIDTH, HEIGHT))
     camera_transform = carla.Transform(carla.Location(z=ELEVATION, x=0.5), 
                                        carla.Rotation(pitch=-10.0, roll=90.0))
     
-    driver = Camera_stream(vehicle=ego_vehicle, rect=sub_screen.get_rect(topleft=(0, 0)), 
-                           world=world, transform=camera_transform)
+    driver = CS(vehicle=ego_vehicle, rect=sub_screen.get_rect(topleft=(0, 0)), 
+                world=world, transform=camera_transform)
 
     camera_transform.location.x = -4.0
-    spectator = Camera_stream(vehicle=ego_vehicle, transform=camera_transform,
-                              world=world, rect=sub_screen.get_rect(topleft=(WIDTH, 0)))
+    spectator = CS(vehicle=ego_vehicle, transform=camera_transform, world=world, 
+                   rect=sub_screen.get_rect(topleft=(WIDTH, 0)))
     
-    print("Preparing Carla and pygame...")
-    time.sleep(3)
-    print("Setup completed")
+    # Add vehicles
+    vehicles = configcarla.add_vehicles(world=world, number=10)
+    vehicles.append(ego_vehicle)
+    tm = configcarla.traffic_manager(client=client, vehicles=vehicles)
 
     try:
         while True:
@@ -49,6 +50,6 @@ if __name__ == "__main__":
     main()
 
 # lidar - 3 -> añadir lidar y visualizarlo
-# traffic manager - 2 -> ver que no se chocan, generar trafico en una zona
-# autopilot - 1 -> teleoperador pero con autopilot
-# colocar varios coches - 0
+'''
+autopilot -> al dar las curvas a veces pierde al carril y se choca contra las paredes
+'''

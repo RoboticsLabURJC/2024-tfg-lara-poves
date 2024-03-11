@@ -2,6 +2,7 @@ import carla
 import pygame
 import numpy as np
 import math
+import random
 
 # Control velocity 
 BRAKE = 1.0
@@ -33,24 +34,31 @@ class Camera_stream:
             # Create a Pygame surface 
             image_surface = pygame.surfarray.make_surface(array)
 
+            # Reverse mirror effect
+            flipped_surface = pygame.transform.flip(image_surface, True, False)
+
             # Resize the image
-            screen_surface = pygame.transform.scale(image_surface, self.rect.size)
+            screen_surface = pygame.transform.scale(flipped_surface, self.rect.size)
             
             screen.blit(screen_surface, self.rect)
 
 def setup_carla(port=2000, vehicle='vehicle.lincoln.mkz_2020', 
-                name_world='Town01', transform=carla.Transform()):
+                name_world='Town01', transform=None):
     # Connect to the server
     client = carla.Client('localhost', port)
     world = client.get_world()
     client.load_world(name_world)
+
+    if transform == None:
+        spawn_points = world.get_map().get_spawn_points()
+        transform = random.choice(spawn_points)
 
     # Create and locate ego vehicle 
     ego_bp = world.get_blueprint_library().find(vehicle)
     ego_bp.set_attribute('role_name', 'hero')
     ego_vehicle = world.spawn_actor(ego_bp, transform)
 
-    return world, ego_vehicle
+    return world, ego_vehicle, client
 
 def center_spectator(world, transform, scale=5.5, height=3.0, pitch=-10.0):
     yaw = math.radians(transform.rotation.yaw)
@@ -86,3 +94,28 @@ def teleoperator(vehicle):
         control.brake = BRAKE
 
     vehicle.apply_control(control)
+
+def add_vehicles(world, number):
+    vehicle_bp = world.get_blueprint_library().filter('*vehicle*')
+    spawn_points = world.get_map().get_spawn_points()
+
+    vehicles = []
+    for _ in range(number):
+        v = world.try_spawn_actor(random.choice(vehicle_bp), random.choice(spawn_points))
+        if v is not None:
+            vehicles.append(v)
+
+    return vehicles
+
+def traffic_manager(client, vehicles, port=5000, dist=3.0, speed_lower=10.0):
+    tm = client.get_trafficmanager(port)
+    tm_port = tm.get_port()
+
+    for v in vehicles:
+        v.set_autopilot(True, tm_port)
+        tm.auto_lane_change(v, False)
+
+    tm.set_global_distance_to_leading_vehicle(dist)
+    tm.global_percentage_speed_difference(speed_lower)
+
+    return tm
