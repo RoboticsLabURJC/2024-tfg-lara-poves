@@ -28,8 +28,8 @@ class Camera_stream:
             array = np.frombuffer(self.image.raw_data, dtype=np.dtype("uint8"))
             array = np.reshape(array, (self.image.height, self.image.width, 4))
 
-            # Convert RGBA to RGB
-            array = array[:, :, :3]
+            # Swap blue and red channels
+            array = array[:, :, (2, 1, 0)]
 
             # Create a Pygame surface 
             image_surface = pygame.surfarray.make_surface(array)
@@ -39,7 +39,7 @@ class Camera_stream:
 
             # Resize the image
             screen_surface = pygame.transform.scale(flipped_surface, self.rect.size)
-            
+
             screen.blit(screen_surface, self.rect)
 
 def setup_carla(port=2000, vehicle='vehicle.lincoln.mkz_2020', 
@@ -85,9 +85,9 @@ def teleoperator(vehicle):
     keys = pygame.key.get_pressed()
 
     if keys[pygame.K_LEFT]:
-        control.steer = STEER
-    if keys[pygame.K_RIGHT]:
         control.steer = -STEER
+    if keys[pygame.K_RIGHT]:
+        control.steer = STEER
     if keys[pygame.K_UP]:
         control.throttle = THROTTLE
     if keys[pygame.K_DOWN]:
