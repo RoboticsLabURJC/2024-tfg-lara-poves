@@ -28,4 +28,4 @@ Para la Interacción Humano-Robot (HRI), se ha utilizado la biblioteca Pygame y 
 
 El teleoperador también ha sido desarrollado utilizando Pygame. En función de la tecla presionada, el vehículo recibe el correspondiente comando de control. Por ejemplo, la flecha hacia adelante se utiliza para avanzar, las teclas laterales para girar y la flecha hacia abajo para frenar.
 
-El resultado final puede verse en el siguiente video [teleoperador](https://youtu.be/iTQZec6NKdY).
+El resultado final puede verse en el siguiente video [teleoperador](https://youtu.be/4Zh4QxjANoQ).
