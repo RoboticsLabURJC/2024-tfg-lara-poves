@@ -1,5 +1,6 @@
 import pygame
 import carla
+import time
 from configcarla import setup_carla, setup_pygame, Camera_stream, teleoperator
 
 # Screen
@@ -24,6 +25,10 @@ def main():
     camera_transform.location.x = -4.0
     spectator = Camera_stream(vehicle=ego_vehicle, transform=camera_transform,
                               world=world, rect=sub_screen.get_rect(topleft=(WIDTH, 0)))
+    
+    print("Preparing Carla and pygame...")
+    time.sleep(3)
+    print("Setup completed")
 
     try:
         while True:
