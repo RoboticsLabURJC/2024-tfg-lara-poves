@@ -1,6 +1,5 @@
 import pygame
 import carla
-import time
 from configcarla import setup_carla, setup_pygame, Camera_stream, teleoperator
 
 # Screen
@@ -11,7 +10,7 @@ ELEVATION = 2.5
 def main():
     # Setup CARLA and pygame
     vehicle_transform = carla.Transform(carla.Location(x=100.0, y=-6.0, z=ELEVATION))
-    world, ego_vehicle = setup_carla(name_world='Town03', transform=vehicle_transform)
+    world, ego_vehicle, _ = setup_carla(name_world='Town03', transform=vehicle_transform)
     screen, clock = setup_pygame(width=WIDTH * 2, height=HEIGHT, name='Teleoperator')
 
     # Create cameras' screens
@@ -25,10 +24,6 @@ def main():
     camera_transform.location.x = -4.0
     spectator = Camera_stream(vehicle=ego_vehicle, transform=camera_transform,
                               world=world, rect=sub_screen.get_rect(topleft=(WIDTH, 0)))
-    
-    print("Preparing Carla and pygame...")
-    time.sleep(3)
-    print("Setup completed")
 
     try:
         while True:
