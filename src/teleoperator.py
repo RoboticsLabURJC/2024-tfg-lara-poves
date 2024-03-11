@@ -31,12 +31,13 @@ def main():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     return
-                elif event.type == pygame.KEYDOWN:
-                    teleoperator(ego_vehicle)
+                
+                teleoperator(ego_vehicle)
 
             driver.show_camera(screen)
             spectator.show_camera(screen)
             pygame.display.flip()
+
             clock.tick(60) # Frame rate
 
     except KeyboardInterrupt:
