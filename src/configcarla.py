@@ -1,6 +1,7 @@
 import carla
 import pygame
 import numpy as np
+import math
 
 # Control velocity 
 BRAKE = 1.0
@@ -50,6 +51,17 @@ def setup_carla(port=2000, vehicle='vehicle.lincoln.mkz_2020',
     ego_vehicle = world.spawn_actor(ego_bp, transform)
 
     return world, ego_vehicle
+
+def center_spectator(world, transform, scale=5.5, height=3.0, pitch=-10.0):
+    yaw = math.radians(transform.rotation.yaw)
+    spectator =  world.get_spectator()
+
+    transform.location.z = height
+    transform.location.x -= scale * math.cos(yaw)
+    transform.location.y -= scale * math.sin(yaw)
+    transform.rotation.pitch = pitch
+
+    spectator.set_transform(transform)
 
 def setup_pygame(width, height, name):
     pygame.init()
