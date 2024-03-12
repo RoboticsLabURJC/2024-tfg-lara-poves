@@ -1,49 +1,48 @@
 import pygame
 import carla
-from configcarla import setup_carla, setup_pygame, Camera_stream, Teleoperator
+from configcarla import setup_carla, setup_pygame, Teleoperator, Vehicle_sensors
 
 # Screen
 HEIGHT= 600
 WIDTH = 600
-ELEVATION = 2.5
     
 def main():
-    # Setup CARLA and pygame
-    vehicle_transform = carla.Transform(carla.Location(x=100.0, y=-6.0, z=ELEVATION))
+    # Setup CARLA and Pygame
+    vehicle_transform = carla.Transform(carla.Location(x=100.0, y=-6.0, z=2.5))
     world, ego_vehicle, _ = setup_carla(name_world='Town03', transform=vehicle_transform)
-    screen, clock = setup_pygame(width=WIDTH * 2, height=HEIGHT, name='Teleoperator')
+    screen, clock = setup_pygame(size=(WIDTH * 2, HEIGHT), name='Teleoperator')
 
     # Create teleoperator
     teleop = Teleoperator(ego_vehicle)
 
-    # Create cameras' screens
-    sub_screen = pygame.Surface((WIDTH, HEIGHT))
-    camera_transform = carla.Transform(carla.Location(z=ELEVATION, x=0.5), 
+    # Add cameras
+    camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5), 
                                        carla.Rotation(pitch=-10.0, roll=90.0))
     
-    driver = Camera_stream(vehicle=ego_vehicle, rect=sub_screen.get_rect(topleft=(0, 0)), 
-                           world=world, transform=camera_transform)
-
+    cameras = Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
+    cameras.add_sensor(sensor='sensor.camera.rgb', size=(WIDTH, HEIGHT), 
+                       init=(0, 0), transform=camera_transform)
+    
     camera_transform.location.x = -4.0
-    spectator = Camera_stream(vehicle=ego_vehicle, transform=camera_transform,
-                              world=world, rect=sub_screen.get_rect(topleft=(WIDTH, 0)))
+    cameras.add_sensor(sensor='sensor.camera.rgb', size=(WIDTH, HEIGHT), 
+                       init=(WIDTH, 0), transform=camera_transform)
 
     try:
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()
                     return
                 
                 teleop.control()
-
-            driver.show_camera(screen)
-            spectator.show_camera(screen)
-            pygame.display.flip()
-
+            
+            cameras.update_screen()
             clock.tick(60) # Frame rate
 
     except KeyboardInterrupt:
+        return
+
+    finally:
+        cameras.destroy()
         pygame.quit()
 
 if __name__ == "__main__":

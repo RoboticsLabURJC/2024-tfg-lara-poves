@@ -1,30 +1,29 @@
 import pygame
 import carla
 import configcarla
-from configcarla import Camera_stream as CS
 
 # Screen
 HEIGHT= 600
 WIDTH = 600
-ELEVATION = 2.5
     
 def main():
-    # Setup CARLA and pygame
+    # Setup 
     world, ego_vehicle, client = configcarla.setup_carla(name_world='Town03')
-    screen, clock = configcarla.setup_pygame(width=WIDTH * 2, height=HEIGHT, 
-                                             name='Teleoperator')
+    screen, clock = configcarla.setup_pygame(size=(WIDTH * 2, HEIGHT), name='Teleoperator')
+    sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
-    # Create cameras' screens
-    sub_screen = pygame.Surface((WIDTH, HEIGHT))
-    camera_transform = carla.Transform(carla.Location(z=ELEVATION, x=0.5), 
+    # Add cameras
+    camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5), 
                                        carla.Rotation(pitch=-10.0, roll=90.0))
     
-    driver = CS(vehicle=ego_vehicle, rect=sub_screen.get_rect(topleft=(0, 0)), 
-                world=world, transform=camera_transform)
-
+    sensors.add_sensor(sensor='sensor.camera.rgb', size=(WIDTH, HEIGHT), 
+                       init=(0, 0), transform=camera_transform)
+    
     camera_transform.location.x = -4.0
-    spectator = CS(vehicle=ego_vehicle, transform=camera_transform, world=world, 
-                   rect=sub_screen.get_rect(topleft=(WIDTH, 0)))
+    sensors.add_sensor(sensor='sensor.camera.rgb', size=(WIDTH, HEIGHT), 
+                       init=(WIDTH, 0), transform=camera_transform)
+    
+    # Add LIDAR
     
     # Add vehicles
     vehicles = configcarla.add_vehicles(world=world, number=10)
@@ -35,15 +34,16 @@ def main():
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()
                     return
-
-            driver.show_camera(screen)
-            spectator.show_camera(screen)
-            pygame.display.flip()
+            
+            sensors.update_screen()
             clock.tick(60) # Frame rate
 
     except KeyboardInterrupt:
+        return
+
+    finally:
+        sensors.destroy()
         pygame.quit()
 
 if __name__ == "__main__":

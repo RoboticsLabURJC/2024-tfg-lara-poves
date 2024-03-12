@@ -4,24 +4,27 @@ import numpy as np
 import math
 import random
 
-class Camera_stream:
-    def __init__(self, vehicle, world, rect, transform=carla.Transform()):
-        self.rect = rect
-        self.image = None
+class Sensor:
+    def __init__(self, size, init, sensor):
+        self.rect = size
+        self.data = None
+        self.sensor = sensor
 
-        # Add camera
-        camera_bp = world.get_blueprint_library().find('sensor.camera.rgb')
-        self.camera = world.spawn_actor(camera_bp, transform, attach_to=vehicle)
-        self.camera.listen(lambda image: self.update_image(image))
+        if size != None: 
+            sub_screen = pygame.Surface(size)
+            self.rect = sub_screen.get_rect(topleft=init)
 
-    def update_image(self, image):
-        self.image = image
-
-    def show_camera(self, screen):
-        if self.image is not None:
+    def update_data(self, data):
+        self.data = data
+    
+    def show_image(self, screen):
+        if self.data == None or self.rect == None:
+            return
+        
+        if isinstance(self.data, carla.Image):
             # Convert the image to a numpy array
-            array = np.frombuffer(self.image.raw_data, dtype=np.dtype("uint8"))
-            array = np.reshape(array, (self.image.height, self.image.width, 4))
+            array = np.frombuffer(self.data.raw_data, dtype=np.dtype("uint8"))
+            array = np.reshape(array, (self.data.height, self.data.width, 4))
 
             # Swap blue and red channels
             array = array[:, :, (2, 1, 0)]
@@ -36,6 +39,46 @@ class Camera_stream:
             screen_surface = pygame.transform.scale(flipped_surface, self.rect.size)
 
             screen.blit(screen_surface, self.rect)
+
+class Vehicle_sensors:
+    def __init__(self, vehicle, world, screen):
+        self.vehicle = vehicle
+        self.world = world
+        self.screen = screen
+        self.sensors = []
+
+    def add_sensor(self, sensor, size=None, init=(0, 0), transform=carla.Transform()):
+        try:
+            sensor_bp = self.world.get_blueprint_library().find(sensor)
+        except IndexError:
+            print("Sensor", sensor, "doesn't exist!")
+            return
+        
+        sensor = self.world.spawn_actor(sensor_bp, transform, attach_to=self.vehicle)
+        sensor_class = Sensor(size=size, init=init, sensor=sensor)
+        self.sensors.append(sensor_class)
+        sensor.listen(lambda data: sensor_class.update_data(data))
+        
+    def resize_screen(self, width=None, height=None):
+        current_width, current_height = self.screen.get_size()
+        if width == None:
+            width = current_width
+        if height == None:
+            height = current_height
+
+        self.screen = pygame.display.set_mode((width, height))
+
+    def update_screen(self):
+        for sensor in self.sensors:
+            sensor.show_image(self.screen)
+
+        pygame.display.flip()
+
+    def destroy(self):
+        for sensor in self.sensors:
+            sensor.sensor.destroy()
+
+        self.vehicle.destroy()
 
 class Teleoperator:
     def __init__(self, vehicle, steer=0.3, throttle=0.6, brake=1.0):
@@ -97,11 +140,11 @@ def center_spectator(world, transform, scale=5.5, height=3.0, pitch=-10.0):
 
     spectator.set_transform(transform)
 
-def setup_pygame(width, height, name):
+def setup_pygame(size, name):
     pygame.init()
     clock = pygame.time.Clock()
 
-    screen = pygame.display.set_mode((width, height))
+    screen = pygame.display.set_mode(size)
     pygame.display.set_caption(name)
 
     return screen, clock
@@ -124,7 +167,7 @@ def traffic_manager(client, vehicles, port=5000, dist=3.0, speed_lower=10.0):
 
     for v in vehicles:
         v.set_autopilot(True, tm_port)
-        tm.auto_lane_change(v, False)
+        tm.auto_lane_change(v, False) 
 
     tm.set_global_distance_to_leading_vehicle(dist)
     tm.global_percentage_speed_difference(speed_lower)
