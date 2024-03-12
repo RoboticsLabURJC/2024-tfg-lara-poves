@@ -4,18 +4,25 @@ import numpy as np
 import math
 import random
 
+def get_rect(size, init):
+    sub_screen = pygame.Surface(size)
+    rect = sub_screen.get_rect(topleft=init)
+
+    return rect
+
 class Sensor:
-    def __init__(self, size, init, sensor):
-        self.rect = size
+    def __init__(self, rect, sensor):
+        self.rect = rect
         self.data = None
         self.sensor = sensor
 
-        if size != None: 
-            sub_screen = pygame.Surface(size)
-            self.rect = sub_screen.get_rect(topleft=init)
+        self.sensor.listen(lambda data: self.update_data(data))
 
     def update_data(self, data):
         self.data = data
+
+    def change_rect(self, size, init=(0, 0)):
+        self.rect= get_rect(size, init)
     
     def show_image(self, screen):
         if self.data == None or self.rect == None:
@@ -54,10 +61,13 @@ class Vehicle_sensors:
             print("Sensor", sensor, "doesn't exist!")
             return
         
+        rect = size
+        if size != None: 
+            rect = get_rect(size, init)
+                
         sensor = self.world.spawn_actor(sensor_bp, transform, attach_to=self.vehicle)
-        sensor_class = Sensor(size=size, init=init, sensor=sensor)
+        sensor_class = Sensor(rect=rect, sensor=sensor)
         self.sensors.append(sensor_class)
-        sensor.listen(lambda data: sensor_class.update_data(data))
         
     def resize_screen(self, width=None, height=None):
         current_width, current_height = self.screen.get_size()

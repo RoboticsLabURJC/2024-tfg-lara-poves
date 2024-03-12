@@ -9,7 +9,7 @@ WIDTH = 600
 def main():
     # Setup 
     world, ego_vehicle, client = configcarla.setup_carla(name_world='Town03')
-    screen, clock = configcarla.setup_pygame(size=(WIDTH * 2, HEIGHT), name='Teleoperator')
+    screen, clock = configcarla.setup_pygame(size=(WIDTH * 2, HEIGHT), name='Autopilot')
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
     # Add cameras
