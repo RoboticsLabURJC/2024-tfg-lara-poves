@@ -32,7 +32,7 @@ class Sensor:
             self.init = (init[0] + size[0] / 2, init[1] + size[1] / 2)
     
     def show_image(self, screen:pygame.Surface):
-        if self.data == None or self.rect == None:
+        if self.data == None:
             return
         
         if isinstance(self.data, carla.Image):
