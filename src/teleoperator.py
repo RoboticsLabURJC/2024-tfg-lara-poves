@@ -20,11 +20,11 @@ def main():
                                        carla.Rotation(pitch=-10.0, roll=90.0))
     
     cameras = Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
-    cameras.add_sensor(sensor='sensor.camera.rgb', size=(WIDTH, HEIGHT), 
+    cameras.add_sensor(sensor='sensor.camera.rgb', size_rect=(WIDTH, HEIGHT), 
                        init=(0, 0), transform=camera_transform)
     
     camera_transform.location.x = -4.0
-    cameras.add_sensor(sensor='sensor.camera.rgb', size=(WIDTH, HEIGHT), 
+    cameras.add_sensor(sensor='sensor.camera.rgb', size_rect=(WIDTH, HEIGHT), 
                        init=(WIDTH, 0), transform=camera_transform)
 
     try:

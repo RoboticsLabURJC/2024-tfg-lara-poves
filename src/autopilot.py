@@ -8,23 +8,26 @@ WIDTH = 600
     
 def main():
     # Setup 
-    world, ego_vehicle, client = configcarla.setup_carla(name_world='Town03')
-    screen, clock = configcarla.setup_pygame(size=(WIDTH * 2, HEIGHT), name='Autopilot')
+    world, ego_vehicle, client = configcarla.setup_carla(name_world='Town01')
+    screen, clock = configcarla.setup_pygame(size=(WIDTH * 3, HEIGHT), name='Autopilot')
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
     # Add cameras
     camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5), 
                                        carla.Rotation(pitch=-10.0, roll=90.0))
+    lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
     
-    sensors.add_sensor(sensor='sensor.camera.rgb', size=(WIDTH, HEIGHT), 
+    sensors.add_sensor(sensor='sensor.camera.rgb', size_rect=(WIDTH, HEIGHT), 
                        init=(0, 0), transform=camera_transform)
     
     camera_transform.location.x = -4.0
-    sensors.add_sensor(sensor='sensor.camera.rgb', size=(WIDTH, HEIGHT), 
+    sensors.add_sensor(sensor='sensor.camera.rgb', size_rect=(WIDTH, HEIGHT),
                        init=(WIDTH, 0), transform=camera_transform)
     
     # Add LIDAR
-    
+    sensors.add_sensor(sensor='sensor.lidar.ray_cast', size_rect=(WIDTH, HEIGHT), 
+                       init=(WIDTH * 2, 0), transform=lidar_transform)
+
     # Add vehicles
     vehicles = configcarla.add_vehicles(world=world, number=10)
     vehicles.append(ego_vehicle)

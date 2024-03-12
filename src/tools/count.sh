@@ -14,7 +14,7 @@ fi
 
 while IFS= read -r line; do
   carac=$(echo -n "$line" | wc -m)
-  if [ "$carac" -gt 90 ]; then
-    echo "Line '$line': $caracteres"
+  if [ "$carac" -gt 100 ]; then
+    echo "Line '$line': $carac"
   fi
 done < "$file"
