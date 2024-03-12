@@ -4,13 +4,8 @@ import numpy as np
 import math
 import random
 
-# Control velocity 
-BRAKE = 1.0
-STEER = 0.3
-THROTTLE = 0.6
-
 class Camera_stream:
-    def __init__(self, vehicle, world, rect,  transform=carla.Transform()):
+    def __init__(self, vehicle, world, rect, transform=carla.Transform()):
         self.rect = rect
         self.image = None
 
@@ -41,6 +36,37 @@ class Camera_stream:
             screen_surface = pygame.transform.scale(flipped_surface, self.rect.size)
 
             screen.blit(screen_surface, self.rect)
+
+class Teleoperator:
+    def __init__(self, vehicle, steer=0.3, throttle=0.6, brake=1.0):
+        self.vehicle = vehicle
+        self.steer = max(0.0, min(1.0, steer))
+        self.throttle = max(0.0, min(1.0, throttle))
+        self.brake = max(0.0, min(1.0, brake))
+        
+    def control(self):
+        control = carla.VehicleControl()
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_LEFT]:
+            control.steer = -self.steer
+        if keys[pygame.K_RIGHT]:
+            control.steer =  self.steer
+        if keys[pygame.K_UP]:
+            control.throttle = self.throttle
+        if keys[pygame.K_DOWN]:
+            control.brake = self.brake
+
+        self.vehicle.apply_control(control)
+
+    def set_steer(self, steer):
+        self.steer = max(0.0, min(1.0, steer))
+
+    def set_throttle(self, throttle):
+        self.throttle = max(0.0, min(1.0, throttle))
+
+    def set_brake(self, brake):
+        self.brake = max(0.0, min(1.0, brake))
 
 def setup_carla(port=2000, vehicle='vehicle.lincoln.mkz_2020', 
                 name_world='Town01', transform=None):
@@ -79,21 +105,6 @@ def setup_pygame(width, height, name):
     pygame.display.set_caption(name)
 
     return screen, clock
-
-def teleoperator(vehicle):
-    control = carla.VehicleControl()
-    keys = pygame.key.get_pressed()
-
-    if keys[pygame.K_LEFT]:
-        control.steer = -STEER
-    if keys[pygame.K_RIGHT]:
-        control.steer = STEER
-    if keys[pygame.K_UP]:
-        control.throttle = THROTTLE
-    if keys[pygame.K_DOWN]:
-        control.brake = BRAKE
-
-    vehicle.apply_control(control)
 
 def add_vehicles(world, number):
     vehicle_bp = world.get_blueprint_library().filter('*vehicle*')
