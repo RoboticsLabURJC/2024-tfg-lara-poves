@@ -1,6 +1,6 @@
 import pygame
 import carla
-from configcarla import setup_carla, setup_pygame, Camera_stream, teleoperator
+from configcarla import setup_carla, setup_pygame, Camera_stream, Teleoperator
 
 # Screen
 HEIGHT= 600
@@ -12,6 +12,9 @@ def main():
     vehicle_transform = carla.Transform(carla.Location(x=100.0, y=-6.0, z=ELEVATION))
     world, ego_vehicle, _ = setup_carla(name_world='Town03', transform=vehicle_transform)
     screen, clock = setup_pygame(width=WIDTH * 2, height=HEIGHT, name='Teleoperator')
+
+    # Create teleoperator
+    teleop = Teleoperator(ego_vehicle)
 
     # Create cameras' screens
     sub_screen = pygame.Surface((WIDTH, HEIGHT))
@@ -32,7 +35,7 @@ def main():
                     pygame.quit()
                     return
                 
-                teleoperator(ego_vehicle)
+                teleop.control()
 
             driver.show_camera(screen)
             spectator.show_camera(screen)
