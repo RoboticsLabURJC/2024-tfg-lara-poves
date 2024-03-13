@@ -39,10 +39,11 @@ def main():
     near_vehicle = configcarla.add_one_vehicle(world=world, ego_vehicle=False, tag='*tesla*',
                                                transform=ego_transform)
     
+    '''
     ego_transform.location.y -= 3.0
     ego_transform.location.x = 140
     a = configcarla.add_one_vehicle(world=world, ego_vehicle=False, tag='*tesla*',transform=ego_transform)
-
+    '''
 
     # Add more vehicles
     vehicles = configcarla.add_vehicles_randomly(world=world, number=10)

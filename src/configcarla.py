@@ -52,7 +52,7 @@ class Lidar(Sensor):
         self.color_min = (0, 0, 255)
         self.color_max = (255, 0, 0)
         self.color_screen = (0, 0, 0)
-        self.init = (init[0] + size[0] / 2, init[1] + size[1] / 2)
+        self.size = size
 
     def show_image(self, screen: pygame.Surface):
         if self.data != None:
@@ -72,8 +72,10 @@ class Lidar(Sensor):
                 color = self._interpolate_color(num=i, min=i_min, max=i_max)
                 thickness = self._interpolate_thickness(num=z, min=z_min, max=z_max)
 
-                center = (int(x * self.scale + self.init[0]), int(y * self.scale + self.init[1]))
-                pygame.draw.circle(screen, color, center, thickness)
+                center = (int(x * self.scale + self.size[0] / 2), int(y * self.scale + self.size[1] / 2))
+                pygame.draw.circle(self.sub_screen, color, center, thickness)
+
+            screen.blit(self.sub_screen, self.rect)
 
     def _interpolate_thickness(self, num:float, min:float, max:float):
         norm = (num - min) / (max - min)
