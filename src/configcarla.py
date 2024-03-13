@@ -3,7 +3,7 @@ import pygame
 import numpy as np
 import math
 import random
-from typing import Tuple
+from typing import Tuple, List
 
 class Sensor:
     def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, 
@@ -68,7 +68,7 @@ class Vehicle_sensors:
             sensor_bp = self.world.get_blueprint_library().find(sensor)
         except IndexError:
             print("Sensor", sensor, "doesn't exist!")
-            return
+            return None
                 
         sensor = self.world.spawn_actor(sensor_bp, transform, attach_to=self.vehicle)
         sensor_class = Sensor(size=size_rect, init=init, sensor=sensor, scale=scale_lidar, 
@@ -120,23 +120,34 @@ class Teleoperator:
     def set_brake(self, brake:float):
         self.brake = max(0.0, min(1.0, brake))
 
-def setup_carla(port:int=2000, vehicle:carla.Vehicle='vehicle.lincoln.mkz_2020', 
-                name_world:str='Town01', transform=None):
-    # Connect to the server
+def setup_carla(port:int=2000, name_world:str='Town01'):
     client = carla.Client('localhost', port)
     world = client.get_world()
     client.load_world(name_world)
 
+    return world, client
+
+def add_one_vehicle(world:carla.World, ego_vehicle:bool, vehicle_type:str=None, 
+                    tag:str='*vehicle*', transform:carla.Transform=None): 
     if transform == None:
         spawn_points = world.get_map().get_spawn_points()
         transform = random.choice(spawn_points)
 
-    # Create and locate ego vehicle 
-    ego_bp = world.get_blueprint_library().find(vehicle)
-    ego_bp.set_attribute('role_name', 'hero')
-    ego_vehicle = world.spawn_actor(ego_bp, transform)
+    if vehicle_type == None:
+        vehicle_bp = world.get_blueprint_library().filter(tag)
+        vehicle_bp = random.choice(vehicle_bp)
+    else:
+        try:
+            vehicle_bp = world.get_blueprint_library().find(vehicle_type)
+        except IndexError:
+            print("Vehicle", vehicle_type, "doesn't exist!")
+            return None, transform
 
-    return world, ego_vehicle, client
+    if ego_vehicle:
+        vehicle_bp.set_attribute('role_name', 'hero')
+
+    vehicle = world.spawn_actor(vehicle_bp, transform)
+    return vehicle, transform
 
 def center_spectator(world:carla.World, transform:carla.Transform,
                      scale:float=5.5, height:float=3.0, pitch:float=-10.0):
@@ -160,7 +171,7 @@ def setup_pygame(size:Tuple[int, int], name:str):
 
     return screen, clock
 
-def add_vehicles(world:carla.World, number:int):
+def add_vehicles_randomly(world:carla.World, number:int):
     vehicle_bp = world.get_blueprint_library().filter('*vehicle*')
     spawn_points = world.get_map().get_spawn_points()
 
