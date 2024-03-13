@@ -1,5 +1,5 @@
 ---
-title: "Autopiloto y LIDAR"
+title: "Autopiloto"
 last_modified_at: 2024-03-13T14:01:00
 categories:
   - Blog
@@ -22,5 +22,11 @@ def traffic_manager(client:carla.Client, vehicles:List[carla.Vehicle], port:int=
 ## LIDAR
 
 Para poder visualizar el láser correctamente, se han tenido que modificar las clases **Vehicle_sensors** y **Sensor** añadiendo nuevos parámetros.
+
+- transforman los datos del laser a un array de array, el cual almanecna XYZI
+```python
+lidar_data = np.copy(np.frombuffer(self.data.raw_data, dtype=np.dtype('f4')))
+lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
+```
 
 ## Demo
