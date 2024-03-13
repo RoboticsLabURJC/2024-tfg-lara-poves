@@ -13,7 +13,7 @@ def main():
 
     # Add Ego Vehicle
     vehicle_transform = carla.Transform(carla.Location(x=100.0, y=-6.0, z=2.5))
-    ego_vehicle, _ = add_one_vehicle(world=world, vehicle_type='vehicle.lincoln.mkz_2020',
+    ego_vehicle = add_one_vehicle(world=world, vehicle_type='vehicle.lincoln.mkz_2020',
                                   transform=vehicle_transform, ego_vehicle=True)
 
     # Create teleoperator
@@ -24,11 +24,11 @@ def main():
     camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5), 
                                        carla.Rotation(pitch=-10.0, roll=90.0))
     
-    cameras.add_sensor(sensor='sensor.camera.rgb', size_rect=(WIDTH, HEIGHT), 
+    cameras.add_sensor(sensor_type='sensor.camera.rgb', size_rect=(WIDTH, HEIGHT), 
                        init=(0, 0), transform=camera_transform)
     
     camera_transform.location.x = -4.0
-    cameras.add_sensor(sensor='sensor.camera.rgb', size_rect=(WIDTH, HEIGHT), 
+    cameras.add_sensor(sensor_type='sensor.camera.rgb', size_rect=(WIDTH, HEIGHT), 
                        init=(WIDTH, 0), transform=camera_transform)
 
     try:

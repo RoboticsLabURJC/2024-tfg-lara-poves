@@ -6,28 +6,26 @@ import random
 from typing import Tuple, List
 
 class Sensor:
-    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, 
-                 scale:int, color_draw:Tuple[int, int, int], color_screen:Tuple[int, int, int]):
+    def __init__(self, sensor:carla.Sensor):
         self.data = None
         self.sensor = sensor
-        self.scale = scale
-        self.color_draw = color_draw
-        self.color_screen = color_screen
-
-        self.init = (init[0] + size[0] / 2, init[1] + size[1] / 2)
-        self.sub_screen = pygame.Surface(size)
-        self.rect = self.sub_screen.get_rect(topleft=init)
-
         self.sensor.listen(lambda data: self._update_data(data))
 
     def _update_data(self, data):
         self.data = data
-    
+
     def show_image(self, screen:pygame.Surface):
-        if self.data == None:
-            return
-        
-        if isinstance(self.data, carla.Image):
+        return
+
+class Camera(Sensor):      
+    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor):
+        super().__init__(sensor=sensor)
+
+        sub_screen = pygame.Surface(size)
+        self.rect = sub_screen.get_rect(topleft=init)
+
+    def show_image(self, screen: pygame.Surface):
+        if self.data != None:
             array = np.frombuffer(self.data.raw_data, dtype=np.dtype("uint8"))
             array = np.reshape(array, (self.data.height, self.data.width, 4))
 
@@ -40,18 +38,57 @@ class Sensor:
 
             screen_surface = pygame.transform.scale(flipped_surface, self.rect.size)
             screen.blit(screen_surface, self.rect)
+        
+class Lidar(Sensor):    
+    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, scale:int):
+        super().__init__(sensor=sensor)
 
-        elif isinstance(self.data, carla.LidarMeasurement):
+        self.sub_screen = pygame.Surface(size)
+        self.rect = self.sub_screen.get_rect(topleft=init)
+        self.scale = scale
+
+        self.min_thickness = 1
+        self.max_thickness = 4
+        self.color_min = (0, 0, 255)
+        self.color_max = (255, 0, 0)
+        self.color_screen = (0, 0, 0)
+        self.init = (init[0] + size[0] / 2, init[1] + size[1] / 2)
+
+    def show_image(self, screen: pygame.Surface):
+        if self.data != None:
             lidar_data = np.copy(np.frombuffer(self.data.raw_data, dtype=np.dtype('f4')))
             lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
-            points = lidar_data[:, :-1]
+
+            z_min = np.min(lidar_data[:, 2])
+            z_max = np.max(lidar_data[:, 2])
+
+            i_min = np.min(lidar_data[:, 3])
+            i_max = np.max(lidar_data[:, 3])
 
             self.sub_screen.fill(self.color_screen)
             screen.blit(self.sub_screen, self.rect)
 
-            for x, y, _ in points:
+            for x, y, z, i in lidar_data:
+                color = self._interpolate_color(num=i, min=i_min, max=i_max)
+                thickness = self._interpolate_thickness(num=z, min=z_min, max=z_max)
+
                 center = (int(x * self.scale + self.init[0]), int(y * self.scale + self.init[1]))
-                pygame.draw.circle(screen, self.color_draw, center, 1)
+                pygame.draw.circle(screen, color, center, thickness)
+
+    def _interpolate_thickness(self, num:float, min:float, max:float):
+        norm = (num - min) / (max - min)
+        thickness = int(self.min_thickness + (self.max_thickness - self.min_thickness) * norm)
+
+        return thickness
+
+    def _interpolate_color(self, num:float, min:float, max:float):
+        norm = (num - min) / (max - min)
+        
+        r = int(self.color_min[0] + (self.color_max[0] - self.color_min[0]) * norm)
+        g = int(self.color_min[1] + (self.color_max[1] - self.color_min[1]) * norm)
+        b = int(self.color_min[2] + (self.color_max[2] - self.color_min[2]) * norm)
+
+        return (r, g, b)
 
 class Vehicle_sensors:
     def __init__(self, vehicle: carla.Vehicle, world: carla.World, screen: pygame.Surface):
@@ -60,21 +97,23 @@ class Vehicle_sensors:
         self.screen = screen
         self.sensors = []
 
-    def add_sensor(self, sensor:str, size_rect:Tuple[int, int], init:Tuple[int, int]=(0, 0), 
-                   transform:carla.Transform=carla.Transform(), scale_lidar:int=20,
-                   color_screen:Tuple[int, int, int]=(0, 0, 0), 
-                   color_draw:Tuple[int, int, int]=(0, 255, 0)):
+    def add_sensor(self, sensor_type:str, size_rect:Tuple[int, int], init:Tuple[int, int]=(0, 0), 
+                   transform:carla.Transform=carla.Transform(), scale_lidar:int=20):
         try:
-            sensor_bp = self.world.get_blueprint_library().find(sensor)
+            sensor_bp = self.world.get_blueprint_library().find(sensor_type)
         except IndexError:
-            print("Sensor", sensor, "doesn't exist!")
+            print("Sensor", sensor_type, "doesn't exist!")
             return None
                 
         sensor = self.world.spawn_actor(sensor_bp, transform, attach_to=self.vehicle)
-        sensor_class = Sensor(size=size_rect, init=init, sensor=sensor, scale=scale_lidar, 
-                              color_screen=color_screen, color_draw=color_draw)
-        self.sensors.append(sensor_class)
+        if 'camera' in sensor_type:
+            sensor_class = Camera(size=size_rect, init=init, sensor=sensor)
+        elif 'lidar' in sensor_type:
+            sensor_class = Lidar(size=size_rect, init=init, sensor=sensor, scale=scale_lidar)
+        else:
+            sensor_class = Sensor(sensor=sensor)
 
+        self.sensors.append(sensor_class)
         return sensor_class
 
     def update_screen(self):
@@ -147,7 +186,7 @@ def add_one_vehicle(world:carla.World, ego_vehicle:bool, vehicle_type:str=None,
         vehicle_bp.set_attribute('role_name', 'hero')
 
     vehicle = world.spawn_actor(vehicle_bp, transform)
-    return vehicle, transform
+    return vehicle
 
 def center_spectator(world:carla.World, transform:carla.Transform,
                      scale:float=5.5, height:float=3.0, pitch:float=-10.0):

@@ -36,13 +36,16 @@ class Vehicle_sensors:
     def destroy(self)
 ```
 
-Cada uno de los sensores pertenece a la clase ***Sensor***, que guarda la instancia del sensor carla, información necesaria para su visualización y contiene el *callback* que actualiza la información del sensor.
+Cada uno de los sensores pertenece a la clase ***Sensor***, que guarda la instancia del sensor carla y contiene el *callback* que actualiza la información del sensor.
 ```python
 class Sensor:
     def __init__(self, size:Tuple[int, int], init:Tuple[int, int])
-    def _update_data(self, data):
+    def _update_data(self, data)
     def show_image(self, screen:pygame.Surface):
+      return
 ```
+
+Para el manejo de la camara, hemos creado una clase que hereda de sensor, añadiendo los parametros necesarios en el constructor y sobreescribiendo la funcion show_image.
 
 ### Control 
 
