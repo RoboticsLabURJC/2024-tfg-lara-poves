@@ -1,5 +1,5 @@
 ---
-title: "Autopiloto"
+title: "Autopiloto y LIDAR"
 last_modified_at: 2024-03-13T14:01:00
 categories:
   - Blog
