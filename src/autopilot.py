@@ -51,8 +51,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# lidar - 3 -> añadir lidar y visualizarlo
-'''
-autopilot -> al dar las curvas a veces pierde al carril y se choca contra las paredes
-'''
