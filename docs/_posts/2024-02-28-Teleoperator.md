@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-03-06T22:29:00
+last_modified_at: 2024-03-13T14:01:00
 categories:
   - Blog
 tags:
@@ -8,26 +8,56 @@ tags:
   - Pygame
 ---
 
-Durante las primeras semanas, el objetivo ha sido familiarizarse con el simulador CARLA y desarrollar un teleoperador sencillo destinado a controlar un vehículo.
+Durante las primeras semanas, nuestro objetivo principal ha sido adentrarnos en el simulador CARLA y desarrollar un teleoperador sencillo para controlar un vehículo.
 
 ## CARLA
 
-Se ha estado investigando la ejecución de acciones básicas, como la apertura de diversos mundos, el desplazamiento del espectador y la ubicación de uno o varios vehículos con la posibilidad de elegir su modelo.
+Hemos estado investigando cómo realizar acciones básicas en CARLA, como la apertura de distintos entornos, el desplazamiento del observador y la colocación de uno o varios vehículos, con la opción de seleccionar su modelo.
 
-Posteriormente, se ha definido el vehículo que deseamos controlar, denominado "Ego Vehicle" en CARLA, al que hemos incorporado sensores. En esta funcionalidad, solamente se han añadido dos cámaras: una que simula la vista del conductor y otra para visualizar el vehículo en el mundo.
+Después, nos centramos en definir el vehículo que queríamos controlar, conocido como ***Ego Vehicle*** en CARLA, al que añadiremos los sensores. Para esta funcionalidad hemos integrado dos cámaras: una para simular la perspectiva del conductor y otra para visualizar el vehículo en su entorno.
 
-## Interfaz
+### Interfaz
 
-Para la Interacción Humano-Robot (HRI), se ha utilizado la biblioteca Pygame y se ha creado una pantalla que permite visualizar el contenido de ambas cámaras de manera simultánea.
+Para la Interacción Humano-Robot (HRI) hemos utilizado la biblioteca ***Pygame***, creando una pantalla que nos permite visualizar el contenido de ambas cámaras de manera simultánea.
 
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/interface.png" alt="">
 </figure>
 
-## Control 
+### Manejo de sensores
 
-El teleoperador también ha sido desarrollado utilizando Pygame. En función de la tecla presionada, el vehículo recibe el correspondiente comando de control. Por ejemplo, la flecha hacia adelante se utiliza para avanzar, las teclas laterales para girar y la flecha hacia abajo para frenar.
+Hemos creado la clase ***Vehicle_sensors***, la cual nos permite almacenar el vehículo, en nuestro caso *ego vehicle*, y una lista de sus sensores.
+```python
+class Vehicle_sensors:
+    def __init__(self, vehicle: carla.Vehicle, world: carla.World, screen: pygame.Surface)
+    def add_sensor(self, sensor:str, size_rect:Tuple[int, int], init:Tuple[int, int]=(0, 0), transform:carla.Transform=carla.Transform())
+    def update_screen(self)
+    def destroy(self)
+```
 
-El resultado final puede verse en el siguiente video:
+Cada uno de los sensores pertenece a la clase ***Sensor***, que guarda la instancia del sensor carla, información necesaria para su visualización y contiene el *callback* que actualiza la información del sensor.
+```python
+class Sensor:
+    def __init__(self, size:Tuple[int, int], init:Tuple[int, int])
+    def _update_data(self, data):
+    def show_image(self, screen:pygame.Surface):
+```
+
+### Control 
+
+El teleoperador también ha sido desarrollado utilizando *Pygame*. En función de la tecla presionada, el vehículo recibe el correspondiente comando de control: la flecha hacia adelante se utiliza para avanzar, las teclas laterales para girar y la flecha hacia abajo para frenar.
+
+Para implementar este modo de funcionamiento, hemos creado la clase ***Teleoperator***.
+```python
+class Teleoperator:
+    def __init__(self, vehicle:carla.Vehicle, steer:float=0.3, throttle:float=0.6, brake:float=1.0)
+    def control(self)
+
+    def set_steer(self, steer:float)
+    def set_throttle(self, throttle:float)
+    def set_brake(self, brake:float)
+```
+
+## Demo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4Zh4QxjANoQ?si=RHRC45ch-WrZsOHz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
