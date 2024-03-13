@@ -6,6 +6,8 @@ categories:
 tags:
   - Carla
   - Pygame
+  - LIDAR
+  - Traffic manager
 ---
 
 Una vez habituados con las funciones básicas de CARLA y realizado el teleoperador, continuamos explorando otras funcionalidades proporcionadas por CARLA que necesitaremos posteriormente.
