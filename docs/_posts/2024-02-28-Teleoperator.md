@@ -6,6 +6,7 @@ categories:
 tags:
   - Carla
   - Pygame
+  - Camera
 ---
 
 Durante las primeras semanas, nuestro objetivo principal ha sido adentrarnos en el simulador CARLA y desarrollar un teleoperador sencillo para controlar un vehículo.
