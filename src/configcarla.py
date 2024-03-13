@@ -5,7 +5,6 @@ import math
 import random
 from typing import Tuple
 
-
 class Sensor:
     def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, 
                  scale:int, color_draw:Tuple[int, int, int], color_screen:Tuple[int, int, int]):
@@ -23,13 +22,6 @@ class Sensor:
 
     def _update_data(self, data):
         self.data = data
-
-    def set_rect_screen(self, size=None, init=None):
-        self.sub_screen = pygame.Surface(size)
-        self.rect = self.sub_screen.get_rect(topleft=init)
-
-        if size != None and init != None:
-            self.init = (init[0] + size[0] / 2, init[1] + size[1] / 2)
     
     def show_image(self, screen:pygame.Surface):
         if self.data == None:
@@ -180,7 +172,7 @@ def add_vehicles(world:carla.World, number:int):
 
     return vehicles
 
-def traffic_manager(client:carla.Client, vehicles:carla.Vehicle, port:int=5000, 
+def traffic_manager(client:carla.Client, vehicles:List[carla.Vehicle], port:int=5000, 
                     dist:float=3.0, speed_lower:float=10.0):
     tm = client.get_trafficmanager(port)
     tm_port = tm.get_port()
