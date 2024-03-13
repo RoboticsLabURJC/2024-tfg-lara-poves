@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-03-13T14:01:00
+last_modified_at: 2024-03-13T21:41:00
 categories:
   - Blog
 tags:
@@ -27,7 +27,7 @@ Para la Interacción Humano-Robot (HRI) hemos utilizado la biblioteca ***Pygame*
 
 ### Manejo de sensores
 
-Hemos creado la clase ***Vehicle_sensors***, la cual nos permite almacenar el vehículo, en nuestro caso *ego vehicle*, y una lista de sus sensores.
+Hemos creado la clase ***Vehicle_sensors***, la cual nos permite almacenar el vehículo, en nuestro caso *Ego Vehicle*, y una lista de sus sensores.
 ```python
 class Vehicle_sensors:
     def __init__(self, vehicle: carla.Vehicle, world: carla.World, screen: pygame.Surface)
@@ -39,13 +39,13 @@ class Vehicle_sensors:
 Cada uno de los sensores pertenece a la clase ***Sensor***, que guarda la instancia del sensor carla y contiene el *callback* que actualiza la información del sensor.
 ```python
 class Sensor:
-    def __init__(self, size:Tuple[int, int], init:Tuple[int, int])
+    def __init__(self, sensor:carla.Sensor)
     def _update_data(self, data)
     def show_image(self, screen:pygame.Surface):
       return
 ```
 
-Para el manejo de la camara, hemos creado una clase que hereda de sensor, añadiendo los parametros necesarios en el constructor y sobreescribiendo la funcion show_image.
+Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *show_image*.
 
 ### Control 
 
