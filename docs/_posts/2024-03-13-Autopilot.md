@@ -32,18 +32,18 @@ lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 Para mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño del punto según su altura. A continuación, se presentan varios ejemplos en diferentes situaciones:
 
 <figure class="align-center" style="max-width: 100%">
+  <figcaption style="font-size: larger">Coche delante</figcaption> 
   <img src="{{ site.url }}{{ site.baseurl }}/images/car_lidar_front.png" alt="">
-  <figcaption>Coche delante</figcaption>
 </figure>
 
 <figure class="align-center" style="max-width: 100%">
+  <figcaption style="font-size: larger">Coche a un lado</figcaption> 
   <img src="{{ site.url }}{{ site.baseurl }}/images/car_lidar_side.png" alt="">
-  <figcaption>Coche a un lado</figcaption>
 </figure>
 
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/motor_lidar_lidar.png" alt="">
-  <figcaption>Moto delnate</figcaption>
+  <figcaption style="font-size: larger">Moto delante</figcaption> 
+  <img src="{{ site.url }}{{ site.baseurl }}/images/motor_lidar.png" alt="">
 </figure>
 
 ## Demo
