@@ -30,7 +30,7 @@ lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 ```
 
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/prueba.git" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/prueba.gif" alt="">
 </figure>
 
 
