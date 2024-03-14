@@ -34,22 +34,15 @@ def main():
                        init=(WIDTH * 2, 0), transform=lidar_transform, scale_lidar=25)
     
     # Add a car in front of Ego Vehicle
-    ego_transform.location.x = 134.0
-
-    near_vehicle = configcarla.add_one_vehicle(world=world, ego_vehicle=False, tag='*tesla*',
+    ego_transform.location.x -= 6.0
+    front_vehicle = configcarla.add_one_vehicle(world=world, ego_vehicle=False, tag='*tesla*', 
                                                transform=ego_transform)
-    
-    '''
-    ego_transform.location.y -= 3.0
-    ego_transform.location.x = 140
-    a = configcarla.add_one_vehicle(world=world, ego_vehicle=False, tag='*tesla*',transform=ego_transform)
-    '''
 
     # Add more vehicles
     vehicles = configcarla.add_vehicles_randomly(world=world, number=10)
     vehicles.append(ego_vehicle)
-    vehicles.append(near_vehicle)
-    #tm = configcarla.traffic_manager(client=client, vehicles=vehicles)
+    vehicles.append(front_vehicle)
+    tm = configcarla.traffic_manager(client=client, vehicles=vehicles, speed_lower=50)
     
     try:
         while True:

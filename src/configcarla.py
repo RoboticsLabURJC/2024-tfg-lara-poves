@@ -72,7 +72,8 @@ class Lidar(Sensor):
                 color = self._interpolate_color(num=i, min=i_min, max=i_max)
                 thickness = self._interpolate_thickness(num=z, min=z_min, max=z_max)
 
-                center = (int(x * self.scale + self.size[0] / 2), int(y * self.scale + self.size[1] / 2))
+                center = (int(x * self.scale + self.size[0] / 2), 
+                          int(y * self.scale + self.size[1] / 2))
                 pygame.draw.circle(self.sub_screen, color, center, thickness)
 
             screen.blit(self.sub_screen, self.rect)
@@ -176,13 +177,17 @@ def add_one_vehicle(world:carla.World, ego_vehicle:bool, vehicle_type:str=None,
 
     if vehicle_type == None:
         vehicle_bp = world.get_blueprint_library().filter(tag)
-        vehicle_bp = random.choice(vehicle_bp)
+        try:
+            vehicle_bp = random.choice(vehicle_bp)
+        except IndexError:
+            print("No vehicle of type", tag, "found!")
+            return None
     else:
         try:
             vehicle_bp = world.get_blueprint_library().find(vehicle_type)
         except IndexError:
             print("Vehicle", vehicle_type, "doesn't exist!")
-            return None, transform
+            return None
 
     if ego_vehicle:
         vehicle_bp.set_attribute('role_name', 'hero')
