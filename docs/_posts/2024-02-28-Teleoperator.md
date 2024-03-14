@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-03-13T21:41:00
+last_modified_at: 2024-03-14T23:54:00
 categories:
   - Blog
 tags:
@@ -35,7 +35,7 @@ class Vehicle_sensors:
     def destroy(self)
 ```
 
-Cada uno de los sensores pertenece a la clase ***Sensor***, que guarda la instancia del sensor carla y contiene el *callback* que actualiza la información del sensor.
+Cada uno de los sensores pertenece a la clase ***Sensor***, que guarda la instancia del sensor carla y contiene el *callback* que almacena los datos del sensor en una cola *thread_safe*.
 ```python
 class Sensor:
     def __init__(self, sensor:carla.Sensor)
