@@ -4,15 +4,16 @@ import numpy as np
 import math
 import random
 from typing import Tuple, List
+from queue import Queue
 
 class Sensor:
     def __init__(self, sensor:carla.Sensor):
-        self.data = None
         self.sensor = sensor
+        self.queue = Queue()
         self.sensor.listen(lambda data: self._update_data(data))
 
     def _update_data(self, data):
-        self.data = data
+        self.queue.put(data)
 
     def show_image(self, screen:pygame.Surface):
         return
@@ -25,15 +26,16 @@ class Camera(Sensor):
         self.rect = sub_screen.get_rect(topleft=init)
 
     def show_image(self, screen: pygame.Surface):
-        if self.data != None:
-            array = np.frombuffer(self.data.raw_data, dtype=np.dtype("uint8"))
-            array = np.reshape(array, (self.data.height, self.data.width, 4))
+        if not self.queue.empty():
+            image = self.queue.get(False)
+            image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
+            image_data = np.reshape(image_data, (image.height, image.width, 4))
 
             # Swap blue and red channels
-            array = array[:, :, (2, 1, 0)]
+            image_data = image_data[:, :, (2, 1, 0)]
 
             # Reserve mirror effect
-            image_surface = pygame.surfarray.make_surface(array)
+            image_surface = pygame.surfarray.make_surface(image_data)
             flipped_surface = pygame.transform.flip(image_surface, True, False)
 
             screen_surface = pygame.transform.scale(flipped_surface, self.rect.size)
@@ -55,8 +57,9 @@ class Lidar(Sensor):
         self.size = size
 
     def show_image(self, screen: pygame.Surface):
-        if self.data != None:
-            lidar_data = np.copy(np.frombuffer(self.data.raw_data, dtype=np.dtype('f4')))
+        if not self.queue.empty():
+            lidar = self.queue.get(False) # Non-blocking call
+            lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
             lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 
             z_min = np.min(lidar_data[:, 2])
