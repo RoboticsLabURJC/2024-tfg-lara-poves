@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-03-14T23:54:00
+last_modified_at: 2024-03-18T11:58:00
 categories:
   - Blog
 tags:
@@ -14,18 +14,22 @@ Durante las primeras semanas, nuestro objetivo principal ha sido adentrarnos en 
 
 ## Anaconda
 
-para trabajar crearemos un entorno anaconda para poder usar la version de python que deseemos.
+Para trabajar, crearemos un entorno Anaconda que nos permita utilizar la versión deseada de Python, en este caso, utilizaremos la versión 3.7.
 
+```bash
+conda create -n tfg python=3.7
 conda activate tfg
 pip install pygame numpy carla==0.9.13
+```
 
-Instalamos esa version de carla porque es la que usa el simulador, de lo contrario, obtenemos un problema de incopatibilidad de versiones
-
+Instalamos la versión 0.9.13 de *carla*, ya que es la versión compatible con el simulador. De lo contrario, se obtienen problemas de incompatibilidad de versiones.
 
 ## CARLA
 
-Lanzar carla usamos
+Para iniciar el simulador CARLA, usaremos el siguiente comando:
+```bash
 /opt/carla/CarlaUE4.sh -world-port=2000
+```
 
 Hemos estado investigando cómo realizar acciones básicas en CARLA, como la apertura de distintos entornos, el desplazamiento del observador y la colocación de uno o varios vehículos, con la opción de seleccionar su modelo.
 
