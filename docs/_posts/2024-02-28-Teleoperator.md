@@ -7,11 +7,25 @@ tags:
   - Carla
   - Pygame
   - Camera
+  - Anaconda
 ---
 
 Durante las primeras semanas, nuestro objetivo principal ha sido adentrarnos en el simulador CARLA y desarrollar un teleoperador sencillo para controlar un vehículo.
 
+## Anaconda
+
+para trabajar crearemos un entorno anaconda para poder usar la version de python que deseemos.
+
+conda activate tfg
+pip install pygame numpy carla==0.9.13
+
+Instalamos esa version de carla porque es la que usa el simulador, de lo contrario, obtenemos un problema de incopatibilidad de versiones
+
+
 ## CARLA
+
+Lanzar carla usamos
+/opt/carla/CarlaUE4.sh -world-port=2000
 
 Hemos estado investigando cómo realizar acciones básicas en CARLA, como la apertura de distintos entornos, el desplazamiento del observador y la colocación de uno o varios vehículos, con la opción de seleccionar su modelo.
 
