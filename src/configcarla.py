@@ -150,7 +150,7 @@ class Vehicle_sensors:
         self.sensors.append(sensor_class)
         return sensor_class
 
-    def update_screen(self):
+    def update_data(self):
         for sensor in self.sensors:
             sensor.process_data(self.screen)
 

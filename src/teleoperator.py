@@ -39,7 +39,7 @@ def main():
                 
                 teleop.control()
             
-            cameras.update_screen()
+            cameras.update_data()
             clock.tick(60) # Frame rate
 
     except KeyboardInterrupt:

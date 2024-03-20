@@ -50,7 +50,7 @@ def main():
                 if event.type == pygame.QUIT:
                     return
             
-            sensors.update_screen()
+            sensors.update_data()
             clock.tick(120) # Frame rate
 
     except KeyboardInterrupt:

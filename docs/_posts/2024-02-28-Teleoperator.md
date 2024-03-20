@@ -49,7 +49,7 @@ Hemos creado la clase ***Vehicle_sensors***, la cual nos permite almacenar el ve
 class Vehicle_sensors:
     def __init__(self, vehicle: carla.Vehicle, world: carla.World, screen: pygame.Surface)
     def add_sensor(self, sensor:str, size_rect:Tuple[int, int], init:Tuple[int, int]=(0, 0), transform:carla.Transform=carla.Transform())
-    def update_screen(self)
+    def update_data(self)
     def destroy(self)
 ```
 
