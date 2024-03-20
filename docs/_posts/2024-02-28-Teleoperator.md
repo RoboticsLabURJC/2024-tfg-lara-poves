@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-03-20T19:58:00
+last_modified_at: 2024-03-20T23:30:00
 categories:
   - Blog
 tags:
@@ -58,11 +58,16 @@ Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la in
 class Sensor:
     def __init__(self, sensor:carla.Sensor)
     def _update_data(self, data)
-    def show_image(self, screen:pygame.Surface):
+    def process_data(self):
       return
 ```
 
 Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, la cual simplemente se encarga de mostrar la imagen capturada.
+```python
+class Camera(Sensor):      
+    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor):
+    def process_data(self, screen: pygame.Surface):
+```
 
 ## Control 
 
