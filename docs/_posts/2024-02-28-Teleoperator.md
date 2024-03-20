@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-03-18T11:58:00
+last_modified_at: 2024-03-20T19:58:00
 categories:
   - Blog
 tags:
@@ -53,7 +53,7 @@ class Vehicle_sensors:
     def destroy(self)
 ```
 
-Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor carla y contiene el *callback* que almacena los datos del sensor en una cola *thread_safe*. La funcion *process_data()* debe sobreescribirse en cada una de las subclases segun el tipo de sensor.
+Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor carla y contiene el *callback* que almacena los datos del sensor en una cola *thread_safe*. La función process_data() debe ser implementada en cada subclase de acuerdo al tipo de sensor
 ```python
 class Sensor:
     def __init__(self, sensor:carla.Sensor)
@@ -62,7 +62,7 @@ class Sensor:
       return
 ```
 
-Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, que en este caso se limita a mostrar la imagen.
+Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, la cual simplemente se encarga de mostrar la imagen capturada.
 
 ## Control 
 
