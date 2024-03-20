@@ -46,6 +46,10 @@ Para mejorar la percepción visual, hemos interpolado el color de cada punto seg
   <img src="{{ site.url }}{{ site.baseurl }}/images/motor_lidar.png" alt="">
 </figure>
 
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/prueba.png" alt="">
+</figure>
+
 ## Demo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h7hmnZ9t0Xs?si=VqMgGGDzFtJJ-IDO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
