@@ -6,6 +6,14 @@ import random
 from typing import Tuple, List
 from queue import Queue
 
+def get_angle_range(angle:float):
+    if angle > 180.0:
+        angle -= 180.0 * 2
+    elif angle < -180.0:
+        angle += 180.0 * 2
+
+    return angle
+
 class Sensor:
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
@@ -15,7 +23,7 @@ class Sensor:
     def _update_data(self, data):
         self.queue.put(data)
 
-    def show_image(self, screen:pygame.Surface):
+    def process_data(self):
         return
 
 class Camera(Sensor):      
@@ -25,7 +33,7 @@ class Camera(Sensor):
         sub_screen = pygame.Surface(size)
         self.rect = sub_screen.get_rect(topleft=init)
 
-    def show_image(self, screen: pygame.Surface):
+    def process_data(self, screen: pygame.Surface):
         if not self.queue.empty():
             image = self.queue.get(False)
             image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
@@ -41,22 +49,31 @@ class Camera(Sensor):
             screen_surface = pygame.transform.scale(flipped_surface, self.rect.size)
             screen.blit(screen_surface, self.rect)
         
-class Lidar(Sensor):    
-    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, scale:int):
+class Lidar(Sensor): 
+    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, scale:int, front_angle:int, yaw:float):
         super().__init__(sensor=sensor)
 
         self.sub_screen = pygame.Surface(size)
         self.rect = self.sub_screen.get_rect(topleft=init)
         self.scale = scale
-
-        self.min_thickness = 1
-        self.max_thickness = 4
-        self.color_min = (0, 0, 255)
-        self.color_max = (255, 0, 0)
-        self.color_screen = (0, 0, 0)
         self.size = size
 
-    def show_image(self, screen: pygame.Surface):
+        self.yaw = abs(yaw)
+        self.front_angle = abs(front_angle)
+        if self.front_angle > 360:
+            self.front_angle = 360
+        
+        angle1 = get_angle_range(-self.front_angle / 2 - yaw)
+        angle2 = get_angle_range(self.front_angle / 2 - yaw)
+        self.angle_min, self.angle_max = sorted([angle1, angle2])
+
+        self.min_thickness = 2
+        self.max_thickness = math.ceil(scale / 10) + 2
+        self.color_min = (0, 0, 255)
+        self.color_max = (255, 0, 0)
+        self.color_screen = (0, 0, 0)        
+
+    def process_data(self, screen: pygame.Surface):
         if not self.queue.empty():
             lidar = self.queue.get(False) # Non-blocking call
             lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
@@ -69,21 +86,30 @@ class Lidar(Sensor):
             i_max = np.max(lidar_data[:, 3])
 
             self.sub_screen.fill(self.color_screen)
-            screen.blit(self.sub_screen, self.rect)
 
             for x, y, z, i in lidar_data:
-                color = self._interpolate_color(num=i, min=i_min, max=i_max)
+                angle = np.arctan2(y, x) * 180 / np.pi 
+                if self.yaw <= 90.0:
+                    if self.angle_min <= angle <= self.angle_max:
+                        color = (0, 255, 0)
+                    else:
+                        color = (0, 0, 255)
+                else:
+                    if self.angle_min >= angle or angle >= self.angle_max:
+                        color = (0, 255, 0)
+                    else:
+                        color = (0, 0, 255)
                 thickness = self._interpolate_thickness(num=z, min=z_min, max=z_max)
 
                 center = (int(x * self.scale + self.size[0] / 2), 
-                          int(y * self.scale + self.size[1] / 2))
+                        int(y * self.scale + self.size[1] / 2))
                 pygame.draw.circle(self.sub_screen, color, center, thickness)
 
             screen.blit(self.sub_screen, self.rect)
 
     def _interpolate_thickness(self, num:float, min:float, max:float):
         norm = (num - min) / (max - min)
-        thickness = int(self.min_thickness + (self.max_thickness - self.min_thickness) * norm)
+        thickness = self.min_thickness + (self.max_thickness - self.min_thickness) * norm
 
         return thickness
 
@@ -104,7 +130,8 @@ class Vehicle_sensors:
         self.sensors = []
 
     def add_sensor(self, sensor_type:str, size_rect:Tuple[int, int], init:Tuple[int, int]=(0, 0), 
-                   transform:carla.Transform=carla.Transform(), scale_lidar:int=20):
+                   transform:carla.Transform=carla.Transform(), scale_lidar:int=25,
+                   front_angle:int=150):
         try:
             sensor_bp = self.world.get_blueprint_library().find(sensor_type)
         except IndexError:
@@ -115,7 +142,8 @@ class Vehicle_sensors:
         if 'camera' in sensor_type:
             sensor_class = Camera(size=size_rect, init=init, sensor=sensor)
         elif 'lidar' in sensor_type:
-            sensor_class = Lidar(size=size_rect, init=init, sensor=sensor, scale=scale_lidar)
+            sensor_class = Lidar(size=size_rect, init=init, sensor=sensor, scale=scale_lidar,
+                                 yaw=transform.rotation.yaw, front_angle=front_angle)
         else:
             sensor_class = Sensor(sensor=sensor)
 
@@ -124,7 +152,7 @@ class Vehicle_sensors:
 
     def update_screen(self):
         for sensor in self.sensors:
-            sensor.show_image(self.screen)
+            sensor.process_data(self.screen)
 
         pygame.display.flip()
 

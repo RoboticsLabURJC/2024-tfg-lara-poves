@@ -3,13 +3,13 @@ import carla
 import configcarla
 
 # Screen
-HEIGHT= 600
-WIDTH = 600
+HEIGHT= 450
+WIDTH = 450
     
 def main():
     # Setup 
     world, client = configcarla.setup_carla(name_world='Town01')
-    screen, clock = configcarla.setup_pygame(size=(WIDTH * 3, HEIGHT), name='Autopilot')
+    screen, clock = configcarla.setup_pygame(size=(WIDTH * 3, HEIGHT * 2), name='Autopilot')
 
     # Add Ego Vehicle
     ego_transform = carla.Transform(carla.Location(x=140, y=129, z=2.5), carla.Rotation(yaw=180))
@@ -28,10 +28,10 @@ def main():
     
     camera_transform.location.x = -4.0
     sensors.add_sensor(sensor_type='sensor.camera.rgb', size_rect=(WIDTH, HEIGHT),
-                       init=(WIDTH, 0), transform=camera_transform)
+                       init=(0, HEIGHT), transform=camera_transform)
     
-    sensors.add_sensor(sensor_type='sensor.lidar.ray_cast', size_rect=(WIDTH, HEIGHT), 
-                       init=(WIDTH * 2, 0), transform=lidar_transform, scale_lidar=25)
+    sensors.add_sensor(sensor_type='sensor.lidar.ray_cast', size_rect=(WIDTH * 2, HEIGHT * 2), 
+                       init=(WIDTH, 0), transform=lidar_transform, scale_lidar=40)
     
     # Add a car in front of Ego Vehicle
     ego_transform.location.x -= 6.0
@@ -42,7 +42,7 @@ def main():
     vehicles = configcarla.add_vehicles_randomly(world=world, number=10)
     vehicles.append(ego_vehicle)
     vehicles.append(front_vehicle)
-    tm = configcarla.traffic_manager(client=client, vehicles=vehicles, speed_lower=50)
+    #tm = configcarla.traffic_manager(client=client, vehicles=vehicles, speed_lower=30)
     
     try:
         while True:
@@ -51,7 +51,7 @@ def main():
                     return
             
             sensors.update_screen()
-            clock.tick(60) # Frame rate
+            clock.tick(120) # Frame rate
 
     except KeyboardInterrupt:
         return
