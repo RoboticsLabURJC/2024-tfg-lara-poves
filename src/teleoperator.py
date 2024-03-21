@@ -24,12 +24,9 @@ def main():
     camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5), 
                                        carla.Rotation(pitch=-10.0, roll=90.0))
     
-    cameras.add_sensor(sensor_type='sensor.camera.rgb', size_rect=(WIDTH, HEIGHT), 
-                       init=(0, 0), transform=camera_transform)
-    
+    cameras.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), transform=camera_transform)
     camera_transform.location.x = -4.0
-    cameras.add_sensor(sensor_type='sensor.camera.rgb', size_rect=(WIDTH, HEIGHT), 
-                       init=(WIDTH, 0), transform=camera_transform)
+    cameras.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(WIDTH, 0), transform=camera_transform)
 
     try:
         while True:
