@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-03-21T12:03:00
+last_modified_at: 2024-03-21T12:48:00
 categories:
   - Blog
 tags:
@@ -82,7 +82,7 @@ class Camera(Sensor):
     def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, screen:pygame.Surface)
     def process_data(self)
 ```
-Tambien hemos añadido una nuev afuncion en sensor vechicle add _camer.., la cual incorpora los parametros del constructor de dicha clase
+Además, hemos añadido una nueva función ***add_camera_rgb*** en la clase *Vehicle_sensors*. Esta función requiere los parámetros del constructor de la clase Camera.
 
 ## Control 
 
