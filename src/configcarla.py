@@ -80,7 +80,6 @@ class Lidar(Sensor):
         self.scale = scale
         self.size = size
         self.screen = screen
-        self.std_min = 0.0 # aun por determinar
 
         # Select front zone
         self.yaw = abs(yaw)
@@ -101,6 +100,19 @@ class Lidar(Sensor):
         self.color_max = (255, 0, 0)
         self.color_screen = (0, 0, 0)        
 
+        # Detect obstacles
+        self.std_zones = [100.0, 100.0, 100.0] # Front-left, front-front, front-right
+        self.std_min = 0.0 # aun por determinar
+
+    def obstacle_front_right(self):
+        return self.std_min >= self.std_zones[2]
+
+    def obstacle_front_left(self):
+        return self.std_min >= self.std_zones[0]
+    
+    def obstacle_front_front(self):
+        return self.std_min >= self.std_zones[1]
+
     def process_data(self):
         if not self.queue.empty():
             lidar = self.queue.get(False) 
@@ -118,13 +130,21 @@ class Lidar(Sensor):
             for x, y, z, i in lidar_data:
                 angle = np.arctan2(y, x) * 180 / np.pi 
                 if self.yaw <= 90.0:
-                    if self.angles[0] <= angle <= self.angles[3]:
+                    if self.angles[0] <= angle <= self.angles[1]:
+                        color = (255, 0, 0)
+                    elif self.angles[1] <= angle <= self.angles[2]:
                         color = (0, 255, 0)
+                    elif self.angles[2] <= angle <= self.angles[3]:
+                        color = (255, 255, 0)
                     else:
                         color = (0, 0, 255)
                 else:
-                    if self.angles[0] >= angle or angle >= self.angles[3]:
+                    if self.angles[0] >= angle or angle >= self.angles[1]:
+                        color = (255, 0, 0)
+                    elif self.angles[1] >= angle or angle >= self.angles[2]:
                         color = (0, 255, 0)
+                    elif self.angles[2] >= angle or angle >= self.angles[3]:
+                        color = (255, 255, 0)
                     else:
                         color = (0, 0, 255)
                 thickness = self._interpolate_thickness(num=z, min=z_min, max=z_max)
