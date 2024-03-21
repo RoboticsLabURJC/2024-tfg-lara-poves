@@ -5,7 +5,6 @@ import math
 import random
 from typing import Tuple, List
 from queue import Queue
-from abc import ABC, abstractmethod
 
 def get_angle_range(angle:float):
     if angle > 180.0:
@@ -27,7 +26,7 @@ class Sensor:
     def process_data(self):
         return
 
-class Sensor(ABC):
+class Sensor():
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
         self.queue = Queue()
@@ -42,7 +41,6 @@ class Sensor(ABC):
             return data
         return None
     
-    @abstractmethod
     def process_data(self):
         pass
 
@@ -91,10 +89,10 @@ class Lidar(Sensor):
             self.front_angle = 360
         
         # Divide front zone
-        angle1 = get_angle_range(-self.front_angle / 2 - yaw)
-        angle2 = get_angle_range(self.front_angle / 2 - yaw)
-        # + 50 y -50 
-        self.angle_min, self.angle_max = sorted([angle1, angle2])  #array de 4 
+        angle1, angle2 = sorted([get_angle_range(-self.front_angle / 2 - yaw),
+                                 get_angle_range(self.front_angle / 2 - yaw)])  
+        self.angles = sorted([angle1 + self.front_angle / 3, angle1,
+                              angle2 - self.front_angle / 3, angle2])
 
         # Visualize lidar
         self.min_thickness = 2
@@ -120,12 +118,12 @@ class Lidar(Sensor):
             for x, y, z, i in lidar_data:
                 angle = np.arctan2(y, x) * 180 / np.pi 
                 if self.yaw <= 90.0:
-                    if self.angle_min <= angle <= self.angle_max:
+                    if self.angles[0] <= angle <= self.angles[3]:
                         color = (0, 255, 0)
                     else:
                         color = (0, 0, 255)
                 else:
-                    if self.angle_min >= angle or angle >= self.angle_max:
+                    if self.angles[0] >= angle or angle >= self.angles[3]:
                         color = (0, 255, 0)
                     else:
                         color = (0, 0, 255)
