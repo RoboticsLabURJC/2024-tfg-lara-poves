@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-03-20T23:30:00
+last_modified_at: 2024-03-21T12:03:00
 categories:
   - Blog
 tags:
@@ -39,7 +39,7 @@ Después, nos centramos en definir el vehículo que queríamos controlar, conoci
 
 Para la Interacción Humano-Robot (HRI) hemos utilizado la biblioteca ***Pygame***, creando una pantalla que nos permite visualizar el contenido de ambas cámaras de manera simultánea.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/interface.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/teleoperator/interface.png" alt="">
 </figure>
 
 ## Manejo de sensores
@@ -47,27 +47,42 @@ Para la Interacción Humano-Robot (HRI) hemos utilizado la biblioteca ***Pygame*
 Hemos creado la clase ***Vehicle_sensors***, la cual nos permite almacenar el vehículo, en nuestro caso *Ego Vehicle*, y una lista de sus sensores.
 ```python
 class Vehicle_sensors:
-    def __init__(self, vehicle: carla.Vehicle, world: carla.World, screen: pygame.Surface)
-    def add_sensor(self, sensor:str, size_rect:Tuple[int, int], init:Tuple[int, int]=(0, 0), transform:carla.Transform=carla.Transform())
+    def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface)
+    def _put_sensor(self, sensor_type:str, transform:carla.Transform)
+    def add_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform())
     def update_data(self)
     def destroy(self)
 ```
 
-Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor carla y contiene el *callback* que almacena los datos del sensor en una cola *thread_safe*. La función process_data() debe ser implementada en cada subclase de acuerdo al tipo de sensor
+Cada uno de los sensores pertenece a la clase abstracta ***Sensor***, la cual guarda la instancia del sensor carla y contiene el *callback* que almacena los datos del sensor en una cola *thread_safe*. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor.
 ```python
-class Sensor:
-    def __init__(self, sensor:carla.Sensor)
-    def _update_data(self, data)
+class Sensor(ABC):
+    def __init__(self, sensor:carla.Sensor):
+        self.sensor = sensor
+        self.queue = Queue()
+        self.sensor.listen(lambda data: self._update_data(data))
+
+    def _update_data(self, data):
+        self.queue.put(data)
+
+    def get_last_data(self):
+        if not self.queue.empty():
+            data = self.queue.get(False) 
+            return data
+        return None
+
+    @abstractmethod
     def process_data(self):
-      return
+        pass
 ```
 
 Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, la cual simplemente se encarga de mostrar la imagen capturada.
 ```python
 class Camera(Sensor):      
-    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor):
-    def process_data(self, screen: pygame.Surface):
+    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, screen:pygame.Surface)
+    def process_data(self)
 ```
+Tambien hemos añadido una nuev afuncion en sensor vechicle add _camer.., la cual incorpora los parametros del constructor de dicha clase
 
 ## Control 
 

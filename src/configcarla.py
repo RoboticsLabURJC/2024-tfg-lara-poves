@@ -5,6 +5,7 @@ import math
 import random
 from typing import Tuple, List
 from queue import Queue
+from abc import ABC, abstractmethod
 
 def get_angle_range(angle:float):
     if angle > 180.0:
@@ -26,16 +27,38 @@ class Sensor:
     def process_data(self):
         return
 
-class Camera(Sensor):      
-    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor):
+class Sensor(ABC):
+    def __init__(self, sensor:carla.Sensor):
+        self.sensor = sensor
+        self.queue = Queue()
+        self.sensor.listen(lambda data: self._update_data(data))
+
+    def _update_data(self, data):
+        self.queue.put(data)
+
+    def get_last_data(self):
+        if not self.queue.empty():
+            data = self.queue.get(False) # Non-blocking call 
+            return data
+        return None
+    
+    @abstractmethod
+    def process_data(self):
+        pass
+
+class CameraRGB(Sensor):      
+    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], 
+                 sensor:carla.Sensor, screen:pygame.Surface):
         super().__init__(sensor=sensor)
 
         sub_screen = pygame.Surface(size)
         self.rect = sub_screen.get_rect(topleft=init)
+        self.screen = screen
 
-    def process_data(self, screen: pygame.Surface):
-        if not self.queue.empty():
-            image = self.queue.get(False)
+    def process_data(self):
+        image = self.get_last_data()
+        
+        if image != None:
             image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
             image_data = np.reshape(image_data, (image.height, image.width, 4))
 
@@ -47,35 +70,42 @@ class Camera(Sensor):
             flipped_surface = pygame.transform.flip(image_surface, True, False)
 
             screen_surface = pygame.transform.scale(flipped_surface, self.rect.size)
-            screen.blit(screen_surface, self.rect)
+            self.screen.blit(screen_surface, self.rect)
         
 class Lidar(Sensor): 
-    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, scale:int, front_angle:int, yaw:float):
+    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,
+                 scale:int, front_angle:int, yaw:float, screen:pygame.Surface):
         super().__init__(sensor=sensor)
 
         self.sub_screen = pygame.Surface(size)
         self.rect = self.sub_screen.get_rect(topleft=init)
         self.scale = scale
         self.size = size
+        self.screen = screen
+        self.std_min = 0.0 # aun por determinar
 
+        # Select front zone
         self.yaw = abs(yaw)
         self.front_angle = abs(front_angle)
         if self.front_angle > 360:
             self.front_angle = 360
         
+        # Divide front zone
         angle1 = get_angle_range(-self.front_angle / 2 - yaw)
         angle2 = get_angle_range(self.front_angle / 2 - yaw)
-        self.angle_min, self.angle_max = sorted([angle1, angle2])
+        # + 50 y -50 
+        self.angle_min, self.angle_max = sorted([angle1, angle2])  #array de 4 
 
+        # Visualize lidar
         self.min_thickness = 2
-        self.max_thickness = math.ceil(scale / 10) + 2
+        self.max_thickness = math.ceil(scale / 10) + self.min_thickness
         self.color_min = (0, 0, 255)
         self.color_max = (255, 0, 0)
         self.color_screen = (0, 0, 0)        
 
-    def process_data(self, screen: pygame.Surface):
+    def process_data(self):
         if not self.queue.empty():
-            lidar = self.queue.get(False) # Non-blocking call
+            lidar = self.queue.get(False) 
             lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
             lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 
@@ -105,7 +135,7 @@ class Lidar(Sensor):
                         int(y * self.scale + self.size[1] / 2))
                 pygame.draw.circle(self.sub_screen, color, center, thickness)
 
-            screen.blit(self.sub_screen, self.rect)
+            self.screen.blit(self.sub_screen, self.rect)
 
     def _interpolate_thickness(self, num:float, min:float, max:float):
         norm = (num - min) / (max - min)
@@ -123,15 +153,13 @@ class Lidar(Sensor):
         return (r, g, b)
 
 class Vehicle_sensors:
-    def __init__(self, vehicle: carla.Vehicle, world: carla.World, screen: pygame.Surface):
+    def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface):
         self.vehicle = vehicle
         self.world = world
         self.screen = screen
         self.sensors = []
 
-    def add_sensor(self, sensor_type:str, size_rect:Tuple[int, int], init:Tuple[int, int]=(0, 0), 
-                   transform:carla.Transform=carla.Transform(), scale_lidar:int=25,
-                   front_angle:int=150):
+    def _put_sensor(self, sensor_type:str, transform:carla.Transform):
         try:
             sensor_bp = self.world.get_blueprint_library().find(sensor_type)
         except IndexError:
@@ -139,20 +167,33 @@ class Vehicle_sensors:
             return None
                 
         sensor = self.world.spawn_actor(sensor_bp, transform, attach_to=self.vehicle)
-        if 'camera' in sensor_type:
-            sensor_class = Camera(size=size_rect, init=init, sensor=sensor)
-        elif 'lidar' in sensor_type:
-            sensor_class = Lidar(size=size_rect, init=init, sensor=sensor, scale=scale_lidar,
-                                 yaw=transform.rotation.yaw, front_angle=front_angle)
-        else:
-            sensor_class = Sensor(sensor=sensor)
+        return sensor
 
+    def add_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform()):
+        sensor = self._put_sensor(sensor_type=sensor_type, transform=transform)
+        sensor_class = Sensor(sensor=sensor)
         self.sensors.append(sensor_class)
         return sensor_class
+    
+    def add_camera_rgb(self, size_rect:Tuple[int, int], init:Tuple[int, int]=(0, 0), 
+                       transform:carla.Transform=carla.Transform()):
+        sensor = self._put_sensor(sensor_type='sensor.camera.rgb', transform=transform)
+        camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.screen)
+        self.sensors.append(camera)
+        return camera
+    
+    def add_lidar(self, size_rect:Tuple[int, int], init:Tuple[int, int]=(0, 0), scale_lidar:int=25,
+                  transform:carla.Transform=carla.Transform(), front_angle:int=150):
+        sensor = self._put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform)
+        lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle,
+                      scale=scale_lidar, yaw=transform.rotation.yaw, screen=self.screen)
+        
+        self.sensors.append(lidar)
+        return lidar
 
     def update_data(self):
         for sensor in self.sensors:
-            sensor.process_data(self.screen)
+            sensor.process_data()
 
         pygame.display.flip()
 
