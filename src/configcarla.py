@@ -78,8 +78,15 @@ class Lidar(Sensor):
         self.sub_screen = pygame.Surface(size)
         self.rect = self.sub_screen.get_rect(topleft=init)
         self.scale = scale
-        self.size = size
+        self.size_screen = size
+        self.center_screen = (size[0] // 2, size[1] // 2)
         self.screen = screen
+
+        # Visualize lidar
+        self.min_thickness = 2
+        self.max_thickness = math.ceil(scale / 10) + self.min_thickness
+        self.color_min = (0, 0, 255)
+        self.color_max = (255, 0, 0)
 
         # Select front zone
         self.yaw = abs(yaw)
@@ -93,68 +100,49 @@ class Lidar(Sensor):
         self.angles = sorted([angle1 + self.front_angle / 3, angle1,
                               angle2 - self.front_angle / 3, angle2])
 
-        # Visualize lidar
-        self.min_thickness = 2
-        self.max_thickness = math.ceil(scale / 10) + self.min_thickness
-        self.color_min = (0, 0, 255)
-        self.color_max = (255, 0, 0)
-        self.color_screen = (0, 0, 0)        
+        '''
+        Each row represents a zone (0: left, 1: front, 2: right)
+        Each column represents a statistic (0: min, 1: mean, 2: median, 3: std)
+        '''
+        self.stat_zones = np.full((3, 4), 100.0) 
+        self.std_min = 0.0 # Detect obstacles
 
-        # Detect obstacles
-        self.std_zones = [100.0, 100.0, 100.0] # Front-left, front-front, front-right
-        self.std_min = 0.0 # aun por determinar
+        # Write data
+        self.color_text = (255, 255, 255)
+        self.size_text = self.scale // 2
+        self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness) 
+        self.image = self._get_back_image()
 
-    def obstacle_front_right(self):
-        return self.std_min >= self.std_zones[2]
+    def _write_text(self, text:str, img:pygame.Surface, point:Tuple[int, int], side:int):
+        font = pygame.font.Font(pygame.font.match_font('tlwgtypo'), self.size_text)
+        text = font.render(text, True, self.color_text)
 
-    def obstacle_front_left(self):
-        return self.std_min >= self.std_zones[0]
+        text_rect = text.get_rect()
+        if side == 0:
+            text_rect.topleft = point 
+        elif side == 2:
+            text_rect.topright = point
+        else:
+            text_rect.center = point
+
+        img.blit(text, text_rect)
+
+    def _get_back_image(self):
+        image = pygame.Surface(self.size_screen)
+        text = ['front-left', 'front', 'front-right']
+        multiplier = 10
+
+        for a in self.angles:
+            x = self.center_screen[0] + self.scale * multiplier * math.cos(math.radians(a))
+            y = self.center_screen[1] + self.scale * multiplier * math.sin(math.radians(a))
+            pygame.draw.line(image, (70, 70, 70), self.center_screen, (x, y), 1)
+
+        for i in range(len(text)):
+            self._write_text(text=text[i], img=image, 
+                             point=(self.x_text[i], self.size_text), side=i)
+
+        return image
     
-    def obstacle_front_front(self):
-        return self.std_min >= self.std_zones[1]
-
-    def process_data(self):
-        if not self.queue.empty():
-            lidar = self.queue.get(False) 
-            lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
-            lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
-
-            z_min = np.min(lidar_data[:, 2])
-            z_max = np.max(lidar_data[:, 2])
-
-            i_min = np.min(lidar_data[:, 3])
-            i_max = np.max(lidar_data[:, 3])
-
-            self.sub_screen.fill(self.color_screen)
-
-            for x, y, z, i in lidar_data:
-                angle = np.arctan2(y, x) * 180 / np.pi 
-                if self.yaw <= 90.0:
-                    if self.angles[0] <= angle <= self.angles[1]:
-                        color = (255, 0, 0)
-                    elif self.angles[1] <= angle <= self.angles[2]:
-                        color = (0, 255, 0)
-                    elif self.angles[2] <= angle <= self.angles[3]:
-                        color = (255, 255, 0)
-                    else:
-                        color = (0, 0, 255)
-                else:
-                    if self.angles[0] >= angle or angle >= self.angles[1]:
-                        color = (255, 0, 0)
-                    elif self.angles[1] >= angle or angle >= self.angles[2]:
-                        color = (0, 255, 0)
-                    elif self.angles[2] >= angle or angle >= self.angles[3]:
-                        color = (255, 255, 0)
-                    else:
-                        color = (0, 0, 255)
-                thickness = self._interpolate_thickness(num=z, min=z_min, max=z_max)
-
-                center = (int(x * self.scale + self.size[0] / 2), 
-                        int(y * self.scale + self.size[1] / 2))
-                pygame.draw.circle(self.sub_screen, color, center, thickness)
-
-            self.screen.blit(self.sub_screen, self.rect)
-
     def _interpolate_thickness(self, num:float, min:float, max:float):
         norm = (num - min) / (max - min)
         thickness = self.min_thickness + (self.max_thickness - self.min_thickness) * norm
@@ -169,6 +157,96 @@ class Lidar(Sensor):
         b = int(self.color_min[2] + (self.color_max[2] - self.color_min[2]) * norm)
 
         return (r, g, b)
+    
+    def _update_stats(self, dist:List[float], y:List[float], zone:int):
+        if len(dist) != 0:
+            self.stat_zones[zone][0] = np.min(dist)
+            self.stat_zones[zone][1] = np.mean(dist)
+            self.stat_zones[zone][2] = np.median(dist)
+        if len(y) != 0:  
+            '''
+            aqui si es 0 no se deberia mantener si se
+            filtra por intensidad
+            '''
+            self.stat_zones[zone][3] = np.std(y)
+
+        y = self.size_text * 2
+        min, mean, median, std = self.stat_zones[zone]
+        stats_text = [
+            "Min = {:.2f}".format(min),
+            "Mean = {:.2f}".format(mean),
+            "Median = {:.2f}".format(median),
+            "Std = {:.2f}".format(std)
+        ]
+
+        for text in stats_text:
+            self._write_text(text=text, img=self.sub_screen, 
+                             point=(self.x_text[zone], y), side=zone)
+            y += self.size_text
+
+    def _get_zone(self, x:float, y:float):
+        angle = np.arctan2(y, x) * 180 / np.pi 
+
+        if self.yaw <= 90.0:
+            if self.angles[0] <= angle <= self.angles[1]:
+                return 0
+            elif self.angles[1] <= angle <= self.angles[2]:
+                return 1
+            elif self.angles[2] <= angle <= self.angles[3]:
+                return 2
+        else:
+            if self.angles[0] >= angle or angle >= self.angles[1]:
+                return 0
+            elif self.angles[1] >= angle or angle >= self.angles[2]:
+                return 1
+            elif self.angles[2] >= angle or angle >= self.angles[3]:
+                return 2
+
+        return 3
+
+    def process_data(self):
+        if not self.queue.empty():
+            lidar = self.queue.get(False) 
+            lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
+            lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
+
+            z_min = np.min(lidar_data[:, 2])
+            z_max = np.max(lidar_data[:, 2])
+
+            i_min = np.min(lidar_data[:, 3])
+            i_max = np.max(lidar_data[:, 3])
+
+            self.sub_screen.blit(self.image, (0, 0))
+
+            zones_y = [[], [], []]
+            zones_dist = [[], [], []]
+
+            for x, y, z, i in lidar_data:
+                index_zone = self._get_zone(x=x, y=y)
+                if index_zone < len(zones_y): # quitar la zona roja
+                    zones_dist[index_zone].append(math.sqrt(x ** 2 + y ** 2))
+                    zones_y[index_zone].append(y) # limitar por i 
+
+                thickness = self._interpolate_thickness(num=z, min=z_min, max=z_max)
+                color = self._interpolate_color(num=i, min=i_min, max=i_max)
+
+                center = (int(x * self.scale + self.center_screen[0]), 
+                        int(y * self.scale + self.center_screen[1]))
+                pygame.draw.circle(self.sub_screen, color, center, thickness)
+
+            for i in range(len(zones_y)):
+                self._update_stats(dist=zones_dist[i], y=zones_y[i], zone=i)
+                
+            self.screen.blit(self.sub_screen, self.rect)
+
+    def obstacle_front_right(self):
+        return self.std_min >= self.std_zones[2]
+
+    def obstacle_front_left(self):
+        return self.std_min >= self.std_zones[0]
+    
+    def obstacle_front(self):
+        return self.std_min >= self.std_zones[1]
 
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface):
