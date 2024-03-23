@@ -14,18 +14,6 @@ def get_angle_range(angle:float):
 
     return angle
 
-class Sensor:
-    def __init__(self, sensor:carla.Sensor):
-        self.sensor = sensor
-        self.queue = Queue()
-        self.sensor.listen(lambda data: self._update_data(data))
-
-    def _update_data(self, data):
-        self.queue.put(data)
-
-    def process_data(self):
-        return
-
 class Sensor():
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
