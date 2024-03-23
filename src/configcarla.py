@@ -213,7 +213,7 @@ class Lidar(Sensor):
                 index_zone = self._get_zone(x=x, y=y)
                 if index_zone < len(zones_y): # quitar la zona roja
                     zones_dist[index_zone].append(math.sqrt(x ** 2 + y ** 2))
-                    zones_y[index_zone].append(y) # limitar por i 
+                    zones_y[index_zone].append(y) # limitar por z
 
                 thickness = self._interpolate_thickness(num=z, min=z_min, max=z_max)
                 color = self._interpolate_color(num=i, min=i_min, max=i_max)
