@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-03-24T17:16:00
+last_modified_at: 2024-03-24T21:00:00
 categories:
   - Blog
 tags:
@@ -36,17 +36,7 @@ Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva
 class Lidar(Sensor): 
     def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,
                  scale:int, front_angle:int, yaw:float, screen:pygame.Surface)
-    def _get_back_image(self)
-
-    def _interpolate_thickness(self, num:float, min:float, max:float)
-    def _interpolate_color(self, num:float, min:float, max:float)
-
-    def _write_text(self, text:str, img:pygame.Surface, point:Tuple[int, int], side:int)
-    def _update_stats(self, dist:List[float], y:List[float], zone:int)
-    def _get_zone(self, x:float, y:float)
-
     def process_data(self):
-
     def obstacle_front_right(self)
     def obstacle_front_left(self)
     def obstacle_front(self)
