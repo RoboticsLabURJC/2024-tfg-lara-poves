@@ -233,13 +233,13 @@ class Lidar(Sensor):
             self.screen.blit(self.sub_screen, self.rect)
 
     def obstacle_front_right(self):
-        return self.std_min >= self.std_zones[2]
+        return self.std_min >= self.std_zones[RIGHT]
 
     def obstacle_front_left(self):
-        return self.std_min >= self.std_zones[0]
+        return self.std_min >= self.std_zones[LEFT]
     
     def obstacle_front(self):
-        return self.std_min >= self.std_zones[1]
+        return self.std_min >= self.std_zones[FRONT]
 
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface):
