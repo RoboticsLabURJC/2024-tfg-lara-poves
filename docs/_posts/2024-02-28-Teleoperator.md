@@ -31,8 +31,6 @@ pip install pygame numpy carla==0.9.13
 ```
 
 Instalamos la versión 0.9.13 de *carla*, ya que es la versión compatible con el simulador. De lo contrario, se obtienen problemas de incompatibilidad de versiones.
----
----
 
 ## CARLA
 
@@ -44,8 +42,6 @@ Para iniciar el simulador CARLA, usaremos el siguiente comando:
 Hemos estado investigando cómo realizar acciones básicas en CARLA, como la apertura de distintos entornos, el desplazamiento del observador y la colocación de uno o varios vehículos, con la opción de seleccionar su modelo.
 
 Después, nos centramos en definir el vehículo que queríamos controlar, conocido como ***Ego Vehicle*** en CARLA, al que añadiremos los sensores. Para esta funcionalidad hemos integrado dos cámaras: una para simular la perspectiva del conductor y otra para visualizar el vehículo en su entorno.
----
----
 
 ## Interfaz
 
@@ -53,8 +49,6 @@ Para la Interacción Humano-Robot (HRI) hemos utilizado la biblioteca ***Pygame*
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/teleoperator/interface.png" alt="">
 </figure>
----
----
 
 ## Manejo de sensores
 
@@ -96,8 +90,6 @@ class Camera(Sensor):
     def process_data(self)
 ```
 Además, hemos añadido una nueva función ***add_camera_rgb*** en la clase *Vehicle_sensors*. Esta función requiere los parámetros del constructor de la clase Camera.
----
----
 
 ## Control 
 
@@ -113,8 +105,6 @@ class Teleoperator:
     def set_throttle(self, throttle:float)
     def set_brake(self, brake:float)
 ```
----
----
 
 ## Demo
 
