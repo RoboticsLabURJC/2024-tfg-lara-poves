@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-03-14T21:01:00
+last_modified_at: 2024-03-24T17:16:00
 categories:
   - Blog
 tags:
@@ -8,6 +8,17 @@ tags:
   - Pygame
   - LIDAR
   - Traffic manager
+---
+
+## Índice
+1. [Traffic manager](#traffic-manager)
+2. [LIDAR](#lidar)
+   - [Visualización](#visualización)
+   - [Zona frontal](#zona-frontal)
+     - [Cálculo de estadísticas](#cálculo-de-estadísticas)
+     - [Detección de obstáculos](#detección-de-obstáculos)
+3. [Demo](#demo)
+---
 ---
 
 Una vez habituados con las funciones básicas de CARLA y realizado el teleoperador, continuamos explorando otras funcionalidades proporcionadas por CARLA que necesitaremos posteriormente.
@@ -18,6 +29,8 @@ Hemos implementado una función llamada ***traffic_manager*** para controlar el 
 ```python
 def traffic_manager(client:carla.Client, vehicles:List[carla.Vehicle], port:int=5000, dist:float=3.0, speed_lower:float=10.0):
 ```
+---
+---
 
 ## LIDAR
 
@@ -57,14 +70,20 @@ Para representar el láser, graficaremos cada uno de sus puntos en un plano 2D c
 <figure class="align-center" style="max-width: 70%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/interpolate.png" alt="">
 </figure>
+---
 
 ### Zona frontal
 
 [-165.0, -115.0, -65.0, -15.0]
+---
 
 #### Cálculo de estadísticas
+---
 
 #### Detección de obstáculos
+
+---
+---
 
 ## Demo
 
