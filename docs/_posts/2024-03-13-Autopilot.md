@@ -10,6 +10,8 @@ tags:
   - Traffic manager
 ---
 
+Una vez habituados con las funciones básicas de CARLA y realizado el teleoperador, continuamos explorando otras funcionalidades proporcionadas por CARLA que necesitaremos posteriormente.
+
 ## Índice
 1. [Traffic manager](#traffic-manager)
 2. [LIDAR](#lidar)
