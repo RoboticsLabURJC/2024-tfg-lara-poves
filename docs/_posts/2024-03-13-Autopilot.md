@@ -23,6 +23,8 @@ def traffic_manager(client:carla.Client, vehicles:List[carla.Vehicle], port:int=
 
 Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva clase ***Lidar*** heredada de la *Sensor*. Al igual que en la implementación para la cámara, hemos agregado nuevos parámetros en el constructor para la visualización y sobrescrito la función *process_data()*, la cual visualiza el laser y ... .
 
+[-165.0, -115.0, -65.0, -15.0]
+
 ### Visualizacion
 En primer lugar, es necesario transformar los datos del láser en una matriz de matrices, donde cada submatriz almacena las coordenadas *x*, *y*, *z* y la intensidad respectivamente. Cada una de estas submatrices representa un punto.
 ```python
