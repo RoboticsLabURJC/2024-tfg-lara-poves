@@ -18,8 +18,6 @@ tags:
 5. [Control](#control)
 6. [Demo](#demo)
 
-Durante las primeras semanas, nuestro objetivo principal ha sido adentrarnos en el simulador CARLA y desarrollar un teleoperador sencillo para controlar un vehículo.
-
 ## Anaconda
 
 Para trabajar, crearemos un entorno Anaconda que nos permita utilizar la versión deseada de Python, en este caso, utilizaremos la versión 3.7.
