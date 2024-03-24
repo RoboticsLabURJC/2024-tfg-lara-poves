@@ -18,10 +18,6 @@ tags:
      - [Cálculo de estadísticas](#cálculo-de-estadísticas)
      - [Detección de obstáculos](#detección-de-obstáculos)
 3. [Demo](#demo)
----
----
-
-Una vez habituados con las funciones básicas de CARLA y realizado el teleoperador, continuamos explorando otras funcionalidades proporcionadas por CARLA que necesitaremos posteriormente.
 
 ## Traffic manager
 
@@ -29,8 +25,6 @@ Hemos implementado una función llamada ***traffic_manager*** para controlar el 
 ```python
 def traffic_manager(client:carla.Client, vehicles:List[carla.Vehicle], port:int=5000, dist:float=3.0, speed_lower:float=10.0):
 ```
----
----
 
 ## LIDAR
 
@@ -63,6 +57,7 @@ lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 ```
 
 ### Visualización
+---
 
 Para le representación del láser dibujaremos cada unos de etos puntos en 2D (x, y). Para mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño del punto según su altura.
 
@@ -70,21 +65,16 @@ Para representar el láser, graficaremos cada uno de sus puntos en un plano 2D c
 <figure class="align-center" style="max-width: 70%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/interpolate.png" alt="">
 </figure>
----
 
 ### Zona frontal
+---
 
 [-165.0, -115.0, -65.0, -15.0]
----
 
 #### Cálculo de estadísticas
 ---
 
 #### Detección de obstáculos
-
----
 ---
 
 ## Demo
-
-
