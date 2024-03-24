@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-03-24T17:16:00
+last_modified_at: 2024-03-24T20:56:00
 categories:
   - Blog
 tags:
@@ -56,7 +56,6 @@ Hemos creado la clase ***Vehicle_sensors***, la cual nos permite almacenar el ve
 ```python
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface)
-    def _put_sensor(self, sensor_type:str, transform:carla.Transform)
     def add_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform())
     def update_data(self)
     def destroy(self)
