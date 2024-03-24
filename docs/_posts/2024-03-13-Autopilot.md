@@ -21,40 +21,51 @@ def traffic_manager(client:carla.Client, vehicles:List[carla.Vehicle], port:int=
 
 ## LIDAR
 
-Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva clase ***Lidar*** heredada de la *Sensor*. Al igual que en la implementación para la cámara, hemos agregado nuevos parámetros en el constructor para la visualización y sobrescrito la función *process_data()*, la cual visualiza el laser y ... .
+Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva clase ***Lidar*** heredada de la *Sensor*. Al igual que en la implementación para la cámara, hemos agregado nuevos parámetros en el constructor para la visualización y sobrescrito la función *process_data()*. Esta función se encarga de visualizar el láser y actualizar las estadísticas relevantes a la zona frontal del láser, las cuales nos serán útiles para la detección de obstáculos.
 
-[-165.0, -115.0, -65.0, -15.0]
+```python
+class Lidar(Sensor): 
+    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,
+                 scale:int, front_angle:int, yaw:float, screen:pygame.Surface)
+    def _get_back_image(self)
 
-### Visualizacion
+    def _interpolate_thickness(self, num:float, min:float, max:float)
+    def _interpolate_color(self, num:float, min:float, max:float)
+
+    def _write_text(self, text:str, img:pygame.Surface, point:Tuple[int, int], side:int)
+    def _update_stats(self, dist:List[float], y:List[float], zone:int)
+    def _get_zone(self, x:float, y:float)
+
+    def process_data(self):
+
+    def obstacle_front_right(self)
+    def obstacle_front_left(self)
+    def obstacle_front(self)
+```
+
 En primer lugar, es necesario transformar los datos del láser en una matriz de matrices, donde cada submatriz almacena las coordenadas *x*, *y*, *z* y la intensidad respectivamente. Cada una de estas submatrices representa un punto.
 ```python
 lidar_data = np.copy(np.frombuffer(self.data.raw_data, dtype=np.dtype('f4')))
 lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 ```
 
-Para mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño del punto según su altura. A continuación, se presentan varios ejemplos en diferentes situaciones:
+### Visualización
 
-<figure class="align-center" style="max-width: 100%">
-  <figcaption style="font-size: larger">Coche delante</figcaption> 
-  <img src="{{ site.url }}{{ site.baseurl }}/images/car_lidar_front.png" alt="">
+Para le representación del láser dibujaremos cada unos de etos puntos en 2D (x, y). Para mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño del punto según su altura.
+
+Para representar el láser, graficaremos cada uno de sus puntos en un plano 2D con coordenadas *x*, *y*. Con el fin de mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño del punto según su altura.
+<figure class="align-center" style="max-width: 70%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/interpolate.png" alt="">
 </figure>
 
-<figure class="align-center" style="max-width: 100%">
-  <figcaption style="font-size: larger">Coche a un lado</figcaption> 
-  <img src="{{ site.url }}{{ site.baseurl }}/images/car_lidar_side.png" alt="">
-</figure>
+### Zona frontal
 
-<figure class="align-center" style="max-width: 100%">
-  <figcaption style="font-size: larger">Moto delante</figcaption> 
-  <img src="{{ site.url }}{{ site.baseurl }}/images/motor_lidar.png" alt="">
-</figure>
+[-165.0, -115.0, -65.0, -15.0]
 
-<figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/prueba.png" alt="">
-</figure>
+#### Cálculo de estadísticas
 
-### Deteccion frontal
+#### Detección de obstáculos
 
 ## Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/h7hmnZ9t0Xs?si=VqMgGGDzFtJJ-IDO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
