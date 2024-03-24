@@ -6,6 +6,15 @@ import random
 from typing import Tuple, List
 from queue import Queue
 
+LEFT = 0
+FRONT = 1
+RIGHT = 2
+
+MIN = 0
+MEAN = 1
+MEDIAN = 2
+STD = 3
+
 def get_angle_range(angle:float):
     if angle > 180.0:
         angle -= 180.0 * 2
@@ -88,12 +97,9 @@ class Lidar(Sensor):
         self.angles = sorted([angle1 + self.front_angle / 3, angle1,
                               angle2 - self.front_angle / 3, angle2])
 
-        '''
-        Each row represents a zone (0: left, 1: front, 2: right)
-        Each column represents a statistic (0: min, 1: mean, 2: median, 3: std)
-        '''
+        # Detect obstacles
         self.stat_zones = np.full((3, 4), 100.0) 
-        self.std_min = 0.0 # Detect obstacles
+        self.std_min = 0.0
 
         # Write data
         self.color_text = (255, 255, 255)
@@ -106,9 +112,9 @@ class Lidar(Sensor):
         text = font.render(text, True, self.color_text)
 
         text_rect = text.get_rect()
-        if side == 0:
+        if side == LEFT:
             text_rect.topleft = point 
-        elif side == 2:
+        elif side == RIGHT:
             text_rect.topright = point
         else:
             text_rect.center = point
@@ -148,23 +154,22 @@ class Lidar(Sensor):
     
     def _update_stats(self, dist:List[float], y:List[float], zone:int):
         if len(dist) != 0:
-            self.stat_zones[zone][0] = np.min(dist)
-            self.stat_zones[zone][1] = np.mean(dist)
-            self.stat_zones[zone][2] = np.median(dist)
+            self.stat_zones[zone][MIN] = np.min(dist)
+            self.stat_zones[zone][MEAN] = np.mean(dist)
+            self.stat_zones[zone][MEDIAN] = np.median(dist)
         if len(y) != 0:  
             '''
             aqui si es 0 no se deberia mantener si se
             filtra por intensidad
             '''
-            self.stat_zones[zone][3] = np.std(y)
+            self.stat_zones[zone][STD] = np.std(y)
 
         y = self.size_text * 2
-        min, mean, median, std = self.stat_zones[zone]
         stats_text = [
-            "Min = {:.2f}".format(min),
-            "Mean = {:.2f}".format(mean),
-            "Median = {:.2f}".format(median),
-            "Std = {:.2f}".format(std)
+            "Min = {:.2f}".format(self.stat_zones[zone][MIN]),
+            "Mean = {:.2f}".format(self.stat_zones[zone][MEAN]),
+            "Median = {:.2f}".format(self.stat_zones[zone][MEDIAN]),
+            "Std = {:.2f}".format(self.stat_zones[zone][STD])
         ]
 
         for text in stats_text:
