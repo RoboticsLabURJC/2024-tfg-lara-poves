@@ -10,6 +10,8 @@ tags:
   - Anaconda
 ---
 
+Durante las primeras semanas, nuestro objetivo principal ha sido adentrarnos en el simulador CARLA y desarrollar un teleoperador sencillo para controlar un vehículo.
+
 ## Índice
 1. [Anaconda](#anaconda)
 2. [CARLA](#carla)
