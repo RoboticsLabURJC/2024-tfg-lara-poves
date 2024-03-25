@@ -76,7 +76,7 @@ class Lidar(Sensor):
         self.rect = self.sub_screen.get_rect(topleft=init)
         self.scale = scale
         self.size_screen = size
-        self.center_screen = (size[0] // 2, size[1] // 2)
+        self.center_screen = (size[0] // 2, size[1] // 2 + self.scale)
         self.screen = screen
 
         # Visualize lidar
@@ -107,11 +107,15 @@ class Lidar(Sensor):
         self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness) 
         self.image = self._get_back_image()
 
-    def _write_text(self, text:str, img:pygame.Surface, point:Tuple[int, int], side:int):
+    def _write_text(self, text:str, img:pygame.Surface, point:Tuple[int, int],
+                    side:int=FRONT, bold:bool=False):
         font = pygame.font.Font(pygame.font.match_font('tlwgtypo'), self.size_text)
-        text = font.render(text, True, self.color_text)
+        if bold:
+            font.set_bold(True)
 
+        text = font.render(text, True, self.color_text)
         text_rect = text.get_rect()
+
         if side == LEFT:
             text_rect.topleft = point 
         elif side == RIGHT:
@@ -123,17 +127,25 @@ class Lidar(Sensor):
 
     def _get_back_image(self):
         image = pygame.Surface(self.size_screen)
-        text = ['front-left', 'front', 'front-right']
-        multiplier = 10
+        mult_line = 10 * self.scale
+        mult_zone = mult_line - self.scale
 
-        for a in self.angles:
-            x = self.center_screen[0] + self.scale * multiplier * math.cos(math.radians(a))
-            y = self.center_screen[1] + self.scale * multiplier * math.sin(math.radians(a))
-            pygame.draw.line(image, (70, 70, 70), self.center_screen, (x, y), 1)
+        text_column = ['front-left', 'front-front', 'front-right']
+        text_zone = ['FL', 'FF', 'FR']
 
-        for i in range(len(text)):
-            self._write_text(text=text[i], img=image, 
-                             point=(self.x_text[i], self.size_text), side=i)
+        for i in range(len(self.angles)):
+            x_line = self.center_screen[0] + mult_line * math.cos(math.radians(self.angles[i]))
+            y_line = self.center_screen[1] + mult_line * math.sin(math.radians(self.angles[i]))
+            pygame.draw.line(image, (70, 70, 70), self.center_screen, (x_line, y_line), 2)
+
+            if i < len(self.angles) - 1:
+                angle = (self.angles[i] + self.angles[i + 1]) / 2
+                x_zone = self.center_screen[0] + mult_zone * math.cos(math.radians(angle))
+                y_zone = self.center_screen[1] + mult_zone * math.sin(math.radians(angle))
+
+                self._write_text(text=text_zone[i], img=image, point=(x_zone, y_zone), bold=True)
+                self._write_text(text=text_column[i], img=image, side=i,
+                                 point=(self.x_text[i], self.size_text))
 
         return image
     
@@ -171,31 +183,31 @@ class Lidar(Sensor):
             "Median = {:.2f}".format(self.stat_zones[zone][MEDIAN]),
             "Std = {:.2f}".format(self.stat_zones[zone][STD])
         ]
-
+        
         for text in stats_text:
             self._write_text(text=text, img=self.sub_screen, 
                              point=(self.x_text[zone], y), side=zone)
             y += self.size_text
-
+        
     def _get_zone(self, x:float, y:float):
         angle = np.arctan2(y, x) * 180 / np.pi 
 
         if self.yaw <= 90.0:
             if self.angles[0] <= angle <= self.angles[1]:
-                return 0
+                return LEFT
             elif self.angles[1] <= angle <= self.angles[2]:
-                return 1
+                return FRONT
             elif self.angles[2] <= angle <= self.angles[3]:
-                return 2
+                return RIGHT
         else:
             if self.angles[0] >= angle or angle >= self.angles[1]:
-                return 0
+                return LEFT
             elif self.angles[1] >= angle or angle >= self.angles[2]:
-                return 1
+                return FRONT
             elif self.angles[2] >= angle or angle >= self.angles[3]:
-                return 2
+                return RIGHT
 
-        return 3
+        return -1
 
     def process_data(self):
         if not self.queue.empty():
@@ -224,12 +236,12 @@ class Lidar(Sensor):
                 color = self._interpolate_color(num=i, min=i_min, max=i_max)
 
                 center = (int(x * self.scale + self.center_screen[0]), 
-                        int(y * self.scale + self.center_screen[1]))
+                          int(y * self.scale + self.center_screen[1]))
                 pygame.draw.circle(self.sub_screen, color, center, thickness)
 
             for i in range(len(zones_y)):
                 self._update_stats(dist=zones_dist[i], y=zones_y[i], zone=i)
-                
+
             self.screen.blit(self.sub_screen, self.rect)
 
     def obstacle_front_right(self):
@@ -238,7 +250,7 @@ class Lidar(Sensor):
     def obstacle_front_left(self):
         return self.std_min >= self.std_zones[LEFT]
     
-    def obstacle_front(self):
+    def obstacle_front_front(self):
         return self.std_min >= self.std_zones[FRONT]
 
 class Vehicle_sensors:

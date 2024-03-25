@@ -39,7 +39,7 @@ class Lidar(Sensor):
     def process_data(self):
     def obstacle_front_right(self)
     def obstacle_front_left(self)
-    def obstacle_front(self)
+    def obstacle_front_front(self)
 ```
 
 En primer lugar, es necesario transformar los datos del láser en una matriz de matrices, donde cada submatriz almacena las coordenadas *x*, *y*, *z* y la intensidad respectivamente. Cada una de estas submatrices representa un punto.
@@ -54,7 +54,7 @@ lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 Para le representación del láser dibujaremos cada unos de etos puntos en 2D (x, y). Para mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño del punto según su altura.
 
 Para representar el láser, graficaremos cada uno de sus puntos en un plano 2D con coordenadas *x*, *y*. Con el fin de mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño del punto según su altura.
-<figure class="align-center" style="max-width: 70%">
+<figure class="align-center" style="max-width: 75%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/interpolate.png" alt="">
 </figure>
 
