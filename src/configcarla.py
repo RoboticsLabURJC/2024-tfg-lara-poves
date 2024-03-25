@@ -96,10 +96,10 @@ class Lidar(Sensor):
         
         # Divide front zone
         angle1 = _get_angle_range(-self.front_angle / 2 - yaw)
-        angle4 = _get_angle_range(self.front_angle / 2 - yaw)
-        angle2 = _get_angle_range(angle1 + self.front_angle / 3)
-        angle3 = _get_angle_range(angle4 - self.front_angle / 3)        
-        self.angles = [angle1, angle2, angle3, angle4]
+        angle2 = _get_angle_range(self.front_angle / 2 - yaw)
+        angle1_add = _get_angle_range(angle1 + self.front_angle / 3)
+        angle2_sub = _get_angle_range(angle2 - self.front_angle / 3)        
+        self.angles = [angle1, angle1_add, angle2_sub, angle2]
 
         # Detect obstacles
         self.stat_zones = np.full((3, 4), 100.0) 
