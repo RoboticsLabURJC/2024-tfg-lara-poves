@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-03-24T21:00:00
+last_modified_at: 2024-03-25T21:00:00
 categories:
   - Blog
 tags:
@@ -54,7 +54,7 @@ lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 Para le representación del láser dibujaremos cada unos de etos puntos en 2D (x, y). Para mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño del punto según su altura.
 
 Para representar el láser, graficaremos cada uno de sus puntos en un plano 2D con coordenadas *x*, *y*. Con el fin de mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño del punto según su altura.
-<figure class="align-center" style="max-width: 75%">
+<figure class="align-center" style="max-width: 85%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/interpolate.png" alt="">
 </figure>
 
@@ -62,23 +62,45 @@ Para representar el láser, graficaremos cada uno de sus puntos en un plano 2D c
 ---
 
 Con el fin de realizar adelantamientos, nos enfocaremos en la detección de obstáculos en la parte frontal del vehículo. Por lo tanto, examinaremos el ángulo frontal del láser, cuya amplitud es indicada por el usuario, por defecto 150º.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/front_angle.png" alt="">
+</figure>
 
-En primer lugar, debemos determinar los ángulos límite que delimitan esta zona frontal, teniendo en cuenta la rotación del láser *yaw*. Partiremos de un supuesto *yaw = 0*, al cual sumaremos el *yaw* real y finalmente acotaremos en un rango de [-180º, 180º].
+En primer lugar, debemos determinar los ángulos límite que delimitan esta zona frontal, teniendo en cuenta la rotación del láser *yaw*. Partimos de un supuesto *yaw = 0*, al cual sumamos el *yaw* real y finalmente lo acotamos en un rango de [-180º, 180º].
 ```python
 angle1 = -front_angle / 2 + yaw
 angle2 = front_angle / 2 + yaw
 ```
+
+Como se puede observar en el siguiente dibujo, dependiendo de que ángulo sea mayor, debemos seguir un criterio u otro para determinar si un punto pertenece o no la zona de interés. 
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/draw_angles.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/draw_angles.jpg" alt="">
 </figure>
 
-Como se puede observar en el dibujo anterior, dependiendo de que ángulo sea mayor, deberemos seguir un criterio u otro para determinar si un punto pertenece o no la zona de interés. 
-<figure class="align-center" style="max-width: 75%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/front_angle.png" alt="">
-</figure>
+Dividimos este ángulo frontal en **tres zonas**: la parte izquierda (***front-left***), central (***front-front***) y derecha (***front-right***), asignándoles los índices 0, 1 y 2 respectivamente. Aunque ya hemos encontrado los ángulos extremos, es necesario calcular los dos ángulos intermedios que delimitan las tres zonas. Estos cuatro ángulos se almacenan en una lista *angles*, la cual es un atributo de la clase *Lidar*. 
+```
+angle1_add = angle1 + front_angle / 3
+angle2_sub = angle2 - front_angle / 3
 
+angles = [angle1, angle1_add, angle2_sub, angle2]
+```
+Para establecer en qué zona se encuentra cada punto, seguimos el criterio mencionado anteriormente:
+```python
+if angles[i] <= angles[i + 1]:
+    return angles[i] <= a <= angles[i + 1]
+else:
+    return angle[i] <= a or a <= angle[i + 1]
+```
 
-[-165.0, -115.0, -65.0, -15.0]
+En nuestro caso, con un *yaw* de 90º, obtendríamos los ángulos: [-165.0, -115.0, -65.0, -15.0].
+<div class="image-container">
+  <div class="image-wrapper">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/three_zones_color.png" alt="Image 1">
+  </div>
+  <div class="image-wrapper">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/three_zones.png" alt="Image 2">
+  </div>
+</div>
 
 #### Cálculo de estadísticas
 ---
