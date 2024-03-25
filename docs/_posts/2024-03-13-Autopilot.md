@@ -61,6 +61,23 @@ Para representar el láser, graficaremos cada uno de sus puntos en un plano 2D c
 ### Zona frontal
 ---
 
+Con el fin de realizar adelantamientos, nos enfocaremos en la detección de obstáculos en la parte frontal del vehículo. Por lo tanto, examinaremos el ángulo frontal del láser, cuya amplitud es indicada por el usuario, por defecto 150º.
+
+En primer lugar, debemos determinar los ángulos límite que delimitan esta zona frontal, teniendo en cuenta la rotación del láser *yaw*. Partiremos de un supuesto *yaw = 0*, al cual sumaremos el *yaw* real y finalmente acotaremos en un rango de [-180º, 180º].
+```python
+angle1 = -front_angle / 2 + yaw
+angle2 = front_angle / 2 + yaw
+```
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/draw_angles.png" alt="">
+</figure>
+
+Como se puede observar en el dibujo anterior, dependiendo de que ángulo sea mayor, deberemos seguir un criterio u otro para determinar si un punto pertenece o no la zona de interés. 
+<figure class="align-center" style="max-width: 75%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/front_angle.png" alt="">
+</figure>
+
+
 [-165.0, -115.0, -65.0, -15.0]
 
 #### Cálculo de estadísticas
