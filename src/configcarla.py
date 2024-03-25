@@ -15,13 +15,16 @@ MEAN = 1
 MEDIAN = 2
 STD = 3
 
-def get_angle_range(angle:float):
+def _get_angle_range(angle:float):
     if angle > 180.0:
         angle -= 180.0 * 2
     elif angle < -180.0:
         angle += 180.0 * 2
 
     return angle
+
+def _same_sign(angle1, angle2):
+    return (angle1 >= 0 and angle2 >= 0) or (angle1 <= 0 and angle2 <= 0)
 
 class Sensor():
     def __init__(self, sensor:carla.Sensor):
@@ -92,10 +95,11 @@ class Lidar(Sensor):
             self.front_angle = 360
         
         # Divide front zone
-        angle1, angle2 = sorted([get_angle_range(-self.front_angle / 2 - yaw),
-                                 get_angle_range(self.front_angle / 2 - yaw)])  
-        self.angles = sorted([angle1 + self.front_angle / 3, angle1,
-                              angle2 - self.front_angle / 3, angle2])
+        angle1 = _get_angle_range(-self.front_angle / 2 - yaw)
+        angle4 = _get_angle_range(self.front_angle / 2 - yaw)
+        angle2 = _get_angle_range(angle1 + self.front_angle / 3)
+        angle3 = _get_angle_range(angle4 - self.front_angle / 3)        
+        self.angles = [angle1, angle2, angle3, angle4]
 
         # Detect obstacles
         self.stat_zones = np.full((3, 4), 100.0) 
@@ -139,7 +143,9 @@ class Lidar(Sensor):
             pygame.draw.line(image, (70, 70, 70), self.center_screen, (x_line, y_line), 2)
 
             if i < len(self.angles) - 1:
-                angle = (self.angles[i] + self.angles[i + 1]) / 2
+                dif = _get_angle_range(self.angles[i] - self.angles[i+1])
+                angle = self.angles[i + 1] + dif / 2
+
                 x_zone = self.center_screen[0] + mult_zone * math.cos(math.radians(angle))
                 y_zone = self.center_screen[1] + mult_zone * math.sin(math.radians(angle))
 
@@ -188,26 +194,21 @@ class Lidar(Sensor):
             self._write_text(text=text, img=self.sub_screen, 
                              point=(self.x_text[zone], y), side=zone)
             y += self.size_text
-        
+
+    def _in_zone(self, zone:int, angle:float):
+        if self.angles[zone] <= self.angles[zone + 1]:
+            return self.angles[zone] <= angle <= self.angles[zone + 1]
+        else:
+            return self.angles[zone] <= angle or angle <= self.angles[zone + 1]
+
     def _get_zone(self, x:float, y:float):
         angle = np.arctan2(y, x) * 180 / np.pi 
 
-        if self.yaw <= 90.0:
-            if self.angles[0] <= angle <= self.angles[1]:
-                return LEFT
-            elif self.angles[1] <= angle <= self.angles[2]:
-                return FRONT
-            elif self.angles[2] <= angle <= self.angles[3]:
-                return RIGHT
-        else:
-            if self.angles[0] >= angle or angle >= self.angles[1]:
-                return LEFT
-            elif self.angles[1] >= angle or angle >= self.angles[2]:
-                return FRONT
-            elif self.angles[2] >= angle or angle >= self.angles[3]:
-                return RIGHT
+        for zone in range(3):
+            if self._in_zone(zone, angle):
+                return zone
 
-        return -1
+        return 10
 
     def process_data(self):
         if not self.queue.empty():
@@ -227,16 +228,16 @@ class Lidar(Sensor):
             zones_dist = [[], [], []]
 
             for x, y, z, i in lidar_data:
-                index_zone = self._get_zone(x=x, y=y)
-                if index_zone < len(zones_y): # quitar la zona roja
-                    zones_dist[index_zone].append(math.sqrt(x ** 2 + y ** 2))
-                    zones_y[index_zone].append(y) # limitar por z
+                zone = self._get_zone(x=x, y=y)
+                if zone < len(zones_y): # quitar la zona roja
+                    zones_dist[zone].append(math.sqrt(x ** 2 + y ** 2))
+                    zones_y[zone].append(y) # limitar por z
 
                 thickness = self._interpolate_thickness(num=z, min=z_min, max=z_max)
                 color = self._interpolate_color(num=i, min=i_min, max=i_max)
 
                 center = (int(x * self.scale + self.center_screen[0]), 
-                          int(y * self.scale + self.center_screen[1]))
+                        int(y * self.scale + self.center_screen[1]))
                 pygame.draw.circle(self.sub_screen, color, center, thickness)
 
             for i in range(len(zones_y)):
