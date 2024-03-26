@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-03-25T21:00:00
+last_modified_at: 2024-03-26T19:14:00
 categories:
   - Blog
 tags:
@@ -93,17 +93,18 @@ else:
 ```
 
 En nuestro caso, con un *yaw* de 90º, obtendríamos los ángulos: [-165.0, -115.0, -65.0, -15.0].
-<div class="image-container">
-  <div class="image-wrapper">
-    <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/three_zones_color.png" alt="Image 1">
-  </div>
-  <div class="image-wrapper">
-    <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/three_zones.png" alt="Image 2">
-  </div>
-</div>
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/three_zones.png" alt="">
+</figure>
 
 #### Cálculo de estadísticas
 ---
+Hacemos tres listas, cada una correspondiente a una de las zona, en las que guardamos las distancias desde el punto hasta el láser en el plano XY. Utilizamos estas medidas para calcular el mínimo, la media y la mediana de cada zona del láser.
+
+Como se puede observar en la imagen, los puntos de color rojo corresponden al propio coche, por lo tanto, hemos realizado un filtrado por intensidad para eliminarlos del cálculo estadístico.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/stats.png" alt="">
+</figure>
 
 #### Detección de obstáculos
 ---
