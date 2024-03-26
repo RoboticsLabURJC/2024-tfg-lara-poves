@@ -143,9 +143,7 @@ class Lidar(Sensor):
             pygame.draw.line(image, (70, 70, 70), self.center_screen, (x_line, y_line), 2)
 
             if i < len(self.angles) - 1:
-                dif = _get_angle_range(self.angles[i] - self.angles[i+1])
-                angle = self.angles[i + 1] + dif / 2
-
+                angle = self.angles[i] + self.front_angle / 6
                 x_zone = self.center_screen[0] + mult_zone * math.cos(math.radians(angle))
                 y_zone = self.center_screen[1] + mult_zone * math.sin(math.radians(angle))
 
