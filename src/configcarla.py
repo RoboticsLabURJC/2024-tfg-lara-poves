@@ -87,7 +87,6 @@ class Lidar(Sensor):
         self.color_max = (255, 0, 0)
 
         # Select front zone
-        self.yaw = abs(yaw)
         self.front_angle = abs(front_angle)
         if self.front_angle > 360:
             self.front_angle = 360
