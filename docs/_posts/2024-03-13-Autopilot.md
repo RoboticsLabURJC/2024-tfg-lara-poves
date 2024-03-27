@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-03-26T19:14:00
+last_modified_at: 2024-03-27T16:14:00
 categories:
   - Blog
 tags:
@@ -37,9 +37,13 @@ class Lidar(Sensor):
     def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,
                  scale:int, front_angle:int, yaw:float, screen:pygame.Surface)
     def process_data(self):
+
     def obstacle_front_right(self)
     def obstacle_front_left(self)
     def obstacle_front_front(self)
+
+    def set_intensity_threshold(self, i:float)
+    def get_intensity_threshold(self)
 ```
 
 En primer lugar, es necesario transformar los datos del láser en una matriz de matrices, donde cada submatriz almacena las coordenadas *x*, *y*, *z* y la intensidad respectivamente. Cada una de estas submatrices representa un punto.
@@ -101,7 +105,8 @@ En nuestro caso, con un *yaw* de 90º, obtendríamos los ángulos: [-165.0, -115
 ---
 Hacemos tres listas, cada una correspondiente a una de las zona, en las que guardamos las distancias desde el punto hasta el láser en el plano XY. Utilizamos estas medidas para calcular el mínimo, la media y la mediana de cada zona del láser.
 
-Como se puede observar en la imagen, los puntos de color rojo corresponden al propio coche, por lo tanto, hemos realizado un filtrado por intensidad para eliminarlos del cálculo estadístico.
+Como se puede observar en la imagen, los puntos de color rojo corresponden al propio coche, por lo tanto, hemos realizado un filtrado por intensidad para eliminarlos del cálculo estadístico. Este umbral tiene un valor predeterminado establecido en el constructor, pero hemos implementado unas funciones para consultar o modificar su valor.
+
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/stats.png" alt="">
 </figure>

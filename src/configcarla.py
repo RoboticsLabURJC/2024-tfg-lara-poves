@@ -101,7 +101,7 @@ class Lidar(Sensor):
         # Detect obstacles
         self.obstacles = [False, False, False]
         self.std_min = 0.0
-        self.i_threshol = 0.987
+        self.i_threshold = 0.987
 
         # Write data
         self.stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
@@ -230,7 +230,7 @@ class Lidar(Sensor):
 
             for x, y, z, i in lidar_data:
                 zone = self._get_zone(x=x, y=y)
-                if zone < NUM_ZONES and i < self.i_threshol:
+                if zone < NUM_ZONES and i < self.i_threshold:
                     zones_dist[zone].append(math.sqrt(x ** 2 + y ** 2))
                     zones_y[zone].append(y) # limitar por z
 
@@ -257,6 +257,12 @@ class Lidar(Sensor):
     
     def obstacle_front_front(self):
         return self.obstacles[FRONT]
+    
+    def set_intensity_threshold(self, i:float):
+        self.i_threshold = i
+
+    def get_intensity_threshold(self):
+        return self.i_threshold
 
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface):
@@ -408,7 +414,7 @@ def add_vehicles_randomly(world:carla.World, number:int):
     return vehicles
 
 def traffic_manager(client:carla.Client, vehicles:List[carla.Vehicle], port:int=5000, 
-                    dist:float=3.0, speed_lower:float=10.0):
+                    dist:float=4.0, speed_lower:float=10.0):
     tm = client.get_trafficmanager(port)
     tm_port = tm.get_port()
 
