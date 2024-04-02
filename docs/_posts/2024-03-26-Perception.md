@@ -64,8 +64,6 @@ El proceso de entrenamiento se divide en dos etapas:
 - Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase.
 - Predicción: resultado al aplicar la función de activación: a = f(r)
 
-Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase.
-
 2. **Propagación hacia atrás**: de salida a entrada, cuyo objetivo es actualizar los pesos y términos independientes.
 - Función de pérdida: cuantificar el error cometido, comparando la salida y la predicción.
 - Cálculo del gradiente de la función de pérdida respecto a los pesos de la capa de salida. 
