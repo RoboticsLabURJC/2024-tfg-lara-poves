@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-02T20:19:00
+last_modified_at: 2024-04-02T20:35:00
 categories:
   - Blog
 tags:
@@ -88,9 +88,7 @@ Las redes neuronales convolucionales o **CNN** se usan para la clasificación de
 En el siguiente ejemplo, podemos observar las diferentes capas que componen una CNN diseñada para un conjunto de datos en escala de grises (2D). Analizaremos cada una de estas capas:
 ```python
 model = tf.keras.Sequential([
-  tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
-  tf.keras.layers.MaxPooling2D((2, 2)),
-  tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
+  tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 1)),
   tf.keras.layers.MaxPooling2D((2, 2)),
   tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
   tf.keras.layers.MaxPooling2D((2, 2)),
@@ -101,24 +99,24 @@ model = tf.keras.Sequential([
   tf.keras.layers.Dense(10, activation='softmax')
 ])
 ```
-<figure class="align-center" style="max-width: 100%">
+<figure class="align-center" style="max-width: 80%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/CNN.png" alt="">
 </figure>
 
 - **Capa de convolución**: se aplican *kernels* (o filtros) de dimensiones nxn  para extraer características locales de la imagen. , el *kernel* se va deslizando a los largo de la imagen. El *kernel* se va deslizando a lo largo de la imagen, calculando la suma ponderada de los píxeles en cada ubicación. Cada filtro produce un mapa de características que contiene las características relevantes de la imagen. En el ejemplo proporcionado, se aplican 32 filtros en la primera y cuarta capa de convolución y 64 en la segunda y tercera.
-<figure class="align-center" style="max-width: 100%">
+<figure class="align-center" style="max-width: 90%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/conv.jpeg" alt="">
 </figure>
 
-La operación de convolución reduce las dimensiones de la matriz, para mantenerlas constante podemos utilizar la técnica ***padding***. La cual consiste aumentar las dimensiones añadiendo 0, Esto no aumenta ni cambia la información  de la matriz original. Es un parámetro flexible, puede añadirse solo arriba o solo en un alado,  la combinación que queramos.
+  La operación de convolución reduce las dimensiones de la matriz, para mantenerlas constante podemos utilizar la técnica ***padding***. La cual consiste aumentar las dimensiones añadiendo 0, Esto no aumenta ni cambia la información  de la matriz original. Es un parámetro flexible, puede añadirse solo arriba o solo en un alado,  la combinación que queramos.
 
-La operación de convolución reduce las dimensiones de la matriz de características. Para mantenerlas constantes, podemos aplicar la técnica de ***padding***, que consiste en aumentar las dimensiones añadiendo ceros sin modificar la información original. El *padding* es un parámetro flexible que puede añadirse a lo largo de toda la imagen, solo en la parte superior o en cualquier combinación deseada.
-<figure class="align-center" style="max-width: 80%">
+  La operación de convolución reduce las dimensiones de la matriz de características. Para mantenerlas constantes, podemos aplicar la técnica de ***padding***, que consiste en aumentar las dimensiones añadiendo ceros sin modificar la información original. El *padding* es un parámetro flexible que puede añadirse a lo largo de toda la imagen, solo en la parte superior o en cualquier combinación deseada.
+<figure class="align-center" style="max-width: 90%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/padding.png" alt="">
 </figure>
 
 Otro parámetro importante es el ***stride***, que determina el número de píxeles que el *kernel* se desplaza dentro de la imagen. Este desplazamiento se aplica tanto en filas como en columnas. En el ejemplo anterior, el *stride* es uno, ahora consideremos un caso donde sea igual a dos:
-<figure class="align-center" style="max-width: 100%">
+<figure class="align-center" style="max-width: 90%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/stride.jpeg" alt="">
 </figure>
 
