@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-03-26T18:01:00
+last_modified_at: 2024-04-02T20:19:00
 categories:
   - Blog
 tags:
@@ -63,7 +63,7 @@ El proceso de entrenamiento se divide en dos etapas:
   - En el caso de ser una neurona y dos características de entrada: r = x1 * w1 + x2 * w2 + b
 - Predicción: resultado al aplicar la función de activación: a = f(r)
 
-Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase, ya que calcula la probabilidad de que un dato pertenezca a cada una de las posibles clases.
+Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase.
 
 2. **Propagación hacia atrás**: de salida a entrada, cuyo objetivo es actualizar los pesos y términos independientes.
 - Función de pérdida: cuantificar el error cometido, comparando la salida y la predicción.
@@ -76,7 +76,7 @@ El entrenamiento se detiene cuando:
 - Se ha alcanzado el número máximo de épocas indicado por el usuario.
 - Se ha alcanzado la precisión deseada.
 - El error de validación diverge del error de entrenamiento, lo cual significa que estamos sobreajustando la red.
-<figure class="align-center" style="max-width: 80%">
+<figure class="align-center" style="max-width: 90%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/error.png" alt="">
 </figure>
 
@@ -85,16 +85,53 @@ El entrenamiento se detiene cuando:
 
 Las redes neuronales convolucionales o **CNN** se usan para la clasificación de imágenes. Estas imágenes pueden tener dos dimensiones (filas x columnas), lo que corresponde a imágenes en escala de grises, o tres dimensiones (filas x columnas x color), correspondientes a imágenes en RGB.
 
-En la siguiente imagen podemos observar las diferentes capas que componen una CNN, iremos analizando cada una de ellas.
-<figure class="align-center" style="max-width: 80%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/error.png" alt="">
+En el siguiente ejemplo, podemos observar las diferentes capas que componen una CNN diseñada para un conjunto de datos en escala de grises (2D). Analizaremos cada una de estas capas:
+```python
+model = tf.keras.Sequential([
+  tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
+  tf.keras.layers.MaxPooling2D((2, 2)),
+  tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
+  tf.keras.layers.MaxPooling2D((2, 2)),
+  tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
+  tf.keras.layers.MaxPooling2D((2, 2)),
+  tf.keras.layers.Conv2D(32, (3, 3), activation='relu'),
+  
+  tf.keras.layers.Flatten(),
+  tf.keras.layers.Dense(64, activation='relu'),
+  tf.keras.layers.Dense(10, activation='softmax')
+])
+```
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/CNN.png" alt="">
 </figure>
 
-- **Capa de convolución**
-- **Capa Pooling**
-- **Capa Flatten**
-- **Capa fully connected**
-- **Capa de salida o clasificación**
+- **Capa de convolución**: se aplican *kernels* (o filtros) de dimensiones nxn  para extraer características locales de la imagen. , el *kernel* se va deslizando a los largo de la imagen. El *kernel* se va deslizando a lo largo de la imagen, calculando la suma ponderada de los píxeles en cada ubicación. Cada filtro produce un mapa de características que contiene las características relevantes de la imagen. En el ejemplo proporcionado, se aplican 32 filtros en la primera y cuarta capa de convolución y 64 en la segunda y tercera.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/conv.jpeg" alt="">
+</figure>
+
+La operación de convolución reduce las dimensiones de la matriz, para mantenerlas constante podemos utilizar la técnica ***padding***. La cual consiste aumentar las dimensiones añadiendo 0, Esto no aumenta ni cambia la información  de la matriz original. Es un parámetro flexible, puede añadirse solo arriba o solo en un alado,  la combinación que queramos.
+
+La operación de convolución reduce las dimensiones de la matriz de características. Para mantenerlas constantes, podemos aplicar la técnica de ***padding***, que consiste en aumentar las dimensiones añadiendo ceros sin modificar la información original. El *padding* es un parámetro flexible que puede añadirse a lo largo de toda la imagen, solo en la parte superior o en cualquier combinación deseada.
+<figure class="align-center" style="max-width: 80%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/padding.png" alt="">
+</figure>
+
+Otro parámetro importante es el ***stride***, que determina el número de píxeles que el *kernel* se desplaza dentro de la imagen. Este desplazamiento se aplica tanto en filas como en columnas. En el ejemplo anterior, el *stride* es uno, ahora consideremos un caso donde sea igual a dos:
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/stride.jpeg" alt="">
+</figure>
+
+- **Capa Pooling**: estas capas reducen las dimensiones del mapa de características preservando la información más importante. Al igual que en la convolución, se desliza un *kernel* sobre la imagen. Aunque el método más común es el ***max pooling***, también existe el *average pooling*.
+<figure class="align-center" style="max-width: 90%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/pooling.jpeg" alt="">
+</figure>
+
+- **Capa Flatten**: convierte los datos de entrada tridimensionales a un vector unidimensional.
+
+- **Capa fully connected**: se corresponde con la capa *dense* del ejemplo.
+
+- **Capa de salida o clasificación**: como ya mencionamos anteriormente, el número de neuronas es igual al número de posibles clases de salida. Usamos la función de activación *softmax*, la cual calcula la probabilidad de que un dato pertenezca a cada una de las posibles clases.
 
 ### Redes neuronales recurrentes
 ---
