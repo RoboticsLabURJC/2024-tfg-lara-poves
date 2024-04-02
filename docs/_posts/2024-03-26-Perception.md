@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-02T20:47:00
+last_modified_at: 2024-04-02T21:11:00
 categories:
   - Blog
 tags:
@@ -61,6 +61,7 @@ El proceso de entrenamiento se divide en dos etapas:
 1. **Propagación hacia adelante**: de entrada a salida, cuyo objetivo es hacer una predicción.
 - Combinación lineal: r = x * w + b. 
   - En el caso de ser una neurona y dos características de entrada: r = x1 * w1 + x2 * w2 + b
+- Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase.
 - Predicción: resultado al aplicar la función de activación: a = f(r)
 
 Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase.
@@ -109,7 +110,7 @@ Se aplican *kernels* (o filtros) de dimensiones nxn  para extraer característic
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/conv.jpeg" alt="">
 </figure>
 
-La operación de convolución reduce las dimensiones de la matriz de características. Para mantener las dimensiones constante o evitar que lleguen a cero o números negativos, podemos aplicar la técnica de ***padding***, que consiste en aumentar las dimensiones añadiendo ceros sin modificar la información original. El *padding* es un parámetro flexible que puede añadirse a lo largo de toda la imagen, solo en la parte superior o en cualquier combinación deseada.
+La operación de convolución reduce las dimensiones de la matriz de características. Para mantener las dimensiones constante o evitar que lleguen a cero, podemos aplicar la técnica de ***padding***, que consiste en aumentar las dimensiones añadiendo ceros sin modificar la información original. El *padding* es un parámetro flexible que puede añadirse a lo largo de toda la imagen, solo en la parte superior o en cualquier combinación deseada.
 <figure class="align-center" style="max-width: 90%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/padding.png" alt="">
 </figure>
