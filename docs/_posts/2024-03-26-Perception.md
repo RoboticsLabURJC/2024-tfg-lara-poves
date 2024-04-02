@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-02T20:35:00
+last_modified_at: 2024-04-02T20:47:00
 categories:
   - Blog
 tags:
@@ -103,14 +103,13 @@ model = tf.keras.Sequential([
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/CNN.png" alt="">
 </figure>
 
-- **Capa de convolución**: se aplican *kernels* (o filtros) de dimensiones nxn  para extraer características locales de la imagen. , el *kernel* se va deslizando a los largo de la imagen. El *kernel* se va deslizando a lo largo de la imagen, calculando la suma ponderada de los píxeles en cada ubicación. Cada filtro produce un mapa de características que contiene las características relevantes de la imagen. En el ejemplo proporcionado, se aplican 32 filtros en la primera y cuarta capa de convolución y 64 en la segunda y tercera.
+#### Capa de convolución
+Se aplican *kernels* (o filtros) de dimensiones nxn  para extraer características locales de la imagen. , el *kernel* se va deslizando a los largo de la imagen. El *kernel* se va deslizando a lo largo de la imagen, calculando la suma ponderada de los píxeles en cada ubicación. Cada filtro produce un mapa de características que contiene las características relevantes de la imagen. En el ejemplo proporcionado, se aplican 32 filtros en la primera y cuarta capa de convolución y 64 en la segunda y tercera.
 <figure class="align-center" style="max-width: 90%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/conv.jpeg" alt="">
 </figure>
 
-  La operación de convolución reduce las dimensiones de la matriz, para mantenerlas constante podemos utilizar la técnica ***padding***. La cual consiste aumentar las dimensiones añadiendo 0, Esto no aumenta ni cambia la información  de la matriz original. Es un parámetro flexible, puede añadirse solo arriba o solo en un alado,  la combinación que queramos.
-
-  La operación de convolución reduce las dimensiones de la matriz de características. Para mantenerlas constantes, podemos aplicar la técnica de ***padding***, que consiste en aumentar las dimensiones añadiendo ceros sin modificar la información original. El *padding* es un parámetro flexible que puede añadirse a lo largo de toda la imagen, solo en la parte superior o en cualquier combinación deseada.
+La operación de convolución reduce las dimensiones de la matriz de características. Para mantener las dimensiones constante o evitar que lleguen a cero o números negativos, podemos aplicar la técnica de ***padding***, que consiste en aumentar las dimensiones añadiendo ceros sin modificar la información original. El *padding* es un parámetro flexible que puede añadirse a lo largo de toda la imagen, solo en la parte superior o en cualquier combinación deseada.
 <figure class="align-center" style="max-width: 90%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/padding.png" alt="">
 </figure>
@@ -120,16 +119,20 @@ Otro parámetro importante es el ***stride***, que determina el número de píxe
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/stride.jpeg" alt="">
 </figure>
 
-- **Capa Pooling**: estas capas reducen las dimensiones del mapa de características preservando la información más importante. Al igual que en la convolución, se desliza un *kernel* sobre la imagen. Aunque el método más común es el ***max pooling***, también existe el *average pooling*.
+#### Capa Pooling
+Estas capas reducen las dimensiones del mapa de características preservando la información más importante. Al igual que en la convolución, se desliza un *kernel* sobre la imagen. Aunque el método más común es el ***max pooling***, también existe el *average pooling*.
 <figure class="align-center" style="max-width: 90%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/pooling.jpeg" alt="">
 </figure>
 
-- **Capa Flatten**: convierte los datos de entrada tridimensionales a un vector unidimensional.
+#### Capa Flatten
+Convierte los datos de entrada tridimensionales a un vector unidimensional.
 
-- **Capa fully connected**: se corresponde con la capa *dense* del ejemplo.
+#### Capa fully connected
+Se corresponde con la capa *dense* del ejemplo.
 
-- **Capa de salida o clasificación**: como ya mencionamos anteriormente, el número de neuronas es igual al número de posibles clases de salida. Usamos la función de activación *softmax*, la cual calcula la probabilidad de que un dato pertenezca a cada una de las posibles clases.
+#### Capa de salida o clasificación
+Como ya mencionamos anteriormente, el número de neuronas es igual al número de posibles clases de salida. Usamos la función de activación *softmax*, la cual calcula la probabilidad de que un dato pertenezca a cada una de las posibles clases.
 
 ### Redes neuronales recurrentes
 ---
