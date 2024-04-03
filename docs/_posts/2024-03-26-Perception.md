@@ -64,11 +64,10 @@ El proceso de entrenamiento se divide en dos etapas:
 - Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase. Se hace una predicción, que es el resultado al aplicar la función de activación: a = f(r)
 
 2. **Propagación hacia atrás**: de salida a entrada, cuyo objetivo es actualizar los pesos y términos independientes.
-- La función de pérdida evalúa el error al comparar la salida predicha con la salida real: L(y, y').
-- Cálculo del gradiente de la función de pérdida respecto a los pesos de la capa de salida. Además del descenso por gradiente, existen otros métodos disponibles.
-- Actualización de pesos y términos independientes mediante un algoritmo de optimización. 
+- La función de pérdida evalúa el error al comparar la salida predicha con la salida real.
+- Se empleaunl algoritmo de optimización para actualizar los pesos y términos independientes. Uno de estos métodos es el descenso por gradiente.
 
-En la fase de actualización, se emplea un parámetro llamado **tasa de aprendizaje** para controlar la magnitud de los ajustes realizados en los pesos de la red neuronal durante cada paso de entrenamiento. Una tasa de aprendizaje muy grande puede provocar oscilaciones y dificultar la convergencia al punto óptimo, mientras que una tasa muy pequeña puede prolongar significativamente el tiempo de entrenamiento y el consumo de recursos computacionales
+En la fase de actualización, se emplea un parámetro llamado **tasa de aprendizaje (α)** para controlar la magnitud de los ajustes realizados en los pesos de la red neuronal durante cada paso de entrenamiento. Una tasa de aprendizaje muy grande puede provocar oscilaciones y dificultar la convergencia al punto óptimo, mientras que una tasa muy pequeña puede prolongar significativamente el tiempo de entrenamiento y el consumo de recursos computacionales
 
 El entrenamiento se detiene cuando:
 - Se ha alcanzado el número máximo de épocas indicado por el usuario.
