@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-02T21:11:00
+last_modified_at: 2024-04-03T21:16:00
 categories:
   - Blog
 tags:
@@ -60,12 +60,12 @@ En la siguiente imagen podemos ver un ejemplo de red neuronal, en el que cada ne
 El proceso de entrenamiento se divide en dos etapas:
 1. **Propagación hacia delante**: de entrada a salida, cuyo objetivo es hacer una predicción.
 - Combinación lineal: r = x * w + b. 
-  - En el caso de ser una neurona y dos características de entrada: r = x1 * w1 + x2 * w2 + b
-- Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase. Se hace una predicción, que es el resultado al aplicar la función de activación: a = f(r)
+  - En el caso de ser una neurona y dos características de entrada: r = x1 * w1 + x2 * w2 + b.
+- Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase. Se hace una predicción, que es el resultado al aplicar la función de activación: a = ŷ = f(r).
 
 2. **Propagación hacia atrás**: de salida a entrada, cuyo objetivo es actualizar los pesos y términos independientes.
-- La función de pérdida evalúa el error al comparar la salida predicha con la salida real. Existen múltiples métodos para calcularla, por ejemplo, está *binary cross-entropy* para clasificación binaria y *sparse categorical cross-entropy* para clasificación multiclase.
-- Se emplea un algoritmo de optimización respecto a la función de pérdida para actualizar los pesos y términos independientes. Uno de estos métodos es el descenso por gradiente: w = w - α * ∇L(y, ŷ) 
+- La función de pérdida evalúa el error al comparar la salida predicha con la salida real: L(y, ŷ). Existen múltiples métodos para calcularla, por ejemplo, está *binary cross-entropy* para clasificación binaria y *sparse categorical cross-entropy* para clasificación multiclase.
+- Se emplea un algoritmo de optimización respecto a la función de pérdida para actualizar los pesos y términos independientes. Uno de estos métodos es el descenso por gradiente: w = w - α * ∇L(y, ŷ). 
 
 En la fase de actualización, se emplea un parámetro llamado **tasa de aprendizaje (α)** para controlar la magnitud de los ajustes realizados en los pesos de la red neuronal durante cada paso de entrenamiento. Una tasa de aprendizaje muy grande puede provocar oscilaciones y dificultar la convergencia al punto óptimo, mientras que una tasa muy pequeña puede prolongar significativamente el tiempo de entrenamiento y el consumo de recursos computacionales
 
@@ -141,17 +141,27 @@ Necesitamos transformar una frase de un máximo de *p* palabras en una entrada c
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/language.jpeg" alt="">
 </figure>
 
-Las RNN incorporan marcas de tiempo, *timestamps*, para abordar la importancia del orden en la secuencia de datos. Por ejemplo, para los humanos la frase '*I love cats*' es comprensible, mientras que '*I cats love*' no lo es, lo que ilustra la relevancia del orden en el lenguaje natural.
+Las RNN incorporan marcas de tiempo, ***timestamps***, para abordar la importancia del orden en la secuencia de datos. Por ejemplo, para los humanos la frase '*I love cats*' es comprensible, mientras que '*I cats love*' no lo es, lo que ilustra la relevancia del orden en el lenguaje natural.
 <figure class="align-center" style="max-width: 90%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/structure.jpeg" alt="">
 </figure>
-1. Propagación hacia delante
+
+1. Propagación hacia delante:
+- a<0> = vec(0)
+- a<t> = f(waa * a<t-1> + wax * x<t> + b)
+- y<t> = f(way * a<t> + b)
+2. Propagación hacia atrás:
+- L(y, ŷ) = ∑L<t>(y<t>, ŷ<t>)
+- waa = waa - αaa * ∇aaL(y, ŷ)
+- way = way - αay * ∇ayL(y, ŷ)
+- wax = wax - αax * ∇axL(y, ŷ)
+
+Existen diversas estructuras de RNN que podemos seleccionar según el tipo de dataset:
+- **GRU** (*Gated Recurrent Unit*): recomendada para casos donde se requiere más memoria. Por ejemplo, en la frase "*My dad, who works a lot of hours in a factory and ..., was hungry.*", la red debe ser capaz de reconocer que "*was*" se refiere al sustantivo "*dad*", mencionado bastantes palabras antes.
+- ***Bi-Directional RNN***: son útiles en casos donde el contexto es relevante. Por ejemplo: "*Tim is high on drags*" / "*Tim is high in the sky*"; en el primer caso, Tim se refiere a una persona, mientras que en el segundo, se refiere a un pájaro. Es necesario reescribir la fórmula de combinación lineal: y<t> = f(way * [af<t>, ab<t> + b), donde *af* representa la propagación desde *a0* hasta *aT*, y *ab* representa la propagación desde *aT* hasta *a0*.
+- **LSTM** (*Long Short-Term Memory*): adecuada para procesar frases muy extensas e incluso párrafos. Se añade una nueva salida c a la estructura convencional de las RNNs.
 <figure class="align-center" style="max-width: 90%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/forward.jpeg" alt="">
-</figure>
-2. Propagación hacia atrás
-<figure class="align-center" style="max-width: 90%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/backward.jpeg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/LSTM.jpeg" alt="">
 </figure>
 
 ## SAM + EfficientVit
