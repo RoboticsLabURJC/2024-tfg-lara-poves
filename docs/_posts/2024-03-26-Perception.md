@@ -61,8 +61,7 @@ El proceso de entrenamiento se divide en dos etapas:
 1. **Propagación hacia adelante**: de entrada a salida, cuyo objetivo es hacer una predicción.
 - Combinación lineal: r = x * w + b. 
   - En el caso de ser una neurona y dos características de entrada: r = x1 * w1 + x2 * w2 + b
-- Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase.
-- Predicción: resultado al aplicar la función de activación: a = f(r)
+- Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase. Se hace una predicción, que es el resultado al aplicar la función de activación: a = f(r)
 
 2. **Propagación hacia atrás**: de salida a entrada, cuyo objetivo es actualizar los pesos y términos independientes.
 - Función de pérdida: cuantificar el error cometido, comparando la salida y la predicción.
