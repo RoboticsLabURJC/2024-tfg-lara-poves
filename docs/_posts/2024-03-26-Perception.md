@@ -64,7 +64,8 @@ El proceso de entrenamiento se divide en dos etapas:
 - Las **funciones de activación** pretenden introducir no linealidad en la red, las más usadas son ReLu = max(r, 0) y softmax, usada para resolver problemas de clasificación multiclase. Se hace una predicción, que es el resultado al aplicar la función de activación: a = f(r)
 
 2. **Propagación hacia atrás**: de salida a entrada, cuyo objetivo es actualizar los pesos y términos independientes.
-- La función de pérdida evalúa el error al comparar la salida predicha con la salida real.
+- La función de pérdida evalúa el error al comparar la salida predicha con la salida real. Existen múltiples métodos para calcularla, por jemplo esta *binary cross-entropy* para clasificación binaria y  *sparse categorial cross-entropy* para clasificacion multiclase.
+- La función de pérdida evalúa el error al comparar la salida predicha con la salida real. Existen múltiples métodos para calcularla, por ejemplo, está *binary cross-entropy* para clasificación binaria y *sparse categorical cross-entropy* para clasificación multiclase.
 - Se empleaunl algoritmo de optimización para actualizar los pesos y términos independientes. Uno de estos métodos es el descenso por gradiente.
 
 En la fase de actualización, se emplea un parámetro llamado **tasa de aprendizaje (α)** para controlar la magnitud de los ajustes realizados en los pesos de la red neuronal durante cada paso de entrenamiento. Una tasa de aprendizaje muy grande puede provocar oscilaciones y dificultar la convergencia al punto óptimo, mientras que una tasa muy pequeña puede prolongar significativamente el tiempo de entrenamiento y el consumo de recursos computacionales
