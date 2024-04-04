@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-04T21:07:00
+last_modified_at: 2024-04-04T21:20:00
 categories:
   - Blog
 tags:
@@ -102,7 +102,7 @@ model = tf.keras.Sequential([
 
 #### Capa de convolución
 Se aplican *kernels* (o filtros) de dimensiones nxn  para extraer características locales de la imagen. , el *kernel* se va deslizando a los largo de la imagen. El *kernel* se va deslizando a lo largo de la imagen, calculando la suma ponderada de los píxeles en cada ubicación. Cada filtro produce un mapa de características que contiene las características relevantes de la imagen. En el ejemplo proporcionado, se aplican 32 filtros en la primera y cuarta capa de convolución y 64 en la segunda y tercera.
-<figure class="align-center" style="max-width: 90%">
+<figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/conv.jpeg" alt="">
 </figure>
 
@@ -112,7 +112,7 @@ La operación de convolución reduce las dimensiones de la matriz de caracterís
 </figure>
 
 Otro parámetro importante es el ***stride***, que determina el número de píxeles que el *kernel* se desplaza dentro de la imagen. Este desplazamiento se aplica tanto en filas como en columnas. En el ejemplo anterior, el *stride* es uno, ahora consideremos un caso donde sea igual a dos:
-<figure class="align-center" style="max-width: 90%">
+<figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/stride.jpeg" alt="">
 </figure>
 
@@ -142,25 +142,25 @@ Necesitamos transformar una frase de un máximo de *p* palabras en una entrada c
 </figure>
 
 Las RNN incorporan marcas de tiempo, ***timestamps***, para abordar la importancia del orden en la secuencia de datos. Por ejemplo, para los humanos la frase '*I love cats*' es comprensible, mientras que '*I cats love*' no lo es, lo que ilustra la relevancia del orden en el lenguaje natural.
-<figure class="align-center" style="max-width: 90%">
+<figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/structure.jpg" alt="">
 </figure>
 
 1. Propagación hacia delante:
 - a<0> = vec(0)
-- a<t> = f(waa * a<t-1> + wax * x<t> + b)
-- y<t> = f(way * a<t> + b)
+- a\<t> = f(waa * a\<t-1> + wax * x\<t> + b)
+- y\<t> = f(way * a\<t> + b)
 2. Propagación hacia atrás:
-- L(y, ŷ) = ∑L<t>(y<t>, ŷ<t>)
+- L(y, ŷ) = ∑L\<t>(y\<t>, ŷ\<t>)
 - waa = waa - αaa * ∇aaL(y, ŷ)
 - way = way - αay * ∇ayL(y, ŷ)
 - wax = wax - αax * ∇axL(y, ŷ)
 
 Existen diversas estructuras de RNN que podemos seleccionar según el tipo de dataset:
 - **GRU** (*Gated Recurrent Unit*): recomendada para casos donde se requiere más memoria. Por ejemplo, en la frase "*My dad, who works a lot of hours in a factory and ..., was hungry.*", la red debe ser capaz de reconocer que "*was*" se refiere al sustantivo "*dad*", mencionado bastantes palabras antes.
-- ***Bi-Directional RNN***: son útiles en casos donde el contexto es relevante. Por ejemplo: "*Tim is high on drags*" / "*Tim is high in the sky*"; en el primer caso, Tim se refiere a una persona, mientras que en el segundo, se refiere a un pájaro. Es necesario reescribir la fórmula de combinación lineal: y<t> = f(way * [af<t>, ab<t>] + b), donde *af* representa la propagación desde *a0* hasta *aT*, y *ab* representa la propagación desde *aT* hasta *a0*.
+- ***Bi-Directional RNN***: son útiles en casos donde el contexto es relevante. Por ejemplo: "*Tim is high on drags*" / "*Tim is high in the sky*"; en el primer caso, Tim se refiere a una persona, mientras que en el segundo, se refiere a un pájaro. Es necesario reescribir la fórmula de combinación lineal: y\<t> = f(way * [af\<t>, ab\<t>] + b), donde *af* representa la propagación desde *a0* hasta *aT*, y *ab* representa la propagación desde *aT* hasta *a0*.
 - **LSTM** (*Long Short-Term Memory*): adecuada para procesar frases muy extensas e incluso párrafos. Se añade una nueva salida c a la estructura convencional de las RNNs.
-<figure class="align-center" style="max-width: 70%">
+<figure class="align-center" style="max-width: 95%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/LSTM.jpg" alt="">
 </figure>
 
