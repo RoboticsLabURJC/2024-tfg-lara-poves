@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-03T21:16:00
+last_modified_at: 2024-04-04T21:07:00
 categories:
   - Blog
 tags:
@@ -136,14 +136,14 @@ Como ya mencionamos anteriormente, el número de neuronas es igual al número de
 
 Las redes neuronales recurrentes o **RNN** buscan solucionar problemas en los que existen dependencias temporales entre características; las redes neuronales convencionales no son capaces de resolverlos de forma eficiente. La aplicación principal es el procesamiento del lenguaje natural, lo cual nos sirve para hacer traducciones, interpretar discursos o generar texto. Un ejemplo real es reconocer emociones en reseñas sobre películas, analizando si los adjetivos sean positivos o negativos.
 
-Necesitamos transformar una frase de un máximo de *p* palabras en una entrada compatible para una red neuronal; para lograrlo, requerimos un diccionario que traduzca el texto a *tokens*. Este proceso se conoce como ***language processing problem***.
-<figure class="align-center" style="max-width: 90%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/language.jpeg" alt="">
+Necesitamos transformar una frase de un máximo de *p* palabras en una entrada compatible para una red neuronal. Para lograrlo, necesitamos un diccionario que traduzca el texto a *tokens* según su índice. Este proceso se conoce como ***language processing problem***.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/language.jpg" alt="">
 </figure>
 
 Las RNN incorporan marcas de tiempo, ***timestamps***, para abordar la importancia del orden en la secuencia de datos. Por ejemplo, para los humanos la frase '*I love cats*' es comprensible, mientras que '*I cats love*' no lo es, lo que ilustra la relevancia del orden en el lenguaje natural.
 <figure class="align-center" style="max-width: 90%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/structure.jpeg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/structure.jpg" alt="">
 </figure>
 
 1. Propagación hacia delante:
@@ -158,10 +158,10 @@ Las RNN incorporan marcas de tiempo, ***timestamps***, para abordar la importanc
 
 Existen diversas estructuras de RNN que podemos seleccionar según el tipo de dataset:
 - **GRU** (*Gated Recurrent Unit*): recomendada para casos donde se requiere más memoria. Por ejemplo, en la frase "*My dad, who works a lot of hours in a factory and ..., was hungry.*", la red debe ser capaz de reconocer que "*was*" se refiere al sustantivo "*dad*", mencionado bastantes palabras antes.
-- ***Bi-Directional RNN***: son útiles en casos donde el contexto es relevante. Por ejemplo: "*Tim is high on drags*" / "*Tim is high in the sky*"; en el primer caso, Tim se refiere a una persona, mientras que en el segundo, se refiere a un pájaro. Es necesario reescribir la fórmula de combinación lineal: y<t> = f(way * [af<t>, ab<t> + b), donde *af* representa la propagación desde *a0* hasta *aT*, y *ab* representa la propagación desde *aT* hasta *a0*.
+- ***Bi-Directional RNN***: son útiles en casos donde el contexto es relevante. Por ejemplo: "*Tim is high on drags*" / "*Tim is high in the sky*"; en el primer caso, Tim se refiere a una persona, mientras que en el segundo, se refiere a un pájaro. Es necesario reescribir la fórmula de combinación lineal: y<t> = f(way * [af<t>, ab<t>] + b), donde *af* representa la propagación desde *a0* hasta *aT*, y *ab* representa la propagación desde *aT* hasta *a0*.
 - **LSTM** (*Long Short-Term Memory*): adecuada para procesar frases muy extensas e incluso párrafos. Se añade una nueva salida c a la estructura convencional de las RNNs.
-<figure class="align-center" style="max-width: 90%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/LSTM.jpeg" alt="">
+<figure class="align-center" style="max-width: 70%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/LSTM.jpg" alt="">
 </figure>
 
 ## SAM + EfficientVit
