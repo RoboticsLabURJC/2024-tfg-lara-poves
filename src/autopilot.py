@@ -13,8 +13,7 @@ def main():
 
     # Add Ego Vehicle
     ego_transform = carla.Transform(carla.Location(x=140, y=129, z=2.5), carla.Rotation(yaw=180))
-    ego_vehicle = configcarla.add_one_vehicle(world=world, ego_vehicle=True, 
-                                              transform=ego_transform,
+    ego_vehicle = configcarla.add_one_vehicle(world=world, ego_vehicle=True, transform=ego_transform,
                                               vehicle_type='vehicle.lincoln.mkz_2020')
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
@@ -31,7 +30,7 @@ def main():
     
     # Add a car in front of Ego Vehicle
     ego_transform.location.x -= 6.0
-    front_vehicle = configcarla.add_one_vehicle(world=world, ego_vehicle=False, tag='*tesla*', 
+    front_vehicle = configcarla.add_one_vehicle(world=world, ego_vehicle=False, vehicle_type='vehicle.kawasaki.ninja', 
                                                transform=ego_transform)
 
     # Add more vehicles
