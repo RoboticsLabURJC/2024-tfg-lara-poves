@@ -162,9 +162,27 @@ Existen diversas estructuras de RNN que podemos seleccionar según el tipo de da
 - **LSTM** (*Long Short-Term Memory*): adecuada para procesar frases muy extensas e incluso párrafos. Se añade una nueva salida c a la estructura convencional de las RNNs.
 <figure class="align-center" style="max-width: 95%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/LSTM.jpg" alt="">
-</figure>
+</figure>SA-1B
 
-## SAM + EfficientVit
+## SAM 
+
+intro de los 3 componentes y  foto, luego ir componente a componente 
+
+Los modelos fine-tuned, o modelos ajustados, se refieren a modelos de inteligencia artificial que han sido entrenados en una tarea específica o en un conjunto de datos específico después de haber sido pre-entrenados en un conjunto de datos más amplio. Este proceso de ajuste fino implica tomar un modelo pre-entrenado, que ha aprendido representaciones generales de datos de un conjunto de datos grande y diverso, y luego ajustar los pesos del modelo utilizando datos más específicos o tareas adicionales.
+
+Un proyecto de SA, **Segmentation Anything**, está compuesto por: tarea o *task*, SAM y datos (dataset de entrada y *data engine*).
+- *Segmention Anything Model* o SAM: flexible promptind and provide realtime outputs para proporciona run comportamiento interactivo, ambiguity-aware -> multym mask for a single promt
+- Es un modelo implementado con *prompt engineering*: el usuario da indicaiones para guiar al modelo -> que segmentar en la iamgen
+- zero-shot / few-shot: modelo puede realizar la tarea sin haber sido explícitamente entrenado para ella, simplemente siguiendo las indicaciones dadas en el prompt y sin entrenamiento adicional con nueva simagnes. -----> resultados impresionantes
+- Los encoder que s eutilizan para el promt o dos datos son CNN o RNN, dependiendo si son lenguaje escrito o imagenes: se quedan con las cracterística srelavantes, esas pasana al entrda del decofificador permite la sintesis d einfo entre pormt e imagen - resaltar la zona pedida creando la mascara de segmentacion ---> SAM
+- el modleo s eentrana con tareas que ayuden a una buena generalizacion
+- datset: Our final dataset, SA-1B, includes more than 1B masks from 11M licensed and privacy-preserving image -> responsabilida ia -> variaedad de paises y personas para que se adepte de forma igualitaria a tod oene le mundo real
+- data engine -> se necesitan muechos y variados para una buena generalizaciön -> resolver el problema de que las mascras/filtros no son abundantes:?????
+
+#### Task
+
+
+## EfficientVit
 
 ## Aplicación
 
