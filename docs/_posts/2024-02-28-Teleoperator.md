@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-03-24T20:56:00
+last_modified_at: 2024-04-08T21:09:00
 categories:
   - Blog
 tags:
@@ -56,20 +56,25 @@ Hemos creado la clase ***Vehicle_sensors***, la cual nos permite almacenar el ve
 ```python
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface)
-    def add_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform())
+
+    def add_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform())    
+    def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), 
+                       transform:carla.Transform=carla.Transform())
+
     def update_data(self)
     def destroy(self)
 ```
 
-Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola *thread_safe* y acilita el acceso al dato más reciente. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor.
+Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola *thread_safe* y acilita el acceso al dato más reciente. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor si deseamos procesar los datos del mismo en cada *tick*, permitiéndonos actualizar su información en la pantalla.
+
 ```python
 class Sensor():
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
         self.queue = Queue()
-        self.sensor.listen(lambda data: self._update_data(data))
+        self.sensor.listen(lambda data: self.__update_data(data))
 
-    def _update_data(self, data):
+    def __update_data(self, data):
         self.queue.put(data)
 
     def get_last_data(self):
@@ -85,7 +90,7 @@ class Sensor():
 Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, la cual simplemente se encarga de mostrar la imagen capturada.
 ```python
 class Camera(Sensor):      
-    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, screen:pygame.Surface)
+    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, screen:pygame.Surface)
     def process_data(self)
 ```
 Además, hemos añadido una nueva función ***add_camera_rgb*** en la clase *Vehicle_sensors*. Esta función requiere los parámetros del constructor de la clase Camera.
