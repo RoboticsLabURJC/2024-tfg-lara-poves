@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-03-27T16:20:00
+last_modified_at: 2024-04-08T21:26:00
 categories:
   - Blog
 tags:
@@ -25,7 +25,7 @@ Una vez habituados con las funciones básicas de CARLA y realizado el teleoperad
 
 Hemos implementado una función llamada ***traffic_manager*** para controlar el tráfico de vehículos de manera eficiente. Esta función activa el piloto automático de la lista de vehículos que recibe como entrada. Además, posibilita la modificación de ciertos parámetros de conducción, como el porcentaje de velocidad con respecto al límite máximo permitido y la distancia de seguridad entre vehículos.
 ```python
-def traffic_manager(client:carla.Client, vehicles:List[carla.Vehicle], port:int=5000, 
+def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000, 
                     dist:float=4.0, speed_lower:float=10.0):
 ```
 
@@ -34,6 +34,10 @@ def traffic_manager(client:carla.Client, vehicles:List[carla.Vehicle], port:int=
 Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva clase ***Lidar*** heredada de la clase *Sensor*. Al igual que en la implementación para la cámara, hemos agregado nuevos parámetros en el constructor para la visualización y sobrescrito la función *process_data()*. Esta función se encarga de visualizar el láser y actualizar las estadísticas relevantes a la zona frontal del láser, las cuales nos serán útiles para la detección de obstáculos.
 
 ```python
+class Vehicle_sensors:
+    def add_lidar(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), scale_lidar:int=25,
+                  transform:carla.Transform=carla.Transform(), front_angle:int=150):
+
 class Lidar(Sensor): 
     def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,
                  scale:int, front_angle:int, yaw:float, screen:pygame.Surface)
@@ -45,6 +49,8 @@ class Lidar(Sensor):
 
     def set_intensity_threshold(self, i:float)
     def get_intensity_threshold(self)
+    def get_z_threshold(self)
+    def set_z_threshold(self, min:float=None, max:float=None)
 ```
 
 En primer lugar, es necesario transformar los datos del láser en una matriz de matrices, donde cada submatriz almacena las coordenadas *x*, *y*, *z* y la intensidad respectivamente. Cada una de estas submatrices representa un punto.

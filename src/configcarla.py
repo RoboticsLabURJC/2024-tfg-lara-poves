@@ -3,7 +3,6 @@ import pygame
 import numpy as np
 import math
 import random
-from typing import Tuple, List
 from queue import Queue
 
 NUM_ZONES = 3
@@ -43,7 +42,7 @@ class Sensor():
         pass
 
 class CameraRGB(Sensor):      
-    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], 
+    def __init__(self, size:tuple[int, int], init:tuple[int, int], 
                  sensor:carla.Sensor, screen:pygame.Surface):
         super().__init__(sensor=sensor)
 
@@ -69,7 +68,7 @@ class CameraRGB(Sensor):
             self.screen.blit(screen_surface, self.rect)
         
 class Lidar(Sensor): 
-    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,
+    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
                  scale:int, front_angle:int, yaw:float, screen:pygame.Surface):
         super().__init__(sensor=sensor)
 
@@ -112,10 +111,8 @@ class Lidar(Sensor):
 
         self.image = self.__get_back_image()
 
-        self.len = 0
-
-    def __write_text(self, text:str, img:pygame.Surface, point:Tuple[int, int],
-                    side:int=FRONT, bold:bool=False, color:Tuple[int, int, int]=None):
+    def __write_text(self, text:str, img:pygame.Surface, point:tuple[int, int],
+                    side:int=FRONT, bold:bool=False, color:tuple[int, int, int]=None):
         font = pygame.font.Font(pygame.font.match_font('tlwgtypo'), self.size_text)
         if bold:
             font.set_bold(True)
@@ -168,43 +165,53 @@ class Lidar(Sensor):
 
         return (r, g, b)
     
-    def __update_stats(self, dist:List[float], y_obstacle:List[float], zone:int):
-        if len(dist) != 0:
-            self.stat_zones[zone][MIN] = np.min(dist)
-            self.stat_zones[zone][MEAN] = np.mean(dist)
-            self.stat_zones[zone][MEDIAN] = np.median(dist)
+    def __update_stats(self, dist:list[list[float]], y_obstacle:list[list[float]]):
+        text_zone = ['front-left', 'front-front', 'front-right']
 
-        stats_text = [
-            "Min = {:.2f}".format(self.stat_zones[zone][MIN]),
-            "Mean = {:.2f}".format(self.stat_zones[zone][MEAN]),
-            "Median = {:.2f}".format(self.stat_zones[zone][MEDIAN]),
-        ]
-        
-        y = self.size_text * 2
-        for text in stats_text:
-            self.__write_text(text=text, img=self.sub_screen,
-                              point=(self.x_text[zone], y), side=zone)
-            y += self.size_text
+        for zone in range(NUM_ZONES):
+            if len(dist) != 0:
+                self.stat_zones[zone][MIN] = np.min(dist[zone])
+                self.stat_zones[zone][MEAN] = np.mean(dist[zone])
+                self.stat_zones[zone][MEDIAN] = np.median(dist[zone])
 
-        # si no hay medidas suficientes y umbral de std
-        
-        text = ['front-left', 'front-front', 'front-right']
-        if len(y_obstacle) < 6:
-            self.obstacles[zone] = False
-        else:
-            std = np.std(y_obstacle)
-            self.obstacles[zone] = len(y_obstacle) >= 6 and std < 0.6
+                stats_text = [
+                    "Min = {:.2f}".format(self.stat_zones[zone][MIN]),
+                    "Mean = {:.2f}".format(self.stat_zones[zone][MEAN]),
+                    "Median = {:.2f}".format(self.stat_zones[zone][MEDIAN]),
+                ]
+            else:
+                stats_text = [
+                    "Min = -",
+                    "Mean = -",
+                    "Median = -",
+                ]
             
-        if zone == 1:
-            print(zone, len(y_obstacle))
+            # Write stats
+            y = self.size_text * 2
+            for text in stats_text:
+                self.__write_text(text=text, point=(self.x_text[zone], y),
+                                  img=self.sub_screen, side=zone)
+                y += self.size_text
 
-        if self.obstacles[zone]:
-            color = (0, 255, 0)
-        else:
-            color = (255, 0, 0)
+            # si no hay medidas suficientes y umbral de std
+            
+            std = 0
+            if len(y_obstacle[zone]) < 5: # para las motos es dificl de ajustars
+                self.obstacles[zone] = False
+            else:
+                std = np.std(y_obstacle[zone])
+                self.obstacles[zone] = std < 0.6
+                
+            if zone == 1:
+                print(zone, len(y_obstacle[zone]), std)
 
-        self.__write_text(text=text[zone], img=self.sub_screen, side=zone, color=color,
-                            point=(self.x_text[zone], self.size_text))
+            if self.obstacles[zone]:
+                color = (0, 255, 0)
+            else:
+                color = (255, 0, 0)
+
+            self.__write_text(text=text_zone[zone], img=self.sub_screen, side=zone,
+                              color=color, point=(self.x_text[zone], self.size_text))
 
     def __in_zone(self, zone:int, angle:float):
         if self.angles[zone] <= self.angles[zone + 1]:
@@ -248,23 +255,17 @@ class Lidar(Sensor):
 
                 thickness = self.__interpolate_thickness(num=z, min=z_min, max=z_max)
                 color = self.__interpolate_color(num=i, min=i_min, max=i_max)
-
                 center = (int(x * self.scale + self.center_screen[0]),
                           int(y * self.scale + self.center_screen[1]))
                 
                 if z >= self.z_threshold_min and z <= self.z_threshold_max:
-                    color = (0, 255, 0) # problemas: hay mas d eun coche -> detectar grupos de puntos??, con un radio maximo
-                    # necesitaria filtrar por altura pero no la std .)
-                    # dificl establecer rangos de numero de puntos con el parpadeo
+                    color = (0, 255, 0) 
+                    # problemas: hay mas d eun coche -> detectar grupos de puntos??, con un radio maximo
 
                 pygame.draw.circle(self.sub_screen, color, center, thickness)
 
-            for i in range(len(zone_y)):
-                self.__update_stats(dist=zones_dist[i], y_obstacle=zone_y[i], zone=i)
-            
-            #if self.len < len(lidar_data):
+            self.__update_stats(dist=zones_dist, y_obstacle=zone_y)            
             self.screen.blit(self.sub_screen, self.rect)
-               # self.len = len(lidar_data)
 
     def obstacle_front_right(self):
         return self.obstacles[RIGHT]
@@ -298,15 +299,17 @@ class Vehicle_sensors:
         self.screen = screen
         self.sensors = []
 
-    def _put_sensor(self, sensor_type:str, transform:carla.Transform):
+    def __put_sensor(self, sensor_type:str, transform:carla.Transform, lidar:bool=False):
         try:
             sensor_bp = self.world.get_blueprint_library().find(sensor_type)
         except IndexError:
             print("Sensor", sensor_type, "doesn't exist!")
             return None
+        
+        if lidar:
+            sensor_bp.set_attribute('rotation_frequency', '20')
                 
-        sensor = self.world.spawn_actor(sensor_bp, transform, attach_to=self.vehicle)
-        return sensor
+        return self.world.spawn_actor(sensor_bp, transform, attach_to=self.vehicle)
 
     def add_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform()):
         sensor = self._put_sensor(sensor_type=sensor_type, transform=transform)
@@ -314,16 +317,16 @@ class Vehicle_sensors:
         self.sensors.append(sensor_class)
         return sensor_class
     
-    def add_camera_rgb(self, size_rect:Tuple[int, int], init:Tuple[int, int]=(0, 0), 
+    def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), 
                        transform:carla.Transform=carla.Transform()):
-        sensor = self._put_sensor(sensor_type='sensor.camera.rgb', transform=transform)
+        sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform)
         camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.screen)
         self.sensors.append(camera)
         return camera
     
-    def add_lidar(self, size_rect:Tuple[int, int], init:Tuple[int, int]=(0, 0), scale_lidar:int=25,
+    def add_lidar(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), scale_lidar:int=25,
                   transform:carla.Transform=carla.Transform(), front_angle:int=150):
-        sensor = self._put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform)
+        sensor = self.__put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, lidar=True)
         lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle,
                       scale=scale_lidar, yaw=transform.rotation.yaw, screen=self.screen)
         
@@ -419,7 +422,7 @@ def center_spectator(world:carla.World, transform:carla.Transform,
     spectator.set_transform(transform)
     return spectator
 
-def setup_pygame(size:Tuple[int, int], name:str):
+def setup_pygame(size:tuple[int, int], name:str):
     pygame.init()
     clock = pygame.time.Clock()
 
@@ -440,7 +443,7 @@ def add_vehicles_randomly(world:carla.World, number:int):
 
     return vehicles
 
-def traffic_manager(client:carla.Client, vehicles:List[carla.Vehicle], port:int=5000, 
+def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000, 
                     dist:float=4.0, speed_lower:float=10.0):
     tm = client.get_trafficmanager(port)
     tm_port = tm.get_port()
