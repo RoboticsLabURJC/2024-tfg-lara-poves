@@ -1,5 +1,11 @@
 import pygame
 import carla
+import os
+import sys
+
+src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(src_path)
+
 import configcarla
 
 # Screen
@@ -32,18 +38,18 @@ def main():
     ego_transform.location.x -= 6.0
     front_vehicle = configcarla.add_one_vehicle(world=world, transform=ego_transform,
                                                 vehicle_type='vehicle.tesla.model3')
-
-    # Add more vehicles
-    vehicles = configcarla.add_vehicles_randomly(world=world, number=10)
-    vehicles.append(ego_vehicle)
-    vehicles.append(front_vehicle)
-    tm = configcarla.traffic_manager(client=client, vehicles=vehicles, dist=10.0, speed_lower=50)
     
+    counter = 0
     try:
-        while True:
+        while counter < 1:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     return
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
+                    pygame.image.save(screen, "img/hist_lidar0.png")
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_x:
+                    front_vehicle.destroy()
+                    counter += 1
             
             sensors.update_data()
             clock.tick(120) # Frame rate

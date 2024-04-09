@@ -10,10 +10,11 @@ LEFT = 0
 FRONT = 1
 RIGHT = 2
 
-NUM_STATS = 3
+NUM_STATS = 4
 MIN = 0
 MEAN = 1
 MEDIAN = 2
+STD = 3
 
 def get_angle_range(angle:float):
     if angle > 180.0:
@@ -52,7 +53,6 @@ class CameraRGB(Sensor):
 
     def process_data(self):
         image = self.get_last_data()
-        
         if image != None:
             image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
             image_data = np.reshape(image_data, (image.height, image.width, 4))
@@ -97,18 +97,12 @@ class Lidar(Sensor):
         angle2_sub = get_angle_range(angle2 - self.front_angle / 3)        
         self.angles = [angle1, angle1_add, angle2_sub, angle2]
 
-        # Detect obstacles
-        self.obstacles = [False, False, False]
-        self.std_min = 0.0
+        # Calculate stats
         self.i_threshold = 0.987
-        self.z_threshold_min = -1.3
-        self.z_threshold_max = 0.0
-
-        # Write data
         self.stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
         self.size_text = min(int(self.scale / 1.5), 20)
-        self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness) 
 
+        self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness) 
         self.image = self.__get_back_image()
 
     def __write_text(self, text:str, img:pygame.Surface, point:tuple[int, int],
@@ -135,6 +129,7 @@ class Lidar(Sensor):
         image = pygame.Surface(self.size_screen)
         mult = 10 * self.scale
         text = ['FL', 'FF', 'FR']
+        text_zone = ['Front-Left', 'Front-Front', 'Front-Right']
 
         for i in range(len(self.angles)):
             x_line = self.center_screen[0] + mult * math.cos(math.radians(self.angles[i]))
@@ -145,9 +140,11 @@ class Lidar(Sensor):
                 angle = self.angles[i] + self.front_angle / 6
                 x_zone = self.center_screen[0] + mult * math.cos(math.radians(angle))
                 y_zone = max(self.center_screen[1] + mult * math.sin(math.radians(angle)), 
-                             self.size_text * 5) # Make sure to write behind the text
-                self.__write_text(text=text[i], img=image, point=(x_zone, y_zone), bold=True)
-
+                             self.size_text * (NUM_STATS + 2)) # Make sure to write behind the text
+                
+                self.__write_text(text=text[i], img=image, point=(x_zone, y_zone),bold=True)
+                self.__write_text(text=text_zone[i], img=image, side=i, color=(255, 165, 180),
+                                  point=(self.x_text[i], self.size_text), bold=True)
         return image
     
     def __interpolate_thickness(self, num:float, min:float, max:float):
@@ -165,25 +162,26 @@ class Lidar(Sensor):
 
         return (r, g, b)
     
-    def __update_stats(self, dist:list[list[float]], y_obstacle:list[list[float]]):
-        text_zone = ['front-left', 'front-front', 'front-right']
-
+    def __update_stats(self, dist:list[list[float]]):
         for zone in range(NUM_ZONES):
-            if len(dist) != 0:
+            if len(dist[zone]) != 0:
                 self.stat_zones[zone][MIN] = np.min(dist[zone])
                 self.stat_zones[zone][MEAN] = np.mean(dist[zone])
                 self.stat_zones[zone][MEDIAN] = np.median(dist[zone])
+                self.stat_zones[zone][STD] = np.std(dist[zone])
 
                 stats_text = [
                     "Min = {:.2f}".format(self.stat_zones[zone][MIN]),
                     "Mean = {:.2f}".format(self.stat_zones[zone][MEAN]),
                     "Median = {:.2f}".format(self.stat_zones[zone][MEDIAN]),
+                    "Std = {:.2f}".format(self.stat_zones[zone][STD])
                 ]
             else:
                 stats_text = [
                     "Min = -",
                     "Mean = -",
                     "Median = -",
+                    "Std = -"
                 ]
             
             # Write stats
@@ -192,26 +190,6 @@ class Lidar(Sensor):
                 self.__write_text(text=text, point=(self.x_text[zone], y),
                                   img=self.sub_screen, side=zone)
                 y += self.size_text
-
-            # si no hay medidas suficientes y umbral de std
-            
-            std = 0
-            if len(y_obstacle[zone]) < 5: # para las motos es dificl de ajustars
-                self.obstacles[zone] = False
-            else:
-                std = np.std(y_obstacle[zone])
-                self.obstacles[zone] = std < 0.6
-                
-            if zone == 1:
-                print(zone, len(y_obstacle[zone]), std)
-
-            if self.obstacles[zone]:
-                color = (0, 255, 0)
-            else:
-                color = (255, 0, 0)
-
-            self.__write_text(text=text_zone[zone], img=self.sub_screen, side=zone,
-                              color=color, point=(self.x_text[zone], self.size_text))
 
     def __in_zone(self, zone:int, angle:float):
         if self.angles[zone] <= self.angles[zone + 1]:
@@ -229,68 +207,42 @@ class Lidar(Sensor):
         return NUM_ZONES
 
     def process_data(self):
-        if not self.queue.empty():
-            lidar = self.queue.get(False) 
-            lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
-            lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
+        lidar = self.get_last_data()
+        if lidar == None:
+            return
+        
+        lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
+        lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 
-            z_min = np.min(lidar_data[:, 2])
-            z_max = np.max(lidar_data[:, 2])
+        z_min = np.min(lidar_data[:, 2])
+        z_max = np.max(lidar_data[:, 2])
 
-            i_min = np.min(lidar_data[:, 3])
-            i_max = np.max(lidar_data[:, 3])
+        i_min = np.min(lidar_data[:, 3])
+        i_max = np.max(lidar_data[:, 3])
 
-            self.sub_screen.blit(self.image, (0, 0))
+        self.sub_screen.blit(self.image, (0, 0))
+        zones_dist = [[] for _ in range(NUM_ZONES)]
 
-            zone_y = [[] for _ in range(NUM_ZONES)] # To detect obstacles
-            zones_dist = [[] for _ in range(NUM_ZONES)]
+        for x, y, z, i in lidar_data:
+            zone = self.__get_zone(x=x, y=y)
+            if zone < NUM_ZONES and i < self.i_threshold:
+                zones_dist[zone].append(math.sqrt(x ** 2 + y ** 2))
 
-            for x, y, z, i in lidar_data:
-                zone = self.__get_zone(x=x, y=y)
-                if zone < NUM_ZONES and i < self.i_threshold:
-                    zones_dist[zone].append(math.sqrt(x ** 2 + y ** 2))
+            thickness = self.__interpolate_thickness(num=z, min=z_min, max=z_max)
+            color = self.__interpolate_color(num=i, min=i_min, max=i_max)
+            center = (int(x * self.scale + self.center_screen[0]),
+                        int(y * self.scale + self.center_screen[1]))
 
-                    if z >= self.z_threshold_min and z <= self.z_threshold_max:
-                        zone_y[zone].append(y)
+            pygame.draw.circle(self.sub_screen, color, center, thickness)
 
-                thickness = self.__interpolate_thickness(num=z, min=z_min, max=z_max)
-                color = self.__interpolate_color(num=i, min=i_min, max=i_max)
-                center = (int(x * self.scale + self.center_screen[0]),
-                          int(y * self.scale + self.center_screen[1]))
-                
-                if z >= self.z_threshold_min and z <= self.z_threshold_max:
-                    color = (0, 255, 0) 
-                    # problemas: hay mas d eun coche -> detectar grupos de puntos??, con un radio maximo
-
-                pygame.draw.circle(self.sub_screen, color, center, thickness)
-
-            self.__update_stats(dist=zones_dist, y_obstacle=zone_y)            
-            self.screen.blit(self.sub_screen, self.rect)
-
-    def obstacle_front_right(self):
-        return self.obstacles[RIGHT]
-
-    def obstacle_front_left(self):
-        return self.obstacles[LEFT]
-    
-    def obstacle_front_front(self):
-        return self.obstacles[FRONT]
+        self.__update_stats(dist=zones_dist)            
+        self.screen.blit(self.sub_screen, self.rect)
     
     def set_intensity_threshold(self, i:float):
         self.i_threshold = i
 
     def get_intensity_threshold(self):
         return self.i_threshold
-    
-    def get_z_threshold(self):
-        return self.z_threshold_min, self.z_threshold_max
-    
-    def set_z_threshold(self, min:float=None, max:float=None):
-        if min != None:
-            self.z_threshold_min = min
-
-        if max != None:
-            self.z_threshold_max = max
 
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface):
@@ -336,7 +288,7 @@ class Vehicle_sensors:
     def update_data(self):
         for sensor in self.sensors:
             sensor.process_data()
-
+            
         pygame.display.flip()
 
     def destroy(self):
@@ -383,7 +335,7 @@ def setup_carla(port:int=2000, name_world:str='Town01'):
 
     return world, client
 
-def add_one_vehicle(world:carla.World, ego_vehicle:bool, vehicle_type:str=None, 
+def add_one_vehicle(world:carla.World, ego_vehicle:bool=False, vehicle_type:str=None, 
                     tag:str='*vehicle*', transform:carla.Transform=None): 
     if transform == None:
         spawn_points = world.get_map().get_spawn_points()
@@ -452,7 +404,6 @@ def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=
         v.set_autopilot(True, tm_port)
         tm.auto_lane_change(v, False) 
 
-    speed_lower = max(0.0, min(100.0, speed_lower))
     tm.set_global_distance_to_leading_vehicle(dist)
     tm.global_percentage_speed_difference(speed_lower)
 

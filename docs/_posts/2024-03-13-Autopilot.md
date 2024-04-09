@@ -18,8 +18,6 @@ Una vez habituados con las funciones básicas de CARLA y realizado el teleoperad
    - [Visualización](#visualización)
    - [Zona frontal](#zona-frontal)
      - [Cálculo de estadísticas](#cálculo-de-estadísticas)
-     - [Detección de obstáculos](#detección-de-obstáculos)
-3. [Demo](#demo)
 
 ## Traffic manager
 
@@ -43,14 +41,8 @@ class Lidar(Sensor):
                  scale:int, front_angle:int, yaw:float, screen:pygame.Surface)
     def process_data(self):
 
-    def obstacle_front_right(self)
-    def obstacle_front_left(self)
-    def obstacle_front_front(self)
-
     def set_intensity_threshold(self, i:float)
     def get_intensity_threshold(self)
-    def get_z_threshold(self)
-    def set_z_threshold(self, min:float=None, max:float=None)
 ```
 
 En primer lugar, es necesario transformar los datos del láser en una matriz de matrices, donde cada submatriz almacena las coordenadas *x*, *y*, *z* y la intensidad respectivamente. Cada una de estas submatrices representa un punto.
@@ -110,14 +102,10 @@ En nuestro caso, con un *yaw* de 90º, obtendríamos los ángulos: [-165.0, -115
 
 #### Cálculo de estadísticas
 ---
-Hacemos tres listas, cada una correspondiente a una de las zona, en las que guardamos las distancias desde el punto hasta el láser en el plano XY. Utilizamos estas medidas para calcular el mínimo, la media y la mediana de cada zona del láser.
+Hacemos tres listas, cada una correspondiente a una de las zona, en las que guardamos las distancias desde el punto hasta el centro del láser en el plano XY. Utilizamos estas medidas para calcular el mínimo, la media, la mediana y la desviación estándar de los en cada zona del láser. _______ retocar y completar
 
 Como se puede observar en la imagen, los puntos de color rojo corresponden al propio coche, por lo tanto, hemos realizado un filtrado por intensidad para eliminarlos del cálculo estadístico. Este umbral tiene un valor predeterminado establecido en el constructor, pero hemos implementado unas funciones para consultar o modificar su valor.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/stats.png" alt="">
 </figure>
 
-#### Detección de obstáculos
----
-
-## Demo
