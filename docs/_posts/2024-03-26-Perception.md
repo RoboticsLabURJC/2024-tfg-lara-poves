@@ -23,9 +23,9 @@ La **detección** es el proceso que nos permite identificar varios objetos y sus
 </figure>
 
 La **segmentación** consiste en dividir una imagen en regiones significativas con el objetivo de identificar objetos. Esta técnica abarca dos enfoques principales: 
-- La segmentación **semántica** asigna una clase a cada uno de los píxeles de la imagen.
-- La segmentación de **instancias** identificar diferentes objetos individuales dentro de una imagen.
-La combinación de ambos enfoques se conoce como segmentación **panóptica**.
+- La segmentación **semántica** asigna una clase a cada uno de los píxeles de la imagen, pero no distingue entre diferentes instancias de la misma clase.
+- La segmentación de **instancias** identifica y delimita cada objeto individual en la imagen asignándole una etiqueta única, pero no las agrupa semánticamente.
+La combinación de ambas técnicas se conoce como segmentación **panóptica**.
 
 La segmentación nos proporciona información detallada sobre los límites y regiones de cada objeto: ¿qué pixel corresponde a cada objeto? En conducción autónoma se suele utilizar para la detección de la calzada.
 <figure class="align-center" style="max-width: 80%">
@@ -167,20 +167,50 @@ Existen diversas estructuras de RNN que podemos seleccionar según el tipo de da
 ## SAM 
 
 intro de los 3 componentes y  foto, luego ir componente a componente 
-
-Los modelos fine-tuned, o modelos ajustados, se refieren a modelos de inteligencia artificial que han sido entrenados en una tarea específica o en un conjunto de datos específico después de haber sido pre-entrenados en un conjunto de datos más amplio. Este proceso de ajuste fino implica tomar un modelo pre-entrenado, que ha aprendido representaciones generales de datos de un conjunto de datos grande y diverso, y luego ajustar los pesos del modelo utilizando datos más específicos o tareas adicionales.
-
 Un proyecto de SA, **Segmentation Anything**, está compuesto por: tarea o *task*, SAM y datos (dataset de entrada y *data engine*).
-- *Segmention Anything Model* o SAM: flexible promptind and provide realtime outputs para proporciona run comportamiento interactivo, ambiguity-aware -> multym mask for a single promt
-- Es un modelo implementado con *prompt engineering*: el usuario da indicaiones para guiar al modelo -> que segmentar en la iamgen
-- zero-shot / few-shot: modelo puede realizar la tarea sin haber sido explícitamente entrenado para ella, simplemente siguiendo las indicaciones dadas en el prompt y sin entrenamiento adicional con nueva simagnes. -----> resultados impresionantes
-- Los encoder que s eutilizan para el promt o dos datos son CNN o RNN, dependiendo si son lenguaje escrito o imagenes: se quedan con las cracterística srelavantes, esas pasana al entrda del decofificador permite la sintesis d einfo entre pormt e imagen - resaltar la zona pedida creando la mascara de segmentacion ---> SAM
-- el modleo s eentrana con tareas que ayuden a una buena generalizacion
-- datset: Our final dataset, SA-1B, includes more than 1B masks from 11M licensed and privacy-preserving image -> responsabilida ia -> variaedad de paises y personas para que se adepte de forma igualitaria a tod oene le mundo real
+
+- - el modleo s eentrana con tareas e imagnes que ayuden a una buena generalizacion -> responsabilida ia -> variaedad de paises y personas para que se adepte de forma igualitaria a tod oene le mundo real
+
+- datset: Our final dataset, SA-1B, includes more than 1B masks from 11M licensed and privacy-preserving image 
 - data engine -> se necesitan muechos y variados para una buena generalizaciön -> resolver el problema de que las mascras/filtros no son abundantes:?????
 
 #### Task
+return a valid segmentation mask given any prompt -> ya sea ambiguo o multiple o multitarea(varios tipos de segmentacion) -> para que se avaliado debe devolver una mascra de al menos uno d elos objetos 
+transformar el promt de NPL o segmentacion
+- Es un modelo implementado con *prompt engineering*: el usuario da indicaiones para guiar al modelo -> que segmentar en la iamgen
 
+Este proceso es similar a cómo se pre-entrenan los modelos de procesamiento del lenguaje natural (NLP), donde se les presenta una gran cantidad de texto y se les entrena para predecir la siguiente palabra en una secuencia -> tb se hace un preentrenamiento en este tipo de modelos ----->>> ???? luego ya fine-tuning
+
+Los modelos fine-tuned, o modelos ajustados, se refieren a modelos de inteligencia artificial que han sido entrenados en una tarea específica o en un conjunto de datos específico después de haber sido pre-entrenados en un conjunto de datos más amplio. Este proceso de ajuste fino implica tomar un modelo pre-entrenado, que ha aprendido representaciones generales de datos de un conjunto de datos grande y diverso, y luego ajustar los pesos del modelo utilizando datos más específicos o tareas adicionales.
+
+el zero shot y eso  va aqui -> el preentrenamiento
+- zero-shot / few-shot: modelo puede realizar la tarea sin haber sido explícitamente entrenado para ella, simplemente siguiendo las indicaciones dadas en el prompt y sin entrenamiento adicional con nueva simagnes. -----> resultados impresionantes
+
+existen varia stareas de segmentación: semantica, deteccion de bordes, instance, paracopic...
+el ser prompting permite usarlo para numerosas aplicaciones
+
+#### Model
+
+SAM has three components,illustrated in Fig. 4: an image encoder, a flexible prompt encoder, and a fast mask decoder
+
+image embedding: vector numumerico que represneta la imagen -> producida por el **encoder image**
+
+**encoder prompt** -> transformar promt de NLP(texto) o imagnes(puntos, bounding boxes, mascaras) a representaciones numericas
+- mascras dense
+- sparse los otros 3
+
+**mask decoder**
+esas pasana al entrda del decofificador permite la sintesis d einfo entre pormt e imagen 
+mascra de segmentacion = "embedding" de la imagen, los "embeddings" de las indicaciones y un token de salida????????
+El "mask decoder" toma la representación de la imagen y las indicaciones como entrada.
+Utiliza el modelo preentrenado para procesar la imagen y las indicaciones, y genera un "token de salida".
+Este "token de salida" representa la predicción del modelo sobre la máscara de segmentación, es decir, qué partes de la imagen son probablemente el perro y qué partes son el fondo.
+
+ el modelo promediará múltiples máscaras válidas si se le proporciona una indicación ambigua. Para abordar esto, modificamos el modelo para predecir múltiples máscaras de salida para una única indicación. Se considera que 3 salidas para un unico promt es sufuciente para asegurarnos d eobtener una respuest avalida.
+
+, onCPU, in ∼50ms. This runtime performance enables seamless, real-time interactive prompting of our model. ----> eficinecia
+
+- que es la mascara que  se le itrduce al modleo en la conv esa??? para que sirve???
 
 ## EfficientVit
 
