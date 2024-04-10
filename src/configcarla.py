@@ -100,6 +100,7 @@ class Lidar(Sensor):
         # Calculate stats
         self.i_threshold = 0.987
         self.stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
+        self.dist_zones = None
         self.size_text = min(int(self.scale / 1.5), 20)
 
         self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness) 
@@ -162,28 +163,24 @@ class Lidar(Sensor):
 
         return (r, g, b)
     
-    def __update_stats(self, dist:list[list[float]]):
+    def __update_stats(self):
         for zone in range(NUM_ZONES):
-            if len(dist[zone]) != 0:
-                self.stat_zones[zone][MIN] = np.min(dist[zone])
-                self.stat_zones[zone][MEAN] = np.mean(dist[zone])
-                self.stat_zones[zone][MEDIAN] = np.median(dist[zone])
-                self.stat_zones[zone][STD] = np.std(dist[zone])
-
-                stats_text = [
-                    "Min = {:.2f}".format(self.stat_zones[zone][MIN]),
-                    "Mean = {:.2f}".format(self.stat_zones[zone][MEAN]),
-                    "Median = {:.2f}".format(self.stat_zones[zone][MEDIAN]),
-                    "Std = {:.2f}".format(self.stat_zones[zone][STD])
-                ]
+            if len(self.dist_zones[zone]) != 0:
+                self.stat_zones[zone][MIN] = np.min(self.dist_zones[zone])
+                self.stat_zones[zone][MEAN] = np.mean(self.dist_zones[zone])
+                self.stat_zones[zone][MEDIAN] = np.median(self.dist_zones[zone])
+                self.stat_zones[zone][STD] = np.std(self.dist_zones[zone])
             else:
-                stats_text = [
-                    "Min = -",
-                    "Mean = -",
-                    "Median = -",
-                    "Std = -"
-                ]
-            
+                for i in range(NUM_STATS):
+                    self.stat_zones[zone][i] = np.nan
+
+            stats_text = [
+                "Min = {:.2f}".format(self.stat_zones[zone][MIN]),
+                "Mean = {:.2f}".format(self.stat_zones[zone][MEAN]),
+                "Median = {:.2f}".format(self.stat_zones[zone][MEDIAN]),
+                "Std = {:.2f}".format(self.stat_zones[zone][STD])
+            ]
+
             # Write stats
             y = self.size_text * 2
             for text in stats_text:
@@ -221,12 +218,12 @@ class Lidar(Sensor):
         i_max = np.max(lidar_data[:, 3])
 
         self.sub_screen.blit(self.image, (0, 0))
-        zones_dist = [[] for _ in range(NUM_ZONES)]
+        self.dist_zones = [[] for _ in range(NUM_ZONES)]
 
         for x, y, z, i in lidar_data:
             zone = self.__get_zone(x=x, y=y)
             if zone < NUM_ZONES and i < self.i_threshold:
-                zones_dist[zone].append(math.sqrt(x ** 2 + y ** 2))
+                self.dist_zones[zone].append(math.sqrt(x ** 2 + y ** 2))
 
             thickness = self.__interpolate_thickness(num=z, min=z_min, max=z_max)
             color = self.__interpolate_color(num=i, min=i_min, max=i_max)
@@ -235,7 +232,7 @@ class Lidar(Sensor):
 
             pygame.draw.circle(self.sub_screen, color, center, thickness)
 
-        self.__update_stats(dist=zones_dist)            
+        self.__update_stats()            
         self.screen.blit(self.sub_screen, self.rect)
     
     def set_intensity_threshold(self, i:float):
@@ -243,6 +240,12 @@ class Lidar(Sensor):
 
     def get_intensity_threshold(self):
         return self.i_threshold
+    
+    def get_stat_zones(self):
+        return self.stat_zones
+    
+    def get_dist_zones(self):
+        return self.dist_zones
 
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface):
