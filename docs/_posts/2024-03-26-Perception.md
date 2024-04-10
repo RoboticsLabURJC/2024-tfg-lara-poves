@@ -10,6 +10,19 @@ tags:
   - RNN
 ---
 
+## Índice
+1. [Clasificación vs detección vs segmentación](#clasificación-vs-detección-vs-segmentación)
+2. [Deep learning](#deep-learning)
+    - [Redes neuronales](#redes-neuronales)
+    - [Redes neuronales convolucionales](#redes-neuronales-convolucionales)
+    - [Redes neuronales recurrentes](#redes-neuronales-recurrentes)
+3. [SA](#sa)
+    - [Task](#task)
+    - [Model](#model)
+    - [Data](#data)
+4. [EfficientVit](#efficientvit)
+5. [Aplicación](#aplicación)
+
 ## Clasificación vs detección vs segmentación
 
 La **clasificación** implica asignar etiquetas o clases a imágenes o regiones específicas, para ello pueden utilizarse CNNs. Sin embargo, esta técnica no proporciona información sobre las ubicaciones de los objetos, simplemente responde a la pregunta de si un objeto específico está presente, por ejemplo: ¿hay un perro?
@@ -162,44 +175,34 @@ Existen diversas estructuras de RNN que podemos seleccionar según el tipo de da
 - **LSTM** (*Long Short-Term Memory*): adecuada para procesar frases muy extensas e incluso párrafos. Se añade una nueva salida c a la estructura convencional de las RNNs.
 <figure class="align-center" style="max-width: 95%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/LSTM.jpg" alt="">
-</figure>SA-1B
+</figure>
 
-## SAM 
+## SA
 
-intro de los 3 componentes y  foto, luego ir componente a componente 
-Un proyecto de SA, **Segmentation Anything**, está compuesto por: tarea o *task*, SAM y datos (dataset de entrada y *data engine*).
-
-- - el modleo s eentrana con tareas e imagnes que ayuden a una buena generalizacion -> responsabilida ia -> variaedad de paises y personas para que se adepte de forma igualitaria a tod oene le mundo real
-
-- datset: Our final dataset, SA-1B, includes more than 1B masks from 11M licensed and privacy-preserving image 
-- data engine -> se necesitan muechos y variados para una buena generalizaciön -> resolver el problema de que las mascras/filtros no son abundantes:?????
+Un proyecto de SA, **Segmentation Anything**, está compuesto por: tarea o *task*, SAM (*model*) y *data* (*dataset* + *data engine*).
+<figure class="align-center" style="max-width: 80%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SA.png" alt="">
+</figure>
 
 #### Task
-return a valid segmentation mask given any prompt -> ya sea ambiguo o multiple o multitarea(varios tipos de segmentacion) -> para que se avaliado debe devolver una mascra de al menos uno d elos objetos 
-transformar el promt de NPL o segmentacion
-- Es un modelo implementado con *prompt engineering*: el usuario da indicaiones para guiar al modelo -> que segmentar en la iamgen
 
-Este proceso es similar a cómo se pre-entrenan los modelos de procesamiento del lenguaje natural (NLP), donde se les presenta una gran cantidad de texto y se les entrena para predecir la siguiente palabra en una secuencia -> tb se hace un preentrenamiento en este tipo de modelos ----->>> ???? luego ya fine-tuning
+Las *tasks* se basan en el *prompt engineering*, el usuario puede proporcionar especificaciones para orientar al modelo, es decir, indicándole qué segmentar en la imagen. El hecho de ser *prompting* permite su aplicación en una variedad de escenarios, incluyendo tareas con múltiples indicaciones. Para lograrlo, existen diversos tipos de segmentación: semántica, de instancia, detección de bordes, panorámica... El objetivo es obtener al menos una máscara de segmentación válida para cualquier *prompt*, incluso si la tarea es ambigua. Se considera una máscara válida aquella que al menos detecta uno o parte de los objetos solicitados (ver el ejemplo de las tijeras en el apartado [model](#model)).
 
-Los modelos fine-tuned, o modelos ajustados, se refieren a modelos de inteligencia artificial que han sido entrenados en una tarea específica o en un conjunto de datos específico después de haber sido pre-entrenados en un conjunto de datos más amplio. Este proceso de ajuste fino implica tomar un modelo pre-entrenado, que ha aprendido representaciones generales de datos de un conjunto de datos grande y diverso, y luego ajustar los pesos del modelo utilizando datos más específicos o tareas adicionales.
-
-el zero shot y eso  va aqui -> el preentrenamiento
-- zero-shot / few-shot: modelo puede realizar la tarea sin haber sido explícitamente entrenado para ella, simplemente siguiendo las indicaciones dadas en el prompt y sin entrenamiento adicional con nueva simagnes. -----> resultados impresionantes
-
-existen varia stareas de segmentación: semantica, deteccion de bordes, instance, paracopic...
-el ser prompting permite usarlo para numerosas aplicaciones
+El proceso de entrenamiento es similar a cómo se pre-entrenan los modelos de procesamiento del lenguaje natural (NLP). El modelo se entrena con una gran variedad de tareas que fomentan la generalización, con el objetivo de lograr ser ***zero-shot***. Un modelo *zero-shot* es capaz de realizar una tarea sin haber sido explícitamente entrenado para ella y sin necesidad de entrenamiento adicional con nuevos datos. El *fine-tuning* consiste en entrenar un modelo ya pre-entrenado para tareas específicas, lo que suele requerir pocos datos nuevos (*few-shot*).
 
 #### Model
 
-SAM has three components,illustrated in Fig. 4: an image encoder, a flexible prompt encoder, and a fast mask decoder
+Un SAM, *Segemnet Anything model*, tiene tres coponentes: *image endocer*, *promt encoder* y *mask decoder*.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SAM.png" alt="">
+</figure>
 
-image embedding: vector numumerico que represneta la imagen -> producida por el **encoder image**
+- ***Image encoder***: su salida es un vector numérico que representa la imagen, conocido como *image embedding*.
 
-**encoder prompt** -> transformar promt de NLP(texto) o imagnes(puntos, bounding boxes, mascaras) a representaciones numericas
-- mascras dense
-- sparse los otros 3
+- ***Prompt encoder***: es flexible a diversos tipos de *promt*, transformar *promts* de NLP(texto) o imágenes(puntos, *bounding boxes*, máscaras) a representaciones numericas.
 
-**mask decoder**
+- ***Mask decoder***: queremso que nuestro modleo sea eficiente y sea interactivo en *promting* en tiempo real, para ello necesitamos un decodificacor rápido ∼50ms en CPU.
+
 esas pasana al entrda del decofificador permite la sintesis d einfo entre pormt e imagen 
 mascra de segmentacion = "embedding" de la imagen, los "embeddings" de las indicaciones y un token de salida????????
 El "mask decoder" toma la representación de la imagen y las indicaciones como entrada.
@@ -208,9 +211,14 @@ Este "token de salida" representa la predicción del modelo sobre la máscara de
 
  el modelo promediará múltiples máscaras válidas si se le proporciona una indicación ambigua. Para abordar esto, modificamos el modelo para predecir múltiples máscaras de salida para una única indicación. Se considera que 3 salidas para un unico promt es sufuciente para asegurarnos d eobtener una respuest avalida.
 
-, onCPU, in ∼50ms. This runtime performance enables seamless, real-time interactive prompting of our model. ----> eficinecia
+#### Data
 
+anotaciones y dudas:
+-  responsabilida ia -> variaedad de paises y personas para que se adepte de forma igualitaria a tod oene le mundo real
+- datset: Our final dataset, SA-1B, includes more than 1B masks from 11M licensed and privacy-preserving image
+- -----
 - que es la mascara que  se le itrduce al modleo en la conv esa??? para que sirve???
+- data engine -> se necesitan muechos y variados para una buena generalizaciön -> resolver el problema de que las mascras/filtros no son abundantes:
 
 ## EfficientVit
 
