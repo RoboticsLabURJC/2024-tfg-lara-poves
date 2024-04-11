@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-04T21:20:00
+last_modified_at: 2024-04-11T19:21:00
 categories:
   - Blog
 tags:
@@ -67,7 +67,7 @@ En la siguiente imagen podemos ver un ejemplo de red neuronal, en el que cada ne
 - p: número de neuronas y salidas de una capa
 - f: función de activación
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/network.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/network.png" alt="">
 </figure>
 
 El proceso de entrenamiento se divide en dos etapas:
@@ -87,7 +87,7 @@ El entrenamiento se detiene cuando:
 - Se ha alcanzado la precisión deseada.
 - El error de validación diverge del error de entrenamiento, lo cual significa que estamos sobreajustando la red.
 <figure class="align-center" style="max-width: 90%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/error.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/error.png" alt="">
 </figure>
 
 ### Redes neuronales convolucionales
@@ -110,29 +110,29 @@ model = tf.keras.Sequential([
 ])
 ```
 <figure class="align-center" style="max-width: 80%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/CNN.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/deep_learning/perception/CNN.png" alt="">
 </figure>
 
 #### Capa de convolución
 Se aplican *kernels* (o filtros) de dimensiones nxn  para extraer características locales de la imagen. , el *kernel* se va deslizando a los largo de la imagen. El *kernel* se va deslizando a lo largo de la imagen, calculando la suma ponderada de los píxeles en cada ubicación. Cada filtro produce un mapa de características que contiene las características relevantes de la imagen. En el ejemplo proporcionado, se aplican 32 filtros en la primera y cuarta capa de convolución y 64 en la segunda y tercera.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/conv.jpeg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/deep_learning/perception/conv.jpeg" alt="">
 </figure>
 
 La operación de convolución reduce las dimensiones de la matriz de características. Para mantener las dimensiones constante o evitar que lleguen a cero, podemos aplicar la técnica de ***padding***, que consiste en aumentar las dimensiones añadiendo ceros sin modificar la información original. El *padding* es un parámetro flexible que puede añadirse a lo largo de toda la imagen, solo en la parte superior o en cualquier combinación deseada.
 <figure class="align-center" style="max-width: 90%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/padding.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/padding.png" alt="">
 </figure>
 
 Otro parámetro importante es el ***stride***, que determina el número de píxeles que el *kernel* se desplaza dentro de la imagen. Este desplazamiento se aplica tanto en filas como en columnas. En el ejemplo anterior, el *stride* es uno, ahora consideremos un caso donde sea igual a dos:
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/stride.jpeg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/stride.jpeg" alt="">
 </figure>
 
 #### Capa Pooling
 Estas capas reducen las dimensiones del mapa de características preservando la información más importante. Al igual que en la convolución, se desliza un *kernel* sobre la imagen. Aunque el método más común es el ***max pooling***, también existe el *average pooling*.
 <figure class="align-center" style="max-width: 90%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/pooling.jpeg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/pooling.jpeg" alt="">
 </figure>
 
 #### Capa Flatten
@@ -151,12 +151,12 @@ Las redes neuronales recurrentes o **RNN** buscan solucionar problemas en los qu
 
 Necesitamos transformar una frase de un máximo de *p* palabras en una entrada compatible para una red neuronal. Para lograrlo, necesitamos un diccionario que traduzca el texto a *tokens* según su índice. Este proceso se conoce como ***language processing problem***.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/language.jpg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/language.jpg" alt="">
 </figure>
 
 Las RNN incorporan marcas de tiempo, ***timestamps***, para abordar la importancia del orden en la secuencia de datos. Por ejemplo, para los humanos la frase '*I love cats*' es comprensible, mientras que '*I cats love*' no lo es, lo que ilustra la relevancia del orden en el lenguaje natural.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/structure.jpg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/structure.jpg" alt="">
 </figure>
 
 1. Propagación hacia delante:
@@ -174,10 +174,10 @@ Existen diversas estructuras de RNN que podemos seleccionar según el tipo de da
 - ***Bi-Directional RNN***: son útiles en casos donde el contexto es relevante. Por ejemplo: "*Tim is high on drags*" / "*Tim is high in the sky*"; en el primer caso, Tim se refiere a una persona, mientras que en el segundo, se refiere a un pájaro. Es necesario reescribir la fórmula de combinación lineal: y\<t> = f(way * [af\<t>, ab\<t>] + b), donde *af* representa la propagación desde *a0* hasta *aT*, y *ab* representa la propagación desde *aT* hasta *a0*.
 - **LSTM** (*Long Short-Term Memory*): adecuada para procesar frases muy extensas e incluso párrafos. Se añade una nueva salida c a la estructura convencional de las RNNs.
 <figure class="align-center" style="max-width: 95%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/LSTM.jpg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/LSTM.jpg" alt="">
 </figure>
 
-## SA
+## SAM
 
 Un proyecto de SA, **Segmentation Anything**, está compuesto por: tarea o *task*, SAM (*model*) y *data* (*dataset* + *data engine*).
 <figure class="align-center" style="max-width: 80%">
@@ -186,39 +186,40 @@ Un proyecto de SA, **Segmentation Anything**, está compuesto por: tarea o *task
 
 #### Task
 
-Las *tasks* se basan en el *prompt engineering*, el usuario puede proporcionar especificaciones para orientar al modelo, es decir, indicándole qué segmentar en la imagen. El hecho de ser *prompting* permite su aplicación en una variedad de escenarios, incluyendo tareas con múltiples indicaciones. Para lograrlo, existen diversos tipos de segmentación: semántica, de instancia, detección de bordes, panorámica... El objetivo es obtener al menos una máscara de segmentación válida para cualquier *prompt*, incluso si la tarea es ambigua. Se considera una máscara válida aquella que al menos detecta uno o parte de los objetos solicitados (ver el ejemplo de las tijeras en el apartado [model](#model)).
+Las *tasks* se basan en el *prompt engineering*, el usuario puede proporcionar especificaciones para orientar al modelo, es decir, indicándole qué segmentar en la imagen. El hecho de ser *prompting* permite su aplicación en una variedad de escenarios, incluyendo tareas con múltiples indicaciones. Para lograrlo, existen diversos tipos de segmentación: semántica, de instancia, detección de bordes, panorámica... El objetivo es obtener al menos una **máscara de segmentación válida** para cualquier *prompt*, incluso si la tarea es ambigua. Se considera una máscara válida aquella que al menos detecta uno o parte de los objetos solicitados.
+<figure class="align-center" style="max-width: 80%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/task.png" alt="">
+</figure>
+
 
 El proceso de entrenamiento es similar a cómo se pre-entrenan los modelos de procesamiento del lenguaje natural (NLP). El modelo se entrena con una gran variedad de tareas que fomentan la generalización, con el objetivo de lograr ser ***zero-shot***. Un modelo *zero-shot* es capaz de realizar una tarea sin haber sido explícitamente entrenado para ella y sin necesidad de entrenamiento adicional con nuevos datos. El *fine-tuning* consiste en entrenar un modelo ya pre-entrenado para tareas específicas, lo que suele requerir pocos datos nuevos (*few-shot*).
 
 #### Model
 
-Un SAM, *Segemnet Anything model*, tiene tres coponentes: *image endocer*, *promt encoder* y *mask decoder*.
+Un SAM, *Segemnet Anything model*, tiene tres componentes: *image endocer*, *promt encoder* y *mask decoder*.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SAM.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/model.png" alt="">
 </figure>
 
-- ***Image encoder***: su salida es un vector numérico que representa la imagen, conocido como *image embedding*.
+- ***Image encoder***: produce un vector numérico que representa la imagen, conocido como *image embedding*.
 
-- ***Prompt encoder***: es flexible a diversos tipos de *promt*, transformar *promts* de NLP(texto) o imágenes(puntos, *bounding boxes*, máscaras) a representaciones numericas.
+- ***Prompt encoder***: es flexible ante diversos tipos de *promt*: NLP(texto) o imágenes(puntos, *bounding boxes*, máscaras), los cuales transforma a representaciones numéricas.
 
-- ***Mask decoder***: queremso que nuestro modleo sea eficiente y sea interactivo en *promting* en tiempo real, para ello necesitamos un decodificacor rápido ∼50ms en CPU.
-
-esas pasana al entrda del decofificador permite la sintesis d einfo entre pormt e imagen 
-mascra de segmentacion = "embedding" de la imagen, los "embeddings" de las indicaciones y un token de salida????????
-El "mask decoder" toma la representación de la imagen y las indicaciones como entrada.
-Utiliza el modelo preentrenado para procesar la imagen y las indicaciones, y genera un "token de salida".
-Este "token de salida" representa la predicción del modelo sobre la máscara de segmentación, es decir, qué partes de la imagen son probablemente el perro y qué partes son el fondo.
-
- el modelo promediará múltiples máscaras válidas si se le proporciona una indicación ambigua. Para abordar esto, modificamos el modelo para predecir múltiples máscaras de salida para una única indicación. Se considera que 3 salidas para un unico promt es sufuciente para asegurarnos d eobtener una respuest avalida.
+- ***Mask decoder***: permite la síntesis entre *image embedding*, *promt embedding* y el *token* de salida (*mask*). Para asegurar la eficiencia y precisión, el modelo propone tres posibles máscaras de salida ante un único *promt*. Asimismo, para garantizar rapidez y capacidad de interacción en tiempo real, el modelo debe ser capaz de decodificar en aproximadamente 50ms en una CPU.
 
 #### Data
 
-anotaciones y dudas:
--  responsabilida ia -> variaedad de paises y personas para que se adepte de forma igualitaria a tod oene le mundo real
-- datset: Our final dataset, SA-1B, includes more than 1B masks from 11M licensed and privacy-preserving image
-- -----
-- que es la mascara que  se le itrduce al modleo en la conv esa??? para que sirve???
-- data engine -> se necesitan muechos y variados para una buena generalizaciön -> resolver el problema de que las mascras/filtros no son abundantes:
+Nuestro ***dataset***, SA-1B, consta de 11M de imágenes bajo licencia, diversas y de alta resolución (3300x4950 píxeles de media), lo que plantea desafíos en cuanto a accesibilidad y almacenamiento. Además, incluye 1.1B de máscaras de alta calidad generadas automáticamente.
+
+...
+
+#### RAI
+
+La **responsabilidad** en la inteligencia artificial es crucial. Nuestro conjunto de datos garantiza equidad geográfica y de ingresos, todas las regiones cuentan con al menos 28 millones de máscaras, a diferencia de otros conjuntos de datos donde, por ejemplo, África tiene menos peso que continentes como Asia o Europa. Además, asegura imparcialidad en el tratamiento de personas, independientemente de su género, edad o color de piel.
+
+#### Conclusión
+
+SAM es un modelo *zero-shot* que muestra resultados prometedores ene le mundo de la segmentación de imágenes, a pesar de tener algunas limitaciones como la omisión de estructuras finas, se espera que se demuestre su utilidad integrándolo en aplicaciones del mundo real.
 
 ## EfficientVit
 
