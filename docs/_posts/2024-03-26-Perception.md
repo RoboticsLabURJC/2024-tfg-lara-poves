@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-11T19:21:00
+last_modified_at: 2024-04-11T22:09:00
 categories:
   - Blog
 tags:
@@ -20,6 +20,8 @@ tags:
     - [Task](#task)
     - [Model](#model)
     - [Data](#data)
+    - [RAI](#rai)
+    - [Conclusión](#conclusión)
 4. [EfficientVit](#efficientvit)
 5. [Aplicación](#aplicación)
 
