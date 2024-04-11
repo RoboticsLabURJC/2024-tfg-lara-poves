@@ -9,11 +9,11 @@ src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(src_path)
 
 import configcarla
-from configcarla import FRONT
+from configcarla import FRONT, DIST
 
 # Screen
-HEIGHT= 450
-WIDTH = 450
+HEIGHT= 400
+WIDTH = 400
 
 def add_config_vehicles(config, world):
     vehicles = []
@@ -23,11 +23,17 @@ def add_config_vehicles(config, world):
         vehicles.append(v)
 
     return vehicles
+
+def show_hist(dist, bin_edges):
+    plt.hist(dist, bins=bin_edges, edgecolor='black')
+    plt.ylim(0, 65)
+    plt.show()
+
     
 def main():
     # Setup 
     world, client = configcarla.setup_carla(name_world='Town01')
-    screen, clock = configcarla.setup_pygame(size=(WIDTH * 3, HEIGHT * 2), name='Autopilot')
+    screen, clock = configcarla.setup_pygame(size=(WIDTH * 3, HEIGHT * 2), name='Histogram Front-Front')
 
     # Add Ego Vehicle
     ego_transform = carla.Transform(carla.Location(x=140, y=129, z=2.5), carla.Rotation(yaw=180))
@@ -43,19 +49,21 @@ def main():
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), transform=camera_transform)
     camera_transform.location.x = -4.0
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, HEIGHT), transform=camera_transform)
-    lidar = sensors.add_lidar(size_rect=(WIDTH * 2, HEIGHT * 2), init=(WIDTH, 0), scale_lidar=40,
+    lidar = sensors.add_lidar(size_rect=(WIDTH * 2, HEIGHT * 2), init=(WIDTH, 0), scale_lidar=35,
                       transform=lidar_transform)
     
     # Possible configurations of vehicles
     x = ego_transform.location.x
     y = ego_transform.location.y
     z = ego_transform.location.z
-    front_tranform = carla.Transform(carla.Location(x=x-6.0, y=y, z=z), ego_transform.rotation)
+    front_transform = carla.Transform(carla.Location(x=x-6.0, y=y, z=z), ego_transform.rotation)
+    side_transform = carla.Transform(carla.Location(x=x-12.0, y=y+2.5, z=z), ego_transform.rotation)
 
     config_vehicles = [
-        ([front_tranform], ['vehicle.tesla.model3']),
-        ([front_tranform, carla.Transform(carla.Location(x=x-12.0, y=y+3.0, z=z), ego_transform.rotation)],
-         ['vehicle.tesla.model3', 'vehicle.carlamotors.firetruck'])
+        ([], []),
+        ([front_transform], ['vehicle.tesla.model3']),
+        ([front_transform, side_transform], ['vehicle.tesla.model3', 'vehicle.carlamotors.firetruck']),
+        ([front_transform], ['vehicle.yamaha.yzf'])
     ]
 
     # Add first config
@@ -63,7 +71,7 @@ def main():
     front_vehicles = add_config_vehicles(config=config_vehicles[index], world=world)
     
     # Histogram
-    bin_edges = np.linspace(0, 10, num=21)
+    bin_edges = np.linspace(0, 10, num=11)
     plt.xlabel('Distance (m)')
     plt.ylabel('Frecuency')
     plt.title('Histogram Front-Front')
@@ -74,8 +82,9 @@ def main():
                 if event.type == pygame.QUIT:
                     return
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
-                    data = lidar.get_dist_zones()[FRONT]
-                    plt.hist(data, bins=bin_edges, edgecolor='black')
+                    dist = lidar.get_meas_zones()[DIST][FRONT]
+                    plt.hist(dist, bins=bin_edges, edgecolor='black')
+                    plt.ylim(0, 65)
                     plt.show()
 
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_x:
@@ -86,6 +95,7 @@ def main():
                     if index >= len(config_vehicles):
                         index = 0
 
+                    print(f"Changing configutation {index}...")
                     front_vehicles = add_config_vehicles(config=config_vehicles[index], world=world)
             
             sensors.update_data()

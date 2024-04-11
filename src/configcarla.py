@@ -11,10 +11,13 @@ FRONT = 1
 RIGHT = 2
 
 NUM_STATS = 4
-MIN = 0
-MEAN = 1
-MEDIAN = 2
-STD = 3
+MEAN = 0
+MEDIAN = 1
+STD = 2
+MIN = 3
+
+DIST = 0
+Z = 1
 
 def get_angle_range(angle:float):
     if angle > 180.0:
@@ -99,8 +102,9 @@ class Lidar(Sensor):
 
         # Calculate stats
         self.i_threshold = 0.987
+        self.z_threshold = -1.6
         self.stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
-        self.dist_zones = None
+        self.meas_zones = None
         self.size_text = min(int(self.scale / 1.5), 20)
 
         self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness) 
@@ -165,27 +169,34 @@ class Lidar(Sensor):
     
     def __update_stats(self):
         for zone in range(NUM_ZONES):
-            if len(self.dist_zones[zone]) != 0:
-                self.stat_zones[zone][MIN] = np.min(self.dist_zones[zone])
-                self.stat_zones[zone][MEAN] = np.mean(self.dist_zones[zone])
-                self.stat_zones[zone][MEDIAN] = np.median(self.dist_zones[zone])
-                self.stat_zones[zone][STD] = np.std(self.dist_zones[zone])
+            if len(self.meas_zones[DIST][zone]) != 0:
+                # Filter distances by z
+                filter = np.array(self.meas_zones[Z][zone]) > self.z_threshold
+                filtered_dist = np.array(self.meas_zones[DIST][zone])[filter]
+
+                if len(filtered_dist) == 0:
+                    self.stat_zones[zone][MIN] = np.nan
+                else:
+                    self.stat_zones[zone][MIN] = np.min(filtered_dist)
+
+                self.stat_zones[zone][MEAN] = np.mean(self.meas_zones[DIST][zone])
+                self.stat_zones[zone][MEDIAN] = np.median(self.meas_zones[DIST][zone])
+                self.stat_zones[zone][STD] = np.std(self.meas_zones[DIST][zone])
             else:
                 for i in range(NUM_STATS):
                     self.stat_zones[zone][i] = np.nan
 
             stats_text = [
-                "Min = {:.2f}".format(self.stat_zones[zone][MIN]),
                 "Mean = {:.2f}".format(self.stat_zones[zone][MEAN]),
                 "Median = {:.2f}".format(self.stat_zones[zone][MEDIAN]),
-                "Std = {:.2f}".format(self.stat_zones[zone][STD])
+                "Std = {:.2f}".format(self.stat_zones[zone][STD]),
+                "Min(z>{:.1f}) = {:.2f}".format(self.z_threshold, self.stat_zones[zone][MIN])
             ]
 
             # Write stats
             y = self.size_text * 2
             for text in stats_text:
-                self.__write_text(text=text, point=(self.x_text[zone], y),
-                                  img=self.sub_screen, side=zone)
+                self.__write_text(text=text, point=(self.x_text[zone], y), img=self.sub_screen, side=zone)
                 y += self.size_text
 
     def __in_zone(self, zone:int, angle:float):
@@ -218,34 +229,44 @@ class Lidar(Sensor):
         i_max = np.max(lidar_data[:, 3])
 
         self.sub_screen.blit(self.image, (0, 0))
-        self.dist_zones = [[] for _ in range(NUM_ZONES)]
+
+        dist_zones = [[] for _ in range(NUM_ZONES)]
+        z_zones = [[] for _ in range(NUM_ZONES)]
 
         for x, y, z, i in lidar_data:
             zone = self.__get_zone(x=x, y=y)
             if zone < NUM_ZONES and i < self.i_threshold:
-                self.dist_zones[zone].append(math.sqrt(x ** 2 + y ** 2))
+                dist_zones[zone].append(math.sqrt(x ** 2 + y ** 2))
+                z_zones[zone].append(z)
 
             thickness = self.__interpolate_thickness(num=z, min=z_min, max=z_max)
             color = self.__interpolate_color(num=i, min=i_min, max=i_max)
             center = (int(x * self.scale + self.center_screen[0]),
-                        int(y * self.scale + self.center_screen[1]))
+                      int(y * self.scale + self.center_screen[1]))
 
             pygame.draw.circle(self.sub_screen, color, center, thickness)
 
+        self.meas_zones = [dist_zones, z_zones]
         self.__update_stats()            
         self.screen.blit(self.sub_screen, self.rect)
     
-    def set_intensity_threshold(self, i:float):
+    def set_i_threshold(self, i:float):
         self.i_threshold = i
 
-    def get_intensity_threshold(self):
+    def get_i_threshold(self):
         return self.i_threshold
+    
+    def set_z_threshold(self, z:float):
+        self.z_threshold = z
+
+    def get_z_threshold(self):
+        return self.z_threshold
     
     def get_stat_zones(self):
         return self.stat_zones
     
-    def get_dist_zones(self):
-        return self.dist_zones
+    def get_meas_zones(self):
+        return self.meas_zones
 
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface):
