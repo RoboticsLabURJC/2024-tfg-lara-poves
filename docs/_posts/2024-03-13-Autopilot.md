@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-04-11T21:57:00
+last_modified_at: 2024-04-11T22:08:00
 categories:
   - Blog
 tags:
@@ -18,6 +18,7 @@ Una vez habituados con las funciones básicas de CARLA y realizado el teleoperad
    - [Visualización](#visualización)
    - [Zona frontal](#zona-frontal)
      - [Cálculo de estadísticas](#cálculo-de-estadísticas)
+     - [Histogramas](#histogramas)
 
 ## Traffic manager
 
@@ -121,21 +122,21 @@ Como se puede observar en la imagen, los puntos de color rojo corresponden al pr
 Vamos a generar histogramas utilizando las distancias detectadas en la zona central frontal del vehículo, con el objetivo de distinguir la presencia de obstáculos y las distancias a las que se encuentran.
 
 - En un escenario sin obstáculos, observamos que no hay ningún valor que sobresalga entre los demás.
-<figure class="align-center" style="max-width: 80%">
+<figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist_empty.png" alt="">
 </figure>
 
 - Cuando hay un coche delante, notamos cómo se dispara la columna que representa el rango de distancia de 5-6 metros, lo cual concuerda con la medida mínima detectada.
-<figure class="align-center" style="max-width: 80%">
+<figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist_car.png" alt="">
 </figure>
 
 - Si añadimos un camión a la izquierda, observamos que las medidas en el rango de 8-9 metros aumentan considerablemente. Hay dos columnas que sobresalen sobre las demás, indicando la presencia de dos obstáculos.
-<figure class="align-center" style="max-width: 80%">
+<figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist_car_truck.png" alt="">
 </figure>
 
 - En el caso de tener una moto delante, el cambio en los valores no es tan significativo como en el caso del coche, dado que es de tamaño menor. Sin embargo, el cambio es lo suficientemente notable respecto al escenario vacío como para detectar la presencia de la motocicleta.
-<figure class="align-center" style="max-width: 80%">
+<figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist_motorbike.png" alt="">
 </figure>
