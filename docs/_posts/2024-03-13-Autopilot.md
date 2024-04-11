@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-04-08T21:26:00
+last_modified_at: 2024-04-11T21:57:00
 categories:
   - Blog
 tags:
@@ -39,10 +39,16 @@ class Vehicle_sensors:
 class Lidar(Sensor): 
     def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,
                  scale:int, front_angle:int, yaw:float, screen:pygame.Surface)
-    def process_data(self):
 
-    def set_intensity_threshold(self, i:float)
-    def get_intensity_threshold(self)
+    def process_data(self)
+    def get_stat_zones(self)
+    def get_meas_zones(self)
+    
+    def set_i_threshold(self, i:float)
+    def get_i_threshold(self)
+    
+    def set_z_threshold(self, z:float)
+    def get_z_threshold(self)
 ```
 
 En primer lugar, es necesario transformar los datos del láser en una matriz de matrices, donde cada submatriz almacena las coordenadas *x*, *y*, *z* y la intensidad respectivamente. Cada una de estas submatrices representa un punto.
@@ -102,10 +108,34 @@ En nuestro caso, con un *yaw* de 90º, obtendríamos los ángulos: [-165.0, -115
 
 #### Cálculo de estadísticas
 ---
-Hacemos tres listas, cada una correspondiente a una de las zona, en las que guardamos las distancias desde el punto hasta el centro del láser en el plano XY. Utilizamos estas medidas para calcular el mínimo, la media, la mediana y la desviación estándar de los en cada zona del láser. _______ retocar y completar
 
-Como se puede observar en la imagen, los puntos de color rojo corresponden al propio coche, por lo tanto, hemos realizado un filtrado por intensidad para eliminarlos del cálculo estadístico. Este umbral tiene un valor predeterminado establecido en el constructor, pero hemos implementado unas funciones para consultar o modificar su valor.
+Creamos una lista de dos elementos ***meas_zones***. En el primero, almacenamos una lista que a su vez contiene tres listas, cada una contiene las distancias desde el punto hasta el centro del láser en el plano XY de cada zona. En el segundo elemento, guardamos de la misma manera las alturas *z*. Utilizamos estas medidas para calcular la media, la mediana, la desviación estándar y el mínimo en cada zona, ***stat_zones***.
+
+Como se puede observar en la imagen, los puntos de color rojo corresponden al propio coche, por lo tanto, hemos realizado un filtrado por intensidad para eliminarlos del cálculo estadístico. Este umbral tiene un valor predeterminado establecido en el constructor, pero hemos implementado unas funciones para consultar o modificar su valor. De manera similar, para calcular el mínimo, filtramos por altura para eliminar todos los puntos correspondientes a la calzada.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/stats.png" alt="">
 </figure>
 
+#### Histogramas
+
+Vamos a generar histogramas utilizando las distancias detectadas en la zona central frontal del vehículo, con el objetivo de distinguir la presencia de obstáculos y las distancias a las que se encuentran.
+
+- En un escenario sin obstáculos, observamos que no hay ningún valor que sobresalga entre los demás.
+<figure class="align-center" style="max-width: 80%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist_empty.png" alt="">
+</figure>
+
+- Cuando hay un coche delante, notamos cómo se dispara la columna que representa el rango de distancia de 5-6 metros, lo cual concuerda con la medida mínima detectada.
+<figure class="align-center" style="max-width: 80%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist_car.png" alt="">
+</figure>
+
+- Si añadimos un camión a la izquierda, observamos que las medidas en el rango de 8-9 metros aumentan considerablemente. Hay dos columnas que sobresalen sobre las demás, indicando la presencia de dos obstáculos.
+<figure class="align-center" style="max-width: 80%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist_car_truck.png" alt="">
+</figure>
+
+- En el caso de tener una moto delante, el cambio en los valores no es tan significativo como en el caso del coche, dado que es de tamaño menor. Sin embargo, el cambio es lo suficientemente notable respecto al escenario vacío como para detectar la presencia de la motocicleta.
+<figure class="align-center" style="max-width: 80%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist_motorbike.png" alt="">
+</figure>
