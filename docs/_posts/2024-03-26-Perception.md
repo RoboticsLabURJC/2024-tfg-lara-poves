@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-11T22:09:00
+last_modified_at: 2024-04-13T18:23:00
 categories:
   - Blog
 tags:
@@ -228,15 +228,45 @@ Para valorar la caliad de la máscra de segmentación de salida, establecemos ua
         Puntuación de error (1): la máscara no coincide en absoluto con el objeto deseado.
     </div>
     <div style="flex: 1;">
-        <img src="sam_mask1.png" alt="">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/sam_mask1.png" alt="">
     </div>
 </div>
 
-- Puntuación de error (1): la máscra no coincide con el objeto en absoluto.
-- Puntuación baja (2-4):máscra con muchos errores, incluye otro objetos o falta mucha región del objeto solicitado
-<figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/model.png" alt="">
-</figure>
+<div style="display: flex; align-items: center;">
+    <div style="flex: 1;">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/sam_mask2-4.png" alt="">
+    </div>
+    <div style="flex: 1;">
+        Puntuación baja (2-4): a máscara presenta numerosos errores, como la inclusión de otros objetos o la omisión de gran parte del objeto solicitado.
+    </div>
+</div>
+
+<div style="display: flex; align-items: center;">
+    <div style="flex: 1;">
+        Puntuación media (5-6): la máscara segmenta el objeto indicado, pero aún presenta errores semánticos y en los bordes.
+    </div>
+    <div style="flex: 1;">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/sam_mask5-6.png" alt="">
+    </div>
+</div>
+
+<div style="display: flex; align-items: center;">
+    <div style="flex: 1;">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/sam_mask7-9.png" alt="">
+    </div>
+    <div style="flex: 1;">
+        Puntuación alta (7-9): solo presenta pequeños errores en los límites. En el ejemplo, la máscara no define adecuadamente una de las piernas traseras e incluye toda la equipación del caballo.
+    </div>
+</div>
+
+<div style="display: flex; align-items: center;">
+    <div style="flex: 1;">
+        Puntuación excelente (10): no hay errores visibles.
+    </div>
+    <div style="flex: 1;">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/sam_mask10.png" alt="">
+    </div>
+</div>
 
 ## EfficientVit
 
