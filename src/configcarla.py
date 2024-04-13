@@ -3,7 +3,16 @@ import pygame
 import numpy as np
 import math
 import random
-from queue import Queue
+from queue import LifoQueue
+import sys
+import os
+from PIL import Image
+
+sys.path.insert(0, '/home/alumnos/lara/efficientvit-urjc/urjc')
+sys.path.insert(0, '/home/alumnos/lara/efficientvit-urjc')
+os.chdir('/home/alumnos/lara/efficientvit-urjc/urjc')
+
+import EfficientVit as EV
 
 NUM_ZONES = 3
 LEFT = 0
@@ -30,7 +39,7 @@ def get_angle_range(angle:float):
 class Sensor():
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
-        self.queue = Queue()
+        self.queue = LifoQueue()
         self.sensor.listen(lambda data: self.__update_data(data))
 
     def __update_data(self, data):
@@ -46,29 +55,52 @@ class Sensor():
         pass
 
 class CameraRGB(Sensor):      
-    def __init__(self, size:tuple[int, int], init:tuple[int, int], 
-                 sensor:carla.Sensor, screen:pygame.Surface):
+    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
+                 screen:pygame.Surface, seg:bool, init_seg:tuple[int, int]):
         super().__init__(sensor=sensor)
 
-        sub_screen = pygame.Surface(size)
-        self.rect = sub_screen.get_rect(topleft=init)
         self.screen = screen
+        self.seg = seg
+        if seg:
+            self.seg_model = EV.EfficientVit(cuda_device="cuda:3")
+
+        sub_screen = pygame.Surface(size)
+        self.rect_org = sub_screen.get_rect(topleft=init)
+        self.rect_seg = sub_screen.get_rect(topleft=init_seg)
 
     def process_data(self):
         image = self.get_last_data()
-        if image != None:
-            image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
-            image_data = np.reshape(image_data, (image.height, image.width, 4))
+        if image == None:
+            return
 
-            # Swap blue and red channels
-            image_data = image_data[:, :, (2, 1, 0)]
+        image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
+        image_data = np.reshape(image_data, (image.height, image.width, 4))
 
-            # Reserve mirror effect
-            image_surface = pygame.surfarray.make_surface(image_data)
-            flipped_surface = pygame.transform.flip(image_surface, True, False)
+        # Swap blue and red channels
+        image_data = image_data[:, :, (2, 1, 0)]
 
-            screen_surface = pygame.transform.scale(flipped_surface, self.rect.size)
-            self.screen.blit(screen_surface, self.rect)
+        # Reserve mirror effect
+        image_surface = pygame.surfarray.make_surface(image_data)
+        flipped_surface = pygame.transform.flip(image_surface, True, False)
+
+        screen_surface = pygame.transform.scale(flipped_surface, self.rect_org.size)
+        self.screen.blit(screen_surface, self.rect_org)
+
+        if self.seg:
+            # Get image from pygame surface
+            image_pygame = pygame.surfarray.array3d(screen_surface)
+            image = Image.fromarray(image_pygame)
+
+            # Create a canvas with the segmentation output
+            pred = self.seg_model.predict(image)
+            canvas, _ = self.seg_model.get_canvas(np.array(image), pred)
+            canvas = Image.fromarray(canvas)
+
+            surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
+            surface_seg = pygame.transform.rotate(surface_seg, -90)
+            surface_seg = pygame.transform.flip(surface_seg, True, False)
+
+            self.screen.blit(surface_seg, self.rect_seg)
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
@@ -293,10 +325,11 @@ class Vehicle_sensors:
         self.sensors.append(sensor_class)
         return sensor_class
     
-    def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), 
-                       transform:carla.Transform=carla.Transform()):
+    def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), seg:bool=False,
+                       transform:carla.Transform=carla.Transform(), init_seg:tuple[int, int]=(0, 0)):
         sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform)
-        camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.screen)
+        camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.screen, 
+                           seg=seg, init_seg=init_seg)
         self.sensors.append(camera)
         return camera
     
