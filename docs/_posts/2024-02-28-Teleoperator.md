@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-04-08T21:09:00
+last_modified_at: 2024-04-13T22:36:00
 categories:
   - Blog
 tags:
@@ -65,13 +65,13 @@ class Vehicle_sensors:
     def destroy(self)
 ```
 
-Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola *thread_safe* y acilita el acceso al dato más reciente. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor si deseamos procesar los datos del mismo en cada *tick*, permitiéndonos actualizar su información en la pantalla.
+Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola LIFO *thread_safe* y facilita el acceso al dato más reciente. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor si deseamos procesar los datos del mismo en cada *tick*, permitiéndonos actualizar su información en la pantalla.
 
 ```python
 class Sensor():
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
-        self.queue = Queue()
+        self.queue = LifoQueue()
         self.sensor.listen(lambda data: self.__update_data(data))
 
     def __update_data(self, data):
