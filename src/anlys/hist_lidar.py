@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.append(src_path)
+sys.path.insert(0, src_path)
 
 import configcarla
 from configcarla import FRONT, DIST
@@ -17,7 +17,6 @@ WIDTH = 400
 
 def add_config_vehicles(config, world):
     vehicles = []
-
     for i in range(len(config[0])):
         v = configcarla.add_one_vehicle(transform=config[0][i], world=world, vehicle_type=config[1][i])
         vehicles.append(v)
@@ -28,7 +27,6 @@ def show_hist(dist, bin_edges):
     plt.hist(dist, bins=bin_edges, edgecolor='black')
     plt.ylim(0, 65)
     plt.show()
-
     
 def main():
     # Setup 
