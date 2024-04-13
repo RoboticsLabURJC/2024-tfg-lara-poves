@@ -193,7 +193,6 @@ Las *tasks* se basan en el *prompt engineering*, el usuario puede proporcionar e
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/task.png" alt="">
 </figure>
 
-
 El proceso de entrenamiento es similar a cómo se pre-entrenan los modelos de procesamiento del lenguaje natural (NLP). El modelo se entrena con una gran variedad de tareas que fomentan la generalización, con el objetivo de lograr ser ***zero-shot***. Un modelo *zero-shot* es capaz de realizar una tarea sin haber sido explícitamente entrenado para ella y sin necesidad de entrenamiento adicional con nuevos datos. El *fine-tuning* consiste en entrenar un modelo ya pre-entrenado para tareas específicas, lo que suele requerir pocos datos nuevos (*few-shot*).
 
 #### Model
@@ -203,8 +202,8 @@ Un SAM, *Segemnet Anything model*, tiene tres componentes: *image endocer*, *pro
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/model.png" alt="">
 </figure>
 
-- ***Image encoder***: produce un vector numérico que representa la imagen, conocido como *image embedding*.
-
+- ***Image encoder***: convierte las imágenes de entrada en representaciones numéricas a través de un proceso que incluye rescalado, convoluciones y finalmente normalización. Este proceso reduce las dimensiones de la imagen a 64x64, generando lo que se conoce como *image embedding*.
+  
 - ***Prompt encoder***: es flexible ante diversos tipos de *promt*: NLP(texto) o imágenes(puntos, *bounding boxes*, máscaras), los cuales transforma a representaciones numéricas.
 
 - ***Mask decoder***: permite la síntesis entre *image embedding*, *promt embedding* y el *token* de salida (*mask*). Para asegurar la eficiencia y precisión, el modelo propone tres posibles máscaras de salida ante un único *promt*. Asimismo, para garantizar rapidez y capacidad de interacción en tiempo real, el modelo debe ser capaz de decodificar en aproximadamente 50ms en una CPU.
@@ -213,7 +212,7 @@ Un SAM, *Segemnet Anything model*, tiene tres componentes: *image endocer*, *pro
 
 Nuestro ***dataset***, SA-1B, consta de 11M de imágenes bajo licencia, diversas y de alta resolución (3300x4950 píxeles de media), lo que plantea desafíos en cuanto a accesibilidad y almacenamiento. Además, incluye 1.1B de máscaras de alta calidad generadas automáticamente.
 
-...
+... + b appendix
 
 #### RAI
 
@@ -221,7 +220,7 @@ La **responsabilidad** en la inteligencia artificial es crucial. Nuestro conjunt
 
 #### Conclusión
 
-SAM es un modelo *zero-shot* que muestra resultados prometedores ene le mundo de la segmentación de imágenes, a pesar de tener algunas limitaciones como la omisión de estructuras finas, se espera que se demuestre su utilidad integrándolo en aplicaciones del mundo real.
+SAM es un modelo *zero-shot*, pues evaluamos su rendimiento con 23 datasets y tareas nuevas que no formaron parte de su entrenamiento original, mostrando resultados prometedores en el mundo de la segmentación de imágenes. Aunque presenta algunas limitaciones, como la omisión de estructuras finas, se espera que su utilidad se demuestre al integrarlo en aplicaciones del mundo real.
 
 Para valorar la caliad de la máscra de segmentación de salida, establecemos uan puntación del 1-10:
 <div style="display: flex; align-items: center;">
