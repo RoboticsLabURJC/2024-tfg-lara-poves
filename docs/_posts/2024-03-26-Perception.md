@@ -223,6 +223,22 @@ La **responsabilidad** en la inteligencia artificial es crucial. Nuestro conjunt
 
 SAM es un modelo *zero-shot* que muestra resultados prometedores ene le mundo de la segmentación de imágenes, a pesar de tener algunas limitaciones como la omisión de estructuras finas, se espera que se demuestre su utilidad integrándolo en aplicaciones del mundo real.
 
+Para valorar la caliad de la máscra de segmentación de salida, establecemos uan puntación del 1-10:
+<div style="display: flex; align-items: center;">
+    <div style="flex: 1;">
+        Puntuación de error (1): la máscara no coincide en absoluto con el objeto deseado.
+    </div>
+    <div style="flex: 1;">
+        <img src="sam_mask1.png" alt="">
+    </div>
+</div>
+
+- Puntuación de error (1): la máscra no coincide con el objeto en absoluto.
+- Puntuación baja (2-4):máscra con muchos errores, incluye otro objetos o falta mucha región del objeto solicitado
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/model.png" alt="">
+</figure>
+
 ## EfficientVit
 
 ## Aplicación
