@@ -7,6 +7,7 @@ from queue import LifoQueue
 import sys
 import os
 from PIL import Image
+import time
 
 sys.path.insert(0, '/home/alumnos/lara/efficientvit-urjc/urjc')
 sys.path.insert(0, '/home/alumnos/lara/efficientvit-urjc')
@@ -36,14 +37,40 @@ def get_angle_range(angle:float):
 
     return angle
 
+def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=False, 
+               side:int=FRONT, size:int=50, color:tuple[int, int, int]=(255, 255, 255)):
+    font = pygame.font.Font(pygame.font.match_font('tlwgtypo'), size)
+    if bold:
+        font.set_bold(True)
+        
+    text = font.render(text, True, color)
+    text_rect = text.get_rect()
+
+    if side == LEFT:
+        text_rect.topleft = point 
+    elif side == RIGHT:
+        text_rect.topright = point
+    else:
+        text_rect.center = point
+
+    img.blit(text, text_rect)
+
 class Sensor():
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
         self.queue = LifoQueue()
         self.sensor.listen(lambda data: self.__update_data(data))
+        self.data_processed = None
 
     def __update_data(self, data):
         self.queue.put(data)
+
+    def update_data_processed(self):
+        self.data_processed = self.get_last_data()
+
+        if self.data_processed != None:
+            return self.data_processed.frame
+        return 0
 
     def get_last_data(self):
         if not self.queue.empty():
@@ -69,7 +96,7 @@ class CameraRGB(Sensor):
         self.rect_seg = sub_screen.get_rect(topleft=init_seg)
 
     def process_data(self):
-        image = self.get_last_data()
+        image = self.data_processed
         if image == None:
             return
 
@@ -87,11 +114,11 @@ class CameraRGB(Sensor):
         self.screen.blit(screen_surface, self.rect_org)
 
         if self.seg:
-            image = Image.fromarray(image_data)
+            image_seg = Image.fromarray(image_data)
 
             # Create a canvas with the segmentation output
-            pred = self.seg_model.predict(image)
-            canvas, _ = self.seg_model.get_canvas(np.array(image), pred)
+            pred = self.seg_model.predict(image_seg)
+            canvas, _ = self.seg_model.get_canvas(np.array(image_seg), pred)
             canvas = Image.fromarray(canvas)
 
             surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
@@ -140,26 +167,6 @@ class Lidar(Sensor):
         self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness) 
         self.image = self.__get_back_image()
 
-    def __write_text(self, text:str, img:pygame.Surface, point:tuple[int, int],
-                    side:int=FRONT, bold:bool=False, color:tuple[int, int, int]=None):
-        font = pygame.font.Font(pygame.font.match_font('tlwgtypo'), self.size_text)
-        if bold:
-            font.set_bold(True)
-            
-        if color == None:
-            color = (255, 255, 255)
-        text = font.render(text, True, color)
-        text_rect = text.get_rect()
-
-        if side == LEFT:
-            text_rect.topleft = point 
-        elif side == RIGHT:
-            text_rect.topright = point
-        else:
-            text_rect.center = point
-
-        img.blit(text, text_rect)
-
     def __get_back_image(self):
         image = pygame.Surface(self.size_screen)
         mult = 10 * self.scale
@@ -177,9 +184,9 @@ class Lidar(Sensor):
                 y_zone = max(self.center_screen[1] + mult * math.sin(math.radians(angle)), 
                              self.size_text * (NUM_STATS + 2)) # Make sure to write behind the text
                 
-                self.__write_text(text=text[i], img=image, point=(x_zone, y_zone),bold=True)
-                self.__write_text(text=text_zone[i], img=image, side=i, color=(255, 165, 180),
-                                  point=(self.x_text[i], self.size_text), bold=True)
+                write_text(text=text[i], img=image, point=(x_zone, y_zone), bold=True, size=self.size_text)
+                write_text(text=text_zone[i], img=image, side=i, color=(255, 165, 180), bold=True,
+                           point=(self.x_text[i], self.size_text), size=self.size_text)
         return image
     
     def __interpolate_thickness(self, num:float, min:float, max:float):
@@ -226,7 +233,8 @@ class Lidar(Sensor):
             # Write stats
             y = self.size_text * 2
             for text in stats_text:
-                self.__write_text(text=text, point=(self.x_text[zone], y), img=self.sub_screen, side=zone)
+                write_text(text=text, point=(self.x_text[zone], y), img=self.sub_screen, 
+                           side=zone, size=self.size_text)
                 y += self.size_text
 
     def __in_zone(self, zone:int, angle:float):
@@ -245,7 +253,7 @@ class Lidar(Sensor):
         return NUM_ZONES
 
     def process_data(self):
-        lidar = self.get_last_data()
+        lidar = self.data_processed
         if lidar == None:
             return
         
@@ -305,6 +313,10 @@ class Vehicle_sensors:
         self.screen = screen
         self.sensors = []
 
+        self.time_frame = -1.0
+        self.count_frame = 0
+        self.write_frame = 0
+
     def __put_sensor(self, sensor_type:str, transform:carla.Transform, lidar:bool=False):
         try:
             sensor_bp = self.world.get_blueprint_library().find(sensor_type)
@@ -341,9 +353,25 @@ class Vehicle_sensors:
         return lidar
 
     def update_data(self):
+        # Pick data in the same frame
+        for sensor in self.sensors:
+            frame = sensor.update_data_processed()
+        
+        if self.time_frame < 0:
+            self.time_frame = time.time()
+            self.count_frame = frame
+
         for sensor in self.sensors:
             sensor.process_data()
-            
+
+        if time.time() - self.time_frame > 1:
+            self.time_frame = time.time()
+            self.write_frame = frame - self.count_frame
+            self.count_frame = frame
+
+        write_text(text="FPS: "+str(self.write_frame), img=self.screen, color=(0, 0, 0),
+                   bold=True, point=(50, 15), size=23)
+        
         pygame.display.flip()
 
     def destroy(self):
@@ -431,12 +459,10 @@ def center_spectator(world:carla.World, transform:carla.Transform,
 
 def setup_pygame(size:tuple[int, int], name:str):
     pygame.init()
-    clock = pygame.time.Clock()
-
     screen = pygame.display.set_mode(size)
     pygame.display.set_caption(name)
 
-    return screen, clock
+    return screen
 
 def add_vehicles_randomly(world:carla.World, number:int):
     vehicle_bp = world.get_blueprint_library().filter('*vehicle*')

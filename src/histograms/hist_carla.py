@@ -2,8 +2,8 @@ import pygame
 import carla
 import os
 import sys
-import matplotlib.pyplot as plt
-import numpy as np
+import csv
+import argparse
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -15,20 +15,20 @@ from configcarla import FRONT, DIST
 HEIGHT= 400
 WIDTH = 400
 
+TITLE = 0
+TRANSFORM = 1
+VEHICLE = 2
+
 def add_config_vehicles(config, world):
     vehicles = []
-    for i in range(len(config[0])):
-        v = configcarla.add_one_vehicle(transform=config[0][i], world=world, vehicle_type=config[1][i])
+    for i in range(len(config[TRANSFORM])):
+        v = configcarla.add_one_vehicle(transform=config[TRANSFORM][i], world=world, 
+                                        vehicle_type=config[VEHICLE][i])
         vehicles.append(v)
 
     return vehicles
-
-def show_hist(dist, bin_edges):
-    plt.hist(dist, bins=bin_edges, edgecolor='black')
-    plt.ylim(0, 65)
-    plt.show()
     
-def main():
+def main(mode):
     # Setup 
     world, client = configcarla.setup_carla(name_world='Town01')
     screen, clock = configcarla.setup_pygame(size=(WIDTH * 3, HEIGHT * 2), name='Histogram Front-Front')
@@ -57,23 +57,22 @@ def main():
     front_transform = carla.Transform(carla.Location(x=x-6.0, y=y, z=z), ego_transform.rotation)
     side_transform = carla.Transform(carla.Location(x=x-12.0, y=y+2.5, z=z), ego_transform.rotation)
 
-    config_vehicles = [
-        ([], []),
-        ([front_transform], ['vehicle.tesla.model3']),
-        ([front_transform, side_transform], ['vehicle.tesla.model3', 'vehicle.carlamotors.firetruck']),
-        ([front_transform], ['vehicle.yamaha.yzf'])
+    configuration = [
+        ('Empty', [], []),
+        ('Car', [front_transform], ['vehicle.tesla.model3']),
+        ('Motorbike', [front_transform], ['vehicle.yamaha.yzf']),
+        ('Car + Truck', [front_transform, side_transform], 
+         ['vehicle.tesla.model3', 'vehicle.carlamotors.firetruck'])
     ]
 
     # Add first config
     index = 0
-    front_vehicles = add_config_vehicles(config=config_vehicles[index], world=world)
+    front_vehicles = add_config_vehicles(config=configuration[index], world=world)
+
+    # Open csv file
+    csv_file= open('/home/alumnos/lara/2024-tfg-lara-poves/src/histograms/hist_data.csv', mode, newline='') 
+    csv_desktop = csv.writer(csv_file)
     
-    # Histogram
-    bin_edges = np.linspace(0, 10, num=11)
-    plt.xlabel('Distance (m)')
-    plt.ylabel('Frecuency')
-    plt.title('Histogram Front-Front')
-        
     try:
         while True:
             for event in pygame.event.get():
@@ -81,20 +80,20 @@ def main():
                     return
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
                     dist = lidar.get_meas_zones()[DIST][FRONT]
-                    plt.hist(dist, bins=bin_edges, edgecolor='black')
-                    plt.ylim(0, 65)
-                    plt.show()
+                    dist.insert(0, configuration[index][TITLE])
+                    csv_desktop.writerow(dist)
+                    print("Save data:", configuration[index][TITLE])
 
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_x:
                     for v in front_vehicles:
                         v.destroy()
 
                     index += 1
-                    if index >= len(config_vehicles):
+                    if index >= len(configuration):
                         index = 0
 
-                    print(f"Changing configutation {index}...")
-                    front_vehicles = add_config_vehicles(config=config_vehicles[index], world=world)
+                    print("Set configuration: ", configuration[index][TITLE])
+                    front_vehicles = add_config_vehicles(config=configuration[index], world=world)
             
             sensors.update_data()
             clock.tick(120) # Frame rate
@@ -104,7 +103,15 @@ def main():
 
     finally:
         sensors.destroy()
+        for v in front_vehicles:
+            v.destroy()
+
+        csv_file.close()
         pygame.quit()
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Specified opening mode for csv file")
+    current_path = os.path.abspath(__file__)
+    parser.add_argument("mode", choices=["a", "w"])
+    args = parser.parse_args()    
+    main(args.mode)
