@@ -62,7 +62,7 @@ class CameraRGB(Sensor):
         self.screen = screen
         self.seg = seg
         if seg:
-            self.seg_model = EV.EfficientVit(cuda_device="cuda:3")
+            self.seg_model = EV.EfficientVit(cuda_device="cuda:3", model="l2")
 
         sub_screen = pygame.Surface(size)
         self.rect_org = sub_screen.get_rect(topleft=init)
@@ -87,9 +87,7 @@ class CameraRGB(Sensor):
         self.screen.blit(screen_surface, self.rect_org)
 
         if self.seg:
-            # Get image from pygame surface
-            image_pygame = pygame.surfarray.array3d(screen_surface)
-            image = Image.fromarray(image_pygame)
+            image = Image.fromarray(image_data)
 
             # Create a canvas with the segmentation output
             pred = self.seg_model.predict(image)
@@ -97,8 +95,8 @@ class CameraRGB(Sensor):
             canvas = Image.fromarray(canvas)
 
             surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
+            surface_seg = pygame.transform.scale(surface_seg, self.rect_org.size)
             surface_seg = pygame.transform.rotate(surface_seg, -90)
-            surface_seg = pygame.transform.flip(surface_seg, True, False)
 
             self.screen.blit(surface_seg, self.rect_seg)
         
