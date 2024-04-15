@@ -270,6 +270,17 @@ Para valorar la caliad de la máscra de segmentación de salida, establecemos ua
 
 ## EfficientVit
 
+- High-resolution dense prediction
+- This work presents EfficientViT, a new family of highresolution vision models with novel multi-scale linear attention
+- achieve de goal with only lightweight and hardware-efficient operations -> speedup
+- high-resolution dense prediction models require high-resolution images and strong context information extraction ability to work well
+- significa que simplemente trasladar arquitecturas de modelos eficientes de clasificación de imágenes no es adecuado para la predicción densa de alta resolución. En otras palabras, no se puede simplemente tomar un modelo diseñado para clasificar imágenes y esperar que funcione bien para predecir información detallada en imágenes de alta resolución. La tarea de predicción densa de alta resolución requiere un enfoque específico y adaptado a sus requisitos, que pueden incluir la captura de detalles finos y la extracción de información contextual significativa. ahí es donde entra efficient
+- Our module is motivated by prior SOTA highresolution dense prediction models -> muy lento, no es factible en aplicaiones en tiempo real, de ellos coge:
+  - El "multi-scale learning" se refiere a la capacidad de un modelo para aprender y comprender información a diferentes escalas espaciales dentro de una imagen. Esto significa que el modelo puede capturar tanto detalles finos como características más grandes y globales en la imagen. En otras palabras, el modelo puede analizar tanto los detalles más pequeños como los patrones más amplios y contextuales presentes en la imagen.
+  - Un "global receptive field" significa que la red puede considerar toda la imagen, lo que puede ser crucial para comprender el contexto y las relaciones entre diferentes partes de la imagen.
+  - les faltan las mejoras hardware
+- operación hardware inificiente qu ecambiamos: substituting the inefficient softmax attention with lightweight ReLUlinear attention to have the global receptive field
+
 ## Aplicación
 
 Red de segmentación semántica.
