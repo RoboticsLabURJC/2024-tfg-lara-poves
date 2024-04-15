@@ -1,6 +1,7 @@
 import pygame
 import carla
 import configcarla
+import time
 
 # Screen
 HEIGHT= 450
@@ -38,7 +39,10 @@ def main():
     vehicles = configcarla.add_vehicles_randomly(world=world, number=10)
     vehicles.append(ego_vehicle)
     vehicles.append(front_vehicle)
-    tm = configcarla.traffic_manager(client=client, vehicles=vehicles, dist=10.0, speed_lower=50)
+    #tm = configcarla.traffic_manager(client=client, vehicles=vehicles, dist=10.0, speed_lower=50)
+
+    # Time to set everything
+    time.sleep(3)
     
     try:
         while True:
