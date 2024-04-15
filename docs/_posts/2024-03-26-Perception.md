@@ -16,13 +16,13 @@ tags:
     - [Redes neuronales](#redes-neuronales)
     - [Redes neuronales convolucionales](#redes-neuronales-convolucionales)
     - [Redes neuronales recurrentes](#redes-neuronales-recurrentes)
-3. [SA](#sa)
+3. [EfficientVit](#efficientvit)
+4. [SA](#sa)
     - [Task](#task)
     - [Model](#model)
     - [Data](#data)
     - [RAI](#rai)
     - [Conclusión](#conclusión)
-4. [EfficientVit](#efficientvit)
 5. [Aplicación](#aplicación)
 
 ## Clasificación vs detección vs segmentación
@@ -179,6 +179,39 @@ Existen diversas estructuras de RNN que podemos seleccionar según el tipo de da
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/LSTM.jpg" alt="">
 </figure>
 
+## EfficientVit
+
+- High-resolution dense prediction
+- We extensively evaluate EfficientViT on two popular
+high-resolution dense prediction tasks: semantic segmentation and super-resolution
+- se aplica EfficientViT a "Segment Anything"
+- This work presents EfficientViT, a new family of highresolution vision models with novel multi-scale linear attention
+- achieve de goal with only lightweight and hardware-efficient operations -> speedup
+- high-resolution dense prediction models require high-resolution images and strong context information extraction ability to work well
+- significa que simplemente trasladar arquitecturas de modelos eficientes de clasificación de imágenes no es adecuado para la predicción densa de alta resolución. En otras palabras, no se puede simplemente tomar un modelo diseñado para clasificar imágenes y esperar que funcione bien para predecir información detallada en imágenes de alta resolución. La tarea de predicción densa de alta resolución requiere un enfoque específico y adaptado a sus requisitos, que pueden incluir la captura de detalles finos y la extracción de información contextual significativa. ahí es donde entra efficient
+- Our module is motivated by prior SOTA highresolution dense prediction models -> muy lento, no es factible en aplicaiones en tiempo real, de ellos coge:
+  - El "multi-scale learning" se refiere a la capacidad de un modelo para aprender y comprender información a diferentes escalas espaciales dentro de una imagen. Esto significa que el modelo puede capturar tanto detalles finos como características más grandes y globales en la imagen. En otras palabras, el modelo puede analizar tanto los detalles más pequeños como los patrones más amplios y contextuales presentes en la imagen.
+  - Un "global receptive field" significa que la red puede considerar toda la imagen, lo que puede ser crucial para comprender el contexto y las relaciones entre diferentes partes de la imagen.
+  - les faltan las mejoras hardware
+- operación hardware inificiente qu ecambiamos: substituting the inefficient softmax attention with lightweight ReLUlinear attention to have the global receptive field -> relu reduce  from quadratic to linear while preserving functionality.
+- con relu no es capaz de almacenar su info local , tiene limitaciones-> por lo tanto dificulta su capacidad de aprender:
+    -Enhancing ReLU Linear Attention with Convolution: La idea es mejorar la atención lineal ReLU utilizando convoluciones. Esto implica aplicar operaciones de convolución a los datos de entrada antes de realizar la atención lineal ReLU. Las convoluciones pueden ayudar a capturar características locales y globales de los datos de entrada, lo que puede mejorar el rendimiento del modelo.
+
+    -Introducing Multi-Scale Linear Attention Module: Se propone un módulo de atención lineal multi-escala para abordar las limitaciones de capacidad de la atención lineal ReLU. Esto implica combinar tokens cercanos utilizando convoluciones con pequeños núcleos para generar tokens multi-escala. Estos tokens multi-escala se utilizan luego para realizar la atención lineal ReLU, lo que permite combinar el campo receptivo global con el aprendizaje multi-escala.
+
+    -Inserting Depthwise Convolutions into FFN Layers: Además de las convoluciones para mejorar la atención lineal ReLU, se proponen convoluciones de profundidad en las capas de red neuronal de alimentación hacia adelante (FFN). Estas convoluciones de profundidad se utilizan para mejorar aún más la capacidad de extracción de características locales.
+
+  En resumen, la propuesta implica utilizar convoluciones para mejorar la atención lineal ReLU y luego combinarla con un enfoque multi-escala para capturar características a diferentes niveles de detalle. También se utilizan convoluciones de profundidad para mejorar la capacidad de extracción de características locales en las capas de la red neuronal
+
+resumen d elo anterior:
+Introducción de un nuevo módulo de atención lineal multi-escala: Se presenta un nuevo módulo de atención lineal multi-escala para predicciones densas de alta resolución. Este módulo logra un campo receptivo global y aprendizaje multi-escala, manteniendo una buena eficiencia en hardware. Además, el trabajo es el primero en demostrar la efectividad de la atención lineal para predicciones densas de alta resolución.
+
+Diseño de EfficientViT: Se introduce EfficientViT, una nueva familia de modelos de visión de alta resolución basada en el módulo de atención lineal multi-escala propuesto.
+
+Mejoras en el rendimiento: El modelo propuesto muestra una mejora notable en la velocidad de ejecución en tareas como segmentación semántica, super-resolución, Segment Anything y clasificación de ImageNet en diversas plataformas de hardware (CPU móvil, GPU de borde y GPU en la nube) en comparación con modelos previos del estado del arte (SOTA).
+
+con todo esto hacer un aintro
+
 ## SAM
 
 Un proyecto de SA, **Segmentation Anything**, está compuesto por: tarea o *task*, SAM (*model*) y *data* (*dataset* + *data engine*).
@@ -268,19 +301,6 @@ Para valorar la caliad de la máscra de segmentación de salida, establecemos ua
     </div>
 </div>
 
-## EfficientVit
-
-- High-resolution dense prediction
-- This work presents EfficientViT, a new family of highresolution vision models with novel multi-scale linear attention
-- achieve de goal with only lightweight and hardware-efficient operations -> speedup
-- high-resolution dense prediction models require high-resolution images and strong context information extraction ability to work well
-- significa que simplemente trasladar arquitecturas de modelos eficientes de clasificación de imágenes no es adecuado para la predicción densa de alta resolución. En otras palabras, no se puede simplemente tomar un modelo diseñado para clasificar imágenes y esperar que funcione bien para predecir información detallada en imágenes de alta resolución. La tarea de predicción densa de alta resolución requiere un enfoque específico y adaptado a sus requisitos, que pueden incluir la captura de detalles finos y la extracción de información contextual significativa. ahí es donde entra efficient
-- Our module is motivated by prior SOTA highresolution dense prediction models -> muy lento, no es factible en aplicaiones en tiempo real, de ellos coge:
-  - El "multi-scale learning" se refiere a la capacidad de un modelo para aprender y comprender información a diferentes escalas espaciales dentro de una imagen. Esto significa que el modelo puede capturar tanto detalles finos como características más grandes y globales en la imagen. En otras palabras, el modelo puede analizar tanto los detalles más pequeños como los patrones más amplios y contextuales presentes en la imagen.
-  - Un "global receptive field" significa que la red puede considerar toda la imagen, lo que puede ser crucial para comprender el contexto y las relaciones entre diferentes partes de la imagen.
-  - les faltan las mejoras hardware
-- operación hardware inificiente qu ecambiamos: substituting the inefficient softmax attention with lightweight ReLUlinear attention to have the global receptive field
-
 ## Aplicación
 
-Red de segmentación semántica.
+Red de segmentación semántica EfficientViT.
