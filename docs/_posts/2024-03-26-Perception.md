@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-13T18:23:00
+last_modified_at: 2024-04-15T21:27:00
 categories:
   - Blog
 tags:
@@ -16,13 +16,13 @@ tags:
     - [Redes neuronales](#redes-neuronales)
     - [Redes neuronales convolucionales](#redes-neuronales-convolucionales)
     - [Redes neuronales recurrentes](#redes-neuronales-recurrentes)
-3. [EfficientVit](#efficientvit)
-4. [SA](#sa)
+3. [SA](#sa)
     - [Task](#task)
     - [Model](#model)
     - [Data](#data)
     - [RAI](#rai)
     - [Conclusión](#conclusión)
+4. [EfficientVit](#efficientvit)
 5. [Aplicación](#aplicación)
 
 ## Clasificación vs detección vs segmentación
@@ -179,42 +179,9 @@ Existen diversas estructuras de RNN que podemos seleccionar según el tipo de da
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/LSTM.jpg" alt="">
 </figure>
 
-## EfficientVit
-
-- High-resolution dense prediction
-- We extensively evaluate EfficientViT on two popular
-high-resolution dense prediction tasks: semantic segmentation and super-resolution
-- se aplica EfficientViT a "Segment Anything"
-- This work presents EfficientViT, a new family of highresolution vision models with novel multi-scale linear attention
-- achieve de goal with only lightweight and hardware-efficient operations -> speedup
-- high-resolution dense prediction models require high-resolution images and strong context information extraction ability to work well
-- significa que simplemente trasladar arquitecturas de modelos eficientes de clasificación de imágenes no es adecuado para la predicción densa de alta resolución. En otras palabras, no se puede simplemente tomar un modelo diseñado para clasificar imágenes y esperar que funcione bien para predecir información detallada en imágenes de alta resolución. La tarea de predicción densa de alta resolución requiere un enfoque específico y adaptado a sus requisitos, que pueden incluir la captura de detalles finos y la extracción de información contextual significativa. ahí es donde entra efficient
-- Our module is motivated by prior SOTA highresolution dense prediction models -> muy lento, no es factible en aplicaiones en tiempo real, de ellos coge:
-  - El "multi-scale learning" se refiere a la capacidad de un modelo para aprender y comprender información a diferentes escalas espaciales dentro de una imagen. Esto significa que el modelo puede capturar tanto detalles finos como características más grandes y globales en la imagen. En otras palabras, el modelo puede analizar tanto los detalles más pequeños como los patrones más amplios y contextuales presentes en la imagen.
-  - Un "global receptive field" significa que la red puede considerar toda la imagen, lo que puede ser crucial para comprender el contexto y las relaciones entre diferentes partes de la imagen.
-  - les faltan las mejoras hardware
-- operación hardware inificiente qu ecambiamos: substituting the inefficient softmax attention with lightweight ReLUlinear attention to have the global receptive field -> relu reduce  from quadratic to linear while preserving functionality.
-- con relu no es capaz de almacenar su info local , tiene limitaciones-> por lo tanto dificulta su capacidad de aprender:
-    -Enhancing ReLU Linear Attention with Convolution: La idea es mejorar la atención lineal ReLU utilizando convoluciones. Esto implica aplicar operaciones de convolución a los datos de entrada antes de realizar la atención lineal ReLU. Las convoluciones pueden ayudar a capturar características locales y globales de los datos de entrada, lo que puede mejorar el rendimiento del modelo.
-
-    -Introducing Multi-Scale Linear Attention Module: Se propone un módulo de atención lineal multi-escala para abordar las limitaciones de capacidad de la atención lineal ReLU. Esto implica combinar tokens cercanos utilizando convoluciones con pequeños núcleos para generar tokens multi-escala. Estos tokens multi-escala se utilizan luego para realizar la atención lineal ReLU, lo que permite combinar el campo receptivo global con el aprendizaje multi-escala.
-
-    -Inserting Depthwise Convolutions into FFN Layers: Además de las convoluciones para mejorar la atención lineal ReLU, se proponen convoluciones de profundidad en las capas de red neuronal de alimentación hacia adelante (FFN). Estas convoluciones de profundidad se utilizan para mejorar aún más la capacidad de extracción de características locales.
-
-  En resumen, la propuesta implica utilizar convoluciones para mejorar la atención lineal ReLU y luego combinarla con un enfoque multi-escala para capturar características a diferentes niveles de detalle. También se utilizan convoluciones de profundidad para mejorar la capacidad de extracción de características locales en las capas de la red neuronal
-
-resumen d elo anterior:
-Introducción de un nuevo módulo de atención lineal multi-escala: Se presenta un nuevo módulo de atención lineal multi-escala para predicciones densas de alta resolución. Este módulo logra un campo receptivo global y aprendizaje multi-escala, manteniendo una buena eficiencia en hardware. Además, el trabajo es el primero en demostrar la efectividad de la atención lineal para predicciones densas de alta resolución.
-
-Diseño de EfficientViT: Se introduce EfficientViT, una nueva familia de modelos de visión de alta resolución basada en el módulo de atención lineal multi-escala propuesto.
-
-Mejoras en el rendimiento: El modelo propuesto muestra una mejora notable en la velocidad de ejecución en tareas como segmentación semántica, super-resolución, Segment Anything y clasificación de ImageNet en diversas plataformas de hardware (CPU móvil, GPU de borde y GPU en la nube) en comparación con modelos previos del estado del arte (SOTA).
-
-con todo esto hacer un aintro
-
 ## SAM
 
-Un proyecto de SA, **Segmentation Anything**, está compuesto por: tarea o *task*, SAM (*model*) y *data* (*dataset* + *data engine*).
+Un proyecto de SA, **Segmentation Anything**, está compuesto por: tarea o *task*, SAM (*model*) y *data* (*dataset* + *data engine*). Es capaz de segmentar cualquier objeto, pero no de categorizar lo que detecta.
 <figure class="align-center" style="max-width: 80%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SA.png" alt="">
 </figure>
@@ -243,9 +210,9 @@ Un SAM, *Segemnet Anything model*, tiene tres componentes: *image endocer*, *pro
 
 #### Data
 
-Nuestro ***dataset***, SA-1B, consta de 11M de imágenes bajo licencia, diversas y de alta resolución (3300x4950 píxeles de media), lo que plantea desafíos en cuanto a accesibilidad y almacenamiento. Además, incluye 1.1B de máscaras de alta calidad generadas automáticamente.
+Nuestro ***dataset***, SA-1B, consta de 11M de imágenes bajo licencia, diversas y de alta resolución (3300x4950 píxeles de media), lo que plantea desafíos en cuanto a accesibilidad y almacenamiento. Además, incluye 1.1B de máscaras de alta calidad generadas automáticamente, ***data engine***.
 
-... + b appendix
+Se trata de un entrenamiento supervisado, donde las máscaras ya están creadas y son específicas para detectar la salida deseada ante una entrada determinada. Por ejemplo, en el caso de las tijeras que aparecen en la imagen anterior, una máscara *ground-truth* contendría un valor de 1 en los píxeles donde hay tijeras y un valor de 0 donde no las hay.
 
 #### RAI
 
@@ -253,9 +220,9 @@ La **responsabilidad** en la inteligencia artificial es crucial. Nuestro conjunt
 
 #### Conclusión
 
-SAM es un modelo *zero-shot*, pues evaluamos su rendimiento con 23 datasets y tareas nuevas que no formaron parte de su entrenamiento original, mostrando resultados prometedores en el mundo de la segmentación de imágenes. Aunque presenta algunas limitaciones, como la omisión de estructuras finas, se espera que su utilidad se demuestre al integrarlo en aplicaciones del mundo real.
+SAM es un modelo *zero-shot*, pues evaluamos su rendimiento con 23 *datasets* y tareas nuevas que no formaron parte de su entrenamiento original, mostrando resultados prometedores en el mundo de la segmentación de imágenes. Aunque presenta algunas limitaciones, como la omisión de estructuras finas, se espera que su utilidad se demuestre al integrarlo en aplicaciones del mundo real.
 
-Para valorar la caliad de la máscra de segmentación de salida, establecemos uan puntación del 1-10:
+Para valorar la calidad de la máscara de segmentación establecemos una puntuación del 1-10:
 <div style="display: flex; align-items: center;">
     <div style="flex: 1;">
         Puntuación de error (1): la máscara no coincide en absoluto con el objeto deseado.
@@ -300,6 +267,16 @@ Para valorar la caliad de la máscra de segmentación de salida, establecemos ua
         <img src="{{ site.url }}{{ site.baseurl }}/images/perception/sam_mask10.png" alt="">
     </div>
 </div>
+
+## EfficientVit
+
+EfficientVit es un nuevo módulo de atención lineal multi-escala para predicciones densas de alta resolución, lo cual requiere la captura de detalles finos y la extracción de información contextual significativa. Este modelo se basa en modelos previos de predicción densos de alta resolución **SOTA** (*State of the Art*), aprovechando el aprendizaje a múltiples escalas y el campo receptivo global.
+- **Aprendizaje a múltiples escalas**: el modelo puede capturar tanto detalles finos como características más grandes y globales en la imagen.
+- **Campo receptivo global**: comprender el contexto y las relaciones entre diferentes partes de la imagen.
+
+El principal desafío es que los modelos SOTA utilizan operaciones de hardware ineficientes, lo que limita su viabilidad en aplicaciones del mundo real. EfficientViT aborda este problema reemplazando estas operaciones con otras más livianas y eficientes en hardware, lo que permite una ejecución más rápida y su uso en aplicaciones en tiempo real. El cambio clave es sustituir la función **softmax por ReLU**, lo que reduce la complejidad computacional de cuadrática a lineal sin comprometer funcionalidad. No obstante, debido a que ReLU por sí sola tiene una capacidad limitada para extraer información local y aprender a múltiples escalas, se complementa con convoluciones a diferentes profundidades para abordar esta carencia.
+
+EfficientViT se evalúa en dos tareas principales: segmentación semántica y súper resolución. Además, encuentra aplicaciones en proyectos SA.
 
 ## Aplicación
 
