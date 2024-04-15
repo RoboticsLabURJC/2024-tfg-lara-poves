@@ -9,7 +9,7 @@ WIDTH = 600
 def main():
     # Setup CARLA and Pygame
     world, _ = setup_carla(name_world='Town03')
-    screen, clock = setup_pygame(size=(WIDTH * 2, HEIGHT), name='Teleoperator')
+    screen = setup_pygame(size=(WIDTH * 2, HEIGHT), name='Teleoperator')
 
     # Add Ego Vehicle
     vehicle_transform = carla.Transform(carla.Location(x=100.0, y=-6.0, z=2.5))
@@ -37,7 +37,7 @@ def main():
                 teleop.control()
             
             cameras.update_data()
-            clock.tick(60) # Frame rate
+            world.tick() 
 
     except KeyboardInterrupt:
         return

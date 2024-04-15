@@ -1,16 +1,15 @@
 import pygame
 import carla
 import configcarla
-import time
 
 # Screen
-HEIGHT= 450
-WIDTH = 450
+HEIGHT= 460
+WIDTH = 460
     
 def main():
     # Setup 
     world, client = configcarla.setup_carla(name_world='Town01')
-    screen, clock = configcarla.setup_pygame(size=(WIDTH * 4, HEIGHT * 2), name='Autopilot')
+    screen = configcarla.setup_pygame(size=(WIDTH * 4, HEIGHT * 2), name='Autopilot')
 
     # Add Ego Vehicle
     ego_transform = carla.Transform(carla.Location(x=140, y=129, z=2.5), carla.Rotation(yaw=180))
@@ -39,19 +38,16 @@ def main():
     vehicles = configcarla.add_vehicles_randomly(world=world, number=10)
     vehicles.append(ego_vehicle)
     vehicles.append(front_vehicle)
-    #tm = configcarla.traffic_manager(client=client, vehicles=vehicles, dist=10.0, speed_lower=50)
-
-    # Time to set everything
-    time.sleep(3)
+    tm = configcarla.traffic_manager(client=client, vehicles=vehicles, dist=10.0, speed_lower=50)
     
     try:
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     return
-            
+           
             sensors.update_data()
-            clock.tick(120) # Frame rate
+            world.tick()
 
     except KeyboardInterrupt:
         return
