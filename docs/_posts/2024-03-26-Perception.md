@@ -270,13 +270,21 @@ Para valorar la calidad de la máscara de segmentación establecemos una puntuac
 
 ## EfficientVit
 
-EfficientVit es un nuevo módulo de atención lineal multi-escala para predicciones densas de alta resolución, lo cual requiere la captura de detalles finos y la extracción de información contextual significativa. Este modelo se basa en modelos previos de predicción densos de alta resolución **SOTA** (*State of the Art*), aprovechando el aprendizaje a múltiples escalas y el campo receptivo global.
+EfficientVit es un nuevo módulo de atención lineal multi-escala para predicciones densas de alta resolución, lo cual requiere la captura de detalles finos y la extracción de información contextual significativa. Se puede ver como una extensión de la clasificación de imágenes, pasando de predicciones por imagen a predicciones por píxel. Este modelo se basa en modelos previos de predicción densos de alta resolución **SOTA** (*State of the Art*), aprovechando:
 - **Aprendizaje a múltiples escalas**: el modelo puede capturar tanto detalles finos como características más grandes y globales en la imagen.
 - **Campo receptivo global**: comprender el contexto y las relaciones entre diferentes partes de la imagen.
 
-El principal desafío es que los modelos SOTA utilizan operaciones de hardware ineficientes, lo que limita su viabilidad en aplicaciones del mundo real. EfficientViT aborda este problema reemplazando estas operaciones con otras más livianas y eficientes en hardware, lo que permite una ejecución más rápida y su uso en aplicaciones en tiempo real. El cambio clave es sustituir la función **softmax por ReLU**, lo que reduce la complejidad computacional de cuadrática a lineal sin comprometer funcionalidad. No obstante, debido a que ReLU por sí sola tiene una capacidad limitada para extraer información local y aprender a múltiples escalas, se complementa con convoluciones a diferentes profundidades para abordar esta carencia.
+El principal desafío es que los modelos SOTA utilizan operaciones de hardware ineficientes, lo que limita su viabilidad en aplicaciones del mundo real. EfficientViT aborda este problema reemplazando estas operaciones con otras más livianas y eficientes en hardware, lo que permite una ejecución más rápida y su uso en aplicaciones en tiempo real. El cambio clave es sustituir la función **softmax por ReLU**, lo que reduce la complejidad computacional de cuadrática a lineal sin comprometer funcionalidad. No obstante, debido a que ReLU por sí sola tiene una capacidad limitada para extraer información local, lo cual se complementa con convoluciones en capas FFN (*FeedForward Network*, capa usada en CNN y RNN) a diferentes profundidades (FFN + DWConv), y aprender a múltiples escalas, se incorporan DWConv separables de *kernel* pequeño para solvertarlo.
+<div style="display: flex; align-items: center;">
+    <div style="flex: 2;">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/detect_comp.png" alt="">
+    </div>
+    <div style="flex: 1;">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/time_comp.png" alt="">
+    </div>
+</div>
 
-EfficientViT se evalúa en dos tareas principales: segmentación semántica y súper resolución. Además, encuentra aplicaciones en proyectos SA.
+EfficientViT es evaluado en tres tareas principales: segmentación semántica, súper resolución y SA. En todas estas áreas, EfficientViT ofrece mejoras significativas en términos de latencia y eficiencia sin comprometer el rendimiento.
 
 ## Aplicación
 
