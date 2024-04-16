@@ -280,4 +280,6 @@ EfficientViT se evalúa en dos tareas principales: segmentación semántica y s�
 
 ## Aplicación
 
+Hemos añadido los FPS.
+
 Red de segmentación semántica EfficientViT.
