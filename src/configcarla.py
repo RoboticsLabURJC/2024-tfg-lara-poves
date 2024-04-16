@@ -55,7 +55,7 @@ def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=Fa
 
     img.blit(text, text_rect)
 
-class Sensor():
+class Sensor:
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
         self.queue = LifoQueue()
