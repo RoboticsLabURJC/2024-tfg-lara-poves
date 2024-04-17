@@ -30,8 +30,8 @@ def add_config_vehicles(config, world):
     
 def main(mode):
     # Setup 
-    world, client = configcarla.setup_carla(name_world='Town01')
-    screen, clock = configcarla.setup_pygame(size=(WIDTH * 3, HEIGHT * 2), name='Histogram Front-Front')
+    world, _ = configcarla.setup_carla(name_world='Town01')
+    screen = configcarla.setup_pygame(size=(WIDTH * 3, HEIGHT * 2), name='Histogram Front-Front')
 
     # Add Ego Vehicle
     ego_transform = carla.Transform(carla.Location(x=140, y=129, z=2.5), carla.Rotation(yaw=180))
@@ -96,7 +96,7 @@ def main(mode):
                     front_vehicles = add_config_vehicles(config=configuration[index], world=world)
             
             sensors.update_data()
-            clock.tick(120) # Frame rate
+            world.tick() # Frame rate
 
     except KeyboardInterrupt:
         return

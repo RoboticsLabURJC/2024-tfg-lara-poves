@@ -109,7 +109,7 @@ En nuestro caso, con un *yaw* de 90º, obtendríamos los ángulos: [-165.0, -115
 #### Cálculo de estadísticas
 ---
 
-Creamos una lista de dos elementos ***meas_zones***. En el primero, almacenamos una lista que a su vez contiene tres listas, cada una contiene las distancias desde el punto hasta el centro del láser en el plano XY de cada zona. En el segundo elemento, guardamos de la misma manera las alturas *z*. Utilizamos estas medidas para calcular la media, la mediana, la desviación estándar y el mínimo en cada zona, ***stat_zones***. Actualizamos estas medidas en cada iteracion, pero, si deseamos visualizarlas en pantalla, su valor se actualiza cada segundo.
+Creamos una lista de dos elementos ***meas_zones***. En el primero, almacenamos una lista que a su vez contiene tres listas, cada una contiene las distancias desde el punto hasta el centro del láser en el plano XY de cada zona. En el segundo elemento, guardamos de la misma manera las alturas *z*. Utilizamos estas medidas para calcular la media, la mediana, la desviación estándar y el mínimo en cada zona, ***stat_zones***. Actualizamos las estadísticas en cada iteración, pero, si deseamos visualizarlas en pantalla, su valor se actualiza cada segundo.
 
 Como se puede observar en la imagen, los puntos de color rojo corresponden al propio coche, por lo tanto, hemos realizado un filtrado por intensidad para eliminarlos del cálculo estadístico. Este umbral tiene un valor predeterminado establecido en el constructor, pero hemos implementado unas funciones para consultar o modificar su valor. De manera similar, para calcular el mínimo, filtramos por altura para eliminar todos los puntos correspondientes a la calzada.
 <figure class="align-center" style="max-width: 100%">

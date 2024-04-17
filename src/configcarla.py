@@ -59,17 +59,17 @@ class Sensor:
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
         self.queue = LifoQueue()
-        self.sensor.listen(lambda data: self.__update_data(data))
-        self.data_processed = None
+        self.sensor.listen(lambda data: self.__callback_data(data))
+        self.data = None
 
-    def __update_data(self, data):
+    def __callback_data(self, data):
         self.queue.put(data)
 
-    def update_data_processed(self):
-        self.data_processed = self.get_last_data()
+    def update_data(self):
+        self.data = self.get_last_data()
 
-        if self.data_processed != None:
-            return self.data_processed.frame
+        if self.data != None:
+            return self.data.frame
         return 0
 
     def get_last_data(self):
@@ -83,20 +83,21 @@ class Sensor:
 
 class CameraRGB(Sensor):      
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
-                 screen:pygame.Surface, seg:bool, init_seg:tuple[int, int]):
+                 screen:pygame.Surface, seg:bool, init_seg:tuple[int, int], text:str):
         super().__init__(sensor=sensor)
 
         self.screen = screen
+        self.text = text
         self.seg = seg
         if seg:
             self.seg_model = EV.EfficientVit(cuda_device="cuda:3", model="l2")
 
-        sub_screen = pygame.Surface(size)
-        self.rect_org = sub_screen.get_rect(topleft=init)
-        self.rect_seg = sub_screen.get_rect(topleft=init_seg)
+        self.sub_screen = pygame.Surface(size)
+        self.rect_org = self.sub_screen.get_rect(topleft=init)
+        self.rect_seg = self.sub_screen.get_rect(topleft=init_seg)
 
     def process_data(self):
-        image = self.data_processed
+        image = self.data
         if image == None:
             return
 
@@ -109,8 +110,12 @@ class CameraRGB(Sensor):
         # Reserve mirror effect
         image_surface = pygame.surfarray.make_surface(image_data)
         flipped_surface = pygame.transform.flip(image_surface, True, False)
-
         screen_surface = pygame.transform.scale(flipped_surface, self.rect_org.size)
+
+        if self.text != None:
+            write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, size=20,
+                       bold=True, point=(self.rect_org.size[0], 0))
+            
         self.screen.blit(screen_surface, self.rect_org)
 
         if self.seg:
@@ -128,8 +133,8 @@ class CameraRGB(Sensor):
             self.screen.blit(surface_seg, self.rect_seg)
         
 class Lidar(Sensor): 
-    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
-                 scale:int, front_angle:int, yaw:float, screen:pygame.Surface):
+    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
+                 front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool=True):
         super().__init__(sensor=sensor)
 
         self.sub_screen = pygame.Surface(size)
@@ -147,15 +152,19 @@ class Lidar(Sensor):
         # Calculate stats
         self.i_threshold = 0.987
         self.z_threshold = -1.6
-        self.stat_zones = np.full((NUM_ZONES, NUM_STATS), 0.0) 
+        self.stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
         self.meas_zones = None
 
         # Write stats
         self.show_stats = show_stats
         y = size[1] / 2
-        if self.show_stats:
+        if show_stats:
             y += self.scale * 1.5
-        self.center_screen = (int(size[0] / 2), y)
+        self.center_screen = (int(size[0] / 2), int(y))
+
+        # Update per second
+        self.time = -2
+        self.stat_text = None
 
         # Write text
         self.size_text = min(int(self.scale / 1.5), 20)
@@ -193,8 +202,10 @@ class Lidar(Sensor):
                              self.size_text * (NUM_STATS + 2)) # Make sure to write behind the text
                 
                 write_text(text=text[i], img=image, point=(x_zone, y_zone), bold=True, size=self.size_text)
-                write_text(text=text_zone[i], img=image, side=i, color=(255, 165, 180), bold=True,
-                           point=(self.x_text[i], self.size_text), size=self.size_text)
+
+                if self.show_stats:
+                    write_text(text=text_zone[i], img=image, side=i, color=(255, 165, 180), bold=True,
+                            point=(self.x_text[i], self.size_text), size=self.size_text)
         return image
     
     def __interpolate_thickness(self, num:float, min:float, max:float):
@@ -231,19 +242,22 @@ class Lidar(Sensor):
                 for i in range(NUM_STATS):
                     self.stat_zones[zone][i] = np.nan
 
-            stats_text = [
-                "Mean = {:.2f}".format(self.stat_zones[zone][MEAN]),
-                "Median = {:.2f}".format(self.stat_zones[zone][MEDIAN]),
-                "Std = {:.2f}".format(self.stat_zones[zone][STD]),
-                "Min(z>{:.1f}) = {:.2f}".format(self.z_threshold, self.stat_zones[zone][MIN])
-            ]
+            if self.show_stats:
+                if time.time() - self.time > 1:
+                    self.time = time.time()
+                    self.stats_text = [
+                        "Mean = {:.2f}".format(self.stat_zones[zone][MEAN]),
+                        "Median = {:.2f}".format(self.stat_zones[zone][MEDIAN]),
+                        "Std = {:.2f}".format(self.stat_zones[zone][STD]),
+                        "Min(z>{:.1f}) = {:.2f}".format(self.z_threshold, self.stat_zones[zone][MIN])
+                    ]
 
-            # Write stats
-            y = self.size_text * 2
-            for text in stats_text:
-                write_text(text=text, point=(self.x_text[zone], y), img=self.sub_screen, 
-                           side=zone, size=self.size_text)
-                y += self.size_text
+                # Write stats
+                y = self.size_text * 2
+                for text in self.stats_text:
+                    write_text(text=text, point=(self.x_text[zone], y), img=self.sub_screen, 
+                               side=zone, size=self.size_text)
+                    y += self.size_text
 
     def __in_zone(self, zone:int, angle:float):
         if self.angles[zone] <= self.angles[zone + 1]:
@@ -261,7 +275,7 @@ class Lidar(Sensor):
         return NUM_ZONES
 
     def process_data(self):
-        lidar = self.data_processed
+        lidar = self.data
         if lidar == None:
             return
         
@@ -322,7 +336,7 @@ class Vehicle_sensors:
         self.sensors = []
 
         self.time_frame = -1.0
-        self.count_frame = 0
+        self.count_frame = -1
         self.write_frame = 0
 
     def __put_sensor(self, sensor_type:str, transform:carla.Transform, lidar:bool=False):
@@ -344,18 +358,19 @@ class Vehicle_sensors:
         return sensor_class
     
     def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), seg:bool=False,
-                       transform:carla.Transform=carla.Transform(), init_seg:tuple[int, int]=(0, 0)):
+                       transform:carla.Transform=carla.Transform(), init_seg:tuple[int, int]=(0, 0),
+                       text:str=None):
         sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform)
         camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.screen, 
-                           seg=seg, init_seg=init_seg)
+                           seg=seg, init_seg=init_seg, text=text)
         self.sensors.append(camera)
         return camera
     
     def add_lidar(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), scale_lidar:int=25,
-                  transform:carla.Transform=carla.Transform(), front_angle:int=150):
+                  transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True):
         sensor = self.__put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, lidar=True)
-        lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle,
-                      scale=scale_lidar, yaw=transform.rotation.yaw, screen=self.screen)
+        lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale_lidar,
+                      yaw=transform.rotation.yaw, screen=self.screen, show_stats=show_stats)
         
         self.sensors.append(lidar)
         return lidar
@@ -363,11 +378,7 @@ class Vehicle_sensors:
     def update_data(self):
         # Pick data in the same frame
         for sensor in self.sensors:
-            frame = sensor.update_data_processed()
-        
-        if self.time_frame < 0:
-            self.time_frame = time.time()
-            self.count_frame = frame
+            frame = sensor.update_data()
 
         for sensor in self.sensors:
             sensor.process_data()
@@ -378,7 +389,7 @@ class Vehicle_sensors:
             self.count_frame = frame
 
         write_text(text="FPS: "+str(self.write_frame), img=self.screen, color=(0, 0, 0),
-                   bold=True, point=(50, 15), size=23)
+                    bold=True, point=(2, 0), size=23, side=LEFT)
         
         pygame.display.flip()
 
@@ -419,10 +430,15 @@ class Teleoperator:
     def set_brake(self, brake:float):
         self.brake = max(0.0, min(1.0, brake))
 
-def setup_carla(port:int=2000, name_world:str='Town01'):
+def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.1):
     client = carla.Client('localhost', port)
     world = client.get_world()
     client.load_world(name_world)
+
+    settings = world.get_settings()
+    settings.synchronous_mode = True
+    settings.fixed_delta_seconds = delta_seconds
+    world.apply_settings(settings)
 
     return world, client
 
@@ -484,20 +500,12 @@ def add_vehicles_randomly(world:carla.World, number:int):
 
     return vehicles
 
-def traffic_manager(client:carla.Client, world:carla.World, vehicles:list[carla.Vehicle], port:int=5000, 
-                    dist:float=4.0, speed_lower:float=10.0):
-    #settings = world.get_settings()
-    #settings.synchronous_mode = True
-    #world.apply_settings(settings)
-
-    tm = client.get_trafficmanager()
+def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000):
+    tm = client.get_trafficmanager(port)
     tm_port = tm.get_port()
 
     for v in vehicles:
-        v.set_autopilot(True)
+        v.set_autopilot(True, tm_port)
         tm.auto_lane_change(v, False) 
-
-   # tm.set_global_distance_to_leading_vehicle(dist)
-   # tm.global_percentage_speed_difference(speed_lower)
 
     return tm
