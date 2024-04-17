@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-15T21:27:00
+last_modified_at: 2024-04-16T22:46:00
 categories:
   - Blog
 tags:
@@ -51,7 +51,7 @@ La segmentación nos proporciona información detallada sobre los límites y reg
 
 La **Inteligencia Artificial** es una técnica que permite a una máquina imitar comportamientos humanos. El ***Machine Learning***, o aprendizaje automático, es el método para lograr IA a través de algoritmos entrenados con datos.
 
-El ***deep learning*** es un tipo de machine learning inspirado por la estructura del cerebro humano, con las redes neuronales como base principal. Es capaz de reconocer patrones en los datos de entrada, a diferencia del *machine learning*, al cual hay que proporcionarle cuáles son las características distintivas, por ejemplo el color para distinguir entre tomates y limones. Los desafíos del *deep learning* son la gran cantidad de datos requerida, lo cual demanda potencia computacional elevada y conlleva procesos de entrenamiento largos.
+El ***deep learning*** es un tipo de *machine learning* inspirado por la estructura del cerebro humano, con las redes neuronales como base principal. Es capaz de reconocer patrones en los datos de entrada, a diferencia del *machine learning*, al cual hay que proporcionarle cuáles son las características distintivas, por ejemplo el color para distinguir entre tomates y limones. Los desafíos del *deep learning* son la gran cantidad de datos requerida, lo cual demanda potencia computacional elevada y conlleva procesos de entrenamiento largos.
 
 ### Redes neuronales
 ---
@@ -183,14 +183,14 @@ Existen diversas estructuras de RNN que podemos seleccionar según el tipo de da
 
 Un proyecto de SA, **Segmentation Anything**, está compuesto por: tarea o *task*, SAM (*model*) y *data* (*dataset* + *data engine*). Es capaz de segmentar cualquier objeto, pero no de categorizar lo que detecta.
 <figure class="align-center" style="max-width: 80%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SA.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SAM/SA.png" alt="">
 </figure>
 
 #### Task
 
 Las *tasks* se basan en el *prompt engineering*, el usuario puede proporcionar especificaciones para orientar al modelo, es decir, indicándole qué segmentar en la imagen. El hecho de ser *prompting* permite su aplicación en una variedad de escenarios, incluyendo tareas con múltiples indicaciones. Para lograrlo, existen diversos tipos de segmentación: semántica, de instancia, detección de bordes, panorámica... El objetivo es obtener al menos una **máscara de segmentación válida** para cualquier *prompt*, incluso si la tarea es ambigua. Se considera una máscara válida aquella que al menos detecta uno o parte de los objetos solicitados.
 <figure class="align-center" style="max-width: 80%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/task.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SAM/task.png" alt="">
 </figure>
 
 El proceso de entrenamiento es similar a cómo se pre-entrenan los modelos de procesamiento del lenguaje natural (NLP). El modelo se entrena con una gran variedad de tareas que fomentan la generalización, con el objetivo de lograr ser ***zero-shot***. Un modelo *zero-shot* es capaz de realizar una tarea sin haber sido explícitamente entrenado para ella y sin necesidad de entrenamiento adicional con nuevos datos. El *fine-tuning* consiste en entrenar un modelo ya pre-entrenado para tareas específicas, lo que suele requerir pocos datos nuevos (*few-shot*).
@@ -199,7 +199,7 @@ El proceso de entrenamiento es similar a cómo se pre-entrenan los modelos de pr
 
 Un SAM, *Segemnet Anything model*, tiene tres componentes: *image endocer*, *promt encoder* y *mask decoder*.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/model.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SAM/model.png" alt="">
 </figure>
 
 - ***Image encoder***: convierte las imágenes de entrada en representaciones numéricas a través de un proceso que incluye rescalado, convoluciones y finalmente normalización. Este proceso reduce las dimensiones de la imagen a 64x64, generando lo que se conoce como *image embedding*.
@@ -228,13 +228,13 @@ Para valorar la calidad de la máscara de segmentación establecemos una puntuac
         Puntuación de error (1): la máscara no coincide en absoluto con el objeto deseado.
     </div>
     <div style="flex: 1;">
-        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/sam_mask1.png" alt="">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SAM/sam_mask1.png" alt="">
     </div>
 </div>
 
 <div style="display: flex; align-items: center;">
     <div style="flex: 1;">
-        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/sam_mask2-4.png" alt="">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SAM/sam_mask2-4.png" alt="">
     </div>
     <div style="flex: 1;">
         Puntuación baja (2-4): a máscara presenta numerosos errores, como la inclusión de otros objetos o la omisión de gran parte del objeto solicitado.
@@ -246,13 +246,13 @@ Para valorar la calidad de la máscara de segmentación establecemos una puntuac
         Puntuación media (5-6): la máscara segmenta el objeto indicado, pero aún presenta errores semánticos y en los bordes.
     </div>
     <div style="flex: 1;">
-        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/sam_mask5-6.png" alt="">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SAM/sam_mask5-6.png" alt="">
     </div>
 </div>
 
 <div style="display: flex; align-items: center;">
     <div style="flex: 1;">
-        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/sam_mask7-9.png" alt="">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SAM/sam_mask7-9.png" alt="">
     </div>
     <div style="flex: 1;">
         Puntuación alta (7-9): solo presenta pequeños errores en los límites. En el ejemplo, la máscara no define adecuadamente una de las piernas traseras e incluye toda la equipación del caballo.
@@ -264,7 +264,7 @@ Para valorar la calidad de la máscara de segmentación establecemos una puntuac
         Puntuación excelente (10): no hay errores visibles.
     </div>
     <div style="flex: 1;">
-        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/sam_mask10.png" alt="">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/SAM/sam_mask10.png" alt="">
     </div>
 </div>
 
@@ -277,10 +277,10 @@ EfficientVit es un nuevo módulo de atención lineal multi-escala para prediccio
 El principal desafío es que los modelos SOTA utilizan operaciones de hardware ineficientes, lo que limita su viabilidad en aplicaciones del mundo real. EfficientViT aborda este problema reemplazando estas operaciones con otras más livianas y eficientes en hardware, lo que permite una ejecución más rápida y su uso en aplicaciones en tiempo real. El cambio clave es sustituir la función **softmax por ReLU**, lo que reduce la complejidad computacional de cuadrática a lineal sin comprometer funcionalidad. No obstante, debido a que ReLU por sí sola tiene una capacidad limitada para extraer información local, lo cual se complementa con convoluciones en capas FFN (*FeedForward Network*, capa usada en CNN y RNN) a diferentes profundidades (FFN + DWConv), y aprender a múltiples escalas, se incorporan DWConv separables de *kernel* pequeño para solvertarlo.
 <div style="display: flex; align-items: center;">
     <div style="flex: 2;">
-        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/detect_comp.png" alt="">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/EfficientVit/detect.png" alt="">
     </div>
     <div style="flex: 1;">
-        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/time_comp.png" alt="">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/perception/EfficientVit/time.png" alt="">
     </div>
 </div>
 
@@ -288,6 +288,5 @@ EfficientViT es evaluado en tres tareas principales: segmentación semántica, s
 
 ## Aplicación
 
-Hemos añadido los FPS.
+Hemos añadido varias mejoras en el manejo de los sensores, la principal es mostrar el número de *frames* por segundo a los que itera nuestro programa. También hemos integrado la red de segmentación semántica EfficientViT en nuestro código para poder comprender el entorno, para ello, hemos añadido nuevos parámetros y atributos en el objeto *CameraRGB*.
 
-Red de segmentación semántica EfficientViT.

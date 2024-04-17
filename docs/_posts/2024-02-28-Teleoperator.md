@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-04-16T00:17:00
+last_modified_at: 2024-04-16T21:35:00
 categories:
   - Blog
 tags:
@@ -71,13 +71,13 @@ class Sensor:
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
         self.queue = LifoQueue()
-        self.sensor.listen(lambda data: self.__update_data(data))
+        self.sensor.listen(lambda data: self.__callback_data(data))
         self.data = None
 
-    def __update_data(self, data):
+    def __callback_data(self, data):
         self.queue.put(data)
 
-    def update_data_processed(self):
+    def update_data(self):
         self.data = self.get_last_data()
 
     def get_last_data(self):
@@ -90,7 +90,7 @@ class Vehicle_sensors:
     def update_data(self):
         # Pick data in the same frame
         for sensor in self.sensors:
-            sensor.update_data_processed()
+            sensor.update_data()
 
         for sensor in self.sensors:
             sensor.process_data()
