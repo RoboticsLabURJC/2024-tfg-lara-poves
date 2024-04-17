@@ -136,7 +136,6 @@ class Lidar(Sensor):
         self.rect = self.sub_screen.get_rect(topleft=init)
         self.scale = scale
         self.size_screen = size
-        self.center_screen = (int(size[0] / 2), int(size[1] / 2 + self.scale * 1.5))
         self.screen = screen
 
         # Visualize lidar
@@ -144,6 +143,10 @@ class Lidar(Sensor):
         self.max_thickness = math.ceil(scale / 10) + self.min_thickness * 2
         self.color_min = (0, 0, 255)
         self.color_max = (255, 0, 0)
+
+        # Write text
+        self.size_text = min(int(self.scale / 1.5), 20)
+        self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness)
 
         # Select front zone
         self.front_angle = abs(front_angle)
@@ -160,11 +163,16 @@ class Lidar(Sensor):
         # Calculate stats
         self.i_threshold = 0.987
         self.z_threshold = -1.6
-        self.stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
+        self.stat_zones = np.full((NUM_ZONES, NUM_STATS), 0.0) 
         self.meas_zones = None
-        self.size_text = min(int(self.scale / 1.5), 20)
 
-        self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness) 
+        # Write stats
+        self.show_stats = show_stats
+        y = size[1] / 2
+        if self.show_stats:
+            y += self.scale * 1.5
+        self.center_screen = (int(size[0] / 2), y)
+
         self.image = self.__get_back_image()
 
     def __get_back_image(self):
@@ -476,16 +484,20 @@ def add_vehicles_randomly(world:carla.World, number:int):
 
     return vehicles
 
-def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000, 
+def traffic_manager(client:carla.Client, world:carla.World, vehicles:list[carla.Vehicle], port:int=5000, 
                     dist:float=4.0, speed_lower:float=10.0):
-    tm = client.get_trafficmanager(port)
+    #settings = world.get_settings()
+    #settings.synchronous_mode = True
+    #world.apply_settings(settings)
+
+    tm = client.get_trafficmanager()
     tm_port = tm.get_port()
 
     for v in vehicles:
-        v.set_autopilot(True, tm_port)
+        v.set_autopilot(True)
         tm.auto_lane_change(v, False) 
 
-    tm.set_global_distance_to_leading_vehicle(dist)
-    tm.global_percentage_speed_difference(speed_lower)
+   # tm.set_global_distance_to_leading_vehicle(dist)
+   # tm.global_percentage_speed_difference(speed_lower)
 
     return tm
