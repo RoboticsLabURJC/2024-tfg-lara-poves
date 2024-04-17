@@ -24,8 +24,7 @@ Una vez habituados con las funciones básicas de CARLA y realizado el teleoperad
 
 Hemos implementado una función llamada ***traffic_manager*** para controlar el tráfico de vehículos de manera eficiente. Esta función activa el piloto automático de la lista de vehículos que recibe como entrada. Además, posibilita la modificación de ciertos parámetros de conducción, como el porcentaje de velocidad con respecto al límite máximo permitido y la distancia de seguridad entre vehículos.
 ```python
-def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000, 
-                    dist:float=4.0, speed_lower:float=10.0):
+def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000)
 ```
 
 ## LIDAR
@@ -35,11 +34,11 @@ Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva
 ```python
 class Vehicle_sensors:
     def add_lidar(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), scale_lidar:int=25,
-                  transform:carla.Transform=carla.Transform(), front_angle:int=150):
+                  transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True):
 
 class Lidar(Sensor): 
     def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,
-                 scale:int, front_angle:int, yaw:float, screen:pygame.Surface)
+                 scale:int, front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool)
 
     def process_data(self)
     def get_stat_zones(self)
@@ -110,7 +109,7 @@ En nuestro caso, con un *yaw* de 90º, obtendríamos los ángulos: [-165.0, -115
 #### Cálculo de estadísticas
 ---
 
-Creamos una lista de dos elementos ***meas_zones***. En el primero, almacenamos una lista que a su vez contiene tres listas, cada una contiene las distancias desde el punto hasta el centro del láser en el plano XY de cada zona. En el segundo elemento, guardamos de la misma manera las alturas *z*. Utilizamos estas medidas para calcular la media, la mediana, la desviación estándar y el mínimo en cada zona, ***stat_zones***.
+Creamos una lista de dos elementos ***meas_zones***. En el primero, almacenamos una lista que a su vez contiene tres listas, cada una contiene las distancias desde el punto hasta el centro del láser en el plano XY de cada zona. En el segundo elemento, guardamos de la misma manera las alturas *z*. Utilizamos estas medidas para calcular la media, la mediana, la desviación estándar y el mínimo en cada zona, ***stat_zones***. Actualizamos estas medidas en cada iteracion, pero, si deseamos visualizarlas en pantalla, su valor se actualiza cada segundo.
 
 Como se puede observar en la imagen, los puntos de color rojo corresponden al propio coche, por lo tanto, hemos realizado un filtrado por intensidad para eliminarlos del cálculo estadístico. Este umbral tiene un valor predeterminado establecido en el constructor, pero hemos implementado unas funciones para consultar o modificar su valor. De manera similar, para calcular el mínimo, filtramos por altura para eliminar todos los puntos correspondientes a la calzada.
 <figure class="align-center" style="max-width: 100%">
@@ -141,7 +140,7 @@ Vamos a generar histogramas utilizando las distancias detectadas en la zona cent
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist/hist_motorbike.png" alt="">
 </figure>
 
-Hemos guardado todos estos datos en un fichero csv (*hist_data.csv*) y desarrollado una aplicación para mostrar su *plot* (*hist_plot.py*). Para recopilar los datos hemos creado una aplicación *hist_carla.py*, que la pulsar la tecla *s* guarda los datos en el fichero csv y con la tecela *x* se cambia la configuaración enla disposición de los vehículos, este fichero adquiere como argumento *w* reescrivir el csv y a para escribir a continuaciond e loq ue ya haya en ese archivo csv.
+Hemos creado una aplicación llamada *hist_carla.py* para recopilar los datos del láser y almacenarlos en formato csv (*hist_data.csv*). Al presionar la tecla *s*, se guardan los datos en el fichero csv, mientras que al presionar la tecla *x*, se puede cambiar la configuración en la disposición de los vehículos. Este fichero acepta el argumento *w* para sobrescribir el csv existente y *a* para añadir al final del archivo csv. Además, hemos creado un *script* para visualizar los *plots* de estos datos (*hist_plot.py*):
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist/hist_plot.png" alt="">
 </figure>

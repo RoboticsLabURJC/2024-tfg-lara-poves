@@ -144,6 +144,19 @@ class Lidar(Sensor):
         self.color_min = (0, 0, 255)
         self.color_max = (255, 0, 0)
 
+        # Calculate stats
+        self.i_threshold = 0.987
+        self.z_threshold = -1.6
+        self.stat_zones = np.full((NUM_ZONES, NUM_STATS), 0.0) 
+        self.meas_zones = None
+
+        # Write stats
+        self.show_stats = show_stats
+        y = size[1] / 2
+        if self.show_stats:
+            y += self.scale * 1.5
+        self.center_screen = (int(size[0] / 2), y)
+
         # Write text
         self.size_text = min(int(self.scale / 1.5), 20)
         self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness)
@@ -159,19 +172,6 @@ class Lidar(Sensor):
         angle1_add = get_angle_range(angle1 + self.front_angle / 3)
         angle2_sub = get_angle_range(angle2 - self.front_angle / 3)        
         self.angles = [angle1, angle1_add, angle2_sub, angle2]
-
-        # Calculate stats
-        self.i_threshold = 0.987
-        self.z_threshold = -1.6
-        self.stat_zones = np.full((NUM_ZONES, NUM_STATS), 0.0) 
-        self.meas_zones = None
-
-        # Write stats
-        self.show_stats = show_stats
-        y = size[1] / 2
-        if self.show_stats:
-            y += self.scale * 1.5
-        self.center_screen = (int(size[0] / 2), y)
 
         self.image = self.__get_back_image()
 
