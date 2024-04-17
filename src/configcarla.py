@@ -55,7 +55,7 @@ def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=Fa
 
     img.blit(text, text_rect)
 
-class Sensor():
+class Sensor:
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
         self.queue = LifoQueue()
@@ -162,11 +162,13 @@ class Lidar(Sensor):
             y += self.scale * 1.5
         self.center_screen = (int(size[0] / 2), int(y))
 
+        # Update per second
         self.time = -2
         self.stat_text = None
 
+        # Write text
         self.size_text = min(int(self.scale / 1.5), 20)
-        self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness) 
+        self.x_text = (self.max_thickness, self.center_screen[0], size[0] - self.max_thickness)
 
         # Select front zone
         self.front_angle = abs(front_angle)
