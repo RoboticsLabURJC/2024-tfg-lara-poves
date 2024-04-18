@@ -29,6 +29,8 @@ MIN = 3
 DIST = 0
 Z = 1
 
+ROAD = 0
+
 def get_angle_range(angle:float):
     if angle > 180.0:
         angle -= 180.0 * 2
@@ -88,6 +90,7 @@ class CameraRGB(Sensor):
 
         self.screen = screen
         self.text = text
+        self.size_text = 20
 
         self.mask = []
         self.seg = seg
@@ -115,8 +118,8 @@ class CameraRGB(Sensor):
         screen_surface = pygame.transform.scale(flipped_surface, self.rect_org.size)
 
         if self.text != None:
-            write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, size=20,
-                       bold=True, point=(self.rect_org.size[0], 0))
+            write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, bold=True,
+                       size=self.size_text, point=(self.rect_org.size[0], 0))
             
         self.screen.blit(screen_surface, self.rect_org)
 
@@ -134,8 +137,67 @@ class CameraRGB(Sensor):
 
             self.screen.blit(surface_seg, self.rect_seg)
     
-    def get_segmentation_mask(self):
-        return self.mask
+    def get_deviation_road(self, rect_mask:pygame.Rect):
+        if len(self.mask) == 0:
+            return None
+        
+        height_text = 10
+        vehicle_color = (255, 0, 0)
+        mask_color = (128, 64, 128)
+        center_color = (0, 255, 0)
+
+        x = 0
+        y = 0
+        count = 0
+
+        width = len(self.mask)
+        height = len(self.mask[0])
+
+        # Create image from mask including only the road
+        image = Image.new('RGB', (width, height), color=0) 
+        for i in range(width):
+            for j in range(height):
+                if self.mask[i][j] == ROAD:
+                    image.putpixel((i, j), mask_color)
+
+                    count += 1
+                    x += i
+                    y += j
+
+        # Calculate center mass
+        x = x / count
+        y = y / count
+        deviation = abs(x - width / 2)
+
+        if rect_mask != None:
+            x = rect_mask.width - int(x * rect_mask.width / width)
+            y = int(y * rect_mask.height / height)
+            image = image.resize((rect_mask.width, rect_mask.height))
+
+            # Transform to pygame surface
+            image_data = image.tobytes()
+            surface = pygame.image.fromstring(image_data, image.size, image.mode)
+            surface = pygame.transform.flip(surface, True, False)
+
+            # Draw center mass
+            pygame.draw.line(surface, center_color, (x, 0), (x, rect_mask.height), 1)
+            pygame.draw.circle(surface, center_color, (x, y), 9)
+            write_text(text="center mass", img=surface, point=(x + 2, height_text * 4), side=LEFT,
+                       size=self.size_text, color=center_color)
+
+            # Draw vehicle
+            pygame.draw.line(surface, vehicle_color, (int(rect_mask.width / 2), 0), 
+                            (int(rect_mask.width / 2), rect_mask.height), 1)
+            write_text(text="vehicle", img=surface, point=(rect_mask.width / 2 + 2, height_text), 
+                       side=LEFT, size=self.size_text, color=vehicle_color)
+
+            # Error
+            write_text(text="Error = "+str(int(deviation))+"(in pixels)", img=surface, point=(0, 0), 
+                       side=LEFT, size=self.size_text, color=(255, 255, 255), bold=True)
+
+            self.screen.blit(surface, rect_mask)
+            
+        return deviation
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
@@ -388,7 +450,7 @@ class Vehicle_sensors:
         for sensor in self.sensors:
             sensor.process_data()
 
-        if time.time() - self.time_frame > 1:
+        if time.time() - self.time_frame > 1: 
             self.time_frame = time.time()
             self.write_frame = frame - self.count_frame
             self.count_frame = frame
