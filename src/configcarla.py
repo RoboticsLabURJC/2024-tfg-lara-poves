@@ -6,7 +6,7 @@ import random
 from queue import LifoQueue
 import sys
 import os
-from PIL import Image
+from PIL import Image, ImageDraw
 import time
 
 sys.path.insert(0, '/home/alumnos/lara/efficientvit-urjc/urjc')
@@ -139,61 +139,53 @@ class CameraRGB(Sensor):
     
     def get_deviation_road(self, rect_mask:pygame.Rect):
         if len(self.mask) == 0:
-            return None
+            return 0
         
         height_text = 10
         vehicle_color = (255, 0, 0)
         mask_color = (128, 64, 128)
         center_color = (0, 255, 0)
 
-        x = 0
-        y = 0
-        count = 0
+        height, width = self.mask.shape
+        road_pixels = np.argwhere(self.mask == ROAD)
 
-        width = len(self.mask)
-        height = len(self.mask[0])
+        image = Image.new('RGB', (width, height), color=0)
+        draw = ImageDraw.Draw(image)
+        for i, j in road_pixels:
+            draw.point((j, i), fill=mask_color)
 
-        # Create image from mask including only the road
-        image = Image.new('RGB', (width, height), color=0) 
-        for i in range(width):
-            for j in range(height):
-                if self.mask[i][j] == ROAD:
-                    image.putpixel((i, j), mask_color)
-
-                    count += 1
-                    x += i
-                    y += j
-
-        # Calculate center mass
-        x = x / count
-        y = y / count
-        deviation = abs(x - width / 2)
+        if len(road_pixels) > 0:
+            center_of_mass = np.mean(road_pixels, axis=0)
+            y, x = center_of_mass
+            deviation = abs(y - height / 2)
+        else:
+            x = y = deviation = 0
 
         if rect_mask != None:
-            x = rect_mask.width - int(x * rect_mask.width / width)
-            y = int(y * rect_mask.height / height)
-            image = image.resize((rect_mask.width, rect_mask.height))
-
             # Transform to pygame surface
+            image = image.resize((rect_mask.height, rect_mask.width))
             image_data = image.tobytes()
             surface = pygame.image.fromstring(image_data, image.size, image.mode)
-            surface = pygame.transform.flip(surface, True, False)
 
-            # Draw center mass
-            pygame.draw.line(surface, center_color, (x, 0), (x, rect_mask.height), 1)
+            x = int(x * rect_mask.height / width)
+            y = int(y * rect_mask.width / height)
+
+            # Draw center mass and vehicle
+            pygame.draw.line(surface, center_color, (0, y), (rect_mask.height, y), 1)
             pygame.draw.circle(surface, center_color, (x, y), 9)
-            write_text(text="center mass", img=surface, point=(x + 2, height_text * 4), side=LEFT,
-                       size=self.size_text, color=center_color)
+            pygame.draw.line(surface, vehicle_color, (0, int(rect_mask.width / 2)), 
+                            (rect_mask.height, int(rect_mask.width / 2)), 1)
 
-            # Draw vehicle
-            pygame.draw.line(surface, vehicle_color, (int(rect_mask.width / 2), 0), 
-                            (int(rect_mask.width / 2), rect_mask.height), 1)
+            # Rotation
+            surface = pygame.transform.rotate(surface, -90)
+
+            # Write text post rotation
+            write_text(text="Deviation = "+str(int(deviation))+"(in pixels)", img=surface, point=(0, 0), 
+                       side=LEFT, size=self.size_text, color=(255, 255, 255), bold=True)
+            write_text(text="center mass", img=surface, point=(rect_mask.width - y + 2, height_text * 4),
+                       side=LEFT, size=self.size_text, color=center_color)
             write_text(text="vehicle", img=surface, point=(rect_mask.width / 2 + 2, height_text), 
                        side=LEFT, size=self.size_text, color=vehicle_color)
-
-            # Error
-            write_text(text="Error = "+str(int(deviation))+"(in pixels)", img=surface, point=(0, 0), 
-                       side=LEFT, size=self.size_text, color=(255, 255, 255), bold=True)
 
             self.screen.blit(surface, rect_mask)
             
@@ -456,7 +448,7 @@ class Vehicle_sensors:
             self.count_frame = frame
 
         write_text(text="FPS: "+str(self.write_frame), img=self.screen, color=(0, 0, 0),
-                    bold=True, point=(2, 0), size=23, side=LEFT)
+                   bold=True, point=(2, 0), size=23, side=LEFT)
         
         if flip:
             pygame.display.flip()
