@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-17T13:46:00
+last_modified_at: 2024-04-18T12:53:00
 categories:
   - Blog
 tags:
@@ -288,5 +288,11 @@ EfficientViT es evaluado en tres tareas principales: segmentación semántica, s
 
 ## Aplicación
 
-Hemos añadido varias mejoras en el manejo de los sensores, la principal es mostrar el número de *frames* por segundo a los que itera nuestro programa. También hemos integrado la red de segmentación semántica EfficientViT en nuestro código para poder comprender el entorno, para ello, hemos añadido nuevos parámetros y atributos en el objeto *CameraRGB*.
+Hemos añadido varias mejoras en el manejo de los sensores, la principal es mostrar el número de *frames* por segundo a los que itera nuestro programa. También hemos integrado la red de segmentación semántica EfficientViT en nuestro código para poder comprender el entorno, para ello, hemos añadido nuevos atributos en la clase *CameraRGB* y nuevos parámetros en la función referente a la cámara de la clase *Vehicle_sensors*.
+```python
+def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0),
+                   transform:carla.Transform=carla.Transform(), text:str=None,
+                   seg:bool=False, init_seg:tuple[int, int]=(0, 0)):
+```
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7sNotFt7PaE?si=FQzEKb_w9w1riukf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
