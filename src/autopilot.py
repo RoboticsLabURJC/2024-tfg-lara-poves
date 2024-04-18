@@ -27,7 +27,8 @@ def main():
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(WIDTH * 3 - DECREASE * 2, 0),
                            transform=camera_transform, text='World view')
 
-    camera_back_transform = carla.Transform(carla.Location(z=2.5, x=-0.5), carla.Rotation(roll=90.0, yaw=180.0))
+    camera_back_transform = carla.Transform(carla.Location(z=2.5, x=-0.5), 
+                                            carla.Rotation(roll=90.0, yaw=180.0))
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(WIDTH * 3 - DECREASE * 2, HEIGHT),
                            transform=camera_back_transform, text='Back view')
 

@@ -88,6 +88,8 @@ class CameraRGB(Sensor):
 
         self.screen = screen
         self.text = text
+
+        self.mask = []
         self.seg = seg
         if seg:
             self.seg_model = EV.EfficientVit(cuda_device="cuda:3", model="l2")
@@ -123,14 +125,17 @@ class CameraRGB(Sensor):
 
             # Create a canvas with the segmentation output
             pred = self.seg_model.predict(image_seg)
-            canvas, _ = self.seg_model.get_canvas(np.array(image_seg), pred)
+            canvas, self.mask = self.seg_model.get_canvas(np.array(image_seg), pred)
             canvas = Image.fromarray(canvas)
 
             surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
-            surface_seg = pygame.transform.scale(surface_seg, self.rect_org.size)
             surface_seg = pygame.transform.rotate(surface_seg, -90)
+            surface_seg = pygame.transform.scale(surface_seg, self.rect_org.size)
 
             self.screen.blit(surface_seg, self.rect_seg)
+    
+    def get_segmentation_mask(self):
+        return self.mask
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
@@ -375,7 +380,7 @@ class Vehicle_sensors:
         self.sensors.append(lidar)
         return lidar
 
-    def update_data(self):
+    def update_data(self, flip:bool=True):
         # Pick data in the same frame
         for sensor in self.sensors:
             frame = sensor.update_data()
@@ -391,7 +396,8 @@ class Vehicle_sensors:
         write_text(text="FPS: "+str(self.write_frame), img=self.screen, color=(0, 0, 0),
                     bold=True, point=(2, 0), size=23, side=LEFT)
         
-        pygame.display.flip()
+        if flip:
+            pygame.display.flip()
 
     def destroy(self):
         for sensor in self.sensors:
