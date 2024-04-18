@@ -2,6 +2,7 @@ import pygame
 import carla
 import configcarla
 from PIL import Image
+import numpy as np
 
 HEIGHT= 610
 WIDTH = 610
@@ -11,6 +12,10 @@ ROAD = 0
 def show_mask(mask:list[list[int]], screen:pygame.Surface, rect:pygame.Rect):
     if len(mask) == 0:
         return 
+    
+    x = 0
+    y = 0
+    count = 0
 
     # Create image from mask including only the road
     image = Image.new('RGB', (len(mask), len(mask[0])), color=0) 
@@ -18,13 +23,26 @@ def show_mask(mask:list[list[int]], screen:pygame.Surface, rect:pygame.Rect):
         for j in range(len(mask[0])):
             if mask[i][j] == ROAD:
                 image.putpixel((i, j), (128, 64, 128))
+
+                count += 1
+                x += i
+                y += j
+
     image = image.resize((rect.width, rect.height))
 
-    # Show in Pygame
+    # Transform to pygame surface
     image_data = image.tobytes()
     surface = pygame.image.fromstring(image_data, image.size, image.mode)
     surface = pygame.transform.flip(surface, True, False)
+
+    # Calculate center mass
+    x = WIDTH - int(x / count * WIDTH / len(mask))
+    y = int(y / count * HEIGHT / len(mask[0]))
+    pygame.draw.line(surface, (173, 216, 230), (x, 0), (x, HEIGHT), 1)
+    pygame.draw.circle(surface, (0, 0, 255), (x, y), 7)
+
     screen.blit(surface, rect)
+    return x, y
 
 def main():
     world, _ = configcarla.setup_carla(name_world='Town04', port=2000)
