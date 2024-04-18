@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-04-16T21:35:00
+last_modified_at: 2024-04-18T12:46:00
 categories:
   - Blog
 tags:
@@ -87,7 +87,7 @@ class Sensor:
         pass
 
 class Vehicle_sensors:
-    def update_data(self):
+    def update_data(self, flip:bool=True):
         # Pick data in the same frame
         for sensor in self.sensors:
             sensor.update_data()
