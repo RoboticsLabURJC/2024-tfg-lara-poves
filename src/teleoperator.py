@@ -17,7 +17,7 @@ def main():
                                   transform=vehicle_transform, ego_vehicle=True)
 
     # Create teleoperator
-    teleop = Teleoperator(ego_vehicle)
+    teleop = Teleoperator(ego_vehicle, throttle=0.45)
 
     # Add cameras
     cameras = Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
