@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-04-18T12:46:00
+last_modified_at: 2024-04-19T08:48:00
 categories:
   - Blog
 tags:
@@ -117,6 +117,10 @@ class Teleoperator:
     def set_steer(self, steer:float)
     def set_throttle(self, throttle:float)
     def set_brake(self, brake:float)
+
+    def get_steer(self)
+    def get_throttle(self)
+    def get_brake(self)
 ```
 
 ## Demo

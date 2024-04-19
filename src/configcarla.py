@@ -157,9 +157,10 @@ class CameraRGB(Sensor):
         if len(road_pixels) > 0:
             center_of_mass = np.mean(road_pixels, axis=0)
             y, x = center_of_mass
-            deviation = abs(y - height / 2)
+            deviation = y - height / 2
         else:
-            x = y = deviation = 0
+            x = y = 0
+            deviation = height / 2
 
         if rect_mask != None:
             # Transform to pygame surface
@@ -167,6 +168,7 @@ class CameraRGB(Sensor):
             image_data = image.tobytes()
             surface = pygame.image.fromstring(image_data, image.size, image.mode)
 
+            # Scale center of mass
             x = int(x * rect_mask.height / width)
             y = int(y * rect_mask.width / height)
 
@@ -180,9 +182,9 @@ class CameraRGB(Sensor):
             surface = pygame.transform.rotate(surface, -90)
 
             # Write text post rotation
-            write_text(text="Deviation = "+str(int(deviation))+"(in pixels)", img=surface, point=(0, 0), 
+            write_text(text="Deviation = "+str(int(abs(deviation)))+"(in pixels)", img=surface, point=(0, 0), 
                        side=LEFT, size=self.size_text, color=(255, 255, 255), bold=True)
-            write_text(text="center mass", img=surface, point=(rect_mask.width - y + 2, height_text * 4),
+            write_text(text="center of mass", img=surface, point=(rect_mask.width - y + 2, height_text * 4),
                        side=LEFT, size=self.size_text, color=center_color)
             write_text(text="vehicle", img=surface, point=(rect_mask.width / 2 + 2, height_text), 
                        side=LEFT, size=self.size_text, color=vehicle_color)
@@ -489,6 +491,44 @@ class Teleoperator:
 
     def set_brake(self, brake:float):
         self.brake = max(0.0, min(1.0, brake))
+
+    def get_steer(self):
+        return self.steer
+    
+    def get_throttle(self):
+        return self.throttle
+    
+    def get_brake(self):
+        return self.brake
+
+class PID:
+    def __init__(self, vehicle:carla.Vehicle):
+        self.throttle = 0.65
+        self.vehicle = vehicle
+
+        # Max error is 400
+        self.kp = -1/200
+        self.kd = 0
+        self.ki = 0
+
+        self.error = 0
+        self.prev_error = 0
+        self.total_error = 0
+
+    def controll_vehicle(self, error:float):
+        self.prev_error = self.error
+        self.error = error
+        self.total_error += error
+
+        control = carla.VehicleControl()
+
+        if error < 150:
+            control.throttle = self.throttle
+        else:
+            control.throttle = self.throttle / 2
+        w = self.kp * (self.error - self.prev_error) 
+        control.steer = w
+        self.vehicle.apply_control(control)
 
 def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.1):
     client = carla.Client('localhost', port)
