@@ -16,7 +16,7 @@ def main():
     rect_mask = sub_screen_mask.get_rect(topleft=(WIDTH, HEIGHT))
 
     # Add Ego Vehicle
-    ego_transform = carla.Transform(carla.Location(x=150.0, y=-105.0, z=2.5), carla.Rotation(yaw=80.0))
+    ego_transform = carla.Transform(carla.Location(x=155.0, y=-90.0, z=2.5), carla.Rotation(yaw=90.0))
     ego_vehicle = configcarla.add_one_vehicle(world=world, vehicle_type='vehicle.lincoln.mkz_2020',
                                               ego_vehicle=True, transform=ego_transform)
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
