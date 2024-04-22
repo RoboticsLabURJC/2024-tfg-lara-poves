@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-04-22T16:33:00
+last_modified_at: 2024-04-22T18:58:00
 categories:
   - Blog
 tags:
@@ -108,7 +108,7 @@ Además, hemos añadido una nueva función ***add_camera_rgb*** en la clase *Veh
 
 ## Control 
 
-El teleoperador también ha sido desarrollado utilizando *Pygame*. En función de la tecla presionada, el vehículo recibe el correspondiente comando de control: la flecha hacia adelante se utiliza para avanzar, las teclas laterales para girar y la flecha hacia abajo para frenar.
+El teleoperador también ha sido desarrollado utilizando *Pygame*. En función de la tecla presionada, el vehículo recibe el correspondiente comando de control: la *w* se utiliza para avanzar, las teclas *a* y *d* para girar el volante y la *s* para frenar.
 
 Para implementar este modo de funcionamiento, hemos creado la clase ***Teleoperator***.
 ```python
