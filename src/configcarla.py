@@ -160,7 +160,6 @@ class CameraRGB(Sensor):
             deviation = y - height / 2
             dev_write = int(deviation)
         else:
-            x = y = 0
             deviation = dev_write = np.nan
 
         if rect_mask != None:
@@ -169,13 +168,16 @@ class CameraRGB(Sensor):
             image_data = image.tobytes()
             surface = pygame.image.fromstring(image_data, image.size, image.mode)
 
-            # Scale center of mass
-            x = int(x * rect_mask.height / width)
-            y = int(y * rect_mask.width / height)
+            if not np.isnan(deviation):
+                # Scale center of mass
+                x = int(x * rect_mask.height / width)
+                y = int(y * rect_mask.width / height)
 
-            # Draw center mass and vehicle
-            pygame.draw.line(surface, center_color, (0, y), (rect_mask.height, y), 1)
-            pygame.draw.circle(surface, center_color, (x, y), 9)
+                # Draw center mass
+                pygame.draw.line(surface, center_color, (0, y), (rect_mask.height, y), 1)
+                pygame.draw.circle(surface, center_color, (x, y), 9)
+
+            # Draw vehicle    
             pygame.draw.line(surface, vehicle_color, (0, int(rect_mask.width / 2)), 
                             (rect_mask.height, int(rect_mask.width / 2)), 1)
 
@@ -185,10 +187,12 @@ class CameraRGB(Sensor):
             # Write text post rotation
             write_text(text="Deviation = "+str(abs(dev_write))+"(in pixels)", img=surface, point=(0, 0), 
                        side=LEFT, size=self.size_text, color=(255, 255, 255), bold=True)
-            write_text(text="center of mass", img=surface, point=(rect_mask.width - y + 2, height_text * 4),
-                       side=LEFT, size=self.size_text, color=center_color)
             write_text(text="vehicle", img=surface, point=(rect_mask.width / 2 + 2, height_text), 
                        side=LEFT, size=self.size_text, color=vehicle_color)
+            
+            if not np.isnan(deviation):
+                write_text(text="center of mass", point=(rect_mask.width - y + 2, height_text * 4),
+                           side=LEFT, img=surface, size=self.size_text, color=center_color)
 
             self.screen.blit(surface, rect_mask)
             
