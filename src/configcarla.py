@@ -39,8 +39,8 @@ def get_angle_range(angle:float):
 
     return angle
 
-def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=False, 
-               side:int=FRONT, size:int=50, color:tuple[int, int, int]=(255, 255, 255)):
+def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=False, side:int=FRONT, 
+               size:int=50, color:tuple[int, int, int]=(255, 255, 255), background:tuple[int, int, int]=None):
     font = pygame.font.Font(pygame.font.match_font('tlwgtypo'), size)
     if bold:
         font.set_bold(True)
@@ -54,6 +54,9 @@ def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=Fa
         text_rect.topright = point
     else:
         text_rect.center = point
+
+    if background != None:
+        pygame.draw.rect(img, background, text_rect)
 
     img.blit(text, text_rect)
 
@@ -141,7 +144,7 @@ class CameraRGB(Sensor):
         if len(self.mask) == 0:
             return 0
         
-        height_text = 10
+        height_text = 15
         vehicle_color = (255, 0, 0)
         mask_color = (128, 64, 128)
         center_color = (0, 255, 0)
@@ -157,9 +160,10 @@ class CameraRGB(Sensor):
         if len(road_pixels) > 0:
             center_of_mass = np.mean(road_pixels, axis=0)
             y, x = center_of_mass
-            deviation = abs(y - height / 2)
+            deviation = height / 2 - y
+            dev_write = int(deviation)
         else:
-            x = y = deviation = 0
+            deviation = dev_write = np.nan
 
         if rect_mask != None:
             # Transform to pygame surface
@@ -167,12 +171,16 @@ class CameraRGB(Sensor):
             image_data = image.tobytes()
             surface = pygame.image.fromstring(image_data, image.size, image.mode)
 
-            x = int(x * rect_mask.height / width)
-            y = int(y * rect_mask.width / height)
+            if not np.isnan(deviation):
+                # Scale center of mass
+                x = int(x * rect_mask.height / width)
+                y = int(y * rect_mask.width / height)
 
-            # Draw center mass and vehicle
-            pygame.draw.line(surface, center_color, (0, y), (rect_mask.height, y), 1)
-            pygame.draw.circle(surface, center_color, (x, y), 9)
+                # Draw center mass
+                pygame.draw.line(surface, center_color, (0, y), (rect_mask.height, y), 1)
+                pygame.draw.circle(surface, center_color, (x, y), 9)
+
+            # Draw vehicle    
             pygame.draw.line(surface, vehicle_color, (0, int(rect_mask.width / 2)), 
                             (rect_mask.height, int(rect_mask.width / 2)), 1)
 
@@ -180,12 +188,14 @@ class CameraRGB(Sensor):
             surface = pygame.transform.rotate(surface, -90)
 
             # Write text post rotation
-            write_text(text="Deviation = "+str(int(deviation))+"(in pixels)", img=surface, point=(0, 0), 
+            write_text(text="Deviation = "+str(abs(dev_write))+"(in pixels)", img=surface, point=(0, 0), 
                        side=LEFT, size=self.size_text, color=(255, 255, 255), bold=True)
-            write_text(text="center mass", img=surface, point=(rect_mask.width - y + 2, height_text * 4),
-                       side=LEFT, size=self.size_text, color=center_color)
             write_text(text="vehicle", img=surface, point=(rect_mask.width / 2 + 2, height_text), 
                        side=LEFT, size=self.size_text, color=vehicle_color)
+            
+            if not np.isnan(deviation):
+                write_text(text="center of mass", point=(rect_mask.width - y + 2, height_text * 4),
+                           side=LEFT, img=surface, size=self.size_text, color=center_color)
 
             self.screen.blit(surface, rect_mask)
             
@@ -470,13 +480,13 @@ class Teleoperator:
         control = carla.VehicleControl()
         keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_a]:
             control.steer = -self.steer
-        if keys[pygame.K_RIGHT]:
+        if keys[pygame.K_d]:
             control.steer =  self.steer
-        if keys[pygame.K_UP]:
+        if keys[pygame.K_w]:
             control.throttle = self.throttle
-        if keys[pygame.K_DOWN]:
+        if keys[pygame.K_s]:
             control.brake = self.brake
 
         self.vehicle.apply_control(control)
@@ -490,10 +500,49 @@ class Teleoperator:
     def set_brake(self, brake:float):
         self.brake = max(0.0, min(1.0, brake))
 
+    def get_steer(self):
+        return self.steer
+    
+    def get_throttle(self):
+        return self.throttle
+    
+    def get_brake(self):
+        return self.brake
+
+class PID:
+    def __init__(self, vehicle:carla.Vehicle):
+        self.throttle = 0.4
+        self.vehicle = vehicle
+
+        # Max error is 300
+        self.kp = 1/300
+        self.kd = 0
+        self.ki = 0
+
+        self.error = 0
+        self.prev_error = 0
+        self.total_error = 0
+
+    def controll_vehicle(self, error:float):
+        self.prev_error = self.error
+        self.error = error
+        self.total_error += error
+
+        control = carla.VehicleControl()
+        control.throttle = self.throttle
+
+        if error == np.nan:
+            w = 0
+        else:
+            w = self.kp * self.error
+        print(w) 
+        control.steer = w
+        self.vehicle.apply_control(control)
+
 def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.1):
     client = carla.Client('localhost', port)
     world = client.get_world()
-    client.load_world(name_world)
+    world = client.load_world(name_world)
 
     settings = world.get_settings()
     settings.synchronous_mode = True
