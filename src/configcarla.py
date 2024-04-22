@@ -158,9 +158,10 @@ class CameraRGB(Sensor):
             center_of_mass = np.mean(road_pixels, axis=0)
             y, x = center_of_mass
             deviation = y - height / 2
+            dev_write = int(deviation)
         else:
             x = y = 0
-            deviation = height / 2
+            deviation = dev_write = np.nan
 
         if rect_mask != None:
             # Transform to pygame surface
@@ -182,7 +183,7 @@ class CameraRGB(Sensor):
             surface = pygame.transform.rotate(surface, -90)
 
             # Write text post rotation
-            write_text(text="Deviation = "+str(int(abs(deviation)))+"(in pixels)", img=surface, point=(0, 0), 
+            write_text(text="Deviation = "+str(abs(dev_write))+"(in pixels)", img=surface, point=(0, 0), 
                        side=LEFT, size=self.size_text, color=(255, 255, 255), bold=True)
             write_text(text="center of mass", img=surface, point=(rect_mask.width - y + 2, height_text * 4),
                        side=LEFT, size=self.size_text, color=center_color)
@@ -503,11 +504,11 @@ class Teleoperator:
 
 class PID:
     def __init__(self, vehicle:carla.Vehicle):
-        self.throttle = 0.65
+        self.throttle = 0.4
         self.vehicle = vehicle
 
-        # Max error is 400
-        self.kp = -1/200
+        # Max error is 300
+        self.kp = -1/300
         self.kd = 0
         self.ki = 0
 
@@ -521,19 +522,20 @@ class PID:
         self.total_error += error
 
         control = carla.VehicleControl()
+        control.throttle = self.throttle
 
-        if error < 150:
-            control.throttle = self.throttle
+        if error == np.nan:
+            w = 0
         else:
-            control.throttle = self.throttle / 2
-        w = self.kp * (self.error - self.prev_error) 
+            w = self.kp * self.error
+        print(w) 
         control.steer = w
         self.vehicle.apply_control(control)
 
 def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.1):
     client = carla.Client('localhost', port)
     world = client.get_world()
-    client.load_world(name_world)
+    world = client.load_world(name_world)
 
     settings = world.get_settings()
     settings.synchronous_mode = True
