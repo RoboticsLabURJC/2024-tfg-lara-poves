@@ -39,8 +39,8 @@ def get_angle_range(angle:float):
 
     return angle
 
-def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=False, 
-               side:int=FRONT, size:int=50, color:tuple[int, int, int]=(255, 255, 255)):
+def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=False, side:int=FRONT, 
+               size:int=50, color:tuple[int, int, int]=(255, 255, 255), background:tuple[int, int, int]=None):
     font = pygame.font.Font(pygame.font.match_font('tlwgtypo'), size)
     if bold:
         font.set_bold(True)
@@ -54,6 +54,9 @@ def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=Fa
         text_rect.topright = point
     else:
         text_rect.center = point
+
+    if background != None:
+        pygame.draw.rect(img, background, text_rect)
 
     img.blit(text, text_rect)
 
@@ -141,7 +144,7 @@ class CameraRGB(Sensor):
         if len(self.mask) == 0:
             return 0
         
-        height_text = 10
+        height_text = 15
         vehicle_color = (255, 0, 0)
         mask_color = (128, 64, 128)
         center_color = (0, 255, 0)
@@ -157,7 +160,7 @@ class CameraRGB(Sensor):
         if len(road_pixels) > 0:
             center_of_mass = np.mean(road_pixels, axis=0)
             y, x = center_of_mass
-            deviation = y - height / 2
+            deviation = height / 2 - y
             dev_write = int(deviation)
         else:
             deviation = dev_write = np.nan
@@ -477,13 +480,13 @@ class Teleoperator:
         control = carla.VehicleControl()
         keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_a]:
             control.steer = -self.steer
-        if keys[pygame.K_RIGHT]:
+        if keys[pygame.K_d]:
             control.steer =  self.steer
-        if keys[pygame.K_UP]:
+        if keys[pygame.K_w]:
             control.throttle = self.throttle
-        if keys[pygame.K_DOWN]:
+        if keys[pygame.K_s]:
             control.brake = self.brake
 
         self.vehicle.apply_control(control)
@@ -512,7 +515,7 @@ class PID:
         self.vehicle = vehicle
 
         # Max error is 300
-        self.kp = -1/300
+        self.kp = 1/300
         self.kd = 0
         self.ki = 0
 
