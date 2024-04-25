@@ -11,31 +11,29 @@ sys.path.insert(0, src_path)
 import configcarla
 
 HEIGHT= 490
-WIDTH = 500
+WIDTH = 550
 
 def main(save_data):
     world, _ = configcarla.setup_carla(name_world='Town05', port=2000)
     screen = configcarla.setup_pygame(size=(WIDTH * 2, HEIGHT * 2), name='PID')
-
-    #world.unload_map_layer(carla.MapLayer.Buildings)
 
     # Surface to show segmentation mask road
     sub_screen_mask = pygame.Surface((WIDTH, HEIGHT))
     rect_mask = sub_screen_mask.get_rect(topleft=(WIDTH, HEIGHT))
 
     # Add Ego Vehicle
-    ego_transform = carla.Transform(carla.Location(x=155.0, y=-90.0, z=2.5), carla.Rotation(yaw=90.0))
+    ego_transform = carla.Transform(carla.Location(x=153.0, y=-58.0, z=2.5), carla.Rotation(yaw=90.0))
     ego_vehicle = configcarla.add_one_vehicle(world=world, vehicle_type='vehicle.lincoln.mkz_2020',
                                               ego_vehicle=True, transform=ego_transform)
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
     # Add sensors to Ego Vehicle
-    driver_transform = carla.Transform(carla.Location(z=2.5, x=0.75), carla.Rotation(roll=90.0))
+    driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
     camera = sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), transform=driver_transform,
-                                    seg=True, init_seg=(WIDTH, 0), text='Driver view')
+                                    seg=True, init_seg=(0, HEIGHT), text='Driver view')
     
-    world_transform = carla.Transform(carla.Location(z=2.5, x=-4.0), carla.Rotation(pitch=-10.0, roll=90.0))
-    sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, HEIGHT), transform=world_transform, 
+    world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
+    sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(WIDTH, 0), transform=world_transform, 
                            text='World view')
     
     # Instance PID controller

@@ -3,7 +3,7 @@ import carla
 import configcarla
 
 # Screen
-HEIGHT = 600
+HEIGHT = 500
 WIDTH = 600
 
 # Buttom

@@ -13,7 +13,7 @@ from configcarla import FRONT, DIST
 
 # Screen
 HEIGHT= 400
-WIDTH = 400
+WIDTH = 450
 
 TITLE = 0
 TRANSFORM = 1
@@ -37,18 +37,21 @@ def main(mode):
     ego_transform = carla.Transform(carla.Location(x=140, y=129, z=2.5), carla.Rotation(yaw=180))
     ego_vehicle = configcarla.add_one_vehicle(world=world, ego_vehicle=True, transform=ego_transform,
                                               vehicle_type='vehicle.lincoln.mkz_2020')
-    sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
     # Add sensors to Ego Vehicle
-    lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
-    camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5), 
-                                       carla.Rotation(pitch=-10.0, roll=90.0))
+    sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
+
+    camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5), carla.Rotation(pitch=-10.0, roll=90.0))
+    sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), text='Driver view',
+                           transform=camera_transform)
     
-    sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), transform=camera_transform)
     camera_transform.location.x = -4.0
-    sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, HEIGHT), transform=camera_transform)
+    sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, HEIGHT), text='World View',
+                           transform=camera_transform)
+
+    lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
     lidar = sensors.add_lidar(size_rect=(WIDTH * 2, HEIGHT * 2), init=(WIDTH, 0), scale_lidar=35,
-                      transform=lidar_transform)
+                              transform=lidar_transform)
     
     # Possible configurations of vehicles
     x = ego_transform.location.x
@@ -70,8 +73,9 @@ def main(mode):
     front_vehicles = add_config_vehicles(config=configuration[index], world=world)
 
     # Open csv file
-    csv_file= open('/home/alumnos/lara/2024-tfg-lara-poves/src/histograms/hist_data.csv', mode, newline='') 
-    csv_desktop = csv.writer(csv_file)
+    if mode != 'n':
+        csv_file= open('/home/alumnos/lara/2024-tfg-lara-poves/src/histograms/hist_data.csv', mode, newline='') 
+        csv_desktop = csv.writer(csv_file)
     
     try:
         while True:
@@ -81,8 +85,10 @@ def main(mode):
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
                     dist = lidar.get_meas_zones()[DIST][FRONT]
                     dist.insert(0, configuration[index][TITLE])
-                    csv_desktop.writerow(dist)
                     print("Save data:", configuration[index][TITLE])
+
+                    if mode != 'n':
+                        csv_desktop.writerow(dist)
 
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_x:
                     for v in front_vehicles:
@@ -106,12 +112,14 @@ def main(mode):
         for v in front_vehicles:
             v.destroy()
 
-        csv_file.close()
+        if mode != 'n':
+            csv_file.close()
+
         pygame.quit()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Specified opening mode for csv file")
     current_path = os.path.abspath(__file__)
-    parser.add_argument("mode", choices=["a", "w"])
+    parser.add_argument("mode", choices=["a", "w", "n"])
     args = parser.parse_args()    
     main(args.mode)
