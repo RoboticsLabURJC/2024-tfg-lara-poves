@@ -50,7 +50,7 @@ def main(mode):
                            transform=camera_transform)
 
     lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
-    lidar = sensors.add_lidar(size_rect=(WIDTH * 2, HEIGHT * 2), init=(WIDTH, 0), scale_lidar=35,
+    lidar = sensors.add_lidar(size_rect=(WIDTH * 2, HEIGHT * 2), init=(WIDTH, 0), scale=35,
                               transform=lidar_transform)
     
     # Possible configurations of vehicles
