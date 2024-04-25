@@ -15,20 +15,30 @@ os.chdir('/home/alumnos/lara/efficientvit-urjc/urjc')
 
 import EfficientVit as EV
 
+SIZE_CAMERA = 512
+
+# Type
+CAMERA = 1
+LIDAR = 2
+
+# Side
 NUM_ZONES = 3
 LEFT = 0
 FRONT = 1
 RIGHT = 2
 
+# Stats
 NUM_STATS = 4
 MEAN = 0
 MEDIAN = 1
 STD = 2
 MIN = 3
 
+# Measurements
 DIST = 0
 Z = 1
 
+# Segmentation
 ROAD = 0
 
 def get_angle_range(angle:float):
@@ -98,7 +108,7 @@ class CameraRGB(Sensor):
         self.mask = []
         self.seg = seg
         if seg:
-            self.seg_model = EV.EfficientVit(cuda_device="cuda:3", model="l2")
+            self.seg_model = EV.EfficientVit(cuda_device="cuda:3")
 
         self.sub_screen = pygame.Surface(size)
         self.rect_org = self.sub_screen.get_rect(topleft=init)
@@ -111,6 +121,8 @@ class CameraRGB(Sensor):
 
         image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
         image_data = np.reshape(image_data, (image.height, image.width, 4))
+        assert image.height == SIZE_CAMERA, "The dimensions of the camera are not correct"
+        assert image.width == SIZE_CAMERA, "The dimensions of the camera are not correct"
 
         # Swap blue and red channels
         image_data = image_data[:, :, (2, 1, 0)]
@@ -127,7 +139,7 @@ class CameraRGB(Sensor):
         self.screen.blit(screen_surface, self.rect_org)
 
         if self.seg:
-            image_seg = Image.fromarray(image_data)
+            image_seg = Image.fromarray(image_data).convert('RGB')
 
             # Create a canvas with the segmentation output
             pred = self.seg_model.predict(image_seg)
@@ -408,15 +420,18 @@ class Vehicle_sensors:
         self.count_frame = -1
         self.write_frame = 0
 
-    def __put_sensor(self, sensor_type:str, transform:carla.Transform, lidar:bool=False):
+    def __put_sensor(self, sensor_type:str, transform:carla.Transform, type:int=0):
         try:
             sensor_bp = self.world.get_blueprint_library().find(sensor_type)
         except IndexError:
             print("Sensor", sensor_type, "doesn't exist!")
             return None
         
-        if lidar:
+        if type == LIDAR:
             sensor_bp.set_attribute('rotation_frequency', '20')
+        elif type == CAMERA:
+            sensor_bp.set_attribute('image_size_x', str(SIZE_CAMERA))
+            sensor_bp.set_attribute('image_size_y', str(SIZE_CAMERA))
                 
         return self.world.spawn_actor(sensor_bp, transform, attach_to=self.vehicle)
 
@@ -429,7 +444,7 @@ class Vehicle_sensors:
     def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), seg:bool=False,
                        transform:carla.Transform=carla.Transform(), init_seg:tuple[int, int]=(0, 0),
                        text:str=None):
-        sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform)
+        sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform, type=CAMERA)
         camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.screen, 
                            seg=seg, init_seg=init_seg, text=text)
         self.sensors.append(camera)
@@ -437,7 +452,7 @@ class Vehicle_sensors:
     
     def add_lidar(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), scale_lidar:int=25,
                   transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True):
-        sensor = self.__put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, lidar=True)
+        sensor = self.__put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, type=LIDAR)
         lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale_lidar,
                       yaw=transform.rotation.yaw, screen=self.screen, show_stats=show_stats)
         

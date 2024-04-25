@@ -9,36 +9,35 @@ DECREASE = 50
     
 def main():
     # Setup 
-    world, client = configcarla.setup_carla(name_world='Town01', port=2000)
+    world, client = configcarla.setup_carla(name_world='Town05', port=2000)
     screen = configcarla.setup_pygame(size=(WIDTH * 4 - DECREASE * 2, HEIGHT * 2), name='Autopilot')
 
     # Add Ego Vehicle
-    ego_transform = carla.Transform(carla.Location(x=140, y=129, z=2.5), carla.Rotation(yaw=180))
+    ego_transform = carla.Transform(carla.Location(x=151.5, y=-90.0, z=2.5), carla.Rotation(yaw=90.0))
     ego_vehicle = configcarla.add_one_vehicle(world=world, ego_vehicle=True, transform=ego_transform,
                                               vehicle_type='vehicle.lincoln.mkz_2020')
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
     # Add sensors to Ego Vehicle
-    camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5), carla.Rotation(pitch=-10.0, roll=90.0))
-    sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), transform=camera_transform,
+    driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
+    sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), transform=driver_transform,
                            seg=True, init_seg=(0, HEIGHT), text='Driver view')
 
-    camera_transform.location.x = -4.0
+    world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(WIDTH * 3 - DECREASE * 2, 0),
-                           transform=camera_transform, text='World view')
+                           transform=world_transform, text='World view')
 
-    camera_back_transform = carla.Transform(carla.Location(z=2.5, x=-0.5), 
-                                            carla.Rotation(roll=90.0, yaw=180.0))
+    back_transform = carla.Transform(carla.Location(z=2.5, x=-0.5), carla.Rotation(roll=90.0, yaw=180.0))
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(WIDTH * 3 - DECREASE * 2, HEIGHT),
-                           transform=camera_back_transform, text='Back view')
+                           transform=back_transform, text='Back view')
 
     lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
     sensors.add_lidar(size_rect=((WIDTH - DECREASE) * 2, HEIGHT * 2), init=(WIDTH, 0), scale_lidar=40,
                       transform=lidar_transform)
     
     # Add a car in front of Ego Vehicle
-    ego_transform.location.x -= 6.0
-    front_vehicle = configcarla.add_one_vehicle(world=world, transform=ego_transform,
+    ego_transform.location.y += 7.0
+    front_vehicle = configcarla.add_one_vehicle(world=world, transform=ego_transform, 
                                                 vehicle_type='vehicle.tesla.model3')
 
     # Add more vehicles
