@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-04-22T18:58:00
+last_modified_at: 2024-04-25T13:54:00
 categories:
   - Blog
 tags:
@@ -60,7 +60,7 @@ class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface)
 
     def add_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform())    
-    def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), 
+    def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=None, 
                        transform:carla.Transform=carla.Transform())
 
     def destroy(self)

@@ -10,16 +10,16 @@ sys.path.insert(0, src_path)
 
 import configcarla
 
-HEIGHT= 490
-WIDTH = 550
+HEIGHT= 512
+WIDTH = 512
 
 def main(save_data):
     world, _ = configcarla.setup_carla(name_world='Town05', port=2000)
-    screen = configcarla.setup_pygame(size=(WIDTH * 2, HEIGHT * 2), name='PID')
+    screen = configcarla.setup_pygame(size=(WIDTH * 3, HEIGHT), name='PID')
 
     # Surface to show segmentation mask road
     sub_screen_mask = pygame.Surface((WIDTH, HEIGHT))
-    rect_mask = sub_screen_mask.get_rect(topleft=(WIDTH, HEIGHT))
+    rect_mask = sub_screen_mask.get_rect(topleft=(WIDTH * 2, 0))
 
     # Add Ego Vehicle
     ego_transform = carla.Transform(carla.Location(x=153.0, y=-58.0, z=2.5), carla.Rotation(yaw=90.0))
@@ -29,11 +29,11 @@ def main(save_data):
 
     # Add sensors to Ego Vehicle
     driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
-    camera = sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), transform=driver_transform,
-                                    seg=True, init_seg=(0, HEIGHT), text='Driver view')
+    camera = sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), transform=driver_transform,
+                                    seg=True, text='Driver view', init_seg=(WIDTH, 0))
     
     world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
-    sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(WIDTH, 0), transform=world_transform, 
+    sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), transform=world_transform, 
                            text='World view')
     
     # Instance PID controller

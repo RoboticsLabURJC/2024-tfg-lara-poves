@@ -111,8 +111,14 @@ class CameraRGB(Sensor):
             self.seg_model = EV.EfficientVit(cuda_device="cuda:3")
 
         self.sub_screen = pygame.Surface(size)
-        self.rect_org = self.sub_screen.get_rect(topleft=init)
-        self.rect_seg = self.sub_screen.get_rect(topleft=init_seg)
+
+        self.rect_org = init
+        if init != None:
+            self.rect_org = self.sub_screen.get_rect(topleft=init)
+
+        self.rect_seg = init_seg
+        if init_seg != None:
+            self.rect_seg = self.sub_screen.get_rect(topleft=init_seg)
 
     def process_data(self):
         image = self.data
@@ -127,16 +133,17 @@ class CameraRGB(Sensor):
         # Swap blue and red channels
         image_data = image_data[:, :, (2, 1, 0)]
 
-        # Reserve mirror effect
-        image_surface = pygame.surfarray.make_surface(image_data)
-        flipped_surface = pygame.transform.flip(image_surface, True, False)
-        screen_surface = pygame.transform.scale(flipped_surface, self.rect_org.size)
+        if self.rect_org != None:
+            # Reserve mirror effect
+            image_surface = pygame.surfarray.make_surface(image_data)
+            flipped_surface = pygame.transform.flip(image_surface, True, False)
+            screen_surface = pygame.transform.scale(flipped_surface, self.rect_org.size)
 
-        if self.text != None:
-            write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, bold=True,
-                       size=self.size_text, point=(self.rect_org.size[0], 0))
-            
-        self.screen.blit(screen_surface, self.rect_org)
+            if self.text != None:
+                write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, bold=True,
+                        size=self.size_text, point=(self.rect_org.size[0], 0))
+                
+            self.screen.blit(screen_surface, self.rect_org)
 
         if self.seg:
             image_seg = Image.fromarray(image_data).convert('RGB')
@@ -144,13 +151,15 @@ class CameraRGB(Sensor):
             # Create a canvas with the segmentation output
             pred = self.seg_model.predict(image_seg)
             canvas, self.mask = self.seg_model.get_canvas(np.array(image_seg), pred)
-            canvas = Image.fromarray(canvas)
 
-            surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
-            surface_seg = pygame.transform.rotate(surface_seg, -90)
-            surface_seg = pygame.transform.scale(surface_seg, self.rect_org.size)
+            if self.rect_seg != None:
+                canvas = Image.fromarray(canvas)
 
-            self.screen.blit(surface_seg, self.rect_seg)
+                surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
+                surface_seg = pygame.transform.rotate(surface_seg, -90)
+                surface_seg = pygame.transform.scale(surface_seg, self.rect_seg.size)
+
+                self.screen.blit(surface_seg, self.rect_seg)
     
     def get_deviation_road(self, rect_mask:pygame.Rect):
         if len(self.mask) == 0:
@@ -441,8 +450,8 @@ class Vehicle_sensors:
         self.sensors.append(sensor_class)
         return sensor_class
     
-    def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), seg:bool=False,
-                       transform:carla.Transform=carla.Transform(), init_seg:tuple[int, int]=(0, 0),
+    def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=None, seg:bool=False,
+                       transform:carla.Transform=carla.Transform(), init_seg:tuple[int, int]=None,
                        text:str=None):
         sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform, type=CAMERA)
         camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.screen, 
