@@ -198,12 +198,12 @@ class CameraRGB(Sensor):
                 y = int(y * rect_mask.width / height)
 
                 # Draw center mass
-                pygame.draw.line(surface, center_color, (0, y), (rect_mask.height, y), 1)
+                pygame.draw.line(surface, center_color, (0, y), (rect_mask.height, y), 2)
                 pygame.draw.circle(surface, center_color, (x, y), 9)
 
             # Draw vehicle    
             pygame.draw.line(surface, vehicle_color, (0, int(rect_mask.width / 2)), 
-                            (rect_mask.height, int(rect_mask.width / 2)), 1)
+                            (rect_mask.height, int(rect_mask.width / 2)), 2)
 
             # Rotation
             surface = pygame.transform.rotate(surface, -90)
@@ -228,7 +228,10 @@ class Lidar(Sensor):
         super().__init__(sensor=sensor)
 
         self.sub_screen = pygame.Surface(size)
-        self.rect = self.sub_screen.get_rect(topleft=init)
+        self.rect = init
+        if init != None:
+            self.rect = self.sub_screen.get_rect(topleft=init)
+
         self.scale = scale
         self.size_screen = size
         self.screen = screen
@@ -272,7 +275,8 @@ class Lidar(Sensor):
         angle2_sub = get_angle_range(angle2 - self.front_angle / 3)        
         self.angles = [angle1, angle1_add, angle2_sub, angle2]
 
-        self.image = self.__get_back_image()
+        if init != None:
+            self.image = self.__get_back_image()
 
     def __get_back_image(self):
         image = pygame.Surface(self.size_screen)
@@ -332,7 +336,7 @@ class Lidar(Sensor):
                 for i in range(NUM_STATS):
                     self.stat_zones[zone][i] = np.nan
 
-            if self.show_stats:
+            if self.show_stats and self.rect != None:
                 if time.time() - self.time > 1:
                     self.time = time.time()
                     self.stats_text = [
@@ -372,13 +376,14 @@ class Lidar(Sensor):
         lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
         lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 
-        z_min = np.min(lidar_data[:, 2])
-        z_max = np.max(lidar_data[:, 2])
+        if self.rect != None:
+            z_min = np.min(lidar_data[:, 2])
+            z_max = np.max(lidar_data[:, 2])
 
-        i_min = np.min(lidar_data[:, 3])
-        i_max = np.max(lidar_data[:, 3])
+            i_min = np.min(lidar_data[:, 3])
+            i_max = np.max(lidar_data[:, 3])
 
-        self.sub_screen.blit(self.image, (0, 0))
+            self.sub_screen.blit(self.image, (0, 0))
 
         dist_zones = [[] for _ in range(NUM_ZONES)]
         z_zones = [[] for _ in range(NUM_ZONES)]
@@ -389,16 +394,19 @@ class Lidar(Sensor):
                 dist_zones[zone].append(math.sqrt(x ** 2 + y ** 2))
                 z_zones[zone].append(z)
 
-            thickness = self.__interpolate_thickness(num=z, min=z_min, max=z_max)
-            color = self.__interpolate_color(num=i, min=i_min, max=i_max)
-            center = (int(x * self.scale + self.center_screen[0]),
-                      int(y * self.scale + self.center_screen[1]))
+            if self.rect != None:
+                thickness = self.__interpolate_thickness(num=z, min=z_min, max=z_max)
+                color = self.__interpolate_color(num=i, min=i_min, max=i_max)
+                center = (int(x * self.scale + self.center_screen[0]),
+                        int(y * self.scale + self.center_screen[1]))
 
-            pygame.draw.circle(self.sub_screen, color, center, thickness)
+                pygame.draw.circle(self.sub_screen, color, center, thickness)
 
         self.meas_zones = [dist_zones, z_zones]
-        self.__update_stats()            
-        self.screen.blit(self.sub_screen, self.rect)
+        self.__update_stats()  
+
+        if self.rect != None:          
+            self.screen.blit(self.sub_screen, self.rect)
     
     def set_i_threshold(self, i:float):
         self.i_threshold = i
@@ -459,10 +467,10 @@ class Vehicle_sensors:
         self.sensors.append(camera)
         return camera
     
-    def add_lidar(self, size_rect:tuple[int, int], init:tuple[int, int]=(0, 0), scale_lidar:int=25,
+    def add_lidar(self, size_rect:tuple[int, int], init:tuple[int, int]=None, scale:int=25,
                   transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True):
         sensor = self.__put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, type=LIDAR)
-        lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale_lidar,
+        lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale,
                       yaw=transform.rotation.yaw, screen=self.screen, show_stats=show_stats)
         
         self.sensors.append(lidar)
