@@ -159,6 +159,9 @@ class CameraRGB(Sensor):
                 surface_seg = pygame.transform.rotate(surface_seg, -90)
                 surface_seg = pygame.transform.scale(surface_seg, self.rect_seg.size)
 
+                write_text(text="Segmented " + self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
+                           bold=True, size=self.size_text, point=(self.rect_seg.size[0], 0))
+
                 self.screen.blit(surface_seg, self.rect_seg)
     
     def get_deviation_road(self, rect_mask:pygame.Rect):
