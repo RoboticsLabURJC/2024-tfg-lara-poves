@@ -12,7 +12,7 @@ import configcarla
 from configcarla import SIZE_CAMERA
 
 def main(save_data):
-    world, _ = configcarla.setup_carla(name_world='Town05', port=2000)
+    world, _ = configcarla.setup_carla(name_world='Town05', port=2000, delta_seconds=0.05)
     screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 3, SIZE_CAMERA), name='PID')
 
     # Surface to show segmentation mask road

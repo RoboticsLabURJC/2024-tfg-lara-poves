@@ -32,7 +32,7 @@ class Buttom:
     
 def main():
     # Setup CARLA and Pygame
-    world, _ = configcarla.setup_carla(name_world='Town03')
+    world, _ = configcarla.setup_carla(name_world='Town03', delta_seconds=0.05)
     screen = configcarla.setup_pygame(size=(WIDTH * 2, HEIGHT), name='Teleoperator')
 
     # Add Ego Vehicle
