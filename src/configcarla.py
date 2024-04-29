@@ -146,7 +146,7 @@ class CameraRGB(Sensor):
             self.screen.blit(screen_surface, self.rect_org)
 
         if self.seg:
-            image_seg = Image.fromarray(image_data).convert('RGB')
+            image_seg = Image.fromarray(image_data).convert('RGB').rotate(-90)
 
             # Create a canvas with the segmentation output
             pred = self.seg_model.predict(image_seg)
@@ -156,7 +156,6 @@ class CameraRGB(Sensor):
                 canvas = Image.fromarray(canvas)
 
                 surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
-                surface_seg = pygame.transform.rotate(surface_seg, -90)
                 surface_seg = pygame.transform.scale(surface_seg, self.rect_seg.size)
 
                 write_text(text="Segmented "+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
@@ -184,7 +183,7 @@ class CameraRGB(Sensor):
         if len(road_pixels) > 0:
             center_of_mass = np.mean(road_pixels, axis=0)
             y, x = center_of_mass
-            deviation = height / 2 - y
+            deviation = width/ 2 - x
             dev_write = int(deviation)
         else:
             deviation = dev_write = np.nan
@@ -202,15 +201,12 @@ class CameraRGB(Sensor):
                 y = int(y * rect_mask.width / height)
 
                 # Draw center mass
-                pygame.draw.line(surface, center_color, (0, y), (rect_mask.height, y), 2)
+                pygame.draw.line(surface, center_color, (x, 0), (x, rect_mask.height), 2)
                 pygame.draw.circle(surface, center_color, (x, y), 9)
 
             # Draw vehicle    
-            pygame.draw.line(surface, vehicle_color, (0, int(rect_mask.width / 2)), 
-                            (rect_mask.height, int(rect_mask.width / 2)), 2)
-
-            # Rotation
-            surface = pygame.transform.rotate(surface, -90)
+            pygame.draw.line(surface, vehicle_color, (int(rect_mask.width / 2), 0), 
+                            (int(rect_mask.width / 2), rect_mask.height), 2)
 
             # Write text post rotation
             write_text(text="Deviation = "+str(abs(dev_write))+"(in pixels)", img=surface, point=(0, 0), 
@@ -242,7 +238,7 @@ class Lidar(Sensor):
 
         # Visualize lidar
         self.min_thickness = 2
-        self.max_thickness = math.ceil(scale / 10) + self.min_thickness * 2
+        self.max_thickness = math.ceil(scale / 10) + self.min_thickness * 3
         self.color_min = (0, 0, 255)
         self.color_max = (255, 0, 0)
 
@@ -402,7 +398,7 @@ class Lidar(Sensor):
                 thickness = self.__interpolate_thickness(num=z, min=z_min, max=z_max)
                 color = self.__interpolate_color(num=i, min=i_min, max=i_max)
                 center = (int(x * self.scale + self.center_screen[0]),
-                        int(y * self.scale + self.center_screen[1]))
+                          int(y * self.scale + self.center_screen[1]))
 
                 pygame.draw.circle(self.sub_screen, color, center, thickness)
 
@@ -575,7 +571,7 @@ class PID:
         control.steer = w
         self.vehicle.apply_control(control)
 
-def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.1):
+def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05):
     client = carla.Client('localhost', port)
     world = client.get_world()
     world = client.load_world(name_world)
