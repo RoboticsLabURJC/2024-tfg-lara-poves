@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-29T13:10:00
+last_modified_at: 2024-04-29T17:42:00
 categories:
   - Blog
 tags:
@@ -297,4 +297,4 @@ def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=None,
 
 La red neuronal recibe como entrada una imagen en **RGB** con dimensiones de **512x512** píxeles. Por tanto, es fundamental garantizar que la imagen esté en formato RGB mediante una conversión antes de introducirla en la red. Para asegurar las dimensiones, configuramos directamente la cámara en Carla a 512x512. Realizar un reescalado podría deformar los objetos, lo que afectaría negativamente al rendimiento de la red neuronal.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_lGmfJr6Qts?si=fk5FZqhxaj0IsIQ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gK5UxpW-EAU?si=X9TG7KeQg_Vcq1--" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
