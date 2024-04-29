@@ -159,7 +159,7 @@ class CameraRGB(Sensor):
                 surface_seg = pygame.transform.rotate(surface_seg, -90)
                 surface_seg = pygame.transform.scale(surface_seg, self.rect_seg.size)
 
-                write_text(text="Segmented " + self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
+                write_text(text="Segmented "+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
                            bold=True, size=self.size_text, point=(self.rect_seg.size[0], 0))
 
                 self.screen.blit(surface_seg, self.rect_seg)
@@ -189,6 +189,7 @@ class CameraRGB(Sensor):
         else:
             deviation = dev_write = np.nan
 
+        # HMI
         if rect_mask != None:
             # Transform to pygame surface
             image = image.resize((rect_mask.height, rect_mask.width))
@@ -650,6 +651,10 @@ def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=
 
     for v in vehicles:
         v.set_autopilot(True, tm_port)
+        tm.ignore_lights_percentage(v, 0)
         tm.auto_lane_change(v, False) 
+        tm.update_vehicle_lights(v, True)
+        tm.random_left_lanechange_percentage(v, 0)
+        tm.random_right_lanechange_percentage(v, 0)
 
     return tm
