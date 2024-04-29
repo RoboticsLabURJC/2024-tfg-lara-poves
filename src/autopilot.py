@@ -41,7 +41,7 @@ def main():
                                                 vehicle_type='vehicle.tesla.model3')
 
     # Add more vehicles
-    vehicles = configcarla.add_vehicles_randomly(world=world, number=15)
+    vehicles = configcarla.add_vehicles_randomly(world=world, number=20)
     vehicles.append(ego_vehicle)
     vehicles.append(front_vehicle)
     tm = configcarla.traffic_manager(client=client, vehicles=vehicles)
