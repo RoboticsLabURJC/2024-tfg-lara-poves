@@ -104,7 +104,7 @@ class Sensor:
 
 class CameraRGB(Sensor):      
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
-                 screen:pygame.Surface, seg:bool, init_seg:tuple[int, int], text:str, lane:bool):
+                 screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], text:str, lane:bool):
         super().__init__(sensor=sensor)
 
         self.screen = screen
@@ -127,58 +127,58 @@ class CameraRGB(Sensor):
         if init != None:
             self.rect_org = self.sub_screen.get_rect(topleft=init)
 
-        self.rect_seg = init_seg
-        if init_seg != None:
-            self.rect_seg = self.sub_screen.get_rect(topleft=init_seg)
+        self.rect_extra = init_extra
+        if init_extra != None:
+            self.rect_extra = self.sub_screen.get_rect(topleft=init_extra)
+
+    def masks_lane(self, image_data:list):    
+        # Resize for the network
+        image_lane = np.zeros((SIZE_CAMERA, SIZE_CAMERA * 2, 3), dtype=np.uint8)
+        image_lane[:SIZE_CAMERA, :SIZE_CAMERA, :] = image_data # Paste image on left corner
+
+        with torch.no_grad():
+            image_tensor = image_lane.transpose(2,0,1).astype('float32')/255
+            x_tensor = torch.from_numpy(image_tensor).to("cuda").unsqueeze(0)
+            model_output = torch.softmax(self.lane_model.forward(x_tensor), dim=1 ).cpu().numpy()
+        
+        _, left_mask, right_mask = model_output[0]
+        left_mask = left_mask[:, :512]
+        right_mask = right_mask[:, :512]
+
+        return left_mask, right_mask
 
     def process_seg(self, data:list):
-        if self.seg:
-            image_seg = Image.fromarray(data).convert('RGB').rotate(-90)
+        canvas = image_data = cv2.rotate(data, cv2.ROTATE_90_CLOCKWISE)
 
-            # Create a canvas with the segmentation output
+        if self.seg:
+            image_seg = Image.fromarray(image_data)
             pred = self.seg_model.predict(image_seg)
             canvas, self.mask = self.seg_model.get_canvas(np.array(image_seg), pred)
-        else:
-            canvas = []
 
-        if self.rect_seg != None:
+        if self.rect_extra != None:
             if self.lane:
-                # Rotate
-                image_data = cv2.rotate(data, cv2.ROTATE_90_CLOCKWISE)
-                if len(canvas) == 0:
-                    canvas = image_data
-                
-                # Resize for the network
-                image_lane = np.zeros((SIZE_CAMERA, SIZE_CAMERA * 2, 3), dtype=np.uint8)
-                image_lane[:SIZE_CAMERA, :SIZE_CAMERA, :] = image_data # Paste image on left corner
-
-                with torch.no_grad():
-                    image_tensor = image_lane.transpose(2,0,1).astype('float32')/255
-                    x_tensor = torch.from_numpy(image_tensor).to("cuda").unsqueeze(0)
-                    model_output = torch.softmax(self.lane_model.forward(x_tensor), dim=1 ).cpu().numpy()
-                
-                _, left_mask, right_mask = model_output[0]
-                left_mask = left_mask[:, :512]
-                right_mask = right_mask[:, :512]
-
                 threshold = 0.25
+                left_mask, right_mask = self.masks_lane(image_data)
                 canvas[left_mask > threshold, :] = [255, 165, 0]
                 canvas[right_mask > threshold,:] = [0, 0, 255]
 
             # Convert to pygame syrface
             canvas = Image.fromarray(canvas)
             surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
-            surface_seg = pygame.transform.scale(surface_seg, self.rect_seg.size)
+            surface_seg = pygame.transform.scale(surface_seg, self.rect_extra.size)
 
             # Write text
-            write_text(text="Segmented "+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
-                        bold=True, size=self.size_text, point=(self.rect_seg.size[0], 0))
+            y = 0
+            if self.seg:
+                write_text(text="Segmented "+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
+                           bold=True, size=self.size_text, point=(self.rect_extra.size[0], 0))
+                y += self.size_text
             if self.lane:
                 write_text(text="Lane detection", img=surface_seg, color=(0, 0, 0), side=RIGHT, bold=True,
-                           size=self.size_text, point=(self.rect_seg.size[0], self.size_text))
+                           size=self.size_text, point=(self.rect_extra.size[0], y))
 
             self.seg_surface = surface_seg
-            self.screen.blit(surface_seg, self.rect_seg)
+            self.screen.blit(surface_seg, self.rect_extra)
 
     def process_data(self):
         image = self.data
@@ -187,8 +187,6 @@ class CameraRGB(Sensor):
 
         image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
         image_data = np.reshape(image_data, (image.height, image.width, 4))
-        assert image.height == SIZE_CAMERA, "The dimensions of the camera are not correct"
-        assert image.width == SIZE_CAMERA, "The dimensions of the camera are not correct"
 
         # Swap blue and red channels
         image_data = image_data[:, :, (2, 1, 0)]
@@ -228,25 +226,25 @@ class CameraRGB(Sensor):
         else:
             deviation = dev_write = np.nan
 
-        if self.rect_seg != None:
+        if self.rect_extra != None:
             if not np.isnan(deviation):
                 # Scale center of mass
-                x = int(x * self.rect_seg.height / width)
-                y = int(y * self.rect_seg.width / height)
+                x = int(x * self.rect_extra.height / width)
+                y = int(y * self.rect_extra.width / height)
 
                 # Draw center mass
-                pygame.draw.line(self.seg_surface, center_color, (x, 0), (x, self.rect_seg.height), 2)
+                pygame.draw.line(self.seg_surface, center_color, (x, 0), (x, self.rect_extra.height), 2)
                 pygame.draw.circle(self.seg_surface, center_color, (x, y), 9)
 
             # Draw vehicle 
-            pygame.draw.line(self.seg_surface, vehicle_color, (int(self.rect_seg.width / 2), 0), 
-                            (int(self.rect_seg.width / 2), self.rect_seg.height), 2)
+            pygame.draw.line(self.seg_surface, vehicle_color, (int(self.rect_extra.width / 2), 0), 
+                            (int(self.rect_extra.width / 2), self.rect_extra.height), 2)
 
             # Write text post rotation
             write_text(text="Deviation = "+str(abs(dev_write))+"(in pixels)", img=self.seg_surface, bold=True,
-                       point=(0, self.rect_seg.height - 30), side=LEFT, size=self.size_text, color=(0, 0, 0))
+                       point=(0, self.rect_extra.height - 30), side=LEFT, size=self.size_text, color=(0, 0, 0))
 
-            self.screen.blit(self.seg_surface, self.rect_seg)
+            self.screen.blit(self.seg_surface, self.rect_extra)
             
         return deviation
         
@@ -487,11 +485,11 @@ class Vehicle_sensors:
         return sensor_class
     
     def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=None, seg:bool=False,
-                       transform:carla.Transform=carla.Transform(), init_seg:tuple[int, int]=None,
+                       transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
                        text:str=None, lane:bool=False):
         sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform, type=CAMERA)
         camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.screen, 
-                           seg=seg, init_seg=init_seg, text=text, lane=lane)
+                           seg=seg, init_extra=init_extra, text=text, lane=lane)
         self.sensors.append(camera)
         return camera
     
