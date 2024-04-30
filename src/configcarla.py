@@ -15,6 +15,8 @@ os.chdir('/home/alumnos/lara/efficientvit-urjc/urjc')
 
 import EfficientVit as EV
 
+SEG_TO_NANOSEG = 1000000000
+
 SIZE_CAMERA = 512
 
 # Type
@@ -108,7 +110,7 @@ class CameraRGB(Sensor):
         self.mask = []
         self.seg = seg
         if seg:
-            self.seg_model = EV.EfficientVit(cuda_device="cuda:3")
+            self.seg_model = EV.EfficientVit(cuda_device="cuda:4")
 
         self.sub_screen = pygame.Surface(size)
 
@@ -484,8 +486,8 @@ class Vehicle_sensors:
         for sensor in self.sensors:
             sensor.process_data()
 
-        if time.time() - self.time_frame > 1: 
-            self.time_frame = time.time()
+        if time.time_ns() - self.time_frame > SEG_TO_NANOSEG: 
+            self.time_frame = time.time_ns()
             self.write_frame = frame - self.count_frame
             self.count_frame = frame
 
