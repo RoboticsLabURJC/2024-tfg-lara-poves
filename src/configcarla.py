@@ -163,64 +163,47 @@ class CameraRGB(Sensor):
                 write_text(text="Segmented "+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
                            bold=True, size=self.size_text, point=(self.rect_seg.size[0], 0))
 
+                self.seg_surface = surface_seg
                 self.screen.blit(surface_seg, self.rect_seg)
     
-    def get_deviation_road(self, rect_mask:pygame.Rect):
+    def get_deviation_road(self):
+        assert self.seg, "Segmentation must be ON"
         if len(self.mask) == 0:
             return 0
         
-        height_text = 15
-        vehicle_color = (255, 0, 0)
-        mask_color = (128, 64, 128)
-        center_color = (0, 255, 0)
+        center_color = (0, 200, 0)
+        vehicle_color = (200, 0, 0)
 
         height, width = self.mask.shape
         road_pixels = np.argwhere(self.mask == ROAD)
 
-        image = Image.new('RGB', (width, height), color=0)
-        draw = ImageDraw.Draw(image)
-        for i, j in road_pixels:
-            draw.point((j, i), fill=mask_color)
-
         if len(road_pixels) > 0:
             center_of_mass = np.mean(road_pixels, axis=0)
             y, x = center_of_mass
-            deviation = width/ 2 - x
+            deviation = x - width / 2
             dev_write = int(deviation)
         else:
             deviation = dev_write = np.nan
 
-        # HMI
-        if rect_mask != None:
-            # Transform to pygame surface
-            image = image.resize((rect_mask.height, rect_mask.width))
-            image_data = image.tobytes()
-            surface = pygame.image.fromstring(image_data, image.size, image.mode)
-
+        if self.rect_seg != None:
             if not np.isnan(deviation):
                 # Scale center of mass
-                x = int(x * rect_mask.height / width)
-                y = int(y * rect_mask.width / height)
+                x = int(x * self.rect_seg.height / width)
+                y = int(y * self.rect_seg.width / height)
 
                 # Draw center mass
-                pygame.draw.line(surface, center_color, (x, 0), (x, rect_mask.height), 2)
-                pygame.draw.circle(surface, center_color, (x, y), 9)
+                pygame.draw.line(self.seg_surface, center_color, (x, 0), (x, self.rect_seg.height), 2)
+                pygame.draw.circle(self.seg_surface, center_color, (x, y), 9)
 
-            # Draw vehicle    
-            pygame.draw.line(surface, vehicle_color, (int(rect_mask.width / 2), 0), 
-                            (int(rect_mask.width / 2), rect_mask.height), 2)
+            # Draw vehicle 
+            pygame.draw.line(self.seg_surface, vehicle_color, (int(self.rect_seg.width / 2), 0), 
+                            (int(self.rect_seg.width / 2), self.rect_seg.height), 2)
 
             # Write text post rotation
-            write_text(text="Deviation = "+str(abs(dev_write))+"(in pixels)", img=surface, point=(0, 0), 
-                       side=LEFT, size=self.size_text, color=(255, 255, 255), bold=True)
-            write_text(text="vehicle", img=surface, point=(rect_mask.width / 2 + 2, height_text), 
-                       side=LEFT, size=self.size_text, color=vehicle_color)
-            
-            if not np.isnan(deviation):
-                write_text(text="center of mass", point=(rect_mask.width - y + 2, height_text * 4),
-                           side=LEFT, img=surface, size=self.size_text, color=center_color)
+            write_text(text="Deviation = "+str(abs(dev_write))+"(in pixels)", img=self.seg_surface, bold=True,
+                       point=(0, self.rect_seg.height - 30), side=LEFT, size=self.size_text, color=(0, 0, 0))
 
-            self.screen.blit(surface, rect_mask)
+            self.screen.blit(self.seg_surface, self.rect_seg)
             
         return deviation
         
