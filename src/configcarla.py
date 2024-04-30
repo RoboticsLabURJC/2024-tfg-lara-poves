@@ -6,8 +6,12 @@ import random
 from queue import LifoQueue
 import sys
 import os
-from PIL import Image, ImageDraw
+from PIL import Image
 import time
+import torch
+
+import cv2
+import matplotlib.pyplot as plt
 
 sys.path.insert(0, '/home/alumnos/lara/efficientvit-urjc/urjc')
 sys.path.insert(0, '/home/alumnos/lara/efficientvit-urjc')
@@ -100,19 +104,24 @@ class Sensor:
 
 class CameraRGB(Sensor):      
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
-                 screen:pygame.Surface, seg:bool, init_seg:tuple[int, int], text:str):
+                 screen:pygame.Surface, seg:bool, init_seg:tuple[int, int], text:str, lane:bool):
         super().__init__(sensor=sensor)
 
         self.screen = screen
         self.text = text
         self.size_text = 20
+        self.sub_screen = pygame.Surface(size)
 
         self.mask = []
         self.seg = seg
         if seg:
             self.seg_model = EV.EfficientVit(cuda_device="cuda:4")
 
-        self.sub_screen = pygame.Surface(size)
+        self.lane = lane
+        if lane:
+            file = '/home/alumnos/lara/carla_lane_detector/examples/fastai_torch_lane_detector_model.pth'
+            self.lane_model = torch.load(file)
+            self.lane_model.eval()
 
         self.rect_org = init
         if init != None:
@@ -121,6 +130,55 @@ class CameraRGB(Sensor):
         self.rect_seg = init_seg
         if init_seg != None:
             self.rect_seg = self.sub_screen.get_rect(topleft=init_seg)
+
+    def process_seg(self, data:list):
+        if self.seg:
+            image_seg = Image.fromarray(data).convert('RGB').rotate(-90)
+
+            # Create a canvas with the segmentation output
+            pred = self.seg_model.predict(image_seg)
+            canvas, self.mask = self.seg_model.get_canvas(np.array(image_seg), pred)
+        else:
+            canvas = []
+
+        if self.rect_seg != None:
+            if self.lane:
+                # Rotate
+                image_data = cv2.rotate(data, cv2.ROTATE_90_CLOCKWISE)
+                if len(canvas) == 0:
+                    canvas = image_data
+                
+                # Resize for the network
+                image_lane = np.zeros((SIZE_CAMERA, SIZE_CAMERA * 2, 3), dtype=np.uint8)
+                image_lane[:SIZE_CAMERA, :SIZE_CAMERA, :] = image_data # Paste image on left corner
+
+                with torch.no_grad():
+                    image_tensor = image_lane.transpose(2,0,1).astype('float32')/255
+                    x_tensor = torch.from_numpy(image_tensor).to("cuda").unsqueeze(0)
+                    model_output = torch.softmax(self.lane_model.forward(x_tensor), dim=1 ).cpu().numpy()
+                
+                _, left_mask, right_mask = model_output[0]
+                left_mask = left_mask[:, :512]
+                right_mask = right_mask[:, :512]
+
+                threshold = 0.25
+                canvas[left_mask > threshold, :] = [255, 165, 0]
+                canvas[right_mask > threshold,:] = [0, 0, 255]
+
+            # Convert to pygame syrface
+            canvas = Image.fromarray(canvas)
+            surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
+            surface_seg = pygame.transform.scale(surface_seg, self.rect_seg.size)
+
+            # Write text
+            write_text(text="Segmented "+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
+                        bold=True, size=self.size_text, point=(self.rect_seg.size[0], 0))
+            if self.lane:
+                write_text(text="Lane detection", img=surface_seg, color=(0, 0, 0), side=RIGHT, bold=True,
+                           size=self.size_text, point=(self.rect_seg.size[0], self.size_text))
+
+            self.seg_surface = surface_seg
+            self.screen.blit(surface_seg, self.rect_seg)
 
     def process_data(self):
         image = self.data
@@ -144,30 +202,15 @@ class CameraRGB(Sensor):
             if self.text != None:
                 write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, bold=True,
                         size=self.size_text, point=(self.rect_org.size[0], 0))
-                
+
             self.screen.blit(screen_surface, self.rect_org)
 
-        if self.seg:
-            image_seg = Image.fromarray(image_data).convert('RGB').rotate(-90)
-
-            # Create a canvas with the segmentation output
-            pred = self.seg_model.predict(image_seg)
-            canvas, self.mask = self.seg_model.get_canvas(np.array(image_seg), pred)
-
-            if self.rect_seg != None:
-                canvas = Image.fromarray(canvas)
-
-                surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
-                surface_seg = pygame.transform.scale(surface_seg, self.rect_seg.size)
-
-                write_text(text="Segmented "+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
-                           bold=True, size=self.size_text, point=(self.rect_seg.size[0], 0))
-
-                self.seg_surface = surface_seg
-                self.screen.blit(surface_seg, self.rect_seg)
+        self.process_seg(image_data)
     
     def get_deviation_road(self):
         assert self.seg, "Segmentation must be ON"
+        assert self.lane, "Lane must be ON"
+
         if len(self.mask) == 0:
             return 0
         
@@ -445,10 +488,10 @@ class Vehicle_sensors:
     
     def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=None, seg:bool=False,
                        transform:carla.Transform=carla.Transform(), init_seg:tuple[int, int]=None,
-                       text:str=None):
+                       text:str=None, lane:bool=False):
         sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform, type=CAMERA)
         camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.screen, 
-                           seg=seg, init_seg=init_seg, text=text)
+                           seg=seg, init_seg=init_seg, text=text, lane=lane)
         self.sensors.append(camera)
         return camera
     
