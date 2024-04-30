@@ -13,7 +13,7 @@ from configcarla import SIZE_CAMERA
 
 def main(save_data):
     world, _ = configcarla.setup_carla(name_world='Town05', port=2000, delta_seconds=0.05)
-    screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 3, SIZE_CAMERA), name='PID')
+    screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='PID')
 
     # Surface to show segmentation mask road
     sub_screen_mask = pygame.Surface((SIZE_CAMERA, SIZE_CAMERA))
@@ -55,8 +55,8 @@ def main(save_data):
            
             # Upadate data of sensors
             sensors.update_data(flip=False)
-            error_road = camera.get_deviation_road(rect_mask=rect_mask)
-
+            error_road = camera.get_deviation_road()
+            
             # Save control error in a csv
             if save_data:
                 csv_desktop.writerow([error_road])
