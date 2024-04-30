@@ -162,6 +162,29 @@ class CameraRGB(Sensor):
                 canvas[left_mask > threshold, :] = [255, 165, 0]
                 canvas[right_mask > threshold,:] = [0, 0, 255]
 
+                road_pixels = []
+                for y in range(canvas.shape[0]):
+                    x_index = np.argwhere(self.mask[y] == ROAD)
+                    x_left_index = np.argwhere(left_mask[y] > threshold)
+                    x_right_index = np.argwhere(right_mask[y] > threshold)
+
+                    right_x = left_x = 0
+                    if len(x_index) != 0:
+                        left_x = x_index[0][0]
+                        right_x = x_index[-1][0] 
+
+                    if len(x_left_index) != 0:
+                        left_x = max(left_x, x_left_index[-1][0])
+
+                    if len(x_right_index) != 0:
+                        right_x = min(right_x, x_right_index[0][0])
+                    else:
+                        right_x = 0
+
+                    canvas[y, left_x:right_x] = [0, 255, 255]
+                    for x in range(left_x, right_x):
+                        road_pixels.append([y, x])
+
             # Convert to pygame syrface
             canvas = Image.fromarray(canvas)
             surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)

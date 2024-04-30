@@ -55,7 +55,8 @@ def main(save_data):
            
             # Upadate data of sensors
             sensors.update_data(flip=False)
-            error_road = camera.get_deviation_road()
+           # error_road = camera.get_deviation_road()
+            error_road = 0
             
             # Save control error in a csv
             if save_data:
