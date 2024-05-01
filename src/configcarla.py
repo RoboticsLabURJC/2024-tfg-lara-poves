@@ -85,13 +85,6 @@ class Sensor:
     def __callback_data(self, data):
         self.queue.put(data)
 
-    def update_data(self):
-        self.data = self.get_last_data()
-
-        if self.data != None:
-            return self.data.frame
-        return 0
-
     def get_last_data(self):
         if not self.queue.empty():
             data = self.queue.get(False) # Non-blocking call 
@@ -176,9 +169,10 @@ class CameraRGB(Sensor):
 
     def process_data(self):
         time_init = time.time_ns()
-        image = self.data
+
+        image = self.get_last_data()
         if image == None:
-            return
+            return 
 
         image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
         image_data = np.reshape(image_data, (image.height, image.width, 4))
@@ -260,6 +254,8 @@ class Lidar(Sensor):
         super().__init__(sensor=sensor)
 
         self.rect = init
+        self.show_stats = show_stats
+
         if init != None:
             assert size != None, "size is required!"
             self.sub_screen = pygame.Surface(size)
@@ -276,7 +272,6 @@ class Lidar(Sensor):
             self.color_max = (255, 0, 0)
 
             # Write stats
-            self.show_stats = show_stats
             y = size[1] / 2
             if show_stats:
                 y += self.scale * 1.5
@@ -404,9 +399,9 @@ class Lidar(Sensor):
     def process_data(self):
         time_init = time.time_ns()
 
-        lidar = self.data
+        lidar = self.get_last_data()
         if lidar == None:
-            return
+            return 
         
         lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
         lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
@@ -471,7 +466,7 @@ class Vehicle_sensors:
         self.sensors = []
 
         self.time_frame = -1.0
-        self.count_frame = -1
+        self.count_frame = 0
         self.write_frame = 0
 
     def __put_sensor(self, sensor_type:str, transform:carla.Transform, type:int=0):
@@ -516,20 +511,18 @@ class Vehicle_sensors:
     def update_data(self, flip:bool=True):
         threads = []
         for i, sensor in enumerate(self.sensors):
-            frame = sensor.update_data()
-
-            # Create and start thread
             threads.append(threading.Thread(target=sensor.process_data()))
             threads[i].start()
 
         if time.time_ns() - self.time_frame > SEG_TO_NANOSEG: 
-            self.write_frame = frame - self.count_frame
-            self.count_frame = frame
+            self.write_frame = self.count_frame
+            self.count_frame = 0
             self.time_frame = time.time_ns()
 
         for i, t in enumerate(threads):
             t.join()
 
+        self.count_frame += 1
         write_text(text="FPS: "+str(self.write_frame), img=self.screen, color=(0, 0, 0),
                    bold=True, point=(2, 0), size=23, side=LEFT)
 

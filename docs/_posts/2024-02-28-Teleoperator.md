@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-04-25T13:54:00
+last_modified_at: 2024-05-01T14:40:00
 categories:
   - Blog
 tags:
@@ -66,8 +66,7 @@ class Vehicle_sensors:
     def destroy(self)
 ```
 
-Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola LIFO *thread_safe* y facilita el acceso al dato más reciente. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor si deseamos procesar los datos del mismo en cada *tick*, permitiéndonos actualizar su información en la pantalla. Esta función procesa la medida del sensor almacenada en *data* con el fin de asegurar que todos los sensores operen en el mismo *frame*.
-
+Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola LIFO *thread_safe* y facilita el acceso al dato más reciente. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor, permitiéndonos actualizar su información y mostrarla en la pantalla si es indica. Los datos de los sensores se procesan de forma **paralela** para mejorar la eficiencia computacional.
 ```python
 class Sensor:
     def __init__(self, sensor:carla.Sensor):
@@ -79,9 +78,6 @@ class Sensor:
     def __callback_data(self, data):
         self.queue.put(data)
 
-    def update_data(self):
-        self.data = self.get_last_data()
-
     def get_last_data(self):
         data = self.queue.get(False)
     
@@ -91,9 +87,6 @@ class Sensor:
 class Vehicle_sensors:
     def update_data(self, flip:bool=True):
         for i, sensor in enumerate(self.sensors):
-            sensor.update_data()
-
-            # Create and start thread
             threads.append(threading.Thread(target=sensor.process_data()))
             threads[i].start()
 ```

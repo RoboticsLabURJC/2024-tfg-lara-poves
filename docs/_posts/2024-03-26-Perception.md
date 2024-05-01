@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-05-01T14:03:00
+last_modified_at: 2024-05-01T14:54:00
 categories:
   - Blog
 tags:
@@ -297,7 +297,7 @@ def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=No
 
 La red neuronal recibe como entrada una imagen en **RGB** con dimensiones de **512x512** píxeles, por tanto, es fundamental garantizar que la imagen esté en dicho formato. Para asegurar las dimensiones, configuramos directamente la cámara en Carla a 512x512, realizar un reescalado podría deformar los objetos, lo que afectaría negativamente al rendimiento de la red neuronal.
 
-Es importante recordar lanzar nuestro programa en otra GPU, para que no se ejecute en la misma donde esta el simulador carla(en la 0) o la segmentacion (en este caso la 4), para gaarantizar eficiente computacional.
+Es fundamental recordar ejecutar nuestro programa en una GPU distinta de aquella en la que se está ejecutando el simulador Carla (generalmente en la GPU 0) o la segmentación (en este caso, en la GPU 4). Esto asegura una eficiencia computacional óptima al garantizar una distribución equitativa de la carga de trabajo entre las GPUs disponibles.
 ```bash
 CUDA_VISIBLE_DEVICES=3 python3 autopilot.py
 ```
