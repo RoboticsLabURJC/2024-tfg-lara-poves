@@ -297,4 +297,4 @@ def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=None,
 
 La red neuronal recibe como entrada una imagen en **RGB** con dimensiones de **512x512** píxeles. Por tanto, es fundamental garantizar que la imagen esté en formato RGB mediante una conversión antes de introducirla en la red. Para asegurar las dimensiones, configuramos directamente la cámara en Carla a 512x512. Realizar un reescalado podría deformar los objetos, lo que afectaría negativamente al rendimiento de la red neuronal.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gK5UxpW-EAU?si=X9TG7KeQg_Vcq1--" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z0IBeOkI8lY?si=oJe5oD3eFN9XI5VM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
