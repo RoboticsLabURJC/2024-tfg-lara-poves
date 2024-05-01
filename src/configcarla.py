@@ -91,6 +91,9 @@ class Sensor:
             return data
         return None
     
+    def blit(self):
+        pass
+
     def process_data(self):
         pass
 
@@ -116,6 +119,9 @@ class CameraRGB(Sensor):
 
         self.rect_org = init
         self.rect_extra = init_extra
+        self.surface_seg = None
+        self.screen_surface = None
+
         if init_extra != None or init != None:
             assert size != None, "size is required!"
             self.sub_screen = pygame.Surface(size)
@@ -144,8 +150,14 @@ class CameraRGB(Sensor):
         return left_mask, right_mask
     '''
 
+    def blit(self):
+        if self.surface_seg != None:
+            self.screen.blit(self.surface_seg, self.rect_extra)
+
+        if self.screen_surface != None:
+            self.screen.blit(self.screen_surface, self.rect_org)
+
     def process_seg(self, data:list):
-        time_init = time.time_ns()
         canvas = image_data = cv2.rotate(data, cv2.ROTATE_90_CLOCKWISE)
         image_seg = Image.fromarray(image_data)
 
@@ -163,15 +175,13 @@ class CameraRGB(Sensor):
             write_text(text="Segmented "+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
                         bold=True, size=self.size_text, point=(self.rect_extra.size[0], 0))
 
-            self.screen.blit(surface_seg, self.rect_extra)
-
-        print("segmentacion:", (time.time_ns() - time_init) / SEG_TO_NANOSEG)
+            self.surface_seg = surface_seg
 
     def process_data(self):
-        time_init = time.time_ns()
-
         image = self.get_last_data()
         if image == None:
+            self.screen_surface = None
+            self.surface_seg = None
             return 
 
         image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
@@ -182,8 +192,7 @@ class CameraRGB(Sensor):
 
         text_traza = "camara"
         if self.seg:
-            thread = threading.Thread(target=self.process_seg(image_data))
-            thread.start()
+            self.process_seg(image_data)
             text_traza = "camara seg:"
 
         if self.rect_org != None:
@@ -196,12 +205,7 @@ class CameraRGB(Sensor):
                 write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, bold=True,
                            size=self.size_text, point=(self.rect_org.size[0], 0))
 
-            self.screen.blit(screen_surface, self.rect_org)
-
-        if self.seg:
-            thread.join()
-
-        print(text_traza, (time.time_ns() - time_init) / SEG_TO_NANOSEG)
+            self.screen_surface = screen_surface
 
     '''
     def get_deviation_road(self):
@@ -330,14 +334,21 @@ class Lidar(Sensor):
                             point=(self.x_text[i], self.size_text), size=self.size_text)
         return image
     
-    def __interpolate_thickness(self, num:float, min:float, max:float):
+    def __interpolate_thickness(self, num:float):
+        min = -2.3
+        max = 1.8
         norm = (num - min) / (max - min)
-        thickness = self.min_thickness + (self.max_thickness - self.min_thickness) * norm
+        if norm < 0:
+            norm = 0
 
-        return thickness
+        return self.min_thickness + (self.max_thickness - self.min_thickness) * norm
 
-    def __interpolate_color(self, num:float, min:float, max:float):
+    def __interpolate_color(self, num:float):
+        min = 0.96
+        max = 1
         norm = (num - min) / (max - min)
+        if norm < 0:
+            norm = 0
         
         r = int(self.color_min[0] + (self.color_max[0] - self.color_min[0]) * norm)
         g = int(self.color_min[1] + (self.color_max[1] - self.color_min[1]) * norm)
@@ -365,8 +376,8 @@ class Lidar(Sensor):
                     self.stat_zones[zone][i] = np.nan
 
             if self.show_stats and self.rect != None:
-                if time.time() - self.time > 1:
-                    self.time = time.time()
+                if time.time_ns() - self.time > SEG_TO_NANOSEG:
+                    self.time = time.time_ns()
                     self.stats_text = [
                         "Mean = {:.2f}".format(self.stat_zones[zone][MEAN]),
                         "Median = {:.2f}".format(self.stat_zones[zone][MEDIAN]),
@@ -395,10 +406,12 @@ class Lidar(Sensor):
                 return zone
 
         return NUM_ZONES
+    
+    def blit(self):
+        if self.rect != None:          
+            self.screen.blit(self.sub_screen, self.rect)
 
     def process_data(self):
-        time_init = time.time_ns()
-
         lidar = self.get_last_data()
         if lidar == None:
             return 
@@ -406,17 +419,11 @@ class Lidar(Sensor):
         lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
         lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 
-        if self.rect != None:
-            z_min = np.min(lidar_data[:, 2])
-            z_max = np.max(lidar_data[:, 2])
-
-            i_min = np.min(lidar_data[:, 3])
-            i_max = np.max(lidar_data[:, 3])
-
-            self.sub_screen.blit(self.image, (0, 0))
-
         dist_zones = [[] for _ in range(NUM_ZONES)]
         z_zones = [[] for _ in range(NUM_ZONES)]
+
+        if self.rect != None:
+            self.sub_screen.blit(self.image, (0, 0))
 
         for x, y, z, i in lidar_data:
             zone = self.__get_zone(x=x, y=y)
@@ -425,20 +432,15 @@ class Lidar(Sensor):
                 z_zones[zone].append(z)
 
             if self.rect != None:
-                thickness = self.__interpolate_thickness(num=z, min=z_min, max=z_max)
-                color = self.__interpolate_color(num=i, min=i_min, max=i_max)
+                thickness = self.__interpolate_thickness(num=z)
+                color = self.__interpolate_color(num=i)
+
                 center = (int(x * self.scale + self.center_screen[0]),
                         int(y * self.scale + self.center_screen[1]))
-
                 pygame.draw.circle(self.sub_screen, color, center, thickness)
 
         self.meas_zones = [dist_zones, z_zones]
         self.__update_stats()  
-
-        if self.rect != None:          
-            self.screen.blit(self.sub_screen, self.rect)
-
-        print("lidar:", (time.time_ns() - time_init) / SEG_TO_NANOSEG)
     
     def set_i_threshold(self, i:float):
         self.i_threshold = i
@@ -519,8 +521,9 @@ class Vehicle_sensors:
             self.count_frame = 0
             self.time_frame = time.time_ns()
 
-        for i, t in enumerate(threads):
-            t.join()
+        for i in range(len(self.sensors)):
+            threads[i].join()
+            self.sensors[i].blit()
 
         self.count_frame += 1
         write_text(text="FPS: "+str(self.write_frame), img=self.screen, color=(0, 0, 0),
@@ -681,11 +684,7 @@ def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=
 
     for v in vehicles:
         v.set_autopilot(True, tm_port)
-        tm.ignore_lights_percentage(v, 0)
         tm.auto_lane_change(v, False) 
-        tm.update_vehicle_lights(v, True)
-        tm.random_left_lanechange_percentage(v, 0)
-        tm.random_right_lanechange_percentage(v, 0)
 
     return tm
 
