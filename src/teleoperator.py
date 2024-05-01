@@ -8,9 +8,9 @@ WIDTH = 600
 
 # Buttom
 BUTTOM_H = 30
-BUTTOM_W = 84
+BUTTOM_W = 90
 TEXT_SIZE = 20
-OFFSET = 0.1
+OFFSET = 0.05
 
 class Buttom:
     def __init__(self, text:str, x:int=0, y:int=0, color_background:tuple[int, int, int]=(0, 0, 0),
@@ -41,7 +41,7 @@ def main():
                                               transform=vehicle_transform, ego_vehicle=True)
 
     # Create teleoperator
-    teleop = configcarla.Teleoperator(ego_vehicle, throttle=0.45)
+    teleop = configcarla.Teleoperator(ego_vehicle, throttle=0.6)
 
     # Add cameras
     cameras = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
@@ -82,7 +82,7 @@ def main():
                 b.draw(screen)
 
             throttle = teleop.get_throttle()
-            text = "Throttle = {:.1f}".format(throttle)
+            text = "Throttle = {:.2f}".format(throttle)
             configcarla.write_text(text=text, img=screen, size=TEXT_SIZE, bold=True,
                                    background=(0, 0, 0), point=(WIDTH, int(HEIGHT / 2)))
 

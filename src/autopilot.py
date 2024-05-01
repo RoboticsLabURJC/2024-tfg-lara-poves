@@ -21,7 +21,7 @@ def main():
     # Add sensors to Ego Vehicle
     driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), transform=driver_transform,
-                           seg=True, init_extra=(0, HEIGHT), text='Driver view', cuda=4)
+                           seg=True, init_extra=(0, HEIGHT), text='Driver view')
     
     world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(WIDTH * 3 - DECREASE * 2, 0),
@@ -32,8 +32,8 @@ def main():
                            transform=back_transform, text='Back view')
 
     lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
-    #sensors.add_lidar(size_rect=((WIDTH - DECREASE) * 2, HEIGHT * 2), init=(WIDTH, 0), scale=40,
-    #                 transform=lidar_transform) 
+    sensors.add_lidar(size_rect=((WIDTH - DECREASE) * 2, HEIGHT * 2), init=(WIDTH, 0), scale=40,
+                      transform=lidar_transform) 
     
     # Add a car in front of Ego Vehicle
     ego_transform.location.y += 7.0

@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-05-01T14:54:00
+last_modified_at: 2024-05-01T16:51:00
 categories:
   - Blog
 tags:
@@ -291,13 +291,12 @@ EfficientViT es evaluado en tres tareas principales: segmentación semántica, s
 Hemos añadido varias mejoras en el manejo de los sensores, la principal es mostrar el número de *frames* por segundo a los que itera nuestro programa. También hemos integrado la **red de segmentación semántica EfficientViT** en nuestro código para poder comprender el entorno, para ello, hemos añadido nuevos atributos en la clase *CameraRGB* y nuevos parámetros en la función referente a la cámara de la clase *Vehicle_sensors*.
 ```python
 def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
-                   transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
-                   text:str=None, lane:bool=False, cuda:int=1)
+                   transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None, text:str=None)
 ```
 
 La red neuronal recibe como entrada una imagen en **RGB** con dimensiones de **512x512** píxeles, por tanto, es fundamental garantizar que la imagen esté en dicho formato. Para asegurar las dimensiones, configuramos directamente la cámara en Carla a 512x512, realizar un reescalado podría deformar los objetos, lo que afectaría negativamente al rendimiento de la red neuronal.
 
-Es fundamental recordar ejecutar nuestro programa en una GPU distinta de aquella en la que se está ejecutando el simulador Carla (generalmente en la GPU 0) o la segmentación (en este caso, en la GPU 4). Esto asegura una eficiencia computacional óptima al garantizar una distribución equitativa de la carga de trabajo entre las GPUs disponibles.
+Es fundamental recordar ejecutar nuestro programa en una GPU distinta de aquella en la que se está ejecutando el simulador Carla (en la GPU 0). Esto asegura una eficiencia computacional óptima al garantizar una distribución equitativa de la carga de trabajo entre las GPUs disponibles.
 ```bash
 CUDA_VISIBLE_DEVICES=3 python3 autopilot.py
 ```
