@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-04-29T12:42:00
+last_modified_at: 2024-05-01T17:38:00
 categories:
   - Blog
 tags:
@@ -22,7 +22,7 @@ Una vez habituados con las funciones básicas de CARLA y realizado el teleoperad
 
 ## Traffic manager
 
-Hemos implementado una función llamada ***traffic_manager*** para controlar el tráfico de vehículos de manera eficiente. Esta función activa el piloto automático de la lista de vehículos que recibe como entrada. Para lograrlo, es necesario activar el modo síncrono al configurar Carla. Entre las opciones del piloto automático, hemos activado las luces de conducción de los vehículos y establecido una probabilidad del 0% para el cambio de carril o la ignorancia de las luces de tráfico.
+Hemos implementado una función llamada ***traffic_manager*** para controlar el tráfico de vehículos, activando el piloto automático de la lista de vehículos que recibe como entrada. Para lograrlo, es necesario activar el modo síncrono al configurar Carla.
 ```python
 settings = world.get_settings()
 settings.synchronous_mode = True
@@ -38,8 +38,8 @@ Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva
 
 ```python
 class Vehicle_sensors:
-    def add_lidar(self, size_rect:tuple[int, int], init:tuple[int, int]=None, scale:int=25,
-                  transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True):
+    def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25,
+                  transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True)
 
 class Lidar(Sensor): 
     def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,

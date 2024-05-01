@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-05-01T15:41:00
+last_modified_at: 2024-05-01T18:07:00
 categories:
   - Blog
 tags:
@@ -66,8 +66,9 @@ class Vehicle_sensors:
     def destroy(self)
 ```
 
-Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola LIFO *thread_safe* y facilita el acceso al dato más reciente. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor si deseamos procesar los datos del mismo en cada *tick*, permitiéndonos actualizar su información en la pantalla. Esta función procesa la medida del sensor almacenada en *data* con el fin de asegurar que todos los sensores operen en el mismo *frame*.
+Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola LIFO *thread_safe* y facilita el acceso al dato más reciente. La función ***process_data()*** y ***blit()*** deben ser implementadas en cada subclase de acuerdo al tipo de sensor, permitiéndonos actualizar su información y mostrarla en la pantalla si es indica. Los datos de los sensores se procesan de forma paralela para mejorar la eficiencia computacional, permitiendo que múltiples sensores trabajen simultáneamente sin interferir entre sí.
 
+La pantalla de pygame es un recurso compartido entre todos los sensores, por ello, el acceso a ella se limita a la función *blit()*, la cual se ejecuta en el hilo principal y garantiza que no se utilice simultáneamente, lo que podría ocasionar comportamientos inesperados. 
 ```python
 class Sensor:
     def __init__(self, sensor:carla.Sensor):
@@ -79,23 +80,24 @@ class Sensor:
     def __callback_data(self, data):
         self.queue.put(data)
 
-    def update_data(self):
-        self.data = self.get_last_data()
-
     def get_last_data(self):
         data = self.queue.get(False)
     
+    def blit(self):
+        pass
+
     def process_data(self):
         pass
 
 class Vehicle_sensors:
     def update_data(self, flip:bool=True):
-        # Pick data in the same frame
-        for sensor in self.sensors:
-            sensor.update_data()
+        for i, sensor in enumerate(self.sensors):
+            threads.append(threading.Thread(target=sensor.process_data()))
+            threads[i].start()
 
-        for sensor in self.sensors:
-            sensor.process_data()
+        for i in range(len(self.sensors)):
+            threads[i].join()
+            self.sensors[i].blit()
 ```
 
 Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, la cual simplemente se encarga de mostrar la imagen capturada.
