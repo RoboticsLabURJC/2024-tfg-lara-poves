@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-05-01T14:42:00
+last_modified_at: 2024-05-01T17:38:00
 categories:
   - Blog
 tags:
@@ -22,7 +22,7 @@ Una vez habituados con las funciones básicas de CARLA y realizado el teleoperad
 
 ## Traffic manager
 
-Hemos implementado una función llamada ***traffic_manager*** para controlar el tráfico de vehículos de manera eficiente. Esta función activa el piloto automático de la lista de vehículos que recibe como entrada. Para lograrlo, es necesario activar el modo síncrono al configurar Carla. Entre las opciones del piloto automático, hemos activado las luces de conducción de los vehículos y establecido una probabilidad del 0% para el cambio de carril o la ignorancia de las luces de tráfico.
+Hemos implementado una función llamada ***traffic_manager*** para controlar el tráfico de vehículos, activando el piloto automático de la lista de vehículos que recibe como entrada. Para lograrlo, es necesario activar el modo síncrono al configurar Carla.
 ```python
 settings = world.get_settings()
 settings.synchronous_mode = True
