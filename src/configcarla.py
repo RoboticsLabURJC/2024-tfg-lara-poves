@@ -190,10 +190,8 @@ class CameraRGB(Sensor):
         # Swap blue and red channels
         image_data = image_data[:, :, (2, 1, 0)]
 
-        text_traza = "camara"
         if self.seg:
             self.process_seg(image_data)
-            text_traza = "camara seg:"
 
         if self.rect_org != None:
             # Reserve mirror effect
