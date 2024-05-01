@@ -95,8 +95,8 @@ class Sensor:
         pass
 
 class CameraRGB(Sensor):      
-    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, cuda:int,
-                 screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], text:str, lane:bool):
+    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, text:str,
+                 screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], lane:bool):
         super().__init__(sensor=sensor)
 
         self.screen = screen
@@ -106,7 +106,7 @@ class CameraRGB(Sensor):
         self.mask = []
         self.seg = seg
         if seg:
-            self.seg_model = EV.EfficientVit(cuda_device="cuda:"+str(cuda))
+            self.seg_model = EV.EfficientVit()
 
         self.lane = lane
         if lane:
@@ -428,7 +428,7 @@ class Lidar(Sensor):
                 thickness = self.__interpolate_thickness(num=z, min=z_min, max=z_max)
                 color = self.__interpolate_color(num=i, min=i_min, max=i_max)
                 center = (int(x * self.scale + self.center_screen[0]),
-                          int(y * self.scale + self.center_screen[1]))
+                        int(y * self.scale + self.center_screen[1]))
 
                 pygame.draw.circle(self.sub_screen, color, center, thickness)
 
@@ -492,10 +492,10 @@ class Vehicle_sensors:
     
     def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
                        transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
-                       text:str=None, lane:bool=False, cuda:int=1):
+                       text:str=None, lane:bool=False):
         sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform, type=CAMERA)
         camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.screen, 
-                           seg=seg, init_extra=init_extra, text=text, lane=lane, cuda=cuda)
+                           seg=seg, init_extra=init_extra, text=text, lane=lane)
         self.sensors.append(camera)
         return camera
     
