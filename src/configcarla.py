@@ -46,6 +46,9 @@ Z = 1
 # Segmentation
 ROAD = 0
 
+# Global variables
+lock_sensor = threading.Lock()
+
 def get_angle_range(angle:float):
     if angle > 180.0:
         angle -= 180.0 * 2
@@ -90,9 +93,6 @@ class Sensor:
             data = self.queue.get(False) # Non-blocking call 
             return data
         return None
-    
-    def blit(self):
-        pass
 
     def process_data(self):
         pass
@@ -119,8 +119,6 @@ class CameraRGB(Sensor):
 
         self.rect_org = init
         self.rect_extra = init_extra
-        self.surface_seg = None
-        self.screen_surface = None
 
         if init_extra != None or init != None:
             assert size != None, "size is required!"
@@ -150,13 +148,6 @@ class CameraRGB(Sensor):
         return left_mask, right_mask
     '''
 
-    def blit(self):
-        if self.surface_seg != None:
-            self.screen.blit(self.surface_seg, self.rect_extra)
-
-        if self.screen_surface != None:
-            self.screen.blit(self.screen_surface, self.rect_org)
-
     def process_seg(self, data:list):
         canvas = image_data = cv2.rotate(data, cv2.ROTATE_90_CLOCKWISE)
         image_seg = Image.fromarray(image_data)
@@ -175,7 +166,9 @@ class CameraRGB(Sensor):
             write_text(text="Segmented "+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
                         bold=True, size=self.size_text, point=(self.rect_extra.size[0], 0))
 
-            self.surface_seg = surface_seg
+            lock_sensor.acquire()
+            self.screen.blit(surface_seg, self.rect_extra)
+            lock_sensor.release()
 
     def process_data(self):
         image = self.get_last_data()
@@ -190,10 +183,8 @@ class CameraRGB(Sensor):
         # Swap blue and red channels
         image_data = image_data[:, :, (2, 1, 0)]
 
-        text_traza = "camara"
         if self.seg:
             self.process_seg(image_data)
-            text_traza = "camara seg:"
 
         if self.rect_org != None:
             # Reserve mirror effect
@@ -205,7 +196,9 @@ class CameraRGB(Sensor):
                 write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, bold=True,
                            size=self.size_text, point=(self.rect_org.size[0], 0))
 
-            self.screen_surface = screen_surface
+            lock_sensor.acquire()
+            self.screen.blit(screen_surface, self.rect_org)
+            lock_sensor.release()
 
     '''
     def get_deviation_road(self):
@@ -406,10 +399,6 @@ class Lidar(Sensor):
                 return zone
 
         return NUM_ZONES
-    
-    def blit(self):
-        if self.rect != None:          
-            self.screen.blit(self.sub_screen, self.rect)
 
     def process_data(self):
         lidar = self.get_last_data()
@@ -441,6 +430,10 @@ class Lidar(Sensor):
 
         self.meas_zones = [dist_zones, z_zones]
         self.__update_stats()  
+
+        lock_sensor.acquire()
+        self.screen.blit(self.sub_screen, self.rect)
+        lock_sensor.release()
     
     def set_i_threshold(self, i:float):
         self.i_threshold = i
@@ -521,9 +514,8 @@ class Vehicle_sensors:
             self.count_frame = 0
             self.time_frame = time.time_ns()
 
-        for i in range(len(self.sensors)):
-            threads[i].join()
-            self.sensors[i].blit()
+        for t in threads:
+            t.join()
 
         self.count_frame += 1
         write_text(text="FPS: "+str(self.write_frame), img=self.screen, color=(0, 0, 0),
