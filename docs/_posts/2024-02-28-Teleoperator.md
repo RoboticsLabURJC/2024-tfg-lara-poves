@@ -90,12 +90,12 @@ class Sensor:
 
 class Vehicle_sensors:
     def update_data(self, flip:bool=True):
-        # Pick data in the same frame
-        for sensor in self.sensors:
+        for i, sensor in enumerate(self.sensors):
             sensor.update_data()
 
-        for sensor in self.sensors:
-            sensor.process_data()
+            # Create and start thread
+            threads.append(threading.Thread(target=sensor.process_data()))
+            threads[i].start()
 ```
 
 Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, la cual simplemente se encarga de mostrar la imagen capturada.

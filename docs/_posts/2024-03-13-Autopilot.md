@@ -38,7 +38,7 @@ Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva
 
 ```python
 class Vehicle_sensors:
-    def add_lidar(self, size_rect:tuple[int, int], init:tuple[int, int]=None, scale:int=25,
+    def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25,
                   transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True):
 
 class Lidar(Sensor): 

@@ -21,7 +21,7 @@ def main():
     # Add sensors to Ego Vehicle
     driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), transform=driver_transform,
-                           seg=True, init_extra=(0, HEIGHT), text='Driver view')
+                           seg=True, init_extra=(0, HEIGHT), text='Driver view', cuda=4)
     
     world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(WIDTH * 3 - DECREASE * 2, 0),

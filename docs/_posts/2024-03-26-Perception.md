@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-04-30T13:01:00
+last_modified_at: 2024-05-01T14:03:00
 categories:
   - Blog
 tags:
@@ -290,11 +290,16 @@ EfficientViT es evaluado en tres tareas principales: segmentación semántica, s
 
 Hemos añadido varias mejoras en el manejo de los sensores, la principal es mostrar el número de *frames* por segundo a los que itera nuestro programa. También hemos integrado la **red de segmentación semántica EfficientViT** en nuestro código para poder comprender el entorno, para ello, hemos añadido nuevos atributos en la clase *CameraRGB* y nuevos parámetros en la función referente a la cámara de la clase *Vehicle_sensors*.
 ```python
-def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=None,
-                   transform:carla.Transform=carla.Transform(), text:str=None,
-                   seg:bool=False, init_extra:tuple[int, int]=None)
+def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
+                   transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
+                   text:str=None, lane:bool=False, cuda:int=1)
 ```
 
-La red neuronal recibe como entrada una imagen en **RGB** con dimensiones de **512x512** píxeles. Por tanto, es fundamental garantizar que la imagen esté en formato RGB mediante una conversión antes de introducirla en la red. Para asegurar las dimensiones, configuramos directamente la cámara en Carla a 512x512. Realizar un reescalado podría deformar los objetos, lo que afectaría negativamente al rendimiento de la red neuronal.
+La red neuronal recibe como entrada una imagen en **RGB** con dimensiones de **512x512** píxeles, por tanto, es fundamental garantizar que la imagen esté en dicho formato. Para asegurar las dimensiones, configuramos directamente la cámara en Carla a 512x512, realizar un reescalado podría deformar los objetos, lo que afectaría negativamente al rendimiento de la red neuronal.
+
+Es importante recordar lanzar nuestro programa en otra GPU, para que no se ejecute en la misma donde esta el simulador carla(en la 0) o la segmentacion (en este caso la 4), para gaarantizar eficiente computacional.
+```bash
+CUDA_VISIBLE_DEVICES=3 python3 autopilot.py
+```
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gK5UxpW-EAU?si=X9TG7KeQg_Vcq1--" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
