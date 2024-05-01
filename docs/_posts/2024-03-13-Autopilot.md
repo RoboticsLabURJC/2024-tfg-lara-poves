@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-04-29T12:42:00
+last_modified_at: 2024-05-01T14:42:00
 categories:
   - Blog
 tags:
@@ -39,7 +39,7 @@ Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva
 ```python
 class Vehicle_sensors:
     def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25,
-                  transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True):
+                  transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True)
 
 class Lidar(Sensor): 
     def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,

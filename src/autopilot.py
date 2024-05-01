@@ -32,8 +32,8 @@ def main():
                            transform=back_transform, text='Back view')
 
     lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
-    sensors.add_lidar(size_rect=((WIDTH - DECREASE) * 2, HEIGHT * 2), init=(WIDTH, 0), scale=40,
-                      transform=lidar_transform)
+    #sensors.add_lidar(size_rect=((WIDTH - DECREASE) * 2, HEIGHT * 2), init=(WIDTH, 0), scale=40,
+    #                 transform=lidar_transform) 
     
     # Add a car in front of Ego Vehicle
     ego_transform.location.y += 7.0
