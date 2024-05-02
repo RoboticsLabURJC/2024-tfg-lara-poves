@@ -74,7 +74,8 @@ def main(mode):
 
     # Open csv file
     if mode != 'n':
-        csv_file= open('/home/alumnos/lara/2024-tfg-lara-poves/src/histograms/hist_data.csv', mode, newline='') 
+        csv_file= open('/home/alumnos/lara/2024-tfg-lara-poves/src/histograms/hist_data.csv', 
+                       mode, newline='') 
         csv_desktop = csv.writer(csv_file)
     
     try:
