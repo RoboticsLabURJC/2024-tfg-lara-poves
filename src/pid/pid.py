@@ -24,7 +24,7 @@ def main(save_data):
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
     driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
-    sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), transform=driver_transform,
+    camera = sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), transform=driver_transform,
                                     seg=True, text='Driver view', init_extra=(SIZE_CAMERA, 0), lane=True)
     
     world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
@@ -51,14 +51,14 @@ def main(save_data):
                     return
            
             sensors.update_data()
-            error_road = 0
+            error_road = camera.get_deviation()
             
             # Save control error in a csv
             if save_data:
                 csv_desktop.writerow([error_road])
 
             # Control vehicle
-            #pid.controll_vehicle(error_road)
+            pid.controll_vehicle(error_road)
           
             world.tick()
 
