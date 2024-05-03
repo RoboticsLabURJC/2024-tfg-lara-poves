@@ -172,52 +172,46 @@ class CameraRGB(Sensor):
             
             road_pixels = []
             y_cm = count = 0
-            len_lane = [int(SIZE_CAMERA / 2) + self.__offset_lane,
-                        int(SIZE_CAMERA / 2) - self.__offset_lane]
+            len_lane = [int(SIZE_CAMERA / 2), int(SIZE_CAMERA / 2)]
 
             for y in range(canvas.shape[0]):
                 if limits_lane[y, 0] < 0 or limits_lane[y, 1] < 0:
-                    x_road = np.argwhere(mask[y] == ROAD) # encontrar solo mas y min
-                    if len(x_road) == 0:
-                        continue
-
                     if limits_lane[y, 0] < 0:
-                        limits_lane[y, 0] = max(len_lane[0] - self.__offset_lane, x_road[0][0])
+                        limits_lane[y, 0] = len_lane[0] - self.__offset_lane
                     if limits_lane[y, 1] < 0:
-                        limits_lane[y, 1] = min(len_lane[1] + self.__offset_lane, x_road[-1][0])
-
+                        limits_lane[y, 1] = len_lane[1] + self.__offset_lane
                     color = [255, 255, 240]
                 else:
                     color = [255, 240, 255]
                 
+                # Check that all are road
+                if not np.all(mask[y, limits_lane[y, 0] : limits_lane[y, 1] + 1] == ROAD):
+                    continue
+
                 len_lane[0] = limits_lane[y, 0]
                 len_lane[1] = limits_lane[y, 1]
                 road_pixels.extend(range(limits_lane[y, 0], limits_lane[y, 1] + 1))
 
                 if self.__rect_extra != None:
                     canvas[y, limits_lane[y, 0] : limits_lane[y, 1] + 1] = color
-                    y_cm += y
-                    count += 1
+                    diff = limits_lane[y, 1] - limits_lane[y, 0] + 1 
+                    y_cm += y * diff
+                    count += diff
 
             # Calculate center of mass
-            if len(road_pixels) != 0:
-                x_cm = np.mean(road_pixels, axis=0)
-            else:
-                x_cm = np.nan
-
+            x_cm = np.mean(road_pixels, axis=0) 
             if np.isnan(x_cm):
                 self.__deviation = 0
             else:
                 self.__deviation = x_cm - SIZE_CAMERA / 2
-                y_cm = int(y_cm / count)
                 x_cm = int(x_cm)
                 middle = int(SIZE_CAMERA / 2)
-                color_cm = (0, 255, 0)
+                y_cm = int(y_cm / count)
 
                 # Draw center of mass and vehicle
-                cv2.line(canvas, (x_cm, 0), (x_cm, SIZE_CAMERA), color_cm, 2)
+                cv2.line(canvas, (x_cm, 0), (x_cm, SIZE_CAMERA), (0, 255, 0), 2)
                 cv2.line(canvas, (middle, 0), (middle, SIZE_CAMERA), (255, 0, 0), 2)
-                cv2.circle(canvas, (x_cm, y_cm), 9, color_cm, thickness=-1)
+                cv2.circle(canvas, (x_cm, y_cm), 9, (0, 255, 0), -1)
 
         if self.__rect_extra != None:
             # Convert to pygame syrface
@@ -629,7 +623,7 @@ class PID:
             w = 0
         else:
             w = self.__kp * self.__error + self.__kd * self.__prev_error + self.__ki * self.__total_error
-        print(w) 
+
         control.steer = w
         self.__vehicle.apply_control(control)
 
