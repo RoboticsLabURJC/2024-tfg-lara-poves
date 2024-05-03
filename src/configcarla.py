@@ -105,6 +105,8 @@ class CameraRGB(Sensor):
         self.text = text
         self.__size_text = 20
         self.__deviation = 0
+        self.__threshold_lane = 0.5
+        self.__offset_lane = 1
 
         self.__seg = seg
         if seg:
@@ -115,8 +117,6 @@ class CameraRGB(Sensor):
             file = '/home/alumnos/lara/carla_lane_detector/examples/fastai_torch_lane_detector_model.pth'
             self.__lane_model = torch.load(file)
             self.__lane_model.eval()
-
-            self.__threshold_lane = 0.25
 
         self.__rect_org = init
         self.__rect_extra = init_extra
@@ -145,13 +145,10 @@ class CameraRGB(Sensor):
         left_mask = left_mask[:, :512]
         right_mask = right_mask[:, :512]
 
-        limits_lane[:, 0] = SIZE_CAMERA
         for y in range(image.shape[0]):
             x_left_index = np.argwhere(left_mask[y] > self.__threshold_lane)
             if len(x_left_index) != 0:
                 limits_lane[y, 0] = x_left_index[0][0]
-            else:
-                continue
 
             x_right_index = np.argwhere(right_mask[y] > self.__threshold_lane)
             if len(x_right_index) != 0:
@@ -162,7 +159,7 @@ class CameraRGB(Sensor):
         image_seg = Image.fromarray(image_data)
 
         if self.__lane:
-            limits_lane = np.zeros((SIZE_CAMERA, 2), dtype=int)
+            limits_lane = np.full((SIZE_CAMERA, 2), -1, dtype=int)
             thread = threading.Thread(target=self.__masks_lane, args=(image_data, limits_lane))
             thread.start()
 
@@ -175,15 +172,30 @@ class CameraRGB(Sensor):
             
             road_pixels = []
             y_cm = count = 0
+            len_lane = [int(SIZE_CAMERA / 2) + self.__offset_lane,
+                        int(SIZE_CAMERA / 2) - self.__offset_lane]
 
             for y in range(canvas.shape[0]):
-                if limits_lane[y, 0] > limits_lane[y, 1]:
-                    continue
+                if limits_lane[y, 0] < 0 or limits_lane[y, 1] < 0:
+                    x_road = np.argwhere(mask[y] == ROAD) # encontrar solo mas y min
+                    if len(x_road) == 0:
+                        continue
 
+                    if limits_lane[y, 0] < 0:
+                        limits_lane[y, 0] = max(len_lane[0] - self.__offset_lane, x_road[0][0])
+                    if limits_lane[y, 1] < 0:
+                        limits_lane[y, 1] = min(len_lane[1] + self.__offset_lane, x_road[-1][0])
+
+                    color = [255, 255, 240]
+                else:
+                    color = [255, 240, 255]
+                
+                len_lane[0] = limits_lane[y, 0]
+                len_lane[1] = limits_lane[y, 1]
                 road_pixels.extend(range(limits_lane[y, 0], limits_lane[y, 1] + 1))
 
                 if self.__rect_extra != None:
-                    canvas[y, limits_lane[y, 0] : limits_lane[y, 1] + 1] = [255, 240, 255]
+                    canvas[y, limits_lane[y, 0] : limits_lane[y, 1] + 1] = color
                     y_cm += y
                     count += 1
 
@@ -227,6 +239,18 @@ class CameraRGB(Sensor):
 
     def get_deviation(self):
         return self.__deviation
+    
+    def get_threshold_lane(self):
+        return self.__threshold_lane
+
+    def set_threshold_lane(self, threshold:float):
+        self.__threshold_lane = max(0.0, min(threshold, 1.0))
+
+    def get_offset_lane(self):
+        return self.__offset_lane
+    
+    def set_offset_lane(self, offset:int):
+        self.__offset_lane = offset
 
     def process_data(self):
         image = self.get_last_data()

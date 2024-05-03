@@ -16,7 +16,7 @@ def main(save_data):
     screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='PID')
 
     # Add Ego Vehicle
-    ego_transform = carla.Transform(carla.Location(x=151.5, y=-65.0, z=2.5), carla.Rotation(yaw=90.0))
+    ego_transform = carla.Transform(carla.Location(x=151.5, y=5.0, z=2.5), carla.Rotation(yaw=90.0))
     ego_vehicle = configcarla.add_one_vehicle(world=world, vehicle_type='vehicle.lincoln.mkz_2020',
                                               ego_vehicle=True, transform=ego_transform)
 
@@ -26,6 +26,7 @@ def main(save_data):
     driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
     camera = sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), transform=driver_transform,
                                     seg=True, text='Driver view', init_extra=(SIZE_CAMERA, 0), lane=True)
+    camera.set_threshold_lane(0.2)
     
     world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
     sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), init=(0, 0), transform=world_transform, 
