@@ -40,7 +40,7 @@ def main():
     vehicles = configcarla.add_vehicles_randomly(world=world, number=5)
     vehicles.append(ego_vehicle)
     vehicles.append(front_vehicle)
-    tm = configcarla.traffic_manager(client=client, vehicles=vehicles)
+    tm = configcarla.traffic_manager(client=client, vehicles=vehicles, dist=3.0)
     
     try:
         while True:
