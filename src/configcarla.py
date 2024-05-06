@@ -131,7 +131,7 @@ class CameraRGB(Sensor):
             if init_extra != None:
                 self.__rect_extra = sub_screen.get_rect(topleft=init_extra)
 
-    def __masks_lane(self, image:list, limits_lane:list):    
+    def __masks_lane(self, image:list, limits_lane:list, start_lane:list):    
         # Resize for the network
         image_lane = np.zeros((SIZE_CAMERA, SIZE_CAMERA * 2, 3), dtype=np.uint8)
         image_lane[:SIZE_CAMERA, :SIZE_CAMERA, :] = image # Copy the image in the top left corner
@@ -145,14 +145,22 @@ class CameraRGB(Sensor):
         left_mask = left_mask[:, :512]
         right_mask = right_mask[:, :512]
 
-        for y in range(image.shape[0]):
+        start_lane[0][1] = int(SIZE_CAMERA / 2)
+        start_lane[1][1] = int(SIZE_CAMERA / 2)
+
+        for y in range(image.shape[0] - 1, -1, -1):
             x_left_index = np.argwhere(left_mask[y] > self.__threshold_lane)
             if len(x_left_index) != 0:
                 limits_lane[y, 0] = x_left_index[0][0]
+                start_lane[0][0] = y
+                start_lane[0][1] = x_left_index[0][0]
 
             x_right_index = np.argwhere(right_mask[y] > self.__threshold_lane)
             if len(x_right_index) != 0:
                 limits_lane[y, 1] = x_right_index[-1][0]
+                start_lane[1] = y
+                start_lane[1][0] = y
+                start_lane[1][1] = x_right_index[-1][0]
 
     def __process_seg(self, data:list):
         image_data = cv2.rotate(data, cv2.ROTATE_90_CLOCKWISE)
@@ -160,7 +168,9 @@ class CameraRGB(Sensor):
 
         if self.__lane:
             limits_lane = np.full((SIZE_CAMERA, 2), -1, dtype=int)
-            thread = threading.Thread(target=self.__masks_lane, args=(image_data, limits_lane))
+            start_lane = np.zeros((2, 2), dtype=int)
+
+            thread = threading.Thread(target=self.__masks_lane, args=(image_data, limits_lane, start_lane))
             thread.start()
 
         # Prediction
@@ -175,15 +185,22 @@ class CameraRGB(Sensor):
             len_lane = [int(SIZE_CAMERA / 2), int(SIZE_CAMERA / 2)]
 
             for y in range(canvas.shape[0]):
-                if limits_lane[y, 0] < 0 or limits_lane[y, 1] < 0:
-                    if limits_lane[y, 0] < 0:
-                        limits_lane[y, 0] = len_lane[0] - self.__offset_lane
-                    if limits_lane[y, 1] < 0:
-                        limits_lane[y, 1] = len_lane[1] + self.__offset_lane
+                color = [255, 240, 255]
+
+                if limits_lane[y, 0] < 0:
+                    limits_lane[y, 0] = len_lane[0] - self.__offset_lane
                     color = [255, 255, 240]
-                else:
-                    color = [255, 240, 255]
-                
+
+                    if y < start_lane[0][0]:
+                        limits_lane[y, 0] = max(limits_lane[y, 0], start_lane[0][1])
+
+                if limits_lane[y, 1] < 0:
+                    limits_lane[y, 1] = len_lane[1] + self.__offset_lane
+                    color = [255, 255, 240]
+
+                    if y < start_lane[1][0]:
+                        limits_lane[y, 1] = min(limits_lane[y, 1], start_lane[1][1])
+                        
                 # Check that all are road
                 if not np.all(mask[y, limits_lane[y, 0] : limits_lane[y, 1] + 1] == ROAD):
                     continue
@@ -197,7 +214,7 @@ class CameraRGB(Sensor):
                     diff = limits_lane[y, 1] - limits_lane[y, 0] + 1 
                     y_cm += y * diff
                     count += diff
-
+        
             # Calculate center of mass
             x_cm = np.mean(road_pixels, axis=0) 
             if np.isnan(x_cm):
@@ -600,31 +617,26 @@ class Teleoperator:
 
 class PID:
     def __init__(self, vehicle:carla.Vehicle):
-        self.__throttle = 0.4
         self.__vehicle = vehicle
-
         self.__kp = 1 / (SIZE_CAMERA / 2)
-        self.__kd = 0
-        self.__ki = 0
-
-        self.__error = 0
-        self.__prev_error = 0
-        self.__total_error = 0
+        self.__count = 0
 
     def controll_vehicle(self, error:float):
-        self.__prev_error = self.__error
-        self.__error = error
-        self.__total_error += error
-
         control = carla.VehicleControl()
-        control.throttle = self.__throttle
+        self.__count += 1
+
+        control.throttle = 0.55
+        if error >= 15:
+            control.brake = 0.7
+            control.throttle = 0.4
+        elif self.__count < 75:
+            control.throttle = 0.75
 
         if error == np.nan:
-            w = 0
+            control.steer = 0
         else:
-            w = self.__kp * self.__error + self.__kd * self.__prev_error + self.__ki * self.__total_error
+            control.steer = self.__kp * error
 
-        control.steer = w
         self.__vehicle.apply_control(control)
 
 def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05):
