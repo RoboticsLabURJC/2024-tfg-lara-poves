@@ -197,14 +197,14 @@ class CameraRGB(Sensor):
                 color = [255, 240, 255]
 
                 if limits_lane[y, 0] < 0:
-                    limits_lane[y, 0] = len_lane[0] - self.__offset_lane
+                    limits_lane[y, 0] = max(len_lane[0] - self.__offset_lane, 0)
                     color = [255, 255, 240]
 
                     if y < start_lane[0][0]:
                         limits_lane[y, 0] = max(limits_lane[y, 0], start_lane[0][1])
 
                 if limits_lane[y, 1] < 0:
-                    limits_lane[y, 1] = len_lane[1] + self.__offset_lane
+                    limits_lane[y, 1] = min(len_lane[1] + self.__offset_lane, SIZE_CAMERA)
                     color = [255, 255, 240]
 
                     if y < start_lane[1][0]:
@@ -634,7 +634,7 @@ class PID:
         else:
             control.throttle = 0.52
 
-        control.steer = self.__kp * error
+        control.steer = self.__kp * error 
         self.__vehicle.apply_control(control)
 
 def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05):
