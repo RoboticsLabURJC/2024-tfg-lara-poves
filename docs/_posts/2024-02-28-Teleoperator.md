@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-05-01T18:48:00
+last_modified_at: 2024-05-06T11:34:00
 categories:
   - Blog
 tags:
@@ -68,7 +68,7 @@ class Vehicle_sensors:
 
 Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola LIFO *thread_safe* y facilita el acceso al dato más reciente. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor, permitiéndonos actualizar su información y mostrarla en la pantalla si es indica. Los datos de los sensores se procesan de forma paralela para mejorar la eficiencia computacional, permitiendo que múltiples sensores trabajen simultáneamente sin interferir entre sí.
 
-La pantalla de pygame es un recurso compartido entre todos los sensores, por ello, protegemos el acceso a ella mediante un *lock* para garantizar que no sea utilizada a la vez por varios hilos, lo que podría ocasionar comportamientos inesperados.
+La pantalla de Pygame se comparte entre todos los sensores, lo que podría ocasionar comportamientos inesperados si varios hilos la utilizan simultáneamente. A pesar de utilizar los bloqueos proporcionados por la librería *threading*, seguimos experimentando resultados inciertos. Por lo tanto, hemos creado una función ***blit*** dedicada para el uso exclusivo de la pantalla compartida, la cual no debe ser empleada en ninguna otra parte del código. Esta función debe ejecutarse únicamente en el hilo principal, garantizando así su correcto funcionamiento.
 ```python
 class Sensor:
     def __init__(self, sensor:carla.Sensor):
