@@ -46,9 +46,6 @@ Z = 1
 # Segmentation
 ROAD = 0
 
-# Global variables
-lock_sensor = threading.Lock()
-
 def get_angle_range(angle:float):
     if angle > 180.0:
         angle -= 180.0 * 2
@@ -93,6 +90,9 @@ class Sensor:
             return data
         return None
 
+    def blit(self):
+        pass
+
     def process_data(self):
         pass
 
@@ -120,6 +120,8 @@ class CameraRGB(Sensor):
 
         self.__rect_org = init
         self.__rect_extra = init_extra
+        self.__surface_seg = None
+        self.__screen_surface = None
 
         if init_extra != None or init != None:
             assert size != None, "size is required!"
@@ -161,6 +163,13 @@ class CameraRGB(Sensor):
                 start_lane[1] = y
                 start_lane[1][0] = y
                 start_lane[1][1] = x_right_index[-1][0]
+
+    def blit(self):
+        if self.__surface_seg != None:
+            self.__screen.blit(self.__surface_seg, self.__rect_extra)
+
+        if self.__screen_surface != None:
+            self.__screen.blit(self.__screen_surface, self.__rect_org)
 
     def __process_seg(self, data:list):
         image_data = cv2.rotate(data, cv2.ROTATE_90_CLOCKWISE)
@@ -233,20 +242,16 @@ class CameraRGB(Sensor):
         if self.__rect_extra != None:
             # Convert to pygame syrface
             canvas = Image.fromarray(canvas)
-            surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
-            surface_seg = pygame.transform.scale(surface_seg, self.__rect_extra.size)
+            self.__surface_seg = pygame.image.fromstring(canvas.tobytes(), canvas.size, canvas.mode)
+            self.__surface_seg = pygame.transform.scale(self.__surface_seg, self.__rect_extra.size)
 
             # Write text
-            write_text(text="Segmented "+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
+            write_text(text="Segmented "+self.text, img=self.__surface_seg, color=(0, 0, 0), side=RIGHT,
                        bold=True, size=self.__size_text, point=(self.__rect_extra.size[0], 0))
             if self.__lane:
-                write_text(text="Deviation = "+str(int(abs(self.__deviation)))+" (pixels)", img=surface_seg,
-                           bold=True, color=(0, 0, 0), side=LEFT, size=self.__size_text, 
+                write_text(text="Deviation = "+str(int(abs(self.__deviation)))+" (pixels)", bold=True,
+                           img=self.__surface_seg, color=(0, 0, 0), side=LEFT, size=self.__size_text, 
                            point=(0, self.__rect_extra.size[0] - self.__size_text))
-
-            lock_sensor.acquire()
-            self.__screen.blit(surface_seg, self.__rect_extra)
-            lock_sensor.release()
 
     def get_deviation(self):
         return self.__deviation
@@ -281,15 +286,11 @@ class CameraRGB(Sensor):
             # Reserve mirror effect
             image_surface = pygame.surfarray.make_surface(image_data)
             flipped_surface = pygame.transform.flip(image_surface, True, False)
-            screen_surface = pygame.transform.scale(flipped_surface, self.__rect_org.size)
+            self.__screen_surface = pygame.transform.scale(flipped_surface, self.__rect_org.size)
 
             if self.text != None:
-                write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, bold=True,
+                write_text(text=self.text, img=self.__screen_surface, color=(0, 0, 0), side=RIGHT, bold=True,
                            size=self.__size_text, point=(self.__rect_org.size[0], 0))
-
-            lock_sensor.acquire()
-            self.__screen.blit(screen_surface, self.__rect_org)
-            lock_sensor.release()
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
@@ -476,9 +477,9 @@ class Lidar(Sensor):
         self.__meas_zones = [dist_zones, z_zones]
         self.__update_stats()  
 
-        lock_sensor.acquire()
-        self.__screen.blit(self.__sub_screen, self.__rect)
-        lock_sensor.release()
+    def blit(self):
+        if self.__rect != None:
+            self.__screen.blit(self.__sub_screen, self.__rect)
     
     def set_i_threshold(self, i:float):
         self.__i_threshold = i
@@ -559,8 +560,9 @@ class Vehicle_sensors:
             self.__count_frame = 0
             self.__time_frame = time.time_ns()
 
-        for t in threads:
-            t.join()
+        for i in range(len(self.sensors)):
+            self.sensors[i].blit()
+            threads[i].join()
 
         self.__count_frame += 1
         write_text(text="FPS: "+str(self.__write_frame), img=self.__screen, color=(0, 0, 0),
@@ -625,18 +627,14 @@ class PID:
         control = carla.VehicleControl()
         self.__count += 1
 
-        control.throttle = 0.55
-        if error >= 15:
-            control.brake = 0.7
+        if error >= 10:
             control.throttle = 0.4
-        elif self.__count < 75:
-            control.throttle = 0.75
-
-        if error == np.nan:
-            control.steer = 0
+        elif self.__count < 70:
+            control.throttle = 0.7
         else:
-            control.steer = self.__kp * error
+            control.throttle = 0.52
 
+        control.steer = self.__kp * error
         self.__vehicle.apply_control(control)
 
 def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05):
