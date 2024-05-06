@@ -83,6 +83,9 @@ class Sensor:
     def __callback_data(self, data):
         self.queue.put(data)
 
+    def update_data(self):
+        self.data = self.get_last_data()
+
     def get_last_data(self):
         if not self.queue.empty():
             data = self.queue.get(False) # Non-blocking call 
@@ -207,7 +210,7 @@ class CameraRGB(Sensor):
 
     def process_data(self):
         init_time = time.time_ns()
-        image = self.get_last_data()
+        image = self.data
         if image == None:
             return 
 
@@ -392,7 +395,7 @@ class Lidar(Sensor):
 
     def process_data(self):
         init_time = time.time_ns()
-        lidar = self.get_last_data()
+        lidar = self.data
         if lidar == None:
             return 
         
@@ -449,12 +452,14 @@ class Lidar(Sensor):
         return self.__meas_zones
 
 class Vehicle_sensors:
-    def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface):
+    def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface, 
+                 color_text:tuple[int, int, int]=(0, 0, 0)):
         self.__vehicle = vehicle
         self.__world = world
         self.__screen = screen
         self.sensors = []
 
+        self.color_text = color_text
         self.__time_frame = -1.0
         self.__count_frame = 0
         self.__write_frame = 0
@@ -500,6 +505,9 @@ class Vehicle_sensors:
 
     def update_data(self, flip:bool=True):
         for sensor in self.sensors:
+            sensor.update_data()
+
+        for sensor in self.sensors:
             sensor.process_data()
 
         init_time = time.time_ns()
@@ -509,7 +517,7 @@ class Vehicle_sensors:
             self.__time_frame = time.time_ns()
 
         self.__count_frame += 1
-        write_text(text="FPS: "+str(self.__write_frame), img=self.__screen, color=(0, 0, 0),
+        write_text(text="FPS: "+str(self.__write_frame), img=self.__screen, color=self.color_text,
                    bold=True, point=(2, 0), size=23, side=LEFT)
 
         if flip:
