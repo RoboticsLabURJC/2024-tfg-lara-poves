@@ -122,10 +122,10 @@ class CameraRGB(Sensor):
             self.__lane_model = torch.load(file)
             self.__lane_model.eval()
 
-            self.__ymax_lane = int(SIZE_CAMERA / 2)
+            self.__ymax_lane = 275
             self.__points_lane = np.zeros(((SIZE_CAMERA - self.__ymax_lane), 2), dtype=int)
                                           
-            self.__mem_max = 10
+            self.__mem_max = 6
             self.__count_mem = [self.__mem_max, self.__mem_max]
 
         self.__rect_org = init
@@ -656,11 +656,11 @@ class PID:
         self.__count += 1
 
         if error > 10:
-            control.throttle = 0.2
-        elif self.__count < 80:
-            control.throttle = 0.5
-        else:
             control.throttle = 0.4
+        elif self.__count < 80:
+            control.throttle = 0.8
+        else:
+            control.throttle = 0.52
 
         control.steer = self.__kp * error
         self.__vehicle.apply_control(control)
