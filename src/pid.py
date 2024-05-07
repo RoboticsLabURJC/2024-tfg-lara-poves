@@ -43,7 +43,7 @@ def main():
             error_road = camera.get_deviation()
             
             # Control vehicle
-            #pid.controll_vehicle(error_road)
+            pid.controll_vehicle(error_road)
           
             world.tick()
 
