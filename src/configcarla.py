@@ -712,11 +712,10 @@ def add_vehicles_randomly(world:carla.World, number:int):
 
     return vehicles
 
-def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000, dist:float=5.0):
+def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000):
     tm = client.get_trafficmanager(port)
     tm_port = tm.get_port()
 
-    tm.set_global_distance_to_leading_vehicle(dist)
     for v in vehicles:
         v.set_autopilot(True, tm_port)
         tm.auto_lane_change(v, False) 
