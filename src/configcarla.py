@@ -122,11 +122,11 @@ class CameraRGB(Sensor):
             self.__lane_model = torch.load(file)
             self.__lane_model.eval()
 
-            self.__ymax_lane = 275
-            self.__points_lane = np.zeros(((SIZE_CAMERA - self.__ymax_lane), 2), dtype=int)
-                                          
+            self.__ymin_lane = 275   
+            self.__coefficients = np.zeros((2, 2), dtype=float)
+
             self.__mem_max = 6
-            self.__count_mem = [self.__mem_max, self.__mem_max]
+            self.__count_mem = [0, 0]
 
         self.__rect_org = init
         self.__rect_extra = init_extra
@@ -143,11 +143,7 @@ class CameraRGB(Sensor):
 
     def __mask_lane(self, mask:list, index:int, canvas):
         mask = mask[:, :512]
-        img = np.copy(mask)
-        img[mask > self.__threshold_lane] = 255
-
-        index_mask = np.where(img == 255)
-        #index_mask = np.where(mask > self.__threshold_lane)
+        index_mask = np.where(mask > self.__threshold_lane)
 
         # Memory lane
         if not np.any(index_mask):
@@ -157,36 +153,10 @@ class CameraRGB(Sensor):
         else:
             self.__count_mem[index] = 0
 
-        canvas[mask > self.__threshold_lane, :] = [255, 165, 0]
-
         # Linear regresion
         coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
-        cv2.line(canvas, (int(coefficients[1]), 0), (int(coefficients[0] * SIZE_CAMERA + coefficients[1]), SIZE_CAMERA - 1),
-                 (0, 0, 255), 2)
-
-        '''
-        x = np.linspace(0, mask.shape[1] - 1, num=1000)
-        y = np.polyval(coefficients, x)
-        points_line = np.column_stack((x, y)).astype(int)
-        '''
-        if index == LEFT_LANE:
-            self.__points_lane[:, index] = -1
-        else:
-            self.__points_lane[:, index] = -1
-
-        for y in range(self.__ymax_lane, SIZE_CAMERA):
-            x = y * coefficients[0] + coefficients[1]
-
-            self.__points_lane[y - self.__ymax_lane, index] = x
-
-        '''
-        for y in range(image.shape[0] - 1, -1, -1):
-            x_left_index = np.argwhere(left_mask[y] > self.__threshold_lane)
-            if len(x_left_index) != 0:
-                limits_lane[y, 0] = x_left_index[0][0]
-                start_lane[0][0] = y
-                start_lane[0][1] = x_left_index[0][0]
-            '''
+        self.__coefficients[index, 0] = coefficients[0]
+        self.__coefficients[index, 1] = coefficients[1]
 
     def __detect_lane(self, data:list, canvas:list): 
         init_time = time.time_ns()
@@ -204,39 +174,34 @@ class CameraRGB(Sensor):
         self.__mask_lane(mask=left_mask, index=LEFT_LANE, canvas=canvas)
         self.__mask_lane(mask=right_mask, index=RIGHT_LANE, canvas=canvas)
 
-        area_lane = []
-        y_cm = y_count = 1
+        area_lane_x = []
+        area_lane_y = []
+        for y in range(self.__ymin_lane, SIZE_CAMERA):
+            x_left = max(int(y * self.__coefficients[LEFT_LANE, 0] +
+                             self.__coefficients[LEFT_LANE, 1]), 0)
+            x_right = min(int(y * self.__coefficients[RIGHT_LANE, 0] +
+                              self.__coefficients[RIGHT_LANE, 1] + 1), SIZE_CAMERA - 1)
 
-        for y in range(self.__ymax_lane, SIZE_CAMERA):
-            y_index = y - self.__ymax_lane
-            x_left = self.__points_lane[y_index, LEFT_LANE]
-            x_right = self.__points_lane[y_index, RIGHT_LANE] + 1
+            area_lane_x.extend(range(x_left, x_right)) 
+            area_lane_y.extend([y] * (x_right - x_left))
+            canvas[y, x_left:x_right] = [255, 240, 255]
 
-            area_lane.extend(range(x_left, x_right))
-            if self.__rect_extra != None:
-                canvas[y, x_left:x_right] = [255, 240, 255]
-                diff = x_right - x_left
-                #y_cm += y * diff
-                #y_count += diff
         print("Lane:", time.time_ns() - init_time, "ns")
-
         init_time = time.time_ns()
 
         # Calculate center of mass
-        x_cm = np.mean(area_lane, axis=0) 
-        if np.isnan(x_cm):
-            self.__deviation = 0
-        else:
-            self.__deviation = x_cm - SIZE_CAMERA / 2 
-            x_cm = int(x_cm)
+        if len(area_lane_x) > 0:
+            x_cm = int(np.mean(area_lane_x))
+            y_cm = int(np.mean(area_lane_y))
             middle = int(SIZE_CAMERA / 2)
-            y_cm = int(y_cm / y_count)
+            self.__deviation = x_cm - SIZE_CAMERA / 2 
 
             # Draw center of mass and vehicle
             cv2.line(canvas, (x_cm, 0), (x_cm, SIZE_CAMERA), (0, 255, 0), 2)
             cv2.line(canvas, (middle, 0), (middle, SIZE_CAMERA), (255, 0, 0), 2)
             cv2.circle(canvas, (x_cm, y_cm), 9, (0, 255, 0), -1)
-
+        else:
+            self.__deviation = 0
         print("Center of mass:", time.time_ns() - init_time, "ns")
 
     def __process_seg(self, data:list):
@@ -282,6 +247,18 @@ class CameraRGB(Sensor):
 
     def set_threshold_lane(self, threshold:float):
         self.__threshold_lane = max(0.0, min(threshold, 1.0))
+
+    def set_ymin_lane(self, ymin:int):
+        self.__ymin_lane = min(max(ymin, 0), SIZE_CAMERA - 1)
+    
+    def get_ymin_lane(self):
+        return self.__ymin_lane
+    
+    def get_mem_max_lane(self):
+        return self.__mem_max
+    
+    def set_mem_max_lane(self, men:int):
+        self.__mem_max = men
 
     def process_data(self):
         init_time = time.time_ns()
@@ -656,11 +633,11 @@ class PID:
         self.__count += 1
 
         if error > 10:
-            control.throttle = 0.4
-        elif self.__count < 80:
+            control.throttle = 0.45
+        elif self.__count < 100:
             control.throttle = 0.8
         else:
-            control.throttle = 0.52
+            control.throttle = 0.53
 
         control.steer = self.__kp * error
         self.__vehicle.apply_control(control)
