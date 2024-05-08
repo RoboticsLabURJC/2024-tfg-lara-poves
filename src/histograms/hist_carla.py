@@ -120,7 +120,8 @@ def main(mode):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Specified opening mode for csv file")
-    current_path = os.path.abspath(__file__)
-    parser.add_argument("mode", choices=["a", "w", "n"])
-    args = parser.parse_args()    
+    parser.add_argument("--mode", choices=["a", "w", "n"], required=True, 
+                        help="Mode for opening the CSV file (a: append, w: write, n: not write)")
+    args = parser.parse_args()
+    main(args.mode)
     main(args.mode)

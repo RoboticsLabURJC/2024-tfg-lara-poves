@@ -6,10 +6,10 @@ from configcarla import SIZE_CAMERA
 def main():
     # Scenes
     town_s1 = 'Town05'
-    ego_transform_s1 = carla.Transform(carla.Location(x=151.5, y=5.0, z=1.0), carla.Rotation(yaw=90.0))
+    ego_transform_s1 = carla.Transform(carla.Location(x=151.5, y=5.0, z=0.8), carla.Rotation(yaw=90.0))
 
     town_s2 = 'Town05'
-    ego_transform_s2 = carla.Transform(carla.Location(x=47.0, y=-146.0, z=1.0), carla.Rotation(yaw=0.0))
+    ego_transform_s2 = carla.Transform(carla.Location(x=47.0, y=-146.0, z=0.8), carla.Rotation(yaw=0.0))
 
     world, _ = configcarla.setup_carla(name_world=town_s2, port=2000, delta_seconds=0.05)
     screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='Follow lane - PID')
@@ -24,7 +24,7 @@ def main():
     driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
     camera = sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), transform=driver_transform,
                                     seg=True, text='Driver view', init_extra=(SIZE_CAMERA, 0), lane=True)
-    camera.set_threshold_lane(0.2)
+    camera.set_threshold_lane(0.05)
     
     world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
     sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), init=(0, 0), transform=world_transform, 
