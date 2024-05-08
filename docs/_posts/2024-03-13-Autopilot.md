@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-05-01T17:38:00
+last_modified_at: 2024-05-08T10:57:00
 categories:
   - Blog
 tags:
@@ -145,7 +145,11 @@ Vamos a generar histogramas utilizando las distancias detectadas en la zona cent
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist/hist_motorbike.png" alt="">
 </figure>
 
-Hemos creado una aplicación llamada *hist_carla.py* para recopilar los datos del láser y almacenarlos en formato csv (*hist_data.csv*). Al presionar la tecla *s*, se guardan los datos en el fichero csv, mientras que al presionar la tecla *x*, se puede cambiar la configuración en la disposición de los vehículos. Este fichero acepta el argumento *w* para sobrescribir el csv existente y *a* para añadir al final del archivo csv. Además, hemos creado un *script* para visualizar los *plots* de estos datos (*hist_plot.py*):
+Hemos creado una aplicación llamada *hist_carla.py* para recopilar los datos del láser y almacenarlos en formato csv (*hist_data.csv*). Al presionar la tecla *s*, se guardan los datos en el fichero csv, mientras que al presionar la tecla *x*, se puede cambiar la configuración en la disposición de los vehículos. Este fichero acepta el argumento *w* para sobrescribir el csv existente, *a* para añadir al final del archivo csv y *n* para no guardar los datos. Además, hemos creado un *script* para visualizar los *plots* de estos datos (*hist_plot.py*):
+```bash
+python3 hist_carla.py --mode w
+python3 hist_plot.py 
+```
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist/hist_plot.png" alt="">
 </figure>
