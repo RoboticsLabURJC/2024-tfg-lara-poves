@@ -124,4 +124,3 @@ if __name__ == "__main__":
                         help="Mode for opening the CSV file (a: append, w: write, n: not write)")
     args = parser.parse_args()
     main(args.mode)
-    main(args.mode)
