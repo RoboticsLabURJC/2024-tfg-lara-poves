@@ -16,9 +16,10 @@ def main():
     ego_transform = carla.Transform(carla.Location(x=151.5, y=-90.0, z=2.5), carla.Rotation(yaw=90.0))
     ego_vehicle = configcarla.add_one_vehicle(world=world, ego_vehicle=True, transform=ego_transform,
                                               vehicle_type='vehicle.lincoln.mkz_2020')
-    sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
     # Add sensors to Ego Vehicle
+    sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
+
     driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), transform=driver_transform,
                            seg=True, init_extra=(0, 0), text='Driver view')
@@ -40,7 +41,7 @@ def main():
     vehicles = configcarla.add_vehicles_randomly(world=world, number=5)
     vehicles.append(ego_vehicle)
     vehicles.append(front_vehicle)
-    tm = configcarla.traffic_manager(client=client, vehicles=vehicles)
+    tm = configcarla.traffic_manager(client=client, vehicles=vehicles, dist=4.0)
     
     try:
         while True:
