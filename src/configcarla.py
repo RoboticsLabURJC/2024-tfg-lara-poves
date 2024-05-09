@@ -108,6 +108,7 @@ class CameraRGB(Sensor):
         self.text = text
         self.__size_text = 20
         self.__deviation = 0
+        self.__road_percentage = 0
         self.__threshold_lane = 0.5
 
         self.__seg = seg
@@ -125,7 +126,7 @@ class CameraRGB(Sensor):
             self.__ymin_lane = 275   
             self.__coefficients = np.zeros((2, 2), dtype=float)
 
-            self.__mem_max = 6
+            self.__mem_max = 4
             self.__count_mem = [0, 0]
 
         self.__rect_org = init
@@ -146,7 +147,7 @@ class CameraRGB(Sensor):
         index_mask = np.where(mask > self.__threshold_lane)
 
         # Memory lane
-        if not np.any(index_mask):
+        if len(index_mask[0]) < 2:
             self.__count_mem[index] += 1
             assert self.__count_mem[index]  < self.__mem_max, "Lane not found"
             return
@@ -158,7 +159,7 @@ class CameraRGB(Sensor):
         self.__coefficients[index, 0] = coefficients[0]
         self.__coefficients[index, 1] = coefficients[1]
 
-    def __detect_lane(self, data:list, canvas:list): 
+    def __detect_lane(self, data:list, canvas:list, mask:list): 
         init_time = time.time_ns()
 
         # Resize for the network
@@ -174,27 +175,41 @@ class CameraRGB(Sensor):
         self.__mask_lane(mask=left_mask, index=LEFT_LANE, canvas=canvas)
         self.__mask_lane(mask=right_mask, index=RIGHT_LANE, canvas=canvas)
 
-        area_lane_x = []
-        area_lane_y = []
+        count_x = count_y = 0
+        count_total = count_road = 0
+
         for y in range(self.__ymin_lane, SIZE_CAMERA):
             x_left = max(int(y * self.__coefficients[LEFT_LANE, 0] +
                              self.__coefficients[LEFT_LANE, 1]), 0)
             x_right = min(int(y * self.__coefficients[RIGHT_LANE, 0] +
                               self.__coefficients[RIGHT_LANE, 1] + 1), SIZE_CAMERA - 1)
 
-            area_lane_x.extend(range(x_left, x_right)) 
-            area_lane_y.extend([y] * (x_right - x_left))
-            canvas[y, x_left:x_right] = [255, 240, 255]
+            if x_left < x_right:
+                # Center of mass
+                count_x += sum(range(x_left, x_right))
+                count_y += y * (x_right - x_left)
+
+                # Draw lane
+                canvas[y, x_left:x_right] = [255, 240, 255]
+
+                # Road percentage
+                region_mask = mask[y, x_left:x_right]
+                count_total += x_right - x_left
+                count_road += np.count_nonzero(region_mask == ROAD)
 
         print("Lane:", time.time_ns() - init_time, "ns")
         init_time = time.time_ns()
 
-        # Calculate center of mass
-        if len(area_lane_x) > 0:
-            x_cm = int(np.mean(area_lane_x))
-            y_cm = int(np.mean(area_lane_y))
+        if count_total > 0:
+            # Calculate center of mass
+            x_cm = int(count_x / count_total)
+            y_cm = int(count_y / count_total)
             middle = int(SIZE_CAMERA / 2)
             self.__deviation = x_cm - SIZE_CAMERA / 2 
+
+            # Calculate road porcentage
+            self.__road_percentage = count_road / count_total * 100
+            assert self.__road_percentage <= 100, "lane"
 
             # Draw center of mass and vehicle
             cv2.line(canvas, (x_cm, 0), (x_cm, SIZE_CAMERA), (0, 255, 0), 2)
@@ -202,7 +217,8 @@ class CameraRGB(Sensor):
             cv2.circle(canvas, (x_cm, y_cm), 9, (0, 255, 0), -1)
         else:
             self.__deviation = 0
-        print("Center of mass:", time.time_ns() - init_time, "ns")
+            self.__road_percentage = 0
+        print("Center of mass / percentage:", time.time_ns() - init_time, "ns")
 
     def __process_seg(self, data:list):
         init_time = time.time_ns()
@@ -218,7 +234,7 @@ class CameraRGB(Sensor):
 
         init_time = time.time_ns()
         if self.__lane:
-            self.__detect_lane(data=image_seg, canvas=canvas)
+            self.__detect_lane(data=image_seg, canvas=canvas, mask=mask)
             init_time = time.time_ns()
 
         if self.__rect_extra != None:
@@ -232,15 +248,21 @@ class CameraRGB(Sensor):
                        bold=True, size=self.__size_text, point=(self.__rect_extra.size[0], 0))
             
             if self.__lane:
-                write_text(text="Deviation = "+str(int(abs(self.__deviation)))+" (pixels)", bold=True,
+                write_text(text="Deviation = "+str(int(abs(self.__deviation)))+" (pixels)",
                            img=surface_seg, color=(0, 0, 0), side=LEFT, size=self.__size_text, 
-                           point=(0, self.__rect_extra.size[0] - self.__size_text))
+                           point=(0, self.__rect_extra.size[0] - self.__size_text), bold=True)
+                write_text(text=f"{self.__road_percentage:.2f}% road", side=RIGHT, bold=True,
+                           img=surface_seg, color=(0, 0, 0), size=self.__size_text, 
+                           point=(SIZE_CAMERA, self.__rect_extra.size[0] - self.__size_text))
                 
             self.__screen.blit(surface_seg, self.__rect_extra)
             print("Show seg:", time.time_ns() - init_time, "ns")
 
     def get_deviation(self):
         return self.__deviation
+    
+    def get_road_percentage(self):
+        return self.__road_percentage
     
     def get_threshold_lane(self):
         return self.__threshold_lane
@@ -628,18 +650,26 @@ class PID:
         self.__kp = 1 / (SIZE_CAMERA / 2)
         self.__count = 0
 
+        self.__kd = -self.__kp / 2.3
+
+        self.__error = 0
+        self.__prev_error = 0
+
     def controll_vehicle(self, error:float):
         control = carla.VehicleControl()
         self.__count += 1
 
+        self.__prev_error = self.__error
+        self.__error = error
+
         if error > 10:
-            control.throttle = 0.45
+            control.throttle = 0.42
         elif self.__count < 100:
             control.throttle = 0.8
         else:
-            control.throttle = 0.53
+            control.throttle = 0.5
 
-        control.steer = self.__kp * error
+        control.steer = self.__kp * self.__error + self.__kd * self.__prev_error
         self.__vehicle.apply_control(control)
 
 def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05):
@@ -712,11 +742,10 @@ def add_vehicles_randomly(world:carla.World, number:int):
 
     return vehicles
 
-def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000, dist:float=5.0):
+def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000):
     tm = client.get_trafficmanager(port)
     tm_port = tm.get_port()
 
-    tm.set_global_distance_to_leading_vehicle(dist)
     for v in vehicles:
         v.set_autopilot(True, tm_port)
         tm.auto_lane_change(v, False) 
