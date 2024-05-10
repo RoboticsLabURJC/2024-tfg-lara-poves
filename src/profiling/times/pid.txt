@@ -2,7 +2,7 @@ Init camera: 374981 ns
 Seg init: 1753174 ns
 Prediction: 71966016 ns
 Lane: 15857804 ns
-Center of mass / percentage: 51320 ns
+CM%: 51320 ns
 Show seg: 2740866 ns
 Init camera: 372181 ns
 Show camera: 2382156 ns
@@ -11,7 +11,7 @@ Init camera: 434661 ns
 Seg init: 1742763 ns
 Prediction: 75627664 ns
 Lane: 15922655 ns
-Center of mass / percentage: 50420 ns
+CM%: 50420 ns
 Show seg: 2752066 ns
 Init camera: 378601 ns
 Show camera: 2398655 ns
@@ -20,7 +20,7 @@ Init camera: 402301 ns
 Seg init: 2045475 ns
 Prediction: 81326246 ns
 Lane: 15457633 ns
-Center of mass / percentage: 48470 ns
+CM%: 48470 ns
 Show seg: 2773256 ns
 Init camera: 343071 ns
 Show camera: 2406045 ns
@@ -29,7 +29,7 @@ Init camera: 344690 ns
 Seg init: 1810354 ns
 Prediction: 77462878 ns
 Lane: 15627544 ns
-Center of mass / percentage: 49430 ns
+CM%: 49430 ns
 Show seg: 2767596 ns
 Init camera: 366451 ns
 Show camera: 2398835 ns
@@ -38,7 +38,7 @@ Init camera: 311841 ns
 Seg init: 1893744 ns
 Prediction: 71173234 ns
 Lane: 15425644 ns
-Center of mass / percentage: 48910 ns
+CM%: 48910 ns
 Show seg: 2754226 ns
 Init camera: 341441 ns
 Show camera: 2393745 ns
@@ -47,7 +47,7 @@ Init camera: 262091 ns
 Seg init: 1802214 ns
 Prediction: 75674014 ns
 Lane: 15431383 ns
-Center of mass / percentage: 50790 ns
+CM%: 50790 ns
 Show seg: 2751136 ns
 Init camera: 316441 ns
 Show camera: 2416975 ns
@@ -56,7 +56,7 @@ Init camera: 298920 ns
 Seg init: 1771404 ns
 Prediction: 77514548 ns
 Lane: 15192803 ns
-Center of mass / percentage: 54400 ns
+CM%: 54400 ns
 Show seg: 2730116 ns
 Init camera: 297670 ns
 Show camera: 2275046 ns
@@ -65,7 +65,7 @@ Init camera: 293950 ns
 Seg init: 2245005 ns
 Prediction: 73105468 ns
 Lane: 17453288 ns
-Center of mass / percentage: 54300 ns
+CM%: 54300 ns
 Show seg: 2766076 ns
 Init camera: 340241 ns
 Show camera: 2402635 ns
@@ -74,7 +74,7 @@ Init camera: 352421 ns
 Seg init: 2389885 ns
 Prediction: 81153744 ns
 Lane: 15422203 ns
-Center of mass / percentage: 51601 ns
+CM%: 51601 ns
 Show seg: 2783876 ns
 Init camera: 306080 ns
 Show camera: 2414806 ns
@@ -83,7 +83,7 @@ Init camera: 296141 ns
 Seg init: 1900914 ns
 Prediction: 80611434 ns
 Lane: 15274633 ns
-Center of mass / percentage: 55140 ns
+CM%: 55140 ns
 Show seg: 2879006 ns
 Init camera: 398091 ns
 Show camera: 2105704 ns
@@ -92,7 +92,7 @@ Init camera: 479871 ns
 Seg init: 1769894 ns
 Prediction: 73790530 ns
 Lane: 15376453 ns
-Center of mass / percentage: 53740 ns
+CM%: 53740 ns
 Show seg: 2755546 ns
 Init camera: 314520 ns
 Show camera: 2393916 ns
@@ -101,7 +101,7 @@ Init camera: 460101 ns
 Seg init: 1745104 ns
 Prediction: 72743747 ns
 Lane: 20003253 ns
-Center of mass / percentage: 50740 ns
+CM%: 50740 ns
 Show seg: 2734756 ns
 Init camera: 325161 ns
 Show camera: 2394195 ns
@@ -110,7 +110,7 @@ Init camera: 503111 ns
 Seg init: 1845324 ns
 Prediction: 76990036 ns
 Lane: 15484473 ns
-Center of mass / percentage: 48751 ns
+CM%: 48751 ns
 Show seg: 2767445 ns
 Init camera: 348621 ns
 Show camera: 2434806 ns
@@ -119,7 +119,7 @@ Init camera: 339421 ns
 Seg init: 1790844 ns
 Prediction: 69160309 ns
 Lane: 15674864 ns
-Center of mass / percentage: 50860 ns
+CM%: 50860 ns
 Show seg: 2754326 ns
 Init camera: 318601 ns
 Show camera: 2389375 ns
@@ -128,7 +128,7 @@ Init camera: 294650 ns
 Seg init: 2083675 ns
 Prediction: 74029930 ns
 Lane: 15583943 ns
-Center of mass / percentage: 51890 ns
+CM%: 51890 ns
 Show seg: 2749406 ns
 Init camera: 299111 ns
 Show camera: 2391685 ns
@@ -137,7 +137,7 @@ Init camera: 296531 ns
 Seg init: 1733094 ns
 Prediction: 71548414 ns
 Lane: 15772254 ns
-Center of mass / percentage: 52640 ns
+CM%: 52640 ns
 Show seg: 2781426 ns
 Init camera: 327101 ns
 Show camera: 2352955 ns
@@ -146,7 +146,7 @@ Init camera: 341821 ns
 Seg init: 1729514 ns
 Prediction: 70843162 ns
 Lane: 15196293 ns
-Center of mass / percentage: 49230 ns
+CM%: 49230 ns
 Show seg: 2734116 ns
 Init camera: 311540 ns
 Show camera: 2428766 ns
@@ -155,7 +155,7 @@ Init camera: 304241 ns
 Seg init: 1718733 ns
 Prediction: 78034928 ns
 Lane: 15290494 ns
-Center of mass / percentage: 50970 ns
+CM%: 50970 ns
 Show seg: 2749895 ns
 Init camera: 344771 ns
 Show camera: 2410316 ns
@@ -164,7 +164,7 @@ Init camera: 284550 ns
 Seg init: 1717434 ns
 Prediction: 78457928 ns
 Lane: 15909334 ns
-Center of mass / percentage: 53090 ns
+CM%: 53090 ns
 Show seg: 3326278 ns
 Init camera: 517531 ns
 Show camera: 2553215 ns
@@ -173,7 +173,7 @@ Init camera: 356981 ns
 Seg init: 1833844 ns
 Prediction: 71019912 ns
 Lane: 15627524 ns
-Center of mass / percentage: 54220 ns
+CM%: 54220 ns
 Show seg: 2752376 ns
 Init camera: 338541 ns
 Show camera: 2392285 ns
@@ -182,7 +182,7 @@ Init camera: 331830 ns
 Seg init: 1811374 ns
 Prediction: 77504337 ns
 Lane: 17343357 ns
-Center of mass / percentage: 59250 ns
+CM%: 59250 ns
 Show seg: 2829836 ns
 Init camera: 428151 ns
 Show camera: 2524535 ns
@@ -191,7 +191,7 @@ Init camera: 641622 ns
 Seg init: 1986124 ns
 Prediction: 81293355 ns
 Lane: 16071104 ns
-Center of mass / percentage: 56340 ns
+CM%: 56340 ns
 Show seg: 2829176 ns
 Init camera: 531191 ns
 Show camera: 2448016 ns
@@ -200,7 +200,7 @@ Init camera: 379140 ns
 Seg init: 1905604 ns
 Prediction: 77856947 ns
 Lane: 15083893 ns
-Center of mass / percentage: 49660 ns
+CM%: 49660 ns
 Show seg: 3200747 ns
 Init camera: 554211 ns
 Show camera: 1828054 ns
@@ -209,7 +209,7 @@ Init camera: 354021 ns
 Seg init: 1729974 ns
 Prediction: 70944732 ns
 Lane: 15470243 ns
-Center of mass / percentage: 50880 ns
+CM%: 50880 ns
 Show seg: 2812816 ns
 Init camera: 351051 ns
 Show camera: 2366445 ns
@@ -218,7 +218,7 @@ Init camera: 644141 ns
 Seg init: 2480686 ns
 Prediction: 78470928 ns
 Lane: 14815472 ns
-Center of mass / percentage: 49650 ns
+CM%: 49650 ns
 Show seg: 2784036 ns
 Init camera: 298470 ns
 Show camera: 2397606 ns
@@ -227,7 +227,7 @@ Init camera: 347421 ns
 Seg init: 1744714 ns
 Prediction: 71501413 ns
 Lane: 16297355 ns
-Center of mass / percentage: 49480 ns
+CM%: 49480 ns
 Show seg: 2722966 ns
 Init camera: 334810 ns
 Show camera: 2387175 ns
@@ -236,7 +236,7 @@ Init camera: 694362 ns
 Seg init: 4049528 ns
 Prediction: 74995081 ns
 Lane: 15429433 ns
-Center of mass / percentage: 51520 ns
+CM%: 51520 ns
 Show seg: 3344808 ns
 Init camera: 296160 ns
 Show camera: 2439765 ns
@@ -245,7 +245,7 @@ Init camera: 327220 ns
 Seg init: 1795004 ns
 Prediction: 72393666 ns
 Lane: 15800423 ns
-Center of mass / percentage: 54660 ns
+CM%: 54660 ns
 Show seg: 2962457 ns
 Init camera: 356380 ns
 Show camera: 3094697 ns
@@ -254,7 +254,7 @@ Init camera: 479571 ns
 Seg init: 1997534 ns
 Prediction: 75122021 ns
 Lane: 15732483 ns
-Center of mass / percentage: 53840 ns
+CM%: 53840 ns
 Show seg: 2880206 ns
 Init camera: 341351 ns
 Show camera: 2432295 ns
@@ -263,7 +263,7 @@ Init camera: 750071 ns
 Seg init: 2207665 ns
 Prediction: 84139299 ns
 Lane: 15420033 ns
-Center of mass / percentage: 54910 ns
+CM%: 54910 ns
 Show seg: 2933086 ns
 Init camera: 309830 ns
 Show camera: 2381336 ns
@@ -272,7 +272,7 @@ Init camera: 300540 ns
 Seg init: 1734214 ns
 Prediction: 71361732 ns
 Lane: 17902078 ns
-Center of mass / percentage: 56390 ns
+CM%: 56390 ns
 Show seg: 3112857 ns
 Init camera: 364011 ns
 Show camera: 2522805 ns
@@ -281,7 +281,7 @@ Init camera: 826972 ns
 Seg init: 1912224 ns
 Prediction: 76660464 ns
 Lane: 16175514 ns
-Center of mass / percentage: 52541 ns
+CM%: 52541 ns
 Show seg: 2935506 ns
 Init camera: 415271 ns
 Show camera: 2486975 ns
@@ -290,7 +290,7 @@ Init camera: 481321 ns
 Seg init: 2077434 ns
 Prediction: 71998934 ns
 Lane: 16208944 ns
-Center of mass / percentage: 50900 ns
+CM%: 50900 ns
 Show seg: 2746676 ns
 Init camera: 334291 ns
 Show camera: 2384735 ns
@@ -299,7 +299,7 @@ Init camera: 513051 ns
 Seg init: 1950184 ns
 Prediction: 78398287 ns
 Lane: 16963936 ns
-Center of mass / percentage: 56020 ns
+CM%: 56020 ns
 Show seg: 2769365 ns
 Init camera: 365771 ns
 Show camera: 2391645 ns
@@ -308,7 +308,7 @@ Init camera: 358591 ns
 Seg init: 1746114 ns
 Prediction: 75541051 ns
 Lane: 15738574 ns
-Center of mass / percentage: 53430 ns
+CM%: 53430 ns
 Show seg: 2724185 ns
 Init camera: 296561 ns
 Show camera: 2411515 ns
@@ -317,7 +317,7 @@ Init camera: 306661 ns
 Seg init: 1818574 ns
 Prediction: 71535612 ns
 Lane: 16393385 ns
-Center of mass / percentage: 52610 ns
+CM%: 52610 ns
 Show seg: 2734226 ns
 Init camera: 318411 ns
 Show camera: 2391185 ns
@@ -326,7 +326,7 @@ Init camera: 419731 ns
 Seg init: 1719733 ns
 Prediction: 73830148 ns
 Lane: 16222984 ns
-Center of mass / percentage: 53400 ns
+CM%: 53400 ns
 Show seg: 3484468 ns
 Init camera: 300540 ns
 Show camera: 2452056 ns
@@ -335,7 +335,7 @@ Init camera: 294120 ns
 Seg init: 1706474 ns
 Prediction: 71687612 ns
 Lane: 15879384 ns
-Center of mass / percentage: 53700 ns
+CM%: 53700 ns
 Show seg: 2815756 ns
 Init camera: 322151 ns
 Show camera: 2386775 ns
@@ -344,7 +344,7 @@ Init camera: 331390 ns
 Seg init: 2161785 ns
 Prediction: 76078151 ns
 Lane: 15654433 ns
-Center of mass / percentage: 52700 ns
+CM%: 52700 ns
 Show seg: 2751786 ns
 Init camera: 355651 ns
 Show camera: 2447625 ns
@@ -353,7 +353,7 @@ Init camera: 371001 ns
 Seg init: 3064446 ns
 Prediction: 80035180 ns
 Lane: 15840194 ns
-Center of mass / percentage: 50670 ns
+CM%: 50670 ns
 Show seg: 2743006 ns
 Init camera: 484971 ns
 Show camera: 2464635 ns
@@ -362,7 +362,7 @@ Init camera: 1112632 ns
 Seg init: 3369437 ns
 Prediction: 84917421 ns
 Lane: 21805726 ns
-Center of mass / percentage: 67540 ns
+CM%: 67540 ns
 Show seg: 3016317 ns
 Init camera: 386620 ns
 Show camera: 2280315 ns
@@ -371,7 +371,7 @@ Init camera: 269561 ns
 Seg init: 1939504 ns
 Prediction: 72916935 ns
 Lane: 16355685 ns
-Center of mass / percentage: 51820 ns
+CM%: 51820 ns
 Show seg: 2802006 ns
 Init camera: 334240 ns
 Show camera: 2489116 ns
@@ -380,7 +380,7 @@ Init camera: 346061 ns
 Seg init: 1806604 ns
 Prediction: 69535208 ns
 Lane: 16497465 ns
-Center of mass / percentage: 57270 ns
+CM%: 57270 ns
 Show seg: 2882676 ns
 Init camera: 350111 ns
 Show camera: 2501165 ns
@@ -389,7 +389,7 @@ Init camera: 405121 ns
 Seg init: 1746734 ns
 Prediction: 72074983 ns
 Lane: 16039174 ns
-Center of mass / percentage: 52920 ns
+CM%: 52920 ns
 Show seg: 2761216 ns
 Init camera: 346801 ns
 Show camera: 2401445 ns
@@ -398,7 +398,7 @@ Init camera: 294881 ns
 Seg init: 1721093 ns
 Prediction: 78114676 ns
 Lane: 16571205 ns
-Center of mass / percentage: 56060 ns
+CM%: 56060 ns
 Show seg: 2752535 ns
 Init camera: 446591 ns
 Show camera: 2440935 ns
@@ -407,7 +407,7 @@ Init camera: 506851 ns
 Seg init: 2122294 ns
 Prediction: 76796323 ns
 Lane: 15305623 ns
-Center of mass / percentage: 49530 ns
+CM%: 49530 ns
 Show seg: 2716786 ns
 Init camera: 327691 ns
 Show camera: 2379995 ns
@@ -416,7 +416,7 @@ Init camera: 328061 ns
 Seg init: 1728964 ns
 Prediction: 73992447 ns
 Lane: 15211742 ns
-Center of mass / percentage: 49000 ns
+CM%: 49000 ns
 Show seg: 2754516 ns
 Init camera: 347401 ns
 Show camera: 2403295 ns
@@ -425,7 +425,7 @@ Init camera: 299781 ns
 Seg init: 1722963 ns
 Prediction: 71909442 ns
 Lane: 19373111 ns
-Center of mass / percentage: 64720 ns
+CM%: 64720 ns
 Show seg: 3051267 ns
 Init camera: 1589673 ns
 Show camera: 2290905 ns
@@ -434,7 +434,7 @@ Init camera: 406501 ns
 Seg init: 1749494 ns
 Prediction: 70763529 ns
 Lane: 16543415 ns
-Center of mass / percentage: 50700 ns
+CM%: 50700 ns
 Show seg: 2742426 ns
 Init camera: 329510 ns
 Show camera: 2497215 ns
@@ -443,7 +443,7 @@ Init camera: 368191 ns
 Seg init: 2156454 ns
 Prediction: 76222661 ns
 Lane: 15989903 ns
-Center of mass / percentage: 52160 ns
+CM%: 52160 ns
 Show seg: 2759356 ns
 Init camera: 318641 ns
 Show camera: 2554386 ns
@@ -452,7 +452,7 @@ Init camera: 275581 ns
 Seg init: 1991364 ns
 Prediction: 72075572 ns
 Lane: 16363855 ns
-Center of mass / percentage: 64340 ns
+CM%: 64340 ns
 Show seg: 2748715 ns
 Init camera: 553421 ns
 Show camera: 2915556 ns
@@ -461,7 +461,7 @@ Init camera: 323590 ns
 Seg init: 1887204 ns
 Prediction: 76007501 ns
 Lane: 17155986 ns
-Center of mass / percentage: 58190 ns
+CM%: 58190 ns
 Show seg: 2809856 ns
 Init camera: 337090 ns
 Show camera: 2472915 ns
@@ -470,7 +470,7 @@ Init camera: 312201 ns
 Seg init: 1859334 ns
 Prediction: 74462537 ns
 Lane: 17226926 ns
-Center of mass / percentage: 54351 ns
+CM%: 54351 ns
 Show seg: 2800265 ns
 Init camera: 387781 ns
 Show camera: 2411405 ns
@@ -479,7 +479,7 @@ Init camera: 326941 ns
 Seg init: 1866204 ns
 Prediction: 74736738 ns
 Lane: 17055346 ns
-Center of mass / percentage: 55801 ns
+CM%: 55801 ns
 Show seg: 2827765 ns
 Init camera: 332230 ns
 Show camera: 2504455 ns
@@ -488,7 +488,7 @@ Init camera: 339451 ns
 Seg init: 1868514 ns
 Prediction: 75652860 ns
 Lane: 18569919 ns
-Center of mass / percentage: 57730 ns
+CM%: 57730 ns
 Show seg: 2772046 ns
 Init camera: 335040 ns
 Show camera: 2368625 ns
@@ -497,7 +497,7 @@ Init camera: 326421 ns
 Seg init: 1957744 ns
 Prediction: 74968898 ns
 Lane: 15060392 ns
-Center of mass / percentage: 51160 ns
+CM%: 51160 ns
 Show seg: 2740846 ns
 Init camera: 321400 ns
 Show camera: 2424475 ns
@@ -506,7 +506,7 @@ Init camera: 477401 ns
 Seg init: 1724094 ns
 Prediction: 73164954 ns
 Lane: 16297684 ns
-Center of mass / percentage: 59570 ns
+CM%: 59570 ns
 Show seg: 2708796 ns
 Init camera: 316881 ns
 Show camera: 2370395 ns
@@ -515,7 +515,7 @@ Init camera: 568861 ns
 Seg init: 2442995 ns
 Prediction: 75510669 ns
 Lane: 16285614 ns
-Center of mass / percentage: 53600 ns
+CM%: 53600 ns
 Show seg: 2709805 ns
 Init camera: 371561 ns
 Show camera: 2405576 ns
@@ -524,7 +524,7 @@ Init camera: 576871 ns
 Seg init: 2418065 ns
 Prediction: 74920957 ns
 Lane: 16109144 ns
-Center of mass / percentage: 52160 ns
+CM%: 52160 ns
 Show seg: 2693176 ns
 Init camera: 343180 ns
 Show camera: 2373126 ns
@@ -533,7 +533,7 @@ Init camera: 564591 ns
 Seg init: 2431125 ns
 Prediction: 77205802 ns
 Lane: 16822735 ns
-Center of mass / percentage: 61670 ns
+CM%: 61670 ns
 Show seg: 2866416 ns
 Init camera: 393501 ns
 Show camera: 2713946 ns
@@ -542,7 +542,7 @@ Init camera: 380020 ns
 Seg init: 1717034 ns
 Prediction: 75086627 ns
 Lane: 20422533 ns
-Center of mass / percentage: 52710 ns
+CM%: 52710 ns
 Show seg: 2695156 ns
 Init camera: 377591 ns
 Show camera: 2173915 ns
@@ -551,7 +551,7 @@ Init camera: 606671 ns
 Seg init: 2746336 ns
 Prediction: 76530840 ns
 Lane: 15260142 ns
-Center of mass / percentage: 50320 ns
+CM%: 50320 ns
 Show seg: 2901996 ns
 Init camera: 351730 ns
 Show camera: 2381536 ns
@@ -560,7 +560,7 @@ Init camera: 490501 ns
 Seg init: 2329055 ns
 Prediction: 77438012 ns
 Lane: 17971028 ns
-Center of mass / percentage: 67880 ns
+CM%: 67880 ns
 Show seg: 3203937 ns
 Init camera: 345051 ns
 Show camera: 3552847 ns
@@ -569,7 +569,7 @@ Init camera: 548861 ns
 Seg init: 2574235 ns
 Prediction: 78424074 ns
 Lane: 16960446 ns
-Center of mass / percentage: 53920 ns
+CM%: 53920 ns
 Show seg: 2810686 ns
 Init camera: 325780 ns
 Show camera: 2401445 ns
@@ -578,7 +578,7 @@ Init camera: 294061 ns
 Seg init: 1864354 ns
 Prediction: 89433127 ns
 Lane: 15936314 ns
-Center of mass / percentage: 55490 ns
+CM%: 55490 ns
 Show seg: 2759356 ns
 Init camera: 323720 ns
 Show camera: 2811336 ns
@@ -587,7 +587,7 @@ Init camera: 513331 ns
 Seg init: 2291585 ns
 Prediction: 76048039 ns
 Lane: 19993423 ns
-Center of mass / percentage: 72630 ns
+CM%: 72630 ns
 Show seg: 3762588 ns
 Init camera: 496891 ns
 Show camera: 2451885 ns
@@ -596,7 +596,7 @@ Init camera: 310131 ns
 Seg init: 1793454 ns
 Prediction: 73879734 ns
 Lane: 15153351 ns
-Center of mass / percentage: 52640 ns
+CM%: 52640 ns
 Show seg: 3341537 ns
 Init camera: 311481 ns
 Show camera: 2458315 ns
@@ -605,7 +605,7 @@ Init camera: 299031 ns
 Seg init: 1799644 ns
 Prediction: 72003520 ns
 Lane: 16965575 ns
-Center of mass / percentage: 54220 ns
+CM%: 54220 ns
 Show seg: 2792306 ns
 Init camera: 355101 ns
 Show camera: 2421035 ns
@@ -614,7 +614,7 @@ Init camera: 284250 ns
 Seg init: 1763634 ns
 Prediction: 75164138 ns
 Lane: 16775685 ns
-Center of mass / percentage: 56390 ns
+CM%: 56390 ns
 Show seg: 2924676 ns
 Init camera: 351071 ns
 Show camera: 2482965 ns
@@ -623,7 +623,7 @@ Init camera: 474151 ns
 Seg init: 1919104 ns
 Prediction: 73436453 ns
 Lane: 16269254 ns
-Center of mass / percentage: 51800 ns
+CM%: 51800 ns
 Show seg: 2733256 ns
 Init camera: 328471 ns
 Show camera: 2403255 ns
@@ -632,7 +632,7 @@ Init camera: 408141 ns
 Seg init: 1714474 ns
 Prediction: 76897900 ns
 Lane: 16724085 ns
-Center of mass / percentage: 51410 ns
+CM%: 51410 ns
 Show seg: 2750946 ns
 Init camera: 543201 ns
 Show camera: 2435035 ns
@@ -641,7 +641,7 @@ Init camera: 442441 ns
 Seg init: 1855504 ns
 Prediction: 84332227 ns
 Lane: 18089018 ns
-Center of mass / percentage: 56840 ns
+CM%: 56840 ns
 Show seg: 2932476 ns
 Init camera: 301311 ns
 Show camera: 2519555 ns
@@ -650,7 +650,7 @@ Init camera: 275540 ns
 Seg init: 1829804 ns
 Prediction: 78579254 ns
 Lane: 16227534 ns
-Center of mass / percentage: 58160 ns
+CM%: 58160 ns
 Show seg: 3006067 ns
 Init camera: 355790 ns
 Show camera: 2493876 ns
@@ -659,7 +659,7 @@ Init camera: 291841 ns
 Seg init: 1752463 ns
 Prediction: 77499492 ns
 Lane: 16094504 ns
-Center of mass / percentage: 56590 ns
+CM%: 56590 ns
 Show seg: 2829256 ns
 Init camera: 360911 ns
 Show camera: 2448835 ns
@@ -668,7 +668,7 @@ Init camera: 490711 ns
 Seg init: 2816726 ns
 Prediction: 76414510 ns
 Lane: 16068033 ns
-Center of mass / percentage: 58090 ns
+CM%: 58090 ns
 Show seg: 2740286 ns
 Init camera: 326631 ns
 Show camera: 2433345 ns
@@ -677,7 +677,7 @@ Init camera: 321561 ns
 Seg init: 1769113 ns
 Prediction: 75068926 ns
 Lane: 16595924 ns
-Center of mass / percentage: 64290 ns
+CM%: 64290 ns
 Show seg: 3112627 ns
 Init camera: 419381 ns
 Show camera: 2531215 ns
@@ -686,7 +686,7 @@ Init camera: 382631 ns
 Seg init: 1728374 ns
 Prediction: 79506115 ns
 Lane: 17049575 ns
-Center of mass / percentage: 60521 ns
+CM%: 60521 ns
 Show seg: 2842646 ns
 Init camera: 332760 ns
 Show camera: 2618436 ns
@@ -695,7 +695,7 @@ Init camera: 315410 ns
 Seg init: 1764774 ns
 Prediction: 78284613 ns
 Lane: 17199596 ns
-Center of mass / percentage: 56780 ns
+CM%: 56780 ns
 Show seg: 2811075 ns
 Init camera: 346251 ns
 Show camera: 2895386 ns
@@ -704,7 +704,7 @@ Init camera: 417781 ns
 Seg init: 1794864 ns
 Prediction: 79911936 ns
 Lane: 17230396 ns
-Center of mass / percentage: 53610 ns
+CM%: 53610 ns
 Show seg: 3002546 ns
 Init camera: 338211 ns
 Show camera: 2487535 ns
@@ -713,7 +713,7 @@ Init camera: 379321 ns
 Seg init: 1784504 ns
 Prediction: 80911708 ns
 Lane: 16349434 ns
-Center of mass / percentage: 54220 ns
+CM%: 54220 ns
 Show seg: 2741236 ns
 Init camera: 337961 ns
 Show camera: 2388545 ns
@@ -722,7 +722,7 @@ Init camera: 294380 ns
 Seg init: 1725044 ns
 Prediction: 81742040 ns
 Lane: 19846691 ns
-Center of mass / percentage: 66780 ns
+CM%: 66780 ns
 Show seg: 3733368 ns
 Init camera: 502881 ns
 Show camera: 4250588 ns
@@ -731,7 +731,7 @@ Init camera: 445621 ns
 Seg init: 2571635 ns
 Prediction: 80326287 ns
 Lane: 16250603 ns
-Center of mass / percentage: 52070 ns
+CM%: 52070 ns
 Show seg: 2849446 ns
 Init camera: 295521 ns
 Show camera: 2380735 ns
@@ -740,7 +740,7 @@ Init camera: 444871 ns
 Seg init: 2058604 ns
 Prediction: 76652989 ns
 Lane: 15762012 ns
-Center of mass / percentage: 50521 ns
+CM%: 50521 ns
 Show seg: 2803345 ns
 Init camera: 301091 ns
 Show camera: 2395645 ns
@@ -749,7 +749,7 @@ Init camera: 282521 ns
 Seg init: 1701433 ns
 Prediction: 75409297 ns
 Lane: 16375904 ns
-Center of mass / percentage: 54220 ns
+CM%: 54220 ns
 Show seg: 2795936 ns
 Init camera: 342991 ns
 Show camera: 2625115 ns
@@ -758,7 +758,7 @@ Init camera: 301421 ns
 Seg init: 1728933 ns
 Prediction: 76858709 ns
 Lane: 18805149 ns
-Center of mass / percentage: 54721 ns
+CM%: 54721 ns
 Show seg: 2857056 ns
 Init camera: 2289155 ns
 Show camera: 6614153 ns
@@ -767,7 +767,7 @@ Init camera: 544091 ns
 Seg init: 2539265 ns
 Prediction: 81016358 ns
 Lane: 18372508 ns
-Center of mass / percentage: 52690 ns
+CM%: 52690 ns
 Show seg: 2758306 ns
 Init camera: 381091 ns
 Show camera: 2375704 ns
@@ -776,7 +776,7 @@ Init camera: 497911 ns
 Seg init: 1751253 ns
 Prediction: 75527386 ns
 Lane: 15433072 ns
-Center of mass / percentage: 52430 ns
+CM%: 52430 ns
 Show seg: 2710746 ns
 Init camera: 319600 ns
 Show camera: 2521276 ns
@@ -785,7 +785,7 @@ Init camera: 571901 ns
 Seg init: 2217405 ns
 Prediction: 78176361 ns
 Lane: 15753933 ns
-Center of mass / percentage: 51190 ns
+CM%: 51190 ns
 Show seg: 2725995 ns
 Init camera: 307421 ns
 Show camera: 2365325 ns
@@ -794,7 +794,7 @@ Init camera: 297671 ns
 Seg init: 1744573 ns
 Prediction: 72484850 ns
 Lane: 15994833 ns
-Center of mass / percentage: 56900 ns
+CM%: 56900 ns
 Show seg: 2738566 ns
 Init camera: 343330 ns
 Show camera: 2464146 ns
@@ -803,7 +803,7 @@ Init camera: 344910 ns
 Seg init: 1762844 ns
 Prediction: 75994057 ns
 Lane: 16337284 ns
-Center of mass / percentage: 53720 ns
+CM%: 53720 ns
 Show seg: 2718535 ns
 Init camera: 363801 ns
 Show camera: 2372745 ns
@@ -812,7 +812,7 @@ Init camera: 280601 ns
 Seg init: 1709614 ns
 Prediction: 84670755 ns
 Lane: 15777182 ns
-Center of mass / percentage: 49610 ns
+CM%: 49610 ns
 Show seg: 3451787 ns
 Init camera: 684992 ns
 Show camera: 2935986 ns
@@ -821,7 +821,7 @@ Init camera: 663211 ns
 Seg init: 2525085 ns
 Prediction: 72528700 ns
 Lane: 15281732 ns
-Center of mass / percentage: 48130 ns
+CM%: 48130 ns
 Show seg: 2904936 ns
 Init camera: 285841 ns
 Show camera: 2447294 ns
@@ -830,7 +830,7 @@ Init camera: 307091 ns
 Seg init: 1904994 ns
 Prediction: 78482952 ns
 Lane: 16771225 ns
-Center of mass / percentage: 54160 ns
+CM%: 54160 ns
 Show seg: 3160257 ns
 Init camera: 362500 ns
 Show camera: 2428665 ns
@@ -839,7 +839,7 @@ Init camera: 263521 ns
 Seg init: 1924954 ns
 Prediction: 76892419 ns
 Lane: 16684594 ns
-Center of mass / percentage: 52590 ns
+CM%: 52590 ns
 Show seg: 3195986 ns
 Init camera: 367451 ns
 Show camera: 2572085 ns
@@ -848,7 +848,7 @@ Init camera: 278220 ns
 Seg init: 1967175 ns
 Prediction: 83046311 ns
 Lane: 16463073 ns
-Center of mass / percentage: 54160 ns
+CM%: 54160 ns
 Show seg: 2772516 ns
 Init camera: 320561 ns
 Show camera: 2392115 ns
@@ -857,7 +857,7 @@ Init camera: 354591 ns
 Seg init: 1751333 ns
 Prediction: 78425641 ns
 Lane: 21293104 ns
-Center of mass / percentage: 96380 ns
+CM%: 96380 ns
 Show seg: 5520432 ns
 Init camera: 324091 ns
 Show camera: 2480865 ns
@@ -866,7 +866,7 @@ Init camera: 365591 ns
 Seg init: 1916664 ns
 Prediction: 76762747 ns
 Lane: 15825673 ns
-Center of mass / percentage: 49480 ns
+CM%: 49480 ns
 Show seg: 3190707 ns
 Init camera: 486831 ns
 Show camera: 2501195 ns
@@ -875,7 +875,7 @@ Init camera: 314471 ns
 Seg init: 1746364 ns
 Prediction: 71375176 ns
 Lane: 16844845 ns
-Center of mass / percentage: 54360 ns
+CM%: 54360 ns
 Show seg: 2764676 ns
 Init camera: 367080 ns
 Show camera: 2374675 ns
@@ -884,7 +884,7 @@ Init camera: 376701 ns
 Seg init: 1730264 ns
 Prediction: 70408525 ns
 Lane: 14923690 ns
-Center of mass / percentage: 57781 ns
+CM%: 57781 ns
 Show seg: 2776495 ns
 Init camera: 368791 ns
 Show camera: 2365955 ns
@@ -893,7 +893,7 @@ Init camera: 402021 ns
 Seg init: 6574974 ns
 Prediction: 80061034 ns
 Lane: 16439914 ns
-Center of mass / percentage: 53850 ns
+CM%: 53850 ns
 Show seg: 2787356 ns
 Init camera: 356031 ns
 Show camera: 2442534 ns
@@ -902,7 +902,7 @@ Init camera: 339911 ns
 Seg init: 1780884 ns
 Prediction: 81908338 ns
 Lane: 15432162 ns
-Center of mass / percentage: 68280 ns
+CM%: 68280 ns
 Show seg: 2770226 ns
 Init camera: 314911 ns
 Show camera: 2435255 ns
@@ -911,7 +911,7 @@ Init camera: 341991 ns
 Seg init: 1779144 ns
 Prediction: 74807853 ns
 Lane: 16755575 ns
-Center of mass / percentage: 53400 ns
+CM%: 53400 ns
 Show seg: 2753536 ns
 Init camera: 310530 ns
 Show camera: 2097694 ns
@@ -920,7 +920,7 @@ Init camera: 370781 ns
 Seg init: 1712314 ns
 Prediction: 73130290 ns
 Lane: 16407984 ns
-Center of mass / percentage: 53190 ns
+CM%: 53190 ns
 Show seg: 3293387 ns
 Init camera: 294040 ns
 Show camera: 2490565 ns
@@ -929,7 +929,7 @@ Init camera: 366321 ns
 Seg init: 1812234 ns
 Prediction: 69884923 ns
 Lane: 13346008 ns
-Center of mass / percentage: 52350 ns
+CM%: 52350 ns
 Show seg: 2773935 ns
 Init camera: 327391 ns
 Show camera: 2380205 ns
@@ -938,7 +938,7 @@ Init camera: 384771 ns
 Seg init: 6292583 ns
 Prediction: 79709763 ns
 Lane: 15551651 ns
-Center of mass / percentage: 50620 ns
+CM%: 50620 ns
 Show seg: 2719846 ns
 Init camera: 310991 ns
 Show camera: 2364705 ns
@@ -947,7 +947,7 @@ Init camera: 300681 ns
 Seg init: 1715544 ns
 Prediction: 73989350 ns
 Lane: 16669425 ns
-Center of mass / percentage: 53040 ns
+CM%: 53040 ns
 Show seg: 2801415 ns
 Init camera: 361250 ns
 Show camera: 2425585 ns
@@ -956,7 +956,7 @@ Init camera: 409461 ns
 Seg init: 1776834 ns
 Prediction: 75719524 ns
 Lane: 15829513 ns
-Center of mass / percentage: 63790 ns
+CM%: 63790 ns
 Show seg: 2868996 ns
 Init camera: 807531 ns
 Show camera: 2379545 ns
@@ -965,7 +965,7 @@ Init camera: 467911 ns
 Seg init: 1712484 ns
 Prediction: 75811375 ns
 Lane: 15007440 ns
-Center of mass / percentage: 48510 ns
+CM%: 48510 ns
 Show seg: 2689016 ns
 Init camera: 319721 ns
 Show camera: 2370455 ns
@@ -974,7 +974,7 @@ Init camera: 286391 ns
 Seg init: 1693244 ns
 Prediction: 71697696 ns
 Lane: 15002531 ns
-Center of mass / percentage: 50090 ns
+CM%: 50090 ns
 Show seg: 2719086 ns
 Init camera: 308340 ns
 Show camera: 2419145 ns
@@ -983,7 +983,7 @@ Init camera: 359281 ns
 Seg init: 1758774 ns
 Prediction: 78733160 ns
 Lane: 15947954 ns
-Center of mass / percentage: 55720 ns
+CM%: 55720 ns
 Show seg: 2776855 ns
 Init camera: 312721 ns
 Show camera: 2400034 ns
@@ -992,7 +992,7 @@ Init camera: 506571 ns
 Seg init: 2227115 ns
 Prediction: 83077929 ns
 Lane: 17820446 ns
-Center of mass / percentage: 55560 ns
+CM%: 55560 ns
 Show seg: 2783656 ns
 Init camera: 375991 ns
 Show camera: 2388965 ns
@@ -1001,7 +1001,7 @@ Init camera: 510011 ns
 Seg init: 2279805 ns
 Prediction: 83065510 ns
 Lane: 16287923 ns
-Center of mass / percentage: 52930 ns
+CM%: 52930 ns
 Show seg: 2804926 ns
 Init camera: 317240 ns
 Show camera: 2444425 ns
@@ -1010,7 +1010,7 @@ Init camera: 512471 ns
 Seg init: 2272765 ns
 Prediction: 79054942 ns
 Lane: 16166593 ns
-Center of mass / percentage: 56530 ns
+CM%: 56530 ns
 Show seg: 2893836 ns
 Init camera: 314630 ns
 Show camera: 2577796 ns
@@ -1019,7 +1019,7 @@ Init camera: 337841 ns
 Seg init: 1810313 ns
 Prediction: 74655902 ns
 Lane: 16013773 ns
-Center of mass / percentage: 52160 ns
+CM%: 52160 ns
 Show seg: 2982436 ns
 Init camera: 353581 ns
 Show camera: 2404554 ns
@@ -1028,7 +1028,7 @@ Init camera: 305110 ns
 Seg init: 1778934 ns
 Prediction: 72510988 ns
 Lane: 16733954 ns
-Center of mass / percentage: 51830 ns
+CM%: 51830 ns
 Show seg: 2923976 ns
 Init camera: 391420 ns
 Show camera: 2462196 ns
@@ -1037,7 +1037,7 @@ Init camera: 533621 ns
 Seg init: 1862004 ns
 Prediction: 77541018 ns
 Lane: 15907302 ns
-Center of mass / percentage: 55340 ns
+CM%: 55340 ns
 Show seg: 2766076 ns
 Init camera: 322961 ns
 Show camera: 2390284 ns
@@ -1046,7 +1046,7 @@ Init camera: 461081 ns
 Seg init: 2403745 ns
 Prediction: 77667838 ns
 Lane: 15348932 ns
-Center of mass / percentage: 50300 ns
+CM%: 50300 ns
 Show seg: 2732555 ns
 Init camera: 360601 ns
 Show camera: 2411665 ns
@@ -1055,7 +1055,7 @@ Init camera: 406981 ns
 Seg init: 2394905 ns
 Prediction: 81292305 ns
 Lane: 16079753 ns
-Center of mass / percentage: 55180 ns
+CM%: 55180 ns
 Show seg: 2885926 ns
 Init camera: 287850 ns
 Show camera: 2475836 ns
@@ -1064,7 +1064,7 @@ Init camera: 353270 ns
 Seg init: 1801254 ns
 Prediction: 78728450 ns
 Lane: 15804012 ns
-Center of mass / percentage: 54770 ns
+CM%: 54770 ns
 Show seg: 2928916 ns
 Init camera: 297761 ns
 Show camera: 2409575 ns
@@ -1073,7 +1073,7 @@ Init camera: 308550 ns
 Seg init: 1784834 ns
 Prediction: 76969096 ns
 Lane: 17165715 ns
-Center of mass / percentage: 58660 ns
+CM%: 58660 ns
 Show seg: 3306527 ns
 Init camera: 360561 ns
 Show camera: 2660315 ns
@@ -1082,7 +1082,7 @@ Init camera: 371851 ns
 Seg init: 1742214 ns
 Prediction: 82436967 ns
 Lane: 17497785 ns
-Center of mass / percentage: 101620 ns
+CM%: 101620 ns
 Show seg: 3622557 ns
 Init camera: 319461 ns
 Show camera: 2452125 ns
@@ -1091,7 +1091,7 @@ Init camera: 299821 ns
 Seg init: 1733183 ns
 Prediction: 73365479 ns
 Lane: 16244263 ns
-Center of mass / percentage: 57121 ns
+CM%: 57121 ns
 Show seg: 2827675 ns
 Init camera: 483201 ns
 Show camera: 2553325 ns
@@ -1100,7 +1100,7 @@ Init camera: 737162 ns
 Seg init: 3143316 ns
 Prediction: 84437052 ns
 Lane: 17788926 ns
-Center of mass / percentage: 71120 ns
+CM%: 71120 ns
 Show seg: 3656217 ns
 Init camera: 437421 ns
 Show camera: 2617565 ns
@@ -1109,7 +1109,7 @@ Init camera: 496091 ns
 Seg init: 2249054 ns
 Prediction: 80628134 ns
 Lane: 17201555 ns
-Center of mass / percentage: 52930 ns
+CM%: 52930 ns
 Show seg: 2786845 ns
 Init camera: 333861 ns
 Show camera: 2452865 ns
@@ -1118,7 +1118,7 @@ Init camera: 345821 ns
 Seg init: 2062154 ns
 Prediction: 77405287 ns
 Lane: 18121076 ns
-Center of mass / percentage: 66771 ns
+CM%: 66771 ns
 Show seg: 3343706 ns
 Init camera: 351761 ns
 Show camera: 2645726 ns
@@ -1127,7 +1127,7 @@ Init camera: 386791 ns
 Seg init: 2182284 ns
 Prediction: 77536427 ns
 Lane: 17315245 ns
-Center of mass / percentage: 68111 ns
+CM%: 68111 ns
 Show seg: 3411976 ns
 Init camera: 386251 ns
 Show camera: 2947626 ns
@@ -1136,7 +1136,7 @@ Init camera: 316851 ns
 Seg init: 1916294 ns
 Prediction: 79698681 ns
 Lane: 16119092 ns
-Center of mass / percentage: 52760 ns
+CM%: 52760 ns
 Show seg: 3276277 ns
 Init camera: 375721 ns
 Show camera: 2962986 ns
@@ -1145,7 +1145,7 @@ Init camera: 482921 ns
 Seg init: 2303955 ns
 Prediction: 81885576 ns
 Lane: 16092602 ns
-Center of mass / percentage: 57200 ns
+CM%: 57200 ns
 Show seg: 2837106 ns
 Init camera: 327801 ns
 Show camera: 2478415 ns
@@ -1154,7 +1154,7 @@ Init camera: 443040 ns
 Seg init: 1930073 ns
 Prediction: 77746208 ns
 Lane: 15749861 ns
-Center of mass / percentage: 52560 ns
+CM%: 52560 ns
 Show seg: 2843716 ns
 Init camera: 339191 ns
 Show camera: 2411835 ns
@@ -1163,7 +1163,7 @@ Init camera: 327600 ns
 Seg init: 1756294 ns
 Prediction: 75176552 ns
 Lane: 16370323 ns
-Center of mass / percentage: 55300 ns
+CM%: 55300 ns
 Show seg: 3051937 ns
 Init camera: 485391 ns
 Show camera: 2907496 ns
@@ -1172,7 +1172,7 @@ Init camera: 320360 ns
 Seg init: 1937814 ns
 Prediction: 76498665 ns
 Lane: 17515056 ns
-Center of mass / percentage: 58670 ns
+CM%: 58670 ns
 Show seg: 2998576 ns
 Init camera: 388691 ns
 Show camera: 2429085 ns
@@ -1181,7 +1181,7 @@ Init camera: 590491 ns
 Seg init: 1818914 ns
 Prediction: 77196876 ns
 Lane: 17474995 ns
-Center of mass / percentage: 56461 ns
+CM%: 56461 ns
 Show seg: 2816405 ns
 Init camera: 311631 ns
 Show camera: 2416284 ns
@@ -1190,7 +1190,7 @@ Init camera: 489211 ns
 Seg init: 2368725 ns
 Prediction: 77313835 ns
 Lane: 15589811 ns
-Center of mass / percentage: 56031 ns
+CM%: 56031 ns
 Show seg: 2871846 ns
 Init camera: 304760 ns
 Show camera: 2589115 ns
@@ -1199,7 +1199,7 @@ Init camera: 317120 ns
 Seg init: 1835354 ns
 Prediction: 84067299 ns
 Lane: 15647481 ns
-Center of mass / percentage: 54611 ns
+CM%: 54611 ns
 Show seg: 2894466 ns
 Init camera: 402660 ns
 Show camera: 3117457 ns
@@ -1208,7 +1208,7 @@ Init camera: 412901 ns
 Seg init: 2274524 ns
 Prediction: 85470012 ns
 Lane: 17943036 ns
-Center of mass / percentage: 55100 ns
+CM%: 55100 ns
 Show seg: 2994536 ns
 Init camera: 347301 ns
 Show camera: 2517185 ns
@@ -1217,7 +1217,7 @@ Init camera: 355221 ns
 Seg init: 1928674 ns
 Prediction: 78985269 ns
 Lane: 17263004 ns
-Center of mass / percentage: 48860 ns
+CM%: 48860 ns
 Show seg: 2910717 ns
 Init camera: 373490 ns
 Show camera: 2553346 ns
@@ -1226,7 +1226,7 @@ Init camera: 441800 ns
 Seg init: 1972154 ns
 Prediction: 80501842 ns
 Lane: 16857824 ns
-Center of mass / percentage: 52240 ns
+CM%: 52240 ns
 Show seg: 2848986 ns
 Init camera: 335281 ns
 Show camera: 2470015 ns
@@ -1235,7 +1235,7 @@ Init camera: 357741 ns
 Seg init: 1979164 ns
 Prediction: 77520376 ns
 Lane: 17109795 ns
-Center of mass / percentage: 50020 ns
+CM%: 50020 ns
 Show seg: 3070966 ns
 Init camera: 498351 ns
 Show camera: 2903436 ns
@@ -1244,7 +1244,7 @@ Init camera: 477801 ns
 Seg init: 2205434 ns
 Prediction: 79703671 ns
 Lane: 17477855 ns
-Center of mass / percentage: 53930 ns
+CM%: 53930 ns
 Show seg: 2926745 ns
 Init camera: 350991 ns
 Show camera: 2590096 ns
@@ -1253,7 +1253,7 @@ Init camera: 322751 ns
 Seg init: 2075094 ns
 Prediction: 82461396 ns
 Lane: 15734471 ns
-Center of mass / percentage: 50950 ns
+CM%: 50950 ns
 Show seg: 3001637 ns
 Init camera: 353970 ns
 Show camera: 2875086 ns
@@ -1262,7 +1262,7 @@ Init camera: 495611 ns
 Seg init: 2245564 ns
 Prediction: 79002079 ns
 Lane: 15160241 ns
-Center of mass / percentage: 53510 ns
+CM%: 53510 ns
 Show seg: 2828775 ns
 Init camera: 380021 ns
 Show camera: 2460705 ns
@@ -1271,7 +1271,7 @@ Init camera: 503461 ns
 Seg init: 2382365 ns
 Prediction: 74185979 ns
 Lane: 16056022 ns
-Center of mass / percentage: 52240 ns
+CM%: 52240 ns
 Show seg: 2790416 ns
 Init camera: 276920 ns
 Show camera: 2414865 ns
@@ -1280,7 +1280,7 @@ Init camera: 491211 ns
 Seg init: 2465705 ns
 Prediction: 76729213 ns
 Lane: 16490853 ns
-Center of mass / percentage: 56250 ns
+CM%: 56250 ns
 Show seg: 2785036 ns
 Init camera: 407351 ns
 Show camera: 2439215 ns
@@ -1289,7 +1289,7 @@ Init camera: 392421 ns
 Seg init: 2061154 ns
 Prediction: 78737138 ns
 Lane: 15917892 ns
-Center of mass / percentage: 53930 ns
+CM%: 53930 ns
 Show seg: 2789765 ns
 Init camera: 324521 ns
 Show camera: 2402355 ns
@@ -1298,7 +1298,7 @@ Init camera: 590011 ns
 Seg init: 2378355 ns
 Prediction: 76953134 ns
 Lane: 16354233 ns
-Center of mass / percentage: 54490 ns
+CM%: 54490 ns
 Show seg: 2844206 ns
 Init camera: 329940 ns
 Show camera: 2465005 ns
@@ -1307,7 +1307,7 @@ Init camera: 296341 ns
 Seg init: 1976104 ns
 Prediction: 77219014 ns
 Lane: 15966382 ns
-Center of mass / percentage: 55250 ns
+CM%: 55250 ns
 Show seg: 2847706 ns
 Init camera: 425471 ns
 Show camera: 2477905 ns
@@ -1316,7 +1316,7 @@ Init camera: 481391 ns
 Seg init: 1797054 ns
 Prediction: 80421871 ns
 Lane: 16262112 ns
-Center of mass / percentage: 55880 ns
+CM%: 55880 ns
 Show seg: 2902086 ns
 Init camera: 476411 ns
 Show camera: 2484225 ns
@@ -1325,7 +1325,7 @@ Init camera: 370901 ns
 Seg init: 1800084 ns
 Prediction: 78162976 ns
 Lane: 15611291 ns
-Center of mass / percentage: 54471 ns
+CM%: 54471 ns
 Show seg: 2812225 ns
 Init camera: 321251 ns
 Show camera: 2393595 ns
@@ -1334,7 +1334,7 @@ Init camera: 295791 ns
 Seg init: 1769913 ns
 Prediction: 76054303 ns
 Lane: 15983482 ns
-Center of mass / percentage: 54630 ns
+CM%: 54630 ns
 Show seg: 2799586 ns
 Init camera: 332751 ns
 Show camera: 2402104 ns
@@ -1343,7 +1343,7 @@ Init camera: 635582 ns
 Seg init: 1750323 ns
 Prediction: 76340273 ns
 Lane: 15359751 ns
-Center of mass / percentage: 51810 ns
+CM%: 51810 ns
 Show seg: 2765806 ns
 Init camera: 338100 ns
 Show camera: 2559585 ns
@@ -1352,7 +1352,7 @@ Init camera: 364861 ns
 Seg init: 1756683 ns
 Prediction: 76653433 ns
 Lane: 15976712 ns
-Center of mass / percentage: 52310 ns
+CM%: 52310 ns
 Show seg: 2767505 ns
 Init camera: 297211 ns
 Show camera: 2383445 ns
@@ -1361,7 +1361,7 @@ Init camera: 304480 ns
 Seg init: 1776674 ns
 Prediction: 72197183 ns
 Lane: 16241633 ns
-Center of mass / percentage: 51770 ns
+CM%: 51770 ns
 Show seg: 2866096 ns
 Init camera: 457901 ns
 Show camera: 2479075 ns
@@ -1370,7 +1370,7 @@ Init camera: 540551 ns
 Seg init: 2203135 ns
 Prediction: 79427008 ns
 Lane: 16076082 ns
-Center of mass / percentage: 54540 ns
+CM%: 54540 ns
 Show seg: 2761035 ns
 Init camera: 326161 ns
 Show camera: 2379005 ns
@@ -1379,7 +1379,7 @@ Init camera: 278360 ns
 Seg init: 1941644 ns
 Prediction: 75744671 ns
 Lane: 16361743 ns
-Center of mass / percentage: 50280 ns
+CM%: 50280 ns
 Show seg: 2716355 ns
 Init camera: 361501 ns
 Show camera: 2424025 ns
@@ -1388,7 +1388,7 @@ Init camera: 1240723 ns
 Seg init: 1731143 ns
 Prediction: 74487329 ns
 Lane: 17873015 ns
-Center of mass / percentage: 54431 ns
+CM%: 54431 ns
 Show seg: 2888465 ns
 Init camera: 274571 ns
 Show camera: 2406415 ns
@@ -1397,7 +1397,7 @@ Init camera: 384891 ns
 Seg init: 1870074 ns
 Prediction: 80425460 ns
 Lane: 15419811 ns
-Center of mass / percentage: 63350 ns
+CM%: 63350 ns
 Show seg: 2807695 ns
 Init camera: 308571 ns
 Show camera: 2257354 ns
@@ -1406,7 +1406,7 @@ Init camera: 412091 ns
 Seg init: 1699803 ns
 Prediction: 75042140 ns
 Lane: 16565973 ns
-Center of mass / percentage: 54190 ns
+CM%: 54190 ns
 Show seg: 2776955 ns
 Init camera: 331431 ns
 Show camera: 2401835 ns
@@ -1415,7 +1415,7 @@ Init camera: 430791 ns
 Seg init: 2220234 ns
 Prediction: 70746501 ns
 Lane: 15292281 ns
-Center of mass / percentage: 47650 ns
+CM%: 47650 ns
 Show seg: 2851395 ns
 Init camera: 351561 ns
 Show camera: 2379405 ns
@@ -1424,7 +1424,7 @@ Init camera: 442891 ns
 Seg init: 1725414 ns
 Prediction: 74202898 ns
 Lane: 17695225 ns
-Center of mass / percentage: 56380 ns
+CM%: 56380 ns
 Show seg: 3125287 ns
 Init camera: 359900 ns
 Show camera: 2521225 ns
@@ -1433,7 +1433,7 @@ Init camera: 313891 ns
 Seg init: 1835193 ns
 Prediction: 80265230 ns
 Lane: 18191166 ns
-Center of mass / percentage: 71810 ns
+CM%: 71810 ns
 Show seg: 3736587 ns
 Init camera: 507391 ns
 Show camera: 2970116 ns
@@ -1442,7 +1442,7 @@ Init camera: 400901 ns
 Seg init: 2449145 ns
 Prediction: 87805054 ns
 Lane: 15627421 ns
-Center of mass / percentage: 50620 ns
+CM%: 50620 ns
 Show seg: 2902386 ns
 Init camera: 345460 ns
 Show camera: 2574736 ns
@@ -1451,7 +1451,7 @@ Init camera: 273270 ns
 Seg init: 1948034 ns
 Prediction: 79909078 ns
 Lane: 19787430 ns
-Center of mass / percentage: 70080 ns
+CM%: 70080 ns
 Show seg: 3304637 ns
 Init camera: 486161 ns
 Show camera: 3137356 ns
@@ -1460,7 +1460,7 @@ Init camera: 494190 ns
 Seg init: 2159125 ns
 Prediction: 77658843 ns
 Lane: 17086594 ns
-Center of mass / percentage: 51531 ns
+CM%: 51531 ns
 Show seg: 2988355 ns
 Init camera: 344521 ns
 Show camera: 2291395 ns
@@ -1469,7 +1469,7 @@ Init camera: 378821 ns
 Seg init: 1847274 ns
 Prediction: 76428111 ns
 Lane: 17197644 ns
-Center of mass / percentage: 56700 ns
+CM%: 56700 ns
 Show seg: 3055016 ns
 Init camera: 379791 ns
 Show camera: 2209014 ns
@@ -1478,7 +1478,7 @@ Init camera: 257541 ns
 Seg init: 1894294 ns
 Prediction: 79428197 ns
 Lane: 16199982 ns
-Center of mass / percentage: 52910 ns
+CM%: 52910 ns
 Show seg: 2932236 ns
 Init camera: 271230 ns
 Show camera: 2407335 ns
@@ -1487,7 +1487,7 @@ Init camera: 269180 ns
 Seg init: 1835094 ns
 Prediction: 69016476 ns
 Lane: 14638619 ns
-Center of mass / percentage: 61010 ns
+CM%: 61010 ns
 Show seg: 3520507 ns
 Init camera: 681241 ns
 Show camera: 3146786 ns
@@ -1496,7 +1496,7 @@ Init camera: 618131 ns
 Seg init: 2568505 ns
 Prediction: 72756914 ns
 Lane: 15286660 ns
-Center of mass / percentage: 49141 ns
+CM%: 49141 ns
 Show seg: 2882385 ns
 Init camera: 309821 ns
 Show camera: 2400315 ns
@@ -1505,7 +1505,7 @@ Init camera: 253151 ns
 Seg init: 1812213 ns
 Prediction: 74661528 ns
 Lane: 15501990 ns
-Center of mass / percentage: 51140 ns
+CM%: 51140 ns
 Show seg: 2907256 ns
 Init camera: 376951 ns
 Show camera: 2495605 ns
@@ -1514,7 +1514,7 @@ Init camera: 383171 ns
 Seg init: 1873804 ns
 Prediction: 85334508 ns
 Lane: 15517341 ns
-Center of mass / percentage: 49200 ns
+CM%: 49200 ns
 Show seg: 2951726 ns
 Init camera: 343321 ns
 Show camera: 2549415 ns
@@ -1523,7 +1523,7 @@ Init camera: 350890 ns
 Seg init: 1959374 ns
 Prediction: 83252454 ns
 Lane: 15824551 ns
-Center of mass / percentage: 51380 ns
+CM%: 51380 ns
 Show seg: 3007986 ns
 Init camera: 342401 ns
 Show camera: 2531015 ns
@@ -1532,7 +1532,7 @@ Init camera: 286071 ns
 Seg init: 1911404 ns
 Prediction: 80745929 ns
 Lane: 16945683 ns
-Center of mass / percentage: 63880 ns
+CM%: 63880 ns
 Show seg: 3955538 ns
 Init camera: 522721 ns
 Show camera: 2797925 ns
@@ -1541,7 +1541,7 @@ Init camera: 344730 ns
 Seg init: 2616246 ns
 Prediction: 88566674 ns
 Lane: 15795161 ns
-Center of mass / percentage: 50890 ns
+CM%: 50890 ns
 Show seg: 3127506 ns
 Init camera: 362690 ns
 Show camera: 3165396 ns
@@ -1550,7 +1550,7 @@ Init camera: 856402 ns
 Seg init: 2724665 ns
 Prediction: 82268932 ns
 Lane: 15636281 ns
-Center of mass / percentage: 54080 ns
+CM%: 54080 ns
 Show seg: 2878186 ns
 Init camera: 308571 ns
 Show camera: 2462774 ns
@@ -1559,7 +1559,7 @@ Init camera: 345870 ns
 Seg init: 1830884 ns
 Prediction: 80922729 ns
 Lane: 15696582 ns
-Center of mass / percentage: 53440 ns
+CM%: 53440 ns
 Show seg: 2745765 ns
 Init camera: 315360 ns
 Show camera: 2369615 ns
@@ -1568,7 +1568,7 @@ Init camera: 265490 ns
 Seg init: 1795644 ns
 Prediction: 75149157 ns
 Lane: 16790643 ns
-Center of mass / percentage: 58380 ns
+CM%: 58380 ns
 Show seg: 2922996 ns
 Init camera: 421991 ns
 Show camera: 2455865 ns
@@ -1577,7 +1577,7 @@ Init camera: 319541 ns
 Seg init: 1848284 ns
 Prediction: 81910681 ns
 Lane: 15493120 ns
-Center of mass / percentage: 51070 ns
+CM%: 51070 ns
 Show seg: 2742746 ns
 Init camera: 273120 ns
 Show camera: 2358805 ns
@@ -1586,7 +1586,7 @@ Init camera: 343391 ns
 Seg init: 1845973 ns
 Prediction: 77669363 ns
 Lane: 15752311 ns
-Center of mass / percentage: 48870 ns
+CM%: 48870 ns
 Show seg: 2718776 ns
 Init camera: 310960 ns
 Show camera: 2407295 ns
@@ -1595,7 +1595,7 @@ Init camera: 270861 ns
 Seg init: 2310354 ns
 Prediction: 79983118 ns
 Lane: 15472440 ns
-Center of mass / percentage: 48850 ns
+CM%: 48850 ns
 Show seg: 3040946 ns
 Init camera: 520421 ns
 Show camera: 2479385 ns
@@ -1604,7 +1604,7 @@ Init camera: 298470 ns
 Seg init: 2046235 ns
 Prediction: 80914128 ns
 Lane: 16216402 ns
-Center of mass / percentage: 49830 ns
+CM%: 49830 ns
 Show seg: 3004746 ns
 Init camera: 324081 ns
 Show camera: 2498054 ns
@@ -1613,7 +1613,7 @@ Init camera: 253180 ns
 Seg init: 1858714 ns
 Prediction: 80288767 ns
 Lane: 16362492 ns
-Center of mass / percentage: 48670 ns
+CM%: 48670 ns
 Show seg: 2934046 ns
 Init camera: 272951 ns
 Show camera: 2497145 ns
@@ -1622,7 +1622,7 @@ Init camera: 466041 ns
 Seg init: 2428054 ns
 Prediction: 74476296 ns
 Lane: 17287894 ns
-Center of mass / percentage: 46560 ns
+CM%: 46560 ns
 Show seg: 2934446 ns
 Init camera: 351821 ns
 Show camera: 2493654 ns
@@ -1631,7 +1631,7 @@ Init camera: 295921 ns
 Seg init: 1894934 ns
 Prediction: 72671722 ns
 Lane: 17032333 ns
-Center of mass / percentage: 60150 ns
+CM%: 60150 ns
 Show seg: 3901158 ns
 Init camera: 908852 ns
 Show camera: 3313517 ns
@@ -1640,7 +1640,7 @@ Init camera: 258771 ns
 Seg init: 1924074 ns
 Prediction: 73416923 ns
 Lane: 17778735 ns
-Center of mass / percentage: 65290 ns
+CM%: 65290 ns
 Show seg: 4394979 ns
 Init camera: 1078342 ns
 Show camera: 3381327 ns
@@ -1649,7 +1649,7 @@ Init camera: 715841 ns
 Seg init: 2806016 ns
 Prediction: 73745114 ns
 Lane: 15373440 ns
-Center of mass / percentage: 49480 ns
+CM%: 49480 ns
 Show seg: 2946876 ns
 Init camera: 308370 ns
 Show camera: 2413875 ns
@@ -1658,7 +1658,7 @@ Init camera: 291261 ns
 Seg init: 1900674 ns
 Prediction: 76388529 ns
 Lane: 17648645 ns
-Center of mass / percentage: 95570 ns
+CM%: 95570 ns
 Show seg: 2982986 ns
 Init camera: 322231 ns
 Show camera: 2421894 ns
@@ -1667,7 +1667,7 @@ Init camera: 253920 ns
 Seg init: 1854944 ns
 Prediction: 76071599 ns
 Lane: 15624431 ns
-Center of mass / percentage: 49320 ns
+CM%: 49320 ns
 Show seg: 2984026 ns
 Init camera: 495471 ns
 Show camera: 2539685 ns
@@ -1676,7 +1676,7 @@ Init camera: 300641 ns
 Seg init: 1953094 ns
 Prediction: 77951402 ns
 Lane: 18282116 ns
-Center of mass / percentage: 53030 ns
+CM%: 53030 ns
 Show seg: 3007075 ns
 Init camera: 342260 ns
 Show camera: 2480175 ns
@@ -1685,7 +1685,7 @@ Init camera: 293900 ns
 Seg init: 1882484 ns
 Prediction: 70366698 ns
 Lane: 18411606 ns
-Center of mass / percentage: 53040 ns
+CM%: 53040 ns
 Show seg: 3024786 ns
 Init camera: 377621 ns
 Show camera: 2462204 ns
@@ -1694,7 +1694,7 @@ Init camera: 309531 ns
 Seg init: 1909074 ns
 Prediction: 77712551 ns
 Lane: 19093048 ns
-Center of mass / percentage: 77930 ns
+CM%: 77930 ns
 Show seg: 3367916 ns
 Init camera: 716362 ns
 Show camera: 2137504 ns
@@ -1703,7 +1703,7 @@ Init camera: 627721 ns
 Seg init: 2631815 ns
 Prediction: 79126514 ns
 Lane: 16863883 ns
-Center of mass / percentage: 62380 ns
+CM%: 62380 ns
 Show seg: 2972716 ns
 Init camera: 318721 ns
 Show camera: 2600125 ns
@@ -1712,7 +1712,7 @@ Init camera: 668811 ns
 Seg init: 2276635 ns
 Prediction: 74052324 ns
 Lane: 15562610 ns
-Center of mass / percentage: 51810 ns
+CM%: 51810 ns
 Show seg: 2778796 ns
 Init camera: 277330 ns
 Show camera: 2374535 ns
@@ -1721,7 +1721,7 @@ Init camera: 2712906 ns
 Seg init: 2048424 ns
 Prediction: 74480245 ns
 Lane: 17770494 ns
-Center of mass / percentage: 60301 ns
+CM%: 60301 ns
 Show seg: 2813335 ns
 Init camera: 307101 ns
 Show camera: 2412514 ns
@@ -1730,7 +1730,7 @@ Init camera: 450501 ns
 Seg init: 2018294 ns
 Prediction: 71520850 ns
 Lane: 18658556 ns
-Center of mass / percentage: 51911 ns
+CM%: 51911 ns
 Show seg: 2776105 ns
 Init camera: 279490 ns
 Show camera: 2399625 ns
@@ -1739,7 +1739,7 @@ Init camera: 328541 ns
 Seg init: 1754203 ns
 Prediction: 76736110 ns
 Lane: 15510490 ns
-Center of mass / percentage: 50351 ns
+CM%: 50351 ns
 Show seg: 2746275 ns
 Init camera: 319701 ns
 Show camera: 2384474 ns
@@ -1748,7 +1748,7 @@ Init camera: 313910 ns
 Seg init: 1822704 ns
 Prediction: 79352434 ns
 Lane: 15457960 ns
-Center of mass / percentage: 50221 ns
+CM%: 50221 ns
 Show seg: 2723715 ns
 Init camera: 299721 ns
 Show camera: 2412245 ns
@@ -1757,7 +1757,7 @@ Init camera: 308590 ns
 Seg init: 1717034 ns
 Prediction: 72847131 ns
 Lane: 15975802 ns
-Center of mass / percentage: 53610 ns
+CM%: 53610 ns
 Show seg: 2730565 ns
 Init camera: 336891 ns
 Show camera: 2396324 ns
@@ -1766,7 +1766,7 @@ Init camera: 428630 ns
 Seg init: 1856464 ns
 Prediction: 77799922 ns
 Lane: 15437610 ns
-Center of mass / percentage: 52400 ns
+CM%: 52400 ns
 Show seg: 2756505 ns
 Init camera: 348981 ns
 Show camera: 2368754 ns
@@ -1775,7 +1775,7 @@ Init camera: 289001 ns
 Seg init: 1966154 ns
 Prediction: 75289766 ns
 Lane: 16741872 ns
-Center of mass / percentage: 51970 ns
+CM%: 51970 ns
 Show seg: 2697005 ns
 Init camera: 334450 ns
 Show camera: 2371305 ns
@@ -1784,7 +1784,7 @@ Init camera: 304170 ns
 Seg init: 2072274 ns
 Prediction: 79003814 ns
 Lane: 15298679 ns
-Center of mass / percentage: 49420 ns
+CM%: 49420 ns
 Show seg: 2709355 ns
 Init camera: 294781 ns
 Show camera: 2385405 ns
@@ -1793,7 +1793,7 @@ Init camera: 285511 ns
 Seg init: 1772023 ns
 Prediction: 76894919 ns
 Lane: 15123219 ns
-Center of mass / percentage: 49230 ns
+CM%: 49230 ns
 Show seg: 2703296 ns
 Init camera: 314541 ns
 Show camera: 2369924 ns
@@ -1802,7 +1802,7 @@ Init camera: 332881 ns
 Seg init: 1784554 ns
 Prediction: 80411845 ns
 Lane: 15654881 ns
-Center of mass / percentage: 50960 ns
+CM%: 50960 ns
 Show seg: 2741815 ns
 Init camera: 313731 ns
 Show camera: 2485914 ns
@@ -1811,7 +1811,7 @@ Init camera: 306981 ns
 Seg init: 1783953 ns
 Prediction: 81989859 ns
 Lane: 15500630 ns
-Center of mass / percentage: 65830 ns
+CM%: 65830 ns
 Show seg: 2671786 ns
 Init camera: 332511 ns
 Show camera: 2385804 ns
@@ -1820,7 +1820,7 @@ Init camera: 276520 ns
 Seg init: 1792074 ns
 Prediction: 74957885 ns
 Lane: 15234800 ns
-Center of mass / percentage: 49160 ns
+CM%: 49160 ns
 Show seg: 2782965 ns
 Init camera: 367171 ns
 Show camera: 2370814 ns
@@ -1829,7 +1829,7 @@ Init camera: 328781 ns
 Seg init: 1848714 ns
 Prediction: 74916625 ns
 Lane: 15065879 ns
-Center of mass / percentage: 50860 ns
+CM%: 50860 ns
 Show seg: 2704155 ns
 Init camera: 295061 ns
 Show camera: 2357524 ns
@@ -1838,7 +1838,7 @@ Init camera: 413541 ns
 Seg init: 1857033 ns
 Prediction: 78833354 ns
 Lane: 15590909 ns
-Center of mass / percentage: 50060 ns
+CM%: 50060 ns
 Show seg: 2975706 ns
 Init camera: 317031 ns
 Show camera: 2397235 ns
@@ -1847,7 +1847,7 @@ Init camera: 360311 ns
 Seg init: 1876933 ns
 Prediction: 74742635 ns
 Lane: 15591510 ns
-Center of mass / percentage: 54510 ns
+CM%: 54510 ns
 Show seg: 2842506 ns
 Init camera: 288971 ns
 Show camera: 2433904 ns
@@ -1856,7 +1856,7 @@ Init camera: 348371 ns
 Seg init: 1834173 ns
 Prediction: 80240595 ns
 Lane: 16216092 ns
-Center of mass / percentage: 54000 ns
+CM%: 54000 ns
 Show seg: 3026886 ns
 Init camera: 465611 ns
 Show camera: 2435244 ns
@@ -1865,7 +1865,7 @@ Init camera: 363771 ns
 Seg init: 1889233 ns
 Prediction: 79904654 ns
 Lane: 15360980 ns
-Center of mass / percentage: 53420 ns
+CM%: 53420 ns
 Show seg: 2734046 ns
 Init camera: 300220 ns
 Show camera: 2379045 ns
@@ -1874,7 +1874,7 @@ Init camera: 339580 ns
 Seg init: 1823834 ns
 Prediction: 80724975 ns
 Lane: 15309970 ns
-Center of mass / percentage: 49900 ns
+CM%: 49900 ns
 Show seg: 2768486 ns
 Init camera: 275860 ns
 Show camera: 2422815 ns
@@ -1883,7 +1883,7 @@ Init camera: 604021 ns
 Seg init: 2260265 ns
 Prediction: 82334428 ns
 Lane: 16081842 ns
-Center of mass / percentage: 53320 ns
+CM%: 53320 ns
 Show seg: 2700035 ns
 Init camera: 310541 ns
 Show camera: 2365854 ns
@@ -1892,7 +1892,7 @@ Init camera: 339161 ns
 Seg init: 2392395 ns
 Prediction: 82208728 ns
 Lane: 15523899 ns
-Center of mass / percentage: 52220 ns
+CM%: 52220 ns
 Show seg: 2750225 ns
 Init camera: 308721 ns
 Show camera: 2407255 ns
@@ -1901,7 +1901,7 @@ Init camera: 340720 ns
 Seg init: 2185054 ns
 Prediction: 77494810 ns
 Lane: 15640289 ns
-Center of mass / percentage: 51070 ns
+CM%: 51070 ns
 Show seg: 2725975 ns
 Init camera: 281290 ns
 Show camera: 2415245 ns
@@ -1910,7 +1910,7 @@ Init camera: 384820 ns
 Seg init: 1812284 ns
 Prediction: 73847942 ns
 Lane: 16651403 ns
-Center of mass / percentage: 54300 ns
+CM%: 54300 ns
 Show seg: 2805785 ns
 Init camera: 512531 ns
 Show camera: 2384505 ns
@@ -1919,7 +1919,7 @@ Init camera: 271971 ns
 Seg init: 1860253 ns
 Prediction: 74033183 ns
 Lane: 15563530 ns
-Center of mass / percentage: 50851 ns
+CM%: 50851 ns
 Show seg: 3307776 ns
 Init camera: 289060 ns
 Show camera: 2411935 ns
@@ -1928,7 +1928,7 @@ Init camera: 800162 ns
 Seg init: 1832573 ns
 Prediction: 76203607 ns
 Lane: 15186309 ns
-Center of mass / percentage: 49280 ns
+CM%: 49280 ns
 Show seg: 2894126 ns
 Init camera: 313280 ns
 Show camera: 2392155 ns
@@ -1937,7 +1937,7 @@ Init camera: 308520 ns
 Seg init: 1792184 ns
 Prediction: 85723864 ns
 Lane: 15821080 ns
-Center of mass / percentage: 55800 ns
+CM%: 55800 ns
 Show seg: 2885315 ns
 Init camera: 334661 ns
 Show camera: 2500325 ns
@@ -1946,7 +1946,7 @@ Init camera: 331121 ns
 Seg init: 1867174 ns
 Prediction: 78151859 ns
 Lane: 16146741 ns
-Center of mass / percentage: 51440 ns
+CM%: 51440 ns
 Show seg: 2873036 ns
 Init camera: 293170 ns
 Show camera: 2432555 ns
@@ -1955,7 +1955,7 @@ Init camera: 643451 ns
 Seg init: 3230466 ns
 Prediction: 95916844 ns
 Lane: 15391580 ns
-Center of mass / percentage: 49490 ns
+CM%: 49490 ns
 Show seg: 2706095 ns
 Init camera: 274140 ns
 Show camera: 2372705 ns
@@ -1964,7 +1964,7 @@ Init camera: 290581 ns
 Seg init: 1726033 ns
 Prediction: 82412178 ns
 Lane: 15899581 ns
-Center of mass / percentage: 51470 ns
+CM%: 51470 ns
 Show seg: 2753585 ns
 Init camera: 301110 ns
 Show camera: 2389965 ns
@@ -1973,7 +1973,7 @@ Init camera: 501051 ns
 Seg init: 2397495 ns
 Prediction: 73897971 ns
 Lane: 14961079 ns
-Center of mass / percentage: 48470 ns
+CM%: 48470 ns
 Show seg: 2758625 ns
 Init camera: 273161 ns
 Show camera: 2416614 ns
@@ -1982,7 +1982,7 @@ Init camera: 271440 ns
 Seg init: 1781254 ns
 Prediction: 87413857 ns
 Lane: 15915290 ns
-Center of mass / percentage: 53131 ns
+CM%: 53131 ns
 Show seg: 2764275 ns
 Init camera: 380211 ns
 Show camera: 2431984 ns
@@ -1991,7 +1991,7 @@ Init camera: 405501 ns
 Seg init: 2134764 ns
 Prediction: 75450205 ns
 Lane: 15425760 ns
-Center of mass / percentage: 54770 ns
+CM%: 54770 ns
 Show seg: 2769115 ns
 Init camera: 336361 ns
 Show camera: 2441555 ns
@@ -2000,7 +2000,7 @@ Init camera: 278001 ns
 Seg init: 1745863 ns
 Prediction: 68547951 ns
 Lane: 19949859 ns
-Center of mass / percentage: 51880 ns
+CM%: 51880 ns
 Show seg: 2835675 ns
 Init camera: 325021 ns
 Show camera: 2493725 ns
@@ -2009,7 +2009,7 @@ Init camera: 330511 ns
 Seg init: 1784443 ns
 Prediction: 74992634 ns
 Lane: 15320039 ns
-Center of mass / percentage: 49290 ns
+CM%: 49290 ns
 Show seg: 2712746 ns
 Init camera: 297830 ns
 Show camera: 2381825 ns
@@ -2018,7 +2018,7 @@ Init camera: 500901 ns
 Seg init: 2341035 ns
 Prediction: 79793473 ns
 Lane: 15682500 ns
-Center of mass / percentage: 52500 ns
+CM%: 52500 ns
 Show seg: 2763115 ns
 Init camera: 368461 ns
 Show camera: 2421905 ns
@@ -2027,7 +2027,7 @@ Init camera: 301330 ns
 Seg init: 1830464 ns
 Prediction: 74386932 ns
 Lane: 15960060 ns
-Center of mass / percentage: 53710 ns
+CM%: 53710 ns
 Show seg: 2774826 ns
 Init camera: 283540 ns
 Show camera: 2463805 ns
@@ -2036,7 +2036,7 @@ Init camera: 517951 ns
 Seg init: 1964134 ns
 Prediction: 73060819 ns
 Lane: 16486131 ns
-Center of mass / percentage: 52881 ns
+CM%: 52881 ns
 Show seg: 2792034 ns
 Init camera: 277541 ns
 Show camera: 2423974 ns
@@ -2045,7 +2045,7 @@ Init camera: 360131 ns
 Seg init: 1934123 ns
 Prediction: 74515333 ns
 Lane: 15660869 ns
-Center of mass / percentage: 51651 ns
+CM%: 51651 ns
 Show seg: 2745315 ns
 Init camera: 315830 ns
 Show camera: 2368655 ns
@@ -2054,7 +2054,7 @@ Init camera: 323810 ns
 Seg init: 1844074 ns
 Prediction: 75936285 ns
 Lane: 15621000 ns
-Center of mass / percentage: 54100 ns
+CM%: 54100 ns
 Show seg: 2749325 ns
 Init camera: 274271 ns
 Show camera: 2381034 ns
@@ -2063,7 +2063,7 @@ Init camera: 358481 ns
 Seg init: 2701715 ns
 Prediction: 78538700 ns
 Lane: 16065920 ns
-Center of mass / percentage: 51300 ns
+CM%: 51300 ns
 Show seg: 2844065 ns
 Init camera: 284171 ns
 Show camera: 2489295 ns
@@ -2072,7 +2072,7 @@ Init camera: 591811 ns
 Seg init: 3358336 ns
 Prediction: 87975108 ns
 Lane: 16797872 ns
-Center of mass / percentage: 56060 ns
+CM%: 56060 ns
 Show seg: 3080956 ns
 Init camera: 429441 ns
 Show camera: 2463225 ns

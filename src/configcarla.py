@@ -218,7 +218,7 @@ class CameraRGB(Sensor):
         else:
             self.__deviation = 0
             self.__road_percentage = 0
-        print("Center of mass / percentage:", time.time_ns() - init_time, "ns")
+        print("CM%", time.time_ns() - init_time, "ns")
 
     def __process_seg(self, data:list):
         init_time = time.time_ns()
