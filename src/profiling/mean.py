@@ -1,26 +1,84 @@
 from collections import defaultdict
-import argparse
+import matplotlib.pyplot as plt
+import os
+import matplotlib.colors as mcolors
+import numpy as np
 
 MILI_TO_NANO = 10**6
 
-def main(file):
-    sum = defaultdict(int)
-    count = defaultdict(int)
+def get_data():
+    dir = "times"
+    all_tasks = set() 
+    data = defaultdict(dict)  
 
-    with open(file, "r") as file:
-        for line in file:
-            task, time_ns = line.strip().split(": ")
-            time_ns = int(time_ns.split()[0])  
-            sum[task] += time_ns
-            count[task] += 1
+    for file_name in os.listdir(dir):
+        if file_name.endswith(".txt"):
+            file_path = os.path.join(dir, file_name)
 
-    means = {task: sum[task] / count[task] for task in sum}
+            with open(file_path, "r") as file:
+                sum = defaultdict(int)
+                count = defaultdict(int)
 
-    for task, mean in means.items():
-        print(f"{task}: {mean / MILI_TO_NANO:.2f} ms")
+                for line in file:
+                    task, time_ns = line.strip().split(": ")
+                    time_ns = int(time_ns.split()[0])  
+                    sum[task] += time_ns
+                    count[task] += 1
+                    all_tasks.add(task)
+
+                means = {task: sum[task] / count[task] for task in sum}
+                data[file_name] = means
+
+    return all_tasks, data
+
+def main():
+    np.random.seed(4)
+
+    all_tasks, data = get_data()
+    num_files = len(data)
+
+    colors = list(mcolors.CSS4_COLORS.keys())
+    np.random.shuffle(colors)
+    colors = colors[:num_files]
+
+    num_columns = 3
+    num_rows = num_files // num_columns if num_files % num_columns == 0 else num_files // num_columns + 1
+    _, axs = plt.subplots(num_rows, num_columns, figsize=(15, num_rows * 6))
+
+    file_index = 0
+    for file_name, means, color in zip(data.keys(), data.values(), colors):
+        row = file_index // num_columns
+        col = file_index % num_columns
+        ax = axs[row, col] if num_rows > 1 else axs[col]
+
+        sorted_tasks = sorted(all_tasks)
+        times = [means.get(task, 0) / MILI_TO_NANO for task in sorted_tasks]
+
+        init = ""
+        for i in range(len(times)):
+            if times[i] == 0:
+                sorted_tasks[i] = init
+                init += ' '
+            else:
+                ax.text(i, times[i], f"{times[i]:.2f}", ha='center', va='bottom', fontsize=8)
+
+        ax.bar(sorted_tasks, times, color=color)
+        ax.set_title(file_name)
+        ax.set_ylabel("Time (ms)")
+        ax.set_ylim(bottom=0, top=80)
+        ax.set_xlabel("Task")
+        ax.tick_params(axis='x', rotation=45)
+
+        file_index += 1
+
+    # Hide any empty subplot
+    for i in range(file_index, num_rows*3):
+        row = i // num_columns
+        col = i % num_columns
+        axs[row, col].axis('off')
+
+    plt.tight_layout()
+    plt.show()
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Calculate mean times of tasks from a file.")
-    parser.add_argument("--file", required=True, help="Input file containing task times.")
-    args = parser.parse_args()
-    main(args.file)
+    main()

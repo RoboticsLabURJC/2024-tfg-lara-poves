@@ -3,7 +3,7 @@ import csv
 import numpy as np
 
 def main():
-    csv_path = '/home/alumnos/lara/2024-tfg-lara-poves/src/histograms/hist_data.csv'
+    csv_path = '/home/lara/2024-tfg-lara-poves/src/histograms/dist.csv'
 
     with open(csv_path, newline='') as csvfile:
         reader = csv.reader(csvfile)
