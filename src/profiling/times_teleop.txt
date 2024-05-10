@@ -1,0 +1,3618 @@
+Init camera: 616686 ns
+Show camera: 4010784 ns
+FPS + flip: 293028 ns
+Init camera: 725185 ns
+Show camera: 5415305 ns
+Init camera: 667326 ns
+Show camera: 3524427 ns
+FPS + flip: 244039 ns
+Init camera: 958274 ns
+Show camera: 6431998 ns
+Init camera: 770415 ns
+Show camera: 3974424 ns
+FPS + flip: 250128 ns
+Init camera: 1247402 ns
+Show camera: 4648170 ns
+Init camera: 635116 ns
+Show camera: 3628146 ns
+FPS + flip: 297288 ns
+Init camera: 1071973 ns
+Show camera: 6916525 ns
+Init camera: 432347 ns
+Show camera: 3143030 ns
+FPS + flip: 240288 ns
+Init camera: 854415 ns
+Show camera: 4078773 ns
+Init camera: 591346 ns
+Show camera: 4885818 ns
+FPS + flip: 440677 ns
+Init camera: 1243922 ns
+Show camera: 5949721 ns
+Init camera: 391447 ns
+Show camera: 3264819 ns
+FPS + flip: 244139 ns
+Init camera: 964464 ns
+Show camera: 4496050 ns
+Init camera: 532616 ns
+Show camera: 3099500 ns
+FPS + flip: 242459 ns
+Init camera: 867674 ns
+Show camera: 5252906 ns
+Init camera: 627776 ns
+Show camera: 5068427 ns
+FPS + flip: 235738 ns
+Init camera: 657296 ns
+Show camera: 4133983 ns
+Init camera: 478557 ns
+Show camera: 3672286 ns
+FPS + flip: 248438 ns
+Init camera: 625436 ns
+Show camera: 3883445 ns
+Init camera: 439147 ns
+Show camera: 3392638 ns
+FPS + flip: 241879 ns
+Init camera: 718795 ns
+Show camera: 4501551 ns
+Init camera: 547727 ns
+Show camera: 3550367 ns
+FPS + flip: 246398 ns
+Init camera: 741096 ns
+Show camera: 4293482 ns
+Init camera: 706296 ns
+Show camera: 4055593 ns
+FPS + flip: 323618 ns
+Init camera: 973394 ns
+Show camera: 6047750 ns
+Init camera: 631886 ns
+Show camera: 3097130 ns
+FPS + flip: 241119 ns
+Init camera: 928714 ns
+Show camera: 7094193 ns
+Init camera: 648606 ns
+Show camera: 4726879 ns
+FPS + flip: 491037 ns
+Init camera: 595996 ns
+Show camera: 6134810 ns
+Init camera: 920104 ns
+Show camera: 5039098 ns
+FPS + flip: 252328 ns
+Init camera: 598356 ns
+Show camera: 4154693 ns
+Init camera: 525207 ns
+Show camera: 3568097 ns
+FPS + flip: 235788 ns
+Init camera: 591266 ns
+Show camera: 4264862 ns
+Init camera: 699495 ns
+Show camera: 4715100 ns
+FPS + flip: 412168 ns
+Init camera: 1060423 ns
+Show camera: 5375635 ns
+Init camera: 636126 ns
+Show camera: 3486488 ns
+FPS + flip: 275838 ns
+Init camera: 720445 ns
+Show camera: 5569104 ns
+Init camera: 622845 ns
+Show camera: 3806136 ns
+FPS + flip: 246858 ns
+Init camera: 1492211 ns
+Show camera: 3396097 ns
+Init camera: 497767 ns
+Show camera: 3381768 ns
+FPS + flip: 245279 ns
+Init camera: 654406 ns
+Show camera: 4839428 ns
+Init camera: 751365 ns
+Show camera: 4048334 ns
+FPS + flip: 270998 ns
+Init camera: 793475 ns
+Show camera: 5523374 ns
+Init camera: 648366 ns
+Show camera: 5463535 ns
+FPS + flip: 480197 ns
+Init camera: 717515 ns
+Show camera: 5481805 ns
+Init camera: 760175 ns
+Show camera: 4659990 ns
+FPS + flip: 243129 ns
+Init camera: 780755 ns
+Show camera: 5423954 ns
+Init camera: 682545 ns
+Show camera: 3479017 ns
+FPS + flip: 242588 ns
+Init camera: 698496 ns
+Show camera: 4161463 ns
+Init camera: 463407 ns
+Show camera: 3432617 ns
+FPS + flip: 238599 ns
+Init camera: 520437 ns
+Show camera: 3480927 ns
+Init camera: 463447 ns
+Show camera: 3337798 ns
+FPS + flip: 237898 ns
+Init camera: 562846 ns
+Show camera: 4755229 ns
+Init camera: 530667 ns
+Show camera: 3410938 ns
+FPS + flip: 265938 ns
+Init camera: 964824 ns
+Show camera: 7005394 ns
+Init camera: 435907 ns
+Show camera: 3007631 ns
+FPS + flip: 270848 ns
+Init camera: 768585 ns
+Show camera: 7036765 ns
+Init camera: 1655389 ns
+Show camera: 4797689 ns
+FPS + flip: 289169 ns
+Init camera: 777575 ns
+Show camera: 5705013 ns
+Init camera: 647946 ns
+Show camera: 4262442 ns
+FPS + flip: 271278 ns
+Init camera: 603166 ns
+Show camera: 4159993 ns
+Init camera: 411957 ns
+Show camera: 4633660 ns
+FPS + flip: 444687 ns
+Init camera: 650925 ns
+Show camera: 4653110 ns
+Init camera: 903224 ns
+Show camera: 4669859 ns
+FPS + flip: 293879 ns
+Init camera: 912984 ns
+Show camera: 4286242 ns
+Init camera: 481666 ns
+Show camera: 3390088 ns
+FPS + flip: 269909 ns
+Init camera: 812705 ns
+Show camera: 6516887 ns
+Init camera: 625796 ns
+Show camera: 5537274 ns
+FPS + flip: 837095 ns
+Init camera: 1046423 ns
+Show camera: 4287642 ns
+Init camera: 738705 ns
+Show camera: 4261282 ns
+FPS + flip: 349898 ns
+Init camera: 727846 ns
+Show camera: 4481751 ns
+Init camera: 690655 ns
+Show camera: 5311936 ns
+FPS + flip: 439388 ns
+Init camera: 739826 ns
+Show camera: 5396225 ns
+Init camera: 694665 ns
+Show camera: 4719179 ns
+FPS + flip: 487107 ns
+Init camera: 873004 ns
+Show camera: 5334095 ns
+Init camera: 828494 ns
+Show camera: 7050545 ns
+FPS + flip: 296158 ns
+Init camera: 1125663 ns
+Show camera: 5100216 ns
+Init camera: 703915 ns
+Show camera: 4008654 ns
+FPS + flip: 305518 ns
+Init camera: 1100983 ns
+Show camera: 8020588 ns
+Init camera: 496677 ns
+Show camera: 3418428 ns
+FPS + flip: 280668 ns
+Init camera: 908835 ns
+Show camera: 6128670 ns
+Init camera: 459057 ns
+Show camera: 3232699 ns
+FPS + flip: 260229 ns
+Init camera: 1096553 ns
+Show camera: 4831389 ns
+Init camera: 596816 ns
+Show camera: 5161717 ns
+FPS + flip: 497066 ns
+Init camera: 890554 ns
+Show camera: 5507295 ns
+Init camera: 620986 ns
+Show camera: 3028520 ns
+FPS + flip: 265419 ns
+Init camera: 1020234 ns
+Show camera: 3957544 ns
+Init camera: 880584 ns
+Show camera: 4120683 ns
+FPS + flip: 447497 ns
+Init camera: 780785 ns
+Show camera: 3900405 ns
+Init camera: 577406 ns
+Show camera: 5174996 ns
+FPS + flip: 508817 ns
+Init camera: 771865 ns
+Show camera: 6109141 ns
+Init camera: 955644 ns
+Show camera: 4407401 ns
+FPS + flip: 259918 ns
+Init camera: 796734 ns
+Show camera: 4920508 ns
+Init camera: 746195 ns
+Show camera: 3906835 ns
+FPS + flip: 259698 ns
+Init camera: 811885 ns
+Show camera: 4452821 ns
+Init camera: 633876 ns
+Show camera: 5102547 ns
+FPS + flip: 432027 ns
+Init camera: 921194 ns
+Show camera: 5512814 ns
+Init camera: 832745 ns
+Show camera: 4101453 ns
+FPS + flip: 255788 ns
+Init camera: 845785 ns
+Show camera: 5054107 ns
+Init camera: 513197 ns
+Show camera: 2878671 ns
+FPS + flip: 266298 ns
+Init camera: 687586 ns
+Show camera: 3814625 ns
+Init camera: 601196 ns
+Show camera: 4494621 ns
+FPS + flip: 258608 ns
+Init camera: 655796 ns
+Show camera: 3892034 ns
+Init camera: 711136 ns
+Show camera: 4283482 ns
+FPS + flip: 274039 ns
+Init camera: 863874 ns
+Show camera: 4195063 ns
+Init camera: 813824 ns
+Show camera: 4079164 ns
+FPS + flip: 533546 ns
+Init camera: 923354 ns
+Show camera: 6703607 ns
+Init camera: 420437 ns
+Show camera: 3374198 ns
+FPS + flip: 265548 ns
+Init camera: 1328661 ns
+Show camera: 6296579 ns
+Init camera: 533007 ns
+Show camera: 4008984 ns
+FPS + flip: 282698 ns
+Init camera: 759205 ns
+Show camera: 4396442 ns
+Init camera: 500006 ns
+Show camera: 3673827 ns
+FPS + flip: 339778 ns
+Init camera: 608917 ns
+Show camera: 3614837 ns
+Init camera: 651046 ns
+Show camera: 5278926 ns
+FPS + flip: 452477 ns
+Init camera: 1111833 ns
+Show camera: 7042974 ns
+Init camera: 636426 ns
+Show camera: 4375141 ns
+FPS + flip: 311218 ns
+Init camera: 954674 ns
+Show camera: 6216709 ns
+Init camera: 595836 ns
+Show camera: 3579137 ns
+FPS + flip: 268478 ns
+Init camera: 953134 ns
+Show camera: 6340579 ns
+Init camera: 410367 ns
+Show camera: 3368708 ns
+FPS + flip: 263729 ns
+Init camera: 774445 ns
+Show camera: 6399918 ns
+Init camera: 401857 ns
+Show camera: 3238219 ns
+FPS + flip: 258028 ns
+Init camera: 1093682 ns
+Show camera: 7552941 ns
+Init camera: 527427 ns
+Show camera: 3728906 ns
+FPS + flip: 272028 ns
+Init camera: 602217 ns
+Show camera: 3832466 ns
+Init camera: 654496 ns
+Show camera: 5477114 ns
+FPS + flip: 495627 ns
+Init camera: 895974 ns
+Show camera: 5941793 ns
+Init camera: 680196 ns
+Show camera: 3321308 ns
+FPS + flip: 321368 ns
+Init camera: 1332342 ns
+Show camera: 4418201 ns
+Init camera: 838585 ns
+Show camera: 4480661 ns
+FPS + flip: 501317 ns
+Init camera: 889614 ns
+Show camera: 4642980 ns
+Init camera: 559136 ns
+Show camera: 4197363 ns
+FPS + flip: 275958 ns
+Init camera: 538546 ns
+Show camera: 3394078 ns
+Init camera: 471557 ns
+Show camera: 2932861 ns
+FPS + flip: 255798 ns
+Init camera: 821905 ns
+Show camera: 7362552 ns
+Init camera: 544276 ns
+Show camera: 3782595 ns
+FPS + flip: 294308 ns
+Init camera: 735775 ns
+Show camera: 6291809 ns
+Init camera: 564477 ns
+Show camera: 3763645 ns
+FPS + flip: 264828 ns
+Init camera: 862435 ns
+Show camera: 4145613 ns
+Init camera: 539497 ns
+Show camera: 3753735 ns
+FPS + flip: 276888 ns
+Init camera: 867984 ns
+Show camera: 5766363 ns
+Init camera: 641696 ns
+Show camera: 3817025 ns
+FPS + flip: 377607 ns
+Init camera: 1252652 ns
+Show camera: 5654153 ns
+Init camera: 469807 ns
+Show camera: 2987311 ns
+FPS + flip: 267708 ns
+Init camera: 534387 ns
+Show camera: 4007014 ns
+Init camera: 452627 ns
+Show camera: 3898925 ns
+FPS + flip: 317828 ns
+Init camera: 571617 ns
+Show camera: 4744009 ns
+Init camera: 914924 ns
+Show camera: 4305712 ns
+FPS + flip: 285938 ns
+Init camera: 1063283 ns
+Show camera: 3760695 ns
+Init camera: 419378 ns
+Show camera: 3395758 ns
+FPS + flip: 258058 ns
+Init camera: 649566 ns
+Show camera: 4928797 ns
+Init camera: 693166 ns
+Show camera: 3461067 ns
+FPS + flip: 255918 ns
+Init camera: 1117592 ns
+Show camera: 5587474 ns
+Init camera: 394338 ns
+Show camera: 2509154 ns
+FPS + flip: 269478 ns
+Init camera: 395417 ns
+Show camera: 3153010 ns
+Init camera: 368367 ns
+Show camera: 2980231 ns
+FPS + flip: 254499 ns
+Init camera: 558267 ns
+Show camera: 4584400 ns
+Init camera: 536456 ns
+Show camera: 4992738 ns
+FPS + flip: 513846 ns
+Init camera: 820274 ns
+Show camera: 4514731 ns
+Init camera: 769645 ns
+Show camera: 3267878 ns
+FPS + flip: 261198 ns
+Init camera: 385607 ns
+Show camera: 3021221 ns
+Init camera: 397417 ns
+Show camera: 3059470 ns
+FPS + flip: 258718 ns
+Init camera: 830994 ns
+Show camera: 5923832 ns
+Init camera: 688185 ns
+Show camera: 3292879 ns
+FPS + flip: 263218 ns
+Init camera: 935294 ns
+Show camera: 5643414 ns
+Init camera: 835215 ns
+Show camera: 3456087 ns
+FPS + flip: 258228 ns
+Init camera: 1063993 ns
+Show camera: 4099813 ns
+Init camera: 397497 ns
+Show camera: 2766892 ns
+FPS + flip: 267548 ns
+Init camera: 758336 ns
+Show camera: 4921748 ns
+Init camera: 621746 ns
+Show camera: 4982348 ns
+FPS + flip: 495216 ns
+Init camera: 1130033 ns
+Show camera: 4341272 ns
+Init camera: 666936 ns
+Show camera: 2867121 ns
+FPS + flip: 277818 ns
+Init camera: 967254 ns
+Show camera: 6131770 ns
+Init camera: 646306 ns
+Show camera: 5004588 ns
+FPS + flip: 461027 ns
+Init camera: 1376011 ns
+Show camera: 6296019 ns
+Init camera: 1468231 ns
+Show camera: 3916464 ns
+FPS + flip: 438197 ns
+Init camera: 944934 ns
+Show camera: 6018151 ns
+Init camera: 815655 ns
+Show camera: 3766565 ns
+FPS + flip: 434097 ns
+Init camera: 968223 ns
+Show camera: 5616784 ns
+Init camera: 598566 ns
+Show camera: 5108007 ns
+FPS + flip: 425167 ns
+Init camera: 920014 ns
+Show camera: 4894368 ns
+Init camera: 643906 ns
+Show camera: 5227126 ns
+FPS + flip: 535726 ns
+Init camera: 811205 ns
+Show camera: 5612303 ns
+Init camera: 755986 ns
+Show camera: 3273979 ns
+FPS + flip: 297868 ns
+Init camera: 837845 ns
+Show camera: 4090723 ns
+Init camera: 623616 ns
+Show camera: 4070234 ns
+FPS + flip: 258539 ns
+Init camera: 1072403 ns
+Show camera: 4494281 ns
+Init camera: 1040793 ns
+Show camera: 4928488 ns
+FPS + flip: 432777 ns
+Init camera: 938644 ns
+Show camera: 4269252 ns
+Init camera: 604376 ns
+Show camera: 3005340 ns
+FPS + flip: 260868 ns
+Init camera: 906534 ns
+Show camera: 7324293 ns
+Init camera: 840615 ns
+Show camera: 3599516 ns
+FPS + flip: 304468 ns
+Init camera: 800535 ns
+Show camera: 5315415 ns
+Init camera: 614036 ns
+Show camera: 4965698 ns
+FPS + flip: 258769 ns
+Init camera: 775835 ns
+Show camera: 4390391 ns
+Init camera: 488967 ns
+Show camera: 3776045 ns
+FPS + flip: 313578 ns
+Init camera: 950584 ns
+Show camera: 3684686 ns
+Init camera: 551277 ns
+Show camera: 3372588 ns
+FPS + flip: 266618 ns
+Init camera: 841235 ns
+Show camera: 4769909 ns
+Init camera: 706385 ns
+Show camera: 4984178 ns
+FPS + flip: 422887 ns
+Init camera: 725915 ns
+Show camera: 5564674 ns
+Init camera: 369088 ns
+Show camera: 3068220 ns
+FPS + flip: 254038 ns
+Init camera: 728485 ns
+Show camera: 3586397 ns
+Init camera: 452277 ns
+Show camera: 3003121 ns
+FPS + flip: 264449 ns
+Init camera: 898945 ns
+Show camera: 5912602 ns
+Init camera: 1137103 ns
+Show camera: 3049610 ns
+FPS + flip: 272989 ns
+Init camera: 623216 ns
+Show camera: 3842395 ns
+Init camera: 1155572 ns
+Show camera: 4052754 ns
+FPS + flip: 442337 ns
+Init camera: 659875 ns
+Show camera: 4255263 ns
+Init camera: 614236 ns
+Show camera: 4897269 ns
+FPS + flip: 331327 ns
+Init camera: 868034 ns
+Show camera: 7156325 ns
+Init camera: 851365 ns
+Show camera: 2966890 ns
+FPS + flip: 263448 ns
+Init camera: 790255 ns
+Show camera: 4685689 ns
+Init camera: 781615 ns
+Show camera: 5359685 ns
+FPS + flip: 265079 ns
+Init camera: 775335 ns
+Show camera: 5678943 ns
+Init camera: 833795 ns
+Show camera: 4298262 ns
+FPS + flip: 274148 ns
+Init camera: 884195 ns
+Show camera: 5233916 ns
+Init camera: 618716 ns
+Show camera: 4988218 ns
+FPS + flip: 426617 ns
+Init camera: 945124 ns
+Show camera: 5919122 ns
+Init camera: 1071754 ns
+Show camera: 3181699 ns
+FPS + flip: 363658 ns
+Init camera: 404467 ns
+Show camera: 3511288 ns
+Init camera: 640436 ns
+Show camera: 3949504 ns
+FPS + flip: 264508 ns
+Init camera: 732365 ns
+Show camera: 4586120 ns
+Init camera: 730435 ns
+Show camera: 5305276 ns
+FPS + flip: 257358 ns
+Init camera: 961914 ns
+Show camera: 4962247 ns
+Init camera: 570887 ns
+Show camera: 4887278 ns
+FPS + flip: 425747 ns
+Init camera: 1345971 ns
+Show camera: 4379052 ns
+Init camera: 383977 ns
+Show camera: 3072830 ns
+FPS + flip: 266238 ns
+Init camera: 1013684 ns
+Show camera: 5967762 ns
+Init camera: 674686 ns
+Show camera: 3011340 ns
+FPS + flip: 263018 ns
+Init camera: 977573 ns
+Show camera: 4197923 ns
+Init camera: 606376 ns
+Show camera: 5152896 ns
+FPS + flip: 270159 ns
+Init camera: 890954 ns
+Show camera: 6561647 ns
+Init camera: 726326 ns
+Show camera: 3529617 ns
+FPS + flip: 266308 ns
+Init camera: 764505 ns
+Show camera: 4587001 ns
+Init camera: 712755 ns
+Show camera: 4121033 ns
+FPS + flip: 257058 ns
+Init camera: 807374 ns
+Show camera: 4637640 ns
+Init camera: 596546 ns
+Show camera: 4946818 ns
+FPS + flip: 428247 ns
+Init camera: 585076 ns
+Show camera: 4178443 ns
+Init camera: 590856 ns
+Show camera: 4948488 ns
+FPS + flip: 430107 ns
+Init camera: 730525 ns
+Show camera: 4543641 ns
+Init camera: 708905 ns
+Show camera: 3921125 ns
+FPS + flip: 256048 ns
+Init camera: 718606 ns
+Show camera: 5989981 ns
+Init camera: 704915 ns
+Show camera: 4408612 ns
+FPS + flip: 254968 ns
+Init camera: 1557500 ns
+Show camera: 4597330 ns
+Init camera: 527987 ns
+Show camera: 3955044 ns
+FPS + flip: 264489 ns
+Init camera: 661945 ns
+Show camera: 5268306 ns
+Init camera: 686975 ns
+Show camera: 6004001 ns
+FPS + flip: 378758 ns
+Init camera: 825965 ns
+Show camera: 6589537 ns
+Init camera: 1062843 ns
+Show camera: 3223549 ns
+FPS + flip: 277089 ns
+Init camera: 484097 ns
+Show camera: 4143413 ns
+Init camera: 667306 ns
+Show camera: 4592920 ns
+FPS + flip: 471127 ns
+Init camera: 749575 ns
+Show camera: 6159790 ns
+Init camera: 741255 ns
+Show camera: 3343989 ns
+FPS + flip: 259948 ns
+Init camera: 876184 ns
+Show camera: 5130647 ns
+Init camera: 605417 ns
+Show camera: 4937677 ns
+FPS + flip: 424998 ns
+Init camera: 1196712 ns
+Show camera: 5434705 ns
+Init camera: 751726 ns
+Show camera: 4169752 ns
+FPS + flip: 396138 ns
+Init camera: 728565 ns
+Show camera: 5093347 ns
+Init camera: 679875 ns
+Show camera: 3194870 ns
+FPS + flip: 262298 ns
+Init camera: 1608350 ns
+Show camera: 4972277 ns
+Init camera: 1135012 ns
+Show camera: 4660770 ns
+FPS + flip: 384058 ns
+Init camera: 746176 ns
+Show camera: 5524904 ns
+Init camera: 419747 ns
+Show camera: 3041030 ns
+FPS + flip: 261529 ns
+Init camera: 838544 ns
+Show camera: 5723083 ns
+Init camera: 844595 ns
+Show camera: 4368231 ns
+FPS + flip: 256658 ns
+Init camera: 850975 ns
+Show camera: 6800945 ns
+Init camera: 823675 ns
+Show camera: 3634037 ns
+FPS + flip: 255559 ns
+Init camera: 1085893 ns
+Show camera: 4118243 ns
+Init camera: 503016 ns
+Show camera: 3841145 ns
+FPS + flip: 259148 ns
+Init camera: 628196 ns
+Show camera: 4771029 ns
+Init camera: 488946 ns
+Show camera: 4222423 ns
+FPS + flip: 254879 ns
+Init camera: 914024 ns
+Show camera: 5210706 ns
+Init camera: 722775 ns
+Show camera: 4328312 ns
+FPS + flip: 256688 ns
+Init camera: 1456181 ns
+Show camera: 5701353 ns
+Init camera: 864664 ns
+Show camera: 5070707 ns
+FPS + flip: 264958 ns
+Init camera: 833364 ns
+Show camera: 4414262 ns
+Init camera: 604836 ns
+Show camera: 5217776 ns
+FPS + flip: 430358 ns
+Init camera: 972174 ns
+Show camera: 3995125 ns
+Init camera: 612376 ns
+Show camera: 4942978 ns
+FPS + flip: 428337 ns
+Init camera: 2123386 ns
+Show camera: 4122823 ns
+Init camera: 590816 ns
+Show camera: 5878272 ns
+FPS + flip: 384478 ns
+Init camera: 845625 ns
+Show camera: 6044941 ns
+Init camera: 541726 ns
+Show camera: 3438858 ns
+FPS + flip: 280018 ns
+Init camera: 878104 ns
+Show camera: 4852548 ns
+Init camera: 608546 ns
+Show camera: 4134623 ns
+FPS + flip: 261019 ns
+Init camera: 824375 ns
+Show camera: 4172373 ns
+Init camera: 422528 ns
+Show camera: 4071153 ns
+FPS + flip: 358557 ns
+Init camera: 1100453 ns
+Show camera: 7414732 ns
+Init camera: 677805 ns
+Show camera: 3662426 ns
+FPS + flip: 270439 ns
+Init camera: 847494 ns
+Show camera: 6505038 ns
+Init camera: 513516 ns
+Show camera: 3354129 ns
+FPS + flip: 766035 ns
+Init camera: 757545 ns
+Show camera: 4552630 ns
+Init camera: 675325 ns
+Show camera: 6208980 ns
+FPS + flip: 349818 ns
+Init camera: 755895 ns
+Show camera: 4935078 ns
+Init camera: 720115 ns
+Show camera: 4117534 ns
+FPS + flip: 260118 ns
+Init camera: 863834 ns
+Show camera: 5372205 ns
+Init camera: 684726 ns
+Show camera: 3925064 ns
+FPS + flip: 421477 ns
+Init camera: 1106483 ns
+Show camera: 5907632 ns
+Init camera: 1226242 ns
+Show camera: 3662607 ns
+FPS + flip: 264368 ns
+Init camera: 888684 ns
+Show camera: 4312252 ns
+Init camera: 635186 ns
+Show camera: 3658446 ns
+FPS + flip: 258249 ns
+Init camera: 857464 ns
+Show camera: 5749213 ns
+Init camera: 587987 ns
+Show camera: 4026943 ns
+FPS + flip: 432018 ns
+Init camera: 630956 ns
+Show camera: 4033034 ns
+Init camera: 893384 ns
+Show camera: 3797555 ns
+FPS + flip: 336278 ns
+Init camera: 724106 ns
+Show camera: 6266019 ns
+Init camera: 518057 ns
+Show camera: 2998840 ns
+FPS + flip: 256718 ns
+Init camera: 1155883 ns
+Show camera: 5236235 ns
+Init camera: 1045264 ns
+Show camera: 3990954 ns
+FPS + flip: 428587 ns
+Init camera: 910504 ns
+Show camera: 5158416 ns
+Init camera: 1012263 ns
+Show camera: 6334009 ns
+FPS + flip: 293328 ns
+Init camera: 855595 ns
+Show camera: 6270780 ns
+Init camera: 780865 ns
+Show camera: 3204989 ns
+FPS + flip: 256978 ns
+Init camera: 952014 ns
+Show camera: 4515291 ns
+Init camera: 590217 ns
+Show camera: 5109266 ns
+FPS + flip: 432248 ns
+Init camera: 853474 ns
+Show camera: 4781389 ns
+Init camera: 559336 ns
+Show camera: 3491287 ns
+FPS + flip: 483957 ns
+Init camera: 656226 ns
+Show camera: 5019027 ns
+Init camera: 593266 ns
+Show camera: 3712566 ns
+FPS + flip: 257718 ns
+Init camera: 607126 ns
+Show camera: 4917408 ns
+Init camera: 588156 ns
+Show camera: 5035817 ns
+FPS + flip: 500737 ns
+Init camera: 963223 ns
+Show camera: 4805169 ns
+Init camera: 1317131 ns
+Show camera: 5632973 ns
+FPS + flip: 284448 ns
+Init camera: 866384 ns
+Show camera: 4964428 ns
+Init camera: 456117 ns
+Show camera: 3053990 ns
+FPS + flip: 266459 ns
+Init camera: 718025 ns
+Show camera: 5060207 ns
+Init camera: 686525 ns
+Show camera: 4127883 ns
+FPS + flip: 353418 ns
+Init camera: 1088513 ns
+Show camera: 4790669 ns
+Init camera: 807305 ns
+Show camera: 3171700 ns
+FPS + flip: 297698 ns
+Init camera: 819004 ns
+Show camera: 6252620 ns
+Init camera: 632026 ns
+Show camera: 4968317 ns
+FPS + flip: 479437 ns
+Init camera: 1396231 ns
+Show camera: 4164353 ns
+Init camera: 645486 ns
+Show camera: 5474984 ns
+FPS + flip: 306958 ns
+Init camera: 685896 ns
+Show camera: 5076827 ns
+Init camera: 596276 ns
+Show camera: 4351412 ns
+FPS + flip: 506446 ns
+Init camera: 1272162 ns
+Show camera: 4951808 ns
+Init camera: 601346 ns
+Show camera: 3679007 ns
+FPS + flip: 258878 ns
+Init camera: 657886 ns
+Show camera: 3828405 ns
+Init camera: 593386 ns
+Show camera: 4295852 ns
+FPS + flip: 253728 ns
+Init camera: 872134 ns
+Show camera: 5445745 ns
+Init camera: 831595 ns
+Show camera: 3458447 ns
+FPS + flip: 252958 ns
+Init camera: 867435 ns
+Show camera: 5399045 ns
+Init camera: 608626 ns
+Show camera: 5248046 ns
+FPS + flip: 618906 ns
+Init camera: 473747 ns
+Show camera: 3688426 ns
+Init camera: 461047 ns
+Show camera: 5292456 ns
+FPS + flip: 495226 ns
+Init camera: 852064 ns
+Show camera: 4948788 ns
+Init camera: 592446 ns
+Show camera: 4910838 ns
+FPS + flip: 423188 ns
+Init camera: 1104213 ns
+Show camera: 3929495 ns
+Init camera: 1023103 ns
+Show camera: 4924889 ns
+FPS + flip: 437097 ns
+Init camera: 888035 ns
+Show camera: 6730786 ns
+Init camera: 523237 ns
+Show camera: 3040810 ns
+FPS + flip: 263689 ns
+Init camera: 502377 ns
+Show camera: 3650116 ns
+Init camera: 663325 ns
+Show camera: 4477861 ns
+FPS + flip: 260818 ns
+Init camera: 1234212 ns
+Show camera: 4535731 ns
+Init camera: 760175 ns
+Show camera: 2717712 ns
+FPS + flip: 277778 ns
+Init camera: 693425 ns
+Show camera: 5250246 ns
+Init camera: 430358 ns
+Show camera: 3065060 ns
+FPS + flip: 262038 ns
+Init camera: 484116 ns
+Show camera: 2865252 ns
+Init camera: 640126 ns
+Show camera: 4828488 ns
+FPS + flip: 521487 ns
+Init camera: 874974 ns
+Show camera: 5961582 ns
+Init camera: 397087 ns
+Show camera: 2682753 ns
+FPS + flip: 254178 ns
+Init camera: 588116 ns
+Show camera: 4073254 ns
+Init camera: 529166 ns
+Show camera: 2414294 ns
+FPS + flip: 258248 ns
+Init camera: 710865 ns
+Show camera: 4106173 ns
+Init camera: 692465 ns
+Show camera: 3412118 ns
+FPS + flip: 320417 ns
+Init camera: 715625 ns
+Show camera: 5966512 ns
+Init camera: 596236 ns
+Show camera: 4909198 ns
+FPS + flip: 429178 ns
+Init camera: 797765 ns
+Show camera: 5196556 ns
+Init camera: 860124 ns
+Show camera: 3695106 ns
+FPS + flip: 257768 ns
+Init camera: 768405 ns
+Show camera: 3918045 ns
+Init camera: 611176 ns
+Show camera: 5050438 ns
+FPS + flip: 422687 ns
+Init camera: 890614 ns
+Show camera: 5052438 ns
+Init camera: 590827 ns
+Show camera: 4942767 ns
+FPS + flip: 420528 ns
+Init camera: 668766 ns
+Show camera: 3528857 ns
+Init camera: 538647 ns
+Show camera: 5285295 ns
+FPS + flip: 423838 ns
+Init camera: 642866 ns
+Show camera: 3891304 ns
+Init camera: 602116 ns
+Show camera: 3401758 ns
+FPS + flip: 253998 ns
+Init camera: 877224 ns
+Show camera: 5707863 ns
+Init camera: 854504 ns
+Show camera: 3066380 ns
+FPS + flip: 256608 ns
+Init camera: 777145 ns
+Show camera: 5029477 ns
+Init camera: 851054 ns
+Show camera: 5009798 ns
+FPS + flip: 263398 ns
+Init camera: 592276 ns
+Show camera: 2878531 ns
+Init camera: 588666 ns
+Show camera: 4160113 ns
+FPS + flip: 421058 ns
+Init camera: 910704 ns
+Show camera: 5915251 ns
+Init camera: 593056 ns
+Show camera: 4964138 ns
+FPS + flip: 438517 ns
+Init camera: 755845 ns
+Show camera: 5420545 ns
+Init camera: 364927 ns
+Show camera: 3030311 ns
+FPS + flip: 250599 ns
+Init camera: 803735 ns
+Show camera: 4489771 ns
+Init camera: 641405 ns
+Show camera: 4000884 ns
+FPS + flip: 421078 ns
+Init camera: 801925 ns
+Show camera: 4453761 ns
+Init camera: 677656 ns
+Show camera: 4098643 ns
+FPS + flip: 439787 ns
+Init camera: 788295 ns
+Show camera: 5263496 ns
+Init camera: 688566 ns
+Show camera: 3653666 ns
+FPS + flip: 267258 ns
+Init camera: 916004 ns
+Show camera: 5935602 ns
+Init camera: 606966 ns
+Show camera: 3895255 ns
+FPS + flip: 263058 ns
+Init camera: 863815 ns
+Show camera: 5041797 ns
+Init camera: 1457980 ns
+Show camera: 3860895 ns
+FPS + flip: 263708 ns
+Init camera: 767065 ns
+Show camera: 4277842 ns
+Init camera: 807165 ns
+Show camera: 3858655 ns
+FPS + flip: 266548 ns
+Init camera: 694556 ns
+Show camera: 3796895 ns
+Init camera: 608156 ns
+Show camera: 3889935 ns
+FPS + flip: 417257 ns
+Init camera: 1562480 ns
+Show camera: 6760126 ns
+Init camera: 677086 ns
+Show camera: 3012030 ns
+FPS + flip: 266399 ns
+Init camera: 791244 ns
+Show camera: 4420562 ns
+Init camera: 530957 ns
+Show camera: 3184879 ns
+FPS + flip: 339058 ns
+Init camera: 758285 ns
+Show camera: 5035447 ns
+Init camera: 686426 ns
+Show camera: 4244112 ns
+FPS + flip: 262469 ns
+Init camera: 781084 ns
+Show camera: 4713730 ns
+Init camera: 1116933 ns
+Show camera: 3098080 ns
+FPS + flip: 260999 ns
+Init camera: 658576 ns
+Show camera: 5319035 ns
+Init camera: 598846 ns
+Show camera: 4913168 ns
+FPS + flip: 335967 ns
+Init camera: 791654 ns
+Show camera: 5391095 ns
+Init camera: 681465 ns
+Show camera: 2672613 ns
+FPS + flip: 256119 ns
+Init camera: 732666 ns
+Show camera: 5266325 ns
+Init camera: 730705 ns
+Show camera: 3324349 ns
+FPS + flip: 254558 ns
+Init camera: 819895 ns
+Show camera: 4193463 ns
+Init camera: 655126 ns
+Show camera: 5035777 ns
+FPS + flip: 444637 ns
+Init camera: 797085 ns
+Show camera: 5838132 ns
+Init camera: 616726 ns
+Show camera: 4876608 ns
+FPS + flip: 428077 ns
+Init camera: 758345 ns
+Show camera: 5305625 ns
+Init camera: 1045393 ns
+Show camera: 2941641 ns
+FPS + flip: 255429 ns
+Init camera: 904125 ns
+Show camera: 4591010 ns
+Init camera: 526447 ns
+Show camera: 3046780 ns
+FPS + flip: 483726 ns
+Init camera: 1042133 ns
+Show camera: 6010651 ns
+Init camera: 610066 ns
+Show camera: 4629040 ns
+FPS + flip: 436877 ns
+Init camera: 1015843 ns
+Show camera: 4158733 ns
+Init camera: 1217742 ns
+Show camera: 4133093 ns
+FPS + flip: 274548 ns
+Init camera: 859794 ns
+Show camera: 5058137 ns
+Init camera: 612526 ns
+Show camera: 3259499 ns
+FPS + flip: 265188 ns
+Init camera: 836855 ns
+Show camera: 5252796 ns
+Init camera: 612056 ns
+Show camera: 3890575 ns
+FPS + flip: 427167 ns
+Init camera: 800365 ns
+Show camera: 5892292 ns
+Init camera: 574907 ns
+Show camera: 2390764 ns
+FPS + flip: 256959 ns
+Init camera: 857254 ns
+Show camera: 5014757 ns
+Init camera: 505117 ns
+Show camera: 3276078 ns
+FPS + flip: 321048 ns
+Init camera: 813145 ns
+Show camera: 4451351 ns
+Init camera: 616966 ns
+Show camera: 4634749 ns
+FPS + flip: 428907 ns
+Init camera: 855554 ns
+Show camera: 6179720 ns
+Init camera: 1390641 ns
+Show camera: 2789102 ns
+FPS + flip: 256579 ns
+Init camera: 820145 ns
+Show camera: 6078010 ns
+Init camera: 636256 ns
+Show camera: 4946458 ns
+FPS + flip: 430437 ns
+Init camera: 1264852 ns
+Show camera: 6654036 ns
+Init camera: 580246 ns
+Show camera: 3412168 ns
+FPS + flip: 274518 ns
+Init camera: 1236752 ns
+Show camera: 4367071 ns
+Init camera: 971273 ns
+Show camera: 5147997 ns
+FPS + flip: 440337 ns
+Init camera: 909724 ns
+Show camera: 6071050 ns
+Init camera: 709375 ns
+Show camera: 3785456 ns
+FPS + flip: 255488 ns
+Init camera: 921334 ns
+Show camera: 4548721 ns
+Init camera: 710826 ns
+Show camera: 5272085 ns
+FPS + flip: 450437 ns
+Init camera: 1200102 ns
+Show camera: 4636840 ns
+Init camera: 989184 ns
+Show camera: 3515837 ns
+FPS + flip: 270208 ns
+Init camera: 947473 ns
+Show camera: 5834652 ns
+Init camera: 620986 ns
+Show camera: 4535841 ns
+FPS + flip: 432438 ns
+Init camera: 1433631 ns
+Show camera: 5442694 ns
+Init camera: 715386 ns
+Show camera: 5246196 ns
+FPS + flip: 495537 ns
+Init camera: 1426231 ns
+Show camera: 5286096 ns
+Init camera: 1126523 ns
+Show camera: 3898685 ns
+FPS + flip: 282378 ns
+Init camera: 824044 ns
+Show camera: 4857759 ns
+Init camera: 496277 ns
+Show camera: 3551187 ns
+FPS + flip: 280388 ns
+Init camera: 722065 ns
+Show camera: 6215130 ns
+Init camera: 829255 ns
+Show camera: 3426668 ns
+FPS + flip: 267908 ns
+Init camera: 681845 ns
+Show camera: 6461148 ns
+Init camera: 1313992 ns
+Show camera: 3741466 ns
+FPS + flip: 297828 ns
+Init camera: 770405 ns
+Show camera: 4953828 ns
+Init camera: 584326 ns
+Show camera: 3393588 ns
+FPS + flip: 265848 ns
+Init camera: 1265812 ns
+Show camera: 5349535 ns
+Init camera: 747865 ns
+Show camera: 3494648 ns
+FPS + flip: 292198 ns
+Init camera: 839155 ns
+Show camera: 6975235 ns
+Init camera: 982284 ns
+Show camera: 3471967 ns
+FPS + flip: 337168 ns
+Init camera: 761575 ns
+Show camera: 4249002 ns
+Init camera: 607566 ns
+Show camera: 3961954 ns
+FPS + flip: 449207 ns
+Init camera: 929434 ns
+Show camera: 5855342 ns
+Init camera: 531056 ns
+Show camera: 4781649 ns
+FPS + flip: 359858 ns
+Init camera: 1086302 ns
+Show camera: 5140997 ns
+Init camera: 466757 ns
+Show camera: 4486741 ns
+FPS + flip: 340368 ns
+Init camera: 722946 ns
+Show camera: 4834308 ns
+Init camera: 539597 ns
+Show camera: 5287105 ns
+FPS + flip: 446347 ns
+Init camera: 1184693 ns
+Show camera: 6814115 ns
+Init camera: 623966 ns
+Show camera: 3370528 ns
+FPS + flip: 285328 ns
+Init camera: 1391061 ns
+Show camera: 4279962 ns
+Init camera: 861884 ns
+Show camera: 4135784 ns
+FPS + flip: 477616 ns
+Init camera: 771525 ns
+Show camera: 4620340 ns
+Init camera: 738055 ns
+Show camera: 2735483 ns
+FPS + flip: 259138 ns
+Init camera: 731645 ns
+Show camera: 5223996 ns
+Init camera: 597316 ns
+Show camera: 3999384 ns
+FPS + flip: 296898 ns
+Init camera: 1427640 ns
+Show camera: 4979158 ns
+Init camera: 581166 ns
+Show camera: 5192446 ns
+FPS + flip: 463827 ns
+Init camera: 763035 ns
+Show camera: 4540740 ns
+Init camera: 612007 ns
+Show camera: 4961538 ns
+FPS + flip: 546136 ns
+Init camera: 713615 ns
+Show camera: 3419648 ns
+Init camera: 400298 ns
+Show camera: 3070260 ns
+FPS + flip: 259398 ns
+Init camera: 1455531 ns
+Show camera: 3927164 ns
+Init camera: 1016064 ns
+Show camera: 4048743 ns
+FPS + flip: 442277 ns
+Init camera: 995103 ns
+Show camera: 3959104 ns
+Init camera: 593886 ns
+Show camera: 3911795 ns
+FPS + flip: 271298 ns
+Init camera: 985944 ns
+Show camera: 4687489 ns
+Init camera: 759745 ns
+Show camera: 4389751 ns
+FPS + flip: 257048 ns
+Init camera: 1255922 ns
+Show camera: 4648450 ns
+Init camera: 723575 ns
+Show camera: 3383528 ns
+FPS + flip: 291068 ns
+Init camera: 578396 ns
+Show camera: 4918488 ns
+Init camera: 712745 ns
+Show camera: 3687586 ns
+FPS + flip: 262548 ns
+Init camera: 680846 ns
+Show camera: 4013604 ns
+Init camera: 652086 ns
+Show camera: 5127887 ns
+FPS + flip: 259399 ns
+Init camera: 1105892 ns
+Show camera: 5603694 ns
+Init camera: 597946 ns
+Show camera: 3702646 ns
+FPS + flip: 271189 ns
+Init camera: 797055 ns
+Show camera: 4758649 ns
+Init camera: 712246 ns
+Show camera: 3564286 ns
+FPS + flip: 259388 ns
+Init camera: 1057203 ns
+Show camera: 4894218 ns
+Init camera: 581486 ns
+Show camera: 3913505 ns
+FPS + flip: 436507 ns
+Init camera: 1230422 ns
+Show camera: 4022833 ns
+Init camera: 774855 ns
+Show camera: 4582670 ns
+FPS + flip: 282528 ns
+Init camera: 867785 ns
+Show camera: 3836985 ns
+Init camera: 663285 ns
+Show camera: 4861419 ns
+FPS + flip: 261108 ns
+Init camera: 874655 ns
+Show camera: 5439954 ns
+Init camera: 604666 ns
+Show camera: 4964968 ns
+FPS + flip: 425937 ns
+Init camera: 814104 ns
+Show camera: 6105401 ns
+Init camera: 527036 ns
+Show camera: 3102190 ns
+FPS + flip: 263329 ns
+Init camera: 796234 ns
+Show camera: 5447525 ns
+Init camera: 581766 ns
+Show camera: 3262489 ns
+FPS + flip: 275168 ns
+Init camera: 850365 ns
+Show camera: 7065454 ns
+Init camera: 554326 ns
+Show camera: 2960711 ns
+FPS + flip: 258408 ns
+Init camera: 856224 ns
+Show camera: 4191793 ns
+Init camera: 968814 ns
+Show camera: 5260826 ns
+FPS + flip: 444997 ns
+Init camera: 773705 ns
+Show camera: 5006857 ns
+Init camera: 633996 ns
+Show camera: 3867195 ns
+FPS + flip: 259049 ns
+Init camera: 784525 ns
+Show camera: 5043587 ns
+Init camera: 914804 ns
+Show camera: 3154980 ns
+FPS + flip: 260209 ns
+Init camera: 757885 ns
+Show camera: 3788285 ns
+Init camera: 580447 ns
+Show camera: 4358991 ns
+FPS + flip: 256658 ns
+Init camera: 1286801 ns
+Show camera: 4864489 ns
+Init camera: 606416 ns
+Show camera: 2509344 ns
+FPS + flip: 265048 ns
+Init camera: 885184 ns
+Show camera: 4767909 ns
+Init camera: 589476 ns
+Show camera: 4970798 ns
+FPS + flip: 434297 ns
+Init camera: 1003014 ns
+Show camera: 5802862 ns
+Init camera: 614896 ns
+Show camera: 5587663 ns
+FPS + flip: 431798 ns
+Init camera: 952544 ns
+Show camera: 7223213 ns
+Init camera: 369968 ns
+Show camera: 2976071 ns
+FPS + flip: 257118 ns
+Init camera: 789955 ns
+Show camera: 4125263 ns
+Init camera: 587137 ns
+Show camera: 5014698 ns
+FPS + flip: 434967 ns
+Init camera: 931954 ns
+Show camera: 6328138 ns
+Init camera: 930024 ns
+Show camera: 4972878 ns
+FPS + flip: 425797 ns
+Init camera: 587367 ns
+Show camera: 4831829 ns
+Init camera: 585956 ns
+Show camera: 3759435 ns
+FPS + flip: 251118 ns
+Init camera: 900854 ns
+Show camera: 5548854 ns
+Init camera: 891504 ns
+Show camera: 3179110 ns
+FPS + flip: 252699 ns
+Init camera: 736975 ns
+Show camera: 3801896 ns
+Init camera: 598846 ns
+Show camera: 4466541 ns
+FPS + flip: 269598 ns
+Init camera: 553397 ns
+Show camera: 2822981 ns
+Init camera: 461807 ns
+Show camera: 5089697 ns
+FPS + flip: 257538 ns
+Init camera: 795435 ns
+Show camera: 5979682 ns
+Init camera: 737706 ns
+Show camera: 4325262 ns
+FPS + flip: 257018 ns
+Init camera: 890714 ns
+Show camera: 7054804 ns
+Init camera: 928464 ns
+Show camera: 2940180 ns
+FPS + flip: 250218 ns
+Init camera: 507667 ns
+Show camera: 3887064 ns
+Init camera: 433158 ns
+Show camera: 4006114 ns
+FPS + flip: 307498 ns
+Init camera: 708236 ns
+Show camera: 5842802 ns
+Init camera: 701936 ns
+Show camera: 4150623 ns
+FPS + flip: 254668 ns
+Init camera: 901034 ns
+Show camera: 5836842 ns
+Init camera: 884834 ns
+Show camera: 3076310 ns
+FPS + flip: 256628 ns
+Init camera: 944154 ns
+Show camera: 4833398 ns
+Init camera: 593657 ns
+Show camera: 4886448 ns
+FPS + flip: 422317 ns
+Init camera: 675845 ns
+Show camera: 5187907 ns
+Init camera: 624705 ns
+Show camera: 3268409 ns
+FPS + flip: 252928 ns
+Init camera: 853545 ns
+Show camera: 5019267 ns
+Init camera: 625886 ns
+Show camera: 5299315 ns
+FPS + flip: 452047 ns
+Init camera: 769465 ns
+Show camera: 4907748 ns
+Init camera: 698826 ns
+Show camera: 3906844 ns
+FPS + flip: 262318 ns
+Init camera: 608706 ns
+Show camera: 4289443 ns
+Init camera: 593547 ns
+Show camera: 5032177 ns
+FPS + flip: 429787 ns
+Init camera: 948313 ns
+Show camera: 5325726 ns
+Init camera: 604306 ns
+Show camera: 4935538 ns
+FPS + flip: 420387 ns
+Init camera: 756575 ns
+Show camera: 5022567 ns
+Init camera: 600096 ns
+Show camera: 3954865 ns
+FPS + flip: 422377 ns
+Init camera: 934764 ns
+Show camera: 7207294 ns
+Init camera: 551016 ns
+Show camera: 2997990 ns
+FPS + flip: 259598 ns
+Init camera: 1621569 ns
+Show camera: 6180380 ns
+Init camera: 417037 ns
+Show camera: 3288369 ns
+FPS + flip: 265578 ns
+Init camera: 785515 ns
+Show camera: 6026300 ns
+Init camera: 809645 ns
+Show camera: 3294169 ns
+FPS + flip: 316928 ns
+Init camera: 824734 ns
+Show camera: 5007808 ns
+Init camera: 513757 ns
+Show camera: 3248589 ns
+FPS + flip: 280148 ns
+Init camera: 846944 ns
+Show camera: 5053517 ns
+Init camera: 635366 ns
+Show camera: 5189466 ns
+FPS + flip: 432167 ns
+Init camera: 777535 ns
+Show camera: 4263092 ns
+Init camera: 669105 ns
+Show camera: 5102317 ns
+FPS + flip: 443357 ns
+Init camera: 1566050 ns
+Show camera: 6721477 ns
+Init camera: 697956 ns
+Show camera: 3313108 ns
+FPS + flip: 285219 ns
+Init camera: 915154 ns
+Show camera: 6039450 ns
+Init camera: 569586 ns
+Show camera: 2966841 ns
+FPS + flip: 256498 ns
+Init camera: 872794 ns
+Show camera: 5817692 ns
+Init camera: 362557 ns
+Show camera: 3135500 ns
+FPS + flip: 259758 ns
+Init camera: 942254 ns
+Show camera: 3754606 ns
+Init camera: 788345 ns
+Show camera: 6497178 ns
+FPS + flip: 634326 ns
+Init camera: 968884 ns
+Show camera: 5969481 ns
+Init camera: 848635 ns
+Show camera: 4594880 ns
+FPS + flip: 257089 ns
+Init camera: 890484 ns
+Show camera: 5535334 ns
+Init camera: 722266 ns
+Show camera: 2390814 ns
+FPS + flip: 283138 ns
+Init camera: 618876 ns
+Show camera: 3923295 ns
+Init camera: 607096 ns
+Show camera: 4089963 ns
+FPS + flip: 257778 ns
+Init camera: 945924 ns
+Show camera: 4400201 ns
+Init camera: 674636 ns
+Show camera: 4056124 ns
+FPS + flip: 492707 ns
+Init camera: 908164 ns
+Show camera: 5583894 ns
+Init camera: 915054 ns
+Show camera: 4777539 ns
+FPS + flip: 264569 ns
+Init camera: 865175 ns
+Show camera: 4821369 ns
+Init camera: 553507 ns
+Show camera: 3830955 ns
+FPS + flip: 269659 ns
+Init camera: 938624 ns
+Show camera: 6808195 ns
+Init camera: 432257 ns
+Show camera: 3446478 ns
+FPS + flip: 276098 ns
+Init camera: 1119232 ns
+Show camera: 5157597 ns
+Init camera: 591476 ns
+Show camera: 4032474 ns
+FPS + flip: 288568 ns
+Init camera: 619216 ns
+Show camera: 5145387 ns
+Init camera: 782125 ns
+Show camera: 3873285 ns
+FPS + flip: 270028 ns
+Init camera: 841215 ns
+Show camera: 4876228 ns
+Init camera: 731085 ns
+Show camera: 4436842 ns
+FPS + flip: 425828 ns
+Init camera: 791585 ns
+Show camera: 4850318 ns
+Init camera: 712975 ns
+Show camera: 4744129 ns
+FPS + flip: 261258 ns
+Init camera: 1215972 ns
+Show camera: 5799572 ns
+Init camera: 625666 ns
+Show camera: 4236563 ns
+FPS + flip: 460777 ns
+Init camera: 878204 ns
+Show camera: 5471265 ns
+Init camera: 707835 ns
+Show camera: 3422208 ns
+FPS + flip: 271668 ns
+Init camera: 894265 ns
+Show camera: 6521428 ns
+Init camera: 652295 ns
+Show camera: 5260727 ns
+FPS + flip: 432267 ns
+Init camera: 1007824 ns
+Show camera: 6678947 ns
+Init camera: 1054553 ns
+Show camera: 3394478 ns
+FPS + flip: 271688 ns
+Init camera: 599516 ns
+Show camera: 4276662 ns
+Init camera: 494187 ns
+Show camera: 3512887 ns
+FPS + flip: 270118 ns
+Init camera: 853164 ns
+Show camera: 6495768 ns
+Init camera: 818805 ns
+Show camera: 3604976 ns
+FPS + flip: 277309 ns
+Init camera: 1908727 ns
+Show camera: 3953764 ns
+Init camera: 536357 ns
+Show camera: 3414118 ns
+FPS + flip: 283268 ns
+Init camera: 842344 ns
+Show camera: 4451351 ns
+Init camera: 573126 ns
+Show camera: 4003614 ns
+FPS + flip: 334458 ns
+Init camera: 898784 ns
+Show camera: 5231816 ns
+Init camera: 569476 ns
+Show camera: 4072764 ns
+FPS + flip: 304728 ns
+Init camera: 792895 ns
+Show camera: 5717943 ns
+Init camera: 948594 ns
+Show camera: 3323278 ns
+FPS + flip: 276159 ns
+Init camera: 948984 ns
+Show camera: 5462054 ns
+Init camera: 495957 ns
+Show camera: 4051964 ns
+FPS + flip: 328627 ns
+Init camera: 1621830 ns
+Show camera: 7525911 ns
+Init camera: 676146 ns
+Show camera: 3477247 ns
+FPS + flip: 307888 ns
+Init camera: 922894 ns
+Show camera: 3633466 ns
+Init camera: 503147 ns
+Show camera: 3782765 ns
+FPS + flip: 260898 ns
+Init camera: 784085 ns
+Show camera: 5475805 ns
+Init camera: 440497 ns
+Show camera: 3476258 ns
+FPS + flip: 278818 ns
+Init camera: 1221472 ns
+Show camera: 5651013 ns
+Init camera: 997963 ns
+Show camera: 4388442 ns
+FPS + flip: 319307 ns
+Init camera: 760585 ns
+Show camera: 5815832 ns
+Init camera: 783435 ns
+Show camera: 4190573 ns
+FPS + flip: 266508 ns
+Init camera: 618956 ns
+Show camera: 5286706 ns
+Init camera: 775725 ns
+Show camera: 3352978 ns
+FPS + flip: 289438 ns
+Init camera: 847155 ns
+Show camera: 4939658 ns
+Init camera: 737545 ns
+Show camera: 4525391 ns
+FPS + flip: 263219 ns
+Init camera: 1095523 ns
+Show camera: 6477477 ns
+Init camera: 459307 ns
+Show camera: 3402978 ns
+FPS + flip: 270558 ns
+Init camera: 834375 ns
+Show camera: 4653899 ns
+Init camera: 723455 ns
+Show camera: 5243956 ns
+FPS + flip: 259589 ns
+Init camera: 859864 ns
+Show camera: 5544984 ns
+Init camera: 832134 ns
+Show camera: 3888525 ns
+FPS + flip: 336868 ns
+Init camera: 1106893 ns
+Show camera: 6196320 ns
+Init camera: 680965 ns
+Show camera: 3481858 ns
+FPS + flip: 278918 ns
+Init camera: 998323 ns
+Show camera: 6531988 ns
+Init camera: 654636 ns
+Show camera: 4507591 ns
+FPS + flip: 469057 ns
+Init camera: 1279992 ns
+Show camera: 7751579 ns
+Init camera: 1123592 ns
+Show camera: 4535931 ns
+FPS + flip: 313808 ns
+Init camera: 920734 ns
+Show camera: 5374505 ns
+Init camera: 446677 ns
+Show camera: 3500137 ns
+FPS + flip: 276458 ns
+Init camera: 697426 ns
+Show camera: 3775985 ns
+Init camera: 508036 ns
+Show camera: 3545567 ns
+FPS + flip: 278918 ns
+Init camera: 630386 ns
+Show camera: 3746665 ns
+Init camera: 541827 ns
+Show camera: 4131763 ns
+FPS + flip: 417608 ns
+Init camera: 917014 ns
+Show camera: 5776022 ns
+Init camera: 642916 ns
+Show camera: 8269486 ns
+FPS + flip: 669566 ns
+Init camera: 1008904 ns
+Show camera: 5692893 ns
+Init camera: 674425 ns
+Show camera: 4697370 ns
+FPS + flip: 261808 ns
+Init camera: 1077023 ns
+Show camera: 5241026 ns
+Init camera: 664006 ns
+Show camera: 3498437 ns
+FPS + flip: 276448 ns
+Init camera: 940674 ns
+Show camera: 4554111 ns
+Init camera: 725596 ns
+Show camera: 3766815 ns
+FPS + flip: 254588 ns
+Init camera: 744725 ns
+Show camera: 4602770 ns
+Init camera: 1060343 ns
+Show camera: 2449434 ns
+FPS + flip: 258758 ns
+Init camera: 744625 ns
+Show camera: 3838125 ns
+Init camera: 580166 ns
+Show camera: 4547240 ns
+FPS + flip: 255318 ns
+Init camera: 614556 ns
+Show camera: 3465438 ns
+Init camera: 633616 ns
+Show camera: 4043483 ns
+FPS + flip: 480767 ns
+Init camera: 1306771 ns
+Show camera: 5564144 ns
+Init camera: 1014573 ns
+Show camera: 4569130 ns
+FPS + flip: 313468 ns
+Init camera: 475757 ns
+Show camera: 3475107 ns
+Init camera: 574487 ns
+Show camera: 4912299 ns
+FPS + flip: 428237 ns
+Init camera: 858525 ns
+Show camera: 5299496 ns
+Init camera: 587197 ns
+Show camera: 4923858 ns
+FPS + flip: 417888 ns
+Init camera: 726135 ns
+Show camera: 6312079 ns
+Init camera: 373437 ns
+Show camera: 3046830 ns
+FPS + flip: 267998 ns
+Init camera: 840705 ns
+Show camera: 3865585 ns
+Init camera: 598566 ns
+Show camera: 3777475 ns
+FPS + flip: 258138 ns
+Init camera: 741405 ns
+Show camera: 4550231 ns
+Init camera: 780315 ns
+Show camera: 3175410 ns
+FPS + flip: 252578 ns
+Init camera: 705446 ns
+Show camera: 5229897 ns
+Init camera: 661146 ns
+Show camera: 3587587 ns
+FPS + flip: 257508 ns
+Init camera: 863674 ns
+Show camera: 7280016 ns
+Init camera: 396827 ns
+Show camera: 2985761 ns
+FPS + flip: 261228 ns
+Init camera: 870694 ns
+Show camera: 5738495 ns
+Init camera: 906535 ns
+Show camera: 3416529 ns
+FPS + flip: 253108 ns
+Init camera: 730356 ns
+Show camera: 4937259 ns
+Init camera: 542597 ns
+Show camera: 2998621 ns
+FPS + flip: 261638 ns
+Init camera: 916265 ns
+Show camera: 5496906 ns
+Init camera: 606226 ns
+Show camera: 4455252 ns
+FPS + flip: 255119 ns
+Init camera: 898325 ns
+Show camera: 6288451 ns
+Init camera: 977164 ns
+Show camera: 4334553 ns
+FPS + flip: 263148 ns
+Init camera: 808645 ns
+Show camera: 6068572 ns
+Init camera: 402198 ns
+Show camera: 2653663 ns
+FPS + flip: 261408 ns
+Init camera: 1583730 ns
+Show camera: 4785631 ns
+Init camera: 765095 ns
+Show camera: 5274757 ns
+FPS + flip: 274588 ns
+Init camera: 920265 ns
+Show camera: 4188414 ns
+Init camera: 583906 ns
+Show camera: 3571198 ns
+FPS + flip: 307638 ns
+Init camera: 691886 ns
+Show camera: 5415886 ns
+Init camera: 758365 ns
+Show camera: 3594008 ns
+FPS + flip: 264738 ns
+Init camera: 834245 ns
+Show camera: 4532983 ns
+Init camera: 817025 ns
+Show camera: 3824836 ns
+FPS + flip: 456637 ns
+Init camera: 755155 ns
+Show camera: 3306189 ns
+Init camera: 504637 ns
+Show camera: 2979852 ns
+FPS + flip: 319138 ns
+Init camera: 870974 ns
+Show camera: 4473902 ns
+Init camera: 463097 ns
+Show camera: 3608168 ns
+FPS + flip: 265809 ns
+Init camera: 882484 ns
+Show camera: 5532905 ns
+Init camera: 840885 ns
+Show camera: 4208284 ns
+FPS + flip: 255309 ns
+Init camera: 468517 ns
+Show camera: 3949266 ns
+Init camera: 460947 ns
+Show camera: 2952252 ns
+FPS + flip: 258798 ns
+Init camera: 884924 ns
+Show camera: 6100222 ns
+Init camera: 658536 ns
+Show camera: 5311948 ns
+FPS + flip: 257288 ns
+Init camera: 1169343 ns
+Show camera: 4982231 ns
+Init camera: 678257 ns
+Show camera: 4191214 ns
+FPS + flip: 252549 ns
+Init camera: 661667 ns
+Show camera: 4197454 ns
+Init camera: 537488 ns
+Show camera: 3680316 ns
+FPS + flip: 272229 ns
+Init camera: 573478 ns
+Show camera: 3885485 ns
+Init camera: 497038 ns
+Show camera: 3750895 ns
+FPS + flip: 319859 ns
+Init camera: 611248 ns
+Show camera: 3735185 ns
+Init camera: 512908 ns
+Show camera: 3534246 ns
+FPS + flip: 320308 ns
+Init camera: 565118 ns
+Show camera: 5721768 ns
+Init camera: 991336 ns
+Show camera: 5744118 ns
+FPS + flip: 330399 ns
+Init camera: 791937 ns
+Show camera: 5026531 ns
+Init camera: 593388 ns
+Show camera: 3888634 ns
+FPS + flip: 431858 ns
+Init camera: 851937 ns
+Show camera: 5496279 ns
+Init camera: 957056 ns
+Show camera: 3196938 ns
+FPS + flip: 280119 ns
+Init camera: 998706 ns
+Show camera: 5863277 ns
+Init camera: 669587 ns
+Show camera: 3090618 ns
+FPS + flip: 268539 ns
+Init camera: 779787 ns
+Show camera: 4791431 ns
+Init camera: 717967 ns
+Show camera: 4908141 ns
+FPS + flip: 258999 ns
+Init camera: 957786 ns
+Show camera: 5387709 ns
+Init camera: 624798 ns
+Show camera: 2760259 ns
+FPS + flip: 267209 ns
+Init camera: 906387 ns
+Show camera: 4837651 ns
+Init camera: 414768 ns
+Show camera: 2619570 ns
+FPS + flip: 282539 ns
+Init camera: 820727 ns
+Show camera: 4565083 ns
+Init camera: 700837 ns
+Show camera: 4375173 ns
+FPS + flip: 255669 ns
+Init camera: 996786 ns
+Show camera: 5593408 ns
+Init camera: 1148316 ns
+Show camera: 3324977 ns
+FPS + flip: 265479 ns
+Init camera: 901467 ns
+Show camera: 4259273 ns
+Init camera: 595677 ns
+Show camera: 4854802 ns
+FPS + flip: 261339 ns
+Init camera: 854877 ns
+Show camera: 5504949 ns
+Init camera: 561288 ns
+Show camera: 2359511 ns
+FPS + flip: 262859 ns
+Init camera: 896986 ns
+Show camera: 5594289 ns
+Init camera: 525238 ns
+Show camera: 2381991 ns
+FPS + flip: 286259 ns
+Init camera: 1115686 ns
+Show camera: 4562523 ns
+Init camera: 599058 ns
+Show camera: 5066240 ns
+FPS + flip: 460149 ns
+Init camera: 658127 ns
+Show camera: 3796056 ns
+Init camera: 597188 ns
+Show camera: 5246400 ns
+FPS + flip: 257329 ns
+Init camera: 1011396 ns
+Show camera: 2446221 ns
+Init camera: 530608 ns
+Show camera: 2454690 ns
+FPS + flip: 267689 ns
+Init camera: 888857 ns
+Show camera: 3904915 ns
+Init camera: 590608 ns
+Show camera: 3734666 ns
+FPS + flip: 258049 ns
+Init camera: 819047 ns
+Show camera: 4482953 ns
+Init camera: 580928 ns
+Show camera: 4992271 ns
+FPS + flip: 557618 ns
+Init camera: 1016966 ns
+Show camera: 6321255 ns
+Init camera: 643497 ns
+Show camera: 4319154 ns
+FPS + flip: 273599 ns
+Init camera: 833967 ns
+Show camera: 4716182 ns
+Init camera: 655257 ns
+Show camera: 5545989 ns
+FPS + flip: 277959 ns
+Init camera: 1852183 ns
+Show camera: 4052085 ns
+Init camera: 509498 ns
+Show camera: 3839345 ns
+FPS + flip: 839577 ns
+Init camera: 755177 ns
+Show camera: 5128551 ns
+Init camera: 728917 ns
+Show camera: 3448867 ns
+FPS + flip: 296219 ns
+Init camera: 922076 ns
+Show camera: 7035863 ns
+Init camera: 526518 ns
+Show camera: 2792689 ns
+FPS + flip: 262099 ns
+Init camera: 1073726 ns
+Show camera: 5493039 ns
+Init camera: 1013986 ns
+Show camera: 3713526 ns
+FPS + flip: 629968 ns
+Init camera: 787277 ns
+Show camera: 5687418 ns
+Init camera: 678277 ns
+Show camera: 3358567 ns
+FPS + flip: 279149 ns
+Init camera: 1001527 ns
+Show camera: 3738865 ns
+Init camera: 938167 ns
+Show camera: 5001851 ns
+FPS + flip: 310889 ns
+Init camera: 1040606 ns
+Show camera: 5513639 ns
+Init camera: 690007 ns
+Show camera: 4236044 ns
+FPS + flip: 323429 ns
+Init camera: 692857 ns
+Show camera: 4583632 ns
+Init camera: 558218 ns
+Show camera: 3914265 ns
+FPS + flip: 605888 ns
+Init camera: 855606 ns
+Show camera: 5523308 ns
+Init camera: 417328 ns
+Show camera: 2582890 ns
+FPS + flip: 272849 ns
+Init camera: 741167 ns
+Show camera: 5134840 ns
+Init camera: 982426 ns
+Show camera: 4142984 ns
+FPS + flip: 258679 ns
+Init camera: 1293815 ns
+Show camera: 6155536 ns
+Init camera: 782807 ns
+Show camera: 3030819 ns
+FPS + flip: 255039 ns
+Init camera: 716167 ns
+Show camera: 4963601 ns
+Init camera: 615587 ns
+Show camera: 4156424 ns
+FPS + flip: 256279 ns
+Init camera: 634937 ns
+Show camera: 3948995 ns
+Init camera: 579708 ns
+Show camera: 3877755 ns
+FPS + flip: 267379 ns
+Init camera: 894856 ns
+Show camera: 4544203 ns
+Init camera: 609918 ns
+Show camera: 4898191 ns
+FPS + flip: 517628 ns
+Init camera: 723628 ns
+Show camera: 4566242 ns
+Init camera: 702247 ns
+Show camera: 4546052 ns
+FPS + flip: 291049 ns
+Init camera: 797167 ns
+Show camera: 4764282 ns
+Init camera: 382669 ns
+Show camera: 3010628 ns
+FPS + flip: 250829 ns
+Init camera: 743787 ns
+Show camera: 4583492 ns
+Init camera: 670497 ns
+Show camera: 4068024 ns
+FPS + flip: 415618 ns
+Init camera: 1264015 ns
+Show camera: 4683462 ns
+Init camera: 450848 ns
+Show camera: 2432651 ns
+FPS + flip: 264549 ns
+Init camera: 806007 ns
+Show camera: 4347113 ns
+Init camera: 362098 ns
+Show camera: 3056678 ns
+FPS + flip: 311169 ns
+Init camera: 879117 ns
+Show camera: 4709312 ns
+Init camera: 819247 ns
+Show camera: 2659270 ns
+FPS + flip: 255779 ns
+Init camera: 937356 ns
+Show camera: 4924481 ns
+Init camera: 1007187 ns
+Show camera: 4679192 ns
+FPS + flip: 425258 ns
+Init camera: 730467 ns
+Show camera: 4358504 ns
+Init camera: 440578 ns
+Show camera: 3023289 ns
+FPS + flip: 292389 ns
+Init camera: 879477 ns
+Show camera: 4960781 ns
+Init camera: 602548 ns
+Show camera: 4043925 ns
+FPS + flip: 254019 ns
+Init camera: 882176 ns
+Show camera: 4611453 ns
+Init camera: 605848 ns
+Show camera: 5027590 ns
+FPS + flip: 422878 ns
+Init camera: 1338364 ns
+Show camera: 6057147 ns
+Init camera: 376119 ns
+Show camera: 2980988 ns
+FPS + flip: 250289 ns
+Init camera: 727497 ns
+Show camera: 4078824 ns
+Init camera: 605317 ns
+Show camera: 4995861 ns
+FPS + flip: 429288 ns
+Init camera: 929496 ns
+Show camera: 4466143 ns
+Init camera: 358479 ns
+Show camera: 3058578 ns
+FPS + flip: 262299 ns
+Init camera: 416909 ns
+Show camera: 2983189 ns
+Init camera: 389588 ns
+Show camera: 3046059 ns
+FPS + flip: 251649 ns
+Init camera: 723307 ns
+Show camera: 4328613 ns
+Init camera: 596627 ns
+Show camera: 4967501 ns
+FPS + flip: 457998 ns
+Init camera: 1036396 ns
+Show camera: 5481069 ns
+Init camera: 859367 ns
+Show camera: 3395657 ns
+FPS + flip: 259529 ns
+Init camera: 426628 ns
+Show camera: 2553291 ns
+Init camera: 358439 ns
+Show camera: 3040158 ns
+FPS + flip: 252389 ns
+Init camera: 376178 ns
+Show camera: 2665440 ns
+Init camera: 398928 ns
+Show camera: 3043268 ns
+FPS + flip: 254709 ns
+Init camera: 722117 ns
+Show camera: 7489711 ns
+Init camera: 1096276 ns
+Show camera: 3921565 ns
+FPS + flip: 424229 ns
+Init camera: 900837 ns
+Show camera: 5477649 ns
+Init camera: 845127 ns
+Show camera: 3550406 ns
+FPS + flip: 253159 ns
+Init camera: 848757 ns
+Show camera: 7108383 ns
+Init camera: 413688 ns
+Show camera: 3012109 ns
+FPS + flip: 258059 ns
+Init camera: 1019897 ns
+Show camera: 4811641 ns
+Init camera: 593537 ns
+Show camera: 3834435 ns
+FPS + flip: 368248 ns
+Init camera: 469908 ns
+Show camera: 4735922 ns
+Init camera: 918457 ns
+Show camera: 2456020 ns
+FPS + flip: 253049 ns
+Init camera: 843777 ns
+Show camera: 6509775 ns
+Init camera: 384999 ns
+Show camera: 3012658 ns
+FPS + flip: 250939 ns
+Init camera: 675087 ns
+Show camera: 5300760 ns
+Init camera: 596658 ns
+Show camera: 4927571 ns
+FPS + flip: 422318 ns
+Init camera: 846777 ns
+Show camera: 5602728 ns
+Init camera: 589628 ns
+Show camera: 4664461 ns
+FPS + flip: 251839 ns
+Init camera: 854787 ns
+Show camera: 5767358 ns
+Init camera: 1269015 ns
+Show camera: 3788145 ns
+FPS + flip: 254629 ns
+Init camera: 627407 ns
+Show camera: 3328617 ns
+Init camera: 387848 ns
+Show camera: 3010079 ns
+FPS + flip: 249329 ns
+Init camera: 730858 ns
+Show camera: 4141884 ns
+Init camera: 620518 ns
+Show camera: 4905021 ns
+FPS + flip: 477969 ns
+Init camera: 1703354 ns
+Show camera: 3966084 ns
+Init camera: 598368 ns
+Show camera: 4962191 ns
+FPS + flip: 415298 ns
+Init camera: 755717 ns
+Show camera: 6080297 ns
+Init camera: 711567 ns
+Show camera: 3009038 ns
+FPS + flip: 250749 ns
+Init camera: 853007 ns
+Show camera: 5324539 ns
+Init camera: 593717 ns
+Show camera: 4940552 ns
+FPS + flip: 416608 ns
+Init camera: 1057506 ns
+Show camera: 4861772 ns
+Init camera: 740657 ns
+Show camera: 3614986 ns
+FPS + flip: 423998 ns
+Init camera: 885037 ns
+Show camera: 6597865 ns
+Init camera: 391619 ns
+Show camera: 2959619 ns
+FPS + flip: 250669 ns
+Init camera: 929556 ns
+Show camera: 7278142 ns
+Init camera: 372738 ns
+Show camera: 2988559 ns
+FPS + flip: 256409 ns
+Init camera: 728947 ns
+Show camera: 4073554 ns
+Init camera: 612857 ns
+Show camera: 4913492 ns
+FPS + flip: 420818 ns
+Init camera: 879776 ns
+Show camera: 5821628 ns
+Init camera: 592848 ns
+Show camera: 4903951 ns
+FPS + flip: 419498 ns
+Init camera: 1053206 ns
+Show camera: 7164802 ns
+Init camera: 379978 ns
+Show camera: 7596731 ns
+FPS + flip: 395528 ns
+Init camera: 818627 ns
+Show camera: 4207054 ns
+Init camera: 434958 ns
+Show camera: 3341238 ns
+FPS + flip: 279549 ns
+Init camera: 777877 ns
+Show camera: 4050814 ns
+Init camera: 536568 ns
+Show camera: 4081305 ns
+FPS + flip: 279519 ns
+Init camera: 697617 ns
+Show camera: 4481333 ns
+Init camera: 575098 ns
+Show camera: 4175884 ns
+FPS + flip: 345118 ns
+Init camera: 897356 ns
+Show camera: 4491953 ns
+Init camera: 502778 ns
+Show camera: 2963048 ns
+FPS + flip: 270249 ns
+Init camera: 823547 ns
+Show camera: 4222284 ns
+Init camera: 501308 ns
+Show camera: 3881595 ns
+FPS + flip: 326069 ns
+Init camera: 919137 ns
+Show camera: 4560242 ns
+Init camera: 771807 ns
+Show camera: 4419523 ns
+FPS + flip: 399268 ns
+Init camera: 826247 ns
+Show camera: 4370414 ns
+Init camera: 482098 ns
+Show camera: 3919865 ns
+FPS + flip: 330919 ns
+Init camera: 553148 ns
+Show camera: 4095224 ns
+Init camera: 506138 ns
+Show camera: 3575026 ns
+FPS + flip: 276769 ns
+Init camera: 990107 ns
+Show camera: 4761901 ns
+Init camera: 616327 ns
+Show camera: 3808636 ns
+FPS + flip: 284719 ns
+Init camera: 607117 ns
+Show camera: 4270884 ns
+Init camera: 501738 ns
+Show camera: 3865115 ns
+FPS + flip: 358018 ns
+Init camera: 1101116 ns
+Show camera: 6149007 ns
+Init camera: 632247 ns
+Show camera: 4061275 ns
+FPS + flip: 376259 ns
+Init camera: 614448 ns
+Show camera: 4362654 ns
+Init camera: 607497 ns
+Show camera: 4153465 ns
+FPS + flip: 446898 ns
+Init camera: 899656 ns
+Show camera: 6278746 ns
+Init camera: 804656 ns
+Show camera: 5311910 ns
+FPS + flip: 444458 ns
+Init camera: 885877 ns
+Show camera: 5221079 ns
+Init camera: 591348 ns
+Show camera: 4884562 ns
+FPS + flip: 439128 ns
+Init camera: 1014036 ns
+Show camera: 4977881 ns
+Init camera: 565448 ns
+Show camera: 5075480 ns
+FPS + flip: 487048 ns
+Init camera: 982196 ns
+Show camera: 3768636 ns
+Init camera: 607688 ns
+Show camera: 4940620 ns
+FPS + flip: 537048 ns
+Init camera: 768597 ns
+Show camera: 4638072 ns
+Init camera: 708788 ns
+Show camera: 4344913 ns
+FPS + flip: 262319 ns
+Init camera: 859606 ns
+Show camera: 3637516 ns
+Init camera: 358799 ns
+Show camera: 2794229 ns
+FPS + flip: 258179 ns
+Init camera: 889347 ns
+Show camera: 4383523 ns
+Init camera: 642868 ns
+Show camera: 3823365 ns
+FPS + flip: 437898 ns
+Init camera: 664077 ns
+Show camera: 3847735 ns
+Init camera: 569068 ns
+Show camera: 3757166 ns
+FPS + flip: 267029 ns
+Init camera: 874427 ns
+Show camera: 5006381 ns
+Init camera: 485408 ns
+Show camera: 3706726 ns
+FPS + flip: 313618 ns
+Init camera: 930597 ns
+Show camera: 5562329 ns
+Init camera: 934766 ns
+Show camera: 3109368 ns
+FPS + flip: 262529 ns
+Init camera: 895517 ns
+Show camera: 5477068 ns
+Init camera: 902737 ns
+Show camera: 2512340 ns
+FPS + flip: 269189 ns
+Init camera: 523458 ns
+Show camera: 3925355 ns
+Init camera: 627277 ns
+Show camera: 4977571 ns
+FPS + flip: 445638 ns
+Init camera: 728327 ns
+Show camera: 5380749 ns
+Init camera: 581967 ns
+Show camera: 4920991 ns
+FPS + flip: 445608 ns
+Init camera: 831157 ns
+Show camera: 4503043 ns
+Init camera: 741467 ns
+Show camera: 3290298 ns
+FPS + flip: 255209 ns
+Init camera: 1016667 ns
+Show camera: 5531728 ns
+Init camera: 568628 ns
+Show camera: 3015709 ns
+FPS + flip: 308299 ns
+Init camera: 680628 ns
+Show camera: 5721988 ns
+Init camera: 579727 ns
+Show camera: 3091528 ns
+FPS + flip: 263009 ns
+Init camera: 1000996 ns
+Show camera: 3963885 ns
+Init camera: 608208 ns
+Show camera: 4931171 ns
+FPS + flip: 254059 ns
+Init camera: 1162135 ns
+Show camera: 4699352 ns
+Init camera: 735988 ns
+Show camera: 3291167 ns
+FPS + flip: 262799 ns
+Init camera: 999106 ns
+Show camera: 4693322 ns
+Init camera: 796697 ns
+Show camera: 4530483 ns
+FPS + flip: 268609 ns
+Init camera: 883486 ns
+Show camera: 5899518 ns
+Init camera: 572028 ns
+Show camera: 4912690 ns
+FPS + flip: 416208 ns
+Init camera: 834947 ns
+Show camera: 7020153 ns
+Init camera: 684647 ns
+Show camera: 5895428 ns
+FPS + flip: 269499 ns
+Init camera: 1012696 ns
+Show camera: 6133716 ns
+Init camera: 721307 ns
+Show camera: 3358437 ns
+FPS + flip: 261469 ns
+Init camera: 855227 ns
+Show camera: 4547352 ns
+Init camera: 582927 ns
+Show camera: 3965185 ns
+FPS + flip: 428868 ns
+Init camera: 665977 ns
+Show camera: 3824866 ns
+Init camera: 600878 ns
+Show camera: 5067470 ns
+FPS + flip: 462528 ns
+Init camera: 696967 ns
+Show camera: 3850185 ns
+Init camera: 585378 ns
+Show camera: 4251993 ns
+FPS + flip: 256939 ns
+Init camera: 787777 ns
+Show camera: 4632472 ns
+Init camera: 701887 ns
+Show camera: 4783801 ns
+FPS + flip: 256349 ns
+Init camera: 1037686 ns
+Show camera: 5014541 ns
+Init camera: 586468 ns
+Show camera: 2690780 ns
+FPS + flip: 259489 ns
+Init camera: 907017 ns
+Show camera: 3850575 ns
+Init camera: 607068 ns
+Show camera: 4957881 ns
+FPS + flip: 423418 ns
+Init camera: 632907 ns
+Show camera: 3876255 ns
+Init camera: 607318 ns
+Show camera: 3601546 ns
+FPS + flip: 254169 ns
+Init camera: 720527 ns
+Show camera: 6765264 ns
+Init camera: 663818 ns
+Show camera: 5135000 ns
+FPS + flip: 430679 ns
+Init camera: 721927 ns
+Show camera: 6246966 ns
+Init camera: 685118 ns
+Show camera: 2974718 ns
+FPS + flip: 266529 ns
+Init camera: 729397 ns
+Show camera: 4906582 ns
+Init camera: 976756 ns
+Show camera: 3370047 ns
+FPS + flip: 258119 ns
+Init camera: 639498 ns
+Show camera: 4542643 ns
+Init camera: 629548 ns
+Show camera: 5443159 ns
+FPS + flip: 263209 ns
+Init camera: 850007 ns
+Show camera: 5283190 ns
+Init camera: 607078 ns
+Show camera: 3912265 ns
+FPS + flip: 424669 ns
+Init camera: 622178 ns
+Show camera: 4978081 ns
+Init camera: 597378 ns
+Show camera: 3852175 ns
+FPS + flip: 259449 ns
+Init camera: 2211042 ns
+Show camera: 6269336 ns
+Init camera: 711967 ns
+Show camera: 4915181 ns
+FPS + flip: 273819 ns
+Init camera: 945416 ns
+Show camera: 5369759 ns
+Init camera: 495868 ns
+Show camera: 4139175 ns
+FPS + flip: 364369 ns
+Init camera: 622337 ns
+Show camera: 4140694 ns
+Init camera: 520778 ns
+Show camera: 3949155 ns
+FPS + flip: 355599 ns
+Init camera: 985966 ns
+Show camera: 4287454 ns
+Init camera: 777777 ns
+Show camera: 5136751 ns
+FPS + flip: 455048 ns
+Init camera: 931407 ns
+Show camera: 4816221 ns
+Init camera: 692257 ns
+Show camera: 4313104 ns
+FPS + flip: 481618 ns
+Init camera: 933007 ns
+Show camera: 5843447 ns
+Init camera: 917536 ns
+Show camera: 3052968 ns
+FPS + flip: 270529 ns
+Init camera: 676707 ns
+Show camera: 3435467 ns
+Init camera: 613428 ns
+Show camera: 4088224 ns
+FPS + flip: 474188 ns
+Init camera: 869326 ns
+Show camera: 4098995 ns
+Init camera: 626008 ns
+Show camera: 4946471 ns
+FPS + flip: 433109 ns
+Init camera: 1075786 ns
+Show camera: 5532979 ns
+Init camera: 1172315 ns
+Show camera: 3805156 ns
+FPS + flip: 273329 ns
+Init camera: 723437 ns
+Show camera: 5660828 ns
+Init camera: 594457 ns
+Show camera: 5307460 ns
+FPS + flip: 433169 ns
+Init camera: 854557 ns
+Show camera: 5748878 ns
+Init camera: 600508 ns
+Show camera: 5142510 ns
+FPS + flip: 264409 ns
+Init camera: 749787 ns
+Show camera: 4745331 ns
+Init camera: 725437 ns
+Show camera: 4569962 ns
+FPS + flip: 258719 ns
+Init camera: 1022876 ns
+Show camera: 5576119 ns
+Init camera: 795537 ns
+Show camera: 5728768 ns
+FPS + flip: 283089 ns
+Init camera: 885267 ns
+Show camera: 5127540 ns
+Init camera: 596657 ns
+Show camera: 5094481 ns
+FPS + flip: 502238 ns
+Init camera: 909036 ns
+Show camera: 3802416 ns
+Init camera: 576528 ns
+Show camera: 5060280 ns
+FPS + flip: 428218 ns
+Init camera: 677248 ns
+Show camera: 3289227 ns
+Init camera: 561608 ns
+Show camera: 3714925 ns
+FPS + flip: 369608 ns
+Init camera: 938636 ns
+Show camera: 5738948 ns
+Init camera: 971327 ns
+Show camera: 3781605 ns
+FPS + flip: 260829 ns
+Init camera: 879057 ns
+Show camera: 5751488 ns
+Init camera: 473898 ns
+Show camera: 3651976 ns
+FPS + flip: 317289 ns
+Init camera: 809817 ns
+Show camera: 6177445 ns
+Init camera: 800057 ns
+Show camera: 4186194 ns
+FPS + flip: 361218 ns
+Init camera: 720347 ns
+Show camera: 4997741 ns
+Init camera: 637598 ns
+Show camera: 5020780 ns
+FPS + flip: 532668 ns
+Init camera: 865197 ns
+Show camera: 4583252 ns
+Init camera: 709038 ns
+Show camera: 3885905 ns
+FPS + flip: 255839 ns
+Init camera: 808367 ns
+Show camera: 4115924 ns
+Init camera: 605758 ns
+Show camera: 3182388 ns
+FPS + flip: 370098 ns
+Init camera: 824357 ns
+Show camera: 6126057 ns
+Init camera: 726237 ns
+Show camera: 3303707 ns
+FPS + flip: 259319 ns
+Init camera: 852407 ns
+Show camera: 5130401 ns
+Init camera: 597678 ns
+Show camera: 5189780 ns
+FPS + flip: 446608 ns
+Init camera: 803257 ns
+Show camera: 5149590 ns
+Init camera: 975106 ns
+Show camera: 4361874 ns
+FPS + flip: 512908 ns
+Init camera: 875426 ns
+Show camera: 6845624 ns
+Init camera: 457568 ns
+Show camera: 3019658 ns
+FPS + flip: 256969 ns
+Init camera: 1324084 ns
+Show camera: 4043525 ns
+Init camera: 1000196 ns
+Show camera: 3462357 ns
+FPS + flip: 271259 ns
+Init camera: 718787 ns
+Show camera: 2421551 ns
+Init camera: 402539 ns
+Show camera: 2390180 ns
+FPS + flip: 258439 ns
+Init camera: 909606 ns
+Show camera: 7204602 ns
+Init camera: 910066 ns
+Show camera: 3142908 ns
+FPS + flip: 273629 ns
+Init camera: 628418 ns
+Show camera: 3780725 ns
+Init camera: 647017 ns
+Show camera: 4993740 ns
+FPS + flip: 479719 ns
+Init camera: 1225115 ns
+Show camera: 4756862 ns
+Init camera: 652287 ns
+Show camera: 5165920 ns
+FPS + flip: 262599 ns
+Init camera: 894177 ns
+Show camera: 5551449 ns
+Init camera: 856607 ns
+Show camera: 3614766 ns
+FPS + flip: 256819 ns
+Init camera: 1076786 ns
+Show camera: 3816506 ns
+Init camera: 880696 ns
+Show camera: 3910685 ns
+FPS + flip: 437849 ns
+Init camera: 815347 ns
+Show camera: 3870865 ns
+Init camera: 671188 ns
+Show camera: 3114738 ns
+FPS + flip: 260099 ns
+Init camera: 874676 ns
+Show camera: 3790376 ns
+Init camera: 626998 ns
+Show camera: 3001768 ns
+FPS + flip: 268589 ns
+Init camera: 1495804 ns
+Show camera: 5491559 ns
+Init camera: 699987 ns
+Show camera: 4010235 ns
+FPS + flip: 447449 ns
+Init camera: 911546 ns
+Show camera: 6553045 ns
+Init camera: 592028 ns
+Show camera: 4102384 ns
+FPS + flip: 451048 ns
+Init camera: 719667 ns
+Show camera: 5735668 ns
+Init camera: 600318 ns
+Show camera: 4976441 ns
+FPS + flip: 422409 ns
+Init camera: 590038 ns
+Show camera: 3864525 ns
+Init camera: 595647 ns
+Show camera: 4031835 ns
+FPS + flip: 251529 ns
+Init camera: 652607 ns
+Show camera: 3905055 ns
+Init camera: 569338 ns
+Show camera: 3819915 ns
+FPS + flip: 253619 ns
+Init camera: 1064796 ns
+Show camera: 3922644 ns
+Init camera: 600257 ns
+Show camera: 4968491 ns
+FPS + flip: 464838 ns
+Init camera: 1193025 ns
+Show camera: 4183834 ns
+Init camera: 585448 ns
+Show camera: 3979254 ns
+FPS + flip: 425149 ns
+Init camera: 651098 ns
+Show camera: 3927385 ns
+Init camera: 617308 ns
+Show camera: 4038994 ns
+FPS + flip: 262189 ns
+Init camera: 610878 ns
+Show camera: 3821715 ns
+Init camera: 610547 ns
+Show camera: 4931791 ns
+FPS + flip: 426248 ns
+Init camera: 1614744 ns
+Show camera: 5230600 ns
+Init camera: 603008 ns
+Show camera: 4321193 ns
+FPS + flip: 447988 ns
+Init camera: 1025016 ns
+Show camera: 6395095 ns
+Init camera: 881967 ns
+Show camera: 3096108 ns
+FPS + flip: 272249 ns
+Init camera: 674787 ns
+Show camera: 5116050 ns
+Init camera: 586288 ns
+Show camera: 3976055 ns
+FPS + flip: 264639 ns
+Init camera: 816887 ns
+Show camera: 3948425 ns
+Init camera: 577458 ns
+Show camera: 5002981 ns
+FPS + flip: 274609 ns
+Init camera: 1110385 ns
+Show camera: 6634955 ns
+Init camera: 615827 ns
+Show camera: 3293308 ns
+FPS + flip: 357429 ns
+Init camera: 756137 ns
+Show camera: 6079286 ns
+Init camera: 713498 ns
+Show camera: 3816135 ns
+FPS + flip: 266539 ns
+Init camera: 1142306 ns
+Show camera: 3949295 ns
+Init camera: 891306 ns
+Show camera: 4701512 ns
+FPS + flip: 323949 ns
+Init camera: 591358 ns
+Show camera: 3846445 ns
+Init camera: 597177 ns
+Show camera: 5080841 ns
+FPS + flip: 440498 ns
+Init camera: 780717 ns
+Show camera: 4508733 ns
+Init camera: 726617 ns
+Show camera: 4453683 ns
+FPS + flip: 256289 ns
+Init camera: 848367 ns
+Show camera: 5340419 ns
+Init camera: 586477 ns
+Show camera: 5003491 ns
+FPS + flip: 420918 ns
+Init camera: 648097 ns
+Show camera: 4940011 ns
+Init camera: 518538 ns
+Show camera: 2353791 ns
+FPS + flip: 265989 ns
+Init camera: 624937 ns
+Show camera: 4530243 ns
+Init camera: 721788 ns
+Show camera: 5695748 ns
+FPS + flip: 258649 ns
+Init camera: 833416 ns
+Show camera: 7020283 ns
+Init camera: 853777 ns
+Show camera: 3386727 ns
+FPS + flip: 251779 ns
+Init camera: 858377 ns
+Show camera: 4120634 ns
+Init camera: 615777 ns
+Show camera: 5913978 ns
+FPS + flip: 560428 ns
+Init camera: 913007 ns
+Show camera: 5700018 ns
+Init camera: 406599 ns
+Show camera: 3024587 ns
+FPS + flip: 259989 ns
+Init camera: 911096 ns
+Show camera: 5619358 ns
+Init camera: 1009056 ns
+Show camera: 3017298 ns
+FPS + flip: 262819 ns
+Init camera: 860377 ns
+Show camera: 5005671 ns
+Init camera: 609938 ns
+Show camera: 3953065 ns
+FPS + flip: 422289 ns
+Init camera: 529718 ns
+Show camera: 3759615 ns
+Init camera: 685137 ns
+Show camera: 3866376 ns
+FPS + flip: 253789 ns
+Init camera: 923637 ns
+Show camera: 5471990 ns
+Init camera: 845766 ns
+Show camera: 3411697 ns
+FPS + flip: 263209 ns
+Init camera: 942237 ns
+Show camera: 3979475 ns
+Init camera: 591268 ns
+Show camera: 5966116 ns
+FPS + flip: 559008 ns
+Init camera: 681197 ns
+Show camera: 3886206 ns
+Init camera: 493358 ns
+Show camera: 3097928 ns
+FPS + flip: 262729 ns
+Init camera: 349889 ns
+Show camera: 2356780 ns
+Init camera: 355909 ns
+Show camera: 3062468 ns
+FPS + flip: 282869 ns
+Init camera: 1092635 ns
+Show camera: 5267630 ns
+Init camera: 1039316 ns
+Show camera: 3623856 ns
+FPS + flip: 536338 ns
+Init camera: 949707 ns
+Show camera: 6652254 ns
+Init camera: 523308 ns
+Show camera: 3535616 ns
+FPS + flip: 269139 ns
+Init camera: 815147 ns
+Show camera: 6177986 ns
+Init camera: 384548 ns
+Show camera: 6139397 ns
+FPS + flip: 496448 ns
+Init camera: 741657 ns
+Show camera: 5198840 ns
+Init camera: 664197 ns
+Show camera: 5056711 ns
+FPS + flip: 441738 ns
+Init camera: 868347 ns
+Show camera: 3495246 ns
+Init camera: 473688 ns
+Show camera: 4320063 ns
+FPS + flip: 267809 ns
+Init camera: 875896 ns
+Show camera: 7354332 ns
+Init camera: 431958 ns
+Show camera: 3156658 ns
+FPS + flip: 339159 ns
+Init camera: 884536 ns
+Show camera: 5210580 ns
+Init camera: 621118 ns
+Show camera: 5487209 ns
+FPS + flip: 526308 ns
+Init camera: 1025286 ns
+Show camera: 5152340 ns
+Init camera: 1171776 ns
+Show camera: 4737682 ns
+FPS + flip: 341519 ns
+Init camera: 727837 ns
+Show camera: 5129610 ns
+Init camera: 621938 ns
+Show camera: 4351303 ns
+FPS + flip: 266819 ns
+Init camera: 1014466 ns
+Show camera: 5273309 ns
+Init camera: 696757 ns
+Show camera: 3075398 ns
+FPS + flip: 263819 ns
+Init camera: 918966 ns
+Show camera: 5531009 ns
+Init camera: 910067 ns
+Show camera: 4057934 ns
+FPS + flip: 262339 ns
+Init camera: 710928 ns
+Show camera: 3871625 ns
+Init camera: 443628 ns
+Show camera: 3921225 ns
+FPS + flip: 350639 ns
+Init camera: 866477 ns
+Show camera: 5374138 ns
+Init camera: 605787 ns
+Show camera: 5089771 ns
+FPS + flip: 430329 ns
+Init camera: 506698 ns
+Show camera: 2842309 ns
+Init camera: 451728 ns
+Show camera: 4226524 ns
+FPS + flip: 430189 ns
+Init camera: 1201436 ns
+Show camera: 4233253 ns
+Init camera: 426428 ns
+Show camera: 3363357 ns
+FPS + flip: 255429 ns
+Init camera: 719447 ns
+Show camera: 4538422 ns
+Init camera: 622607 ns
+Show camera: 4980831 ns
+FPS + flip: 418999 ns
+Init camera: 896327 ns
+Show camera: 5502959 ns
+Init camera: 834606 ns
+Show camera: 4113114 ns
+FPS + flip: 252809 ns
+Init camera: 651738 ns
+Show camera: 4233243 ns
+Init camera: 493438 ns
+Show camera: 4868171 ns
+FPS + flip: 478728 ns
+Init camera: 785967 ns
+Show camera: 5131020 ns
+Init camera: 637978 ns
+Show camera: 3945504 ns
+FPS + flip: 417079 ns
+Init camera: 896407 ns
+Show camera: 5143709 ns
+Init camera: 603148 ns
+Show camera: 4986211 ns
+FPS + flip: 423199 ns
+Init camera: 611388 ns
+Show camera: 3691596 ns
+Init camera: 430268 ns
+Show camera: 3072258 ns
+FPS + flip: 270769 ns
+Init camera: 490049 ns
+Show camera: 5680438 ns
+Init camera: 833057 ns
+Show camera: 4065944 ns
+FPS + flip: 254759 ns
+Init camera: 966076 ns
+Show camera: 4967791 ns
+Init camera: 617888 ns
+Show camera: 5099890 ns
+FPS + flip: 428308 ns
+Init camera: 596528 ns
+Show camera: 3263457 ns
+Init camera: 628338 ns
+Show camera: 2687560 ns
+FPS + flip: 256909 ns
+Init camera: 815627 ns
+Show camera: 6341686 ns
+Init camera: 886927 ns
+Show camera: 3718316 ns
+FPS + flip: 258669 ns
+Init camera: 500928 ns
+Show camera: 4402153 ns
+Init camera: 837697 ns
+Show camera: 5387079 ns
+FPS + flip: 255999 ns
+Init camera: 695877 ns
+Show camera: 4345453 ns
+Init camera: 503038 ns
+Show camera: 3102038 ns
+FPS + flip: 264869 ns
+Init camera: 969836 ns
+Show camera: 6376076 ns
+Init camera: 507108 ns
+Show camera: 3003408 ns
+FPS + flip: 256549 ns
+Init camera: 867507 ns
+Show camera: 4515313 ns
+Init camera: 614208 ns
+Show camera: 4977960 ns
+FPS + flip: 417148 ns
+Init camera: 638767 ns
+Show camera: 3837705 ns
+Init camera: 594738 ns
+Show camera: 4943411 ns
+FPS + flip: 415988 ns
+Init camera: 888737 ns
+Show camera: 4819111 ns
+Init camera: 539438 ns
+Show camera: 3705196 ns
+FPS + flip: 359448 ns
+Init camera: 753987 ns
+Show camera: 4526293 ns
+Init camera: 733117 ns
+Show camera: 4574342 ns
+FPS + flip: 250589 ns
+Init camera: 774607 ns
+Show camera: 4909131 ns
+Init camera: 635778 ns
+Show camera: 3733505 ns
+FPS + flip: 253259 ns
+Init camera: 675717 ns
+Show camera: 4051234 ns
+Init camera: 505298 ns
+Show camera: 3340537 ns
+FPS + flip: 265669 ns
+Init camera: 781087 ns
+Show camera: 4348434 ns
+Init camera: 495188 ns
+Show camera: 3027398 ns
+FPS + flip: 254029 ns
+Init camera: 667658 ns
+Show camera: 3967254 ns
+Init camera: 654077 ns
+Show camera: 4219454 ns
+FPS + flip: 471739 ns
+Init camera: 568738 ns
+Show camera: 4553912 ns
+Init camera: 550128 ns
+Show camera: 4125794 ns
+FPS + flip: 309019 ns
+Init camera: 620597 ns
+Show camera: 3948125 ns
+Init camera: 510408 ns
+Show camera: 3546566 ns
+FPS + flip: 265669 ns
+Init camera: 801757 ns
+Show camera: 5531039 ns
+Init camera: 605237 ns
+Show camera: 4983741 ns
+FPS + flip: 320029 ns
+Init camera: 634917 ns
+Show camera: 3757045 ns
+Init camera: 586148 ns
+Show camera: 4247343 ns
+FPS + flip: 251919 ns
+Init camera: 556938 ns
+Show camera: 3708755 ns
+Init camera: 459199 ns
+Show camera: 3089598 ns
+FPS + flip: 256799 ns
+Init camera: 903186 ns
+Show camera: 5769728 ns
+Init camera: 894997 ns
+Show camera: 3030598 ns
+FPS + flip: 262149 ns
+Init camera: 888086 ns
+Show camera: 5904227 ns
+Init camera: 524988 ns
+Show camera: 3028939 ns
+FPS + flip: 252329 ns
+Init camera: 1119136 ns
+Show camera: 6188636 ns
+Init camera: 420558 ns
+Show camera: 3115048 ns
+FPS + flip: 255259 ns
+Init camera: 552288 ns
+Show camera: 4871512 ns
+Init camera: 709907 ns
+Show camera: 3240997 ns
+FPS + flip: 252839 ns
+Init camera: 1024676 ns
+Show camera: 9164654 ns
+Init camera: 415149 ns
+Show camera: 3132838 ns
+FPS + flip: 281179 ns
+Init camera: 709257 ns
+Show camera: 2525550 ns
+Init camera: 426639 ns
+Show camera: 2375561 ns
+FPS + flip: 258069 ns
+Init camera: 735407 ns
+Show camera: 4779182 ns
+Init camera: 705537 ns
+Show camera: 3553606 ns
+FPS + flip: 257089 ns
+Init camera: 690467 ns
+Show camera: 3865725 ns
+Init camera: 588998 ns
+Show camera: 4208453 ns
+FPS + flip: 265249 ns
+Init camera: 926176 ns
+Show camera: 3835165 ns
+Init camera: 469248 ns
+Show camera: 3117138 ns
+FPS + flip: 282729 ns
+Init camera: 602318 ns
+Show camera: 4928901 ns
+Init camera: 593158 ns
+Show camera: 3275927 ns
+FPS + flip: 250479 ns
+Init camera: 824606 ns
+Show camera: 4192934 ns
+Init camera: 594428 ns
+Show camera: 3996144 ns
+FPS + flip: 433228 ns
+Init camera: 683597 ns
+Show camera: 4162204 ns
+Init camera: 604278 ns
+Show camera: 4071614 ns
+FPS + flip: 250970 ns
+Init camera: 676938 ns
+Show camera: 4517042 ns
+Init camera: 625747 ns
+Show camera: 3911825 ns
+FPS + flip: 565558 ns
+Init camera: 923717 ns
+Show camera: 7181862 ns
+Init camera: 540818 ns
+Show camera: 3020878 ns
+FPS + flip: 262509 ns
+Init camera: 990306 ns
+Show camera: 6418415 ns
+Init camera: 831267 ns
+Show camera: 3796675 ns
+FPS + flip: 253859 ns
+Init camera: 766137 ns
+Show camera: 3610746 ns
+Init camera: 438958 ns
+Show camera: 3012058 ns
+FPS + flip: 273128 ns
+Init camera: 857026 ns
+Show camera: 6358266 ns
+Init camera: 535188 ns
+Show camera: 3145448 ns
+FPS + flip: 270799 ns
+Init camera: 749037 ns
+Show camera: 5437779 ns
+Init camera: 664217 ns
+Show camera: 5108540 ns
+FPS + flip: 425648 ns
+Init camera: 864046 ns
+Show camera: 5309490 ns
+Init camera: 695957 ns
+Show camera: 4367803 ns
+FPS + flip: 470969 ns
+Init camera: 927327 ns
+Show camera: 7235851 ns
+Init camera: 698978 ns
+Show camera: 3078308 ns
+FPS + flip: 262669 ns
+Init camera: 780887 ns
+Show camera: 5129990 ns
+Init camera: 725457 ns
+Show camera: 4500832 ns
+FPS + flip: 255259 ns
+Init camera: 693537 ns
+Show camera: 4694852 ns
+Init camera: 412599 ns
+Show camera: 3130938 ns
+FPS + flip: 307599 ns
+Init camera: 762337 ns
+Show camera: 5147120 ns
+Init camera: 871257 ns
+Show camera: 3963985 ns
+FPS + flip: 255869 ns
+Init camera: 913127 ns
+Show camera: 7166382 ns
+Init camera: 929576 ns
+Show camera: 3000509 ns
+FPS + flip: 273379 ns
+Init camera: 677777 ns
+Show camera: 4551282 ns
+Init camera: 635228 ns
+Show camera: 3008838 ns
+FPS + flip: 277759 ns
+Init camera: 691677 ns
+Show camera: 6040747 ns
+Init camera: 419999 ns
+Show camera: 3015558 ns
+FPS + flip: 252089 ns
+Init camera: 785017 ns
+Show camera: 4821841 ns
+Init camera: 787427 ns
+Show camera: 4536672 ns
+FPS + flip: 253119 ns
+Init camera: 841787 ns
+Show camera: 5090110 ns
+Init camera: 610508 ns
+Show camera: 4180353 ns
+FPS + flip: 270529 ns
+Init camera: 658188 ns
+Show camera: 5022191 ns
+Init camera: 682907 ns
+Show camera: 3065448 ns
+FPS + flip: 335909 ns
+Init camera: 814747 ns
+Show camera: 4449683 ns
+Init camera: 619888 ns
+Show camera: 4972991 ns
+FPS + flip: 421318 ns
+Init camera: 902857 ns
+Show camera: 6759904 ns
+Init camera: 363248 ns
+Show camera: 3035689 ns
+FPS + flip: 255409 ns
+Init camera: 703147 ns
+Show camera: 5922077 ns
+Init camera: 390019 ns
+Show camera: 3146808 ns
+FPS + flip: 277519 ns
+Init camera: 1033616 ns
+Show camera: 5226680 ns
+Init camera: 630527 ns
+Show camera: 4015605 ns
+FPS + flip: 259069 ns
+Init camera: 1148895 ns
+Show camera: 5828637 ns
+Init camera: 754568 ns
+Show camera: 4931171 ns
+FPS + flip: 466258 ns
+Init camera: 867616 ns
+Show camera: 5091321 ns
+Init camera: 592227 ns
+Show camera: 5035831 ns
+FPS + flip: 432109 ns
+Init camera: 896956 ns
+Show camera: 4255444 ns
+Init camera: 674697 ns
+Show camera: 4645072 ns
+FPS + flip: 259029 ns
+Init camera: 761867 ns
+Show camera: 5031901 ns
+Init camera: 599747 ns
+Show camera: 5898368 ns
+FPS + flip: 461918 ns
+Init camera: 954546 ns
+Show camera: 4704682 ns
+Init camera: 584988 ns
+Show camera: 5014571 ns
+FPS + flip: 425049 ns
+Init camera: 806587 ns
+Show camera: 3814365 ns
+Init camera: 609968 ns
+Show camera: 4207404 ns
+FPS + flip: 265139 ns
+Init camera: 546047 ns
+Show camera: 6133936 ns
+Init camera: 1062316 ns
+Show camera: 5704788 ns
+FPS + flip: 477318 ns
+Init camera: 726787 ns
+Show camera: 5045241 ns
+Init camera: 578718 ns
+Show camera: 4986621 ns
+FPS + flip: 446248 ns
+Init camera: 868247 ns
+Show camera: 6803764 ns
+Init camera: 446569 ns
+Show camera: 3010038 ns
+FPS + flip: 251099 ns
+Init camera: 1241065 ns
+Show camera: 5543679 ns
+Init camera: 619037 ns
+Show camera: 5195201 ns
+FPS + flip: 443308 ns
+Init camera: 685877 ns
+Show camera: 4429023 ns
+Init camera: 582308 ns
+Show camera: 4119774 ns
+FPS + flip: 254429 ns
+Init camera: 863626 ns
+Show camera: 4451923 ns
+Init camera: 396199 ns
+Show camera: 3014248 ns
+FPS + flip: 254259 ns
+Init camera: 918276 ns
+Show camera: 4169704 ns
+Init camera: 610698 ns
+Show camera: 3849705 ns
+FPS + flip: 420129 ns
+Init camera: 1203865 ns
+Show camera: 4368643 ns
+Init camera: 592547 ns
+Show camera: 5780958 ns
+FPS + flip: 365149 ns
+Init camera: 742597 ns
+Show camera: 5051451 ns
+Init camera: 621198 ns
+Show camera: 3920935 ns
+FPS + flip: 255129 ns
+Init camera: 925596 ns
+Show camera: 5363850 ns
+Init camera: 721657 ns
+Show camera: 3044279 ns
+FPS + flip: 253579 ns
+Init camera: 857646 ns
+Show camera: 4825481 ns
+Init camera: 584907 ns
+Show camera: 5172681 ns
+FPS + flip: 265549 ns
+Init camera: 649558 ns
+Show camera: 4127554 ns
+Init camera: 799987 ns
+Show camera: 3590326 ns
+FPS + flip: 258359 ns
+Init camera: 832977 ns
+Show camera: 6891573 ns
+Init camera: 833137 ns
+Show camera: 3300127 ns
+FPS + flip: 256999 ns
+Init camera: 944756 ns
+Show camera: 3785025 ns
+Init camera: 608188 ns
+Show camera: 4257044 ns
+FPS + flip: 252460 ns
+Init camera: 1352185 ns
+Show camera: 6259056 ns
+Init camera: 411489 ns
+Show camera: 3063707 ns
+FPS + flip: 258489 ns
+Init camera: 922446 ns
+Show camera: 4333943 ns
+Init camera: 587698 ns
+Show camera: 4885151 ns
+FPS + flip: 423848 ns
+Init camera: 854537 ns
+Show camera: 5456868 ns
+Init camera: 831507 ns
+Show camera: 2928409 ns
+FPS + flip: 258349 ns
+Init camera: 852417 ns
+Show camera: 4424443 ns
+Init camera: 919527 ns
+Show camera: 4930110 ns
+FPS + flip: 429458 ns
+Init camera: 695707 ns
+Show camera: 4450463 ns
+Init camera: 401418 ns
+Show camera: 2613180 ns
+FPS + flip: 273969 ns
+Init camera: 1269765 ns
+Show camera: 6603855 ns
+Init camera: 405068 ns
+Show camera: 3010028 ns
+FPS + flip: 253029 ns
+Init camera: 921936 ns
+Show camera: 5685239 ns
+Init camera: 849567 ns
+Show camera: 3918304 ns
+FPS + flip: 250519 ns
+Init camera: 751327 ns
+Show camera: 5599329 ns
+Init camera: 504448 ns
+Show camera: 3635096 ns
+FPS + flip: 358349 ns
+Init camera: 823347 ns
+Show camera: 5119420 ns
+Init camera: 456118 ns
+Show camera: 3287677 ns
+FPS + flip: 253619 ns
+Init camera: 1292635 ns
+Show camera: 6601284 ns
+Init camera: 440408 ns
+Show camera: 3540977 ns
+FPS + flip: 267059 ns
+Init camera: 2253802 ns
+Show camera: 5359309 ns
+Init camera: 745787 ns
+Show camera: 3679856 ns
+FPS + flip: 265329 ns
+Init camera: 687518 ns
+Show camera: 5408139 ns
+Init camera: 649508 ns
+Show camera: 5283639 ns
+FPS + flip: 322169 ns
+Init camera: 589428 ns
+Show camera: 3873525 ns
+Init camera: 436449 ns
+Show camera: 4611862 ns
+FPS + flip: 417368 ns
+Init camera: 763847 ns
+Show camera: 3902825 ns
+Init camera: 514498 ns
+Show camera: 3864525 ns
+FPS + flip: 253149 ns
+Init camera: 724507 ns
+Show camera: 4655422 ns
+Init camera: 440168 ns
+Show camera: 5104721 ns
+FPS + flip: 331319 ns
+Init camera: 1531014 ns
+Show camera: 4058094 ns
+Init camera: 459379 ns
+Show camera: 3262797 ns
+FPS + flip: 267259 ns
+Init camera: 723267 ns
+Show camera: 5946647 ns
+Init camera: 712577 ns
+Show camera: 2949099 ns
+FPS + flip: 254219 ns
+Init camera: 1108035 ns
+Show camera: 5044801 ns
+Init camera: 588628 ns
+Show camera: 3535756 ns
+FPS + flip: 247089 ns
+Init camera: 714317 ns
+Show camera: 4664861 ns
+Init camera: 713237 ns
+Show camera: 4729122 ns
+FPS + flip: 243790 ns
+Init camera: 678847 ns
+Show camera: 4001354 ns
+Init camera: 588688 ns
+Show camera: 4114135 ns
+FPS + flip: 408899 ns
+Init camera: 918997 ns
+Show camera: 5916857 ns
+Init camera: 616958 ns
+Show camera: 2996378 ns
+FPS + flip: 248539 ns
+Init camera: 753147 ns
+Show camera: 4637742 ns
+Init camera: 670777 ns
+Show camera: 5286289 ns
+FPS + flip: 468638 ns
+Init camera: 526707 ns
+Show camera: 3986935 ns
+Init camera: 705257 ns
+Show camera: 4825381 ns
+FPS + flip: 243919 ns
+Init camera: 765387 ns
+Show camera: 4537572 ns
+Init camera: 705578 ns
+Show camera: 3791875 ns
+FPS + flip: 242369 ns
+Init camera: 496698 ns
+Show camera: 4253544 ns
+Init camera: 626037 ns
+Show camera: 3811076 ns
+FPS + flip: 249959 ns
+Init camera: 823497 ns
+Show camera: 4686871 ns
+Init camera: 704067 ns
+Show camera: 5030791 ns
+FPS + flip: 256489 ns
+Init camera: 829817 ns
+Show camera: 4630432 ns
+Init camera: 719747 ns
+Show camera: 4212184 ns
+FPS + flip: 246089 ns
+Init camera: 1054276 ns
+Show camera: 4436132 ns
+Init camera: 758737 ns
+Show camera: 5310160 ns
+FPS + flip: 440718 ns
+Init camera: 739747 ns
+Show camera: 5081840 ns
+Init camera: 447519 ns
+Show camera: 3659785 ns
+FPS + flip: 245449 ns
+Init camera: 517607 ns
+Show camera: 4357794 ns
+Init camera: 639527 ns
+Show camera: 5259540 ns
+FPS + flip: 253279 ns
+Init camera: 485408 ns
+Show camera: 2925339 ns
+Init camera: 545578 ns
+Show camera: 3605506 ns
+FPS + flip: 268369 ns
+Init camera: 636717 ns
+Show camera: 3962425 ns
+Init camera: 683397 ns
+Show camera: 5379789 ns
+FPS + flip: 443198 ns
+Init camera: 1134086 ns
+Show camera: 5928497 ns
+Init camera: 639737 ns
+Show camera: 3580027 ns
+FPS + flip: 269489 ns
+Init camera: 972686 ns
+Show camera: 6026037 ns
+Init camera: 460928 ns
+Show camera: 3192987 ns
+FPS + flip: 274449 ns
+Init camera: 665517 ns
+Show camera: 4544822 ns
+Init camera: 671097 ns
+Show camera: 3990345 ns
+FPS + flip: 287069 ns
+Init camera: 887046 ns
+Show camera: 5888927 ns
+Init camera: 683837 ns
+Show camera: 5253260 ns
+FPS + flip: 469128 ns
+Init camera: 798947 ns
+Show camera: 4742201 ns
+Init camera: 827847 ns
+Show camera: 3313857 ns
+FPS + flip: 268489 ns
+Init camera: 887677 ns
+Show camera: 2542270 ns
+Init camera: 398709 ns
+Show camera: 2451220 ns
+FPS + flip: 264589 ns
+Init camera: 689997 ns
+Show camera: 4340784 ns
+Init camera: 866137 ns
+Show camera: 3720115 ns
+FPS + flip: 266838 ns
+Init camera: 855147 ns
+Show camera: 5434869 ns
+Init camera: 859857 ns
+Show camera: 3450817 ns
+FPS + flip: 254449 ns
+Init camera: 711427 ns
+Show camera: 5884027 ns
+Init camera: 381938 ns
+Show camera: 2389340 ns
+FPS + flip: 259589 ns
+Init camera: 1008276 ns
+Show camera: 4807941 ns
+Init camera: 382658 ns
+Show camera: 2751940 ns
+FPS + flip: 261479 ns
+Init camera: 760857 ns
+Show camera: 4187354 ns
+Init camera: 642488 ns
+Show camera: 5014960 ns
+FPS + flip: 309129 ns
+Init camera: 956656 ns
+Show camera: 5544889 ns
+Init camera: 864236 ns
+Show camera: 3986345 ns
+FPS + flip: 266139 ns
+Init camera: 926076 ns
+Show camera: 6274706 ns
+Init camera: 382699 ns
+Show camera: 3121328 ns
+FPS + flip: 324419 ns
+Init camera: 791526 ns
+Show camera: 4087945 ns
+Init camera: 484108 ns
+Show camera: 3550027 ns
+FPS + flip: 314329 ns
+Init camera: 733437 ns
+Show camera: 5004810 ns
+Init camera: 607017 ns
+Show camera: 4902741 ns
+FPS + flip: 424338 ns
+Init camera: 734787 ns
+Show camera: 5089140 ns
+Init camera: 641918 ns
+Show camera: 2959859 ns
+FPS + flip: 303909 ns
+Init camera: 611048 ns
+Show camera: 5241449 ns
+Init camera: 624398 ns
+Show camera: 3406537 ns
+FPS + flip: 279649 ns
+Init camera: 1009327 ns
+Show camera: 5829827 ns
+Init camera: 642718 ns
+Show camera: 4308183 ns
+FPS + flip: 473058 ns
+Init camera: 982827 ns
+Show camera: 5162119 ns
+Init camera: 680408 ns
+Show camera: 4628392 ns
+FPS + flip: 448799 ns
+Init camera: 749337 ns
+Show camera: 4541652 ns
+Init camera: 404158 ns
+Show camera: 3383067 ns
+FPS + flip: 266659 ns
+Init camera: 786167 ns
+Show camera: 4846622 ns
+Init camera: 548178 ns
+Show camera: 4597592 ns
+FPS + flip: 438278 ns
+Init camera: 1643354 ns
+Show camera: 5131119 ns
+Init camera: 711768 ns
+Show camera: 5022480 ns
+FPS + flip: 391928 ns
+Init camera: 1002936 ns
+Show camera: 4643421 ns
+Init camera: 716858 ns
+Show camera: 3516286 ns
+FPS + flip: 402698 ns
+Init camera: 831827 ns
+Show camera: 4506513 ns
+Init camera: 741357 ns
+Show camera: 4012954 ns
+FPS + flip: 391259 ns
+Init camera: 857787 ns
+Show camera: 5400639 ns
+Init camera: 1043776 ns
+Show camera: 4926721 ns
+FPS + flip: 426898 ns
+Init camera: 768787 ns
+Show camera: 4014454 ns
+Init camera: 538568 ns
+Show camera: 3291458 ns
+FPS + flip: 272189 ns
+Init camera: 451218 ns
+Show camera: 3107368 ns
+Init camera: 424548 ns
+Show camera: 3073858 ns
+FPS + flip: 275229 ns
+Init camera: 1051286 ns
+Show camera: 5687458 ns
+Init camera: 980046 ns
+Show camera: 3327327 ns
+FPS + flip: 276439 ns
+Init camera: 731027 ns
+Show camera: 3509197 ns
+Init camera: 465558 ns
+Show camera: 4510922 ns
+FPS + flip: 309138 ns
+Init camera: 859797 ns
+Show camera: 5467229 ns
+Init camera: 369419 ns
+Show camera: 3124338 ns
+FPS + flip: 256119 ns
+Init camera: 760587 ns
+Show camera: 5632338 ns
+Init camera: 593968 ns
+Show camera: 4589182 ns
+FPS + flip: 316728 ns
+Init camera: 1390794 ns
+Show camera: 3533316 ns
+Init camera: 602867 ns
+Show camera: 3463817 ns
+FPS + flip: 326888 ns
+Init camera: 932717 ns
+Show camera: 6074386 ns
+Init camera: 780807 ns
+Show camera: 3266608 ns
+FPS + flip: 266549 ns
+Init camera: 708257 ns
+Show camera: 3804016 ns
+Init camera: 617918 ns
+Show camera: 3030858 ns
+FPS + flip: 257349 ns
+Init camera: 739677 ns
+Show camera: 5087000 ns
+Init camera: 768047 ns
+Show camera: 4725432 ns
+FPS + flip: 258329 ns
+Init camera: 970637 ns
+Show camera: 5541558 ns
+Init camera: 834957 ns
+Show camera: 4840401 ns
+FPS + flip: 264549 ns
+Init camera: 794767 ns
+Show camera: 4610102 ns
+Init camera: 713037 ns
+Show camera: 5011991 ns
+FPS + flip: 266849 ns
+Init camera: 931106 ns
+Show camera: 6015967 ns
+Init camera: 691757 ns
+Show camera: 5541168 ns
+FPS + flip: 427818 ns
+Init camera: 773897 ns
+Show camera: 4406683 ns
+Init camera: 588978 ns
+Show camera: 3711776 ns
+FPS + flip: 257570 ns
+Init camera: 836297 ns
+Show camera: 5421459 ns
+Init camera: 599538 ns
+Show camera: 4877721 ns
+FPS + flip: 419909 ns
+Init camera: 853567 ns
+Show camera: 4680292 ns
+Init camera: 571438 ns
+Show camera: 5004540 ns
+FPS + flip: 480848 ns
+Init camera: 903257 ns
+Show camera: 7319031 ns
+Init camera: 1657553 ns
+Show camera: 5294309 ns
+FPS + flip: 287019 ns
+Init camera: 895956 ns
+Show camera: 5008780 ns
+Init camera: 599858 ns
+Show camera: 3702246 ns
+FPS + flip: 263239 ns
+Init camera: 727167 ns
+Show camera: 4712171 ns
+Init camera: 631677 ns
+Show camera: 5036081 ns
+FPS + flip: 428118 ns
+Init camera: 847187 ns
+Show camera: 5614988 ns
+Init camera: 579297 ns
+Show camera: 5899597 ns
+FPS + flip: 522488 ns
