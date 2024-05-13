@@ -7,7 +7,7 @@ import numpy as np
 MILI_TO_NANO = 10**6
 
 def get_data():
-    dir = "times"
+    dir = "/home/lara/2024-tfg-lara-poves/src/profiling/times"
     all_tasks = set() 
     data = defaultdict(dict)  
 
@@ -67,7 +67,7 @@ def main():
         ax.set_ylabel("Time (ms)")
         ax.set_ylim(bottom=0, top=80)
         ax.set_xlabel("Task")
-        ax.tick_params(axis='x', rotation=45)
+        ax.tick_params(axis='x', rotation=70)
 
         file_index += 1
 

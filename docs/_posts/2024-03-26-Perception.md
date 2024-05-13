@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-05-01T16:51:00
+last_modified_at: 2024-05-13T12:43:00
 categories:
   - Blog
 tags:
@@ -13,15 +13,15 @@ tags:
 ## Índice
 1. [Clasificación vs detección vs segmentación](#clasificación-vs-detección-vs-segmentación)
 2. [Deep learning](#deep-learning)
-    - [Redes neuronales](#redes-neuronales)
-    - [Redes neuronales convolucionales](#redes-neuronales-convolucionales)
-    - [Redes neuronales recurrentes](#redes-neuronales-recurrentes)
+  - [Redes neuronales](#redes-neuronales)
+  - [Redes neuronales convolucionales](#redes-neuronales-convolucionales)
+  - [Redes neuronales recurrentes](#redes-neuronales-recurrentes)
 3. [SA](#sa)
-    - [Task](#task)
-    - [Model](#model)
-    - [Data](#data)
-    - [RAI](#rai)
-    - [Conclusión](#conclusión)
+  - [Task](#task)
+  - [Model](#model)
+  - [Data](#data)
+  - [RAI](#rai)
+  - [Conclusión](#conclusión)
 4. [EfficientVit](#efficientvit)
 5. [Aplicación](#aplicación)
 
