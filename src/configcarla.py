@@ -87,21 +87,20 @@ class Sensor:
     def __callback_data(self, data):
         self.queue.put(data)
 
-    def update_data(self):
-        self.data = self.get_last_data()
-
     def get_last_data(self):
         if not self.queue.empty():
-            data = self.queue.get(False) # Non-blocking call 
-            return data
-        return None
+            self.data = self.queue.get(False) # Non-blocking call 
+        else:
+            self.data = None
+        return self.data
 
     def process_data(self):
         pass
 
 class CameraRGB(Sensor):      
-    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, text:str,
-                 screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], lane:bool):
+    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
+                 text:str, screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], 
+                 lane:bool, canvas_seg:bool):
         super().__init__(sensor=sensor)
 
         self.__screen = screen
@@ -113,6 +112,7 @@ class CameraRGB(Sensor):
 
         self.__seg = seg
         if seg:
+            self.__canvas_seg = canvas_seg
             self.__seg_model = EV.EfficientVit()
 
         self.__lane = lane
@@ -165,12 +165,17 @@ class CameraRGB(Sensor):
         # Resize for the network
         image_lane = np.zeros((SIZE_CAMERA, SIZE_CAMERA * 2, 3), dtype=np.uint8)
         image_lane[:SIZE_CAMERA, :SIZE_CAMERA, :] = data # Copy the image in the top left corner
-
+    
         with torch.no_grad():
             image_tensor = image_lane.transpose(2,0,1).astype('float32')/255
             x_tensor = torch.from_numpy(image_tensor).to("cuda").unsqueeze(0)
+            print("Lane init:", time.time_ns() - init_time)
+
+            init_time = time.time_ns()
             model_output = torch.softmax(self.__lane_model.forward(x_tensor), dim=1 ).cpu().numpy()
+            print("Lane prediction:", time.time_ns() - init_time)
         
+        init_time = time.time_ns()
         _, left_mask, right_mask = model_output[0]
         self.__mask_lane(mask=left_mask, index=LEFT_LANE, canvas=canvas)
         self.__mask_lane(mask=right_mask, index=RIGHT_LANE, canvas=canvas)
@@ -197,7 +202,7 @@ class CameraRGB(Sensor):
                 count_total += x_right - x_left
                 count_road += np.count_nonzero(region_mask == ROAD)
 
-        print("Lane:", time.time_ns() - init_time, "ns")
+        print("Lane detection:", time.time_ns() - init_time, "ns")
         init_time = time.time_ns()
 
         if count_total > 0:
@@ -218,7 +223,7 @@ class CameraRGB(Sensor):
         else:
             self.__deviation = 0
             self.__road_percentage = 0
-        print("CM%", time.time_ns() - init_time, "ns")
+        print("Lane cm%:", time.time_ns() - init_time, "ns")
 
     def __process_seg(self, data:list):
         init_time = time.time_ns()
@@ -229,8 +234,19 @@ class CameraRGB(Sensor):
         # Prediction
         init_time = time.time_ns()
         pred = self.__seg_model.predict(image_seg)
-        canvas, mask = self.__seg_model.get_canvas(image_data, pred)
-        print("Prediction:", time.time_ns() - init_time, "ns")
+        print("Seg prediction:", time.time_ns() - init_time, "ns")
+
+        init_time = time.time_ns()
+        if self.__canvas_seg:
+            canvas, mask = self.__seg_model.get_canvas(image_data, pred)
+            print("Seg get canvas:", time.time_ns() - init_time, "ns")
+        else:
+            canvas = image_data
+            mask = pred
+
+            if (SIZE_CAMERA, SIZE_CAMERA) != mask.shape:
+                mask = cv2.resize(mask, dsize=(SIZE_CAMERA, SIZE_CAMERA), interpolation=cv2.INTER_NEAREST)
+            print("Seg get mask:", time.time_ns() - init_time, "ns")
 
         init_time = time.time_ns()
         if self.__lane:
@@ -256,8 +272,39 @@ class CameraRGB(Sensor):
                            point=(SIZE_CAMERA, self.__rect_extra.size[0] - self.__size_text))
                 
             self.__screen.blit(surface_seg, self.__rect_extra)
-            print("Show seg:", time.time_ns() - init_time, "ns")
+            print("Seg camera show:", time.time_ns() - init_time, "ns")
 
+    def process_data(self):
+        init_time = time.time_ns()
+        image = self.data
+        if image == None:
+            return 
+
+        image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
+        image_data = np.reshape(image_data, (image.height, image.width, 4))
+
+        # Swap blue and red channels
+        image_data = image_data[:, :, (2, 1, 0)]
+        print("Camera init:", time.time_ns()- init_time, "ns")
+
+        init_time = time.time_ns()
+        if self.__seg:
+            self.__process_seg(image_data)
+            init_time = time.time_ns()
+
+        if self.__rect_org != None:
+            # Reserve mirror effect
+            image_surface = pygame.surfarray.make_surface(image_data)
+            flipped_surface = pygame.transform.flip(image_surface, True, False)
+            screen_surface = pygame.transform.scale(flipped_surface, self.__rect_org.size)
+
+            if self.text != None:
+                write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, bold=True,
+                           size=self.__size_text, point=(self.__rect_org.size[0], 0))
+                
+            self.__screen.blit(screen_surface, self.__rect_org)
+            print("Camera show:", time.time_ns() - init_time, "ns")
+    
     def get_deviation(self):
         return self.__deviation
     
@@ -281,37 +328,6 @@ class CameraRGB(Sensor):
     
     def set_mem_max_lane(self, men:int):
         self.__mem_max = men
-
-    def process_data(self):
-        init_time = time.time_ns()
-        image = self.data
-        if image == None:
-            return 
-
-        image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
-        image_data = np.reshape(image_data, (image.height, image.width, 4))
-
-        # Swap blue and red channels
-        image_data = image_data[:, :, (2, 1, 0)]
-        print("Init camera:", time.time_ns()- init_time, "ns")
-
-        init_time = time.time_ns()
-        if self.__seg:
-            self.__process_seg(image_data)
-            init_time = time.time_ns()
-
-        if self.__rect_org != None:
-            # Reserve mirror effect
-            image_surface = pygame.surfarray.make_surface(image_data)
-            flipped_surface = pygame.transform.flip(image_surface, True, False)
-            screen_surface = pygame.transform.scale(flipped_surface, self.__rect_org.size)
-
-            if self.text != None:
-                write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, bold=True,
-                           size=self.__size_text, point=(self.__rect_org.size[0], 0))
-                
-            self.__screen.blit(screen_surface, self.__rect_org)
-            print("Show camera:", time.time_ns() - init_time, "ns")
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
@@ -481,7 +497,7 @@ class Lidar(Sensor):
 
         if self.__rect != None:
             self.__sub_screen.blit(self.__image, (0, 0))
-        print("Init lidar:", time.time_ns() - init_time, "ns")
+        print("Lidar init:", time.time_ns() - init_time, "ns")
 
         init_time = time.time_ns()
         for x, y, z, i in lidar_data:
@@ -497,15 +513,17 @@ class Lidar(Sensor):
                 center = (int(x * self.__scale + self.__center_screen[0]),
                           int(y * self.__scale + self.__center_screen[1]))
                 pygame.draw.circle(self.__sub_screen, color, center, thickness)
-        print("Lidar draw:", time.time_ns() - init_time, "ns")
+        print("Lidar points:", time.time_ns() - init_time, "ns")
 
         init_time = time.time_ns()
         self.__meas_zones = [dist_zones, z_zones]
         self.__update_stats()  
         print("Lidar stats:", time.time_ns()- init_time, "ns")
 
+        init_time = time.time_ns()
         if self.__rect != None:
             self.__screen.blit(self.__sub_screen, self.__rect)
+            print("Lidar blit:", time.time_ns() - init_time)
     
     def set_i_threshold(self, i:float):
         self.__i_threshold = i
@@ -561,10 +579,10 @@ class Vehicle_sensors:
     
     def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
                        transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
-                       text:str=None, lane:bool=False):
+                       text:str=None, lane:bool=False, canvas_seg:bool=True):
         sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform, type=CAMERA)
         camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.__screen, 
-                           seg=seg, init_extra=init_extra, text=text, lane=lane)
+                           seg=seg, init_extra=init_extra, text=text, lane=lane, canvas_seg=canvas_seg)
         self.sensors.append(camera)
         return camera
     
@@ -579,7 +597,7 @@ class Vehicle_sensors:
 
     def update_data(self, flip:bool=True):
         for sensor in self.sensors:
-            sensor.update_data()
+            sensor.get_last_data()
 
         for sensor in self.sensors:
             sensor.process_data()
@@ -650,7 +668,7 @@ class PID:
         self.__kp = 1 / (SIZE_CAMERA / 2)
         self.__count = 0
 
-        self.__kd = -self.__kp / 2.3
+        self.__kd = -self.__kp / 2.45
 
         self.__error = 0
         self.__prev_error = 0
@@ -663,11 +681,11 @@ class PID:
         self.__error = error
 
         if error > 10:
-            control.throttle = 0.42
+            control.throttle = 0.44
         elif self.__count < 100:
             control.throttle = 0.8
         else:
-            control.throttle = 0.5
+            control.throttle = 0.53
 
         control.steer = self.__kp * self.__error + self.__kd * self.__prev_error
         self.__vehicle.apply_control(control)
