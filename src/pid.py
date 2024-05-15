@@ -3,13 +3,15 @@ import carla
 import configcarla
 from configcarla import SIZE_CAMERA
 
+Z = 0.5
+
 def main():
     # Scenes
     town_s1 = 'Town05'
-    ego_transform_s1 = carla.Transform(carla.Location(x=151.5, y=5.0, z=0.8), carla.Rotation(yaw=90.0))
+    ego_transform_s1 = carla.Transform(carla.Location(x=151.5, y=7.0, z=Z), carla.Rotation(yaw=90.0))
 
     town_s2 = 'Town05'
-    ego_transform_s2 = carla.Transform(carla.Location(x=47.0, y=-146.0, z=0.8), carla.Rotation(yaw=0.0))
+    ego_transform_s2 = carla.Transform(carla.Location(x=47.0, y=-146.0, z=Z), carla.Rotation(yaw=0.0))
 
     world, _ = configcarla.setup_carla(name_world=town_s1, port=2000, delta_seconds=0.05)
     screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='Follow lane - PID')
