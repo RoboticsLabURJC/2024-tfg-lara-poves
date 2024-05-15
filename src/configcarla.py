@@ -79,14 +79,12 @@ def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=Fa
     img.blit(text, text__rect)
 
 class Sensor:
-    def __init__(self, sensor:carla.Sensor, name:str):
-        self.name = name
+    def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
         self.queue = LifoQueue()
         self.sensor.listen(lambda data: self.__callback_data(data))
 
     def __callback_data(self, data):
-        print(data.frame, self.name)
         self.queue.put(data)
 
     def get_last_data(self):
@@ -100,10 +98,10 @@ class Sensor:
         pass
 
 class CameraRGB(Sensor):      
-    def __init__(self, name:str, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
+    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
                  text:str, screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], 
                  lane:bool, canvas_seg:bool):
-        super().__init__(sensor=sensor, name=name)
+        super().__init__(sensor=sensor)
 
         self.__screen = screen
         self.text = text
@@ -347,9 +345,9 @@ class CameraRGB(Sensor):
         self.__mem_max = men
         
 class Lidar(Sensor): 
-    def __init__(self, name:str, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
-                 scale:int, front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool=True):
-        super().__init__(sensor=sensor, name=name)
+    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
+                 front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool=True):
+        super().__init__(sensor=sensor)
 
         self.__rect = init
         self.show_stats = show_stats
@@ -601,10 +599,9 @@ class Vehicle_sensors:
             init = None
             init_extra = None
 
-        name = "Camera" + text
         sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform, type=CAMERA)
-        camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.__screen, name=name,
-                           seg=seg, init_extra=init_extra, text=text, lane=lane, canvas_seg=canvas_seg)
+        camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.__screen, seg=seg,
+                           init_extra=init_extra, text=text, lane=lane, canvas_seg=canvas_seg)
         self.sensors.append(camera)
         return camera
     
@@ -613,17 +610,31 @@ class Vehicle_sensors:
         if self.__screen == None:
             init = None
 
-        name = "Lidar"
         sensor = self.__put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, type=LIDAR)
         lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale,
-                      yaw=transform.rotation.yaw, screen=self.__screen, show_stats=show_stats, name=name)
+                      yaw=transform.rotation.yaw, screen=self.__screen, show_stats=show_stats)
         
         self.sensors.append(lidar)
         return lidar
 
     def update_data(self, flip:bool=True):
-        for sensor in self.sensors:
-            sensor.get_last_data()
+        i = count = 0
+        frame_prev = frame = None
+        while i < len(self.sensors):
+            frame_prev = frame
+            data = self.sensors[i].get_last_data()
+
+            if frame == None:
+                i += 1
+                continue
+
+            frame = data.frame
+            if i != 0 and frame != frame_prev:
+                i = 0
+                count += 1
+                assert count >= 3, "Error in frames"
+            else:
+                i += 1
 
         for sensor in self.sensors:
             sensor.process_data()

@@ -13,7 +13,7 @@ def main():
     town_s2 = 'Town05'
     ego_transform_s2 = carla.Transform(carla.Location(x=47.0, y=-146.0, z=Z), carla.Rotation(yaw=0.0))
 
-    world, _ = configcarla.setup_carla(name_world=town_s1, port=2000, delta_seconds=0.05)
+    world, client = configcarla.setup_carla(name_world=town_s1, port=2000, delta_seconds=0.05)
     screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='Follow lane - PID')
 
     # Add Ego Vehicle
