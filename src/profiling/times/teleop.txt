@@ -1,2290 +1,2874 @@
-Camera init: 823195 ns
-Camera show: 5508587 ns
-Camera init: 525877 ns
-Camera show: 3343920 ns
-FPS + flip: 241648 ns
-Camera init: 744836 ns
-Camera show: 4903880 ns
-Camera init: 605047 ns
-Camera show: 3486499 ns
-FPS + flip: 255509 ns
-Camera init: 780135 ns
-Camera show: 4933041 ns
-Camera init: 742246 ns
-Camera show: 3088771 ns
-FPS + flip: 227668 ns
-Camera init: 1089353 ns
-Camera show: 5977144 ns
-Camera init: 450647 ns
-Camera show: 2655525 ns
-FPS + flip: 231818 ns
-Camera init: 1438131 ns
-Camera show: 8252110 ns
-Camera init: 759645 ns
-Camera show: 4950540 ns
-FPS + flip: 241309 ns
-Camera init: 922354 ns
-Camera show: 5063980 ns
-Camera init: 703476 ns
-Camera show: 2796253 ns
-FPS + flip: 237129 ns
-Camera init: 1083333 ns
-Camera show: 5941115 ns
-Camera init: 589616 ns
-Camera show: 4233374 ns
-FPS + flip: 377528 ns
-Camera init: 769976 ns
-Camera show: 4973220 ns
-Camera init: 601106 ns
-Camera show: 4299354 ns
-FPS + flip: 376278 ns
-Camera init: 623276 ns
-Camera show: 5156819 ns
-Camera init: 579747 ns
-Camera show: 4394714 ns
-FPS + flip: 280438 ns
-Camera init: 748925 ns
-Camera show: 5237298 ns
-Camera init: 410118 ns
-Camera show: 4487153 ns
-FPS + flip: 243778 ns
-Camera init: 788855 ns
-Camera show: 5666306 ns
-Camera init: 612967 ns
-Camera show: 5371057 ns
-FPS + flip: 381748 ns
-Camera init: 1214323 ns
-Camera show: 9356054 ns
-Camera init: 1366472 ns
-Camera show: 3581668 ns
-FPS + flip: 253759 ns
-Camera init: 984064 ns
-Camera show: 5163358 ns
-Camera init: 660396 ns
-Camera show: 3057421 ns
-FPS + flip: 236068 ns
-Camera init: 808375 ns
-Camera show: 6784749 ns
-Camera init: 743006 ns
-Camera show: 3278480 ns
-FPS + flip: 312768 ns
-Camera init: 1016964 ns
-Camera show: 4416164 ns
-Camera init: 570356 ns
-Camera show: 3860547 ns
-FPS + flip: 315018 ns
-Camera init: 867874 ns
-Camera show: 4715892 ns
-Camera init: 671276 ns
-Camera show: 2707654 ns
-FPS + flip: 256919 ns
-Camera init: 1573561 ns
-Camera show: 6370131 ns
-Camera init: 754515 ns
-Camera show: 3901097 ns
-FPS + flip: 269808 ns
-Camera init: 916345 ns
-Camera show: 6616000 ns
-Camera init: 645416 ns
-Camera show: 5720486 ns
-FPS + flip: 336198 ns
-Camera init: 1152132 ns
-Camera show: 6119554 ns
-Camera init: 822505 ns
-Camera show: 3844297 ns
-FPS + flip: 270378 ns
-Camera init: 881454 ns
-Camera show: 6225793 ns
-Camera init: 635486 ns
-Camera show: 3784807 ns
-FPS + flip: 258298 ns
-Camera init: 1266492 ns
-Camera show: 6266462 ns
-Camera init: 755116 ns
-Camera show: 3816297 ns
-FPS + flip: 258288 ns
-Camera init: 1903708 ns
-Camera show: 3661368 ns
-Camera init: 612626 ns
-Camera show: 3848057 ns
-FPS + flip: 344238 ns
-Camera init: 627856 ns
-Camera show: 3360470 ns
-Camera init: 538756 ns
-Camera show: 4995960 ns
-FPS + flip: 425687 ns
-Camera init: 625616 ns
-Camera show: 4071525 ns
-Camera init: 523277 ns
-Camera show: 3813697 ns
-FPS + flip: 324428 ns
-Camera init: 1837779 ns
-Camera show: 6180162 ns
-Camera init: 741125 ns
-Camera show: 3771798 ns
-FPS + flip: 272418 ns
-Camera init: 1634910 ns
-Camera show: 4344354 ns
-Camera init: 449197 ns
-Camera show: 3060532 ns
-FPS + flip: 261968 ns
-Camera init: 856225 ns
-Camera show: 6139773 ns
-Camera init: 585546 ns
-Camera show: 4094925 ns
-FPS + flip: 292448 ns
-Camera init: 943074 ns
-Camera show: 5145089 ns
-Camera init: 867915 ns
-Camera show: 3461599 ns
-FPS + flip: 262258 ns
-Camera init: 836295 ns
-Camera show: 5006790 ns
-Camera init: 747636 ns
-Camera show: 4298854 ns
-FPS + flip: 429447 ns
-Camera init: 778145 ns
-Camera show: 3665478 ns
-Camera init: 461718 ns
-Camera show: 3667227 ns
-FPS + flip: 420698 ns
-Camera init: 929524 ns
-Camera show: 5208969 ns
-Camera init: 719376 ns
-Camera show: 3807156 ns
-FPS + flip: 262048 ns
-Camera init: 661656 ns
-Camera show: 4318564 ns
-Camera init: 589297 ns
-Camera show: 4221325 ns
-FPS + flip: 251999 ns
-Camera init: 893975 ns
-Camera show: 4898571 ns
-Camera init: 663236 ns
-Camera show: 3820757 ns
-FPS + flip: 270888 ns
-Camera init: 896145 ns
-Camera show: 5000579 ns
-Camera init: 649496 ns
-Camera show: 5318868 ns
-FPS + flip: 449047 ns
-Camera init: 1040504 ns
-Camera show: 5101449 ns
-Camera init: 760295 ns
-Camera show: 2801063 ns
-FPS + flip: 263878 ns
-Camera init: 517527 ns
-Camera show: 3733637 ns
-Camera init: 600636 ns
-Camera show: 4285704 ns
-FPS + flip: 337528 ns
-Camera init: 975894 ns
-Camera show: 6315792 ns
-Camera init: 744796 ns
-Camera show: 3326380 ns
-FPS + flip: 253388 ns
-Camera init: 1072673 ns
-Camera show: 4811091 ns
-Camera init: 746026 ns
-Camera show: 3859266 ns
-FPS + flip: 259159 ns
-Camera init: 853564 ns
-Camera show: 5063210 ns
-Camera init: 589626 ns
-Camera show: 5162169 ns
-FPS + flip: 259709 ns
-Camera init: 1051204 ns
-Camera show: 5489847 ns
-Camera init: 739306 ns
-Camera show: 4117445 ns
-FPS + flip: 258048 ns
-Camera init: 1249573 ns
-Camera show: 5202108 ns
-Camera init: 736475 ns
-Camera show: 3373500 ns
-FPS + flip: 268479 ns
-Camera init: 1068144 ns
-Camera show: 5499967 ns
-Camera init: 680586 ns
-Camera show: 4533242 ns
-FPS + flip: 429258 ns
-Camera init: 835565 ns
-Camera show: 5044040 ns
-Camera init: 753816 ns
-Camera show: 3858097 ns
-FPS + flip: 263358 ns
-Camera init: 703156 ns
-Camera show: 4394434 ns
-Camera init: 640986 ns
-Camera show: 4728411 ns
-FPS + flip: 437647 ns
-Camera init: 864835 ns
-Camera show: 4479373 ns
-Camera init: 475867 ns
-Camera show: 3322491 ns
-FPS + flip: 260468 ns
-Camera init: 732196 ns
-Camera show: 5708105 ns
-Camera init: 597436 ns
-Camera show: 5168609 ns
-FPS + flip: 410818 ns
-Camera init: 946034 ns
-Camera show: 7259906 ns
-Camera init: 743456 ns
-Camera show: 3802687 ns
-FPS + flip: 381778 ns
-Camera init: 616617 ns
-Camera show: 6020783 ns
-Camera init: 418947 ns
-Camera show: 2905753 ns
-FPS + flip: 261838 ns
-Camera init: 717646 ns
-Camera show: 6039323 ns
-Camera init: 609996 ns
-Camera show: 5167169 ns
-FPS + flip: 435397 ns
-Camera init: 837815 ns
-Camera show: 5252909 ns
-Camera init: 597267 ns
-Camera show: 5033629 ns
-FPS + flip: 411218 ns
-Camera init: 1346432 ns
-Camera show: 4091635 ns
-Camera init: 579636 ns
-Camera show: 4640772 ns
-FPS + flip: 701286 ns
-Camera init: 1318732 ns
-Camera show: 7181526 ns
-Camera init: 717986 ns
-Camera show: 4173684 ns
-FPS + flip: 335068 ns
-Camera init: 1138083 ns
-Camera show: 5652696 ns
-Camera init: 777646 ns
-Camera show: 3995055 ns
-FPS + flip: 266878 ns
-Camera init: 886075 ns
-Camera show: 6787509 ns
-Camera init: 685126 ns
-Camera show: 4793081 ns
-FPS + flip: 313118 ns
-Camera init: 1203403 ns
-Camera show: 5674176 ns
-Camera init: 648446 ns
-Camera show: 5285108 ns
-FPS + flip: 265299 ns
-Camera init: 920365 ns
-Camera show: 4664261 ns
-Camera init: 602256 ns
-Camera show: 4514093 ns
-FPS + flip: 514567 ns
-Camera init: 633906 ns
-Camera show: 4617482 ns
-Camera init: 553317 ns
-Camera show: 3536949 ns
-FPS + flip: 282008 ns
-Camera init: 1011384 ns
-Camera show: 4701222 ns
-Camera init: 602746 ns
-Camera show: 2735003 ns
-FPS + flip: 267289 ns
-Camera init: 808255 ns
-Camera show: 4454813 ns
-Camera init: 582687 ns
-Camera show: 5229218 ns
-FPS + flip: 432667 ns
-Camera init: 642766 ns
-Camera show: 4615882 ns
-Camera init: 604826 ns
-Camera show: 4185555 ns
-FPS + flip: 455407 ns
-Camera init: 667495 ns
-Camera show: 4355644 ns
-Camera init: 588897 ns
-Camera show: 3567909 ns
-FPS + flip: 277778 ns
-Camera init: 566646 ns
-Camera show: 4147505 ns
-Camera init: 565396 ns
-Camera show: 4251885 ns
-FPS + flip: 489817 ns
-Camera init: 1775700 ns
-Camera show: 4653691 ns
-Camera init: 447598 ns
-Camera show: 3094981 ns
-FPS + flip: 262779 ns
-Camera init: 1031894 ns
-Camera show: 5267518 ns
-Camera init: 593746 ns
-Camera show: 3417309 ns
-FPS + flip: 268308 ns
-Camera init: 599226 ns
-Camera show: 3356150 ns
-Camera init: 460277 ns
-Camera show: 2602414 ns
-FPS + flip: 264968 ns
-Camera init: 733656 ns
-Camera show: 5476816 ns
-Camera init: 690885 ns
-Camera show: 3328021 ns
-FPS + flip: 268988 ns
-Camera init: 737615 ns
-Camera show: 4328924 ns
-Camera init: 614026 ns
-Camera show: 3974286 ns
-FPS + flip: 456057 ns
-Camera init: 968055 ns
-Camera show: 5100289 ns
-Camera init: 643336 ns
-Camera show: 3311380 ns
-FPS + flip: 337538 ns
-Camera init: 720905 ns
-Camera show: 4183225 ns
-Camera init: 503227 ns
-Camera show: 3952277 ns
-FPS + flip: 273958 ns
-Camera init: 672076 ns
-Camera show: 4147205 ns
-Camera init: 536677 ns
-Camera show: 3819617 ns
-FPS + flip: 280158 ns
-Camera init: 681386 ns
-Camera show: 3162711 ns
-Camera init: 677586 ns
-Camera show: 4603902 ns
-FPS + flip: 345228 ns
-Camera init: 797385 ns
-Camera show: 3753847 ns
-Camera init: 547177 ns
-Camera show: 5333217 ns
-FPS + flip: 343718 ns
-Camera init: 733356 ns
-Camera show: 5106559 ns
-Camera init: 882205 ns
-Camera show: 3638018 ns
-FPS + flip: 283098 ns
-Camera init: 615216 ns
-Camera show: 4508003 ns
-Camera init: 603776 ns
-Camera show: 5380698 ns
-FPS + flip: 434587 ns
-Camera init: 696796 ns
-Camera show: 5083509 ns
-Camera init: 648406 ns
-Camera show: 4104415 ns
-FPS + flip: 313028 ns
-Camera init: 864914 ns
-Camera show: 4426044 ns
-Camera init: 577387 ns
-Camera show: 4016706 ns
-FPS + flip: 417328 ns
-Camera init: 915124 ns
-Camera show: 5331798 ns
-Camera init: 597617 ns
-Camera show: 3803177 ns
-FPS + flip: 263119 ns
-Camera init: 876605 ns
-Camera show: 4937660 ns
-Camera init: 583876 ns
-Camera show: 3764408 ns
-FPS + flip: 344778 ns
-Camera init: 848485 ns
-Camera show: 5419118 ns
-Camera init: 638756 ns
-Camera show: 4662252 ns
-FPS + flip: 260868 ns
-Camera init: 653666 ns
-Camera show: 4618643 ns
-Camera init: 615467 ns
-Camera show: 3182261 ns
-FPS + flip: 255498 ns
-Camera init: 782685 ns
-Camera show: 5344008 ns
-Camera init: 538977 ns
-Camera show: 3148860 ns
-FPS + flip: 252258 ns
-Camera init: 741556 ns
-Camera show: 4308254 ns
-Camera init: 622826 ns
-Camera show: 4322594 ns
-FPS + flip: 333968 ns
-Camera init: 864255 ns
-Camera show: 5020780 ns
-Camera init: 585677 ns
-Camera show: 3400859 ns
-FPS + flip: 268458 ns
-Camera init: 1002154 ns
-Camera show: 4196854 ns
-Camera init: 742606 ns
-Camera show: 3832267 ns
-FPS + flip: 281318 ns
-Camera init: 1337832 ns
-Camera show: 4725851 ns
-Camera init: 555986 ns
-Camera show: 3080992 ns
-FPS + flip: 263868 ns
-Camera init: 1004784 ns
-Camera show: 4417334 ns
-Camera init: 532457 ns
-Camera show: 3809517 ns
-FPS + flip: 399537 ns
-Camera init: 745285 ns
-Camera show: 3402660 ns
-Camera init: 490977 ns
-Camera show: 3847177 ns
-FPS + flip: 318528 ns
-Camera init: 881555 ns
-Camera show: 5342598 ns
-Camera init: 1050173 ns
-Camera show: 4480614 ns
-FPS + flip: 320748 ns
-Camera init: 620946 ns
-Camera show: 3103461 ns
-Camera init: 473657 ns
-Camera show: 3549349 ns
-FPS + flip: 253909 ns
-Camera init: 1160123 ns
-Camera show: 3688428 ns
-Camera init: 509817 ns
-Camera show: 3825627 ns
-FPS + flip: 263568 ns
-Camera init: 716186 ns
-Camera show: 3862747 ns
-Camera init: 507837 ns
-Camera show: 3726877 ns
-FPS + flip: 311519 ns
-Camera init: 559806 ns
-Camera show: 3114222 ns
-Camera init: 671846 ns
-Camera show: 3623128 ns
-FPS + flip: 262759 ns
-Camera init: 1273432 ns
-Camera show: 3243100 ns
-Camera init: 564587 ns
-Camera show: 3746137 ns
-FPS + flip: 316228 ns
-Camera init: 771185 ns
-Camera show: 4066846 ns
-Camera init: 542827 ns
-Camera show: 3114361 ns
-FPS + flip: 258649 ns
-Camera init: 1092884 ns
-Camera show: 5702175 ns
-Camera init: 636236 ns
-Camera show: 5056910 ns
-FPS + flip: 427747 ns
-Camera init: 699425 ns
-Camera show: 4020386 ns
-Camera init: 793515 ns
-Camera show: 5295178 ns
-FPS + flip: 475867 ns
-Camera init: 1127063 ns
-Camera show: 6346942 ns
-Camera init: 667006 ns
-Camera show: 4064486 ns
-FPS + flip: 349468 ns
-Camera init: 837825 ns
-Camera show: 5385898 ns
-Camera init: 646796 ns
-Camera show: 4408593 ns
-FPS + flip: 272899 ns
-Camera init: 932484 ns
-Camera show: 6905048 ns
-Camera init: 470367 ns
-Camera show: 3304360 ns
-FPS + flip: 256668 ns
-Camera init: 1127114 ns
-Camera show: 6035303 ns
-Camera init: 714956 ns
-Camera show: 2908693 ns
-FPS + flip: 260158 ns
-Camera init: 950674 ns
-Camera show: 4575513 ns
-Camera init: 712076 ns
-Camera show: 3956456 ns
-FPS + flip: 263339 ns
-Camera init: 732716 ns
-Camera show: 5529477 ns
-Camera init: 788075 ns
-Camera show: 3286070 ns
-FPS + flip: 288559 ns
-Camera init: 737036 ns
-Camera show: 5687985 ns
-Camera init: 678636 ns
-Camera show: 3156461 ns
-FPS + flip: 262468 ns
-Camera init: 880154 ns
-Camera show: 4750721 ns
-Camera init: 616996 ns
-Camera show: 3424279 ns
-FPS + flip: 270009 ns
-Camera init: 1706909 ns
-Camera show: 4857811 ns
-Camera init: 590456 ns
-Camera show: 3310840 ns
-FPS + flip: 317078 ns
-Camera init: 762595 ns
-Camera show: 5119429 ns
-Camera init: 631976 ns
-Camera show: 3713378 ns
-FPS + flip: 259949 ns
-Camera init: 987794 ns
-Camera show: 5640606 ns
-Camera init: 716535 ns
-Camera show: 2904683 ns
-FPS + flip: 315518 ns
-Camera init: 1115493 ns
-Camera show: 6193643 ns
-Camera init: 461537 ns
-Camera show: 3053711 ns
-FPS + flip: 264858 ns
-Camera init: 481557 ns
-Camera show: 2810883 ns
-Camera init: 496537 ns
-Camera show: 2526025 ns
-FPS + flip: 262829 ns
-Camera init: 1138643 ns
-Camera show: 6403351 ns
-Camera init: 455587 ns
-Camera show: 3102842 ns
-FPS + flip: 259348 ns
-Camera init: 754485 ns
-Camera show: 3494779 ns
-Camera init: 527927 ns
-Camera show: 3079001 ns
-FPS + flip: 257149 ns
-Camera init: 903035 ns
-Camera show: 7334626 ns
-Camera init: 468797 ns
-Camera show: 3010982 ns
-FPS + flip: 255268 ns
-Camera init: 870994 ns
-Camera show: 5176379 ns
-Camera init: 603357 ns
-Camera show: 4506553 ns
-FPS + flip: 417118 ns
-Camera init: 793875 ns
-Camera show: 4630322 ns
-Camera init: 645766 ns
-Camera show: 4149115 ns
-FPS + flip: 303769 ns
-Camera init: 913775 ns
-Camera show: 5233429 ns
-Camera init: 632947 ns
-Camera show: 4979469 ns
-FPS + flip: 434297 ns
-Camera init: 1003594 ns
-Camera show: 5588616 ns
-Camera init: 615056 ns
-Camera show: 5003070 ns
-FPS + flip: 414497 ns
-Camera init: 709285 ns
-Camera show: 4249425 ns
-Camera init: 693366 ns
-Camera show: 3756867 ns
-FPS + flip: 251159 ns
-Camera init: 592656 ns
-Camera show: 4686081 ns
-Camera init: 471288 ns
-Camera show: 4384654 ns
-FPS + flip: 314738 ns
-Camera init: 859795 ns
-Camera show: 5543247 ns
-Camera init: 659626 ns
-Camera show: 4007896 ns
-FPS + flip: 405377 ns
-Camera init: 855845 ns
-Camera show: 4422343 ns
-Camera init: 648966 ns
-Camera show: 3891707 ns
-FPS + flip: 417987 ns
-Camera init: 608726 ns
-Camera show: 4108985 ns
-Camera init: 501267 ns
-Camera show: 4559033 ns
-FPS + flip: 417768 ns
-Camera init: 739375 ns
-Camera show: 5126209 ns
-Camera init: 646456 ns
-Camera show: 3896217 ns
-FPS + flip: 252849 ns
-Camera init: 896884 ns
-Camera show: 6092863 ns
-Camera init: 912324 ns
-Camera show: 8827527 ns
-FPS + flip: 520896 ns
-Camera init: 1125233 ns
-Camera show: 7193136 ns
-Camera init: 781565 ns
-Camera show: 3691868 ns
-FPS + flip: 290538 ns
-Camera init: 816115 ns
-Camera show: 4563752 ns
-Camera init: 724836 ns
-Camera show: 3260650 ns
-FPS + flip: 311868 ns
-Camera init: 876454 ns
-Camera show: 4389164 ns
-Camera init: 534707 ns
-Camera show: 3879727 ns
-FPS + flip: 268408 ns
-Camera init: 852615 ns
-Camera show: 6728969 ns
-Camera init: 795836 ns
-Camera show: 3309250 ns
-FPS + flip: 267378 ns
-Camera init: 610796 ns
-Camera show: 4053066 ns
-Camera init: 482267 ns
-Camera show: 2877703 ns
-FPS + flip: 284609 ns
-Camera init: 961364 ns
-Camera show: 5606627 ns
-Camera init: 548617 ns
-Camera show: 3128621 ns
-FPS + flip: 261908 ns
-Camera init: 971074 ns
-Camera show: 5463738 ns
-Camera init: 655516 ns
-Camera show: 3680578 ns
-FPS + flip: 251608 ns
-Camera init: 644186 ns
-Camera show: 5002060 ns
-Camera init: 627326 ns
-Camera show: 5062700 ns
-FPS + flip: 481627 ns
-Camera init: 740875 ns
-Camera show: 3716468 ns
-Camera init: 593687 ns
-Camera show: 3330430 ns
-FPS + flip: 284508 ns
-Camera init: 750266 ns
-Camera show: 5467817 ns
-Camera init: 662406 ns
-Camera show: 5129959 ns
-FPS + flip: 425128 ns
-Camera init: 1228882 ns
-Camera show: 5985254 ns
-Camera init: 768515 ns
-Camera show: 4797512 ns
-FPS + flip: 565747 ns
-Camera init: 664766 ns
-Camera show: 5543736 ns
-Camera init: 719676 ns
-Camera show: 3700717 ns
-FPS + flip: 265589 ns
-Camera init: 1070574 ns
-Camera show: 6741189 ns
-Camera init: 676196 ns
-Camera show: 4568403 ns
-FPS + flip: 256378 ns
-Camera init: 1574160 ns
-Camera show: 8004092 ns
-Camera init: 688176 ns
-Camera show: 3646938 ns
-FPS + flip: 271349 ns
-Camera init: 888025 ns
-Camera show: 4787861 ns
-Camera init: 668736 ns
-Camera show: 3435589 ns
-FPS + flip: 267939 ns
-Camera init: 927194 ns
-Camera show: 6164023 ns
-Camera init: 593657 ns
-Camera show: 5136449 ns
-FPS + flip: 261828 ns
-Camera init: 711465 ns
-Camera show: 4119495 ns
-Camera init: 511527 ns
-Camera show: 4098105 ns
-FPS + flip: 349088 ns
-Camera init: 917015 ns
-Camera show: 6529441 ns
-Camera init: 680046 ns
-Camera show: 5142439 ns
-FPS + flip: 421247 ns
-Camera init: 964314 ns
-Camera show: 6251432 ns
-Camera init: 761226 ns
-Camera show: 3467789 ns
-FPS + flip: 262758 ns
-Camera init: 1258153 ns
-Camera show: 5724715 ns
-Camera init: 979444 ns
-Camera show: 3719918 ns
-FPS + flip: 278098 ns
-Camera init: 1148103 ns
-Camera show: 5382518 ns
-Camera init: 556486 ns
-Camera show: 4276794 ns
-FPS + flip: 324378 ns
-Camera init: 601926 ns
-Camera show: 4733812 ns
-Camera init: 773245 ns
-Camera show: 4465873 ns
-FPS + flip: 420058 ns
-Camera init: 694015 ns
-Camera show: 3697218 ns
-Camera init: 482377 ns
-Camera show: 3148671 ns
-FPS + flip: 914715 ns
-Camera init: 1012704 ns
-Camera show: 4796101 ns
-Camera init: 662856 ns
-Camera show: 3063331 ns
-FPS + flip: 274399 ns
-Camera init: 677376 ns
-Camera show: 3575779 ns
-Camera init: 538407 ns
-Camera show: 3751857 ns
-FPS + flip: 268509 ns
-Camera init: 910894 ns
-Camera show: 5029770 ns
-Camera init: 932264 ns
-Camera show: 4048206 ns
-FPS + flip: 279408 ns
-Camera init: 1145023 ns
-Camera show: 5662667 ns
-Camera init: 493797 ns
-Camera show: 3189721 ns
-FPS + flip: 287568 ns
-Camera init: 1197653 ns
-Camera show: 4916580 ns
-Camera init: 439517 ns
-Camera show: 3135942 ns
-FPS + flip: 263868 ns
-Camera init: 771846 ns
-Camera show: 4725252 ns
-Camera init: 904854 ns
-Camera show: 4133815 ns
-FPS + flip: 383368 ns
-Camera init: 765765 ns
-Camera show: 5211179 ns
-Camera init: 423757 ns
-Camera show: 3170201 ns
-FPS + flip: 284218 ns
-Camera init: 685006 ns
-Camera show: 5217058 ns
-Camera init: 609546 ns
-Camera show: 4683962 ns
-FPS + flip: 255248 ns
-Camera init: 693096 ns
-Camera show: 5213609 ns
-Camera init: 802895 ns
-Camera show: 5262178 ns
-FPS + flip: 406508 ns
-Camera init: 654476 ns
-Camera show: 4201964 ns
-Camera init: 797376 ns
-Camera show: 4032096 ns
-FPS + flip: 258138 ns
-Camera init: 711096 ns
-Camera show: 4639132 ns
-Camera init: 635226 ns
-Camera show: 4269804 ns
-FPS + flip: 360327 ns
-Camera init: 877885 ns
-Camera show: 6975648 ns
-Camera init: 1173393 ns
-Camera show: 3104051 ns
-FPS + flip: 332218 ns
-Camera init: 594406 ns
-Camera show: 4287915 ns
-Camera init: 783795 ns
-Camera show: 3168341 ns
-FPS + flip: 445208 ns
-Camera init: 638016 ns
-Camera show: 3971696 ns
-Camera init: 540936 ns
-Camera show: 3040772 ns
-FPS + flip: 242228 ns
-Camera init: 562407 ns
-Camera show: 4285714 ns
-Camera init: 558646 ns
-Camera show: 3269150 ns
-FPS + flip: 299378 ns
-Camera init: 762095 ns
-Camera show: 4141615 ns
-Camera init: 472077 ns
-Camera show: 3173651 ns
-FPS + flip: 275159 ns
-Camera init: 572167 ns
-Camera show: 3807187 ns
-Camera init: 485787 ns
-Camera show: 3763407 ns
-FPS + flip: 301798 ns
-Camera init: 613966 ns
-Camera show: 3458539 ns
-Camera init: 474907 ns
-Camera show: 3632208 ns
-FPS + flip: 302548 ns
-Camera init: 856265 ns
-Camera show: 4004625 ns
-Camera init: 551567 ns
-Camera show: 4065835 ns
-FPS + flip: 322528 ns
-Camera init: 593016 ns
-Camera show: 3964077 ns
-Camera init: 581087 ns
-Camera show: 3190480 ns
-FPS + flip: 299798 ns
-Camera init: 739795 ns
-Camera show: 3412710 ns
-Camera init: 637917 ns
-Camera show: 3441609 ns
-FPS + flip: 319538 ns
-Camera init: 692476 ns
-Camera show: 3767487 ns
-Camera init: 516317 ns
-Camera show: 3181571 ns
-FPS + flip: 245139 ns
-Camera init: 693326 ns
-Camera show: 4154515 ns
-Camera init: 654386 ns
-Camera show: 3264441 ns
-FPS + flip: 273018 ns
-Camera init: 738295 ns
-Camera show: 4362784 ns
-Camera init: 604527 ns
-Camera show: 4461313 ns
-FPS + flip: 298248 ns
-Camera init: 592237 ns
-Camera show: 5242938 ns
-Camera init: 803975 ns
-Camera show: 4584993 ns
-FPS + flip: 263339 ns
-Camera init: 1150573 ns
-Camera show: 7711103 ns
-Camera init: 1052574 ns
-Camera show: 3790717 ns
-FPS + flip: 345018 ns
-Camera init: 501417 ns
-Camera show: 3013222 ns
-Camera init: 433138 ns
-Camera show: 3710797 ns
-FPS + flip: 290479 ns
-Camera init: 735925 ns
-Camera show: 4033475 ns
-Camera init: 573177 ns
-Camera show: 3759667 ns
-FPS + flip: 293298 ns
-Camera init: 562917 ns
-Camera show: 3962646 ns
-Camera init: 458997 ns
-Camera show: 3550988 ns
-FPS + flip: 240119 ns
-Camera init: 492227 ns
-Camera show: 3204581 ns
-Camera init: 460777 ns
-Camera show: 3254120 ns
-FPS + flip: 232949 ns
-Camera init: 676426 ns
-Camera show: 3835147 ns
-Camera init: 653036 ns
-Camera show: 3738257 ns
-FPS + flip: 306238 ns
-Camera init: 711876 ns
-Camera show: 4202945 ns
-Camera init: 524376 ns
-Camera show: 3047782 ns
-FPS + flip: 316398 ns
-Camera init: 642706 ns
-Camera show: 4065686 ns
-Camera init: 478627 ns
-Camera show: 2980991 ns
-FPS + flip: 285228 ns
-Camera init: 654686 ns
-Camera show: 4086585 ns
-Camera init: 574726 ns
-Camera show: 3775817 ns
-FPS + flip: 261169 ns
-Camera init: 582896 ns
-Camera show: 4217475 ns
-Camera init: 761186 ns
-Camera show: 2801653 ns
-FPS + flip: 269458 ns
-Camera init: 695826 ns
-Camera show: 3336540 ns
-Camera init: 596587 ns
-Camera show: 3730378 ns
-FPS + flip: 320578 ns
-Camera init: 646776 ns
-Camera show: 4253474 ns
-Camera init: 1192923 ns
-Camera show: 3289910 ns
-FPS + flip: 265998 ns
-Camera init: 553777 ns
-Camera show: 3068132 ns
-Camera init: 475967 ns
-Camera show: 3691478 ns
-FPS + flip: 317508 ns
-Camera init: 592287 ns
-Camera show: 4488403 ns
-Camera init: 508387 ns
-Camera show: 3752857 ns
-FPS + flip: 324808 ns
-Camera init: 973764 ns
-Camera show: 3515018 ns
-Camera init: 491447 ns
-Camera show: 3041062 ns
-FPS + flip: 261689 ns
-Camera init: 686796 ns
-Camera show: 4126855 ns
-Camera init: 547187 ns
-Camera show: 3043691 ns
-FPS + flip: 264808 ns
-Camera init: 868075 ns
-Camera show: 3871217 ns
-Camera init: 893615 ns
-Camera show: 4250944 ns
-FPS + flip: 277079 ns
-Camera init: 1170193 ns
-Camera show: 4004516 ns
-Camera init: 585876 ns
-Camera show: 3901166 ns
-FPS + flip: 329258 ns
-Camera init: 572776 ns
-Camera show: 3341130 ns
-Camera init: 663706 ns
-Camera show: 3249630 ns
-FPS + flip: 281838 ns
-Camera init: 806246 ns
-Camera show: 3322050 ns
-Camera init: 538846 ns
-Camera show: 3394470 ns
-FPS + flip: 273978 ns
-Camera init: 613126 ns
-Camera show: 3733248 ns
-Camera init: 552557 ns
-Camera show: 3948606 ns
-FPS + flip: 291518 ns
-Camera init: 703556 ns
-Camera show: 3140171 ns
-Camera init: 634417 ns
-Camera show: 2892642 ns
-FPS + flip: 276338 ns
-Camera init: 844625 ns
-Camera show: 5480667 ns
-Camera init: 513707 ns
-Camera show: 2954082 ns
-FPS + flip: 308699 ns
-Camera init: 673266 ns
-Camera show: 4202864 ns
-Camera init: 537037 ns
-Camera show: 3228970 ns
-FPS + flip: 262078 ns
-Camera init: 781535 ns
-Camera show: 3376010 ns
-Camera init: 489287 ns
-Camera show: 2777583 ns
-FPS + flip: 258408 ns
-Camera init: 946784 ns
-Camera show: 3564928 ns
-Camera init: 408928 ns
-Camera show: 3111031 ns
-FPS + flip: 260029 ns
-Camera init: 608176 ns
-Camera show: 3260891 ns
-Camera init: 486857 ns
-Camera show: 5004520 ns
-FPS + flip: 426577 ns
-Camera init: 843814 ns
-Camera show: 3436800 ns
-Camera init: 591607 ns
-Camera show: 3024872 ns
-FPS + flip: 323888 ns
-Camera init: 746796 ns
-Camera show: 4352104 ns
-Camera init: 898195 ns
-Camera show: 3380439 ns
-FPS + flip: 251419 ns
-Camera init: 564547 ns
-Camera show: 3984545 ns
-Camera init: 462647 ns
-Camera show: 3710688 ns
-FPS + flip: 308398 ns
-Camera init: 542467 ns
-Camera show: 4018886 ns
-Camera init: 504337 ns
-Camera show: 3035501 ns
-FPS + flip: 314249 ns
-Camera init: 816625 ns
-Camera show: 4258915 ns
-Camera init: 690656 ns
-Camera show: 3611028 ns
-FPS + flip: 340887 ns
-Camera init: 668116 ns
-Camera show: 4060486 ns
-Camera init: 653076 ns
-Camera show: 4396274 ns
-FPS + flip: 445518 ns
-Camera init: 743295 ns
-Camera show: 5002010 ns
-Camera init: 764035 ns
-Camera show: 3217440 ns
-FPS + flip: 256479 ns
-Camera init: 882635 ns
-Camera show: 6796799 ns
-Camera init: 745886 ns
-Camera show: 2781763 ns
-FPS + flip: 254949 ns
-Camera init: 754005 ns
-Camera show: 3364450 ns
-Camera init: 530567 ns
-Camera show: 3249700 ns
-FPS + flip: 273568 ns
-Camera init: 1237132 ns
-Camera show: 7245876 ns
-Camera init: 930455 ns
-Camera show: 2710904 ns
-FPS + flip: 262468 ns
-Camera init: 595477 ns
-Camera show: 4181695 ns
-Camera init: 531737 ns
-Camera show: 4192824 ns
-FPS + flip: 268689 ns
-Camera init: 657456 ns
-Camera show: 4181675 ns
-Camera init: 544037 ns
-Camera show: 5744605 ns
-FPS + flip: 534426 ns
-Camera init: 1003714 ns
-Camera show: 3614018 ns
-Camera init: 390808 ns
-Camera show: 3190760 ns
-FPS + flip: 266548 ns
-Camera init: 889265 ns
-Camera show: 6299342 ns
-Camera init: 531486 ns
-Camera show: 2992902 ns
-FPS + flip: 275719 ns
-Camera init: 588206 ns
-Camera show: 3170111 ns
-Camera init: 470217 ns
-Camera show: 3321050 ns
-FPS + flip: 271868 ns
-Camera init: 771215 ns
-Camera show: 4473463 ns
-Camera init: 565217 ns
-Camera show: 3605758 ns
-FPS + flip: 272038 ns
-Camera init: 951994 ns
-Camera show: 5187508 ns
-Camera init: 896984 ns
-Camera show: 4175395 ns
-FPS + flip: 367678 ns
-Camera init: 853085 ns
-Camera show: 4639102 ns
-Camera init: 647786 ns
-Camera show: 3707987 ns
-FPS + flip: 258489 ns
-Camera init: 912715 ns
-Camera show: 4996820 ns
-Camera init: 670376 ns
-Camera show: 4229004 ns
-FPS + flip: 263399 ns
-Camera init: 1172183 ns
-Camera show: 5485957 ns
-Camera init: 567087 ns
-Camera show: 4397644 ns
-FPS + flip: 579207 ns
-Camera init: 694466 ns
-Camera show: 4093555 ns
-Camera init: 489187 ns
-Camera show: 3414370 ns
-FPS + flip: 313318 ns
-Camera init: 643226 ns
-Camera show: 5287688 ns
-Camera init: 654006 ns
-Camera show: 4068836 ns
-FPS + flip: 252668 ns
-Camera init: 711586 ns
-Camera show: 3965586 ns
-Camera init: 473918 ns
-Camera show: 3141321 ns
-FPS + flip: 254099 ns
-Camera init: 903894 ns
-Camera show: 7322846 ns
-Camera init: 518717 ns
-Camera show: 3542238 ns
-FPS + flip: 375488 ns
-Camera init: 620126 ns
-Camera show: 4430924 ns
-Camera init: 470248 ns
-Camera show: 3094101 ns
-FPS + flip: 261988 ns
-Camera init: 733086 ns
-Camera show: 5283968 ns
-Camera init: 611456 ns
-Camera show: 3618648 ns
-FPS + flip: 253969 ns
-Camera init: 1542051 ns
-Camera show: 5535736 ns
-Camera init: 657856 ns
-Camera show: 4059816 ns
-FPS + flip: 325508 ns
-Camera init: 932174 ns
-Camera show: 4236785 ns
-Camera init: 660316 ns
-Camera show: 4914400 ns
-FPS + flip: 422758 ns
-Camera init: 807975 ns
-Camera show: 4906740 ns
-Camera init: 846815 ns
-Camera show: 3184091 ns
-FPS + flip: 340178 ns
-Camera init: 685325 ns
-Camera show: 3779408 ns
-Camera init: 630256 ns
-Camera show: 3745538 ns
-FPS + flip: 336908 ns
-Camera init: 792085 ns
-Camera show: 6388842 ns
-Camera init: 418027 ns
-Camera show: 3300370 ns
-FPS + flip: 266869 ns
-Camera init: 709036 ns
-Camera show: 3321609 ns
-Camera init: 645126 ns
-Camera show: 3403560 ns
-FPS + flip: 254119 ns
-Camera init: 1173903 ns
-Camera show: 5298078 ns
-Camera init: 800776 ns
-Camera show: 5999223 ns
-FPS + flip: 476347 ns
-Camera init: 746076 ns
-Camera show: 4944790 ns
-Camera init: 519327 ns
-Camera show: 3139732 ns
-FPS + flip: 284428 ns
-Camera init: 956224 ns
-Camera show: 6787319 ns
-Camera init: 679976 ns
-Camera show: 3219110 ns
-FPS + flip: 274269 ns
-Camera init: 1198732 ns
-Camera show: 4402484 ns
-Camera init: 1121103 ns
-Camera show: 3751538 ns
-FPS + flip: 267798 ns
-Camera init: 947855 ns
-Camera show: 3900677 ns
-Camera init: 774725 ns
-Camera show: 3040432 ns
-FPS + flip: 465537 ns
-Camera init: 1246892 ns
-Camera show: 4556883 ns
-Camera init: 612567 ns
-Camera show: 6185573 ns
-FPS + flip: 355728 ns
-Camera init: 872405 ns
-Camera show: 4569712 ns
-Camera init: 643496 ns
-Camera show: 4955600 ns
-FPS + flip: 425588 ns
-Camera init: 742726 ns
-Camera show: 4616162 ns
-Camera init: 737135 ns
-Camera show: 5035280 ns
-FPS + flip: 436497 ns
-Camera init: 841905 ns
-Camera show: 5025370 ns
-Camera init: 1275623 ns
-Camera show: 4817871 ns
-FPS + flip: 269738 ns
-Camera init: 775515 ns
-Camera show: 3943376 ns
-Camera init: 640116 ns
-Camera show: 3062182 ns
-FPS + flip: 273638 ns
-Camera init: 785685 ns
-Camera show: 5980344 ns
-Camera init: 690896 ns
-Camera show: 3035131 ns
-FPS + flip: 271358 ns
-Camera init: 755315 ns
-Camera show: 5982614 ns
-Camera init: 881005 ns
-Camera show: 4423523 ns
-FPS + flip: 493137 ns
-Camera init: 990554 ns
-Camera show: 3844967 ns
-Camera init: 526077 ns
-Camera show: 3789717 ns
-FPS + flip: 320208 ns
-Camera init: 761595 ns
-Camera show: 6037674 ns
-Camera init: 738246 ns
-Camera show: 3218271 ns
-FPS + flip: 258539 ns
-Camera init: 812595 ns
-Camera show: 4831831 ns
-Camera init: 617446 ns
-Camera show: 4382844 ns
-FPS + flip: 318388 ns
-Camera init: 625787 ns
-Camera show: 3886367 ns
-Camera init: 531387 ns
-Camera show: 2909952 ns
-FPS + flip: 261578 ns
-Camera init: 747395 ns
-Camera show: 6107714 ns
-Camera init: 610907 ns
-Camera show: 4836320 ns
-FPS + flip: 425198 ns
-Camera init: 973334 ns
-Camera show: 5100010 ns
-Camera init: 493447 ns
-Camera show: 4588803 ns
-FPS + flip: 351318 ns
-Camera init: 752755 ns
-Camera show: 3976546 ns
-Camera init: 487487 ns
-Camera show: 3639908 ns
-FPS + flip: 259419 ns
-Camera init: 555516 ns
-Camera show: 3923066 ns
-Camera init: 636406 ns
-Camera show: 5094710 ns
-FPS + flip: 430187 ns
-Camera init: 700116 ns
-Camera show: 5212489 ns
-Camera init: 738555 ns
-Camera show: 4825001 ns
-FPS + flip: 266469 ns
-Camera init: 801665 ns
-Camera show: 3976516 ns
-Camera init: 491677 ns
-Camera show: 3743407 ns
-FPS + flip: 317569 ns
-Camera init: 497657 ns
-Camera show: 3067382 ns
-Camera init: 462237 ns
-Camera show: 3799317 ns
-FPS + flip: 321648 ns
-Camera init: 758135 ns
-Camera show: 5142389 ns
-Camera init: 715056 ns
-Camera show: 3066161 ns
-FPS + flip: 261799 ns
-Camera init: 1316603 ns
-Camera show: 7136996 ns
-Camera init: 596107 ns
-Camera show: 3160911 ns
-FPS + flip: 264498 ns
-Camera init: 1802419 ns
-Camera show: 5154299 ns
-Camera init: 440757 ns
-Camera show: 2844923 ns
-FPS + flip: 262018 ns
-Camera init: 620006 ns
-Camera show: 4465293 ns
-Camera init: 537706 ns
-Camera show: 3458210 ns
-FPS + flip: 498117 ns
-Camera init: 681176 ns
-Camera show: 5087129 ns
-Camera init: 588666 ns
-Camera show: 4845761 ns
-FPS + flip: 320088 ns
-Camera init: 747325 ns
-Camera show: 5164979 ns
-Camera init: 614607 ns
-Camera show: 3800067 ns
-FPS + flip: 264778 ns
-Camera init: 591507 ns
-Camera show: 3993595 ns
-Camera init: 1102303 ns
-Camera show: 3489839 ns
-FPS + flip: 263078 ns
-Camera init: 852484 ns
-Camera show: 4167835 ns
-Camera init: 551787 ns
-Camera show: 3252730 ns
-FPS + flip: 258369 ns
-Camera init: 859565 ns
-Camera show: 5969154 ns
-Camera init: 590627 ns
-Camera show: 2742643 ns
-FPS + flip: 264019 ns
-Camera init: 647816 ns
-Camera show: 4129545 ns
-Camera init: 813115 ns
-Camera show: 3688478 ns
-FPS + flip: 377308 ns
-Camera init: 664036 ns
-Camera show: 4485103 ns
-Camera init: 734946 ns
-Camera show: 3860916 ns
-FPS + flip: 263508 ns
-Camera init: 682006 ns
-Camera show: 5083439 ns
-Camera init: 661456 ns
-Camera show: 4956739 ns
-FPS + flip: 434098 ns
-Camera init: 997913 ns
-Camera show: 6566971 ns
-Camera init: 680006 ns
-Camera show: 4119665 ns
-FPS + flip: 329218 ns
-Camera init: 859345 ns
-Camera show: 4934070 ns
-Camera init: 514476 ns
-Camera show: 4652472 ns
-FPS + flip: 344018 ns
-Camera init: 1100273 ns
-Camera show: 6021054 ns
-Camera init: 473058 ns
-Camera show: 3349199 ns
-FPS + flip: 262019 ns
-Camera init: 1058414 ns
-Camera show: 4961080 ns
-Camera init: 566067 ns
-Camera show: 4290864 ns
-FPS + flip: 331708 ns
-Camera init: 850015 ns
-Camera show: 6166242 ns
-Camera init: 500147 ns
-Camera show: 3677478 ns
-FPS + flip: 360698 ns
-Camera init: 787865 ns
-Camera show: 4702421 ns
-Camera init: 562837 ns
-Camera show: 4409873 ns
-FPS + flip: 337128 ns
-Camera init: 1006054 ns
-Camera show: 4858511 ns
-Camera init: 507167 ns
-Camera show: 3339420 ns
-FPS + flip: 274879 ns
-Camera init: 615846 ns
-Camera show: 3570368 ns
-Camera init: 440347 ns
-Camera show: 3079932 ns
-FPS + flip: 268248 ns
-Camera init: 827304 ns
-Camera show: 5279018 ns
-Camera init: 704386 ns
-Camera show: 3448919 ns
-FPS + flip: 267239 ns
-Camera init: 1113934 ns
-Camera show: 7252037 ns
-Camera init: 824175 ns
-Camera show: 3400229 ns
-FPS + flip: 273448 ns
-Camera init: 979104 ns
-Camera show: 6029434 ns
-Camera init: 780845 ns
-Camera show: 5643116 ns
-FPS + flip: 444167 ns
-Camera init: 1118244 ns
-Camera show: 5257429 ns
-Camera init: 963024 ns
-Camera show: 4241435 ns
-FPS + flip: 291298 ns
-Camera init: 1072793 ns
-Camera show: 6500161 ns
-Camera init: 793715 ns
-Camera show: 2626375 ns
-FPS + flip: 266088 ns
-Camera init: 797195 ns
-Camera show: 4461573 ns
-Camera init: 481607 ns
-Camera show: 4437193 ns
-FPS + flip: 441367 ns
-Camera init: 866195 ns
-Camera show: 3872837 ns
-Camera init: 866475 ns
-Camera show: 6833639 ns
-FPS + flip: 780916 ns
-Camera init: 1169753 ns
-Camera show: 6461250 ns
-Camera init: 1010764 ns
-Camera show: 5990404 ns
-FPS + flip: 575527 ns
-Camera init: 702896 ns
-Camera show: 4147795 ns
-Camera init: 643136 ns
-Camera show: 4465854 ns
-FPS + flip: 449348 ns
-Camera init: 588457 ns
-Camera show: 3641098 ns
-Camera init: 505207 ns
-Camera show: 2615164 ns
-FPS + flip: 267759 ns
-Camera init: 1044474 ns
-Camera show: 4006746 ns
-Camera init: 515547 ns
-Camera show: 4241755 ns
-FPS + flip: 265828 ns
-Camera init: 900974 ns
-Camera show: 4023356 ns
-Camera init: 628426 ns
-Camera show: 4819361 ns
-FPS + flip: 435988 ns
-Camera init: 804225 ns
-Camera show: 5590986 ns
-Camera init: 741046 ns
-Camera show: 3537609 ns
-FPS + flip: 264078 ns
-Camera init: 871435 ns
-Camera show: 4978990 ns
-Camera init: 656016 ns
-Camera show: 5732676 ns
-FPS + flip: 269448 ns
-Camera init: 637706 ns
-Camera show: 3181791 ns
-Camera init: 485027 ns
-Camera show: 3379880 ns
-FPS + flip: 264789 ns
-Camera init: 893885 ns
-Camera show: 5747676 ns
-Camera init: 901245 ns
-Camera show: 3798477 ns
-FPS + flip: 278268 ns
-Camera init: 705196 ns
-Camera show: 4652862 ns
-Camera init: 616826 ns
-Camera show: 3710488 ns
-FPS + flip: 274949 ns
-Camera init: 796176 ns
-Camera show: 4335623 ns
-Camera init: 641836 ns
-Camera show: 3384930 ns
-FPS + flip: 286739 ns
-Camera init: 633446 ns
-Camera show: 4249485 ns
-Camera init: 504397 ns
-Camera show: 3182041 ns
-FPS + flip: 420997 ns
-Camera init: 527547 ns
-Camera show: 4281925 ns
-Camera init: 560617 ns
-Camera show: 4041605 ns
-FPS + flip: 321558 ns
-Camera init: 677495 ns
-Camera show: 4072436 ns
-Camera init: 550027 ns
-Camera show: 3938647 ns
-FPS + flip: 352528 ns
-Camera init: 677066 ns
-Camera show: 4017216 ns
-Camera init: 564567 ns
-Camera show: 2979642 ns
-FPS + flip: 322918 ns
-Camera init: 913174 ns
-Camera show: 3601779 ns
-Camera init: 618057 ns
-Camera show: 3147330 ns
-FPS + flip: 274309 ns
-Camera init: 915445 ns
-Camera show: 5205808 ns
-Camera init: 738515 ns
-Camera show: 3080802 ns
-FPS + flip: 267018 ns
-Camera init: 1235203 ns
-Camera show: 7138536 ns
-Camera init: 743195 ns
-Camera show: 3200331 ns
-FPS + flip: 267889 ns
-Camera init: 1086903 ns
-Camera show: 5784756 ns
-Camera init: 629646 ns
-Camera show: 5131740 ns
-FPS + flip: 468817 ns
-Camera init: 917385 ns
-Camera show: 5063649 ns
-Camera init: 722116 ns
-Camera show: 4076746 ns
-FPS + flip: 406828 ns
-Camera init: 942435 ns
-Camera show: 4336504 ns
-Camera init: 498937 ns
-Camera show: 2838953 ns
-FPS + flip: 274428 ns
-Camera init: 825975 ns
-Camera show: 5031119 ns
-Camera init: 566316 ns
-Camera show: 3769148 ns
-FPS + flip: 324698 ns
-Camera init: 744356 ns
-Camera show: 4761471 ns
-Camera init: 940184 ns
-Camera show: 3342580 ns
-FPS + flip: 258778 ns
-Camera init: 778365 ns
-Camera show: 5171899 ns
-Camera init: 819725 ns
-Camera show: 4488373 ns
-FPS + flip: 353958 ns
-Camera init: 1455521 ns
-Camera show: 6368543 ns
-Camera init: 840225 ns
-Camera show: 3430939 ns
-FPS + flip: 300048 ns
-Camera init: 855395 ns
-Camera show: 6304772 ns
-Camera init: 526437 ns
-Camera show: 3752657 ns
-FPS + flip: 319958 ns
-Camera init: 831115 ns
-Camera show: 3342100 ns
-Camera init: 715145 ns
-Camera show: 3315750 ns
-FPS + flip: 333508 ns
-Camera init: 1277873 ns
-Camera show: 4755672 ns
-Camera init: 713975 ns
-Camera show: 4183845 ns
-FPS + flip: 337478 ns
-Camera init: 1315262 ns
-Camera show: 5732626 ns
-Camera init: 952444 ns
-Camera show: 3266001 ns
-FPS + flip: 410898 ns
-Camera init: 811265 ns
-Camera show: 5178199 ns
-Camera init: 643296 ns
-Camera show: 5560477 ns
-FPS + flip: 274138 ns
-Camera init: 786245 ns
-Camera show: 5437067 ns
-Camera init: 731226 ns
-Camera show: 5293188 ns
-FPS + flip: 318599 ns
-Camera init: 1018554 ns
-Camera show: 4118045 ns
-Camera init: 578836 ns
-Camera show: 3794397 ns
-FPS + flip: 324358 ns
-Camera init: 848835 ns
-Camera show: 4145335 ns
-Camera init: 748996 ns
-Camera show: 3831747 ns
-FPS + flip: 324268 ns
-Camera init: 853655 ns
-Camera show: 5276609 ns
-Camera init: 414398 ns
-Camera show: 3251400 ns
-FPS + flip: 260879 ns
-Camera init: 878174 ns
-Camera show: 4472073 ns
-Camera init: 621696 ns
-Camera show: 4137145 ns
-FPS + flip: 304038 ns
-Camera init: 653006 ns
-Camera show: 4269454 ns
-Camera init: 571527 ns
-Camera show: 3443769 ns
-FPS + flip: 306568 ns
-Camera init: 728015 ns
-Camera show: 4056446 ns
-Camera init: 583717 ns
-Camera show: 3360740 ns
-FPS + flip: 282458 ns
-Camera init: 990344 ns
-Camera show: 5683796 ns
-Camera init: 509597 ns
-Camera show: 3302520 ns
-FPS + flip: 258289 ns
-Camera init: 742266 ns
-Camera show: 5220718 ns
-Camera init: 603836 ns
-Camera show: 5056620 ns
-FPS + flip: 257938 ns
-Camera init: 840875 ns
-Camera show: 6570120 ns
-Camera init: 573087 ns
-Camera show: 3162861 ns
-FPS + flip: 261498 ns
-Camera init: 925845 ns
-Camera show: 4914460 ns
-Camera init: 696255 ns
-Camera show: 4602803 ns
-FPS + flip: 420197 ns
-Camera init: 839175 ns
-Camera show: 5466997 ns
-Camera init: 769945 ns
-Camera show: 5161859 ns
-FPS + flip: 603937 ns
-Camera init: 670236 ns
-Camera show: 4118566 ns
-Camera init: 576497 ns
-Camera show: 3482019 ns
-FPS + flip: 258808 ns
-Camera init: 773285 ns
-Camera show: 5347668 ns
-Camera init: 663686 ns
-Camera show: 6100913 ns
-FPS + flip: 461958 ns
-Camera init: 1193232 ns
-Camera show: 5378008 ns
-Camera init: 414477 ns
-Camera show: 3717448 ns
-FPS + flip: 287568 ns
-Camera init: 1032224 ns
-Camera show: 5253079 ns
-Camera init: 542067 ns
-Camera show: 3621118 ns
-FPS + flip: 268168 ns
-Camera init: 1838369 ns
-Camera show: 3676878 ns
-Camera init: 1157693 ns
-Camera show: 3298151 ns
-FPS + flip: 271279 ns
-Camera init: 786665 ns
-Camera show: 5838845 ns
-Camera init: 992114 ns
-Camera show: 5520257 ns
-FPS + flip: 257219 ns
-Camera init: 1289052 ns
-Camera show: 4239145 ns
-Camera init: 475587 ns
-Camera show: 3297400 ns
-FPS + flip: 266898 ns
-Camera init: 1189393 ns
-Camera show: 4234784 ns
-Camera init: 693026 ns
-Camera show: 4018606 ns
-FPS + flip: 323058 ns
-Camera init: 814025 ns
-Camera show: 4640032 ns
-Camera init: 628206 ns
-Camera show: 3894417 ns
-FPS + flip: 347018 ns
-Camera init: 592837 ns
-Camera show: 4209804 ns
-Camera init: 811835 ns
-Camera show: 3106002 ns
-FPS + flip: 265048 ns
-Camera init: 545677 ns
-Camera show: 3856436 ns
-Camera init: 479697 ns
-Camera show: 3700278 ns
-FPS + flip: 312498 ns
-Camera init: 740185 ns
-Camera show: 4139645 ns
-Camera init: 643156 ns
-Camera show: 3122991 ns
-FPS + flip: 313779 ns
-Camera init: 679456 ns
-Camera show: 4361703 ns
-Camera init: 508547 ns
-Camera show: 3731048 ns
-FPS + flip: 263878 ns
-Camera init: 797895 ns
-Camera show: 5579736 ns
-Camera init: 640096 ns
-Camera show: 4314154 ns
-FPS + flip: 262618 ns
-Camera init: 1324502 ns
-Camera show: 5028900 ns
-Camera init: 704206 ns
-Camera show: 4235464 ns
-FPS + flip: 355077 ns
-Camera init: 938214 ns
-Camera show: 5538857 ns
-Camera init: 638697 ns
-Camera show: 3473859 ns
-FPS + flip: 291758 ns
-Camera init: 876195 ns
-Camera show: 5015890 ns
-Camera init: 480047 ns
-Camera show: 3623088 ns
-FPS + flip: 311608 ns
-Camera init: 736625 ns
-Camera show: 4385274 ns
-Camera init: 468097 ns
-Camera show: 3735727 ns
-FPS + flip: 313568 ns
-Camera init: 706955 ns
-Camera show: 5355128 ns
-Camera init: 1007104 ns
-Camera show: 3019452 ns
-FPS + flip: 281709 ns
-Camera init: 900214 ns
-Camera show: 4968661 ns
-Camera init: 616887 ns
-Camera show: 4590232 ns
-FPS + flip: 266888 ns
-Camera init: 610586 ns
-Camera show: 4045196 ns
-Camera init: 551187 ns
-Camera show: 3896626 ns
-FPS + flip: 330608 ns
-Camera init: 1018413 ns
-Camera show: 5278838 ns
-Camera init: 659206 ns
-Camera show: 4017546 ns
-FPS + flip: 422797 ns
-Camera init: 717015 ns
-Camera show: 5207779 ns
-Camera init: 657686 ns
-Camera show: 4994420 ns
-FPS + flip: 473247 ns
-Camera init: 789825 ns
-Camera show: 4441713 ns
-Camera init: 449717 ns
-Camera show: 3061242 ns
-FPS + flip: 262319 ns
-Camera init: 790665 ns
-Camera show: 4408364 ns
-Camera init: 626316 ns
-Camera show: 5084100 ns
-FPS + flip: 420228 ns
-Camera init: 626516 ns
-Camera show: 4749181 ns
-Camera init: 675706 ns
-Camera show: 4744751 ns
-FPS + flip: 265468 ns
-Camera init: 1197392 ns
-Camera show: 4753921 ns
-Camera init: 967764 ns
-Camera show: 4379424 ns
-FPS + flip: 423618 ns
-Camera init: 699026 ns
-Camera show: 5126549 ns
-Camera init: 733426 ns
-Camera show: 5244608 ns
-FPS + flip: 424777 ns
-Camera init: 792925 ns
-Camera show: 6510571 ns
-Camera init: 1035173 ns
-Camera show: 3778417 ns
-FPS + flip: 363118 ns
-Camera init: 892214 ns
-Camera show: 6612020 ns
-Camera init: 704766 ns
-Camera show: 3742617 ns
-FPS + flip: 405837 ns
-Camera init: 761785 ns
-Camera show: 4518373 ns
-Camera init: 555667 ns
-Camera show: 3688938 ns
-FPS + flip: 248828 ns
-Camera init: 606666 ns
-Camera show: 4613053 ns
-Camera init: 1699930 ns
-Camera show: 2971732 ns
-FPS + flip: 239318 ns
-Camera init: 637436 ns
-Camera show: 3288190 ns
-Camera init: 525877 ns
-Camera show: 3147531 ns
-FPS + flip: 236499 ns
-Camera init: 593707 ns
-Camera show: 3986976 ns
-Camera init: 684556 ns
-Camera show: 3852266 ns
-FPS + flip: 342388 ns
-Camera init: 1040534 ns
-Camera show: 4778712 ns
-Camera init: 656266 ns
-Camera show: 4010186 ns
-FPS + flip: 322048 ns
-Camera init: 848045 ns
-Camera show: 5468827 ns
-Camera init: 628876 ns
-Camera show: 4655032 ns
-FPS + flip: 303768 ns
-Camera init: 1764239 ns
-Camera show: 5040520 ns
-Camera init: 1769289 ns
-Camera show: 3466180 ns
-FPS + flip: 306168 ns
-Camera init: 1082484 ns
-Camera show: 5831534 ns
-Camera init: 762105 ns
-Camera show: 5562777 ns
-FPS + flip: 253169 ns
-Camera init: 742305 ns
-Camera show: 3794308 ns
-Camera init: 701876 ns
-Camera show: 5445717 ns
-FPS + flip: 313278 ns
-Camera init: 726575 ns
-Camera show: 5726946 ns
-Camera init: 671226 ns
-Camera show: 6348232 ns
-FPS + flip: 569587 ns
-Camera init: 1242312 ns
-Camera show: 4933491 ns
-Camera init: 792405 ns
-Camera show: 3382260 ns
-FPS + flip: 258938 ns
-Camera init: 846775 ns
-Camera show: 5345958 ns
-Camera init: 821886 ns
-Camera show: 4759521 ns
-FPS + flip: 242909 ns
-Camera init: 940874 ns
-Camera show: 6026984 ns
-Camera init: 1062294 ns
-Camera show: 4675862 ns
-FPS + flip: 269808 ns
-Camera init: 1120814 ns
-Camera show: 7963993 ns
-Camera init: 426578 ns
-Camera show: 3746437 ns
-FPS + flip: 279828 ns
-Camera init: 824644 ns
-Camera show: 4839601 ns
-Camera init: 590816 ns
-Camera show: 4699702 ns
-FPS + flip: 416697 ns
-Camera init: 827055 ns
-Camera show: 4244464 ns
-Camera init: 600037 ns
-Camera show: 3665177 ns
-FPS + flip: 235418 ns
-Camera init: 559687 ns
-Camera show: 3699517 ns
-Camera init: 740535 ns
-Camera show: 5403587 ns
-FPS + flip: 298529 ns
-Camera init: 1273682 ns
-Camera show: 6796919 ns
-Camera init: 646066 ns
-Camera show: 3239590 ns
-FPS + flip: 378248 ns
-Camera init: 518457 ns
-Camera show: 2915333 ns
-Camera init: 417367 ns
-Camera show: 2786434 ns
-FPS + flip: 244399 ns
-Camera init: 902375 ns
-Camera show: 4985510 ns
-Camera init: 681676 ns
-Camera show: 4443493 ns
-FPS + flip: 325908 ns
-Camera init: 1021834 ns
-Camera show: 5210109 ns
-Camera init: 538247 ns
-Camera show: 3898636 ns
-FPS + flip: 309308 ns
-Camera init: 625116 ns
-Camera show: 3993166 ns
-Camera init: 525827 ns
-Camera show: 3183990 ns
-FPS + flip: 250279 ns
-Camera init: 669675 ns
-Camera show: 4102375 ns
-Camera init: 540997 ns
-Camera show: 3918567 ns
-FPS + flip: 319268 ns
-Camera init: 922345 ns
-Camera show: 4166495 ns
-Camera init: 572537 ns
-Camera show: 3795847 ns
-FPS + flip: 303228 ns
-Camera init: 867405 ns
-Camera show: 3901667 ns
-Camera init: 774395 ns
-Camera show: 3417730 ns
-FPS + flip: 264038 ns
-Camera init: 672266 ns
-Camera show: 3496299 ns
-Camera init: 426598 ns
-Camera show: 3987106 ns
-FPS + flip: 427437 ns
-Camera init: 587366 ns
-Camera show: 4229255 ns
-Camera init: 586637 ns
-Camera show: 3743897 ns
-FPS + flip: 298558 ns
-Camera init: 774336 ns
-Camera show: 4559602 ns
-Camera init: 680356 ns
-Camera show: 3032391 ns
-FPS + flip: 354358 ns
-Camera init: 789355 ns
-Camera show: 4981510 ns
-Camera init: 764886 ns
-Camera show: 3505419 ns
-FPS + flip: 302068 ns
-Camera init: 795295 ns
-Camera show: 4268114 ns
-Camera init: 615366 ns
-Camera show: 3933296 ns
-FPS + flip: 267818 ns
-Camera init: 691455 ns
-Camera show: 4021586 ns
-Camera init: 545976 ns
-Camera show: 3086562 ns
-FPS + flip: 314858 ns
-Camera init: 1165743 ns
-Camera show: 4190924 ns
-Camera init: 987674 ns
-Camera show: 3727468 ns
-FPS + flip: 263058 ns
-Camera init: 883184 ns
-Camera show: 5952834 ns
-Camera init: 620116 ns
-Camera show: 5421258 ns
-FPS + flip: 438697 ns
-Camera init: 717155 ns
-Camera show: 5008260 ns
-Camera init: 630976 ns
-Camera show: 4466603 ns
-FPS + flip: 408857 ns
-Camera init: 1263272 ns
-Camera show: 5565107 ns
-Camera init: 485817 ns
-Camera show: 3136421 ns
-FPS + flip: 259029 ns
-Camera init: 896335 ns
-Camera show: 6414341 ns
-Camera init: 779495 ns
-Camera show: 2929712 ns
-FPS + flip: 269878 ns
-Camera init: 641357 ns
-Camera show: 3559478 ns
-Camera init: 488487 ns
-Camera show: 3424460 ns
-FPS + flip: 261088 ns
-Camera init: 960195 ns
-Camera show: 5209139 ns
-Camera init: 660416 ns
-Camera show: 5064429 ns
-FPS + flip: 261289 ns
-Camera init: 996874 ns
-Camera show: 4595452 ns
-Camera init: 626306 ns
-Camera show: 5078959 ns
-FPS + flip: 427688 ns
-Camera init: 625736 ns
-Camera show: 3793967 ns
-Camera init: 536217 ns
-Camera show: 3175180 ns
-FPS + flip: 258979 ns
-Camera init: 701016 ns
-Camera show: 3764167 ns
-Camera init: 570796 ns
-Camera show: 3843257 ns
-FPS + flip: 326738 ns
-Camera init: 981635 ns
-Camera show: 4267985 ns
-Camera init: 486047 ns
-Camera show: 3713568 ns
-FPS + flip: 323988 ns
-Camera init: 928075 ns
-Camera show: 4485193 ns
-Camera init: 695676 ns
-Camera show: 4052325 ns
-FPS + flip: 368988 ns
-Camera init: 685466 ns
-Camera show: 4369364 ns
-Camera init: 691836 ns
-Camera show: 4573133 ns
-FPS + flip: 329778 ns
-Camera init: 567637 ns
-Camera show: 3907127 ns
-Camera init: 547367 ns
-Camera show: 3136251 ns
-FPS + flip: 279598 ns
-Camera init: 770795 ns
-Camera show: 4743591 ns
-Camera init: 421097 ns
-Camera show: 3139932 ns
-FPS + flip: 264948 ns
-Camera init: 1236612 ns
-Camera show: 6000464 ns
-Camera init: 827745 ns
-Camera show: 4874550 ns
-FPS + flip: 261788 ns
-Camera init: 1049804 ns
-Camera show: 5108379 ns
-Camera init: 607986 ns
-Camera show: 4261865 ns
-FPS + flip: 248188 ns
-Camera init: 499017 ns
-Camera show: 3071362 ns
-Camera init: 485267 ns
-Camera show: 3785917 ns
-FPS + flip: 312448 ns
-Camera init: 1010364 ns
-Camera show: 4865570 ns
-Camera init: 701556 ns
-Camera show: 3708828 ns
-FPS + flip: 275868 ns
-Camera init: 602666 ns
-Camera show: 4099996 ns
-Camera init: 470357 ns
-Camera show: 3605978 ns
-FPS + flip: 259049 ns
-Camera init: 502537 ns
-Camera show: 3110491 ns
-Camera init: 466258 ns
-Camera show: 3360940 ns
-FPS + flip: 251888 ns
-Camera init: 481217 ns
-Camera show: 3776677 ns
-Camera init: 463437 ns
-Camera show: 3687278 ns
-FPS + flip: 314618 ns
-Camera init: 699376 ns
-Camera show: 4113805 ns
-Camera init: 515327 ns
-Camera show: 3119151 ns
-FPS + flip: 311378 ns
-Camera init: 853725 ns
-Camera show: 4225065 ns
-Camera init: 530877 ns
-Camera show: 3719337 ns
-FPS + flip: 269849 ns
-Camera init: 840155 ns
-Camera show: 3998716 ns
-Camera init: 533636 ns
-Camera show: 3953697 ns
-FPS + flip: 332818 ns
-Camera init: 733176 ns
-Camera show: 5085509 ns
-Camera init: 724936 ns
-Camera show: 4217924 ns
-FPS + flip: 429947 ns
-Camera init: 970364 ns
-Camera show: 6531270 ns
-Camera init: 665126 ns
-Camera show: 3209701 ns
-FPS + flip: 327418 ns
-Camera init: 782225 ns
-Camera show: 5049469 ns
-Camera init: 618746 ns
-Camera show: 5160039 ns
-FPS + flip: 429448 ns
-Camera init: 884695 ns
-Camera show: 3729027 ns
-Camera init: 572186 ns
-Camera show: 3688028 ns
-FPS + flip: 324328 ns
-Camera init: 736156 ns
-Camera show: 4680611 ns
-Camera init: 707926 ns
-Camera show: 3405850 ns
-FPS + flip: 296649 ns
-Camera init: 909385 ns
-Camera show: 4723861 ns
-Camera init: 609806 ns
-Camera show: 4032986 ns
-FPS + flip: 469317 ns
-Camera init: 833455 ns
-Camera show: 4349404 ns
-Camera init: 505837 ns
-Camera show: 3841856 ns
-FPS + flip: 328258 ns
-Camera init: 678216 ns
-Camera show: 4310264 ns
-Camera init: 788186 ns
-Camera show: 4037795 ns
-FPS + flip: 377888 ns
-Camera init: 952694 ns
-Camera show: 6185203 ns
-Camera init: 753156 ns
-Camera show: 3877776 ns
-FPS + flip: 268519 ns
-Camera init: 599827 ns
-Camera show: 4484373 ns
-Camera init: 498518 ns
-Camera show: 3105191 ns
-FPS + flip: 340678 ns
-Camera init: 659386 ns
-Camera show: 4477473 ns
-Camera init: 500197 ns
-Camera show: 3080442 ns
-FPS + flip: 489017 ns
-Camera init: 907374 ns
-Camera show: 5324118 ns
-Camera init: 648126 ns
-Camera show: 3792738 ns
-FPS + flip: 272758 ns
-Camera init: 939974 ns
-Camera show: 4848351 ns
-Camera init: 689076 ns
-Camera show: 4006576 ns
-FPS + flip: 354028 ns
-Camera init: 848855 ns
-Camera show: 5262938 ns
-Camera init: 619047 ns
-Camera show: 3633977 ns
-FPS + flip: 266958 ns
-Camera init: 856545 ns
-Camera show: 6637489 ns
-Camera init: 600836 ns
-Camera show: 3255291 ns
-FPS + flip: 283708 ns
-Camera init: 964004 ns
-Camera show: 5163230 ns
-Camera init: 682446 ns
-Camera show: 4709981 ns
-FPS + flip: 264929 ns
-Camera init: 967354 ns
-Camera show: 5208238 ns
-Camera init: 755916 ns
-Camera show: 4092485 ns
-FPS + flip: 266339 ns
-Camera init: 796885 ns
-Camera show: 5325358 ns
-Camera init: 586007 ns
-Camera show: 4981800 ns
-FPS + flip: 421738 ns
-Camera init: 797935 ns
-Camera show: 5405647 ns
-Camera init: 677236 ns
-Camera show: 4030815 ns
-FPS + flip: 263789 ns
-Camera init: 712256 ns
-Camera show: 5942724 ns
-Camera init: 697336 ns
-Camera show: 4056266 ns
-FPS + flip: 252269 ns
-Camera init: 779196 ns
-Camera show: 5425707 ns
-Camera init: 846325 ns
-Camera show: 3182021 ns
-FPS + flip: 255588 ns
-Camera init: 637086 ns
-Camera show: 6998718 ns
-Camera init: 720646 ns
-Camera show: 5027470 ns
-FPS + flip: 260109 ns
-Camera init: 651646 ns
-Camera show: 5256478 ns
-Camera init: 587177 ns
-Camera show: 3606808 ns
-FPS + flip: 254698 ns
-Camera init: 959565 ns
-Camera show: 6442871 ns
-Camera init: 616406 ns
-Camera show: 4325384 ns
-FPS + flip: 424498 ns
-Camera init: 852245 ns
-Camera show: 4943231 ns
-Camera init: 673786 ns
-Camera show: 4564232 ns
-FPS + flip: 427348 ns
-Camera init: 587226 ns
-Camera show: 3561349 ns
-Camera init: 476447 ns
-Camera show: 3177531 ns
-FPS + flip: 260418 ns
-Camera init: 800995 ns
-Camera show: 6719379 ns
-Camera init: 728615 ns
-Camera show: 4027666 ns
-FPS + flip: 262819 ns
-Camera init: 958244 ns
-Camera show: 5225838 ns
-Camera init: 804455 ns
-Camera show: 3698398 ns
-FPS + flip: 284538 ns
-Camera init: 969984 ns
-Camera show: 4936760 ns
-Camera init: 852505 ns
-Camera show: 4656552 ns
-FPS + flip: 452207 ns
-Camera init: 590827 ns
-Camera show: 3936146 ns
-Camera init: 468227 ns
-Camera show: 3063122 ns
-FPS + flip: 263678 ns
-Camera init: 823145 ns
-Camera show: 5366648 ns
-Camera init: 1067433 ns
-Camera show: 3631258 ns
-FPS + flip: 367007 ns
-Camera init: 540617 ns
-Camera show: 2864753 ns
-Camera init: 468507 ns
-Camera show: 3846587 ns
-FPS + flip: 430857 ns
-Camera init: 763226 ns
-Camera show: 4252194 ns
-Camera init: 633856 ns
-Camera show: 5363228 ns
-FPS + flip: 355628 ns
-Camera init: 560657 ns
-Camera show: 3879966 ns
-Camera init: 529167 ns
-Camera show: 4215854 ns
-FPS + flip: 318878 ns
-Camera init: 599246 ns
-Camera show: 4126705 ns
-Camera init: 535587 ns
-Camera show: 3915116 ns
-FPS + flip: 275228 ns
-Camera init: 675626 ns
-Camera show: 4081866 ns
-Camera init: 562137 ns
-Camera show: 2981462 ns
-FPS + flip: 310068 ns
-Camera init: 652286 ns
-Camera show: 4603993 ns
-Camera init: 524477 ns
-Camera show: 3116601 ns
-FPS + flip: 334228 ns
-Camera init: 1036843 ns
-Camera show: 4805092 ns
-Camera init: 667506 ns
-Camera show: 3464319 ns
-FPS + flip: 346668 ns
-Camera init: 1281632 ns
-Camera show: 4412233 ns
-Camera init: 524057 ns
-Camera show: 3918386 ns
-FPS + flip: 328978 ns
-Camera init: 798825 ns
-Camera show: 4622183 ns
-Camera init: 629756 ns
-Camera show: 3557879 ns
-FPS + flip: 267298 ns
-Camera init: 1410691 ns
-Camera show: 4602333 ns
-Camera init: 501177 ns
-Camera show: 3505599 ns
-FPS + flip: 271359 ns
-Camera init: 673886 ns
-Camera show: 3892397 ns
-Camera init: 477487 ns
-Camera show: 3240970 ns
-FPS + flip: 259159 ns
-Camera init: 839135 ns
-Camera show: 4254474 ns
-Camera init: 485267 ns
-Camera show: 3020872 ns
-FPS + flip: 264049 ns
-Camera init: 811065 ns
-Camera show: 6803679 ns
-Camera init: 526997 ns
-Camera show: 3374729 ns
-FPS + flip: 269178 ns
-Camera init: 965684 ns
-Camera show: 7238496 ns
-Camera init: 488927 ns
-Camera show: 2930802 ns
-FPS + flip: 268109 ns
-Camera init: 601047 ns
-Camera show: 5511486 ns
-Camera init: 644636 ns
-Camera show: 3233491 ns
-FPS + flip: 279428 ns
-Camera init: 814395 ns
-Camera show: 4598372 ns
-Camera init: 621946 ns
-Camera show: 6610560 ns
-FPS + flip: 604276 ns
-Camera init: 1304972 ns
-Camera show: 4585182 ns
-Camera init: 1060264 ns
-Camera show: 3349310 ns
-FPS + flip: 281229 ns
-Camera init: 792515 ns
-Camera show: 5486197 ns
-Camera init: 751145 ns
-Camera show: 4149985 ns
-FPS + flip: 277638 ns
-Camera init: 889975 ns
-Camera show: 5797745 ns
-Camera init: 612006 ns
-Camera show: 4992721 ns
-FPS + flip: 452827 ns
+Sensors data: 360610 ns
+Camera init: 1421208 ns
+Camera show: 6302851 ns
+Camera init: 390579 ns
+Camera show: 3169045 ns
+Sensors FPS + flip: 231370 ns
+Sensors data: 270619 ns
+Camera init: 890469 ns
+Camera show: 6519001 ns
+Camera init: 364549 ns
+Camera show: 3023916 ns
+Sensors FPS + flip: 231410 ns
+Sensors data: 208050 ns
+Camera init: 430199 ns
+Camera show: 6401521 ns
+Camera init: 575809 ns
+Camera show: 5107613 ns
+Sensors FPS + flip: 434659 ns
+Sensors data: 236310 ns
+Camera init: 921989 ns
+Camera show: 7077190 ns
+Camera init: 364619 ns
+Camera show: 3002406 ns
+Sensors FPS + flip: 256849 ns
+Sensors data: 247289 ns
+Camera init: 471480 ns
+Camera show: 3553065 ns
+Camera init: 408579 ns
+Camera show: 3083966 ns
+Sensors FPS + flip: 254730 ns
+Sensors data: 256470 ns
+Camera init: 918029 ns
+Camera show: 7472039 ns
+Camera init: 630099 ns
+Camera show: 5030753 ns
+Sensors FPS + flip: 419859 ns
+Sensors data: 317499 ns
+Camera init: 919299 ns
+Camera show: 7741329 ns
+Camera init: 441229 ns
+Camera show: 2959266 ns
+Sensors FPS + flip: 259080 ns
+Sensors data: 260040 ns
+Camera init: 575719 ns
+Camera show: 4748793 ns
+Camera init: 488249 ns
+Camera show: 3858185 ns
+Sensors FPS + flip: 313629 ns
+Sensors data: 381159 ns
+Camera init: 751469 ns
+Camera show: 4569864 ns
+Camera init: 695009 ns
+Camera show: 4699723 ns
+Sensors FPS + flip: 295810 ns
+Sensors data: 294429 ns
+Camera init: 827799 ns
+Camera show: 4561394 ns
+Camera init: 569130 ns
+Camera show: 3882834 ns
+Sensors FPS + flip: 291929 ns
+Sensors data: 220120 ns
+Camera init: 662379 ns
+Camera show: 4173774 ns
+Camera init: 589150 ns
+Camera show: 3773134 ns
+Sensors FPS + flip: 264850 ns
+Sensors data: 212709 ns
+Camera init: 625629 ns
+Camera show: 4160234 ns
+Camera init: 575819 ns
+Camera show: 3853125 ns
+Sensors FPS + flip: 260010 ns
+Sensors data: 356569 ns
+Camera init: 1054379 ns
+Camera show: 4290934 ns
+Camera init: 688929 ns
+Camera show: 4116114 ns
+Sensors FPS + flip: 395329 ns
+Sensors data: 293880 ns
+Camera init: 1214878 ns
+Camera show: 4452944 ns
+Camera init: 649789 ns
+Camera show: 5092733 ns
+Sensors FPS + flip: 469250 ns
+Sensors data: 296309 ns
+Camera init: 927249 ns
+Camera show: 4609233 ns
+Camera init: 555179 ns
+Camera show: 3969865 ns
+Sensors FPS + flip: 270900 ns
+Sensors data: 230110 ns
+Camera init: 817939 ns
+Camera show: 4396964 ns
+Camera init: 710599 ns
+Camera show: 4264964 ns
+Sensors FPS + flip: 355769 ns
+Sensors data: 220460 ns
+Camera init: 536589 ns
+Camera show: 3663705 ns
+Camera init: 500719 ns
+Camera show: 5035503 ns
+Sensors FPS + flip: 277699 ns
+Sensors data: 262480 ns
+Camera init: 846249 ns
+Camera show: 6125051 ns
+Camera init: 712259 ns
+Camera show: 5036073 ns
+Sensors FPS + flip: 270740 ns
+Sensors data: 218700 ns
+Camera init: 714319 ns
+Camera show: 5206833 ns
+Camera init: 637159 ns
+Camera show: 5618862 ns
+Sensors FPS + flip: 441330 ns
+Sensors data: 190919 ns
+Camera init: 651899 ns
+Camera show: 5219653 ns
+Camera init: 766549 ns
+Camera show: 4690923 ns
+Sensors FPS + flip: 257790 ns
+Sensors data: 283969 ns
+Camera init: 1347129 ns
+Camera show: 4127304 ns
+Camera init: 464139 ns
+Camera show: 3642835 ns
+Sensors FPS + flip: 260339 ns
+Sensors data: 278559 ns
+Camera init: 792869 ns
+Camera show: 5758572 ns
+Camera init: 647619 ns
+Camera show: 5213253 ns
+Sensors FPS + flip: 431599 ns
+Sensors data: 383729 ns
+Camera init: 1034929 ns
+Camera show: 5192103 ns
+Camera init: 530689 ns
+Camera show: 3576525 ns
+Sensors FPS + flip: 271910 ns
+Sensors data: 242360 ns
+Camera init: 749479 ns
+Camera show: 5313463 ns
+Camera init: 808419 ns
+Camera show: 4646033 ns
+Sensors FPS + flip: 268509 ns
+Sensors data: 253410 ns
+Camera init: 835338 ns
+Camera show: 5670123 ns
+Camera init: 709299 ns
+Camera show: 3580765 ns
+Sensors FPS + flip: 348580 ns
+Sensors data: 218279 ns
+Camera init: 683039 ns
+Camera show: 5283503 ns
+Camera init: 813489 ns
+Camera show: 6709150 ns
+Sensors FPS + flip: 530199 ns
+Sensors data: 230020 ns
+Camera init: 1042558 ns
+Camera show: 5708622 ns
+Camera init: 975948 ns
+Camera show: 4391744 ns
+Sensors FPS + flip: 344419 ns
+Sensors data: 264859 ns
+Camera init: 854219 ns
+Camera show: 4599624 ns
+Camera init: 474950 ns
+Camera show: 3514714 ns
+Sensors FPS + flip: 352610 ns
+Sensors data: 350320 ns
+Camera init: 873309 ns
+Camera show: 6416231 ns
+Camera init: 614640 ns
+Camera show: 4932023 ns
+Sensors FPS + flip: 265589 ns
+Sensors data: 513409 ns
+Camera init: 624479 ns
+Camera show: 4695764 ns
+Camera init: 518320 ns
+Camera show: 3296665 ns
+Sensors FPS + flip: 284740 ns
+Sensors data: 396420 ns
+Camera init: 611179 ns
+Camera show: 4181874 ns
+Camera init: 459980 ns
+Camera show: 3864365 ns
+Sensors FPS + flip: 316670 ns
+Sensors data: 348339 ns
+Camera init: 1196909 ns
+Camera show: 4813583 ns
+Camera init: 679720 ns
+Camera show: 3401725 ns
+Sensors FPS + flip: 280139 ns
+Sensors data: 281999 ns
+Camera init: 609179 ns
+Camera show: 4170295 ns
+Camera init: 447330 ns
+Camera show: 3541005 ns
+Sensors FPS + flip: 255519 ns
+Sensors data: 339780 ns
+Camera init: 894638 ns
+Camera show: 5066294 ns
+Camera init: 762199 ns
+Camera show: 4390394 ns
+Sensors FPS + flip: 346399 ns
+Sensors data: 360779 ns
+Camera init: 1074919 ns
+Camera show: 4823673 ns
+Camera init: 696699 ns
+Camera show: 5457732 ns
+Sensors FPS + flip: 449069 ns
+Sensors data: 335160 ns
+Camera init: 807589 ns
+Camera show: 4591883 ns
+Camera init: 487479 ns
+Camera show: 4619824 ns
+Sensors FPS + flip: 475650 ns
+Sensors data: 273480 ns
+Camera init: 1065769 ns
+Camera show: 5345752 ns
+Camera init: 408629 ns
+Camera show: 3204236 ns
+Sensors FPS + flip: 255939 ns
+Sensors data: 227339 ns
+Camera init: 734829 ns
+Camera show: 4448854 ns
+Camera init: 586829 ns
+Camera show: 4029964 ns
+Sensors FPS + flip: 324409 ns
+Sensors data: 449360 ns
+Camera init: 982828 ns
+Camera show: 6110421 ns
+Camera init: 887349 ns
+Camera show: 4644283 ns
+Sensors FPS + flip: 337130 ns
+Sensors data: 270809 ns
+Camera init: 709089 ns
+Camera show: 4422694 ns
+Camera init: 728439 ns
+Camera show: 3603206 ns
+Sensors FPS + flip: 319090 ns
+Sensors data: 275840 ns
+Camera init: 719409 ns
+Camera show: 4416003 ns
+Camera init: 602929 ns
+Camera show: 4817283 ns
+Sensors FPS + flip: 342210 ns
+Sensors data: 222680 ns
+Camera init: 658629 ns
+Camera show: 4980553 ns
+Camera init: 856408 ns
+Camera show: 4994903 ns
+Sensors FPS + flip: 432529 ns
+Sensors data: 242300 ns
+Camera init: 1138428 ns
+Camera show: 3717345 ns
+Camera init: 516729 ns
+Camera show: 3431035 ns
+Sensors FPS + flip: 265509 ns
+Sensors data: 254650 ns
+Camera init: 825448 ns
+Camera show: 4842153 ns
+Camera init: 811869 ns
+Camera show: 4355824 ns
+Sensors FPS + flip: 251569 ns
+Sensors data: 253190 ns
+Camera init: 769518 ns
+Camera show: 6256371 ns
+Camera init: 585309 ns
+Camera show: 3259876 ns
+Sensors FPS + flip: 255219 ns
+Sensors data: 287309 ns
+Camera init: 1807007 ns
+Camera show: 5032304 ns
+Camera init: 471230 ns
+Camera show: 3274215 ns
+Sensors FPS + flip: 252450 ns
+Sensors data: 199750 ns
+Camera init: 708209 ns
+Camera show: 4164764 ns
+Camera init: 790639 ns
+Camera show: 4554743 ns
+Sensors FPS + flip: 333039 ns
+Sensors data: 336549 ns
+Camera init: 809029 ns
+Camera show: 5847502 ns
+Camera init: 680759 ns
+Camera show: 5409602 ns
+Sensors FPS + flip: 429929 ns
+Sensors data: 318909 ns
+Camera init: 829799 ns
+Camera show: 6162531 ns
+Camera init: 616429 ns
+Camera show: 4120094 ns
+Sensors FPS + flip: 432099 ns
+Sensors data: 286069 ns
+Camera init: 782829 ns
+Camera show: 5955312 ns
+Camera init: 889819 ns
+Camera show: 4180734 ns
+Sensors FPS + flip: 444859 ns
+Sensors data: 217740 ns
+Camera init: 601459 ns
+Camera show: 3934215 ns
+Camera init: 641149 ns
+Camera show: 3393815 ns
+Sensors FPS + flip: 273070 ns
+Sensors data: 260899 ns
+Camera init: 773269 ns
+Camera show: 5881232 ns
+Camera init: 602389 ns
+Camera show: 5184972 ns
+Sensors FPS + flip: 430079 ns
+Sensors data: 248800 ns
+Camera init: 714259 ns
+Camera show: 4601903 ns
+Camera init: 708299 ns
+Camera show: 3259736 ns
+Sensors FPS + flip: 268930 ns
+Sensors data: 229100 ns
+Camera init: 668999 ns
+Camera show: 4883393 ns
+Camera init: 619819 ns
+Camera show: 5019403 ns
+Sensors FPS + flip: 425760 ns
+Sensors data: 256340 ns
+Camera init: 726749 ns
+Camera show: 4249313 ns
+Camera init: 709009 ns
+Camera show: 4488094 ns
+Sensors FPS + flip: 265169 ns
+Sensors data: 224210 ns
+Camera init: 734499 ns
+Camera show: 6557961 ns
+Camera init: 779299 ns
+Camera show: 2976566 ns
+Sensors FPS + flip: 252730 ns
+Sensors data: 171409 ns
+Camera init: 549990 ns
+Camera show: 4780623 ns
+Camera init: 593279 ns
+Camera show: 4969672 ns
+Sensors FPS + flip: 422680 ns
+Sensors data: 240409 ns
+Camera init: 1131959 ns
+Camera show: 5265862 ns
+Camera init: 861148 ns
+Camera show: 5457873 ns
+Sensors FPS + flip: 410979 ns
+Sensors data: 306070 ns
+Camera init: 797959 ns
+Camera show: 5878061 ns
+Camera init: 664020 ns
+Camera show: 4938673 ns
+Sensors FPS + flip: 267590 ns
+Sensors data: 279640 ns
+Camera init: 566809 ns
+Camera show: 4146184 ns
+Camera init: 486479 ns
+Camera show: 3815264 ns
+Sensors FPS + flip: 315030 ns
+Sensors data: 252680 ns
+Camera init: 686189 ns
+Camera show: 5270672 ns
+Camera init: 575349 ns
+Camera show: 5019033 ns
+Sensors FPS + flip: 426709 ns
+Sensors data: 257680 ns
+Camera init: 564339 ns
+Camera show: 4129074 ns
+Camera init: 671169 ns
+Camera show: 5083163 ns
+Sensors FPS + flip: 258139 ns
+Sensors data: 374799 ns
+Camera init: 868939 ns
+Camera show: 6661430 ns
+Camera init: 756449 ns
+Camera show: 3103895 ns
+Sensors FPS + flip: 266660 ns
+Sensors data: 270650 ns
+Camera init: 782738 ns
+Camera show: 6339312 ns
+Camera init: 885639 ns
+Camera show: 3842725 ns
+Sensors FPS + flip: 391799 ns
+Sensors data: 303209 ns
+Camera init: 859639 ns
+Camera show: 6703360 ns
+Camera init: 600509 ns
+Camera show: 4896453 ns
+Sensors FPS + flip: 428339 ns
+Sensors data: 310789 ns
+Camera init: 1550958 ns
+Camera show: 5567162 ns
+Camera init: 570639 ns
+Camera show: 5119273 ns
+Sensors FPS + flip: 418329 ns
+Sensors data: 213939 ns
+Camera init: 745209 ns
+Camera show: 6301591 ns
+Camera init: 360730 ns
+Camera show: 3006476 ns
+Sensors FPS + flip: 256219 ns
+Sensors data: 287850 ns
+Camera init: 871578 ns
+Camera show: 5830702 ns
+Camera init: 604819 ns
+Camera show: 4095414 ns
+Sensors FPS + flip: 255400 ns
+Sensors data: 325080 ns
+Camera init: 819349 ns
+Camera show: 3608514 ns
+Camera init: 861149 ns
+Camera show: 5520452 ns
+Sensors FPS + flip: 252199 ns
+Sensors data: 229790 ns
+Camera init: 933309 ns
+Camera show: 7275609 ns
+Camera init: 406619 ns
+Camera show: 3042966 ns
+Sensors FPS + flip: 254979 ns
+Sensors data: 172209 ns
+Camera init: 608280 ns
+Camera show: 4128524 ns
+Camera init: 588720 ns
+Camera show: 3562494 ns
+Sensors FPS + flip: 257060 ns
+Sensors data: 232459 ns
+Camera init: 906889 ns
+Camera show: 6658731 ns
+Camera init: 762408 ns
+Camera show: 3697255 ns
+Sensors FPS + flip: 256549 ns
+Sensors data: 205660 ns
+Camera init: 1055309 ns
+Camera show: 5042652 ns
+Camera init: 1053919 ns
+Camera show: 2751486 ns
+Sensors FPS + flip: 264360 ns
+Sensors data: 234970 ns
+Camera init: 936459 ns
+Camera show: 4423944 ns
+Camera init: 627419 ns
+Camera show: 5004442 ns
+Sensors FPS + flip: 422930 ns
+Sensors data: 159830 ns
+Camera init: 685309 ns
+Camera show: 3867675 ns
+Camera init: 614150 ns
+Camera show: 3278535 ns
+Sensors FPS + flip: 251599 ns
+Sensors data: 175459 ns
+Camera init: 721579 ns
+Camera show: 5064174 ns
+Camera init: 611359 ns
+Camera show: 4410304 ns
+Sensors FPS + flip: 256369 ns
+Sensors data: 221450 ns
+Camera init: 903228 ns
+Camera show: 6506911 ns
+Camera init: 732209 ns
+Camera show: 2447886 ns
+Sensors FPS + flip: 267370 ns
+Sensors data: 231339 ns
+Camera init: 870719 ns
+Camera show: 7218250 ns
+Camera init: 457479 ns
+Camera show: 3077305 ns
+Sensors FPS + flip: 260600 ns
+Sensors data: 203920 ns
+Camera init: 529419 ns
+Camera show: 5324312 ns
+Camera init: 776709 ns
+Camera show: 2556486 ns
+Sensors FPS + flip: 284570 ns
+Sensors data: 242119 ns
+Camera init: 852999 ns
+Camera show: 6318571 ns
+Camera init: 852609 ns
+Camera show: 3205445 ns
+Sensors FPS + flip: 261079 ns
+Sensors data: 250300 ns
+Camera init: 697689 ns
+Camera show: 5061463 ns
+Camera init: 667229 ns
+Camera show: 3316526 ns
+Sensors FPS + flip: 256100 ns
+Sensors data: 374059 ns
+Camera init: 1403138 ns
+Camera show: 3165056 ns
+Camera init: 477550 ns
+Camera show: 3182195 ns
+Sensors FPS + flip: 259120 ns
+Sensors data: 286770 ns
+Camera init: 903828 ns
+Camera show: 5375992 ns
+Camera init: 744879 ns
+Camera show: 4886383 ns
+Sensors FPS + flip: 321609 ns
+Sensors data: 249610 ns
+Camera init: 785849 ns
+Camera show: 4457313 ns
+Camera init: 744909 ns
+Camera show: 2703886 ns
+Sensors FPS + flip: 310960 ns
+Sensors data: 231280 ns
+Camera init: 756109 ns
+Camera show: 6325001 ns
+Camera init: 751009 ns
+Camera show: 4213184 ns
+Sensors FPS + flip: 264690 ns
+Sensors data: 378270 ns
+Camera init: 981099 ns
+Camera show: 5472912 ns
+Camera init: 644499 ns
+Camera show: 3368255 ns
+Sensors FPS + flip: 263910 ns
+Sensors data: 226629 ns
+Camera init: 894719 ns
+Camera show: 5170723 ns
+Camera init: 680419 ns
+Camera show: 3694634 ns
+Sensors FPS + flip: 259320 ns
+Sensors data: 348110 ns
+Camera init: 980428 ns
+Camera show: 4380054 ns
+Camera init: 559429 ns
+Camera show: 4073345 ns
+Sensors FPS + flip: 387570 ns
+Sensors data: 378340 ns
+Camera init: 1206898 ns
+Camera show: 5990481 ns
+Camera init: 754509 ns
+Camera show: 4674783 ns
+Sensors FPS + flip: 450589 ns
+Sensors data: 292179 ns
+Camera init: 1126879 ns
+Camera show: 5615972 ns
+Camera init: 472499 ns
+Camera show: 3469985 ns
+Sensors FPS + flip: 270189 ns
+Sensors data: 238610 ns
+Camera init: 795089 ns
+Camera show: 5672752 ns
+Camera init: 700069 ns
+Camera show: 4176653 ns
+Sensors FPS + flip: 274030 ns
+Sensors data: 294419 ns
+Camera init: 1166408 ns
+Camera show: 6030652 ns
+Camera init: 973068 ns
+Camera show: 6342651 ns
+Sensors FPS + flip: 321399 ns
+Sensors data: 305890 ns
+Camera init: 948108 ns
+Camera show: 7511179 ns
+Camera init: 429109 ns
+Camera show: 3452796 ns
+Sensors FPS + flip: 330300 ns
+Sensors data: 486450 ns
+Camera init: 727659 ns
+Camera show: 4831773 ns
+Camera init: 478350 ns
+Camera show: 3297535 ns
+Sensors FPS + flip: 276749 ns
+Sensors data: 247720 ns
+Camera init: 567089 ns
+Camera show: 5060493 ns
+Camera init: 652639 ns
+Camera show: 3863355 ns
+Sensors FPS + flip: 276340 ns
+Sensors data: 243459 ns
+Camera init: 757659 ns
+Camera show: 4440283 ns
+Camera init: 449879 ns
+Camera show: 3591315 ns
+Sensors FPS + flip: 261840 ns
+Sensors data: 277699 ns
+Camera init: 576570 ns
+Camera show: 5818761 ns
+Camera init: 807988 ns
+Camera show: 4439104 ns
+Sensors FPS + flip: 330400 ns
+Sensors data: 263729 ns
+Camera init: 859759 ns
+Camera show: 6179782 ns
+Camera init: 757979 ns
+Camera show: 3342565 ns
+Sensors FPS + flip: 265249 ns
+Sensors data: 247270 ns
+Camera init: 652429 ns
+Camera show: 4284134 ns
+Camera init: 594339 ns
+Camera show: 4621384 ns
+Sensors FPS + flip: 484819 ns
+Sensors data: 253299 ns
+Camera init: 1095599 ns
+Camera show: 5894632 ns
+Camera init: 1245198 ns
+Camera show: 4574034 ns
+Sensors FPS + flip: 266490 ns
+Sensors data: 256510 ns
+Camera init: 607519 ns
+Camera show: 4268864 ns
+Camera init: 494590 ns
+Camera show: 3870024 ns
+Sensors FPS + flip: 373640 ns
+Sensors data: 261330 ns
+Camera init: 997288 ns
+Camera show: 4956253 ns
+Camera init: 425660 ns
+Camera show: 4373683 ns
+Sensors FPS + flip: 260690 ns
+Sensors data: 197580 ns
+Camera init: 813649 ns
+Camera show: 4049294 ns
+Camera init: 469859 ns
+Camera show: 3768405 ns
+Sensors FPS + flip: 258530 ns
+Sensors data: 228209 ns
+Camera init: 580829 ns
+Camera show: 4274024 ns
+Camera init: 535999 ns
+Camera show: 3354985 ns
+Sensors FPS + flip: 251979 ns
+Sensors data: 186680 ns
+Camera init: 473939 ns
+Camera show: 4370624 ns
+Camera init: 423949 ns
+Camera show: 3750575 ns
+Sensors FPS + flip: 254630 ns
+Sensors data: 307280 ns
+Camera init: 1433908 ns
+Camera show: 5538712 ns
+Camera init: 690679 ns
+Camera show: 3803175 ns
+Sensors FPS + flip: 253190 ns
+Sensors data: 210789 ns
+Camera init: 848139 ns
+Camera show: 6458630 ns
+Camera init: 1515408 ns
+Camera show: 4992933 ns
+Sensors FPS + flip: 375339 ns
+Sensors data: 269070 ns
+Camera init: 691589 ns
+Camera show: 5528892 ns
+Camera init: 1121958 ns
+Camera show: 4290334 ns
+Sensors FPS + flip: 288960 ns
+Sensors data: 249130 ns
+Camera init: 1052599 ns
+Camera show: 7093870 ns
+Camera init: 988839 ns
+Camera show: 4494773 ns
+Sensors FPS + flip: 455090 ns
+Sensors data: 352760 ns
+Camera init: 1000658 ns
+Camera show: 6198521 ns
+Camera init: 648889 ns
+Camera show: 5137623 ns
+Sensors FPS + flip: 423450 ns
+Sensors data: 304740 ns
+Camera init: 814109 ns
+Camera show: 5169492 ns
+Camera init: 543309 ns
+Camera show: 4074754 ns
+Sensors FPS + flip: 332670 ns
+Sensors data: 328220 ns
+Camera init: 915779 ns
+Camera show: 6750750 ns
+Camera init: 388419 ns
+Camera show: 3105196 ns
+Sensors FPS + flip: 263859 ns
+Sensors data: 288290 ns
+Camera init: 773479 ns
+Camera show: 5860982 ns
+Camera init: 432740 ns
+Camera show: 3423005 ns
+Sensors FPS + flip: 274420 ns
+Sensors data: 255469 ns
+Camera init: 808389 ns
+Camera show: 5814392 ns
+Camera init: 649419 ns
+Camera show: 5040112 ns
+Sensors FPS + flip: 344330 ns
+Sensors data: 252840 ns
+Camera init: 946609 ns
+Camera show: 7679929 ns
+Camera init: 745049 ns
+Camera show: 5785992 ns
+Sensors FPS + flip: 290550 ns
+Sensors data: 321680 ns
+Camera init: 853959 ns
+Camera show: 6294641 ns
+Camera init: 615619 ns
+Camera show: 2930136 ns
+Sensors FPS + flip: 254100 ns
+Sensors data: 235440 ns
+Camera init: 766259 ns
+Camera show: 5965462 ns
+Camera init: 561760 ns
+Camera show: 4857992 ns
+Sensors FPS + flip: 426019 ns
+Sensors data: 202489 ns
+Camera init: 936509 ns
+Camera show: 5171443 ns
+Camera init: 1024858 ns
+Camera show: 4542053 ns
+Sensors FPS + flip: 276790 ns
+Sensors data: 237990 ns
+Camera init: 905369 ns
+Camera show: 5551152 ns
+Camera init: 876919 ns
+Camera show: 3746285 ns
+Sensors FPS + flip: 261460 ns
+Sensors data: 151450 ns
+Camera init: 547589 ns
+Camera show: 3565755 ns
+Camera init: 621769 ns
+Camera show: 5785872 ns
+Sensors FPS + flip: 509370 ns
+Sensors data: 396059 ns
+Camera init: 884849 ns
+Camera show: 6935600 ns
+Camera init: 710639 ns
+Camera show: 3128835 ns
+Sensors FPS + flip: 266419 ns
+Sensors data: 258120 ns
+Camera init: 741099 ns
+Camera show: 5294542 ns
+Camera init: 577839 ns
+Camera show: 4882623 ns
+Sensors FPS + flip: 416699 ns
+Sensors data: 302820 ns
+Camera init: 870459 ns
+Camera show: 5801672 ns
+Camera init: 469390 ns
+Camera show: 3130955 ns
+Sensors FPS + flip: 270329 ns
+Sensors data: 165750 ns
+Camera init: 520839 ns
+Camera show: 4938103 ns
+Camera init: 815768 ns
+Camera show: 3795315 ns
+Sensors FPS + flip: 431150 ns
+Sensors data: 250110 ns
+Camera init: 838109 ns
+Camera show: 6149951 ns
+Camera init: 606129 ns
+Camera show: 3925314 ns
+Sensors FPS + flip: 424389 ns
+Sensors data: 251159 ns
+Camera init: 1142139 ns
+Camera show: 4639263 ns
+Camera init: 889459 ns
+Camera show: 3895645 ns
+Sensors FPS + flip: 437169 ns
+Sensors data: 201330 ns
+Camera init: 833828 ns
+Camera show: 5516263 ns
+Camera init: 579359 ns
+Camera show: 4995972 ns
+Sensors FPS + flip: 412649 ns
+Sensors data: 164240 ns
+Camera init: 905848 ns
+Camera show: 3997784 ns
+Camera init: 736219 ns
+Camera show: 2713506 ns
+Sensors FPS + flip: 254629 ns
+Sensors data: 324109 ns
+Camera init: 874139 ns
+Camera show: 7426329 ns
+Camera init: 866809 ns
+Camera show: 4421603 ns
+Sensors FPS + flip: 451099 ns
+Sensors data: 241980 ns
+Camera init: 1022489 ns
+Camera show: 5927961 ns
+Camera init: 806459 ns
+Camera show: 2492016 ns
+Sensors FPS + flip: 255169 ns
+Sensors data: 261230 ns
+Camera init: 947228 ns
+Camera show: 9479557 ns
+Camera init: 1153308 ns
+Camera show: 6155282 ns
+Sensors FPS + flip: 477889 ns
+Sensors data: 467430 ns
+Camera init: 954989 ns
+Camera show: 5190322 ns
+Camera init: 686399 ns
+Camera show: 5191173 ns
+Sensors FPS + flip: 526270 ns
+Sensors data: 243909 ns
+Camera init: 1051989 ns
+Camera show: 7203630 ns
+Camera init: 588459 ns
+Camera show: 3341605 ns
+Sensors FPS + flip: 260140 ns
+Sensors data: 212670 ns
+Camera init: 760259 ns
+Camera show: 6070261 ns
+Camera init: 607599 ns
+Camera show: 4945613 ns
+Sensors FPS + flip: 414470 ns
+Sensors data: 200750 ns
+Camera init: 611969 ns
+Camera show: 4564583 ns
+Camera init: 544619 ns
+Camera show: 3683245 ns
+Sensors FPS + flip: 255720 ns
+Sensors data: 203990 ns
+Camera init: 834499 ns
+Camera show: 4490534 ns
+Camera init: 768279 ns
+Camera show: 3646835 ns
+Sensors FPS + flip: 249519 ns
+Sensors data: 241729 ns
+Camera init: 766449 ns
+Camera show: 3938634 ns
+Camera init: 970528 ns
+Camera show: 4094704 ns
+Sensors FPS + flip: 314830 ns
+Sensors data: 271210 ns
+Camera init: 1559028 ns
+Camera show: 5055842 ns
+Camera init: 793499 ns
+Camera show: 4538403 ns
+Sensors FPS + flip: 248020 ns
+Sensors data: 241620 ns
+Camera init: 908269 ns
+Camera show: 6351661 ns
+Camera init: 582900 ns
+Camera show: 3050525 ns
+Sensors FPS + flip: 264220 ns
+Sensors data: 203120 ns
+Camera init: 764349 ns
+Camera show: 5971071 ns
+Camera init: 585089 ns
+Camera show: 3038135 ns
+Sensors FPS + flip: 250320 ns
+Sensors data: 392469 ns
+Camera init: 1190188 ns
+Camera show: 3892615 ns
+Camera init: 676569 ns
+Camera show: 2863566 ns
+Sensors FPS + flip: 256719 ns
+Sensors data: 249989 ns
+Camera init: 1223918 ns
+Camera show: 5385973 ns
+Camera init: 592379 ns
+Camera show: 5119032 ns
+Sensors FPS + flip: 427889 ns
+Sensors data: 203920 ns
+Camera init: 710159 ns
+Camera show: 3815654 ns
+Camera init: 423669 ns
+Camera show: 3735985 ns
+Sensors FPS + flip: 315180 ns
+Sensors data: 247240 ns
+Camera init: 588399 ns
+Camera show: 5172903 ns
+Camera init: 649539 ns
+Camera show: 5441993 ns
+Sensors FPS + flip: 328020 ns
+Sensors data: 270699 ns
+Camera init: 711419 ns
+Camera show: 5404352 ns
+Camera init: 734609 ns
+Camera show: 3287745 ns
+Sensors FPS + flip: 324960 ns
+Sensors data: 235370 ns
+Camera init: 788959 ns
+Camera show: 6584161 ns
+Camera init: 744819 ns
+Camera show: 3189485 ns
+Sensors FPS + flip: 258370 ns
+Sensors data: 341220 ns
+Camera init: 1027268 ns
+Camera show: 5430222 ns
+Camera init: 660029 ns
+Camera show: 5281542 ns
+Sensors FPS + flip: 450589 ns
+Sensors data: 269530 ns
+Camera init: 981419 ns
+Camera show: 4523593 ns
+Camera init: 436939 ns
+Camera show: 3822945 ns
+Sensors FPS + flip: 322429 ns
+Sensors data: 292280 ns
+Camera init: 737979 ns
+Camera show: 4329624 ns
+Camera init: 653929 ns
+Camera show: 3124395 ns
+Sensors FPS + flip: 577739 ns
+Sensors data: 235459 ns
+Camera init: 792089 ns
+Camera show: 4099404 ns
+Camera init: 488469 ns
+Camera show: 3824085 ns
+Sensors FPS + flip: 341139 ns
+Sensors data: 250589 ns
+Camera init: 878769 ns
+Camera show: 5283942 ns
+Camera init: 458989 ns
+Camera show: 2589386 ns
+Sensors FPS + flip: 264910 ns
+Sensors data: 384459 ns
+Camera init: 1618248 ns
+Camera show: 5479502 ns
+Camera init: 434989 ns
+Camera show: 3207635 ns
+Sensors FPS + flip: 254830 ns
+Sensors data: 232320 ns
+Camera init: 662729 ns
+Camera show: 6553350 ns
+Camera init: 833799 ns
+Camera show: 4690213 ns
+Sensors FPS + flip: 275020 ns
+Sensors data: 165569 ns
+Camera init: 628109 ns
+Camera show: 4595034 ns
+Camera init: 511919 ns
+Camera show: 3887745 ns
+Sensors FPS + flip: 269130 ns
+Sensors data: 277279 ns
+Camera init: 895899 ns
+Camera show: 7266480 ns
+Camera init: 619199 ns
+Camera show: 2463006 ns
+Sensors FPS + flip: 261059 ns
+Sensors data: 254660 ns
+Camera init: 1907587 ns
+Camera show: 6141481 ns
+Camera init: 713749 ns
+Camera show: 6611740 ns
+Sensors FPS + flip: 272080 ns
+Sensors data: 317450 ns
+Camera init: 906278 ns
+Camera show: 5786582 ns
+Camera init: 607260 ns
+Camera show: 5264152 ns
+Sensors FPS + flip: 437179 ns
+Sensors data: 242290 ns
+Camera init: 793979 ns
+Camera show: 6075011 ns
+Camera init: 729348 ns
+Camera show: 3838115 ns
+Sensors FPS + flip: 262929 ns
+Sensors data: 233900 ns
+Camera init: 963709 ns
+Camera show: 4033894 ns
+Camera init: 599200 ns
+Camera show: 5036952 ns
+Sensors FPS + flip: 433960 ns
+Sensors data: 184190 ns
+Camera init: 778569 ns
+Camera show: 4670033 ns
+Camera init: 476660 ns
+Camera show: 4005214 ns
+Sensors FPS + flip: 484220 ns
+Sensors data: 197379 ns
+Camera init: 624109 ns
+Camera show: 4847034 ns
+Camera init: 581720 ns
+Camera show: 4064164 ns
+Sensors FPS + flip: 253569 ns
+Sensors data: 262640 ns
+Camera init: 1209478 ns
+Camera show: 5703752 ns
+Camera init: 456129 ns
+Camera show: 2506477 ns
+Sensors FPS + flip: 278960 ns
+Sensors data: 213480 ns
+Camera init: 849829 ns
+Camera show: 6108271 ns
+Camera init: 412489 ns
+Camera show: 2983825 ns
+Sensors FPS + flip: 248940 ns
+Sensors data: 145650 ns
+Camera init: 376200 ns
+Camera show: 3089565 ns
+Camera init: 391689 ns
+Camera show: 3688195 ns
+Sensors FPS + flip: 255459 ns
+Sensors data: 160749 ns
+Camera init: 606149 ns
+Camera show: 3731275 ns
+Camera init: 586679 ns
+Camera show: 3898784 ns
+Sensors FPS + flip: 424159 ns
+Sensors data: 210640 ns
+Camera init: 1079549 ns
+Camera show: 5672831 ns
+Camera init: 541689 ns
+Camera show: 2477826 ns
+Sensors FPS + flip: 264600 ns
+Sensors data: 203959 ns
+Camera init: 879449 ns
+Camera show: 4668843 ns
+Camera init: 581469 ns
+Camera show: 5291053 ns
+Sensors FPS + flip: 540530 ns
+Sensors data: 256580 ns
+Camera init: 606729 ns
+Camera show: 4683143 ns
+Camera init: 568109 ns
+Camera show: 4020824 ns
+Sensors FPS + flip: 328159 ns
+Sensors data: 279290 ns
+Camera init: 802039 ns
+Camera show: 6592430 ns
+Camera init: 642669 ns
+Camera show: 4232334 ns
+Sensors FPS + flip: 427430 ns
+Sensors data: 213970 ns
+Camera init: 544479 ns
+Camera show: 4044775 ns
+Camera init: 488690 ns
+Camera show: 3915694 ns
+Sensors FPS + flip: 287570 ns
+Sensors data: 261990 ns
+Camera init: 753399 ns
+Camera show: 4829753 ns
+Camera init: 1196548 ns
+Camera show: 4000274 ns
+Sensors FPS + flip: 318059 ns
+Sensors data: 217499 ns
+Camera init: 530200 ns
+Camera show: 4101314 ns
+Camera init: 468770 ns
+Camera show: 3786404 ns
+Sensors FPS + flip: 325339 ns
+Sensors data: 341850 ns
+Camera init: 780529 ns
+Camera show: 3487204 ns
+Camera init: 373379 ns
+Camera show: 3089656 ns
+Sensors FPS + flip: 264389 ns
+Sensors data: 309109 ns
+Camera init: 565839 ns
+Camera show: 4301204 ns
+Camera init: 457919 ns
+Camera show: 3843844 ns
+Sensors FPS + flip: 339190 ns
+Sensors data: 255019 ns
+Camera init: 843299 ns
+Camera show: 5956311 ns
+Camera init: 674919 ns
+Camera show: 3150336 ns
+Sensors FPS + flip: 251669 ns
+Sensors data: 236199 ns
+Camera init: 806609 ns
+Camera show: 7531529 ns
+Camera init: 363410 ns
+Camera show: 3123335 ns
+Sensors FPS + flip: 259810 ns
+Sensors data: 314620 ns
+Camera init: 835538 ns
+Camera show: 5868612 ns
+Camera init: 611069 ns
+Camera show: 4975853 ns
+Sensors FPS + flip: 433689 ns
+Sensors data: 238390 ns
+Camera init: 687948 ns
+Camera show: 5385592 ns
+Camera init: 557049 ns
+Camera show: 3719275 ns
+Sensors FPS + flip: 255379 ns
+Sensors data: 237320 ns
+Camera init: 528519 ns
+Camera show: 5151753 ns
+Camera init: 605700 ns
+Camera show: 3248715 ns
+Sensors FPS + flip: 262839 ns
+Sensors data: 234530 ns
+Camera init: 1853047 ns
+Camera show: 5268263 ns
+Camera init: 583699 ns
+Camera show: 3721544 ns
+Sensors FPS + flip: 255710 ns
+Sensors data: 284280 ns
+Camera init: 683569 ns
+Camera show: 4876972 ns
+Camera init: 653959 ns
+Camera show: 4807193 ns
+Sensors FPS + flip: 422799 ns
+Sensors data: 180330 ns
+Camera init: 425299 ns
+Camera show: 3232985 ns
+Camera init: 379760 ns
+Camera show: 3133565 ns
+Sensors FPS + flip: 317179 ns
+Sensors data: 273880 ns
+Camera init: 532329 ns
+Camera show: 4023434 ns
+Camera init: 594309 ns
+Camera show: 5124183 ns
+Sensors FPS + flip: 428249 ns
+Sensors data: 254910 ns
+Camera init: 567259 ns
+Camera show: 4619173 ns
+Camera init: 1068829 ns
+Camera show: 3563135 ns
+Sensors FPS + flip: 282370 ns
+Sensors data: 651459 ns
+Camera init: 781608 ns
+Camera show: 5071703 ns
+Camera init: 648149 ns
+Camera show: 5407442 ns
+Sensors FPS + flip: 526449 ns
+Sensors data: 295240 ns
+Camera init: 737969 ns
+Camera show: 4179154 ns
+Camera init: 509219 ns
+Camera show: 3210176 ns
+Sensors FPS + flip: 263889 ns
+Sensors data: 288539 ns
+Camera init: 926039 ns
+Camera show: 7285899 ns
+Camera init: 819409 ns
+Camera show: 3384345 ns
+Sensors FPS + flip: 292959 ns
+Sensors data: 288490 ns
+Camera init: 679329 ns
+Camera show: 4176534 ns
+Camera init: 499460 ns
+Camera show: 3869014 ns
+Sensors FPS + flip: 264139 ns
+Sensors data: 205869 ns
+Camera init: 726579 ns
+Camera show: 4170854 ns
+Camera init: 518099 ns
+Camera show: 4018814 ns
+Sensors FPS + flip: 333170 ns
+Sensors data: 294249 ns
+Camera init: 622310 ns
+Camera show: 5994731 ns
+Camera init: 690339 ns
+Camera show: 5447972 ns
+Sensors FPS + flip: 265130 ns
+Sensors data: 286549 ns
+Camera init: 829829 ns
+Camera show: 4158374 ns
+Camera init: 453860 ns
+Camera show: 3771374 ns
+Sensors FPS + flip: 311169 ns
+Sensors data: 360749 ns
+Camera init: 959679 ns
+Camera show: 6913240 ns
+Camera init: 755159 ns
+Camera show: 5305382 ns
+Sensors FPS + flip: 276569 ns
+Sensors data: 257119 ns
+Camera init: 551009 ns
+Camera show: 4040514 ns
+Camera init: 658829 ns
+Camera show: 3145835 ns
+Sensors FPS + flip: 266590 ns
+Sensors data: 293080 ns
+Camera init: 813418 ns
+Camera show: 7190610 ns
+Camera init: 387810 ns
+Camera show: 3159545 ns
+Sensors FPS + flip: 258779 ns
+Sensors data: 279869 ns
+Camera init: 878529 ns
+Camera show: 5754861 ns
+Camera init: 635059 ns
+Camera show: 2991186 ns
+Sensors FPS + flip: 272629 ns
+Sensors data: 238100 ns
+Camera init: 785819 ns
+Camera show: 6453110 ns
+Camera init: 582459 ns
+Camera show: 5043792 ns
+Sensors FPS + flip: 423669 ns
+Sensors data: 218020 ns
+Camera init: 605239 ns
+Camera show: 4244354 ns
+Camera init: 514299 ns
+Camera show: 3508255 ns
+Sensors FPS + flip: 321330 ns
+Sensors data: 233229 ns
+Camera init: 734739 ns
+Camera show: 6533171 ns
+Camera init: 746999 ns
+Camera show: 4149454 ns
+Sensors FPS + flip: 256449 ns
+Sensors data: 310849 ns
+Camera init: 1058539 ns
+Camera show: 4807383 ns
+Camera init: 631089 ns
+Camera show: 5121643 ns
+Sensors FPS + flip: 439130 ns
+Sensors data: 255940 ns
+Camera init: 893689 ns
+Camera show: 5512321 ns
+Camera init: 607419 ns
+Camera show: 5041323 ns
+Sensors FPS + flip: 447419 ns
+Sensors data: 253580 ns
+Camera init: 602229 ns
+Camera show: 3040495 ns
+Camera init: 635309 ns
+Camera show: 3264755 ns
+Sensors FPS + flip: 259310 ns
+Sensors data: 189779 ns
+Camera init: 585439 ns
+Camera show: 3906965 ns
+Camera init: 448570 ns
+Camera show: 4828202 ns
+Sensors FPS + flip: 252540 ns
+Sensors data: 305950 ns
+Camera init: 819919 ns
+Camera show: 5868121 ns
+Camera init: 434809 ns
+Camera show: 3309025 ns
+Sensors FPS + flip: 262399 ns
+Sensors data: 285469 ns
+Camera init: 713289 ns
+Camera show: 5189492 ns
+Camera init: 681419 ns
+Camera show: 3160985 ns
+Sensors FPS + flip: 287460 ns
+Sensors data: 270020 ns
+Camera init: 702339 ns
+Camera show: 5459892 ns
+Camera init: 582779 ns
+Camera show: 4061054 ns
+Sensors FPS + flip: 260870 ns
+Sensors data: 303990 ns
+Camera init: 2637666 ns
+Camera show: 5431942 ns
+Camera init: 638139 ns
+Camera show: 3761665 ns
+Sensors FPS + flip: 282750 ns
+Sensors data: 271580 ns
+Camera init: 711399 ns
+Camera show: 4818703 ns
+Camera init: 595000 ns
+Camera show: 4469823 ns
+Sensors FPS + flip: 271090 ns
+Sensors data: 207480 ns
+Camera init: 781208 ns
+Camera show: 5403392 ns
+Camera init: 677009 ns
+Camera show: 4343104 ns
+Sensors FPS + flip: 322200 ns
+Sensors data: 231310 ns
+Camera init: 764679 ns
+Camera show: 5530441 ns
+Camera init: 834629 ns
+Camera show: 4295093 ns
+Sensors FPS + flip: 454169 ns
+Sensors data: 433909 ns
+Camera init: 589809 ns
+Camera show: 6825680 ns
+Camera init: 865579 ns
+Camera show: 5898051 ns
+Sensors FPS + flip: 269030 ns
+Sensors data: 323640 ns
+Camera init: 790129 ns
+Camera show: 5887201 ns
+Camera init: 675509 ns
+Camera show: 4355324 ns
+Sensors FPS + flip: 266069 ns
+Sensors data: 272939 ns
+Camera init: 654809 ns
+Camera show: 4721083 ns
+Camera init: 660329 ns
+Camera show: 2815866 ns
+Sensors FPS + flip: 263389 ns
+Sensors data: 281150 ns
+Camera init: 783849 ns
+Camera show: 4734493 ns
+Camera init: 479169 ns
+Camera show: 3115566 ns
+Sensors FPS + flip: 271580 ns
+Sensors data: 307180 ns
+Camera init: 786799 ns
+Camera show: 4792332 ns
+Camera init: 1431098 ns
+Camera show: 4561163 ns
+Sensors FPS + flip: 546679 ns
+Sensors data: 293430 ns
+Camera init: 812989 ns
+Camera show: 4103654 ns
+Camera init: 471080 ns
+Camera show: 3717124 ns
+Sensors FPS + flip: 318969 ns
+Sensors data: 297050 ns
+Camera init: 749139 ns
+Camera show: 5250072 ns
+Camera init: 478630 ns
+Camera show: 4476623 ns
+Sensors FPS + flip: 259359 ns
+Sensors data: 244899 ns
+Camera init: 529870 ns
+Camera show: 4114303 ns
+Camera init: 447569 ns
+Camera show: 3745215 ns
+Sensors FPS + flip: 339220 ns
+Sensors data: 257850 ns
+Camera init: 753849 ns
+Camera show: 6212040 ns
+Camera init: 547779 ns
+Camera show: 3025516 ns
+Sensors FPS + flip: 263520 ns
+Sensors data: 246760 ns
+Camera init: 756438 ns
+Camera show: 6099882 ns
+Camera init: 663029 ns
+Camera show: 4827933 ns
+Sensors FPS + flip: 620849 ns
+Sensors data: 264099 ns
+Camera init: 821499 ns
+Camera show: 6600381 ns
+Camera init: 722669 ns
+Camera show: 3833984 ns
+Sensors FPS + flip: 264250 ns
+Sensors data: 322630 ns
+Camera init: 932908 ns
+Camera show: 6604831 ns
+Camera init: 425790 ns
+Camera show: 2818145 ns
+Sensors FPS + flip: 259600 ns
+Sensors data: 204340 ns
+Camera init: 623859 ns
+Camera show: 5104632 ns
+Camera init: 615119 ns
+Camera show: 5091002 ns
+Sensors FPS + flip: 253830 ns
+Sensors data: 228600 ns
+Camera init: 800149 ns
+Camera show: 5105102 ns
+Camera init: 648499 ns
+Camera show: 5058712 ns
+Sensors FPS + flip: 469929 ns
+Sensors data: 229289 ns
+Camera init: 867609 ns
+Camera show: 4995003 ns
+Camera init: 762049 ns
+Camera show: 4976083 ns
+Sensors FPS + flip: 253639 ns
+Sensors data: 263320 ns
+Camera init: 956739 ns
+Camera show: 4602323 ns
+Camera init: 635860 ns
+Camera show: 5070582 ns
+Sensors FPS + flip: 456019 ns
+Sensors data: 271080 ns
+Camera init: 1005208 ns
+Camera show: 5808572 ns
+Camera init: 609879 ns
+Camera show: 5211813 ns
+Sensors FPS + flip: 420540 ns
+Sensors data: 235370 ns
+Camera init: 830999 ns
+Camera show: 5413032 ns
+Camera init: 625189 ns
+Camera show: 5073293 ns
+Sensors FPS + flip: 419380 ns
+Sensors data: 258950 ns
+Camera init: 878169 ns
+Camera show: 6006161 ns
+Camera init: 606039 ns
+Camera show: 5065943 ns
+Sensors FPS + flip: 416749 ns
+Sensors data: 257160 ns
+Camera init: 873558 ns
+Camera show: 6506191 ns
+Camera init: 409880 ns
+Camera show: 3103555 ns
+Sensors FPS + flip: 254010 ns
+Sensors data: 248510 ns
+Camera init: 899089 ns
+Camera show: 5276142 ns
+Camera init: 607989 ns
+Camera show: 5445322 ns
+Sensors FPS + flip: 478870 ns
+Sensors data: 221180 ns
+Camera init: 856599 ns
+Camera show: 4409243 ns
+Camera init: 658579 ns
+Camera show: 3580535 ns
+Sensors FPS + flip: 251760 ns
+Sensors data: 222969 ns
+Camera init: 469870 ns
+Camera show: 4659053 ns
+Camera init: 515919 ns
+Camera show: 5155583 ns
+Sensors FPS + flip: 447870 ns
+Sensors data: 294939 ns
+Camera init: 1123549 ns
+Camera show: 5712421 ns
+Camera init: 853078 ns
+Camera show: 3613785 ns
+Sensors FPS + flip: 265149 ns
+Sensors data: 233480 ns
+Camera init: 906318 ns
+Camera show: 5595592 ns
+Camera init: 849428 ns
+Camera show: 4068674 ns
+Sensors FPS + flip: 250270 ns
+Sensors data: 254509 ns
+Camera init: 1348678 ns
+Camera show: 4120584 ns
+Camera init: 427429 ns
+Camera show: 3223225 ns
+Sensors FPS + flip: 263380 ns
+Sensors data: 219739 ns
+Camera init: 754279 ns
+Camera show: 5720372 ns
+Camera init: 647609 ns
+Camera show: 4463453 ns
+Sensors FPS + flip: 431419 ns
+Sensors data: 236800 ns
+Camera init: 865008 ns
+Camera show: 5357252 ns
+Camera init: 605899 ns
+Camera show: 5359863 ns
+Sensors FPS + flip: 463059 ns
+Sensors data: 252490 ns
+Camera init: 1187858 ns
+Camera show: 5949451 ns
+Camera init: 621129 ns
+Camera show: 5152232 ns
+Sensors FPS + flip: 436860 ns
+Sensors data: 256500 ns
+Camera init: 1272858 ns
+Camera show: 3134795 ns
+Camera init: 581029 ns
+Camera show: 2686306 ns
+Sensors FPS + flip: 255590 ns
+Sensors data: 198390 ns
+Camera init: 1033958 ns
+Camera show: 5009613 ns
+Camera init: 613419 ns
+Camera show: 3281846 ns
+Sensors FPS + flip: 255480 ns
+Sensors data: 212070 ns
+Camera init: 821358 ns
+Camera show: 4663133 ns
+Camera init: 724319 ns
+Camera show: 4057234 ns
+Sensors FPS + flip: 249229 ns
+Sensors data: 213570 ns
+Camera init: 690759 ns
+Camera show: 5333563 ns
+Camera init: 702379 ns
+Camera show: 4716873 ns
+Sensors FPS + flip: 254800 ns
+Sensors data: 356549 ns
+Camera init: 1264839 ns
+Camera show: 5752221 ns
+Camera init: 582269 ns
+Camera show: 5302172 ns
+Sensors FPS + flip: 326689 ns
+Sensors data: 289540 ns
+Camera init: 917819 ns
+Camera show: 5728232 ns
+Camera init: 643669 ns
+Camera show: 5106873 ns
+Sensors FPS + flip: 424910 ns
+Sensors data: 234600 ns
+Camera init: 769149 ns
+Camera show: 4188814 ns
+Camera init: 642699 ns
+Camera show: 5043053 ns
+Sensors FPS + flip: 462029 ns
+Sensors data: 284840 ns
+Camera init: 923308 ns
+Camera show: 7306639 ns
+Camera init: 477059 ns
+Camera show: 2491257 ns
+Sensors FPS + flip: 260410 ns
+Sensors data: 239610 ns
+Camera init: 657989 ns
+Camera show: 5132362 ns
+Camera init: 643459 ns
+Camera show: 3617345 ns
+Sensors FPS + flip: 267710 ns
+Sensors data: 330610 ns
+Camera init: 1010168 ns
+Camera show: 6696910 ns
+Camera init: 499039 ns
+Camera show: 2769876 ns
+Sensors FPS + flip: 265299 ns
+Sensors data: 228089 ns
+Camera init: 761549 ns
+Camera show: 5569652 ns
+Camera init: 632099 ns
+Camera show: 5122532 ns
+Sensors FPS + flip: 420899 ns
+Sensors data: 317769 ns
+Camera init: 876459 ns
+Camera show: 4789693 ns
+Camera init: 675799 ns
+Camera show: 3983465 ns
+Sensors FPS + flip: 347680 ns
+Sensors data: 210680 ns
+Camera init: 667149 ns
+Camera show: 4559343 ns
+Camera init: 676959 ns
+Camera show: 3235485 ns
+Sensors FPS + flip: 257459 ns
+Sensors data: 210030 ns
+Camera init: 818269 ns
+Camera show: 5575632 ns
+Camera init: 619299 ns
+Camera show: 5319182 ns
+Sensors FPS + flip: 426029 ns
+Sensors data: 254479 ns
+Camera init: 822199 ns
+Camera show: 4410214 ns
+Camera init: 414370 ns
+Camera show: 3146575 ns
+Sensors FPS + flip: 260539 ns
+Sensors data: 229220 ns
+Camera init: 629479 ns
+Camera show: 5619712 ns
+Camera init: 469950 ns
+Camera show: 4957892 ns
+Sensors FPS + flip: 251300 ns
+Sensors data: 201550 ns
+Camera init: 613459 ns
+Camera show: 5180542 ns
+Camera init: 383039 ns
+Camera show: 3053016 ns
+Sensors FPS + flip: 262110 ns
+Sensors data: 330450 ns
+Camera init: 1063248 ns
+Camera show: 7990268 ns
+Camera init: 759179 ns
+Camera show: 3089665 ns
+Sensors FPS + flip: 260259 ns
+Sensors data: 233240 ns
+Camera init: 884358 ns
+Camera show: 6311201 ns
+Camera init: 540159 ns
+Camera show: 3184675 ns
+Sensors FPS + flip: 265309 ns
+Sensors data: 224410 ns
+Camera init: 791429 ns
+Camera show: 5971041 ns
+Camera init: 602420 ns
+Camera show: 4311943 ns
+Sensors FPS + flip: 318870 ns
+Sensors data: 360220 ns
+Camera init: 981338 ns
+Camera show: 6250181 ns
+Camera init: 626579 ns
+Camera show: 4864443 ns
+Sensors FPS + flip: 449920 ns
+Sensors data: 280820 ns
+Camera init: 881389 ns
+Camera show: 5755941 ns
+Camera init: 580949 ns
+Camera show: 3850474 ns
+Sensors FPS + flip: 418089 ns
+Sensors data: 269969 ns
+Camera init: 1064929 ns
+Camera show: 5781541 ns
+Camera init: 606429 ns
+Camera show: 5011032 ns
+Sensors FPS + flip: 414060 ns
+Sensors data: 205830 ns
+Camera init: 854019 ns
+Camera show: 3573204 ns
+Camera init: 524479 ns
+Camera show: 4974573 ns
+Sensors FPS + flip: 487199 ns
+Sensors data: 323590 ns
+Camera init: 1245168 ns
+Camera show: 4778882 ns
+Camera init: 611879 ns
+Camera show: 3744654 ns
+Sensors FPS + flip: 250950 ns
+Sensors data: 298490 ns
+Camera init: 1002998 ns
+Camera show: 5551932 ns
+Camera init: 868688 ns
+Camera show: 3710635 ns
+Sensors FPS + flip: 271369 ns
+Sensors data: 223759 ns
+Camera init: 655439 ns
+Camera show: 5200233 ns
+Camera init: 590799 ns
+Camera show: 3907555 ns
+Sensors FPS + flip: 421180 ns
+Sensors data: 255120 ns
+Camera init: 884618 ns
+Camera show: 5196232 ns
+Camera init: 614539 ns
+Camera show: 4609383 ns
+Sensors FPS + flip: 293320 ns
+Sensors data: 283650 ns
+Camera init: 1106378 ns
+Camera show: 5156353 ns
+Camera init: 653039 ns
+Camera show: 3317515 ns
+Sensors FPS + flip: 248460 ns
+Sensors data: 346530 ns
+Camera init: 968808 ns
+Camera show: 5530142 ns
+Camera init: 644999 ns
+Camera show: 5414752 ns
+Sensors FPS + flip: 472580 ns
+Sensors data: 259829 ns
+Camera init: 948619 ns
+Camera show: 6105371 ns
+Camera init: 653329 ns
+Camera show: 5009302 ns
+Sensors FPS + flip: 419709 ns
+Sensors data: 212640 ns
+Camera init: 522529 ns
+Camera show: 4039104 ns
+Camera init: 663479 ns
+Camera show: 4195293 ns
+Sensors FPS + flip: 253330 ns
+Sensors data: 206000 ns
+Camera init: 606129 ns
+Camera show: 6091701 ns
+Camera init: 774178 ns
+Camera show: 4813613 ns
+Sensors FPS + flip: 254280 ns
+Sensors data: 255270 ns
+Camera init: 865408 ns
+Camera show: 7146870 ns
+Camera init: 445140 ns
+Camera show: 3043145 ns
+Sensors FPS + flip: 461299 ns
+Sensors data: 224700 ns
+Camera init: 738219 ns
+Camera show: 6037261 ns
+Camera init: 708679 ns
+Camera show: 3043406 ns
+Sensors FPS + flip: 258799 ns
+Sensors data: 240360 ns
+Camera init: 785488 ns
+Camera show: 5849421 ns
+Camera init: 432419 ns
+Camera show: 3094715 ns
+Sensors FPS + flip: 258880 ns
+Sensors data: 287580 ns
+Camera init: 906148 ns
+Camera show: 7468109 ns
+Camera init: 1285118 ns
+Camera show: 6737280 ns
+Sensors FPS + flip: 348770 ns
+Sensors data: 268219 ns
+Camera init: 778519 ns
+Camera show: 4234444 ns
+Camera init: 377050 ns
+Camera show: 3002875 ns
+Sensors FPS + flip: 250950 ns
+Sensors data: 324650 ns
+Camera init: 1301748 ns
+Camera show: 5004932 ns
+Camera init: 658459 ns
+Camera show: 4096944 ns
+Sensors FPS + flip: 356079 ns
+Sensors data: 245809 ns
+Camera init: 560929 ns
+Camera show: 4504474 ns
+Camera init: 446960 ns
+Camera show: 3681964 ns
+Sensors FPS + flip: 250610 ns
+Sensors data: 229769 ns
+Camera init: 554339 ns
+Camera show: 4165134 ns
+Camera init: 455799 ns
+Camera show: 3617125 ns
+Sensors FPS + flip: 252929 ns
+Sensors data: 371409 ns
+Camera init: 918169 ns
+Camera show: 6058561 ns
+Camera init: 503050 ns
+Camera show: 3248255 ns
+Sensors FPS + flip: 261029 ns
+Sensors data: 268700 ns
+Camera init: 887828 ns
+Camera show: 5802582 ns
+Camera init: 577289 ns
+Camera show: 3288435 ns
+Sensors FPS + flip: 260359 ns
+Sensors data: 256109 ns
+Camera init: 552769 ns
+Camera show: 4456514 ns
+Camera init: 494919 ns
+Camera show: 3912884 ns
+Sensors FPS + flip: 320949 ns
+Sensors data: 292790 ns
+Camera init: 793318 ns
+Camera show: 4127354 ns
+Camera init: 584419 ns
+Camera show: 3748104 ns
+Sensors FPS + flip: 259120 ns
+Sensors data: 353480 ns
+Camera init: 834179 ns
+Camera show: 6266510 ns
+Camera init: 657229 ns
+Camera show: 5239652 ns
+Sensors FPS + flip: 466169 ns
+Sensors data: 239880 ns
+Camera init: 721129 ns
+Camera show: 5152402 ns
+Camera init: 491429 ns
+Camera show: 3890364 ns
+Sensors FPS + flip: 341530 ns
+Sensors data: 295010 ns
+Camera init: 648389 ns
+Camera show: 4129564 ns
+Camera init: 520210 ns
+Camera show: 4343883 ns
+Sensors FPS + flip: 347879 ns
+Sensors data: 294070 ns
+Camera init: 805348 ns
+Camera show: 4790313 ns
+Camera init: 486949 ns
+Camera show: 3807405 ns
+Sensors FPS + flip: 321220 ns
+Sensors data: 299220 ns
+Camera init: 542349 ns
+Camera show: 6545520 ns
+Camera init: 1635577 ns
+Camera show: 5607222 ns
+Sensors FPS + flip: 273849 ns
+Sensors data: 192520 ns
+Camera init: 577129 ns
+Camera show: 5071032 ns
+Camera init: 656959 ns
+Camera show: 4296883 ns
+Sensors FPS + flip: 254080 ns
+Sensors data: 288729 ns
+Camera init: 788889 ns
+Camera show: 6353990 ns
+Camera init: 612479 ns
+Camera show: 6841870 ns
+Sensors FPS + flip: 267759 ns
+Sensors data: 237170 ns
+Camera init: 704459 ns
+Camera show: 4506913 ns
+Camera init: 721919 ns
+Camera show: 3479935 ns
+Sensors FPS + flip: 265079 ns
+Sensors data: 229490 ns
+Camera init: 600649 ns
+Camera show: 5729021 ns
+Camera init: 754719 ns
+Camera show: 3895154 ns
+Sensors FPS + flip: 266909 ns
+Sensors data: 230860 ns
+Camera init: 548859 ns
+Camera show: 4165794 ns
+Camera init: 492400 ns
+Camera show: 3839064 ns
+Sensors FPS + flip: 334969 ns
+Sensors data: 307860 ns
+Camera init: 908299 ns
+Camera show: 7449328 ns
+Camera init: 2318556 ns
+Camera show: 4176114 ns
+Sensors FPS + flip: 306619 ns
+Sensors data: 570979 ns
+Camera init: 1038798 ns
+Camera show: 7893768 ns
+Camera init: 648219 ns
+Camera show: 5774392 ns
+Sensors FPS + flip: 363369 ns
+Sensors data: 278830 ns
+Camera init: 915308 ns
+Camera show: 7375290 ns
+Camera init: 712719 ns
+Camera show: 2902056 ns
+Sensors FPS + flip: 266619 ns
+Sensors data: 195470 ns
+Camera init: 719789 ns
+Camera show: 6041791 ns
+Camera init: 571259 ns
+Camera show: 5074842 ns
+Sensors FPS + flip: 421679 ns
+Sensors data: 244720 ns
+Camera init: 684259 ns
+Camera show: 5109162 ns
+Camera init: 663149 ns
+Camera show: 5147072 ns
+Sensors FPS + flip: 473119 ns
+Sensors data: 323620 ns
+Camera init: 907569 ns
+Camera show: 4681163 ns
+Camera init: 798589 ns
+Camera show: 6999389 ns
+Sensors FPS + flip: 456549 ns
+Sensors data: 350250 ns
+Camera init: 1558267 ns
+Camera show: 6117831 ns
+Camera init: 882758 ns
+Camera show: 4253783 ns
+Sensors FPS + flip: 255350 ns
+Sensors data: 236180 ns
+Camera init: 970099 ns
+Camera show: 7470808 ns
+Camera init: 653909 ns
+Camera show: 5384742 ns
+Sensors FPS + flip: 426759 ns
+Sensors data: 204539 ns
+Camera init: 696829 ns
+Camera show: 5129783 ns
+Camera init: 601300 ns
+Camera show: 3677894 ns
+Sensors FPS + flip: 263470 ns
+Sensors data: 237839 ns
+Camera init: 866899 ns
+Camera show: 8041307 ns
+Camera init: 1136358 ns
+Camera show: 4684703 ns
+Sensors FPS + flip: 295250 ns
+Sensors data: 198369 ns
+Camera init: 700519 ns
+Camera show: 4327964 ns
+Camera init: 460320 ns
+Camera show: 3183385 ns
+Sensors FPS + flip: 263729 ns
+Sensors data: 242950 ns
+Camera init: 1157958 ns
+Camera show: 5301982 ns
+Camera init: 570239 ns
+Camera show: 4970432 ns
+Sensors FPS + flip: 420819 ns
+Sensors data: 261219 ns
+Camera init: 1471498 ns
+Camera show: 6332000 ns
+Camera init: 1021329 ns
+Camera show: 4833133 ns
+Sensors FPS + flip: 354029 ns
+Sensors data: 218880 ns
+Camera init: 805989 ns
+Camera show: 4137053 ns
+Camera init: 683809 ns
+Camera show: 3250015 ns
+Sensors FPS + flip: 271310 ns
+Sensors data: 337810 ns
+Camera init: 801039 ns
+Camera show: 5838201 ns
+Camera init: 676839 ns
+Camera show: 5128242 ns
+Sensors FPS + flip: 296899 ns
+Sensors data: 374570 ns
+Camera init: 827099 ns
+Camera show: 6145720 ns
+Camera init: 489719 ns
+Camera show: 3410765 ns
+Sensors FPS + flip: 283020 ns
+Sensors data: 280460 ns
+Camera init: 903708 ns
+Camera show: 6212181 ns
+Camera init: 694909 ns
+Camera show: 4742262 ns
+Sensors FPS + flip: 459499 ns
+Sensors data: 273680 ns
+Camera init: 799739 ns
+Camera show: 4700723 ns
+Camera init: 611029 ns
+Camera show: 4230314 ns
+Sensors FPS + flip: 294089 ns
+Sensors data: 317569 ns
+Camera init: 828139 ns
+Camera show: 5788281 ns
+Camera init: 372329 ns
+Camera show: 3088206 ns
+Sensors FPS + flip: 258340 ns
+Sensors data: 256290 ns
+Camera init: 959558 ns
+Camera show: 7094920 ns
+Camera init: 937759 ns
+Camera show: 3644254 ns
+Sensors FPS + flip: 256069 ns
+Sensors data: 292899 ns
+Camera init: 1025079 ns
+Camera show: 5161742 ns
+Camera init: 609649 ns
+Camera show: 5102522 ns
+Sensors FPS + flip: 425760 ns
+Sensors data: 297439 ns
+Camera init: 774679 ns
+Camera show: 7143220 ns
+Camera init: 734429 ns
+Camera show: 5009872 ns
+Sensors FPS + flip: 484229 ns
+Sensors data: 251130 ns
+Camera init: 545669 ns
+Camera show: 5396332 ns
+Camera init: 643259 ns
+Camera show: 4287103 ns
+Sensors FPS + flip: 272829 ns
+Sensors data: 236799 ns
+Camera init: 862259 ns
+Camera show: 4245443 ns
+Camera init: 467289 ns
+Camera show: 5148513 ns
+Sensors FPS + flip: 480070 ns
+Sensors data: 193790 ns
+Camera init: 953439 ns
+Camera show: 4618693 ns
+Camera init: 603459 ns
+Camera show: 4303614 ns
+Sensors FPS + flip: 266609 ns
+Sensors data: 220589 ns
+Camera init: 743659 ns
+Camera show: 6059141 ns
+Camera init: 747479 ns
+Camera show: 4709563 ns
+Sensors FPS + flip: 254439 ns
+Sensors data: 297970 ns
+Camera init: 965998 ns
+Camera show: 7024980 ns
+Camera init: 629479 ns
+Camera show: 5402562 ns
+Sensors FPS + flip: 450799 ns
+Sensors data: 270140 ns
+Camera init: 920098 ns
+Camera show: 6044181 ns
+Camera init: 630389 ns
+Camera show: 5023253 ns
+Sensors FPS + flip: 425780 ns
+Sensors data: 238280 ns
+Camera init: 1141968 ns
+Camera show: 7657699 ns
+Camera init: 1154569 ns
+Camera show: 5831291 ns
+Sensors FPS + flip: 268809 ns
+Sensors data: 212400 ns
+Camera init: 727989 ns
+Camera show: 6077221 ns
+Camera init: 732169 ns
+Camera show: 4306094 ns
+Sensors FPS + flip: 255029 ns
+Sensors data: 296670 ns
+Camera init: 931668 ns
+Camera show: 7120500 ns
+Camera init: 396850 ns
+Camera show: 4199163 ns
+Sensors FPS + flip: 378420 ns
+Sensors data: 378449 ns
+Camera init: 889679 ns
+Camera show: 5905171 ns
+Camera init: 738239 ns
+Camera show: 2918555 ns
+Sensors FPS + flip: 278140 ns
+Sensors data: 260299 ns
+Camera init: 741199 ns
+Camera show: 5121893 ns
+Camera init: 642859 ns
+Camera show: 3776685 ns
+Sensors FPS + flip: 256729 ns
+Sensors data: 226190 ns
+Camera init: 766619 ns
+Camera show: 6998799 ns
+Camera init: 611469 ns
+Camera show: 5066742 ns
+Sensors FPS + flip: 467019 ns
+Sensors data: 253029 ns
+Camera init: 1287298 ns
+Camera show: 3867074 ns
+Camera init: 783459 ns
+Camera show: 4630973 ns
+Sensors FPS + flip: 263319 ns
+Sensors data: 247119 ns
+Camera init: 841579 ns
+Camera show: 6932080 ns
+Camera init: 439160 ns
+Camera show: 3374755 ns
+Sensors FPS + flip: 269189 ns
+Sensors data: 258360 ns
+Camera init: 872869 ns
+Camera show: 5541811 ns
+Camera init: 554079 ns
+Camera show: 3172326 ns
+Sensors FPS + flip: 259480 ns
+Sensors data: 209510 ns
+Camera init: 740439 ns
+Camera show: 6756989 ns
+Camera init: 494149 ns
+Camera show: 3084666 ns
+Sensors FPS + flip: 255190 ns
+Sensors data: 148839 ns
+Camera init: 559859 ns
+Camera show: 5462122 ns
+Camera init: 618840 ns
+Camera show: 3859784 ns
+Sensors FPS + flip: 266789 ns
+Sensors data: 256840 ns
+Camera init: 565509 ns
+Camera show: 4205574 ns
+Camera init: 594199 ns
+Camera show: 3448885 ns
+Sensors FPS + flip: 268819 ns
+Sensors data: 843569 ns
+Camera init: 1126288 ns
+Camera show: 4223524 ns
+Camera init: 588490 ns
+Camera show: 2867716 ns
+Sensors FPS + flip: 249359 ns
+Sensors data: 207369 ns
+Camera init: 661759 ns
+Camera show: 5911891 ns
+Camera init: 884779 ns
+Camera show: 3175365 ns
+Sensors FPS + flip: 247250 ns
+Sensors data: 247340 ns
+Camera init: 588629 ns
+Camera show: 6304210 ns
+Camera init: 661199 ns
+Camera show: 3929254 ns
+Sensors FPS + flip: 253649 ns
+Sensors data: 281920 ns
+Camera init: 714708 ns
+Camera show: 4911242 ns
+Camera init: 427140 ns
+Camera show: 2987825 ns
+Sensors FPS + flip: 282859 ns
+Sensors data: 242619 ns
+Camera init: 1385238 ns
+Camera show: 6537320 ns
+Camera init: 774509 ns
+Camera show: 3088455 ns
+Sensors FPS + flip: 252809 ns
+Sensors data: 233890 ns
+Camera init: 825888 ns
+Camera show: 6423630 ns
+Camera init: 677179 ns
+Camera show: 3035105 ns
+Sensors FPS + flip: 246070 ns
+Sensors data: 218090 ns
+Camera init: 529919 ns
+Camera show: 4122274 ns
+Camera init: 497479 ns
+Camera show: 3741225 ns
+Sensors FPS + flip: 328880 ns
+Sensors data: 137570 ns
+Camera init: 537109 ns
+Camera show: 3831235 ns
+Camera init: 422799 ns
+Camera show: 3752744 ns
+Sensors FPS + flip: 315180 ns
+Sensors data: 331809 ns
+Camera init: 1072598 ns
+Camera show: 5079163 ns
+Camera init: 654039 ns
+Camera show: 4143693 ns
+Sensors FPS + flip: 250420 ns
+Sensors data: 467529 ns
+Camera init: 922639 ns
+Camera show: 5142882 ns
+Camera init: 486739 ns
+Camera show: 3656664 ns
+Sensors FPS + flip: 314959 ns
+Sensors data: 283700 ns
+Camera init: 833738 ns
+Camera show: 5469622 ns
+Camera init: 667939 ns
+Camera show: 3294875 ns
+Sensors FPS + flip: 252869 ns
+Sensors data: 236249 ns
+Camera init: 873139 ns
+Camera show: 5149152 ns
+Camera init: 492510 ns
+Camera show: 3545614 ns
+Sensors FPS + flip: 305449 ns
+Sensors data: 344320 ns
+Camera init: 925418 ns
+Camera show: 4370434 ns
+Camera init: 522079 ns
+Camera show: 3217265 ns
+Sensors FPS + flip: 255939 ns
+Sensors data: 204370 ns
+Camera init: 761898 ns
+Camera show: 5487342 ns
+Camera init: 624469 ns
+Camera show: 5080192 ns
+Sensors FPS + flip: 426119 ns
+Sensors data: 301500 ns
+Camera init: 1310338 ns
+Camera show: 3767674 ns
+Camera init: 539839 ns
+Camera show: 3227026 ns
+Sensors FPS + flip: 260490 ns
+Sensors data: 249800 ns
+Camera init: 918349 ns
+Camera show: 6150461 ns
+Camera init: 2319627 ns
+Camera show: 3878474 ns
+Sensors FPS + flip: 331400 ns
+Sensors data: 347529 ns
+Camera init: 678539 ns
+Camera show: 5513752 ns
+Camera init: 909238 ns
+Camera show: 4402294 ns
+Sensors FPS + flip: 424209 ns
+Sensors data: 149580 ns
+Camera init: 455219 ns
+Camera show: 4823173 ns
+Camera init: 582779 ns
+Camera show: 4967942 ns
+Sensors FPS + flip: 436409 ns
+Sensors data: 287930 ns
+Camera init: 1037098 ns
+Camera show: 5803321 ns
+Camera init: 427719 ns
+Camera show: 3221905 ns
+Sensors FPS + flip: 259659 ns
+Sensors data: 219410 ns
+Camera init: 789839 ns
+Camera show: 6178141 ns
+Camera init: 758399 ns
+Camera show: 4251773 ns
+Sensors FPS + flip: 261410 ns
+Sensors data: 253110 ns
+Camera init: 816428 ns
+Camera show: 3852975 ns
+Camera init: 482899 ns
+Camera show: 5610902 ns
+Sensors FPS + flip: 593159 ns
+Sensors data: 246210 ns
+Camera init: 875788 ns
+Camera show: 7233909 ns
+Camera init: 669789 ns
+Camera show: 3122486 ns
+Sensors FPS + flip: 253039 ns
+Sensors data: 262129 ns
+Camera init: 664349 ns
+Camera show: 5792471 ns
+Camera init: 579579 ns
+Camera show: 5203832 ns
+Sensors FPS + flip: 251299 ns
+Sensors data: 245239 ns
+Camera init: 791269 ns
+Camera show: 4727163 ns
+Camera init: 716989 ns
+Camera show: 3912434 ns
+Sensors FPS + flip: 266469 ns
+Sensors data: 279660 ns
+Camera init: 1084518 ns
+Camera show: 4558343 ns
+Camera init: 1100758 ns
+Camera show: 4543063 ns
+Sensors FPS + flip: 436179 ns
+Sensors data: 146510 ns
+Camera init: 467809 ns
+Camera show: 3156975 ns
+Camera init: 390329 ns
+Camera show: 3083825 ns
+Sensors FPS + flip: 257340 ns
+Sensors data: 224380 ns
+Camera init: 837369 ns
+Camera show: 5910750 ns
+Camera init: 944269 ns
+Camera show: 3123525 ns
+Sensors FPS + flip: 262779 ns
+Sensors data: 228760 ns
+Camera init: 673109 ns
+Camera show: 6108500 ns
+Camera init: 898529 ns
+Camera show: 2987615 ns
+Sensors FPS + flip: 264910 ns
+Sensors data: 267550 ns
+Camera init: 1005068 ns
+Camera show: 5675972 ns
+Camera init: 570639 ns
+Camera show: 4996302 ns
+Sensors FPS + flip: 416739 ns
+Sensors data: 203750 ns
+Camera init: 725029 ns
+Camera show: 4330913 ns
+Camera init: 664449 ns
+Camera show: 3891514 ns
+Sensors FPS + flip: 482549 ns
+Sensors data: 232190 ns
+Camera init: 472309 ns
+Camera show: 4709093 ns
+Camera init: 605369 ns
+Camera show: 5112672 ns
+Sensors FPS + flip: 431189 ns
+Sensors data: 485350 ns
+Camera init: 669179 ns
+Camera show: 6606691 ns
+Camera init: 585109 ns
+Camera show: 4235654 ns
+Sensors FPS + flip: 316359 ns
+Sensors data: 362040 ns
+Camera init: 877639 ns
+Camera show: 6336820 ns
+Camera init: 655759 ns
+Camera show: 3028795 ns
+Sensors FPS + flip: 252870 ns
+Sensors data: 245160 ns
+Camera init: 870428 ns
+Camera show: 6187421 ns
+Camera init: 883788 ns
+Camera show: 4575353 ns
+Sensors FPS + flip: 252070 ns
+Sensors data: 245390 ns
+Camera init: 961178 ns
+Camera show: 6195511 ns
+Camera init: 609450 ns
+Camera show: 4556813 ns
+Sensors FPS + flip: 427819 ns
+Sensors data: 249380 ns
+Camera init: 904118 ns
+Camera show: 5674292 ns
+Camera init: 604270 ns
+Camera show: 5175982 ns
+Sensors FPS + flip: 433089 ns
+Sensors data: 146459 ns
+Camera init: 547479 ns
+Camera show: 3611075 ns
+Camera init: 629789 ns
+Camera show: 5278382 ns
+Sensors FPS + flip: 446939 ns
+Sensors data: 230840 ns
+Camera init: 858849 ns
+Camera show: 7157909 ns
+Camera init: 657439 ns
+Camera show: 5056272 ns
+Sensors FPS + flip: 1444808 ns
+Sensors data: 316189 ns
+Camera init: 699919 ns
+Camera show: 5624842 ns
+Camera init: 823609 ns
+Camera show: 5091642 ns
+Sensors FPS + flip: 349889 ns
+Sensors data: 183270 ns
+Camera init: 420969 ns
+Camera show: 3213125 ns
+Camera init: 373450 ns
+Camera show: 3219785 ns
+Sensors FPS + flip: 253740 ns
+Sensors data: 276510 ns
+Camera init: 576579 ns
+Camera show: 3763374 ns
+Camera init: 521459 ns
+Camera show: 3902764 ns
+Sensors FPS + flip: 268349 ns
+Sensors data: 277910 ns
+Camera init: 639629 ns
+Camera show: 5868751 ns
+Camera init: 793859 ns
+Camera show: 3960714 ns
+Sensors FPS + flip: 260140 ns
+Sensors data: 290550 ns
+Camera init: 910408 ns
+Camera show: 4412453 ns
+Camera init: 623369 ns
+Camera show: 3417165 ns
+Sensors FPS + flip: 330470 ns
+Sensors data: 250160 ns
+Camera init: 775239 ns
+Camera show: 6725869 ns
+Camera init: 591789 ns
+Camera show: 3043325 ns
+Sensors FPS + flip: 260700 ns
+Sensors data: 268709 ns
+Camera init: 808269 ns
+Camera show: 6207571 ns
+Camera init: 739958 ns
+Camera show: 3925755 ns
+Sensors FPS + flip: 255750 ns
+Sensors data: 161879 ns
+Camera init: 463390 ns
+Camera show: 3030755 ns
+Camera init: 553869 ns
+Camera show: 4456423 ns
+Sensors FPS + flip: 419649 ns
+Sensors data: 171490 ns
+Camera init: 643889 ns
+Camera show: 3854974 ns
+Camera init: 617939 ns
+Camera show: 3841095 ns
+Sensors FPS + flip: 263450 ns
+Sensors data: 218810 ns
+Camera init: 1203198 ns
+Camera show: 4044214 ns
+Camera init: 913678 ns
+Camera show: 3979124 ns
+Sensors FPS + flip: 426599 ns
+Sensors data: 225340 ns
+Camera init: 705969 ns
+Camera show: 4853383 ns
+Camera init: 477610 ns
+Camera show: 4131353 ns
+Sensors FPS + flip: 307259 ns
+Sensors data: 199580 ns
+Camera init: 712739 ns
+Camera show: 5554101 ns
+Camera init: 860219 ns
+Camera show: 4040243 ns
+Sensors FPS + flip: 253279 ns
+Sensors data: 322140 ns
+Camera init: 1024338 ns
+Camera show: 4037864 ns
+Camera init: 641399 ns
+Camera show: 4097514 ns
+Sensors FPS + flip: 418669 ns
+Sensors data: 177090 ns
+Camera init: 716499 ns
+Camera show: 4449803 ns
+Camera init: 656969 ns
+Camera show: 3703364 ns
+Sensors FPS + flip: 252349 ns
+Sensors data: 206239 ns
+Camera init: 821949 ns
+Camera show: 5459461 ns
+Camera init: 605139 ns
+Camera show: 3004786 ns
+Sensors FPS + flip: 246990 ns
+Sensors data: 239520 ns
+Camera init: 914088 ns
+Camera show: 5760281 ns
+Camera init: 893619 ns
+Camera show: 2437926 ns
+Sensors FPS + flip: 260590 ns
+Sensors data: 154630 ns
+Camera init: 535489 ns
+Camera show: 3704904 ns
+Camera init: 502019 ns
+Camera show: 2835056 ns
+Sensors FPS + flip: 307399 ns
+Sensors data: 163650 ns
+Camera init: 704729 ns
+Camera show: 4465362 ns
+Camera init: 564269 ns
+Camera show: 4950843 ns
+Sensors FPS + flip: 415879 ns
+Sensors data: 190390 ns
+Camera init: 892348 ns
+Camera show: 5016373 ns
+Camera init: 775068 ns
+Camera show: 3887934 ns
+Sensors FPS + flip: 426219 ns
+Sensors data: 199410 ns
+Camera init: 923968 ns
+Camera show: 4163484 ns
+Camera init: 606359 ns
+Camera show: 3879824 ns
+Sensors FPS + flip: 413959 ns
+Sensors data: 208549 ns
+Camera init: 804419 ns
+Camera show: 5294332 ns
+Camera init: 600319 ns
+Camera show: 5139213 ns
+Sensors FPS + flip: 416859 ns
+Sensors data: 199809 ns
+Camera init: 711789 ns
+Camera show: 5543092 ns
+Camera init: 757399 ns
+Camera show: 4960463 ns
+Sensors FPS + flip: 437570 ns
+Sensors data: 242750 ns
+Camera init: 853789 ns
+Camera show: 5043252 ns
+Camera init: 573429 ns
+Camera show: 4227474 ns
+Sensors FPS + flip: 253160 ns
+Sensors data: 148400 ns
+Camera init: 505709 ns
+Camera show: 2923425 ns
+Camera init: 459949 ns
+Camera show: 3927254 ns
+Sensors FPS + flip: 297710 ns
+Sensors data: 402360 ns
+Camera init: 919248 ns
+Camera show: 5725311 ns
+Camera init: 922818 ns
+Camera show: 3740705 ns
+Sensors FPS + flip: 266980 ns
+Sensors data: 210009 ns
+Camera init: 847679 ns
+Camera show: 6024380 ns
+Camera init: 708609 ns
+Camera show: 5107022 ns
+Sensors FPS + flip: 459719 ns
+Sensors data: 209500 ns
+Camera init: 984998 ns
+Camera show: 7198319 ns
+Camera init: 692248 ns
+Camera show: 3078236 ns
+Sensors FPS + flip: 266429 ns
+Sensors data: 149580 ns
+Camera init: 616889 ns
+Camera show: 4867152 ns
+Camera init: 645169 ns
+Camera show: 4102264 ns
+Sensors FPS + flip: 257600 ns
+Sensors data: 210370 ns
+Camera init: 850188 ns
+Camera show: 6602700 ns
+Camera init: 415349 ns
+Camera show: 3007416 ns
+Sensors FPS + flip: 254830 ns
+Sensors data: 161740 ns
+Camera init: 615319 ns
+Camera show: 4958903 ns
+Camera init: 636639 ns
+Camera show: 5659052 ns
+Sensors FPS + flip: 626589 ns
+Sensors data: 204809 ns
+Camera init: 814419 ns
+Camera show: 5626592 ns
+Camera init: 640729 ns
+Camera show: 4929442 ns
+Sensors FPS + flip: 266260 ns
+Sensors data: 226590 ns
+Camera init: 910908 ns
+Camera show: 3924774 ns
+Camera init: 615879 ns
+Camera show: 3956984 ns
+Sensors FPS + flip: 418409 ns
+Sensors data: 205219 ns
+Camera init: 808869 ns
+Camera show: 5436651 ns
+Camera init: 608609 ns
+Camera show: 3872514 ns
+Sensors FPS + flip: 422389 ns
+Sensors data: 198259 ns
+Camera init: 906269 ns
+Camera show: 3961684 ns
+Camera init: 584579 ns
+Camera show: 4835972 ns
+Sensors FPS + flip: 582939 ns
+Sensors data: 242320 ns
+Camera init: 922248 ns
+Camera show: 5227943 ns
+Camera init: 596089 ns
+Camera show: 4420374 ns
+Sensors FPS + flip: 315369 ns
+Sensors data: 231169 ns
+Camera init: 540550 ns
+Camera show: 5553281 ns
+Camera init: 407910 ns
+Camera show: 3075895 ns
+Sensors FPS + flip: 259720 ns
+Sensors data: 208889 ns
+Camera init: 731119 ns
+Camera show: 6127521 ns
+Camera init: 571539 ns
+Camera show: 4972402 ns
+Sensors FPS + flip: 427109 ns
+Sensors data: 313029 ns
+Camera init: 910779 ns
+Camera show: 6123011 ns
+Camera init: 722889 ns
+Camera show: 5547601 ns
+Sensors FPS + flip: 381920 ns
+Sensors data: 203290 ns
+Camera init: 704889 ns
+Camera show: 5677621 ns
+Camera init: 572539 ns
+Camera show: 5057932 ns
+Sensors FPS + flip: 431659 ns
+Sensors data: 515219 ns
+Camera init: 1676428 ns
+Camera show: 5501391 ns
+Camera init: 2140716 ns
+Camera show: 5115563 ns
+Sensors FPS + flip: 405719 ns
+Sensors data: 447099 ns
+Camera init: 1278508 ns
+Camera show: 6980850 ns
+Camera init: 415440 ns
+Camera show: 3649094 ns
+Sensors FPS + flip: 270599 ns
+Sensors data: 419180 ns
+Camera init: 628969 ns
+Camera show: 6466269 ns
+Camera init: 592729 ns
+Camera show: 4470493 ns
+Sensors FPS + flip: 429009 ns
+Sensors data: 210850 ns
+Camera init: 814708 ns
+Camera show: 6203070 ns
+Camera init: 924309 ns
+Camera show: 4317843 ns
+Sensors FPS + flip: 271660 ns
+Sensors data: 154280 ns
+Camera init: 504819 ns
+Camera show: 4027554 ns
+Camera init: 447849 ns
+Camera show: 5772121 ns
+Sensors FPS + flip: 449059 ns
+Sensors data: 331050 ns
+Camera init: 796209 ns
+Camera show: 5581541 ns
+Camera init: 546579 ns
+Camera show: 3632424 ns
+Sensors FPS + flip: 266890 ns
+Sensors data: 222689 ns
+Camera init: 644499 ns
+Camera show: 3917534 ns
+Camera init: 362579 ns
+Camera show: 2445597 ns
+Sensors FPS + flip: 257790 ns
+Sensors data: 213799 ns
+Camera init: 827409 ns
+Camera show: 6103231 ns
+Camera init: 405790 ns
+Camera show: 3284065 ns
+Sensors FPS + flip: 260830 ns
+Sensors data: 180910 ns
+Camera init: 704839 ns
+Camera show: 6012610 ns
+Camera init: 655479 ns
+Camera show: 5015892 ns
+Sensors FPS + flip: 429620 ns
+Sensors data: 150920 ns
+Camera init: 853299 ns
+Camera show: 3941604 ns
+Camera init: 583749 ns
+Camera show: 5028662 ns
+Sensors FPS + flip: 435869 ns
+Sensors data: 199460 ns
+Camera init: 847889 ns
+Camera show: 5443701 ns
+Camera init: 642139 ns
+Camera show: 5156282 ns
+Sensors FPS + flip: 435939 ns
+Sensors data: 471709 ns
+Camera init: 1284228 ns
+Camera show: 5805911 ns
+Camera init: 448869 ns
+Camera show: 3139755 ns
+Sensors FPS + flip: 309100 ns
+Sensors data: 226680 ns
+Camera init: 551489 ns
+Camera show: 4211223 ns
+Camera init: 703419 ns
+Camera show: 4054964 ns
+Sensors FPS + flip: 265270 ns
+Sensors data: 287569 ns
+Camera init: 928419 ns
+Camera show: 6112430 ns
+Camera init: 576999 ns
+Camera show: 3279155 ns
+Sensors FPS + flip: 259090 ns
+Sensors data: 246620 ns
+Camera init: 552919 ns
+Camera show: 4779313 ns
+Camera init: 902979 ns
+Camera show: 3278994 ns
+Sensors FPS + flip: 264160 ns
+Sensors data: 295830 ns
+Camera init: 940598 ns
+Camera show: 6722540 ns
+Camera init: 814678 ns
+Camera show: 2917156 ns
+Sensors FPS + flip: 295620 ns
+Sensors data: 463400 ns
+Camera init: 593039 ns
+Camera show: 4209623 ns
+Camera init: 643279 ns
+Camera show: 3995283 ns
+Sensors FPS + flip: 331420 ns
+Sensors data: 294179 ns
+Camera init: 621509 ns
+Camera show: 4453493 ns
+Camera init: 449419 ns
+Camera show: 4714763 ns
+Sensors FPS + flip: 333599 ns
+Sensors data: 302719 ns
+Camera init: 811099 ns
+Camera show: 5620571 ns
+Camera init: 689059 ns
+Camera show: 3724414 ns
+Sensors FPS + flip: 297619 ns
+Sensors data: 238270 ns
+Camera init: 559029 ns
+Camera show: 4079024 ns
+Camera init: 489380 ns
+Camera show: 4031033 ns
+Sensors FPS + flip: 341709 ns
+Sensors data: 270850 ns
+Camera init: 649759 ns
+Camera show: 6558419 ns
+Camera init: 638089 ns
+Camera show: 3251675 ns
+Sensors FPS + flip: 268480 ns
+Sensors data: 363769 ns
+Camera init: 1020448 ns
+Camera show: 5645192 ns
+Camera init: 717729 ns
+Camera show: 4301193 ns
+Sensors FPS + flip: 272660 ns
+Sensors data: 276270 ns
+Camera init: 469319 ns
+Camera show: 3716234 ns
+Camera init: 467579 ns
+Camera show: 3312575 ns
+Sensors FPS + flip: 287019 ns
+Sensors data: 235409 ns
+Camera init: 749569 ns
+Camera show: 4271604 ns
+Camera init: 465679 ns
+Camera show: 3252745 ns
+Sensors FPS + flip: 271009 ns
+Sensors data: 180720 ns
+Camera init: 496609 ns
+Camera show: 4181944 ns
+Camera init: 466439 ns
+Camera show: 3867744 ns
+Sensors FPS + flip: 329659 ns
+Sensors data: 300500 ns
+Camera init: 904339 ns
+Camera show: 5579081 ns
+Camera init: 554850 ns
+Camera show: 6039331 ns
+Sensors FPS + flip: 499619 ns
+Sensors data: 209059 ns
+Camera init: 515559 ns
+Camera show: 3678715 ns
+Camera init: 417730 ns
+Camera show: 3311814 ns
+Sensors FPS + flip: 276190 ns
+Sensors data: 349359 ns
+Camera init: 1073579 ns
+Camera show: 5983051 ns
+Camera init: 657929 ns
+Camera show: 5279902 ns
+Sensors FPS + flip: 503820 ns
+Sensors data: 207570 ns
+Camera init: 556329 ns
+Camera show: 3497144 ns
+Camera init: 746919 ns
+Camera show: 5862571 ns
+Sensors FPS + flip: 262640 ns
+Sensors data: 283779 ns
+Camera init: 791639 ns
+Camera show: 5389032 ns
+Camera init: 639129 ns
+Camera show: 3120206 ns
+Sensors FPS + flip: 324430 ns
+Sensors data: 293909 ns
+Camera init: 776749 ns
+Camera show: 3807914 ns
+Camera init: 440869 ns
+Camera show: 3749834 ns
+Sensors FPS + flip: 314800 ns
+Sensors data: 229020 ns
+Camera init: 726999 ns
+Camera show: 3243835 ns
+Camera init: 387899 ns
+Camera show: 3097835 ns
+Sensors FPS + flip: 259599 ns
+Sensors data: 257079 ns
+Camera init: 565859 ns
+Camera show: 4949572 ns
+Camera init: 378809 ns
+Camera show: 3279965 ns
+Sensors FPS + flip: 268840 ns
+Sensors data: 970448 ns
+Camera init: 877839 ns
+Camera show: 4589212 ns
+Camera init: 616639 ns
+Camera show: 3350475 ns
+Sensors FPS + flip: 289169 ns
+Sensors data: 241359 ns
+Camera init: 594980 ns
+Camera show: 4100653 ns
+Camera init: 450180 ns
+Camera show: 3748224 ns
+Sensors FPS + flip: 323949 ns
+Sensors data: 325740 ns
+Camera init: 1674367 ns
+Camera show: 4299533 ns
+Camera init: 473309 ns
+Camera show: 4228754 ns
+Sensors FPS + flip: 454850 ns
+Sensors data: 339740 ns
+Camera init: 776869 ns
+Camera show: 4985451 ns
+Camera init: 467089 ns
+Camera show: 3814785 ns
+Sensors FPS + flip: 324600 ns
+Sensors data: 244520 ns
+Camera init: 1146038 ns
+Camera show: 6339991 ns
+Camera init: 1087809 ns
+Camera show: 4725152 ns
+Sensors FPS + flip: 437829 ns
+Sensors data: 236750 ns
+Camera init: 613159 ns
+Camera show: 3550324 ns
+Camera init: 380420 ns
+Camera show: 3357404 ns
+Sensors FPS + flip: 296270 ns
+Sensors data: 261700 ns
+Camera init: 1101928 ns
+Camera show: 5779471 ns
+Camera init: 456229 ns
+Camera show: 3127286 ns
+Sensors FPS + flip: 260820 ns
+Sensors data: 291989 ns
+Camera init: 861969 ns
+Camera show: 4661793 ns
+Camera init: 746789 ns
+Camera show: 3641955 ns
+Sensors FPS + flip: 400480 ns
+Sensors data: 396680 ns
+Camera init: 1353228 ns
+Camera show: 7236568 ns
+Camera init: 829568 ns
+Camera show: 4444194 ns
+Sensors FPS + flip: 296000 ns
+Sensors data: 278579 ns
+Camera init: 699069 ns
+Camera show: 5414142 ns
+Camera init: 691288 ns
+Camera show: 4271214 ns
+Sensors FPS + flip: 259069 ns
+Sensors data: 322230 ns
+Camera init: 798659 ns
+Camera show: 6846089 ns
+Camera init: 879849 ns
+Camera show: 5225902 ns
+Sensors FPS + flip: 265840 ns
+Sensors data: 335160 ns
+Camera init: 1315118 ns
+Camera show: 5569591 ns
+Camera init: 622289 ns
+Camera show: 5980320 ns
+Sensors FPS + flip: 641519 ns
+Sensors data: 308399 ns
+Camera init: 861279 ns
+Camera show: 4413003 ns
+Camera init: 598190 ns
+Camera show: 3296204 ns
+Sensors FPS + flip: 304500 ns
+Sensors data: 323309 ns
+Camera init: 822169 ns
+Camera show: 5833641 ns
+Camera init: 638849 ns
+Camera show: 5263041 ns
+Sensors FPS + flip: 466479 ns
+Sensors data: 267640 ns
+Camera init: 1118178 ns
+Camera show: 5181512 ns
+Camera init: 922359 ns
+Camera show: 5058752 ns
+Sensors FPS + flip: 612790 ns
+Sensors data: 274830 ns
+Camera init: 894458 ns
+Camera show: 6311280 ns
+Camera init: 653629 ns
+Camera show: 5151812 ns
+Sensors FPS + flip: 440360 ns
+Sensors data: 187740 ns
+Camera init: 473429 ns
+Camera show: 3491274 ns
+Camera init: 485239 ns
+Camera show: 5121812 ns
+Sensors FPS + flip: 270190 ns
+Sensors data: 336049 ns
+Camera init: 977439 ns
+Camera show: 5435991 ns
+Camera init: 808559 ns
+Camera show: 4479192 ns
+Sensors FPS + flip: 381089 ns
+Sensors data: 297389 ns
+Camera init: 489269 ns
+Camera show: 3730505 ns
+Camera init: 369569 ns
+Camera show: 3908824 ns
+Sensors FPS + flip: 572449 ns
+Sensors data: 253289 ns
+Camera init: 617909 ns
+Camera show: 4757753 ns
+Camera init: 771699 ns
+Camera show: 5048212 ns
+Sensors FPS + flip: 265440 ns
+Sensors data: 290440 ns
+Camera init: 582449 ns
+Camera show: 4006463 ns
+Camera init: 499169 ns
+Camera show: 4167214 ns
+Sensors FPS + flip: 267889 ns
+Sensors data: 269869 ns
+Camera init: 720629 ns
+Camera show: 5662641 ns
+Camera init: 547629 ns
+Camera show: 3299575 ns
+Sensors FPS + flip: 263059 ns
+Sensors data: 196390 ns
+Camera init: 515519 ns
+Camera show: 3804424 ns
+Camera init: 430169 ns
+Camera show: 4083544 ns
+Sensors FPS + flip: 441399 ns
+Sensors data: 264169 ns
+Camera init: 749049 ns
+Camera show: 5472312 ns
+Camera init: 731399 ns
+Camera show: 4271863 ns
+Sensors FPS + flip: 254160 ns
+Sensors data: 257020 ns
+Camera init: 756439 ns
+Camera show: 4966231 ns
+Camera init: 630459 ns
+Camera show: 5205742 ns
+Sensors FPS + flip: 444630 ns
+Sensors data: 211389 ns
+Camera init: 485440 ns
+Camera show: 3481364 ns
+Camera init: 516749 ns
+Camera show: 3302935 ns
+Sensors FPS + flip: 261690 ns
+Sensors data: 290950 ns
+Camera init: 700169 ns
+Camera show: 5150992 ns
+Camera init: 687489 ns
+Camera show: 3894344 ns
+Sensors FPS + flip: 361999 ns
+Sensors data: 201550 ns
+Camera init: 676829 ns
+Camera show: 5354331 ns
+Camera init: 589739 ns
+Camera show: 3636034 ns
+Sensors FPS + flip: 252729 ns
+Sensors data: 296079 ns
+Camera init: 825849 ns
+Camera show: 5193812 ns
+Camera init: 658659 ns
+Camera show: 5270912 ns
+Sensors FPS + flip: 437639 ns
+Sensors data: 301720 ns
+Camera init: 817248 ns
+Camera show: 6812890 ns
+Camera init: 729179 ns
+Camera show: 3797214 ns
+Sensors FPS + flip: 258499 ns
+Sensors data: 262269 ns
+Camera init: 802919 ns
+Camera show: 6457200 ns
+Camera init: 518219 ns
+Camera show: 3663084 ns
+Sensors FPS + flip: 268480 ns
+Sensors data: 291700 ns
+Camera init: 890389 ns
+Camera show: 5198991 ns
+Camera init: 609909 ns
+Camera show: 5605931 ns
+Sensors FPS + flip: 311190 ns
+Sensors data: 300520 ns
+Camera init: 729119 ns
+Camera show: 5744621 ns
+Camera init: 613789 ns
+Camera show: 5081663 ns
+Sensors FPS + flip: 441380 ns
+Sensors data: 370289 ns
+Camera init: 823809 ns
+Camera show: 7187519 ns
+Camera init: 655099 ns
+Camera show: 3259225 ns
+Sensors FPS + flip: 291420 ns
+Sensors data: 270590 ns
+Camera init: 789419 ns
+Camera show: 5667491 ns
+Camera init: 558379 ns
+Camera show: 4378054 ns
+Sensors FPS + flip: 315679 ns
+Sensors data: 387859 ns
+Camera init: 1162938 ns
+Camera show: 5476232 ns
+Camera init: 600909 ns
+Camera show: 3294844 ns
+Sensors FPS + flip: 273059 ns
