@@ -5,20 +5,12 @@ from configcarla import SIZE_CAMERA
 
 Z = 0.5
 
-def main():
-    # Scenes
-    town_s1 = 'Town05'
-    ego_transform_s1 = carla.Transform(carla.Location(x=151.5, y=7.0, z=Z), carla.Rotation(yaw=90.0))
-
-    town_s2 = 'Town05'
-    ego_transform_s2 = carla.Transform(carla.Location(x=50.0, y=-145.7, z=Z))
-
-    world, _ = configcarla.setup_carla(name_world=town_s1, port=2000, delta_seconds=0.05)
-    screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='Follow lane - PID')
+def main(client:carla.Client, screen:pygame.Surface, town:str, transform:carla.Transform):
+    world, client = configcarla.setup_carla(name_world=town, port=2000, delta_seconds=0.05, client=client)
 
     # Add Ego Vehicle
     ego_vehicle = configcarla.add_one_vehicle(world=world, vehicle_type='vehicle.lincoln.mkz_2020',
-                                              ego_vehicle=True, transform=ego_transform_s1)
+                                              ego_vehicle=True, transform=transform)
 
     # Add sensors to Ego Vehicle
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
@@ -40,7 +32,7 @@ def main():
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    return
+                    return None
            
             world.tick()
             sensors.update_data()
@@ -50,14 +42,26 @@ def main():
             pid.controll_vehicle(error_road)
 
     except KeyboardInterrupt:
-        return
-    
+        return None
+
     except AssertionError:
-        return
+        return client
 
     finally:
         sensors.destroy()
-        pygame.quit()
 
 if __name__ == "__main__":
-    main()
+    scenes = [
+        ('Town05', carla.Transform(carla.Location(x=50.0, y=-145.7, z=Z))),
+        ('Town05', carla.Transform(carla.Location(x=151.5, y=7.0, z=Z), carla.Rotation(yaw=90.0)))
+    ]
+    
+    client = None
+    screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='Follow lane - PID')
+
+    for scene in scenes:
+        client = main(screen=screen, client=client, town=scene[0], transform=scene[1])
+        if client == None:
+            break
+
+    pygame.quit()
