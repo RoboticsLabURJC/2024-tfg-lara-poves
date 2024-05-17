@@ -708,7 +708,7 @@ class PID:
         self.__prev_error = self.__error
         self.__error = error
 
-        if error > 10:
+        if error > 8:
             control.throttle = 0.43
         elif self.__count < 100:
             control.throttle = 0.8
@@ -718,8 +718,9 @@ class PID:
         control.steer = self.__kp * self.__error + self.__kd * self.__prev_error
         self.__vehicle.apply_control(control)
 
-def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05):
-    client = carla.Client('localhost', port)
+def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05, client:carla.Client=None):
+    if client == None:
+        client = carla.Client('localhost', port)
     world = client.get_world()
     world = client.load_world(name_world)
 
