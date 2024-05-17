@@ -74,6 +74,7 @@ def main():
                                 throttle -= OFFSET
                             teleop.set_throttle(throttle)
 
+            world.tick() 
             cameras.update_data(flip=False)
             teleop.control()
 
@@ -87,7 +88,6 @@ def main():
                                    background=(0, 0, 0), point=(WIDTH, int(HEIGHT / 2)))
 
             pygame.display.flip()
-            world.tick() 
 
     except KeyboardInterrupt:
         return

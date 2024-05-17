@@ -18,7 +18,7 @@ def main():
 
     # Add Ego Vehicle
     ego_vehicle = configcarla.add_one_vehicle(world=world, vehicle_type='vehicle.lincoln.mkz_2020',
-                                              ego_vehicle=True, transform=ego_transform_s2)
+                                              ego_vehicle=True, transform=ego_transform_s1)
 
     # Add sensors to Ego Vehicle
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
@@ -42,15 +42,17 @@ def main():
                 if event.type == pygame.QUIT:
                     return
            
+            world.tick()
             sensors.update_data()
-            error_road = camera.get_deviation()
             
             # Control vehicle
+            error_road = camera.get_deviation()
             pid.controll_vehicle(error_road)
-          
-            world.tick()
 
     except KeyboardInterrupt:
+        return
+    
+    except AssertionError:
         return
 
     finally:
