@@ -49,8 +49,8 @@ def main():
                 if event.type == pygame.QUIT:
                     return
            
-            sensors.update_data()
             world.tick()
+            sensors.update_data()
 
     except KeyboardInterrupt:
         return

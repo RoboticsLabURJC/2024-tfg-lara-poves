@@ -3,7 +3,7 @@ import pygame
 import numpy as np
 import math
 import random
-from queue import LifoQueue
+from queue import Queue
 import sys
 import os
 from PIL import Image
@@ -81,7 +81,7 @@ def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=Fa
 class Sensor:
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
-        self.queue = LifoQueue()
+        self.queue = Queue()
         self.sensor.listen(lambda data: self.__callback_data(data))
 
     def __callback_data(self, data):
@@ -89,10 +89,8 @@ class Sensor:
 
     def get_last_data(self):
         if not self.queue.empty():
-            self.data = self.queue.get(False) # Non-blocking call 
-        else:
-            self.data = None
-        return self.data
+            return self.queue.get(False) # Non-blocking call 
+        return None
 
     def process_data(self):
         pass
@@ -295,7 +293,7 @@ class CameraRGB(Sensor):
 
     def process_data(self):
         init_time = time.time_ns()
-        image = self.data
+        image = self.get_last_data()
         if image == None:
             return 
 
@@ -510,7 +508,7 @@ class Lidar(Sensor):
 
     def process_data(self):
         init_time = time.time_ns()
-        lidar = self.data
+        lidar = self.get_last_data()
         if lidar == None:
             return 
         
@@ -575,7 +573,6 @@ class Vehicle_sensors:
         self.__world = world
         self.__screen = screen
         self.sensors = []
-        self.__count = 0
 
         self.color_text = color_text
         self.__time_frame = -1.0
@@ -629,29 +626,6 @@ class Vehicle_sensors:
         return lidar
 
     def update_data(self, flip:bool=True):
-        init_time = time.time_ns()
-        i = 0
-        frames = np.zeros((len(self.sensors), 1), dtype=int)
-        count_error = 0
-
-        while i < len(self.sensors):
-            data = self.sensors[i].get_last_data()
-            if data != None:
-                frames[i] = data.frame
-
-            if self.__count > COUNT_FIRST:
-                if i == len(self.sensors) - 1 and not np.allclose(frames, frames[0]):
-                    count_error += 1
-                    assert count_error < 5, "ERROR: not equal frames"
-
-                    i = 0
-                    self.__world.tick()
-                    continue
-            else:
-                self.__count += 1
-            i += 1
-        print("Sensors data:", time.time_ns() - init_time, "ns")
-
         for sensor in self.sensors:
             sensor.process_data()
 
@@ -722,7 +696,7 @@ class PID:
         self.__kp = 1 / (SIZE_CAMERA / 2)
         self.__count = 0
 
-        self.__kd = -self.__kp / 2.05
+        self.__kd = -self.__kp / 2.3
 
         self.__error = 0
         self.__prev_error = 0
@@ -735,11 +709,11 @@ class PID:
         self.__error = error
 
         if error > 10:
-            control.throttle = 0.4
+            control.throttle = 0.43
         elif self.__count < 100:
             control.throttle = 0.8
         else:
-            control.throttle = 0.5
+            control.throttle = 0.52
 
         control.steer = self.__kp * self.__error + self.__kd * self.__prev_error
         self.__vehicle.apply_control(control)
