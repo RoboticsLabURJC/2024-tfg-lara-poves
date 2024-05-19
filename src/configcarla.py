@@ -708,14 +708,21 @@ class PID:
         self.__prev_error = self.__error
         self.__error = error
 
-        if error > 8:
-            control.throttle = 0.43
+        # Different sign
+        if (self.__error > 0 and self.__prev_error < 0) or (self.__error < 0 and self.__prev_error > 0):
+            self.__prev_error = 0        
+
+        if error > 10:
+            control.throttle = 0.41
         elif self.__count < 100:
             control.throttle = 0.8
         else:
-            control.throttle = 0.52
+            control.throttle = 0.51
 
-        control.steer = self.__kp * self.__error + self.__kd * self.__prev_error
+        if error > 20:
+            error *= 1.25
+
+        control.steer = self.__kp * error + self.__kd * self.__prev_error
         self.__vehicle.apply_control(control)
 
 def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05, client:carla.Client=None):
