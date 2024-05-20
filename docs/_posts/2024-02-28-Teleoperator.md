@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-05-06T11:34:00
+last_modified_at: 2024-05-17T13:35:00
 categories:
   - Blog
 tags:
@@ -66,14 +66,12 @@ class Vehicle_sensors:
     def destroy(self)
 ```
 
-Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola LIFO *thread_safe* y facilita el acceso al dato más reciente. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor, permitiéndonos actualizar su información y mostrarla en la pantalla si es indica. Los datos de los sensores se procesan de forma paralela para mejorar la eficiencia computacional, permitiendo que múltiples sensores trabajen simultáneamente sin interferir entre sí.
-
-La pantalla de Pygame se comparte entre todos los sensores, lo que podría ocasionar comportamientos inesperados si varios hilos la utilizan simultáneamente. A pesar de utilizar los bloqueos proporcionados por la librería *threading*, seguimos experimentando resultados inciertos. Por lo tanto, hemos creado una función ***blit*** dedicada para el uso exclusivo de la pantalla compartida, la cual no debe ser empleada en ninguna otra parte del código. Esta función debe ejecutarse únicamente en el hilo principal, garantizando así su correcto funcionamiento.
+Cada uno de los sensores pertenece a la clase ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola *thread_safe* y facilita el acceso al dato más reciente. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor, permitiéndonos actualizar su información y mostrarla en la pantalla si es indica.
 ```python
 class Sensor:
     def __init__(self, sensor:carla.Sensor):
         self.sensor = sensor
-        self.queue = LifoQueue()
+        self.queue = Queue()
         self.sensor.listen(lambda data: self.__callback_data(data))
         self.data = None
 
@@ -81,32 +79,29 @@ class Sensor:
         self.queue.put(data)
 
     def get_last_data(self):
-        data = self.queue.get(False)
-    
-    def blit(self):
-        pass
+        if not self.queue.empty():
+            return self.queue.get(False) # Non-blocking call 
+        return None
 
     def process_data(self):
-        pass
+        pass 
 
 class Vehicle_sensors:
     def update_data(self, flip:bool=True):
-        for i, sensor in enumerate(self.sensors):
-            threads.append(threading.Thread(target=sensor.process_data()))
-            threads[i].start()
-
-        for i in range(len(self.sensors)):
-            threads[i].join()
-            self.sensors[i].blit()
+        for sensor in self.sensors:
+            sensor.process_data()
 ```
 
-Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, la cual simplemente se encarga de mostrar la imagen capturada.
+Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, la cual simplemente se encarga de mostrar la imagen capturada. Además, hemos añadido una nueva función ***add_camera_rgb*** en la clase *Vehicle_sensors*.
 ```python
 class Camera(Sensor):      
-    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, screen:pygame.Surface)
+    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, screen:pygame.Surface, text:str=None)
     def process_data(self)
+
+class Vehicle_sensors:
+    def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, text:str=None, transform:carla.Transform=carla.Transform())
 ```
-Además, hemos añadido una nueva función ***add_camera_rgb*** en la clase *Vehicle_sensors*. Esta función requiere los parámetros del constructor de la clase Camera.
+Además, hemos añadido una nueva función ***add_camera_rgb*** en la clase *Vehicle_sensors*. Esta función requiere los parámetros del constructor de la clase *Camera*.
 
 ## Control 
 
