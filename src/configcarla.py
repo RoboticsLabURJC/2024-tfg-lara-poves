@@ -456,21 +456,21 @@ class Lidar(Sensor):
 
         return (r, g, b)
     
-    def __update_stats(self):
+    def __update_stats(self, meas_zones):
         for zone in range(NUM_ZONES):
-            if len(self.__meas_zones[DIST][zone]) != 0:
+            if len(meas_zones[DIST][zone]) != 0:
                 # Filter distances by z
-                filter = np.array(self.__meas_zones[Z][zone]) > self.__z_threshold
-                filtered_dist = np.array(self.__meas_zones[DIST][zone])[filter]
+                filter = np.array(meas_zones[Z][zone]) > self.__z_threshold
+                filtered_dist = np.array(meas_zones[DIST][zone])[filter]
 
                 if len(filtered_dist) == 0:
                     self.__stat_zones[zone][MIN] = np.nan
                 else:
                     self.__stat_zones[zone][MIN] = np.min(filtered_dist)
 
-                self.__stat_zones[zone][MEAN] = np.mean(self.__meas_zones[DIST][zone])
-                self.__stat_zones[zone][MEDIAN] = np.median(self.__meas_zones[DIST][zone])
-                self.__stat_zones[zone][STD] = np.std(self.__meas_zones[DIST][zone])
+                self.__stat_zones[zone][MEAN] = np.mean(meas_zones[DIST][zone])
+                self.__stat_zones[zone][MEDIAN] = np.median(meas_zones[DIST][zone])
+                self.__stat_zones[zone][STD] = np.std(meas_zones[DIST][zone])
             else:
                 for i in range(NUM_STATS):
                     self.__stat_zones[zone][i] = np.nan
@@ -540,9 +540,8 @@ class Lidar(Sensor):
         print("Lidar points:", time.time_ns() - init_time, "ns")
 
         init_time = time.time_ns()
-        self.__meas_zones = [dist_zones, z_zones]
-        self.__update_stats()  
-        print("Lidar stats:", time.time_ns()- init_time, "ns")
+        self.__update_stats(meas_zones=[dist_zones, z_zones])  
+        print("Lidar stats:", time.time_ns() - init_time, "ns")
 
         init_time = time.time_ns()
         if self.__rect != None:
@@ -563,9 +562,6 @@ class Lidar(Sensor):
     
     def get_stat_zones(self):
         return self.__stat_zones
-    
-    def get_meas_zones(self):
-        return self.__meas_zones
 
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface=None, 
