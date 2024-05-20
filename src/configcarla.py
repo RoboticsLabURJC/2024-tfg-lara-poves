@@ -124,7 +124,7 @@ class CameraRGB(Sensor):
             self.__ymin_lane = 275 
             self.__coefficients = np.zeros((5, 2, 2), dtype=float)
 
-            self.__mem_max = 5
+            self.__mem_max = 6
             self.__count_mem_road = 0
             self.__count_mem_lane = [0, 0]
 
@@ -150,7 +150,7 @@ class CameraRGB(Sensor):
         # Memory lane
         if len(index_mask[0]) < 10:
             self.__count_mem_lane[index] += 1
-            return
+            return self.__coefficients[-1, index, :]
         else:
             self.__count_mem_lane[index] = 0
 
@@ -190,18 +190,15 @@ class CameraRGB(Sensor):
         
         init_time = time.time_ns()
         _, left_mask, right_mask = model_output[0]
-        self.__mask_lane(mask=left_mask, index=LEFT_LANE)
-        self.__mask_lane(mask=right_mask, index=RIGHT_LANE)
+        coef_left = self.__mask_lane(mask=left_mask, index=LEFT_LANE)
+        coef_right = self.__mask_lane(mask=right_mask, index=RIGHT_LANE)
 
         count_x = count_y = 0
         count_total = count_road = 0
 
         for y in range(self.__ymin_lane, SIZE_CAMERA):
-            m, b = self.__coefficients[-1, LEFT_LANE, :]
-            x_left = max(int(y * m + b), 0)
-
-            m, b = self.__coefficients[-1, RIGHT_LANE, :]
-            x_right = min(int(y *m + b) + 1, SIZE_CAMERA - 1)
+            x_left = max(int(y * coef_left[0] + coef_left[1]), 0)
+            x_right = min(int(y * coef_right[0] + coef_right[1]) + 1, SIZE_CAMERA - 1)
 
             if x_left < x_right:
                 # Center of mass
@@ -390,7 +387,6 @@ class Lidar(Sensor):
         self.__i_threshold = 0.987
         self.__z_threshold = -1.6
         self.__stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
-        self.__meas_zones = None
 
         # Update per second
         self.__time = -2
@@ -710,7 +706,7 @@ class PID:
             self.__prev_error = 0        
 
         if error > 10:
-            control.throttle = 0.4
+            control.throttle = 0.42
             control.brake = 0.2
         elif self.__count < 100:
             control.throttle = 0.8
@@ -718,7 +714,7 @@ class PID:
             control.throttle = 0.5
 
         if error > 20:
-            error *= 1.2
+            error *= 1.23
 
         control.steer = self.__kp * error + self.__kd * self.__prev_error
         self.__vehicle.apply_control(control)
