@@ -19,7 +19,6 @@ import EfficientVit as EV
 
 SEG_TO_NANOSEG = 1000000000
 SIZE_CAMERA = 512
-COUNT_FIRST = 16 # Not consider the first iterations
 
 # Type
 CAMERA = 1
@@ -122,9 +121,8 @@ class CameraRGB(Sensor):
             self.__lane_model = torch.load(file)
             self.__lane_model.eval()
   
-            self.__count = 0
             self.__ymin_lane = 275 
-            self.__coefficients = np.zeros((3, 2, 2), dtype=float)
+            self.__coefficients = np.zeros((5, 2, 2), dtype=float)
 
             self.__mem_max = 5
             self.__count_mem_road = 0
@@ -150,7 +148,7 @@ class CameraRGB(Sensor):
         index_mask = np.where(mask > self.__threshold_lane)
 
         # Memory lane
-        if len(index_mask[0]) < 10 and self.__count > COUNT_FIRST:
+        if len(index_mask[0]) < 10:
             self.__count_mem_lane[index] += 1
             return
         else:
@@ -158,18 +156,21 @@ class CameraRGB(Sensor):
 
         # Linear regression
         coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
-        
-        if self.__count > COUNT_FIRST:
-            same_sign = np.sign(coefficients[0]) == np.sign(self.__coefficients[:, index, 0])
-            if not np.all(same_sign):
-                self.__count_mem_lane[index] += 1
-                return
+
+        # Check sign of the slope
+        signs = np.sign(self.__coefficients[:, index, 0])
+        neg = np.sum(signs == -1.0) > len(signs) / 2
+        if (np.sign(coefficients[0]) > 0 and neg) or (np.sign(coefficients[0]) < 0 and not neg):
+            coef_ret = self.__coefficients[-1, index, :]
         else:
-            self.__count += 1
+            coef_ret = coefficients
         
+        # Update memory
         for i in range(len(self.__coefficients) - 1):
             self.__coefficients[i, index, :] = self.__coefficients[i + 1, index, :]
         self.__coefficients[-1, index, :] = coefficients
+
+        return coef_ret
 
     def __detect_lane(self, data:list, canvas:list, mask:list): 
         init_time = time.time_ns()
@@ -227,7 +228,7 @@ class CameraRGB(Sensor):
 
             # Calculate road porcentage
             self.__road_percentage = count_road / count_total * 100
-            if self.__road_percentage < self.__threshold_road and self.__count > COUNT_FIRST:
+            if self.__road_percentage < self.__threshold_road:
                 self.__count_mem_road += 1
                 assert self.__count_mem_road < self.__mem_max, "Low percentage of lane"
             else:
@@ -713,14 +714,15 @@ class PID:
             self.__prev_error = 0        
 
         if error > 10:
-            control.throttle = 0.41
+            control.throttle = 0.4
+            control.brake = 0.2
         elif self.__count < 100:
             control.throttle = 0.8
         else:
-            control.throttle = 0.51
+            control.throttle = 0.5
 
         if error > 20:
-            error *= 1.25
+            error *= 1.2
 
         control.steer = self.__kp * error + self.__kd * self.__prev_error
         self.__vehicle.apply_control(control)
