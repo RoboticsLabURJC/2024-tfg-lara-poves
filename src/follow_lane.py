@@ -44,7 +44,8 @@ def main(client:carla.Client, screen:pygame.Surface, town:str, transform:carla.T
     except KeyboardInterrupt:
         return None
 
-    except AssertionError:
+    except AssertionError as e:
+        print("ERROR:", e)
         return client
 
     finally:
@@ -53,15 +54,20 @@ def main(client:carla.Client, screen:pygame.Surface, town:str, transform:carla.T
 if __name__ == "__main__":
     scenes = [
         ('Town05', carla.Transform(carla.Location(x=50.0, y=-145.7, z=Z))),
-        ('Town05', carla.Transform(carla.Location(x=151.5, y=7.0, z=Z), carla.Rotation(yaw=90.0)))
+        ('Town05', carla.Transform(carla.Location(x=151.5, y=7.0, z=Z), carla.Rotation(yaw=90.0))),
+        ('Town04', carla.Transform(carla.Location(x=198.5, y=-163, z=0.5), carla.Rotation(yaw=90.0)))
     ]
-    
+
     client = None
-    screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='Follow lane')
+    size = (SIZE_CAMERA * 2, SIZE_CAMERA)
+    screen = configcarla.setup_pygame(size=size, name='Follow lane')
 
     for scene in scenes:
         client = main(screen=screen, client=client, town=scene[0], transform=scene[1])
         if client == None:
             break
+
+        screen.blit(pygame.Surface(size), (0, 0))
+        pygame.display.flip()
 
     pygame.quit()
