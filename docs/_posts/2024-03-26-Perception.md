@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-05-13T12:43:00
+last_modified_at: 2024-05-20T13:30:00
 categories:
   - Blog
 tags:
@@ -11,10 +11,16 @@ tags:
 ---
 
 ## Índice
+## Índice
 1. [Clasificación vs detección vs segmentación](#clasificación-vs-detección-vs-segmentación)
 2. [Deep learning](#deep-learning)
   - [Redes neuronales](#redes-neuronales)
   - [Redes neuronales convolucionales](#redes-neuronales-convolucionales)
+    - [Capa de convolución](#capa-de-convolución)
+    - [Capa Pooling](#capa-pooling)
+    - [Capa Flatten](#capa-flatten)
+    - [Capa fully connected](#capa-fully-connected)
+    - [Capa de salida o clasificación](#capa-de-salida-o-clasificación)
   - [Redes neuronales recurrentes](#redes-neuronales-recurrentes)
 3. [SA](#sa)
   - [Task](#task)
@@ -27,12 +33,12 @@ tags:
 
 ## Clasificación vs detección vs segmentación
 
-La **clasificación** implica asignar etiquetas o clases a imágenes o regiones específicas, para ello pueden utilizarse CNNs. Sin embargo, esta técnica no proporciona información sobre las ubicaciones de los objetos, simplemente responde a la pregunta de si un objeto específico está presente, por ejemplo: ¿hay un perro?
+La **clasificación** implica asignar etiquetas o clases a imágenes o regiones específicas. Sin embargo, esta técnica no proporciona información sobre las ubicaciones de los objetos, simplemente responde a la pregunta de si un objeto específico está presente, por ejemplo: ¿hay un perro?
 <figure class="align-center" style="max-width: 70%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/classification.jpeg" alt="">
 </figure>
 
-La **detección** es el proceso que nos permite identificar varios objetos y sus ubicaciones en una imagen, proporcionando sus *bounding boxes*. Responde a pregunta: ¿qué hay en la imagen y dónde está?. Se suele utilizar para tareas en tiempo real, un ejemplo en conducción autónoma es la detección de peatones, pues nos basta con señalar y conocer su posición en la escena mediante un cuadro delimitador.
+La **detección** es el proceso que nos permite identificar varios objetos, diferentes instancias de un mismo objeto y sus ubicaciones en una imagen, proporcionando sus *bounding boxes*. Responde a la pregunta: ¿qué hay en la imagen y dónde está?. Se suele utilizar para tareas en tiempo real, un ejemplo en conducción autónoma es la detección de peatones, pues nos basta con señalar y conocer su posición en la escena mediante un cuadro delimitador.
 <figure class="align-center" style="max-width: 80%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/detection.jpeg" alt="">
 </figure>
@@ -116,7 +122,7 @@ model = tf.keras.Sequential([
 </figure>
 
 #### Capa de convolución
-Se aplican *kernels* (o filtros) de dimensiones nxn  para extraer características locales de la imagen. , el *kernel* se va deslizando a los largo de la imagen. El *kernel* se va deslizando a lo largo de la imagen, calculando la suma ponderada de los píxeles en cada ubicación. Cada filtro produce un mapa de características que contiene las características relevantes de la imagen. En el ejemplo proporcionado, se aplican 32 filtros en la primera y cuarta capa de convolución y 64 en la segunda y tercera.
+Se aplican *kernels* (o filtros) de dimensiones nxn  para extraer características locales de la imagen. El *kernel* se va deslizando a lo largo de la imagen, calculando la suma ponderada de los píxeles en cada ubicación. Cada filtro produce un mapa de características que contiene las características relevantes de la imagen. En el ejemplo proporcionado, se aplican 32 filtros en la primera y cuarta capa de convolución y 64 en la segunda y tercera.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/deep_learning/perception/conv.jpeg" alt="">
 </figure>
@@ -144,19 +150,19 @@ Convierte los datos de entrada tridimensionales a un vector unidimensional.
 Se corresponde con la capa *dense* del ejemplo.
 
 #### Capa de salida o clasificación
-Como ya mencionamos anteriormente, el número de neuronas es igual al número de posibles clases de salida. Usamos la función de activación *softmax*, la cual calcula la probabilidad de que un dato pertenezca a cada una de las posibles clases.
+Como ya mencionamos anteriormente, el número de neuronas es igual al número de posibles clases de salida. Usamos la función de activación *softmax*, la cual calcula la probabilidad de una entrada pertenezca a cada una de las posibles clases.
 
 ### Redes neuronales recurrentes
 ---
 
-Las redes neuronales recurrentes o **RNN** buscan solucionar problemas en los que existen dependencias temporales entre características; las redes neuronales convencionales no son capaces de resolverlos de forma eficiente. La aplicación principal es el procesamiento del lenguaje natural, lo cual nos sirve para hacer traducciones, interpretar discursos o generar texto. Un ejemplo real es reconocer emociones en reseñas sobre películas, analizando si los adjetivos sean positivos o negativos.
+Las redes neuronales recurrentes o **RNN** buscan solucionar problemas en los que existen dependencias temporales entre características; las redes neuronales convencionales no son capaces de resolverlos de forma eficiente. La aplicación principal es el procesamiento del lenguaje natural, lo cual nos sirve para hacer traducciones, interpretar discursos o generar texto. Un ejemplo real es reconocer emociones en reseñas sobre películas, analizando si los adjetivos son positivos o negativos.
 
 Necesitamos transformar una frase de un máximo de *p* palabras en una entrada compatible para una red neuronal. Para lograrlo, necesitamos un diccionario que traduzca el texto a *tokens* según su índice. Este proceso se conoce como ***language processing problem***.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/language.jpg" alt="">
 </figure>
 
-Las RNN incorporan marcas de tiempo, ***timestamps***, para abordar la importancia del orden en la secuencia de datos. Por ejemplo, para los humanos la frase '*I love cats*' es comprensible, mientras que '*I cats love*' no lo es, lo que ilustra la relevancia del orden en el lenguaje natural.
+Las RNN incorporan marcas de tiempo, ***timestamps***, para abordar la importancia del orden en la secuencia de datos. Por ejemplo, para los humanos la frase '*I love cats*' es comprensible, mientras que '*I cats love*' no lo es.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/structure.jpg" alt="">
 </figure>
@@ -174,7 +180,7 @@ Las RNN incorporan marcas de tiempo, ***timestamps***, para abordar la importanc
 Existen diversas estructuras de RNN que podemos seleccionar según el tipo de dataset:
 - **GRU** (*Gated Recurrent Unit*): recomendada para casos donde se requiere más memoria. Por ejemplo, en la frase "*My dad, who works a lot of hours in a factory and ..., was hungry.*", la red debe ser capaz de reconocer que "*was*" se refiere al sustantivo "*dad*", mencionado bastantes palabras antes.
 - ***Bi-Directional RNN***: son útiles en casos donde el contexto es relevante. Por ejemplo: "*Tim is high on drags*" / "*Tim is high in the sky*"; en el primer caso, Tim se refiere a una persona, mientras que en el segundo, se refiere a un pájaro. Es necesario reescribir la fórmula de combinación lineal: y\<t> = f(way * [af\<t>, ab\<t>] + b), donde *af* representa la propagación desde *a0* hasta *aT*, y *ab* representa la propagación desde *aT* hasta *a0*.
-- **LSTM** (*Long Short-Term Memory*): adecuada para procesar frases muy extensas e incluso párrafos. Se añade una nueva salida c a la estructura convencional de las RNNs.
+- **LSTM** (*Long Short-Term Memory*): adecuada para procesar frases muy extensas e incluso párrafos. Se añade una nueva salida *c* a la estructura convencional de las RNNs.
 <figure class="align-center" style="max-width: 95%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/LSTM.jpg" alt="">
 </figure>
@@ -274,7 +280,7 @@ EfficientVit es un nuevo módulo de atención lineal multi-escala para prediccio
 - **Aprendizaje a múltiples escalas**: el modelo puede capturar tanto detalles finos como características más grandes y globales en la imagen.
 - **Campo receptivo global**: comprender el contexto y las relaciones entre diferentes partes de la imagen.
 
-El principal desafío es que los modelos SOTA utilizan operaciones de hardware ineficientes, lo que limita su viabilidad en aplicaciones del mundo real. EfficientViT aborda este problema reemplazando estas operaciones con otras más livianas y eficientes en hardware, lo que permite una ejecución más rápida y su uso en aplicaciones en tiempo real. El cambio clave es sustituir la función **softmax por ReLU**, lo que reduce la complejidad computacional de cuadrática a lineal sin comprometer funcionalidad. No obstante, debido a que ReLU por sí sola tiene una capacidad limitada para extraer información local, lo cual se complementa con convoluciones en capas FFN (*FeedForward Network*, capa usada en CNN y RNN) a diferentes profundidades (FFN + DWConv), y aprender a múltiples escalas, se incorporan DWConv separables de *kernel* pequeño para solvertarlo.
+El principal desafío es que los modelos SOTA utilizan operaciones de hardware ineficientes, lo que limita su viabilidad en aplicaciones del mundo real. EfficientViT aborda este problema reemplazando estas operaciones con otras más livianas y eficientes en hardware, lo que permite una ejecución más rápida y su uso en aplicaciones en tiempo real. El cambio clave es sustituir la función **softmax por ReLU**, lo que reduce la complejidad computacional de cuadrática a lineal sin comprometer funcionalidad. No obstante, debido a que ReLU por sí sola tiene una capacidad limitada para extraer información local, se complementa con convoluciones en capas FFN (*FeedForward Network*, capa usada en CNN y RNN) a diferentes profundidades (FFN + DWConv), y aprender a múltiples escalas, se incorporan DWConv separables de *kernel* pequeño para solventarlo.
 <div style="display: flex; align-items: center;">
     <div style="flex: 2;">
         <img src="{{ site.url }}{{ site.baseurl }}/images/perception/EfficientVit/detect.png" alt="">
@@ -288,13 +294,13 @@ EfficientViT es evaluado en tres tareas principales: segmentación semántica, s
 
 ## Aplicación
 
-Hemos añadido varias mejoras en el manejo de los sensores, la principal es mostrar el número de *frames* por segundo a los que itera nuestro programa. También hemos integrado la **red de segmentación semántica EfficientViT** en nuestro código para poder comprender el entorno, para ello, hemos añadido nuevos atributos en la clase *CameraRGB* y nuevos parámetros en la función referente a la cámara de la clase *Vehicle_sensors*.
+Hemos añadido varias mejoras en el manejo de los sensores, la principal es mostrar el número de *frames* por segundo a los que itera nuestro programa. También hemos integrado la **red de segmentación semántica EfficientViT** en nuestro código para poder comprender el entorno. Para ello, hemos añadido nuevos atributos en la clase *CameraRGB* y nuevos parámetros en la función referente a la cámara de la clase *Vehicle_sensors*.
 ```python
 def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
                    transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None, text:str=None)
 ```
 
-La red neuronal recibe como entrada una imagen en **RGB** con dimensiones de **512x512** píxeles, por tanto, es fundamental garantizar que la imagen esté en dicho formato. Para asegurar las dimensiones, configuramos directamente la cámara en Carla a 512x512, realizar un reescalado podría deformar los objetos, lo que afectaría negativamente al rendimiento de la red neuronal.
+La red neuronal recibe como entrada una imagen en **RGB** con dimensiones de **512x512** píxeles, por tanto, es fundamental garantizar que la imagen esté en dicho formato. Para asegurar las dimensiones, configuramos directamente la cámara en Carla a 512x512, ya que realizar un reescalado podría deformar los objetos, lo que afectaría negativamente al rendimiento de la red neuronal.
 
 Es fundamental recordar ejecutar nuestro programa en una GPU distinta de aquella en la que se está ejecutando el simulador Carla (en la GPU 0). Esto asegura una eficiencia computacional óptima al garantizar una distribución equitativa de la carga de trabajo entre las GPUs disponibles.
 ```bash

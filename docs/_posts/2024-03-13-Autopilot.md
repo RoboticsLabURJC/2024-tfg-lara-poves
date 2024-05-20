@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-05-16T13:54:00
+last_modified_at: 2024-05-20T12:52:00
 categories:
   - Blog
 tags:
@@ -34,7 +34,7 @@ def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=
 
 ## LIDAR
 
-Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva clase ***Lidar*** heredada de la clase *Sensor*. Al igual que en la implementación para la cámara, hemos agregado nuevos parámetros en el constructor para la visualización y sobrescrito la función *process_data()*. Esta función se encarga de visualizar el láser y actualizar las estadísticas relevantes a la zona frontal del láser, las cuales nos serán útiles para la detección de obstáculos.
+Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva clase ***Lidar*** heredada de la clase *Sensor*. Al igual que en la implementación de la cámara, hemos agregado nuevos parámetros en el constructor para la visualización y sobrescrito la función *process_data()*. Esta función se encarga de visualizar el láser y actualizar las estadísticas relevantes a la zona frontal del láser, las cuales nos serán útiles para la detección de obstáculos.
 
 ```python
 class Vehicle_sensors:
@@ -63,19 +63,15 @@ lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 ```
 
 ### Visualización
----
 
-Para la representación del láser dibujaremos cada unos de estos puntos en 2D (x, y). Para mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño del punto según su altura.
-
-Para representar el láser, graficaremos cada uno de sus puntos en un plano 2D con coordenadas *x*, *y*. Con el fin de mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño del punto según su altura.
+Para la representación del láser, dibujamos cada unos de estos puntos en 2D (x, y). Para mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño según su altura.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/interpolate.png" alt="">
 </figure>
 
 ### Zona frontal
----
 
-Con el fin de realizar adelantamientos, nos enfocaremos en la detección de obstáculos en la parte frontal del vehículo. Por lo tanto, examinaremos el ángulo frontal del láser, cuya amplitud es indicada por el usuario, por defecto 150º.
+Con el fin de realizar adelantamientos, nos enfocaremos en la detección de obstáculos en la parte frontal del vehículo. Por lo tanto, examinaremos el ángulo frontal del láser, cuya amplitud es indicada por el usuario, por defecto es 150º.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/front_angle.png" alt="">
 </figure>
@@ -111,17 +107,16 @@ En nuestro caso, con un *yaw* de 90º, obtendríamos los ángulos: [-165.0, -115
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/three_zones.png" alt="">
 </figure>
 
-#### Cálculo de estadísticas
----
+### Cálculo de estadísticas
 
-Creamos una lista de dos elementos ***meas_zones***. En el primero, almacenamos una lista que a su vez contiene tres listas, cada una contiene las distancias desde el punto hasta el centro del láser en el plano XY de cada zona. En el segundo elemento, guardamos de la misma manera las alturas *z*. Utilizamos estas medidas para calcular la media, la mediana, la desviación estándar y el mínimo en cada zona, ***stat_zones***. Actualizamos las estadísticas en cada iteración, pero, si deseamos visualizarlas en pantalla, su valor se actualiza cada segundo.
+Creamos una lista de dos elementos ***meas_zones***. El primer elemento de esta lista a su vez contiene tres listas, cada una contiene las distancias desde el punto hasta el centro del láser en el plano XY de cada zona. El segundo elemento, guarda de la misma manera las alturas *z*. Utilizamos estas medidas para calcular la media, la mediana, la desviación estándar y el mínimo en cada zona, ***stat_zones***. Actualizamos las estadísticas en cada iteración, pero, si deseamos visualizarlas en pantalla, su valor se actualiza cada segundo.
 
 Como se puede observar en la imagen, los puntos de color rojo corresponden al propio coche, por lo tanto, hemos realizado un filtrado por intensidad para eliminarlos del cálculo estadístico. Este umbral tiene un valor predeterminado establecido en el constructor, pero hemos implementado unas funciones para consultar o modificar su valor. De manera similar, para calcular el mínimo, filtramos por altura para eliminar todos los puntos correspondientes a la calzada.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/stats.png" alt="">
 </figure>
 
-#### Histogramas
+### Histogramas
 
 Vamos a generar histogramas utilizando las distancias detectadas en la zona central frontal del vehículo, con el objetivo de distinguir la presencia de obstáculos y las distancias a las que se encuentran.
 

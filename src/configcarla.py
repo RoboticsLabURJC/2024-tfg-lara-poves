@@ -563,9 +563,6 @@ class Lidar(Sensor):
     
     def get_stat_zones(self):
         return self.__stat_zones
-    
-    def get_meas_zones(self):
-        return self.__meas_zones
 
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface=None, 
