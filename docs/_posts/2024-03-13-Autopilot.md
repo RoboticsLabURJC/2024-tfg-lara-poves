@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-05-08T10:57:00
+last_modified_at: 2024-05-16T13:54:00
 categories:
   - Blog
 tags:
@@ -38,22 +38,22 @@ Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva
 
 ```python
 class Vehicle_sensors:
-    def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25,
-                  transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True)
+  def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25,
+                transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True)
 
 class Lidar(Sensor): 
-    def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,
-                 scale:int, front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool)
+  def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,
+                scale:int, front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool)
 
-    def process_data(self)
-    def get_stat_zones(self)
-    def get_meas_zones(self)
-    
-    def set_i_threshold(self, i:float)
-    def get_i_threshold(self)
-    
-    def set_z_threshold(self, z:float)
-    def get_z_threshold(self)
+  def process_data(self)
+  def get_stat_zones(self)
+  def get_meas_zones(self)
+  
+  def set_i_threshold(self, i:float)
+  def get_i_threshold(self)
+  
+  def set_z_threshold(self, z:float)
+  def get_z_threshold(self)
 ```
 
 En primer lugar, es necesario transformar los datos del láser en una matriz de matrices, donde cada submatriz almacena las coordenadas *x*, *y*, *z* y la intensidad respectivamente. Cada una de estas submatrices representa un punto.
@@ -101,9 +101,9 @@ angles = [angle1, angle1_add, angle2_sub, angle2]
 Para establecer en qué zona se encuentra cada punto, seguimos el criterio mencionado anteriormente:
 ```python
 if angles[i] <= angles[i + 1]:
-    return angles[i] <= a <= angles[i + 1]
+  return angles[i] <= a <= angles[i + 1]
 else:
-    return angle[i] <= a or a <= angle[i + 1]
+  return angle[i] <= a or a <= angle[i + 1]
 ```
 
 En nuestro caso, con un *yaw* de 90º, obtendríamos los ángulos: [-165.0, -115.0, -65.0, -15.0].
