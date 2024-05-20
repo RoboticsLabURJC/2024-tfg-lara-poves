@@ -1,3240 +1,3504 @@
-Camera init: 267407 ns
-Seg init: 1652962 ns
-Seg prediction: 56994583 ns
-Seg get mask: 550504 ns
-Lane init: 4014176
-Lane prediction: 10955030
-Lane detection: 4338092 ns
-Lane cm%: 44309 ns
-Seg camera show: 2966007 ns
-Camera init: 297927 ns
-Camera show: 2529572 ns
-Sensors FPS + flip: 1816980 ns
-Camera init: 260527 ns
-Seg init: 1730961 ns
-Seg prediction: 56477160 ns
-Seg get mask: 551264 ns
-Lane init: 4424602
-Lane prediction: 8722914
-Lane detection: 4317003 ns
-Lane cm%: 43489 ns
-Seg camera show: 2877939 ns
-Camera init: 285347 ns
-Camera show: 2517712 ns
-Sensors FPS + flip: 1834410 ns
-Camera init: 301987 ns
-Seg init: 1685891 ns
-Seg prediction: 56855615 ns
-Seg get mask: 556024 ns
-Lane init: 3424933
-Lane prediction: 8456657
-Lane detection: 4358102 ns
-Lane cm%: 43729 ns
-Seg camera show: 2831339 ns
-Camera init: 282177 ns
-Camera show: 2558152 ns
-Sensors FPS + flip: 1942358 ns
-Camera init: 294247 ns
-Seg init: 1674701 ns
-Seg prediction: 59372818 ns
-Seg get mask: 526914 ns
-Lane init: 3358182
-Lane prediction: 8607126
-Lane detection: 4336362 ns
-Lane cm%: 44430 ns
-Seg camera show: 2902779 ns
-Camera init: 285277 ns
-Camera show: 2533482 ns
-Sensors FPS + flip: 2293355 ns
-Camera init: 274117 ns
-Seg init: 1695331 ns
-Seg prediction: 54145365 ns
-Seg get mask: 809091 ns
-Lane init: 5023725
-Lane prediction: 12186525
-Lane detection: 4279103 ns
-Lane cm%: 44820 ns
-Seg camera show: 2828479 ns
-Camera init: 303057 ns
-Camera show: 2514033 ns
-Sensors FPS + flip: 2622302 ns
-Camera init: 264587 ns
-Seg init: 1726411 ns
-Seg prediction: 55809966 ns
-Seg get mask: 670643 ns
-Lane init: 3077296
-Lane prediction: 8627956
-Lane detection: 4461271 ns
-Lane cm%: 44880 ns
-Seg camera show: 3334163 ns
-Camera init: 332997 ns
-Camera show: 2951197 ns
-Sensors FPS + flip: 3427303 ns
-Camera init: 539804 ns
-Seg init: 2583002 ns
-Seg prediction: 57677506 ns
-Seg get mask: 951960 ns
-Lane init: 3644300
-Lane prediction: 8423718
-Lane detection: 4296963 ns
-Lane cm%: 42930 ns
-Seg camera show: 2859108 ns
-Camera init: 292446 ns
-Camera show: 2481173 ns
-Sensors FPS + flip: 2411253 ns
-Camera init: 678123 ns
-Seg init: 4250323 ns
-Seg prediction: 59876902 ns
-Seg get mask: 619793 ns
-Lane init: 3307614
-Lane prediction: 8299109
-Lane detection: 4374192 ns
-Lane cm%: 43219 ns
-Seg camera show: 3086526 ns
-Camera init: 280677 ns
-Camera show: 2479093 ns
-Sensors FPS + flip: 2649520 ns
-Camera init: 259577 ns
-Seg init: 1856570 ns
-Seg prediction: 53539032 ns
-Seg get mask: 493874 ns
-Lane init: 3011197
-Lane prediction: 8990071
-Lane detection: 6622067 ns
-Lane cm%: 45290 ns
-Seg camera show: 3180645 ns
-Camera init: 304427 ns
-Camera show: 2425683 ns
-Sensors FPS + flip: 3782859 ns
-Camera init: 286837 ns
-Seg init: 1908989 ns
-Seg prediction: 60130700 ns
-Seg get mask: 514944 ns
-Lane init: 3706209
-Lane prediction: 8438748
-Lane detection: 4384422 ns
-Lane cm%: 43429 ns
-Seg camera show: 2837799 ns
-Camera init: 278747 ns
-Camera show: 2454123 ns
-Sensors FPS + flip: 2201795 ns
-Camera init: 436865 ns
-Seg init: 2022188 ns
-Seg prediction: 53367614 ns
-Seg get mask: 532984 ns
-Lane init: 3114266
-Lane prediction: 8402757
-Lane detection: 4391462 ns
-Lane cm%: 43239 ns
-Seg camera show: 2826159 ns
-Camera init: 272907 ns
-Camera show: 3104846 ns
-Sensors FPS + flip: 3805178 ns
-Camera init: 347366 ns
-Seg init: 1597902 ns
-Seg prediction: 57124753 ns
-Seg get mask: 481535 ns
-Lane init: 3313543
-Lane prediction: 8748314
-Lane detection: 4353072 ns
-Lane cm%: 42630 ns
-Seg camera show: 2857908 ns
-Camera init: 297187 ns
-Camera show: 2517262 ns
-Sensors FPS + flip: 2102797 ns
-Camera init: 430265 ns
-Seg init: 2385664 ns
-Seg prediction: 57881945 ns
-Seg get mask: 490284 ns
-Lane init: 3141446
-Lane prediction: 8487437
-Lane detection: 4464862 ns
-Lane cm%: 42820 ns
-Seg camera show: 2837079 ns
-Camera init: 296556 ns
-Camera show: 2515963 ns
-Sensors FPS + flip: 2079727 ns
-Camera init: 437665 ns
-Seg init: 1572812 ns
-Seg prediction: 58022633 ns
-Seg get mask: 470195 ns
-Lane init: 5916985
-Lane prediction: 8475277
-Lane detection: 4343502 ns
-Lane cm%: 43729 ns
-Seg camera show: 2822549 ns
-Camera init: 294917 ns
-Camera show: 2489462 ns
-Sensors FPS + flip: 2138997 ns
-Camera init: 277017 ns
-Seg init: 1576053 ns
-Seg prediction: 59425548 ns
-Seg get mask: 276197 ns
-Lane init: 3698009
-Lane prediction: 8980922
-Lane detection: 4340472 ns
-Lane cm%: 44090 ns
-Seg camera show: 2857689 ns
-Camera init: 285137 ns
-Camera show: 2528492 ns
-Sensors FPS + flip: 2109817 ns
-Camera init: 512994 ns
-Seg init: 2281715 ns
-Seg prediction: 60506636 ns
-Seg get mask: 312217 ns
-Lane init: 4041186
-Lane prediction: 8938411
-Lane detection: 4349373 ns
-Lane cm%: 44309 ns
-Seg camera show: 2862889 ns
-Camera init: 285177 ns
-Camera show: 2526412 ns
-Sensors FPS + flip: 2079478 ns
-Camera init: 281087 ns
-Seg init: 1969878 ns
-Seg prediction: 57077274 ns
-Seg get mask: 265917 ns
-Lane init: 3719689
-Lane prediction: 8490547
-Lane detection: 4348452 ns
-Lane cm%: 42989 ns
-Seg camera show: 2823489 ns
-Camera init: 521074 ns
-Camera show: 2809940 ns
-Sensors FPS + flip: 2362354 ns
-Camera init: 271877 ns
-Seg init: 1852749 ns
-Seg prediction: 53301395 ns
-Seg get mask: 269607 ns
-Lane init: 3038887
-Lane prediction: 8157930
-Lane detection: 4301233 ns
-Lane cm%: 42439 ns
-Seg camera show: 2798560 ns
-Camera init: 286977 ns
-Camera show: 2452463 ns
-Sensors FPS + flip: 1989128 ns
-Camera init: 259967 ns
-Seg init: 1831210 ns
-Seg prediction: 62075898 ns
-Seg get mask: 275127 ns
-Lane init: 3136916
-Lane prediction: 8920283
-Lane detection: 4968945 ns
-Lane cm%: 46790 ns
-Seg camera show: 2892279 ns
-Camera init: 282787 ns
-Camera show: 2574111 ns
-Sensors FPS + flip: 2293915 ns
-Camera init: 271817 ns
-Seg init: 1779280 ns
-Seg prediction: 56028106 ns
-Seg get mask: 244578 ns
-Lane init: 3340833
-Lane prediction: 8624895
-Lane detection: 4343673 ns
-Lane cm%: 43699 ns
-Seg camera show: 2900378 ns
-Camera init: 294777 ns
-Camera show: 2523702 ns
-Sensors FPS + flip: 1744361 ns
-Camera init: 324607 ns
-Seg init: 2355954 ns
-Seg prediction: 58213861 ns
-Seg get mask: 472305 ns
-Lane init: 6800625
-Lane prediction: 9039421
-Lane detection: 4268353 ns
-Lane cm%: 42240 ns
-Seg camera show: 2844319 ns
-Camera init: 292337 ns
-Camera show: 2615121 ns
-Sensors FPS + flip: 2003998 ns
-Camera init: 506134 ns
-Seg init: 1834690 ns
-Seg prediction: 61349416 ns
-Seg get mask: 298427 ns
-Lane init: 3651190
-Lane prediction: 9944491
-Lane detection: 4682718 ns
-Lane cm%: 48130 ns
-Seg camera show: 3672249 ns
-Camera init: 512694 ns
-Camera show: 2609362 ns
-Sensors FPS + flip: 1807140 ns
-Camera init: 253957 ns
-Seg init: 2287765 ns
-Seg prediction: 58123353 ns
-Seg get mask: 278417 ns
-Lane init: 3624651
-Lane prediction: 8690184
-Lane detection: 4298713 ns
-Lane cm%: 42489 ns
-Seg camera show: 2843379 ns
-Camera init: 283167 ns
-Camera show: 2492493 ns
-Sensors FPS + flip: 2260576 ns
-Camera init: 288167 ns
-Seg init: 1585262 ns
-Seg prediction: 61171830 ns
-Seg get mask: 296297 ns
-Lane init: 4325083
-Lane prediction: 8660975
-Lane detection: 4508040 ns
-Lane cm%: 42010 ns
-Seg camera show: 2861198 ns
-Camera init: 321826 ns
-Camera show: 2561342 ns
-Sensors FPS + flip: 2506683 ns
-Camera init: 321236 ns
-Seg init: 1810190 ns
-Seg prediction: 52932109 ns
-Seg get mask: 259027 ns
-Lane init: 2907778
-Lane prediction: 8143621
-Lane detection: 4325322 ns
-Lane cm%: 42470 ns
-Seg camera show: 2783879 ns
-Camera init: 287447 ns
-Camera show: 2484512 ns
-Sensors FPS + flip: 2347925 ns
-Camera init: 274167 ns
-Seg init: 1595523 ns
-Seg prediction: 58310301 ns
-Seg get mask: 270127 ns
-Lane init: 3792218
-Lane prediction: 8548597
-Lane detection: 4362743 ns
-Lane cm%: 44989 ns
-Seg camera show: 2839879 ns
-Camera init: 286116 ns
-Camera show: 2495333 ns
-Sensors FPS + flip: 2552302 ns
-Camera init: 274087 ns
-Seg init: 1602642 ns
-Seg prediction: 60830443 ns
-Seg get mask: 277437 ns
-Lane init: 2904208
-Lane prediction: 8150081
-Lane detection: 4798427 ns
-Lane cm%: 41370 ns
-Seg camera show: 2818930 ns
-Camera init: 293917 ns
-Camera show: 2466703 ns
-Sensors FPS + flip: 2225106 ns
-Camera init: 258558 ns
-Seg init: 1597142 ns
-Seg prediction: 53411964 ns
-Seg get mask: 285007 ns
-Lane init: 3364673
-Lane prediction: 12774449
-Lane detection: 4275123 ns
-Lane cm%: 42500 ns
-Seg camera show: 2801149 ns
-Camera init: 281497 ns
-Camera show: 2435093 ns
-Sensors FPS + flip: 2281115 ns
-Camera init: 255187 ns
-Seg init: 1664992 ns
-Seg prediction: 53627302 ns
-Seg get mask: 282947 ns
-Lane init: 3435713
-Lane prediction: 8091181
-Lane detection: 4315373 ns
-Lane cm%: 42139 ns
-Seg camera show: 2821279 ns
-Camera init: 284257 ns
-Camera show: 2473623 ns
-Sensors FPS + flip: 2395394 ns
-Camera init: 316966 ns
-Seg init: 1613452 ns
-Seg prediction: 71244619 ns
-Seg get mask: 284087 ns
-Lane init: 3534091
-Lane prediction: 8524017
-Lane detection: 4661539 ns
-Lane cm%: 41820 ns
-Seg camera show: 2800099 ns
-Camera init: 300477 ns
-Camera show: 2516212 ns
-Sensors FPS + flip: 2416433 ns
-Camera init: 275627 ns
-Seg init: 1590813 ns
-Seg prediction: 56198834 ns
-Seg get mask: 241088 ns
-Lane init: 4183504
-Lane prediction: 9460406
-Lane detection: 4496501 ns
-Lane cm%: 43599 ns
-Seg camera show: 2816759 ns
-Camera init: 287527 ns
-Camera show: 2456823 ns
-Sensors FPS + flip: 2116316 ns
-Camera init: 278367 ns
-Seg init: 2010128 ns
-Seg prediction: 54821019 ns
-Seg get mask: 274517 ns
-Lane init: 3314784
-Lane prediction: 8053111
-Lane detection: 4239704 ns
-Lane cm%: 42309 ns
-Seg camera show: 2835779 ns
-Camera init: 295517 ns
-Camera show: 2469643 ns
-Sensors FPS + flip: 2262096 ns
-Camera init: 257737 ns
-Seg init: 1869380 ns
-Seg prediction: 66351083 ns
-Seg get mask: 284236 ns
-Lane init: 4095375
-Lane prediction: 8675925
-Lane detection: 4252103 ns
-Lane cm%: 43620 ns
-Seg camera show: 2801179 ns
-Camera init: 291937 ns
-Camera show: 2510052 ns
-Sensors FPS + flip: 2340884 ns
-Camera init: 489494 ns
-Seg init: 2021228 ns
-Seg prediction: 63429305 ns
-Seg get mask: 296167 ns
-Lane init: 3456202
-Lane prediction: 9177899
-Lane detection: 4284843 ns
-Lane cm%: 42320 ns
-Seg camera show: 2833358 ns
-Camera init: 279787 ns
-Camera show: 2465893 ns
-Sensors FPS + flip: 1900249 ns
-Camera init: 268597 ns
-Seg init: 1609583 ns
-Seg prediction: 54493283 ns
-Seg get mask: 292966 ns
-Lane init: 3152676
-Lane prediction: 8094031
-Lane detection: 4287623 ns
-Lane cm%: 50939 ns
-Seg camera show: 2778730 ns
-Camera init: 287166 ns
-Camera show: 2438014 ns
-Sensors FPS + flip: 2058957 ns
-Camera init: 279037 ns
-Seg init: 1640252 ns
-Seg prediction: 54426694 ns
-Seg get mask: 226377 ns
-Lane init: 3456583
-Lane prediction: 11604163
-Lane detection: 4528880 ns
-Lane cm%: 43650 ns
-Seg camera show: 2826049 ns
-Camera init: 312846 ns
-Camera show: 2505233 ns
-Sensors FPS + flip: 2107447 ns
-Camera init: 294297 ns
-Seg init: 1662292 ns
-Seg prediction: 57514959 ns
-Seg get mask: 254458 ns
-Lane init: 4263413
-Lane prediction: 8559166
-Lane detection: 4251123 ns
-Lane cm%: 41990 ns
-Seg camera show: 3136265 ns
-Camera init: 308437 ns
-Camera show: 2512592 ns
-Sensors FPS + flip: 2283395 ns
-Camera init: 315376 ns
-Seg init: 1605093 ns
-Seg prediction: 61019880 ns
-Seg get mask: 272317 ns
-Lane init: 3359263
-Lane prediction: 8055973
-Lane detection: 4382522 ns
-Lane cm%: 43019 ns
-Seg camera show: 3061276 ns
-Camera init: 304977 ns
-Camera show: 2490932 ns
-Sensors FPS + flip: 1936319 ns
-Camera init: 275227 ns
-Seg init: 1757380 ns
-Seg prediction: 55186565 ns
-Seg get mask: 741962 ns
-Lane init: 7117182
-Lane prediction: 8823764
-Lane detection: 4276573 ns
-Lane cm%: 43169 ns
-Seg camera show: 2803819 ns
-Camera init: 332027 ns
-Camera show: 2489522 ns
-Sensors FPS + flip: 2140257 ns
-Camera init: 450835 ns
-Seg init: 1665771 ns
-Seg prediction: 56657259 ns
-Seg get mask: 253427 ns
-Lane init: 3820788
-Lane prediction: 8683245
-Lane detection: 5007695 ns
-Lane cm%: 57539 ns
-Seg camera show: 4196665 ns
-Camera init: 425805 ns
-Camera show: 3260115 ns
-Sensors FPS + flip: 2427613 ns
-Camera init: 271267 ns
-Seg init: 1641762 ns
-Seg prediction: 60576235 ns
-Seg get mask: 316157 ns
-Lane init: 3509821
-Lane prediction: 8040432
-Lane detection: 4213044 ns
-Lane cm%: 42459 ns
-Seg camera show: 2842599 ns
-Camera init: 287857 ns
-Camera show: 2447923 ns
-Sensors FPS + flip: 1928989 ns
-Camera init: 263537 ns
-Seg init: 1598882 ns
-Seg prediction: 60225880 ns
-Seg get mask: 353796 ns
-Lane init: 8002502
-Lane prediction: 8625816
-Lane detection: 4243273 ns
-Lane cm%: 42920 ns
-Seg camera show: 2817759 ns
-Camera init: 286237 ns
-Camera show: 2507162 ns
-Sensors FPS + flip: 2417904 ns
-Camera init: 495085 ns
-Seg init: 1678612 ns
-Seg prediction: 61346547 ns
-Seg get mask: 254058 ns
-Lane init: 3283304
-Lane prediction: 8088342
-Lane detection: 4234684 ns
-Lane cm%: 42960 ns
-Seg camera show: 2795270 ns
-Camera init: 291956 ns
-Camera show: 2504823 ns
-Sensors FPS + flip: 2006418 ns
-Camera init: 333617 ns
-Seg init: 2055807 ns
-Seg prediction: 60091223 ns
-Seg get mask: 679012 ns
-Lane init: 5358071
-Lane prediction: 8566506
-Lane detection: 4405452 ns
-Lane cm%: 48119 ns
-Seg camera show: 2860359 ns
-Camera init: 299936 ns
-Camera show: 2574362 ns
-Sensors FPS + flip: 2117647 ns
-Camera init: 282597 ns
-Seg init: 1859780 ns
-Seg prediction: 58584149 ns
-Seg get mask: 595143 ns
-Lane init: 3019867
-Lane prediction: 8605316
-Lane detection: 4386161 ns
-Lane cm%: 44610 ns
-Seg camera show: 3232154 ns
-Camera init: 402736 ns
-Camera show: 2642561 ns
-Sensors FPS + flip: 5666808 ns
-Camera init: 320616 ns
-Seg init: 2106577 ns
-Seg prediction: 63072789 ns
-Seg get mask: 613153 ns
-Lane init: 3310134
-Lane prediction: 8503847
-Lane detection: 4230114 ns
-Lane cm%: 42109 ns
-Seg camera show: 2832979 ns
-Camera init: 304967 ns
-Camera show: 2501623 ns
-Sensors FPS + flip: 2084317 ns
-Camera init: 428636 ns
-Seg init: 1612742 ns
-Seg prediction: 61581536 ns
-Seg get mask: 490454 ns
-Lane init: 4176505
-Lane prediction: 8610795
-Lane detection: 4220884 ns
-Lane cm%: 41549 ns
-Seg camera show: 2824789 ns
-Camera init: 285927 ns
-Camera show: 2512202 ns
-Sensors FPS + flip: 2188016 ns
-Camera init: 437436 ns
-Seg init: 1981998 ns
-Seg prediction: 60548387 ns
-Seg get mask: 246297 ns
-Lane init: 3482742
-Lane prediction: 10421876
-Lane detection: 8323629 ns
-Lane cm%: 61369 ns
-Seg camera show: 4531210 ns
-Camera init: 309447 ns
-Camera show: 2680371 ns
-Sensors FPS + flip: 2254775 ns
-Camera init: 459075 ns
-Seg init: 2072897 ns
-Seg prediction: 61342138 ns
-Seg get mask: 354756 ns
-Lane init: 6468469
-Lane prediction: 8761515
-Lane detection: 4310412 ns
-Lane cm%: 46000 ns
-Seg camera show: 2855758 ns
-Camera init: 303377 ns
-Camera show: 2538952 ns
-Sensors FPS + flip: 2406033 ns
-Camera init: 571053 ns
-Seg init: 2174646 ns
-Seg prediction: 62185470 ns
-Seg get mask: 266827 ns
-Lane init: 3608440
-Lane prediction: 12364615
-Lane detection: 4270994 ns
-Lane cm%: 43899 ns
-Seg camera show: 3019967 ns
-Camera init: 377316 ns
-Camera show: 2617792 ns
-Sensors FPS + flip: 2500592 ns
-Camera init: 330156 ns
-Seg init: 1678852 ns
-Seg prediction: 64650512 ns
-Seg get mask: 270707 ns
-Lane init: 3802228
-Lane prediction: 9054271
-Lane detection: 4182484 ns
-Lane cm%: 44089 ns
-Seg camera show: 3273015 ns
-Camera init: 602764 ns
-Camera show: 2566832 ns
-Sensors FPS + flip: 3764409 ns
-Camera init: 342337 ns
-Seg init: 1630903 ns
-Seg prediction: 61514076 ns
-Seg get mask: 251717 ns
-Lane init: 3652760
-Lane prediction: 8747944
-Lane detection: 4312903 ns
-Lane cm%: 43620 ns
-Seg camera show: 2897219 ns
-Camera init: 361346 ns
-Camera show: 2587412 ns
-Sensors FPS + flip: 2337344 ns
-Camera init: 303377 ns
-Seg init: 1627372 ns
-Seg prediction: 62570205 ns
-Seg get mask: 258377 ns
-Lane init: 3118386
-Lane prediction: 8117751
-Lane detection: 4227933 ns
-Lane cm%: 42460 ns
-Seg camera show: 2861048 ns
-Camera init: 281977 ns
-Camera show: 2437234 ns
-Sensors FPS + flip: 2308915 ns
-Camera init: 455395 ns
-Seg init: 1656922 ns
-Seg prediction: 56442353 ns
-Seg get mask: 322106 ns
-Lane init: 4288033
-Lane prediction: 8856333
-Lane detection: 4371303 ns
-Lane cm%: 42500 ns
-Seg camera show: 2940408 ns
-Camera init: 290507 ns
-Camera show: 3052887 ns
-Sensors FPS + flip: 2629911 ns
-Camera init: 269967 ns
-Seg init: 1660282 ns
-Seg prediction: 58936485 ns
-Seg get mask: 267307 ns
-Lane init: 3566521
-Lane prediction: 12110207
-Lane detection: 4308503 ns
-Lane cm%: 42740 ns
-Seg camera show: 3341094 ns
-Camera init: 298037 ns
-Camera show: 2978657 ns
-Sensors FPS + flip: 3614881 ns
-Camera init: 300716 ns
-Seg init: 2124507 ns
-Seg prediction: 60019763 ns
-Seg get mask: 288547 ns
-Lane init: 3186435
-Lane prediction: 8711505
-Lane detection: 4185744 ns
-Lane cm%: 44210 ns
-Seg camera show: 2857828 ns
-Camera init: 302497 ns
-Camera show: 2541592 ns
-Sensors FPS + flip: 2245675 ns
-Camera init: 282477 ns
-Seg init: 1831560 ns
-Seg prediction: 66614761 ns
-Seg get mask: 271117 ns
-Lane init: 3623750
-Lane prediction: 8714045
-Lane detection: 4151745 ns
-Lane cm%: 41319 ns
-Seg camera show: 2796160 ns
-Camera init: 285597 ns
-Camera show: 2573132 ns
-Sensors FPS + flip: 1918829 ns
-Camera init: 458275 ns
-Seg init: 1697171 ns
-Seg prediction: 68349023 ns
-Seg get mask: 264118 ns
-Lane init: 3049466
-Lane prediction: 8134291
-Lane detection: 4100535 ns
-Lane cm%: 42029 ns
-Seg camera show: 2801419 ns
-Camera init: 291587 ns
-Camera show: 2470623 ns
-Sensors FPS + flip: 2025848 ns
-Camera init: 258417 ns
-Seg init: 1591272 ns
-Seg prediction: 57049926 ns
-Seg get mask: 1181447 ns
-Lane init: 6791555
-Lane prediction: 11617183
-Lane detection: 4686979 ns
-Lane cm%: 58209 ns
-Seg camera show: 3880917 ns
-Camera init: 315787 ns
-Camera show: 2304944 ns
-Sensors FPS + flip: 2345164 ns
-Camera init: 266347 ns
-Seg init: 2313565 ns
-Seg prediction: 66865708 ns
-Seg get mask: 250228 ns
-Lane init: 2582391
-Lane prediction: 9434837
-Lane detection: 5095524 ns
-Lane cm%: 78739 ns
-Seg camera show: 3414943 ns
-Camera init: 568683 ns
-Camera show: 2478973 ns
-Sensors FPS + flip: 2166196 ns
-Camera init: 315066 ns
-Seg init: 1881700 ns
-Seg prediction: 68124435 ns
-Seg get mask: 377316 ns
-Lane init: 3550071
-Lane prediction: 10036120
-Lane detection: 5535920 ns
-Lane cm%: 71179 ns
-Seg camera show: 4503351 ns
-Camera init: 429826 ns
-Camera show: 2725560 ns
-Sensors FPS + flip: 2168696 ns
-Camera init: 310987 ns
-Seg init: 2535972 ns
-Seg prediction: 59649688 ns
-Seg get mask: 296266 ns
-Lane init: 3233565
-Lane prediction: 8770234
-Lane detection: 4262993 ns
-Lane cm%: 45759 ns
-Seg camera show: 2866459 ns
-Camera init: 302606 ns
-Camera show: 2515003 ns
-Sensors FPS + flip: 1845280 ns
-Camera init: 267627 ns
-Seg init: 1655051 ns
-Seg prediction: 61211850 ns
-Seg get mask: 329937 ns
-Lane init: 3435672
-Lane prediction: 9474877
-Lane detection: 4392271 ns
-Lane cm%: 45510 ns
-Seg camera show: 2955237 ns
-Camera init: 291127 ns
-Camera show: 2568882 ns
-Sensors FPS + flip: 2020088 ns
-Camera init: 268277 ns
-Seg init: 1680622 ns
-Seg prediction: 60232861 ns
-Seg get mask: 328777 ns
-Lane init: 3400112
-Lane prediction: 11552284
-Lane detection: 4840507 ns
-Lane cm%: 70299 ns
-Seg camera show: 3470572 ns
-Camera init: 407095 ns
-Camera show: 2664981 ns
-Sensors FPS + flip: 2344925 ns
-Camera init: 807681 ns
-Seg init: 4441171 ns
-Seg prediction: 60321651 ns
-Seg get mask: 542344 ns
-Lane init: 3712719
-Lane prediction: 8847344
-Lane detection: 4360943 ns
-Lane cm%: 47439 ns
-Seg camera show: 2960608 ns
-Camera init: 287247 ns
-Camera show: 2614822 ns
-Sensors FPS + flip: 2282285 ns
-Camera init: 464915 ns
-Seg init: 1705281 ns
-Seg prediction: 60702116 ns
-Seg get mask: 543324 ns
-Lane init: 3525621
-Lane prediction: 11475635
-Lane detection: 5038455 ns
-Lane cm%: 49419 ns
-Seg camera show: 2842679 ns
-Camera init: 283867 ns
-Camera show: 1965608 ns
-Sensors FPS + flip: 2144107 ns
-Camera init: 261777 ns
-Seg init: 1688371 ns
-Seg prediction: 58853827 ns
-Seg get mask: 531244 ns
-Lane init: 3719539
-Lane prediction: 8755005
-Lane detection: 4343722 ns
-Lane cm%: 45779 ns
-Seg camera show: 2879409 ns
-Camera init: 297326 ns
-Camera show: 2557872 ns
-Sensors FPS + flip: 6054184 ns
-Camera init: 321886 ns
-Seg init: 1841380 ns
-Seg prediction: 62690695 ns
-Seg get mask: 516894 ns
-Lane init: 3849258
-Lane prediction: 14681779
-Lane detection: 5548689 ns
-Lane cm%: 69659 ns
-Seg camera show: 3935247 ns
-Camera init: 386806 ns
-Camera show: 2951938 ns
-Sensors FPS + flip: 5005996 ns
-Camera init: 472224 ns
-Seg init: 3928728 ns
-Seg prediction: 62235350 ns
-Seg get mask: 685133 ns
-Lane init: 3504601
-Lane prediction: 9526036
-Lane detection: 4365363 ns
-Lane cm%: 45249 ns
-Seg camera show: 2935468 ns
-Camera init: 285667 ns
-Camera show: 2520143 ns
-Sensors FPS + flip: 2241605 ns
-Camera init: 367156 ns
-Seg init: 1623422 ns
-Seg prediction: 61025994 ns
-Seg get mask: 534624 ns
-Lane init: 3145665
-Lane prediction: 12215167
-Lane detection: 5644938 ns
-Lane cm%: 78289 ns
-Seg camera show: 3778438 ns
-Camera init: 376866 ns
-Camera show: 2641351 ns
-Sensors FPS + flip: 2203485 ns
-Camera init: 301657 ns
-Seg init: 2439644 ns
-Seg prediction: 59418140 ns
-Seg get mask: 344627 ns
-Lane init: 2674641
-Lane prediction: 8276269
-Lane detection: 4516201 ns
-Lane cm%: 56119 ns
-Seg camera show: 3025257 ns
-Camera init: 324117 ns
-Camera show: 2570081 ns
-Sensors FPS + flip: 2337815 ns
-Camera init: 291287 ns
-Seg init: 2023878 ns
-Seg prediction: 73672555 ns
-Seg get mask: 571683 ns
-Lane init: 5109715
-Lane prediction: 9128220
-Lane detection: 6316580 ns
-Lane cm%: 47430 ns
-Seg camera show: 3065006 ns
-Camera init: 289147 ns
-Camera show: 3028977 ns
-Sensors FPS + flip: 2189866 ns
-Camera init: 275757 ns
-Seg init: 1709692 ns
-Seg prediction: 60071843 ns
-Seg get mask: 518394 ns
-Lane init: 3600831
-Lane prediction: 9129410
-Lane detection: 4391642 ns
-Lane cm%: 42899 ns
-Seg camera show: 2928218 ns
-Camera init: 378776 ns
-Camera show: 2703370 ns
-Sensors FPS + flip: 2072248 ns
-Camera init: 318507 ns
-Seg init: 1618292 ns
-Seg prediction: 57395303 ns
-Seg get mask: 549324 ns
-Lane init: 3972136
-Lane prediction: 9223169
-Lane detection: 4349483 ns
-Lane cm%: 43909 ns
-Seg camera show: 2988507 ns
-Camera init: 291957 ns
-Camera show: 2641291 ns
-Sensors FPS + flip: 1923759 ns
-Camera init: 303056 ns
-Seg init: 1637463 ns
-Seg prediction: 62327909 ns
-Seg get mask: 765632 ns
-Lane init: 4246493
-Lane prediction: 8687625
-Lane detection: 4349963 ns
-Lane cm%: 42479 ns
-Seg camera show: 4134045 ns
-Camera init: 278177 ns
-Camera show: 2602892 ns
-Sensors FPS + flip: 2164257 ns
-Camera init: 458345 ns
-Seg init: 1678251 ns
-Seg prediction: 57390644 ns
-Seg get mask: 380125 ns
-Lane init: 4228854
-Lane prediction: 10746343
-Lane detection: 4568210 ns
-Lane cm%: 46499 ns
-Seg camera show: 3560481 ns
-Camera init: 286777 ns
-Camera show: 2630051 ns
-Sensors FPS + flip: 2314355 ns
-Camera init: 269447 ns
-Seg init: 1606122 ns
-Seg prediction: 57945258 ns
-Seg get mask: 526194 ns
-Lane init: 4040955
-Lane prediction: 9644375
-Lane detection: 4419982 ns
-Lane cm%: 46799 ns
-Seg camera show: 3062177 ns
-Camera init: 285777 ns
-Camera show: 2583832 ns
-Sensors FPS + flip: 2012748 ns
-Camera init: 260547 ns
-Seg init: 1612632 ns
-Seg prediction: 60316101 ns
-Seg get mask: 477545 ns
-Lane init: 3289764
-Lane prediction: 8593456
-Lane detection: 4321323 ns
-Lane cm%: 43339 ns
-Seg camera show: 2917978 ns
-Camera init: 281097 ns
-Camera show: 2543882 ns
-Sensors FPS + flip: 1795411 ns
-Camera init: 261097 ns
-Seg init: 1618903 ns
-Seg prediction: 57035077 ns
-Seg get mask: 490394 ns
-Lane init: 3372843
-Lane prediction: 8670156
-Lane detection: 5675818 ns
-Lane cm%: 56939 ns
-Seg camera show: 3198325 ns
-Camera init: 526394 ns
-Camera show: 2791429 ns
-Sensors FPS + flip: 2357684 ns
-Camera init: 274777 ns
-Seg init: 1833650 ns
-Seg prediction: 58589980 ns
-Seg get mask: 494515 ns
-Lane init: 3020307
-Lane prediction: 8368169
-Lane detection: 4467941 ns
-Lane cm%: 44930 ns
-Seg camera show: 2942578 ns
-Camera init: 288517 ns
-Camera show: 2503083 ns
-Sensors FPS + flip: 1817680 ns
-Camera init: 269077 ns
-Seg init: 1880150 ns
-Seg prediction: 64281338 ns
-Seg get mask: 629583 ns
-Lane init: 3493321
-Lane prediction: 10295568
-Lane detection: 4344722 ns
-Lane cm%: 45580 ns
-Seg camera show: 2980547 ns
-Camera init: 282037 ns
-Camera show: 2671051 ns
-Sensors FPS + flip: 1985358 ns
-Camera init: 266267 ns
-Seg init: 1637322 ns
-Seg prediction: 56768901 ns
-Seg get mask: 514195 ns
-Lane init: 3126745
-Lane prediction: 13216496
-Lane detection: 5814517 ns
-Lane cm%: 44129 ns
-Seg camera show: 2885669 ns
-Camera init: 277697 ns
-Camera show: 2618722 ns
-Sensors FPS + flip: 1870219 ns
-Camera init: 256487 ns
-Seg init: 1599903 ns
-Seg prediction: 60821465 ns
-Seg get mask: 359496 ns
-Lane init: 3595672
-Lane prediction: 8665265
-Lane detection: 4359722 ns
-Lane cm%: 43819 ns
-Seg camera show: 2963458 ns
-Camera init: 335976 ns
-Camera show: 2624822 ns
-Sensors FPS + flip: 1939919 ns
-Camera init: 267017 ns
-Seg init: 1643192 ns
-Seg prediction: 56966288 ns
-Seg get mask: 323946 ns
-Lane init: 3700730
-Lane prediction: 9429497
-Lane detection: 5118803 ns
-Lane cm%: 52030 ns
-Seg camera show: 3639160 ns
-Camera init: 345136 ns
-Camera show: 3908637 ns
-Sensors FPS + flip: 2421974 ns
-Camera init: 278186 ns
-Seg init: 1897350 ns
-Seg prediction: 59730038 ns
-Seg get mask: 526014 ns
-Lane init: 3483742
-Lane prediction: 9092410
-Lane detection: 4595000 ns
-Lane cm%: 43620 ns
-Seg camera show: 2931758 ns
-Camera init: 280727 ns
-Camera show: 2581142 ns
-Sensors FPS + flip: 2106347 ns
-Camera init: 262977 ns
-Seg init: 1594593 ns
-Seg prediction: 62022273 ns
-Seg get mask: 519984 ns
-Lane init: 3646551
-Lane prediction: 8685285
-Lane detection: 4357652 ns
-Lane cm%: 42900 ns
-Seg camera show: 2917908 ns
-Camera init: 314876 ns
-Camera show: 2862719 ns
-Sensors FPS + flip: 2639921 ns
-Camera init: 862531 ns
-Seg init: 2072737 ns
-Seg prediction: 60551940 ns
-Seg get mask: 604523 ns
-Lane init: 3796678
-Lane prediction: 8651146
-Lane detection: 4322293 ns
-Lane cm%: 42909 ns
-Seg camera show: 3472553 ns
-Camera init: 318217 ns
-Camera show: 2620801 ns
-Sensors FPS + flip: 2103227 ns
-Camera init: 621874 ns
-Seg init: 2878749 ns
-Seg prediction: 63405988 ns
-Seg get mask: 518025 ns
-Lane init: 5787156
-Lane prediction: 8732605
-Lane detection: 4316433 ns
-Lane cm%: 43809 ns
-Seg camera show: 2975158 ns
-Camera init: 285207 ns
-Camera show: 2632792 ns
-Sensors FPS + flip: 1979058 ns
-Camera init: 259147 ns
-Seg init: 1650462 ns
-Seg prediction: 56897009 ns
-Seg get mask: 395956 ns
-Lane init: 4187974
-Lane prediction: 9041361
-Lane detection: 5185573 ns
-Lane cm%: 44730 ns
-Seg camera show: 2938388 ns
-Camera init: 292637 ns
-Camera show: 2597941 ns
-Sensors FPS + flip: 2028188 ns
-Camera init: 632003 ns
-Seg init: 2064858 ns
-Seg prediction: 57565992 ns
-Seg get mask: 527914 ns
-Lane init: 3454292
-Lane prediction: 8863383
-Lane detection: 4297883 ns
-Lane cm%: 43480 ns
-Seg camera show: 2932358 ns
-Camera init: 283197 ns
-Camera show: 2572862 ns
-Sensors FPS + flip: 1928738 ns
-Camera init: 310767 ns
-Seg init: 1648912 ns
-Seg prediction: 63843873 ns
-Seg get mask: 569294 ns
-Lane init: 3714890
-Lane prediction: 9003712
-Lane detection: 4466371 ns
-Lane cm%: 56240 ns
-Seg camera show: 3093336 ns
-Camera init: 351857 ns
-Camera show: 2152786 ns
-Sensors FPS + flip: 2181607 ns
-Camera init: 312787 ns
-Seg init: 1650312 ns
-Seg prediction: 63937382 ns
-Seg get mask: 561194 ns
-Lane init: 3439203
-Lane prediction: 8561786
-Lane detection: 4397252 ns
-Lane cm%: 43280 ns
-Seg camera show: 2989667 ns
-Camera init: 311426 ns
-Camera show: 2602182 ns
-Sensors FPS + flip: 2207995 ns
-Camera init: 315187 ns
-Seg init: 1841020 ns
-Seg prediction: 57917218 ns
-Seg get mask: 587383 ns
-Lane init: 6657518
-Lane prediction: 8868533
-Lane detection: 4326193 ns
-Lane cm%: 43780 ns
-Seg camera show: 2863659 ns
-Camera init: 278517 ns
-Camera show: 2569082 ns
-Sensors FPS + flip: 2008008 ns
-Camera init: 336897 ns
-Seg init: 1596172 ns
-Seg prediction: 58202515 ns
-Seg get mask: 520655 ns
-Lane init: 3277894
-Lane prediction: 8973292
-Lane detection: 4389402 ns
-Lane cm%: 44089 ns
-Seg camera show: 2911068 ns
-Camera init: 470235 ns
-Camera show: 3410803 ns
-Sensors FPS + flip: 4454992 ns
-Camera init: 316297 ns
-Seg init: 1616392 ns
-Seg prediction: 57443364 ns
-Seg get mask: 522625 ns
-Lane init: 3245474
-Lane prediction: 8553807
-Lane detection: 4301313 ns
-Lane cm%: 42569 ns
-Seg camera show: 2920858 ns
-Camera init: 280497 ns
-Camera show: 2622412 ns
-Sensors FPS + flip: 2243576 ns
-Camera init: 300736 ns
-Seg init: 1829760 ns
-Seg prediction: 57181087 ns
-Seg get mask: 498244 ns
-Lane init: 2692771
-Lane prediction: 8197531
-Lane detection: 4335083 ns
-Lane cm%: 43869 ns
-Seg camera show: 2895579 ns
-Camera init: 279507 ns
-Camera show: 2521623 ns
-Sensors FPS + flip: 2052387 ns
-Camera init: 262157 ns
-Seg init: 1619022 ns
-Seg prediction: 55783652 ns
-Seg get mask: 589043 ns
-Lane init: 6288212
-Lane prediction: 8996912
-Lane detection: 4310992 ns
-Lane cm%: 44060 ns
-Seg camera show: 2887779 ns
-Camera init: 276617 ns
-Camera show: 2569682 ns
-Sensors FPS + flip: 1974219 ns
-Camera init: 261668 ns
-Seg init: 1604292 ns
-Seg prediction: 57357335 ns
-Seg get mask: 433585 ns
-Lane init: 4568990
-Lane prediction: 8335619
-Lane detection: 4305253 ns
-Lane cm%: 43230 ns
-Seg camera show: 2902888 ns
-Camera init: 276317 ns
-Camera show: 2505873 ns
-Sensors FPS + flip: 1917720 ns
-Camera init: 260908 ns
-Seg init: 1751821 ns
-Seg prediction: 51764696 ns
-Seg get mask: 334007 ns
-Lane init: 3394122
-Lane prediction: 11526135
-Lane detection: 4650689 ns
-Lane cm%: 45800 ns
-Seg camera show: 3041366 ns
-Camera init: 283797 ns
-Camera show: 2568262 ns
-Sensors FPS + flip: 1968258 ns
-Camera init: 257138 ns
-Seg init: 1585613 ns
-Seg prediction: 51724196 ns
-Seg get mask: 495004 ns
-Lane init: 3789419
-Lane prediction: 8966642
-Lane detection: 4850097 ns
-Lane cm%: 43720 ns
-Seg camera show: 3371394 ns
-Camera init: 510224 ns
-Camera show: 3328424 ns
-Sensors FPS + flip: 2857319 ns
-Camera init: 593814 ns
-Seg init: 2583532 ns
-Seg prediction: 61326761 ns
-Seg get mask: 285007 ns
-Lane init: 3517232
-Lane prediction: 8590056
-Lane detection: 4336272 ns
-Lane cm%: 44460 ns
-Seg camera show: 2915058 ns
-Camera init: 293907 ns
-Camera show: 2576232 ns
-Sensors FPS + flip: 1864859 ns
-Camera init: 289367 ns
-Seg init: 1687292 ns
-Seg prediction: 61028475 ns
-Seg get mask: 372586 ns
-Lane init: 3741839
-Lane prediction: 9218299
-Lane detection: 4365403 ns
-Lane cm%: 49529 ns
-Seg camera show: 2927838 ns
-Camera init: 300486 ns
-Camera show: 2668232 ns
-Sensors FPS + flip: 2193907 ns
-Camera init: 263958 ns
-Seg init: 1655251 ns
-Seg prediction: 53452858 ns
-Seg get mask: 284746 ns
-Lane init: 3394893
-Lane prediction: 8132502
-Lane detection: 4305063 ns
-Lane cm%: 43780 ns
-Seg camera show: 2884499 ns
-Camera init: 277497 ns
-Camera show: 2508722 ns
-Sensors FPS + flip: 2002398 ns
-Camera init: 305906 ns
-Seg init: 1678242 ns
-Seg prediction: 62132093 ns
-Seg get mask: 369166 ns
-Lane init: 4433341
-Lane prediction: 8762375
-Lane detection: 4452821 ns
-Lane cm%: 43639 ns
-Seg camera show: 2914249 ns
-Camera init: 281927 ns
-Camera show: 2563532 ns
-Sensors FPS + flip: 2041498 ns
-Camera init: 287897 ns
-Seg init: 1732111 ns
-Seg prediction: 59252913 ns
-Seg get mask: 385516 ns
-Lane init: 3508262
-Lane prediction: 8986032
-Lane detection: 4450172 ns
-Lane cm%: 46679 ns
-Seg camera show: 2895598 ns
-Camera init: 282807 ns
-Camera show: 2562762 ns
-Sensors FPS + flip: 1987679 ns
-Camera init: 263628 ns
-Seg init: 1632373 ns
-Seg prediction: 57684901 ns
-Seg get mask: 360346 ns
-Lane init: 3870938
-Lane prediction: 8573206
-Lane detection: 4559940 ns
-Lane cm%: 49650 ns
-Seg camera show: 3348923 ns
-Camera init: 281997 ns
-Camera show: 2559192 ns
-Sensors FPS + flip: 1990798 ns
-Camera init: 262877 ns
-Seg init: 1641482 ns
-Seg prediction: 53911133 ns
-Seg get mask: 338836 ns
-Lane init: 3409573
-Lane prediction: 8455478
-Lane detection: 4363852 ns
-Lane cm%: 42650 ns
-Seg camera show: 2863689 ns
-Camera init: 276527 ns
-Camera show: 2505683 ns
-Sensors FPS + flip: 1873119 ns
-Camera init: 258367 ns
-Seg init: 1660912 ns
-Seg prediction: 61681257 ns
-Seg get mask: 328597 ns
-Lane init: 3789359
-Lane prediction: 8592956
-Lane detection: 4352123 ns
-Lane cm%: 42490 ns
-Seg camera show: 2895788 ns
-Camera init: 279967 ns
-Camera show: 2611001 ns
-Sensors FPS + flip: 2088278 ns
-Camera init: 256827 ns
-Seg init: 1590073 ns
-Seg prediction: 58952138 ns
-Seg get mask: 1142497 ns
-Lane init: 3398363
-Lane prediction: 8150642
-Lane detection: 4639549 ns
-Lane cm%: 57689 ns
-Seg camera show: 3201395 ns
-Camera init: 283667 ns
-Camera show: 2508753 ns
-Sensors FPS + flip: 1897270 ns
-Camera init: 323626 ns
-Seg init: 1613042 ns
-Seg prediction: 53329750 ns
-Seg get mask: 537085 ns
-Lane init: 3034436
-Lane prediction: 8095422
-Lane detection: 4499741 ns
-Lane cm%: 43139 ns
-Seg camera show: 2829990 ns
-Camera init: 282207 ns
-Camera show: 2514243 ns
-Sensors FPS + flip: 4427322 ns
-Camera init: 387796 ns
-Seg init: 1638852 ns
-Seg prediction: 59809248 ns
-Seg get mask: 606234 ns
-Lane init: 4109665
-Lane prediction: 8685825
-Lane detection: 4362093 ns
-Lane cm%: 43180 ns
-Seg camera show: 2918669 ns
-Camera init: 295697 ns
-Camera show: 2565642 ns
-Sensors FPS + flip: 1717211 ns
-Camera init: 263037 ns
-Seg init: 1614593 ns
-Seg prediction: 59007968 ns
-Seg get mask: 692212 ns
-Lane init: 5912426
-Lane prediction: 8746354
-Lane detection: 4731129 ns
-Lane cm%: 47569 ns
-Seg camera show: 3142906 ns
-Camera init: 298636 ns
-Camera show: 2666991 ns
-Sensors FPS + flip: 2299275 ns
-Camera init: 367406 ns
-Seg init: 2126817 ns
-Seg prediction: 60052176 ns
-Seg get mask: 827421 ns
-Lane init: 3603461
-Lane prediction: 11506014
-Lane detection: 4490211 ns
-Lane cm%: 45250 ns
-Seg camera show: 3474352 ns
-Camera init: 389305 ns
-Camera show: 3137696 ns
-Sensors FPS + flip: 4041676 ns
-Camera init: 287967 ns
-Seg init: 1628042 ns
-Seg prediction: 65074021 ns
-Seg get mask: 804762 ns
-Lane init: 3430082
-Lane prediction: 8656906
-Lane detection: 4342432 ns
-Lane cm%: 42750 ns
-Seg camera show: 2906668 ns
-Camera init: 348256 ns
-Camera show: 2567952 ns
-Sensors FPS + flip: 1810960 ns
-Camera init: 298947 ns
-Seg init: 1594802 ns
-Seg prediction: 61837987 ns
-Seg get mask: 859191 ns
-Lane init: 3402334
-Lane prediction: 9024321
-Lane detection: 4667239 ns
-Lane cm%: 43930 ns
-Seg camera show: 3027327 ns
-Camera init: 406525 ns
-Camera show: 2636741 ns
-Sensors FPS + flip: 1919319 ns
-Camera init: 276887 ns
-Seg init: 1644912 ns
-Seg prediction: 57590354 ns
-Seg get mask: 961500 ns
-Lane init: 7324080
-Lane prediction: 8717145
-Lane detection: 4395852 ns
-Lane cm%: 44530 ns
-Seg camera show: 2886819 ns
-Camera init: 289867 ns
-Camera show: 2597831 ns
-Sensors FPS + flip: 1994029 ns
-Camera init: 262577 ns
-Seg init: 1609263 ns
-Seg prediction: 63676856 ns
-Seg get mask: 645033 ns
-Lane init: 3691920
-Lane prediction: 12365225
-Lane detection: 4440862 ns
-Lane cm%: 43219 ns
-Seg camera show: 2916338 ns
-Camera init: 329036 ns
-Camera show: 2620742 ns
-Sensors FPS + flip: 1781131 ns
-Camera init: 316897 ns
-Seg init: 1596942 ns
-Seg prediction: 58692221 ns
-Seg get mask: 563444 ns
-Lane init: 5185173
-Lane prediction: 10027041
-Lane detection: 7358109 ns
-Lane cm%: 71440 ns
-Seg camera show: 5632819 ns
-Camera init: 516454 ns
-Camera show: 3800549 ns
-Sensors FPS + flip: 3594281 ns
-Camera init: 467835 ns
-Seg init: 1994179 ns
-Seg prediction: 58642571 ns
-Seg get mask: 541104 ns
-Lane init: 3156606
-Lane prediction: 8573386
-Lane detection: 4426152 ns
-Lane cm%: 44980 ns
-Seg camera show: 3218156 ns
-Camera init: 303067 ns
-Camera show: 2742460 ns
-Sensors FPS + flip: 1903849 ns
-Camera init: 264417 ns
-Seg init: 1608943 ns
-Seg prediction: 58399464 ns
-Seg get mask: 551744 ns
-Lane init: 3165656
-Lane prediction: 8384699
-Lane detection: 4385972 ns
-Lane cm%: 42819 ns
-Seg camera show: 2848779 ns
-Camera init: 325377 ns
-Camera show: 2499432 ns
-Sensors FPS + flip: 2197396 ns
-Camera init: 297197 ns
-Seg init: 1619643 ns
-Seg prediction: 54836483 ns
-Seg get mask: 740402 ns
-Lane init: 3661620
-Lane prediction: 8808894
-Lane detection: 4919687 ns
-Lane cm%: 43889 ns
-Seg camera show: 3113866 ns
-Camera init: 278747 ns
-Camera show: 2746870 ns
-Sensors FPS + flip: 2889038 ns
-Camera init: 377696 ns
-Seg init: 2397994 ns
-Seg prediction: 60927167 ns
-Seg get mask: 550754 ns
-Lane init: 3272895
-Lane prediction: 8206131
-Lane detection: 4341552 ns
-Lane cm%: 44460 ns
-Seg camera show: 2908228 ns
-Camera init: 284737 ns
-Camera show: 2534872 ns
-Sensors FPS + flip: 1734791 ns
-Camera init: 450625 ns
-Seg init: 1703161 ns
-Seg prediction: 63310192 ns
-Seg get mask: 598833 ns
-Lane init: 3892208
-Lane prediction: 8711815
-Lane detection: 4341313 ns
-Lane cm%: 44249 ns
-Seg camera show: 2896808 ns
-Camera init: 283427 ns
-Camera show: 2979658 ns
-Sensors FPS + flip: 1848960 ns
-Camera init: 273227 ns
-Seg init: 1606962 ns
-Seg prediction: 61079255 ns
-Seg get mask: 529885 ns
-Lane init: 3000527
-Lane prediction: 8145362
-Lane detection: 4329032 ns
-Lane cm%: 44220 ns
-Seg camera show: 2847909 ns
-Camera init: 277238 ns
-Camera show: 2513303 ns
-Sensors FPS + flip: 1656092 ns
-Camera init: 318626 ns
-Seg init: 2021048 ns
-Seg prediction: 59389324 ns
-Seg get mask: 509215 ns
-Lane init: 3372864
-Lane prediction: 8772805
-Lane detection: 4388091 ns
-Lane cm%: 43570 ns
-Seg camera show: 2904419 ns
-Camera init: 278407 ns
-Camera show: 2554572 ns
-Sensors FPS + flip: 2062058 ns
-Camera init: 268307 ns
-Seg init: 1600623 ns
-Seg prediction: 57507834 ns
-Seg get mask: 627283 ns
-Lane init: 5441481
-Lane prediction: 9541426
-Lane detection: 5637299 ns
-Lane cm%: 71579 ns
-Seg camera show: 4321553 ns
-Camera init: 415316 ns
-Camera show: 2516642 ns
-Sensors FPS + flip: 2434474 ns
-Camera init: 520214 ns
-Seg init: 3058967 ns
-Seg prediction: 68613553 ns
-Seg get mask: 635003 ns
-Lane init: 7760686
-Lane prediction: 8947252
-Lane detection: 4353633 ns
-Lane cm%: 47550 ns
-Seg camera show: 3038866 ns
-Camera init: 287227 ns
-Camera show: 2636041 ns
-Sensors FPS + flip: 2489603 ns
-Camera init: 516555 ns
-Seg init: 2050477 ns
-Seg prediction: 59596812 ns
-Seg get mask: 379396 ns
-Lane init: 5223553
-Lane prediction: 13226916
-Lane detection: 7814505 ns
-Lane cm%: 80519 ns
-Seg camera show: 6019095 ns
-Camera init: 570784 ns
-Camera show: 3540622 ns
-Sensors FPS + flip: 2448774 ns
-Camera init: 304347 ns
-Seg init: 2354664 ns
-Seg prediction: 54424808 ns
-Seg get mask: 285827 ns
-Lane init: 3341604
-Lane prediction: 8752195
-Lane detection: 4303852 ns
-Lane cm%: 48390 ns
-Seg camera show: 2938508 ns
-Camera init: 310667 ns
-Camera show: 2505383 ns
-Sensors FPS + flip: 4118585 ns
-Camera init: 314116 ns
-Seg init: 1638732 ns
-Seg prediction: 58450654 ns
-Seg get mask: 370576 ns
-Lane init: 3401843
-Lane prediction: 9090821
-Lane detection: 5501540 ns
-Lane cm%: 63580 ns
-Seg camera show: 3579361 ns
-Camera init: 363366 ns
-Camera show: 2659041 ns
-Sensors FPS + flip: 2008028 ns
-Camera init: 434945 ns
-Seg init: 1656092 ns
-Seg prediction: 64208602 ns
-Seg get mask: 299617 ns
-Lane init: 3543272
-Lane prediction: 8876793
-Lane detection: 4297734 ns
-Lane cm%: 43679 ns
-Seg camera show: 3085816 ns
-Camera init: 344996 ns
-Camera show: 2692771 ns
-Sensors FPS + flip: 2167856 ns
-Camera init: 284267 ns
-Seg init: 1622702 ns
-Seg prediction: 58378986 ns
-Seg get mask: 345707 ns
-Lane init: 3282865
-Lane prediction: 9527526
-Lane detection: 4298143 ns
-Lane cm%: 43790 ns
-Seg camera show: 3038676 ns
-Camera init: 291627 ns
-Camera show: 2578472 ns
-Sensors FPS + flip: 2063888 ns
-Camera init: 319507 ns
-Seg init: 3531701 ns
-Seg prediction: 59982029 ns
-Seg get mask: 359397 ns
-Lane init: 3442653
-Lane prediction: 8220131
-Lane detection: 4538411 ns
-Lane cm%: 42300 ns
-Seg camera show: 2883028 ns
-Camera init: 285937 ns
-Camera show: 2473883 ns
-Sensors FPS + flip: 1828510 ns
-Camera init: 280197 ns
-Seg init: 1618852 ns
-Seg prediction: 57915170 ns
-Seg get mask: 565414 ns
-Lane init: 3895828
-Lane prediction: 8716265
-Lane detection: 4248604 ns
-Lane cm%: 42699 ns
-Seg camera show: 2898389 ns
-Camera init: 322296 ns
-Camera show: 2583592 ns
-Sensors FPS + flip: 1851250 ns
-Camera init: 322567 ns
-Seg init: 1592423 ns
-Seg prediction: 58292256 ns
-Seg get mask: 550534 ns
-Lane init: 3206075
-Lane prediction: 8233271
-Lane detection: 4365342 ns
-Lane cm%: 42940 ns
-Seg camera show: 2879898 ns
-Camera init: 279237 ns
-Camera show: 2531083 ns
-Sensors FPS + flip: 1881370 ns
-Camera init: 261007 ns
-Seg init: 1633622 ns
-Seg prediction: 53666457 ns
-Seg get mask: 582994 ns
-Lane init: 3390623
-Lane prediction: 14308304
-Lane detection: 4098655 ns
-Lane cm%: 44080 ns
-Seg camera show: 2883108 ns
-Camera init: 280877 ns
-Camera show: 2558612 ns
-Sensors FPS + flip: 2116977 ns
-Camera init: 266147 ns
-Seg init: 1592382 ns
-Seg prediction: 56852233 ns
-Seg get mask: 587533 ns
-Lane init: 3574822
-Lane prediction: 8905864
-Lane detection: 4022487 ns
-Lane cm%: 44229 ns
-Seg camera show: 3099247 ns
-Camera init: 279857 ns
-Camera show: 2566393 ns
-Sensors FPS + flip: 2194505 ns
-Camera init: 273167 ns
-Seg init: 1791811 ns
-Seg prediction: 57515064 ns
-Seg get mask: 595704 ns
-Lane init: 3713519
-Lane prediction: 9003943
-Lane detection: 3974607 ns
-Lane cm%: 43220 ns
-Seg camera show: 2894928 ns
-Camera init: 300917 ns
-Camera show: 2518912 ns
-Sensors FPS + flip: 2285236 ns
-Camera init: 304417 ns
-Seg init: 1703001 ns
-Seg prediction: 55062052 ns
-Seg get mask: 900660 ns
-Lane init: 6004275
-Lane prediction: 9144090
-Lane detection: 4091816 ns
-Lane cm%: 43189 ns
-Seg camera show: 2982348 ns
-Camera init: 281507 ns
-Camera show: 2623252 ns
-Sensors FPS + flip: 2176696 ns
-Camera init: 271747 ns
-Seg init: 1592222 ns
-Seg prediction: 55297959 ns
-Seg get mask: 531034 ns
-Lane init: 2954898
-Lane prediction: 8819784
-Lane detection: 4384623 ns
-Lane cm%: 43640 ns
-Seg camera show: 2907458 ns
-Camera init: 278867 ns
-Camera show: 2528503 ns
-Sensors FPS + flip: 2013068 ns
-Camera init: 260047 ns
-Seg init: 1625463 ns
-Seg prediction: 55884183 ns
-Seg get mask: 1312525 ns
-Lane init: 5758447
-Lane prediction: 9062742
-Lane detection: 4228634 ns
-Lane cm%: 44820 ns
-Seg camera show: 2892588 ns
-Camera init: 290637 ns
-Camera show: 2525042 ns
-Sensors FPS + flip: 1875550 ns
-Camera init: 276207 ns
-Seg init: 1631672 ns
-Seg prediction: 56148351 ns
-Seg get mask: 524474 ns
-Lane init: 2941598
-Lane prediction: 8147171
-Lane detection: 4171235 ns
-Lane cm%: 42910 ns
-Seg camera show: 2925118 ns
-Camera init: 316907 ns
-Camera show: 2522843 ns
-Sensors FPS + flip: 1886189 ns
-Camera init: 445955 ns
-Seg init: 1878280 ns
-Seg prediction: 60290875 ns
-Seg get mask: 484755 ns
-Lane init: 2917348
-Lane prediction: 8285190
-Lane detection: 4256444 ns
-Lane cm%: 44580 ns
-Seg camera show: 2875639 ns
-Camera init: 294097 ns
-Camera show: 2543852 ns
-Sensors FPS + flip: 1747181 ns
-Camera init: 273097 ns
-Seg init: 1640622 ns
-Seg prediction: 54670246 ns
-Seg get mask: 1005749 ns
-Lane init: 5282373
-Lane prediction: 8864864
-Lane detection: 4243934 ns
-Lane cm%: 42730 ns
-Seg camera show: 2932958 ns
-Camera init: 280247 ns
-Camera show: 2636712 ns
-Sensors FPS + flip: 1919829 ns
-Camera init: 329177 ns
-Seg init: 1638642 ns
-Seg prediction: 56831602 ns
-Seg get mask: 542184 ns
-Lane init: 3222665
-Lane prediction: 8280751
-Lane detection: 4174665 ns
-Lane cm%: 43990 ns
-Seg camera show: 3183256 ns
-Camera init: 518975 ns
-Camera show: 2604071 ns
-Sensors FPS + flip: 2036318 ns
-Camera init: 265467 ns
-Seg init: 1654612 ns
-Seg prediction: 53279052 ns
-Seg get mask: 559964 ns
-Lane init: 3209075
-Lane prediction: 11476826
-Lane detection: 4546410 ns
-Lane cm%: 45400 ns
-Seg camera show: 2965598 ns
-Camera init: 319926 ns
-Camera show: 2611382 ns
-Sensors FPS + flip: 1931658 ns
-Camera init: 297837 ns
-Seg init: 1612742 ns
-Seg prediction: 57705164 ns
-Seg get mask: 560574 ns
-Lane init: 3335064
-Lane prediction: 8947873
-Lane detection: 3677400 ns
-Lane cm%: 45920 ns
-Seg camera show: 2890208 ns
-Camera init: 284947 ns
-Camera show: 2542112 ns
-Sensors FPS + flip: 1606033 ns
-Camera init: 265497 ns
-Seg init: 1651882 ns
-Seg prediction: 57196928 ns
-Seg get mask: 790222 ns
-Lane init: 6935084
-Lane prediction: 8956943
-Lane detection: 4281154 ns
-Lane cm%: 45869 ns
-Seg camera show: 2943958 ns
-Camera init: 283927 ns
-Camera show: 2573561 ns
-Sensors FPS + flip: 1959099 ns
-Camera init: 264078 ns
-Seg init: 1643382 ns
-Seg prediction: 57483495 ns
-Seg get mask: 555004 ns
-Lane init: 3355834
-Lane prediction: 8603727
-Lane detection: 4407323 ns
-Lane cm%: 44059 ns
-Seg camera show: 3622451 ns
-Camera init: 331176 ns
-Camera show: 3094227 ns
-Sensors FPS + flip: 5915915 ns
-Camera init: 266117 ns
-Seg init: 1614033 ns
-Seg prediction: 61052367 ns
-Seg get mask: 514974 ns
-Lane init: 3001658
-Lane prediction: 8578327
-Lane detection: 4202015 ns
-Lane cm%: 43559 ns
-Seg camera show: 2929998 ns
-Camera init: 299387 ns
-Camera show: 2532912 ns
-Sensors FPS + flip: 1843710 ns
-Camera init: 285516 ns
-Seg init: 1629613 ns
-Seg prediction: 55719885 ns
-Seg get mask: 471605 ns
-Lane init: 3960356
-Lane prediction: 8608597
-Lane detection: 4199224 ns
-Lane cm%: 45500 ns
-Seg camera show: 2940788 ns
-Camera init: 286507 ns
-Camera show: 2653141 ns
-Sensors FPS + flip: 2210506 ns
-Camera init: 261677 ns
-Seg init: 1611823 ns
-Seg prediction: 56683394 ns
-Seg get mask: 361306 ns
-Lane init: 4260404
-Lane prediction: 13317565
-Lane detection: 4324813 ns
-Lane cm%: 45780 ns
-Seg camera show: 3297335 ns
-Camera init: 336536 ns
-Camera show: 2069658 ns
-Sensors FPS + flip: 1864599 ns
-Camera init: 304457 ns
-Seg init: 1671792 ns
-Seg prediction: 53064594 ns
-Seg get mask: 557274 ns
-Lane init: 3264384
-Lane prediction: 8172031
-Lane detection: 4234214 ns
-Lane cm%: 42450 ns
-Seg camera show: 2970737 ns
-Camera init: 283607 ns
-Camera show: 2490503 ns
-Sensors FPS + flip: 2133077 ns
-Camera init: 267208 ns
-Seg init: 1622173 ns
-Seg prediction: 62245434 ns
-Seg get mask: 621473 ns
-Lane init: 3997607
-Lane prediction: 8892223
-Lane detection: 4191445 ns
-Lane cm%: 43810 ns
-Seg camera show: 2937788 ns
-Camera init: 320536 ns
-Camera show: 2603662 ns
-Sensors FPS + flip: 2451074 ns
-Camera init: 358846 ns
-Seg init: 1650812 ns
-Seg prediction: 60430045 ns
-Seg get mask: 940020 ns
-Lane init: 3520222
-Lane prediction: 8925233
-Lane detection: 4251274 ns
-Lane cm%: 44619 ns
-Seg camera show: 2953188 ns
-Camera init: 283227 ns
-Camera show: 2629922 ns
-Sensors FPS + flip: 2447553 ns
-Camera init: 293547 ns
-Seg init: 1613322 ns
-Seg prediction: 60020039 ns
-Seg get mask: 982759 ns
-Lane init: 5940716
-Lane prediction: 9084111
-Lane detection: 4160235 ns
-Lane cm%: 43110 ns
-Seg camera show: 2912759 ns
-Camera init: 286207 ns
-Camera show: 2664481 ns
-Sensors FPS + flip: 2545503 ns
-Camera init: 259257 ns
-Seg init: 1621363 ns
-Seg prediction: 57242779 ns
-Seg get mask: 854360 ns
-Lane init: 3947178
-Lane prediction: 9220279
-Lane detection: 4103526 ns
-Lane cm%: 44939 ns
-Seg camera show: 3375353 ns
-Camera init: 312477 ns
-Camera show: 3430703 ns
-Sensors FPS + flip: 4323453 ns
-Camera init: 273317 ns
-Seg init: 1882019 ns
-Seg prediction: 61461853 ns
-Seg get mask: 858851 ns
-Lane init: 3501262
-Lane prediction: 8962783
-Lane detection: 4201884 ns
-Lane cm%: 51780 ns
-Seg camera show: 3195455 ns
-Camera init: 334837 ns
-Camera show: 2565672 ns
-Sensors FPS + flip: 2252445 ns
-Camera init: 542514 ns
-Seg init: 2259615 ns
-Seg prediction: 62068717 ns
-Seg get mask: 1002139 ns
-Lane init: 3314504
-Lane prediction: 8359189
-Lane detection: 4214304 ns
-Lane cm%: 46060 ns
-Seg camera show: 2983657 ns
-Camera init: 300707 ns
-Camera show: 2677491 ns
-Sensors FPS + flip: 2062147 ns
-Camera init: 461695 ns
-Seg init: 1727902 ns
-Seg prediction: 53210193 ns
-Seg get mask: 848370 ns
-Lane init: 3211195
-Lane prediction: 8667686
-Lane detection: 4681159 ns
-Lane cm%: 46160 ns
-Seg camera show: 3428753 ns
-Camera init: 497125 ns
-Camera show: 3119846 ns
-Sensors FPS + flip: 4912507 ns
-Camera init: 279887 ns
-Seg init: 1677372 ns
-Seg prediction: 58271518 ns
-Seg get mask: 830561 ns
-Lane init: 4106525
-Lane prediction: 9507987
-Lane detection: 4179274 ns
-Lane cm%: 46620 ns
-Seg camera show: 3163266 ns
-Camera init: 310637 ns
-Camera show: 2128557 ns
-Sensors FPS + flip: 2103207 ns
-Camera init: 283947 ns
-Seg init: 1663792 ns
-Seg prediction: 53675398 ns
-Seg get mask: 856790 ns
-Lane init: 3194165
-Lane prediction: 8388340
-Lane detection: 4548631 ns
-Lane cm%: 45649 ns
-Seg camera show: 2954108 ns
-Camera init: 317607 ns
-Camera show: 2536453 ns
-Sensors FPS + flip: 1848390 ns
-Camera init: 315906 ns
-Seg init: 1626812 ns
-Seg prediction: 58927111 ns
-Seg get mask: 575114 ns
-Lane init: 4209374
-Lane prediction: 8713515
-Lane detection: 4083186 ns
-Lane cm%: 44529 ns
-Seg camera show: 2972978 ns
-Camera init: 288997 ns
-Camera show: 2579002 ns
-Sensors FPS + flip: 2418253 ns
-Camera init: 395966 ns
-Seg init: 1627613 ns
-Seg prediction: 57581825 ns
-Seg get mask: 693912 ns
-Lane init: 3723070
-Lane prediction: 8237660
-Lane detection: 4163745 ns
-Lane cm%: 47030 ns
-Seg camera show: 2908978 ns
-Camera init: 320657 ns
-Camera show: 2503852 ns
-Sensors FPS + flip: 1935419 ns
-Camera init: 290467 ns
-Seg init: 1602282 ns
-Seg prediction: 57285559 ns
-Seg get mask: 858131 ns
-Lane init: 6934015
-Lane prediction: 9235290
-Lane detection: 4749478 ns
-Lane cm%: 48460 ns
-Seg camera show: 2907648 ns
-Camera init: 287147 ns
-Camera show: 3052906 ns
-Sensors FPS + flip: 2589172 ns
-Camera init: 461355 ns
-Seg init: 2359924 ns
-Seg prediction: 65372951 ns
-Seg get mask: 594294 ns
-Lane init: 3884118
-Lane prediction: 10079170
-Lane detection: 4140036 ns
-Lane cm%: 45329 ns
-Seg camera show: 3181556 ns
-Camera init: 343607 ns
-Camera show: 2610131 ns
-Sensors FPS + flip: 2967758 ns
-Camera init: 411865 ns
-Seg init: 2179007 ns
-Seg prediction: 60118738 ns
-Seg get mask: 704863 ns
-Lane init: 3509242
-Lane prediction: 8869184
-Lane detection: 4543981 ns
-Lane cm%: 106389 ns
-Seg camera show: 3522402 ns
-Camera init: 295416 ns
-Camera show: 2562283 ns
-Sensors FPS + flip: 2036438 ns
-Camera init: 262757 ns
-Seg init: 1715652 ns
-Seg prediction: 59249467 ns
-Seg get mask: 617443 ns
-Lane init: 3328244
-Lane prediction: 8517478
-Lane detection: 4063516 ns
-Lane cm%: 44989 ns
-Seg camera show: 2958508 ns
-Camera init: 306936 ns
-Camera show: 2584353 ns
-Sensors FPS + flip: 1933020 ns
-Camera init: 275877 ns
-Seg init: 1621653 ns
-Seg prediction: 53154744 ns
-Seg get mask: 583903 ns
-Lane init: 3775709
-Lane prediction: 12207478
-Lane detection: 4478251 ns
-Lane cm%: 45499 ns
-Seg camera show: 3083477 ns
-Camera init: 305516 ns
-Camera show: 2595552 ns
-Sensors FPS + flip: 2072678 ns
-Camera init: 315057 ns
-Seg init: 1613523 ns
-Seg prediction: 57509446 ns
-Seg get mask: 567534 ns
-Lane init: 4412692
-Lane prediction: 9850613
-Lane detection: 4082416 ns
-Lane cm%: 48709 ns
-Seg camera show: 2871669 ns
-Camera init: 340136 ns
-Camera show: 2597642 ns
-Sensors FPS + flip: 2747610 ns
-Camera init: 284677 ns
-Seg init: 1603042 ns
-Seg prediction: 53834318 ns
-Seg get mask: 548755 ns
-Lane init: 3139656
-Lane prediction: 8159922
-Lane detection: 4849817 ns
-Lane cm%: 61809 ns
-Seg camera show: 3975867 ns
-Camera init: 286077 ns
-Camera show: 2504703 ns
-Sensors FPS + flip: 3030347 ns
-Camera init: 283376 ns
-Seg init: 1662262 ns
-Seg prediction: 57909172 ns
-Seg get mask: 549204 ns
-Lane init: 3068427
-Lane prediction: 8299370
-Lane detection: 4128055 ns
-Lane cm%: 43650 ns
-Seg camera show: 2892718 ns
-Camera init: 298127 ns
-Camera show: 2484223 ns
-Sensors FPS + flip: 1915359 ns
-Camera init: 272387 ns
-Seg init: 1568363 ns
-Seg prediction: 54704427 ns
-Seg get mask: 671453 ns
-Lane init: 3608101
-Lane prediction: 8932223
-Lane detection: 3923007 ns
-Lane cm%: 43490 ns
-Seg camera show: 2878259 ns
-Camera init: 306777 ns
-Camera show: 2603481 ns
-Sensors FPS + flip: 2380595 ns
-Camera init: 377286 ns
-Seg init: 1625413 ns
-Seg prediction: 57892642 ns
-Seg get mask: 568194 ns
-Lane init: 3651940
-Lane prediction: 11527016
-Lane detection: 3907927 ns
-Lane cm%: 43899 ns
-Seg camera show: 2871339 ns
-Camera init: 321446 ns
-Camera show: 2561173 ns
-Sensors FPS + flip: 2071837 ns
-Camera init: 331236 ns
-Seg init: 1592983 ns
-Seg prediction: 57851073 ns
-Seg get mask: 578064 ns
-Lane init: 3576701
-Lane prediction: 9212640
-Lane detection: 3929447 ns
-Lane cm%: 42890 ns
-Seg camera show: 2886679 ns
-Camera init: 293207 ns
-Camera show: 2704211 ns
-Sensors FPS + flip: 1918019 ns
-Camera init: 276587 ns
-Seg init: 1576123 ns
-Seg prediction: 60284457 ns
-Seg get mask: 928410 ns
-Lane init: 3387063
-Lane prediction: 8541087
-Lane detection: 3929648 ns
-Lane cm%: 60679 ns
-Seg camera show: 2887259 ns
-Camera init: 297586 ns
-Camera show: 2538743 ns
-Sensors FPS + flip: 2060537 ns
-Camera init: 284186 ns
-Seg init: 1597403 ns
-Seg prediction: 58284399 ns
-Seg get mask: 568364 ns
-Lane init: 3837419
-Lane prediction: 8164881
-Lane detection: 3866498 ns
-Lane cm%: 44779 ns
-Seg camera show: 2858960 ns
-Camera init: 515955 ns
-Camera show: 2600351 ns
-Sensors FPS + flip: 1880860 ns
-Camera init: 266767 ns
-Seg init: 2119967 ns
-Seg prediction: 56284871 ns
-Seg get mask: 569004 ns
-Lane init: 2967398
-Lane prediction: 8109312
-Lane detection: 4072145 ns
+Camera init: 402719 ns
+Seg init: 2028330 ns
+Seg prediction: 58382897 ns
+Seg get mask: 715386 ns
+Lane init: 1942071
+Lane prediction: 10855391
+Lane detection: 4051492 ns
+Lane cm%: 46400 ns
+Seg camera show: 2782307 ns
+Camera init: 695687 ns
+Camera show: 2515758 ns
+Sensors FPS + flip: 4591979 ns
+Camera init: 321278 ns
+Seg init: 1661883 ns
+Seg prediction: 59160282 ns
+Seg get mask: 494968 ns
+Lane init: 1543553
+Lane prediction: 10476643
+Lane detection: 3978082 ns
+Lane cm%: 44680 ns
+Seg camera show: 2671438 ns
+Camera init: 331658 ns
+Camera show: 2438879 ns
+Sensors FPS + flip: 2466439 ns
+Camera init: 332838 ns
+Seg init: 1672583 ns
+Seg prediction: 60159188 ns
+Seg get mask: 506287 ns
+Lane init: 1604363
+Lane prediction: 10447513
+Lane detection: 4040951 ns
+Lane cm%: 46680 ns
+Seg camera show: 2704978 ns
+Camera init: 364558 ns
+Camera show: 2460899 ns
+Sensors FPS + flip: 2502679 ns
+Camera init: 335139 ns
+Seg init: 1689153 ns
+Seg prediction: 61708960 ns
+Seg get mask: 958226 ns
+Lane init: 1721253
+Lane prediction: 10783322
+Lane detection: 4124812 ns
 Lane cm%: 44350 ns
-Seg camera show: 2883529 ns
-Camera init: 300327 ns
-Camera show: 3267485 ns
-Sensors FPS + flip: 3455133 ns
-Camera init: 337206 ns
-Seg init: 1616423 ns
-Seg prediction: 56595107 ns
-Seg get mask: 562874 ns
-Lane init: 3924817
-Lane prediction: 8631497
-Lane detection: 4275723 ns
-Lane cm%: 53690 ns
-Seg camera show: 3374823 ns
-Camera init: 294507 ns
-Camera show: 2684471 ns
-Sensors FPS + flip: 2310535 ns
-Camera init: 423316 ns
-Seg init: 2116107 ns
-Seg prediction: 55878535 ns
-Seg get mask: 521234 ns
-Lane init: 3501782
-Lane prediction: 8095773
-Lane detection: 3430013 ns
-Lane cm%: 44279 ns
-Seg camera show: 2898078 ns
-Camera init: 294757 ns
-Camera show: 2494963 ns
-Sensors FPS + flip: 1887580 ns
-Camera init: 322376 ns
-Seg init: 1629642 ns
-Seg prediction: 61206167 ns
-Seg get mask: 486005 ns
-Lane init: 3975847
-Lane prediction: 8872424
-Lane detection: 4025106 ns
-Lane cm%: 43829 ns
-Seg camera show: 2887669 ns
-Camera init: 305607 ns
-Camera show: 2608352 ns
-Sensors FPS + flip: 2161317 ns
-Camera init: 330416 ns
-Seg init: 2073948 ns
-Seg prediction: 60220427 ns
-Seg get mask: 356626 ns
-Lane init: 3327934
-Lane prediction: 8661927
-Lane detection: 4273374 ns
-Lane cm%: 65369 ns
-Seg camera show: 3121156 ns
-Camera init: 374216 ns
-Camera show: 2637581 ns
-Sensors FPS + flip: 2291936 ns
-Camera init: 287267 ns
-Seg init: 2167777 ns
-Seg prediction: 56130742 ns
-Seg get mask: 897460 ns
-Lane init: 4418782
-Lane prediction: 9233870
-Lane detection: 4086596 ns
-Lane cm%: 43879 ns
-Seg camera show: 4559571 ns
-Camera init: 298607 ns
-Camera show: 2512153 ns
-Sensors FPS + flip: 2309035 ns
-Camera init: 352476 ns
-Seg init: 1618203 ns
-Seg prediction: 57081892 ns
-Seg get mask: 354626 ns
-Lane init: 4341322
-Lane prediction: 10672265
-Lane detection: 4083066 ns
-Lane cm%: 44860 ns
-Seg camera show: 2734920 ns
-Camera init: 292367 ns
-Camera show: 2491453 ns
-Sensors FPS + flip: 2074327 ns
-Camera init: 262307 ns
-Seg init: 1613033 ns
-Seg prediction: 54235252 ns
-Seg get mask: 362596 ns
-Lane init: 3122357
-Lane prediction: 8217250
-Lane detection: 4006937 ns
-Lane cm%: 45759 ns
-Seg camera show: 2762000 ns
-Camera init: 281797 ns
-Camera show: 3288995 ns
-Sensors FPS + flip: 4091495 ns
-Camera init: 428395 ns
-Seg init: 2721591 ns
-Seg prediction: 59601625 ns
-Seg get mask: 662022 ns
-Lane init: 4832688
-Lane prediction: 9214600
-Lane detection: 4016827 ns
-Lane cm%: 46099 ns
-Seg camera show: 2852959 ns
-Camera init: 321527 ns
-Camera show: 2570722 ns
-Sensors FPS + flip: 2241195 ns
-Camera init: 432796 ns
-Seg init: 1755991 ns
-Seg prediction: 61995529 ns
-Seg get mask: 369466 ns
-Lane init: 3514111
-Lane prediction: 10713124
-Lane detection: 4073856 ns
-Lane cm%: 43110 ns
-Seg camera show: 2807339 ns
-Camera init: 288087 ns
-Camera show: 2522603 ns
-Sensors FPS + flip: 2067187 ns
-Camera init: 286647 ns
-Seg init: 1623112 ns
-Seg prediction: 56852825 ns
-Seg get mask: 299147 ns
-Lane init: 3797389
-Lane prediction: 8711196
-Lane detection: 4116165 ns
-Lane cm%: 44409 ns
-Seg camera show: 2772250 ns
-Camera init: 285797 ns
-Camera show: 2494533 ns
-Sensors FPS + flip: 2586962 ns
-Camera init: 330887 ns
-Seg init: 1708852 ns
-Seg prediction: 59741873 ns
-Seg get mask: 315157 ns
-Lane init: 3014617
-Lane prediction: 8200412
-Lane detection: 4230254 ns
-Lane cm%: 44800 ns
-Seg camera show: 2836180 ns
-Camera init: 293507 ns
-Camera show: 2537982 ns
-Sensors FPS + flip: 1964068 ns
-Camera init: 299637 ns
-Seg init: 1715781 ns
-Seg prediction: 55635768 ns
-Seg get mask: 641043 ns
-Lane init: 5001456
-Lane prediction: 8447809
-Lane detection: 4202055 ns
-Lane cm%: 44950 ns
-Seg camera show: 2761010 ns
-Camera init: 338776 ns
-Camera show: 2459143 ns
-Sensors FPS + flip: 1925649 ns
-Camera init: 361986 ns
-Seg init: 1701052 ns
-Seg prediction: 57795184 ns
-Seg get mask: 306616 ns
-Lane init: 4488772
-Lane prediction: 8663467
-Lane detection: 4516072 ns
-Lane cm%: 46139 ns
-Seg camera show: 2777800 ns
-Camera init: 288797 ns
-Camera show: 2493153 ns
-Sensors FPS + flip: 1737711 ns
-Camera init: 365926 ns
-Seg init: 1736582 ns
-Seg prediction: 54145554 ns
-Seg get mask: 375966 ns
-Lane init: 3060887
-Lane prediction: 8127931
-Lane detection: 4220605 ns
-Lane cm%: 52439 ns
-Seg camera show: 2924309 ns
-Camera init: 309327 ns
-Camera show: 2478183 ns
-Sensors FPS + flip: 3591401 ns
-Camera init: 280917 ns
-Seg init: 1628383 ns
-Seg prediction: 61877560 ns
-Seg get mask: 559974 ns
-Lane init: 3283284
-Lane prediction: 8786015
-Lane detection: 4161695 ns
-Lane cm%: 43559 ns
-Seg camera show: 2842000 ns
-Camera init: 280957 ns
-Camera show: 2530223 ns
-Sensors FPS + flip: 1959209 ns
-Camera init: 266587 ns
-Seg init: 1706662 ns
-Seg prediction: 59837952 ns
-Seg get mask: 524095 ns
-Lane init: 3348464
-Lane prediction: 8513138
-Lane detection: 4074406 ns
-Lane cm%: 44620 ns
-Seg camera show: 2750000 ns
-Camera init: 339666 ns
-Camera show: 2587102 ns
-Sensors FPS + flip: 2095727 ns
-Camera init: 297036 ns
-Seg init: 2054588 ns
-Seg prediction: 54382432 ns
-Seg get mask: 512434 ns
-Lane init: 3028068
-Lane prediction: 8365859
-Lane detection: 4010406 ns
-Lane cm%: 43520 ns
-Seg camera show: 2756720 ns
-Camera init: 284877 ns
-Camera show: 2477103 ns
-Sensors FPS + flip: 1769351 ns
-Camera init: 261757 ns
-Seg init: 1701852 ns
-Seg prediction: 59183829 ns
-Seg get mask: 361636 ns
-Lane init: 3125106
-Lane prediction: 8238562
-Lane detection: 4456592 ns
-Lane cm%: 43430 ns
-Seg camera show: 2735010 ns
-Camera init: 281147 ns
-Camera show: 2484653 ns
-Sensors FPS + flip: 1829380 ns
-Camera init: 262457 ns
-Seg init: 2030208 ns
-Seg prediction: 57649427 ns
-Seg get mask: 311157 ns
-Lane init: 3861868
-Lane prediction: 8706246
-Lane detection: 4144825 ns
-Lane cm%: 44259 ns
-Seg camera show: 2814500 ns
-Camera init: 287597 ns
-Camera show: 2483543 ns
-Sensors FPS + flip: 1955089 ns
-Camera init: 268087 ns
-Seg init: 1655452 ns
-Seg prediction: 55872415 ns
-Seg get mask: 414276 ns
-Lane init: 3712270
-Lane prediction: 12257288
-Lane detection: 4112095 ns
-Lane cm%: 44200 ns
-Seg camera show: 2806170 ns
-Camera init: 326426 ns
-Camera show: 2476014 ns
-Sensors FPS + flip: 1871679 ns
-Camera init: 303227 ns
-Seg init: 1719361 ns
-Seg prediction: 58522108 ns
-Seg get mask: 537695 ns
-Lane init: 4085136
-Lane prediction: 8568757
-Lane detection: 4145675 ns
-Lane cm%: 42820 ns
-Seg camera show: 2824299 ns
-Camera init: 288827 ns
-Camera show: 2504803 ns
-Sensors FPS + flip: 1941759 ns
-Camera init: 297577 ns
-Seg init: 1635083 ns
-Seg prediction: 53988107 ns
-Seg get mask: 556384 ns
-Lane init: 3048117
-Lane prediction: 8157582
-Lane detection: 4140386 ns
-Lane cm%: 43129 ns
-Seg camera show: 2721541 ns
-Camera init: 281697 ns
-Camera show: 2493083 ns
-Sensors FPS + flip: 1874949 ns
-Camera init: 280017 ns
-Seg init: 1938579 ns
-Seg prediction: 59617606 ns
-Seg get mask: 576703 ns
-Lane init: 5100715
-Lane prediction: 8446269
-Lane detection: 4538351 ns
-Lane cm%: 43350 ns
-Seg camera show: 2741220 ns
-Camera init: 299337 ns
-Camera show: 2475943 ns
-Sensors FPS + flip: 1882269 ns
-Camera init: 276377 ns
-Seg init: 1775481 ns
-Seg prediction: 53910117 ns
-Seg get mask: 538494 ns
-Lane init: 3128917
-Lane prediction: 8150542
-Lane detection: 4132255 ns
-Lane cm%: 44199 ns
-Seg camera show: 2753590 ns
-Camera init: 307127 ns
-Camera show: 2480633 ns
-Sensors FPS + flip: 3743590 ns
-Camera init: 717883 ns
-Seg init: 1901109 ns
-Seg prediction: 58083483 ns
-Seg get mask: 556954 ns
-Lane init: 3561281
-Lane prediction: 8508189
-Lane detection: 4099275 ns
-Lane cm%: 44080 ns
-Seg camera show: 2793970 ns
-Camera init: 296097 ns
-Camera show: 2950988 ns
-Sensors FPS + flip: 2529133 ns
-Camera init: 1261067 ns
-Seg init: 2193756 ns
-Seg prediction: 60222279 ns
-Seg get mask: 366826 ns
-Lane init: 2969578
-Lane prediction: 8616297
-Lane detection: 4192555 ns
-Lane cm%: 56480 ns
-Seg camera show: 2869619 ns
-Camera init: 326386 ns
-Camera show: 2382664 ns
-Sensors FPS + flip: 1782431 ns
-Camera init: 320556 ns
-Seg init: 2880729 ns
-Seg prediction: 61094750 ns
-Seg get mask: 562724 ns
-Lane init: 6455430
-Lane prediction: 8772635
-Lane detection: 4109355 ns
-Lane cm%: 42470 ns
-Seg camera show: 2780860 ns
-Camera init: 295786 ns
-Camera show: 2465914 ns
-Sensors FPS + flip: 1914809 ns
-Camera init: 288827 ns
-Seg init: 1965729 ns
-Seg prediction: 59762504 ns
-Seg get mask: 337597 ns
-Lane init: 3727050
-Lane prediction: 8570137
-Lane detection: 4204465 ns
-Lane cm%: 46279 ns
-Seg camera show: 3199205 ns
-Camera init: 337196 ns
-Camera show: 2502313 ns
-Sensors FPS + flip: 2122517 ns
-Camera init: 297976 ns
-Seg init: 1674982 ns
-Seg prediction: 58276341 ns
-Seg get mask: 369926 ns
-Lane init: 3332354
-Lane prediction: 8420089
-Lane detection: 4065406 ns
-Lane cm%: 48250 ns
-Seg camera show: 2803220 ns
-Camera init: 296427 ns
-Camera show: 2477443 ns
-Sensors FPS + flip: 3576211 ns
-Camera init: 265557 ns
-Seg init: 1696481 ns
-Seg prediction: 61250658 ns
-Seg get mask: 371336 ns
-Lane init: 3507452
-Lane prediction: 8221921
-Lane detection: 4145666 ns
-Lane cm%: 43099 ns
-Seg camera show: 2745400 ns
-Camera init: 301086 ns
-Camera show: 2507213 ns
-Sensors FPS + flip: 1746241 ns
-Camera init: 277107 ns
-Seg init: 1884309 ns
-Seg prediction: 54415753 ns
-Seg get mask: 346176 ns
-Lane init: 4480881
-Lane prediction: 8447239
-Lane detection: 4117256 ns
-Lane cm%: 43280 ns
-Seg camera show: 2740121 ns
-Camera init: 284727 ns
-Camera show: 2492303 ns
-Sensors FPS + flip: 1778270 ns
-Camera init: 454835 ns
-Seg init: 1724901 ns
-Seg prediction: 58711226 ns
-Seg get mask: 359116 ns
-Lane init: 3556761
-Lane prediction: 12687723
-Lane detection: 4267694 ns
-Lane cm%: 43220 ns
-Seg camera show: 2826569 ns
-Camera init: 334856 ns
-Camera show: 2500283 ns
-Sensors FPS + flip: 1785161 ns
-Camera init: 378196 ns
-Seg init: 1735161 ns
-Seg prediction: 58010414 ns
-Seg get mask: 270057 ns
-Lane init: 3230245
-Lane prediction: 7998713
-Lane detection: 4020927 ns
-Lane cm%: 44829 ns
-Seg camera show: 2782960 ns
-Camera init: 288947 ns
-Camera show: 2480113 ns
-Sensors FPS + flip: 1697672 ns
-Camera init: 265827 ns
-Seg init: 1606462 ns
-Seg prediction: 55272213 ns
-Seg get mask: 391016 ns
-Lane init: 3626931
-Lane prediction: 8344290
-Lane detection: 4082906 ns
-Lane cm%: 41919 ns
-Seg camera show: 2752330 ns
-Camera init: 283807 ns
-Camera show: 2480893 ns
-Sensors FPS + flip: 1914720 ns
-Camera init: 260438 ns
-Seg init: 1664631 ns
-Seg prediction: 56924906 ns
-Seg get mask: 397296 ns
-Lane init: 3632580
-Lane prediction: 8541148
-Lane detection: 4700679 ns
-Lane cm%: 59699 ns
-Seg camera show: 3504182 ns
-Camera init: 586773 ns
-Camera show: 2534363 ns
-Sensors FPS + flip: 1821740 ns
-Camera init: 339876 ns
-Seg init: 1704272 ns
-Seg prediction: 56275763 ns
-Seg get mask: 423726 ns
-Lane init: 3452222
-Lane prediction: 8423029
-Lane detection: 4211405 ns
-Lane cm%: 44119 ns
-Seg camera show: 2759400 ns
-Camera init: 357626 ns
-Camera show: 2493093 ns
-Sensors FPS + flip: 1874220 ns
-Camera init: 398195 ns
-Seg init: 1670322 ns
-Seg prediction: 61980401 ns
-Seg get mask: 368026 ns
-Lane init: 3098537
-Lane prediction: 8420930
-Lane detection: 4071586 ns
-Lane cm%: 42819 ns
-Seg camera show: 2726121 ns
-Camera init: 300797 ns
-Camera show: 2480723 ns
-Sensors FPS + flip: 1926839 ns
-Camera init: 467804 ns
-Seg init: 1772111 ns
-Seg prediction: 56590329 ns
-Seg get mask: 369026 ns
-Lane init: 3152036
-Lane prediction: 8714366
-Lane detection: 4105025 ns
-Lane cm%: 42190 ns
-Seg camera show: 2770070 ns
-Camera init: 284677 ns
-Camera show: 2488833 ns
-Sensors FPS + flip: 1753901 ns
-Camera init: 307596 ns
-Seg init: 1944049 ns
-Seg prediction: 56912736 ns
-Seg get mask: 599604 ns
-Lane init: 7150023
-Lane prediction: 8672266
-Lane detection: 4153615 ns
-Lane cm%: 42750 ns
-Seg camera show: 2733340 ns
-Camera init: 284047 ns
-Camera show: 2497653 ns
-Sensors FPS + flip: 1651892 ns
-Camera init: 264817 ns
-Seg init: 1620873 ns
-Seg prediction: 55982486 ns
-Seg get mask: 359296 ns
-Lane init: 3316984
-Lane prediction: 8415439
-Lane detection: 4132216 ns
-Lane cm%: 43619 ns
-Seg camera show: 3129426 ns
-Camera init: 864531 ns
-Camera show: 2950878 ns
-Sensors FPS + flip: 2258845 ns
-Camera init: 362837 ns
-Seg init: 1704112 ns
-Seg prediction: 54205085 ns
-Seg get mask: 360716 ns
-Lane init: 3030907
-Lane prediction: 7959614
-Lane detection: 4115825 ns
-Lane cm%: 42860 ns
-Seg camera show: 2682241 ns
-Camera init: 279387 ns
-Camera show: 2476073 ns
-Sensors FPS + flip: 1594353 ns
-Camera init: 266867 ns
-Seg init: 1603823 ns
-Seg prediction: 59452787 ns
-Seg get mask: 340827 ns
-Lane init: 3387463
-Lane prediction: 8294121
-Lane detection: 4127056 ns
-Lane cm%: 43639 ns
-Seg camera show: 2743391 ns
-Camera init: 280847 ns
-Camera show: 2478133 ns
-Sensors FPS + flip: 1880349 ns
-Camera init: 258048 ns
-Seg init: 1600222 ns
-Seg prediction: 56907246 ns
-Seg get mask: 377976 ns
-Lane init: 4079256
-Lane prediction: 8423840
-Lane detection: 5551031 ns
-Lane cm%: 55939 ns
-Seg camera show: 3087496 ns
-Camera init: 504305 ns
-Camera show: 2544002 ns
-Sensors FPS + flip: 1950849 ns
-Camera init: 264277 ns
-Seg init: 1635892 ns
-Seg prediction: 53609121 ns
-Seg get mask: 395706 ns
-Lane init: 3505682
-Lane prediction: 8067413
-Lane detection: 4098605 ns
-Lane cm%: 41970 ns
-Seg camera show: 2746530 ns
-Camera init: 326247 ns
-Camera show: 2438023 ns
-Sensors FPS + flip: 1788621 ns
-Camera init: 301727 ns
-Seg init: 1611652 ns
-Seg prediction: 58936035 ns
-Seg get mask: 596633 ns
-Lane init: 3494522
-Lane prediction: 8695536
-Lane detection: 4122636 ns
-Lane cm%: 44319 ns
-Seg camera show: 2793750 ns
-Camera init: 294377 ns
-Camera show: 2486933 ns
-Sensors FPS + flip: 1907879 ns
-Camera init: 260498 ns
-Seg init: 1649952 ns
-Seg prediction: 55809638 ns
-Seg get mask: 554974 ns
-Lane init: 3714399
-Lane prediction: 8572728
-Lane detection: 4152545 ns
-Lane cm%: 43120 ns
-Seg camera show: 2771801 ns
-Camera init: 308267 ns
-Camera show: 2529703 ns
-Sensors FPS + flip: 2159356 ns
-Camera init: 465755 ns
-Seg init: 1901120 ns
-Seg prediction: 60433598 ns
-Seg get mask: 571153 ns
-Lane init: 8138923
-Lane prediction: 8730345
-Lane detection: 4110136 ns
-Lane cm%: 43019 ns
-Seg camera show: 2731281 ns
-Camera init: 283717 ns
-Camera show: 2497933 ns
-Sensors FPS + flip: 1887799 ns
-Camera init: 261228 ns
-Seg init: 1599022 ns
-Seg prediction: 56757468 ns
-Seg get mask: 557584 ns
-Lane init: 3388103
-Lane prediction: 8344730
-Lane detection: 4070506 ns
-Lane cm%: 43870 ns
-Seg camera show: 3062377 ns
-Camera init: 1107508 ns
-Camera show: 2615592 ns
-Sensors FPS + flip: 3250485 ns
-Camera init: 548734 ns
-Seg init: 2213326 ns
-Seg prediction: 55747199 ns
-Seg get mask: 583743 ns
-Lane init: 2883079
-Lane prediction: 8078683
-Lane detection: 4094576 ns
-Lane cm%: 43739 ns
-Seg camera show: 2776360 ns
-Camera init: 283017 ns
-Camera show: 2467873 ns
-Sensors FPS + flip: 2141217 ns
-Camera init: 257288 ns
-Seg init: 1601342 ns
-Seg prediction: 58295181 ns
-Seg get mask: 527915 ns
-Lane init: 4138496
-Lane prediction: 8893804
-Lane detection: 4159555 ns
-Lane cm%: 42729 ns
-Seg camera show: 2730251 ns
-Camera init: 295026 ns
-Camera show: 2555653 ns
-Sensors FPS + flip: 2279255 ns
-Camera init: 293947 ns
-Seg init: 1603893 ns
-Seg prediction: 56113874 ns
-Seg get mask: 505995 ns
-Lane init: 3097676
-Lane prediction: 8062923
-Lane detection: 4005987 ns
-Lane cm%: 41849 ns
-Seg camera show: 2700261 ns
-Camera init: 289157 ns
-Camera show: 2478463 ns
-Sensors FPS + flip: 1951689 ns
-Camera init: 281087 ns
-Seg init: 1600433 ns
-Seg prediction: 54137636 ns
-Seg get mask: 509234 ns
-Lane init: 3187316
-Lane prediction: 8075673
-Lane detection: 3953717 ns
-Lane cm%: 42809 ns
-Seg camera show: 3274115 ns
-Camera init: 541504 ns
-Camera show: 2929278 ns
-Sensors FPS + flip: 2755120 ns
-Camera init: 683303 ns
-Seg init: 1903079 ns
-Seg prediction: 57609519 ns
-Seg get mask: 525594 ns
-Lane init: 2946038
-Lane prediction: 8103053
-Lane detection: 4162605 ns
-Lane cm%: 48359 ns
-Seg camera show: 2753120 ns
-Camera init: 288157 ns
-Camera show: 2466183 ns
-Sensors FPS + flip: 1912370 ns
-Camera init: 291657 ns
-Seg init: 1614342 ns
-Seg prediction: 65564263 ns
-Seg get mask: 643163 ns
-Lane init: 4578441
-Lane prediction: 8434269
-Lane detection: 4009517 ns
-Lane cm%: 44090 ns
-Seg camera show: 2696730 ns
-Camera init: 293747 ns
-Camera show: 2471083 ns
-Sensors FPS + flip: 2052678 ns
-Camera init: 281147 ns
-Seg init: 1584863 ns
-Seg prediction: 58666347 ns
-Seg get mask: 643863 ns
-Lane init: 3610891
-Lane prediction: 8417109
-Lane detection: 4042257 ns
-Lane cm%: 42569 ns
-Seg camera show: 2718221 ns
-Camera init: 281907 ns
-Camera show: 2501733 ns
-Sensors FPS + flip: 2007608 ns
-Camera init: 267997 ns
-Seg init: 1583403 ns
-Seg prediction: 63730413 ns
-Seg get mask: 946270 ns
-Lane init: 3822968
-Lane prediction: 8320191
-Lane detection: 4228245 ns
-Lane cm%: 98219 ns
-Seg camera show: 2714420 ns
-Camera init: 455205 ns
-Camera show: 2480243 ns
-Sensors FPS + flip: 1851820 ns
-Camera init: 311697 ns
-Seg init: 1719621 ns
-Seg prediction: 53179207 ns
-Seg get mask: 900820 ns
-Lane init: 3015118
-Lane prediction: 8044763
-Lane detection: 3957817 ns
-Lane cm%: 42720 ns
-Seg camera show: 2685591 ns
-Camera init: 287037 ns
-Camera show: 2468494 ns
-Sensors FPS + flip: 3665730 ns
-Camera init: 268027 ns
-Seg init: 1618943 ns
-Seg prediction: 55343843 ns
-Seg get mask: 844801 ns
-Lane init: 3035008
-Lane prediction: 8068452
-Lane detection: 3954568 ns
-Lane cm%: 42239 ns
-Seg camera show: 2716541 ns
-Camera init: 293767 ns
-Camera show: 2471483 ns
-Sensors FPS + flip: 2111778 ns
-Camera init: 257308 ns
-Seg init: 1591012 ns
-Seg prediction: 55288064 ns
-Seg get mask: 959279 ns
-Lane init: 7847606
-Lane prediction: 8467799
-Lane detection: 4287474 ns
-Lane cm%: 59729 ns
-Seg camera show: 3036667 ns
-Camera init: 309557 ns
-Camera show: 2512403 ns
-Sensors FPS + flip: 2014919 ns
-Camera init: 261518 ns
-Seg init: 1712201 ns
-Seg prediction: 59879835 ns
-Seg get mask: 815381 ns
-Lane init: 3429533
-Lane prediction: 8618237
-Lane detection: 4394003 ns
-Lane cm%: 44330 ns
-Seg camera show: 2900129 ns
-Camera init: 524254 ns
-Camera show: 2598822 ns
-Sensors FPS + flip: 2914739 ns
-Camera init: 547034 ns
-Seg init: 1646792 ns
-Seg prediction: 57574550 ns
-Seg get mask: 832571 ns
-Lane init: 3474573
-Lane prediction: 8445949
-Lane detection: 4112705 ns
-Lane cm%: 43880 ns
-Seg camera show: 2767090 ns
-Camera init: 286207 ns
-Camera show: 2474183 ns
-Sensors FPS + flip: 2021028 ns
-Camera init: 4013606 ns
-Seg init: 1630333 ns
-Seg prediction: 60732765 ns
-Seg get mask: 827551 ns
-Lane init: 3459063
-Lane prediction: 8801995
-Lane detection: 4117945 ns
-Lane cm%: 42220 ns
-Seg camera show: 2677581 ns
-Camera init: 284837 ns
-Camera show: 2886578 ns
-Sensors FPS + flip: 2377655 ns
-Camera init: 286787 ns
-Seg init: 1748951 ns
-Seg prediction: 69252393 ns
-Seg get mask: 885960 ns
-Lane init: 3343124
-Lane prediction: 8509519
-Lane detection: 4170785 ns
-Lane cm%: 41860 ns
-Seg camera show: 2683911 ns
-Camera init: 307507 ns
-Camera show: 2450473 ns
-Sensors FPS + flip: 2205467 ns
-Camera init: 257967 ns
-Seg init: 1597673 ns
-Seg prediction: 57074475 ns
-Seg get mask: 844401 ns
-Lane init: 3459663
-Lane prediction: 13787481
-Lane detection: 4364163 ns
-Lane cm%: 43909 ns
-Seg camera show: 2961298 ns
-Camera init: 528254 ns
-Camera show: 2563033 ns
-Sensors FPS + flip: 3418563 ns
-Camera init: 641713 ns
-Seg init: 1600833 ns
-Seg prediction: 57395031 ns
-Seg get mask: 518594 ns
-Lane init: 3613581
-Lane prediction: 8392780
-Lane detection: 4273174 ns
-Lane cm%: 53689 ns
-Seg camera show: 2890919 ns
-Camera init: 291577 ns
-Camera show: 2573153 ns
-Sensors FPS + flip: 2069188 ns
-Camera init: 302967 ns
-Seg init: 1620182 ns
-Seg prediction: 63354447 ns
-Seg get mask: 510475 ns
-Lane init: 3488022
-Lane prediction: 8970743
-Lane detection: 4165645 ns
-Lane cm%: 42910 ns
-Seg camera show: 2721391 ns
-Camera init: 283127 ns
-Camera show: 2484073 ns
-Sensors FPS + flip: 2028528 ns
-Camera init: 255357 ns
-Seg init: 1833281 ns
-Seg prediction: 61116462 ns
-Seg get mask: 982570 ns
-Lane init: 3073647
-Lane prediction: 8117062
-Lane detection: 4156235 ns
-Lane cm%: 42260 ns
-Seg camera show: 2700501 ns
-Camera init: 296147 ns
-Camera show: 2527022 ns
-Sensors FPS + flip: 2075998 ns
-Camera init: 465725 ns
-Seg init: 2218706 ns
-Seg prediction: 54503863 ns
-Seg get mask: 740912 ns
-Lane init: 2922838
-Lane prediction: 8516329
-Lane detection: 4052096 ns
-Lane cm%: 41320 ns
-Seg camera show: 2719580 ns
-Camera init: 302177 ns
-Camera show: 2786950 ns
-Sensors FPS + flip: 3996976 ns
-Camera init: 674123 ns
-Seg init: 1958499 ns
-Seg prediction: 62431068 ns
-Seg get mask: 888900 ns
-Lane init: 3238725
-Lane prediction: 8361370
-Lane detection: 4029516 ns
-Lane cm%: 60739 ns
-Seg camera show: 2904399 ns
-Camera init: 309896 ns
-Camera show: 2495014 ns
-Sensors FPS + flip: 2002068 ns
-Camera init: 277107 ns
-Seg init: 1588783 ns
-Seg prediction: 60544157 ns
-Seg get mask: 816161 ns
-Lane init: 2473734
-Lane prediction: 8656048
-Lane detection: 4206934 ns
-Lane cm%: 46260 ns
-Seg camera show: 2780650 ns
-Camera init: 279426 ns
-Camera show: 2572633 ns
-Sensors FPS + flip: 2314775 ns
-Camera init: 281937 ns
-Seg init: 1608753 ns
-Seg prediction: 55115227 ns
-Seg get mask: 839042 ns
-Lane init: 3338524
-Lane prediction: 8775145
-Lane detection: 4208314 ns
-Lane cm%: 43340 ns
-Seg camera show: 2765110 ns
-Camera init: 287657 ns
-Camera show: 2527972 ns
-Sensors FPS + flip: 2176687 ns
-Camera init: 275957 ns
-Seg init: 1608482 ns
-Seg prediction: 58936496 ns
-Seg get mask: 808691 ns
-Lane init: 3972777
-Lane prediction: 13997779
-Lane detection: 4982437 ns
-Lane cm%: 52689 ns
-Seg camera show: 2911179 ns
-Camera init: 381266 ns
-Camera show: 1991699 ns
-Sensors FPS + flip: 1925279 ns
-Camera init: 330957 ns
-Seg init: 2356244 ns
-Seg prediction: 55531842 ns
-Seg get mask: 605684 ns
-Lane init: 8830265
-Lane prediction: 8879534
-Lane detection: 4448852 ns
-Lane cm%: 49989 ns
-Seg camera show: 2755480 ns
-Camera init: 286177 ns
-Camera show: 2492183 ns
-Sensors FPS + flip: 2220046 ns
-Camera init: 285687 ns
-Seg init: 1769191 ns
-Seg prediction: 61765305 ns
-Seg get mask: 690872 ns
-Lane init: 3573792
-Lane prediction: 8575297
-Lane detection: 4303054 ns
-Lane cm%: 56089 ns
-Seg camera show: 3553662 ns
-Camera init: 508464 ns
-Camera show: 2602902 ns
-Sensors FPS + flip: 2393124 ns
-Camera init: 265977 ns
-Seg init: 1643562 ns
-Seg prediction: 60450199 ns
-Seg get mask: 522595 ns
-Lane init: 3134976
-Lane prediction: 8141082
-Lane detection: 4172855 ns
-Lane cm%: 42589 ns
-Seg camera show: 2703091 ns
-Camera init: 293477 ns
-Camera show: 2968698 ns
-Sensors FPS + flip: 1775900 ns
-Camera init: 280567 ns
-Seg init: 1808370 ns
-Seg prediction: 56247135 ns
-Seg get mask: 581354 ns
-Lane init: 3372814
-Lane prediction: 8783625
-Lane detection: 4186275 ns
-Lane cm%: 44110 ns
-Seg camera show: 2683181 ns
-Camera init: 322257 ns
-Camera show: 3270405 ns
-Sensors FPS + flip: 2637932 ns
-Camera init: 303996 ns
-Seg init: 1710332 ns
-Seg prediction: 54672221 ns
-Seg get mask: 567924 ns
-Lane init: 3145406
-Lane prediction: 8409580
-Lane detection: 4235755 ns
-Lane cm%: 43699 ns
-Seg camera show: 2672551 ns
-Camera init: 283987 ns
-Camera show: 2473913 ns
-Sensors FPS + flip: 5009906 ns
-Camera init: 258917 ns
-Seg init: 1702922 ns
-Seg prediction: 57696159 ns
-Seg get mask: 479135 ns
-Lane init: 3050428
-Lane prediction: 11433117
-Lane detection: 4400503 ns
-Lane cm%: 45870 ns
-Seg camera show: 3538452 ns
-Camera init: 541534 ns
-Camera show: 2522543 ns
-Sensors FPS + flip: 1949579 ns
-Camera init: 261287 ns
-Seg init: 1771391 ns
-Seg prediction: 57604411 ns
-Seg get mask: 584154 ns
-Lane init: 2904359
-Lane prediction: 8643827
-Lane detection: 4578990 ns
-Lane cm%: 50130 ns
-Seg camera show: 2727480 ns
-Camera init: 280907 ns
-Camera show: 2489153 ns
-Sensors FPS + flip: 2738371 ns
-Camera init: 326897 ns
-Seg init: 2077737 ns
-Seg prediction: 57552661 ns
-Seg get mask: 488094 ns
-Lane init: 2978878
-Lane prediction: 9061243
-Lane detection: 4386773 ns
-Lane cm%: 42439 ns
-Seg camera show: 2726831 ns
-Camera init: 362556 ns
-Camera show: 2475083 ns
-Sensors FPS + flip: 2147037 ns
-Camera init: 398985 ns
-Seg init: 1696492 ns
-Seg prediction: 57815898 ns
-Seg get mask: 565744 ns
-Lane init: 3534752
-Lane prediction: 10973501
-Lane detection: 4299454 ns
+Seg camera show: 2718647 ns
+Camera init: 838726 ns
+Camera show: 2455229 ns
+Sensors FPS + flip: 4944188 ns
+Camera init: 362138 ns
+Seg init: 2381399 ns
+Seg prediction: 68191022 ns
+Seg get mask: 264869 ns
+Lane init: 1748342
+Lane prediction: 11777577
+Lane detection: 3905592 ns
+Lane cm%: 45930 ns
+Seg camera show: 2759867 ns
+Camera init: 328198 ns
+Camera show: 2415380 ns
+Sensors FPS + flip: 1804152 ns
+Camera init: 349618 ns
+Seg init: 1657543 ns
+Seg prediction: 57811959 ns
+Seg get mask: 256709 ns
+Lane init: 1690303
+Lane prediction: 10042224
+Lane detection: 5575765 ns
+Lane cm%: 43990 ns
+Seg camera show: 2647238 ns
+Camera init: 360498 ns
+Camera show: 2472629 ns
+Sensors FPS + flip: 2132320 ns
+Camera init: 360709 ns
+Seg init: 1650223 ns
+Seg prediction: 61139094 ns
+Seg get mask: 263239 ns
+Lane init: 1852561
+Lane prediction: 10944591
+Lane detection: 3908193 ns
+Lane cm%: 43640 ns
+Seg camera show: 2670437 ns
+Camera init: 377599 ns
+Camera show: 2447219 ns
+Sensors FPS + flip: 2032101 ns
+Camera init: 366418 ns
+Seg init: 1655733 ns
+Seg prediction: 59635630 ns
+Seg get mask: 276058 ns
+Lane init: 1656293
+Lane prediction: 10114394
+Lane detection: 3880083 ns
+Lane cm%: 43480 ns
+Seg camera show: 2756157 ns
+Camera init: 355419 ns
+Camera show: 2696658 ns
+Sensors FPS + flip: 3677313 ns
+Camera init: 715717 ns
+Seg init: 4669089 ns
+Seg prediction: 63971120 ns
+Seg get mask: 260739 ns
+Lane init: 1912792
+Lane prediction: 10312613
+Lane detection: 3907732 ns
 Lane cm%: 43830 ns
-Seg camera show: 2701931 ns
-Camera init: 293377 ns
-Camera show: 2820119 ns
-Sensors FPS + flip: 2331505 ns
-Camera init: 316397 ns
-Seg init: 1834721 ns
-Seg prediction: 56353623 ns
-Seg get mask: 710042 ns
-Lane init: 2360085
-Lane prediction: 9934413
-Lane detection: 4969407 ns
-Lane cm%: 41929 ns
-Seg camera show: 2659821 ns
-Camera init: 286927 ns
-Camera show: 2479003 ns
-Sensors FPS + flip: 1772891 ns
-Camera init: 294486 ns
-Seg init: 1697052 ns
-Seg prediction: 53797272 ns
-Seg get mask: 554064 ns
-Lane init: 3505672
-Lane prediction: 8401649
-Lane detection: 4181595 ns
-Lane cm%: 42370 ns
-Seg camera show: 2666341 ns
-Camera init: 366607 ns
-Camera show: 2470943 ns
-Sensors FPS + flip: 2102918 ns
-Camera init: 271337 ns
-Seg init: 1861480 ns
-Seg prediction: 58656409 ns
-Seg get mask: 880291 ns
-Lane init: 3540722
-Lane prediction: 10911843
-Lane detection: 4280194 ns
-Lane cm%: 49599 ns
-Seg camera show: 2739241 ns
-Camera init: 323137 ns
-Camera show: 2550212 ns
-Sensors FPS + flip: 2495193 ns
-Camera init: 338007 ns
-Seg init: 1744411 ns
-Seg prediction: 55987278 ns
-Seg get mask: 1171807 ns
-Lane init: 3883418
-Lane prediction: 8595157
-Lane detection: 4122596 ns
+Seg camera show: 2798317 ns
+Camera init: 309579 ns
+Camera show: 2402459 ns
+Sensors FPS + flip: 1879621 ns
+Camera init: 299059 ns
+Seg init: 1591873 ns
+Seg prediction: 60221588 ns
+Seg get mask: 253108 ns
+Lane init: 1850422
+Lane prediction: 10257193
+Lane detection: 3936853 ns
+Lane cm%: 44829 ns
+Seg camera show: 2709478 ns
+Camera init: 435418 ns
+Camera show: 2716278 ns
+Sensors FPS + flip: 2540648 ns
+Camera init: 348399 ns
+Seg init: 1640472 ns
+Seg prediction: 59974859 ns
+Seg get mask: 247099 ns
+Lane init: 1839912
+Lane prediction: 11241369
+Lane detection: 4248301 ns
+Lane cm%: 51179 ns
+Seg camera show: 2774338 ns
+Camera init: 706856 ns
+Camera show: 2467099 ns
+Sensors FPS + flip: 3952772 ns
+Camera init: 361318 ns
+Seg init: 1707153 ns
+Seg prediction: 59406471 ns
+Seg get mask: 268439 ns
+Lane init: 1820652
+Lane prediction: 10017225
+Lane detection: 4149901 ns
+Lane cm%: 57350 ns
+Seg camera show: 3495194 ns
+Camera init: 413998 ns
+Camera show: 2876837 ns
+Sensors FPS + flip: 2381270 ns
+Camera init: 282229 ns
+Seg init: 1708302 ns
+Seg prediction: 59078923 ns
+Seg get mask: 248148 ns
+Lane init: 1736203
+Lane prediction: 10352093
+Lane detection: 3981072 ns
+Lane cm%: 42920 ns
+Seg camera show: 2637528 ns
+Camera init: 360148 ns
+Camera show: 2453979 ns
+Sensors FPS + flip: 2205910 ns
+Camera init: 338648 ns
+Seg init: 1629193 ns
+Seg prediction: 60756915 ns
+Seg get mask: 255039 ns
+Lane init: 1923892
+Lane prediction: 10556432
+Lane detection: 3910692 ns
+Lane cm%: 42390 ns
+Seg camera show: 2828407 ns
+Camera init: 335198 ns
+Camera show: 2458739 ns
+Sensors FPS + flip: 1976941 ns
+Camera init: 380398 ns
+Seg init: 1742022 ns
+Seg prediction: 57529371 ns
+Seg get mask: 240189 ns
+Lane init: 1807432
+Lane prediction: 7887904
+Lane detection: 3869763 ns
+Lane cm%: 62370 ns
+Seg camera show: 2635708 ns
+Camera init: 338289 ns
+Camera show: 2436219 ns
+Sensors FPS + flip: 1815352 ns
+Camera init: 1049505 ns
+Seg init: 1657423 ns
+Seg prediction: 61050774 ns
+Seg get mask: 244309 ns
+Lane init: 1863401
+Lane prediction: 10467753
+Lane detection: 4281170 ns
+Lane cm%: 42980 ns
+Seg camera show: 2667368 ns
+Camera init: 338938 ns
+Camera show: 2447259 ns
+Sensors FPS + flip: 2089211 ns
+Camera init: 284288 ns
+Seg init: 1738892 ns
+Seg prediction: 58704585 ns
+Seg get mask: 383828 ns
+Lane init: 2131321
+Lane prediction: 8299152
+Lane detection: 3861293 ns
+Lane cm%: 42749 ns
+Seg camera show: 2633498 ns
+Camera init: 420888 ns
+Camera show: 2459379 ns
+Sensors FPS + flip: 2119901 ns
+Camera init: 356219 ns
+Seg init: 1638772 ns
+Seg prediction: 58829854 ns
+Seg get mask: 379359 ns
+Lane init: 1655282
+Lane prediction: 10388423
+Lane detection: 3932922 ns
+Lane cm%: 45720 ns
+Seg camera show: 2806017 ns
+Camera init: 396808 ns
+Camera show: 2468499 ns
+Sensors FPS + flip: 3790333 ns
+Camera init: 445438 ns
+Seg init: 1649483 ns
+Seg prediction: 59042373 ns
+Seg get mask: 268868 ns
+Lane init: 1795422
+Lane prediction: 10215884
+Lane detection: 3869583 ns
+Lane cm%: 43970 ns
+Seg camera show: 2649918 ns
+Camera init: 450318 ns
+Camera show: 2479008 ns
+Sensors FPS + flip: 2131901 ns
+Camera init: 424738 ns
+Seg init: 1650362 ns
+Seg prediction: 61313302 ns
+Seg get mask: 269249 ns
+Lane init: 1766582
+Lane prediction: 10354614
+Lane detection: 3965132 ns
+Lane cm%: 43240 ns
+Seg camera show: 2625288 ns
+Camera init: 333278 ns
+Camera show: 2467389 ns
+Sensors FPS + flip: 2107590 ns
+Camera init: 286909 ns
+Seg init: 1672292 ns
+Seg prediction: 58729595 ns
+Seg get mask: 356298 ns
+Lane init: 2233590
+Lane prediction: 10217114
+Lane detection: 4271570 ns
+Lane cm%: 44720 ns
+Seg camera show: 2711118 ns
+Camera init: 370678 ns
+Camera show: 2462219 ns
+Sensors FPS + flip: 2279379 ns
+Camera init: 322268 ns
+Seg init: 1631263 ns
+Seg prediction: 61083914 ns
+Seg get mask: 263699 ns
+Lane init: 1762583
+Lane prediction: 10484452
+Lane detection: 3924312 ns
+Lane cm%: 42600 ns
+Seg camera show: 2638098 ns
+Camera init: 364378 ns
+Camera show: 2452089 ns
+Sensors FPS + flip: 1935901 ns
+Camera init: 368268 ns
+Seg init: 1659633 ns
+Seg prediction: 110797409 ns
+Seg get mask: 230559 ns
+Lane init: 1548333
+Lane prediction: 10307094
+Lane detection: 3961742 ns
+Lane cm%: 46019 ns
+Seg camera show: 2710278 ns
+Camera init: 364328 ns
+Camera show: 2742148 ns
+Sensors FPS + flip: 2676528 ns
+Camera init: 387478 ns
+Seg init: 1717813 ns
+Seg prediction: 62754577 ns
+Seg get mask: 764426 ns
+Lane init: 1856672
+Lane prediction: 10321713
+Lane detection: 3960222 ns
+Lane cm%: 43260 ns
+Seg camera show: 2659208 ns
+Camera init: 356708 ns
+Camera show: 2443029 ns
+Sensors FPS + flip: 2225770 ns
+Camera init: 380709 ns
+Seg init: 1683622 ns
+Seg prediction: 58749705 ns
+Seg get mask: 564967 ns
+Lane init: 1730962
+Lane prediction: 10468323
+Lane detection: 3896612 ns
+Lane cm%: 43430 ns
+Seg camera show: 2666948 ns
+Camera init: 361538 ns
+Camera show: 2463989 ns
+Sensors FPS + flip: 1908481 ns
+Camera init: 318478 ns
+Seg init: 1656923 ns
+Seg prediction: 58370516 ns
+Seg get mask: 1024255 ns
+Lane init: 2001641
+Lane prediction: 10130604
+Lane detection: 4409110 ns
+Lane cm%: 45320 ns
+Seg camera show: 2681708 ns
+Camera init: 406368 ns
+Camera show: 2445599 ns
+Sensors FPS + flip: 2045150 ns
+Camera init: 346789 ns
+Seg init: 1639432 ns
+Seg prediction: 61175483 ns
+Seg get mask: 557958 ns
+Lane init: 1662172
+Lane prediction: 10348154
+Lane detection: 3890423 ns
+Lane cm%: 43139 ns
+Seg camera show: 2639748 ns
+Camera init: 355179 ns
+Camera show: 2458698 ns
+Sensors FPS + flip: 2048701 ns
+Camera init: 330749 ns
+Seg init: 1639672 ns
+Seg prediction: 69792255 ns
+Seg get mask: 632647 ns
+Lane init: 1620703
+Lane prediction: 10173724
+Lane detection: 3881472 ns
+Lane cm%: 42890 ns
+Seg camera show: 2610988 ns
+Camera init: 359548 ns
+Camera show: 2450419 ns
+Sensors FPS + flip: 2154330 ns
+Camera init: 280509 ns
+Seg init: 1684282 ns
+Seg prediction: 62833936 ns
+Seg get mask: 611217 ns
+Lane init: 1707383
+Lane prediction: 10244943
+Lane detection: 3865893 ns
+Lane cm%: 42669 ns
+Seg camera show: 6222662 ns
+Camera init: 337419 ns
+Camera show: 2454078 ns
+Sensors FPS + flip: 1947472 ns
+Camera init: 377058 ns
+Seg init: 1637463 ns
+Seg prediction: 59484161 ns
+Seg get mask: 1126415 ns
+Lane init: 3622504
+Lane prediction: 10424493
+Lane detection: 3896452 ns
+Lane cm%: 44360 ns
+Seg camera show: 2703538 ns
+Camera init: 353818 ns
+Camera show: 2457829 ns
+Sensors FPS + flip: 2284069 ns
+Camera init: 539998 ns
+Seg init: 2334819 ns
+Seg prediction: 62689127 ns
+Seg get mask: 227119 ns
+Lane init: 1725932
+Lane prediction: 10052554
+Lane detection: 3851643 ns
+Lane cm%: 42650 ns
+Seg camera show: 2638598 ns
+Camera init: 316578 ns
+Camera show: 2419830 ns
+Sensors FPS + flip: 1746052 ns
+Camera init: 321859 ns
+Seg init: 1626722 ns
+Seg prediction: 61420142 ns
+Seg get mask: 320529 ns
+Lane init: 3173805
+Lane prediction: 10553643
+Lane detection: 4025002 ns
+Lane cm%: 43120 ns
+Seg camera show: 3112846 ns
+Camera init: 365619 ns
+Camera show: 2470339 ns
+Sensors FPS + flip: 2227259 ns
+Camera init: 397368 ns
+Seg init: 1754362 ns
+Seg prediction: 57873088 ns
+Seg get mask: 218299 ns
+Lane init: 1742072
+Lane prediction: 10118335
+Lane detection: 3908652 ns
+Lane cm%: 42990 ns
+Seg camera show: 2649888 ns
+Camera init: 372468 ns
+Camera show: 2442109 ns
+Sensors FPS + flip: 1865511 ns
+Camera init: 328969 ns
+Seg init: 1686962 ns
+Seg prediction: 65178716 ns
+Seg get mask: 279158 ns
+Lane init: 1786752
+Lane prediction: 10290194
+Lane detection: 3908932 ns
+Lane cm%: 42550 ns
+Seg camera show: 2951726 ns
+Camera init: 513298 ns
+Camera show: 2489928 ns
+Sensors FPS + flip: 1720223 ns
+Camera init: 348288 ns
+Seg init: 1723182 ns
+Seg prediction: 58427076 ns
+Seg get mask: 310769 ns
+Lane init: 1877971
+Lane prediction: 11225559
+Lane detection: 3956472 ns
+Lane cm%: 46950 ns
+Seg camera show: 2695668 ns
+Camera init: 688947 ns
+Camera show: 2457949 ns
+Sensors FPS + flip: 2936327 ns
+Camera init: 896816 ns
+Seg init: 3578024 ns
+Seg prediction: 62692147 ns
+Seg get mask: 518307 ns
+Lane init: 1493713
+Lane prediction: 10454553
+Lane detection: 3964812 ns
+Lane cm%: 47690 ns
+Seg camera show: 2772097 ns
+Camera init: 423368 ns
+Camera show: 2415519 ns
+Sensors FPS + flip: 2717228 ns
+Camera init: 364998 ns
+Seg init: 1656093 ns
+Seg prediction: 62795706 ns
+Seg get mask: 247579 ns
+Lane init: 1746702
+Lane prediction: 10153034
+Lane detection: 3916342 ns
+Lane cm%: 46250 ns
+Seg camera show: 2779048 ns
+Camera init: 330868 ns
+Camera show: 2468139 ns
+Sensors FPS + flip: 1812772 ns
+Camera init: 452358 ns
+Seg init: 1650213 ns
+Seg prediction: 57190951 ns
+Seg get mask: 249689 ns
+Lane init: 1747912
+Lane prediction: 11312589
+Lane detection: 4321020 ns
+Lane cm%: 43840 ns
+Seg camera show: 2677128 ns
+Camera init: 364548 ns
+Camera show: 2510469 ns
+Sensors FPS + flip: 1783552 ns
+Camera init: 369258 ns
+Seg init: 2021931 ns
+Seg prediction: 59898419 ns
+Seg get mask: 230669 ns
+Lane init: 1758122
+Lane prediction: 9903855
+Lane detection: 3872473 ns
+Lane cm%: 42469 ns
+Seg camera show: 2644398 ns
+Camera init: 358259 ns
+Camera show: 2447429 ns
+Sensors FPS + flip: 1717812 ns
+Camera init: 564287 ns
+Seg init: 2786587 ns
+Seg prediction: 68694860 ns
+Seg get mask: 283149 ns
+Lane init: 1912191
+Lane prediction: 10910981
+Lane detection: 4274811 ns
+Lane cm%: 47809 ns
+Seg camera show: 2742598 ns
+Camera init: 336288 ns
+Camera show: 2456279 ns
+Sensors FPS + flip: 1633363 ns
+Camera init: 343358 ns
+Seg init: 1728682 ns
+Seg prediction: 57035733 ns
+Seg get mask: 235219 ns
+Lane init: 1685882
+Lane prediction: 10095024
+Lane detection: 3888742 ns
+Lane cm%: 42930 ns
+Seg camera show: 2661688 ns
+Camera init: 429228 ns
+Camera show: 2476209 ns
+Sensors FPS + flip: 1811432 ns
+Camera init: 354909 ns
+Seg init: 1700882 ns
+Seg prediction: 60164278 ns
+Seg get mask: 289019 ns
+Lane init: 1725232
+Lane prediction: 11217419
+Lane detection: 3958012 ns
+Lane cm%: 47940 ns
+Seg camera show: 2768407 ns
+Camera init: 391668 ns
+Camera show: 2966337 ns
+Sensors FPS + flip: 1985261 ns
+Camera init: 384968 ns
+Seg init: 1844402 ns
+Seg prediction: 58345846 ns
+Seg get mask: 230619 ns
+Lane init: 1777012
+Lane prediction: 13462659
+Lane detection: 7371987 ns
+Lane cm%: 75009 ns
+Seg camera show: 4046532 ns
+Camera init: 935536 ns
+Camera show: 2498839 ns
+Sensors FPS + flip: 2569538 ns
+Camera init: 852186 ns
+Seg init: 1764942 ns
+Seg prediction: 63086354 ns
+Seg get mask: 322059 ns
+Lane init: 1858451
+Lane prediction: 10674833
+Lane detection: 3904402 ns
+Lane cm%: 43880 ns
+Seg camera show: 2707197 ns
+Camera init: 364169 ns
+Camera show: 2463939 ns
+Sensors FPS + flip: 2326570 ns
+Camera init: 499038 ns
+Seg init: 1698223 ns
+Seg prediction: 62301948 ns
+Seg get mask: 247629 ns
+Lane init: 1708812
+Lane prediction: 10210584
+Lane detection: 3904432 ns
+Lane cm%: 43340 ns
+Seg camera show: 2715468 ns
+Camera init: 343449 ns
+Camera show: 2504309 ns
+Sensors FPS + flip: 2286750 ns
+Camera init: 321478 ns
+Seg init: 1644183 ns
+Seg prediction: 58052907 ns
+Seg get mask: 270919 ns
+Lane init: 1770572
+Lane prediction: 10026845
+Lane detection: 3777442 ns
+Lane cm%: 42820 ns
+Seg camera show: 2619518 ns
+Camera init: 333759 ns
+Camera show: 2374679 ns
+Sensors FPS + flip: 1704372 ns
+Camera init: 314109 ns
+Seg init: 1597563 ns
+Seg prediction: 59236522 ns
+Seg get mask: 355768 ns
+Lane init: 1809552
+Lane prediction: 10790671
+Lane detection: 3888183 ns
+Lane cm%: 44659 ns
+Seg camera show: 2702198 ns
+Camera init: 725557 ns
+Camera show: 2463359 ns
+Sensors FPS + flip: 2391619 ns
+Camera init: 599117 ns
+Seg init: 1722773 ns
+Seg prediction: 59989879 ns
+Seg get mask: 264288 ns
+Lane init: 1743782
+Lane prediction: 10132185
+Lane detection: 3940113 ns
+Lane cm%: 44549 ns
+Seg camera show: 2738428 ns
+Camera init: 356508 ns
+Camera show: 2542849 ns
+Sensors FPS + flip: 1803222 ns
+Camera init: 450158 ns
+Seg init: 1759882 ns
+Seg prediction: 62500608 ns
+Seg get mask: 251939 ns
+Lane init: 1726292
+Lane prediction: 9905535
+Lane detection: 3961022 ns
+Lane cm%: 43380 ns
+Seg camera show: 2675448 ns
+Camera init: 311678 ns
+Camera show: 2404589 ns
+Sensors FPS + flip: 3635144 ns
+Camera init: 362339 ns
+Seg init: 2855348 ns
+Seg prediction: 61267243 ns
+Seg get mask: 318028 ns
+Lane init: 1866452
+Lane prediction: 10603672
+Lane detection: 3647393 ns
+Lane cm%: 45090 ns
+Seg camera show: 2694878 ns
+Camera init: 361348 ns
+Camera show: 2434960 ns
+Sensors FPS + flip: 1649772 ns
+Camera init: 354019 ns
+Seg init: 1645802 ns
+Seg prediction: 58283466 ns
+Seg get mask: 255809 ns
+Lane init: 1712662
+Lane prediction: 9896605
+Lane detection: 3667134 ns
+Lane cm%: 44180 ns
+Seg camera show: 2671588 ns
+Camera init: 356548 ns
+Camera show: 2490409 ns
+Sensors FPS + flip: 2383089 ns
+Camera init: 872386 ns
+Seg init: 2263820 ns
+Seg prediction: 56889232 ns
+Seg get mask: 233139 ns
+Lane init: 1740902
+Lane prediction: 9826826
+Lane detection: 3611294 ns
+Lane cm%: 43340 ns
+Seg camera show: 2639828 ns
+Camera init: 346278 ns
+Camera show: 2434829 ns
+Sensors FPS + flip: 1867752 ns
+Camera init: 267829 ns
+Seg init: 1695343 ns
+Seg prediction: 60305877 ns
+Seg get mask: 524058 ns
+Lane init: 2169280
+Lane prediction: 9870615
+Lane detection: 3614174 ns
+Lane cm%: 46209 ns
+Seg camera show: 2627248 ns
+Camera init: 360319 ns
+Camera show: 2445909 ns
+Sensors FPS + flip: 1877671 ns
+Camera init: 460078 ns
+Seg init: 1876821 ns
+Seg prediction: 60117799 ns
+Seg get mask: 522357 ns
+Lane init: 1776932
+Lane prediction: 11733007
+Lane detection: 3992792 ns
+Lane cm%: 47740 ns
+Seg camera show: 2764617 ns
+Camera init: 562097 ns
+Camera show: 2470679 ns
+Sensors FPS + flip: 2271670 ns
+Camera init: 300219 ns
+Seg init: 1604173 ns
+Seg prediction: 108922947 ns
+Seg get mask: 555977 ns
+Lane init: 1758172
+Lane prediction: 11999007
+Lane detection: 3669753 ns
+Lane cm%: 46380 ns
+Seg camera show: 2674938 ns
+Camera init: 304748 ns
+Camera show: 2395159 ns
+Sensors FPS + flip: 1489504 ns
+Camera init: 352549 ns
+Seg init: 1622363 ns
+Seg prediction: 56427514 ns
+Seg get mask: 646718 ns
+Lane init: 1659412
+Lane prediction: 10388883
+Lane detection: 3710723 ns
+Lane cm%: 43360 ns
+Seg camera show: 2652248 ns
+Camera init: 326948 ns
+Camera show: 2469109 ns
+Sensors FPS + flip: 2379869 ns
+Camera init: 282519 ns
+Seg init: 1693373 ns
+Seg prediction: 60421327 ns
+Seg get mask: 618088 ns
+Lane init: 1750352
+Lane prediction: 11125069
+Lane detection: 3715873 ns
+Lane cm%: 43560 ns
+Seg camera show: 2697898 ns
+Camera init: 355418 ns
+Camera show: 2404059 ns
+Sensors FPS + flip: 1919012 ns
+Camera init: 281939 ns
+Seg init: 1613873 ns
+Seg prediction: 60824885 ns
+Seg get mask: 640497 ns
+Lane init: 1493163
+Lane prediction: 11193419
+Lane detection: 3787463 ns
+Lane cm%: 43570 ns
+Seg camera show: 2676588 ns
+Camera init: 331568 ns
+Camera show: 2390819 ns
+Sensors FPS + flip: 1873012 ns
+Camera init: 314969 ns
+Seg init: 1602902 ns
+Seg prediction: 64309830 ns
+Seg get mask: 719256 ns
+Lane init: 1451564
+Lane prediction: 11149299
+Lane detection: 3807883 ns
+Lane cm%: 43760 ns
+Seg camera show: 2646868 ns
+Camera init: 351978 ns
+Camera show: 2448379 ns
+Sensors FPS + flip: 1874081 ns
+Camera init: 335279 ns
+Seg init: 1659172 ns
+Seg prediction: 58192387 ns
+Seg get mask: 578237 ns
+Lane init: 1684083
+Lane prediction: 10738981
+Lane detection: 4013222 ns
+Lane cm%: 45400 ns
+Seg camera show: 2699427 ns
+Camera init: 355749 ns
+Camera show: 2483108 ns
+Sensors FPS + flip: 2731958 ns
+Camera init: 428638 ns
+Seg init: 2150591 ns
+Seg prediction: 61848160 ns
+Seg get mask: 640007 ns
+Lane init: 1816652
+Lane prediction: 10728181
+Lane detection: 4029422 ns
+Lane cm%: 44470 ns
+Seg camera show: 2736327 ns
+Camera init: 329949 ns
+Camera show: 2442379 ns
+Sensors FPS + flip: 1913362 ns
+Camera init: 299858 ns
+Seg init: 1690873 ns
+Seg prediction: 58370775 ns
+Seg get mask: 659597 ns
+Lane init: 1497793
+Lane prediction: 11362319
+Lane detection: 3904223 ns
+Lane cm%: 43020 ns
+Seg camera show: 2774777 ns
+Camera init: 350568 ns
+Camera show: 2453679 ns
+Sensors FPS + flip: 1818742 ns
+Camera init: 313538 ns
+Seg init: 1641973 ns
+Seg prediction: 59735809 ns
+Seg get mask: 509558 ns
+Lane init: 1778152
+Lane prediction: 10277604
+Lane detection: 3953622 ns
+Lane cm%: 43380 ns
+Seg camera show: 2742897 ns
+Camera init: 382439 ns
+Camera show: 2475798 ns
+Sensors FPS + flip: 1780202 ns
+Camera init: 314339 ns
+Seg init: 1657682 ns
+Seg prediction: 57419540 ns
+Seg get mask: 760407 ns
+Lane init: 2016101
+Lane prediction: 10817921
+Lane detection: 3924362 ns
+Lane cm%: 45120 ns
+Seg camera show: 2694208 ns
+Camera init: 670027 ns
+Camera show: 2423459 ns
+Sensors FPS + flip: 3223355 ns
+Camera init: 499247 ns
+Seg init: 1641273 ns
+Seg prediction: 61098604 ns
+Seg get mask: 590717 ns
+Lane init: 1708572
+Lane prediction: 10088415
+Lane detection: 3882272 ns
+Lane cm%: 42470 ns
+Seg camera show: 2679788 ns
+Camera init: 322468 ns
+Camera show: 2447129 ns
+Sensors FPS + flip: 1902171 ns
+Camera init: 323208 ns
+Seg init: 1634453 ns
+Seg prediction: 59970219 ns
+Seg get mask: 549988 ns
+Lane init: 1670152
+Lane prediction: 10030924
+Lane detection: 3884283 ns
+Lane cm%: 42430 ns
+Seg camera show: 2659878 ns
+Camera init: 346839 ns
+Camera show: 2463829 ns
+Sensors FPS + flip: 1794282 ns
+Camera init: 349119 ns
+Seg init: 1723072 ns
+Seg prediction: 60631226 ns
+Seg get mask: 600487 ns
+Lane init: 1697062
+Lane prediction: 10445863
+Lane detection: 3944812 ns
+Lane cm%: 45650 ns
+Seg camera show: 2720968 ns
+Camera init: 934985 ns
+Camera show: 2577109 ns
+Sensors FPS + flip: 2851257 ns
+Camera init: 651947 ns
+Seg init: 1836552 ns
+Seg prediction: 58625875 ns
+Seg get mask: 600587 ns
+Lane init: 1707952
+Lane prediction: 10685462
+Lane detection: 4318590 ns
+Lane cm%: 56140 ns
+Seg camera show: 2995086 ns
+Camera init: 384848 ns
+Camera show: 2974137 ns
+Sensors FPS + flip: 2033131 ns
+Camera init: 373438 ns
+Seg init: 1748582 ns
+Seg prediction: 59909050 ns
+Seg get mask: 697576 ns
+Lane init: 1717223
+Lane prediction: 11278658
+Lane detection: 4050122 ns
+Lane cm%: 44930 ns
+Seg camera show: 2801297 ns
+Camera init: 353958 ns
+Camera show: 2472029 ns
+Sensors FPS + flip: 1849242 ns
+Camera init: 347039 ns
+Seg init: 1651642 ns
+Seg prediction: 61463452 ns
+Seg get mask: 615798 ns
+Lane init: 1762892
+Lane prediction: 10148414
+Lane detection: 3880262 ns
+Lane cm%: 43620 ns
+Seg camera show: 2686018 ns
+Camera init: 384529 ns
+Camera show: 2995326 ns
+Sensors FPS + flip: 2258140 ns
+Camera init: 543328 ns
+Seg init: 2011721 ns
+Seg prediction: 61629210 ns
+Seg get mask: 681787 ns
+Lane init: 1668533
+Lane prediction: 10092424
+Lane detection: 4042232 ns
+Lane cm%: 43210 ns
+Seg camera show: 2691328 ns
+Camera init: 350778 ns
+Camera show: 2443099 ns
+Sensors FPS + flip: 1943941 ns
+Camera init: 369438 ns
+Seg init: 1642723 ns
+Seg prediction: 61368922 ns
+Seg get mask: 612187 ns
+Lane init: 2103420
+Lane prediction: 11345610
+Lane detection: 4253740 ns
+Lane cm%: 46200 ns
+Seg camera show: 2699118 ns
+Camera init: 323688 ns
+Camera show: 2490359 ns
+Sensors FPS + flip: 1746342 ns
+Camera init: 311539 ns
+Seg init: 1764092 ns
+Seg prediction: 56634254 ns
+Seg get mask: 575217 ns
+Lane init: 1655703
+Lane prediction: 9834505
+Lane detection: 3864893 ns
 Lane cm%: 43280 ns
-Seg camera show: 2670181 ns
-Camera init: 286387 ns
-Camera show: 2513373 ns
-Sensors FPS + flip: 1886770 ns
-Camera init: 300496 ns
-Seg init: 1602233 ns
-Seg prediction: 56603841 ns
-Seg get mask: 885190 ns
-Lane init: 3701551
-Lane prediction: 8565347
-Lane detection: 4148486 ns
-Lane cm%: 49409 ns
-Seg camera show: 2722121 ns
-Camera init: 296857 ns
-Camera show: 2787420 ns
-Sensors FPS + flip: 1838260 ns
-Camera init: 269837 ns
-Seg init: 1784051 ns
-Seg prediction: 63584816 ns
-Seg get mask: 892961 ns
-Lane init: 2922089
-Lane prediction: 8051044
-Lane detection: 4168225 ns
-Lane cm%: 43639 ns
-Seg camera show: 2726881 ns
-Camera init: 280247 ns
-Camera show: 2553823 ns
-Sensors FPS + flip: 1712611 ns
-Camera init: 330197 ns
-Seg init: 2252135 ns
-Seg prediction: 56748810 ns
-Seg get mask: 761122 ns
-Lane init: 3445303
-Lane prediction: 10824093
-Lane detection: 4636700 ns
-Lane cm%: 45709 ns
-Seg camera show: 2791230 ns
-Camera init: 326197 ns
-Camera show: 2516473 ns
-Sensors FPS + flip: 3354723 ns
-Camera init: 309977 ns
-Seg init: 1632232 ns
-Seg prediction: 61627237 ns
-Seg get mask: 571974 ns
-Lane init: 3063957
-Lane prediction: 9022552
-Lane detection: 4275874 ns
-Lane cm%: 59800 ns
-Seg camera show: 2885359 ns
-Camera init: 306857 ns
-Camera show: 3076137 ns
-Sensors FPS + flip: 2313685 ns
-Camera init: 262487 ns
-Seg init: 1646472 ns
-Seg prediction: 55446464 ns
-Seg get mask: 792102 ns
-Lane init: 8034203
-Lane prediction: 8621117
-Lane detection: 4135326 ns
-Lane cm%: 43109 ns
-Seg camera show: 2721201 ns
-Camera init: 289156 ns
-Camera show: 2517343 ns
-Sensors FPS + flip: 1955919 ns
-Camera init: 272547 ns
-Seg init: 1618003 ns
-Seg prediction: 59702508 ns
-Seg get mask: 515844 ns
-Lane init: 3482652
-Lane prediction: 8185323
-Lane detection: 4714269 ns
-Lane cm%: 47969 ns
-Seg camera show: 2799620 ns
-Camera init: 289787 ns
-Camera show: 2989797 ns
-Sensors FPS + flip: 3619591 ns
-Camera init: 872531 ns
-Seg init: 3814489 ns
-Seg prediction: 54445965 ns
-Seg get mask: 865371 ns
-Lane init: 3005478
-Lane prediction: 8953023
-Lane detection: 4170496 ns
-Lane cm%: 43059 ns
-Seg camera show: 2843900 ns
-Camera init: 336156 ns
-Camera show: 2541792 ns
-Sensors FPS + flip: 2279206 ns
+Seg camera show: 2685927 ns
+Camera init: 363759 ns
+Camera show: 2512758 ns
+Sensors FPS + flip: 1613773 ns
+Camera init: 336909 ns
+Seg init: 1775402 ns
+Seg prediction: 62618377 ns
+Seg get mask: 626077 ns
+Lane init: 1718172
+Lane prediction: 10690762
+Lane detection: 3916192 ns
+Lane cm%: 48460 ns
+Seg camera show: 2686147 ns
+Camera init: 474858 ns
+Camera show: 2477589 ns
+Sensors FPS + flip: 1792992 ns
+Camera init: 327298 ns
+Seg init: 1666933 ns
+Seg prediction: 57308231 ns
+Seg get mask: 632567 ns
+Lane init: 1930421
+Lane prediction: 10470263
+Lane detection: 4076431 ns
+Lane cm%: 45670 ns
+Seg camera show: 3084426 ns
+Camera init: 659027 ns
+Camera show: 2612708 ns
+Sensors FPS + flip: 2713888 ns
+Camera init: 692767 ns
+Seg init: 1658832 ns
+Seg prediction: 62609758 ns
+Seg get mask: 552757 ns
+Lane init: 1732952
+Lane prediction: 10557012
+Lane detection: 3956142 ns
+Lane cm%: 44910 ns
+Seg camera show: 2691338 ns
+Camera init: 332858 ns
+Camera show: 2618788 ns
+Sensors FPS + flip: 1810392 ns
+Camera init: 277699 ns
+Seg init: 1692912 ns
+Seg prediction: 57779869 ns
+Seg get mask: 506878 ns
+Lane init: 1569492
+Lane prediction: 10261554
+Lane detection: 3938752 ns
+Lane cm%: 44920 ns
+Seg camera show: 2713907 ns
+Camera init: 360789 ns
+Camera show: 2489098 ns
+Sensors FPS + flip: 1876242 ns
+Camera init: 388489 ns
+Seg init: 1664442 ns
+Seg prediction: 58912684 ns
+Seg get mask: 573197 ns
+Lane init: 1513703
+Lane prediction: 10384543
+Lane detection: 4219521 ns
+Lane cm%: 62670 ns
+Seg camera show: 3119206 ns
+Camera init: 382798 ns
+Camera show: 2524528 ns
+Sensors FPS + flip: 2144401 ns
+Camera init: 371068 ns
+Seg init: 1694052 ns
+Seg prediction: 56307466 ns
+Seg get mask: 550788 ns
+Lane init: 1527074
+Lane prediction: 9874095
+Lane detection: 3878512 ns
+Lane cm%: 43010 ns
+Seg camera show: 2664188 ns
+Camera init: 366398 ns
+Camera show: 2461239 ns
+Sensors FPS + flip: 1968241 ns
+Camera init: 321208 ns
+Seg init: 1648623 ns
+Seg prediction: 62650277 ns
+Seg get mask: 229729 ns
+Lane init: 1776402
+Lane prediction: 10345213
+Lane detection: 4235131 ns
+Lane cm%: 44810 ns
+Seg camera show: 2676898 ns
+Camera init: 306698 ns
+Camera show: 2402040 ns
+Sensors FPS + flip: 1831872 ns
+Camera init: 268889 ns
+Seg init: 1610813 ns
+Seg prediction: 57823469 ns
+Seg get mask: 330698 ns
+Lane init: 1906761
+Lane prediction: 10433633
+Lane detection: 3936422 ns
+Lane cm%: 44590 ns
+Seg camera show: 2694088 ns
+Camera init: 649217 ns
+Camera show: 2460669 ns
+Sensors FPS + flip: 2855147 ns
+Camera init: 715306 ns
+Seg init: 1803562 ns
+Seg prediction: 58567575 ns
+Seg get mask: 254679 ns
+Lane init: 1683742
+Lane prediction: 10163894
+Lane detection: 3891622 ns
+Lane cm%: 43130 ns
+Seg camera show: 2625349 ns
+Camera init: 349188 ns
+Camera show: 2449119 ns
+Sensors FPS + flip: 1939051 ns
+Camera init: 357118 ns
+Seg init: 1675923 ns
+Seg prediction: 65790922 ns
+Seg get mask: 245569 ns
+Lane init: 1710762
+Lane prediction: 10142225
+Lane detection: 3882472 ns
+Lane cm%: 43780 ns
+Seg camera show: 2675168 ns
+Camera init: 340749 ns
+Camera show: 2396179 ns
+Sensors FPS + flip: 1885921 ns
+Camera init: 307869 ns
+Seg init: 1645582 ns
+Seg prediction: 58899034 ns
+Seg get mask: 237539 ns
+Lane init: 1614583
+Lane prediction: 10160514
+Lane detection: 3886962 ns
+Lane cm%: 43590 ns
+Seg camera show: 2674688 ns
+Camera init: 351208 ns
+Camera show: 2550968 ns
+Sensors FPS + flip: 2262390 ns
+Camera init: 591327 ns
+Seg init: 1820542 ns
+Seg prediction: 61237793 ns
+Seg get mask: 248439 ns
+Lane init: 1671663
+Lane prediction: 10532012
+Lane detection: 3964472 ns
+Lane cm%: 44670 ns
+Seg camera show: 2983636 ns
+Camera init: 919296 ns
+Camera show: 2846797 ns
+Sensors FPS + flip: 3118436 ns
+Camera init: 290579 ns
+Seg init: 1651633 ns
+Seg prediction: 56556064 ns
+Seg get mask: 258059 ns
+Lane init: 1580883
+Lane prediction: 10181334
+Lane detection: 3839873 ns
+Lane cm%: 42260 ns
+Seg camera show: 2650638 ns
+Camera init: 317858 ns
+Camera show: 2442269 ns
+Sensors FPS + flip: 1617723 ns
+Camera init: 339249 ns
+Seg init: 1704372 ns
+Seg prediction: 99363471 ns
+Seg get mask: 247008 ns
+Lane init: 1726833
+Lane prediction: 10693151
+Lane detection: 4007952 ns
+Lane cm%: 43120 ns
+Seg camera show: 2744287 ns
+Camera init: 312079 ns
+Camera show: 2540028 ns
+Sensors FPS + flip: 1537523 ns
+Camera init: 730357 ns
+Seg init: 1639912 ns
+Seg prediction: 59614740 ns
+Seg get mask: 252759 ns
+Lane init: 1598193
+Lane prediction: 10189254
+Lane detection: 3928003 ns
+Lane cm%: 44510 ns
+Seg camera show: 2661698 ns
+Camera init: 411588 ns
+Camera show: 2340000 ns
+Sensors FPS + flip: 1725743 ns
+Camera init: 514588 ns
+Seg init: 2033410 ns
+Seg prediction: 61830490 ns
+Seg get mask: 226779 ns
+Lane init: 1656753
+Lane prediction: 10225344
+Lane detection: 3880842 ns
+Lane cm%: 43210 ns
+Seg camera show: 2800837 ns
+Camera init: 544788 ns
+Camera show: 2497139 ns
+Sensors FPS + flip: 1865261 ns
+Camera init: 323838 ns
+Seg init: 1642813 ns
+Seg prediction: 61487861 ns
+Seg get mask: 626157 ns
+Lane init: 1915402
+Lane prediction: 10886271
+Lane detection: 3927202 ns
+Lane cm%: 44400 ns
+Seg camera show: 2743667 ns
+Camera init: 478448 ns
+Camera show: 2489639 ns
+Sensors FPS + flip: 2123850 ns
+Camera init: 342968 ns
+Seg init: 2266410 ns
+Seg prediction: 61275493 ns
+Seg get mask: 247009 ns
+Lane init: 1671322
+Lane prediction: 10377643
+Lane detection: 3934202 ns
+Lane cm%: 44190 ns
+Seg camera show: 2951927 ns
+Camera init: 653377 ns
+Camera show: 2466938 ns
+Sensors FPS + flip: 2587219 ns
+Camera init: 809806 ns
+Seg init: 1884602 ns
+Seg prediction: 61151803 ns
+Seg get mask: 829267 ns
+Lane init: 1928351
+Lane prediction: 7952904
+Lane detection: 4143941 ns
+Lane cm%: 45280 ns
+Seg camera show: 2677478 ns
+Camera init: 353468 ns
+Camera show: 2477819 ns
+Sensors FPS + flip: 1744582 ns
+Camera init: 284549 ns
+Seg init: 1723672 ns
+Seg prediction: 60803145 ns
+Seg get mask: 230979 ns
+Lane init: 1558373
+Lane prediction: 9996905
+Lane detection: 3846272 ns
+Lane cm%: 42560 ns
+Seg camera show: 2645848 ns
+Camera init: 322709 ns
+Camera show: 2428379 ns
+Sensors FPS + flip: 1757712 ns
+Camera init: 321988 ns
+Seg init: 1685023 ns
+Seg prediction: 60134308 ns
+Seg get mask: 244549 ns
+Lane init: 1548763
+Lane prediction: 10075274
+Lane detection: 3863173 ns
+Lane cm%: 43479 ns
+Seg camera show: 2694348 ns
+Camera init: 360168 ns
+Camera show: 3202526 ns
+Sensors FPS + flip: 2153830 ns
+Camera init: 388179 ns
+Seg init: 1676042 ns
+Seg prediction: 58330186 ns
+Seg get mask: 245449 ns
+Lane init: 1442734
+Lane prediction: 10038304
+Lane detection: 4113632 ns
+Lane cm%: 45469 ns
+Seg camera show: 2837948 ns
+Camera init: 1130375 ns
+Camera show: 2582689 ns
+Sensors FPS + flip: 3214106 ns
+Camera init: 344508 ns
+Seg init: 1653723 ns
+Seg prediction: 61818200 ns
+Seg get mask: 245369 ns
+Lane init: 1375904
+Lane prediction: 10243863
+Lane detection: 3842753 ns
+Lane cm%: 43890 ns
+Seg camera show: 2627719 ns
+Camera init: 351389 ns
+Camera show: 2456169 ns
+Sensors FPS + flip: 1815751 ns
+Camera init: 276209 ns
+Seg init: 1673923 ns
+Seg prediction: 62200499 ns
+Seg get mask: 231969 ns
+Lane init: 1369764
+Lane prediction: 10036735
+Lane detection: 3854082 ns
+Lane cm%: 41870 ns
+Seg camera show: 2633678 ns
+Camera init: 334849 ns
+Camera show: 2599848 ns
+Sensors FPS + flip: 1858901 ns
+Camera init: 437518 ns
+Seg init: 2320699 ns
+Seg prediction: 58277027 ns
+Seg get mask: 859676 ns
+Lane init: 2267340
+Lane prediction: 10311233
+Lane detection: 4045322 ns
+Lane cm%: 44109 ns
+Seg camera show: 2664678 ns
+Camera init: 724077 ns
+Camera show: 2421209 ns
+Sensors FPS + flip: 2573858 ns
+Camera init: 611047 ns
+Seg init: 1876401 ns
+Seg prediction: 61158914 ns
+Seg get mask: 245949 ns
+Lane init: 1453913
+Lane prediction: 10205504
+Lane detection: 3835903 ns
+Lane cm%: 43409 ns
+Seg camera show: 2623209 ns
+Camera init: 321539 ns
+Camera show: 2391749 ns
+Sensors FPS + flip: 1672193 ns
+Camera init: 377208 ns
+Seg init: 1580703 ns
+Seg prediction: 64427368 ns
+Seg get mask: 244729 ns
+Lane init: 1455354
+Lane prediction: 10094884
+Lane detection: 3861723 ns
+Lane cm%: 42139 ns
+Seg camera show: 2678319 ns
+Camera init: 354388 ns
+Camera show: 2440429 ns
+Sensors FPS + flip: 2011571 ns
+Camera init: 272869 ns
+Seg init: 1644502 ns
+Seg prediction: 58639905 ns
+Seg get mask: 278899 ns
+Lane init: 1481754
+Lane prediction: 10103314
+Lane detection: 3939973 ns
+Lane cm%: 42569 ns
+Seg camera show: 2660229 ns
+Camera init: 367219 ns
+Camera show: 2426799 ns
+Sensors FPS + flip: 1837741 ns
+Camera init: 410468 ns
+Seg init: 1817792 ns
+Seg prediction: 61991479 ns
+Seg get mask: 470478 ns
+Lane init: 1778612
+Lane prediction: 10582842
+Lane detection: 4851248 ns
+Lane cm%: 42970 ns
+Seg camera show: 2671978 ns
+Camera init: 343888 ns
+Camera show: 2464079 ns
+Sensors FPS + flip: 1670702 ns
+Camera init: 326368 ns
+Seg init: 1717232 ns
+Seg prediction: 55743898 ns
+Seg get mask: 248459 ns
+Lane init: 1681962
+Lane prediction: 10214314
+Lane detection: 3894013 ns
+Lane cm%: 42480 ns
+Seg camera show: 2659597 ns
+Camera init: 355349 ns
+Camera show: 2446569 ns
+Sensors FPS + flip: 1752922 ns
+Camera init: 1090136 ns
+Seg init: 1971842 ns
+Seg prediction: 62566037 ns
+Seg get mask: 230389 ns
+Lane init: 1605452
+Lane prediction: 10153164
+Lane detection: 3874873 ns
+Lane cm%: 42960 ns
+Seg camera show: 2625078 ns
+Camera init: 371988 ns
+Camera show: 2458779 ns
+Sensors FPS + flip: 1655582 ns
+Camera init: 276149 ns
+Seg init: 1708132 ns
+Seg prediction: 59139613 ns
+Seg get mask: 673007 ns
+Lane init: 1732932
+Lane prediction: 10443492
+Lane detection: 4102482 ns
+Lane cm%: 47890 ns
+Seg camera show: 2624588 ns
+Camera init: 836526 ns
+Camera show: 2420399 ns
+Sensors FPS + flip: 4175711 ns
+Camera init: 1252144 ns
+Seg init: 2907907 ns
+Seg prediction: 62437118 ns
+Seg get mask: 249749 ns
+Lane init: 1456543
+Lane prediction: 9993765
+Lane detection: 3892942 ns
+Lane cm%: 42670 ns
+Seg camera show: 2671738 ns
+Camera init: 330888 ns
+Camera show: 2442669 ns
+Sensors FPS + flip: 1917141 ns
+Camera init: 362848 ns
+Seg init: 1666113 ns
+Seg prediction: 59334322 ns
+Seg get mask: 255868 ns
+Lane init: 1474904
+Lane prediction: 10245553
+Lane detection: 4021412 ns
+Lane cm%: 42910 ns
+Seg camera show: 2685218 ns
+Camera init: 452098 ns
+Camera show: 2448069 ns
+Sensors FPS + flip: 1737982 ns
+Camera init: 380678 ns
+Seg init: 1908991 ns
+Seg prediction: 60142329 ns
+Seg get mask: 649337 ns
+Lane init: 2669227
+Lane prediction: 10100165
+Lane detection: 3953542 ns
+Lane cm%: 44110 ns
+Seg camera show: 2665608 ns
+Camera init: 356339 ns
+Camera show: 2487398 ns
+Sensors FPS + flip: 2075681 ns
+Camera init: 329718 ns
+Seg init: 1738072 ns
+Seg prediction: 57020093 ns
+Seg get mask: 240559 ns
+Lane init: 1498503
+Lane prediction: 10772521
+Lane detection: 3915572 ns
+Lane cm%: 42090 ns
+Seg camera show: 2648428 ns
+Camera init: 326368 ns
+Camera show: 2439779 ns
+Sensors FPS + flip: 1682683 ns
+Camera init: 363788 ns
+Seg init: 1687693 ns
+Seg prediction: 61145493 ns
+Seg get mask: 277409 ns
+Lane init: 1584663
+Lane prediction: 10236523
+Lane detection: 4109912 ns
+Lane cm%: 41530 ns
+Seg camera show: 2610438 ns
+Camera init: 326798 ns
+Camera show: 2425509 ns
+Sensors FPS + flip: 1795562 ns
+Camera init: 512347 ns
+Seg init: 2770808 ns
+Seg prediction: 58086647 ns
+Seg get mask: 526178 ns
+Lane init: 1442853
+Lane prediction: 9947145
+Lane detection: 4072922 ns
+Lane cm%: 45600 ns
+Seg camera show: 2740318 ns
+Camera init: 661337 ns
+Camera show: 2617648 ns
+Sensors FPS + flip: 3520884 ns
+Camera init: 765106 ns
+Seg init: 2106441 ns
+Seg prediction: 59321982 ns
+Seg get mask: 542167 ns
+Lane init: 1702843
+Lane prediction: 10322823
+Lane detection: 3917432 ns
+Lane cm%: 44450 ns
+Seg camera show: 2652388 ns
+Camera init: 321978 ns
+Camera show: 2440549 ns
+Sensors FPS + flip: 1867832 ns
+Camera init: 466028 ns
+Seg init: 1791982 ns
+Seg prediction: 56172426 ns
+Seg get mask: 228659 ns
+Lane init: 1704182
+Lane prediction: 10638592
+Lane detection: 4394540 ns
+Lane cm%: 64350 ns
+Seg camera show: 2826357 ns
+Camera init: 908126 ns
+Camera show: 2529539 ns
+Sensors FPS + flip: 3149066 ns
+Camera init: 910696 ns
+Seg init: 2989047 ns
+Seg prediction: 66378350 ns
+Seg get mask: 255639 ns
+Lane init: 1790701
+Lane prediction: 10454443
+Lane detection: 3932082 ns
+Lane cm%: 44020 ns
+Seg camera show: 2681198 ns
+Camera init: 374468 ns
+Camera show: 2462179 ns
+Sensors FPS + flip: 1614043 ns
+Camera init: 350839 ns
+Seg init: 1672192 ns
+Seg prediction: 63482023 ns
+Seg get mask: 279559 ns
+Lane init: 1724992
+Lane prediction: 9892275
+Lane detection: 3907942 ns
+Lane cm%: 43520 ns
+Seg camera show: 2667468 ns
+Camera init: 352029 ns
+Camera show: 2432679 ns
+Sensors FPS + flip: 1670162 ns
+Camera init: 388368 ns
+Seg init: 1651073 ns
+Seg prediction: 60135767 ns
+Seg get mask: 247669 ns
+Lane init: 1718292
+Lane prediction: 10062285
+Lane detection: 4186761 ns
+Lane cm%: 45420 ns
+Seg camera show: 2658638 ns
+Camera init: 327649 ns
+Camera show: 2441879 ns
+Sensors FPS + flip: 1765462 ns
+Camera init: 285949 ns
+Seg init: 1677882 ns
+Seg prediction: 57196181 ns
+Seg get mask: 247309 ns
+Lane init: 1699412
+Lane prediction: 8458452
+Lane detection: 4041722 ns
+Lane cm%: 45200 ns
+Seg camera show: 2708289 ns
+Camera init: 962525 ns
+Camera show: 2421029 ns
+Sensors FPS + flip: 2414369 ns
+Camera init: 840896 ns
+Seg init: 1648913 ns
+Seg prediction: 59556490 ns
+Seg get mask: 231539 ns
+Lane init: 1616922
+Lane prediction: 9999785
+Lane detection: 3868393 ns
+Lane cm%: 43200 ns
+Seg camera show: 2640878 ns
+Camera init: 1155655 ns
+Camera show: 2568408 ns
+Sensors FPS + flip: 2050881 ns
+Camera init: 2012921 ns
+Seg init: 2134270 ns
+Seg prediction: 63359103 ns
+Seg get mask: 1104165 ns
+Lane init: 2096391
+Lane prediction: 10350573
+Lane detection: 3867523 ns
+Lane cm%: 44019 ns
+Seg camera show: 2690918 ns
+Camera init: 1124415 ns
+Camera show: 2472539 ns
+Sensors FPS + flip: 1815341 ns
+Camera init: 400868 ns
+Seg init: 1843261 ns
+Seg prediction: 60392598 ns
+Seg get mask: 508347 ns
+Lane init: 1458484
+Lane prediction: 10029244
+Lane detection: 4084092 ns
+Lane cm%: 49569 ns
+Seg camera show: 3232006 ns
+Camera init: 675477 ns
+Camera show: 2442739 ns
+Sensors FPS + flip: 2688258 ns
+Camera init: 367519 ns
+Seg init: 1725212 ns
+Seg prediction: 98555294 ns
+Seg get mask: 833046 ns
+Lane init: 1657993
+Lane prediction: 11919446
+Lane detection: 3866572 ns
+Lane cm%: 42590 ns
+Seg camera show: 2669318 ns
+Camera init: 320898 ns
+Camera show: 2393689 ns
+Sensors FPS + flip: 1605763 ns
+Camera init: 296898 ns
+Seg init: 1620283 ns
+Seg prediction: 58215947 ns
+Seg get mask: 628037 ns
+Lane init: 1656363
+Lane prediction: 9962955
+Lane detection: 3878173 ns
+Lane cm%: 43920 ns
+Seg camera show: 2673807 ns
+Camera init: 290909 ns
+Camera show: 2630098 ns
+Sensors FPS + flip: 3340885 ns
+Camera init: 490378 ns
+Seg init: 1800472 ns
+Seg prediction: 57754739 ns
+Seg get mask: 561177 ns
+Lane init: 1765452
+Lane prediction: 10127584
+Lane detection: 3882533 ns
+Lane cm%: 43430 ns
+Seg camera show: 2673048 ns
+Camera init: 285319 ns
+Camera show: 2452739 ns
+Sensors FPS + flip: 1670482 ns
+Camera init: 329278 ns
+Seg init: 1727412 ns
+Seg prediction: 58717255 ns
+Seg get mask: 535367 ns
+Lane init: 1695613
+Lane prediction: 12079665
+Lane detection: 3843182 ns
+Lane cm%: 43740 ns
+Seg camera show: 2700128 ns
+Camera init: 502758 ns
+Camera show: 2865127 ns
+Sensors FPS + flip: 2104050 ns
+Camera init: 315399 ns
+Seg init: 1701033 ns
+Seg prediction: 66657479 ns
+Seg get mask: 1361313 ns
+Lane init: 2126341
+Lane prediction: 10490712
+Lane detection: 3873622 ns
+Lane cm%: 50770 ns
+Seg camera show: 2715378 ns
+Camera init: 634017 ns
+Camera show: 2424349 ns
+Sensors FPS + flip: 2661989 ns
+Camera init: 332319 ns
+Seg init: 1661582 ns
+Seg prediction: 59415391 ns
+Seg get mask: 622567 ns
+Lane init: 1903131
+Lane prediction: 11029140
+Lane detection: 3869153 ns
+Lane cm%: 43670 ns
+Seg camera show: 2686958 ns
+Camera init: 296299 ns
+Camera show: 2446959 ns
+Sensors FPS + flip: 1897552 ns
+Camera init: 275299 ns
+Seg init: 1710462 ns
+Seg prediction: 58606674 ns
+Seg get mask: 251289 ns
+Lane init: 2331170
+Lane prediction: 11010631
+Lane detection: 4150081 ns
+Lane cm%: 76480 ns
+Seg camera show: 3328695 ns
+Camera init: 773587 ns
+Camera show: 6406201 ns
+Sensors FPS + flip: 2721127 ns
+Camera init: 510407 ns
+Seg init: 2058261 ns
+Seg prediction: 64440729 ns
+Seg get mask: 257638 ns
+Lane init: 2467389
+Lane prediction: 11563248
+Lane detection: 4036452 ns
+Lane cm%: 55799 ns
+Seg camera show: 3138826 ns
+Camera init: 404838 ns
+Camera show: 2688238 ns
+Sensors FPS + flip: 2086840 ns
+Camera init: 313729 ns
+Seg init: 1717162 ns
+Seg prediction: 60093358 ns
+Seg get mask: 259839 ns
+Lane init: 1908902
+Lane prediction: 11181549
+Lane detection: 3877412 ns
+Lane cm%: 52430 ns
+Seg camera show: 3023206 ns
+Camera init: 299229 ns
+Camera show: 2713008 ns
+Sensors FPS + flip: 2046301 ns
+Camera init: 288969 ns
+Seg init: 1684382 ns
+Seg prediction: 59856960 ns
+Seg get mask: 248618 ns
+Lane init: 2762468
+Lane prediction: 10809721
+Lane detection: 7071088 ns
+Lane cm%: 95049 ns
+Seg camera show: 5563675 ns
+Camera init: 479998 ns
+Camera show: 3833682 ns
+Sensors FPS + flip: 2198000 ns
+Camera init: 484078 ns
+Seg init: 1769402 ns
+Seg prediction: 69293187 ns
+Seg get mask: 307578 ns
+Lane init: 1992521
+Lane prediction: 11929996
+Lane detection: 4020312 ns
+Lane cm%: 47450 ns
+Seg camera show: 3112355 ns
+Camera init: 317719 ns
+Camera show: 2511628 ns
+Sensors FPS + flip: 1737023 ns
+Camera init: 375928 ns
+Seg init: 1905712 ns
+Seg prediction: 58796634 ns
+Seg get mask: 268859 ns
+Lane init: 1647592
+Lane prediction: 8580472
+Lane detection: 4952818 ns
+Lane cm%: 68520 ns
+Seg camera show: 3578013 ns
+Camera init: 717357 ns
+Camera show: 2479999 ns
+Sensors FPS + flip: 2610948 ns
+Camera init: 319099 ns
+Seg init: 1862101 ns
+Seg prediction: 57865159 ns
+Seg get mask: 287768 ns
+Lane init: 1652513
+Lane prediction: 9999255
+Lane detection: 4348020 ns
+Lane cm%: 45450 ns
+Seg camera show: 2806657 ns
+Camera init: 358408 ns
+Camera show: 2498479 ns
+Sensors FPS + flip: 1672602 ns
+Camera init: 357339 ns
+Seg init: 1744512 ns
+Seg prediction: 62089599 ns
+Seg get mask: 251449 ns
+Lane init: 1518693
+Lane prediction: 9841345
+Lane detection: 3748623 ns
+Lane cm%: 44250 ns
+Seg camera show: 2762308 ns
+Camera init: 291758 ns
+Camera show: 2504389 ns
+Sensors FPS + flip: 1813862 ns
+Camera init: 289419 ns
+Seg init: 1646342 ns
+Seg prediction: 58315767 ns
+Seg get mask: 267478 ns
+Lane init: 1634043
+Lane prediction: 9829235
+Lane detection: 3778553 ns
+Lane cm%: 44340 ns
+Seg camera show: 2689318 ns
+Camera init: 304618 ns
+Camera show: 2434679 ns
+Sensors FPS + flip: 1744822 ns
+Camera init: 335568 ns
+Seg init: 1589993 ns
+Seg prediction: 59211563 ns
+Seg get mask: 263568 ns
+Lane init: 1416714
+Lane prediction: 10054324
+Lane detection: 3861443 ns
+Lane cm%: 47160 ns
+Seg camera show: 2738017 ns
+Camera init: 814146 ns
+Camera show: 2488699 ns
+Sensors FPS + flip: 4774338 ns
+Camera init: 579707 ns
+Seg init: 1683513 ns
+Seg prediction: 63387104 ns
+Seg get mask: 262999 ns
+Lane init: 1452843
+Lane prediction: 10379273
+Lane detection: 3757983 ns
+Lane cm%: 44610 ns
+Seg camera show: 2688968 ns
+Camera init: 385158 ns
+Camera show: 2485109 ns
+Sensors FPS + flip: 2033960 ns
+Camera init: 389709 ns
+Seg init: 1676552 ns
+Seg prediction: 61930170 ns
+Seg get mask: 262839 ns
+Lane init: 1483383
+Lane prediction: 10140944
+Lane detection: 3748523 ns
+Lane cm%: 44560 ns
+Seg camera show: 2659398 ns
+Camera init: 299148 ns
+Camera show: 2489609 ns
+Sensors FPS + flip: 1891831 ns
+Camera init: 323369 ns
+Seg init: 1896301 ns
+Seg prediction: 62159709 ns
+Seg get mask: 344039 ns
+Lane init: 1637532
+Lane prediction: 10249404
+Lane detection: 3793772 ns
+Lane cm%: 45430 ns
+Seg camera show: 2749788 ns
+Camera init: 375338 ns
+Camera show: 2490629 ns
+Sensors FPS + flip: 3013506 ns
+Camera init: 858636 ns
+Seg init: 1689772 ns
+Seg prediction: 60680496 ns
+Seg get mask: 256459 ns
+Lane init: 1523303
+Lane prediction: 9816375
+Lane detection: 3657904 ns
+Lane cm%: 45170 ns
+Seg camera show: 2693977 ns
+Camera init: 350549 ns
+Camera show: 2506088 ns
+Sensors FPS + flip: 3380125 ns
+Camera init: 277378 ns
+Seg init: 2282490 ns
+Seg prediction: 65974542 ns
+Seg get mask: 304528 ns
+Lane init: 1587453
+Lane prediction: 7913244
+Lane detection: 3717794 ns
+Lane cm%: 44429 ns
+Seg camera show: 2659638 ns
+Camera init: 332489 ns
+Camera show: 2407889 ns
+Sensors FPS + flip: 1961521 ns
+Camera init: 477707 ns
+Seg init: 1681763 ns
+Seg prediction: 60565156 ns
+Seg get mask: 380048 ns
+Lane init: 1973341
+Lane prediction: 11298449
+Lane detection: 3841543 ns
+Lane cm%: 53950 ns
+Seg camera show: 2780618 ns
+Camera init: 301738 ns
+Camera show: 2542219 ns
+Sensors FPS + flip: 1945131 ns
+Camera init: 320349 ns
+Seg init: 1846122 ns
+Seg prediction: 66685148 ns
+Seg get mask: 548687 ns
+Lane init: 1537473
+Lane prediction: 10632082
+Lane detection: 3806923 ns
+Lane cm%: 47100 ns
+Seg camera show: 2744638 ns
+Camera init: 347848 ns
+Camera show: 2452239 ns
+Sensors FPS + flip: 3412975 ns
+Camera init: 574137 ns
+Seg init: 1837192 ns
+Seg prediction: 74134094 ns
+Seg get mask: 426338 ns
+Lane init: 1561843
+Lane prediction: 10207034
+Lane detection: 3750933 ns
+Lane cm%: 47600 ns
+Seg camera show: 2696838 ns
+Camera init: 345518 ns
+Camera show: 2425219 ns
+Sensors FPS + flip: 2797448 ns
+Camera init: 714737 ns
+Seg init: 2404369 ns
+Seg prediction: 58612344 ns
+Seg get mask: 254929 ns
+Lane init: 1807442
+Lane prediction: 10296934
+Lane detection: 3763183 ns
+Lane cm%: 48560 ns
+Seg camera show: 2691907 ns
+Camera init: 353269 ns
+Camera show: 2417109 ns
+Sensors FPS + flip: 2215310 ns
+Camera init: 321328 ns
+Seg init: 1832892 ns
+Seg prediction: 64974957 ns
+Seg get mask: 261948 ns
+Lane init: 1701773
+Lane prediction: 10463062
+Lane detection: 3780833 ns
+Lane cm%: 48740 ns
+Seg camera show: 2716437 ns
+Camera init: 321999 ns
+Camera show: 2462759 ns
+Sensors FPS + flip: 2075600 ns
+Camera init: 514388 ns
+Seg init: 2036631 ns
+Seg prediction: 62508027 ns
+Seg get mask: 571808 ns
+Lane init: 1808942
+Lane prediction: 12165455
+Lane detection: 4335581 ns
+Lane cm%: 56019 ns
+Seg camera show: 2758798 ns
+Camera init: 292408 ns
+Camera show: 2651608 ns
+Sensors FPS + flip: 2728268 ns
+Camera init: 384808 ns
+Seg init: 1772492 ns
+Seg prediction: 56019317 ns
+Seg get mask: 566067 ns
+Lane init: 1665883
+Lane prediction: 9987125
+Lane detection: 3927592 ns
+Lane cm%: 44200 ns
+Seg camera show: 2659998 ns
+Camera init: 323129 ns
+Camera show: 2445569 ns
+Sensors FPS + flip: 1889741 ns
+Camera init: 283489 ns
+Seg init: 1688252 ns
+Seg prediction: 62033450 ns
+Seg get mask: 560377 ns
+Lane init: 1645313
+Lane prediction: 11097790
+Lane detection: 3759063 ns
+Lane cm%: 47809 ns
+Seg camera show: 2751288 ns
+Camera init: 354288 ns
+Camera show: 2392669 ns
+Sensors FPS + flip: 1799012 ns
+Camera init: 290229 ns
+Seg init: 1623283 ns
+Seg prediction: 57029312 ns
+Seg get mask: 586497 ns
+Lane init: 1487144
+Lane prediction: 9876655
+Lane detection: 3701153 ns
+Lane cm%: 54260 ns
+Seg camera show: 2640498 ns
+Camera init: 290058 ns
+Camera show: 2443949 ns
+Sensors FPS + flip: 1862572 ns
+Camera init: 275278 ns
+Seg init: 1666023 ns
+Seg prediction: 59183602 ns
+Seg get mask: 666877 ns
+Lane init: 1542363
+Lane prediction: 11636098
+Lane detection: 3680813 ns
+Lane cm%: 46750 ns
+Seg camera show: 2717527 ns
+Camera init: 286169 ns
+Camera show: 2476639 ns
+Sensors FPS + flip: 1730432 ns
+Camera init: 325398 ns
+Seg init: 1634353 ns
+Seg prediction: 60426707 ns
+Seg get mask: 590457 ns
+Lane init: 1532403
+Lane prediction: 10385153
+Lane detection: 3662263 ns
+Lane cm%: 44750 ns
+Seg camera show: 2838457 ns
+Camera init: 526468 ns
+Camera show: 2536618 ns
+Sensors FPS + flip: 3656574 ns
+Camera init: 440768 ns
+Seg init: 1693863 ns
+Seg prediction: 61060624 ns
+Seg get mask: 536197 ns
+Lane init: 1523624
+Lane prediction: 10477852
+Lane detection: 3678833 ns
+Lane cm%: 47810 ns
+Seg camera show: 2720618 ns
+Camera init: 321878 ns
+Camera show: 2459499 ns
+Sensors FPS + flip: 1806892 ns
+Camera init: 478568 ns
+Seg init: 1645262 ns
+Seg prediction: 62603698 ns
+Seg get mask: 558767 ns
+Lane init: 1493133
+Lane prediction: 9978415
+Lane detection: 3777553 ns
+Lane cm%: 44800 ns
+Seg camera show: 2659978 ns
+Camera init: 286609 ns
+Camera show: 2461669 ns
+Sensors FPS + flip: 1874181 ns
+Camera init: 281199 ns
+Seg init: 1651412 ns
+Seg prediction: 58723515 ns
+Seg get mask: 592567 ns
+Lane init: 1778792
+Lane prediction: 10441813
+Lane detection: 3679743 ns
+Lane cm%: 43150 ns
+Seg camera show: 2650448 ns
+Camera init: 323268 ns
+Camera show: 2459769 ns
+Sensors FPS + flip: 2173230 ns
+Camera init: 344039 ns
+Seg init: 1776612 ns
+Seg prediction: 60525906 ns
+Seg get mask: 381068 ns
+Lane init: 3303485
+Lane prediction: 12820022
+Lane detection: 3778673 ns
+Lane cm%: 56160 ns
+Seg camera show: 2853367 ns
+Camera init: 563047 ns
+Camera show: 2421739 ns
+Sensors FPS + flip: 4197441 ns
+Camera init: 536678 ns
+Seg init: 2144320 ns
+Seg prediction: 99798039 ns
+Seg get mask: 439848 ns
+Lane init: 2337959
+Lane prediction: 10543302
+Lane detection: 3627094 ns
+Lane cm%: 44440 ns
+Seg camera show: 2678387 ns
+Camera init: 323749 ns
+Camera show: 2405979 ns
+Sensors FPS + flip: 2143900 ns
+Camera init: 326889 ns
+Seg init: 1784972 ns
+Seg prediction: 58354636 ns
+Seg get mask: 284709 ns
+Lane init: 1678332
+Lane prediction: 10331053
+Lane detection: 3619094 ns
+Lane cm%: 50489 ns
+Seg camera show: 2710188 ns
+Camera init: 432238 ns
+Camera show: 3261805 ns
+Sensors FPS + flip: 2875037 ns
+Camera init: 281078 ns
+Seg init: 1999401 ns
+Seg prediction: 59768990 ns
+Seg get mask: 267879 ns
+Lane init: 1667952
+Lane prediction: 7743465
+Lane detection: 3559984 ns
+Lane cm%: 45010 ns
+Seg camera show: 2690918 ns
+Camera init: 320108 ns
+Camera show: 2448879 ns
+Sensors FPS + flip: 1839732 ns
+Camera init: 1320894 ns
+Seg init: 1720073 ns
+Seg prediction: 61005574 ns
+Seg get mask: 565237 ns
+Lane init: 1663663
+Lane prediction: 10536452
+Lane detection: 3597454 ns
+Lane cm%: 43389 ns
+Seg camera show: 2704748 ns
+Camera init: 325689 ns
+Camera show: 2858077 ns
+Sensors FPS + flip: 1852041 ns
+Camera init: 328859 ns
+Seg init: 1882191 ns
+Seg prediction: 58428766 ns
+Seg get mask: 884566 ns
+Lane init: 2003881
+Lane prediction: 10619492
+Lane detection: 3553754 ns
+Lane cm%: 43430 ns
+Seg camera show: 2661468 ns
+Camera init: 294099 ns
+Camera show: 2361199 ns
+Sensors FPS + flip: 1979481 ns
+Camera init: 453778 ns
+Seg init: 1697973 ns
+Seg prediction: 59165472 ns
+Seg get mask: 966426 ns
+Lane init: 1856181
+Lane prediction: 10118495
+Lane detection: 3586293 ns
+Lane cm%: 44060 ns
+Seg camera show: 3033286 ns
+Camera init: 336609 ns
+Camera show: 3041386 ns
+Sensors FPS + flip: 1954561 ns
+Camera init: 272148 ns
+Seg init: 1656983 ns
+Seg prediction: 58304756 ns
+Seg get mask: 550818 ns
+Lane init: 1464623
+Lane prediction: 9894205
+Lane detection: 3609194 ns
+Lane cm%: 43840 ns
+Seg camera show: 2639868 ns
+Camera init: 305688 ns
+Camera show: 2440319 ns
+Sensors FPS + flip: 1840222 ns
+Camera init: 288118 ns
+Seg init: 1595263 ns
+Seg prediction: 61054034 ns
+Seg get mask: 529288 ns
+Lane init: 1418973
+Lane prediction: 9679586
+Lane detection: 4326221 ns
+Lane cm%: 44520 ns
+Seg camera show: 2657278 ns
+Camera init: 332299 ns
+Camera show: 2433549 ns
+Sensors FPS + flip: 1757702 ns
+Camera init: 277108 ns
+Seg init: 1725833 ns
+Seg prediction: 58246396 ns
+Seg get mask: 527648 ns
+Lane init: 7031748
+Lane prediction: 10964530
+Lane detection: 4193291 ns
+Lane cm%: 54180 ns
+Seg camera show: 3599903 ns
+Camera init: 299509 ns
+Camera show: 2182870 ns
+Sensors FPS + flip: 3231675 ns
+Camera init: 283078 ns
+Seg init: 1650633 ns
+Seg prediction: 67819303 ns
+Seg get mask: 348259 ns
+Lane init: 6128782
+Lane prediction: 12058845
+Lane detection: 8789720 ns
+Lane cm%: 73180 ns
+Seg camera show: 4275281 ns
+Camera init: 307088 ns
+Camera show: 2437350 ns
+Sensors FPS + flip: 1689713 ns
+Camera init: 389408 ns
+Seg init: 2141881 ns
+Seg prediction: 68522949 ns
+Seg get mask: 684157 ns
+Lane init: 4759938
+Lane prediction: 13142632
+Lane detection: 3899412 ns
+Lane cm%: 44650 ns
+Seg camera show: 3039546 ns
+Camera init: 295948 ns
+Camera show: 2584669 ns
+Sensors FPS + flip: 1636682 ns
+Camera init: 281669 ns
+Seg init: 1768891 ns
+Seg prediction: 55864307 ns
+Seg get mask: 225019 ns
+Lane init: 2344090
+Lane prediction: 10839611
+Lane detection: 3687144 ns
+Lane cm%: 44949 ns
+Seg camera show: 2730828 ns
+Camera init: 334978 ns
+Camera show: 2653318 ns
+Sensors FPS + flip: 1922772 ns
+Camera init: 569468 ns
+Seg init: 3457634 ns
+Seg prediction: 75979747 ns
+Seg get mask: 285969 ns
+Lane init: 2139450
+Lane prediction: 11205500
+Lane detection: 3704943 ns
+Lane cm%: 54390 ns
+Seg camera show: 2971476 ns
+Camera init: 289389 ns
+Camera show: 2503808 ns
+Sensors FPS + flip: 1704903 ns
+Camera init: 271719 ns
+Seg init: 1696112 ns
+Seg prediction: 58229857 ns
+Seg get mask: 368339 ns
+Lane init: 3109305
+Lane prediction: 11601588
+Lane detection: 3335515 ns
+Lane cm%: 45489 ns
+Seg camera show: 2710258 ns
+Camera init: 286689 ns
+Camera show: 2533178 ns
+Sensors FPS + flip: 2179890 ns
+Camera init: 275168 ns
+Seg init: 1717843 ns
+Seg prediction: 65699683 ns
+Seg get mask: 280228 ns
+Lane init: 1681773
+Lane prediction: 14632003
+Lane detection: 6710570 ns
+Lane cm%: 68570 ns
+Seg camera show: 3774803 ns
+Camera init: 565908 ns
+Camera show: 3430654 ns
+Sensors FPS + flip: 2238150 ns
+Camera init: 347588 ns
+Seg init: 2977627 ns
+Seg prediction: 62911416 ns
+Seg get mask: 265698 ns
+Lane init: 1512493
+Lane prediction: 10117235
+Lane detection: 3407174 ns
+Lane cm%: 47620 ns
+Seg camera show: 3131306 ns
+Camera init: 398508 ns
+Camera show: 2567498 ns
+Sensors FPS + flip: 2357499 ns
+Camera init: 312989 ns
+Seg init: 1802992 ns
+Seg prediction: 58476286 ns
+Seg get mask: 526067 ns
+Lane init: 1482253
+Lane prediction: 10422473
+Lane detection: 3311865 ns
+Lane cm%: 50080 ns
+Seg camera show: 2701718 ns
+Camera init: 294559 ns
+Camera show: 2466649 ns
+Sensors FPS + flip: 2111790 ns
+Camera init: 282819 ns
+Seg init: 1769342 ns
+Seg prediction: 60995165 ns
+Seg get mask: 400868 ns
+Lane init: 1828631
+Lane prediction: 11099980
+Lane detection: 4292891 ns
+Lane cm%: 51719 ns
+Seg camera show: 2740148 ns
+Camera init: 296948 ns
+Camera show: 2530189 ns
+Sensors FPS + flip: 1989011 ns
+Camera init: 679297 ns
+Seg init: 2122611 ns
+Seg prediction: 61776141 ns
+Seg get mask: 577387 ns
+Lane init: 1593323
+Lane prediction: 9933915
+Lane detection: 3580183 ns
+Lane cm%: 48060 ns
+Seg camera show: 2679528 ns
+Camera init: 287189 ns
+Camera show: 2434489 ns
+Sensors FPS + flip: 1972021 ns
+Camera init: 284409 ns
+Seg init: 1640762 ns
+Seg prediction: 61309513 ns
+Seg get mask: 910296 ns
+Lane init: 1646222
+Lane prediction: 10849371
+Lane detection: 3764563 ns
+Lane cm%: 61570 ns
+Seg camera show: 3583314 ns
+Camera init: 355719 ns
+Camera show: 2481169 ns
+Sensors FPS + flip: 1754602 ns
+Camera init: 274888 ns
+Seg init: 1670723 ns
+Seg prediction: 58900134 ns
+Seg get mask: 280968 ns
+Lane init: 1678993
+Lane prediction: 12507773
+Lane detection: 3590454 ns
+Lane cm%: 50689 ns
+Seg camera show: 2773828 ns
+Camera init: 325978 ns
+Camera show: 2431189 ns
+Sensors FPS + flip: 4633039 ns
+Camera init: 284799 ns
+Seg init: 1838621 ns
+Seg prediction: 61063264 ns
+Seg get mask: 660407 ns
+Lane init: 1903882
+Lane prediction: 10904450
+Lane detection: 3529014 ns
+Lane cm%: 49930 ns
+Seg camera show: 3169466 ns
+Camera init: 324809 ns
+Camera show: 2194680 ns
+Sensors FPS + flip: 2012051 ns
+Camera init: 285269 ns
+Seg init: 1936861 ns
+Seg prediction: 63409033 ns
+Seg get mask: 603688 ns
+Lane init: 1651652
+Lane prediction: 9963625
+Lane detection: 3533914 ns
+Lane cm%: 43570 ns
+Seg camera show: 2646978 ns
+Camera init: 298509 ns
+Camera show: 2459099 ns
+Sensors FPS + flip: 2234780 ns
+Camera init: 368618 ns
+Seg init: 1898681 ns
+Seg prediction: 60638976 ns
+Seg get mask: 574398 ns
+Lane init: 1834361
+Lane prediction: 11005170
+Lane detection: 3704464 ns
+Lane cm%: 43319 ns
+Seg camera show: 2665458 ns
+Camera init: 389338 ns
+Camera show: 2502559 ns
+Sensors FPS + flip: 1744792 ns
+Camera init: 280699 ns
+Seg init: 1701902 ns
+Seg prediction: 62670437 ns
+Seg get mask: 746847 ns
+Lane init: 2225770
+Lane prediction: 11461318
+Lane detection: 3698083 ns
+Lane cm%: 42290 ns
+Seg camera show: 2615988 ns
+Camera init: 337948 ns
+Camera show: 2563639 ns
+Sensors FPS + flip: 1980261 ns
+Camera init: 294429 ns
+Seg init: 1782092 ns
+Seg prediction: 61641971 ns
+Seg get mask: 536958 ns
+Lane init: 1766632
+Lane prediction: 7965354
+Lane detection: 3687903 ns
+Lane cm%: 43180 ns
+Seg camera show: 2643898 ns
+Camera init: 283499 ns
+Camera show: 2825187 ns
+Sensors FPS + flip: 2819477 ns
+Camera init: 401119 ns
+Seg init: 1929761 ns
+Seg prediction: 57280611 ns
+Seg get mask: 544258 ns
+Lane init: 1706332
+Lane prediction: 10029414
+Lane detection: 3691204 ns
+Lane cm%: 43789 ns
+Seg camera show: 2705168 ns
+Camera init: 287259 ns
+Camera show: 2415889 ns
+Sensors FPS + flip: 1940431 ns
+Camera init: 283599 ns
+Seg init: 1691212 ns
+Seg prediction: 66443830 ns
+Seg get mask: 619097 ns
+Lane init: 1962291
+Lane prediction: 11477208
+Lane detection: 3680113 ns
+Lane cm%: 44070 ns
+Seg camera show: 2725607 ns
+Camera init: 543298 ns
+Camera show: 2072630 ns
+Sensors FPS + flip: 1930662 ns
+Camera init: 336769 ns
+Seg init: 2038960 ns
+Seg prediction: 72130164 ns
+Seg get mask: 542938 ns
+Lane init: 1831751
+Lane prediction: 13804118
+Lane detection: 3670023 ns
+Lane cm%: 60250 ns
+Seg camera show: 3283545 ns
+Camera init: 303389 ns
+Camera show: 2498008 ns
+Sensors FPS + flip: 2611418 ns
+Camera init: 274269 ns
+Seg init: 1950071 ns
+Seg prediction: 62172599 ns
+Seg get mask: 292059 ns
+Lane init: 1486033
+Lane prediction: 9959035
+Lane detection: 3614064 ns
+Lane cm%: 43660 ns
+Seg camera show: 2677428 ns
+Camera init: 285029 ns
+Camera show: 2397309 ns
+Sensors FPS + flip: 1756952 ns
+Camera init: 273529 ns
+Seg init: 1595943 ns
+Seg prediction: 57982828 ns
+Seg get mask: 279889 ns
+Lane init: 1401423
+Lane prediction: 9991195
+Lane detection: 4030122 ns
+Lane cm%: 46400 ns
+Seg camera show: 2820218 ns
+Camera init: 314318 ns
+Camera show: 2557139 ns
+Sensors FPS + flip: 5049588 ns
+Camera init: 417508 ns
+Seg init: 1906942 ns
+Seg prediction: 60636656 ns
+Seg get mask: 262058 ns
+Lane init: 1455984
+Lane prediction: 9799735
+Lane detection: 3604174 ns
+Lane cm%: 43580 ns
+Seg camera show: 2652938 ns
+Camera init: 352108 ns
+Camera show: 2397119 ns
+Sensors FPS + flip: 1726502 ns
+Camera init: 276119 ns
+Seg init: 1637842 ns
+Seg prediction: 62154210 ns
+Seg get mask: 504577 ns
+Lane init: 1386654
+Lane prediction: 9769526
+Lane detection: 3666213 ns
+Lane cm%: 42590 ns
+Seg camera show: 2681068 ns
+Camera init: 301818 ns
+Camera show: 2898987 ns
+Sensors FPS + flip: 2579508 ns
+Camera init: 312838 ns
+Seg init: 1707322 ns
+Seg prediction: 59751190 ns
+Seg get mask: 724027 ns
+Lane init: 1631693
+Lane prediction: 12848581
+Lane detection: 4005192 ns
+Lane cm%: 57440 ns
+Seg camera show: 2702748 ns
+Camera init: 298418 ns
+Camera show: 2479439 ns
+Sensors FPS + flip: 1896051 ns
+Camera init: 314858 ns
+Seg init: 1758182 ns
+Seg prediction: 97785168 ns
+Seg get mask: 1103205 ns
+Lane init: 2549398
+Lane prediction: 10449923
+Lane detection: 3683163 ns
+Lane cm%: 44060 ns
+Seg camera show: 2792007 ns
+Camera init: 285529 ns
+Camera show: 2611768 ns
+Sensors FPS + flip: 1837212 ns
+Camera init: 260239 ns
+Seg init: 1679583 ns
+Seg prediction: 58610545 ns
+Seg get mask: 471818 ns
+Lane init: 1626552
+Lane prediction: 10755221
+Lane detection: 3898823 ns
+Lane cm%: 46410 ns
+Seg camera show: 2800968 ns
+Camera init: 651827 ns
+Camera show: 3003446 ns
+Sensors FPS + flip: 3207336 ns
+Camera init: 402248 ns
+Seg init: 2148140 ns
+Seg prediction: 65082556 ns
+Seg get mask: 501088 ns
+Lane init: 1445013
+Lane prediction: 10195184
+Lane detection: 3679793 ns
+Lane cm%: 42500 ns
+Seg camera show: 3201845 ns
+Camera init: 303169 ns
+Camera show: 2482729 ns
+Sensors FPS + flip: 2339609 ns
+Camera init: 282879 ns
+Seg init: 1692362 ns
+Seg prediction: 62145700 ns
+Seg get mask: 401528 ns
+Lane init: 1355354
+Lane prediction: 10013054
+Lane detection: 3655564 ns
+Lane cm%: 41689 ns
+Seg camera show: 2628288 ns
+Camera init: 287219 ns
+Camera show: 2387019 ns
+Sensors FPS + flip: 2100171 ns
+Camera init: 298808 ns
+Seg init: 1773172 ns
+Seg prediction: 56388006 ns
+Seg get mask: 528697 ns
+Lane init: 1670013
+Lane prediction: 10140854
+Lane detection: 4291010 ns
+Lane cm%: 58360 ns
+Seg camera show: 2704498 ns
+Camera init: 303869 ns
+Camera show: 2463739 ns
+Sensors FPS + flip: 1766472 ns
+Camera init: 276219 ns
+Seg init: 1719642 ns
+Seg prediction: 56055557 ns
+Seg get mask: 703396 ns
+Lane init: 1635333
+Lane prediction: 10174434
+Lane detection: 4606389 ns
+Lane cm%: 50970 ns
+Seg camera show: 2763187 ns
+Camera init: 683467 ns
+Camera show: 2408079 ns
+Sensors FPS + flip: 2923527 ns
+Camera init: 388058 ns
+Seg init: 1807492 ns
+Seg prediction: 58981883 ns
+Seg get mask: 631348 ns
+Lane init: 1691442
+Lane prediction: 10070734
+Lane detection: 3764503 ns
+Lane cm%: 44710 ns
+Seg camera show: 3097556 ns
+Camera init: 311068 ns
+Camera show: 2420489 ns
+Sensors FPS + flip: 2934817 ns
+Camera init: 766367 ns
+Seg init: 3263875 ns
+Seg prediction: 71884645 ns
+Seg get mask: 263219 ns
+Lane init: 2093430
+Lane prediction: 10951001
+Lane detection: 3843392 ns
+Lane cm%: 51860 ns
+Seg camera show: 3176955 ns
+Camera init: 425708 ns
+Camera show: 2635708 ns
+Sensors FPS + flip: 1988801 ns
+Camera init: 329368 ns
+Seg init: 1780002 ns
+Seg prediction: 61920501 ns
+Seg get mask: 988026 ns
+Lane init: 4489320
+Lane prediction: 13208100
+Lane detection: 5814883 ns
+Lane cm%: 71840 ns
+Seg camera show: 3990442 ns
+Camera init: 542107 ns
+Camera show: 3311985 ns
+Sensors FPS + flip: 2095311 ns
+Camera init: 316539 ns
+Seg init: 1805392 ns
+Seg prediction: 56967922 ns
+Seg get mask: 249929 ns
+Lane init: 1988911
+Lane prediction: 15544640
+Lane detection: 4074122 ns
+Lane cm%: 60130 ns
+Seg camera show: 3127756 ns
+Camera init: 303199 ns
+Camera show: 2663838 ns
+Sensors FPS + flip: 2139700 ns
+Camera init: 345028 ns
+Seg init: 2642228 ns
+Seg prediction: 67710664 ns
+Seg get mask: 267039 ns
+Lane init: 2029781
+Lane prediction: 10712031
+Lane detection: 3739723 ns
+Lane cm%: 55360 ns
+Seg camera show: 3026856 ns
+Camera init: 329088 ns
+Camera show: 2565379 ns
+Sensors FPS + flip: 1801612 ns
+Camera init: 295379 ns
+Seg init: 1656502 ns
+Seg prediction: 58719335 ns
+Seg get mask: 264509 ns
+Lane init: 2028900
+Lane prediction: 10784862
+Lane detection: 3905512 ns
+Lane cm%: 51060 ns
+Seg camera show: 3012206 ns
+Camera init: 326988 ns
+Camera show: 2583009 ns
+Sensors FPS + flip: 1711452 ns
+Camera init: 300649 ns
+Seg init: 1730772 ns
+Seg prediction: 57668500 ns
+Seg get mask: 309868 ns
+Lane init: 3098986
+Lane prediction: 11272029
+Lane detection: 3881832 ns
+Lane cm%: 57650 ns
+Seg camera show: 3108096 ns
+Camera init: 441178 ns
+Camera show: 2706548 ns
+Sensors FPS + flip: 2264900 ns
+Camera init: 318198 ns
+Seg init: 1707142 ns
+Seg prediction: 60459377 ns
+Seg get mask: 259389 ns
+Lane init: 1996291
+Lane prediction: 10272383
+Lane detection: 3726463 ns
+Lane cm%: 45870 ns
+Seg camera show: 2730178 ns
+Camera init: 311648 ns
+Camera show: 2402799 ns
+Sensors FPS + flip: 1689663 ns
+Camera init: 269519 ns
+Seg init: 1622873 ns
+Seg prediction: 60686096 ns
+Seg get mask: 703626 ns
+Lane init: 5572655
+Lane prediction: 8698421
+Lane detection: 4303740 ns
+Lane cm%: 55350 ns
+Seg camera show: 3129776 ns
+Camera init: 345199 ns
+Camera show: 2640928 ns
+Sensors FPS + flip: 1901691 ns
+Camera init: 345868 ns
+Seg init: 1911772 ns
+Seg prediction: 56366035 ns
+Seg get mask: 302359 ns
+Lane init: 2140360
+Lane prediction: 11179499
+Lane detection: 3793783 ns
+Lane cm%: 53990 ns
+Seg camera show: 3773423 ns
+Camera init: 938076 ns
+Camera show: 3831083 ns
+Sensors FPS + flip: 3455434 ns
+Camera init: 556757 ns
+Seg init: 2074881 ns
+Seg prediction: 57643449 ns
+Seg get mask: 249969 ns
+Lane init: 1985761
+Lane prediction: 10667502
+Lane detection: 3841002 ns
+Lane cm%: 58020 ns
+Seg camera show: 6541770 ns
+Camera init: 558977 ns
+Camera show: 4338651 ns
+Sensors FPS + flip: 3599874 ns
+Camera init: 447058 ns
+Seg init: 2065551 ns
+Seg prediction: 69548906 ns
+Seg get mask: 709027 ns
+Lane init: 1726593
+Lane prediction: 10955720
+Lane detection: 3787683 ns
+Lane cm%: 54139 ns
+Seg camera show: 2719988 ns
+Camera init: 368708 ns
+Camera show: 2524289 ns
+Sensors FPS + flip: 2089880 ns
+Camera init: 488858 ns
+Seg init: 1709502 ns
+Seg prediction: 55768639 ns
+Seg get mask: 595897 ns
+Lane init: 1678432
+Lane prediction: 9982925
+Lane detection: 3634113 ns
+Lane cm%: 44580 ns
+Seg camera show: 2672828 ns
+Camera init: 333758 ns
+Camera show: 2482009 ns
+Sensors FPS + flip: 2074081 ns
+Camera init: 406478 ns
+Seg init: 1818962 ns
+Seg prediction: 59214212 ns
+Seg get mask: 659787 ns
+Lane init: 1743182
+Lane prediction: 10737422
+Lane detection: 3692273 ns
+Lane cm%: 45420 ns
+Seg camera show: 2721947 ns
+Camera init: 351789 ns
+Camera show: 2831557 ns
+Sensors FPS + flip: 2067080 ns
+Camera init: 475228 ns
+Seg init: 1786102 ns
+Seg prediction: 56152717 ns
+Seg get mask: 588747 ns
+Lane init: 1746702
+Lane prediction: 9967495
+Lane detection: 3649823 ns
+Lane cm%: 43960 ns
+Seg camera show: 2827917 ns
+Camera init: 326359 ns
+Camera show: 2523348 ns
+Sensors FPS + flip: 1733092 ns
+Camera init: 479167 ns
+Seg init: 1814252 ns
+Seg prediction: 65883532 ns
+Seg get mask: 630268 ns
+Lane init: 1955001
+Lane prediction: 10775051
+Lane detection: 6456011 ns
+Lane cm%: 68419 ns
+Seg camera show: 3926992 ns
+Camera init: 596808 ns
+Camera show: 2534178 ns
+Sensors FPS + flip: 1685782 ns
+Camera init: 464608 ns
+Seg init: 1748752 ns
+Seg prediction: 58675085 ns
+Seg get mask: 779567 ns
+Lane init: 1841631
+Lane prediction: 10403113
+Lane detection: 3792543 ns
+Lane cm%: 47740 ns
+Seg camera show: 2697338 ns
+Camera init: 305939 ns
+Camera show: 2482609 ns
+Sensors FPS + flip: 3447384 ns
+Camera init: 308199 ns
+Seg init: 1862751 ns
+Seg prediction: 69016998 ns
+Seg get mask: 848467 ns
+Lane init: 1688322
+Lane prediction: 10259403
+Lane detection: 3762763 ns
+Lane cm%: 46840 ns
+Seg camera show: 2634148 ns
+Camera init: 289359 ns
+Camera show: 2399869 ns
+Sensors FPS + flip: 1987181 ns
+Camera init: 257369 ns
+Seg init: 1579133 ns
+Seg prediction: 58230347 ns
+Seg get mask: 1022165 ns
+Lane init: 1813412
+Lane prediction: 10927620
+Lane detection: 3733653 ns
+Lane cm%: 47230 ns
+Seg camera show: 2750568 ns
+Camera init: 293818 ns
+Camera show: 2228470 ns
+Sensors FPS + flip: 3729423 ns
+Camera init: 416498 ns
+Seg init: 1670212 ns
+Seg prediction: 58667615 ns
+Seg get mask: 681327 ns
+Lane init: 1554683
+Lane prediction: 10163745
+Lane detection: 3625994 ns
+Lane cm%: 45799 ns
+Seg camera show: 2659178 ns
+Camera init: 336249 ns
+Camera show: 2480248 ns
+Sensors FPS + flip: 1966821 ns
+Camera init: 283229 ns
+Seg init: 1705032 ns
+Seg prediction: 58359246 ns
+Seg get mask: 666277 ns
+Lane init: 1750452
+Lane prediction: 10717791
+Lane detection: 3697574 ns
+Lane cm%: 50090 ns
+Seg camera show: 2711747 ns
+Camera init: 301549 ns
+Camera show: 2510109 ns
+Sensors FPS + flip: 3084567 ns
+Camera init: 521988 ns
+Seg init: 1850821 ns
+Seg prediction: 60627316 ns
+Seg get mask: 1037525 ns
+Lane init: 1778922
+Lane prediction: 10126154
+Lane detection: 3610374 ns
+Lane cm%: 44239 ns
+Seg camera show: 2692508 ns
+Camera init: 299259 ns
+Camera show: 2677358 ns
+Sensors FPS + flip: 2056921 ns
+Camera init: 274729 ns
+Seg init: 1636702 ns
+Seg prediction: 59457801 ns
+Seg get mask: 981225 ns
+Lane init: 1881062
+Lane prediction: 10194864
+Lane detection: 3677563 ns
+Lane cm%: 49560 ns
+Seg camera show: 2770577 ns
+Camera init: 514548 ns
+Camera show: 2672728 ns
+Sensors FPS + flip: 3967092 ns
+Camera init: 265709 ns
+Seg init: 1635263 ns
+Seg prediction: 58626065 ns
+Seg get mask: 937346 ns
+Lane init: 1780072
+Lane prediction: 7674795
+Lane detection: 3449995 ns
+Lane cm%: 43019 ns
+Seg camera show: 2653348 ns
+Camera init: 331199 ns
+Camera show: 2471099 ns
+Sensors FPS + flip: 1809301 ns
+Camera init: 285029 ns
+Seg init: 1676442 ns
+Seg prediction: 59012443 ns
+Seg get mask: 841297 ns
+Lane init: 1751842
+Lane prediction: 10064824
+Lane detection: 3599464 ns
+Lane cm%: 44069 ns
+Seg camera show: 2656658 ns
+Camera init: 285879 ns
+Camera show: 2468019 ns
+Sensors FPS + flip: 2040291 ns
+Camera init: 434878 ns
+Seg init: 1832391 ns
+Seg prediction: 57742160 ns
+Seg get mask: 897625 ns
+Lane init: 1743843
+Lane prediction: 9986375
+Lane detection: 3585894 ns
+Lane cm%: 44980 ns
+Seg camera show: 2633518 ns
+Camera init: 291498 ns
+Camera show: 2466559 ns
+Sensors FPS + flip: 2158160 ns
+Camera init: 277149 ns
+Seg init: 1694052 ns
+Seg prediction: 56452555 ns
+Seg get mask: 792147 ns
+Lane init: 1576923
+Lane prediction: 11251620
+Lane detection: 3646144 ns
+Lane cm%: 54920 ns
+Seg camera show: 2971916 ns
+Camera init: 372368 ns
+Camera show: 2742938 ns
+Sensors FPS + flip: 2111900 ns
+Camera init: 279079 ns
+Seg init: 1735222 ns
+Seg prediction: 60872045 ns
+Seg get mask: 1152365 ns
+Lane init: 1892211
+Lane prediction: 10385413
+Lane detection: 3955552 ns
+Lane cm%: 45100 ns
+Seg camera show: 2679738 ns
+Camera init: 362378 ns
+Camera show: 2485969 ns
+Sensors FPS + flip: 2153810 ns
+Camera init: 319999 ns
+Seg init: 1693422 ns
+Seg prediction: 58328807 ns
+Seg get mask: 821236 ns
+Lane init: 1729852
+Lane prediction: 9893185
+Lane detection: 3605054 ns
+Lane cm%: 42610 ns
+Seg camera show: 2651898 ns
+Camera init: 294298 ns
+Camera show: 2486769 ns
+Sensors FPS + flip: 2671508 ns
+Camera init: 581617 ns
+Seg init: 1956081 ns
+Seg prediction: 62666867 ns
+Seg get mask: 1248364 ns
+Lane init: 1853862
+Lane prediction: 11045640
+Lane detection: 3572933 ns
+Lane cm%: 45240 ns
+Seg camera show: 2684348 ns
+Camera init: 302699 ns
+Camera show: 2497918 ns
+Sensors FPS + flip: 1973611 ns
+Camera init: 286959 ns
+Seg init: 1758002 ns
+Seg prediction: 57768039 ns
+Seg get mask: 875396 ns
+Lane init: 1664773
+Lane prediction: 10148715
+Lane detection: 3677574 ns
+Lane cm%: 44650 ns
+Seg camera show: 2710317 ns
+Camera init: 312829 ns
+Camera show: 2481119 ns
+Sensors FPS + flip: 2821688 ns
+Camera init: 309498 ns
+Seg init: 1733223 ns
+Seg prediction: 60226567 ns
+Seg get mask: 676337 ns
+Lane init: 1724402
+Lane prediction: 10895101
+Lane detection: 3790443 ns
+Lane cm%: 43580 ns
+Seg camera show: 2733217 ns
+Camera init: 353549 ns
+Camera show: 2508938 ns
+Sensors FPS + flip: 2379749 ns
+Camera init: 718837 ns
+Seg init: 2750658 ns
+Seg prediction: 65473434 ns
+Seg get mask: 264429 ns
+Lane init: 2180580
+Lane prediction: 11175929
+Lane detection: 4628749 ns
+Lane cm%: 90880 ns
+Seg camera show: 4668259 ns
+Camera init: 409868 ns
+Camera show: 2315369 ns
+Sensors FPS + flip: 2256200 ns
+Camera init: 355308 ns
+Seg init: 1827492 ns
+Seg prediction: 61157993 ns
+Seg get mask: 289049 ns
+Lane init: 2628608
+Lane prediction: 14157806
+Lane detection: 6507580 ns
+Lane cm%: 85860 ns
+Seg camera show: 3414104 ns
+Camera init: 342339 ns
+Camera show: 2580858 ns
+Sensors FPS + flip: 2622978 ns
+Camera init: 287409 ns
+Seg init: 1922981 ns
+Seg prediction: 59717730 ns
+Seg get mask: 526877 ns
+Lane init: 1779642
+Lane prediction: 10733472
+Lane detection: 3668423 ns
+Lane cm%: 44110 ns
+Seg camera show: 2684128 ns
+Camera init: 284479 ns
+Camera show: 2437999 ns
+Sensors FPS + flip: 2025820 ns
+Camera init: 270599 ns
+Seg init: 1605123 ns
+Seg prediction: 69083367 ns
+Seg get mask: 631187 ns
+Lane init: 2016431
+Lane prediction: 10752182
+Lane detection: 3965052 ns
+Lane cm%: 160449 ns
+Seg camera show: 3603394 ns
+Camera init: 514268 ns
+Camera show: 2546339 ns
+Sensors FPS + flip: 2187351 ns
+Camera init: 273289 ns
+Seg init: 1810662 ns
+Seg prediction: 59137252 ns
+Seg get mask: 625087 ns
+Lane init: 1546623
+Lane prediction: 10147445
+Lane detection: 3648893 ns
+Lane cm%: 43310 ns
+Seg camera show: 2707508 ns
+Camera init: 296608 ns
+Camera show: 2517029 ns
+Sensors FPS + flip: 1990021 ns
+Camera init: 288879 ns
+Seg init: 1698532 ns
+Seg prediction: 60387437 ns
+Seg get mask: 595787 ns
+Lane init: 1726532
+Lane prediction: 10878661
+Lane detection: 3623174 ns
+Lane cm%: 46269 ns
+Seg camera show: 2708919 ns
+Camera init: 285579 ns
+Camera show: 2503629 ns
+Sensors FPS + flip: 1797992 ns
+Camera init: 303259 ns
+Seg init: 1750182 ns
+Seg prediction: 98171976 ns
+Seg get mask: 586027 ns
+Lane init: 1846462
+Lane prediction: 9767235
+Lane detection: 3572844 ns
+Lane cm%: 43000 ns
+Seg camera show: 2660968 ns
+Camera init: 283948 ns
+Camera show: 2429579 ns
+Sensors FPS + flip: 1798362 ns
+Camera init: 456018 ns
+Seg init: 1708462 ns
+Seg prediction: 61106064 ns
+Seg get mask: 863576 ns
+Lane init: 1748832
+Lane prediction: 9927165
+Lane detection: 3733513 ns
+Lane cm%: 47210 ns
+Seg camera show: 2753008 ns
+Camera init: 368258 ns
+Camera show: 2509648 ns
+Sensors FPS + flip: 1812482 ns
+Camera init: 279769 ns
+Seg init: 1758952 ns
+Seg prediction: 59173702 ns
+Seg get mask: 913686 ns
+Lane init: 1777312
+Lane prediction: 10229335
+Lane detection: 3813212 ns
+Lane cm%: 45090 ns
+Seg camera show: 2705948 ns
+Camera init: 350458 ns
+Camera show: 2252180 ns
+Sensors FPS + flip: 3260235 ns
+Camera init: 288409 ns
+Seg init: 1654872 ns
+Seg prediction: 60205367 ns
+Seg get mask: 810257 ns
+Lane init: 1704142
+Lane prediction: 9888145
+Lane detection: 3707133 ns
+Lane cm%: 44690 ns
+Seg camera show: 3016937 ns
+Camera init: 307439 ns
+Camera show: 2435158 ns
+Sensors FPS + flip: 1793942 ns
+Camera init: 471128 ns
+Seg init: 1777572 ns
+Seg prediction: 57509339 ns
+Seg get mask: 510698 ns
+Lane init: 1557703
+Lane prediction: 9866885
+Lane detection: 3716183 ns
+Lane cm%: 45230 ns
+Seg camera show: 2652118 ns
+Camera init: 283649 ns
+Camera show: 2454558 ns
+Sensors FPS + flip: 1814462 ns
+Camera init: 444308 ns
+Seg init: 1973561 ns
+Seg prediction: 59447511 ns
+Seg get mask: 556728 ns
+Lane init: 1744602
+Lane prediction: 10254183
+Lane detection: 4076132 ns
+Lane cm%: 74419 ns
+Seg camera show: 2968197 ns
+Camera init: 1206554 ns
+Camera show: 2646988 ns
+Sensors FPS + flip: 1960951 ns
+Camera init: 323259 ns
+Seg init: 1626632 ns
+Seg prediction: 59506202 ns
+Seg get mask: 524137 ns
+Lane init: 1514783
+Lane prediction: 10596292
+Lane detection: 3932462 ns
+Lane cm%: 52230 ns
+Seg camera show: 2686258 ns
+Camera init: 330238 ns
+Camera show: 2621469 ns
+Sensors FPS + flip: 2029871 ns
+Camera init: 304458 ns
+Seg init: 1700063 ns
+Seg prediction: 58779474 ns
+Seg get mask: 551328 ns
+Lane init: 1587392
+Lane prediction: 10805541
+Lane detection: 3706204 ns
+Lane cm%: 42759 ns
+Seg camera show: 2629718 ns
+Camera init: 306569 ns
+Camera show: 2453249 ns
+Sensors FPS + flip: 1731992 ns
+Camera init: 284339 ns
+Seg init: 1680392 ns
+Seg prediction: 63126485 ns
+Seg get mask: 602807 ns
+Lane init: 1807862
+Lane prediction: 8351762
+Lane detection: 3899472 ns
+Lane cm%: 43030 ns
+Seg camera show: 3135546 ns
+Camera init: 481448 ns
+Camera show: 2541968 ns
+Sensors FPS + flip: 3506844 ns
+Camera init: 302069 ns
+Seg init: 2013331 ns
+Seg prediction: 62552627 ns
+Seg get mask: 457908 ns
+Lane init: 1481003
+Lane prediction: 10227274
+Lane detection: 3727243 ns
+Lane cm%: 42790 ns
+Seg camera show: 2657438 ns
+Camera init: 405618 ns
+Camera show: 2500189 ns
+Sensors FPS + flip: 1858192 ns
+Camera init: 353918 ns
+Seg init: 2079131 ns
+Seg prediction: 66151031 ns
+Seg get mask: 531927 ns
+Lane init: 1744962
+Lane prediction: 10220874
+Lane detection: 3727743 ns
+Lane cm%: 43140 ns
+Seg camera show: 2655648 ns
+Camera init: 287949 ns
+Camera show: 2457048 ns
+Sensors FPS + flip: 1673723 ns
+Camera init: 474618 ns
+Seg init: 1790822 ns
+Seg prediction: 56305495 ns
+Seg get mask: 538378 ns
+Lane init: 1763702
+Lane prediction: 11803256
+Lane detection: 3769923 ns
+Lane cm%: 44580 ns
+Seg camera show: 2658748 ns
+Camera init: 304748 ns
+Camera show: 2481309 ns
+Sensors FPS + flip: 3115476 ns
+Camera init: 290089 ns
+Seg init: 1691122 ns
+Seg prediction: 58876754 ns
+Seg get mask: 861956 ns
+Lane init: 1783162
+Lane prediction: 10249644
+Lane detection: 3663953 ns
+Lane cm%: 43270 ns
+Seg camera show: 2627498 ns
+Camera init: 298529 ns
+Camera show: 2498558 ns
+Sensors FPS + flip: 1631663 ns
+Camera init: 281148 ns
+Seg init: 1702873 ns
+Seg prediction: 57005381 ns
+Seg get mask: 827077 ns
+Lane init: 1707053
+Lane prediction: 10855181
+Lane detection: 3648423 ns
+Lane cm%: 42950 ns
+Seg camera show: 2624728 ns
+Camera init: 506838 ns
+Camera show: 2466769 ns
+Sensors FPS + flip: 1912091 ns
+Camera init: 293669 ns
+Seg init: 1636852 ns
+Seg prediction: 60368827 ns
+Seg get mask: 788056 ns
+Lane init: 1711063
+Lane prediction: 10136894
+Lane detection: 3776723 ns
+Lane cm%: 48029 ns
+Seg camera show: 3137816 ns
+Camera init: 322209 ns
+Camera show: 2464608 ns
+Sensors FPS + flip: 1689123 ns
+Camera init: 458588 ns
+Seg init: 1718802 ns
+Seg prediction: 61782800 ns
+Seg get mask: 1256195 ns
+Lane init: 2062270
+Lane prediction: 10707582
+Lane detection: 3669863 ns
+Lane cm%: 44400 ns
+Seg camera show: 2630158 ns
+Camera init: 286609 ns
+Camera show: 2455918 ns
+Sensors FPS + flip: 2314620 ns
+Camera init: 274988 ns
+Seg init: 1682743 ns
+Seg prediction: 60930604 ns
+Seg get mask: 767497 ns
+Lane init: 1490183
+Lane prediction: 11806007
+Lane detection: 3644023 ns
+Lane cm%: 44260 ns
+Seg camera show: 2629628 ns
+Camera init: 280158 ns
+Camera show: 2388760 ns
+Sensors FPS + flip: 2514408 ns
+Camera init: 285449 ns
+Seg init: 1586853 ns
+Seg prediction: 58844294 ns
+Seg get mask: 795456 ns
+Lane init: 1640533
+Lane prediction: 7932934
+Lane detection: 3728793 ns
+Lane cm%: 45210 ns
+Seg camera show: 2720077 ns
+Camera init: 893936 ns
+Camera show: 2572899 ns
+Sensors FPS + flip: 1936441 ns
+Camera init: 420998 ns
+Seg init: 3016196 ns
+Seg prediction: 60398527 ns
+Seg get mask: 838256 ns
+Lane init: 1447854
+Lane prediction: 12486113
+Lane detection: 3624914 ns
+Lane cm%: 43980 ns
+Seg camera show: 2618878 ns
+Camera init: 320398 ns
+Camera show: 2432549 ns
+Sensors FPS + flip: 1763222 ns
+Camera init: 285699 ns
+Seg init: 1815991 ns
+Seg prediction: 56256856 ns
+Seg get mask: 607118 ns
+Lane init: 1852561
+Lane prediction: 10130904
+Lane detection: 3694253 ns
+Lane cm%: 43610 ns
+Seg camera show: 4351971 ns
+Camera init: 492738 ns
+Camera show: 4114761 ns
+Sensors FPS + flip: 2800857 ns
+Camera init: 712037 ns
+Seg init: 3548554 ns
+Seg prediction: 72274263 ns
+Seg get mask: 315128 ns
+Lane init: 2221820
+Lane prediction: 11630878
+Lane detection: 3890642 ns
+Lane cm%: 55160 ns
+Seg camera show: 3054386 ns
+Camera init: 385668 ns
+Camera show: 2950006 ns
+Sensors FPS + flip: 2820778 ns
+Camera init: 876676 ns
+Seg init: 4402040 ns
+Seg prediction: 68423591 ns
+Seg get mask: 587227 ns
+Lane init: 2111721
+Lane prediction: 10455992
+Lane detection: 3673484 ns
+Lane cm%: 45879 ns
+Seg camera show: 2975857 ns
+Camera init: 340978 ns
+Camera show: 1995081 ns
+Sensors FPS + flip: 1898112 ns
+Camera init: 281429 ns
+Seg init: 1643432 ns
+Seg prediction: 57715610 ns
+Seg get mask: 839207 ns
+Lane init: 4173001
+Lane prediction: 12326564
+Lane detection: 3919952 ns
+Lane cm%: 45990 ns
+Seg camera show: 2694508 ns
+Camera init: 302888 ns
+Camera show: 2469169 ns
+Sensors FPS + flip: 1949581 ns
+Camera init: 286699 ns
+Seg init: 2129750 ns
+Seg prediction: 57580940 ns
+Seg get mask: 502098 ns
+Lane init: 2272129
+Lane prediction: 10009075
+Lane detection: 4206341 ns
+Lane cm%: 48470 ns
+Seg camera show: 2851747 ns
+Camera init: 302788 ns
+Camera show: 2487129 ns
+Sensors FPS + flip: 1808722 ns
+Camera init: 278769 ns
+Seg init: 1641513 ns
+Seg prediction: 58281686 ns
+Seg get mask: 608678 ns
+Lane init: 1660972
+Lane prediction: 10416614
+Lane detection: 4190111 ns
+Lane cm%: 59729 ns
+Seg camera show: 3018937 ns
+Camera init: 294408 ns
+Camera show: 2472319 ns
+Sensors FPS + flip: 2239790 ns
+Camera init: 275988 ns
+Seg init: 1845332 ns
+Seg prediction: 61046904 ns
+Seg get mask: 630237 ns
+Lane init: 1591202
+Lane prediction: 11767727
+Lane detection: 4160571 ns
+Lane cm%: 43370 ns
+Seg camera show: 2636469 ns
+Camera init: 328349 ns
+Camera show: 2590718 ns
+Sensors FPS + flip: 2121231 ns
+Camera init: 467808 ns
+Seg init: 2042781 ns
+Seg prediction: 61744690 ns
+Seg get mask: 640217 ns
+Lane init: 1734403
+Lane prediction: 10124134
+Lane detection: 3763403 ns
+Lane cm%: 44619 ns
+Seg camera show: 2791048 ns
+Camera init: 305628 ns
+Camera show: 2638888 ns
+Sensors FPS + flip: 1632483 ns
+Camera init: 289369 ns
+Seg init: 1712812 ns
+Seg prediction: 56739064 ns
+Seg get mask: 577507 ns
+Lane init: 1704922
+Lane prediction: 9816026
+Lane detection: 3586764 ns
+Lane cm%: 43199 ns
+Seg camera show: 2642848 ns
+Camera init: 284999 ns
+Camera show: 2442759 ns
+Sensors FPS + flip: 1684632 ns
+Camera init: 286709 ns
+Seg init: 1699922 ns
+Seg prediction: 59770460 ns
+Seg get mask: 583007 ns
+Lane init: 1730592
+Lane prediction: 11321729
+Lane detection: 4817428 ns
+Lane cm%: 44920 ns
+Seg camera show: 2691348 ns
+Camera init: 285708 ns
+Camera show: 2455119 ns
+Sensors FPS + flip: 1710602 ns
+Camera init: 296229 ns
+Seg init: 1695032 ns
+Seg prediction: 60284007 ns
+Seg get mask: 561768 ns
+Lane init: 1721492
+Lane prediction: 9943105
+Lane detection: 3889412 ns
+Lane cm%: 45560 ns
+Seg camera show: 2754188 ns
+Camera init: 397038 ns
+Camera show: 2410109 ns
+Sensors FPS + flip: 1832161 ns
+Camera init: 320349 ns
+Seg init: 1649922 ns
+Seg prediction: 58659795 ns
+Seg get mask: 602428 ns
+Lane init: 1773242
+Lane prediction: 10567923
+Lane detection: 3771982 ns
+Lane cm%: 45080 ns
+Seg camera show: 2738288 ns
+Camera init: 287048 ns
+Camera show: 2430589 ns
+Sensors FPS + flip: 1754162 ns
+Camera init: 290309 ns
+Seg init: 1626772 ns
+Seg prediction: 60149628 ns
+Seg get mask: 833157 ns
+Lane init: 2265389
+Lane prediction: 10160504
+Lane detection: 3795723 ns
+Lane cm%: 66890 ns
+Seg camera show: 2772477 ns
+Camera init: 341819 ns
+Camera show: 2473748 ns
+Sensors FPS + flip: 2016041 ns
+Camera init: 348519 ns
+Seg init: 1715142 ns
+Seg prediction: 62078849 ns
+Seg get mask: 644217 ns
+Lane init: 1674792
+Lane prediction: 10841952
+Lane detection: 4311330 ns
+Lane cm%: 43750 ns
+Seg camera show: 2687628 ns
+Camera init: 309428 ns
+Camera show: 2448479 ns
+Sensors FPS + flip: 2007701 ns
+Camera init: 344809 ns
+Seg init: 1704502 ns
+Seg prediction: 58993133 ns
+Seg get mask: 620757 ns
+Lane init: 1657232
+Lane prediction: 10470643
+Lane detection: 3726243 ns
+Lane cm%: 44920 ns
+Seg camera show: 2679098 ns
+Camera init: 357438 ns
+Camera show: 2451419 ns
+Sensors FPS + flip: 1978481 ns
+Camera init: 293458 ns
+Seg init: 1735953 ns
+Seg prediction: 59638189 ns
+Seg get mask: 543378 ns
+Lane init: 1678802
+Lane prediction: 10024325
+Lane detection: 3725003 ns
+Lane cm%: 45480 ns
+Seg camera show: 2692278 ns
+Camera init: 310859 ns
+Camera show: 2479659 ns
+Sensors FPS + flip: 1635722 ns
+Camera init: 314359 ns
+Seg init: 1741692 ns
+Seg prediction: 94866941 ns
+Seg get mask: 905606 ns
+Lane init: 1675342
+Lane prediction: 10615453
+Lane detection: 3710923 ns
+Lane cm%: 45540 ns
+Seg camera show: 2678917 ns
+Camera init: 286009 ns
+Camera show: 2405599 ns
+Sensors FPS + flip: 1442944 ns
+Camera init: 428999 ns
+Seg init: 1666593 ns
+Seg prediction: 58827863 ns
+Seg get mask: 784627 ns
+Lane init: 1982391
+Lane prediction: 10586892
+Lane detection: 3801133 ns
+Lane cm%: 43739 ns
+Seg camera show: 2696698 ns
+Camera init: 344558 ns
+Camera show: 2622669 ns
+Sensors FPS + flip: 1554343 ns
+Camera init: 485118 ns
+Seg init: 1795062 ns
+Seg prediction: 61510141 ns
+Seg get mask: 957356 ns
+Lane init: 2306899
+Lane prediction: 10042185
+Lane detection: 3780952 ns
+Lane cm%: 42370 ns
+Seg camera show: 2655788 ns
+Camera init: 333899 ns
+Camera show: 2394919 ns
+Sensors FPS + flip: 1883071 ns
+Camera init: 274858 ns
+Seg init: 1649093 ns
+Seg prediction: 57536540 ns
+Seg get mask: 880546 ns
+Lane init: 1623093
+Lane prediction: 10050734
+Lane detection: 3717053 ns
+Lane cm%: 44230 ns
+Seg camera show: 2741918 ns
+Camera init: 293619 ns
+Camera show: 2834267 ns
+Sensors FPS + flip: 2597548 ns
+Camera init: 293199 ns
+Seg init: 1973561 ns
+Seg prediction: 63672312 ns
+Seg get mask: 1058155 ns
+Lane init: 1626513
+Lane prediction: 10416803
+Lane detection: 3925062 ns
+Lane cm%: 58819 ns
+Seg camera show: 2802188 ns
+Camera init: 296268 ns
+Camera show: 2389719 ns
+Sensors FPS + flip: 4555260 ns
+Camera init: 278508 ns
+Seg init: 1645163 ns
+Seg prediction: 59998699 ns
+Seg get mask: 939256 ns
+Lane init: 1656092
+Lane prediction: 10189034
+Lane detection: 3920132 ns
+Lane cm%: 57730 ns
+Seg camera show: 3226165 ns
+Camera init: 298379 ns
+Camera show: 3241555 ns
+Sensors FPS + flip: 1941721 ns
+Camera init: 281579 ns
+Seg init: 1705402 ns
+Seg prediction: 61324333 ns
+Seg get mask: 930066 ns
+Lane init: 1550883
+Lane prediction: 10028704
+Lane detection: 3707744 ns
+Lane cm%: 44289 ns
+Seg camera show: 2600619 ns
+Camera init: 362598 ns
+Camera show: 2423829 ns
+Sensors FPS + flip: 1714842 ns
+Camera init: 426848 ns
+Seg init: 1672003 ns
+Seg prediction: 58832184 ns
+Seg get mask: 830326 ns
+Lane init: 1634873
+Lane prediction: 10133114
+Lane detection: 3742703 ns
+Lane cm%: 43320 ns
+Seg camera show: 2659218 ns
+Camera init: 333569 ns
+Camera show: 2528458 ns
+Sensors FPS + flip: 1739183 ns
+Camera init: 337508 ns
+Seg init: 1709102 ns
+Seg prediction: 55640368 ns
+Seg get mask: 543008 ns
+Lane init: 1543973
+Lane prediction: 10141444
+Lane detection: 4712629 ns
+Lane cm%: 44670 ns
+Seg camera show: 2757377 ns
+Camera init: 502468 ns
+Camera show: 2508318 ns
+Sensors FPS + flip: 2038001 ns
+Camera init: 296049 ns
+Seg init: 1602443 ns
+Seg prediction: 68453529 ns
+Seg get mask: 967736 ns
+Lane init: 1795072
+Lane prediction: 10118664
+Lane detection: 5767584 ns
+Lane cm%: 47670 ns
+Seg camera show: 2660128 ns
+Camera init: 291869 ns
+Camera show: 2394830 ns
+Sensors FPS + flip: 1701432 ns
+Camera init: 258049 ns
+Seg init: 1583742 ns
+Seg prediction: 56497004 ns
+Seg get mask: 591918 ns
+Lane init: 2188670
+Lane prediction: 16534925
+Lane detection: 3779523 ns
+Lane cm%: 50450 ns
+Seg camera show: 3282485 ns
+Camera init: 549148 ns
+Camera show: 2273729 ns
+Sensors FPS + flip: 1770972 ns
+Camera init: 331759 ns
+Seg init: 2134510 ns
+Seg prediction: 62087800 ns
+Seg get mask: 469577 ns
+Lane init: 1415864
+Lane prediction: 9994945
+Lane detection: 3926252 ns
+Lane cm%: 43260 ns
+Seg camera show: 2611048 ns
+Camera init: 297428 ns
+Camera show: 2373400 ns
+Sensors FPS + flip: 1541873 ns
+Camera init: 429758 ns
+Seg init: 1578863 ns
+Seg prediction: 56041906 ns
+Seg get mask: 534388 ns
+Lane init: 1409433
+Lane prediction: 11652858
+Lane detection: 5752174 ns
+Lane cm%: 63309 ns
+Seg camera show: 2961297 ns
+Camera init: 289368 ns
+Camera show: 2393260 ns
+Sensors FPS + flip: 1735542 ns
+Camera init: 471668 ns
+Seg init: 1637723 ns
+Seg prediction: 58947363 ns
+Seg get mask: 518018 ns
+Lane init: 1745142
+Lane prediction: 10210554
+Lane detection: 3737893 ns
+Lane cm%: 46510 ns
+Seg camera show: 2772867 ns
+Camera init: 354568 ns
+Camera show: 2206060 ns
+Sensors FPS + flip: 2987877 ns
+Camera init: 397139 ns
+Seg init: 1656572 ns
+Seg prediction: 61291823 ns
+Seg get mask: 808896 ns
+Lane init: 1788012
+Lane prediction: 9983455
+Lane detection: 4229901 ns
+Lane cm%: 44610 ns
+Seg camera show: 2639348 ns
+Camera init: 303638 ns
+Camera show: 2407279 ns
+Sensors FPS + flip: 1931132 ns
+Camera init: 276978 ns
+Seg init: 1591903 ns
+Seg prediction: 55974727 ns
+Seg get mask: 509427 ns
+Lane init: 1676133
+Lane prediction: 12047766
+Lane detection: 3642193 ns
+Lane cm%: 42860 ns
+Seg camera show: 2678848 ns
+Camera init: 291369 ns
+Camera show: 2470808 ns
+Sensors FPS + flip: 1932942 ns
+Camera init: 286888 ns
+Seg init: 1990381 ns
+Seg prediction: 59360511 ns
+Seg get mask: 502378 ns
+Lane init: 1484883
+Lane prediction: 10017595
+Lane detection: 3768823 ns
+Lane cm%: 43960 ns
+Seg camera show: 2661348 ns
+Camera init: 422038 ns
+Camera show: 2593098 ns
+Sensors FPS + flip: 2101031 ns
+Camera init: 535098 ns
+Seg init: 2027490 ns
+Seg prediction: 58174297 ns
+Seg get mask: 564177 ns
+Lane init: 1372884
+Lane prediction: 10012585
+Lane detection: 3728003 ns
+Lane cm%: 42720 ns
+Seg camera show: 2651188 ns
+Camera init: 288179 ns
+Camera show: 2435049 ns
+Sensors FPS + flip: 1995001 ns
+Camera init: 484348 ns
+Seg init: 1808281 ns
+Seg prediction: 61748151 ns
+Seg get mask: 501228 ns
+Lane init: 1441323
+Lane prediction: 9817096
+Lane detection: 3667213 ns
+Lane cm%: 42970 ns
+Seg camera show: 2637858 ns
+Camera init: 332959 ns
+Camera show: 2609638 ns
+Sensors FPS + flip: 1872941 ns
+Camera init: 286239 ns
+Seg init: 1690112 ns
+Seg prediction: 57677110 ns
+Seg get mask: 810736 ns
+Lane init: 1878251
+Lane prediction: 10464143
+Lane detection: 3936372 ns
+Lane cm%: 56290 ns
+Seg camera show: 2977316 ns
+Camera init: 294599 ns
+Camera show: 2443679 ns
+Sensors FPS + flip: 1738392 ns
+Camera init: 328698 ns
+Seg init: 1705982 ns
+Seg prediction: 55730109 ns
+Seg get mask: 533017 ns
+Lane init: 1481503
+Lane prediction: 9894726
+Lane detection: 3511744 ns
+Lane cm%: 42459 ns
+Seg camera show: 2611929 ns
+Camera init: 287518 ns
+Camera show: 2431839 ns
+Sensors FPS + flip: 1958971 ns
+Camera init: 309198 ns
+Seg init: 1820862 ns
+Seg prediction: 61723930 ns
+Seg get mask: 532778 ns
+Lane init: 1703162
+Lane prediction: 10031766
+Lane detection: 3524144 ns
+Lane cm%: 42309 ns
+Seg camera show: 2665098 ns
+Camera init: 285019 ns
+Camera show: 2428679 ns
+Sensors FPS + flip: 1710533 ns
+Camera init: 287769 ns
+Seg init: 1922921 ns
+Seg prediction: 61083983 ns
+Seg get mask: 690807 ns
+Lane init: 1447213
+Lane prediction: 10708892
+Lane detection: 3719233 ns
+Lane cm%: 42790 ns
+Seg camera show: 2608558 ns
+Camera init: 347638 ns
+Camera show: 2419479 ns
+Sensors FPS + flip: 1798783 ns
