@@ -19,6 +19,7 @@ import EfficientVit as EV
 
 SEG_TO_NANOSEG = 1000000000
 SIZE_CAMERA = 512
+SIZE_MEM = 5
 
 # Type
 CAMERA = 1
@@ -105,8 +106,6 @@ class CameraRGB(Sensor):
         self.__size_text = 20
         self.__deviation = 0
         self.__road_percentage = 0
-        self.__threshold_road = 90.0
-        self.__threshold_lane = 0.5
 
         self.__seg = seg
         if seg:
@@ -120,11 +119,17 @@ class CameraRGB(Sensor):
             file = '/home/alumnos/lara/carla_lane_detector/examples/fastai_torch_lane_detector_model.pth'
             self.__lane_model = torch.load(file)
             self.__lane_model.eval()
-  
-            self.__ymin_lane = 275 
-            self.__coefficients = np.zeros((5, 2, 2), dtype=float)
 
-            self.__mem_max = 6
+            # Constants
+            self.__threshold_road_per = 90.0
+            self.__threshold_lane_mask = 0.05
+            self.__ymin_lane = 275 
+            self.__angle_lane = 10
+            self.__mem_max = 5
+
+            # Initialize
+            self.__coefficients = np.zeros((SIZE_MEM, 2, 3), dtype=float)
+            self.__count_coef = [0, 0] # Not use until having 5 measurements
             self.__count_mem_road = 0
             self.__count_mem_lane = [0, 0]
 
@@ -141,36 +146,41 @@ class CameraRGB(Sensor):
             if init_extra != None:
                 self.__rect_extra = sub_screen.get_rect(topleft=init_extra)
 
-    def __mask_lane(self, mask:list, index:int):
+    def __mask_lane(self, mask:list, index:int, canvas):
         assert self.__count_mem_lane[index] < self.__mem_max, "Lane not found"
 
         mask = mask[:, :512]
-        index_mask = np.where(mask > self.__threshold_lane)
+        index_mask = np.where(mask > self.__threshold_lane_mask)
 
         # Memory lane
         if len(index_mask[0]) < 10:
             self.__count_mem_lane[index] += 1
-            return self.__coefficients[-1, index, :]
+            return self.__coefficients[-1, index, 0:2]
         else:
             self.__count_mem_lane[index] = 0
 
         # Linear regression
         coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
 
-        # Check sign of the slope
-        signs = np.sign(self.__coefficients[:, index, 0])
-        neg = np.sum(signs == -1.0) > len(signs) / 2
-        if (np.sign(coefficients[0]) > 0 and neg) or (np.sign(coefficients[0]) < 0 and not neg):
-            coef_ret = self.__coefficients[-1, index, :]
-        else:
-            coef_ret = coefficients
-        
+        # Check measure
+        mean = np.mean(self.__coefficients[:, index, 2])
+        angle = math.degrees(math.atan(coefficients[0])) % 180
+        if abs(mean - angle) > self.__angle_lane and self.__count_coef[index] >= SIZE_MEM:
+            self.__count_mem_lane[index] += 1
+            return self.__coefficients[-1, index, 0:2]
+        elif self.__count_coef[index] >= SIZE_MEM:
+            self.__count_mem_lane[index] = 0
+
         # Update memory
         for i in range(len(self.__coefficients) - 1):
             self.__coefficients[i, index, :] = self.__coefficients[i + 1, index, :]
-        self.__coefficients[-1, index, :] = coefficients
+        self.__coefficients[-1, index, 0:2] = coefficients
+        self.__coefficients[-1, index, 2] = angle
 
-        return coef_ret
+        # Update count 
+        self.__count_coef[index] += 1
+
+        return self.__coefficients[-1, index, 0:2]
 
     def __detect_lane(self, data:list, canvas:list, mask:list): 
         init_time = time.time_ns()
@@ -190,8 +200,8 @@ class CameraRGB(Sensor):
         
         init_time = time.time_ns()
         _, left_mask, right_mask = model_output[0]
-        coef_left = self.__mask_lane(mask=left_mask, index=LEFT_LANE)
-        coef_right = self.__mask_lane(mask=right_mask, index=RIGHT_LANE)
+        coef_left = self.__mask_lane(mask=left_mask, index=LEFT_LANE, canvas=canvas)
+        coef_right = self.__mask_lane(mask=right_mask, index=RIGHT_LANE, canvas=canvas)
 
         count_x = count_y = 0
         count_total = count_road = 0
@@ -225,7 +235,7 @@ class CameraRGB(Sensor):
 
             # Calculate road porcentage
             self.__road_percentage = count_road / count_total * 100
-            if self.__road_percentage < self.__threshold_road:
+            if self.__road_percentage < self.__threshold_road_per:
                 self.__count_mem_road += 1
                 assert self.__count_mem_road < self.__mem_max, "Low percentage of lane"
             else:
@@ -325,30 +335,6 @@ class CameraRGB(Sensor):
     
     def get_road_percentage(self):
         return self.__road_percentage
-    
-    def get_threshold_lane(self):
-        return self.__threshold_lane
-
-    def set_threshold_lane(self, threshold:float):
-        self.__threshold_lane = max(0.0, min(threshold, 1.0))
-
-    def set_ymin_lane(self, ymin:int):
-        self.__ymin_lane = min(max(ymin, 0), SIZE_CAMERA - 1)
-    
-    def get_ymin_lane(self):
-        return self.__ymin_lane
-    
-    def get_mem_max_lane(self):
-        return self.__mem_max
-    
-    def set_mem_max_lane(self, men:int):
-        self.__mem_max = men
-
-    def get_threshold_road(self):
-        return self.__threshold_road
-    
-    def set_threshold_road(self, per:float):
-        self.__threshold_road = max(0.0, min(100.0, per))
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
