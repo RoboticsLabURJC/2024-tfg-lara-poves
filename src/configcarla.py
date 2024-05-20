@@ -258,30 +258,6 @@ class CameraRGB(Sensor):
             self.__screen.blit(surface_seg, self.__rect_extra)
             print("Show seg:", time.time_ns() - init_time, "ns")
 
-    def get_deviation(self):
-        return self.__deviation
-    
-    def get_road_percentage(self):
-        return self.__road_percentage
-    
-    def get_threshold_lane(self):
-        return self.__threshold_lane
-
-    def set_threshold_lane(self, threshold:float):
-        self.__threshold_lane = max(0.0, min(threshold, 1.0))
-
-    def set_ymin_lane(self, ymin:int):
-        self.__ymin_lane = min(max(ymin, 0), SIZE_CAMERA - 1)
-    
-    def get_ymin_lane(self):
-        return self.__ymin_lane
-    
-    def get_mem_max_lane(self):
-        return self.__mem_max
-    
-    def set_mem_max_lane(self, men:int):
-        self.__mem_max = men
-
     def process_data(self):
         init_time = time.time_ns()
         image = self.data
@@ -312,6 +288,30 @@ class CameraRGB(Sensor):
                 
             self.__screen.blit(screen_surface, self.__rect_org)
             print("Show camera:", time.time_ns() - init_time, "ns")
+
+    def get_deviation(self):
+        return self.__deviation
+    
+    def get_road_percentage(self):
+        return self.__road_percentage
+    
+    def get_threshold_lane(self):
+        return self.__threshold_lane
+
+    def set_threshold_lane(self, threshold:float):
+        self.__threshold_lane = max(0.0, min(threshold, 1.0))
+
+    def set_ymin_lane(self, ymin:int):
+        self.__ymin_lane = min(max(ymin, 0), SIZE_CAMERA - 1)
+    
+    def get_ymin_lane(self):
+        return self.__ymin_lane
+    
+    def get_mem_max_lane(self):
+        return self.__mem_max
+    
+    def set_mem_max_lane(self, men:int):
+        self.__mem_max = men
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
