@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-05-20T12:52:00
+last_modified_at: 2024-05-22T13:02:00
 categories:
   - Blog
 tags:
@@ -13,8 +13,8 @@ tags:
 Una vez habituados con las funciones básicas de CARLA y realizado el teleoperador, continuamos explorando otras funcionalidades proporcionadas por CARLA que necesitaremos posteriormente.
 
 ## Índice
-1. [Traffic manager](#traffic-manager)
-2. [LIDAR](#lidar)
+- [Traffic manager](#traffic-manager)
+- [LIDAR](#lidar)
    - [Visualización](#visualización)
    - [Zona frontal](#zona-frontal)
      - [Cálculo de estadísticas](#cálculo-de-estadísticas)
