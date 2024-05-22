@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-05-22T13:02:00
+last_modified_at: 2024-05-22T13:31:00
 categories:
   - Blog
 tags:
@@ -15,10 +15,10 @@ Una vez habituados con las funciones básicas de CARLA y realizado el teleoperad
 ## Índice
 - [Traffic manager](#traffic-manager)
 - [LIDAR](#lidar)
-   - [Visualización](#visualización)
-   - [Zona frontal](#zona-frontal)
-     - [Cálculo de estadísticas](#cálculo-de-estadísticas)
-     - [Histogramas](#histogramas)
+  - [Visualización](#visualización)
+  - [Zona frontal](#zona-frontal)
+  - [Cálculo de estadísticas](#cálculo-de-estadísticas)
+  - [Histogramas](#histogramas)
 
 ## Traffic manager
 
