@@ -16,7 +16,7 @@ def main(args):
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
-    model_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/model' + args.env.lower()
+    model_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/model/' + args.env.lower()
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
 
