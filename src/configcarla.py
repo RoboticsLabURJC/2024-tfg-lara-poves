@@ -10,6 +10,7 @@ from PIL import Image
 import time
 import torch
 import cv2
+from abc import ABC, abstractmethod
 
 sys.path.insert(0, '/home/alumnos/lara/efficientvit-urjc/urjc')
 sys.path.insert(0, '/home/alumnos/lara/efficientvit-urjc')
@@ -78,8 +79,8 @@ def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=Fa
 
     img.blit(text, text__rect)
 
-class Sensor:
-    def __init__(self, sensor:carla.Sensor):
+class Sensor(ABC):
+    def __init__(self, sensor):
         self.sensor = sensor
         self.queue = Queue()
         self.sensor.listen(lambda data: self.__callback_data(data))
@@ -87,11 +88,12 @@ class Sensor:
     def __callback_data(self, data):
         self.queue.put(data)
 
-    def get_last_data(self):
+    def get_data(self):
         if not self.queue.empty():
             return self.queue.get(False) # Non-blocking call 
         return None
 
+    @abstractmethod
     def process_data(self):
         pass
 
@@ -146,7 +148,7 @@ class CameraRGB(Sensor):
             if init_extra != None:
                 self.__rect_extra = sub_screen.get_rect(topleft=init_extra)
 
-    def __mask_lane(self, mask:list, index:int, canvas):
+    def __mask_lane(self, mask:list, index:int):
         assert self.__count_mem_lane[index] < self.__mem_max, "Lane not found"
 
         mask = mask[:, :512]
@@ -301,7 +303,7 @@ class CameraRGB(Sensor):
 
     def process_data(self):
         init_time = time.time_ns()
-        image = self.get_last_data()
+        image = self.get_data()
         if image == None:
             return 
 
@@ -491,7 +493,7 @@ class Lidar(Sensor):
 
     def process_data(self):
         init_time = time.time_ns()
-        lidar = self.get_last_data()
+        lidar = self.get_data()
         if lidar == None:
             return 
         
@@ -572,12 +574,6 @@ class Vehicle_sensors:
             sensor_bp.set_attribute('image_size_y', str(SIZE_CAMERA))
                 
         return self.__world.spawn_actor(sensor_bp, transform, attach_to=self.__vehicle)
-
-    def add_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform()):
-        sensor = self.__put_sensor(sensor_type=sensor_type, transform=transform)
-        sensor_class = Sensor(sensor=sensor)
-        self.sensors.append(sensor_class)
-        return sensor_class
     
     def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
                        transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
