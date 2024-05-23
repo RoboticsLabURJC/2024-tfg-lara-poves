@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-05-22T08:22:00
+last_modified_at: 2024-05-22T13:02:00
 categories:
   - Blog
 tags:
@@ -13,12 +13,12 @@ tags:
 Durante las primeras semanas, nuestro objetivo principal ha sido adentrarnos en el simulador CARLA y desarrollar un teleoperador sencillo para controlar un vehículo.
 
 ## Índice
-1. [Anaconda](#anaconda)
-2. [CARLA](#carla)
-3. [Interfaz](#interfaz)
-4. [Manejo de sensores](#manejo-de-sensores)
-5. [Control](#control)
-6. [Demo](#demo)
+- [Anaconda](#anaconda)
+- [CARLA](#carla)
+- [Interfaz](#interfaz)
+- [Manejo de sensores](#manejo-de-sensores)
+- [Control](#control)
+- [Demo](#demo)
 
 ## Anaconda
 

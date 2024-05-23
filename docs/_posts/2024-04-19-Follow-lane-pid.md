@@ -1,6 +1,6 @@
 ---
-title: "Sigue carril"
-last_modified_at: 2024-05-16T20:27:00
+title: "Sigue carril: PID"
+last_modified_at: 2024-05-22T13:00:00
 categories:
   - Blog
 tags:
@@ -11,11 +11,11 @@ tags:
 Implementaremos una solución combinando múltiples redes neuronales para detectar el carril y calcular la desviación del vehículo respecto al mismo. Esta información se enviará a un controlador PID para corregir la desviación y mantener al vehículo en adecuadamente en el centro del carril.
 
 ## Índice
-1. [Detección de carril](#detección-de-carril)
+- [Detección de carril](#detección-de-carril)
   - [Red neuronal de detección de carril](#red-neuronal-de-detección-de-carril)
   - [Red neuronal de segmentación semántica](#red-neuronal-de-segmentación-semántica)
-2. [Controlador PID](#controlador-pid)
-3. [Profiling](#profiling)
+- [Controlador PID](#controlador-pid)
+- [Profiling](#profiling)
 
 ## Detección de carril
 
