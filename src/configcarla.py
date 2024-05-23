@@ -148,7 +148,7 @@ class CameraRGB(Sensor):
             if init_extra != None:
                 self.__rect_extra = sub_screen.get_rect(topleft=init_extra)
 
-    def __mask_lane(self, mask:list, index:int, canvas):
+    def __mask_lane(self, mask:list, index:int):
         assert self.__count_mem_lane[index] < self.__mem_max, "Lane not found"
 
         mask = mask[:, :512]

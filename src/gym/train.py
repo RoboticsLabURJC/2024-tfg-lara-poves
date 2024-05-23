@@ -1,17 +1,24 @@
 import gymnasium as gym
-from stable_baselines3 import DQN
+from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import argparse
 import os
 import yaml
 
 # Visualize train: tensorboard --logdir=log_dir
 
-def main(args):
-    # Mapping str with constructor
-    alg_callable = {
-        'DQN': DQN
-    }
+SEED = 6
 
+# Mapping str each constructor
+alg_callable = {
+    'DQN': DQN,
+    'A2C': A2C,
+    'DDPG': DDPG, 
+    'TD3': TD3,
+    'SAC': SAC,
+    'PPO': PPO
+}
+
+def main(args):
     log_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/log/' + args.env.lower()
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
@@ -20,15 +27,9 @@ def main(args):
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
 
-    # Create env
     env = gym.make(args.env, render_mode="human")
-
-    # Algorithm
     alg = alg_callable[args.alg]
-
-    # Log parameters
-    log_interval = args.log_interval
-    log_name = args.alg + '-' + args.env
+    log_name = args.alg + '-' + args.env + '-' + str(args.log_interval)
 
     # Get hyperparams
     config_path = "/home/alumnos/lara/2024-tfg-lara-poves/src/gym/config/" + args.alg.lower() + ".yml"
@@ -43,26 +44,24 @@ def main(args):
     model_params.pop('policy', None)
 
     # Create, train and save the model
-    model = alg(policy, env, verbose=1, tensorboard_log=log_dir, **model_params)
-    model.set_random_seed(6)
-    model.learn(total_timesteps=n_timesteps, log_interval=log_interval, tb_log_name=log_name, progress_bar=True)
+    model = alg(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
+    model.set_random_seed(SEED)
+    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, 
+                tb_log_name=log_name, progress_bar=True)
     model.save(model_dir + '/' + args.alg + '-' + args.env)
 
 if __name__ == "__main__":
     possible_envs = [
         "CartPole-v1",
         "MountainCar-v0",
-        "Acrobot-v1",
-        "atari"
-        "LunarLander-v2",
+        "Acrobot-v1"
     ]
-    possible_algs = [
-        "DQN"
-    ]
+    possible_algs = list(alg_callable.keys())
 
     parser = argparse.ArgumentParser(
         description="Run a training on a specified Gym environment",
-        usage="python3 %(prog)s --env {" + ",".join(possible_envs) + "} --alg {" + ",".join(possible_algs) + "} [--log_interval <log_interval>]"
+        usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
+            "} --alg {" + ",".join(possible_algs) + "} [--log_interval <log_interval>]"
     )
     parser.add_argument(
         '--env', 
