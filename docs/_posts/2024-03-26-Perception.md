@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-05-20T13:30:00
+last_modified_at: 2024-05-22T13:01:00
 categories:
   - Blog
 tags:
@@ -12,8 +12,8 @@ tags:
 
 ## Índice
 ## Índice
-1. [Clasificación vs detección vs segmentación](#clasificación-vs-detección-vs-segmentación)
-2. [Deep learning](#deep-learning)
+- [Clasificación vs detección vs segmentación](#clasificación-vs-detección-vs-segmentación)
+- [Deep learning](#deep-learning)
   - [Redes neuronales](#redes-neuronales)
   - [Redes neuronales convolucionales](#redes-neuronales-convolucionales)
     - [Capa de convolución](#capa-de-convolución)
@@ -22,14 +22,14 @@ tags:
     - [Capa fully connected](#capa-fully-connected)
     - [Capa de salida o clasificación](#capa-de-salida-o-clasificación)
   - [Redes neuronales recurrentes](#redes-neuronales-recurrentes)
-3. [SA](#sa)
+- [SA](#sa)
   - [Task](#task)
   - [Model](#model)
   - [Data](#data)
   - [RAI](#rai)
   - [Conclusión](#conclusión)
-4. [EfficientVit](#efficientvit)
-5. [Aplicación](#aplicación)
+- [EfficientVit](#efficientvit)
+- [Aplicación](#aplicación)
 
 ## Clasificación vs detección vs segmentación
 

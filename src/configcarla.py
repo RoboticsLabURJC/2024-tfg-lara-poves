@@ -639,7 +639,7 @@ class Teleoperator:
         if keys[pygame.K_a]:
             control.steer = -self.__steer
         if keys[pygame.K_d]:
-            control.steer =  self.__steer
+            control.steer = self.__steer
         if keys[pygame.K_w]:
             control.throttle = self.__throttle
         if keys[pygame.K_s]:
