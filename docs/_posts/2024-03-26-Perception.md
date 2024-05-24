@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-05-22T13:01:00
+last_modified_at: 2024-05-24T09:15:00
 categories:
   - Blog
 tags:
@@ -86,7 +86,7 @@ El proceso de entrenamiento se divide en dos etapas:
 
 2. **Propagación hacia atrás**: de salida a entrada, cuyo objetivo es actualizar los pesos y términos independientes.
 - La función de pérdida evalúa el error al comparar la salida predicha con la salida real: L(y, ŷ). Existen múltiples métodos para calcularla, por ejemplo, está *binary cross-entropy* para clasificación binaria y *sparse categorical cross-entropy* para clasificación multiclase.
-- Se emplea un algoritmo de optimización respecto a la función de pérdida para actualizar los pesos y términos independientes. Uno de estos métodos es el descenso por gradiente: w = w - α * ∇L(y, ŷ). 
+- Se emplea un algoritmo de optimización respecto a la función de pérdida para actualizar los pesos y términos independientes. Uno de estos métodos es el descenso por gradiente: w = w - α * ∇<sub>L</sub>(y, ŷ). 
 
 En la fase de actualización, se emplea un parámetro llamado **tasa de aprendizaje (α)** para controlar la magnitud de los ajustes realizados en los pesos de la red neuronal durante cada paso de entrenamiento. Una tasa de aprendizaje muy grande puede provocar oscilaciones y dificultar la convergencia al punto óptimo, mientras que una tasa muy pequeña puede prolongar significativamente el tiempo de entrenamiento y el consumo de recursos computacionales
 
@@ -169,13 +169,13 @@ Las RNN incorporan marcas de tiempo, ***timestamps***, para abordar la importanc
 
 1. Propagación hacia delante:
 - a<0> = vec(0)
-- a\<t> = f(waa * a\<t-1> + wax * x\<t> + b)
+- a\<t> = f(w<sub>aa</sub> * a\<t-1> + w<sub>ax</sub> * x\<t> + b)
 - y\<t> = f(way * a\<t> + b)
 2. Propagación hacia atrás:
 - L(y, ŷ) = ∑L\<t>(y\<t>, ŷ\<t>)
-- waa = waa - αaa * ∇aaL(y, ŷ)
-- way = way - αay * ∇ayL(y, ŷ)
-- wax = wax - αax * ∇axL(y, ŷ)
+- w<sub>aa</sub> = w<sub>aa</sub> - α<sub>aa</sub> * ∇<sub>aa</sub>L(y, ŷ)
+- w<sub>ay</sub> = w<sub>ay</sub> - α<sub>ay</sub> * ∇<sub>ay</sub>L(y, ŷ)
+- w<sub>ax</sub> = w<sub>ax</sub> - α<sub>ax</sub> * ∇<sub>ax</sub>L(y, ŷ)
 
 Existen diversas estructuras de RNN que podemos seleccionar según el tipo de dataset:
 - **GRU** (*Gated Recurrent Unit*): recomendada para casos donde se requiere más memoria. Por ejemplo, en la frase "*My dad, who works a lot of hours in a factory and ..., was hungry.*", la red debe ser capaz de reconocer que "*was*" se refiere al sustantivo "*dad*", mencionado bastantes palabras antes.
