@@ -75,8 +75,16 @@ def main(args):
 
         for alg, rewards in rewards_models:
             plt.plot(range(len(rewards)), rewards, label=alg, color=alg_callable[alg][1])
-            plt.text(len(rewards)-1, rewards[-1], f'{alg}: {rewards[-1]}', ha='right', va='center')
             all_labels.append(alg)
+
+            if rewards[-1] < 0:
+                va = 'top'
+                y = rewards[-1] - 1
+            else:
+                va = 'bottom'
+                y = rewards[-1] + 1 
+            plt.text(len(rewards) - 1, y, f'{int(rewards[-1])}', 
+                     ha='right', va=va, color=alg_callable[alg][1])
 
         plt.xlabel('Steps')
         plt.ylabel('Total Reward')
