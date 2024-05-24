@@ -100,7 +100,7 @@ class Sensor(ABC):
 class CameraRGB(Sensor):      
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
                  text:str, screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], 
-                 lane:bool, canvas_seg:bool):
+                 lane:bool, canvas_seg:bool, grade:int):
         super().__init__(sensor=sensor)
 
         self.__screen = screen
@@ -118,7 +118,7 @@ class CameraRGB(Sensor):
         if lane:
             assert seg, "Segmentation must be active for lane detection"
 
-            file = '/home/alumnos/lara/carla_lane_detector/examples/fastai_torch_lane_detector_model.pth'
+            file = '/home/alumnos/lara/2024-tfg-lara-poves/best_model_torch.pth'
             self.__lane_model = torch.load(file)
             self.__lane_model.eval()
 
@@ -130,8 +130,10 @@ class CameraRGB(Sensor):
             self.__mem_max = 5
 
             # Initialize
-            self.__coefficients = np.zeros((SIZE_MEM, 2, 3), dtype=float)
-            self.__count_coef = [0, 0] # Not use until having 5 measurements
+            assert grade == 1 or grade == 2, "Invalid grade for lane detection"
+            self.__grade = grade
+            self.__coefficients = np.zeros((SIZE_MEM, 2, self.__grade + 2), dtype=float)
+            self.__count_coef = [0, 0] # Not use coefficients until having SIZE_MEN measurements
             self.__count_mem_road = 0
             self.__count_mem_lane = [0, 0]
 
@@ -148,6 +150,9 @@ class CameraRGB(Sensor):
             if init_extra != None:
                 self.__rect_extra = sub_screen.get_rect(topleft=init_extra)
 
+    def __get_last_coef_sort(self, index:int):
+        return self.__coefficients[-1, index, self.__grade::-1]
+
     def __mask_lane(self, mask:list, index:int):
         assert self.__count_mem_lane[index] < self.__mem_max, "Lane not found"
 
@@ -157,32 +162,43 @@ class CameraRGB(Sensor):
         # Memory lane
         if len(index_mask[0]) < 10:
             self.__count_mem_lane[index] += 1
-            return self.__coefficients[-1, index, 0:2]
+            return self.__get_last_coef_sort(index)
         else:
             self.__count_mem_lane[index] = 0
 
-        # Linear regression
-        coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
+        # Polynomial regression
+        coefficients = np.polyfit(index_mask[0], index_mask[1], self.__grade)
 
         # Check measure
-        mean = np.mean(self.__coefficients[:, index, 2])
-        angle = math.degrees(math.atan(coefficients[0])) % 180
-        if abs(mean - angle) > self.__angle_lane and self.__count_coef[index] >= SIZE_MEM:
+        mean = np.mean(self.__coefficients[:, index, self.__grade + 1])
+        if self.__grade == 1: 
+            extra = math.degrees(math.atan(coefficients[0])) % 180 # angle
+            cond = abs(mean - extra) > self.__angle_lane
+        else:
+            y = 10# seguramente haya que hacerlo a varias alturas
+            # en el centro para ver si se mete para dentro
+            # arriba y abajo para ver se mete por loes extremos
+            extra = coefficients[0] * y ** 2 + coefficients[1] * y + coefficients[0] # x
+            print("diff:", abs(extra - mean))
+            cond = abs(extra - mean) > 15
+            cond = False
+
+        if cond and self.__count_coef[index] >= SIZE_MEM:
             self.__count_mem_lane[index] += 1
-            return self.__coefficients[-1, index, 0:2]
+            return self.__get_last_coef_sort(index)
         elif self.__count_coef[index] >= SIZE_MEM:
             self.__count_mem_lane[index] = 0
 
         # Update memory
         for i in range(len(self.__coefficients) - 1):
             self.__coefficients[i, index, :] = self.__coefficients[i + 1, index, :]
-        self.__coefficients[-1, index, 0:2] = coefficients
-        self.__coefficients[-1, index, 2] = angle
+        self.__coefficients[-1, index, 0:self.__grade + 1] = coefficients
+        self.__coefficients[-1, index, self.__grade + 1] = extra
 
         # Update count 
         self.__count_coef[index] += 1
 
-        return self.__coefficients[-1, index, 0:2]
+        return self.__get_last_coef_sort(index)
 
     def __detect_lane(self, data:list, canvas:list, mask:list): 
         init_time = time.time_ns()
@@ -202,15 +218,21 @@ class CameraRGB(Sensor):
         
         init_time = time.time_ns()
         _, left_mask, right_mask = model_output[0]
-        coef_left = self.__mask_lane(mask=left_mask, index=LEFT_LANE, canvas=canvas)
-        coef_right = self.__mask_lane(mask=right_mask, index=RIGHT_LANE, canvas=canvas)
+        coef_left = self.__mask_lane(mask=left_mask, index=LEFT_LANE)
+        coef_right = self.__mask_lane(mask=right_mask, index=RIGHT_LANE)
 
         count_x = count_y = 0
         count_total = count_road = 0
 
         for y in range(self.__ymin_lane, SIZE_CAMERA):
-            x_left = max(int(y * coef_left[0] + coef_left[1]), 0)
-            x_right = min(int(y * coef_right[0] + coef_right[1]) + 1, SIZE_CAMERA - 1)
+            x_right = 0
+            x_left = 0
+            for i in range(self.__grade + 1):
+                x_left += y ** i * coef_left[i]
+                x_right += y ** i * coef_right[i]
+
+            x_left = max(0, int(x_left))
+            x_right = min(SIZE_CAMERA - 1, int(x_right))
 
             if x_left < x_right:
                 # Center of mass
@@ -224,6 +246,9 @@ class CameraRGB(Sensor):
                 region_mask = mask[y, x_left:x_right]
                 count_total += x_right - x_left
                 count_road += np.count_nonzero(region_mask == ROAD)
+            else:
+                print("mal", y, x_left, x_right)
+                print( self.__coefficients)
 
         print("Lane detection:", time.time_ns() - init_time, "ns")
         init_time = time.time_ns()
@@ -577,14 +602,14 @@ class Vehicle_sensors:
     
     def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
                        transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
-                       text:str=None, lane:bool=False, canvas_seg:bool=True):
+                       text:str=None, lane:bool=False, canvas_seg:bool=True, grade_lane:int=1):
         if self.__screen == None:
             init = None
             init_extra = None
 
         sensor = self.__put_sensor(sensor_type='sensor.camera.rgb', transform=transform, type=CAMERA)
         camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self.__screen, seg=seg,
-                           init_extra=init_extra, text=text, lane=lane, canvas_seg=canvas_seg)
+                           init_extra=init_extra, text=text, lane=lane, canvas_seg=canvas_seg, grade=grade_lane)
         self.sensors.append(camera)
         return camera
     
@@ -696,7 +721,7 @@ class PID:
             control.throttle = 0.5
 
         if error > 20:
-            error *= 1.23
+            error *= 1.3
 
         control.steer = self.__kp * error + self.__kd * self.__prev_error
         self.__vehicle.apply_control(control)
