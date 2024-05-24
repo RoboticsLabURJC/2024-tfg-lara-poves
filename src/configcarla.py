@@ -118,7 +118,7 @@ class CameraRGB(Sensor):
         if lane:
             assert seg, "Segmentation must be active for lane detection"
 
-            file = '/home/alumnos/lara/carla_lane_detector/examples/fastai_torch_lane_detector_model.pth'
+            file = '/home/alumnos/lara/2024-tfg-lara-poves/best_model_torch.pth'
             self.__lane_model = torch.load(file)
             self.__lane_model.eval()
 
@@ -127,7 +127,7 @@ class CameraRGB(Sensor):
             self.__threshold_lane_mask = 0.05
             self.__ymin_lane = 275 
             self.__angle_lane = 10
-            self.__mem_max = 5
+            self.__mem_max = 4
 
             # Initialize
             self.__coefficients = np.zeros((SIZE_MEM, 2, 3), dtype=float)
@@ -202,8 +202,8 @@ class CameraRGB(Sensor):
         
         init_time = time.time_ns()
         _, left_mask, right_mask = model_output[0]
-        coef_left = self.__mask_lane(mask=left_mask, index=LEFT_LANE, canvas=canvas)
-        coef_right = self.__mask_lane(mask=right_mask, index=RIGHT_LANE, canvas=canvas)
+        coef_left = self.__mask_lane(mask=left_mask, index=LEFT_LANE)
+        coef_right = self.__mask_lane(mask=right_mask, index=RIGHT_LANE)
 
         count_x = count_y = 0
         count_total = count_road = 0
@@ -696,7 +696,7 @@ class PID:
             control.throttle = 0.5
 
         if error > 20:
-            error *= 1.23
+            error *= 1.3
 
         control.steer = self.__kp * error + self.__kd * self.__prev_error
         self.__vehicle.apply_control(control)
