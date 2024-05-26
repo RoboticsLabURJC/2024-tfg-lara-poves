@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-05-24T09:15:00
+last_modified_at: 2024-05-24T09:20:00
 categories:
   - Blog
 tags:
@@ -124,7 +124,7 @@ model = tf.keras.Sequential([
 #### Capa de convolución
 Se aplican *kernels* (o filtros) de dimensiones nxn  para extraer características locales de la imagen. El *kernel* se va deslizando a lo largo de la imagen, calculando la suma ponderada de los píxeles en cada ubicación. Cada filtro produce un mapa de características que contiene las características relevantes de la imagen. En el ejemplo proporcionado, se aplican 32 filtros en la primera y cuarta capa de convolución y 64 en la segunda y tercera.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/deep_learning/perception/conv.jpeg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/perception/deep_learning/conv.jpeg" alt="">
 </figure>
 
 La operación de convolución reduce las dimensiones de la matriz de características. Para mantener las dimensiones constante o evitar que lleguen a cero, podemos aplicar la técnica de ***padding***, que consiste en aumentar las dimensiones añadiendo ceros sin modificar la información original. El *padding* es un parámetro flexible que puede añadirse a lo largo de toda la imagen, solo en la parte superior o en cualquier combinación deseada.
