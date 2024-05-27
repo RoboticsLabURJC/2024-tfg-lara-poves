@@ -1,5 +1,5 @@
 CartPole-v1:
-  n_timesteps: 50000
+  n_timesteps: 500000
   policy: 'MlpPolicy'
   learning_rate: 2.3e-3
   batch_size: 64 # Experiences per batch (N)
@@ -16,9 +16,9 @@ CartPole-v1:
     net_arch: [256, 256] # 2 hidden layers of 256 neurons
 
 MountainCar-v0:
-  n_timesteps: !!float 120000
+  n_timesteps: 120000
   policy: 'MlpPolicy'
-  learning_rate: !!float 0.004
+  learning_rate: 0.004
   batch_size: 128
   buffer_size: 10000
   learning_starts: 1000
@@ -41,7 +41,7 @@ Acrobot-v1:
   gamma: 0.99
   target_update_interval: 250
   train_freq: 4
-  gradient_steps: -1 # ??
+  gradient_steps: -1 # Igual que train_freq
   exploration_fraction: 0.12
   exploration_final_eps: 0.1
   policy_kwargs: 

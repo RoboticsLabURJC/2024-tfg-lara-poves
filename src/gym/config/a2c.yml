@@ -1,5 +1,4 @@
 CartPole-v1:
-  normalize: false
   n_envs: 8
   n_timesteps: 500000
   policy: 'MlpPolicy'
