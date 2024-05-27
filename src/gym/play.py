@@ -3,6 +3,8 @@ from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import argparse
 import matplotlib.pyplot as plt
 import random
+import math
+from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize
 
 alg_callable = {
     'DQN': (DQN, 'blue'),
@@ -16,6 +18,7 @@ alg_callable = {
 possible_envs = [
     "CartPole-v1",
     "MountainCar-v0",
+    "MountainCarContinuous-v0",
     "Acrobot-v1"
 ]
 
@@ -31,16 +34,22 @@ def main(args):
     rewards_envs = []
     for env_str in args.env:
         env = gym.make(env_str, render_mode="human")
-        rewards_models = []
 
+        env_dir = env_str.split("-")[0]
+        if "MountainCar" in env_str:
+            env_dir = "MountainCar"
+
+        rewards_models = []
         for alg in args.alg:
             try:
-                model_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/model/' + env_str.lower()
+                model_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/model/' + env_dir.lower()
                 model_str = model_dir + '/' + alg + '-' + env_str
                 model = alg_callable[alg][0].load(model_str)
                 model.set_random_seed(seed)
+
+                print("Algorithm:", alg + ',', "environment:", env_str)
             except FileNotFoundError:
-                print("Model", model_str, "doesn't exit")
+                print("Model", env_dir.lower() + '/' + alg + '-' + env_str, "doesn't exit")
                 continue
 
             total_reward = 0
@@ -64,18 +73,33 @@ def main(args):
         env.close()
 
     # Plot results
-    num_cols = len(rewards_envs)
-    num_rows = 1
-    all_labels = []
-    plt.figure(figsize=(5 * num_cols, 5 * num_rows))
+    num_cols = 3
+    num_plots = len(rewards_envs)
+    if num_plots < num_cols:
+        num_cols = num_plots
+    elif num_plots % 2 == 0 and num_plots <= 4:
+        num_cols = 2
+
+    num_rows = math.ceil(len(rewards_envs) / num_cols)
+    plt.figure(figsize=(5 * num_cols, 4 * num_rows))
 
     for i, (env, rewards_models) in enumerate(rewards_envs):
-        rewards_models.sort(key=lambda x: x[1][-1], reverse=True)
         plt.subplot(num_rows, num_cols, i + 1)
+        
+        reverse = False
+        if rewards_models[0][1][-1] > 0:
+            reverse = True
+        rewards_models.sort(key=lambda x: x[1][-1], reverse=reverse)
+
+        last_rewards = []
+        offset = 40
 
         for alg, rewards in rewards_models:
-            plt.plot(range(len(rewards)), rewards, label=alg, color=alg_callable[alg][1])
-            all_labels.append(alg)
+            if rewards[-1] in last_rewards:
+                x = len(rewards) - 1 - offset
+            else:
+                last_rewards.append(rewards[-1])
+                x = len(rewards) - 1
 
             if rewards[-1] < 0:
                 va = 'top'
@@ -83,15 +107,16 @@ def main(args):
             else:
                 va = 'bottom'
                 y = rewards[-1] + 1 
-            plt.text(len(rewards) - 1, y, f'{int(rewards[-1])}', 
-                     ha='right', va=va, color=alg_callable[alg][1])
+
+            plt.plot(range(len(rewards)), rewards, label=alg, color=alg_callable[alg][1])
+            plt.text(x, y, f'{int(rewards[-1])}', ha='right', va=va, color=alg_callable[alg][1])
 
         plt.xlabel('Steps')
         plt.ylabel('Total Reward')
         plt.title(env)
+        plt.legend()
 
     plt.tight_layout()
-    plt.legend(list(set(all_labels)))
     plt.show()
 
 if __name__ == "__main__":

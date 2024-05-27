@@ -24,8 +24,8 @@ MountainCar-v0:
   learning_starts: 1000
   gamma: 0.98
   target_update_interval: 600
-  train_freq: 16 # ??
-  gradient_steps: 8 # ??
+  train_freq: 16 # Actualiza el modelo cda 16 pasos, esos 16 pasos conforman un rollout
+  gradient_steps: 8 # Numero de actualizaciones que se hacen en cada rollout
   exploration_fraction: 0.2
   exploration_final_eps: 0.07
   policy_kwargs: 

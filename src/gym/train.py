@@ -3,6 +3,7 @@ from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import argparse
 import os
 import yaml
+from stable_baselines3.common.vec_env import DummyVecEnv
 
 # Visualize train: tensorboard --logdir=log_dir
 
@@ -19,15 +20,18 @@ alg_callable = {
 }
 
 def main(args):
-    log_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/log/' + args.env.lower()
+    env_dir = args.env.split("-")[0]
+    if "MountainCar" in args.env:
+        env_dir = "MountainCar"
+
+    log_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/log/' + env_dir.lower()
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
-    model_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/model/' + args.env.lower()
+    model_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/model/' + env_dir.lower()
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
 
-    env = gym.make(args.env, render_mode="human")
     alg = alg_callable[args.alg]
     log_name = args.alg + '-' + args.env + '-' + str(args.log_interval)
 
@@ -35,13 +39,30 @@ def main(args):
     config_path = "/home/alumnos/lara/2024-tfg-lara-poves/src/gym/config/" + args.alg.lower() + ".yml"
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
-    model_params = config[args.env]
-
+    
+    try:
+        model_params = config[args.env]
+    except KeyError:
+        print("Algorithm", args.alg, "is not available for environment", args.env)
+        return
+    
     # Extract some parameters
     n_timesteps = model_params['n_timesteps']
     model_params.pop('n_timesteps', None)
     policy = model_params['policy']
     model_params.pop('policy', None)
+
+    # Create env
+    try:
+        n_envs = model_params['n_envs']
+        model_params.pop('n_envs', None)
+        norm = model_params['normalize']
+        model_params.pop('normalize', None)
+
+        envs = [lambda: gym.make(args.env) for _ in range(n_envs)]
+        env = DummyVecEnv(envs) # Vector of envs
+    except KeyError:
+        env = gym.make(args.env, render_mode="human")
 
     # Create, train and save the model
     model = alg(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
@@ -54,6 +75,7 @@ if __name__ == "__main__":
     possible_envs = [
         "CartPole-v1",
         "MountainCar-v0",
+        "MountainCarContinuous-v0",
         "Acrobot-v1"
     ]
     possible_algs = list(alg_callable.keys())
