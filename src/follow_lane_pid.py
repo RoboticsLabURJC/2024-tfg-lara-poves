@@ -6,7 +6,7 @@ from configcarla import SIZE_CAMERA
 Z = 0.5
 
 def main(client:carla.Client, screen:pygame.Surface, town:str, transform:carla.Transform):
-    world, client = configcarla.setup_carla(name_world=town, port=2000, delta_seconds=0.05, client=client)
+    world, client = configcarla.setup_carla(name_world=town, port=2000, client=client, syn=False)
 
     # Add Ego Vehicle
     ego_vehicle = configcarla.add_one_vehicle(world=world, vehicle_type='vehicle.lincoln.mkz_2020',
@@ -33,7 +33,6 @@ def main(client:carla.Client, screen:pygame.Surface, town:str, transform:carla.T
                 if event.type == pygame.QUIT:
                     return None
            
-            world.tick()
             sensors.update_data()
             
             # Control vehicle
@@ -53,7 +52,7 @@ def main(client:carla.Client, screen:pygame.Surface, town:str, transform:carla.T
 if __name__ == "__main__":
     scenes = [
         ('Town05', carla.Transform(carla.Location(x=50.0, y=-145.7, z=Z))),
-        ('Town05', carla.Transform(carla.Location(x=151.5, y=7.0, z=Z), carla.Rotation(yaw=90.0))),
+        ('Town05', carla.Transform(carla.Location(x=151.5, y=15.0, z=Z), carla.Rotation(yaw=90.0))),
         ('Town04', carla.Transform(carla.Location(x=198.5, y=-163, z=0.5), carla.Rotation(yaw=90.0)))
     ]
 

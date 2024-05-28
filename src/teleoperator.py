@@ -2,10 +2,6 @@ import pygame
 import carla
 import configcarla
 
-# Screen
-HEIGHT = 500
-WIDTH = 600
-
 # Buttom
 BUTTOM_H = 30
 BUTTOM_W = 90
@@ -32,8 +28,8 @@ class Buttom:
     
 def main():
     # Setup CARLA and Pygame
-    world, _ = configcarla.setup_carla(name_world='Town03', delta_seconds=0.05)
-    screen = configcarla.setup_pygame(size=(WIDTH * 2, HEIGHT), name='Teleoperator')
+    world, _ = configcarla.setup_carla(name_world='Town03', syn=False)
+    screen = configcarla.setup_pygame(size=(configcarla.SIZE_CAMERA * 2, configcarla.SIZE_CAMERA), name='Teleoperator')
 
     # Add Ego Vehicle
     vehicle_transform = carla.Transform(carla.Location(x=100.0, y=-6.0, z=2.5))
@@ -47,17 +43,17 @@ def main():
     cameras = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
     camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5), carla.Rotation(pitch=-10.0, roll=90.0))
-    cameras.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, 0), text='Driver view',
+    cameras.add_camera_rgb(size_rect=(configcarla.SIZE_CAMERA, configcarla.SIZE_CAMERA), init=(0, 0), text='Driver view',
                            transform=camera_transform)
     
     camera_transform.location.x = -4.0
-    cameras.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(WIDTH, 0), text='World View',
+    cameras.add_camera_rgb(size_rect=(configcarla.SIZE_CAMERA, configcarla.SIZE_CAMERA), init=(configcarla.SIZE_CAMERA, 0), text='World View',
                            transform=camera_transform)
 
     # Instance buttoms
-    buttom_decrease = Buttom(text="-", x=WIDTH - BUTTOM_W, y=int(HEIGHT / 2) + 12, 
+    buttom_decrease = Buttom(text="-", x=configcarla.SIZE_CAMERA - BUTTOM_W, y=int(configcarla.SIZE_CAMERA / 2) + 12, 
                              color_background=(230, 50, 25))
-    buttom_increase = Buttom(text="+", x=WIDTH, y=int(HEIGHT / 2) + 12, color_background=(50, 230, 25))
+    buttom_increase = Buttom(text="+", x=configcarla.SIZE_CAMERA, y=int(configcarla.SIZE_CAMERA / 2) + 12, color_background=(50, 230, 25))
     buttoms = [buttom_increase, buttom_decrease]
 
     try:
@@ -74,7 +70,6 @@ def main():
                                 throttle -= OFFSET
                             teleop.set_throttle(throttle)
 
-            world.tick() 
             cameras.update_data(flip=False)
             teleop.control()
 
@@ -85,7 +80,7 @@ def main():
             throttle = teleop.get_throttle()
             text = "Throttle = {:.2f}".format(throttle)
             configcarla.write_text(text=text, img=screen, size=TEXT_SIZE, bold=True,
-                                   background=(0, 0, 0), point=(WIDTH, int(HEIGHT / 2)))
+                                   background=(0, 0, 0), point=(configcarla.SIZE_CAMERA, int(configcarla.SIZE_CAMERA / 2)))
 
             pygame.display.flip()
 
