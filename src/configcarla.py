@@ -3,7 +3,6 @@ import pygame
 import numpy as np
 import math
 import random
-from queue import Queue
 import sys
 import os
 from PIL import Image
@@ -82,16 +81,14 @@ def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=Fa
 class Sensor(ABC):
     def __init__(self, sensor):
         self.sensor = sensor
-        self.queue = Queue()
         self.sensor.listen(lambda data: self.__callback_data(data))
+        self.data = None
 
     def __callback_data(self, data):
-        self.queue.put(data)
+        self.data = data
 
-    def get_data(self):
-        if not self.queue.empty():
-            return self.queue.get(False) # Non-blocking call 
-        return None
+    def get_last_data(self):
+        return self.data
 
     @abstractmethod
     def process_data(self):
@@ -149,7 +146,11 @@ class CameraRGB(Sensor):
                 self.__rect_extra = sub_screen.get_rect(topleft=init_extra)
 
     def __mask_lane(self, mask:list, index:int):
-        assert self.__count_mem_lane[index] < self.__mem_max, "Lane not found"
+        if index == LEFT_LANE:
+            lane = "left"
+        else:
+            lane = "right"
+        assert self.__count_mem_lane[index] < self.__mem_max, "Line " + lane + " not found"
 
         mask = mask[:, :512]
         index_mask = np.where(mask > self.__threshold_lane_mask)
@@ -157,7 +158,7 @@ class CameraRGB(Sensor):
         # Memory lane
         if len(index_mask[0]) < 10:
             self.__count_mem_lane[index] += 1
-            return self.__coefficients[-1, index, 0:2]
+            return self.__coefficients[-1, index, 0:2], False
         else:
             self.__count_mem_lane[index] = 0
 
@@ -167,9 +168,11 @@ class CameraRGB(Sensor):
         # Check measure
         mean = np.mean(self.__coefficients[:, index, 2])
         angle = math.degrees(math.atan(coefficients[0])) % 180
-        if abs(mean - angle) > self.__angle_lane and self.__count_coef[index] >= SIZE_MEM:
+        diff = abs(mean - angle)
+
+        if diff > self.__angle_lane and self.__count_coef[index] >= SIZE_MEM:
             self.__count_mem_lane[index] += 1
-            return self.__coefficients[-1, index, 0:2]
+            return self.__coefficients[-1, index, 0:2], diff <= self.__angle_lane * 1.5
         elif self.__count_coef[index] >= SIZE_MEM:
             self.__count_mem_lane[index] = 0
 
@@ -182,7 +185,7 @@ class CameraRGB(Sensor):
         # Update count 
         self.__count_coef[index] += 1
 
-        return self.__coefficients[-1, index, 0:2]
+        return self.__coefficients[-1, index, 0:2], True
 
     def __detect_lane(self, data:list, canvas:list, mask:list): 
         init_time = time.time_ns()
@@ -202,8 +205,9 @@ class CameraRGB(Sensor):
         
         init_time = time.time_ns()
         _, left_mask, right_mask = model_output[0]
-        coef_left = self.__mask_lane(mask=left_mask, index=LEFT_LANE)
-        coef_right = self.__mask_lane(mask=right_mask, index=RIGHT_LANE)
+        coef_left, see_line_left = self.__mask_lane(mask=left_mask, index=LEFT_LANE)
+        coef_right, see_line_right = self.__mask_lane(mask=right_mask, index=RIGHT_LANE)
+        assert see_line_right == True or see_line_left == True, "Lane not found"
 
         count_x = count_y = 0
         count_total = count_road = 0
@@ -303,7 +307,7 @@ class CameraRGB(Sensor):
 
     def process_data(self):
         init_time = time.time_ns()
-        image = self.get_data()
+        image = self.data
         if image == None:
             return 
 
@@ -493,7 +497,7 @@ class Lidar(Sensor):
 
     def process_data(self):
         init_time = time.time_ns()
-        lidar = self.get_data()
+        lidar = self.data
         if lidar == None:
             return 
         
@@ -669,17 +673,13 @@ class PID:
     def __init__(self, vehicle:carla.Vehicle):
         self.__vehicle = vehicle
         self.__kp = 1 / (SIZE_CAMERA / 2)
-        self.__count = 0
-
-        self.__kd = -self.__kp / 2.3
+        self.__kd = -self.__kp / 1.7
 
         self.__error = 0
         self.__prev_error = 0
 
     def controll_vehicle(self, error:float):
         control = carla.VehicleControl()
-        self.__count += 1
-
         self.__prev_error = self.__error
         self.__error = error
 
@@ -687,30 +687,38 @@ class PID:
         if (self.__error > 0 and self.__prev_error < 0) or (self.__error < 0 and self.__prev_error > 0):
             self.__prev_error = 0        
 
+        v = self.__vehicle.get_velocity()
+        v = carla.Vector3D(v).length()
+
         if error > 10:
-            control.throttle = 0.42
-            control.brake = 0.2
-        elif self.__count < 100:
-            control.throttle = 0.8
+            control.throttle = 0.45
+            if v > 12.0:
+                control.brake = 0.38
+            elif v > 8.5:
+                control.brake = 0.22
         else:
-            control.throttle = 0.5
+            control.throttle = 0.58
 
         if error > 20:
-            error *= 1.3
+           error *= 1.15
 
         control.steer = self.__kp * error + self.__kd * self.__prev_error
         self.__vehicle.apply_control(control)
 
-def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05, client:carla.Client=None):
+def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.0, client:carla.Client=None, syn:bool=False):
     if client == None:
         client = carla.Client('localhost', port)
     world = client.get_world()
     world = client.load_world(name_world)
 
     settings = world.get_settings()
-    settings.synchronous_mode = True
     settings.fixed_delta_seconds = delta_seconds
+    if syn:
+        settings.synchronous_mode = True
+    else:
+        settings.synchronous_mode = False
     world.apply_settings(settings)
+    client.reload_world(False)
 
     return world, client
 
@@ -774,6 +782,7 @@ def add_vehicles_randomly(world:carla.World, number:int):
 
 def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000):
     tm = client.get_trafficmanager(port)
+    tm.set_synchronous_mode(True)
     tm_port = tm.get_port()
 
     for v in vehicles:
