@@ -35,14 +35,15 @@ def main(args):
     if "MountainCar" in args.env:
         env_dir = "MountainCar"
 
-    log_dir = check_dir('/home/alumnos/lara/2024-tfg-lara-poves/src/gym/log/', env_dir)
-    model_dir = check_dir('/home/alumnos/lara/2024-tfg-lara-poves/src/gym/model/', env_dir)
+    gym_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/'
+    log_dir = check_dir(gym_dir + 'log/', env_dir)
+    model_dir = check_dir(gym_dir + 'model/', env_dir)
 
     alg = alg_callable[args.alg]
     log_name = args.alg + '-' + args.env + '-' + str(args.log_interval)
 
     # Get hyperparams
-    config_path = "/home/alumnos/lara/2024-tfg-lara-poves/src/gym/config/" + args.alg.lower() + ".yml"
+    config_path = gym_dir + "config/" + args.alg.lower() + ".yml"
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
     
@@ -89,7 +90,7 @@ def main(args):
         # Save the running average, for testing the agent we need that normalization
         vec_normalize = model.get_vec_normalize_env()
         assert vec_normalize is not None
-        vec_dir = check_dir('/home/alumnos/lara/2024-tfg-lara-poves/src/gym/vecnormalize/', env_dir)
+        vec_dir = check_dir(gym_dir + '/vecnormalize/', env_dir)
         vec_normalize.save(vec_dir + cont_save + ".pkl")
 
 if __name__ == "__main__":

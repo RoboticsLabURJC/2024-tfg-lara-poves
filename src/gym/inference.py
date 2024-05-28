@@ -3,16 +3,16 @@ from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import argparse
 import matplotlib.pyplot as plt
 import random
-import math
-from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize
+from stable_baselines3.common.vec_env import VecNormalize
+from stable_baselines3.common.env_util import make_vec_env
 
 alg_callable = {
-    'DQN': (DQN, 'blue'),
-    'A2C': (A2C, 'orange'),
-    'DDPG': (DDPG, 'green'),
-    'TD3': (TD3, 'red'),
-    'SAC': (SAC, 'purple'),
-    'PPO': (PPO, 'yellow')
+    'DQN': (DQN, 'red'),
+    'A2C': (A2C, 'lightgreen', 'green'),
+    'DDPG': (DDPG, 'orange', 'lightcoral'),
+    'TD3': (TD3, 'blue', 'cornflowerblue'),
+    'SAC': (SAC, 'violet', 'purple'),
+    'PPO': (PPO, 'gray', 'black')
 }
 
 possible_envs = [
@@ -21,52 +21,6 @@ possible_envs = [
     "MountainCarContinuous-v0",
     "Acrobot-v1"
 ]
-
-'''
-from stable_baselines3 import PPO
-from stable_baselines3.common.vec_env import VecNormalize
-import gym
-
-# Ruta donde se guardó el modelo entrenado
-path_to_model = "ruta/al/modelo_entrenado.zip"
-
-# Ruta donde se guardaron las estadísticas de normalización
-path_to_vecnormalize = "ruta/a/vecnormalize.pkl"
-
-# Crear el entorno
-env = gym.make('nombre_del_entorno')
-
-# Crear el modelo PPO y cargar los parámetros entrenados
-model = PPO.load(path_to_model)
-
-# Cargar las estadísticas de normalización
-vec_normalize = VecNormalize.load(path_to_vecnormalize)
-
-# Inicializar el entorno
-obs = env.reset()
-
-# Loop de interacción con el entorno
-done = False
-while not done:
-    # Normalizar la observación antes de enviarla al modelo
-    normalized_obs = vec_normalize.normalize_obs(obs)
-
-    # Tomar una acción utilizando el modelo
-    action, _ = model.predict(normalized_obs, deterministic=True)
-
-    # Desnormalizar la acción si es necesario
-    action = vec_normalize.unnormalize_action(action)
-
-    # Aplicar la acción al entorno
-    obs, reward, done, info = env.step(action)
-
-    # Renderizar el entorno (opcional)
-    env.render()
-
-# Cerrar el entorno (opcional)
-env.close()
-
-'''
 
 def main(args):
     seed = random.randint(0, 1000)
@@ -91,78 +45,106 @@ def main(args):
 
         rewards_models = []
         for alg in args.alg:
-            try:
-                model_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/model/' + env_dir.lower()
-                model_str = model_dir + '/' + alg + '-' + env_str
-                model = alg_callable[alg][0].load(model_str)
-                model.set_random_seed(seed)
+            gym_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/'
+            cont_load =  env_dir.lower() + '/' + alg + '-' + env_str
 
-                print("Algorithm:", alg + ',', "environment:", env_str)
+            # Load model
+            try:
+                model = alg_callable[alg][0].load(gym_dir + 'model/' + cont_load)
+                model.set_random_seed(seed)
             except FileNotFoundError:
                 if alg != 'DQN' and env_dir != 'MountainCarContinuous-v0':
-                    print("Model", env_dir.lower() + '/' + alg + '-' + env_str, "doesn't exit")
+                    print("Model", cont_load + '.zip', "doesn't exit")
                 continue
 
-            total_reward = 0
+            try:
+                # Create env
+                def make_env(**kwargs) -> gym.Env:
+                    spec = gym.spec(env_str)
+                    return spec.make(**kwargs)  
+                env = make_vec_env(make_env, seed=seed)
+
+                # Load vecnormalize
+                norm = alg != 'DQN' and env_str != 'CartPole-v1'
+                if norm:
+                    vec_normalize = VecNormalize.load(gym_dir + 'vecnormalize/' + cont_load + '.pkl', venv=env)
+            except FileNotFoundError: 
+                print("Vector normalize", cont_load + '.pkl', "doesn't exit")
+                continue
+
+            print("Algorithm:", alg + ',', "environment:", env_str)
+            obs = env.reset()
+            done = False
+            total_reward = 0.0
             rewards = [total_reward]
-            obs, info = env.reset()
+            
+            # Simulate a play
+            while not done:
+                if norm:
+                    obs = vec_normalize.normalize_obs(obs)
 
-            while True:
-                # _states: internal state of the model
-                action, _states = model.predict(obs, deterministic=True)
-                obs, reward, terminated, truncated, info = env.step(action)
+                # Predict and execute action
+                action, _ = model.predict(obs, deterministic=True)
+                obs, reward, done, _ = env.step(action)
 
-                total_reward += reward
+                # Keep reward
+                total_reward += reward[0]
                 rewards.append(total_reward)
 
-                if terminated or truncated:
-                    rewards_models.append((alg, rewards))
-                    break
+            rewards_models.append((alg, rewards))
 
         if len(rewards_models) > 0:
             rewards_envs.append((env_str, rewards_models))
-        env.close()
-
+    
     # Plot results
     num_cols = 3
-    num_plots = len(rewards_envs)
-    if num_plots == 0:
-        return
-    elif num_plots < num_cols:
-        num_cols = num_plots
-    elif num_plots % 2 == 0 and num_plots <= 4:
-        num_cols = 2
+    num_rows = 1
+    plt.figure(figsize=(6 * num_cols, 5 * num_rows))
 
-    num_rows = math.ceil(len(rewards_envs) / num_cols)
-    plt.figure(figsize=(5 * num_cols, int(4.5 * num_rows)))
-
-    for i, (env, rewards_models) in enumerate(rewards_envs):
-        plt.subplot(num_rows, num_cols, i + 1)
-        
+    for env, rewards_models in rewards_envs:
+        # Sort rewards to see all plots
         reverse = False
         if rewards_models[0][1][-1] > 0:
             reverse = True
         rewards_models.sort(key=lambda x: x[1][-1], reverse=reverse)
 
+        # Select graph
+        if 'CartPole' in env:
+            i = 1
+        elif 'Acrobot' in env:
+            i = 3
+        else:
+            i = 2
+        plt.subplot(num_rows, num_cols, i)
+
         last_rewards = []
-        offset = 40
+        offset = 10
 
         for alg, rewards in rewards_models:
-            if rewards[-1] in last_rewards:
+            if any(abs(reward - rewards[-1]) <= offset for reward in last_rewards):
                 x = len(rewards) - 1 - offset
             else:
                 last_rewards.append(rewards[-1])
                 x = len(rewards) - 1
 
             if rewards[-1] < 0:
-                va = 'top'
                 y = rewards[-1] - 1
+                va = 'top'
             else:
-                va = 'bottom'
                 y = rewards[-1] + 1 
+                va = 'bottom'
 
-            plt.plot(range(len(rewards)), rewards, label=alg, color=alg_callable[alg][1])
-            plt.text(x, y, f'{int(rewards[-1])}', ha='right', va=va, color=alg_callable[alg][1])
+            if 'Continuous' in env:
+                last_reward = round(rewards[-1], 2)
+                color = alg_callable[alg][2]
+                label = alg + ' ' + 'cont'
+            else:
+                last_reward = int(rewards[-1])
+                color = alg_callable[alg][1]
+                label = alg
+
+            plt.plot(range(len(rewards)), rewards, label=label, color=color)
+            plt.text(x, y, f'{last_reward}', ha='right', va=va, color=color, fontsize=11)
 
         plt.xlabel('Steps')
         plt.ylabel('Total Reward')

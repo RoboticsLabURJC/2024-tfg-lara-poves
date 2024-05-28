@@ -7,14 +7,14 @@ CartPole-v1:
 MountainCar-v0:
   normalize: true
   n_envs: 16
-  n_timesteps: 1000000
+  n_timesteps: 550000
   policy: 'MlpPolicy'
   ent_coef: .0
 
 Acrobot-v1:
   normalize: true
   n_envs: 16
-  n_timesteps: 500000
+  n_timesteps: 600000
   policy: 'MlpPolicy'
   ent_coef: .0 # coeficiente que controla la entropia en la funcion de perdida (beta)
   # gae_lambda: controlar el sesgo y la varianza con el metodo GAE (gamma)
@@ -23,7 +23,7 @@ MountainCarContinuous-v0:
   normalize: true
   n_envs: 4 # Numero de entornos que se ejecutan en paralelo
   n_steps: 100 # Número de pasos de interacción que se ejecutarán en cada entorno antes de realizar una actualización de la política
-  n_timesteps: 100000
+  n_timesteps: 550000
   policy: 'MlpPolicy'
   ent_coef: 0.0
   use_sde: True
