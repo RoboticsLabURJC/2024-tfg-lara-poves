@@ -16,7 +16,7 @@ CartPole-v1:
     net_arch: [256, 256] # 2 hidden layers of 256 neurons
 
 MountainCar-v0:
-  n_timesteps: 120000
+  n_timesteps: 550000
   policy: 'MlpPolicy'
   learning_rate: 0.004
   batch_size: 128
@@ -32,7 +32,7 @@ MountainCar-v0:
     net_arch: [256, 256]
 
 Acrobot-v1:
-  n_timesteps: 500000
+  n_timesteps: 600000
   policy: 'MlpPolicy'
   learning_rate: 6.3e-4
   batch_size: 128
