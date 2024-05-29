@@ -1,2964 +1,2676 @@
-Camera init: 446231 ns
-Seg init: 1624444 ns
-Seg prediction: 79968106 ns
-Seg get canvas: 10637157 ns
-Seg camera show: 1881084 ns
-Lidar init: 372071 ns
-Lidar points: 13000662 ns
-Lidar stats: 4330311 ns
-Lidar blit: 330900
-Camera init: 281591 ns
-Camera show: 2525896 ns
-Sensors FPS + flip: 3385549 ns
-Camera init: 259950 ns
-Seg init: 1578704 ns
-Seg prediction: 64978430 ns
-Seg get canvas: 10974757 ns
-Seg camera show: 1856535 ns
-Lidar init: 317611 ns
-Lidar points: 13168982 ns
-Lidar stats: 4265760 ns
-Lidar blit: 332701
-Camera init: 309461 ns
-Camera show: 2475786 ns
-Sensors FPS + flip: 4512491 ns
-Camera init: 705252 ns
-Seg init: 1947265 ns
-Seg prediction: 58661074 ns
-Seg get canvas: 11092597 ns
-Seg camera show: 1791824 ns
-Lidar init: 240901 ns
-Lidar points: 13142813 ns
-Lidar stats: 4203550 ns
-Lidar blit: 326001
-Camera init: 268401 ns
-Camera show: 2283695 ns
-Sensors FPS + flip: 3854890 ns
-Camera init: 635232 ns
-Seg init: 2354775 ns
-Seg prediction: 59258656 ns
-Seg get canvas: 10875947 ns
-Seg camera show: 1754454 ns
-Lidar init: 213290 ns
-Lidar points: 12789712 ns
-Lidar stats: 4246871 ns
-Lidar blit: 339071
-Camera init: 298910 ns
-Camera show: 2463766 ns
-Sensors FPS + flip: 4091570 ns
-Camera init: 449672 ns
-Seg init: 2015214 ns
-Seg prediction: 61596572 ns
-Seg get canvas: 10574986 ns
-Seg camera show: 1758754 ns
-Lidar init: 210270 ns
-Lidar points: 12938532 ns
-Lidar stats: 4231430 ns
-Lidar blit: 362971
-Camera init: 295201 ns
-Camera show: 1929035 ns
-Sensors FPS + flip: 4468991 ns
-Camera init: 695422 ns
-Seg init: 4717211 ns
-Seg prediction: 62369673 ns
-Seg get canvas: 10090015 ns
-Seg camera show: 1763084 ns
-Lidar init: 206451 ns
-Lidar points: 12887451 ns
-Lidar stats: 4318551 ns
-Lidar blit: 342981
-Camera init: 267220 ns
-Camera show: 2434116 ns
-Sensors FPS + flip: 3109128 ns
-Camera init: 973322 ns
-Seg init: 5451653 ns
-Seg prediction: 69412080 ns
-Seg get canvas: 10017624 ns
-Seg camera show: 1914965 ns
-Lidar init: 230351 ns
-Lidar points: 13818003 ns
-Lidar stats: 4206471 ns
-Lidar blit: 723561
-Camera init: 466281 ns
-Camera show: 3067387 ns
-Sensors FPS + flip: 4006251 ns
-Camera init: 454721 ns
-Seg init: 1746515 ns
-Seg prediction: 55637236 ns
-Seg get canvas: 10086285 ns
-Seg camera show: 1755854 ns
-Lidar init: 202391 ns
-Lidar points: 12756691 ns
-Lidar stats: 4078710 ns
-Lidar blit: 338731
-Camera init: 264220 ns
-Camera show: 2430736 ns
-Sensors FPS + flip: 2758927 ns
-Camera init: 356811 ns
-Seg init: 2193675 ns
-Seg prediction: 65347550 ns
-Seg get canvas: 10632966 ns
-Seg camera show: 2151895 ns
-Lidar init: 215781 ns
-Lidar points: 13309093 ns
-Lidar stats: 4588341 ns
-Lidar blit: 331901
-Camera init: 283020 ns
-Camera show: 2550857 ns
-Sensors FPS + flip: 2946547 ns
-Camera init: 351931 ns
-Seg init: 2006825 ns
-Seg prediction: 67594945 ns
-Seg get canvas: 11115157 ns
-Seg camera show: 1981505 ns
-Lidar init: 211681 ns
-Lidar points: 13156402 ns
-Lidar stats: 4080900 ns
-Lidar blit: 327941
-Camera init: 273290 ns
-Camera show: 2443486 ns
-Sensors FPS + flip: 3079848 ns
-Camera init: 290241 ns
-Seg init: 2255456 ns
-Seg prediction: 61243779 ns
-Seg get canvas: 11594089 ns
-Seg camera show: 1871834 ns
-Lidar init: 217351 ns
-Lidar points: 14807056 ns
-Lidar stats: 5047452 ns
-Lidar blit: 361011
-Camera init: 267801 ns
-Camera show: 2541576 ns
-Sensors FPS + flip: 3528249 ns
-Camera init: 546442 ns
-Seg init: 4930992 ns
-Seg prediction: 64108206 ns
-Seg get canvas: 10543496 ns
-Seg camera show: 1893105 ns
-Lidar init: 222950 ns
-Lidar points: 12995532 ns
-Lidar stats: 4464461 ns
-Lidar blit: 667942
-Camera init: 270340 ns
-Camera show: 3015528 ns
-Sensors FPS + flip: 6532536 ns
-Camera init: 399321 ns
-Seg init: 2667597 ns
-Seg prediction: 65238770 ns
-Seg get canvas: 10583216 ns
-Seg camera show: 1838934 ns
-Lidar init: 219131 ns
-Lidar points: 13383713 ns
-Lidar stats: 4286040 ns
-Lidar blit: 335970
-Camera init: 318311 ns
-Camera show: 2562676 ns
-Sensors FPS + flip: 4748752 ns
-Camera init: 549391 ns
-Seg init: 3591999 ns
-Seg prediction: 61977472 ns
-Seg get canvas: 10449155 ns
-Seg camera show: 1798995 ns
-Lidar init: 211570 ns
-Lidar points: 12822292 ns
-Lidar stats: 4045590 ns
-Lidar blit: 333370
-Camera init: 339081 ns
-Camera show: 2533756 ns
-Sensors FPS + flip: 4814432 ns
-Camera init: 308531 ns
-Seg init: 1669414 ns
-Seg prediction: 60894659 ns
-Seg get canvas: 12508830 ns
-Seg camera show: 2088016 ns
-Lidar init: 322220 ns
-Lidar points: 13644384 ns
-Lidar stats: 4821832 ns
-Lidar blit: 531441
-Camera init: 324811 ns
-Camera show: 3013977 ns
-Sensors FPS + flip: 5835794 ns
-Camera init: 343990 ns
-Seg init: 1664684 ns
-Seg prediction: 59963816 ns
-Seg get canvas: 12550731 ns
-Seg camera show: 1873394 ns
-Lidar init: 229071 ns
-Lidar points: 12699611 ns
-Lidar stats: 6819797 ns
-Lidar blit: 703271
-Camera init: 408631 ns
-Camera show: 3422478 ns
-Sensors FPS + flip: 3605029 ns
-Camera init: 584242 ns
-Seg init: 2311545 ns
-Seg prediction: 74748893 ns
-Seg get canvas: 10482746 ns
-Seg camera show: 1981734 ns
-Lidar init: 304211 ns
-Lidar points: 13545433 ns
-Lidar stats: 5706954 ns
-Lidar blit: 861842
-Camera init: 500471 ns
-Camera show: 3690489 ns
-Sensors FPS + flip: 3170188 ns
-Camera init: 532041 ns
-Seg init: 1930565 ns
-Seg prediction: 78595801 ns
-Seg get canvas: 10963707 ns
-Seg camera show: 1857265 ns
-Lidar init: 346461 ns
-Lidar points: 12593030 ns
-Lidar stats: 4228840 ns
-Lidar blit: 364031
-Camera init: 293501 ns
-Camera show: 2501206 ns
-Sensors FPS + flip: 3468858 ns
-Camera init: 294260 ns
-Seg init: 1593934 ns
-Seg prediction: 64078836 ns
-Seg get canvas: 10654786 ns
-Seg camera show: 1876595 ns
-Lidar init: 223600 ns
-Lidar points: 12633021 ns
-Lidar stats: 4156050 ns
-Lidar blit: 337001
-Camera init: 281121 ns
-Camera show: 2567556 ns
-Sensors FPS + flip: 4522831 ns
-Camera init: 279900 ns
-Seg init: 2137156 ns
-Seg prediction: 60914728 ns
-Seg get canvas: 9792794 ns
-Seg camera show: 1877004 ns
-Lidar init: 267021 ns
-Lidar points: 13073791 ns
-Lidar stats: 4168240 ns
-Lidar blit: 336741
-Camera init: 284211 ns
-Camera show: 2591206 ns
-Sensors FPS + flip: 3710009 ns
-Camera init: 500531 ns
-Seg init: 1916515 ns
-Seg prediction: 63648814 ns
-Seg get canvas: 10973587 ns
-Seg camera show: 1783325 ns
-Lidar init: 210640 ns
-Lidar points: 13676004 ns
-Lidar stats: 4798121 ns
-Lidar blit: 335181
-Camera init: 279251 ns
-Camera show: 2567226 ns
-Sensors FPS + flip: 3347208 ns
-Camera init: 487621 ns
-Seg init: 3188278 ns
-Seg prediction: 74807272 ns
-Seg get canvas: 11880819 ns
-Seg camera show: 1793784 ns
-Lidar init: 219641 ns
-Lidar points: 12967191 ns
-Lidar stats: 4188831 ns
-Lidar blit: 353720
-Camera init: 293250 ns
-Camera show: 2487166 ns
-Sensors FPS + flip: 3931950 ns
-Camera init: 308971 ns
-Seg init: 1602094 ns
-Seg prediction: 61508270 ns
-Seg get canvas: 11792258 ns
-Seg camera show: 1973585 ns
-Lidar init: 226541 ns
-Lidar points: 14888686 ns
-Lidar stats: 4732722 ns
-Lidar blit: 367101
-Camera init: 341021 ns
-Camera show: 2574756 ns
-Sensors FPS + flip: 3282847 ns
-Camera init: 474711 ns
-Seg init: 1860005 ns
-Seg prediction: 67404784 ns
-Seg get canvas: 11437038 ns
-Seg camera show: 1899184 ns
-Lidar init: 257670 ns
-Lidar points: 13704054 ns
-Lidar stats: 4811061 ns
-Lidar blit: 402681
-Camera init: 296301 ns
-Camera show: 2622767 ns
-Sensors FPS + flip: 3796359 ns
-Camera init: 322541 ns
-Seg init: 1949085 ns
-Seg prediction: 60173276 ns
-Seg get canvas: 10292285 ns
-Seg camera show: 1848975 ns
-Lidar init: 217540 ns
-Lidar points: 12759861 ns
-Lidar stats: 4405541 ns
-Lidar blit: 318620
-Camera init: 271741 ns
-Camera show: 2579426 ns
-Sensors FPS + flip: 3380459 ns
-Camera init: 262971 ns
-Seg init: 1648124 ns
-Seg prediction: 64898878 ns
-Seg get canvas: 9800604 ns
-Seg camera show: 1728584 ns
-Lidar init: 209790 ns
-Lidar points: 14048675 ns
-Lidar stats: 4147810 ns
-Lidar blit: 331881
-Camera init: 294270 ns
-Camera show: 2453136 ns
-Sensors FPS + flip: 3899860 ns
-Camera init: 301641 ns
-Seg init: 1605084 ns
-Seg prediction: 62595221 ns
-Seg get canvas: 10223024 ns
-Seg camera show: 1819844 ns
-Lidar init: 214411 ns
-Lidar points: 12549290 ns
-Lidar stats: 4170900 ns
-Lidar blit: 330201
-Camera init: 268951 ns
-Camera show: 2536506 ns
-Sensors FPS + flip: 3402828 ns
-Camera init: 285700 ns
-Seg init: 1637064 ns
-Seg prediction: 64277826 ns
-Seg get canvas: 11753009 ns
-Seg camera show: 1787444 ns
-Lidar init: 212481 ns
-Lidar points: 12511090 ns
-Lidar stats: 4122660 ns
-Lidar blit: 326561
-Camera init: 288700 ns
-Camera show: 2469186 ns
-Sensors FPS + flip: 2702997 ns
-Camera init: 284131 ns
-Seg init: 1573454 ns
-Seg prediction: 59702784 ns
-Seg get canvas: 10623736 ns
-Seg camera show: 2129615 ns
-Lidar init: 212840 ns
-Lidar points: 13316713 ns
-Lidar stats: 4111099 ns
-Lidar blit: 328691
-Camera init: 291421 ns
-Camera show: 2569136 ns
-Sensors FPS + flip: 3862449 ns
-Camera init: 470481 ns
-Seg init: 3364768 ns
-Seg prediction: 65183968 ns
-Seg get canvas: 11760049 ns
-Seg camera show: 2267775 ns
-Lidar init: 446242 ns
-Lidar points: 16734990 ns
-Lidar stats: 6468506 ns
-Lidar blit: 394241
-Camera init: 517801 ns
-Camera show: 3119897 ns
-Sensors FPS + flip: 4473240 ns
-Camera init: 855752 ns
-Seg init: 2675636 ns
-Seg prediction: 62082801 ns
-Seg get canvas: 10897956 ns
-Seg camera show: 1878805 ns
-Lidar init: 214990 ns
-Lidar points: 12692571 ns
-Lidar stats: 4196871 ns
-Lidar blit: 328490
-Camera init: 267921 ns
-Camera show: 2499846 ns
-Sensors FPS + flip: 3851399 ns
-Camera init: 261721 ns
-Seg init: 1692944 ns
-Seg prediction: 58672272 ns
-Seg get canvas: 10540035 ns
-Seg camera show: 1969644 ns
-Lidar init: 207631 ns
-Lidar points: 12704831 ns
-Lidar stats: 4355141 ns
-Lidar blit: 337770
-Camera init: 279271 ns
-Camera show: 2408186 ns
-Sensors FPS + flip: 3924939 ns
-Camera init: 380951 ns
-Seg init: 1635454 ns
-Seg prediction: 58723232 ns
-Seg get canvas: 10036494 ns
-Seg camera show: 1762534 ns
-Lidar init: 204010 ns
-Lidar points: 12484411 ns
-Lidar stats: 4101920 ns
-Lidar blit: 323221
-Camera init: 283710 ns
-Camera show: 2631786 ns
-Sensors FPS + flip: 3481599 ns
-Camera init: 282791 ns
-Seg init: 1557964 ns
-Seg prediction: 59836575 ns
-Seg get canvas: 10760026 ns
-Seg camera show: 1727654 ns
-Lidar init: 207791 ns
-Lidar points: 13446823 ns
-Lidar stats: 4436790 ns
-Lidar blit: 329331
-Camera init: 277721 ns
-Camera show: 2415115 ns
-Sensors FPS + flip: 3240008 ns
-Camera init: 297200 ns
-Seg init: 1681144 ns
-Seg prediction: 62425142 ns
-Seg get canvas: 11409587 ns
-Seg camera show: 1763905 ns
-Lidar init: 215960 ns
-Lidar points: 13315102 ns
-Lidar stats: 4266211 ns
-Lidar blit: 326760
-Camera init: 274931 ns
-Camera show: 2497506 ns
-Sensors FPS + flip: 3741149 ns
-Camera init: 270800 ns
-Seg init: 1575524 ns
-Seg prediction: 62604962 ns
-Seg get canvas: 11302817 ns
-Seg camera show: 1759854 ns
-Lidar init: 224260 ns
-Lidar points: 13396593 ns
-Lidar stats: 4394291 ns
-Lidar blit: 344610
-Camera init: 286320 ns
-Camera show: 2436136 ns
-Sensors FPS + flip: 3473558 ns
-Camera init: 301831 ns
-Seg init: 1578154 ns
-Seg prediction: 58338920 ns
-Seg get canvas: 10439235 ns
-Seg camera show: 1754295 ns
-Lidar init: 219280 ns
-Lidar points: 13462043 ns
-Lidar stats: 4097890 ns
-Lidar blit: 331640
-Camera init: 311061 ns
-Camera show: 2532766 ns
-Sensors FPS + flip: 4088050 ns
-Camera init: 308301 ns
-Seg init: 1623074 ns
-Seg prediction: 59372553 ns
-Seg get canvas: 11238757 ns
-Seg camera show: 1817175 ns
-Lidar init: 220680 ns
-Lidar points: 12935531 ns
-Lidar stats: 4088080 ns
-Lidar blit: 338491
-Camera init: 284031 ns
-Camera show: 2450656 ns
-Sensors FPS + flip: 4104220 ns
-Camera init: 488431 ns
-Seg init: 1979834 ns
-Seg prediction: 61190738 ns
-Seg get canvas: 11125977 ns
-Seg camera show: 1920754 ns
-Lidar init: 206001 ns
-Lidar points: 13434802 ns
-Lidar stats: 4155240 ns
-Lidar blit: 332901
-Camera init: 301811 ns
-Camera show: 2577196 ns
-Sensors FPS + flip: 3491179 ns
-Camera init: 497261 ns
-Seg init: 2276666 ns
-Seg prediction: 56966597 ns
-Seg get canvas: 10686836 ns
-Seg camera show: 2115535 ns
-Lidar init: 227800 ns
-Lidar points: 14006364 ns
-Lidar stats: 4218761 ns
-Lidar blit: 339980
-Camera init: 295761 ns
-Camera show: 2456536 ns
-Sensors FPS + flip: 2985067 ns
-Camera init: 698192 ns
-Seg init: 2469166 ns
-Seg prediction: 64990257 ns
-Seg get canvas: 13691223 ns
-Seg camera show: 2141905 ns
-Lidar init: 341871 ns
-Lidar points: 14665096 ns
-Lidar stats: 4250040 ns
-Lidar blit: 355191
-Camera init: 288111 ns
-Camera show: 2526106 ns
-Sensors FPS + flip: 3061617 ns
-Camera init: 288721 ns
-Seg init: 1618814 ns
-Seg prediction: 57237718 ns
-Seg get canvas: 10540525 ns
-Seg camera show: 1771145 ns
-Lidar init: 213450 ns
-Lidar points: 13276032 ns
-Lidar stats: 4188670 ns
-Lidar blit: 327041
-Camera init: 282751 ns
-Camera show: 2463756 ns
-Sensors FPS + flip: 6581205 ns
-Camera init: 292261 ns
-Seg init: 1776444 ns
-Seg prediction: 61183928 ns
-Seg get canvas: 10460305 ns
-Seg camera show: 1792264 ns
-Lidar init: 214340 ns
-Lidar points: 13585333 ns
-Lidar stats: 4163700 ns
-Lidar blit: 349141
-Camera init: 286970 ns
-Camera show: 2568347 ns
-Sensors FPS + flip: 3072367 ns
-Camera init: 335941 ns
-Seg init: 2098995 ns
-Seg prediction: 64205184 ns
-Seg get canvas: 10883047 ns
-Seg camera show: 1817164 ns
-Lidar init: 209921 ns
-Lidar points: 15354167 ns
-Lidar stats: 4151640 ns
-Lidar blit: 335751
-Camera init: 299850 ns
-Camera show: 2473766 ns
-Sensors FPS + flip: 3112588 ns
-Camera init: 521581 ns
-Seg init: 1806734 ns
-Seg prediction: 57955930 ns
-Seg get canvas: 10175604 ns
-Seg camera show: 1783354 ns
-Lidar init: 223011 ns
-Lidar points: 12913732 ns
-Lidar stats: 4167249 ns
-Lidar blit: 342421
-Camera init: 285851 ns
-Camera show: 2537316 ns
-Sensors FPS + flip: 3481508 ns
-Camera init: 304531 ns
-Seg init: 1660684 ns
-Seg prediction: 61673099 ns
-Seg get canvas: 10934176 ns
-Seg camera show: 1787024 ns
-Lidar init: 217431 ns
-Lidar points: 12570830 ns
-Lidar stats: 4476771 ns
-Lidar blit: 341591
-Camera init: 296640 ns
-Camera show: 2478766 ns
-Sensors FPS + flip: 3218968 ns
-Camera init: 314451 ns
-Seg init: 1636154 ns
-Seg prediction: 61171127 ns
-Seg get canvas: 9669243 ns
-Seg camera show: 1784454 ns
-Lidar init: 229791 ns
-Lidar points: 13483322 ns
-Lidar stats: 4332220 ns
-Lidar blit: 343651
-Camera init: 371541 ns
-Camera show: 2713877 ns
-Sensors FPS + flip: 3225158 ns
-Camera init: 488241 ns
-Seg init: 1803594 ns
-Seg prediction: 61967109 ns
-Seg get canvas: 9995753 ns
-Seg camera show: 1813124 ns
-Lidar init: 214421 ns
-Lidar points: 12703060 ns
-Lidar stats: 6269675 ns
-Lidar blit: 376081
-Camera init: 541371 ns
-Camera show: 2808437 ns
-Sensors FPS + flip: 3240188 ns
-Camera init: 310960 ns
-Seg init: 1679394 ns
-Seg prediction: 61696668 ns
-Seg get canvas: 9817094 ns
-Seg camera show: 1863485 ns
-Lidar init: 224610 ns
-Lidar points: 13239102 ns
-Lidar stats: 4145880 ns
-Lidar blit: 343701
-Camera init: 287550 ns
-Camera show: 2956887 ns
-Sensors FPS + flip: 3585218 ns
-Camera init: 502581 ns
-Seg init: 2311746 ns
-Seg prediction: 60230514 ns
-Seg get canvas: 9953224 ns
-Seg camera show: 1879705 ns
-Lidar init: 222960 ns
-Lidar points: 14186964 ns
-Lidar stats: 4817702 ns
-Lidar blit: 352161
-Camera init: 325091 ns
-Camera show: 2661526 ns
-Sensors FPS + flip: 3447888 ns
-Camera init: 600162 ns
-Seg init: 2267645 ns
-Seg prediction: 64410095 ns
-Seg get canvas: 10147634 ns
-Seg camera show: 1770134 ns
-Lidar init: 208880 ns
-Lidar points: 12786471 ns
-Lidar stats: 4506450 ns
-Lidar blit: 350971
-Camera init: 398431 ns
-Camera show: 3063178 ns
-Sensors FPS + flip: 2960147 ns
-Camera init: 338151 ns
-Seg init: 2109635 ns
-Seg prediction: 62064119 ns
-Seg get canvas: 9730313 ns
-Seg camera show: 1736544 ns
-Lidar init: 210601 ns
-Lidar points: 12599940 ns
-Lidar stats: 4096780 ns
-Lidar blit: 327301
-Camera init: 273150 ns
-Camera show: 2418316 ns
-Sensors FPS + flip: 3206168 ns
-Camera init: 285860 ns
-Seg init: 1579044 ns
-Seg prediction: 65198556 ns
-Seg get canvas: 10552416 ns
-Seg camera show: 1751924 ns
-Lidar init: 205551 ns
-Lidar points: 12835271 ns
-Lidar stats: 4302830 ns
-Lidar blit: 339260
-Camera init: 286361 ns
-Camera show: 2575646 ns
-Sensors FPS + flip: 2681327 ns
-Camera init: 265791 ns
-Seg init: 1593434 ns
-Seg prediction: 64946806 ns
-Seg get canvas: 10855445 ns
-Seg camera show: 1740835 ns
-Lidar init: 966922 ns
-Lidar points: 12745811 ns
-Lidar stats: 4140740 ns
-Lidar blit: 343781
-Camera init: 267490 ns
-Camera show: 2419646 ns
-Sensors FPS + flip: 2596776 ns
-Camera init: 308611 ns
-Seg init: 1949455 ns
-Seg prediction: 63788293 ns
-Seg get canvas: 10769666 ns
-Seg camera show: 1833054 ns
-Lidar init: 322911 ns
-Lidar points: 13100972 ns
-Lidar stats: 4185639 ns
-Lidar blit: 329271
-Camera init: 270971 ns
-Camera show: 2562076 ns
-Sensors FPS + flip: 2688897 ns
-Camera init: 347790 ns
-Seg init: 1581374 ns
-Seg prediction: 62261339 ns
-Seg get canvas: 9839934 ns
-Seg camera show: 1936144 ns
-Lidar init: 256101 ns
-Lidar points: 12227759 ns
-Lidar stats: 4267820 ns
-Lidar blit: 382781
-Camera init: 494501 ns
-Camera show: 2934217 ns
-Sensors FPS + flip: 3453199 ns
-Camera init: 370761 ns
-Seg init: 2498195 ns
-Seg prediction: 65789917 ns
-Seg get canvas: 9687914 ns
-Seg camera show: 1985154 ns
-Lidar init: 242001 ns
-Lidar points: 12359389 ns
-Lidar stats: 4244961 ns
-Lidar blit: 325080
-Camera init: 285170 ns
-Camera show: 2576926 ns
-Sensors FPS + flip: 4503141 ns
-Camera init: 280851 ns
-Seg init: 1619844 ns
-Seg prediction: 66091108 ns
-Seg get canvas: 10065314 ns
-Seg camera show: 2004635 ns
-Lidar init: 208660 ns
-Lidar points: 12470880 ns
-Lidar stats: 4460160 ns
-Lidar blit: 336971
-Camera init: 277501 ns
-Camera show: 2476366 ns
-Sensors FPS + flip: 3383848 ns
-Camera init: 489891 ns
-Seg init: 1758154 ns
-Seg prediction: 59027391 ns
-Seg get canvas: 9534133 ns
-Seg camera show: 1798844 ns
-Lidar init: 227791 ns
-Lidar points: 13302771 ns
-Lidar stats: 4170410 ns
-Lidar blit: 321721
-Camera init: 268441 ns
-Camera show: 2504265 ns
-Sensors FPS + flip: 3359909 ns
-Camera init: 393351 ns
-Seg init: 1602174 ns
-Seg prediction: 62378959 ns
-Seg get canvas: 9561182 ns
-Seg camera show: 1724324 ns
-Lidar init: 206151 ns
-Lidar points: 13281302 ns
-Lidar stats: 4302100 ns
-Lidar blit: 339870
-Camera init: 278411 ns
-Camera show: 2386036 ns
-Sensors FPS + flip: 3171768 ns
-Camera init: 301101 ns
-Seg init: 1561224 ns
-Seg prediction: 60063093 ns
-Seg get canvas: 9686363 ns
-Seg camera show: 1770514 ns
-Lidar init: 215381 ns
-Lidar points: 13982963 ns
-Lidar stats: 4348151 ns
-Lidar blit: 329701
-Camera init: 279240 ns
-Camera show: 2576886 ns
-Sensors FPS + flip: 3051908 ns
-Camera init: 267961 ns
-Seg init: 2245045 ns
-Seg prediction: 61319216 ns
-Seg get canvas: 12329580 ns
-Seg camera show: 1736844 ns
-Lidar init: 213691 ns
-Lidar points: 12696070 ns
-Lidar stats: 4181570 ns
-Lidar blit: 342830
-Camera init: 280161 ns
-Camera show: 2437746 ns
-Sensors FPS + flip: 3103158 ns
-Camera init: 287971 ns
-Seg init: 1592883 ns
-Seg prediction: 62583659 ns
-Seg get canvas: 9820984 ns
-Seg camera show: 1747494 ns
-Lidar init: 218561 ns
-Lidar points: 13105971 ns
-Lidar stats: 4776201 ns
-Lidar blit: 326201
-Camera init: 277841 ns
-Camera show: 2516106 ns
-Sensors FPS + flip: 2722667 ns
-Camera init: 268741 ns
-Seg init: 1861124 ns
-Seg prediction: 58439700 ns
-Seg get canvas: 11349827 ns
-Seg camera show: 1713414 ns
-Lidar init: 211380 ns
-Lidar points: 12656931 ns
-Lidar stats: 4192829 ns
-Lidar blit: 324351
-Camera init: 272941 ns
-Camera show: 2426496 ns
-Sensors FPS + flip: 3350868 ns
-Camera init: 288951 ns
-Seg init: 1560473 ns
-Seg prediction: 61082906 ns
-Seg get canvas: 9912714 ns
-Seg camera show: 1763804 ns
-Lidar init: 216121 ns
-Lidar points: 12962361 ns
-Lidar stats: 4293129 ns
-Lidar blit: 340901
-Camera init: 290881 ns
-Camera show: 2529336 ns
-Sensors FPS + flip: 3373198 ns
-Camera init: 298291 ns
-Seg init: 1964474 ns
-Seg prediction: 61140936 ns
-Seg get canvas: 11040356 ns
-Seg camera show: 1741004 ns
-Lidar init: 213411 ns
-Lidar points: 12654220 ns
-Lidar stats: 4272000 ns
-Lidar blit: 352421
-Camera init: 530271 ns
-Camera show: 2483266 ns
-Sensors FPS + flip: 3670779 ns
-Camera init: 482371 ns
-Seg init: 2026405 ns
-Seg prediction: 65113614 ns
-Seg get canvas: 9789994 ns
-Seg camera show: 1726344 ns
-Lidar init: 214910 ns
-Lidar points: 12577970 ns
-Lidar stats: 4555971 ns
-Lidar blit: 327751
-Camera init: 272380 ns
-Camera show: 2529127 ns
-Sensors FPS + flip: 3346138 ns
-Camera init: 276841 ns
-Seg init: 1596983 ns
-Seg prediction: 59802673 ns
-Seg get canvas: 10656985 ns
-Seg camera show: 1735434 ns
-Lidar init: 208851 ns
-Lidar points: 13139291 ns
-Lidar stats: 4273680 ns
-Lidar blit: 323401
-Camera init: 270601 ns
-Camera show: 2486586 ns
-Sensors FPS + flip: 2875776 ns
-Camera init: 288571 ns
-Seg init: 1581614 ns
-Seg prediction: 56862505 ns
-Seg get canvas: 11252106 ns
-Seg camera show: 1819955 ns
-Lidar init: 236071 ns
-Lidar points: 13164561 ns
-Lidar stats: 4877222 ns
-Lidar blit: 478231
-Camera init: 628881 ns
-Camera show: 2525576 ns
-Sensors FPS + flip: 3334938 ns
-Camera init: 534711 ns
-Seg init: 3591399 ns
-Seg prediction: 62376008 ns
-Seg get canvas: 10085244 ns
-Seg camera show: 1720684 ns
-Lidar init: 214301 ns
-Lidar points: 13246492 ns
-Lidar stats: 4263159 ns
-Lidar blit: 324231
-Camera init: 269231 ns
-Camera show: 2414166 ns
-Sensors FPS + flip: 3095807 ns
-Camera init: 318621 ns
-Seg init: 1581734 ns
-Seg prediction: 59482331 ns
-Seg get canvas: 10069954 ns
-Seg camera show: 1742974 ns
-Lidar init: 229510 ns
-Lidar points: 12901351 ns
-Lidar stats: 4219650 ns
-Lidar blit: 331331
-Camera init: 266121 ns
-Camera show: 2527506 ns
-Sensors FPS + flip: 2964947 ns
-Camera init: 262620 ns
-Seg init: 1776365 ns
-Seg prediction: 60416943 ns
-Seg get canvas: 10551425 ns
-Seg camera show: 1737204 ns
-Lidar init: 208081 ns
-Lidar points: 12791920 ns
-Lidar stats: 4166620 ns
-Lidar blit: 329391
-Camera init: 259130 ns
-Camera show: 2388636 ns
-Sensors FPS + flip: 3023188 ns
-Camera init: 282060 ns
-Seg init: 1548294 ns
-Seg prediction: 63898852 ns
-Seg get canvas: 9925423 ns
-Seg camera show: 1922815 ns
-Lidar init: 209830 ns
-Lidar points: 13337172 ns
-Lidar stats: 4431381 ns
-Lidar blit: 428551
-Camera init: 382431 ns
-Camera show: 2537015 ns
-Sensors FPS + flip: 3171698 ns
-Camera init: 318071 ns
-Seg init: 1757244 ns
-Seg prediction: 65638066 ns
-Seg get canvas: 10138514 ns
-Seg camera show: 1795054 ns
-Lidar init: 212261 ns
-Lidar points: 12725570 ns
-Lidar stats: 4154310 ns
-Lidar blit: 528701
-Camera init: 527831 ns
-Camera show: 2104556 ns
-Sensors FPS + flip: 3010377 ns
-Camera init: 301561 ns
-Seg init: 1852794 ns
-Seg prediction: 62576768 ns
-Seg get canvas: 11362847 ns
-Seg camera show: 1782574 ns
-Lidar init: 264550 ns
-Lidar points: 12884401 ns
-Lidar stats: 4930252 ns
-Lidar blit: 356610
-Camera init: 282641 ns
-Camera show: 2358045 ns
-Sensors FPS + flip: 3502729 ns
-Camera init: 301781 ns
-Seg init: 1640703 ns
-Seg prediction: 59527091 ns
-Seg get canvas: 10644726 ns
-Seg camera show: 1742143 ns
-Lidar init: 213710 ns
-Lidar points: 13020681 ns
-Lidar stats: 4204430 ns
-Lidar blit: 325721
-Camera init: 286991 ns
-Camera show: 2427225 ns
-Sensors FPS + flip: 3290638 ns
-Camera init: 344900 ns
-Seg init: 1739735 ns
-Seg prediction: 63925661 ns
-Seg get canvas: 10084104 ns
-Seg camera show: 1736324 ns
-Lidar init: 214030 ns
-Lidar points: 13357502 ns
-Lidar stats: 4202190 ns
-Lidar blit: 341151
-Camera init: 322091 ns
-Camera show: 2573056 ns
-Sensors FPS + flip: 2896846 ns
-Camera init: 322551 ns
-Seg init: 1645544 ns
-Seg prediction: 61508115 ns
-Seg get canvas: 10081534 ns
-Seg camera show: 1747624 ns
-Lidar init: 211090 ns
-Lidar points: 13329502 ns
-Lidar stats: 4138880 ns
-Lidar blit: 336831
-Camera init: 278701 ns
-Camera show: 2495455 ns
-Sensors FPS + flip: 3559309 ns
-Camera init: 303401 ns
-Seg init: 1613644 ns
-Seg prediction: 61129095 ns
-Seg get canvas: 9806422 ns
-Seg camera show: 1724585 ns
-Lidar init: 205010 ns
-Lidar points: 12862821 ns
-Lidar stats: 4132550 ns
-Lidar blit: 332490
-Camera init: 268581 ns
-Camera show: 2551136 ns
-Sensors FPS + flip: 3157198 ns
-Camera init: 264881 ns
-Seg init: 1640224 ns
-Seg prediction: 64616423 ns
-Seg get canvas: 10473684 ns
-Seg camera show: 1922465 ns
-Lidar init: 209330 ns
-Lidar points: 15666988 ns
-Lidar stats: 4450020 ns
-Lidar blit: 366801
-Camera init: 274361 ns
-Camera show: 2513276 ns
-Sensors FPS + flip: 3906959 ns
-Camera init: 300070 ns
-Seg init: 1768465 ns
-Seg prediction: 63541580 ns
-Seg get canvas: 10095774 ns
-Seg camera show: 1764974 ns
-Lidar init: 209981 ns
-Lidar points: 12600420 ns
-Lidar stats: 4121969 ns
-Lidar blit: 329001
-Camera init: 271321 ns
-Camera show: 2562526 ns
-Sensors FPS + flip: 2964737 ns
-Camera init: 577171 ns
-Seg init: 1835525 ns
-Seg prediction: 60170312 ns
-Seg get canvas: 10032254 ns
-Seg camera show: 1750874 ns
-Lidar init: 204201 ns
-Lidar points: 12807780 ns
-Lidar stats: 4125950 ns
-Lidar blit: 332890
-Camera init: 266731 ns
-Camera show: 2425476 ns
-Sensors FPS + flip: 2872386 ns
-Camera init: 294731 ns
-Seg init: 1792194 ns
-Seg prediction: 57119825 ns
-Seg get canvas: 9052561 ns
-Seg camera show: 1741214 ns
-Lidar init: 210920 ns
-Lidar points: 13939824 ns
-Lidar stats: 4191649 ns
-Lidar blit: 338181
-Camera init: 273041 ns
-Camera show: 2559946 ns
-Sensors FPS + flip: 3070677 ns
-Camera init: 419811 ns
-Seg init: 3043007 ns
-Seg prediction: 59110040 ns
-Seg get canvas: 10148324 ns
-Seg camera show: 1729344 ns
-Lidar init: 210831 ns
-Lidar points: 13141331 ns
-Lidar stats: 4425540 ns
-Lidar blit: 329271
-Camera init: 279881 ns
-Camera show: 2660436 ns
-Sensors FPS + flip: 5950164 ns
-Camera init: 481771 ns
-Seg init: 2921787 ns
-Seg prediction: 59156549 ns
-Seg get canvas: 9490013 ns
-Seg camera show: 1752224 ns
-Lidar init: 208841 ns
-Lidar points: 12846830 ns
-Lidar stats: 4050049 ns
-Lidar blit: 321901
-Camera init: 271501 ns
-Camera show: 2494315 ns
-Sensors FPS + flip: 3282008 ns
-Camera init: 301151 ns
-Seg init: 1666913 ns
-Seg prediction: 64295932 ns
-Seg get canvas: 11011366 ns
-Seg camera show: 1717604 ns
-Lidar init: 229221 ns
-Lidar points: 12913040 ns
-Lidar stats: 4179480 ns
-Lidar blit: 344800
-Camera init: 339101 ns
-Camera show: 2428636 ns
-Sensors FPS + flip: 2947357 ns
-Camera init: 285881 ns
-Seg init: 1570083 ns
-Seg prediction: 65053724 ns
-Seg get canvas: 10182594 ns
-Seg camera show: 1728983 ns
-Lidar init: 208880 ns
-Lidar points: 12508630 ns
-Lidar stats: 4059419 ns
-Lidar blit: 340051
-Camera init: 269800 ns
-Camera show: 2498977 ns
-Sensors FPS + flip: 3313427 ns
-Camera init: 487762 ns
-Seg init: 2147535 ns
-Seg prediction: 62529346 ns
-Seg get canvas: 10830195 ns
-Seg camera show: 1727994 ns
-Lidar init: 217691 ns
-Lidar points: 12564689 ns
-Lidar stats: 4216240 ns
-Lidar blit: 346361
-Camera init: 285081 ns
-Camera show: 2443075 ns
-Sensors FPS + flip: 3474369 ns
-Camera init: 305201 ns
-Seg init: 1585653 ns
-Seg prediction: 62415807 ns
-Seg get canvas: 10343744 ns
-Seg camera show: 1720025 ns
-Lidar init: 210540 ns
-Lidar points: 12728900 ns
-Lidar stats: 4006870 ns
-Lidar blit: 329060
-Camera init: 280440 ns
-Camera show: 2502926 ns
-Sensors FPS + flip: 4006269 ns
-Camera init: 270951 ns
-Seg init: 1575803 ns
-Seg prediction: 66612107 ns
-Seg get canvas: 9868914 ns
-Seg camera show: 1741074 ns
-Lidar init: 214520 ns
-Lidar points: 13085601 ns
-Lidar stats: 4157520 ns
-Lidar blit: 343250
-Camera init: 288040 ns
-Camera show: 2214715 ns
-Sensors FPS + flip: 4074670 ns
-Camera init: 299631 ns
-Seg init: 1582684 ns
-Seg prediction: 65749735 ns
-Seg get canvas: 10160063 ns
-Seg camera show: 1719794 ns
-Lidar init: 220131 ns
-Lidar points: 12505610 ns
-Lidar stats: 3981539 ns
-Lidar blit: 330100
-Camera init: 271501 ns
-Camera show: 2490266 ns
-Sensors FPS + flip: 3122057 ns
-Camera init: 754572 ns
-Seg init: 2571246 ns
-Seg prediction: 64380031 ns
-Seg get canvas: 9612133 ns
-Seg camera show: 1726244 ns
-Lidar init: 205601 ns
-Lidar points: 12295618 ns
-Lidar stats: 4084720 ns
-Lidar blit: 328101
-Camera init: 276281 ns
-Camera show: 2430675 ns
-Sensors FPS + flip: 4773842 ns
-Camera init: 321551 ns
-Seg init: 2564526 ns
-Seg prediction: 67335038 ns
-Seg get canvas: 10798945 ns
-Seg camera show: 1734265 ns
-Lidar init: 223340 ns
-Lidar points: 12226859 ns
-Lidar stats: 4026319 ns
-Lidar blit: 311311
-Camera init: 267291 ns
-Camera show: 2510156 ns
-Sensors FPS + flip: 2678116 ns
-Camera init: 275231 ns
-Seg init: 1664314 ns
-Seg prediction: 62901218 ns
-Seg get canvas: 9702762 ns
-Seg camera show: 1783665 ns
-Lidar init: 211400 ns
-Lidar points: 12494839 ns
-Lidar stats: 4072720 ns
-Lidar blit: 325201
-Camera init: 265180 ns
-Camera show: 2419396 ns
-Sensors FPS + flip: 2842967 ns
-Camera init: 319941 ns
-Seg init: 1698544 ns
-Seg prediction: 68145539 ns
-Seg get canvas: 10105684 ns
-Seg camera show: 1797374 ns
-Lidar init: 218991 ns
-Lidar points: 12847670 ns
-Lidar stats: 4127020 ns
-Lidar blit: 330060
-Camera init: 274571 ns
-Camera show: 2428036 ns
-Sensors FPS + flip: 3480348 ns
-Camera init: 275601 ns
-Seg init: 1642424 ns
-Seg prediction: 58988128 ns
-Seg get canvas: 10242474 ns
-Seg camera show: 1787274 ns
-Lidar init: 213760 ns
-Lidar points: 12464399 ns
-Lidar stats: 4077190 ns
-Lidar blit: 324760
-Camera init: 267761 ns
-Camera show: 2464756 ns
-Sensors FPS + flip: 3368528 ns
-Camera init: 301941 ns
-Seg init: 1698574 ns
-Seg prediction: 62674377 ns
-Seg get canvas: 11770167 ns
-Seg camera show: 1893255 ns
-Lidar init: 354761 ns
-Lidar points: 13763612 ns
-Lidar stats: 4450250 ns
-Lidar blit: 324881
-Camera init: 323881 ns
-Camera show: 2466576 ns
-Sensors FPS + flip: 3267207 ns
-Camera init: 270150 ns
-Seg init: 1690014 ns
-Seg prediction: 59744280 ns
-Seg get canvas: 9505892 ns
-Seg camera show: 1748604 ns
-Lidar init: 217271 ns
-Lidar points: 12787320 ns
-Lidar stats: 4158010 ns
-Lidar blit: 326860
-Camera init: 281031 ns
-Camera show: 2420726 ns
-Sensors FPS + flip: 3085947 ns
-Camera init: 273760 ns
-Seg init: 1676944 ns
-Seg prediction: 67807749 ns
-Seg get canvas: 12386629 ns
-Seg camera show: 1795274 ns
-Lidar init: 209331 ns
-Lidar points: 17021870 ns
-Lidar stats: 4255220 ns
-Lidar blit: 327191
-Camera init: 267430 ns
-Camera show: 2499406 ns
-Sensors FPS + flip: 2640046 ns
-Camera init: 419701 ns
-Seg init: 1690834 ns
-Seg prediction: 61722924 ns
-Seg get canvas: 10055814 ns
-Seg camera show: 1777644 ns
-Lidar init: 214871 ns
-Lidar points: 13295801 ns
-Lidar stats: 5043832 ns
-Lidar blit: 352331
-Camera init: 279180 ns
-Camera show: 2556506 ns
-Sensors FPS + flip: 2759467 ns
-Camera init: 275050 ns
-Seg init: 1589424 ns
-Seg prediction: 60478492 ns
-Seg get canvas: 10144763 ns
-Seg camera show: 1767944 ns
-Lidar init: 205480 ns
-Lidar points: 12975680 ns
-Lidar stats: 4292851 ns
-Lidar blit: 342751
-Camera init: 286770 ns
-Camera show: 2491366 ns
-Sensors FPS + flip: 3043487 ns
-Camera init: 292010 ns
-Seg init: 1598794 ns
-Seg prediction: 63738660 ns
-Seg get canvas: 10601895 ns
-Seg camera show: 1771554 ns
-Lidar init: 207070 ns
-Lidar points: 12494229 ns
-Lidar stats: 4145100 ns
-Lidar blit: 324121
-Camera init: 261671 ns
-Camera show: 2472435 ns
-Sensors FPS + flip: 3147628 ns
-Camera init: 262001 ns
-Seg init: 1579283 ns
-Seg prediction: 63945890 ns
-Seg get canvas: 11307796 ns
-Seg camera show: 1860865 ns
-Lidar init: 207520 ns
-Lidar points: 14517225 ns
-Lidar stats: 4876991 ns
-Lidar blit: 383411
-Camera init: 307360 ns
-Camera show: 2103076 ns
-Sensors FPS + flip: 2720356 ns
-Camera init: 299850 ns
-Seg init: 1711065 ns
-Seg prediction: 58589636 ns
-Seg get canvas: 10202584 ns
-Seg camera show: 1786394 ns
-Lidar init: 205291 ns
-Lidar points: 12821460 ns
-Lidar stats: 4281310 ns
-Lidar blit: 330140
-Camera init: 261551 ns
-Camera show: 2526726 ns
-Sensors FPS + flip: 3200667 ns
-Camera init: 261690 ns
-Seg init: 1591734 ns
-Seg prediction: 63303408 ns
-Seg get canvas: 11694687 ns
-Seg camera show: 2327645 ns
-Lidar init: 218391 ns
-Lidar points: 13780502 ns
-Lidar stats: 4203940 ns
-Lidar blit: 332931
-Camera init: 269530 ns
-Camera show: 2471516 ns
-Sensors FPS + flip: 2996037 ns
-Camera init: 276201 ns
-Seg init: 1957694 ns
-Seg prediction: 57693414 ns
-Seg get canvas: 9951604 ns
-Seg camera show: 1769764 ns
-Lidar init: 206990 ns
-Lidar points: 12923301 ns
-Lidar stats: 4274120 ns
-Lidar blit: 353050
-Camera init: 282941 ns
-Camera show: 2654246 ns
-Sensors FPS + flip: 3623099 ns
-Camera init: 397591 ns
-Seg init: 1728714 ns
-Seg prediction: 64454810 ns
-Seg get canvas: 10482055 ns
-Seg camera show: 1771504 ns
-Lidar init: 210000 ns
-Lidar points: 12373299 ns
-Lidar stats: 4284570 ns
-Lidar blit: 334281
-Camera init: 274021 ns
-Camera show: 3054087 ns
-Sensors FPS + flip: 4061070 ns
-Camera init: 310091 ns
-Seg init: 1745164 ns
-Seg prediction: 66440825 ns
-Seg get canvas: 11032026 ns
-Seg camera show: 1759384 ns
-Lidar init: 213350 ns
-Lidar points: 13235541 ns
-Lidar stats: 4349580 ns
-Lidar blit: 357041
-Camera init: 299111 ns
-Camera show: 2575436 ns
-Sensors FPS + flip: 2744116 ns
-Camera init: 280931 ns
-Seg init: 1704144 ns
-Seg prediction: 60235970 ns
-Seg get canvas: 12341069 ns
-Seg camera show: 1834434 ns
-Lidar init: 213811 ns
-Lidar points: 13029340 ns
-Lidar stats: 4242280 ns
-Lidar blit: 343640
-Camera init: 300321 ns
-Camera show: 2753097 ns
-Sensors FPS + flip: 3102627 ns
-Camera init: 300531 ns
-Seg init: 2055694 ns
-Seg prediction: 62228916 ns
-Seg get canvas: 12406768 ns
-Seg camera show: 2557916 ns
-Lidar init: 234691 ns
-Lidar points: 13037001 ns
-Lidar stats: 4186359 ns
-Lidar blit: 328151
-Camera init: 271061 ns
-Camera show: 2502836 ns
-Sensors FPS + flip: 3024437 ns
-Camera init: 337621 ns
-Seg init: 2131795 ns
-Seg prediction: 70567845 ns
-Seg get canvas: 14035722 ns
-Seg camera show: 2112195 ns
-Lidar init: 437391 ns
-Lidar points: 12804260 ns
-Lidar stats: 4395200 ns
-Lidar blit: 837302
-Camera init: 814182 ns
-Camera show: 3315768 ns
-Sensors FPS + flip: 4353590 ns
-Camera init: 562311 ns
-Seg init: 2649106 ns
-Seg prediction: 61419014 ns
-Seg get canvas: 10793815 ns
-Seg camera show: 2029045 ns
-Lidar init: 332250 ns
-Lidar points: 13282411 ns
-Lidar stats: 5877504 ns
-Lidar blit: 581872
-Camera init: 367100 ns
-Camera show: 3634799 ns
-Sensors FPS + flip: 3360318 ns
-Camera init: 301181 ns
-Seg init: 3715798 ns
-Seg prediction: 80608608 ns
-Seg get canvas: 12996380 ns
-Seg camera show: 1869335 ns
-Lidar init: 577871 ns
-Lidar points: 12207859 ns
-Lidar stats: 4221749 ns
-Lidar blit: 355881
-Camera init: 392671 ns
-Camera show: 2591486 ns
-Sensors FPS + flip: 3691498 ns
-Camera init: 262260 ns
-Seg init: 1701785 ns
-Seg prediction: 63891118 ns
-Seg get canvas: 11659527 ns
-Seg camera show: 1855044 ns
-Lidar init: 400071 ns
-Lidar points: 13493491 ns
-Lidar stats: 4461891 ns
-Lidar blit: 345611
-Camera init: 282960 ns
-Camera show: 2562486 ns
-Sensors FPS + flip: 3322178 ns
-Camera init: 481271 ns
-Seg init: 2179705 ns
-Seg prediction: 65252961 ns
-Seg get canvas: 11696557 ns
-Seg camera show: 2061475 ns
-Lidar init: 383271 ns
-Lidar points: 14003602 ns
-Lidar stats: 4725321 ns
-Lidar blit: 346741
-Camera init: 278211 ns
-Camera show: 2488306 ns
-Sensors FPS + flip: 3768298 ns
-Camera init: 281860 ns
-Seg init: 1705814 ns
-Seg prediction: 63588748 ns
-Seg get canvas: 10751535 ns
-Seg camera show: 1963864 ns
-Lidar init: 300321 ns
-Lidar points: 12987830 ns
-Lidar stats: 4309910 ns
-Lidar blit: 322511
-Camera init: 271611 ns
-Camera show: 2507206 ns
-Sensors FPS + flip: 3951879 ns
-Camera init: 511961 ns
-Seg init: 2801516 ns
-Seg prediction: 63549988 ns
-Seg get canvas: 11522757 ns
-Seg camera show: 1827944 ns
-Lidar init: 271171 ns
-Lidar points: 15787236 ns
-Lidar stats: 4996512 ns
-Lidar blit: 345771
-Camera init: 280301 ns
-Camera show: 2573475 ns
-Sensors FPS + flip: 3682239 ns
-Camera init: 272260 ns
-Seg init: 1666914 ns
-Seg prediction: 59503308 ns
-Seg get canvas: 11514177 ns
-Seg camera show: 1909294 ns
-Lidar init: 276481 ns
-Lidar points: 12755419 ns
-Lidar stats: 4484481 ns
-Lidar blit: 335371
-Camera init: 314261 ns
-Camera show: 2497025 ns
-Sensors FPS + flip: 3872309 ns
-Camera init: 276381 ns
-Seg init: 1702964 ns
-Seg prediction: 58524675 ns
-Seg get canvas: 13826792 ns
-Seg camera show: 2211035 ns
-Lidar init: 221241 ns
-Lidar points: 13159401 ns
-Lidar stats: 4352370 ns
-Lidar blit: 329481
-Camera init: 269180 ns
-Camera show: 2492246 ns
-Sensors FPS + flip: 6949746 ns
-Camera init: 346051 ns
-Seg init: 1701524 ns
-Seg prediction: 58445495 ns
-Seg get canvas: 10600025 ns
-Seg camera show: 2047355 ns
-Lidar init: 212850 ns
-Lidar points: 12761350 ns
-Lidar stats: 4160540 ns
-Lidar blit: 661261
-Camera init: 275820 ns
-Camera show: 2533056 ns
-Sensors FPS + flip: 6939206 ns
-Camera init: 484671 ns
-Seg init: 3229287 ns
-Seg prediction: 67359707 ns
-Seg get canvas: 9961093 ns
-Seg camera show: 1784724 ns
-Lidar init: 215600 ns
-Lidar points: 13067721 ns
-Lidar stats: 4696000 ns
-Lidar blit: 361181
-Camera init: 472701 ns
-Camera show: 2502986 ns
-Sensors FPS + flip: 5234643 ns
-Camera init: 476851 ns
-Seg init: 1944724 ns
-Seg prediction: 65761783 ns
-Seg get canvas: 9867503 ns
-Seg camera show: 1901554 ns
-Lidar init: 249111 ns
-Lidar points: 14009292 ns
-Lidar stats: 4261430 ns
-Lidar blit: 376771
-Camera init: 328951 ns
-Camera show: 2455936 ns
-Sensors FPS + flip: 4433590 ns
-Camera init: 419611 ns
-Seg init: 3018237 ns
-Seg prediction: 61191561 ns
-Seg get canvas: 11108086 ns
-Seg camera show: 2507376 ns
-Lidar init: 305461 ns
-Lidar points: 12564229 ns
-Lidar stats: 4187919 ns
-Lidar blit: 341811
-Camera init: 482001 ns
-Camera show: 2523556 ns
-Sensors FPS + flip: 5873133 ns
-Camera init: 508071 ns
-Seg init: 1706534 ns
-Seg prediction: 62625464 ns
-Seg get canvas: 10989166 ns
-Seg camera show: 1792754 ns
-Lidar init: 249521 ns
-Lidar points: 13466971 ns
-Lidar stats: 4370130 ns
-Lidar blit: 351531
-Camera init: 301990 ns
-Camera show: 2493496 ns
-Sensors FPS + flip: 2629847 ns
-Camera init: 517041 ns
-Seg init: 2826576 ns
-Seg prediction: 60825171 ns
-Seg get canvas: 9770522 ns
-Seg camera show: 1781464 ns
-Lidar init: 208361 ns
-Lidar points: 12436829 ns
-Lidar stats: 4128619 ns
-Lidar blit: 323981
-Camera init: 270850 ns
-Camera show: 2460076 ns
-Sensors FPS + flip: 2795197 ns
-Camera init: 258791 ns
-Seg init: 1645463 ns
-Seg prediction: 56814251 ns
-Seg get canvas: 10833905 ns
-Seg camera show: 1794655 ns
-Lidar init: 269900 ns
-Lidar points: 12847630 ns
-Lidar stats: 4181130 ns
-Lidar blit: 318380
-Camera init: 280811 ns
-Camera show: 2493866 ns
-Sensors FPS + flip: 6222084 ns
-Camera init: 443131 ns
-Seg init: 2616406 ns
-Seg prediction: 62574624 ns
-Seg get canvas: 10677785 ns
-Seg camera show: 1918135 ns
-Lidar init: 232300 ns
-Lidar points: 13015880 ns
-Lidar stats: 4132940 ns
-Lidar blit: 331811
-Camera init: 274310 ns
-Camera show: 2400486 ns
-Sensors FPS + flip: 3640578 ns
-Camera init: 475681 ns
-Seg init: 1898155 ns
-Seg prediction: 63697717 ns
-Seg get canvas: 9491812 ns
-Seg camera show: 1786324 ns
-Lidar init: 211941 ns
-Lidar points: 14143933 ns
-Lidar stats: 4460480 ns
-Lidar blit: 334930
-Camera init: 275611 ns
-Camera show: 2673586 ns
-Sensors FPS + flip: 4290520 ns
-Camera init: 460551 ns
-Seg init: 2047345 ns
-Seg prediction: 58610415 ns
-Seg get canvas: 9944493 ns
-Seg camera show: 1737954 ns
-Lidar init: 210981 ns
-Lidar points: 12936060 ns
-Lidar stats: 4215669 ns
-Lidar blit: 336581
-Camera init: 295511 ns
-Camera show: 2379886 ns
-Sensors FPS + flip: 3387827 ns
-Camera init: 1702094 ns
-Seg init: 1887944 ns
-Seg prediction: 58591206 ns
-Seg get canvas: 9957643 ns
-Seg camera show: 1758134 ns
-Lidar init: 215090 ns
-Lidar points: 13289251 ns
-Lidar stats: 4385440 ns
-Lidar blit: 335451
-Camera init: 316421 ns
-Camera show: 2511456 ns
-Sensors FPS + flip: 3425438 ns
-Camera init: 268801 ns
-Seg init: 1781684 ns
-Seg prediction: 61400542 ns
-Seg get canvas: 9872072 ns
-Seg camera show: 1740505 ns
-Lidar init: 211050 ns
-Lidar points: 13043880 ns
-Lidar stats: 4083290 ns
-Lidar blit: 321271
-Camera init: 278190 ns
-Camera show: 2337576 ns
-Sensors FPS + flip: 2993256 ns
-Camera init: 266241 ns
-Seg init: 1670804 ns
-Seg prediction: 63447536 ns
-Seg get canvas: 9835613 ns
-Seg camera show: 1762234 ns
-Lidar init: 220960 ns
-Lidar points: 13102651 ns
-Lidar stats: 4098689 ns
-Lidar blit: 329431
-Camera init: 280670 ns
-Camera show: 2455026 ns
-Sensors FPS + flip: 3438138 ns
-Camera init: 286470 ns
-Seg init: 1596554 ns
-Seg prediction: 68683618 ns
-Seg get canvas: 10110573 ns
-Seg camera show: 1725744 ns
-Lidar init: 213591 ns
-Lidar points: 12576419 ns
-Lidar stats: 4100149 ns
-Lidar blit: 328261
-Camera init: 281521 ns
-Camera show: 2353205 ns
-Sensors FPS + flip: 2880656 ns
-Camera init: 292001 ns
-Seg init: 1700694 ns
-Seg prediction: 58425294 ns
-Seg get canvas: 10454134 ns
-Seg camera show: 1764354 ns
-Lidar init: 205660 ns
-Lidar points: 13280761 ns
-Lidar stats: 4084799 ns
-Lidar blit: 315261
-Camera init: 272431 ns
-Camera show: 2440635 ns
-Sensors FPS + flip: 3293278 ns
-Camera init: 323101 ns
-Seg init: 1589834 ns
-Seg prediction: 59002305 ns
-Seg get canvas: 11313256 ns
-Seg camera show: 1745294 ns
-Lidar init: 200431 ns
-Lidar points: 13356520 ns
-Lidar stats: 4114610 ns
-Lidar blit: 307431
-Camera init: 287080 ns
-Camera show: 2343456 ns
-Sensors FPS + flip: 2999096 ns
-Camera init: 287490 ns
-Seg init: 1675444 ns
-Seg prediction: 57840733 ns
-Seg get canvas: 11602116 ns
-Seg camera show: 1758274 ns
-Lidar init: 207080 ns
-Lidar points: 12688229 ns
-Lidar stats: 4081980 ns
-Lidar blit: 319290
-Camera init: 321571 ns
-Camera show: 2446386 ns
-Sensors FPS + flip: 3187827 ns
-Camera init: 340031 ns
-Seg init: 1596174 ns
-Seg prediction: 59430016 ns
-Seg get canvas: 12245388 ns
-Seg camera show: 1856515 ns
-Lidar init: 261830 ns
-Lidar points: 13722812 ns
-Lidar stats: 4225460 ns
-Lidar blit: 323901
-Camera init: 277900 ns
-Camera show: 2351715 ns
-Sensors FPS + flip: 3425257 ns
-Camera init: 596321 ns
-Seg init: 2768357 ns
-Seg prediction: 60828650 ns
-Seg get canvas: 10254853 ns
-Seg camera show: 1781404 ns
-Lidar init: 238591 ns
-Lidar points: 13622851 ns
-Lidar stats: 4592680 ns
-Lidar blit: 335251
-Camera init: 292271 ns
-Camera show: 2467896 ns
-Sensors FPS + flip: 3371428 ns
-Camera init: 291241 ns
-Seg init: 1599034 ns
-Seg prediction: 58691744 ns
-Seg get canvas: 9716973 ns
-Seg camera show: 1765914 ns
-Lidar init: 220290 ns
-Lidar points: 14038363 ns
-Lidar stats: 4486840 ns
-Lidar blit: 396651
-Camera init: 384811 ns
-Camera show: 2512895 ns
-Sensors FPS + flip: 4433741 ns
-Camera init: 473231 ns
-Seg init: 2940207 ns
-Seg prediction: 59009436 ns
-Seg get canvas: 10793235 ns
-Seg camera show: 1772184 ns
-Lidar init: 215781 ns
-Lidar points: 13128599 ns
-Lidar stats: 4129690 ns
-Lidar blit: 333421
-Camera init: 269771 ns
-Camera show: 2481036 ns
-Sensors FPS + flip: 4846551 ns
-Camera init: 386701 ns
-Seg init: 1691974 ns
-Seg prediction: 58149624 ns
-Seg get canvas: 10764644 ns
-Seg camera show: 1749914 ns
-Lidar init: 208631 ns
-Lidar points: 12963440 ns
-Lidar stats: 4207799 ns
-Lidar blit: 340061
-Camera init: 275901 ns
-Camera show: 2423175 ns
-Sensors FPS + flip: 2981287 ns
-Camera init: 273320 ns
-Seg init: 1685675 ns
-Seg prediction: 63322324 ns
-Seg get canvas: 11012715 ns
-Seg camera show: 1750694 ns
-Lidar init: 226211 ns
-Lidar points: 13727921 ns
-Lidar stats: 4396070 ns
-Lidar blit: 324731
-Camera init: 268941 ns
-Camera show: 2541616 ns
-Sensors FPS + flip: 3193137 ns
-Camera init: 275110 ns
-Seg init: 1729584 ns
-Seg prediction: 65593850 ns
-Seg get canvas: 10278324 ns
-Seg camera show: 1721133 ns
-Lidar init: 212661 ns
-Lidar points: 13071780 ns
-Lidar stats: 4035999 ns
-Lidar blit: 322921
-Camera init: 265171 ns
-Camera show: 2376335 ns
-Sensors FPS + flip: 3259258 ns
-Camera init: 420951 ns
-Seg init: 2614466 ns
-Seg prediction: 67742585 ns
-Seg get canvas: 9995223 ns
-Seg camera show: 1749374 ns
-Lidar init: 222830 ns
-Lidar points: 15462306 ns
-Lidar stats: 4132219 ns
-Lidar blit: 327331
-Camera init: 268081 ns
-Camera show: 2486045 ns
-Sensors FPS + flip: 4572101 ns
-Camera init: 272171 ns
-Seg init: 1773984 ns
-Seg prediction: 66381552 ns
-Seg get canvas: 9655452 ns
-Seg camera show: 1753704 ns
-Lidar init: 203740 ns
-Lidar points: 12224108 ns
-Lidar stats: 4047940 ns
-Lidar blit: 313070
-Camera init: 266681 ns
-Camera show: 2362605 ns
-Sensors FPS + flip: 3048487 ns
-Camera init: 444341 ns
-Seg init: 2968127 ns
-Seg prediction: 65693640 ns
-Seg get canvas: 10426694 ns
-Seg camera show: 1948935 ns
-Lidar init: 247100 ns
-Lidar points: 12704979 ns
-Lidar stats: 4272740 ns
-Lidar blit: 317791
-Camera init: 458261 ns
-Camera show: 2494025 ns
-Sensors FPS + flip: 4280870 ns
-Camera init: 647392 ns
-Seg init: 1582084 ns
-Seg prediction: 64757847 ns
-Seg get canvas: 9379072 ns
-Seg camera show: 1724744 ns
-Lidar init: 217791 ns
-Lidar points: 12059467 ns
-Lidar stats: 4042549 ns
-Lidar blit: 336951
-Camera init: 446361 ns
-Camera show: 2468096 ns
-Sensors FPS + flip: 4519320 ns
-Camera init: 471131 ns
-Seg init: 1884185 ns
-Seg prediction: 65644800 ns
-Seg get canvas: 10096803 ns
-Seg camera show: 1738044 ns
-Lidar init: 209140 ns
-Lidar points: 11810737 ns
-Lidar stats: 4040839 ns
-Lidar blit: 328571
-Camera init: 457321 ns
+Camera init: 693346 ns
+Seg init: 2924105 ns
+Seg prediction: 61071606 ns
+Seg get canvas: 12552624 ns
+Seg camera show: 1791410 ns
+Lidar init: 188359 ns
+Lidar points: 13430729 ns
+Lidar stats: 4218608 ns
+Lidar blit: 347148
+Camera init: 267589 ns
+Camera show: 2541147 ns
+Sensors FPS + flip: 2980634 ns
+Camera init: 371078 ns
+Seg init: 2153179 ns
+Seg prediction: 62872997 ns
+Seg get canvas: 12504694 ns
+Seg camera show: 1773200 ns
+Lidar init: 183449 ns
+Lidar points: 12767273 ns
+Lidar stats: 4264447 ns
+Lidar blit: 318909
+Camera init: 285478 ns
+Camera show: 2524457 ns
+Sensors FPS + flip: 3280442 ns
+Camera init: 373289 ns
+Seg init: 4925125 ns
+Seg prediction: 62457089 ns
+Seg get canvas: 11600958 ns
+Seg camera show: 2932305 ns
+Lidar init: 322938 ns
+Lidar points: 14007856 ns
+Lidar stats: 4516596 ns
+Lidar blit: 624696
+Camera init: 380588 ns
+Camera show: 2694266 ns
+Sensors FPS + flip: 3540301 ns
+Camera init: 309188 ns
+Seg init: 1651361 ns
+Seg prediction: 63230165 ns
+Seg get canvas: 11291051 ns
+Seg camera show: 2206578 ns
+Lidar init: 388198 ns
+Lidar points: 12984092 ns
+Lidar stats: 4975464 ns
+Lidar blit: 768896
+Camera init: 345628 ns
+Camera show: 2704166 ns
+Sensors FPS + flip: 4579186 ns
+Camera init: 552447 ns
+Seg init: 3330033 ns
+Seg prediction: 56575931 ns
+Seg get canvas: 12003836 ns
+Seg camera show: 1971940 ns
+Lidar init: 325298 ns
+Lidar points: 15473098 ns
+Lidar stats: 4478516 ns
+Lidar blit: 564017
+Camera init: 319518 ns
+Camera show: 3465572 ns
+Sensors FPS + flip: 6915743 ns
+Camera init: 387178 ns
+Seg init: 1705381 ns
+Seg prediction: 59290216 ns
+Seg get canvas: 12433794 ns
+Seg camera show: 2751385 ns
+Lidar init: 340658 ns
+Lidar points: 14291765 ns
+Lidar stats: 4226607 ns
+Lidar blit: 544787
+Camera init: 317729 ns
+Camera show: 2636236 ns
+Sensors FPS + flip: 4024119 ns
+Camera init: 435508 ns
+Seg init: 2452317 ns
+Seg prediction: 58494441 ns
+Seg get canvas: 13487498 ns
+Seg camera show: 2038010 ns
+Lidar init: 366638 ns
+Lidar points: 12720662 ns
+Lidar stats: 4903214 ns
+Lidar blit: 694866
+Camera init: 368198 ns
+Camera show: 2682736 ns
+Sensors FPS + flip: 4542386 ns
+Camera init: 452838 ns
+Seg init: 1908310 ns
+Seg prediction: 66046260 ns
+Seg get canvas: 12196626 ns
+Seg camera show: 1818530 ns
+Lidar init: 184949 ns
+Lidar points: 12730723 ns
+Lidar stats: 4228527 ns
+Lidar blit: 319129
+Camera init: 329979 ns
+Camera show: 2537526 ns
+Sensors FPS + flip: 3359302 ns
+Camera init: 284959 ns
+Seg init: 1570581 ns
+Seg prediction: 67797061 ns
+Seg get canvas: 12644814 ns
+Seg camera show: 1880240 ns
+Lidar init: 391857 ns
+Lidar points: 13581509 ns
+Lidar stats: 4216827 ns
+Lidar blit: 422428
+Camera init: 733126 ns
+Camera show: 2307128 ns
+Sensors FPS + flip: 5193612 ns
+Camera init: 662056 ns
+Seg init: 2215488 ns
+Seg prediction: 59507366 ns
+Seg get canvas: 11279370 ns
+Seg camera show: 1761091 ns
+Lidar init: 179519 ns
+Lidar points: 12693713 ns
+Lidar stats: 4191248 ns
+Lidar blit: 314218
+Camera init: 308818 ns
+Camera show: 2478097 ns
+Sensors FPS + flip: 3037334 ns
+Camera init: 330009 ns
+Seg init: 1714181 ns
+Seg prediction: 58178222 ns
+Seg get canvas: 11878317 ns
+Seg camera show: 1760091 ns
+Lidar init: 183509 ns
+Lidar points: 12946341 ns
+Lidar stats: 4164478 ns
+Lidar blit: 318768
+Camera init: 330138 ns
+Camera show: 2192929 ns
+Sensors FPS + flip: 3620981 ns
+Camera init: 803935 ns
+Seg init: 2931554 ns
+Seg prediction: 69237374 ns
+Seg get canvas: 12708233 ns
+Seg camera show: 1776430 ns
+Lidar init: 177919 ns
+Lidar points: 13053621 ns
+Lidar stats: 4129329 ns
+Lidar blit: 299468
+Camera init: 331058 ns
+Camera show: 2473817 ns
+Sensors FPS + flip: 2947085 ns
+Camera init: 275769 ns
+Seg init: 1575591 ns
+Seg prediction: 78465855 ns
+Seg get canvas: 15929846 ns
+Seg camera show: 1906820 ns
+Lidar init: 1516992 ns
+Lidar points: 13462528 ns
+Lidar stats: 4240908 ns
+Lidar blit: 333728
+Camera init: 315569 ns
+Camera show: 2531576 ns
+Sensors FPS + flip: 3070034 ns
+Camera init: 263198 ns
+Seg init: 1623932 ns
+Seg prediction: 55891374 ns
+Seg get canvas: 11322320 ns
+Seg camera show: 1744031 ns
+Lidar init: 178629 ns
+Lidar points: 13168940 ns
+Lidar stats: 4357858 ns
+Lidar blit: 338048
+Camera init: 679486 ns
+Camera show: 2729035 ns
+Sensors FPS + flip: 5483331 ns
+Camera init: 286269 ns
+Seg init: 1578501 ns
+Seg prediction: 58389251 ns
+Seg get canvas: 11194031 ns
+Seg camera show: 1759670 ns
+Lidar init: 187319 ns
+Lidar points: 12401365 ns
+Lidar stats: 4230277 ns
+Lidar blit: 340739
+Camera init: 285648 ns
+Camera show: 2710866 ns
+Sensors FPS + flip: 3344772 ns
+Camera init: 378968 ns
+Seg init: 1602722 ns
+Seg prediction: 54088534 ns
+Seg get canvas: 10458674 ns
+Seg camera show: 1767171 ns
+Lidar init: 182489 ns
+Lidar points: 12333124 ns
+Lidar stats: 4157929 ns
+Lidar blit: 322548
+Camera init: 272648 ns
+Camera show: 2562057 ns
+Sensors FPS + flip: 3441672 ns
+Camera init: 264359 ns
+Seg init: 1593931 ns
+Seg prediction: 63861533 ns
+Seg get canvas: 10880802 ns
+Seg camera show: 1771411 ns
+Lidar init: 183189 ns
+Lidar points: 13131160 ns
+Lidar stats: 4680456 ns
+Lidar blit: 326748
+Camera init: 279358 ns
+Camera show: 2729066 ns
+Sensors FPS + flip: 5212252 ns
+Camera init: 256659 ns
+Seg init: 1684401 ns
+Seg prediction: 60148781 ns
+Seg get canvas: 10685234 ns
+Seg camera show: 1835070 ns
+Lidar init: 184809 ns
+Lidar points: 13103671 ns
+Lidar stats: 4361497 ns
+Lidar blit: 327018
+Camera init: 274428 ns
+Camera show: 2708596 ns
+Sensors FPS + flip: 4496727 ns
+Camera init: 702726 ns
+Seg init: 1687621 ns
+Seg prediction: 69780451 ns
+Seg get canvas: 11077822 ns
+Seg camera show: 1765850 ns
+Lidar init: 181929 ns
+Lidar points: 13348399 ns
+Lidar stats: 4215778 ns
+Lidar blit: 323189
+Camera init: 334708 ns
+Camera show: 2543936 ns
+Sensors FPS + flip: 4136049 ns
+Camera init: 568497 ns
+Seg init: 2883135 ns
+Seg prediction: 61554144 ns
+Seg get canvas: 11502800 ns
+Seg camera show: 1807050 ns
+Lidar init: 189069 ns
+Lidar points: 12764893 ns
+Lidar stats: 4422036 ns
+Lidar blit: 332838
+Camera init: 311169 ns
+Camera show: 2549926 ns
+Sensors FPS + flip: 3056044 ns
+Camera init: 572247 ns
+Seg init: 2579596 ns
+Seg prediction: 60802988 ns
+Seg get canvas: 10176896 ns
+Seg camera show: 1771861 ns
+Lidar init: 185639 ns
+Lidar points: 12533393 ns
+Lidar stats: 4181628 ns
+Lidar blit: 322679
+Camera init: 267838 ns
+Camera show: 2514947 ns
+Sensors FPS + flip: 3037094 ns
+Camera init: 473888 ns
+Seg init: 2830986 ns
+Seg prediction: 64361039 ns
+Seg get canvas: 12023907 ns
+Seg camera show: 1750630 ns
+Lidar init: 178909 ns
+Lidar points: 13104881 ns
+Lidar stats: 4283277 ns
+Lidar blit: 324198
+Camera init: 409248 ns
+Camera show: 2501427 ns
+Sensors FPS + flip: 3027084 ns
+Camera init: 450228 ns
+Seg init: 2216978 ns
+Seg prediction: 63449735 ns
+Seg get canvas: 10836572 ns
+Seg camera show: 1747961 ns
+Lidar init: 176169 ns
+Lidar points: 13164340 ns
+Lidar stats: 4410677 ns
+Lidar blit: 324318
+Camera init: 338968 ns
+Camera show: 2299358 ns
+Sensors FPS + flip: 3398592 ns
+Camera init: 398268 ns
+Seg init: 2202688 ns
+Seg prediction: 64522029 ns
+Seg get canvas: 10795253 ns
+Seg camera show: 1786140 ns
+Lidar init: 186759 ns
+Lidar points: 14152746 ns
+Lidar stats: 4366816 ns
+Lidar blit: 367458
+Camera init: 339438 ns
+Camera show: 2567957 ns
+Sensors FPS + flip: 3528721 ns
+Camera init: 613757 ns
+Seg init: 1875240 ns
+Seg prediction: 56575740 ns
+Seg get canvas: 10698194 ns
+Seg camera show: 1767411 ns
+Lidar init: 175579 ns
+Lidar points: 13542708 ns
+Lidar stats: 4313587 ns
+Lidar blit: 304448
+Camera init: 281209 ns
+Camera show: 2506906 ns
+Sensors FPS + flip: 2987295 ns
+Camera init: 702386 ns
+Seg init: 2009989 ns
+Seg prediction: 67387254 ns
+Seg get canvas: 10749283 ns
+Seg camera show: 1759751 ns
+Lidar init: 177119 ns
+Lidar points: 13041150 ns
+Lidar stats: 4573096 ns
+Lidar blit: 303349
+Camera init: 272398 ns
+Camera show: 2532537 ns
+Sensors FPS + flip: 2710786 ns
+Camera init: 698577 ns
+Seg init: 2421997 ns
+Seg prediction: 61881793 ns
+Seg get canvas: 12370124 ns
+Seg camera show: 1748671 ns
+Lidar init: 179239 ns
+Lidar points: 13043251 ns
+Lidar stats: 4389827 ns
+Lidar blit: 313318
+Camera init: 342218 ns
+Camera show: 2528227 ns
+Sensors FPS + flip: 6541155 ns
+Camera init: 455698 ns
+Seg init: 2673666 ns
+Seg prediction: 64658068 ns
+Seg get canvas: 11024151 ns
+Seg camera show: 1750641 ns
+Lidar init: 179669 ns
+Lidar points: 12993111 ns
+Lidar stats: 4604286 ns
+Lidar blit: 361998
+Camera init: 728166 ns
+Camera show: 2735696 ns
+Sensors FPS + flip: 3232913 ns
+Camera init: 264819 ns
+Seg init: 1628511 ns
+Seg prediction: 57365827 ns
+Seg get canvas: 12350915 ns
+Seg camera show: 1785721 ns
+Lidar init: 184319 ns
+Lidar points: 13299319 ns
+Lidar stats: 4514467 ns
+Lidar blit: 318688
+Camera init: 508867 ns
+Camera show: 3044984 ns
+Sensors FPS + flip: 4517466 ns
+Camera init: 658797 ns
+Seg init: 3164743 ns
+Seg prediction: 61838523 ns
+Seg get canvas: 11621709 ns
+Seg camera show: 1771880 ns
+Lidar init: 186069 ns
+Lidar points: 13212311 ns
+Lidar stats: 4355166 ns
+Lidar blit: 319348
+Camera init: 301779 ns
+Camera show: 1908390 ns
+Sensors FPS + flip: 3063574 ns
+Camera init: 312118 ns
+Seg init: 1588122 ns
+Seg prediction: 107403292 ns
+Seg get canvas: 11266140 ns
+Seg camera show: 1835271 ns
+Lidar init: 189759 ns
+Lidar points: 13402409 ns
+Lidar stats: 4439686 ns
+Lidar blit: 311908
+Camera init: 280449 ns
+Camera show: 2560846 ns
+Sensors FPS + flip: 2808685 ns
+Camera init: 257288 ns
+Seg init: 1649722 ns
+Seg prediction: 59949513 ns
+Seg get canvas: 10850433 ns
+Seg camera show: 1749261 ns
+Lidar init: 179659 ns
+Lidar points: 12951251 ns
+Lidar stats: 4304538 ns
+Lidar blit: 316428
+Camera init: 324738 ns
+Camera show: 2357477 ns
+Sensors FPS + flip: 3092154 ns
+Camera init: 314388 ns
+Seg init: 1804121 ns
+Seg prediction: 62473799 ns
+Seg get canvas: 10693544 ns
+Seg camera show: 1768591 ns
+Lidar init: 180049 ns
+Lidar points: 13055361 ns
+Lidar stats: 4253317 ns
+Lidar blit: 319539
+Camera init: 287538 ns
+Camera show: 2520067 ns
+Sensors FPS + flip: 2979163 ns
+Camera init: 835166 ns
+Seg init: 3834139 ns
+Seg prediction: 66141591 ns
+Seg get canvas: 10224115 ns
+Seg camera show: 1918330 ns
+Lidar init: 221929 ns
+Lidar points: 12434505 ns
+Lidar stats: 4232027 ns
+Lidar blit: 606607
+Camera init: 335798 ns
+Camera show: 2602946 ns
+Sensors FPS + flip: 3745140 ns
+Camera init: 269898 ns
+Seg init: 1811161 ns
+Seg prediction: 71291143 ns
+Seg get canvas: 10809283 ns
+Seg camera show: 1812070 ns
+Lidar init: 196959 ns
+Lidar points: 13097191 ns
+Lidar stats: 4337727 ns
+Lidar blit: 340518
+Camera init: 331318 ns
+Camera show: 2183799 ns
+Sensors FPS + flip: 2684285 ns
+Camera init: 507438 ns
+Seg init: 2259788 ns
+Seg prediction: 60085083 ns
+Seg get canvas: 10828723 ns
+Seg camera show: 2611556 ns
+Lidar init: 206669 ns
+Lidar points: 23956594 ns
+Lidar stats: 4699254 ns
+Lidar blit: 467228
+Camera init: 530487 ns
+Camera show: 2457527 ns
+Sensors FPS + flip: 2315138 ns
+Camera init: 309458 ns
+Seg init: 1647982 ns
+Seg prediction: 59460115 ns
+Seg get canvas: 10369585 ns
+Seg camera show: 1765811 ns
+Lidar init: 183159 ns
+Lidar points: 13178700 ns
+Lidar stats: 4247868 ns
+Lidar blit: 320678
+Camera init: 279869 ns
+Camera show: 2539426 ns
+Sensors FPS + flip: 2751036 ns
+Camera init: 277238 ns
+Seg init: 1951970 ns
+Seg prediction: 57980474 ns
+Seg get canvas: 11331830 ns
+Seg camera show: 1828000 ns
+Lidar init: 281318 ns
+Lidar points: 13173091 ns
+Lidar stats: 4429746 ns
+Lidar blit: 339549
+Camera init: 304889 ns
+Camera show: 2789705 ns
+Sensors FPS + flip: 3818420 ns
+Camera init: 458168 ns
+Seg init: 2001610 ns
+Seg prediction: 56046544 ns
+Seg get canvas: 12192235 ns
+Seg camera show: 1763861 ns
+Lidar init: 181659 ns
+Lidar points: 13027401 ns
+Lidar stats: 4373147 ns
+Lidar blit: 322648
+Camera init: 291409 ns
+Camera show: 2511466 ns
+Sensors FPS + flip: 2567897 ns
+Camera init: 793635 ns
+Seg init: 3355672 ns
+Seg prediction: 61293526 ns
+Seg get canvas: 11518929 ns
+Seg camera show: 1737371 ns
+Lidar init: 175709 ns
+Lidar points: 12791812 ns
+Lidar stats: 5220853 ns
+Lidar blit: 332778
+Camera init: 288749 ns
+Camera show: 2741355 ns
+Sensors FPS + flip: 3356863 ns
+Camera init: 316088 ns
+Seg init: 1889930 ns
+Seg prediction: 55359897 ns
+Seg get canvas: 10309076 ns
+Seg camera show: 1772480 ns
+Lidar init: 173419 ns
+Lidar points: 12894912 ns
+Lidar stats: 4256978 ns
+Lidar blit: 318028
+Camera init: 283699 ns
+Camera show: 2118588 ns
+Sensors FPS + flip: 2761306 ns
+Camera init: 276059 ns
+Seg init: 1593351 ns
+Seg prediction: 63346995 ns
+Seg get canvas: 10550815 ns
+Seg camera show: 1752551 ns
+Lidar init: 177689 ns
+Lidar points: 12791823 ns
+Lidar stats: 4382227 ns
+Lidar blit: 335958
+Camera init: 327688 ns
+Camera show: 2257888 ns
+Sensors FPS + flip: 2904835 ns
+Camera init: 619167 ns
+Seg init: 1783201 ns
+Seg prediction: 59314736 ns
+Seg get canvas: 10817793 ns
+Seg camera show: 1750441 ns
+Lidar init: 180079 ns
+Lidar points: 12902241 ns
+Lidar stats: 4286508 ns
+Lidar blit: 318278
+Camera init: 280089 ns
+Camera show: 2550496 ns
+Sensors FPS + flip: 2543267 ns
+Camera init: 265599 ns
+Seg init: 1796720 ns
+Seg prediction: 56142954 ns
+Seg get canvas: 9953137 ns
+Seg camera show: 1772491 ns
+Lidar init: 187739 ns
+Lidar points: 12190535 ns
+Lidar stats: 4196868 ns
+Lidar blit: 328888
+Camera init: 269679 ns
+Camera show: 2552226 ns
+Sensors FPS + flip: 2825475 ns
+Camera init: 318578 ns
+Seg init: 1786301 ns
+Seg prediction: 59942713 ns
+Seg get canvas: 10330435 ns
+Seg camera show: 1760031 ns
+Lidar init: 178449 ns
+Lidar points: 12230586 ns
+Lidar stats: 4268347 ns
+Lidar blit: 319658
+Camera init: 288819 ns
+Camera show: 2534866 ns
+Sensors FPS + flip: 2680916 ns
+Camera init: 348859 ns
+Seg init: 1963079 ns
+Seg prediction: 63710033 ns
+Seg get canvas: 11072472 ns
+Seg camera show: 1849570 ns
+Lidar init: 187789 ns
+Lidar points: 12772293 ns
+Lidar stats: 4635945 ns
+Lidar blit: 455478
+Camera init: 535447 ns
+Camera show: 2855104 ns
+Sensors FPS + flip: 3035164 ns
+Camera init: 434138 ns
+Seg init: 1969990 ns
+Seg prediction: 55702405 ns
+Seg get canvas: 11134371 ns
+Seg camera show: 1815091 ns
+Lidar init: 218329 ns
+Lidar points: 13438819 ns
+Lidar stats: 4245668 ns
+Lidar blit: 321808
+Camera init: 302499 ns
+Camera show: 2515167 ns
+Sensors FPS + flip: 3229653 ns
+Camera init: 297778 ns
+Seg init: 2114359 ns
+Seg prediction: 64614088 ns
+Seg get canvas: 11735758 ns
+Seg camera show: 1840790 ns
+Lidar init: 209259 ns
+Lidar points: 13644418 ns
+Lidar stats: 4757655 ns
+Lidar blit: 349768
+Camera init: 314598 ns
+Camera show: 2580677 ns
+Sensors FPS + flip: 2794325 ns
+Camera init: 906585 ns
+Seg init: 3527751 ns
+Seg prediction: 58023163 ns
+Seg get canvas: 11643969 ns
+Seg camera show: 2423766 ns
+Lidar init: 210659 ns
+Lidar points: 14471524 ns
+Lidar stats: 4236108 ns
+Lidar blit: 328628
+Camera init: 299928 ns
+Camera show: 2551747 ns
+Sensors FPS + flip: 2634687 ns
+Camera init: 550818 ns
+Seg init: 2615466 ns
+Seg prediction: 65806882 ns
+Seg get canvas: 11117281 ns
+Seg camera show: 1787460 ns
+Lidar init: 186659 ns
+Lidar points: 12003997 ns
+Lidar stats: 4288588 ns
+Lidar blit: 337278
+Camera init: 272708 ns
+Camera show: 2523007 ns
+Sensors FPS + flip: 2815235 ns
+Camera init: 314579 ns
+Seg init: 1611651 ns
+Seg prediction: 63704844 ns
+Seg get canvas: 10405125 ns
+Seg camera show: 1750940 ns
+Lidar init: 181349 ns
+Lidar points: 12126486 ns
+Lidar stats: 4181278 ns
+Lidar blit: 316668
+Camera init: 276739 ns
+Camera show: 2519927 ns
+Sensors FPS + flip: 2895925 ns
+Camera init: 458667 ns
+Seg init: 1624231 ns
+Seg prediction: 66874507 ns
+Seg get canvas: 10863543 ns
+Seg camera show: 1754010 ns
+Lidar init: 181919 ns
+Lidar points: 12641044 ns
+Lidar stats: 4497616 ns
+Lidar blit: 315158
+Camera init: 274319 ns
+Camera show: 2497126 ns
+Sensors FPS + flip: 2747946 ns
+Camera init: 341718 ns
+Seg init: 2068389 ns
+Seg prediction: 64186461 ns
+Seg get canvas: 10961422 ns
+Seg camera show: 1745191 ns
+Lidar init: 178199 ns
+Lidar points: 12910082 ns
+Lidar stats: 4284247 ns
+Lidar blit: 339348
+Camera init: 289869 ns
+Camera show: 2549566 ns
+Sensors FPS + flip: 2836735 ns
+Camera init: 254439 ns
+Seg init: 1574172 ns
+Seg prediction: 67380714 ns
+Seg get canvas: 10358685 ns
+Seg camera show: 1738031 ns
+Lidar init: 179139 ns
+Lidar points: 12916562 ns
+Lidar stats: 4252487 ns
+Lidar blit: 329948
+Camera init: 301829 ns
+Camera show: 2383837 ns
+Sensors FPS + flip: 2727766 ns
+Camera init: 1226503 ns
+Seg init: 4064019 ns
+Seg prediction: 77623000 ns
+Seg get canvas: 10625573 ns
+Seg camera show: 1808151 ns
+Lidar init: 184699 ns
+Lidar points: 12669263 ns
+Lidar stats: 4208088 ns
+Lidar blit: 309958
+Camera init: 270758 ns
+Camera show: 3135374 ns
+Sensors FPS + flip: 3033384 ns
+Camera init: 416988 ns
+Seg init: 2678045 ns
+Seg prediction: 66156421 ns
+Seg get canvas: 10716693 ns
+Seg camera show: 1778251 ns
+Lidar init: 178769 ns
+Lidar points: 13152001 ns
+Lidar stats: 4219257 ns
+Lidar blit: 319078
+Camera init: 331999 ns
+Camera show: 2517146 ns
+Sensors FPS + flip: 2713826 ns
+Camera init: 369328 ns
+Seg init: 2271918 ns
+Seg prediction: 60449121 ns
+Seg get canvas: 15197509 ns
+Seg camera show: 1776621 ns
+Lidar init: 179189 ns
+Lidar points: 13194460 ns
+Lidar stats: 4270188 ns
+Lidar blit: 326438
+Camera init: 303368 ns
+Camera show: 1917790 ns
+Sensors FPS + flip: 2838955 ns
+Camera init: 661207 ns
+Seg init: 3255993 ns
+Seg prediction: 66034980 ns
+Seg get canvas: 13391400 ns
+Seg camera show: 1901430 ns
+Lidar init: 185529 ns
+Lidar points: 13044691 ns
+Lidar stats: 4247927 ns
+Lidar blit: 419688
+Camera init: 331498 ns
+Camera show: 2572776 ns
+Sensors FPS + flip: 3414662 ns
+Camera init: 519627 ns
+Seg init: 3016404 ns
+Seg prediction: 65344135 ns
+Seg get canvas: 11371990 ns
+Seg camera show: 1808570 ns
+Lidar init: 182629 ns
+Lidar points: 13619308 ns
+Lidar stats: 4387777 ns
+Lidar blit: 330868
+Camera init: 468378 ns
+Camera show: 2537396 ns
+Sensors FPS + flip: 2979045 ns
+Camera init: 443908 ns
+Seg init: 2073829 ns
+Seg prediction: 61995632 ns
+Seg get canvas: 14622143 ns
+Seg camera show: 2272718 ns
+Lidar init: 213169 ns
+Lidar points: 12727252 ns
+Lidar stats: 4465017 ns
+Lidar blit: 324218
+Camera init: 271028 ns
+Camera show: 3075814 ns
+Sensors FPS + flip: 3165734 ns
+Camera init: 709507 ns
+Seg init: 2514996 ns
+Seg prediction: 72240859 ns
+Seg get canvas: 11461199 ns
+Seg camera show: 1792351 ns
+Lidar init: 190219 ns
+Lidar points: 13404669 ns
+Lidar stats: 4205598 ns
+Lidar blit: 336728
+Camera init: 294168 ns
+Camera show: 2483077 ns
+Sensors FPS + flip: 2421437 ns
+Camera init: 286279 ns
+Seg init: 2125108 ns
+Seg prediction: 58851710 ns
+Seg get canvas: 10156106 ns
+Seg camera show: 1776510 ns
+Lidar init: 203219 ns
+Lidar points: 13466549 ns
+Lidar stats: 4381427 ns
+Lidar blit: 340598
+Camera init: 329368 ns
+Camera show: 2629497 ns
+Sensors FPS + flip: 2293528 ns
+Camera init: 295118 ns
+Seg init: 1630631 ns
+Seg prediction: 60546561 ns
+Seg get canvas: 12086326 ns
+Seg camera show: 1956900 ns
+Lidar init: 176749 ns
+Lidar points: 12411434 ns
+Lidar stats: 4319817 ns
+Lidar blit: 312659
+Camera init: 281909 ns
+Camera show: 2513067 ns
+Sensors FPS + flip: 2382667 ns
+Camera init: 559887 ns
+Seg init: 3155093 ns
+Seg prediction: 65679143 ns
+Seg get canvas: 11435470 ns
+Seg camera show: 1773710 ns
+Lidar init: 179169 ns
+Lidar points: 13760598 ns
+Lidar stats: 4302907 ns
+Lidar blit: 304538
+Camera init: 258739 ns
+Camera show: 2774825 ns
+Sensors FPS + flip: 2994204 ns
+Camera init: 677397 ns
+Seg init: 3579861 ns
+Seg prediction: 59986843 ns
+Seg get canvas: 9461600 ns
+Seg camera show: 1756271 ns
+Lidar init: 176810 ns
+Lidar points: 13481289 ns
+Lidar stats: 4309436 ns
+Lidar blit: 317649
+Camera init: 311718 ns
+Camera show: 2464137 ns
+Sensors FPS + flip: 3208483 ns
+Camera init: 907865 ns
+Seg init: 2981244 ns
+Seg prediction: 86843601 ns
+Seg get canvas: 10058728 ns
+Seg camera show: 1787251 ns
+Lidar init: 173599 ns
+Lidar points: 13438779 ns
+Lidar stats: 4307217 ns
+Lidar blit: 311069
+Camera init: 268468 ns
+Camera show: 2444777 ns
+Sensors FPS + flip: 3271812 ns
+Camera init: 653126 ns
+Seg init: 2918005 ns
+Seg prediction: 63362835 ns
+Seg get canvas: 10882632 ns
+Seg camera show: 1934990 ns
+Lidar init: 206409 ns
+Lidar points: 12913422 ns
+Lidar stats: 4226608 ns
+Lidar blit: 819585
+Camera init: 332488 ns
+Camera show: 2583487 ns
+Sensors FPS + flip: 8964933 ns
+Camera init: 851985 ns
+Seg init: 3843050 ns
+Seg prediction: 64395120 ns
+Seg get canvas: 12980301 ns
+Seg camera show: 2251898 ns
+Lidar init: 374058 ns
+Lidar points: 14836902 ns
+Lidar stats: 4984703 ns
+Lidar blit: 640627
+Camera init: 387678 ns
+Camera show: 2438217 ns
+Sensors FPS + flip: 3829220 ns
+Camera init: 292958 ns
+Seg init: 3326902 ns
+Seg prediction: 91261208 ns
+Seg get canvas: 12315575 ns
+Seg camera show: 1869170 ns
+Lidar init: 381858 ns
+Lidar points: 13519179 ns
+Lidar stats: 4290887 ns
+Lidar blit: 337428
+Camera init: 274699 ns
+Camera show: 2479837 ns
+Sensors FPS + flip: 3017534 ns
+Camera init: 300269 ns
+Seg init: 1588932 ns
+Seg prediction: 55345087 ns
+Seg get canvas: 14046936 ns
+Seg camera show: 1927580 ns
+Lidar init: 729207 ns
+Lidar points: 12995701 ns
+Lidar stats: 4216958 ns
+Lidar blit: 321588
+Camera init: 321568 ns
+Camera show: 2501927 ns
+Sensors FPS + flip: 5417432 ns
+Camera init: 400907 ns
+Seg init: 2186469 ns
+Seg prediction: 59161707 ns
+Seg get canvas: 10988132 ns
+Seg camera show: 1800341 ns
+Lidar init: 192188 ns
+Lidar points: 13207371 ns
+Lidar stats: 4047308 ns
+Lidar blit: 322219
+Camera init: 272598 ns
+Camera show: 2466697 ns
+Sensors FPS + flip: 2635746 ns
+Camera init: 272349 ns
+Seg init: 1677531 ns
+Seg prediction: 61731904 ns
+Seg get canvas: 11020412 ns
+Seg camera show: 1770730 ns
+Lidar init: 184369 ns
+Lidar points: 12923382 ns
+Lidar stats: 4053818 ns
+Lidar blit: 317459
+Camera init: 329848 ns
+Camera show: 2476777 ns
+Sensors FPS + flip: 4871654 ns
+Camera init: 341128 ns
+Seg init: 1960280 ns
+Seg prediction: 60069772 ns
+Seg get canvas: 10227706 ns
+Seg camera show: 1791821 ns
+Lidar init: 184730 ns
+Lidar points: 13030332 ns
+Lidar stats: 4043238 ns
+Lidar blit: 320499
+Camera init: 265039 ns
+Camera show: 2442557 ns
+Sensors FPS + flip: 3047814 ns
+Camera init: 285009 ns
+Seg init: 1784070 ns
+Seg prediction: 61962463 ns
+Seg get canvas: 11264370 ns
+Seg camera show: 1763841 ns
+Lidar init: 180249 ns
+Lidar points: 12391895 ns
+Lidar stats: 4087928 ns
+Lidar blit: 335178
+Camera init: 325668 ns
+Camera show: 2599627 ns
+Sensors FPS + flip: 3405002 ns
+Camera init: 300388 ns
+Seg init: 1699451 ns
+Seg prediction: 63599095 ns
+Seg get canvas: 10968141 ns
+Seg camera show: 1759691 ns
+Lidar init: 183439 ns
+Lidar points: 12378185 ns
+Lidar stats: 4020228 ns
+Lidar blit: 320348
+Camera init: 269379 ns
+Camera show: 2475877 ns
+Sensors FPS + flip: 2889635 ns
+Camera init: 298699 ns
+Seg init: 2071369 ns
+Seg prediction: 66009681 ns
+Seg get canvas: 11103041 ns
+Seg camera show: 1778681 ns
+Lidar init: 179459 ns
+Lidar points: 12755443 ns
+Lidar stats: 4112958 ns
+Lidar blit: 341068
+Camera init: 451898 ns
+Camera show: 2629626 ns
+Sensors FPS + flip: 4753725 ns
+Camera init: 1038234 ns
+Seg init: 5449701 ns
+Seg prediction: 69291614 ns
+Seg get canvas: 10317376 ns
+Seg camera show: 2257007 ns
+Lidar init: 288649 ns
+Lidar points: 13442959 ns
+Lidar stats: 5433221 ns
+Lidar blit: 1059384
+Camera init: 609397 ns
+Camera show: 3933009 ns
+Sensors FPS + flip: 7242722 ns
+Camera init: 367378 ns
+Seg init: 3424601 ns
+Seg prediction: 79701930 ns
+Seg get canvas: 22018564 ns
+Seg camera show: 2383268 ns
+Lidar init: 448148 ns
+Lidar points: 22679850 ns
+Lidar stats: 6170018 ns
+Lidar blit: 738697
+Camera init: 517987 ns
+Camera show: 3343852 ns
+Sensors FPS + flip: 4066649 ns
+Camera init: 351028 ns
+Seg init: 2547287 ns
+Seg prediction: 62941178 ns
+Seg get canvas: 17985066 ns
+Seg camera show: 1929190 ns
+Lidar init: 227049 ns
+Lidar points: 14012586 ns
+Lidar stats: 4575006 ns
+Lidar blit: 361708
+Camera init: 403908 ns
+Camera show: 2005779 ns
+Sensors FPS + flip: 3712620 ns
+Camera init: 517347 ns
+Seg init: 1823880 ns
+Seg prediction: 66381560 ns
+Seg get canvas: 11736478 ns
+Seg camera show: 1799111 ns
+Lidar init: 192209 ns
+Lidar points: 12579623 ns
+Lidar stats: 4427777 ns
+Lidar blit: 322618
+Camera init: 265939 ns
+Camera show: 2443497 ns
+Sensors FPS + flip: 2697205 ns
+Camera init: 254588 ns
+Seg init: 1582592 ns
+Seg prediction: 57803905 ns
+Seg get canvas: 12556494 ns
+Seg camera show: 1845120 ns
+Lidar init: 206639 ns
+Lidar points: 12447844 ns
+Lidar stats: 4726545 ns
+Lidar blit: 390938
+Camera init: 339828 ns
+Camera show: 2608906 ns
+Sensors FPS + flip: 3731631 ns
+Camera init: 470027 ns
+Seg init: 2570577 ns
+Seg prediction: 64704478 ns
+Seg get canvas: 10673384 ns
+Seg camera show: 1778321 ns
+Lidar init: 182329 ns
+Lidar points: 12890441 ns
+Lidar stats: 4480837 ns
+Lidar blit: 327358
+Camera init: 299658 ns
+Camera show: 2487677 ns
+Sensors FPS + flip: 2691336 ns
+Camera init: 259179 ns
+Seg init: 1584301 ns
+Seg prediction: 58599891 ns
+Seg get canvas: 11171420 ns
+Seg camera show: 1768231 ns
+Lidar init: 175199 ns
+Lidar points: 12708913 ns
+Lidar stats: 4277198 ns
+Lidar blit: 310448
+Camera init: 258508 ns
+Camera show: 2441337 ns
+Sensors FPS + flip: 3076504 ns
+Camera init: 269079 ns
+Seg init: 1602651 ns
+Seg prediction: 69035006 ns
+Seg get canvas: 10561624 ns
+Seg camera show: 1738031 ns
+Lidar init: 177199 ns
+Lidar points: 12751574 ns
+Lidar stats: 4277947 ns
+Lidar blit: 311298
+Camera init: 260219 ns
+Camera show: 2452256 ns
+Sensors FPS + flip: 3165304 ns
+Camera init: 450988 ns
+Seg init: 1643851 ns
+Seg prediction: 69770412 ns
+Seg get canvas: 10858112 ns
+Seg camera show: 1769491 ns
+Lidar init: 180359 ns
+Lidar points: 12977642 ns
+Lidar stats: 4343877 ns
+Lidar blit: 303438
+Camera init: 328348 ns
+Camera show: 2486787 ns
+Sensors FPS + flip: 4082498 ns
+Camera init: 447817 ns
+Seg init: 1709541 ns
+Seg prediction: 61612415 ns
+Seg get canvas: 11278431 ns
+Seg camera show: 1748350 ns
+Lidar init: 180789 ns
+Lidar points: 12604334 ns
+Lidar stats: 4382947 ns
+Lidar blit: 316558
+Camera init: 263399 ns
+Camera show: 2942604 ns
+Sensors FPS + flip: 3722820 ns
+Camera init: 465238 ns
+Seg init: 1790890 ns
+Seg prediction: 55807085 ns
+Seg get canvas: 11582760 ns
+Seg camera show: 1757390 ns
+Lidar init: 174899 ns
+Lidar points: 12585614 ns
+Lidar stats: 4326487 ns
+Lidar blit: 301198
+Camera init: 292209 ns
+Camera show: 2448447 ns
+Sensors FPS + flip: 3384302 ns
+Camera init: 474318 ns
+Seg init: 1622021 ns
+Seg prediction: 60490701 ns
+Seg get canvas: 11076451 ns
+Seg camera show: 1760811 ns
+Lidar init: 175360 ns
+Lidar points: 12646563 ns
+Lidar stats: 4211348 ns
+Lidar blit: 304099
+Camera init: 263379 ns
+Camera show: 2413897 ns
+Sensors FPS + flip: 4535726 ns
+Camera init: 902815 ns
+Seg init: 4918774 ns
+Seg prediction: 66914007 ns
+Seg get canvas: 12408184 ns
+Seg camera show: 2330758 ns
+Lidar init: 322338 ns
+Lidar points: 13361490 ns
+Lidar stats: 4356156 ns
+Lidar blit: 1108754
+Camera init: 321539 ns
+Camera show: 2807435 ns
+Sensors FPS + flip: 6786174 ns
+Camera init: 415828 ns
+Seg init: 2635267 ns
+Seg prediction: 68691657 ns
+Seg get canvas: 14256715 ns
+Seg camera show: 2095989 ns
+Lidar init: 479958 ns
+Lidar points: 13523469 ns
+Lidar stats: 6951633 ns
+Lidar blit: 716906
+Camera init: 487127 ns
+Camera show: 3858200 ns
+Sensors FPS + flip: 3813540 ns
+Camera init: 333888 ns
+Seg init: 3508562 ns
+Seg prediction: 77338342 ns
+Seg get canvas: 12253396 ns
+Seg camera show: 1831030 ns
+Lidar init: 310479 ns
+Lidar points: 12764123 ns
+Lidar stats: 4218498 ns
+Lidar blit: 330728
+Camera init: 282238 ns
+Camera show: 2438928 ns
+Sensors FPS + flip: 3720470 ns
+Camera init: 254008 ns
+Seg init: 1655462 ns
+Seg prediction: 63558104 ns
+Seg get canvas: 12290996 ns
+Seg camera show: 1832510 ns
+Lidar init: 232069 ns
+Lidar points: 12560303 ns
+Lidar stats: 4091239 ns
+Lidar blit: 333818
+Camera init: 259688 ns
+Camera show: 2435588 ns
+Sensors FPS + flip: 3457882 ns
+Camera init: 782185 ns
+Seg init: 4330037 ns
+Seg prediction: 72268099 ns
+Seg get canvas: 13529779 ns
+Seg camera show: 3121063 ns
+Lidar init: 274298 ns
+Lidar points: 14760953 ns
+Lidar stats: 4788385 ns
+Lidar blit: 346348
+Camera init: 259278 ns
+Camera show: 2686946 ns
+Sensors FPS + flip: 3209453 ns
+Camera init: 282158 ns
+Seg init: 1781771 ns
+Seg prediction: 60136443 ns
+Seg get canvas: 11228191 ns
+Seg camera show: 1791270 ns
+Lidar init: 184469 ns
+Lidar points: 12744833 ns
+Lidar stats: 4059738 ns
+Lidar blit: 339838
+Camera init: 261619 ns
+Camera show: 2409117 ns
+Sensors FPS + flip: 3079264 ns
+Camera init: 327818 ns
+Seg init: 2215788 ns
+Seg prediction: 71300624 ns
+Seg get canvas: 11137681 ns
+Seg camera show: 1892820 ns
+Lidar init: 200559 ns
+Lidar points: 13781757 ns
+Lidar stats: 4147418 ns
+Lidar blit: 308579
+Camera init: 261788 ns
+Camera show: 2440507 ns
+Sensors FPS + flip: 3341983 ns
+Camera init: 427137 ns
+Seg init: 2591996 ns
+Seg prediction: 67182136 ns
+Seg get canvas: 12582944 ns
+Seg camera show: 1846130 ns
+Lidar init: 221989 ns
+Lidar points: 12294685 ns
+Lidar stats: 4154668 ns
+Lidar blit: 302598
+Camera init: 342728 ns
+Camera show: 2422927 ns
+Sensors FPS + flip: 2990405 ns
+Camera init: 380098 ns
+Seg init: 1561452 ns
+Seg prediction: 64697318 ns
+Seg get canvas: 13390810 ns
+Seg camera show: 1752401 ns
+Lidar init: 182909 ns
+Lidar points: 13242270 ns
+Lidar stats: 4169688 ns
+Lidar blit: 322618
+Camera init: 284029 ns
+Camera show: 2463857 ns
+Sensors FPS + flip: 2518166 ns
+Camera init: 267358 ns
+Seg init: 1715371 ns
+Seg prediction: 65340896 ns
+Seg get canvas: 14219255 ns
+Seg camera show: 1765720 ns
+Lidar init: 186469 ns
+Lidar points: 11953158 ns
+Lidar stats: 4116787 ns
+Lidar blit: 320549
+Camera init: 372338 ns
+Camera show: 2462117 ns
+Sensors FPS + flip: 4841254 ns
+Camera init: 1201603 ns
+Seg init: 5474922 ns
+Seg prediction: 76523997 ns
+Seg get canvas: 14247554 ns
+Seg camera show: 2261759 ns
+Lidar init: 422888 ns
+Lidar points: 13051061 ns
+Lidar stats: 8066608 ns
+Lidar blit: 624426
+Camera init: 499318 ns
+Camera show: 3919209 ns
+Sensors FPS + flip: 3713971 ns
+Camera init: 401758 ns
+Seg init: 3128544 ns
+Seg prediction: 78216057 ns
+Seg get canvas: 12814813 ns
+Seg camera show: 1802620 ns
+Lidar init: 237268 ns
+Lidar points: 13052842 ns
+Lidar stats: 4540746 ns
+Lidar blit: 363988
+Camera init: 735916 ns
+Camera show: 2574847 ns
+Sensors FPS + flip: 4711685 ns
+Camera init: 730616 ns
+Seg init: 2813895 ns
+Seg prediction: 63134277 ns
+Seg get canvas: 12860322 ns
+Seg camera show: 1810991 ns
+Lidar init: 200249 ns
+Lidar points: 12558173 ns
+Lidar stats: 4205478 ns
+Lidar blit: 333018
+Camera init: 316278 ns
+Camera show: 2832076 ns
+Sensors FPS + flip: 7984918 ns
+Camera init: 911686 ns
+Seg init: 3076293 ns
+Seg prediction: 62574511 ns
+Seg get canvas: 13014781 ns
+Seg camera show: 1942059 ns
+Lidar init: 188299 ns
+Lidar points: 12232386 ns
+Lidar stats: 4203088 ns
+Lidar blit: 330599
+Camera init: 297858 ns
+Camera show: 2455687 ns
+Sensors FPS + flip: 5654781 ns
+Camera init: 1161574 ns
+Seg init: 3471151 ns
+Seg prediction: 60553101 ns
+Seg get canvas: 12775393 ns
+Seg camera show: 2045080 ns
+Lidar init: 186489 ns
+Lidar points: 13084041 ns
+Lidar stats: 4248368 ns
+Lidar blit: 344808
+Camera init: 268729 ns
+Camera show: 2754565 ns
+Sensors FPS + flip: 4876915 ns
+Camera init: 511717 ns
+Seg init: 2252458 ns
+Seg prediction: 58719761 ns
+Seg get canvas: 11830127 ns
+Seg camera show: 1766451 ns
+Lidar init: 190189 ns
+Lidar points: 13016761 ns
+Lidar stats: 4221668 ns
+Lidar blit: 333358
+Camera init: 303129 ns
+Camera show: 2442876 ns
+Sensors FPS + flip: 4507357 ns
+Camera init: 318778 ns
+Seg init: 2624967 ns
+Seg prediction: 156966102 ns
+Seg get canvas: 13590858 ns
+Seg camera show: 1740111 ns
+Lidar init: 171579 ns
+Lidar points: 12708703 ns
+Lidar stats: 4378407 ns
+Lidar blit: 328688
+Camera init: 297969 ns
+Camera show: 2453797 ns
+Sensors FPS + flip: 3476101 ns
+Camera init: 1144124 ns
+Seg init: 3474922 ns
+Seg prediction: 71936970 ns
+Seg get canvas: 18570643 ns
+Seg camera show: 2111298 ns
+Lidar init: 374448 ns
+Lidar points: 12854942 ns
+Lidar stats: 4587366 ns
+Lidar blit: 727926
+Camera init: 389318 ns
+Camera show: 2744496 ns
+Sensors FPS + flip: 4419436 ns
+Camera init: 1499222 ns
+Seg init: 5126613 ns
+Seg prediction: 69454264 ns
+Seg get canvas: 13764868 ns
+Seg camera show: 2063869 ns
+Lidar init: 297528 ns
+Lidar points: 14696392 ns
+Lidar stats: 4644956 ns
+Lidar blit: 709956
+Camera init: 334908 ns
+Camera show: 2153129 ns
+Sensors FPS + flip: 3662251 ns
+Camera init: 664696 ns
+Seg init: 1916170 ns
+Seg prediction: 61122278 ns
+Seg get canvas: 13673308 ns
+Seg camera show: 1818090 ns
+Lidar init: 187569 ns
+Lidar points: 13296400 ns
+Lidar stats: 4363317 ns
+Lidar blit: 338588
+Camera init: 301629 ns
+Camera show: 2691426 ns
+Sensors FPS + flip: 6106357 ns
+Camera init: 581847 ns
+Seg init: 3269623 ns
+Seg prediction: 67965401 ns
+Seg get canvas: 12963732 ns
+Seg camera show: 1791281 ns
+Lidar init: 182399 ns
+Lidar points: 12416524 ns
+Lidar stats: 4982054 ns
+Lidar blit: 329038
+Camera init: 703526 ns
+Camera show: 2542027 ns
+Sensors FPS + flip: 5236482 ns
+Camera init: 3478441 ns
+Seg init: 4420987 ns
+Seg prediction: 63168058 ns
+Seg get canvas: 12128496 ns
+Seg camera show: 2004300 ns
+Lidar init: 214359 ns
+Lidar points: 14982092 ns
+Lidar stats: 5445051 ns
+Lidar blit: 1307433
+Camera init: 1118715 ns
+Camera show: 2346827 ns
+Sensors FPS + flip: 3971119 ns
+Camera init: 596167 ns
+Seg init: 2086909 ns
+Seg prediction: 55904945 ns
+Seg get canvas: 11996026 ns
+Seg camera show: 1803151 ns
+Lidar init: 186569 ns
+Lidar points: 12518634 ns
+Lidar stats: 4289027 ns
+Lidar blit: 306339
+Camera init: 303988 ns
+Camera show: 2472207 ns
+Sensors FPS + flip: 3376552 ns
+Camera init: 558697 ns
+Seg init: 2760046 ns
+Seg prediction: 61214657 ns
+Seg get canvas: 12929292 ns
+Seg camera show: 1822190 ns
+Lidar init: 211609 ns
+Lidar points: 14635683 ns
+Lidar stats: 4384066 ns
+Lidar blit: 326879
+Camera init: 350668 ns
+Camera show: 2924444 ns
+Sensors FPS + flip: 3812010 ns
+Camera init: 433398 ns
+Seg init: 2417897 ns
+Seg prediction: 57341338 ns
+Seg get canvas: 12464674 ns
+Seg camera show: 1745621 ns
+Lidar init: 175989 ns
+Lidar points: 12810743 ns
+Lidar stats: 4238797 ns
+Lidar blit: 305529
+Camera init: 273498 ns
+Camera show: 2806215 ns
+Sensors FPS + flip: 4735015 ns
+Camera init: 431988 ns
+Seg init: 2749316 ns
+Seg prediction: 67653733 ns
+Seg get canvas: 12471444 ns
+Seg camera show: 1759901 ns
+Lidar init: 175039 ns
+Lidar points: 13629628 ns
+Lidar stats: 4646045 ns
+Lidar blit: 323229
+Camera init: 362118 ns
+Camera show: 2788435 ns
+Sensors FPS + flip: 5089083 ns
+Camera init: 792136 ns
+Seg init: 2798125 ns
+Seg prediction: 60433332 ns
+Seg get canvas: 12285215 ns
+Seg camera show: 1754931 ns
+Lidar init: 178969 ns
+Lidar points: 13281820 ns
+Lidar stats: 4537276 ns
+Lidar blit: 424508
+Camera init: 1259613 ns
+Camera show: 2555097 ns
+Sensors FPS + flip: 4310047 ns
+Camera init: 451028 ns
+Seg init: 2165338 ns
+Seg prediction: 62784009 ns
+Seg get canvas: 12662593 ns
+Seg camera show: 1751811 ns
+Lidar init: 174829 ns
+Lidar points: 13353479 ns
+Lidar stats: 4936304 ns
+Lidar blit: 851156
+Camera init: 801806 ns
+Camera show: 2708395 ns
+Sensors FPS + flip: 2758906 ns
+Camera init: 564847 ns
+Seg init: 1666761 ns
+Seg prediction: 60394422 ns
+Seg get canvas: 13848007 ns
+Seg camera show: 1763060 ns
+Lidar init: 179139 ns
+Lidar points: 13465250 ns
+Lidar stats: 4874113 ns
+Lidar blit: 315049
+Camera init: 293638 ns
+Camera show: 2447227 ns
+Sensors FPS + flip: 2894475 ns
+Camera init: 353599 ns
+Seg init: 1885270 ns
+Seg prediction: 63825663 ns
+Seg get canvas: 14007426 ns
+Seg camera show: 1809811 ns
+Lidar init: 196649 ns
+Lidar points: 13229390 ns
+Lidar stats: 4285867 ns
+Lidar blit: 331878
+Camera init: 531687 ns
+Camera show: 2464797 ns
+Sensors FPS + flip: 5225303 ns
+Camera init: 269558 ns
+Seg init: 2534717 ns
+Seg prediction: 61869974 ns
+Seg get canvas: 12385714 ns
+Seg camera show: 1799521 ns
+Lidar init: 181979 ns
+Lidar points: 13341789 ns
+Lidar stats: 4524316 ns
+Lidar blit: 324388
+Camera init: 512098 ns
+Camera show: 2771705 ns
+Sensors FPS + flip: 3723251 ns
+Camera init: 1549872 ns
+Seg init: 3007645 ns
+Seg prediction: 59535696 ns
+Seg get canvas: 12106576 ns
+Seg camera show: 1748210 ns
+Lidar init: 175459 ns
+Lidar points: 12930152 ns
+Lidar stats: 4163348 ns
+Lidar blit: 302688
+Camera init: 300279 ns
+Camera show: 2436677 ns
+Sensors FPS + flip: 3680821 ns
+Camera init: 705727 ns
+Seg init: 2627906 ns
+Seg prediction: 61500696 ns
+Seg get canvas: 12163835 ns
+Seg camera show: 1742091 ns
+Lidar init: 178939 ns
+Lidar points: 14496614 ns
+Lidar stats: 4415626 ns
+Lidar blit: 369348
+Camera init: 314689 ns
+Camera show: 2807325 ns
+Sensors FPS + flip: 6389156 ns
+Camera init: 615677 ns
+Seg init: 2125719 ns
+Seg prediction: 58075014 ns
+Seg get canvas: 12731092 ns
+Seg camera show: 1745661 ns
+Lidar init: 177209 ns
+Lidar points: 13351470 ns
+Lidar stats: 4191698 ns
+Lidar blit: 325168
+Camera init: 286289 ns
+Camera show: 2632196 ns
+Sensors FPS + flip: 4923913 ns
+Camera init: 809176 ns
+Seg init: 2815795 ns
+Seg prediction: 62828719 ns
+Seg get canvas: 11917997 ns
+Seg camera show: 1786761 ns
+Lidar init: 180949 ns
+Lidar points: 13742128 ns
+Lidar stats: 4380817 ns
+Lidar blit: 311148
+Camera init: 314289 ns
+Camera show: 2439797 ns
+Sensors FPS + flip: 3352462 ns
+Camera init: 632457 ns
+Seg init: 2732315 ns
+Seg prediction: 60734370 ns
+Seg get canvas: 12236826 ns
+Seg camera show: 1758041 ns
+Lidar init: 175509 ns
+Lidar points: 12737832 ns
+Lidar stats: 4230738 ns
+Lidar blit: 317618
+Camera init: 264239 ns
+Camera show: 2447017 ns
+Sensors FPS + flip: 7338212 ns
+Camera init: 561567 ns
+Seg init: 2689105 ns
+Seg prediction: 69620884 ns
+Seg get canvas: 12820602 ns
+Seg camera show: 1735501 ns
+Lidar init: 186259 ns
+Lidar points: 13758987 ns
+Lidar stats: 4143289 ns
+Lidar blit: 323838
+Camera init: 422428 ns
+Camera show: 2472407 ns
+Sensors FPS + flip: 6262227 ns
+Camera init: 498787 ns
+Seg init: 2592836 ns
+Seg prediction: 62517530 ns
+Seg get canvas: 10220357 ns
+Seg camera show: 1796730 ns
+Lidar init: 210119 ns
+Lidar points: 13897816 ns
+Lidar stats: 4426357 ns
+Lidar blit: 331368
+Camera init: 327059 ns
+Camera show: 2455247 ns
+Sensors FPS + flip: 4102628 ns
+Camera init: 749936 ns
+Seg init: 1603832 ns
+Seg prediction: 64415970 ns
+Seg get canvas: 10707463 ns
+Seg camera show: 1733841 ns
+Lidar init: 179419 ns
+Lidar points: 13264671 ns
+Lidar stats: 4058658 ns
+Lidar blit: 311658
+Camera init: 303059 ns
+Camera show: 2454177 ns
+Sensors FPS + flip: 3163644 ns
+Camera init: 670087 ns
+Seg init: 1677221 ns
+Seg prediction: 62209152 ns
+Seg get canvas: 10932572 ns
+Seg camera show: 1734981 ns
+Lidar init: 176419 ns
+Lidar points: 13231560 ns
+Lidar stats: 4191568 ns
+Lidar blit: 313359
+Camera init: 335458 ns
+Camera show: 2453107 ns
+Sensors FPS + flip: 4452277 ns
+Camera init: 588826 ns
+Seg init: 1586682 ns
+Seg prediction: 62100453 ns
+Seg get canvas: 11078762 ns
+Seg camera show: 1752791 ns
+Lidar init: 190069 ns
+Lidar points: 13051301 ns
+Lidar stats: 4104858 ns
+Lidar blit: 328559
+Camera init: 269268 ns
+Camera show: 2424638 ns
+Sensors FPS + flip: 3520671 ns
+Camera init: 471347 ns
+Seg init: 2182259 ns
+Seg prediction: 67204006 ns
+Seg get canvas: 11336550 ns
+Seg camera show: 1762871 ns
+Lidar init: 184449 ns
+Lidar points: 13258241 ns
+Lidar stats: 4137407 ns
+Lidar blit: 312399
+Camera init: 293108 ns
+Camera show: 2423678 ns
+Sensors FPS + flip: 3441722 ns
+Camera init: 348308 ns
+Seg init: 2006690 ns
+Seg prediction: 62143113 ns
+Seg get canvas: 10684164 ns
+Seg camera show: 1760001 ns
+Lidar init: 178789 ns
+Lidar points: 13123301 ns
+Lidar stats: 4094448 ns
+Lidar blit: 308528
+Camera init: 337429 ns
+Camera show: 2579136 ns
+Sensors FPS + flip: 3634031 ns
+Camera init: 1368423 ns
+Seg init: 2161358 ns
+Seg prediction: 60998359 ns
+Seg get canvas: 10639223 ns
+Seg camera show: 1736571 ns
+Lidar init: 173229 ns
+Lidar points: 13027212 ns
+Lidar stats: 4171478 ns
+Lidar blit: 306268
+Camera init: 307609 ns
+Camera show: 2435127 ns
+Sensors FPS + flip: 3121923 ns
+Camera init: 1114785 ns
+Seg init: 1896070 ns
+Seg prediction: 62143702 ns
+Seg get canvas: 10502775 ns
+Seg camera show: 1746431 ns
+Lidar init: 182329 ns
+Lidar points: 12284465 ns
+Lidar stats: 4404817 ns
+Lidar blit: 399807
+Camera init: 531498 ns
+Camera show: 2418277 ns
+Sensors FPS + flip: 3193443 ns
+Camera init: 895835 ns
+Seg init: 2895275 ns
+Seg prediction: 56596051 ns
+Seg get canvas: 12069487 ns
+Seg camera show: 1745451 ns
+Lidar init: 177449 ns
+Lidar points: 12656023 ns
+Lidar stats: 4136898 ns
+Lidar blit: 314608
+Camera init: 278239 ns
+Camera show: 2439867 ns
+Sensors FPS + flip: 2993964 ns
+Camera init: 302918 ns
+Seg init: 1616841 ns
+Seg prediction: 62450581 ns
+Seg get canvas: 11382080 ns
+Seg camera show: 1745841 ns
+Lidar init: 176229 ns
+Lidar points: 14717273 ns
+Lidar stats: 4239127 ns
+Lidar blit: 322328
+Camera init: 264629 ns
+Camera show: 2456647 ns
+Sensors FPS + flip: 2984714 ns
+Camera init: 388168 ns
+Seg init: 2349118 ns
+Seg prediction: 55222399 ns
+Seg get canvas: 10326616 ns
+Seg camera show: 1751770 ns
+Lidar init: 177929 ns
+Lidar points: 11924548 ns
+Lidar stats: 4322566 ns
+Lidar blit: 321059
+Camera init: 302568 ns
+Camera show: 2467467 ns
+Sensors FPS + flip: 2934315 ns
+Camera init: 302438 ns
+Seg init: 2615766 ns
+Seg prediction: 67186147 ns
+Seg get canvas: 10813253 ns
+Seg camera show: 1996149 ns
+Lidar init: 210428 ns
+Lidar points: 13514979 ns
+Lidar stats: 4219938 ns
+Lidar blit: 350358
+Camera init: 567777 ns
+Camera show: 2537407 ns
+Sensors FPS + flip: 3499932 ns
+Camera init: 328468 ns
+Seg init: 1652642 ns
+Seg prediction: 61323737 ns
+Seg get canvas: 10181746 ns
+Seg camera show: 1761011 ns
+Lidar init: 180219 ns
+Lidar points: 12513424 ns
+Lidar stats: 4194488 ns
+Lidar blit: 325939
+Camera init: 316248 ns
+Camera show: 2438107 ns
+Sensors FPS + flip: 3648180 ns
+Camera init: 356188 ns
+Seg init: 1586081 ns
+Seg prediction: 65649085 ns
+Seg get canvas: 10060708 ns
+Seg camera show: 1762300 ns
+Lidar init: 199069 ns
+Lidar points: 13240270 ns
+Lidar stats: 4701165 ns
+Lidar blit: 362678
+Camera init: 288209 ns
+Camera show: 2495296 ns
+Sensors FPS + flip: 3289023 ns
+Camera init: 457078 ns
+Seg init: 1651351 ns
+Seg prediction: 61981364 ns
+Seg get canvas: 11697418 ns
+Seg camera show: 1771310 ns
+Lidar init: 181709 ns
+Lidar points: 12255436 ns
+Lidar stats: 4248068 ns
+Lidar blit: 326428
+Camera init: 321738 ns
+Camera show: 2493677 ns
+Sensors FPS + flip: 3085214 ns
+Camera init: 334158 ns
+Seg init: 1581582 ns
+Seg prediction: 63453826 ns
+Seg get canvas: 11081252 ns
+Seg camera show: 1784340 ns
+Lidar init: 186389 ns
+Lidar points: 12177226 ns
+Lidar stats: 4534526 ns
+Lidar blit: 335989
+Camera init: 296638 ns
+Camera show: 2521967 ns
+Sensors FPS + flip: 2685086 ns
+Camera init: 497597 ns
+Seg init: 2677886 ns
+Seg prediction: 65829163 ns
+Seg get canvas: 10710484 ns
+Seg camera show: 1754811 ns
+Lidar init: 179479 ns
+Lidar points: 12551133 ns
+Lidar stats: 4207418 ns
+Lidar blit: 312988
+Camera init: 337349 ns
+Camera show: 2448757 ns
+Sensors FPS + flip: 3028794 ns
+Camera init: 320538 ns
+Seg init: 1591002 ns
+Seg prediction: 72892696 ns
+Seg get canvas: 12077666 ns
+Seg camera show: 1739651 ns
+Lidar init: 177669 ns
+Lidar points: 12195096 ns
+Lidar stats: 4163748 ns
+Lidar blit: 325088
+Camera init: 295089 ns
+Camera show: 2439457 ns
+Sensors FPS + flip: 2661726 ns
+Camera init: 288709 ns
+Seg init: 1580071 ns
+Seg prediction: 60698761 ns
+Seg get canvas: 10696323 ns
+Seg camera show: 1744381 ns
+Lidar init: 178569 ns
+Lidar points: 12101746 ns
+Lidar stats: 4154758 ns
+Lidar blit: 317869
+Camera init: 339798 ns
+Camera show: 2438047 ns
+Sensors FPS + flip: 3174843 ns
+Camera init: 319729 ns
+Seg init: 1577351 ns
+Seg prediction: 62454532 ns
+Seg get canvas: 10782763 ns
+Seg camera show: 1741721 ns
+Lidar init: 199509 ns
+Lidar points: 12772353 ns
+Lidar stats: 4333728 ns
+Lidar blit: 322828
+Camera init: 329578 ns
+Camera show: 2444917 ns
+Sensors FPS + flip: 3085664 ns
+Camera init: 336068 ns
+Seg init: 1593212 ns
+Seg prediction: 62168932 ns
+Seg get canvas: 10313476 ns
+Seg camera show: 1739961 ns
+Lidar init: 192069 ns
+Lidar points: 12056667 ns
+Lidar stats: 4293737 ns
+Lidar blit: 313848
+Camera init: 329568 ns
+Camera show: 2431257 ns
+Sensors FPS + flip: 5310332 ns
+Camera init: 1089294 ns
+Seg init: 3984439 ns
+Seg prediction: 71300725 ns
+Seg get canvas: 11209580 ns
+Seg camera show: 1810491 ns
+Lidar init: 181279 ns
+Lidar points: 13010282 ns
+Lidar stats: 4279758 ns
+Lidar blit: 638256
+Camera init: 409068 ns
+Camera show: 2197739 ns
+Sensors FPS + flip: 3363972 ns
+Camera init: 436157 ns
+Seg init: 2741846 ns
+Seg prediction: 73907931 ns
+Seg get canvas: 17164770 ns
+Seg camera show: 2184768 ns
+Lidar init: 422888 ns
+Lidar points: 12305074 ns
+Lidar stats: 4498907 ns
+Lidar blit: 746266
+Camera init: 337858 ns
+Camera show: 2781325 ns
+Sensors FPS + flip: 4061909 ns
+Camera init: 329578 ns
+Seg init: 3431502 ns
+Seg prediction: 64870218 ns
+Seg get canvas: 11246881 ns
+Seg camera show: 2308748 ns
+Lidar init: 267859 ns
+Lidar points: 13928467 ns
+Lidar stats: 4466176 ns
+Lidar blit: 966765
+Camera init: 630207 ns
+Camera show: 3808770 ns
+Sensors FPS + flip: 4765615 ns
+Camera init: 465798 ns
+Seg init: 1861810 ns
+Seg prediction: 61923204 ns
+Seg get canvas: 11206831 ns
+Seg camera show: 1788161 ns
+Lidar init: 178969 ns
+Lidar points: 12431515 ns
+Lidar stats: 4641836 ns
+Lidar blit: 333108
+Camera init: 783326 ns
+Camera show: 2450867 ns
+Sensors FPS + flip: 4142018 ns
+Camera init: 411598 ns
+Seg init: 1746331 ns
+Seg prediction: 65494445 ns
+Seg get canvas: 11388050 ns
+Seg camera show: 1748361 ns
+Lidar init: 182439 ns
+Lidar points: 13503529 ns
+Lidar stats: 4298437 ns
+Lidar blit: 529418
+Camera init: 391178 ns
+Camera show: 2511786 ns
+Sensors FPS + flip: 4793225 ns
+Camera init: 428918 ns
+Seg init: 1638901 ns
+Seg prediction: 63391776 ns
+Seg get canvas: 10654424 ns
+Seg camera show: 1771301 ns
+Lidar init: 176829 ns
+Lidar points: 12057387 ns
+Lidar stats: 4252327 ns
+Lidar blit: 303108
+Camera init: 345088 ns
+Camera show: 2439307 ns
+Sensors FPS + flip: 3735431 ns
+Camera init: 639657 ns
+Seg init: 3265592 ns
+Seg prediction: 69649194 ns
+Seg get canvas: 10788213 ns
+Seg camera show: 1761281 ns
+Lidar init: 179259 ns
+Lidar points: 12338774 ns
+Lidar stats: 4407627 ns
+Lidar blit: 332108
+Camera init: 306679 ns
+Camera show: 2477237 ns
+Sensors FPS + flip: 2962364 ns
+Camera init: 300918 ns
+Seg init: 1581192 ns
+Seg prediction: 59889094 ns
+Seg get canvas: 10766094 ns
+Seg camera show: 1748341 ns
+Lidar init: 184659 ns
+Lidar points: 12615793 ns
+Lidar stats: 4686275 ns
+Lidar blit: 321948
+Camera init: 349359 ns
+Camera show: 2580626 ns
+Sensors FPS + flip: 5234043 ns
+Camera init: 371808 ns
+Seg init: 2522997 ns
+Seg prediction: 56659571 ns
+Seg get canvas: 11876898 ns
+Seg camera show: 1736701 ns
+Lidar init: 177169 ns
+Lidar points: 12872112 ns
+Lidar stats: 4272258 ns
+Lidar blit: 309968
+Camera init: 272228 ns
+Camera show: 2428537 ns
+Sensors FPS + flip: 4139029 ns
+Camera init: 304259 ns
+Seg init: 2062119 ns
+Seg prediction: 67349785 ns
+Seg get canvas: 11888258 ns
+Seg camera show: 1759840 ns
+Lidar init: 187509 ns
+Lidar points: 12572184 ns
+Lidar stats: 4648135 ns
+Lidar blit: 328668
+Camera init: 614287 ns
+Camera show: 2486607 ns
+Sensors FPS + flip: 3851860 ns
+Camera init: 902035 ns
+Seg init: 1939360 ns
+Seg prediction: 61201557 ns
+Seg get canvas: 10755304 ns
+Seg camera show: 1727181 ns
+Lidar init: 182809 ns
+Lidar points: 12192405 ns
+Lidar stats: 4154988 ns
+Lidar blit: 322709
+Camera init: 349458 ns
+Camera show: 2432397 ns
+Sensors FPS + flip: 3689981 ns
+Camera init: 311938 ns
+Seg init: 1571932 ns
+Seg prediction: 63045318 ns
+Seg get canvas: 16688032 ns
+Seg camera show: 1798511 ns
+Lidar init: 184649 ns
+Lidar points: 12890201 ns
+Lidar stats: 4330008 ns
+Lidar blit: 306739
+Camera init: 778966 ns
+Camera show: 2466587 ns
+Sensors FPS + flip: 5339012 ns
+Camera init: 906305 ns
+Seg init: 4667536 ns
+Seg prediction: 61475486 ns
+Seg get canvas: 9854668 ns
+Seg camera show: 1816581 ns
+Lidar init: 197808 ns
+Lidar points: 12316425 ns
+Lidar stats: 4176088 ns
+Lidar blit: 532247
+Camera init: 301729 ns
+Camera show: 2928584 ns
+Sensors FPS + flip: 6189618 ns
+Camera init: 607396 ns
+Seg init: 2755736 ns
+Seg prediction: 57844485 ns
+Seg get canvas: 10379996 ns
+Seg camera show: 1752760 ns
+Lidar init: 181699 ns
+Lidar points: 12855723 ns
+Lidar stats: 4155398 ns
+Lidar blit: 325478
+Camera init: 323188 ns
+Camera show: 2558447 ns
+Sensors FPS + flip: 5337111 ns
+Camera init: 472747 ns
+Seg init: 2691396 ns
+Seg prediction: 59994655 ns
+Seg get canvas: 10236515 ns
+Seg camera show: 1793611 ns
+Lidar init: 182589 ns
+Lidar points: 12648234 ns
+Lidar stats: 4266057 ns
+Lidar blit: 323059
+Camera init: 323409 ns
+Camera show: 2467527 ns
+Sensors FPS + flip: 6043338 ns
+Camera init: 506787 ns
+Seg init: 3211323 ns
+Seg prediction: 57737927 ns
+Seg get canvas: 10134187 ns
+Seg camera show: 1738190 ns
+Lidar init: 178299 ns
+Lidar points: 12340425 ns
+Lidar stats: 4131298 ns
+Lidar blit: 322179
+Camera init: 296278 ns
+Camera show: 2525027 ns
+Sensors FPS + flip: 2883935 ns
+Camera init: 323419 ns
+Seg init: 1692571 ns
+Seg prediction: 64088762 ns
+Seg get canvas: 11146222 ns
+Seg camera show: 1726800 ns
+Lidar init: 182309 ns
+Lidar points: 14526323 ns
+Lidar stats: 4484917 ns
+Lidar blit: 324128
+Camera init: 335498 ns
+Camera show: 2572797 ns
+Sensors FPS + flip: 3622501 ns
+Camera init: 794966 ns
+Seg init: 3656881 ns
+Seg prediction: 90296044 ns
+Seg get canvas: 10573934 ns
+Seg camera show: 2150759 ns
+Lidar init: 204669 ns
+Lidar points: 13197211 ns
+Lidar stats: 4664995 ns
+Lidar blit: 831036
+Camera init: 1118864 ns
+Camera show: 2629146 ns
+Sensors FPS + flip: 3427361 ns
+Camera init: 943655 ns
+Seg init: 4979204 ns
+Seg prediction: 61604186 ns
+Seg get canvas: 10114556 ns
+Seg camera show: 1896340 ns
+Lidar init: 200699 ns
+Lidar points: 12845542 ns
+Lidar stats: 4308938 ns
+Lidar blit: 323888
+Camera init: 322638 ns
+Camera show: 2478767 ns
+Sensors FPS + flip: 5234113 ns
+Camera init: 489268 ns
+Seg init: 2775335 ns
+Seg prediction: 65879704 ns
+Seg get canvas: 13391999 ns
+Seg camera show: 2416887 ns
+Lidar init: 225999 ns
+Lidar points: 16330394 ns
+Lidar stats: 4318377 ns
+Lidar blit: 326579
+Camera init: 341848 ns
+Camera show: 2458487 ns
+Sensors FPS + flip: 3476522 ns
+Camera init: 327248 ns
+Seg init: 1671731 ns
+Seg prediction: 57035120 ns
+Seg get canvas: 10062827 ns
+Seg camera show: 1790791 ns
+Lidar init: 182289 ns
+Lidar points: 13039971 ns
+Lidar stats: 4645406 ns
+Lidar blit: 415488
+Camera init: 887025 ns
+Camera show: 2498677 ns
+Sensors FPS + flip: 4357237 ns
+Camera init: 375368 ns
+Seg init: 2040820 ns
+Seg prediction: 60266623 ns
+Seg get canvas: 15174079 ns
+Seg camera show: 1804271 ns
+Lidar init: 180249 ns
+Lidar points: 12518354 ns
+Lidar stats: 4378107 ns
+Lidar blit: 320998
+Camera init: 305189 ns
+Camera show: 2496887 ns
+Sensors FPS + flip: 2839585 ns
+Camera init: 467288 ns
+Seg init: 1653731 ns
+Seg prediction: 54612663 ns
+Seg get canvas: 10592534 ns
+Seg camera show: 1749051 ns
+Lidar init: 183049 ns
+Lidar points: 12815703 ns
+Lidar stats: 4367946 ns
+Lidar blit: 329398
+Camera init: 344959 ns
+Camera show: 2459746 ns
+Sensors FPS + flip: 3358853 ns
+Camera init: 369848 ns
+Seg init: 1567462 ns
+Seg prediction: 63782784 ns
+Seg get canvas: 10926142 ns
+Seg camera show: 1772051 ns
+Lidar init: 183729 ns
+Lidar points: 12869442 ns
+Lidar stats: 4635456 ns
+Lidar blit: 336158
+Camera init: 442168 ns
+Camera show: 2498907 ns
+Sensors FPS + flip: 2751025 ns
+Camera init: 308218 ns
+Seg init: 1573872 ns
+Seg prediction: 57588576 ns
+Seg get canvas: 10742694 ns
+Seg camera show: 1869840 ns
+Lidar init: 341038 ns
+Lidar points: 12771683 ns
+Lidar stats: 4285007 ns
+Lidar blit: 325558
+Camera init: 329108 ns
+Camera show: 2450637 ns
+Sensors FPS + flip: 3286973 ns
+Camera init: 514527 ns
+Seg init: 2622956 ns
+Seg prediction: 62677041 ns
+Seg get canvas: 10374895 ns
+Seg camera show: 1828690 ns
+Lidar init: 183109 ns
+Lidar points: 13846807 ns
+Lidar stats: 4333597 ns
+Lidar blit: 333589
+Camera init: 293188 ns
+Camera show: 2576957 ns
+Sensors FPS + flip: 2632236 ns
+Camera init: 340019 ns
+Seg init: 1789470 ns
+Seg prediction: 56994020 ns
+Seg get canvas: 10547105 ns
+Seg camera show: 1820741 ns
+Lidar init: 178469 ns
+Lidar points: 13892647 ns
+Lidar stats: 4687065 ns
+Lidar blit: 597037
+Camera init: 325549 ns
 Camera show: 2521456 ns
-Sensors FPS + flip: 2700256 ns
-Camera init: 578991 ns
-Seg init: 1894035 ns
-Seg prediction: 57332380 ns
-Seg get canvas: 10702805 ns
-Seg camera show: 2237275 ns
-Lidar init: 222031 ns
-Lidar points: 13522001 ns
-Lidar stats: 4164789 ns
-Lidar blit: 347121
-Camera init: 276400 ns
-Camera show: 2376006 ns
-Sensors FPS + flip: 3894769 ns
-Camera init: 644832 ns
-Seg init: 2135355 ns
-Seg prediction: 59769576 ns
-Seg get canvas: 10226874 ns
-Seg camera show: 1767334 ns
-Lidar init: 220611 ns
-Lidar points: 12450398 ns
-Lidar stats: 4097559 ns
-Lidar blit: 332371
-Camera init: 279150 ns
-Camera show: 2488496 ns
-Sensors FPS + flip: 3039577 ns
-Camera init: 489792 ns
-Seg init: 1818664 ns
-Seg prediction: 58918285 ns
-Seg get canvas: 10540303 ns
-Seg camera show: 1755984 ns
-Lidar init: 213280 ns
-Lidar points: 12718409 ns
-Lidar stats: 4504231 ns
-Lidar blit: 365741
-Camera init: 363891 ns
-Camera show: 2492185 ns
-Sensors FPS + flip: 2875157 ns
-Camera init: 361551 ns
-Seg init: 1738194 ns
-Seg prediction: 63312954 ns
-Seg get canvas: 11481216 ns
-Seg camera show: 2992257 ns
-Lidar init: 276100 ns
-Lidar points: 12417839 ns
-Lidar stats: 4163879 ns
-Lidar blit: 358281
-Camera init: 327091 ns
-Camera show: 2475915 ns
-Sensors FPS + flip: 5597433 ns
-Camera init: 462601 ns
-Seg init: 3098787 ns
-Seg prediction: 71276503 ns
-Seg get canvas: 11398295 ns
-Seg camera show: 1800655 ns
-Lidar init: 204060 ns
-Lidar points: 12186228 ns
-Lidar stats: 4119350 ns
-Lidar blit: 312270
-Camera init: 267261 ns
-Camera show: 2380355 ns
-Sensors FPS + flip: 2964667 ns
-Camera init: 354120 ns
-Seg init: 1668404 ns
-Seg prediction: 58824283 ns
-Seg get canvas: 11216147 ns
-Seg camera show: 1793774 ns
-Lidar init: 209600 ns
-Lidar points: 12198368 ns
-Lidar stats: 4178189 ns
-Lidar blit: 341331
-Camera init: 368371 ns
-Camera show: 2547556 ns
-Sensors FPS + flip: 4024849 ns
-Camera init: 277720 ns
-Seg init: 1682894 ns
-Seg prediction: 60403448 ns
-Seg get canvas: 11199105 ns
-Seg camera show: 1831164 ns
-Lidar init: 434451 ns
-Lidar points: 12134838 ns
-Lidar stats: 4093649 ns
-Lidar blit: 333761
-Camera init: 295530 ns
-Camera show: 2369606 ns
-Sensors FPS + flip: 3570798 ns
-Camera init: 281631 ns
-Seg init: 1700754 ns
-Seg prediction: 59041274 ns
-Seg get canvas: 11217816 ns
-Seg camera show: 2013704 ns
-Lidar init: 511471 ns
-Lidar points: 13585122 ns
-Lidar stats: 4122149 ns
-Lidar blit: 345041
-Camera init: 277931 ns
-Camera show: 2590586 ns
-Sensors FPS + flip: 2785226 ns
-Camera init: 349071 ns
-Seg init: 1990114 ns
-Seg prediction: 63089314 ns
-Seg get canvas: 10123963 ns
-Seg camera show: 1745914 ns
-Lidar init: 214270 ns
-Lidar points: 12584499 ns
-Lidar stats: 4414640 ns
-Lidar blit: 330111
-Camera init: 466751 ns
-Camera show: 2402245 ns
-Sensors FPS + flip: 5059832 ns
-Camera init: 335401 ns
-Seg init: 2055645 ns
-Seg prediction: 61615970 ns
-Seg get canvas: 10068243 ns
-Seg camera show: 1788074 ns
-Lidar init: 210850 ns
-Lidar points: 11936767 ns
-Lidar stats: 4616611 ns
-Lidar blit: 327331
-Camera init: 265890 ns
-Camera show: 2485386 ns
-Sensors FPS + flip: 2741316 ns
-Camera init: 463772 ns
-Seg init: 1664224 ns
-Seg prediction: 59663935 ns
-Seg get canvas: 10959995 ns
-Seg camera show: 1733544 ns
-Lidar init: 212691 ns
-Lidar points: 12973399 ns
-Lidar stats: 4557711 ns
-Lidar blit: 335090
-Camera init: 307801 ns
-Camera show: 2899617 ns
-Sensors FPS + flip: 3749468 ns
-Camera init: 512421 ns
-Seg init: 1924605 ns
-Seg prediction: 58373423 ns
-Seg get canvas: 11381736 ns
-Seg camera show: 1951414 ns
-Lidar init: 248191 ns
-Lidar points: 12487478 ns
-Lidar stats: 4161179 ns
-Lidar blit: 323521
-Camera init: 318891 ns
-Camera show: 2478115 ns
-Sensors FPS + flip: 3605279 ns
-Camera init: 462721 ns
-Seg init: 1723914 ns
-Seg prediction: 60991297 ns
-Seg get canvas: 11563306 ns
-Seg camera show: 1782054 ns
-Lidar init: 228151 ns
-Lidar points: 13007069 ns
-Lidar stats: 4330430 ns
-Lidar blit: 329881
-Camera init: 274030 ns
-Camera show: 2416936 ns
-Sensors FPS + flip: 3475468 ns
-Camera init: 341781 ns
-Seg init: 1688644 ns
-Seg prediction: 58300582 ns
-Seg get canvas: 10359933 ns
-Seg camera show: 1783424 ns
-Lidar init: 213201 ns
-Lidar points: 12155667 ns
-Lidar stats: 4284090 ns
-Lidar blit: 362911
-Camera init: 284201 ns
-Camera show: 2515415 ns
-Sensors FPS + flip: 5243052 ns
-Camera init: 770812 ns
-Seg init: 2658906 ns
-Seg prediction: 61633769 ns
-Seg get canvas: 10324794 ns
-Seg camera show: 1719244 ns
-Lidar init: 216240 ns
-Lidar points: 12532719 ns
-Lidar stats: 4200869 ns
-Lidar blit: 331991
-Camera init: 308051 ns
-Camera show: 2604106 ns
-Sensors FPS + flip: 5697102 ns
-Camera init: 524431 ns
-Seg init: 2017314 ns
-Seg prediction: 58471313 ns
-Seg get canvas: 10512104 ns
-Seg camera show: 1855644 ns
-Lidar init: 218560 ns
-Lidar points: 11844687 ns
-Lidar stats: 4372550 ns
-Lidar blit: 331421
-Camera init: 284391 ns
-Camera show: 2492705 ns
-Sensors FPS + flip: 5258152 ns
-Camera init: 537601 ns
-Seg init: 2281865 ns
-Seg prediction: 61923661 ns
-Seg get canvas: 12696318 ns
-Seg camera show: 2576636 ns
-Lidar init: 244540 ns
-Lidar points: 15063444 ns
-Lidar stats: 4887021 ns
-Lidar blit: 467602
-Camera init: 430801 ns
-Camera show: 2817966 ns
-Sensors FPS + flip: 2802606 ns
-Camera init: 341041 ns
-Seg init: 1761384 ns
-Seg prediction: 61369049 ns
-Seg get canvas: 10801245 ns
-Seg camera show: 1823224 ns
-Lidar init: 210240 ns
-Lidar points: 12723959 ns
-Lidar stats: 4539020 ns
-Lidar blit: 342821
-Camera init: 278401 ns
-Camera show: 3009957 ns
-Sensors FPS + flip: 2795546 ns
-Camera init: 482411 ns
-Seg init: 1962184 ns
-Seg prediction: 63687974 ns
-Seg get canvas: 10224144 ns
-Seg camera show: 1756134 ns
-Lidar init: 218520 ns
-Lidar points: 12810279 ns
-Lidar stats: 4213440 ns
-Lidar blit: 333320
-Camera init: 268520 ns
-Camera show: 2923207 ns
-Sensors FPS + flip: 4030029 ns
-Camera init: 471721 ns
-Seg init: 2096694 ns
-Seg prediction: 64644957 ns
-Seg get canvas: 10027393 ns
-Seg camera show: 1797184 ns
-Lidar init: 217400 ns
-Lidar points: 12274668 ns
-Lidar stats: 4146059 ns
-Lidar blit: 331971
-Camera init: 271161 ns
-Camera show: 2503446 ns
-Sensors FPS + flip: 2786306 ns
-Camera init: 265531 ns
-Seg init: 1615943 ns
-Seg prediction: 61639850 ns
-Seg get canvas: 10041913 ns
-Seg camera show: 1761384 ns
-Lidar init: 210230 ns
-Lidar points: 12323708 ns
-Lidar stats: 4906541 ns
-Lidar blit: 350211
-Camera init: 298811 ns
-Camera show: 2498365 ns
-Sensors FPS + flip: 3623978 ns
-Camera init: 376541 ns
-Seg init: 1702274 ns
-Seg prediction: 61255919 ns
-Seg get canvas: 13492150 ns
-Seg camera show: 1918395 ns
-Lidar init: 217680 ns
-Lidar points: 12586679 ns
-Lidar stats: 4160929 ns
-Lidar blit: 436131
-Camera init: 344271 ns
-Camera show: 1899374 ns
-Sensors FPS + flip: 2994797 ns
-Camera init: 505662 ns
-Seg init: 2319565 ns
-Seg prediction: 63786574 ns
-Seg get canvas: 9722332 ns
-Seg camera show: 1774964 ns
-Lidar init: 213940 ns
-Lidar points: 13363300 ns
-Lidar stats: 4120889 ns
-Lidar blit: 330891
-Camera init: 287691 ns
-Camera show: 2388775 ns
-Sensors FPS + flip: 3484418 ns
-Camera init: 484041 ns
-Seg init: 1751774 ns
-Seg prediction: 63450963 ns
-Seg get canvas: 10140023 ns
-Seg camera show: 1848694 ns
-Lidar init: 246961 ns
-Lidar points: 18550811 ns
-Lidar stats: 5011061 ns
-Lidar blit: 342351
-Camera init: 302341 ns
-Camera show: 2302515 ns
-Sensors FPS + flip: 3828179 ns
-Camera init: 303161 ns
-Seg init: 2097004 ns
-Seg prediction: 64949687 ns
-Seg get canvas: 11079035 ns
-Seg camera show: 1766084 ns
-Lidar init: 217250 ns
-Lidar points: 12994409 ns
-Lidar stats: 4126879 ns
-Lidar blit: 327251
-Camera init: 277001 ns
-Camera show: 2347115 ns
-Sensors FPS + flip: 3454898 ns
-Camera init: 326051 ns
-Seg init: 1656523 ns
-Seg prediction: 63746604 ns
-Seg get canvas: 9736342 ns
-Seg camera show: 1777384 ns
-Lidar init: 226791 ns
-Lidar points: 12318117 ns
-Lidar stats: 4185919 ns
-Lidar blit: 332651
-Camera init: 276901 ns
-Camera show: 2454085 ns
-Sensors FPS + flip: 3385458 ns
-Camera init: 268801 ns
-Seg init: 1574583 ns
-Seg prediction: 61210578 ns
-Seg get canvas: 10267104 ns
-Seg camera show: 1741453 ns
-Lidar init: 236250 ns
-Lidar points: 12837949 ns
-Lidar stats: 4110059 ns
-Lidar blit: 327601
-Camera init: 279301 ns
-Camera show: 2377515 ns
-Sensors FPS + flip: 3723818 ns
-Camera init: 322531 ns
-Seg init: 1655614 ns
-Seg prediction: 61776619 ns
-Seg get canvas: 9764732 ns
-Seg camera show: 1759524 ns
-Lidar init: 223281 ns
-Lidar points: 12467728 ns
-Lidar stats: 4111359 ns
-Lidar blit: 325011
-Camera init: 275471 ns
-Camera show: 2448245 ns
-Sensors FPS + flip: 3875129 ns
-Camera init: 276191 ns
-Seg init: 1576953 ns
-Seg prediction: 66021528 ns
-Seg get canvas: 11226976 ns
-Seg camera show: 1727314 ns
-Lidar init: 212960 ns
-Lidar points: 12747769 ns
-Lidar stats: 4116009 ns
-Lidar blit: 324871
-Camera init: 283691 ns
-Camera show: 2347295 ns
-Sensors FPS + flip: 3875499 ns
-Camera init: 338021 ns
-Seg init: 1951634 ns
-Seg prediction: 65102407 ns
-Seg get canvas: 10315793 ns
-Seg camera show: 1783354 ns
-Lidar init: 210810 ns
-Lidar points: 11909597 ns
-Lidar stats: 4141860 ns
-Lidar blit: 324501
-Camera init: 364150 ns
-Camera show: 2496986 ns
-Sensors FPS + flip: 4417940 ns
-Camera init: 349790 ns
-Seg init: 1663744 ns
-Seg prediction: 64814676 ns
-Seg get canvas: 10018602 ns
-Seg camera show: 1755404 ns
-Lidar init: 216901 ns
-Lidar points: 12374688 ns
-Lidar stats: 4205070 ns
-Lidar blit: 351730
-Camera init: 317641 ns
-Camera show: 2435266 ns
-Sensors FPS + flip: 4710530 ns
-Camera init: 614841 ns
-Seg init: 2121975 ns
-Seg prediction: 70481038 ns
-Seg get canvas: 10456153 ns
-Seg camera show: 1821194 ns
-Lidar init: 218881 ns
-Lidar points: 13286330 ns
-Lidar stats: 4172649 ns
-Lidar blit: 336041
-Camera init: 294791 ns
-Camera show: 2496395 ns
-Sensors FPS + flip: 3816019 ns
-Camera init: 3099137 ns
-Seg init: 4122639 ns
-Seg prediction: 159677928 ns
-Seg get canvas: 12258538 ns
-Seg camera show: 2082834 ns
-Lidar init: 414781 ns
-Lidar points: 13561361 ns
-Lidar stats: 4396910 ns
-Lidar blit: 674241
-Camera init: 346171 ns
-Camera show: 2713396 ns
-Sensors FPS + flip: 3455998 ns
-Camera init: 354780 ns
-Seg init: 2159115 ns
-Seg prediction: 61502468 ns
-Seg get canvas: 11416906 ns
-Seg camera show: 2095155 ns
-Lidar init: 350511 ns
-Lidar points: 14560522 ns
-Lidar stats: 5202572 ns
-Lidar blit: 550411
-Camera init: 498311 ns
-Camera show: 3011407 ns
-Sensors FPS + flip: 3703528 ns
-Camera init: 369631 ns
-Seg init: 2039874 ns
-Seg prediction: 63663363 ns
-Seg get canvas: 11128335 ns
-Seg camera show: 1950484 ns
-Lidar init: 316301 ns
-Lidar points: 14084652 ns
-Lidar stats: 9920962 ns
-Lidar blit: 802811
-Camera init: 863112 ns
-Camera show: 4184299 ns
-Sensors FPS + flip: 4211480 ns
-Camera init: 741321 ns
-Seg init: 2602766 ns
-Seg prediction: 80866821 ns
-Seg get canvas: 10724845 ns
-Seg camera show: 2059774 ns
-Lidar init: 421611 ns
-Lidar points: 12946709 ns
-Lidar stats: 4502380 ns
-Lidar blit: 338501
-Camera init: 282541 ns
-Camera show: 2648016 ns
-Sensors FPS + flip: 3758218 ns
-Camera init: 347841 ns
-Seg init: 1595093 ns
-Seg prediction: 63983754 ns
-Seg get canvas: 14957763 ns
-Seg camera show: 2133295 ns
-Lidar init: 538321 ns
-Lidar points: 14019551 ns
-Lidar stats: 4776121 ns
-Lidar blit: 717942
-Camera init: 392711 ns
-Camera show: 3069567 ns
-Sensors FPS + flip: 5297762 ns
-Camera init: 388570 ns
-Seg init: 2071424 ns
-Seg prediction: 61401158 ns
-Seg get canvas: 10727524 ns
-Seg camera show: 2104834 ns
-Lidar init: 378991 ns
-Lidar points: 13097370 ns
-Lidar stats: 4831981 ns
-Lidar blit: 631161
-Camera init: 371171 ns
-Camera show: 3823709 ns
-Sensors FPS + flip: 3798938 ns
-Camera init: 318001 ns
-Seg init: 1854414 ns
-Seg prediction: 60615846 ns
-Seg get canvas: 11461376 ns
-Seg camera show: 2000874 ns
-Lidar init: 320191 ns
-Lidar points: 13231109 ns
-Lidar stats: 4285930 ns
-Lidar blit: 552541
-Camera init: 367751 ns
-Camera show: 2686786 ns
-Sensors FPS + flip: 7317007 ns
-Camera init: 388021 ns
-Seg init: 2650326 ns
-Seg prediction: 67899921 ns
-Seg get canvas: 10592994 ns
-Seg camera show: 2105735 ns
-Lidar init: 388880 ns
-Lidar points: 15301574 ns
-Lidar stats: 4350760 ns
-Lidar blit: 546392
-Camera init: 326790 ns
-Camera show: 2701506 ns
-Sensors FPS + flip: 3549519 ns
-Camera init: 292480 ns
-Seg init: 1693454 ns
-Seg prediction: 63700292 ns
-Seg get canvas: 12332128 ns
-Seg camera show: 2402015 ns
-Lidar init: 327971 ns
-Lidar points: 12493007 ns
-Lidar stats: 4315840 ns
-Lidar blit: 524121
-Camera init: 377591 ns
-Camera show: 2883087 ns
-Sensors FPS + flip: 3606598 ns
-Camera init: 575562 ns
-Seg init: 2304115 ns
-Seg prediction: 63366171 ns
-Seg get canvas: 11508416 ns
-Seg camera show: 2189045 ns
-Lidar init: 309931 ns
-Lidar points: 13776151 ns
-Lidar stats: 4346940 ns
-Lidar blit: 535421
-Camera init: 360051 ns
-Camera show: 2996286 ns
-Sensors FPS + flip: 4507430 ns
-Camera init: 349981 ns
-Seg init: 1856314 ns
-Seg prediction: 63047790 ns
-Seg get canvas: 10574794 ns
-Seg camera show: 2077984 ns
-Lidar init: 314161 ns
-Lidar points: 12685129 ns
-Lidar stats: 4512349 ns
-Lidar blit: 534742
-Camera init: 327020 ns
-Camera show: 2621216 ns
-Sensors FPS + flip: 3475958 ns
-Camera init: 310131 ns
-Seg init: 2036744 ns
-Seg prediction: 61708288 ns
-Seg get canvas: 10973594 ns
-Seg camera show: 2041025 ns
-Lidar init: 332480 ns
-Lidar points: 12413908 ns
-Lidar stats: 4385309 ns
-Lidar blit: 545951
-Camera init: 355401 ns
-Camera show: 3561258 ns
-Sensors FPS + flip: 3820059 ns
-Camera init: 335361 ns
-Seg init: 1960124 ns
-Seg prediction: 66130317 ns
-Seg get canvas: 10371384 ns
-Seg camera show: 1952584 ns
-Lidar init: 332241 ns
-Lidar points: 12918118 ns
-Lidar stats: 4446251 ns
-Lidar blit: 533621
-Camera init: 330511 ns
-Camera show: 2619846 ns
-Sensors FPS + flip: 4419219 ns
-Camera init: 353801 ns
-Seg init: 1961375 ns
-Seg prediction: 68500613 ns
-Seg get canvas: 10666564 ns
-Seg camera show: 2024654 ns
-Lidar init: 301881 ns
-Lidar points: 14398662 ns
-Lidar stats: 5246791 ns
-Lidar blit: 538282
-Camera init: 345480 ns
-Camera show: 2860037 ns
-Sensors FPS + flip: 3705068 ns
-Camera init: 405481 ns
-Seg init: 1824734 ns
-Seg prediction: 66945719 ns
-Seg get canvas: 10899144 ns
-Seg camera show: 2272066 ns
-Lidar init: 312400 ns
-Lidar points: 15719975 ns
-Lidar stats: 5276742 ns
-Lidar blit: 577261
-Camera init: 410160 ns
-Camera show: 2632786 ns
-Sensors FPS + flip: 4715811 ns
-Camera init: 373081 ns
-Seg init: 2081155 ns
-Seg prediction: 62093928 ns
-Seg get canvas: 11881987 ns
-Seg camera show: 2109205 ns
-Lidar init: 352840 ns
-Lidar points: 14877774 ns
-Lidar stats: 4608150 ns
-Lidar blit: 537881
-Camera init: 386551 ns
-Camera show: 2839686 ns
-Sensors FPS + flip: 3662978 ns
-Camera init: 574301 ns
-Seg init: 1938054 ns
-Seg prediction: 69891726 ns
-Seg get canvas: 13952421 ns
-Seg camera show: 2073744 ns
-Lidar init: 310360 ns
-Lidar points: 13098159 ns
-Lidar stats: 5194912 ns
-Lidar blit: 546821
-Camera init: 320851 ns
-Camera show: 2622556 ns
-Sensors FPS + flip: 3492357 ns
-Camera init: 595581 ns
-Seg init: 6446875 ns
-Seg prediction: 82138881 ns
-Seg get canvas: 10914195 ns
-Seg camera show: 2224365 ns
-Lidar init: 344231 ns
-Lidar points: 12560078 ns
-Lidar stats: 4433439 ns
-Lidar blit: 1096313
-Camera init: 328780 ns
-Camera show: 2712877 ns
-Sensors FPS + flip: 3329737 ns
-Camera init: 308411 ns
-Seg init: 1582554 ns
-Seg prediction: 77659822 ns
-Seg get canvas: 16562287 ns
-Seg camera show: 2716075 ns
-Lidar init: 498732 ns
-Lidar points: 14829053 ns
-Lidar stats: 5080871 ns
-Lidar blit: 845022
-Camera init: 1415563 ns
-Camera show: 3077647 ns
-Sensors FPS + flip: 4598020 ns
-Camera init: 527321 ns
-Seg init: 3759169 ns
-Seg prediction: 65606546 ns
-Seg get canvas: 10740313 ns
-Seg camera show: 2092875 ns
-Lidar init: 319971 ns
-Lidar points: 13373389 ns
-Lidar stats: 4431880 ns
-Lidar blit: 530652
-Camera init: 334370 ns
-Camera show: 2681126 ns
-Sensors FPS + flip: 3643288 ns
-Camera init: 427691 ns
-Seg init: 1667494 ns
-Seg prediction: 62770339 ns
-Seg get canvas: 11160235 ns
-Seg camera show: 1950984 ns
-Lidar init: 305251 ns
-Lidar points: 12649388 ns
-Lidar stats: 4389790 ns
-Lidar blit: 523851
-Camera init: 320881 ns
-Camera show: 2611955 ns
-Sensors FPS + flip: 3748829 ns
-Camera init: 449511 ns
-Seg init: 1866554 ns
-Seg prediction: 70267296 ns
-Seg get canvas: 11092105 ns
-Seg camera show: 2103925 ns
-Lidar init: 313900 ns
-Lidar points: 12497228 ns
-Lidar stats: 4466610 ns
-Lidar blit: 557901
-Camera init: 304571 ns
-Camera show: 2603926 ns
-Sensors FPS + flip: 3621528 ns
-Camera init: 390641 ns
-Seg init: 1751964 ns
-Seg prediction: 68679092 ns
-Seg get canvas: 10756344 ns
-Seg camera show: 2090835 ns
-Lidar init: 327771 ns
-Lidar points: 12903218 ns
-Lidar stats: 4745951 ns
-Lidar blit: 821572
-Camera init: 373101 ns
-Camera show: 2812366 ns
-Sensors FPS + flip: 6701625 ns
-Camera init: 543521 ns
-Seg init: 2618046 ns
-Seg prediction: 66728628 ns
-Seg get canvas: 10946625 ns
-Seg camera show: 2031864 ns
-Lidar init: 309391 ns
-Lidar points: 13771231 ns
-Lidar stats: 5273381 ns
-Lidar blit: 3419788
-Camera init: 346910 ns
-Camera show: 5854134 ns
-Sensors FPS + flip: 4952600 ns
-Camera init: 463051 ns
-Seg init: 1676304 ns
-Seg prediction: 79907688 ns
-Seg get canvas: 13939200 ns
-Seg camera show: 2106735 ns
-Lidar init: 3306088 ns
-Lidar points: 13059098 ns
-Lidar stats: 4525850 ns
-Lidar blit: 533971
-Camera init: 368911 ns
-Camera show: 2750876 ns
-Sensors FPS + flip: 3843529 ns
-Camera init: 445941 ns
-Seg init: 1767994 ns
-Seg prediction: 66730957 ns
-Seg get canvas: 13657900 ns
-Seg camera show: 2022524 ns
-Lidar init: 269021 ns
-Lidar points: 13666160 ns
-Lidar stats: 4527080 ns
-Lidar blit: 530991
-Camera init: 364461 ns
-Camera show: 2668426 ns
-Sensors FPS + flip: 4270930 ns
-Camera init: 433011 ns
-Seg init: 1644783 ns
-Seg prediction: 72940861 ns
-Seg get canvas: 10347664 ns
-Seg camera show: 1947504 ns
-Lidar init: 230270 ns
-Lidar points: 12388707 ns
-Lidar stats: 4262640 ns
-Lidar blit: 503891
-Camera init: 306741 ns
-Camera show: 2500826 ns
-Sensors FPS + flip: 3696327 ns
-Camera init: 1009292 ns
-Seg init: 4090209 ns
-Seg prediction: 67853300 ns
-Seg get canvas: 10489463 ns
-Seg camera show: 2043445 ns
-Lidar init: 229690 ns
-Lidar points: 12669288 ns
-Lidar stats: 4357260 ns
-Lidar blit: 518371
-Camera init: 309091 ns
-Camera show: 2563836 ns
-Sensors FPS + flip: 4020988 ns
-Camera init: 447901 ns
-Seg init: 2137095 ns
-Seg prediction: 68036251 ns
-Seg get canvas: 12154487 ns
-Seg camera show: 1957604 ns
-Lidar init: 231620 ns
-Lidar points: 12719048 ns
-Lidar stats: 4569040 ns
-Lidar blit: 569342
-Camera init: 333531 ns
-Camera show: 2661896 ns
-Sensors FPS + flip: 4390500 ns
-Camera init: 555351 ns
-Seg init: 2304145 ns
-Seg prediction: 65063114 ns
-Seg get canvas: 11316864 ns
-Seg camera show: 2213935 ns
-Lidar init: 269090 ns
-Lidar points: 14340062 ns
-Lidar stats: 4460140 ns
-Lidar blit: 578031
-Camera init: 374051 ns
-Camera show: 2697126 ns
-Sensors FPS + flip: 3756488 ns
-Camera init: 520102 ns
-Seg init: 1723953 ns
-Seg prediction: 62137357 ns
-Seg get canvas: 11769776 ns
-Seg camera show: 2650256 ns
-Lidar init: 237621 ns
-Lidar points: 12910228 ns
-Lidar stats: 5364672 ns
-Lidar blit: 627822
-Camera init: 506601 ns
-Camera show: 3358417 ns
-Sensors FPS + flip: 3414878 ns
-Camera init: 325791 ns
-Seg init: 1761994 ns
-Seg prediction: 67119478 ns
-Seg get canvas: 11948587 ns
-Seg camera show: 2017184 ns
-Lidar init: 231051 ns
-Lidar points: 17119938 ns
-Lidar stats: 4611400 ns
-Lidar blit: 548251
-Camera init: 350621 ns
-Camera show: 2745596 ns
-Sensors FPS + flip: 3401427 ns
-Camera init: 510161 ns
-Seg init: 2253885 ns
-Seg prediction: 65242874 ns
-Seg get canvas: 10848624 ns
-Seg camera show: 1973914 ns
-Lidar init: 239811 ns
-Lidar points: 13751180 ns
-Lidar stats: 4431400 ns
-Lidar blit: 541331
-Camera init: 347331 ns
-Camera show: 2753146 ns
-Sensors FPS + flip: 3674408 ns
-Camera init: 476571 ns
-Seg init: 1852264 ns
-Seg prediction: 62830549 ns
-Seg get canvas: 10426002 ns
-Seg camera show: 2036185 ns
-Lidar init: 238321 ns
-Lidar points: 12770408 ns
-Lidar stats: 4412019 ns
-Lidar blit: 519161
-Camera init: 340361 ns
-Camera show: 2616096 ns
-Sensors FPS + flip: 3473058 ns
-Camera init: 487271 ns
-Seg init: 1676714 ns
-Seg prediction: 65402703 ns
-Seg get canvas: 11004794 ns
-Seg camera show: 1974644 ns
-Lidar init: 277571 ns
-Lidar points: 14676282 ns
-Lidar stats: 4555750 ns
-Lidar blit: 545711
-Camera init: 375781 ns
-Camera show: 2674226 ns
-Sensors FPS + flip: 3230897 ns
-Camera init: 529132 ns
-Seg init: 2438505 ns
-Seg prediction: 64588212 ns
-Seg get canvas: 10081212 ns
-Seg camera show: 2008374 ns
-Lidar init: 229941 ns
-Lidar points: 13569570 ns
-Lidar stats: 4826190 ns
-Lidar blit: 548392
-Camera init: 401510 ns
-Camera show: 2749016 ns
-Sensors FPS + flip: 3474008 ns
-Camera init: 285060 ns
-Seg init: 1970755 ns
-Seg prediction: 67157007 ns
-Seg get canvas: 10536123 ns
-Seg camera show: 1962795 ns
-Lidar init: 229950 ns
-Lidar points: 12836209 ns
-Lidar stats: 4300979 ns
-Lidar blit: 513351
-Camera init: 382541 ns
-Camera show: 2549515 ns
-Sensors FPS + flip: 3541998 ns
-Camera init: 325821 ns
-Seg init: 1828364 ns
-Seg prediction: 63771950 ns
-Seg get canvas: 11183304 ns
-Seg camera show: 2009365 ns
-Lidar init: 239601 ns
-Lidar points: 14886432 ns
-Lidar stats: 4486100 ns
-Lidar blit: 534551
-Camera init: 344451 ns
-Camera show: 2642776 ns
-Sensors FPS + flip: 3503377 ns
-Camera init: 324211 ns
-Seg init: 1664754 ns
-Seg prediction: 62450277 ns
-Seg get canvas: 13594430 ns
-Seg camera show: 2233054 ns
-Lidar init: 241751 ns
-Lidar points: 12981808 ns
-Lidar stats: 4288820 ns
-Lidar blit: 509161
-Camera init: 302691 ns
-Camera show: 2552556 ns
-Sensors FPS + flip: 3985518 ns
-Camera init: 478311 ns
-Seg init: 2059665 ns
-Seg prediction: 61198284 ns
-Seg get canvas: 10378643 ns
-Seg camera show: 1993315 ns
-Lidar init: 229040 ns
-Lidar points: 13421299 ns
-Lidar stats: 4288530 ns
-Lidar blit: 578131
-Camera init: 363921 ns
-Camera show: 2602956 ns
-Sensors FPS + flip: 3089116 ns
-Camera init: 408361 ns
-Seg init: 1640844 ns
-Seg prediction: 65424803 ns
-Seg get canvas: 15462784 ns
-Seg camera show: 2642966 ns
-Lidar init: 244271 ns
-Lidar points: 18566150 ns
-Lidar stats: 4413160 ns
-Lidar blit: 528601
-Camera init: 318791 ns
-Camera show: 2563006 ns
-Sensors FPS + flip: 2878386 ns
-Camera init: 304080 ns
-Seg init: 1783114 ns
-Seg prediction: 66209715 ns
-Seg get canvas: 10486484 ns
-Seg camera show: 2035934 ns
-Lidar init: 229440 ns
-Lidar points: 13462139 ns
-Lidar stats: 4894281 ns
-Lidar blit: 538821
-Camera init: 338831 ns
-Camera show: 2655446 ns
-Sensors FPS + flip: 3222517 ns
-Camera init: 376201 ns
-Seg init: 1699734 ns
-Seg prediction: 64816253 ns
-Seg get canvas: 13470749 ns
-Seg camera show: 1958284 ns
-Lidar init: 229071 ns
-Lidar points: 14135701 ns
-Lidar stats: 4513700 ns
-Lidar blit: 510861
-Camera init: 300181 ns
-Camera show: 2566156 ns
-Sensors FPS + flip: 3550247 ns
-Camera init: 307651 ns
-Seg init: 1857564 ns
-Seg prediction: 68756230 ns
-Seg get canvas: 10504853 ns
-Seg camera show: 2010014 ns
-Lidar init: 234371 ns
-Lidar points: 12718228 ns
-Lidar stats: 4489960 ns
-Lidar blit: 522411
-Camera init: 373321 ns
-Camera show: 2642785 ns
-Sensors FPS + flip: 3159237 ns
-Camera init: 326991 ns
-Seg init: 1951654 ns
-Seg prediction: 63199858 ns
-Seg get canvas: 13437740 ns
-Seg camera show: 1923194 ns
-Lidar init: 229520 ns
-Lidar points: 13580530 ns
-Lidar stats: 5836663 ns
-Lidar blit: 560831
-Camera init: 463431 ns
-Camera show: 2669686 ns
-Sensors FPS + flip: 4255129 ns
-Camera init: 362370 ns
-Seg init: 1968694 ns
-Seg prediction: 62620777 ns
-Seg get canvas: 10392192 ns
-Seg camera show: 2018075 ns
-Lidar init: 236460 ns
-Lidar points: 12518378 ns
-Lidar stats: 4345000 ns
-Lidar blit: 551701
-Camera init: 378751 ns
-Camera show: 2642965 ns
-Sensors FPS + flip: 3658348 ns
-Camera init: 289220 ns
-Seg init: 1741244 ns
-Seg prediction: 65680234 ns
-Seg get canvas: 10482723 ns
-Seg camera show: 1959054 ns
-Lidar init: 233141 ns
-Lidar points: 13438519 ns
-Lidar stats: 4363710 ns
-Lidar blit: 515941
-Camera init: 305460 ns
-Camera show: 2731146 ns
-Sensors FPS + flip: 3262137 ns
-Camera init: 318160 ns
-Seg init: 1782373 ns
-Seg prediction: 65108743 ns
-Seg get canvas: 10266502 ns
-Seg camera show: 2050535 ns
-Lidar init: 231190 ns
-Lidar points: 13687890 ns
-Lidar stats: 4698791 ns
-Lidar blit: 596461
-Camera init: 328321 ns
-Camera show: 2838576 ns
-Sensors FPS + flip: 3644818 ns
-Camera init: 268431 ns
-Seg init: 1716054 ns
-Seg prediction: 64363990 ns
-Seg get canvas: 9932982 ns
-Seg camera show: 1967605 ns
-Lidar init: 244690 ns
-Lidar points: 11894956 ns
-Lidar stats: 4417160 ns
-Lidar blit: 608071
-Camera init: 373121 ns
-Camera show: 2653686 ns
-Sensors FPS + flip: 3915178 ns
-Camera init: 297940 ns
-Seg init: 1727994 ns
-Seg prediction: 68188119 ns
-Seg get canvas: 10384683 ns
-Seg camera show: 2005024 ns
-Lidar init: 224430 ns
-Lidar points: 13149989 ns
-Lidar stats: 4907321 ns
-Lidar blit: 650241
-Camera init: 538001 ns
-Camera show: 2543396 ns
-Sensors FPS + flip: 3056126 ns
-Camera init: 285491 ns
-Seg init: 1608393 ns
-Seg prediction: 73309291 ns
-Seg get canvas: 12201946 ns
-Seg camera show: 2575026 ns
-Lidar init: 417401 ns
-Lidar points: 14554722 ns
-Lidar stats: 4859651 ns
-Lidar blit: 974702
-Camera init: 612521 ns
-Camera show: 3108277 ns
-Sensors FPS + flip: 3585518 ns
-Camera init: 321581 ns
-Seg init: 1821304 ns
-Seg prediction: 57105664 ns
-Seg get canvas: 10900724 ns
-Seg camera show: 1828334 ns
-Lidar init: 306431 ns
-Lidar points: 13341899 ns
-Lidar stats: 4392460 ns
-Lidar blit: 398450
-Camera init: 273141 ns
-Camera show: 2322715 ns
-Sensors FPS + flip: 5354322 ns
-Camera init: 916882 ns
-Seg init: 2032975 ns
-Seg prediction: 66931076 ns
-Seg get canvas: 10031931 ns
-Seg camera show: 1971514 ns
-Lidar init: 234851 ns
-Lidar points: 12521947 ns
-Lidar stats: 4343690 ns
-Lidar blit: 531291
-Camera init: 378111 ns
-Camera show: 2301065 ns
-Sensors FPS + flip: 3986368 ns
-Camera init: 327001 ns
-Seg init: 1937874 ns
-Seg prediction: 64679931 ns
-Seg get canvas: 13265729 ns
-Seg camera show: 2022144 ns
-Lidar init: 336780 ns
-Lidar points: 14749992 ns
-Lidar stats: 4757411 ns
-Lidar blit: 379631
-Camera init: 387350 ns
-Camera show: 2458996 ns
-Sensors FPS + flip: 3046136 ns
-Camera init: 274610 ns
-Seg init: 1707584 ns
-Seg prediction: 64918801 ns
-Seg get canvas: 11875355 ns
-Seg camera show: 1875804 ns
-Lidar init: 453621 ns
-Lidar points: 14244441 ns
-Lidar stats: 4680250 ns
-Lidar blit: 382291
-Camera init: 330541 ns
-Camera show: 2491045 ns
-Sensors FPS + flip: 3214267 ns
-Camera init: 277781 ns
-Seg init: 1900564 ns
-Seg prediction: 72110937 ns
-Seg get canvas: 13233059 ns
-Seg camera show: 1966664 ns
-Lidar init: 343761 ns
-Lidar points: 12383497 ns
-Lidar stats: 4309229 ns
-Lidar blit: 521851
-Camera init: 554031 ns
-Camera show: 2778537 ns
-Sensors FPS + flip: 3210096 ns
-Camera init: 505531 ns
-Seg init: 4472179 ns
-Seg prediction: 65006452 ns
-Seg get canvas: 11232865 ns
-Seg camera show: 1797243 ns
-Lidar init: 316061 ns
-Lidar points: 12590998 ns
-Lidar stats: 4276099 ns
-Lidar blit: 365621
-Camera init: 288290 ns
-Camera show: 2690646 ns
-Sensors FPS + flip: 3199967 ns
-Camera init: 331111 ns
-Seg init: 1933174 ns
-Seg prediction: 61945125 ns
-Seg get canvas: 11970636 ns
-Seg camera show: 1845164 ns
-Lidar init: 411451 ns
-Lidar points: 12449577 ns
-Lidar stats: 4372429 ns
-Lidar blit: 455611
-Camera init: 491281 ns
-Camera show: 2572096 ns
-Sensors FPS + flip: 4341079 ns
-Camera init: 396551 ns
-Seg init: 2300265 ns
-Seg prediction: 66021413 ns
-Seg get canvas: 11150944 ns
-Seg camera show: 1837104 ns
-Lidar init: 318771 ns
-Lidar points: 12521287 ns
-Lidar stats: 4346770 ns
-Lidar blit: 335650
-Camera init: 296531 ns
-Camera show: 2698156 ns
-Sensors FPS + flip: 3466227 ns
-Camera init: 313440 ns
-Seg init: 1847824 ns
-Seg prediction: 65941234 ns
-Seg get canvas: 11598395 ns
-Seg camera show: 2329345 ns
-Lidar init: 277221 ns
-Lidar points: 18961001 ns
-Lidar stats: 4763421 ns
-Lidar blit: 574771
-Camera init: 330120 ns
-Camera show: 3216607 ns
-Sensors FPS + flip: 3446387 ns
-Camera init: 579692 ns
-Seg init: 2249435 ns
-Seg prediction: 72557828 ns
-Seg get canvas: 12399156 ns
-Seg camera show: 1985915 ns
-Lidar init: 501391 ns
-Lidar points: 13334019 ns
-Lidar stats: 4340140 ns
-Lidar blit: 354130
-Camera init: 274581 ns
-Camera show: 2671456 ns
-Sensors FPS + flip: 2952926 ns
-Camera init: 344450 ns
-Seg init: 1938625 ns
-Seg prediction: 61650043 ns
-Seg get canvas: 14637231 ns
-Seg camera show: 1830235 ns
-Lidar init: 470291 ns
-Lidar points: 14054650 ns
-Lidar stats: 4843671 ns
-Lidar blit: 402050
-Camera init: 292990 ns
-Camera show: 2875506 ns
-Sensors FPS + flip: 3347137 ns
-Camera init: 267290 ns
-Seg init: 1597783 ns
-Seg prediction: 60123031 ns
-Seg get canvas: 14049460 ns
-Seg camera show: 1891444 ns
-Lidar init: 322331 ns
-Lidar points: 14260181 ns
-Lidar stats: 4711360 ns
-Lidar blit: 369241
-Camera init: 332301 ns
-Camera show: 2301435 ns
-Sensors FPS + flip: 2812056 ns
-Camera init: 309961 ns
-Seg init: 1779473 ns
-Seg prediction: 57471825 ns
-Seg get canvas: 16837326 ns
-Seg camera show: 2116335 ns
-Lidar init: 445300 ns
-Lidar points: 12785699 ns
-Lidar stats: 4401109 ns
-Lidar blit: 342591
-Camera init: 266630 ns
-Camera show: 2519485 ns
-Sensors FPS + flip: 3425548 ns
-Camera init: 510481 ns
-Seg init: 1657123 ns
-Seg prediction: 57045104 ns
-Seg get canvas: 13577429 ns
-Seg camera show: 2609106 ns
-Lidar init: 318571 ns
-Lidar points: 14259491 ns
-Lidar stats: 6632344 ns
-Lidar blit: 999622
-Camera init: 496512 ns
-Camera show: 4289669 ns
-Sensors FPS + flip: 4111939 ns
-Camera init: 664141 ns
-Seg init: 2258935 ns
-Seg prediction: 73448439 ns
-Seg get canvas: 11990266 ns
-Seg camera show: 2694616 ns
-Lidar init: 1661933 ns
-Lidar points: 17691129 ns
-Lidar stats: 6476834 ns
-Lidar blit: 920912
-Camera init: 483551 ns
-Camera show: 3026216 ns
-Sensors FPS + flip: 7914718 ns
-Camera init: 304351 ns
-Seg init: 1875214 ns
-Seg prediction: 63912878 ns
-Seg get canvas: 11132264 ns
-Seg camera show: 1860384 ns
-Lidar init: 428981 ns
-Lidar points: 12460947 ns
-Lidar stats: 4609160 ns
-Lidar blit: 1030952
-Camera init: 409810 ns
-Camera show: 3071427 ns
-Sensors FPS + flip: 7006195 ns
+Sensors FPS + flip: 4106098 ns
+Camera init: 395737 ns
+Seg init: 1753741 ns
+Seg prediction: 61961615 ns
+Seg get canvas: 16098815 ns
+Seg camera show: 1820091 ns
+Lidar init: 188349 ns
+Lidar points: 12772093 ns
+Lidar stats: 4318147 ns
+Lidar blit: 320168
+Camera init: 358718 ns
+Camera show: 2442328 ns
+Sensors FPS + flip: 3660780 ns
+Camera init: 794706 ns
+Seg init: 1688541 ns
+Seg prediction: 55585297 ns
+Seg get canvas: 10684434 ns
+Seg camera show: 1773381 ns
+Lidar init: 180500 ns
+Lidar points: 12807822 ns
+Lidar stats: 4340437 ns
+Lidar blit: 324268
+Camera init: 300469 ns
+Camera show: 2455467 ns
+Sensors FPS + flip: 3397192 ns
+Camera init: 276509 ns
+Seg init: 1569102 ns
+Seg prediction: 62057453 ns
+Seg get canvas: 10657034 ns
+Seg camera show: 1745081 ns
+Lidar init: 182409 ns
+Lidar points: 13036561 ns
+Lidar stats: 4313697 ns
+Lidar blit: 319129
+Camera init: 300678 ns
+Camera show: 2469827 ns
+Sensors FPS + flip: 4027849 ns
+Camera init: 300489 ns
+Seg init: 1590871 ns
+Seg prediction: 61853414 ns
+Seg get canvas: 10563235 ns
+Seg camera show: 1736631 ns
+Lidar init: 178359 ns
+Lidar points: 12087816 ns
+Lidar stats: 4253548 ns
+Lidar blit: 327008
+Camera init: 312079 ns
+Camera show: 2543156 ns
+Sensors FPS + flip: 4722386 ns
+Camera init: 578127 ns
+Seg init: 3023994 ns
+Seg prediction: 66856428 ns
+Seg get canvas: 10526065 ns
+Seg camera show: 1783521 ns
+Lidar init: 178320 ns
+Lidar points: 13291689 ns
+Lidar stats: 4388617 ns
+Lidar blit: 322778
+Camera init: 298299 ns
+Camera show: 2473597 ns
+Sensors FPS + flip: 4276787 ns
+Camera init: 503857 ns
+Seg init: 2637506 ns
+Seg prediction: 66029763 ns
+Seg get canvas: 10789513 ns
+Seg camera show: 1805680 ns
+Lidar init: 177799 ns
+Lidar points: 12180236 ns
+Lidar stats: 4279668 ns
+Lidar blit: 323978
+Camera init: 322388 ns
+Camera show: 2448458 ns
+Sensors FPS + flip: 3728640 ns
+Camera init: 283389 ns
+Seg init: 2251188 ns
+Seg prediction: 64179182 ns
+Seg get canvas: 11691419 ns
+Seg camera show: 1764250 ns
+Lidar init: 184129 ns
+Lidar points: 12644374 ns
+Lidar stats: 4394017 ns
+Lidar blit: 339688
+Camera init: 379628 ns
+Camera show: 2490257 ns
+Sensors FPS + flip: 3750600 ns
+Camera init: 605057 ns
+Seg init: 2605196 ns
+Seg prediction: 65362137 ns
+Seg get canvas: 10537874 ns
+Seg camera show: 1823461 ns
+Lidar init: 200578 ns
+Lidar points: 12713643 ns
+Lidar stats: 4352277 ns
+Lidar blit: 326138
+Camera init: 390898 ns
+Camera show: 2546067 ns
+Sensors FPS + flip: 2897235 ns
+Camera init: 492288 ns
+Seg init: 2644686 ns
+Seg prediction: 66073302 ns
+Seg get canvas: 10434455 ns
+Seg camera show: 1748281 ns
+Lidar init: 182829 ns
+Lidar points: 13260960 ns
+Lidar stats: 4607616 ns
+Lidar blit: 343458
+Camera init: 382238 ns
+Camera show: 2527967 ns
+Sensors FPS + flip: 3449982 ns
+Camera init: 606987 ns
+Seg init: 3413622 ns
+Seg prediction: 68996697 ns
+Seg get canvas: 13826087 ns
+Seg camera show: 1843041 ns
+Lidar init: 179489 ns
+Lidar points: 12764762 ns
+Lidar stats: 4449447 ns
+Lidar blit: 320188
+Camera init: 327078 ns
+Camera show: 2498527 ns
+Sensors FPS + flip: 3325473 ns
+Camera init: 622367 ns
+Seg init: 4428637 ns
+Seg prediction: 72344519 ns
+Seg get canvas: 10217047 ns
+Seg camera show: 1778720 ns
+Lidar init: 186599 ns
+Lidar points: 12225136 ns
+Lidar stats: 4320367 ns
+Lidar blit: 331939
+Camera init: 337798 ns
+Camera show: 2463627 ns
+Sensors FPS + flip: 2991254 ns
+Camera init: 669776 ns
+Seg init: 3268533 ns
+Seg prediction: 67356716 ns
+Seg get canvas: 10868073 ns
+Seg camera show: 1962880 ns
+Lidar init: 214958 ns
+Lidar points: 16145345 ns
+Lidar stats: 6242967 ns
+Lidar blit: 2990604
+Camera init: 500548 ns
+Camera show: 3966389 ns
+Sensors FPS + flip: 5101183 ns
+Camera init: 947425 ns
+Seg init: 3008925 ns
+Seg prediction: 67634813 ns
+Seg get canvas: 11140742 ns
+Seg camera show: 1862680 ns
+Lidar init: 210749 ns
+Lidar points: 12598074 ns
+Lidar stats: 4297427 ns
+Lidar blit: 331129
+Camera init: 351469 ns
+Camera show: 2458997 ns
+Sensors FPS + flip: 3391112 ns
+Camera init: 644147 ns
+Seg init: 2164868 ns
+Seg prediction: 69804163 ns
+Seg get canvas: 10695384 ns
+Seg camera show: 2117849 ns
+Lidar init: 281338 ns
+Lidar points: 13055612 ns
+Lidar stats: 4374117 ns
+Lidar blit: 901515
+Camera init: 547657 ns
+Camera show: 3031714 ns
+Sensors FPS + flip: 3788870 ns
+Camera init: 306509 ns
+Seg init: 1790020 ns
+Seg prediction: 63242958 ns
+Seg get canvas: 11517299 ns
+Seg camera show: 2090299 ns
+Lidar init: 305969 ns
+Lidar points: 13137291 ns
+Lidar stats: 4679914 ns
+Lidar blit: 559227
+Camera init: 319379 ns
+Camera show: 2336557 ns
+Sensors FPS + flip: 3711301 ns
+Camera init: 451328 ns
+Seg init: 2239608 ns
+Seg prediction: 67935073 ns
+Seg get canvas: 15201950 ns
+Seg camera show: 1869860 ns
+Lidar init: 189759 ns
+Lidar points: 11999877 ns
+Lidar stats: 4377927 ns
+Lidar blit: 327899
+Camera init: 348378 ns
+Camera show: 2500787 ns
+Sensors FPS + flip: 4055558 ns
+Camera init: 369988 ns
+Seg init: 2542267 ns
+Seg prediction: 67951182 ns
+Seg get canvas: 10493925 ns
+Seg camera show: 1759911 ns
+Lidar init: 180330 ns
+Lidar points: 12068676 ns
+Lidar stats: 4485887 ns
+Lidar blit: 326828
+Camera init: 301798 ns
+Camera show: 2472377 ns
+Sensors FPS + flip: 2881215 ns
+Camera init: 345768 ns
+Seg init: 1587912 ns
+Seg prediction: 59787595 ns
+Seg get canvas: 10796443 ns
+Seg camera show: 1821370 ns
+Lidar init: 174199 ns
+Lidar points: 12962272 ns
+Lidar stats: 4286658 ns
+Lidar blit: 348028
+Camera init: 267319 ns
+Camera show: 2506627 ns
+Sensors FPS + flip: 4010129 ns
+Camera init: 459698 ns
+Seg init: 1677131 ns
+Seg prediction: 62913629 ns
+Seg get canvas: 10498235 ns
+Seg camera show: 1944149 ns
+Lidar init: 177969 ns
+Lidar points: 12920202 ns
+Lidar stats: 4319648 ns
+Lidar blit: 319318
+Camera init: 304018 ns
+Camera show: 2469047 ns
+Sensors FPS + flip: 3141344 ns
+Camera init: 1070855 ns
+Seg init: 6035688 ns
+Seg prediction: 69226736 ns
+Seg get canvas: 12085357 ns
+Seg camera show: 1925280 ns
+Lidar init: 198829 ns
+Lidar points: 12533624 ns
+Lidar stats: 4259707 ns
+Lidar blit: 724106
+Camera init: 281838 ns
+Camera show: 2525947 ns
+Sensors FPS + flip: 3441332 ns
+Camera init: 914975 ns
+Seg init: 4679756 ns
+Seg prediction: 73182775 ns
+Seg get canvas: 11808618 ns
+Seg camera show: 1857960 ns
+Lidar init: 188459 ns
+Lidar points: 12863562 ns
+Lidar stats: 4113979 ns
+Lidar blit: 809276
+Camera init: 372868 ns
+Camera show: 2602147 ns
+Sensors FPS + flip: 3770820 ns
+Camera init: 842476 ns
+Seg init: 3149473 ns
+Seg prediction: 70258621 ns
+Seg get canvas: 12545153 ns
+Seg camera show: 1873981 ns
+Lidar init: 218989 ns
+Lidar points: 12341276 ns
+Lidar stats: 4184648 ns
+Lidar blit: 313768
+Camera init: 560017 ns
+Camera show: 2363238 ns
+Sensors FPS + flip: 5045044 ns
+Camera init: 459358 ns
+Seg init: 2852105 ns
+Seg prediction: 61947684 ns
+Seg get canvas: 11632109 ns
+Seg camera show: 1845541 ns
+Lidar init: 216059 ns
+Lidar points: 12682123 ns
+Lidar stats: 4335637 ns
+Lidar blit: 327079
+Camera init: 367088 ns
+Camera show: 2663206 ns
+Sensors FPS + flip: 4914954 ns
+Camera init: 1608531 ns
+Seg init: 3293163 ns
+Seg prediction: 62177503 ns
+Seg get canvas: 12158336 ns
+Seg camera show: 1721091 ns
+Lidar init: 179389 ns
+Lidar points: 12064076 ns
+Lidar stats: 4164988 ns
+Lidar blit: 355868
+Camera init: 280729 ns
+Camera show: 2517397 ns
+Sensors FPS + flip: 3560441 ns
+Camera init: 306229 ns
+Seg init: 1701201 ns
+Seg prediction: 59423787 ns
+Seg get canvas: 12940472 ns
+Seg camera show: 1741681 ns
+Lidar init: 185519 ns
+Lidar points: 13248250 ns
+Lidar stats: 4153138 ns
+Lidar blit: 321258
+Camera init: 295919 ns
+Camera show: 2648446 ns
+Sensors FPS + flip: 4344727 ns
+Camera init: 487387 ns
+Seg init: 2402427 ns
+Seg prediction: 67390926 ns
+Seg get canvas: 12880113 ns
+Seg camera show: 1757120 ns
+Lidar init: 184389 ns
+Lidar points: 13146381 ns
+Lidar stats: 4236287 ns
+Lidar blit: 334159
+Camera init: 279239 ns
+Camera show: 2467047 ns
+Sensors FPS + flip: 3667941 ns
+Camera init: 484558 ns
+Seg init: 3264742 ns
+Seg prediction: 63766435 ns
+Seg get canvas: 12964302 ns
+Seg camera show: 1744731 ns
+Lidar init: 180009 ns
+Lidar points: 12670503 ns
+Lidar stats: 4052648 ns
+Lidar blit: 326359
+Camera init: 363028 ns
+Camera show: 2467207 ns
+Sensors FPS + flip: 4302737 ns
+Camera init: 279139 ns
+Seg init: 1658381 ns
+Seg prediction: 60212394 ns
+Seg get canvas: 10885153 ns
+Seg camera show: 1749001 ns
+Lidar init: 186309 ns
+Lidar points: 13348950 ns
+Lidar stats: 4192998 ns
+Lidar blit: 331678
+Camera init: 279289 ns
+Camera show: 2521187 ns
+Sensors FPS + flip: 3502101 ns
+Camera init: 308618 ns
+Seg init: 1680981 ns
+Seg prediction: 56765552 ns
+Seg get canvas: 10390065 ns
+Seg camera show: 1742641 ns
+Lidar init: 175999 ns
+Lidar points: 12308076 ns
+Lidar stats: 4190108 ns
+Lidar blit: 321468
+Camera init: 499027 ns
+Camera show: 2664986 ns
+Sensors FPS + flip: 4160248 ns
+Camera init: 448128 ns
+Seg init: 2126729 ns
+Seg prediction: 60238233 ns
+Seg get canvas: 10564744 ns
+Seg camera show: 1846190 ns
+Lidar init: 201559 ns
+Lidar points: 13065441 ns
+Lidar stats: 4658396 ns
+Lidar blit: 330528
+Camera init: 284049 ns
+Camera show: 2189068 ns
+Sensors FPS + flip: 3723480 ns
+Camera init: 348548 ns
+Seg init: 2337788 ns
+Seg prediction: 54840922 ns
+Seg get canvas: 10464665 ns
+Seg camera show: 1741991 ns
+Lidar init: 181889 ns
+Lidar points: 13943256 ns
+Lidar stats: 4286638 ns
+Lidar blit: 373308
+Camera init: 469257 ns
+Camera show: 2495107 ns
+Sensors FPS + flip: 3991779 ns
+Camera init: 367568 ns
+Seg init: 1660062 ns
+Seg prediction: 64119743 ns
+Seg get canvas: 10725693 ns
+Seg camera show: 1744721 ns
+Lidar init: 193269 ns
+Lidar points: 14123626 ns
+Lidar stats: 4296177 ns
+Lidar blit: 335289
+Camera init: 292898 ns
+Camera show: 2474067 ns
+Sensors FPS + flip: 4055699 ns
+Camera init: 296018 ns
+Seg init: 1587472 ns
+Seg prediction: 73257625 ns
+Seg get canvas: 11708578 ns
+Seg camera show: 2056299 ns
+Lidar init: 212998 ns
+Lidar points: 13340620 ns
+Lidar stats: 4468097 ns
+Lidar blit: 339988
+Camera init: 1025415 ns
+Camera show: 2496897 ns
+Sensors FPS + flip: 3147083 ns
+Camera init: 290288 ns
+Seg init: 1854110 ns
+Seg prediction: 57565508 ns
+Seg get canvas: 10901892 ns
+Seg camera show: 1743731 ns
+Lidar init: 214259 ns
+Lidar points: 13589309 ns
+Lidar stats: 4177628 ns
+Lidar blit: 321908
+Camera init: 582067 ns
+Camera show: 2493077 ns
+Sensors FPS + flip: 6772634 ns
+Camera init: 512308 ns
+Seg init: 2577986 ns
+Seg prediction: 75342264 ns
+Seg get canvas: 10629304 ns
+Seg camera show: 1746661 ns
+Lidar init: 184219 ns
+Lidar points: 13058342 ns
+Lidar stats: 4200467 ns
+Lidar blit: 346469
+Camera init: 298968 ns
+Camera show: 2471957 ns
+Sensors FPS + flip: 2919455 ns
+Camera init: 341658 ns
+Seg init: 2093899 ns
+Seg prediction: 59467058 ns
+Seg get canvas: 10686353 ns
+Seg camera show: 1757041 ns
+Lidar init: 178149 ns
+Lidar points: 12472224 ns
+Lidar stats: 4160508 ns
+Lidar blit: 320329
+Camera init: 371738 ns
+Camera show: 2642666 ns
+Sensors FPS + flip: 3744770 ns
+Camera init: 639137 ns
+Seg init: 3070144 ns
+Seg prediction: 58132614 ns
+Seg get canvas: 10739374 ns
+Seg camera show: 1741491 ns
+Lidar init: 173159 ns
+Lidar points: 12589154 ns
+Lidar stats: 4363447 ns
+Lidar blit: 338118
+Camera init: 305268 ns
+Camera show: 2496057 ns
+Sensors FPS + flip: 2835165 ns
+Camera init: 310598 ns
+Seg init: 1597692 ns
+Seg prediction: 59695566 ns
+Seg get canvas: 10357475 ns
+Seg camera show: 1725021 ns
+Lidar init: 183359 ns
+Lidar points: 14949142 ns
+Lidar stats: 4933364 ns
+Lidar blit: 336288
+Camera init: 326588 ns
+Camera show: 2561137 ns
+Sensors FPS + flip: 5477571 ns
+Camera init: 447307 ns
+Seg init: 2628256 ns
+Seg prediction: 59707817 ns
+Seg get canvas: 11005813 ns
+Seg camera show: 2119639 ns
+Lidar init: 196679 ns
+Lidar points: 12425115 ns
+Lidar stats: 4243617 ns
+Lidar blit: 311029
+Camera init: 294178 ns
+Camera show: 2467297 ns
+Sensors FPS + flip: 5923389 ns
+Camera init: 782986 ns
+Seg init: 3404312 ns
+Seg prediction: 62539681 ns
+Seg get canvas: 11076512 ns
+Seg camera show: 1752221 ns
+Lidar init: 173719 ns
+Lidar points: 12121636 ns
+Lidar stats: 4223718 ns
+Lidar blit: 379588
+Camera init: 344468 ns
+Camera show: 2471467 ns
+Sensors FPS + flip: 3783510 ns
+Camera init: 1119705 ns
+Seg init: 1839330 ns
+Seg prediction: 57568567 ns
+Seg get canvas: 9874008 ns
+Seg camera show: 1753421 ns
+Lidar init: 177359 ns
+Lidar points: 12408685 ns
+Lidar stats: 4249797 ns
+Lidar blit: 314778
+Camera init: 320369 ns
+Camera show: 2505687 ns
+Sensors FPS + flip: 3427402 ns
+Camera init: 1782910 ns
+Seg init: 3293163 ns
+Seg prediction: 60320893 ns
+Seg get canvas: 9744189 ns
+Seg camera show: 1784530 ns
+Lidar init: 176749 ns
+Lidar points: 13135801 ns
+Lidar stats: 4396257 ns
+Lidar blit: 328249
+Camera init: 338628 ns
+Camera show: 2512317 ns
+Sensors FPS + flip: 2807075 ns
+Camera init: 474367 ns
+Seg init: 1745611 ns
+Seg prediction: 61733466 ns
+Seg get canvas: 9538310 ns
+Seg camera show: 1733550 ns
+Lidar init: 174349 ns
+Lidar points: 14628674 ns
+Lidar stats: 4622575 ns
+Lidar blit: 318409
+Camera init: 360148 ns
+Camera show: 2678455 ns
+Sensors FPS + flip: 3661931 ns
+Camera init: 395998 ns
+Seg init: 1736871 ns
+Seg prediction: 58262204 ns
+Seg get canvas: 9964667 ns
+Seg camera show: 1745741 ns
+Lidar init: 176889 ns
+Lidar points: 11740408 ns
+Lidar stats: 4186799 ns
+Lidar blit: 318919
+Camera init: 304048 ns
+Camera show: 2497017 ns
+Sensors FPS + flip: 2798715 ns
+Camera init: 342708 ns
+Seg init: 1670292 ns
+Seg prediction: 65294026 ns
+Seg get canvas: 11806669 ns
+Seg camera show: 2302298 ns
+Lidar init: 179379 ns
+Lidar points: 13118572 ns
+Lidar stats: 4287307 ns
+Lidar blit: 309518
+Camera init: 326129 ns
+Camera show: 2481247 ns
+Sensors FPS + flip: 2794395 ns
+Camera init: 311758 ns
+Seg init: 1594912 ns
+Seg prediction: 58203514 ns
+Seg get canvas: 11563799 ns
+Seg camera show: 1777041 ns
+Lidar init: 176039 ns
+Lidar points: 12903822 ns
+Lidar stats: 4249657 ns
+Lidar blit: 309989
+Camera init: 280268 ns
+Camera show: 2486307 ns
+Sensors FPS + flip: 3080764 ns
+Camera init: 651446 ns
+Seg init: 2224989 ns
+Seg prediction: 59974124 ns
+Seg get canvas: 16293405 ns
+Seg camera show: 1786760 ns
+Lidar init: 175719 ns
+Lidar points: 12381755 ns
+Lidar stats: 4254098 ns
+Lidar blit: 309608
+Camera init: 303329 ns
+Camera show: 2487107 ns
+Sensors FPS + flip: 2833995 ns
+Camera init: 717546 ns
+Seg init: 4631965 ns
+Seg prediction: 71428525 ns
+Seg get canvas: 10295536 ns
+Seg camera show: 1920140 ns
+Lidar init: 207039 ns
+Lidar points: 12905771 ns
+Lidar stats: 4636836 ns
+Lidar blit: 698556
+Camera init: 302269 ns
+Camera show: 2626876 ns
+Sensors FPS + flip: 4363337 ns
+Camera init: 331378 ns
+Seg init: 1857160 ns
+Seg prediction: 58229584 ns
+Seg get canvas: 11181712 ns
+Seg camera show: 1847370 ns
+Lidar init: 188009 ns
+Lidar points: 13081411 ns
+Lidar stats: 4437307 ns
+Lidar blit: 338068
+Camera init: 331328 ns
+Camera show: 2735766 ns
+Sensors FPS + flip: 3553891 ns
+Camera init: 477627 ns
+Seg init: 2805426 ns
+Seg prediction: 65110157 ns
+Seg get canvas: 12002217 ns
+Seg camera show: 1756371 ns
+Lidar init: 187039 ns
+Lidar points: 13860557 ns
+Lidar stats: 4614476 ns
+Lidar blit: 334998
+Camera init: 542927 ns
+Camera show: 2494057 ns
+Sensors FPS + flip: 5428392 ns

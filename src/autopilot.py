@@ -9,7 +9,7 @@ DECREASE = 50
     
 def main():
     # Setup 
-    world, client = configcarla.setup_carla(name_world='Town05', port=2000, delta_seconds=0.05, syn=True)
+    world, client = configcarla.setup_carla(name_world='Town05', fixed_delta_seconds=0.05, syn=True)
     screen = configcarla.setup_pygame(size=(WIDTH * 3 - DECREASE * 2, HEIGHT * 2), name='Autopilot')
 
     # Add Ego Vehicle

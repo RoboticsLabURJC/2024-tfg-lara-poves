@@ -67,7 +67,7 @@ def main(args):
                 # Load vecnormalize
                 norm = alg != 'DQN' and env_str != 'CartPole-v1'
                 if norm:
-                    vec_normalize = VecNormalize.load(gym_dir + 'vecnormalize/' + cont_load + '.pkl', venv=env)
+                    vec_norm = VecNormalize.load(gym_dir + 'vecnormalize/' + cont_load + '.pkl', venv=env)
             except FileNotFoundError: 
                 print("Vector normalize", cont_load + '.pkl', "doesn't exit")
                 continue
@@ -81,7 +81,7 @@ def main(args):
             # Simulate a play
             while not done:
                 if norm:
-                    obs = vec_normalize.normalize_obs(obs)
+                    obs = vec_norm.normalize_obs(obs)
 
                 # Predict and execute action
                 action, _ = model.predict(obs, deterministic=True)

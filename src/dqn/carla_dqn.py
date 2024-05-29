@@ -1,14 +1,22 @@
 import pygame
 import carla
+import sys
+import os
+
+src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, src_path)
+
 import configcarla
 from configcarla import SIZE_CAMERA
 
 Z = 0.5
 
-def main(client:carla.Client, screen:pygame.Surface, town:str, transform:carla.Transform):
-    world, client = configcarla.setup_carla(name_world=town, port=2000, client=client, syn=False)
+def main():
+    screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='DQN')
+    world, _ = configcarla.setup_carla(name_world='Town05', port=2000, syn=False)
 
     # Add Ego Vehicle
+    transform = carla.Transform(carla.Location(x=50.0, y=-145.7, z=Z))
     ego_vehicle = configcarla.add_one_vehicle(world=world, vehicle_type='vehicle.lincoln.mkz_2020',
                                               ego_vehicle=True, transform=transform)
 
@@ -33,7 +41,16 @@ def main(client:carla.Client, screen:pygame.Surface, town:str, transform:carla.T
                 if event.type == pygame.QUIT:
                     return None
            
-            sensors.update_data()
+            sensors.update_data(flip=False)
+            cm = camera.get_lane_cm()
+            area = camera.get_lane_area()
+            points_left, points_right = camera.get_lane_points(show=True)
+
+            print("cm:", cm, type(cm), cm.shape)
+            print("area:", area, type(area))
+            print("points left:", points_left, type(points_left), points_left.shape)
+            print("points right:", points_right, type(points_right), points_right.shape)
+            pygame.display.flip()
             
             # Control vehicle
             error_road = camera.get_deviation()
@@ -42,30 +59,9 @@ def main(client:carla.Client, screen:pygame.Surface, town:str, transform:carla.T
     except KeyboardInterrupt:
         return None
 
-    except AssertionError as e:
-        print("ERROR:", e)
-        return client
-
     finally:
         sensors.destroy()
+        pygame.quit()
 
 if __name__ == "__main__":
-    scenes = [
-        ('Town05', carla.Transform(carla.Location(x=50.0, y=-145.7, z=Z))),
-        ('Town05', carla.Transform(carla.Location(x=151.5, y=15.0, z=Z), carla.Rotation(yaw=90.0))),
-        ('Town04', carla.Transform(carla.Location(x=198.5, y=-163, z=Z), carla.Rotation(yaw=90.0)))
-    ]
-
-    client = None
-    size = (SIZE_CAMERA * 2, SIZE_CAMERA)
-    screen = configcarla.setup_pygame(size=size, name='Follow lane')
-
-    for scene in scenes:
-        client = main(screen=screen, client=client, town=scene[0], transform=scene[1])
-        if client == None:
-            break
-
-        screen.blit(pygame.Surface(size), (0, 0))
-        pygame.display.flip()
-
-    pygame.quit()
+    main()
