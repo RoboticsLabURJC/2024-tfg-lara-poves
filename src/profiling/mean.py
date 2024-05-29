@@ -7,7 +7,7 @@ import numpy as np
 MILI_TO_NANO = 10**6
 
 def get_data():
-    dir = "/home/alumnos/lara/2024-tfg-lara-poves/src/profiling/times"
+    dir = "/home/lara/2024-tfg-lara-poves/src/profiling/times"
     all_tasks = set() 
     data = defaultdict(dict)  
 
@@ -43,7 +43,7 @@ def main():
 
     num_columns = 3
     num_rows = num_files // num_columns if num_files % num_columns == 0 else num_files // num_columns + 1
-    _, axs = plt.subplots(num_rows, num_columns, figsize=(20, num_rows * 6))
+    _, axs = plt.subplots(num_rows, num_columns, figsize=(6.6 * num_columns, num_rows * 7))
 
     file_index = 0
     for file_name, means, color in zip(data.keys(), data.values(), colors):
@@ -60,7 +60,7 @@ def main():
                 sorted_tasks[i] = init
                 init += ' '
             else:
-                ax.text(i, times[i], f"{times[i]:.2f}", ha='center', va='bottom', fontsize=8)
+                ax.text(i, times[i], f"{times[i]:.2f}", ha='center', va='bottom', fontsize=10)
 
         ax.bar(sorted_tasks, times, color=color)
         ax.set_title(file_name)
