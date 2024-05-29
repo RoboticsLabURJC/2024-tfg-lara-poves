@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-05-22T13:31:00
+last_modified_at: 2024-05-29T11:44:00
 categories:
   - Blog
 tags:
@@ -22,14 +22,10 @@ Una vez habituados con las funciones básicas de CARLA y realizado el teleoperad
 
 ## Traffic manager
 
-Hemos implementado una función llamada ***traffic_manager*** para controlar el tráfico de vehículos, activando el piloto automático de la lista de vehículos que recibe como entrada. Para lograrlo, es necesario activar el modo síncrono al configurar Carla.
+Hemos implementado una función llamada ***traffic_manager*** para controlar el tráfico de vehículos, activando el piloto automático de la lista de vehículos que recibe como entrada. Para lograrlo, es necesario activar el modo síncrono al configurar CARLA y el modo síncrono del propio manejador de tráfico.
 ```python
-settings = world.get_settings()
-settings.synchronous_mode = True
-settings.fixed_delta_seconds = delta_seconds
-world.apply_settings(settings)
-
-def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000)
+settings.synchronous_mode = True # setup_carla()
+tm.set_synchronous_mode(True) # traffic_manager()
 ```
 
 ## LIDAR
@@ -140,10 +136,10 @@ Vamos a generar histogramas utilizando las distancias detectadas en la zona cent
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist/hist_motorbike.png" alt="">
 </figure>
 
-Hemos creado una aplicación llamada *hist_carla.py* para recopilar los datos del láser y almacenarlos en formato csv (*hist_data.csv*). Al presionar la tecla *s*, se guardan los datos en el fichero csv, mientras que al presionar la tecla *x*, se puede cambiar la configuración en la disposición de los vehículos. Este fichero acepta el argumento *w* para sobrescribir el csv existente, *a* para añadir al final del archivo csv y *n* para no guardar los datos. Además, hemos creado un *script* para visualizar los *plots* de estos datos (*hist_plot.py*):
+Hemos creado una aplicación llamada *carla_hist.py* para recopilar los datos del láser y almacenarlos en formato csv (*hist_data.csv*). Al presionar la tecla *s*, se guardan los datos en el fichero csv, mientras que al presionar la tecla *x*, se puede cambiar la configuración en la disposición de los vehículos. Este fichero acepta el argumento *w* para sobrescribir el csv existente, *a* para añadir al final del archivo csv y *n* para no guardar los datos. Además, hemos creado un *script* para visualizar los *plots* de estos datos (*plot.py*):
 ```bash
-python3 hist_carla.py --mode w
-python3 hist_plot.py 
+python3 carla_hist.py --mode w
+python3 plot.py 
 ```
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/hist/hist_plot.png" alt="">

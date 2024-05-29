@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-05-22T13:02:00
+last_modified_at: 2024-05-29T14:28:00
 categories:
   - Blog
 tags:
@@ -39,13 +39,22 @@ Para iniciar el simulador CARLA, usamos el siguiente comando:
 /opt/carla/CarlaUE4.sh -world-port=2000
 ```
 
-Hemos estado investigando cómo realizar acciones básicas en CARLA: la apertura de distintos entornos, el desplazamiento del observador y la colocación de uno o varios vehículos con la opción de seleccionar su modelo.
+Hemos estado investigando cómo realizar acciones básicas en CARLA: la apertura de distintos entornos, el desplazamiento del observador y la colocación de uno o varios vehículos con la opción de seleccionar su modelo. Después, nos centramos en definir el vehículo que queríamos controlar, conocido como ***Ego Vehicle*** en CARLA, al que añadiremos los sensores. Para esta funcionalidad hemos integrado dos cámaras: una para simular la perspectiva del conductor y otra para visualizar el vehículo en su entorno.
+```python
+def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05, client:carla.Client=None)
+def add_one_vehicle(world:carla.World, ego_vehicle:bool=False, vehicle_type:str=None, 
+                    tag:str='*vehicle*', transform:carla.Transform=None)
+def add_vehicles_randomly(world:carla.World, number:int) # Spawn Points
+```
 
-Después, nos centramos en definir el vehículo que queríamos controlar, conocido como ***Ego Vehicle*** en CARLA, al que añadiremos los sensores. Para esta funcionalidad hemos integrado dos cámaras: una para simular la perspectiva del conductor y otra para visualizar el vehículo en su entorno.
+En el modo asíncrono de CARLA, el servidor se ejecuta a máxima velocidad, mientras que en el modo síncrono, el cliente indica al servidor cuándo actualizar (*world.tick()*). El modo síncrono se emplea comúnmente en entrenamientos de modelos, permitiendo detener la simulación durante el procesamiento. Sin embargo, la inferencia se realiza en modo asíncrono, replicando así condiciones más cercanas a la realidad. El parámetro *fixed_delta_seconds* establece un intervalo de tiempo fijo entre *frames*, es decir, la cantidad de tiempo que se detiene la simulación.
 
 ## Interfaz
 
 Para la Interacción Humano-Robot (HRI) hemos utilizado la biblioteca ***Pygame***, creando una pantalla que nos permite visualizar el contenido de ambas cámaras de manera simultánea.
+```python
+def setup_pygame(size:tuple[int, int], name:str)
+```
 
 También hemos incluido un par de botones para aumentar o disminuir el *throttle*, es decir, la cantidad de acelerador que se aplica en el coche.
 <figure class="align-center" style="max-width: 100%">
@@ -123,4 +132,4 @@ class Teleoperator:
 
 ## Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GHUfHbij0Ms?si=q624w4l_3DTorCOp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qzD1aoslRfE?si=zijuSd1kQ_ayODg9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

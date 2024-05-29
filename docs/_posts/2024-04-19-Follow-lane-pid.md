@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: PID"
-last_modified_at: 2024-05-24T13:57:00
+last_modified_at: 2024-05-29T08:27:00
 categories:
   - Blog
 tags:
@@ -8,7 +8,7 @@ tags:
   - Redes neuronales
 ---
 
-Implementaremos una solución combinando múltiples redes neuronales para detectar el carril y calcular la desviación del vehículo respecto al mismo. Esta información se enviará a un controlador PID para corregir la desviación y mantener al vehículo en adecuadamente en el centro del carril.
+Implementaremos una solución combinando múltiples redes neuronales para detectar el carril y calcular la desviación del vehículo respecto al mismo. Esta información se enviará a un controlador PID para corregir la desviación y mantener el vehículo en el centro del carril. Utilizaremos el modo asíncrono de CARLA ya que es el que mejor se ajusta al mundo real.
 
 ## Índice
 - [Detección de carril](#detección-de-carril)
@@ -27,7 +27,7 @@ Contamos con una red neuronal para detectar el carril, la cual nos proporciona d
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_pid/linear_regression.png" alt="">
 </figure>
 
-Hemos definido una altura máxima para la detección del carril, creando así la forma de un trapecio. Los puntos que se encuentren dentro de este trapecio delimitado pdefinen el área del carril. Además, hemos integrado una función de seguridad: si perdemos el seguimiento de una de las líneas del carril durante varias iteraciones consecutivas, detenemos la ejecución del programa. En casos donde no se detecten líneas, volvemos a utilizar la última medida válida.
+Hemos definido una altura máxima para la detección del carril, creando así la forma de un trapecio. Los puntos que se encuentren dentro de este trapecio delimitado pdefinen el área del carril. Además, hemos integrado una función de seguridad: si perdemos el seguimiento de una de las líneas del carril durante varias iteraciones consecutivas o perdemos ambas líneas del carril, detenemos la ejecución del programa. En casos donde no se detecten líneas, volvemos a utilizar la última medida válida.
 
 Para filtrar mediciones erróneas, hemos implementado una memoria que guarda las cinco últimas detecciones de las líneas, junto con el ángulo que cada una forma con la horizontal. Si el ángulo de la detección actual difiere lo suficiente de la media de los ángulos almacenados en esta memoria, descartamos la medida y empleamos la última detección válida. Estas mediciones incorrectas también se consideran al evaluar si hemos perdido el carril.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0MiUoJePh-s?si=tbMwHcbj9cTxUHj_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -42,10 +42,10 @@ class Camera(Sensor):
 
 ## Controlador PID
 
-La desviación en el eje *x* representa el error que recibe nuestro controlador, el cual es principalmente un controlador PD para el giro del volante (*steer*). El componente proporcional normaliza el error en un rango de 0.0 a 1.0, que es el rango de control proporcionado por Carla. Sin embargo, si el error supera cierto umbral, lo incrementamos ligeramente para mejorar el rendimiento en las curvas. Respecto al componente derivativo, lo hemos incorporado para prevenir movimientos oscilatorios al salir de las curvas, ya que resta el error anterior reducido. Por lo tanto, solo consideramos el error anterior si su signo difiere del error actual, ya que de lo contrario, podría afectar negativamente la conducción en las curvas.
+La desviación en el eje *x* representa el error que recibe nuestro controlador, el cual es principalmente un controlador PD para el giro del volante (*steer*). El componente proporcional normaliza el error en un rango de 0.0 a 1.0, que es el rango de control proporcionado por Carla. Sin embargo, si el error supera cierto umbral, lo incrementamos ligeramente para mejorar el rendimiento en las curvas. Respecto al componente derivativo, lo hemos incorporado para prevenir movimientos oscilatorios al salir de las curvas, ya que resta el error anterior reducido. Por lo tanto, solo consideramos el error anterior si su signo difiere del error actual, ya que, de lo contrario, podría afectar negativamente la conducción en las curvas.
 
-En cuanto al control de los pedales, si el error es menor que un umbral determinado, únicamente aceleramos; de lo contrario, aplicamos freno y reducimos la aceleración. Para lograr una velocidad alta lo antes posible, durante las primeras iteraciones incrementamos la presión sobre el acelerador.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2le6gn2_RYU?si=or4z7dg026Ggcz2f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+En cuanto al control de los pedales, si el error es menor que un umbral determinado, únicamente aceleramos. De lo contrario, reducimos la aceleración y aplicamos freno a corde a la velocidad actual de coche
+<iframe width="560" height="315" src="https://www.youtube.com/embed/px_omrxt3zU?si=9sj4S-PMPfa_j-xu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Profiling
 
