@@ -123,7 +123,7 @@ class CameraRGB(Sensor):
             self._threshold_road_per = 90.0
             self._threshold_lane_mask = 0.05
             self._ymin_lane = 275 
-            self._angle_lane = 7
+            self._angle_lane = 10
             self._mem_max = 4
 
             # Initialize
@@ -162,7 +162,7 @@ class CameraRGB(Sensor):
         # Memory lane
         if len(index_mask[0]) < 10:
             self._count_mem_lane[index] += 1
-            return self._coefficients[-1, index, 0:2], False
+            return self._coefficients[-1, index, 0:2], False, mask
         else:
             self._count_mem_lane[index] = 0
 
@@ -176,7 +176,7 @@ class CameraRGB(Sensor):
 
         if diff > self._angle_lane and self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] += 1
-            return self._coefficients[-1, index, 0:2], diff <= self._angle_lane * 1.5
+            return self._coefficients[-1, index, 0:2], diff <= self._angle_lane * 1.5, mask
         elif self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] = 0
 
@@ -189,7 +189,7 @@ class CameraRGB(Sensor):
         # Update count 
         self._count_coef[index] += 1
 
-        return self._coefficients[-1, index, 0:2], True
+        return self._coefficients[-1, index, 0:2], True, mask
 
     def _detect_lane(self, data:list, canvas:list, mask:list): 
         #init_time = time.time_ns()
@@ -209,8 +209,8 @@ class CameraRGB(Sensor):
         
         #init_time = time.time_ns()
         _, left_mask, right_mask = model_output[0]
-        coef_left, see_line_left = self._mask_lane(mask=left_mask, index=LEFT_LANE)
-        coef_right, see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
+        coef_left, see_line_left, mask_left = self._mask_lane(mask=left_mask, index=LEFT_LANE)
+        coef_right, see_line_right, mask_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
         assert see_line_right == True or see_line_left == True, "Lane not found"
 
         count_x = count_y = 0
@@ -232,6 +232,9 @@ class CameraRGB(Sensor):
                 region_mask = mask[y, x_left:x_right]
                 count_total += x_right - x_left
                 count_road += np.count_nonzero(region_mask == ROAD)
+
+        canvas[mask_left > self._threshold_lane_mask, :] = [255, 0, 0]
+        canvas[mask_right > self._threshold_lane_mask, :] = [0, 255, 0]
 
         #print("Lane detection:", time.time_ns() - init_time, "ns")
         #init_time = time.time_ns()
