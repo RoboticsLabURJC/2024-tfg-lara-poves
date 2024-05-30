@@ -63,11 +63,9 @@ class CarlaDiscreteBasic(gym.Env):
         # Init locations
         self._town = 'Town04'
         self._init_locations = [
+            carla.Transform(carla.Location(x=-25.0, y=-252, z=0.5), carla.Rotation(yaw=125.0)),
+            carla.Transform(carla.Location(x=-25.0, y=-245.75, z=0.5), carla.Rotation(yaw=125.0)),
             carla.Transform(carla.Location(x=198.5, y=-163, z=0.5), carla.Rotation(yaw=90.0)),
-            carla.Transform(carla.Location(x=198.5, y=-163, z=0.5), carla.Rotation(yaw=90.0)),
-            carla.Transform(carla.Location(x=198.5, y=-163, z=0.5), carla.Rotation(yaw=90.0)),
-            carla.Transform(carla.Location(x=198.5, y=-163, z=0.5), carla.Rotation(yaw=90.0)),
-            carla.Transform(carla.Location(x=198.5, y=-163, z=0.5), carla.Rotation(yaw=90.0))
         ]
 
         # Init simulation
