@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-05-24T09:20:00
+last_modified_at: 2024-06-03T09:32:00
 categories:
   - Blog
 tags:
@@ -297,7 +297,7 @@ EfficientViT es evaluado en tres tareas principales: segmentación semántica, s
 Hemos añadido varias mejoras en el manejo de los sensores, la principal es mostrar el número de *frames* por segundo a los que itera nuestro programa. También hemos integrado la **red de segmentación semántica EfficientViT** en nuestro código para poder comprender el entorno. Para ello, hemos añadido nuevos atributos en la clase *CameraRGB* y nuevos parámetros en la función referente a la cámara de la clase *Vehicle_sensors*.
 ```python
 def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
-                   transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None, text:str=None)
+                   transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None, text:str='')
 ```
 
 La red neuronal recibe como entrada una imagen en **RGB** con dimensiones de **512x512** píxeles, por tanto, es fundamental garantizar que la imagen esté en dicho formato. Para asegurar las dimensiones, configuramos directamente la cámara en Carla a 512x512, ya que realizar un reescalado podría deformar los objetos, lo que afectaría negativamente al rendimiento de la red neuronal.
