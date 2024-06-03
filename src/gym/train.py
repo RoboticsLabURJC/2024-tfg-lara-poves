@@ -80,7 +80,6 @@ def main(args):
 
     # Create, train and save the model
     model = alg(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
-    model.set_random_seed(SEED)
     model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, 
                 tb_log_name=log_name, progress_bar=True)
     cont_save = '/' + args.alg + '-' + args.env
@@ -112,7 +111,7 @@ if __name__ == "__main__":
         type=str, 
         required=True, 
         choices=possible_envs,
-        help='The Gym environment ID. Possible values are: {' + ', '.join(possible_envs) + '}'
+        help='Gym environment. Possible values are: {' + ', '.join(possible_envs) + '}'
     )
     parser.add_argument(
         '--alg', 
