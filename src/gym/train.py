@@ -111,7 +111,7 @@ if __name__ == "__main__":
         type=str, 
         required=True, 
         choices=possible_envs,
-        help='The Gym environment ID. Possible values are: {' + ', '.join(possible_envs) + '}'
+        help='Gym environment. Possible values are: {' + ', '.join(possible_envs) + '}'
     )
     parser.add_argument(
         '--alg', 

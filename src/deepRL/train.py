@@ -1,140 +1,105 @@
-import gymnasium as gym
-from gym import spaces
+from environment import CarlaDiscreteBasic
+import argparse
+from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
-import sys
-import numpy as np
-import carla
-import random
 
-src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.insert(0, src_path)
+SEED = 16
 
-from configcarla import SIZE_CAMERA
-import configcarla
+alg_callable = {
+    'DQN': DQN,
+    'A2C': A2C,
+    'DDPG': DDPG, 
+    'TD3': TD3,
+    'SAC': SAC,
+    'PPO': PPO
+}
 
-class CarlaDiscreteBasic(gym.Env):
-    def __init__(self, train:bool, port:int=2000, fixed_delta_seconds=0.0, num_points_line:int=5, range_throttle:int=10, range_steer:int=50):
-        self._dev = 0
-        
-        # States
-        self.observation_space = spaces.Dict(
-            {
-                "cm": spaces.Box(
-                    low=np.full((2,), -SIZE_CAMERA / 2, dtype=np.int32),
-                    high=np.full((2,), SIZE_CAMERA / 2, dtype=np.int32),
-                    shape=(2,),
-                    dtype=np.int32
-                ),
+env_callable = {
+    'CarlaDiscreteBasic': CarlaDiscreteBasic
+}
 
-                "left_points": spaces.Box(
-                    low=np.full((num_points_line, 2), 0, dtype=np.int32),
-                    high=np.full((num_points_line, 2), SIZE_CAMERA - 1, dtype=np.int32),
-                    shape=(num_points_line, 2),
-                    dtype=np.int32
-                ),
+def check_dir(dir:str, env:str):
+    if not os.path.exists(dir):
+        os.makedirs(dir)
 
-                "right_points": spaces.Box(
-                    low=np.full((num_points_line, 2), 0, dtype=int),
-                    high=np.full((num_points_line, 2), SIZE_CAMERA - 1, dtype=np.int32),
-                    shape=(num_points_line, 2),
-                    dtype=np.int32
-                ),
+    dir = dir + env
+    if not os.path.exists(dir):
+        os.makedirs(dir)
 
-                "area": spaces.Box(
-                    low=0,
-                    high=SIZE_CAMERA * SIZE_CAMERA,
-                    shape=(1,),
-                    dtype=np.int32
-                )
-            }
-        )
+    return dir
 
-        # Actions
-        self._action_to_control = {}
-        self._range_throttle = range_throttle
-        self._range_steer = range_steer
+def main(args):
+    configuracion = {
+        "learning_rate": 0.1,
+        "batch_size": 128,
+        "buffer_size": 50000,
+        "learning_starts": 0,
+        "gamma": 0.99,
+        "target_update_interval": 200,
+        "train_freq": 1,
+        "gradient_steps": -1,  
+        "exploration_fraction": 0.05,
+        "exploration_final_eps": 0.1,
+        "policy_kwargs": {
+            "net_arch": [256, 256]
+        }
+    }
 
-        for i in range(self._range_throttle + 1):
-            for j in range(self._range_steer + 1):
-                self._action_to_control[i * self._range_steer + j] = np.array([i / self._range_throttle, j / self._range_steer])
+    alg_class = alg_callable[args.alg]
+    env_class = env_callable[args.env]
 
-        self.action_space = spaces.Discrete(self._range_steer * self._range_throttle)
+    dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/'
+    log_dir = check_dir(dir + 'log/', args.env)
+    model_dir = check_dir(dir + 'model/', args.env)
 
-        # Init locations
-        self._town = 'Town04'
-        self._init_locations = [
-            carla.Transform(carla.Location(x=-25.0, y=-252, z=0.5), carla.Rotation(yaw=125.0)),
-            carla.Transform(carla.Location(x=-25.0, y=-245.75, z=0.5), carla.Rotation(yaw=125.0)),
-            carla.Transform(carla.Location(x=198.5, y=-163, z=0.5), carla.Rotation(yaw=90.0)),
-        ]
+    log_name = args.alg + '-' + args.env
+    env = env_class(train=True, fixed_delta_seconds=0.05, human=True)
+    
+    model = alg_class("MultiInputPolicy", env, verbose=1, seed=SEED, tensorboard_log=log_dir, **configuracion)
+    model.learn(total_timesteps=5, log_interval=1, tb_log_name=log_name, progress_bar=True)
+    
+    files = os.listdir(dir + 'model')
+    num_files = len(files)
+    model.save(model_dir + '/' + args.alg + '-' + args.env + str(num_files))
 
-        # Init simulation
-        if train:
-            assert fixed_delta_seconds > 0.0, "In synchronous mode fidex_delta_seconds can't be 0.0"
-        self._world, _ = configcarla.setup_carla(name_world=self._town, port=port, syn=train, fixed_delta_seconds=fixed_delta_seconds)
-        
-        # Swap ego vehicle
-        self._ego_vehicle = configcarla.add_one_vehicle(world=self._world, vehicle_type='vehicle.lincoln.mkz_2020',
-                                                        ego_vehicle=True, transform=random.choice(self._init_locations))
-        transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
-        self._sensors = configcarla.Vehicle_sensors(vehicle=self._ego_vehicle, world=self._world)
-        self._camera = self._sensors.add_camera_rgb(transform=transform, seg=True, lane=True, canvas_seg=False)
-
-    def _get_obs(self):
-        cm = self._camera.get_lane_cm()
-        area = self._camera.get_lane_area()
-        left_points, right_points = self._camera.get_lane_points()
-        
-        return {"cm": cm, "area": area, "left_points": left_points, "right_points": right_points}
-
-    def _get_info(self):
-        return {"desviation": self._dev}
-
-    def step(self, action):
-        # Exec actions
-        throttle, steer = self._action_to_control[action]
-        control = carla.VehicleControl()
-        control.throttle = throttle
-        control.steer = steer
-        self._ego_vehicle.apply_control(control)
-
-        terminated = False
-        try:
-            # Update data
-            self._world.tick()
-            self._sensors.update_data()
-
-            # Calculate reward
-            self._dev = self._camera.get_deviation()
-            reward = self._dev if self._dev < 0 else self._dev * -1
-            
-        except AssertionError:
-            terminated = True
-            reward = -SIZE_CAMERA / 2
-            if self._dev >= 0:
-                self._dev = abs(reward)
-            else:
-                self._dev = reward
-
-        return self._get_obs(), reward, terminated, False, self._get_info()
-
-    def reset(self, seed=None):
-        super().reset(seed=seed)
-        self._ego_vehicle.set_transform(random.choice(self._init_locations))
-
-    def render(self):
-        pass # No rendering
-
-def main():
-    cv = CarlaDiscreteBasic(train=True, fixed_delta_seconds=0.05)
-    print(cv.observation_space)
-    print(cv.action_space)
-    cv.reset()
-    for i in range(100):
-        obs, reward, terminate, truncated, info = cv.step(action = 533)
+    '''
+    print(env.observation_space)
+    print(env.action_space)
+    '''
+    '''
+    env.reset()
+    terminated = False
+    while not terminated:
+        obs, reward, terminated, truncated, info = env.step(action = 533)
         print(reward, info)
-        if terminate or truncated:
-            break
+    env.close()
+    '''
+    
 
 if __name__ == "__main__":
-    main()
+    possible_envs = [
+        "CarlaDiscreteBasic"
+    ]
+    possible_algs = list(alg_callable.keys())
+
+    parser = argparse.ArgumentParser(
+        description="Run a training on a specified Gym environment",
+        usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
+            "} --alg {" + ",".join(possible_algs) + "}"
+    )
+    parser.add_argument(
+        '--env', 
+        type=str, 
+        required=True, 
+        choices=possible_envs,
+        help='Gym environment. Possible values are: {' + ', '.join(possible_envs) + '}'
+    )
+    parser.add_argument(
+        '--alg', 
+        type=str, 
+        required=True, 
+        choices=possible_algs,
+        help='The algorithm to use. Possible values are: {' + ', '.join(possible_algs) + '}'
+    )
+
+    main(parser.parse_args())

@@ -159,24 +159,40 @@ class CameraRGB(Sensor):
         mask = mask[:, :512]
         index_mask = np.where(mask > self._threshold_lane_mask)
 
+        # Remove outliers
+        if self._count_coef[index] >= SIZE_MEM:
+            coefficients = self._coefficients[-1, index, 0:2]
+        else:
+            coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
+
+        th = 55
+        x_coef = []
+        y_coef = []
+        for y, x in zip(index_mask[0], index_mask[1]):
+            x_1 = coefficients[0] * y + coefficients[1] + th
+            x_2 = coefficients[0] * y + coefficients[1] - th
+
+            if x_1 <= x <= x_2 or x_2 <= x <= x_1:
+                x_coef.append(x)
+                y_coef.append(y)
+
         # Memory lane
-        if len(index_mask[0]) < 10:
+        if len(x_coef) < 10:
             self._count_mem_lane[index] += 1
-            return self._coefficients[-1, index, 0:2], False, mask
+            return self._coefficients[-1, index, 0:2], False
         else:
             self._count_mem_lane[index] = 0
 
         # Linear regression
-        coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
+        coefficients = np.polyfit(y_coef, x_coef, 1)
 
         # Check measure
         mean = np.mean(self._coefficients[:, index, 2])
         angle = math.degrees(math.atan(coefficients[0])) % 180
-        diff = abs(mean - angle)
-
-        if diff > self._angle_lane and self._count_coef[index] >= SIZE_MEM:
+        
+        if abs(mean - angle) > self._angle_lane and self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] += 1
-            return self._coefficients[-1, index, 0:2], diff <= self._angle_lane * 1.5, mask
+            return self._coefficients[-1, index, 0:2], abs(angle - mean) > self._angle_lane * 2
         elif self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] = 0
 
@@ -189,7 +205,7 @@ class CameraRGB(Sensor):
         # Update count 
         self._count_coef[index] += 1
 
-        return self._coefficients[-1, index, 0:2], True, mask
+        return self._coefficients[-1, index, 0:2], True
 
     def _detect_lane(self, data:list, canvas:list, mask:list): 
         #init_time = time.time_ns()
@@ -209,8 +225,8 @@ class CameraRGB(Sensor):
         
         #init_time = time.time_ns()
         _, left_mask, right_mask = model_output[0]
-        coef_left, see_line_left, mask_left = self._mask_lane(mask=left_mask, index=LEFT_LANE)
-        coef_right, see_line_right, mask_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
+        coef_left, see_line_left= self._mask_lane(mask=left_mask, index=LEFT_LANE)
+        coef_right, see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
         assert see_line_right == True or see_line_left == True, "Lane not found"
 
         count_x = count_y = 0
@@ -232,9 +248,6 @@ class CameraRGB(Sensor):
                 region_mask = mask[y, x_left:x_right]
                 count_total += x_right - x_left
                 count_road += np.count_nonzero(region_mask == ROAD)
-
-        canvas[mask_left > self._threshold_lane_mask, :] = [255, 0, 0]
-        canvas[mask_right > self._threshold_lane_mask, :] = [0, 255, 0]
 
         #print("Lane detection:", time.time_ns() - init_time, "ns")
         #init_time = time.time_ns()
@@ -300,7 +313,11 @@ class CameraRGB(Sensor):
             surface_seg = pygame.transform.scale(surface_seg, self._rect_extra.size)
 
             # Write text
-            write_text(text="Segmented "+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
+            text = ""
+            if self._canvas_seg:
+                text = "Segmented "
+
+            write_text(text=text+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
                        bold=True, size=self._size_text, point=(self._rect_extra.size[0], 0))
             
             if self._lane:
@@ -331,7 +348,7 @@ class CameraRGB(Sensor):
         #init_time = time.time_ns()
         if self._seg:
             self._process_seg(image_data)
-            init_time = time.time_ns()
+            #init_time = time.time_ns()
 
         if self._rect_org != None:
             # Reserve mirror effect
@@ -353,7 +370,7 @@ class CameraRGB(Sensor):
         return self._road_percentage
     
     def get_lane_cm(self):
-        return self._cm
+        return np.array(self._cm)
     
     def get_lane_area(self):
         return self._area
@@ -629,7 +646,7 @@ class Vehicle_sensors:
     
     def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
                        transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
-                       text:str=None, lane:bool=False, canvas_seg:bool=True):
+                       text:str='', lane:bool=False, canvas_seg:bool=True):
         if self._screen == None:
             init = None
             init_extra = None
@@ -722,6 +739,7 @@ class PID:
         self._vehicle = vehicle
         self._kp = 1 / (SIZE_CAMERA / 2)
         self._kd = -self._kp / 1.7
+        self._throttle = 0.6
 
         self._error = 0
         self._prev_error = 0
@@ -737,15 +755,12 @@ class PID:
 
         v = self._vehicle.get_velocity()
         v = carla.Vector3D(v).length()
-
-        if error > 10:
-            control.throttle = 0.45
-            if v > 12.0:
-                control.brake = 0.38
-            elif v > 8.5:
-                control.brake = 0.22
-        else:
-            control.throttle = 0.58
+        if v > 10:
+            control.brake = self._throttle / 2
+        elif v > 7:
+            control.brake = self._throttle / 5
+            
+        control.throttle = self._throttle
 
         if error > 20:
            error *= 1.15

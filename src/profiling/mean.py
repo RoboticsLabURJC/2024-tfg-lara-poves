@@ -7,7 +7,7 @@ import numpy as np
 MILI_TO_NANO = 10**6
 
 def get_data():
-    dir = "/home/lara/2024-tfg-lara-poves/src/profiling/times"
+    dir = "/home/alumnos/lara/2024-tfg-lara-poves/src/profiling/times"
     all_tasks = set() 
     data = defaultdict(dict)  
 
