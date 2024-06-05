@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-06-03T13:51:00
+last_modified_at: 2024-06-04T12:31:00
 categories:
   - Blog
 tags:
@@ -73,26 +73,29 @@ class Vehicle_sensors:
                        transform:carla.Transform=carla.Transform())
 
     def destroy(self)
+    def reset(self)
 ```
 
-Cada uno de los sensores pertenece a la clase abstracta ***Sensor***, la cual guarda la instancia del sensor en CARLA, contiene el *callback* que almacena los datos del sensor en una cola *thread_safe* y facilita el acceso a los datos almacenados en la cola. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor, permitiéndonos actualizar su información y mostrarla en la pantalla si es indica.
+Cada sensor pertenece a la clase abstracta ***Sensor***, la cual guarda la instancia del sensor en CARLA y contiene el *callback* que almacena la última medida recogida del entorno en un atributo de la clase. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor, permitiéndonos actualizar su información y mostrarla en la pantalla si es necesario. La función *reset()* inicializa nuevamente algunos atributos de la clase, simulando que el objeto acaba de ser creado; por ejemplo, reiniciar un contador a cero.
 ```python
 class Sensor(ABC):
     def __init__(self, sensor):
         self.sensor = sensor
-        self.queue = Queue()
+        self.data = None
         self.sensor.listen(lambda data: self.__callback_data(data))
 
     def __callback_data(self, data):
-        self.queue.put(data)
+        self.data = data
 
-    def get_data(self):
-        if not self.queue.empty():
-            return self.queue.get(False) # Non-blocking call 
-        return None
+    def get_last_data(self):
+        return self.data
 
     @abstractmethod
     def process_data(self):
+        pass
+
+    @abstractmethod
+    def reset(self):
         pass
 
 class Vehicle_sensors:
