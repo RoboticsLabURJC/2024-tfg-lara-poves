@@ -1,11 +1,11 @@
 import gymnasium as gym
+from gymnasium import spaces
 import os
 import sys
 import numpy as np
 import carla
 import random
 import pygame
-import time
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -19,37 +19,37 @@ class CarlaDiscreteBasic(gym.Env):
         self._dev = 0
         self._jump = False
         self._human = human
-        
+
         # States
-        self.observation_space = gym.spaces.dict.Dict(
-            {
-                "cm": gym.spaces.Box(
-                    low=np.full((2,), -SIZE_CAMERA / 2, dtype=np.int32),
-                    high=np.full((2,), SIZE_CAMERA / 2, dtype=np.int32),
+        self.observation_space = spaces.Dict(
+            spaces={
+                "cm": spaces.Box(
+                    low=0,
+                    high=SIZE_CAMERA - 1,
                     shape=(2,),
                     dtype=np.int32
                 ),
                 
-                "left_points": gym.spaces.Box(
-                    low=np.full((num_points_line, 2), 0, dtype=np.int32),
-                    high=np.full((num_points_line, 2), SIZE_CAMERA - 1, dtype=np.int32),
+                "left_points": spaces.Box(
+                    low=0,
+                    high=SIZE_CAMERA - 1,
                     shape=(num_points_line, 2),
                     dtype=np.int32
                 ),
 
-                "right_points": gym.spaces.Box(
-                    low=np.full((num_points_line, 2), 0, dtype=int),
-                    high=np.full((num_points_line, 2), SIZE_CAMERA - 1, dtype=np.int32),
+                "right_points": spaces.Box(
+                    low=0,
+                    high=SIZE_CAMERA - 1,
                     shape=(num_points_line, 2),
                     dtype=np.int32
                 ),
 
-                "area": gym.spaces.Box(
+                "area": spaces.Box(
                     low=0,
                     high=SIZE_CAMERA * SIZE_CAMERA,
-                    shape=(),
+                    shape=(1,),
                     dtype=np.int32
-                )
+                ),
             }
         )
 
@@ -58,20 +58,21 @@ class CarlaDiscreteBasic(gym.Env):
         self._range_vel = range_vel
         self._range_steer = range_steer
 
-        for i in range(self._range_vel + 1):
+        for i in range(self._range_vel):
             for j in range(self._range_steer + 1):
-                vel = i / self._range_vel * 10 # [0, 10]
+                vel = (i + 1) / self._range_vel * 10 # [1, 10]
                 steer = j / self._range_steer * 0.4 - 0.2 # [-0.2, 0.2]
                 self._action_to_control[i * self._range_steer + j] = np.array([vel, steer])
-        self.action_space = gym.spaces.Discrete(self._range_steer * self._range_vel)
+        self.action_space = spaces.Discrete(self._range_steer * (self._range_vel - 1))
 
         # Init locations
         self._town = 'Town05'
+        z = 0.1
         self._init_locations = [
-            carla.Transform(carla.Location(x=50.0, y=-145.7, z=0.5)),
-            carla.Transform(carla.Location(x=120.0, y=-137, z=0.5), carla.Rotation(yaw=22)),
-            carla.Transform(carla.Location(x=43.0, y=141.5, z=0.5), carla.Rotation(yaw=3)),
-            carla.Transform(carla.Location(x=111.0, y=135.5, z=0.5), carla.Rotation(yaw=-16))
+            carla.Transform(carla.Location(x=50.0, y=-145.7, z=z)),
+            carla.Transform(carla.Location(x=120.0, y=-137, z=z), carla.Rotation(yaw=22)),
+            carla.Transform(carla.Location(x=43.0, y=141.5, z=z), carla.Rotation(yaw=3)),
+            carla.Transform(carla.Location(x=111.0, y=135.5, z=z), carla.Rotation(yaw=-16))
         ]
         self._index_loc = random.randint(0, len(self._init_locations) - 1)
 
@@ -97,7 +98,7 @@ class CarlaDiscreteBasic(gym.Env):
         transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
         self._sensors = configcarla.Vehicle_sensors(vehicle=self._ego_vehicle, world=self._world,
                                                     screen=self._screen)
-        self._camera = self._sensors.add_camera_rgb(transform=transform, seg=True, lane=True,
+        self._camera = self._sensors.add_camera_rgb(transform=transform, seg=False, lane=True,
                                                     canvas_seg=False, size_rect=(SIZE_CAMERA, SIZE_CAMERA),
                                                     init_extra=init_driver, text='Driver view')
 
@@ -106,14 +107,15 @@ class CarlaDiscreteBasic(gym.Env):
             self._sensors.add_camera_rgb(transform=world_transform, size_rect=(SIZE_CAMERA, SIZE_CAMERA),
                                          init=(0, 0), text='World view')
 
-        self._init_time = time.time()
+        self._max_count = 600
+        self._count = 0
 
     def _get_obs(self):
         cm = self._camera.get_lane_cm()
-        area = self._camera.get_lane_area()
+        area = np.array([self._camera.get_lane_area()], dtype=np.int32)
         left_points, right_points = self._camera.get_lane_points()
-        
-        return {"cm": cm, "area": area, "left_points": left_points, "right_points": right_points}
+
+        return {"cm": cm, "left_points": left_points, "right_points": right_points, "area": area}
     
     def _get_info(self):
         return {"deviation": self._dev}
@@ -137,6 +139,8 @@ class CarlaDiscreteBasic(gym.Env):
         self._ego_vehicle.apply_control(control)
 
         terminated = False
+        truncated = False
+
         try:
             # Update data
             self._world.tick()
@@ -144,7 +148,7 @@ class CarlaDiscreteBasic(gym.Env):
 
             # Calculate reward
             self._dev = self._camera.get_deviation()
-            reward = self._dev if self._dev < 0 else self._dev * -1
+            reward = 1 / (abs(self._dev) + 1)
 
             t = self._ego_vehicle.get_transform()
             if self._index_loc >= 2:
@@ -153,37 +157,49 @@ class CarlaDiscreteBasic(gym.Env):
                     self._ego_vehicle.set_transform(t)
                     self._jump = True
                 elif t.location.y < -146:
-                    return
+                    reward = 1
+                    terminated = True
             else:
                 if not self._jump and t.location.y > -18:
                     t.location.y = 15
                     self._ego_vehicle.set_transform(t)
                     self._jump = True
                 elif t.location.x < 43:
-                    return
+                    reward = 1
+                    terminated = True
             
         except AssertionError:
             terminated = True
-            reward = -SIZE_CAMERA / 2
+            reward = 0
             if self._dev >= 0:
                 self._dev = abs(reward)
             else:
                 self._dev = reward
 
-        if time.time() - self._init_time > 3 * 60:
+        if self._count > self._max_count:
             terminated = True 
+            reward = 0
+            truncated = True
+        self._count += 1
 
-        return self._get_obs(), reward, terminated, False, self._get_info()
+        if not terminated:
+            reward += vel_current / 100 
+
+        return self._get_obs(), reward, terminated, truncated, self._get_info()
 
     def reset(self, seed=None):
-        super().reset(seed=seed)
-        self._init_time = time.time()
+        if seed is not None:
+            super().reset(seed=seed)
+            
+        self._count = 0
+        self._jump = False
 
         self._index_loc = random.randint(0, len(self._init_locations) - 1)
         self._ego_vehicle.set_transform(self._init_locations[self._index_loc])
         self._ego_vehicle.apply_control(carla.VehicleControl())
+        self._sensors.reset()
 
-        return self._get_obs(), self._get_info()
+        return self._get_obs(), {}
 
     def close(self):
         pygame.quit()
