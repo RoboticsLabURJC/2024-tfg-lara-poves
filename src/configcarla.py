@@ -94,6 +94,10 @@ class Sensor(ABC):
     def process_data(self):
         pass
 
+    @abstractmethod
+    def reset(self):
+        pass
+
 class CameraRGB(Sensor):      
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
                  text:str, screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], 
@@ -107,14 +111,14 @@ class CameraRGB(Sensor):
         self._road_percentage = 0
 
         self._seg = seg
+        self._canvas_seg = canvas_seg
         if seg:
-            self._canvas_seg = canvas_seg
             self._seg_model = EV.EfficientVit()
+        else:
+            self._canvas_seg = False
 
         self._lane = lane
         if lane:
-            assert seg, "Segmentation must be active for lane detection"
-
             file = '/home/alumnos/lara/2024-tfg-lara-poves/best_model_torch.pth'
             self._lane_model = torch.load(file)
             self._lane_model.eval()
@@ -148,6 +152,17 @@ class CameraRGB(Sensor):
 
             if init_extra != None:
                 self._rect_extra = sub_screen.get_rect(topleft=init_extra)
+            
+    def reset(self):
+        self._deviation = 0
+        self._road_percentage = 0
+        self._coefficients = np.zeros((SIZE_MEM, 2, 3), dtype=float)
+        self._count_coef = [0, 0]
+        self._count_mem_road = 0
+        self._count_mem_lane = [0, 0]
+        self._cm = np.zeros((2,), dtype=np.int32),
+        self._area = np.int32(0)
+        self._surface_seg = None
 
     def _mask_lane(self, mask:list, index:int):
         if index == LEFT_LANE:
@@ -158,6 +173,11 @@ class CameraRGB(Sensor):
 
         mask = mask[:, :512]
         index_mask = np.where(mask > self._threshold_lane_mask)
+        if len(index_mask[0]) < 10:
+            self._count_mem_lane[index] += 1
+            return self._coefficients[-1, index, 0:2], False, mask
+        else:
+            self._count_mem_lane[index] = 0
 
         # Remove outliers
         if self._count_coef[index] >= SIZE_MEM:
@@ -179,7 +199,7 @@ class CameraRGB(Sensor):
         # Memory lane
         if len(x_coef) < 10:
             self._count_mem_lane[index] += 1
-            return self._coefficients[-1, index, 0:2], False
+            return self._coefficients[-1, index, 0:2], False, mask
         else:
             self._count_mem_lane[index] = 0
 
@@ -192,7 +212,7 @@ class CameraRGB(Sensor):
         
         if abs(mean - angle) > self._angle_lane and self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] += 1
-            return self._coefficients[-1, index, 0:2], abs(angle - mean) > self._angle_lane * 2
+            return self._coefficients[-1, index, 0:2], abs(angle - mean) > self._angle_lane * 2, mask
         elif self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] = 0
 
@@ -205,7 +225,7 @@ class CameraRGB(Sensor):
         # Update count 
         self._count_coef[index] += 1
 
-        return self._coefficients[-1, index, 0:2], True
+        return self._coefficients[-1, index, 0:2], True, mask
 
     def _detect_lane(self, data:list, canvas:list, mask:list): 
         #init_time = time.time_ns()
@@ -225,8 +245,8 @@ class CameraRGB(Sensor):
         
         #init_time = time.time_ns()
         _, left_mask, right_mask = model_output[0]
-        coef_left, see_line_left= self._mask_lane(mask=left_mask, index=LEFT_LANE)
-        coef_right, see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
+        coef_left, see_line_left, mask_l= self._mask_lane(mask=left_mask, index=LEFT_LANE)
+        coef_right, see_line_right, mask_r = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
         assert see_line_right == True or see_line_left == True, "Lane not found"
 
         count_x = count_y = 0
@@ -245,12 +265,16 @@ class CameraRGB(Sensor):
                 canvas[y, x_left:x_right] = [255, 240, 255]
 
                 # Road percentage
-                region_mask = mask[y, x_left:x_right]
                 count_total += x_right - x_left
-                count_road += np.count_nonzero(region_mask == ROAD)
+                if self._seg:
+                    region_mask = mask[y, x_left:x_right]
+                    count_road += np.count_nonzero(region_mask == ROAD)
 
         #print("Lane detection:", time.time_ns() - init_time, "ns")
         #init_time = time.time_ns()
+
+        #canvas[mask_l > self._threshold_lane_mask] = [0, 0, 255]
+        #canvas[mask_r > self._threshold_lane_mask] = [0, 255, 0]
 
         if count_total > 0:
             # Calculate center of mass
@@ -262,12 +286,13 @@ class CameraRGB(Sensor):
             self._area = np.int32(count_total)
 
             # Calculate road porcentage
-            self._road_percentage = count_road / count_total * 100
-            if self._road_percentage < self._threshold_road_per:
-                self._count_mem_road += 1
-                assert self._count_mem_road < self._mem_max, "Low percentage of lane"
-            else:
-                self._count_mem_road = 0
+            if self._seg:
+                self._road_percentage = count_road / count_total * 100
+                if self._road_percentage < self._threshold_road_per:
+                    self._count_mem_road += 1
+                    assert self._count_mem_road < self._mem_max, "Low percentage of lane"
+                else:
+                    self._count_mem_road = 0
 
             # Draw center of mass and vehicle
             cv2.line(canvas, (x_cm, 0), (x_cm, SIZE_CAMERA), (0, 255, 0), 2)
@@ -286,19 +311,23 @@ class CameraRGB(Sensor):
 
         # Prediction
         #init_time = time.time_ns()
-        pred = self._seg_model.predict(image_seg)
+        if self._seg:
+            pred = self._seg_model.predict(image_seg)
         #print("Seg prediction:", time.time_ns() - init_time, "ns")
 
         #init_time = time.time_ns()
-        if self._canvas_seg:
+        if self._canvas_seg and self._seg:
             canvas, mask = self._seg_model.get_canvas(image_data, pred)
             #print("Seg get canvas:", time.time_ns() - init_time, "ns")
         else:
             canvas = image_data
-            mask = pred
+            if self._seg:
+                mask = pred
 
-            if (SIZE_CAMERA, SIZE_CAMERA) != mask.shape:
-                mask = cv2.resize(mask, dsize=(SIZE_CAMERA, SIZE_CAMERA), interpolation=cv2.INTER_NEAREST)
+                if (SIZE_CAMERA, SIZE_CAMERA) != mask.shape:
+                    mask = cv2.resize(mask, dsize=(SIZE_CAMERA, SIZE_CAMERA), interpolation=cv2.INTER_NEAREST)
+            else:
+                mask = None
             #print("Seg get mask:", time.time_ns() - init_time, "ns")
 
         #init_time = time.time_ns()
@@ -314,7 +343,7 @@ class CameraRGB(Sensor):
 
             # Write text
             text = ""
-            if self._canvas_seg:
+            if self._canvas_seg and self._seg:
                 text = "Segmented "
 
             write_text(text=text+self.text, img=surface_seg, color=(0, 0, 0), side=RIGHT,
@@ -324,9 +353,10 @@ class CameraRGB(Sensor):
                 write_text(text="Deviation = "+str(int(abs(self._deviation)))+" (pixels)",
                            img=surface_seg, color=(0, 0, 0), side=LEFT, size=self._size_text, 
                            point=(0, self._rect_extra.size[0] - self._size_text), bold=True)
-                write_text(text=f"{self._road_percentage:.2f}% road", side=RIGHT, bold=True,
-                           img=surface_seg, color=(0, 0, 0), size=self._size_text, 
-                           point=(SIZE_CAMERA, self._rect_extra.size[0] - self._size_text))
+                if self._seg:
+                    write_text(text=f"{self._road_percentage:.2f}% road", side=RIGHT, bold=True,
+                               img=surface_seg, color=(0, 0, 0), size=self._size_text, 
+                               point=(SIZE_CAMERA, self._rect_extra.size[0] - self._size_text))
                 
             self._surface_seg = surface_seg
             self._screen.blit(surface_seg, self._rect_extra)
@@ -346,7 +376,7 @@ class CameraRGB(Sensor):
         #print("Camera init:", time.time_ns()- init_time, "ns")
 
         #init_time = time.time_ns()
-        if self._seg:
+        if self._seg or self._lane:
             self._process_seg(image_data)
             #init_time = time.time_ns()
 
@@ -370,7 +400,7 @@ class CameraRGB(Sensor):
         return self._road_percentage
     
     def get_lane_cm(self):
-        return np.array(self._cm)
+        return np.array(self._cm, dtype=np.uint32)
     
     def get_lane_area(self):
         return self._area
@@ -462,6 +492,10 @@ class Lidar(Sensor):
 
         if init != None:
             self._image = self._get_back_image()
+
+    def reset(self):
+        self._stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
+        self._time = -2
 
     def _get_back_image(self):
         image = pygame.Surface(self._size_screen)
@@ -693,6 +727,10 @@ class Vehicle_sensors:
             sensor.sensor.destroy()
 
         self._vehicle.destroy()
+
+    def reset(self):
+        for sensor in self.sensors:
+            sensor.reset()
 
 class Teleoperator:
     def __init__(self, vehicle:carla.Vehicle, steer:float=0.3, throttle:float=0.6, brake:float=1.0):

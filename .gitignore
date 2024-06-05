@@ -2,3 +2,4 @@ src/__pycache__/*
 src/tools
 best_model_torch.pth
 src/deepRL/__pycache__/*
+src/deepRL/models.txt
