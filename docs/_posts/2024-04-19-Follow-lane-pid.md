@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: PID"
-last_modified_at: 2024-06-02T12:43:00
+last_modified_at: 2024-06-03T12:43:00
 categories:
   - Blog
 tags:
@@ -16,6 +16,7 @@ Implementaremos una solución combinando múltiples redes neuronales para detect
   - [Red neuronal de segmentación semántica](#red-neuronal-de-segmentación-semántica)
 - [Controlador PID](#controlador-pid)
 - [Profiling](#profiling)
+- [Puntos del carril](#puntos-del-carril)
 
 ## Detección de carril
 
@@ -61,3 +62,14 @@ Hemos dividido el código en secciones para evaluar las latencias y determinar d
 </figure>
 
 Un cambio que implementamos después de este análisis fue convertir la funcionalidad que encapsula *Seg get canvas* en opcional, ya que solo es útil para la visualización, ya que únicamente modifica el color del píxel dependiendo de la clase a la que pertenezca según la red de segmentación. Con esto, logramos ganar algo de velocidad de cara al seguimiento del carril.
+
+## Puntos del carril
+
+En la clase *CameraRGB*, hemos implementado una función que extrae un número específico de puntos en cada línea del carril y devuelve un *np.array* con sus coordendas (*x*, *y*). Dividimos la altura total del carril (eje *y*) en ese número de puntos, obteniendo así las coordenadas *y*, posteriormente calculamos las coordenadas *x* correspondientes a dichas alturas. Esta función está diseñada para ser utilizada en la siguiente etapa, donde entrenaremos un modelo de *deep* RL.
+```python
+def get_lane_points(self, num_points:int=5, show:bool=False):
+  return [left_points, right_points]
+```
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_pid/points_lane.png" alt="">
+</figure>
