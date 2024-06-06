@@ -9,7 +9,7 @@ CartPole-v1:
   target_update_interval: 10 # (F)
   train_freq: 256
   gradient_steps: 128 
-  exploration_fraction: 0.16 # Decay epsilon
+  exploration_fraction: 0.16 # Descenso gradual durante el 16% del tiempo
   exploration_final_eps: 0.04 # Final value of epsilon
   tau: 1 # Soft update coefficient (Polyak update), if 1 hard update
   policy_kwargs: 
