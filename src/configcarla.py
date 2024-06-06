@@ -296,7 +296,7 @@ class CameraRGB(Sensor):
             cv2.line(canvas, (middle, 0), (middle, SIZE_CAMERA), (255, 0, 0), 2)
             cv2.circle(canvas, (x_cm, y_cm), 9, (0, 255, 0), -1)
         else:
-            self._deviation = 0
+            self._deviation = SIZE_CAMERA / 2
             self._road_percentage = 0
         #print("Lane cm%:", time.time_ns() - init_time, "ns")
 

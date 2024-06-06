@@ -20,6 +20,7 @@ class CarlaDiscreteBasic(gym.Env):
         self._dev = 0
         self._vel = 0
         self._steer = 0
+        self._speed = 0
         self._jump = False
         self._human = human
 
@@ -123,7 +124,7 @@ class CarlaDiscreteBasic(gym.Env):
             self._sensors.add_camera_rgb(transform=world_transform, size_rect=(SIZE_CAMERA, SIZE_CAMERA),
                                          init=(0, 0), text='World view')
 
-        self._max_count = 600
+        self._max_count = 5000
         self._count = 0
         self._count_ep = 0
         self._total_reward = 0
@@ -136,7 +137,7 @@ class CarlaDiscreteBasic(gym.Env):
         return {"cm": cm, "left_points": left_points, "right_points": right_points, "area": area}
     
     def _get_info(self):
-        return {"deviation": self._dev, "steer": self._steer, "vel": self._vel}
+        return {"deviation": self._dev, "steer": self._steer, "vel": self._vel, "speed": self._speed}
 
     def step(self, action:int):
         try:
@@ -150,9 +151,9 @@ class CarlaDiscreteBasic(gym.Env):
         control.steer = self._steer
 
         # Set velocity
-        vel_current = self._ego_vehicle.get_velocity()
-        vel_current = carla.Vector3D(vel_current).length()
-        diff = self._vel - vel_current
+        self._speed = self._ego_vehicle.get_velocity()
+        self._speed = carla.Vector3D(self._speed).length()
+        diff = self._vel - self._speed
         if diff > 0:
             control.throttle = min(diff, 1)
         else:
@@ -206,7 +207,7 @@ class CarlaDiscreteBasic(gym.Env):
         self._count += 1
 
         if not terminated:
-            reward += vel_current / 100 
+            reward += self._speed / 100 
         self._total_reward += reward
 
         if terminated and self._train:

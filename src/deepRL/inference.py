@@ -28,7 +28,7 @@ def main(args):
     except:
         print("Model", model_file, "doesn't exit")
 
-    env = env_class(train=False, port=6016, human=True)
+    env = env_class(train=False, port=args.port, human=True)
     obs, _ = env.reset()
 
     total_reward = 0
@@ -40,9 +40,9 @@ def main(args):
 
     files = os.listdir(dir_csv)
     num_files = len(files) + 1
-    file_csv = open(dir_csv + 'data_' + str(args.n) + '_' + str(num_files), mode='w', newline='')
+    file_csv = open(dir_csv + 'data_' + args.n + '_' + str(num_files), mode='w', newline='')
     writer_csv = csv.writer(file_csv)
-    writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Velocity", "Steer"])
+    writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Velocity", "Steer", "Deviation", "Speed"])
     
     while True:
         action, _ = model.predict(obs, deterministic=True)
@@ -50,7 +50,8 @@ def main(args):
 
         step += 1
         total_reward += reward
-        writer_csv.writerow([step, reward, total_reward, info['vel'], info['steer']])        
+        writer_csv.writerow([step, reward, total_reward, info['vel'], info['steer'],
+                             abs(info['deviation']), info['speed']])        
 
         if terminated or truncated:
             break
@@ -64,9 +65,10 @@ if __name__ == "__main__":
     possible_algs = list(alg_callable.keys())
 
     parser = argparse.ArgumentParser(
-        description="Run a training on a specified Gym environment",
+        description="Execute an inference trial on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
-            "} --alg {" + ",".join(possible_algs) + "}"
+            "} --alg {" + ",".join(possible_algs) + \
+            "} --n <model_number> [--port <port_number>]"
     )
     parser.add_argument(
         '--env', 
@@ -86,7 +88,14 @@ if __name__ == "__main__":
         '--n', 
         type=str, 
         required=True, 
-        help='Integer'
+        help='Number of model'
+    )
+    parser.add_argument(
+        '--port', 
+        type=int, 
+        required=False, 
+        default=6016,
+        help='Port for Carla'
     )
 
     main(parser.parse_args())

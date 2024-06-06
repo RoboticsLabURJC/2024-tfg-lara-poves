@@ -30,14 +30,14 @@ def check_dir(dir:str, env:str):
 
 def main(args):
     model_params = {
-        "learning_rate": 0.01,
+        "learning_rate": 0.1,
         "batch_size": 50,
         "learning_starts": 0,
-        "gamma": 0.6,
+        "gamma": 0.6, # bajado
         "target_update_interval": 200,
-        "train_freq": 3,
+        "train_freq": 4,
         "gradient_steps": -1,
-        "exploration_fraction": 0.70,
+        "exploration_fraction": 0.70, # bajado porque hay menos acciones
         "exploration_final_eps": 0.01,
         'policy_kwargs': {
             'net_arch': [256, 256]
@@ -52,7 +52,7 @@ def main(args):
     model_dir = check_dir(dir + 'model/', args.env)
 
     log_name = args.alg + '-' + args.env
-    env = env_class(train=True, fixed_delta_seconds=0.04, human=False, port=6016)
+    env = env_class(train=True, fixed_delta_seconds=0.04, human=False, port=args.port)
 
     model = alg_class("MultiInputPolicy", env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
     model.learn(total_timesteps=1_100_000, log_interval=1, tb_log_name=log_name, progress_bar=True)
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Run a training on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
-            "} --alg {" + ",".join(possible_algs) + "}"
+            "} --alg {" + ",".join(possible_algs) + "} [--port <port_number>]"
     )
     parser.add_argument(
         '--env', 
@@ -85,6 +85,13 @@ if __name__ == "__main__":
         required=True, 
         choices=possible_algs,
         help='The algorithm to use. Possible values are: {' + ', '.join(possible_algs) + '}'
+    )
+    parser.add_argument(
+        '--port', 
+        type=int, 
+        required=False, 
+        default=6016,
+        help='Port for Carla'
     )
 
     main(parser.parse_args())
