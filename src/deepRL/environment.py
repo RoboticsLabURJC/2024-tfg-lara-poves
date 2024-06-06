@@ -6,6 +6,8 @@ import numpy as np
 import carla
 import random
 import pygame
+import os
+import csv
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -14,13 +16,27 @@ from configcarla import SIZE_CAMERA
 import configcarla
 
 class CarlaDiscreteBasic(gym.Env):
-    def __init__(self, human:bool, train:bool, port:int=2000, fixed_delta_seconds=0.0, 
-                 num_points_line:int=5, range_vel:int=10, range_steer:int=50):
+    def __init__(self, human:bool, train:bool, port:int=2000, fixed_delta_seconds=0.0):
         self._dev = 0
+        self._vel = 0
+        self._steer = 0
         self._jump = False
         self._human = human
 
+        # CSV file
+        self._train = train
+        if self._train:
+            dir_csv = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/CarlaDiscreteBasic/'
+            if not os.path.exists(dir_csv):
+                os.makedirs(dir_csv)
+            files = os.listdir(dir_csv)
+            num_files = len(files) + 1
+            self._file_csv = open(dir_csv + 'train_data_' + str(num_files), mode='w', newline='')
+            self._writer_csv = csv.writer(self._file_csv)
+            self._writer_csv.writerow(["Episode", "Reward", "Num_steps"])
+
         # States
+        self._num_points_line = 5
         self.observation_space = spaces.Dict(
             spaces={
                 "cm": spaces.Box(
@@ -33,14 +49,14 @@ class CarlaDiscreteBasic(gym.Env):
                 "left_points": spaces.Box(
                     low=0,
                     high=SIZE_CAMERA - 1,
-                    shape=(num_points_line, 2),
+                    shape=(self._num_points_line, 2),
                     dtype=np.int32
                 ),
 
                 "right_points": spaces.Box(
                     low=0,
                     high=SIZE_CAMERA - 1,
-                    shape=(num_points_line, 2),
+                    shape=(self._num_points_line, 2),
                     dtype=np.int32
                 ),
 
@@ -55,8 +71,8 @@ class CarlaDiscreteBasic(gym.Env):
 
         # Actions
         self._action_to_control = {}
-        self._range_vel = range_vel
-        self._range_steer = range_steer
+        self._range_vel = 10
+        self._range_steer = 20
 
         for i in range(self._range_vel):
             for j in range(self._range_steer + 1):
@@ -86,9 +102,9 @@ class CarlaDiscreteBasic(gym.Env):
             init_driver = None
 
         # Init simulation
-        if train:
+        if self._train:
             assert fixed_delta_seconds > 0.0, "In synchronous mode fidex_delta_seconds can't be 0.0"
-        self._world, _ = configcarla.setup_carla(name_world=self._town, port=port, syn=train, 
+        self._world, _ = configcarla.setup_carla(name_world=self._town, port=port, syn=self._train, 
                                                  fixed_delta_seconds=fixed_delta_seconds)
         
         # Swap ego vehicle
@@ -109,6 +125,8 @@ class CarlaDiscreteBasic(gym.Env):
 
         self._max_count = 600
         self._count = 0
+        self._count_ep = 0
+        self._total_reward = 0
 
     def _get_obs(self):
         cm = self._camera.get_lane_cm()
@@ -118,18 +136,23 @@ class CarlaDiscreteBasic(gym.Env):
         return {"cm": cm, "left_points": left_points, "right_points": right_points, "area": area}
     
     def _get_info(self):
-        return {"deviation": self._dev}
+        return {"deviation": self._dev, "steer": self._steer, "vel": self._vel}
 
     def step(self, action:int):
+        try:
+            action = action[0]
+        except IndexError:
+            action = int(action)
+
         # Exec actions
-        vel, steer = self._action_to_control[action]
+        self._vel, self._steer = self._action_to_control[action]
         control = carla.VehicleControl()
-        control.steer = steer
+        control.steer = self._steer
 
         # Set velocity
         vel_current = self._ego_vehicle.get_velocity()
         vel_current = carla.Vector3D(vel_current).length()
-        diff = vel - vel_current
+        diff = self._vel - vel_current
         if diff > 0:
             control.throttle = min(diff, 1)
         else:
@@ -184,14 +207,20 @@ class CarlaDiscreteBasic(gym.Env):
 
         if not terminated:
             reward += vel_current / 100 
+        self._total_reward += reward
+
+        if terminated and self._train:
+            self._count_ep += 1
+            self._writer_csv.writerow([self._count_ep, self._total_reward, self._count])
 
         return self._get_obs(), reward, terminated, truncated, self._get_info()
 
     def reset(self, seed=None):
         if seed is not None:
             super().reset(seed=seed)
-            
+
         self._count = 0
+        self._total_reward = 0
         self._jump = False
 
         self._index_loc = random.randint(0, len(self._init_locations) - 1)
@@ -202,4 +231,9 @@ class CarlaDiscreteBasic(gym.Env):
         return self._get_obs(), {}
 
     def close(self):
+        self._sensors.destroy()
+
+        if self._train:
+            self._file_csv.close()
         pygame.quit()
+        
