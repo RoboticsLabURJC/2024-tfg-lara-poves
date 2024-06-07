@@ -17,7 +17,7 @@ os.chdir('/home/alumnos/lara/efficientvit-urjc/urjc')
 
 import EfficientVit as EV
 
-SEG_TO_NANOSEG = 1000000000
+SEG_TO_NANOSEG = 1_000_000_000
 SIZE_CAMERA = 512
 SIZE_MEM = 5
 
@@ -803,7 +803,7 @@ class PID:
         control.steer = self._kp * error + self._kd * self._prev_error
         self._vehicle.apply_control(control)
 
-def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds=0.0, 
+def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:float=0.0, 
                 client:carla.Client=None, syn:bool=False):
     if client == None:
         client = carla.Client('localhost', port)
@@ -817,7 +817,7 @@ def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds=0.0,
     else:
         settings.synchronous_mode = False
     world.apply_settings(settings)
-    client.reload_world(False)
+    client.reload_world(False) # reload world keeping settings
 
     return world, client
 

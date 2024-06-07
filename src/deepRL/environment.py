@@ -8,6 +8,7 @@ import random
 import pygame
 import os
 import csv
+import time
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -72,15 +73,15 @@ class CarlaDiscreteBasic(gym.Env):
 
         # Actions
         self._action_to_control = {}
-        self._range_vel = 10
+        self._range_vel = 1
         self._range_steer = 20
 
         for i in range(self._range_vel):
             for j in range(self._range_steer + 1):
-                vel = (i + 1) / self._range_vel * 10 # [1, 10]
+                vel = 4#(i + 1) / self._range_vel * 10 # [1, 10]
                 steer = j / self._range_steer * 0.4 - 0.2 # [-0.2, 0.2]
                 self._action_to_control[i * self._range_steer + j] = np.array([vel, steer])
-        self.action_space = spaces.Discrete(self._range_steer * (self._range_vel - 1))
+        self.action_space = spaces.Discrete(self._range_steer) #* (self._range_vel - 1))
 
         # Init locations
         self._town = 'Town05'
@@ -124,7 +125,7 @@ class CarlaDiscreteBasic(gym.Env):
             self._sensors.add_camera_rgb(transform=world_transform, size_rect=(SIZE_CAMERA, SIZE_CAMERA),
                                          init=(0, 0), text='World view')
 
-        self._max_count = 5000
+        self._max_count = 2000
         self._count = 0
         self._count_ep = 0
         self._total_reward = 0
@@ -172,7 +173,7 @@ class CarlaDiscreteBasic(gym.Env):
 
             # Calculate reward
             self._dev = self._camera.get_deviation()
-            reward = 1 / (abs(self._dev) + 1)
+            reward = (SIZE_CAMERA / 2 - abs(self._dev)) / (SIZE_CAMERA / 2)
 
             t = self._ego_vehicle.get_transform()
             if self._index_loc >= 2:
@@ -180,8 +181,7 @@ class CarlaDiscreteBasic(gym.Env):
                     t.location.y = -20
                     self._ego_vehicle.set_transform(t)
                     self._jump = True
-                elif t.location.y < -146:
-                    reward = 1
+                elif t.location.y < -146: 
                     terminated = True
             else:
                 if not self._jump and t.location.y > -18:
@@ -189,25 +189,17 @@ class CarlaDiscreteBasic(gym.Env):
                     self._ego_vehicle.set_transform(t)
                     self._jump = True
                 elif t.location.x < 43:
-                    reward = 1
                     terminated = True
             
         except AssertionError:
             terminated = True
             reward = 0
-            if self._dev >= 0:
-                self._dev = abs(reward)
-            else:
-                self._dev = reward
 
         if self._count > self._max_count:
             terminated = True 
             reward = 0
             truncated = True
         self._count += 1
-
-        if not terminated:
-            reward += self._speed / 100 
         self._total_reward += reward
 
         if terminated and self._train:
