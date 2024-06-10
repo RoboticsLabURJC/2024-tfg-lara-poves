@@ -37,10 +37,13 @@ def main(args):
     dir_csv = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/inference/'
     if not os.path.exists(dir_csv):
         os.makedirs(dir_csv)
+    dir_csv += args.env + '/'
+    if not os.path.exists(dir_csv):
+        os.makedirs(dir_csv)
 
     files = os.listdir(dir_csv)
     num_files = len(files) + 1
-    file_csv = open(dir_csv + 'data_' + args.n + '_' + str(num_files), mode='w', newline='')
+    file_csv = open(dir_csv + args.alg + '_' + 'data_' + args.n + '_' + str(num_files) + '.csv', mode='w', newline='')
     writer_csv = csv.writer(file_csv)
     writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Velocity", "Steer", "Deviation", "Speed"])
     

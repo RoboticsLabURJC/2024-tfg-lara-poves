@@ -8,7 +8,6 @@ import random
 import pygame
 import os
 import csv
-import time
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -17,7 +16,7 @@ from configcarla import SIZE_CAMERA
 import configcarla
 
 class CarlaDiscreteBasic(gym.Env):
-    def __init__(self, human:bool, train:bool, port:int=2000, fixed_delta_seconds=0.0):
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, fixed_delta_seconds=0.0):
         self._dev = 0
         self._vel = 0
         self._steer = 0
@@ -28,12 +27,13 @@ class CarlaDiscreteBasic(gym.Env):
         # CSV file
         self._train = train
         if self._train:
-            dir_csv = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/CarlaDiscreteBasic/'
+            assert alg != None, "Algorithms are required for training"
+            dir_csv = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/train/CarlaDiscreteBasic/'
             if not os.path.exists(dir_csv):
                 os.makedirs(dir_csv)
             files = os.listdir(dir_csv)
             num_files = len(files) + 1
-            self._file_csv = open(dir_csv + 'train_data_' + str(num_files), mode='w', newline='')
+            self._file_csv = open(dir_csv + alg + '_train_data_' + str(num_files) + '.csv', mode='w', newline='')
             self._writer_csv = csv.writer(self._file_csv)
             self._writer_csv.writerow(["Episode", "Reward", "Num_steps"])
 
