@@ -1,6 +1,7 @@
 import pygame
 import carla
 import configcarla
+import argparse
 
 # Buttom
 BUTTOM_H = 30
@@ -26,9 +27,9 @@ class Buttom:
     def collision(self, point):
         return self.rect.collidepoint(point)
     
-def main():
+def main(args):
     # Setup CARLA and Pygame
-    world, _ = configcarla.setup_carla(name_world='Town03', syn=False)
+    world, _ = configcarla.setup_carla(name_world='Town03', syn=False, port=args.port)
     screen = configcarla.setup_pygame(size=(configcarla.SIZE_CAMERA * 2, configcarla.SIZE_CAMERA), 
                                       name='Teleoperator')
 
@@ -95,4 +96,16 @@ def main():
         pygame.quit()
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Execute an inference trial on a specified Gym environment",
+        usage="python3 %(prog)s --port <port_number>"
+    )
+    parser.add_argument(
+        '--port', 
+        type=int, 
+        required=False, 
+        default=2000,
+        help='Port for Carla'
+    )
+
+    main(parser.parse_args())

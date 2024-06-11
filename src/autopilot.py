@@ -1,15 +1,17 @@
 import pygame
 import carla
 import configcarla
+import argparse
 
 # Screen
 HEIGHT= 450
 WIDTH = 450
 DECREASE = 50
     
-def main():
+def main(args):
     # Setup 
-    world, client = configcarla.setup_carla(name_world='Town05', fixed_delta_seconds=0.05, syn=True)
+    world, client = configcarla.setup_carla(name_world='Town05', fixed_delta_seconds=0.05, syn=True, 
+                                            port=args.port)
     screen = configcarla.setup_pygame(size=(WIDTH * 3 - DECREASE * 2, HEIGHT * 2), name='Autopilot')
 
     # Add Ego Vehicle
@@ -60,4 +62,16 @@ def main():
         pygame.quit()
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Execute an inference trial on a specified Gym environment",
+        usage="python3 %(prog)s --port <port_number>"
+    )
+    parser.add_argument(
+        '--port', 
+        type=int, 
+        required=False, 
+        default=2000,
+        help='Port for Carla'
+    )
+
+    main(parser.parse_args())

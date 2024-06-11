@@ -16,11 +16,15 @@ from configcarla import SIZE_CAMERA
 import configcarla
 
 class CarlaDiscreteBasic(gym.Env):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, fixed_delta_seconds=0.0):
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
+                 fixed_delta_seconds=0.0, normalize:bool=False):
         self._dev = 0
         self._vel = 0
         self._steer = 0
         self._speed = 0
+        self._count_ep = 0
+        self._total_reward = 0
+        self._count = 0
         self._jump = False
         self._human = human
 
@@ -71,6 +75,41 @@ class CarlaDiscreteBasic(gym.Env):
             }
         )
 
+        self.normalize = normalize
+        if self.normalize:
+            self._obs_norm = self.observation_space
+            self.observation_space = spaces.Dict(
+            spaces={
+                "cm": spaces.Box(
+                    low=0,
+                    high=1,
+                    shape=(2,),
+                    dtype=np.float64
+                ),
+                
+                "left_points": spaces.Box(
+                    low=0,
+                    high=1,
+                    shape=(self._num_points_line, 2),
+                    dtype=np.float64
+                ),
+
+                "right_points": spaces.Box(
+                    low=0,
+                    high=1,
+                    shape=(self._num_points_line, 2),
+                    dtype=np.float64
+                ),
+
+                "area": spaces.Box(
+                    low=0,
+                    high=1,
+                    shape=(1,),
+                    dtype=np.float64
+                ),
+            }
+        )
+
         # Actions
         self._action_to_control = {}
         self._range_vel = 1
@@ -78,7 +117,7 @@ class CarlaDiscreteBasic(gym.Env):
 
         for i in range(self._range_vel):
             for j in range(self._range_steer + 1):
-                vel = 4#(i + 1) / self._range_vel * 10 # [1, 10]
+                vel = 3#(i + 1) / self._range_vel * 10 # [1, 10]
                 steer = j / self._range_steer * 0.4 - 0.2 # [-0.2, 0.2]
                 self._action_to_control[i * self._range_steer + j] = np.array([vel, steer])
         self.action_space = spaces.Discrete(self._range_steer) #* (self._range_vel - 1))
@@ -125,17 +164,18 @@ class CarlaDiscreteBasic(gym.Env):
             self._sensors.add_camera_rgb(transform=world_transform, size_rect=(SIZE_CAMERA, SIZE_CAMERA),
                                          init=(0, 0), text='World view')
 
-        self._max_count = 2000
-        self._count = 0
-        self._count_ep = 0
-        self._total_reward = 0
-
     def _get_obs(self):
         cm = self._camera.get_lane_cm()
         area = np.array([self._camera.get_lane_area()], dtype=np.int32)
         left_points, right_points = self._camera.get_lane_points()
+        obs = {"cm": cm, "left_points": left_points, "right_points": right_points, "area": area}
 
-        return {"cm": cm, "left_points": left_points, "right_points": right_points, "area": area}
+        if self.normalize:
+            for key, sub_space in self._obs_norm.spaces.items():
+                obs[key] = (obs[key] - sub_space.low) / (sub_space.high - sub_space.low)
+                obs[key] = obs[key].astype(np.float32)
+
+        return obs
     
     def _get_info(self):
         return {"deviation": self._dev, "steer": self._steer, "vel": self._vel, "speed": self._speed}
@@ -193,14 +233,10 @@ class CarlaDiscreteBasic(gym.Env):
             
         except AssertionError:
             terminated = True
-            reward = 0
+            reward = -20
 
-        if self._count > self._max_count:
-            terminated = True 
-            reward = 0
-            truncated = True
-        self._count += 1
         self._total_reward += reward
+        self._count += 1
 
         if terminated and self._train:
             self._count_ep += 1
@@ -212,15 +248,28 @@ class CarlaDiscreteBasic(gym.Env):
         if seed is not None:
             super().reset(seed=seed)
 
-        self._count = 0
+        # Reset variables
         self._total_reward = 0
+        self._count = 0
         self._jump = False
-
+        
+        # New inir location
         self._index_loc = random.randint(0, len(self._init_locations) - 1)
         self._ego_vehicle.set_transform(self._init_locations[self._index_loc])
+
+        # Stop the vehicle
         self._ego_vehicle.apply_control(carla.VehicleControl())
+
+        # Update sensor to initialize observations
         self._sensors.reset()
 
+        for _ in range(3):
+            try:
+                self._sensors.update_data()
+                break
+            except AssertionError:
+                pass
+            
         return self._get_obs(), {}
 
     def close(self):
