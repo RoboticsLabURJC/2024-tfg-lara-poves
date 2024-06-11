@@ -1,10 +1,9 @@
 import matplotlib.pyplot as plt
 import argparse
 import csv
-import numpy as np
 
-NUM_COLUMNS = 2 
-NUM_ROWS = 1
+NUM_COLUMNS = 1
+NUM_ROWS = 2
 
 def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, color:str=None):
     data = []
@@ -19,7 +18,7 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, color:str=N
     plt.title(title)
 
 def main(args):
-    plt.figure(figsize=(9 * NUM_COLUMNS, 7 * NUM_ROWS))
+    plt.figure(figsize=(15 * NUM_COLUMNS, 5 * NUM_ROWS))
 
     data = []
     with open(args.file, 'r') as file:

@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-06-04T12:31:00
+last_modified_at: 2024-06-10T16:44:00
 categories:
   - Blog
 tags:
@@ -47,7 +47,7 @@ def add_one_vehicle(world:carla.World, ego_vehicle:bool=False, vehicle_type:str=
 def add_vehicles_randomly(world:carla.World, number:int) # Spawn Points
 ```
 
-En el modo asíncrono de CARLA, el servidor se ejecuta a máxima velocidad, mientras que en el modo síncrono, el cliente indica al servidor cuándo actualizar (*world.tick()*). El modo síncrono se emplea comúnmente en entrenamientos de modelos, permitiendo detener la simulación durante el procesamiento. Sin embargo, la inferencia se realiza en modo asíncrono, replicando así condiciones más cercanas a la realidad. El parámetro *fixed_delta_seconds* establece un intervalo de tiempo fijo entre *frames*, es decir, la cantidad de tiempo que se detiene la simulación.
+En el modo asíncrono de CARLA, el servidor se ejecuta a máxima velocidad, mientras que en el modo síncrono, el cliente indica al servidor cuándo ejecutar (*world.tick()*) y durante cuanto tiempo debe hacerlo (*fixed delta seconds*). El modo síncrono se emplea comúnmente en entrenamientos de modelos, permitiendo detener la simulación durante el procesamiento. Sin embargo, la inferencia se realiza en modo asíncrono, replicando así condiciones más cercanas a la realidad.
 
 ## Interfaz
 
