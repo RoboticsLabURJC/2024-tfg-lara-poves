@@ -30,16 +30,16 @@ def check_dir(dir:str, env:str):
 
 def main(args):
     model_params = {
-        "learning_rate": 0.5,
+        "learning_rate": 0.4,
         "buffer_size": 10_000,
-        "batch_size": 70,
+        "batch_size": 128,
         "learning_starts": 0,
-        "gamma": 0.6, # bajado
+        "gamma": 0.96, 
         "target_update_interval": 200,
-        "train_freq": 4, # tender a bajar creo
+        "train_freq": 4, 
         "gradient_steps": -1,
-        "exploration_fraction": 0.70, # bajado porque hay menos acciones
-        "exploration_final_eps": 0.01,
+        "exploration_fraction": 0.73, 
+        "exploration_final_eps": 0.05,
         'policy_kwargs': {
             'net_arch': [256, 256]
         }
@@ -53,10 +53,10 @@ def main(args):
     model_dir = check_dir(dir + 'model/', args.env)
 
     log_name = args.alg + '-' + args.env
-    env = env_class(train=True, fixed_delta_seconds=0.08, human=False, port=args.port)
+    env = env_class(train=True, fixed_delta_seconds=0.08, human=False, port=args.port, alg=args.alg)
 
     model = alg_class("MultiInputPolicy", env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
-    model.learn(total_timesteps=1_100_000, log_interval=1, tb_log_name=log_name, progress_bar=True)
+    model.learn(total_timesteps=1_000_000, log_interval=1, tb_log_name=log_name, progress_bar=True)
     
     files = os.listdir(dir + 'model/' + args.env)
     num_files = len(files) + 1
