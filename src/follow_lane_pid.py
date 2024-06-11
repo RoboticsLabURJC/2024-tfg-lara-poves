@@ -2,9 +2,10 @@ import pygame
 import carla
 import configcarla
 from configcarla import SIZE_CAMERA
+import argparse
 
-def main():
-    world, _ = configcarla.setup_carla(name_world='Town05', port=2000, syn=False)
+def main(args):
+    world, _ = configcarla.setup_carla(name_world='Town05', port=args.port, syn=False)
     screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='Follow lane')
 
     # Add Ego Vehicle
@@ -61,4 +62,16 @@ def main():
         pygame.quit()
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Execute an inference trial on a specified Gym environment",
+        usage="python3 %(prog)s --port <port_number>"
+    )
+    parser.add_argument(
+        '--port', 
+        type=int, 
+        required=False, 
+        default=2000,
+        help='Port for Carla'
+    )
+
+    main(parser.parse_args())

@@ -109,6 +109,7 @@ class CameraRGB(Sensor):
         self._size_text = 20
         self._deviation = 0
         self._road_percentage = 0
+        self._error_lane = False
 
         self._seg = seg
         self._canvas_seg = canvas_seg
@@ -127,8 +128,8 @@ class CameraRGB(Sensor):
             self._threshold_road_per = 90.0
             self._threshold_lane_mask = 0.05
             self._ymin_lane = 275 
-            self._angle_lane = 10
-            self._mem_max = 4
+            self._angle_lane = 7
+            self._mem_max = 3
 
             # Initialize
             self._coefficients = np.zeros((SIZE_MEM, 2, 3), dtype=float)
@@ -155,6 +156,7 @@ class CameraRGB(Sensor):
             
     def reset(self):
         self._deviation = 0
+        self._error_lane = False
         self._road_percentage = 0
         self._coefficients = np.zeros((SIZE_MEM, 2, 3), dtype=float)
         self._count_coef = [0, 0]
@@ -169,7 +171,10 @@ class CameraRGB(Sensor):
             lane = "left"
         else:
             lane = "right"
-        assert self._count_mem_lane[index] < self._mem_max, "Line " + lane + " not found"
+
+        if self._count_mem_lane[index] >= self._mem_max:
+            self._error_lane = True
+            assert False, "Line " + lane + " not found"
 
         mask = mask[:, :512]
         index_mask = np.where(mask > self._threshold_lane_mask)
@@ -212,7 +217,7 @@ class CameraRGB(Sensor):
         
         if abs(mean - angle) > self._angle_lane and self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] += 1
-            return self._coefficients[-1, index, 0:2], abs(angle - mean) > self._angle_lane * 2
+            return self._coefficients[-1, index, 0:2], False
         elif self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] = 0
 
@@ -247,7 +252,10 @@ class CameraRGB(Sensor):
         _, left_mask, right_mask = model_output[0]
         coef_left, see_line_left = self._mask_lane(mask=left_mask, index=LEFT_LANE)
         coef_right, see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
-        assert see_line_right == True or see_line_left == True, "Lane not found"
+
+        if see_line_left == False and see_line_right == False:
+            self._error_lane = True
+            assert False, "Lane not found"
 
         count_x = count_y = 0
         count_total = count_road = 0
@@ -276,18 +284,21 @@ class CameraRGB(Sensor):
         if count_total > 0:
             # Calculate center of mass
             x_cm = int(count_x / count_total)
-            y_cm = int(count_y / count_total)
+            y_cm = int(count_y / count_total) 
             middle = int(SIZE_CAMERA / 2)
             self._deviation = x_cm - SIZE_CAMERA / 2 
             self._cm = np.array([x_cm, y_cm], dtype=np.int32)
-            self._area = np.int32(count_total)
+            self._area = count_total
 
             # Calculate road porcentage
             if self._seg:
                 self._road_percentage = count_road / count_total * 100
                 if self._road_percentage < self._threshold_road_per:
                     self._count_mem_road += 1
-                    assert self._count_mem_road < self._mem_max, "Low percentage of lane"
+
+                    if self._count_mem_road > self._mem_max:
+                        self._error_lane = True
+                        assert False, "Low percentage of lane"
                 else:
                     self._count_mem_road = 0
 
@@ -298,6 +309,8 @@ class CameraRGB(Sensor):
         else:
             self._deviation = SIZE_CAMERA / 2
             self._road_percentage = 0
+            self._error_lane = True
+            assert False, "Area zero"
         #print("Lane cm%:", time.time_ns() - init_time, "ns")
 
     def _process_seg(self, data:list):
@@ -362,6 +375,7 @@ class CameraRGB(Sensor):
     def process_data(self):
         #init_time = time.time_ns()
         image = self.data
+        self._error_lane = False
         if image == None:
             return 
 
@@ -397,14 +411,37 @@ class CameraRGB(Sensor):
         return self._road_percentage
     
     def get_lane_cm(self):
-        return np.array(self._cm, dtype=np.int32)
+        if self._error_lane:
+            # Move cm to the nearest corner
+            try:
+                x_cm = self._cm[0]
+                y_cm = self._cm[1]
+            except IndexError:
+                x_cm = self._cm[0][0]
+                y_cm = self._cm[0][1]
+
+            if x_cm < SIZE_CAMERA / 2:
+                x_cm = 0
+            else:
+                x_cm = SIZE_CAMERA - 1
+            if y_cm < SIZE_CAMERA / 2:
+                y_cm = 0
+            else:
+                y_cm = SIZE_CAMERA - 1
+
+            self._cm = np.array([x_cm, y_cm], dtype=np.int32)
+
+        return self._cm
     
     def get_lane_area(self):
+        if self._error_lane:
+            self._area = 0
+
         return self._area
     
     def get_lane_points(self, num_points:int=5, show:bool=False):
-        if not self._lane:
-            return [np.zeros((num_points, 2), dtype=np.int32)] * 2
+        if not self._lane or self._error_lane:
+            return [np.full((num_points, 2), SIZE_CAMERA / 2, dtype=np.int32)] * 2
         
         lane_points = []
         for side in range(2):
@@ -419,7 +456,7 @@ class CameraRGB(Sensor):
                 if points[i, 0] < 0:
                     points[i, 0] = 0
                 elif points[i, 0] > SIZE_CAMERA - 1:
-                    points[i, 0] = SIZE_CAMERA
+                    points[i, 0] = SIZE_CAMERA - 1
 
                 if show and self._rect_extra != None and self._surface_seg != None:
                     if side == LEFT_LANE:
