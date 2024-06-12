@@ -16,7 +16,8 @@ def extract_data(key:str, data_csv:list[dict]):
 
     return data
 
-def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, hist:bool=False, nsteer:int=0, label:str=None, color:str=None):
+def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, hist:bool=False,
+              nsteer:int=0, label:str=None, color:str=None):
     data = extract_data(key, data_csv)
     plt.subplot(NUM_ROWS, NUM_COLUMNS, sub_plot)
 
@@ -76,15 +77,20 @@ def main(args):
         color = get_color_random()
 
         # Plots
-        plot_data(data_csv=data, key='Reward', sub_plot=2, title='Reward per step', label=csv_file, color=color)
-        plot_data(data_csv=data, key='Accumulated reward', sub_plot=3, title='Total reward', label=csv_file, color=color)
-        plot_data(data_csv=data, key='Deviation', sub_plot=1, title='Deviation', label=csv_file, color=color)
-        plot_data(data_csv=data, key='Speed', sub_plot=4, title='Velocity of the vehicle', label=csv_file, color=color)
+        plot_data(data_csv=data, key='Reward', sub_plot=2, title='Reward per step', label=csv_file,
+                  color=color)
+        plot_data(data_csv=data, key='Accumulated reward', sub_plot=3, title='Total reward',
+                  label=csv_file, color=color)
+        plot_data(data_csv=data, key='Deviation', sub_plot=1, title='Deviation', label=csv_file,
+                  color=color)
+        plot_data(data_csv=data, key='Speed', sub_plot=4, title='Velocity of the vehicle',
+                  label=csv_file, color=color)
 
         # Histograms
-        plot_data(data_csv=data, key='Velocity', sub_plot=5, title='Histogram velocity actions', hist=True, label=csv_file)
-        plot_data(data_csv=data, key='Steer', sub_plot=6, title='Histogram steer actions', hist=True, 
-                nsteer=args.nsteer, label=csv_file)
+        plot_data(data_csv=data, key='Velocity', sub_plot=5, title='Histogram velocity actions',
+                  hist=True, label=csv_file)
+        plot_data(data_csv=data, key='Steer', sub_plot=6, title='Histogram steer actions', hist=True,
+                  nsteer=args.nsteer, label=csv_file)
         
         file.close()
 
