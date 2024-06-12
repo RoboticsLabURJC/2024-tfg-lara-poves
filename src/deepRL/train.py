@@ -31,7 +31,7 @@ def check_dir(dir:str, env:str):
 def main(args):
     model_params = {
         "learning_rate": 0.006,
-        "buffer_size": 5_000,
+        "buffer_size": 10_000, # duplicado respecto a model 1
         "batch_size": 50,
         "learning_starts": 0,
         "gamma": 0.96, 
@@ -53,9 +53,10 @@ def main(args):
     model_dir = check_dir(dir + 'model/', args.env)
 
     log_name = args.alg + '-' + args.env
-    env = env_class(train=True, fixed_delta_seconds=0.1, human=False, port=args.port, alg=args.alg, normalize=True)
+    env = env_class(train=True, fixed_delta_seconds=0.1, human=True, port=args.port, 
+                    alg=args.alg, normalize=True)
 
-    model = alg_class("MultiInputPolicy", env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
+    model = alg_class("MultiInputPolicy", env, verbose=0, seed=SEED, tensorboard_log=log_dir, **model_params)
     model.learn(total_timesteps=1_000_000, log_interval=1, tb_log_name=log_name, progress_bar=True)
     
     files = os.listdir(dir + 'model/' + args.env)

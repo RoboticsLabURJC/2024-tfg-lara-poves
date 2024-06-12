@@ -131,16 +131,15 @@ class CarlaDiscreteBasic(gym.Env):
             carla.Transform(carla.Location(x=43.0, y=141.5, z=z), carla.Rotation(yaw=3)),
             carla.Transform(carla.Location(x=111.0, y=135.5, z=z), carla.Rotation(yaw=-16))
         ]
-        self._index_loc = random.randint(0, len(self._init_locations) - 1)
 
         # Pygame window
         if self._human:
             self._screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), 
                                                     name='Follow lane: CarlaDiscreteBasic')
-            init_driver = (SIZE_CAMERA, 0)
+            self._init_driver = (SIZE_CAMERA, 0)
         else:
             self._screen = None
-            init_driver = None
+            self._init_driver = None
 
         # Init simulation
         if self._train:
@@ -148,7 +147,12 @@ class CarlaDiscreteBasic(gym.Env):
         self._world, _ = configcarla.setup_carla(name_world=self._town, port=port, syn=self._train, 
                                                  fixed_delta_seconds=fixed_delta_seconds)
         
-        # Swap ego vehicle
+        self._model_seg = None
+        self._swap_ego_vehicle()
+        self._model_seg = self._camera.seg_model
+
+    def _swap_ego_vehicle(self):
+        self._index_loc = random.randint(0, len(self._init_locations) - 1)
         self._ego_vehicle = configcarla.add_one_vehicle(world=self._world, ego_vehicle=True,
                                                         vehicle_type='vehicle.lincoln.mkz_2020',
                                                         transform=self._init_locations[self._index_loc])
@@ -157,7 +161,7 @@ class CarlaDiscreteBasic(gym.Env):
                                                     screen=self._screen)
         self._camera = self._sensors.add_camera_rgb(transform=transform, seg=False, lane=True,
                                                     canvas_seg=False, size_rect=(SIZE_CAMERA, SIZE_CAMERA),
-                                                    init_extra=init_driver, text='Driver view')
+                                                    init_extra=self._init_driver, text='Driver view', model_seg=self._model_seg)
 
         if self._human:
             world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
@@ -172,9 +176,12 @@ class CarlaDiscreteBasic(gym.Env):
 
         if self.normalize:
             for key, sub_space in self._obs_norm.spaces.items():
+                old = obs[key]
                 obs[key] = (obs[key] - sub_space.low) / (sub_space.high - sub_space.low)
                 obs[key] = obs[key].astype(np.float32)
+                #print(key, str(old.tolist()), str(obs[key].tolist()))
 
+        #print("---------------------------------------------------------------------------")
         return obs
     
     def _get_info(self):
@@ -242,6 +249,7 @@ class CarlaDiscreteBasic(gym.Env):
             self._count_ep += 1
             self._writer_csv.writerow([self._count_ep, self._total_reward, self._count])
 
+        #print("dev:", self._dev, "reward", reward, "finish:", terminated)
         return self._get_obs(), reward, terminated, truncated, self._get_info()
 
     def reset(self, seed=None):
@@ -252,24 +260,23 @@ class CarlaDiscreteBasic(gym.Env):
         self._total_reward = 0
         self._count = 0
         self._jump = False
-        
-        # New inir location
-        self._index_loc = random.randint(0, len(self._init_locations) - 1)
-        self._ego_vehicle.set_transform(self._init_locations[self._index_loc])
 
-        # Stop the vehicle
-        self._ego_vehicle.apply_control(carla.VehicleControl())
+        self._swap_ego_vehicle()
 
-        # Update sensor to initialize observations
-        self._sensors.reset()
-
-        for _ in range(3):
+        for _ in range(5):
             try:
+                self._world.tick()
                 self._sensors.update_data()
-                break
+                if self._camera.data != None:
+                    break 
+                else:
+                    print("none")
             except AssertionError:
                 pass
-            
+
+        #time.sleep(5)
+        print("check", self._camera.get_deviation())
+        
         return self._get_obs(), {}
 
     def close(self):

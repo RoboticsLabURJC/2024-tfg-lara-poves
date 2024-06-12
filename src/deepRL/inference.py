@@ -43,7 +43,8 @@ def main(args):
 
     files = os.listdir(dir_csv)
     num_files = len(files) + 1
-    file_csv = open(dir_csv + args.alg + '_' + 'data_' + args.n + '_' + str(num_files) + '.csv', mode='w', newline='')
+    file_csv = open(dir_csv + args.alg + '_' + 'data_' + args.n + '_' + str(num_files) +
+                    '.csv', mode='w', newline='')
     writer_csv = csv.writer(file_csv)
     writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Velocity", "Steer", "Deviation", "Speed"])
     

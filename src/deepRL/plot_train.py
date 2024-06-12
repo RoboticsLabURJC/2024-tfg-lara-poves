@@ -58,9 +58,11 @@ def main(args):
         csv_file = csv_file.split('/')[-1]
 
         # Plots
-        plot_data(data_csv=data, key='Reward', sub_plot=1, title='Reward per episode', color=color, label=csv_file)
+        plot_data(data_csv=data, key='Reward', sub_plot=1, title='Reward per episode',
+                  color=color, label=csv_file)
         plt.legend()
-        plot_data(data_csv=data, key='Num_steps', sub_plot=2, title='Steps per epidose', color=color, label=csv_file)
+        plot_data(data_csv=data, key='Num_steps', sub_plot=2, title='Steps per epidose',
+                  color=color, label=csv_file)
 
     plt.tight_layout()
     plt.show()
