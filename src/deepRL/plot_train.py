@@ -5,8 +5,8 @@ import os
 import glob
 import random
 
-NUM_COLUMNS = 2 
-NUM_ROWS = 1
+NUM_COLUMNS = 1
+NUM_ROWS = 2
 
 def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, color:str=None, label:str=None):
     data = []
@@ -28,7 +28,7 @@ def get_color_random():
 
 def main(args):
     random.seed(6)
-    plt.figure(figsize=(9 * NUM_COLUMNS, 7 * NUM_ROWS))
+    plt.figure(figsize=(15 * NUM_COLUMNS, 5 * NUM_ROWS))
 
     if len(args.file) == 1 and args.file[0] == 'all':
         dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/train/' 
