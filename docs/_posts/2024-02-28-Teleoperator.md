@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-06-10T16:44:00
+last_modified_at: 2024-06-12T13:30:00
 categories:
   - Blog
 tags:
@@ -47,7 +47,7 @@ def add_one_vehicle(world:carla.World, ego_vehicle:bool=False, vehicle_type:str=
 def add_vehicles_randomly(world:carla.World, number:int) # Spawn Points
 ```
 
-En el modo asíncrono de CARLA, el servidor se ejecuta a máxima velocidad, mientras que en el modo síncrono, el cliente indica al servidor cuándo ejecutar (*world.tick()*) y durante cuanto tiempo debe hacerlo (*fixed delta seconds*). El modo síncrono se emplea comúnmente en entrenamientos de modelos, permitiendo detener la simulación durante el procesamiento. Sin embargo, la inferencia se realiza en modo asíncrono, replicando así condiciones más cercanas a la realidad.
+En el modo asíncrono de CARLA, el servidor se ejecuta a máxima velocidad, mientras que en el modo síncrono, el cliente indica al servidor cuándo ejecutar (*world.tick()*) y durante cuanto tiempo debe hacerlo (*fixed delta seconds*), en tiempo simulado no en tiempo real. El modo síncrono se emplea comúnmente en entrenamientos de modelos, permitiendo detener la simulación durante el procesamiento. Sin embargo, la inferencia se realiza en modo asíncrono, replicando así condiciones más cercanas a la realidad.
 
 ## Interfaz
 
@@ -73,10 +73,9 @@ class Vehicle_sensors:
                        transform:carla.Transform=carla.Transform())
 
     def destroy(self)
-    def reset(self)
 ```
 
-Cada sensor pertenece a la clase abstracta ***Sensor***, la cual guarda la instancia del sensor en CARLA y contiene el *callback* que almacena la última medida recogida del entorno en un atributo de la clase. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor, permitiéndonos actualizar su información y mostrarla en la pantalla si es necesario. La función *reset()* inicializa nuevamente algunos atributos de la clase, simulando que el objeto acaba de ser creado; por ejemplo, reiniciar un contador a cero.
+Cada sensor pertenece a la clase abstracta ***Sensor***, la cual guarda la instancia del sensor en CARLA y contiene el *callback* que almacena la última medida recogida del entorno en un atributo de la clase. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor, permitiéndonos actualizar su información y mostrarla en la pantalla si es necesario.
 ```python
 class Sensor(ABC):
     def __init__(self, sensor):
@@ -92,10 +91,6 @@ class Sensor(ABC):
 
     @abstractmethod
     def process_data(self):
-        pass
-
-    @abstractmethod
-    def reset(self):
         pass
 
 class Vehicle_sensors:
