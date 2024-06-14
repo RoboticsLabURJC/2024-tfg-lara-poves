@@ -18,6 +18,7 @@ import configcarla
 class CarlaDiscreteBasic(gym.Env):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
                  fixed_delta_seconds=0.0, normalize:bool=False):
+        self._first = True
         self._dev = 0
         self._vel = 0
         self._steer = 0
@@ -146,10 +147,6 @@ class CarlaDiscreteBasic(gym.Env):
             assert fixed_delta_seconds > 0.0, "In synchronous mode fidex_delta_seconds can't be 0.0"
         self._world, _ = configcarla.setup_carla(name_world=self._town, port=port, syn=self._train, 
                                                  fixed_delta_seconds=fixed_delta_seconds)
-        
-        self._model_seg = None
-        self._swap_ego_vehicle()
-        self._model_seg = self._camera.seg_model
 
     def _swap_ego_vehicle(self):
         self._index_loc = random.randint(0, len(self._init_locations) - 1)
@@ -161,7 +158,7 @@ class CarlaDiscreteBasic(gym.Env):
                                                     screen=self._screen)
         self._camera = self._sensors.add_camera_rgb(transform=transform, seg=False, lane=True,
                                                     canvas_seg=False, size_rect=(SIZE_CAMERA, SIZE_CAMERA),
-                                                    init_extra=self._init_driver, text='Driver view', model_seg=self._model_seg)
+                                                    init_extra=self._init_driver, text='Driver view')
 
         if self._human:
             world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
@@ -176,7 +173,7 @@ class CarlaDiscreteBasic(gym.Env):
 
         if self.normalize:
             for key, sub_space in self._obs_norm.spaces.items():
-                old = obs[key]
+                #old = obs[key]
                 obs[key] = (obs[key] - sub_space.low) / (sub_space.high - sub_space.low)
                 obs[key] = obs[key].astype(np.float32)
                 #print(key, str(old.tolist()), str(obs[key].tolist()))
@@ -249,7 +246,7 @@ class CarlaDiscreteBasic(gym.Env):
             self._count_ep += 1
             self._writer_csv.writerow([self._count_ep, self._total_reward, self._count])
 
-        #print("dev:", self._dev, "reward", reward, "finish:", terminated)
+        #print("dev:", self._dev, "reward", reward, "steer:", control.steer ,"finish:", terminated)
         return self._get_obs(), reward, terminated, truncated, self._get_info()
 
     def reset(self, seed=None):
@@ -261,6 +258,11 @@ class CarlaDiscreteBasic(gym.Env):
         self._count = 0
         self._jump = False
 
+        if self._first:
+            self._first = False
+        else:
+            self._sensors.destroy()
+
         self._swap_ego_vehicle()
 
         for _ in range(5):
@@ -269,13 +271,10 @@ class CarlaDiscreteBasic(gym.Env):
                 self._sensors.update_data()
                 if self._camera.data != None:
                     break 
-                else:
-                    print("none")
             except AssertionError:
                 pass
 
-        #time.sleep(5)
-        print("check", self._camera.get_deviation())
+        #print("reset / dev:", self._camera.get_deviation())
         
         return self._get_obs(), {}
 

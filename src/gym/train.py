@@ -30,6 +30,13 @@ def check_dir(dir:str, env:str):
 
     return dir
 
+class Linear_decay:
+    def __init__(self, initial:float):
+        self.initial = initial
+
+    def linear_decay(self, progress:float):
+        return self.initial * progress
+
 def main(args):
     env_dir = args.env.split("-")[0]
     if "MountainCar" in args.env:
@@ -70,6 +77,17 @@ def main(args):
         model_params.pop('normalize', None)
     except KeyError:
         normalize = False
+
+    # Check if linear decay
+    if isinstance(model_params['learning_rate'], str) and 'lin' in model_params['learning_rate']:
+        init_val = float(model_params['learning_rate'].split('_')[-1])
+        lr = Linear_decay(init_val)
+        model_params['learning_rate'] = lr.linear_decay
+
+    if isinstance(model_params['clip_range'], str) and 'lin' in model_params['clip_range']:
+        init_val = float(model_params['clip_range'].split('_')[-1])
+        cr = Linear_decay(init_val)
+        model_params['clip_range'] = cr.linear_decay
 
     # Create env
     def make_env(**kwargs) -> gym.Env:

@@ -30,9 +30,9 @@ def check_dir(dir:str, env:str):
 
 def main(args):
     model_params = {
-        "learning_rate": 0.006,
-        "buffer_size": 10_000, # duplicado respecto a model 1
-        "batch_size": 50,
+        "learning_rate": 0.0063,
+        "buffer_size": 10_000, 
+        "batch_size": 64,
         "learning_starts": 0,
         "gamma": 0.96, 
         "target_update_interval": 200,
@@ -40,9 +40,9 @@ def main(args):
         "gradient_steps": -1,
         "exploration_fraction": 0.72, 
         "exploration_final_eps": 0.05,
-        'policy_kwargs': {
-            'net_arch': [256, 256]
-        }
+        #'policy_kwargs': {
+        #    'net_arch': [512, 512] # model 6 usar lospor defecto
+        #}
     }
 
     alg_class = alg_callable[args.alg]
@@ -53,11 +53,11 @@ def main(args):
     model_dir = check_dir(dir + 'model/', args.env)
 
     log_name = args.alg + '-' + args.env
-    env = env_class(train=True, fixed_delta_seconds=0.1, human=True, port=args.port, 
+    env = env_class(train=True, fixed_delta_seconds=0.1, human=False, port=args.port, 
                     alg=args.alg, normalize=True)
 
-    model = alg_class("MultiInputPolicy", env, verbose=0, seed=SEED, tensorboard_log=log_dir, **model_params)
-    model.learn(total_timesteps=1_000_000, log_interval=1, tb_log_name=log_name, progress_bar=True)
+    model = alg_class("MultiInputPolicy", env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
+    model.learn(total_timesteps=2_500_000, log_interval=1, tb_log_name=log_name, progress_bar=True)
     
     files = os.listdir(dir + 'model/' + args.env)
     num_files = len(files) + 1

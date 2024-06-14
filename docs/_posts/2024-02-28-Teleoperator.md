@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-06-12T13:30:00
+last_modified_at: 2024-06-13T14:01:00
 categories:
   - Blog
 tags:
@@ -22,12 +22,12 @@ Durante las primeras semanas, nuestro objetivo principal ha sido adentrarnos en 
 
 ## Anaconda
 
-Para trabajar, crearemos un entorno Anaconda que nos permita utilizar la versión deseada de Python, en este caso, utilizaremos la versión 3.7.
+Para trabajar, crearemos un entorno Anaconda que nos permita utilizar la versión deseada de Python, en este caso, utilizaremos la versión 3.10, ya que es la que necesitaremos para usar la red neuronal de segmentación en futuros apartados.
 
 ```bash
-conda create -n tfg python=3.7
+conda create -n tfg python=3.10
 conda activate tfg
-pip install pygame numpy carla==0.9.13 Pillow 
+pip install pygame numpy carla Pillow 
 ```
 
 Instalamos la versión 0.9.13 de *carla*, ya que es la versión compatible con el simulador, de lo contrario, obtenemos problemas de incompatibilidad de versiones.

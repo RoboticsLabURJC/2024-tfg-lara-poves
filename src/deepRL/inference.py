@@ -28,7 +28,7 @@ def main(args):
     except:
         print("Model", model_file, "doesn't exit")
 
-    env = env_class(train=False, port=args.port, human=True)
+    env = env_class(train=False, port=args.port, human=True, normalize=True)
     obs, _ = env.reset()
 
     total_reward = 0

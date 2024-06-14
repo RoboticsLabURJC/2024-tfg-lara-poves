@@ -7,12 +7,12 @@ from stable_baselines3.common.vec_env import VecNormalize
 from stable_baselines3.common.env_util import make_vec_env
 
 alg_callable = {
-    'DQN': (DQN, 'red'),
-    'A2C': (A2C, 'lightgreen', 'green'),
-    'DDPG': (DDPG, 'orange', 'lightcoral'),
-    'TD3': (TD3, 'blue', 'cornflowerblue'),
-    'SAC': (SAC, 'violet', 'purple'),
-    'PPO': (PPO, 'gray', 'black')
+    'DQN': (DQN, 'yellow'),
+    'A2C': (A2C, 'green'),
+    'DDPG': (DDPG, 'orange'),
+    'TD3': (TD3, 'blue'),
+    'SAC': (SAC, 'violet'),
+    'PPO': (PPO, 'red')
 }
 
 possible_envs = [
@@ -97,9 +97,18 @@ def main(args):
             rewards_envs.append((env_str, rewards_models))
     
     # Plot results
-    num_cols = 3
-    num_rows = 1
+    num_cols = 2
+    num_rows = 2
     plt.figure(figsize=(6 * num_cols, 5 * num_rows))
+
+    # Obtain the same x limite for MountainCar envs
+    mountain = [r for r in rewards_envs if 'Mountain' in r[0]]
+    max_mountain = 0
+    for m in mountain:
+        for i in m[1]:
+            len_mountain = len(i[1])
+            if len_mountain > max_mountain:
+                max_mountain = len_mountain
 
     for env, rewards_models in rewards_envs:
         # Sort rewards to see all plots
@@ -112,16 +121,18 @@ def main(args):
         if 'CartPole' in env:
             i = 1
         elif 'Acrobot' in env:
-            i = 3
-        else:
             i = 2
+        elif 'Continuous' in env:
+            i = 4
+        else:
+            i = 3
         plt.subplot(num_rows, num_cols, i)
 
         last_rewards = []
-        offset = 10
+        offset = 35
 
         for alg, rewards in rewards_models:
-            if any(abs(reward - rewards[-1]) <= offset for reward in last_rewards):
+            if any(abs(reward - rewards[-1]) <= 2 for reward in last_rewards):
                 x = len(rewards) - 1 - offset
             else:
                 last_rewards.append(rewards[-1])
@@ -136,15 +147,14 @@ def main(args):
 
             if 'Continuous' in env:
                 last_reward = round(rewards[-1], 2)
-                color = alg_callable[alg][2]
-                label = alg + ' ' + 'cont'
             else:
                 last_reward = int(rewards[-1])
-                color = alg_callable[alg][1]
-                label = alg
 
-            plt.plot(range(len(rewards)), rewards, label=label, color=color)
-            plt.text(x, y, f'{last_reward}', ha='right', va=va, color=color, fontsize=11)
+            plt.plot(range(len(rewards)), rewards, label=alg, color=alg_callable[alg][1])
+            plt.text(x, y, f'{last_reward}', ha='right', va=va, color=alg_callable[alg][1],
+                     fontsize=11)
+            if 'Mountain' in env:
+                plt.xlim(0, max_mountain)
 
         plt.xlabel('Steps')
         plt.ylabel('Total Reward')
@@ -160,7 +170,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Use a model on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + "} \
-            [--alg {" + ",".join(possible_algs) + " | all}] [--plays <plays>]"
+            [--alg {" + ",".join(possible_algs) + " | all}]"
     )
     parser.add_argument(
         '--env', 
