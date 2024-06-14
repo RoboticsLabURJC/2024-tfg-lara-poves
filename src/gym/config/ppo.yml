@@ -1,0 +1,57 @@
+CartPole-v1:
+  n_envs: 8
+  n_timesteps: 100_000
+  policy: 'MlpPolicy'
+  n_steps: 32
+  batch_size: 256
+  gae_lambda: 0.8
+  gamma: 0.98
+  n_epochs: 20
+  ent_coef: 0.0
+  learning_rate: "lin_0.001"
+  clip_range: "lin_0.2"
+
+MountainCar-v0:
+  normalize: true
+  n_envs: 16
+  n_timesteps: 1_000_000
+  policy: 'MlpPolicy'
+  n_steps: 16
+  gae_lambda: 0.98
+  gamma: 0.99
+  n_epochs: 4
+  ent_coef: 0.0
+
+MountainCarContinuous-v0:
+  normalize: true
+  n_envs: 1
+  n_timesteps: 550000
+  policy: 'MlpPolicy'
+  n_steps: 8
+  gamma: 0.9999
+  learning_rate: 0.0000777
+  ent_coef: 0.00429
+  clip_range: 0.1 # epsilon
+  n_epochs: 10
+  gae_lambda: 0.9
+  max_grad_norm: 5 # Valor maximo del gradiente
+  vf_coef: 0.19
+  use_sde: True
+  policy_kwargs: 
+    log_std_init: -3.29
+    ortho_init: False
+
+Acrobot-v1:
+  normalize: true
+  n_envs: 16
+  n_timesteps: 1_000_000
+  policy: 'MlpPolicy'
+  n_steps: 256
+  gae_lambda: 0.94
+  gamma: 0.99
+  n_epochs: 4 # numero de actualizaciones
+  ent_coef: 0.0 
+
+# Durante el entrenamiento: 
+  # clip_fraction: numero de actualizaciones que han sido recortadas
+  # approx_kl: difrencia entre politicas

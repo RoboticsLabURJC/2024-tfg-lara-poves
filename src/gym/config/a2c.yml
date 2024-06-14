@@ -17,18 +17,19 @@ Acrobot-v1:
   n_timesteps: 600000
   policy: 'MlpPolicy'
   ent_coef: .0 # coeficiente que controla la entropia en la funcion de perdida (beta)
-  # gae_lambda: controlar el sesgo y la varianza con el metodo GAE (gamma)
 
-MountainCarContinuous-v0:
+MountainCarContinuous-v0: # la grafica train/std esta relacionado con la normalizacion 
   normalize: true
   n_envs: 4 # Numero de entornos que se ejecutan en paralelo
   n_steps: 100 # Número de pasos de interacción que se ejecutarán en cada entorno antes de realizar una actualización de la política
   n_timesteps: 550000
   policy: 'MlpPolicy'
-  ent_coef: 0.0
+  ent_coef: 0.0 
   use_sde: True
   sde_sample_freq: 16
   policy_kwargs: 
     log_std_init: 0.0
     ortho_init: False
-  # vf_coef es la importancia de La funcion de valor (Q) en la funcion de perdida
+
+  # vf_coef: el peso de la funcion de valor (Q) en el calculo de la funcion de perdida (no visto en el paper)
+  # gae_lambda: controlar el sesgo y la varianza con el metodo GAE (gamma)

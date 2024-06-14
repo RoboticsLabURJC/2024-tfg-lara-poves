@@ -94,10 +94,6 @@ class Sensor(ABC):
     def process_data(self):
         pass
 
-    @abstractmethod
-    def reset(self):
-        pass
-
 class CameraRGB(Sensor):      
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
                  text:str, screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], 
@@ -137,7 +133,7 @@ class CameraRGB(Sensor):
             self._count_mem_road = 0
             self._count_mem_lane = [0, 0]
 
-        self._cm = np.zeros((2,), dtype=np.int32),
+        self._cm = np.zeros((2,), dtype=np.int32)
         self._area = np.int32(0)
         self._surface_seg = None
 
@@ -153,18 +149,6 @@ class CameraRGB(Sensor):
 
             if init_extra != None:
                 self._rect_extra = sub_screen.get_rect(topleft=init_extra)
-            
-    def reset(self):
-        self._deviation = 0
-        self._error_lane = False
-        self._road_percentage = 0
-        self._coefficients = np.zeros((SIZE_MEM, 2, 3), dtype=float)
-        self._count_coef = [0, 0]
-        self._count_mem_road = 0
-        self._count_mem_lane = [0, 0]
-        self._cm = np.zeros((2,), dtype=np.int32),
-        self._area = np.int32(0)
-        self._surface_seg = None
 
     def _mask_lane(self, mask:list, index:int):
         if index == LEFT_LANE:
@@ -413,18 +397,11 @@ class CameraRGB(Sensor):
     def get_lane_cm(self):
         if self._error_lane:
             # Move cm to the nearest corner
-            try:
-                x_cm = self._cm[0]
-                y_cm = self._cm[1]
-            except IndexError:
-                x_cm = self._cm[0][0]
-                y_cm = self._cm[0][1]
-
-            if x_cm < SIZE_CAMERA / 2:
+            if self._cm[0] < SIZE_CAMERA / 2:
                 x_cm = 0
             else:
                 x_cm = SIZE_CAMERA - 1
-            if y_cm < SIZE_CAMERA / 2:
+            if self._cm[1] < SIZE_CAMERA / 2:
                 y_cm = 0
             else:
                 y_cm = SIZE_CAMERA - 1
@@ -526,10 +503,6 @@ class Lidar(Sensor):
 
         if init != None:
             self._image = self._get_back_image()
-
-    def reset(self):
-        self._stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
-        self._time = -2
 
     def _get_back_image(self):
         image = pygame.Surface(self._size_screen)
@@ -761,10 +734,6 @@ class Vehicle_sensors:
             sensor.sensor.destroy()
 
         self._vehicle.destroy()
-
-    def reset(self):
-        for sensor in self.sensors:
-            sensor.reset()
 
 class Teleoperator:
     def __init__(self, vehicle:carla.Vehicle, steer:float=0.3, throttle:float=0.6, brake:float=1.0):
