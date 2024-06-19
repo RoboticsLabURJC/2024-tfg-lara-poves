@@ -2,6 +2,7 @@ from environment import CarlaDiscreteBasic
 import argparse
 from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
+import yaml
 
 SEED = 6
 
@@ -29,21 +30,22 @@ def check_dir(dir:str, env:str):
     return dir
 
 def main(args):
-    model_params = {
-        "learning_rate": 0.0063,
-        "buffer_size": 10_000, 
-        "batch_size": 64,
-        "learning_starts": 0,
-        "gamma": 0.96, 
-        "target_update_interval": 200,
-        "train_freq": 4, 
-        "gradient_steps": -1,
-        "exploration_fraction": 0.72, 
-        "exploration_final_eps": 0.05,
-        #'policy_kwargs': {
-        #    'net_arch': [512, 512] # model 6 usar lospor defecto
-        #}
-    }
+    # Get hyperparams
+    config_path = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/' + "config/" + args.env + ".yml"
+    with open(config_path, 'r') as f:
+        config = yaml.safe_load(f)
+    
+    try:
+        model_params = config[args.alg]
+    except KeyError:
+        print("Algorithm", args.alg, "is not available for environment", args.env)
+        exit(1)
+
+    # Extract compulsory params
+    n_timesteps = model_params['n_timesteps']
+    model_params.pop('n_timesteps', None)
+    policy = model_params['policy']
+    model_params.pop('policy', None)
 
     alg_class = alg_callable[args.alg]
     env_class = env_callable[args.env]
@@ -56,8 +58,8 @@ def main(args):
     env = env_class(train=True, fixed_delta_seconds=0.1, human=False, port=args.port, 
                     alg=args.alg, normalize=True)
 
-    model = alg_class("MultiInputPolicy", env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
-    model.learn(total_timesteps=2_500_000, log_interval=1, tb_log_name=log_name, progress_bar=True)
+    model = alg_class(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
+    model.learn(total_timesteps=n_timesteps, log_interval=1, tb_log_name=log_name, progress_bar=True)
     
     files = os.listdir(dir + 'model/' + args.env)
     num_files = len(files) + 1

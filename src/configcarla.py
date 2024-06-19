@@ -125,7 +125,7 @@ class CameraRGB(Sensor):
             self._threshold_lane_mask = 0.05
             self._ymin_lane = 275 
             self._angle_lane = 7
-            self._mem_max = 3
+            self._mem_max = 4
 
             # Initialize
             self._coefficients = np.zeros((SIZE_MEM, 2, 3), dtype=float)
@@ -198,10 +198,12 @@ class CameraRGB(Sensor):
         # Check measure
         mean = np.mean(self._coefficients[:, index, 2])
         angle = math.degrees(math.atan(coefficients[0])) % 180
+        diff = abs(mean - angle)
         
-        if abs(mean - angle) > self._angle_lane and self._count_coef[index] >= SIZE_MEM:
+        if diff > self._angle_lane and self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] += 1
-            return self._coefficients[-1, index, 0:2], False
+            # It might get both bad measures at the same time, but that doesn't mean it has lost the lane
+            return self._coefficients[-1, index, 0:2], diff < 20 # Only return False for really bad measures
         elif self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] = 0
 
@@ -217,8 +219,6 @@ class CameraRGB(Sensor):
         return self._coefficients[-1, index, 0:2], True
 
     def _detect_lane(self, data:list, canvas:list, mask:list): 
-        #init_time = time.time_ns()
-
         # Resize for the network
         image_lane = np.zeros((SIZE_CAMERA, SIZE_CAMERA * 2, 3), dtype=np.uint8)
         image_lane[:SIZE_CAMERA, :SIZE_CAMERA, :] = data # Copy the image in the top left corner
@@ -226,13 +226,8 @@ class CameraRGB(Sensor):
         with torch.no_grad():
             image_tensor = image_lane.transpose(2,0,1).astype('float32')/255
             x_tensor = torch.from_numpy(image_tensor).to("cuda").unsqueeze(0)
-            #print("Lane init:", time.time_ns() - init_time)
-
-            #init_time = time.time_ns()
             model_output = torch.softmax(self._lane_model.forward(x_tensor), dim=1 ).cpu().numpy()
-            #print("Lane prediction:", time.time_ns() - init_time)
-        
-        #init_time = time.time_ns()
+
         _, left_mask, right_mask = model_output[0]
         coef_left, see_line_left = self._mask_lane(mask=left_mask, index=LEFT_LANE)
         coef_right, see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
@@ -261,9 +256,6 @@ class CameraRGB(Sensor):
                 if self._seg:
                     region_mask = mask[y, x_left:x_right]
                     count_road += np.count_nonzero(region_mask == ROAD)
-
-        #print("Lane detection:", time.time_ns() - init_time, "ns")
-        #init_time = time.time_ns()
 
         if count_total > 0:
             # Calculate center of mass
@@ -295,24 +287,17 @@ class CameraRGB(Sensor):
             self._road_percentage = 0
             self._error_lane = True
             assert False, "Area zero"
-        #print("Lane cm%:", time.time_ns() - init_time, "ns")
 
     def _process_seg(self, data:list):
-        #init_time = time.time_ns()
         image_data = cv2.rotate(data, cv2.ROTATE_90_CLOCKWISE)
         image_seg = Image.fromarray(image_data)
-        #print("Seg init:", time.time_ns() - init_time, "ns")
 
         # Prediction
-        #init_time = time.time_ns()
         if self._seg:
             pred = self._seg_model.predict(image_seg)
-        #print("Seg prediction:", time.time_ns() - init_time, "ns")
 
-        #init_time = time.time_ns()
         if self._canvas_seg and self._seg:
             canvas, mask = self._seg_model.get_canvas(image_data, pred)
-            #print("Seg get canvas:", time.time_ns() - init_time, "ns")
         else:
             canvas = image_data
             if self._seg:
@@ -322,12 +307,9 @@ class CameraRGB(Sensor):
                     mask = cv2.resize(mask, dsize=(SIZE_CAMERA, SIZE_CAMERA), interpolation=cv2.INTER_NEAREST)
             else:
                 mask = None
-            #print("Seg get mask:", time.time_ns() - init_time, "ns")
-
-        #init_time = time.time_ns()
+            
         if self._lane:
             self._detect_lane(data=image_seg, canvas=canvas, mask=mask)
-            #init_time = time.time_ns()
 
         if self._rect_extra != None:
             # Convert to pygame syrface
@@ -354,10 +336,8 @@ class CameraRGB(Sensor):
                 
             self._surface_seg = surface_seg
             self._screen.blit(surface_seg, self._rect_extra)
-            #print("Seg camera show:", time.time_ns() - init_time, "ns")
 
     def process_data(self):
-        #init_time = time.time_ns()
         image = self.data
         self._error_lane = False
         if image == None:
@@ -368,12 +348,9 @@ class CameraRGB(Sensor):
 
         # Swap blue and red channels
         image_data = image_data[:, :, (2, 1, 0)]
-        #print("Camera init:", time.time_ns()- init_time, "ns")
 
-        #init_time = time.time_ns()
         if self._seg or self._lane:
             self._process_seg(image_data)
-            #init_time = time.time_ns()
 
         if self._rect_org != None:
             # Reserve mirror effect
@@ -386,7 +363,6 @@ class CameraRGB(Sensor):
                            size=self._size_text, point=(self._rect_org.size[0], 0))
                 
             self._screen.blit(screen_surface, self._rect_org)
-            #print("Camera show:", time.time_ns() - init_time, "ns")
 
     def get_deviation(self):
         return self._deviation
@@ -602,7 +578,6 @@ class Lidar(Sensor):
         return NUM_ZONES
 
     def process_data(self):
-        init_time = time.time_ns()
         lidar = self.data
         if lidar == None:
             return 
@@ -615,9 +590,7 @@ class Lidar(Sensor):
 
         if self._rect != None:
             self._sub_screen.blit(self._image, (0, 0))
-        print("Lidar init:", time.time_ns() - init_time, "ns")
 
-        init_time = time.time_ns()
         for x, y, z, i in lidar_data:
             zone = self._get_zone(x=x, y=y)
             if zone < NUM_ZONES and i < self._i_threshold:
@@ -631,16 +604,11 @@ class Lidar(Sensor):
                 center = (int(x * self._scale + self._center_screen[0]),
                           int(y * self._scale + self._center_screen[1]))
                 pygame.draw.circle(self._sub_screen, color, center, thickness)
-        print("Lidar points:", time.time_ns() - init_time, "ns")
 
-        init_time = time.time_ns()
         self._update_stats(meas_zones=[dist_zones, z_zones])  
-        print("Lidar stats:", time.time_ns() - init_time, "ns")
 
-        init_time = time.time_ns()
         if self._rect != None:
             self._screen.blit(self._sub_screen, self._rect)
-            print("Lidar blit:", time.time_ns() - init_time)
     
     def set_i_threshold(self, i:float):
         self._i_threshold = i
@@ -715,7 +683,6 @@ class Vehicle_sensors:
             sensor.process_data()
 
         if self._screen != None:
-            #init_time = time.time_ns()
             if time.time_ns() - self._time_frame > SEG_TO_NANOSEG: 
                 self._write_frame = self._count_frame
                 self._count_frame = 0
@@ -727,7 +694,6 @@ class Vehicle_sensors:
 
             if flip:
                 pygame.display.flip()
-            #print("Sensors FPS + flip:", time.time_ns() - init_time, "ns")
 
     def destroy(self):
         for sensor in self.sensors:

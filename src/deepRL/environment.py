@@ -40,8 +40,8 @@ class CarlaDiscreteBasic(gym.Env):
             num_files = len(files) + 1
             self._file_csv = open(dir_csv + alg + '_train_data_' + str(num_files) + '.csv', mode='w', newline='')
             self._writer_csv = csv.writer(self._file_csv)
-            self._writer_csv.writerow(["Episode", "Reward", "Num_steps"])
-
+            self._writer_csv.writerow(["Episode", "Reward", "Num_steps", "Index_loc"])
+        
         # States
         self._num_points_line = 5
         self.observation_space = spaces.Dict(
@@ -225,15 +225,19 @@ class CarlaDiscreteBasic(gym.Env):
                     t.location.y = -20
                     self._ego_vehicle.set_transform(t)
                     self._jump = True
+                    print("jump", self._count, "index loc:", self._index_loc)
                 elif t.location.y < -146: 
                     terminated = True
+                    print("finish:)")
             else:
                 if not self._jump and t.location.y > -18:
                     t.location.y = 15
                     self._ego_vehicle.set_transform(t)
                     self._jump = True
+                    print("jump", self._count, "index loc:", self._index_loc)
                 elif t.location.x < 43:
                     terminated = True
+                    print("finish:)")
             
         except AssertionError:
             terminated = True
@@ -244,14 +248,13 @@ class CarlaDiscreteBasic(gym.Env):
 
         if terminated and self._train:
             self._count_ep += 1
-            self._writer_csv.writerow([self._count_ep, self._total_reward, self._count])
+            self._writer_csv.writerow([self._count_ep, self._total_reward, self._count, self._index_loc])
 
         #print("dev:", self._dev, "reward", reward, "steer:", control.steer ,"finish:", terminated)
         return self._get_obs(), reward, terminated, truncated, self._get_info()
 
     def reset(self, seed=None):
-        if seed is not None:
-            super().reset(seed=seed)
+        super().reset(seed=seed)
 
         # Reset variables
         self._total_reward = 0
@@ -264,6 +267,7 @@ class CarlaDiscreteBasic(gym.Env):
             self._sensors.destroy()
 
         self._swap_ego_vehicle()
+        print("reset -> loc:", self._index_loc)
 
         for _ in range(5):
             try:
