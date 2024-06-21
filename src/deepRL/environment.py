@@ -40,7 +40,7 @@ class CarlaDiscreteBasic(gym.Env):
             num_files = len(files) + 1
             self._file_csv = open(dir_csv + alg + '_train_data_' + str(num_files) + '.csv', mode='w', newline='')
             self._writer_csv = csv.writer(self._file_csv)
-            self._writer_csv.writerow(["Episode", "Reward", "Num_steps", "Index_loc"])
+            self._writer_csv.writerow(["Episode", "Reward", "Num_steps", "Finish"])
         
         # States
         self._num_points_line = 5
@@ -113,15 +113,16 @@ class CarlaDiscreteBasic(gym.Env):
 
         # Actions
         self._action_to_control = {}
-        self._range_vel = 1
+        self._range_vel = 6
+        self._limits_vel = [0.5, 3]
         self._range_steer = 20
 
         for i in range(self._range_vel):
             for j in range(self._range_steer + 1):
-                vel = 3#(i + 1) / self._range_vel * 10 # [1, 10]
+                vel = self._limits_vel[0] + i * (self._limits_vel[1] - self._limits_vel[0]) / (self._range_vel - 1)
                 steer = j / self._range_steer * 0.4 - 0.2 # [-0.2, 0.2]
                 self._action_to_control[i * self._range_steer + j] = np.array([vel, steer])
-        self.action_space = spaces.Discrete(self._range_steer) #* (self._range_vel - 1))
+        self.action_space = spaces.Discrete(self._range_steer * self._range_vel)
 
         # Init locations
         self._town = 'Town05'
@@ -209,6 +210,7 @@ class CarlaDiscreteBasic(gym.Env):
 
         terminated = False
         truncated = False
+        finish_ep = False
 
         try:
             # Update data
@@ -217,7 +219,9 @@ class CarlaDiscreteBasic(gym.Env):
 
             # Calculate reward
             self._dev = self._camera.get_deviation()
-            reward = (SIZE_CAMERA / 2 - abs(self._dev)) / (SIZE_CAMERA / 2)
+            reward_dev = (SIZE_CAMERA / 2 - abs(self._dev)) / (SIZE_CAMERA / 2)
+            reward_vel = (self._vel - self._limits_vel[0]) / (self._limits_vel[1] - self._limits_vel[0])
+            reward = 0.99 * reward_dev + 0.01 * reward_vel
 
             t = self._ego_vehicle.get_transform()
             if self._index_loc >= 2:
@@ -228,6 +232,7 @@ class CarlaDiscreteBasic(gym.Env):
                     print("jump", self._count, "index loc:", self._index_loc)
                 elif t.location.y < -146: 
                     terminated = True
+                    finish_ep = True
                     print("finish:)")
             else:
                 if not self._jump and t.location.y > -18:
@@ -237,18 +242,20 @@ class CarlaDiscreteBasic(gym.Env):
                     print("jump", self._count, "index loc:", self._index_loc)
                 elif t.location.x < 43:
                     terminated = True
+                    finish_ep = True
                     print("finish:)")
             
         except AssertionError:
             terminated = True
             reward = -20
+            print("t:", self._ego_vehicle.get_transform().location)
 
         self._total_reward += reward
         self._count += 1
 
         if terminated and self._train:
             self._count_ep += 1
-            self._writer_csv.writerow([self._count_ep, self._total_reward, self._count, self._index_loc])
+            self._writer_csv.writerow([self._count_ep, self._total_reward, self._count, finish_ep])
 
         #print("dev:", self._dev, "reward", reward, "steer:", control.steer ,"finish:", terminated)
         return self._get_obs(), reward, terminated, truncated, self._get_info()

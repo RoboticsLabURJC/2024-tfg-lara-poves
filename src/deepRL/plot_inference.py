@@ -17,7 +17,7 @@ def extract_data(key:str, data_csv:list[dict]):
     return data
 
 def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, hist:bool=False,
-              nsteer:int=0, label:str=None, color:str=None):
+              label:str=None, color:str=None):
     data = extract_data(key, data_csv)
     plt.subplot(NUM_ROWS, NUM_COLUMNS, sub_plot)
 
@@ -29,6 +29,7 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, hist:bool=F
         if key == 'Velocity':
             bins = [i for i in range(1, 11)]
         else:
+            nsteer = 20
             bins = np.linspace(-0.2, 0.2, nsteer + 1)
             
         plt.hist(data, bins=bins, color=color, edgecolor='black', label=label, zorder=1)
@@ -90,7 +91,7 @@ def main(args):
         plot_data(data_csv=data, key='Velocity', sub_plot=5, title='Histogram velocity actions',
                   hist=True, label=csv_file)
         plot_data(data_csv=data, key='Steer', sub_plot=6, title='Histogram steer actions', hist=True,
-                  nsteer=args.nsteer, label=csv_file)
+                  label=csv_file)
         
         file.close()
 
@@ -107,7 +108,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
         description="Plot data of an inference trial",
-        usage="python3 %(prog)s --file <FILE> [--nsteer <N_STEER>] [--env <ENV>] [--alg <ALG>]"
+        usage="python3 %(prog)s --file <FILE> [--env <ENV>] [--alg <ALG>]"
     )
     parser.add_argument(
         '--file', 
@@ -115,13 +116,6 @@ if __name__ == "__main__":
         required=True, 
         nargs='+',
         help='Data file csv to plot, or \'all\' if you want the whole directory'
-    )
-    parser.add_argument(
-        '--nsteer', 
-        type=int, 
-        required=False, 
-        default=20,
-        help='Number of actions for steer'
     )
     parser.add_argument(
         '--env', 

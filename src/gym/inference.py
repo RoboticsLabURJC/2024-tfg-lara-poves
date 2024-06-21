@@ -9,10 +9,10 @@ from stable_baselines3.common.env_util import make_vec_env
 alg_callable = {
     'DQN': (DQN, 'yellow'),
     'A2C': (A2C, 'green'),
+    'PPO': (PPO, 'red'),
     'DDPG': (DDPG, 'orange'),
     'TD3': (TD3, 'blue'),
-    'SAC': (SAC, 'violet'),
-    'PPO': (PPO, 'red')
+    'SAC': (SAC, 'violet')
 }
 
 possible_envs = [
@@ -24,14 +24,17 @@ possible_envs = [
 
 def main(args):
     seed = random.randint(0, 1000)
+    all = False
 
     if 'all' in args.alg:
         args.alg = list(alg_callable.keys())
-    elif  not isinstance(args.alg, list):
+        all = True
+    elif not isinstance(args.alg, list):
         args.alg = [args.alg]
 
     if 'all' in args.env:
         args.env = possible_envs
+        all = True
     elif not isinstance(args.env, list):
         args.env = [args.env]
 
@@ -53,7 +56,9 @@ def main(args):
                 model = alg_callable[alg][0].load(gym_dir + 'model/' + cont_load)
                 model.set_random_seed(seed)
             except FileNotFoundError:
-                if alg != 'DQN' and env_dir != 'MountainCarContinuous-v0':
+                if all and ((alg == 'DQN' and env_str == 'MountainCarContinuous-v0') or (alg == 'DDPG' and env_str != 'MountainCarContinuous-v0')):
+                    pass
+                else:
                     print("Model", cont_load + '.zip', "doesn't exit")
                 continue
 
@@ -65,7 +70,7 @@ def main(args):
                 env = make_vec_env(make_env, seed=seed)
 
                 # Load vecnormalize
-                norm = alg != 'DQN' and env_str != 'CartPole-v1'
+                norm = alg != 'DQN' and env_str != 'CartPole-v1' and alg != 'DDPG'
                 if norm:
                     vec_norm = VecNormalize.load(gym_dir + 'vecnormalize/' + cont_load + '.pkl', venv=env)
             except FileNotFoundError: 
@@ -95,11 +100,14 @@ def main(args):
 
         if len(rewards_models) > 0:
             rewards_envs.append((env_str, rewards_models))
+
+    if len(rewards_envs) == 0:
+        return
     
     # Plot results
     num_cols = 2
     num_rows = 2
-    plt.figure(figsize=(6 * num_cols, 5 * num_rows))
+    plt.figure(figsize=(6 * num_cols, 4 * num_rows))
 
     # Obtain the same x limite for MountainCar envs
     mountain = [r for r in rewards_envs if 'Mountain' in r[0]]
@@ -129,10 +137,12 @@ def main(args):
         plt.subplot(num_rows, num_cols, i)
 
         last_rewards = []
-        offset = 35
-
         for alg, rewards in rewards_models:
             if any(abs(reward - rewards[-1]) <= 2 for reward in last_rewards):
+                offset = len(rewards) / 15
+                if env == 'MountainCarContinuous-v0':
+                    offset = -len(rewards) 
+
                 x = len(rewards) - 1 - offset
             else:
                 last_rewards.append(rewards[-1])
