@@ -5,12 +5,14 @@ import os
 import yaml
 from stable_baselines3.common.env_util import make_vec_env
 from stable_baselines3.common.vec_env import VecNormalize
+from stable_baselines3.common.noise import OrnsteinUhlenbeckActionNoise, NormalActionNoise
+import numpy as np
 
 # Visualize train: tensorboard --logdir=log_dir
 
 SEED = 6
 
-# Mapping str each constructor
+# Mapping str alg each constructor
 alg_callable = {
     'DQN': DQN,
     'A2C': A2C,
@@ -18,6 +20,12 @@ alg_callable = {
     'TD3': TD3,
     'SAC': SAC,
     'PPO': PPO
+}
+
+# Mapping str noise each constructor
+noise_callable = {
+    'ornstein-uhlenbeck': OrnsteinUhlenbeckActionNoise,
+    'normal': NormalActionNoise
 }
 
 def check_dir(dir:str, env:str):
@@ -78,23 +86,45 @@ def main(args):
     except KeyError:
         normalize = False
 
-    # Check if linear decay
-    if isinstance(model_params['learning_rate'], str) and 'lin' in model_params['learning_rate']:
-        init_val = float(model_params['learning_rate'].split('_')[-1])
-        lr = Linear_decay(init_val)
-        model_params['learning_rate'] = lr.linear_decay
-
-    if isinstance(model_params['clip_range'], str) and 'lin' in model_params['clip_range']:
-        init_val = float(model_params['clip_range'].split('_')[-1])
-        cr = Linear_decay(init_val)
-        model_params['clip_range'] = cr.linear_decay
-
     # Create env
     def make_env(**kwargs) -> gym.Env:
         spec = gym.spec(args.env)
         return spec.make(**kwargs)  
     env = make_vec_env(make_env, n_envs=n_envs, seed=SEED)
     env = VecNormalize(env, norm_obs=normalize, norm_reward=normalize)
+
+    # For DDPG
+    noise_type = None
+    try:
+        noise_type = model_params['noise_type']
+        model_params.pop('noise_type', None)
+    except KeyError:
+        pass
+
+    if noise_type != None:
+        try:
+            noise_std = model_params['noise_std']
+            model_params.pop('noise_std', None)
+
+            n_actions = env.action_space.shape[-1]
+            action_noise = noise_callable[noise_type](sigma=noise_std, mean=np.zeros(n_actions))
+            model_params['action_noise'] = action_noise # Add to model params
+        except Exception:
+            print("Can't include noise", noise_type)
+
+    # Check if linear decay
+    if isinstance(model_params['learning_rate'], str) and 'lin' in model_params['learning_rate']:
+        init_val = float(model_params['learning_rate'].split('_')[-1])
+        lr = Linear_decay(init_val)
+        model_params['learning_rate'] = lr.linear_decay
+
+    try:
+        if isinstance(model_params['clip_range'], str) and 'lin' in model_params['clip_range']:
+            init_val = float(model_params['clip_range'].split('_')[-1])
+            cr = Linear_decay(init_val)
+            model_params['clip_range'] = cr.linear_decay
+    except KeyError:
+        pass
 
     # Create, train and save the model
     model = alg(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)

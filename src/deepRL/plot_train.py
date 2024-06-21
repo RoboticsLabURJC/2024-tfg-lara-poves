@@ -4,17 +4,34 @@ import csv
 import os
 import glob
 import random
+import numpy as np
 
 NUM_COLUMNS = 1
 NUM_ROWS = 2
 
-def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, color:str=None, label:str=None):
+def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, color:str=None,
+              label:str=None, one:bool=False):
+    plt.subplot(NUM_ROWS, NUM_COLUMNS, sub_plot)
+    
+    # Extract dats
     data = []
+    finish = []
     for d in data_csv:
         data.append(float(d[key]))
+        if one:
+            if d['Finish'] == 'False':
+                f = 0
+            else:
+                f = 1
+            finish.append(f)
 
-    plt.subplot(NUM_ROWS, NUM_COLUMNS, sub_plot)
-    plt.plot(range(len(data)), data, color=color, label=label) 
+    # Only for step graph
+    if one: 
+        colors = np.where(finish, 'green', 'red')
+        plt.scatter(range(len(data)), data, color=colors, s=7)
+    else:
+        plt.plot(range(len(data)), data, color=color, linewidth=1, label=label)
+
     plt.ylabel(key)
     plt.xlabel('Episode')
     
@@ -28,7 +45,7 @@ def get_color_random():
 
 def main(args):
     random.seed(6)
-    plt.figure(figsize=(15 * NUM_COLUMNS, 5 * NUM_ROWS))
+    plt.figure(figsize=(15 * NUM_COLUMNS, 4 * NUM_ROWS))
 
     if len(args.file) == 1 and args.file[0] == 'all':
         dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/train/' 
@@ -54,7 +71,10 @@ def main(args):
             for row in csv_reader:
                 data.append(row)
 
-        color = get_color_random()
+        if len(csv_files) > 1:
+            color = get_color_random()
+        else:
+            color = None
         csv_file = csv_file.split('/')[-1]
 
         # Plots
@@ -62,7 +82,7 @@ def main(args):
                   color=color, label=csv_file)
         plt.legend()
         plot_data(data_csv=data, key='Num_steps', sub_plot=2, title='Steps per epidose',
-                  color=color, label=csv_file)
+                  color=color, label=csv_file, one=len(csv_files)==1)
 
     plt.tight_layout()
     plt.show()
