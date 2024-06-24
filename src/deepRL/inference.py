@@ -48,19 +48,23 @@ def main(args):
     writer_csv = csv.writer(file_csv)
     writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Velocity", "Steer", "Deviation", "Speed"])
     
-    while True:
-        action, _ = model.predict(obs, deterministic=True)
-        obs, reward, terminated, truncated, info = env.step(action)
+    try:
+        while True:
+            action, _ = model.predict(obs, deterministic=True)
+            obs, reward, terminated, truncated, info = env.step(action)
 
-        step += 1
-        total_reward += reward
-        writer_csv.writerow([step, reward, total_reward, info['vel'], info['steer'],
-                             abs(info['deviation']), info['speed']])        
+            step += 1
+            total_reward += reward
+            writer_csv.writerow([step, reward, total_reward, info['vel'], info['steer'],
+                                abs(info['deviation']), info['speed']])        
 
-        if terminated or truncated:
-            break
+            if terminated or truncated:
+                break
+    except KeyboardInterrupt:
+        return
     
-    env.close()
+    finally:
+        env.close()
 
 if __name__ == "__main__":
     possible_envs = [

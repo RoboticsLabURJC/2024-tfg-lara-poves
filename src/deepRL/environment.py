@@ -114,7 +114,7 @@ class CarlaDiscreteBasic(gym.Env):
         # Actions
         self._action_to_control = {}
         self._range_vel = 6
-        self._limits_vel = [0.5, 3]
+        self._limits_vel = [0.5, 6.5]
         self._range_steer = 20
 
         for i in range(self._range_vel):
@@ -160,6 +160,7 @@ class CarlaDiscreteBasic(gym.Env):
         self._camera = self._sensors.add_camera_rgb(transform=transform, seg=False, lane=True,
                                                     canvas_seg=False, size_rect=(SIZE_CAMERA, SIZE_CAMERA),
                                                     init_extra=self._init_driver, text='Driver view')
+        self._sensors.add_collision() # Raise an exception if the vehicle crashes
 
         if self._human:
             world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
@@ -225,22 +226,22 @@ class CarlaDiscreteBasic(gym.Env):
 
             t = self._ego_vehicle.get_transform()
             if self._index_loc >= 2:
-                if not self._jump and t.location.y < 10:
+                if not self._jump and t.location.y < 13:
                     t.location.y = -20
                     self._ego_vehicle.set_transform(t)
                     self._jump = True
                     print("jump", self._count, "index loc:", self._index_loc)
-                elif t.location.y < -146: 
+                elif t.location.y < -143: 
                     terminated = True
                     finish_ep = True
                     print("finish:)")
             else:
-                if not self._jump and t.location.y > -18:
+                if not self._jump and t.location.y > -26:
                     t.location.y = 15
                     self._ego_vehicle.set_transform(t)
                     self._jump = True
-                    print("jump", self._count, "index loc:", self._index_loc)
-                elif t.location.x < 43:
+                    print("jump", self._count, "index loc:", self._index_loc, "count:", self._count)
+                elif t.location.x < 46:
                     terminated = True
                     finish_ep = True
                     print("finish:)")
@@ -257,7 +258,9 @@ class CarlaDiscreteBasic(gym.Env):
             self._count_ep += 1
             self._writer_csv.writerow([self._count_ep, self._total_reward, self._count, finish_ep])
 
-        #print("dev:", self._dev, "reward", reward, "steer:", control.steer ,"finish:", terminated)
+        if self._count > 4000:
+            print("dev:", self._dev, "reward", reward, "steer:", control.steer ,"finish:", terminated, "count:", self._count)
+        
         return self._get_obs(), reward, terminated, truncated, self._get_info()
 
     def reset(self, seed=None):

@@ -9,6 +9,11 @@ tags:
   - stable_baselines3
 ---
 
+Con la nueva actualizacion de landau si se quiere usar pygame, antes se debe ejecutar en la terminal:
+```bash
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+```
+
 ## DQN
 
 ### CarlaDiscreteBasic

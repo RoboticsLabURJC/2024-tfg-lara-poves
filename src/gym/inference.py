@@ -56,7 +56,8 @@ def main(args):
                 model = alg_callable[alg][0].load(gym_dir + 'model/' + cont_load)
                 model.set_random_seed(seed)
             except FileNotFoundError:
-                if all and ((alg == 'DQN' and env_str == 'MountainCarContinuous-v0') or (alg == 'DDPG' and env_str != 'MountainCarContinuous-v0')):
+                if all and ((alg == 'DQN' and env_str == 'MountainCarContinuous-v0') or 
+                            ((alg == 'DDPG' or alg == 'TD3') and env_str != 'MountainCarContinuous-v0')):
                     pass
                 else:
                     print("Model", cont_load + '.zip', "doesn't exit")
@@ -70,7 +71,7 @@ def main(args):
                 env = make_vec_env(make_env, seed=seed)
 
                 # Load vecnormalize
-                norm = alg != 'DQN' and env_str != 'CartPole-v1' and alg != 'DDPG'
+                norm = alg != 'DQN' and env_str != 'CartPole-v1' and alg != 'DDPG' and alg != 'TD3'
                 if norm:
                     vec_norm = VecNormalize.load(gym_dir + 'vecnormalize/' + cont_load + '.pkl', venv=env)
             except FileNotFoundError: 
@@ -138,14 +139,19 @@ def main(args):
 
         last_rewards = []
         for alg, rewards in rewards_models:
-            if any(abs(reward - rewards[-1]) <= 2 for reward in last_rewards):
-                offset = len(rewards) / 15
-                if env == 'MountainCarContinuous-v0':
-                    offset = -len(rewards) 
+            found = False
+            for i, (reward, count) in enumerate(last_rewards):
+                if abs(reward - rewards[-1]) <= 2:
+                    offset = len(rewards) / 15
+                    if env == 'MountainCarContinuous-v0':
+                        offset = int(-93 * 1.2)
 
-                x = len(rewards) - 1 - offset
-            else:
-                last_rewards.append(rewards[-1])
+                    x = len(rewards) - 1 - offset * count
+                    last_rewards[i] = (reward, count + 1)
+                    found = True
+            
+            if not found:
+                last_rewards.append((rewards[-1], 1))
                 x = len(rewards) - 1
 
             if rewards[-1] < 0:

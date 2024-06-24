@@ -57,7 +57,7 @@ def main(args):
     log_name = args.alg + '-' + args.env
     env = env_class(train=True, fixed_delta_seconds=0.1, human=False, port=args.port, 
                     alg=args.alg, normalize=True)
-
+    
     model = alg_class(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
     model.learn(total_timesteps=n_timesteps, log_interval=1, tb_log_name=log_name, progress_bar=True)
     
