@@ -625,6 +625,15 @@ class Lidar(Sensor):
     def get_stat_zones(self):
         return self._stat_zones
 
+class Collision(Sensor):
+    def __init__(self, sensor):
+        super().__init__(sensor=sensor)
+
+    def process_data(self):
+        if self.data != None:
+            other_actor = self.data.other_actor
+            assert False, f"The vehicle crashed with {other_actor.type_id}"
+
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface=None, 
                  color_text:tuple[int, int, int]=(0, 0, 0)):
@@ -638,7 +647,7 @@ class Vehicle_sensors:
         self._count_frame = 0
         self._write_frame = 0
 
-    def _put_sensor(self, sensor_type:str, transform:carla.Transform, type:int=0):
+    def _put_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform(), type:int=0):
         try:
             sensor_bp = self._world.get_blueprint_library().find(sensor_type)
         except IndexError:
@@ -677,6 +686,12 @@ class Vehicle_sensors:
         
         self.sensors.append(lidar)
         return lidar
+    
+    def add_collision(self):
+        sensor = self._put_sensor(sensor_type='sensor.other.collision')
+        sensor_collision = Collision(sensor=sensor)
+        self.sensors.append(sensor_collision)
+        return sensor_collision
 
     def update_data(self, flip:bool=True):
         for sensor in self.sensors:

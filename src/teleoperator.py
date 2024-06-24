@@ -42,14 +42,15 @@ def main(args):
     teleop = configcarla.Teleoperator(ego_vehicle, throttle=0.6)
 
     # Add cameras
-    cameras = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
+    sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
+    sensors.add_collision()
 
     camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5), carla.Rotation(pitch=-10.0, roll=90.0))
-    cameras.add_camera_rgb(size_rect=(configcarla.SIZE_CAMERA, configcarla.SIZE_CAMERA), init=(0, 0), 
+    sensors.add_camera_rgb(size_rect=(configcarla.SIZE_CAMERA, configcarla.SIZE_CAMERA), init=(0, 0), 
                            text='Driver view', transform=camera_transform)
     
     camera_transform.location.x = -4.0
-    cameras.add_camera_rgb(size_rect=(configcarla.SIZE_CAMERA, configcarla.SIZE_CAMERA),
+    sensors.add_camera_rgb(size_rect=(configcarla.SIZE_CAMERA, configcarla.SIZE_CAMERA),
                            init=(configcarla.SIZE_CAMERA, 0),
                            text='World View', transform=camera_transform)
 
@@ -74,7 +75,7 @@ def main(args):
                                 throttle -= OFFSET
                             teleop.set_throttle(throttle)
 
-            cameras.update_data(flip=False)
+            sensors.update_data(flip=False)
             teleop.control()
 
             # Draw buttoms
@@ -90,9 +91,13 @@ def main(args):
 
     except KeyboardInterrupt:
         return
+    
+    except AssertionError as e:
+        print(e)
+        return
 
     finally:
-        cameras.destroy()
+        sensors.destroy()
         pygame.quit()
 
 if __name__ == "__main__":

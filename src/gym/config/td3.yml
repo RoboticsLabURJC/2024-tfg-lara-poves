@@ -1,0 +1,11 @@
+MountainCarContinuous-v0:
+  n_timesteps: 300000
+  policy: 'MlpPolicy'
+  noise_type: 'ornstein-uhlenbeck'
+  noise_std: 0.5
+  gradient_steps: 1
+  train_freq: 1
+  learning_rate: 0.001
+  batch_size: 256
+  policy_kwargs: 
+    net_arch: [400, 300]
