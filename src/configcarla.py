@@ -106,6 +106,7 @@ class CameraRGB(Sensor):
         self._deviation = 0
         self._road_percentage = 0
         self._error_lane = False
+        self._angle_error = 0
 
         self._seg = seg
         self._canvas_seg = canvas_seg
@@ -164,7 +165,7 @@ class CameraRGB(Sensor):
         index_mask = np.where(mask > self._threshold_lane_mask)
         if len(index_mask[0]) < 10:
             self._count_mem_lane[index] += 1
-            return self._coefficients[-1, index, 0:2], False
+            return False
         else:
             self._count_mem_lane[index] = 0
 
@@ -188,7 +189,7 @@ class CameraRGB(Sensor):
         # Memory lane
         if len(x_coef) < 10:
             self._count_mem_lane[index] += 1
-            return self._coefficients[-1, index, 0:2], False
+            return False
         else:
             self._count_mem_lane[index] = 0
 
@@ -203,7 +204,7 @@ class CameraRGB(Sensor):
         if diff > self._angle_lane and self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] += 1
             # It might get both bad measures at the same time, but that doesn't mean it has lost the lane
-            return self._coefficients[-1, index, 0:2], diff < 20 # Only return False for really bad measures
+            return  diff < 20 # Only return False for really bad measures
         elif self._count_coef[index] >= SIZE_MEM:
             self._count_mem_lane[index] = 0
 
@@ -216,7 +217,7 @@ class CameraRGB(Sensor):
         # Update count 
         self._count_coef[index] += 1
 
-        return self._coefficients[-1, index, 0:2], True
+        return True
 
     def _detect_lane(self, data:list, canvas:list, mask:list): 
         # Resize for the network
@@ -229,8 +230,17 @@ class CameraRGB(Sensor):
             model_output = torch.softmax(self._lane_model.forward(x_tensor), dim=1 ).cpu().numpy()
 
         _, left_mask, right_mask = model_output[0]
-        coef_left, see_line_left = self._mask_lane(mask=left_mask, index=LEFT_LANE)
-        coef_right, see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
+        see_line_left = self._mask_lane(mask=left_mask, index=LEFT_LANE)
+        see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
+
+        # Coefficients
+        coef_left = self._coefficients[-1, LEFT_LANE, 0:2]
+        coef_right = self._coefficients[-1, RIGHT_LANE, 0:2]
+
+        # Lane error
+        angle_left = self._coefficients[-1, LEFT_LANE, 2]
+        angle_right = self._coefficients[-1, RIGHT_LANE, 2]
+        self._angle_error = abs(90 - np.mean([angle_left, angle_right]))
 
         if see_line_left == False and see_line_right == False:
             self._error_lane = True
@@ -369,6 +379,9 @@ class CameraRGB(Sensor):
     
     def get_road_percentage(self):
         return self._road_percentage
+    
+    def get_angle_lane_error(self):
+        return self._angle_error
     
     def get_lane_cm(self):
         if self._error_lane:
@@ -804,7 +817,9 @@ def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:floa
     else:
         settings.synchronous_mode = False
     world.apply_settings(settings)
-    client.reload_world(False) # reload world keeping settings
+    client.reload_world(False) # Reload world keeping settings
+
+    print(settings.synchronous_mode)
 
     return world, client
 

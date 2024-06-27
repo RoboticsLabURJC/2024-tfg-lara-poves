@@ -9,3 +9,6 @@ MountainCarContinuous-v0:
   batch_size: 256
   policy_kwargs: 
     net_arch: [400, 300]
+  
+  # policy_delay
+  # target_noise_clip -> smoothing noise

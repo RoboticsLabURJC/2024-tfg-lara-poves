@@ -27,7 +27,7 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, hist:bool=F
         plt.xlabel('Step')
     else:
         if key == 'Velocity':
-            bins = [i for i in range(1, 7)]
+            bins = [i + 0.5 for i in range(0, 6)]
         else:
             nsteer = 20
             bins = np.linspace(-0.2, 0.2, nsteer + 1)
