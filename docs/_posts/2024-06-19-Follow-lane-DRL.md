@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-06-19T08:35:00
+last_modified_at: 2024-06-25T12:04:00
 categories:
   - Blog
 tags:
@@ -16,29 +16,28 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 
 ## DQN
 
+hemos desactivado la segmentación para ganar frame spor segundo y reducir ele tiempo de entrenamiento
+
 ### CarlaDiscreteBasic
 observaciones (las usamos normalizadas):
 - area del carril
 - 5 puntos de la linea izquierda del carril
 - 5 puntos de la linea derecha del carril
 - centro de masas
+```python
+class Camera(Sensor):     
+  # reaward 
+  def get_angle_lane_error(self):
 
-**Modelo 1**:
-- funcion de recompensa: reward = (SIZE_CAMERA / 2 - abs(self._dev)) / (SIZE_CAMERA / 2), if out: reward = -20
-- acciones de velocidad -> 3m/s
-- acciones de giro -> 20 acciones -> rango [-0.2, 0.2]
-- N steps: 2_000_000
-- Parametros:
-    model_params = {
-        "learning_rate": 0.00063,
-        "buffer_size": 10_000, 
-        "batch_size": 128,
-        "learning_starts": 0,
-        "gamma": 0.5, 
-        "target_update_interval": 200,
-        "train_freq": 4, 
-        "gradient_steps": -1,
-        "exploration_fraction": 0.72, 
-        "exploration_final_eps": 0.0
-    }
-- duracion del entrenamiento: 
+  # obs
+  def get_lane_area(self):
+  def get_lane_cm(self):
+```
+Si el coche pierde el carril, el area es 0, el cm se situa en la de las esquinas, la mas cercana  a al ultima medida, y los puntos de cada linea de carril se situan en el centro de la imagen (simular que no hay carrril).
+
+env:
+  - sensor de camera driver
+  - sensor de colison
+  - si modo human: cmara de world también y activación de pygame
+
+añadido angle_error: angulo de desviación en valor absoluto entre el coche y el carril

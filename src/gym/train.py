@@ -93,7 +93,7 @@ def main(args):
     env = make_vec_env(make_env, n_envs=n_envs, seed=SEED)
     env = VecNormalize(env, norm_obs=normalize, norm_reward=normalize)
 
-    # For DDPG
+    # For DDPG and TD3
     noise_type = None
     try:
         noise_type = model_params['noise_type']

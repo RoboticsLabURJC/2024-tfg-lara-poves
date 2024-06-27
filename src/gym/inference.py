@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import random
 from stable_baselines3.common.vec_env import VecNormalize
 from stable_baselines3.common.env_util import make_vec_env
+import math
 
 alg_callable = {
     'DQN': (DQN, 'yellow'),
@@ -57,7 +58,7 @@ def main(args):
                 model.set_random_seed(seed)
             except FileNotFoundError:
                 if all and ((alg == 'DQN' and env_str == 'MountainCarContinuous-v0') or 
-                            ((alg == 'DDPG' or alg == 'TD3') and env_str != 'MountainCarContinuous-v0')):
+                            ((alg == 'DDPG' or alg == 'TD3' or alg == 'SAC') and env_str != 'MountainCarContinuous-v0')):
                     pass
                 else:
                     print("Model", cont_load + '.zip', "doesn't exit")
@@ -71,7 +72,7 @@ def main(args):
                 env = make_vec_env(make_env, seed=seed)
 
                 # Load vecnormalize
-                norm = alg != 'DQN' and env_str != 'CartPole-v1' and alg != 'DDPG' and alg != 'TD3'
+                norm = alg != 'DQN' and env_str != 'CartPole-v1' and alg != 'DDPG' and alg != 'TD3' and alg != 'SAC'
                 if norm:
                     vec_norm = VecNormalize.load(gym_dir + 'vecnormalize/' + cont_load + '.pkl', venv=env)
             except FileNotFoundError: 
@@ -106,9 +107,9 @@ def main(args):
         return
     
     # Plot results
-    num_cols = 2
-    num_rows = 2
-    plt.figure(figsize=(6 * num_cols, 4 * num_rows))
+    num_cols = 1 if len(rewards_envs) == 1 else 2
+    num_rows = math.ceil(len(rewards_envs) / 2)
+    plt.figure(figsize=(6 * num_cols, 5 * num_rows))
 
     # Obtain the same x limite for MountainCar envs
     mountain = [r for r in rewards_envs if 'Mountain' in r[0]]
@@ -119,6 +120,7 @@ def main(args):
             if len_mountain > max_mountain:
                 max_mountain = len_mountain
 
+    subplot = 0
     for env, rewards_models in rewards_envs:
         # Sort rewards to see all plots
         reverse = False
@@ -127,23 +129,16 @@ def main(args):
         rewards_models.sort(key=lambda x: x[1][-1], reverse=reverse)
 
         # Select graph
-        if 'CartPole' in env:
-            i = 1
-        elif 'Acrobot' in env:
-            i = 2
-        elif 'Continuous' in env:
-            i = 4
-        else:
-            i = 3
-        plt.subplot(num_rows, num_cols, i)
+        subplot += 1
+        plt.subplot(num_rows, num_cols, subplot)
 
         last_rewards = []
         for alg, rewards in rewards_models:
             found = False
             for i, (reward, count) in enumerate(last_rewards):
-                if abs(reward - rewards[-1]) <= 2:
-                    offset = len(rewards) / 15
-                    if env == 'MountainCarContinuous-v0':
+                if abs(reward - rewards[-1]) <= 10:
+                    offset = len(rewards) / 9
+                    if env == 'MountainCarContinuous-v0' and max_mountain > 200:
                         offset = int(-93 * 1.2)
 
                     x = len(rewards) - 1 - offset * count
@@ -177,7 +172,7 @@ def main(args):
         plt.title(env)
         plt.legend()
 
-    plt.tight_layout()
+    #plt.tight_layout()
     plt.show()
 
 if __name__ == "__main__":

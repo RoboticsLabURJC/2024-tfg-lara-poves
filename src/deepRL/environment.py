@@ -8,6 +8,7 @@ import random
 import pygame
 import os
 import csv
+import math
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -113,8 +114,8 @@ class CarlaDiscreteBasic(gym.Env):
 
         # Actions
         self._action_to_control = {}
-        self._range_vel = 6
         self._limits_vel = [0.5, 6.5]
+        self._range_vel = math.ceil(self._limits_vel[1])
         self._range_steer = 20
 
         for i in range(self._range_vel):
@@ -220,9 +221,11 @@ class CarlaDiscreteBasic(gym.Env):
 
             # Calculate reward
             self._dev = self._camera.get_deviation()
+            angle_error = self._camera.get_angle_lane_error()
+
             reward_dev = (SIZE_CAMERA / 2 - abs(self._dev)) / (SIZE_CAMERA / 2)
             reward_vel = (self._vel - self._limits_vel[0]) / (self._limits_vel[1] - self._limits_vel[0])
-            reward = 0.99 * reward_dev + 0.01 * reward_vel
+            reward = 0.99 * reward_dev + 0.01 * reward_vel #- angle_error / 100
 
             t = self._ego_vehicle.get_transform()
             if self._index_loc >= 2:
@@ -249,7 +252,7 @@ class CarlaDiscreteBasic(gym.Env):
         except AssertionError:
             terminated = True
             reward = -20
-            print("t:", self._ego_vehicle.get_transform().location)
+            print("t:", self._ego_vehicle.get_transform().location, "count:", self._count)
 
         self._total_reward += reward
         self._count += 1
@@ -258,7 +261,7 @@ class CarlaDiscreteBasic(gym.Env):
             self._count_ep += 1
             self._writer_csv.writerow([self._count_ep, self._total_reward, self._count, finish_ep])
 
-        if self._count > 4000:
+        if self._count > 5000:
             print("dev:", self._dev, "reward", reward, "steer:", control.steer ,"finish:", terminated, "count:", self._count)
         
         return self._get_obs(), reward, terminated, truncated, self._get_info()
