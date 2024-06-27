@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-06-13T14:01:00
+last_modified_at: 2024-06-27T08:17:00
 categories:
   - Blog
 tags:
@@ -47,7 +47,7 @@ def add_one_vehicle(world:carla.World, ego_vehicle:bool=False, vehicle_type:str=
 def add_vehicles_randomly(world:carla.World, number:int) # Spawn Points
 ```
 
-En el modo asíncrono de CARLA, el servidor se ejecuta a máxima velocidad, mientras que en el modo síncrono, el cliente indica al servidor cuándo ejecutar (*world.tick()*) y durante cuanto tiempo debe hacerlo (*fixed delta seconds*), en tiempo simulado no en tiempo real. El modo síncrono se emplea comúnmente en entrenamientos de modelos, permitiendo detener la simulación durante el procesamiento. Sin embargo, la inferencia se realiza en modo asíncrono, replicando así condiciones más cercanas a la realidad.
+En el modo asíncrono de CARLA, el servidor se ejecuta a máxima velocidad, mientras que en el modo síncrono, el cliente indica al servidor cuándo ejecutar (*world.tick()*) y durante cuanto tiempo **simulado** debe hacerlo (*fixed delta seconds*), luego detiene la simulación hasta un nuevo *tick*. El modo síncrono se emplea comúnmente en entrenamientos de modelos, permitiendo detener la simulación durante el procesamiento. Sin embargo, la inferencia se realiza en modo asíncrono, replicando así condiciones más cercanas a la realidad.
 
 ## Interfaz
 
@@ -99,14 +99,20 @@ class Vehicle_sensors:
             sensor.process_data()
 ```
 
-Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, que simplemente muestra la imagen capturada. Además, hemos añadido una nueva función ***add_camera_rgb*** en la clase *Vehicle_sensors*, que requiere los parámetros del constructor de esta nueva clase y la ubicación de la cámara respecto al coche.
+Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, que simplemente muestra la imagen capturada. Además, hemos añadido una nueva función ***add_camera_rgb*** en la clase *Vehicle_sensors*, que requiere los parámetros del constructor de esta nueva clase y la ubicación de la cámara respecto al coche. Además, hemos añadido un sensor de colisión para detectar si el coche choca contra algún objeto, en caso de impacto, se eleva una excepción.
 ```python
 class Camera(Sensor):      
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, screen:pygame.Surface, text:str=None)
     def process_data(self)
 
+class Collision(Sensor):
+    def process_data():
+        if self.data != None:
+            assert False # El vehículo ha chocado
+
 class Vehicle_sensors:
     def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, text:str=None, transform:carla.Transform=carla.Transform())
+    def add_collision(self)
 ```
 
 ## Control 
