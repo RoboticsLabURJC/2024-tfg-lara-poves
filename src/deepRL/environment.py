@@ -138,7 +138,8 @@ class CarlaDiscreteBasic(gym.Env):
         throttle = 0.1
         for i in range(0, num_actions, 2):
             self.action_to_control[i] = (throttle, steer)
-            self.action_to_control[i + 1] = (throttle, -steer)
+            if i < 16:
+                self.action_to_control[i + 1] = (throttle, -steer)
 
             steer -= 0.02
             if throttle <= 0.4:
@@ -147,6 +148,8 @@ class CarlaDiscreteBasic(gym.Env):
                 throttle = min(0.3, throttle)
             elif i >= 16:
                 throttle = 0.6
+
+        print(self.action_to_control)
 
         # Other parameters
         self.reward_range = (0.0, 1.0)
