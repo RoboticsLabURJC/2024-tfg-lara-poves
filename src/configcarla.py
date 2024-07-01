@@ -125,7 +125,7 @@ class CameraRGB(Sensor):
             self._threshold_road_per = 90.0
             self._threshold_lane_mask = 0.05
             self._ymin_lane = 275 
-            self._angle_lane = 7
+            self._angle_lane = 10
             self._mem_max = 4
 
             # Initialize
@@ -236,11 +236,6 @@ class CameraRGB(Sensor):
         # Coefficients
         coef_left = self._coefficients[-1, LEFT_LANE, 0:2]
         coef_right = self._coefficients[-1, RIGHT_LANE, 0:2]
-
-        # Lane error
-        angle_left = self._coefficients[-1, LEFT_LANE, 2]
-        angle_right = self._coefficients[-1, RIGHT_LANE, 2]
-        self._angle_error = abs(90 - np.mean([angle_left, angle_right]))
 
         if see_line_left == False and see_line_right == False:
             self._error_lane = True
@@ -379,9 +374,6 @@ class CameraRGB(Sensor):
     
     def get_road_percentage(self):
         return self._road_percentage
-    
-    def get_angle_lane_error(self):
-        return self._angle_error
     
     def get_lane_cm(self):
         if self._error_lane:
@@ -818,8 +810,6 @@ def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:floa
         settings.synchronous_mode = False
     world.apply_settings(settings)
     client.reload_world(False) # Reload world keeping settings
-
-    print(settings.synchronous_mode)
 
     return world, client
 
