@@ -55,10 +55,11 @@ def main(args):
     model_dir = check_dir(dir + 'model/', args.env)
 
     log_name = args.alg + '-' + args.env
-    env = env_class(train=True, fixed_delta_seconds=0.1, human=False, port=args.port, 
-                    alg=args.alg, normalize=True)
+    env = env_class(train=True, fixed_delta_seconds=0.1, human=True, port=args.port, 
+                    alg=args.alg, normalize=True, seed=SEED)
     
     model = alg_class(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
+    env.set_model(model)
     model.learn(total_timesteps=n_timesteps, log_interval=1, tb_log_name=log_name, progress_bar=True)
     
     files = os.listdir(dir + 'model/' + args.env)

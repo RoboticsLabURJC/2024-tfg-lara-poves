@@ -1,44 +1,41 @@
 import matplotlib.pyplot as plt
 import argparse
 import csv
-import numpy as np
-import random
 import os
 import glob
+import random
+import numpy as np
 
-NUM_COLUMNS = 3
-NUM_ROWS = 2
+NUM_COLUMNS = 1
+NUM_ROWS = 3
 
-def extract_data(key:str, data_csv:list[dict]):
+def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, color:str=None,
+              label:str=None, one:bool=False):
+    plt.subplot(NUM_ROWS, NUM_COLUMNS, sub_plot)
+    
+    # Extract dats
     data = []
+    finish = []
     for d in data_csv:
         data.append(float(d[key]))
+        if one:
+            if d['Finish'] == 'False':
+                f = 0
+            else:
+                f = 1
+            finish.append(f)
 
-    return data
-
-def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, hist:bool=False,
-              label:str=None, color:str=None):
-    data = extract_data(key, data_csv)
-    plt.subplot(NUM_ROWS, NUM_COLUMNS, sub_plot)
-
-    if not hist:
-        plt.plot(range(len(data)), data, color=color, label=label) 
-        plt.ylabel(key)
-        plt.xlabel('Step')
+    # Only for step graph
+    if one: 
+        colors = np.where(finish, 'green', 'red')
+        plt.scatter(range(len(data)), data, color=colors, s=7)
     else:
-        if key == 'Velocity':
-            bins = [i + 0.5 for i in range(0, 6)]
-        else:
-            nsteer = 20
-            bins = np.linspace(-0.2, 0.2, nsteer + 1)
-            
-        plt.hist(data, bins=bins, color=color, edgecolor='black', label=label, zorder=1)
-        plt.ylabel('Frecuency')
-        plt.xlabel(key)
+        plt.plot(range(len(data)), data, color=color, linewidth=1, label=label)
+
+    plt.ylabel(key)
+    plt.xlabel('Episode')
     
     plt.title(title)
-    if sub_plot % 3 == 0:
-        plt.legend()
 
 def get_color_random():
     r = random.randint(0, 255)
@@ -48,10 +45,10 @@ def get_color_random():
 
 def main(args):
     random.seed(6)
-    plt.figure(figsize=(5 * NUM_COLUMNS, 4 * NUM_ROWS))
+    plt.figure(figsize=(15 * NUM_COLUMNS, 3 * NUM_ROWS))
 
     if len(args.file) == 1 and args.file[0] == 'all':
-        dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/inference/' 
+        dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/train/' 
         if args.env != None:
             dir += args.env + '/'
 
@@ -74,26 +71,20 @@ def main(args):
             for row in csv_reader:
                 data.append(row)
 
-        csv_file = csv_file.split('/')[-1].rsplit('_', 1)[0]
-        color = get_color_random()
+        if len(csv_files) > 1:
+            color = get_color_random()
+        else:
+            color = None
+        csv_file = csv_file.split('/')[-1]
 
         # Plots
-        plot_data(data_csv=data, key='Reward', sub_plot=2, title='Reward per step', label=csv_file,
-                  color=color)
-        plot_data(data_csv=data, key='Accumulated reward', sub_plot=3, title='Total reward',
-                  label=csv_file, color=color)
-        plot_data(data_csv=data, key='Deviation', sub_plot=1, title='Deviation', label=csv_file,
-                  color=color)
-        plot_data(data_csv=data, key='Speed', sub_plot=4, title='Velocity of the vehicle',
-                  label=csv_file, color=color)
-
-        # Histograms
-        plot_data(data_csv=data, key='Velocity', sub_plot=5, title='Histogram velocity actions',
-                  hist=True, label=csv_file)
-        plot_data(data_csv=data, key='Steer', sub_plot=6, title='Histogram steer actions', hist=True,
-                  label=csv_file)
-        
-        file.close()
+        plot_data(data_csv=data, key='Reward', sub_plot=1, title='Reward per episode',
+                  color=color, label=csv_file)
+        plt.legend()
+        plot_data(data_csv=data, key='Num_steps', sub_plot=2, title='Steps per epidose',
+                  color=color, label=csv_file, one=len(csv_files)==1)
+        plot_data(data_csv=data, key='Exploration_rate', sub_plot=3, title='Decay exploration rate', 
+                  color=color, label=csv_file)
 
     plt.tight_layout()
     plt.show()
