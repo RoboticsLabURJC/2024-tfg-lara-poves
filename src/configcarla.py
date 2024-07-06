@@ -786,7 +786,6 @@ class PID:
             control.brake = self._throttle / 2
         elif v > 7:
             control.brake = self._throttle / 5
-            
         control.throttle = self._throttle
 
         if error > 20:

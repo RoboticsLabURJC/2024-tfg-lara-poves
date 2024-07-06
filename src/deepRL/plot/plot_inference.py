@@ -27,16 +27,14 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, hist:bool=F
         plt.xlabel('Step')
     else:
         if key == 'Throttle':
-            i = 0.0
-            bins = []
-            while i <= 0.5:
-                bins.append(i)
-                i += 0.1
+            bins = np.linspace(0.05, 0.55, 6)
+            bins_ticks = np.linspace(0.1, 0.5, 5)
         else:
-            nsteer = 20
-            bins = np.linspace(-0.2, 0.2, nsteer + 1)
+            bins = np.linspace(-0.19, 0.19, 20)
+            bins_ticks = np.linspace(-0.2, 0.2, 21)
             
         plt.hist(data, bins=bins, color=color, edgecolor='black', label=label, zorder=1)
+        plt.xticks(bins_ticks, rotation=90)
         plt.ylabel('Frecuency')
         plt.xlabel(key)
     
