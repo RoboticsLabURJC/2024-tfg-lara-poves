@@ -27,6 +27,7 @@ def main(args):
         model = alg_class.load(model_file)
     except:
         print("Model", model_file, "doesn't exit")
+        exit(1)
 
     env = env_class(train=False, port=args.port, human=True, normalize=True)
     obs, _ = env.reset()
@@ -46,17 +47,18 @@ def main(args):
     file_csv = open(dir_csv + args.alg + '_' + 'data_' + args.n + '_' + str(num_files) +
                     '.csv', mode='w', newline='')
     writer_csv = csv.writer(file_csv)
-    writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Velocity", "Steer", "Deviation", "Speed"])
+    writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Throttle", "Steer", "Deviation", "Speed"])
     
     try:
         while True:
             action, _ = model.predict(obs, deterministic=True)
+            throttle, steer = env.action_to_control[action.item()]
             obs, reward, terminated, truncated, info = env.step(action)
 
             step += 1
             total_reward += reward
-            writer_csv.writerow([step, reward, total_reward, info['vel'], info['steer'],
-                                abs(info['deviation']), info['speed']])        
+            writer_csv.writerow([step, reward, total_reward, throttle, steer, info['deviation'], 
+                                 info['speed']])        
 
             if terminated or truncated:
                 break
