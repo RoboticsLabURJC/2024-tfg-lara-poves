@@ -15,7 +15,8 @@ sys.path.insert(0, src_path)
 from configcarla import SIZE_CAMERA
 import configcarla
 
-MAX_REWARD = 100
+MAX_DEV = 100
+MAX_VEL = 5.0
 
 class CarlaDiscreteBasic(gym.Env):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
@@ -149,8 +150,8 @@ class CarlaDiscreteBasic(gym.Env):
             14: (0.3, -0.12),
             15: (0.2, 0.14),
             16: (0.2, -0.14),
-            17: (0.1, 0.16),
-            18: (0.1, -0.16),
+            17: (0.2, 0.16),
+            18: (0.2, -0.16),
             19: (0.1, 0.18),
             20: (0.1, -0.18)
         }
@@ -253,18 +254,18 @@ class CarlaDiscreteBasic(gym.Env):
 
             # Get deviation
             self._dev = self._camera.get_deviation()
-            dev = np.clip(self._dev, -MAX_REWARD, MAX_REWARD)
+            dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
 
             # Get velocity
             speed = self.ego_vehicle.get_velocity()
             self._speed = carla.Vector3D(speed).length()
-            vel = np.clip(self._speed, 0.0, 5.0) # Reaches a speed of 5m/s after 5 seconds ¿bajar? hacerlo constante
+            vel = np.clip(self._speed, 0.0, MAX_VEL) # Reaches a speed of 5m/s (MAX_VEL) after 5 seconds
 
             # Angle reward
             r_steer = (self._max_steer - abs(steer)) / self._max_steer
 
             # Calculate reward
-            reward = 0.75 * (MAX_REWARD - abs(dev)) / MAX_REWARD + 0.2 * vel / 5.0 + 0.05 * r_steer
+            reward = 0.7 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / MAX_VEL + 0.1 * r_steer
 
             t = self.ego_vehicle.get_transform()
             if self._index_loc >= 2:
