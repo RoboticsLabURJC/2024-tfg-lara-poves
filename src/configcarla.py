@@ -11,9 +11,9 @@ import torch
 import cv2
 from abc import ABC, abstractmethod
 
-sys.path.insert(0, '/home/alumnos/lara/efficientvit-urjc/urjc')
-sys.path.insert(0, '/home/alumnos/lara/efficientvit-urjc')
-os.chdir('/home/alumnos/lara/efficientvit-urjc/urjc')
+sys.path.insert(0, '/home/lpoves/efficientvit-urjc/urjc')
+sys.path.insert(0, '/home/lpoves/efficientvit-urjc')
+os.chdir('/home/lpoves/efficientvit-urjc/urjc')
 
 import EfficientVit as EV
 
@@ -117,7 +117,7 @@ class CameraRGB(Sensor):
 
         self._lane = lane
         if lane:
-            file = '/home/alumnos/lara/2024-tfg-lara-poves/best_model_torch.pth'
+            file = '/home/lpoves/2024-tfg-lara-poves/best_model_torch.pth'
             self._lane_model = torch.load(file)
             self._lane_model.eval()
 
