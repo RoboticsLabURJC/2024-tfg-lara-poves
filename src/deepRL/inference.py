@@ -21,7 +21,7 @@ def main(args):
     alg_class = alg_callable[args.alg]
     env_class = env_callable[args.env]
 
-    dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/'
+    dir = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/'
     model_file = dir + 'model/' + args.env + '/' + args.alg + '-' + args.env + '_' + args.n
     try:
         model = alg_class.load(model_file)
@@ -35,7 +35,7 @@ def main(args):
     total_reward = 0
     step = 0
 
-    dir_csv = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/inference/'
+    dir_csv = dir + 'csv/inference/'
     if not os.path.exists(dir_csv):
         os.makedirs(dir_csv)
     dir_csv += args.env + '/'

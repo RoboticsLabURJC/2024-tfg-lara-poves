@@ -16,11 +16,10 @@ from configcarla import SIZE_CAMERA
 import configcarla
 
 MAX_DEV = 100
-MAX_VEL = 5.0
 
 class CarlaDiscreteBasic(gym.Env):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
-                 fixed_delta_seconds=0.0, normalize:bool=False, seed:int=None):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
         self._first = True
         self._dev = 0
         self._vel = 0
@@ -32,12 +31,13 @@ class CarlaDiscreteBasic(gym.Env):
         self._jump = False
         self._human = human
         self.model = None
+        self._max_vel = 5.0 # Train on old server
 
         # CSV file
         self._train = train
         if self._train:
             assert alg != None, "Algorithms are required for training"
-            dir_csv = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/train/CarlaDiscreteBasic/'
+            dir_csv = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/csv/train/' + self.__class__.__name__ + '/'
             if not os.path.exists(dir_csv):
                 os.makedirs(dir_csv)
             files = os.listdir(dir_csv)
@@ -174,7 +174,7 @@ class CarlaDiscreteBasic(gym.Env):
         # Pygame window
         if self._human:
             self._screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), 
-                                                    name='Follow lane: CarlaDiscreteBasic')
+                                                    name='Follow lane: ' + self.__class__.__name__)
             self._init_driver = (SIZE_CAMERA, 0)
         else:
             self._screen = None
@@ -230,17 +230,33 @@ class CarlaDiscreteBasic(gym.Env):
     
     def _get_info(self):
         return {"deviation": self._dev, "speed": self._speed}
+    
+    def _read_action(self, action):
+        throttle, steer = self.action_to_control[int(action)]
+        return throttle, steer
+    
+    def _calculate_reward(self):
+        # Get deviation
+        self._dev = self._camera.get_deviation()
+        dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
 
-    def step(self, action:int):
-        try:
-            action = action[0]
-        except IndexError:
-            action = int(action)
+        # Get velocity
+        speed = self.ego_vehicle.get_velocity()
+        self._speed = carla.Vector3D(speed).length()
+        vel = np.clip(self._speed, 0.0, self._max_vel) # Reaches a speed of 5m/s after 5 seconds
 
+        # Angle reward
+        r_steer = (self._max_steer - abs(self._steer)) / self._max_steer
+
+        # Calculate reward
+        reward = 0.7 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel + 0.1 * r_steer
+        return reward
+
+    def step(self, action):
         # Exec actions
-        throttle, steer = self.action_to_control[action]
+        throttle, self._steer = self._read_action(action)
         control = carla.VehicleControl()
-        control.steer = steer
+        control.steer = self._steer
         control.throttle = throttle
         self.ego_vehicle.apply_control(control) # Apply control
 
@@ -252,20 +268,7 @@ class CarlaDiscreteBasic(gym.Env):
             self._world.tick()
             self._sensors.update_data()
 
-            # Get deviation
-            self._dev = self._camera.get_deviation()
-            dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
-
-            # Get velocity
-            speed = self.ego_vehicle.get_velocity()
-            self._speed = carla.Vector3D(speed).length()
-            vel = np.clip(self._speed, 0.0, MAX_VEL) # Reaches a speed of 5m/s (MAX_VEL) after 5 seconds
-
-            # Angle reward
-            r_steer = (self._max_steer - abs(steer)) / self._max_steer
-
-            # Calculate reward
-            reward = 0.7 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / MAX_VEL + 0.1 * r_steer
+            reward = self._calculate_reward()
 
             t = self.ego_vehicle.get_transform()
             if self._index_loc >= 2:
@@ -351,3 +354,31 @@ class CarlaDiscreteBasic(gym.Env):
             self._file_csv.close()
 
         pygame.quit()
+
+class CarlaContinuousBasic(CarlaDiscreteBasic):
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
+        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
+        
+        self._max_vel = 7.0 # Train on new server
+        self.action_space = spaces.Box(low=np.array([0.1, -0.3]), high=np.array([0.5, 0.3]),
+                                       dtype=np.float64)
+        
+    def _read_action(self, action):
+        throttle, steer = action
+        print("action", action)
+        return throttle, steer
+    
+    def _calculate_reward(self):
+        # Get deviation
+        self._dev = self._camera.get_deviation()
+        dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
+
+        # Get velocity
+        speed = self.ego_vehicle.get_velocity()
+        self._speed = carla.Vector3D(speed).length()
+
+        # Calculate reward
+        reward = (MAX_DEV - abs(dev)) / MAX_DEV 
+        return reward
