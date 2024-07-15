@@ -49,7 +49,7 @@ def main(args):
 
         rewards_models = []
         for alg in args.alg:
-            gym_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/'
+            gym_dir = '/home/lpoves/2024-tfg-lara-poves/src/gym/'
             cont_load =  env_dir.lower() + '/' + alg + '-' + env_str
 
             # Load model

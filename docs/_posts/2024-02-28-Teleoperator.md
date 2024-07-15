@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-06-27T08:17:00
+last_modified_at: 2024-07-10T14:51:00
 categories:
   - Blog
 tags:
@@ -27,10 +27,8 @@ Para trabajar, crearemos un entorno Anaconda que nos permita utilizar la versió
 ```bash
 conda create -n tfg python=3.10
 conda activate tfg
-pip install pygame numpy carla Pillow 
+pip install pygame numpy==1.26.4 carla Pillow 
 ```
-
-Instalamos la versión 0.9.13 de *carla*, ya que es la versión compatible con el simulador, de lo contrario, obtenemos problemas de incompatibilidad de versiones.
 
 ## CARLA
 

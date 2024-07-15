@@ -50,7 +50,7 @@ def main(args):
     if "MountainCar" in args.env:
         env_dir = "MountainCar"
 
-    gym_dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/gym/'
+    gym_dir = '/home/lpoves/2024-tfg-lara-poves/src/gym/'
     log_dir = check_dir(gym_dir + 'log/', env_dir)
     model_dir = check_dir(gym_dir + 'model/', env_dir)
 

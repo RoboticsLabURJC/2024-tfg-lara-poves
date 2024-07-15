@@ -3,6 +3,7 @@ import argparse
 from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
 import yaml
+from stable_baselines3.common.env_util import make_vec_env
 
 SEED = 6
 
@@ -58,6 +59,10 @@ def main(args):
     log_name = args.alg + '-' + args.env
     env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port, 
                     alg=args.alg, normalize=True, seed=SEED)
+    
+    if args.alg != 'DQN':
+        env = make_vec_env(lambda: env_class(train=True, fixed_delta_seconds=args.delta, human=False,
+                                             port=args.port, alg=args.alg, normalize=True, seed=SEED), n_envs=1)
     
     model = alg_class(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
     if args.alg == 'DQN':
