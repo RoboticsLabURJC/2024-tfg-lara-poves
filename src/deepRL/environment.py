@@ -225,13 +225,14 @@ class CarlaDiscreteBasic(gym.Env):
             for key, sub_space in self._obs_norm.spaces.items():
                 obs[key] = (obs[key] - sub_space.low) / (sub_space.high - sub_space.low)
                 obs[key] = obs[key].astype(np.float32)
-                
+
+        print(obs)    
         return obs
     
     def _get_info(self):
         return {"deviation": self._dev, "speed": self._speed}
     
-    def _read_action(self, action):
+    def _read_action(self, action:np.ndarray):
         throttle, steer = self.action_to_control[int(action)]
         return throttle, steer
     
@@ -252,7 +253,7 @@ class CarlaDiscreteBasic(gym.Env):
         reward = 0.7 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel + 0.1 * r_steer
         return reward
 
-    def step(self, action):
+    def step(self, action:np.ndarray):
         # Exec actions
         throttle, self._steer = self._read_action(action)
         control = carla.VehicleControl()
@@ -309,6 +310,7 @@ class CarlaDiscreteBasic(gym.Env):
             self._writer_csv.writerow([self._count_ep, self._total_reward, self._count,
                                        finish_ep, exploration_rate])
         
+        print("step")
         return self._get_obs(), reward, terminated, False, self._get_info()
     
     def render(self):
@@ -345,6 +347,7 @@ class CarlaDiscreteBasic(gym.Env):
             except AssertionError:
                 pass
         
+        print("reset")
         return self._get_obs(), self._get_info()
 
     def close(self):
@@ -363,11 +366,12 @@ class CarlaContinuousBasic(CarlaDiscreteBasic):
         
         self._max_vel = 7.0 # Train on new server
         self.action_space = spaces.Box(low=np.array([0.1, -0.3]), high=np.array([0.5, 0.3]),
-                                       dtype=np.float64)
+                                       shape=(2,), dtype=np.float64)
         
-    def _read_action(self, action):
+    def _read_action(self, action:np.ndarray):
+        assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
         throttle, steer = action
-        print("action", action)
+        print("action:", action, "throtle:", throttle, "steer:", steer)
         return throttle, steer
     
     def _calculate_reward(self):

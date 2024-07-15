@@ -49,7 +49,7 @@ Acrobot-v1:
   n_steps: 256
   gae_lambda: 0.94
   gamma: 0.99
-  n_epochs: 4 # numero de actualizaciones
+  n_epochs: 4 # numero de veces que se puede usar una experiencia para entrenar la red
   ent_coef: 0.0 
 
 # Durante el entrenamiento: 
