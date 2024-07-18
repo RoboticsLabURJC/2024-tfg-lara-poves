@@ -12,7 +12,7 @@ import csv
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
 
-from configcarla import SIZE_CAMERA
+from configcarla import SIZE_CAMERA, PATH
 import configcarla
 
 MAX_DEV = 100
@@ -37,7 +37,7 @@ class CarlaDiscreteBasic(gym.Env):
         self._train = train
         if self._train:
             assert alg != None, "Algorithms are required for training"
-            dir_csv = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/csv/train/' + self.__class__.__name__ + '/'
+            dir_csv = PATH + '2024-tfg-lara-poves/src/deepRL/csv/train/' + self.__class__.__name__ + '/'
             if not os.path.exists(dir_csv):
                 os.makedirs(dir_csv)
             files = os.listdir(dir_csv)
@@ -45,7 +45,7 @@ class CarlaDiscreteBasic(gym.Env):
             self._file_csv = open(dir_csv + alg + '_train_data_' + str(num_files) + '.csv',
                                   mode='w', newline='')
             self._writer_csv = csv.writer(self._file_csv)
-            self._writer_csv.writerow(["Episode", "Reward", "Num_steps", "Finish", "Exploration_rate"])
+            self._writer_csv.writerow(["Episode", "Reward", "Num_steps", "Finish", "Deviation", "Exploration_rate"])
         
         # States
         self._num_points_line = 5
@@ -226,7 +226,6 @@ class CarlaDiscreteBasic(gym.Env):
                 obs[key] = (obs[key] - sub_space.low) / (sub_space.high - sub_space.low)
                 obs[key] = obs[key].astype(np.float32)
 
-        print(obs)    
         return obs
     
     def _get_info(self):
@@ -308,9 +307,8 @@ class CarlaDiscreteBasic(gym.Env):
 
             self._count_ep += 1
             self._writer_csv.writerow([self._count_ep, self._total_reward, self._count,
-                                       finish_ep, exploration_rate])
+                                       finish_ep, self._dev, exploration_rate])
         
-        print("step")
         return self._get_obs(), reward, terminated, False, self._get_info()
     
     def render(self):
@@ -347,7 +345,6 @@ class CarlaDiscreteBasic(gym.Env):
             except AssertionError:
                 pass
         
-        print("reset")
         return self._get_obs(), self._get_info()
 
     def close(self):

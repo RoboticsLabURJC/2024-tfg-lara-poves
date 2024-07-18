@@ -4,6 +4,12 @@ from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
 import yaml
 from stable_baselines3.common.env_util import make_vec_env
+import sys
+
+src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, src_path)
+
+from configcarla import PATH
 
 SEED = 6
 
@@ -33,7 +39,7 @@ def check_dir(dir:str, env:str):
 
 def main(args):
     # Get hyperparams
-    config_path = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/' + 'config/' + args.env + '.yml'
+    config_path = PATH + '2024-tfg-lara-poves/src/deepRL/' + 'config/' + args.env + '.yml'
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
     
@@ -52,12 +58,12 @@ def main(args):
     alg_class = alg_callable[args.alg]
     env_class = env_callable[args.env]
 
-    dir = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/'
+    dir = PATH + '2024-tfg-lara-poves/src/deepRL/'
     log_dir = check_dir(dir + 'log/', args.env)
     model_dir = check_dir(dir + 'model/', args.env)
 
     log_name = args.alg + '-' + args.env
-    env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port, 
+    env = env_class(train=True, fixed_delta_seconds=args.delta, human=True, port=args.port, 
                     alg=args.alg, normalize=True, seed=SEED)
     
     if args.alg != 'DQN':

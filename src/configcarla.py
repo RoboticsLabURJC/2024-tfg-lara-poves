@@ -11,9 +11,11 @@ import torch
 import cv2
 from abc import ABC, abstractmethod
 
-sys.path.insert(0, '/home/lpoves/efficientvit-urjc/urjc')
-sys.path.insert(0, '/home/lpoves/efficientvit-urjc')
-os.chdir('/home/lpoves/efficientvit-urjc/urjc')
+PATH = '/home/alumnos/lara/'
+
+sys.path.insert(0, PATH + 'efficientvit-urjc/urjc')
+sys.path.insert(0, PATH + '/efficientvit-urjc')
+os.chdir(PATH + '/efficientvit-urjc/urjc')
 
 import EfficientVit as EV
 
@@ -117,7 +119,7 @@ class CameraRGB(Sensor):
 
         self._lane = lane
         if lane:
-            file = '/home/lpoves/2024-tfg-lara-poves/best_model_torch.pth'
+            file = PATH + '2024-tfg-lara-poves/best_model_torch.pth'
             self._lane_model = torch.load(file)
             self._lane_model.eval()
 
@@ -151,7 +153,7 @@ class CameraRGB(Sensor):
             if init_extra != None:
                 self._rect_extra = sub_screen.get_rect(topleft=init_extra)
 
-    def _mask_lane(self, mask:list, index:int):
+    def _mask_lane(self, mask:list, index:int, canvas):
         if index == LEFT_LANE:
             lane = "left"
         else:
@@ -161,7 +163,15 @@ class CameraRGB(Sensor):
             self._error_lane = True
             assert False, "Line " + lane + " not found"
 
-        mask = mask[:, :512]
+        mask = mask[:, int(SIZE_CAMERA / 2):int(SIZE_CAMERA + SIZE_CAMERA / 2)]
+
+        color = [255, 165, 0]
+        error_color = [255, 0, 0]
+        if LEFT_LANE == index:
+            color = [0, 0, 255]
+            error_color = [0, 255,  0]
+        canvas[mask > self._threshold_lane_mask, :] = error_color
+
         index_mask = np.where(mask > self._threshold_lane_mask)
         if len(index_mask[0]) < 10:
             self._count_mem_lane[index] += 1
@@ -169,13 +179,18 @@ class CameraRGB(Sensor):
         else:
             self._count_mem_lane[index] = 0
 
-        # Remove outliers
+        coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
+
+        '''
+        # Initial linear regression
         if self._count_coef[index] >= SIZE_MEM:
             coefficients = self._coefficients[-1, index, 0:2]
         else:
             coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
 
-        th = 55
+        # Remove outliers
+        
+        th = 70
         x_coef = []
         y_coef = []
         for y, x in zip(index_mask[0], index_mask[1]):
@@ -185,6 +200,7 @@ class CameraRGB(Sensor):
             if x_1 <= x <= x_2 or x_2 <= x <= x_1:
                 x_coef.append(x)
                 y_coef.append(y)
+                canvas[y, x] = color # quitar
 
         # Memory lane
         if len(x_coef) < 10:
@@ -195,7 +211,8 @@ class CameraRGB(Sensor):
 
         # Linear regression
         coefficients = np.polyfit(y_coef, x_coef, 1)
-
+        '''
+     
         # Check measure
         mean = np.mean(self._coefficients[:, index, 2])
         angle = math.degrees(math.atan(coefficients[0])) % 180
@@ -220,22 +237,29 @@ class CameraRGB(Sensor):
         return True
 
     def _detect_lane(self, data:list, canvas:list, mask:list): 
-        # Resize for the network
+        # Resize for the network, copy the image in the middle
         image_lane = np.zeros((SIZE_CAMERA, SIZE_CAMERA * 2, 3), dtype=np.uint8)
-        image_lane[:SIZE_CAMERA, :SIZE_CAMERA, :] = data # Copy the image in the top left corner
-    
+        image_lane[:SIZE_CAMERA, int(SIZE_CAMERA / 2):int(SIZE_CAMERA + SIZE_CAMERA / 2), :] = data
+
         with torch.no_grad():
             image_tensor = image_lane.transpose(2,0,1).astype('float32')/255
             x_tensor = torch.from_numpy(image_tensor).to("cuda").unsqueeze(0)
             model_output = torch.softmax(self._lane_model.forward(x_tensor), dim=1 ).cpu().numpy()
 
         _, left_mask, right_mask = model_output[0]
-        see_line_left = self._mask_lane(mask=left_mask, index=LEFT_LANE)
-        see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
+        see_line_left = self._mask_lane(mask=left_mask, index=LEFT_LANE, canvas=canvas)
+        see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE, canvas=canvas)
 
         # Coefficients
         coef_left = self._coefficients[-1, LEFT_LANE, 0:2]
         coef_right = self._coefficients[-1, RIGHT_LANE, 0:2]
+
+        #cv2.line(canvas, (int(coef_left[1] + coef_left[0] * SIZE_CAMERA), SIZE_CAMERA),
+         #       (int(coef_left[0] * self._ymin_lane + coef_left[1]), self._ymin_lane), (255, 255, 0), 2)
+                
+        #cv2.line(canvas, (int(coef_right[1] + coef_right[0] * SIZE_CAMERA), SIZE_CAMERA),
+          #      (int(coef_right[0] * self._ymin_lane + coef_right[1]), self._ymin_lane), (255, 255, 0), 2)
+
 
         if see_line_left == False and see_line_right == False:
             self._error_lane = True
@@ -254,7 +278,7 @@ class CameraRGB(Sensor):
                 count_y += y * (x_right - x_left)
 
                 # Draw lane
-                canvas[y, x_left:x_right] = [255, 240, 255]
+                #canvas[y, x_left:x_right] = [255, 240, 255]
 
                 # Road percentage
                 count_total += x_right - x_left
@@ -295,6 +319,7 @@ class CameraRGB(Sensor):
 
     def _process_seg(self, data:list):
         image_data = cv2.rotate(data, cv2.ROTATE_90_CLOCKWISE)
+        image_data = cv2.cvtColor(image_data, cv2.COLOR_BGR2RGB)
         image_seg = Image.fromarray(image_data)
 
         # Prediction
@@ -314,7 +339,7 @@ class CameraRGB(Sensor):
                 mask = None
             
         if self._lane:
-            self._detect_lane(data=image_seg, canvas=canvas, mask=mask)
+            self._detect_lane(data=image_data, canvas=canvas, mask=mask)
 
         if self._rect_extra != None:
             # Convert to pygame syrface
@@ -711,6 +736,11 @@ class Vehicle_sensors:
             self._count_frame += 1
             write_text(text="FPS: "+str(self._write_frame), img=self._screen, color=self.color_text,
                        bold=True, point=(2, 0), size=23, side=LEFT)
+            
+            v = self._vehicle.get_velocity()
+            v = carla.Vector3D(v).length()
+            write_text(text=f"Vel: {v:.2f}", img=self._screen, color=self.color_text,
+                       bold=True, point=(2, 20), size=23, side=LEFT)
 
             if flip:
                 pygame.display.flip()
