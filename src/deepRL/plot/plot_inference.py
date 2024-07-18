@@ -7,7 +7,7 @@ import os
 import glob
 
 NUM_COLUMNS = 3
-NUM_ROWS = 2
+NUM_ROWS = 3
 
 def extract_data(key:str, data_csv:list[dict]):
     data = []
@@ -49,11 +49,11 @@ def get_color_random():
     return '#{:02x}{:02x}{:02x}'.format(r, g, b)
 
 def main(args):
-    random.seed(6)
+    random.seed(7)
     plt.figure(figsize=(5 * NUM_COLUMNS, 4 * NUM_ROWS))
 
     if len(args.file) == 1 and args.file[0] == 'all':
-        dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/inference/' 
+        dir = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/csv/inference/' 
         if args.env != None:
             dir += args.env + '/'
 
@@ -84,15 +84,17 @@ def main(args):
                   color=color)
         plot_data(data_csv=data, key='Accumulated reward', sub_plot=3, title='Total reward',
                   label=csv_file, color=color)
-        plot_data(data_csv=data, key='Deviation', sub_plot=1, title='Deviation', label=csv_file,
+        plot_data(data_csv=data, key='Deviation', sub_plot=5, title='Deviation', label=csv_file,
                   color=color)
         plot_data(data_csv=data, key='Speed', sub_plot=4, title='Velocity of the vehicle',
                   label=csv_file, color=color)
+        plot_data(data_csv=data, key='Throttle', sub_plot=1, title='Throttle of the vehicle',
+                  label=csv_file, color=color)
 
         # Histograms
-        plot_data(data_csv=data, key='Throttle', sub_plot=5, title='Histogram throttle actions',
+        plot_data(data_csv=data, key='Throttle', sub_plot=7, title='Histogram throttle actions',
                   hist=True, label=csv_file)
-        plot_data(data_csv=data, key='Steer', sub_plot=6, title='Histogram steer actions', hist=True,
+        plot_data(data_csv=data, key='Steer', sub_plot=8, title='Histogram steer actions', hist=True,
                   label=csv_file)
         
         file.close()
