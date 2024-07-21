@@ -46,7 +46,7 @@ class CarlaDiscreteBasic(gym.Env):
                                   mode='w', newline='')
             self._writer_csv = csv.writer(self._file_csv)
             self._writer_csv.writerow(["Episode", "Reward", "Num_steps", "Finish", "Exploration_rate"])
-        
+
         # States
         self._num_points_line = 5
         self.observation_space = spaces.Dict(
@@ -225,8 +225,7 @@ class CarlaDiscreteBasic(gym.Env):
             for key, sub_space in self._obs_norm.spaces.items():
                 obs[key] = (obs[key] - sub_space.low) / (sub_space.high - sub_space.low)
                 obs[key] = obs[key].astype(np.float32)
-
-        print(obs)    
+  
         return obs
     
     def _get_info(self):
@@ -244,7 +243,7 @@ class CarlaDiscreteBasic(gym.Env):
         # Get velocity
         speed = self.ego_vehicle.get_velocity()
         self._speed = carla.Vector3D(speed).length()
-        vel = np.clip(self._speed, 0.0, self._max_vel) # Reaches a speed of 5m/s after 5 seconds
+        vel = np.clip(self._speed, 0.0, self._max_vel) # Reaches a speed of 10m/s after 5 seconds
 
         # Angle reward
         r_steer = (self._max_steer - abs(self._steer)) / self._max_steer
@@ -310,7 +309,6 @@ class CarlaDiscreteBasic(gym.Env):
             self._writer_csv.writerow([self._count_ep, self._total_reward, self._count,
                                        finish_ep, exploration_rate])
         
-        print("step")
         return self._get_obs(), reward, terminated, False, self._get_info()
     
     def render(self):
@@ -347,7 +345,6 @@ class CarlaDiscreteBasic(gym.Env):
             except AssertionError:
                 pass
         
-        print("reset")
         return self._get_obs(), self._get_info()
 
     def close(self):
@@ -362,27 +359,14 @@ class CarlaContinuousBasic(CarlaDiscreteBasic):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
+                        normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
         
-        self._max_vel = 7.0 # Train on new server
-        self.action_space = spaces.Box(low=np.array([0.1, -0.3]), high=np.array([0.5, 0.3]),
+        self._max_vel = 10.0 # Train on new server
+        self._max_steer = 0.3
+        self.action_space = spaces.Box(low=np.array([0.1, -0.3]), high=np.array([1.0, 0.3]),
                                        shape=(2,), dtype=np.float64)
         
     def _read_action(self, action:np.ndarray):
         assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
         throttle, steer = action
-        print("action:", action, "throtle:", throttle, "steer:", steer)
         return throttle, steer
-    
-    def _calculate_reward(self):
-        # Get deviation
-        self._dev = self._camera.get_deviation()
-        dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
-
-        # Get velocity
-        speed = self.ego_vehicle.get_velocity()
-        self._speed = carla.Vector3D(speed).length()
-
-        # Calculate reward
-        reward = (MAX_DEV - abs(dev)) / MAX_DEV 
-        return reward

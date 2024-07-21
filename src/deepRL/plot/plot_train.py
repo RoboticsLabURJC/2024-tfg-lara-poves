@@ -7,13 +7,12 @@ import random
 import numpy as np
 
 NUM_COLUMNS = 1
-NUM_ROWS = 3
 
-def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, color:str=None,
-              label:str=None, one:bool=False):
-    plt.subplot(NUM_ROWS, NUM_COLUMNS, sub_plot)
+def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, num_rows:int,
+              color:str=None, label:str=None, one:bool=False):
+    plt.subplot(num_rows, NUM_COLUMNS, sub_plot)
     
-    # Extract dats
+    # Extract data
     data = []
     finish = []
     for d in data_csv:
@@ -45,7 +44,6 @@ def get_color_random():
 
 def main(args):
     random.seed(6)
-    plt.figure(figsize=(15 * NUM_COLUMNS, 3 * NUM_ROWS))
 
     if len(args.file) == 1 and args.file[0] == 'all':
         dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/train/' 
@@ -78,13 +76,21 @@ def main(args):
         csv_file = csv_file.split('/')[-1]
 
         # Plots
+        num_rows = 3
+        if data[0]['Exploration_rate'] == '-1.0':
+            num_rows = 2
+
+        plt.figure(figsize=(15 * NUM_COLUMNS, 3 * num_rows))
+
         plot_data(data_csv=data, key='Reward', sub_plot=1, title='Reward per episode',
-                  color=color, label=csv_file)
+                  color=color, label=csv_file, num_rows=num_rows)
         plt.legend()
         plot_data(data_csv=data, key='Num_steps', sub_plot=2, title='Steps per epidose',
-                  color=color, label=csv_file, one=len(csv_files)==1)
-        plot_data(data_csv=data, key='Exploration_rate', sub_plot=3, title='Decay exploration rate', 
-                  color=color, label=csv_file)
+                  color=color, label=csv_file, one=len(csv_files)==1, num_rows=num_rows)
+        
+        if num_rows == 3:
+            plot_data(data_csv=data, key='Exploration_rate', sub_plot=3, title='Decay exploration rate',
+                      color=color, label=csv_file, num_rows=num_rows)
 
     plt.tight_layout()
     plt.show()

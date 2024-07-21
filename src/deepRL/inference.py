@@ -1,4 +1,4 @@
-from environment import CarlaDiscreteBasic
+from environment import CarlaDiscreteBasic, CarlaContinuousBasic
 import argparse
 from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
@@ -14,7 +14,8 @@ alg_callable = {
 }
 
 env_callable = {
-    'CarlaDiscreteBasic': CarlaDiscreteBasic
+    'CarlaDiscreteBasic': CarlaDiscreteBasic,
+    'CarlaContinuousBasic': CarlaContinuousBasic
 }
 
 def main(args):
@@ -52,7 +53,11 @@ def main(args):
     try:
         while True:
             action, _ = model.predict(obs, deterministic=True)
-            throttle, steer = env.action_to_control[action.item()]
+            if args.alg == 'DQN':
+                throttle, steer = env.action_to_control[action.item()]
+            else:
+                throttle, steer = action
+
             obs, reward, terminated, truncated, info = env.step(action)
 
             step += 1
@@ -69,9 +74,7 @@ def main(args):
         env.close()
 
 if __name__ == "__main__":
-    possible_envs = [
-        "CarlaDiscreteBasic"
-    ]
+    possible_envs = list(env_callable.keys())
     possible_algs = list(alg_callable.keys())
 
     parser = argparse.ArgumentParser(

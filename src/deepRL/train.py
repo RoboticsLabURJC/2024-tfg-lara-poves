@@ -4,6 +4,7 @@ from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
 import yaml
 from stable_baselines3.common.env_util import make_vec_env
+from stable_baselines3.common.callbacks import BaseCallback
 
 SEED = 6
 
@@ -57,13 +58,13 @@ def main(args):
     model_dir = check_dir(dir + 'model/', args.env)
 
     log_name = args.alg + '-' + args.env
-    env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port, 
-                    alg=args.alg, normalize=True, seed=SEED)
-    
     if args.alg != 'DQN':
         env = make_vec_env(lambda: env_class(train=True, fixed_delta_seconds=args.delta, human=False,
                                              port=args.port, alg=args.alg, normalize=True, seed=SEED), n_envs=1)
-    
+    else:
+        env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port, 
+                        alg=args.alg, normalize=True, seed=SEED)
+
     model = alg_class(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
     if args.alg == 'DQN':
         env.set_model(model)
@@ -108,8 +109,8 @@ if __name__ == "__main__":
         '--delta', 
         type=float, 
         required=False, 
-        default=0.1,
-        help='Fixed delta second for CARLA simulator. By default 0.1s'
+        default=0.05,
+        help='Fixed delta second for CARLA simulator. By default 50ms'
     )
 
     main(parser.parse_args())
