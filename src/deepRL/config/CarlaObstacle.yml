@@ -1,0 +1,10 @@
+PPO:
+  policy: "MultiInputPolicy"
+  learning_rate: 0.0001
+  gamma: 0.96
+  gae_lambda: 0.9 # γ
+  n_steps: 64 # The number of steps to run for each environment per update
+  batch_size: 64 # = n_steps * n_envs(=1)
+  ent_coef: 0.01 # β
+  clip_range: 0.2 # epsilon
+  n_timesteps: 5_000_000
