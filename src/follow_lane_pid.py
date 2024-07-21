@@ -16,7 +16,7 @@ def main(args):
     # Add sensors to Ego Vehicle
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
-    driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
+    driver_transform = carla.Transform(carla.Location(z=1.4, x=1.75), carla.Rotation(roll=90.0))
     camera = sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), transform=driver_transform,
                                     seg=True, text='Driver view', init_extra=(SIZE_CAMERA, 0), 
                                     lane=True, canvas_seg=False)
@@ -38,11 +38,11 @@ def main(args):
             sensors.update_data()
             t = ego_vehicle.get_transform()
 
-            if not jump and t.location.y > -18:
+            if not jump and t.location.y > -30:
                 t.location.y = 15
                 ego_vehicle.set_transform(t)
                 jump = True
-            elif t.location.x < 43:
+            elif t.location.x < 50:
                 print("Finish route")
                 return
             
