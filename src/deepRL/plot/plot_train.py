@@ -4,7 +4,7 @@ import csv
 import os
 import glob
 import random
-import numpy as np
+import matplotlib.patches as mpatches
 
 NUM_COLUMNS = 1
 
@@ -18,16 +18,25 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, num_rows:in
     for d in data_csv:
         data.append(float(d[key]))
         if one:
-            if d['Finish'] == 'False':
+            if d['Finish'] == 'False': 
                 f = 0
+                if abs(float(d['Deviation'])) <= 65:
+                    f = 2
             else:
                 f = 1
             finish.append(f)
 
     # Only for step graph
     if one: 
-        colors = np.where(finish, 'green', 'red')
+        color_map = {0: 'red', 1: 'green', 2: 'orange'}
+        colors = [color_map[f] for f in finish] 
         plt.scatter(range(len(data)), data, color=colors, s=7)
+
+        # Legend
+        red_patch = mpatches.Patch(color='red', label='Finish = False, Deviation > 65')
+        green_patch = mpatches.Patch(color='green', label='Finish = True')
+        orange_patch = mpatches.Patch(color='orange', label='Finish = False, Deviation <= 65')
+        plt.legend(handles=[red_patch, green_patch, orange_patch])  
     else:
         plt.plot(range(len(data)), data, color=color, linewidth=1, label=label)
 

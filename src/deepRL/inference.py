@@ -1,4 +1,4 @@
-from environment import CarlaDiscreteBasic, CarlaContinuousBasic
+from environment import CarlaLaneDiscrete, CarlaLaneContinuousSimple, CarlaLaneContinuousComplex, CarlaObstacle
 import argparse
 from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
@@ -14,15 +14,17 @@ alg_callable = {
 }
 
 env_callable = {
-    'CarlaDiscreteBasic': CarlaDiscreteBasic,
-    'CarlaContinuousBasic': CarlaContinuousBasic
+    'CarlaLaneDiscrete': CarlaLaneDiscrete,
+    'CarlaLaneContinuousSimple': CarlaLaneContinuousSimple,
+    'CarlaLaneContinuousComplex': CarlaLaneContinuousComplex,
+    'CarlaObstacle': CarlaObstacle
 }
 
 def main(args):
     alg_class = alg_callable[args.alg]
     env_class = env_callable[args.env]
 
-    dir = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/'
+    dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/'
     model_file = dir + 'model/' + args.env + '/' + args.alg + '-' + args.env + '_' + args.n
     try:
         model = alg_class.load(model_file)
