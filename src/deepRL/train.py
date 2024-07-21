@@ -1,4 +1,4 @@
-from environment import CarlaDiscreteBasic, CarlaContinuousBasic
+from environment import CarlaLaneDiscrete, CarlaLaneContinuousSimple, CarlaLaneContinuousComplex, CarlaObstacle
 import argparse
 from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
@@ -23,8 +23,10 @@ alg_callable = {
 }
 
 env_callable = {
-    'CarlaDiscreteBasic': CarlaDiscreteBasic,
-    'CarlaContinuousBasic': CarlaContinuousBasic
+    'CarlaLaneDiscrete': CarlaLaneDiscrete,
+    'CarlaLaneContinuousSimple': CarlaLaneContinuousSimple,
+    'CarlaLaneContinuousComplex': CarlaLaneContinuousComplex,
+    'CarlaObstacle': CarlaObstacle
 }
 
 def check_dir(dir:str, env:str):
@@ -63,7 +65,7 @@ def main(args):
     model_dir = check_dir(dir + 'model/', args.env)
 
     log_name = args.alg + '-' + args.env
-    env = env_class(train=True, fixed_delta_seconds=args.delta, human=True, port=args.port, 
+    env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port, 
                     alg=args.alg, normalize=True, seed=SEED)
     
     if args.alg != 'DQN':

@@ -164,14 +164,6 @@ class CameraRGB(Sensor):
             assert False, "Line " + lane + " not found"
 
         mask = mask[:, int(SIZE_CAMERA / 2):int(SIZE_CAMERA + SIZE_CAMERA / 2)]
-
-        color = [255, 165, 0]
-        error_color = [255, 0, 0]
-        if LEFT_LANE == index:
-            color = [0, 0, 255]
-            error_color = [0, 255,  0]
-        canvas[mask > self._threshold_lane_mask, :] = error_color
-
         index_mask = np.where(mask > self._threshold_lane_mask)
         if len(index_mask[0]) < 10:
             self._count_mem_lane[index] += 1
@@ -181,16 +173,14 @@ class CameraRGB(Sensor):
 
         coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
 
-        '''
-        # Initial linear regression
+        # Previus linear regression
         if self._count_coef[index] >= SIZE_MEM:
             coefficients = self._coefficients[-1, index, 0:2]
         else:
             coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
 
         # Remove outliers
-        
-        th = 70
+        th = 60
         x_coef = []
         y_coef = []
         for y, x in zip(index_mask[0], index_mask[1]):
@@ -200,7 +190,6 @@ class CameraRGB(Sensor):
             if x_1 <= x <= x_2 or x_2 <= x <= x_1:
                 x_coef.append(x)
                 y_coef.append(y)
-                canvas[y, x] = color # quitar
 
         # Memory lane
         if len(x_coef) < 10:
@@ -211,7 +200,6 @@ class CameraRGB(Sensor):
 
         # Linear regression
         coefficients = np.polyfit(y_coef, x_coef, 1)
-        '''
      
         # Check measure
         mean = np.mean(self._coefficients[:, index, 2])
@@ -254,13 +242,6 @@ class CameraRGB(Sensor):
         coef_left = self._coefficients[-1, LEFT_LANE, 0:2]
         coef_right = self._coefficients[-1, RIGHT_LANE, 0:2]
 
-        #cv2.line(canvas, (int(coef_left[1] + coef_left[0] * SIZE_CAMERA), SIZE_CAMERA),
-         #       (int(coef_left[0] * self._ymin_lane + coef_left[1]), self._ymin_lane), (255, 255, 0), 2)
-                
-        #cv2.line(canvas, (int(coef_right[1] + coef_right[0] * SIZE_CAMERA), SIZE_CAMERA),
-          #      (int(coef_right[0] * self._ymin_lane + coef_right[1]), self._ymin_lane), (255, 255, 0), 2)
-
-
         if see_line_left == False and see_line_right == False:
             self._error_lane = True
             assert False, "Lane not found"
@@ -278,7 +259,7 @@ class CameraRGB(Sensor):
                 count_y += y * (x_right - x_left)
 
                 # Draw lane
-                #canvas[y, x_left:x_right] = [255, 240, 255]
+                canvas[y, x_left:x_right] = [255, 240, 255]
 
                 # Road percentage
                 count_total += x_right - x_left
@@ -319,7 +300,6 @@ class CameraRGB(Sensor):
 
     def _process_seg(self, data:list):
         image_data = cv2.rotate(data, cv2.ROTATE_90_CLOCKWISE)
-        image_data = cv2.cvtColor(image_data, cv2.COLOR_BGR2RGB)
         image_seg = Image.fromarray(image_data)
 
         # Prediction
@@ -339,6 +319,7 @@ class CameraRGB(Sensor):
                 mask = None
             
         if self._lane:
+            image_data = cv2.cvtColor(image_data, cv2.COLOR_BGR2RGB)
             self._detect_lane(data=image_data, canvas=canvas, mask=mask)
 
         if self._rect_extra != None:
