@@ -11,7 +11,7 @@ import torch
 import cv2
 from abc import ABC, abstractmethod
 
-PATH = '/home/alumnos/lara/'
+PATH = '/home/lpoves/'
 
 sys.path.insert(0, PATH + 'efficientvit-urjc/urjc')
 sys.path.insert(0, PATH + '/efficientvit-urjc')

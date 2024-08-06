@@ -55,7 +55,11 @@ def main(args):
     try:
         while True:
             action, _ = model.predict(obs, deterministic=True)
-            throttle, steer = env.action_to_control[action.item()]
+            if args.alg == 'DQN':
+                throttle, steer = env.action_to_control[action.item()]
+            else:
+                throttle, steer = action
+
             obs, reward, terminated, truncated, info = env.step(action)
 
             step += 1

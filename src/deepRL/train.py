@@ -64,7 +64,7 @@ def main(args):
     log_dir = check_dir(dir + 'log/', args.env)
     model_dir = check_dir(dir + 'model/', args.env)
     log_name = args.alg + '-' + args.env
-    
+
     if args.alg != 'DQN':
         env = make_vec_env(lambda: env_class(train=True, fixed_delta_seconds=args.delta, human=False,
                                              port=args.port, alg=args.alg, normalize=True, seed=SEED),
@@ -72,7 +72,7 @@ def main(args):
     else:
         env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port,
                         alg=args.alg, normalize=True, seed=SEED)
-    
+
     model = alg_class(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
     if args.alg == 'DQN':
         env.set_model(model)
@@ -117,8 +117,8 @@ if __name__ == "__main__":
         '--delta', 
         type=float, 
         required=False, 
-        default=0.1,
-        help='Fixed delta second for CARLA simulator. By default 0.1s'
+        default=0.05,
+        help='Fixed delta second for CARLA simulator. By default 50ms'
     )
 
     main(parser.parse_args())
