@@ -127,7 +127,7 @@ class CameraRGB(Sensor):
             self._threshold_road_per = 90.0
             self._threshold_lane_mask = 0.05
             self._ymin_lane = 275 
-            self._angle_lane = 10
+            self._angle_lane = 7
             self._mem_max = 4
 
             # Initialize
@@ -720,8 +720,8 @@ class Vehicle_sensors:
             
             v = self._vehicle.get_velocity()
             v = carla.Vector3D(v).length()
-            write_text(text=f"Vel: {v:.2f}", img=self._screen, color=self.color_text,
-                       bold=True, point=(2, 20), size=23, side=LEFT)
+            write_text(text=f"Vel: {v:.2f} m/s", img=self._screen, color=self.color_text,
+                       bold=True, point=(2, 20), size=20, side=LEFT)
 
             if flip:
                 pygame.display.flip()

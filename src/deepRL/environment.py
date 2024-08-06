@@ -246,7 +246,14 @@ class CarlaBase(gym.Env, ABC):
             terminated = True
             reward = -20
             t = self.ego_vehicle.get_transform()
-            print(t, "index =", self._index_loc)
+            if self._index_loc >= 2:
+                base = -143
+                t = t.location.y
+            else:
+                base = 50
+                t = t.location.x
+
+            print("base", base, "dev:", self._dev, "t:", t)
 
         # Check if a key has been pressed
         if self._human:
@@ -405,7 +412,6 @@ class CarlaLaneContinuousSimple(CarlaBase):
         control = carla.VehicleControl()
         control.steer = steer 
         control.throttle = throttle
-        print("action:", action, "throtle:", throttle, "steer:", steer)
 
         return control
     
@@ -417,9 +423,10 @@ class CarlaLaneContinuousSimple(CarlaBase):
         # Get velocity
         speed = self.ego_vehicle.get_velocity()
         self._speed = carla.Vector3D(speed).length()
+        vel = np.clip(self._speed, 0.0, self._max_vel)
 
         # Calculate reward
-        reward = (MAX_DEV - abs(dev)) / MAX_DEV 
+        reward = 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
         return reward
 
 class CarlaLaneContinuousComplex(CarlaBase):
@@ -524,7 +531,8 @@ class CarlaObstacle(CarlaBase):
         # Get velocity
         speed = self.ego_vehicle.get_velocity()
         self._speed = carla.Vector3D(speed).length()
+        vel = np.clip(self._speed, 0.0, self._max_vel)
 
         # Calculate reward
-        reward = (MAX_DEV - abs(dev)) / MAX_DEV 
+        reward = 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
         return reward
