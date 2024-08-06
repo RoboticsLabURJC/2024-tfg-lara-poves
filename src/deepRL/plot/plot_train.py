@@ -7,6 +7,7 @@ import random
 import matplotlib.patches as mpatches
 
 NUM_COLUMNS = 1
+TH_DEV = 10
 
 def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, num_rows:int,
               color:str=None, label:str=None, one:bool=False):
@@ -20,7 +21,7 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, num_rows:in
         if one:
             if d['Finish'] == 'False': 
                 f = 0
-                if abs(float(d['Deviation'])) <= 65:
+                if abs(float(d['Deviation'])) <= TH_DEV:
                     f = 2
             else:
                 f = 1
@@ -33,9 +34,9 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, num_rows:in
         plt.scatter(range(len(data)), data, color=colors, s=7)
 
         # Legend
-        red_patch = mpatches.Patch(color='red', label='Finish = False, Deviation > 65')
+        red_patch = mpatches.Patch(color='red', label='Finish = False, Deviation > '+str(TH_DEV))
         green_patch = mpatches.Patch(color='green', label='Finish = True')
-        orange_patch = mpatches.Patch(color='orange', label='Finish = False, Deviation <= 65')
+        orange_patch = mpatches.Patch(color='orange', label='Finish = False, Deviation <= '+str(TH_DEV))
         plt.legend(handles=[red_patch, green_patch, orange_patch])  
     else:
         plt.plot(range(len(data)), data, color=color, linewidth=1, label=label)
@@ -55,7 +56,7 @@ def main(args):
     random.seed(6)
 
     if len(args.file) == 1 and args.file[0] == 'all':
-        dir = '/home/alumnos/lara/2024-tfg-lara-poves/src/deepRL/csv/train/' 
+        dir = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/csv/train/' 
         if args.env != None:
             dir += args.env + '/'
 
@@ -106,10 +107,14 @@ def main(args):
 
 if __name__ == "__main__":
     possible_envs = [
-        "CarlaDiscreteBasic"
+        "CarlaLaneDiscrete",
+        "CarlaLaneContinuousSimple",
+        "CarlaLaneContinuousComplex",
+        "CarlaObstacle"
     ]
     possible_algs = [
-        "DQN"
+        "DQN",
+        "PPO"
     ]
 
     parser = argparse.ArgumentParser(
