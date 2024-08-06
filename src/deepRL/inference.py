@@ -1,4 +1,4 @@
-from environment import CarlaLaneContinuous, CarlaLaneDiscrete
+import environment
 import argparse
 from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
@@ -14,8 +14,10 @@ alg_callable = {
 }
 
 env_callable = {
-    'CarlaLaneDiscrete': CarlaLaneDiscrete,
-    'CarlaLaneContinuous': CarlaLaneContinuous
+    'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
+    'CarlaLaneContinuousSimple': environment.CarlaLaneContinuousSimple,
+    'CarlaLaneContinuousComplex': environment.CarlaLaneContinuousComplex,
+    'CarlaObstacle': environment.CarlaObstacle
 }
 
 def main(args):
@@ -70,9 +72,7 @@ def main(args):
         env.close()
 
 if __name__ == "__main__":
-    possible_envs = [
-        "CarlaDiscreteBasic"
-    ]
+    possible_envs = list(env_callable.keys())
     possible_algs = list(alg_callable.keys())
 
     parser = argparse.ArgumentParser(

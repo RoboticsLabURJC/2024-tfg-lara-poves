@@ -45,7 +45,8 @@ class CarlaBase(gym.Env, ABC):
             self._file_csv = open(dir_csv + alg + '_train_data_' + str(num_files) + '.csv',
                                   mode='w', newline='')
             self._writer_csv = csv.writer(self._file_csv)
-            self._writer_csv.writerow(["Episode", "Reward", "Num_steps", "Finish", "Deviation", "Exploration_rate"])
+            self._writer_csv.writerow(["Episode", "Reward", "Num_steps", "Finish", "Deviation",
+                                       "Exploration_rate"])
         
         # States
         self._num_points_line = 5
@@ -245,8 +246,6 @@ class CarlaBase(gym.Env, ABC):
         except AssertionError:
             terminated = True
             reward = -20
-            t = self.ego_vehicle.get_transform()
-            print(t, "index =", self._index_loc)
 
         # Check if a key has been pressed
         if self._human:
