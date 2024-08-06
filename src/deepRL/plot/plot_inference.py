@@ -27,8 +27,12 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, hist:bool=F
         plt.xlabel('Step')
     else:
         if key == 'Throttle':
-            bins = np.linspace(0.05, 0.55, 6)
-            bins_ticks = np.linspace(0.1, 0.5, 5)
+            if 'DQN' in label:
+                bins = np.linspace(0.05, 0.55, 6)
+                bins_ticks = np.linspace(0.1, 0.5, 5)
+            else:
+                bins = np.linspace(0.1, 1.0, 10)
+                bins_ticks = bins
         else:
             bins = np.linspace(-0.19, 0.19, 20)
             bins_ticks = np.linspace(-0.2, 0.2, 21)
