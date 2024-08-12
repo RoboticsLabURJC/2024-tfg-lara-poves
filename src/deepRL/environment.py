@@ -45,7 +45,8 @@ class CarlaBase(gym.Env, ABC):
             self._file_csv = open(dir_csv + alg + '_train_data_' + str(num_files) + '.csv',
                                   mode='w', newline='')
             self._writer_csv = csv.writer(self._file_csv)
-            self._writer_csv.writerow(["Episode", "Reward", "Num_steps", "Finish", "Deviation", "Exploration_rate"])
+            self._writer_csv.writerow(["Episode", "Reward", "Num_steps", "Finish", "Deviation",
+                                       "Exploration_rate"])
         
         # States
         self._num_points_line = 5
@@ -245,6 +246,7 @@ class CarlaBase(gym.Env, ABC):
         except AssertionError:
             terminated = True
             reward = -20
+
             t = self.ego_vehicle.get_transform()
             if self._index_loc >= 2:
                 base = -143
@@ -384,11 +386,8 @@ class CarlaLaneDiscrete(CarlaBase):
         self._speed = carla.Vector3D(speed).length()
         vel = np.clip(self._speed, 0.0, self._max_vel) # Reaches a speed of 5m/s after 5 seconds
 
-        # Angle reward
-        r_steer = (self._max_steer - abs(self._steer)) / self._max_steer
-
         # Calculate reward
-        reward = 0.75 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel + 0.05 * r_steer
+        reward = 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
         return reward
 
 class CarlaLaneContinuousSimple(CarlaBase):

@@ -1,4 +1,4 @@
-from environment import CarlaLaneDiscrete, CarlaLaneContinuousSimple, CarlaLaneContinuousComplex, CarlaObstacle
+import environment
 import argparse
 from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
@@ -23,10 +23,10 @@ alg_callable = {
 }
 
 env_callable = {
-    'CarlaLaneDiscrete': CarlaLaneDiscrete,
-    'CarlaLaneContinuousSimple': CarlaLaneContinuousSimple,
-    'CarlaLaneContinuousComplex': CarlaLaneContinuousComplex,
-    'CarlaObstacle': CarlaObstacle
+    'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
+    'CarlaLaneContinuousSimple': environment.CarlaLaneContinuousSimple,
+    'CarlaLaneContinuousComplex': environment.CarlaLaneContinuousComplex,
+    'CarlaObstacle': environment.CarlaObstacle
 }
 
 def check_dir(dir:str, env:str):
@@ -63,13 +63,14 @@ def main(args):
     dir = PATH + '2024-tfg-lara-poves/src/deepRL/'
     log_dir = check_dir(dir + 'log/', args.env)
     model_dir = check_dir(dir + 'model/', args.env)
-
     log_name = args.alg + '-' + args.env
+
     if args.alg != 'DQN':
         env = make_vec_env(lambda: env_class(train=True, fixed_delta_seconds=args.delta, human=False,
-                                             port=args.port, alg=args.alg, normalize=True, seed=SEED), n_envs=1)
+                                             port=args.port, alg=args.alg, normalize=True, seed=SEED),
+                                             n_envs=1)
     else:
-        env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port, 
+        env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port,
                         alg=args.alg, normalize=True, seed=SEED)
 
     model = alg_class(policy, env, verbose=0, seed=SEED, tensorboard_log=log_dir, **model_params)

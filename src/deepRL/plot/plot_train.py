@@ -7,7 +7,6 @@ import random
 import matplotlib.patches as mpatches
 
 NUM_COLUMNS = 1
-TH_DEV = 10
 
 def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, num_rows:int,
               color:str=None, label:str=None, one:bool=False):
@@ -21,23 +20,20 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, num_rows:in
         if one:
             if d['Finish'] == 'False': 
                 f = 0
-                if abs(float(d['Deviation'])) <= TH_DEV:
-                    f = 2
             else:
                 f = 1
             finish.append(f)
 
     # Only for step graph
     if one: 
-        color_map = {0: 'red', 1: 'green', 2: 'orange'}
+        color_map = {0: 'red', 1: 'green'}
         colors = [color_map[f] for f in finish] 
         plt.scatter(range(len(data)), data, color=colors, s=7)
 
         # Legend
-        red_patch = mpatches.Patch(color='red', label='Finish = False, Deviation > '+str(TH_DEV))
+        red_patch = mpatches.Patch(color='red', label='Finish = False')
         green_patch = mpatches.Patch(color='green', label='Finish = True')
-        orange_patch = mpatches.Patch(color='orange', label='Finish = False, Deviation <= '+str(TH_DEV))
-        plt.legend(handles=[red_patch, green_patch, orange_patch])  
+        plt.legend(handles=[red_patch, green_patch])  
     else:
         plt.plot(range(len(data)), data, color=color, linewidth=1, label=label)
 
@@ -72,6 +68,10 @@ def main(args):
     else:
         csv_files = args.file
 
+    # Create plot
+    num_rows = 3
+    fig = plt.figure(figsize=(15 * NUM_COLUMNS, 3 * num_rows))
+
     for csv_file in csv_files:
         data = []
         with open(csv_file, 'r') as file:
@@ -86,11 +86,8 @@ def main(args):
         csv_file = csv_file.split('/')[-1]
 
         # Plots
-        num_rows = 3
         if data[0]['Exploration_rate'] == '-1.0':
             num_rows = 2
-
-        plt.figure(figsize=(15 * NUM_COLUMNS, 3 * num_rows))
 
         plot_data(data_csv=data, key='Reward', sub_plot=1, title='Reward per episode',
                   color=color, label=csv_file, num_rows=num_rows)
@@ -102,6 +99,7 @@ def main(args):
             plot_data(data_csv=data, key='Exploration_rate', sub_plot=3, title='Decay exploration rate',
                       color=color, label=csv_file, num_rows=num_rows)
 
+    fig.set_size_inches(15 * NUM_COLUMNS, 3 * num_rows)
     plt.tight_layout()
     plt.show()
 
