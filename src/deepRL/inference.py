@@ -1,4 +1,4 @@
-from environment import CarlaLaneDiscrete, CarlaLaneContinuousSimple, CarlaLaneContinuousComplex, CarlaObstacle
+import environment
 import argparse
 from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
@@ -14,10 +14,10 @@ alg_callable = {
 }
 
 env_callable = {
-    'CarlaLaneDiscrete': CarlaLaneDiscrete,
-    'CarlaLaneContinuousSimple': CarlaLaneContinuousSimple,
-    'CarlaLaneContinuousComplex': CarlaLaneContinuousComplex,
-    'CarlaObstacle': CarlaObstacle
+    'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
+    'CarlaLaneContinuousSimple': environment.CarlaLaneContinuousSimple,
+    'CarlaLaneContinuousComplex': environment.CarlaLaneContinuousComplex,
+    'CarlaObstacle': environment.CarlaObstacle
 }
 
 def main(args):

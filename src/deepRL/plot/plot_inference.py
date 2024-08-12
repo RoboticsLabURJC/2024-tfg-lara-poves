@@ -7,22 +7,25 @@ import os
 import glob
 
 NUM_COLUMNS = 3
-NUM_ROWS = 3
+NUM_ROWS = 2
 
-def extract_data(key:str, data_csv:list[dict]):
+def extract_data(key:str, data_csv:list[dict], val_abs:bool=False):
     data = []
     for d in data_csv:
-        data.append(float(d[key]))
+        value = float(d[key]) 
+        data.append(abs(value) if val_abs else value)
 
     return data
 
 def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, hist:bool=False,
               label:str=None, color:str=None):
-    data = extract_data(key, data_csv)
+    data = extract_data(key=key, data_csv=data_csv, val_abs=key=='Deviation')
     plt.subplot(NUM_ROWS, NUM_COLUMNS, sub_plot)
 
     if not hist:
         plt.plot(range(len(data)), data, color=color, label=label) 
+        if key == 'Deviation':
+            key += ' in pixels'
         plt.ylabel(key)
         plt.xlabel('Step')
     else:
@@ -43,7 +46,7 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, hist:bool=F
         plt.xlabel(key)
     
     plt.title(title)
-    if sub_plot % 3 == 0:
+    if sub_plot == 3 or sub_plot == 4:
         plt.legend()
 
 def get_color_random():
@@ -53,7 +56,7 @@ def get_color_random():
     return '#{:02x}{:02x}{:02x}'.format(r, g, b)
 
 def main(args):
-    random.seed(7)
+    random.seed(6)
     plt.figure(figsize=(5 * NUM_COLUMNS, 4 * NUM_ROWS))
 
     if len(args.file) == 1 and args.file[0] == 'all':
@@ -86,19 +89,17 @@ def main(args):
         # Plots
         plot_data(data_csv=data, key='Reward', sub_plot=2, title='Reward per step', label=csv_file,
                   color=color)
-        plot_data(data_csv=data, key='Accumulated reward', sub_plot=3, title='Total reward',
+        plot_data(data_csv=data, key='Deviation', sub_plot=5, title='Deviation in absolute value',
                   label=csv_file, color=color)
-        plot_data(data_csv=data, key='Deviation', sub_plot=5, title='Deviation', label=csv_file,
-                  color=color)
         plot_data(data_csv=data, key='Speed', sub_plot=4, title='Velocity of the vehicle',
                   label=csv_file, color=color)
         plot_data(data_csv=data, key='Throttle', sub_plot=1, title='Throttle of the vehicle',
                   label=csv_file, color=color)
 
         # Histograms
-        plot_data(data_csv=data, key='Throttle', sub_plot=7, title='Histogram throttle actions',
+        plot_data(data_csv=data, key='Throttle', sub_plot=3, title='Histogram throttle actions',
                   hist=True, label=csv_file)
-        plot_data(data_csv=data, key='Steer', sub_plot=8, title='Histogram steer actions', hist=True,
+        plot_data(data_csv=data, key='Steer', sub_plot=6, title='Histogram steer actions', hist=True,
                   label=csv_file)
         
         file.close()

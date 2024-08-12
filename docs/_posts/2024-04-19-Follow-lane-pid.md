@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: PID"
-last_modified_at: 2024-07-10T14:07:00
+last_modified_at: 2024-08-06T14:14:00
 categories:
   - Blog
 tags:
@@ -51,8 +51,8 @@ class Camera(Sensor):
 
 La desviación en el eje *x* representa el error que recibe nuestro controlador, el cual es principalmente un controlador PD para el giro del volante (*steer*). El componente proporcional normaliza el error en un rango de 0.0 a 1.0, que es el rango de control proporcionado por Carla. Sin embargo, si el error supera cierto umbral, lo incrementamos ligeramente para mejorar el rendimiento en las curvas. Respecto al componente derivativo, lo hemos incorporado para prevenir movimientos oscilatorios al salir de las curvas, ya que resta el error anterior reducido. Por lo tanto, solo consideramos el error anterior si su signo difiere del error actual, ya que, de lo contrario, podría afectar negativamente la conducción en las curvas.
 
-En lo referente al control de los pedales, mantenemos la constancia del acelerador, mientras que con el freno regulamos la velocidad para no exceder los 10m/s.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kuUNTTiq64w?si=uYyF4veT2qDjEFnd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+En lo referente al control de los pedales, mantenemos el acelerador contante, mientras que con el freno regulamos la velocidad para mantenerla en un rango de 10-15m/s.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-3RPNrn3nLg?si=JM_46rGVRMXbJQag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Profiling
 
