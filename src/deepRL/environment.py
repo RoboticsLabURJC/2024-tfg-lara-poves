@@ -462,9 +462,10 @@ class CarlaLaneContinuousComplex(CarlaBase):
         # Get velocity
         speed = self.ego_vehicle.get_velocity()
         self._speed = carla.Vector3D(speed).length()
+        vel = np.clip(self._speed, 0.0, self._max_vel)
 
         # Calculate reward
-        reward = (MAX_DEV - abs(dev)) / MAX_DEV 
+        reward = 0.7 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.3 * vel / self._max_vel
         return reward
     
 class CarlaObstacle(CarlaBase):
