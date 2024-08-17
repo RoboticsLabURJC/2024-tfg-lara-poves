@@ -134,6 +134,7 @@ class CameraRGB(Sensor):
             self._coefficients = np.zeros((SIZE_MEM, 2, 3), dtype=float)
             self._count_coef = [0, 0] # Not use until having 5 measurements
             self._count_mem_road = 0
+            self._count_no_lane = 0
             self._count_mem_lane = [0, 0]
 
         self._cm = np.zeros((2,), dtype=np.int32)
@@ -170,8 +171,6 @@ class CameraRGB(Sensor):
             return False
         else:
             self._count_mem_lane[index] = 0
-
-        coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
 
         # Previus linear regression
         if self._count_coef[index] >= SIZE_MEM:
@@ -243,8 +242,13 @@ class CameraRGB(Sensor):
         coef_right = self._coefficients[-1, RIGHT_LANE, 0:2]
 
         if see_line_left == False and see_line_right == False:
-            self._error_lane = True
-            assert False, "Lane not found"
+            self._count_no_lane += 1
+
+            if self._count_no_lane >= self._mem_max / 2:
+                self._error_lane = True
+                assert False, "Lane not found"
+        else:
+            self._count_no_lane += 0
 
         count_x = count_y = 0
         count_total = count_road = 0
@@ -777,7 +781,7 @@ class PID:
         self._vehicle = vehicle
         self._kp = 1 / (SIZE_CAMERA / 2)
         self._kd = -self._kp / 1.7
-        self._throttle = 0.6
+        self._throttle = 0.5
 
         self._error = 0
         self._prev_error = 0

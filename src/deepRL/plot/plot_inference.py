@@ -17,10 +17,10 @@ def extract_data(key:str, data_csv:list[dict], val_abs:bool=False):
 
     return data
 
-def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, hist:bool=False,
-              label:str=None, color:str=None):
+def plot_data(data_csv:list[dict], num_rows:int, key:str, sub_plot:int, title:str, 
+              hist:bool=False, label:str=None, color:str=None):
     data = extract_data(key=key, data_csv=data_csv, val_abs=key=='Deviation')
-    plt.subplot(NUM_ROWS, NUM_COLUMNS, sub_plot)
+    plt.subplot(num_rows, NUM_COLUMNS, sub_plot)
 
     if not hist:
         plt.plot(range(len(data)), data, color=color, label=label) 
@@ -57,7 +57,6 @@ def get_color_random():
 
 def main(args):
     random.seed(6)
-    plt.figure(figsize=(5 * NUM_COLUMNS, 4 * NUM_ROWS))
 
     if len(args.file) == 1 and args.file[0] == 'all':
         dir = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/csv/inference/' 
@@ -76,43 +75,67 @@ def main(args):
     else:
         csv_files = args.file
 
+    plot_data_csv = []
+    extra_row = False
+    num_rows = NUM_ROWS
+
     for csv_file in csv_files:
         data = []
         with open(csv_file, 'r') as file:
             csv_reader = csv.DictReader(file)
             for row in csv_reader:
                 data.append(row)
+        file.close()
+
+        if not extra_row and float(data[0]['Brake']) >= 0.0:
+            num_rows += 1
+            extra_row = True
 
         csv_file = csv_file.split('/')[-1].rsplit('_', 1)[0]
         color = get_color_random()
+        plot_data_csv.append([csv_file, data, color])
 
+    # Plot csv data
+    plt.figure(figsize=(5 * NUM_COLUMNS, 3.5 * num_rows))
+
+    for csv_file, data, color in plot_data_csv:
         # Plots
-        plot_data(data_csv=data, key='Reward', sub_plot=2, title='Reward per step', label=csv_file,
-                  color=color)
-        plot_data(data_csv=data, key='Deviation', sub_plot=5, title='Deviation in absolute value',
-                  label=csv_file, color=color)
-        plot_data(data_csv=data, key='Speed', sub_plot=4, title='Velocity of the vehicle',
-                  label=csv_file, color=color)
-        plot_data(data_csv=data, key='Throttle', sub_plot=1, title='Throttle of the vehicle',
-                  label=csv_file, color=color)
+        plot_data(data_csv=data, key='Reward', sub_plot=1, title='Reward per step', label=csv_file,
+                  color=color, num_rows=num_rows)
+        plot_data(data_csv=data, key='Deviation', sub_plot=4, title='Deviation in absolute value',
+                  label=csv_file, color=color, num_rows=num_rows)
+        plot_data(data_csv=data, key='Speed', sub_plot=5, title='Velocity of the vehicle',
+                  label=csv_file, color=color, num_rows=num_rows)
+        plot_data(data_csv=data, key='Throttle', sub_plot=2, title='Throttle of the vehicle',
+                  label=csv_file, color=color, num_rows=num_rows)
 
         # Histograms
         plot_data(data_csv=data, key='Throttle', sub_plot=3, title='Histogram throttle actions',
-                  hist=True, label=csv_file)
+                  hist=True, label=csv_file, num_rows=num_rows)
         plot_data(data_csv=data, key='Steer', sub_plot=6, title='Histogram steer actions', hist=True,
-                  label=csv_file)
+                  label=csv_file, num_rows=num_rows)
         
-        file.close()
+        # Extra column
+        if num_rows > NUM_ROWS:
+            plot_data(data_csv=data, key='Accumulated reward', sub_plot=7, color=color,
+                      title='Accumulated reward', label=csv_file, num_rows=num_rows)
+            plot_data(data_csv=data, num_rows=num_rows, key='Brake', title='Brake of the vehicle',
+                      color=color, label=csv_file, sub_plot=8)
+            plot_data(data_csv=data, key='Brake', sub_plot=9, title='Histogram brake actions',
+                      hist=True, label=csv_file, num_rows=num_rows)
 
     plt.tight_layout()
     plt.show()
 
 if __name__ == "__main__":
     possible_envs = [
-        "CarlaDiscreteBasic"
+        "CarlaLaneDiscrete",
+        "CarlaLaneContinuousComplex",
+        "CarlaLaneContinuousSimple"
     ]
     possible_algs = [
-        "DQN"
+        "DQN",
+        "PPO"
     ]
 
     parser = argparse.ArgumentParser(

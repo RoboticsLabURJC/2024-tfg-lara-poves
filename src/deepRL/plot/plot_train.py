@@ -86,7 +86,7 @@ def main(args):
         csv_file = csv_file.split('/')[-1]
 
         # Plots
-        if data[0]['Exploration_rate'] == '-1.0':
+        if float(data[0]['Exploration_rate']) < 0.0:
             num_rows = 2
 
         plot_data(data_csv=data, key='Reward', sub_plot=1, title='Reward per episode',

@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: PID"
-last_modified_at: 2024-08-06T14:14:00
+last_modified_at: 2024-08-14T15:22:00
 categories:
   - Blog
 tags:
@@ -23,6 +23,7 @@ Implementaremos una solución combinando múltiples redes neuronales para detect
 Buscamos seleccionar un entorno con una única vía y rodeado de vegetación para facilitar la detección de carril.
 
 ### Red neuronal de detección de carril
+
 Contamos con una red neuronal para detectar el carril, la cual nos proporciona dos máscaras que definen cada una de las líneas del mismo. Para mejorar la detección, especialmente en casos de líneas discontinuas o cuando la red neuronal proporciona líneas fragmentadas o incompletas, empleamos **regresión lineal** en los puntos obtenidos para cada línea a través de la red. Este procedimiento nos permite calcular los coeficientes de las rectas que mejor se ajustan a dichos puntos.
 
 Hemos definido una **altura máxima** para la detección del carril, creando así la forma de un trapecio. Los puntos que se encuentren dentro de este trapecio delimitado pdefinen el área del carril. Además, hemos integrado una función de seguridad: si perdemos el seguimiento de una de las líneas del carril durante varias iteraciones consecutivas o perdemos ambas líneas del carril, detenemos la ejecución del programa. En casos donde no se detecten líneas, volvemos a utilizar la última medida válida.
@@ -40,6 +41,7 @@ Para **eliminar los *outliers*** de cada máscara, solo conservaremos los puntos
 </figure>
 
 ### Red neuronal de segmentación semántica
+
 Una vez que hemos determinado el área del carril, empleamos la red de segmentación para calcular el porcentaje de ese área que corresponde realmente a la carretera. Este cálculo nos permite discernir si hemos perdido el carril aunque continuamos detectando líneas, las cuales podrían ser, por ejemplo, de la acera. Si el porcentaje de área correspondiente al carril es inferior a un umbral durante varias iteraciones seguidas, detenemos la ejecución del programa. Esto será útil sobre todo en la próxima etapa, el seguimiento del carril mediante *deep reinforcement learning*. Después de realizar todas las verificaciones, determinamos el centro de masas del carril y evaluamos su desviación con respecto al centro de la pantalla en el eje *x*, donde se encuentra nuestro vehículo.
 ```python
 class Camera(Sensor):      
@@ -51,8 +53,8 @@ class Camera(Sensor):
 
 La desviación en el eje *x* representa el error que recibe nuestro controlador, el cual es principalmente un controlador PD para el giro del volante (*steer*). El componente proporcional normaliza el error en un rango de 0.0 a 1.0, que es el rango de control proporcionado por Carla. Sin embargo, si el error supera cierto umbral, lo incrementamos ligeramente para mejorar el rendimiento en las curvas. Respecto al componente derivativo, lo hemos incorporado para prevenir movimientos oscilatorios al salir de las curvas, ya que resta el error anterior reducido. Por lo tanto, solo consideramos el error anterior si su signo difiere del error actual, ya que, de lo contrario, podría afectar negativamente la conducción en las curvas.
 
-En lo referente al control de los pedales, mantenemos el acelerador contante, mientras que con el freno regulamos la velocidad para mantenerla en un rango de 10-15m/s.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-3RPNrn3nLg?si=JM_46rGVRMXbJQag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+En lo referente al control de los pedales, mantenemos el acelerador contante en 0.5, mientras que con el freno regulamos la velocidad para mantenerla en aproximadamente de 10m/s.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pfv5A-J-X_s?si=TNOIpLmgoDJKgNvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Profiling
 

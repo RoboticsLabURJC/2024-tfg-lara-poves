@@ -9,7 +9,7 @@ def main(args):
     screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='Follow lane')
 
     # Add Ego Vehicle
-    transform = carla.Transform(carla.Location(x=50.0, y=-145.7, z=0.5))
+    transform = carla.Transform(carla.Location(x=75.0, y=-144.5, z=0.5), carla.Rotation(yaw=4.0))
     ego_vehicle = configcarla.add_one_vehicle(world=world, vehicle_type='vehicle.lincoln.mkz_2020',
                                               ego_vehicle=True, transform=transform)
 
