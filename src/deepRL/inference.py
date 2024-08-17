@@ -50,22 +50,25 @@ def main(args):
     file_csv = open(dir_csv + args.alg + '_' + 'data_' + args.n + '_' + str(num_files) +
                     '.csv', mode='w', newline='')
     writer_csv = csv.writer(file_csv)
-    writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Throttle", "Steer", "Deviation", "Speed"])
+    writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Throttle", "Steer", "Deviation", "Speed", "Brake"])
     
+    brake = -1.0
     try:
         while True:
             action, _ = model.predict(obs, deterministic=True)
             if args.alg == 'DQN':
                 throttle, steer = env.action_to_control[action.item()]
-            else:
+            elif 'CarlaLaneContinuousSimple' == args.env:
                 throttle, steer = action
+            else:
+                throttle, steer, brake = action
 
             obs, reward, terminated, truncated, info = env.step(action)
 
             step += 1
             total_reward += reward
             writer_csv.writerow([step, reward, total_reward, throttle, steer, info['deviation'], 
-                                 info['speed']])        
+                                 info['speed'], brake])        
 
             if terminated or truncated:
                 break

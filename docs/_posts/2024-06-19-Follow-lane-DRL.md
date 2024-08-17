@@ -91,13 +91,13 @@ else:
   reward = -20
 ```
 
-Los entrenamientos han durado entre 18 y 19 horas. Tras realizar varias pruebas experimentales, hemos identificado los hiperparámetros que han ofrecido los mejores resultados: un gamma de 0.9, una tasa de aprendizaje de 0.0005 y una frecuencia de entrenamiento cada 50 pasos. Este último fue clave durante los entrenamientos, al principio se utilizó un valor menor, pero los modelos no lograron converger. El ratio de exploración se reduce gradualmente durante el 72.5% del entrenamiento y, a partir de ese punto, se dejan de realizar acciones aleatorias. En la gráfica siguiente, se puede observar cómo el modelo finalmente converge:
+Los entrenamientos han durado entre 18-19 horas. Tras realizar varias pruebas experimentales, hemos identificado los hiperparámetros que han ofrecido los mejores resultados: un gamma de 0.9, una tasa de aprendizaje de 0.0005 y una frecuencia de entrenamiento cada 50 pasos. Este último fue clave durante los entrenamientos, al principio se utilizó un valor menor, pero los modelos no lograron converger. El ratio de exploración se reduce gradualmente durante el 72.5% del entrenamiento y, a partir de ese punto, se dejan de realizar acciones aleatorias. En la gráfica siguiente, se puede observar cómo el modelo finalmente converge:
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneDiscrete/train.png" alt="">
 </figure>
 
 En inferencia, se observa que el seguimiento del carril no es completamente fluido, especialmente en las curvas. Esto se debe a una de las limitaciones del DQN, ya que el espacio de acciones es discreto y no permite seleccionar la acción de giro óptima en cada momento.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZVmVK_JqjOk?si=FU0vyBmK6G4ZVeSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 En las siguiente gráficas, se presenta la información recopilada durante la inferencia: la aceleración comandada al coche y su velocidad actual, la desviación del carril y la recompensa obtenida, junto con histogramas que muestran las acciones de giro y aceleración escogidas. Podemos observar claramente los momentos en los que se reduce la velocidad, correspondientes a las dos curvas pronunciadas. Sin embargo, de manera general, los histogramas indican que, predominantemente, se eligen los pares de acciones más rápidos.
 <figure class="align-center" style="max-width: 100%">
@@ -105,6 +105,11 @@ En las siguiente gráficas, se presenta la información recopilada durante la in
 </figure>
 
 ### CarlaLaneContinuousSimple
+
+[25-27]horas
+revisar si hay errores en el blog subidos en lso links y eso
+se probo aumentar el peso de la velocida en la funcion de recompensa, pero no se conseguia seguir centrado el carril
+= funcion recompensa que en la anterior
 
 ### CarlaLaneContinuousComplex
 

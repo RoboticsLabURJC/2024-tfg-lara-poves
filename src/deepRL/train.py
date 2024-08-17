@@ -76,7 +76,7 @@ def main(args):
     model = alg_class(policy, env, verbose=0, seed=SEED, tensorboard_log=log_dir, **model_params)
     if args.alg == 'DQN':
         env.set_model(model)
-    model.learn(total_timesteps=n_timesteps, log_interval=1, tb_log_name=log_name, progress_bar=True)
+    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name, progress_bar=True)
     
     files = os.listdir(dir + 'model/' + args.env)
     num_files = len(files) + 1
@@ -90,7 +90,7 @@ if __name__ == "__main__":
         description="Run a training on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + "} [--port <port_number>]" +\
-            "[--delta <fixed_delta_seconds>]"
+            "[--delta <fixed_delta_seconds>] [--log_interval <log_interval>]"
     )
     parser.add_argument(
         '--env', 
@@ -119,6 +119,13 @@ if __name__ == "__main__":
         required=False, 
         default=0.05,
         help='Fixed delta second for CARLA simulator. By default 50ms'
+    )
+    parser.add_argument(
+        '--log_interval', 
+        type=int, 
+        required=False, 
+        default=64,
+        help='Logging interval for traing. By default 64'
     )
 
     main(parser.parse_args())

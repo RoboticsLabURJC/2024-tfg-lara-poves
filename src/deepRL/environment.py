@@ -141,7 +141,7 @@ class CarlaBase(gym.Env, ABC):
         self._town = 'Town05'
         z = 0.1
         self._init_locations = [
-            carla.Transform(carla.Location(x=50.0, y=-145.7, z=z)),
+            carla.Transform(carla.Location(x=75.0, y=-144.5, z=z), carla.Rotation(yaw=4.0)),
             carla.Transform(carla.Location(x=120.0, y=-137, z=z), carla.Rotation(yaw=22)),
             carla.Transform(carla.Location(x=43.0, y=141.5, z=z), carla.Rotation(yaw=3)),
             carla.Transform(carla.Location(x=111.0, y=135.5, z=z), carla.Rotation(yaw=-16))
@@ -171,7 +171,7 @@ class CarlaBase(gym.Env, ABC):
         self.ego_vehicle = configcarla.add_one_vehicle(world=self._world, ego_vehicle=True,
                                                         vehicle_type='vehicle.lincoln.mkz_2020',
                                                         transform=self._init_locations[self._index_loc])
-        transform = carla.Transform(carla.Location(z=1.4, x=1.75), carla.Rotation(roll=90.0))
+        transform = carla.Transform(carla.Location(z=1.5, x=1.6), carla.Rotation(roll=90.0))
         self._sensors = configcarla.Vehicle_sensors(vehicle=self.ego_vehicle, world=self._world,
                                                     screen=self._screen)
         self._camera = self._sensors.add_camera_rgb(transform=transform, seg=False, lane=True,
@@ -246,16 +246,6 @@ class CarlaBase(gym.Env, ABC):
         except AssertionError:
             terminated = True
             reward = -20
-
-            t = self.ego_vehicle.get_transform()
-            if self._index_loc >= 2:
-                base = -143
-                t = t.location.y
-            else:
-                base = 50
-                t = t.location.x
-
-            print("base", base, "dev:", self._dev, "t:", t)
 
         # Check if a key has been pressed
         if self._human:
