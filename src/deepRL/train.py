@@ -25,7 +25,7 @@ alg_callable = {
 env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
     'CarlaLaneContinuousSimple': environment.CarlaLaneContinuousSimple,
-    'CarlaLaneContinuousComplex': environment.CarlaLaneContinuousComplex,
+    'CarlaLaneContinuous': environment.CarlaLaneContinuous,
     'CarlaObstacle': environment.CarlaObstacle
 }
 
