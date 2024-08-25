@@ -21,6 +21,11 @@ MAX_DEV = 100
 class CarlaBase(gym.Env, ABC):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
+        assert hasattr(self, '_max_vel'), "Code error: remember to create\
+              \'_max_vel\' variable in your inherited classes"
+        assert hasattr(self, '_penalty_lane'), "Code error: remember to create\
+              \'_max_vel\' variable in your inherited classes"
+
         self._first = True
         self._dev = 0
         self._vel = 0
@@ -31,7 +36,6 @@ class CarlaBase(gym.Env, ABC):
         self._count = 0
         self._jump = False
         self._human = human
-        self._max_vel = 5.0
 
         # CSV file
         self._train = train
@@ -234,6 +238,7 @@ class CarlaBase(gym.Env, ABC):
                 elif t.location.y < -143: 
                     terminated = True
                     finish_ep = True
+                    print("termino", self._count_ep)
             else:
                 if not self._jump and t.location.y > -30:
                     t.location.y = 15
@@ -242,10 +247,12 @@ class CarlaBase(gym.Env, ABC):
                 elif t.location.x < 50:
                     terminated = True
                     finish_ep = True
+                    print("termino", self._count_ep)
             
         except AssertionError:
             terminated = True
-            reward = -20
+            reward = self._penalty_lane
+            print("No termino", self._count_ep)
 
         # Check if a key has been pressed
         if self._human:
@@ -325,6 +332,8 @@ class CarlaBase(gym.Env, ABC):
 class CarlaLaneDiscrete(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
+        self._max_vel = 5.0
+        self._penalty_lane = -20
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
 
@@ -377,7 +386,7 @@ class CarlaLaneDiscrete(CarlaBase):
         vel = np.clip(self._speed, 0.0, self._max_vel) # Reaches a speed of 5m/s after 5 seconds
 
         # Calculate reward
-        reward = 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
+        reward = 0.75 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.25 * vel / self._max_vel
         return reward
 
 class CarlaLaneContinuousSimple(CarlaBase):
@@ -387,11 +396,12 @@ class CarlaLaneContinuousSimple(CarlaBase):
             human = False
             print("Warning: Can't activate human mode during training")
 
+        self._max_vel = 15
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
-        
+
     def _create_actions(self):
-        self.action_space = spaces.Box(low=np.array([0.1, -0.3]), high=np.array([0.5, 0.3]),
+        self.action_space = spaces.Box(low=np.array([0.1, -0.3]), high=np.array([1.0, 0.3]),
                                        shape=(2,), dtype=np.float64)
         
     def _get_control(self, action:np.ndarray):
@@ -415,22 +425,24 @@ class CarlaLaneContinuousSimple(CarlaBase):
         vel = np.clip(self._speed, 0.0, self._max_vel)
 
         # Calculate reward
-        reward = 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
+        reward = 0.95 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.05 * vel / self._max_vel
         return reward
 
-class CarlaLaneContinuousComplex(CarlaBase):
+class CarlaLaneContinuous(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
         if train and human:
             human = False
             print("Warning: Can't activate human mode during training")
 
+        self._max_vel = 10
+        self._penalty_lane = -20
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
         
     def _create_actions(self):
         # Add brake
-        self.action_space = spaces.Box(low=np.array([0.1, -0.3, 0.0]), high=np.array([0.5, 0.3, 1.0]),
+        self.action_space = spaces.Box(low=np.array([0.0, -0.3, 0.0]), high=np.array([1.0, 0.3, 1.0]),
                                        shape=(3,), dtype=np.float64)
         
     def _get_control(self, action:np.ndarray):

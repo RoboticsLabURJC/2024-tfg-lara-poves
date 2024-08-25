@@ -7,4 +7,4 @@ PPO:
   batch_size: 64 # = n_steps * n_envs(=1)
   ent_coef: 0.01 # β
   clip_range: 0.2 # epsilon
-  n_timesteps: 3_000_000
+  n_timesteps: 10_000_000
