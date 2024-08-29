@@ -24,7 +24,6 @@ alg_callable = {
 
 env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
-    'CarlaLaneContinuousSimple': environment.CarlaLaneContinuousSimple,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
     'CarlaObstacle': environment.CarlaObstacle
 }
@@ -73,10 +72,11 @@ def main(args):
         env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port,
                         alg=args.alg, normalize=True, seed=SEED)
 
-    model = alg_class(policy, env, verbose=0, seed=SEED, tensorboard_log=log_dir, **model_params)
+    model = alg_class(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
     if args.alg == 'DQN':
         env.set_model(model)
-    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name, progress_bar=True)
+    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval,
+                tb_log_name=log_name, progress_bar=True)
     
     files = os.listdir(dir + 'model/' + args.env)
     num_files = len(files) + 1

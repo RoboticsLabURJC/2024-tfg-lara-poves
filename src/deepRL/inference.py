@@ -15,7 +15,6 @@ alg_callable = {
 
 env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
-    'CarlaLaneContinuousSimple': environment.CarlaLaneContinuousSimple,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
     'CarlaObstacle': environment.CarlaObstacle
 }
@@ -50,7 +49,8 @@ def main(args):
     file_csv = open(dir_csv + args.alg + '_' + 'data_' + args.n + '_' + str(num_files) +
                     '.csv', mode='w', newline='')
     writer_csv = csv.writer(file_csv)
-    writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Throttle", "Steer", "Deviation", "Speed", "Brake"])
+    writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Throttle",
+                         "Steer", "Deviation", "Speed", "Brake"])
     
     brake = -1.0
     try:

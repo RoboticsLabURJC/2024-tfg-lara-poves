@@ -58,7 +58,8 @@ def main(args):
                 model.set_random_seed(seed)
             except FileNotFoundError:
                 if all and ((alg == 'DQN' and env_str == 'MountainCarContinuous-v0') or 
-                            ((alg == 'DDPG' or alg == 'TD3' or alg == 'SAC') and env_str != 'MountainCarContinuous-v0')):
+                            ((alg == 'DDPG' or alg == 'TD3' or alg == 'SAC') 
+                            and env_str != 'MountainCarContinuous-v0')):
                     pass
                 else:
                     print("Model", cont_load + '.zip', "doesn't exit")
@@ -72,8 +73,8 @@ def main(args):
                 env = make_vec_env(make_env, seed=seed)
 
                 # Load vecnormalize
-                norm = alg != 'DQN' and env_str != 'CartPole-v1' and alg != 'DDPG' and alg != 'TD3' and alg != 'SAC'
-                if norm:
+                norm = alg != 'DQN' and env_str != 'CartPole-v1' and alg != 'DDPG'
+                if norm and alg != 'TD3' and alg != 'SAC':
                     vec_norm = VecNormalize.load(gym_dir + 'vecnormalize/' + cont_load + '.pkl', venv=env)
             except FileNotFoundError: 
                 print("Vector normalize", cont_load + '.pkl', "doesn't exit")

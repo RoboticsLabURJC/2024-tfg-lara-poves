@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-08-12T16:04:00
+last_modified_at: 2024-08-26T14:51:00
 categories:
   - Blog
 tags:
@@ -18,9 +18,7 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 ## Índice
 - [Sigue carrils](#sigue-carril)
   - [CarlaLaneDiscrete](#carlalanediscrete)
-  - [CarlaLaneContinuousSimple](#carlalanecontinuoussimple)
-  - [CarlaLaneContinuousComplex](#carlalanecontinuouscomplex)
-- [Detección de obstáculos](#detección-de-obstáculos)
+  - [CarlaLaneContinuous](#carlalanecontinuous)
 
 ## Sigue carril
 
@@ -91,26 +89,27 @@ else:
   reward = -20
 ```
 
-Los entrenamientos han durado entre 18-19 horas. Tras realizar varias pruebas experimentales, hemos identificado los hiperparámetros que han ofrecido los mejores resultados: un gamma de 0.9, una tasa de aprendizaje de 0.0005 y una frecuencia de entrenamiento cada 50 pasos. Este último fue clave durante los entrenamientos, al principio se utilizó un valor menor, pero los modelos no lograron converger. El ratio de exploración se reduce gradualmente durante el 72.5% del entrenamiento y, a partir de ese punto, se dejan de realizar acciones aleatorias. En la gráfica siguiente, se puede observar cómo el modelo finalmente converge:
+Los entrenamientos tuvieron una duración de entre 17 y 19 horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionaron los mejores resultados:
+```yaml
+learning_rate: 0.0005 
+buffer_size: 10_000
+batch_size: 128
+gamma: 0.8 
+target_update_interval: 200
+train_freq: 50 
+gradient_steps: 2 
+```
+La frecuencia de entrenamiento resultó ser un factor clave en el proceso, al principio se utilizó un valor menor, pero los modelos no lograron converger. El ratio de exploración se reduce gradualmente durante el 72.5% del entrenamiento y, a partir de ese punto, se dejan de realizar acciones aleatorias (ε=0). En la gráfica siguiente, se puede observar cómo el modelo finalmente converge:
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneDiscrete/train.png" alt="">
 </figure>
 
 En inferencia, se observa que el seguimiento del carril no es completamente fluido, especialmente en las curvas. Esto se debe a una de las limitaciones del DQN, ya que el espacio de acciones es discreto y no permite seleccionar la acción de giro óptima en cada momento.
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YPkT7LDOKKc?si=9RMqzVinfTC3Kdzl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 En las siguiente gráficas, se presenta la información recopilada durante la inferencia: la aceleración comandada al coche y su velocidad actual, la desviación del carril y la recompensa obtenida, junto con histogramas que muestran las acciones de giro y aceleración escogidas. Podemos observar claramente los momentos en los que se reduce la velocidad, correspondientes a las dos curvas pronunciadas. Sin embargo, de manera general, los histogramas indican que, predominantemente, se eligen los pares de acciones más rápidos.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneDiscrete/inference.png" alt="">
 </figure>
 
-### CarlaLaneContinuousSimple
-
-[25-27]horas
-revisar si hay errores en el blog subidos en lso links y eso
-se probo aumentar el peso de la velocida en la funcion de recompensa, pero no se conseguia seguir centrado el carril
-= funcion recompensa que en la anterior
-
-### CarlaLaneContinuousComplex
-
-## Detección de obstáculos
+### CarlaLaneContinuous

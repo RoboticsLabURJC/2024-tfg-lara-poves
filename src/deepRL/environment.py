@@ -21,11 +21,7 @@ MAX_DEV = 100
 class CarlaBase(gym.Env, ABC):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
-        assert hasattr(self, '_max_vel'), "Code error: remember to create\
-              \'_max_vel\' variable in your inherited classes"
-        assert hasattr(self, '_penalty_lane'), "Code error: remember to create\
-              \'_max_vel\' variable in your inherited classes"
-
+        self._penalty_lane = -20
         self._first = True
         self._dev = 0
         self._vel = 0
@@ -332,10 +328,10 @@ class CarlaBase(gym.Env, ABC):
 class CarlaLaneDiscrete(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
-        self._max_vel = 5.0
-        self._penalty_lane = -20
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
+        
+        self._max_vel = 5.0
 
     def _create_actions(self):
         self._max_steer = 0.18
@@ -389,45 +385,6 @@ class CarlaLaneDiscrete(CarlaBase):
         reward = 0.75 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.25 * vel / self._max_vel
         return reward
 
-class CarlaLaneContinuousSimple(CarlaBase):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
-        if train and human:
-            human = False
-            print("Warning: Can't activate human mode during training")
-
-        self._max_vel = 15
-        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
-
-    def _create_actions(self):
-        self.action_space = spaces.Box(low=np.array([0.1, -0.3]), high=np.array([1.0, 0.3]),
-                                       shape=(2,), dtype=np.float64)
-        
-    def _get_control(self, action:np.ndarray):
-        assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
-        throttle, steer = action
-
-        control = carla.VehicleControl()
-        control.steer = steer 
-        control.throttle = throttle
-
-        return control
-    
-    def _calculate_reward(self):
-        # Get deviation
-        self._dev = self._camera.get_deviation()
-        dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
-
-        # Get velocity
-        speed = self.ego_vehicle.get_velocity()
-        self._speed = carla.Vector3D(speed).length()
-        vel = np.clip(self._speed, 0.0, self._max_vel)
-
-        # Calculate reward
-        reward = 0.95 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.05 * vel / self._max_vel
-        return reward
-
 class CarlaLaneContinuous(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
@@ -435,10 +392,11 @@ class CarlaLaneContinuous(CarlaBase):
             human = False
             print("Warning: Can't activate human mode during training")
 
-        self._max_vel = 10
-        self._penalty_lane = -20
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
+        
+        self._max_vel = 10
+        self._penalty_lane = -50
         
     def _create_actions(self):
         # Add brake
