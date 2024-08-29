@@ -23,22 +23,27 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, sub_plot:int, title:st
     plt.subplot(num_rows, NUM_COLUMNS, sub_plot)
 
     if not hist:
-        plt.plot(range(len(data)), data, color=color, label=label) 
         if key == 'Deviation':
             key += ' in pixels'
+
+        plt.plot(range(len(data)), data, color=color, label=label) 
         plt.ylabel(key)
         plt.xlabel('Step')
     else:
-        if key == 'Throttle':
+        if key == 'Steer':
+            if 'DQN' in label:
+                bins = np.linspace(-0.19, 0.19, 20)
+                bins_ticks = np.linspace(-0.2, 0.2, 21)
+            else:
+                bins = np.arange(-0.3, 0.35, 0.05)
+                bins_ticks = bins
+        else:
             if 'DQN' in label:
                 bins = np.linspace(0.05, 0.55, 6)
                 bins_ticks = np.linspace(0.1, 0.5, 5)
             else:
-                bins = np.linspace(0.1, 1.0, 10)
+                bins = np.linspace(0.0, 1.0, 11)
                 bins_ticks = bins
-        else:
-            bins = np.linspace(-0.19, 0.19, 20)
-            bins_ticks = np.linspace(-0.2, 0.2, 21)
             
         plt.hist(data, bins=bins, color=color, edgecolor='black', label=label, zorder=1)
         plt.xticks(bins_ticks, rotation=90)
@@ -96,7 +101,7 @@ def main(args):
         plot_data_csv.append([csv_file, data, color])
 
     # Plot csv data
-    plt.figure(figsize=(5 * NUM_COLUMNS, 3.5 * num_rows))
+    plt.figure(figsize=(5 * NUM_COLUMNS, 3 * num_rows))
 
     for csv_file, data, color in plot_data_csv:
         # Plots
