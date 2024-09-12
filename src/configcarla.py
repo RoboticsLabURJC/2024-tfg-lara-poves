@@ -191,7 +191,7 @@ class CameraRGB(Sensor):
                 y_coef.append(y)
 
         # Memory lane
-        if len(x_coef) < 10:
+        if len(x_coef) < 20:
             self._count_mem_lane[index] += 1
             return False
         else:

@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-08-26T14:51:00
+last_modified_at: 2024-08-30T13:23:00
 categories:
   - Blog
 tags:
@@ -22,7 +22,7 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 
 ## Sigue carril
 
-Para aumentar los frames por segundo y reducir el tiempo de entrenamiento, hemos desactivado la segmentación. Hemos creado tres entornos de Gym que solo difieren en la función de recompensa y el espacio de acciones, lo cual determina el tipo de algoritmo que utilizaremos para entrenar. Emplearemos modelos predefinidos de la librería *stable-baselines3*, como se detalló en el apartado anterior.
+Para aumentar los frames por segundo y reducir el tiempo de entrenamiento, hemos desactivado la segmentación. Hemos creado tres entornos de Gym que principalmente difieren en la función de recompensa y el espacio de acciones, lo cual determina el tipo de algoritmo que utilizaremos para entrenar. Emplearemos modelos predefinidos de la librería *stable-baselines3*, como se detalló en el apartado anterior.
 
 A continuación, se muestra el mapa del recorrido que seguirán los vehículos. Los círculos representan los distintos puntos de inicio, de los cuales se selecciona uno de manera aleatoria al comienzo de cada episodio. Cada localización está marcada con una flecha que indica la dirección del recorrido.
 <figure class="align-center" style="max-width: 100%">
@@ -34,7 +34,7 @@ El vehículo del entorno consta de los siguientes **sensores**:
 - Sensor de colisión: si el coche se choca, detenemos el episodio.
 - Si está en modo humano: cámara del entorno y activación de pygame.
 
-El **espacio de observaciones** es continuo y coincide con el espacio de estados, y se normaliza en todos los entrenamientos. Está compuesto por múltiples elementos, por lo que utilizamos un espacio de estados basado en un **diccionario**. Por consiguiente, en nuestros algoritmos emplearemos la política *MultiInputPolicy*.
+El **espacio de observaciones** es continuo y coincide con el espacio de estados. Se normaliza en todos los entrenamientos y está compuesto por múltiples elementos, por lo que utilizamos un espacio de estados basado en un **diccionario**. Por consiguiente, en nuestros algoritmos emplearemos la política *MultiInputPolicy*.
 - Desviación del carril
 - Área del carril
 - 5 puntos de la línea izquierda del carril
