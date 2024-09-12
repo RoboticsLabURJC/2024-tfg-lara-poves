@@ -26,7 +26,11 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, sub_plot:int, title:st
         if key == 'Deviation':
             key += ' in pixels'
 
-        plt.plot(range(len(data)), data, color=color, label=label) 
+        if key == 'Throttle':
+            plt.plot(range(len(data)), data, color=color, label=label, marker='o', linestyle='None', markersize=2)
+        else:
+            plt.plot(range(len(data)), data, color=color, label=label) 
+
         plt.ylabel(key)
         plt.xlabel('Step')
     else:
@@ -35,7 +39,7 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, sub_plot:int, title:st
                 bins = np.linspace(-0.19, 0.19, 20)
                 bins_ticks = np.linspace(-0.2, 0.2, 21)
             else:
-                bins = np.arange(-0.3, 0.35, 0.05)
+                bins = np.linspace(-0.3, 0.3, 13)
                 bins_ticks = bins
         else:
             if 'DQN' in label:
@@ -61,7 +65,7 @@ def get_color_random():
     return '#{:02x}{:02x}{:02x}'.format(r, g, b)
 
 def main(args):
-    random.seed(6)
+    random.seed(7)
 
     if len(args.file) == 1 and args.file[0] == 'all':
         dir = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/csv/inference/' 
@@ -109,7 +113,7 @@ def main(args):
                   color=color, num_rows=num_rows)
         plot_data(data_csv=data, key='Deviation', sub_plot=4, title='Deviation in absolute value',
                   label=csv_file, color=color, num_rows=num_rows)
-        plot_data(data_csv=data, key='Speed', sub_plot=5, title='Velocity of the vehicle',
+        plot_data(data_csv=data, key='Velocity', sub_plot=5, title='Velocity of the vehicle',
                   label=csv_file, color=color, num_rows=num_rows)
         plot_data(data_csv=data, key='Throttle', sub_plot=2, title='Throttle of the vehicle',
                   label=csv_file, color=color, num_rows=num_rows)
@@ -145,7 +149,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
         description="Plot data of an inference trial",
-        usage="python3 %(prog)s --file <FILE> [--env <ENV>] [--alg <ALG>]"
+        usage="python3 %(prog)s --file <FILE> [--env <ENV>] [--alg <ALG>] [--point_throttle <>]"
     )
     parser.add_argument(
         '--file', 
@@ -169,6 +173,13 @@ if __name__ == "__main__":
         default=None,
         choices=possible_algs,
         help='The algorithm used. Possible values are: {' + ', '.join(possible_algs) + '}'
+    )
+    parser.add_argument(
+        '--point_throttle', 
+        type=bool, 
+        required=False, 
+        default=False,
+        help='Plot throttle using points instead of lines. By default, lines are used.'
     )
 
     main(parser.parse_args())

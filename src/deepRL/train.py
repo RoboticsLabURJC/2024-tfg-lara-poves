@@ -25,6 +25,7 @@ alg_callable = {
 env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
+    'CarlaLane': environment.CarlaLane,
     'CarlaObstacle': environment.CarlaObstacle
 }
 
@@ -72,7 +73,7 @@ def main(args):
         env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port,
                         alg=args.alg, normalize=True, seed=SEED)
 
-    model = alg_class(policy, env, verbose=1, seed=SEED, tensorboard_log=log_dir, **model_params)
+    model = alg_class(policy, env, verbose=args.verbose, seed=SEED, tensorboard_log=log_dir, **model_params)
     if args.alg == 'DQN':
         env.set_model(model)
     model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval,
@@ -90,7 +91,7 @@ if __name__ == "__main__":
         description="Run a training on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + "} [--port <port_number>]" +\
-            "[--delta <fixed_delta_seconds>] [--log_interval <log_interval>]"
+            "[--delta <fixed_delta_seconds>] [--log_interval <log_interval>] [--verbose <verbose>]"
     )
     parser.add_argument(
         '--env', 
@@ -118,14 +119,22 @@ if __name__ == "__main__":
         type=float, 
         required=False, 
         default=0.05,
-        help='Fixed delta second for CARLA simulator. By default 50ms'
+        help='Fixed delta second for CARLA simulator. By default 50ms.'
     )
     parser.add_argument(
         '--log_interval', 
         type=int, 
         required=False, 
         default=64,
-        help='Logging interval for traing. By default 64'
+        help='Logging interval for traing. By default 64.'
+    )
+    parser.add_argument(
+        '--verbose', 
+        type=int, 
+        required=False, 
+        default=0,
+        choices=[0, 1, 2],
+        help='Show basic (1) or detailed (2) training information, or hide it (0). Default is 0.'
     )
 
     main(parser.parse_args())

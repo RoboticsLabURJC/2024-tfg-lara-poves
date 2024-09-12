@@ -16,6 +16,7 @@ alg_callable = {
 env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
+    'CarlaLane': environment.CarlaLane,
     'CarlaObstacle': environment.CarlaObstacle
 }
 
@@ -50,7 +51,7 @@ def main(args):
                     '.csv', mode='w', newline='')
     writer_csv = csv.writer(file_csv)
     writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Throttle",
-                         "Steer", "Deviation", "Speed", "Brake"])
+                         "Steer", "Deviation", "Velocity", "Brake"])
     
     brake = -1.0
     try:
@@ -58,7 +59,7 @@ def main(args):
             action, _ = model.predict(obs, deterministic=True)
             if args.alg == 'DQN':
                 throttle, steer = env.action_to_control[action.item()]
-            elif 'CarlaLaneContinuousSimple' == args.env:
+            elif 'CarlaLaneContinuous' == args.env:
                 throttle, steer = action
             else:
                 throttle, steer, brake = action
@@ -68,7 +69,7 @@ def main(args):
             step += 1
             total_reward += reward
             writer_csv.writerow([step, reward, total_reward, throttle, steer, info['deviation'], 
-                                 info['speed'], brake])        
+                                 info['velocity'], brake])        
 
             if terminated or truncated:
                 break
