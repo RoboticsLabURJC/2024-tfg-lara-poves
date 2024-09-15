@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
 import argparse
 import csv
 import numpy as np
@@ -6,7 +7,7 @@ import random
 import os
 import glob
 
-NUM_COLUMNS = 3
+NUM_COLUMNS = 4
 NUM_ROWS = 2
 
 def extract_data(key:str, data_csv:list[dict], val_abs:bool=False):
@@ -17,22 +18,23 @@ def extract_data(key:str, data_csv:list[dict], val_abs:bool=False):
 
     return data
 
-def plot_data(data_csv:list[dict], num_rows:int, key:str, sub_plot:int, title:str, 
-              hist:bool=False, label:str=None, color:str=None):
+def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], title:str, 
+              hist:bool=False, label:str=None, color:str=None, size:int=1):
+    # Extract data from csv
     data = extract_data(key=key, data_csv=data_csv, val_abs=key=='Deviation')
-    plt.subplot(num_rows, NUM_COLUMNS, sub_plot)
-
+    
+    # Locate the subplot in the grid
+    ax = plt.subplot2grid((num_rows, NUM_COLUMNS), init, colspan=size)
+    ax.set_title(title)
+    
+    # Draw plot
     if not hist:
         if key == 'Deviation':
             key += ' in pixels'
 
-        if key == 'Throttle':
-            plt.plot(range(len(data)), data, color=color, label=label, marker='o', linestyle='None', markersize=2)
-        else:
-            plt.plot(range(len(data)), data, color=color, label=label) 
-
-        plt.ylabel(key)
-        plt.xlabel('Step')
+        ax.plot(range(len(data)), data, color=color, label=label) 
+        ax.set_ylabel(key)
+        ax.set_xlabel('Step')
     else:
         if key == 'Steer':
             if 'DQN' in label:
@@ -49,14 +51,14 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, sub_plot:int, title:st
                 bins = np.linspace(0.0, 1.0, 11)
                 bins_ticks = bins
             
-        plt.hist(data, bins=bins, color=color, edgecolor='black', label=label, zorder=1)
-        plt.xticks(bins_ticks, rotation=90)
-        plt.ylabel('Frecuency')
-        plt.xlabel(key)
+        ax.hist(data, bins=bins, color=color, edgecolor='black', label=label, zorder=1)
+        ax.set_xticks(bins_ticks)
+        ax.set_xticklabels([f'{tick:.2f}' for tick in bins_ticks], rotation=90)
+        ax.set_ylabel('Frequency')
+        ax.set_xlabel(key)
     
-    plt.title(title)
-    if sub_plot == 3 or sub_plot == 4:
-        plt.legend()
+    if init == (0, 2) or init == (0, 1):
+       plt.legend()
 
 def get_color_random():
     r = random.randint(0, 255)
@@ -105,42 +107,43 @@ def main(args):
         plot_data_csv.append([csv_file, data, color])
 
     # Plot csv data
-    plt.figure(figsize=(5 * NUM_COLUMNS, 3 * num_rows))
+    plt.figure(figsize=(6 * NUM_COLUMNS, 8))
+    gs = gridspec.GridSpec(num_rows, NUM_COLUMNS)
 
     for csv_file, data, color in plot_data_csv:
         # Plots
-        plot_data(data_csv=data, key='Reward', sub_plot=1, title='Reward per step', label=csv_file,
+        plot_data(data_csv=data, key='Reward', init=(0, 0), title='Reward per step', label=csv_file,
                   color=color, num_rows=num_rows)
-        plot_data(data_csv=data, key='Deviation', sub_plot=4, title='Deviation in absolute value',
+        plot_data(data_csv=data, key='Deviation', init=(1, 0), title='Deviation in absolute value',
                   label=csv_file, color=color, num_rows=num_rows)
-        plot_data(data_csv=data, key='Velocity', sub_plot=5, title='Velocity of the vehicle',
-                  label=csv_file, color=color, num_rows=num_rows)
-        plot_data(data_csv=data, key='Throttle', sub_plot=2, title='Throttle of the vehicle',
-                  label=csv_file, color=color, num_rows=num_rows)
+        plot_data(data_csv=data, key='Velocity', init=(0, 2), title='Velocity of the vehicle',
+                  label=csv_file, color=color, num_rows=num_rows, size=2)
+        plot_data(data_csv=data, key='Throttle', init=(1, 2), title='Throttle of the vehicle',
+                  label=csv_file, color=color, num_rows=num_rows, size=2)
 
         # Histograms
-        plot_data(data_csv=data, key='Throttle', sub_plot=3, title='Histogram throttle actions',
+        plot_data(data_csv=data, key='Throttle', init=(1, 1), title='Histogram throttle actions',
                   hist=True, label=csv_file, num_rows=num_rows)
-        plot_data(data_csv=data, key='Steer', sub_plot=6, title='Histogram steer actions', hist=True,
+        plot_data(data_csv=data, key='Steer', init=(0, 1), title='Histogram steer actions', hist=True,
                   label=csv_file, num_rows=num_rows)
         
-        # Extra column
-        if num_rows > NUM_ROWS:
-            plot_data(data_csv=data, key='Accumulated reward', sub_plot=7, color=color,
+        # Extra row
+        if extra_row:
+            plot_data(data_csv=data, key='Accumulated reward', init=(2, 0), color=color,
                       title='Accumulated reward', label=csv_file, num_rows=num_rows)
             plot_data(data_csv=data, num_rows=num_rows, key='Brake', title='Brake of the vehicle',
-                      color=color, label=csv_file, sub_plot=8)
-            plot_data(data_csv=data, key='Brake', sub_plot=9, title='Histogram brake actions',
+                      color=color, label=csv_file, init=(2, 2), size=2)
+            plot_data(data_csv=data, key='Brake', init=(2, 1), title='Histogram brake actions',
                       hist=True, label=csv_file, num_rows=num_rows)
-
+    
     plt.tight_layout()
     plt.show()
 
 if __name__ == "__main__":
     possible_envs = [
         "CarlaLaneDiscrete",
-        "CarlaLaneContinuousComplex",
-        "CarlaLaneContinuousSimple"
+        "CarlaLaneContinuous",
+        "CarlaLane"
     ]
     possible_algs = [
         "DQN",
@@ -149,7 +152,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
         description="Plot data of an inference trial",
-        usage="python3 %(prog)s --file <FILE> [--env <ENV>] [--alg <ALG>] [--point_throttle <>]"
+        usage="python3 %(prog)s --file <FILE> [--env <ENV>] [--alg <ALG>]"
     )
     parser.add_argument(
         '--file', 
@@ -173,13 +176,6 @@ if __name__ == "__main__":
         default=None,
         choices=possible_algs,
         help='The algorithm used. Possible values are: {' + ', '.join(possible_algs) + '}'
-    )
-    parser.add_argument(
-        '--point_throttle', 
-        type=bool, 
-        required=False, 
-        default=False,
-        help='Plot throttle using points instead of lines. By default, lines are used.'
     )
 
     main(parser.parse_args())
