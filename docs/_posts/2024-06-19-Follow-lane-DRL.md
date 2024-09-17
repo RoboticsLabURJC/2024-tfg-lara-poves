@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-08-30T13:23:00
+last_modified_at: 2024-09-15T23:58:00
 categories:
   - Blog
 tags:
@@ -105,11 +105,19 @@ La frecuencia de entrenamiento resultó ser un factor clave en el proceso, al pr
 </figure>
 
 En inferencia, se observa que el seguimiento del carril no es completamente fluido, especialmente en las curvas. Esto se debe a una de las limitaciones del DQN, ya que el espacio de acciones es discreto y no permite seleccionar la acción de giro óptima en cada momento.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YPkT7LDOKKc?si=9RMqzVinfTC3Kdzl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ta6e-msfjCc?si=1eXPQV_v_tTk9SCU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 En las siguiente gráficas, se presenta la información recopilada durante la inferencia: la aceleración comandada al coche y su velocidad actual, la desviación del carril y la recompensa obtenida, junto con histogramas que muestran las acciones de giro y aceleración escogidas. Podemos observar claramente los momentos en los que se reduce la velocidad, correspondientes a las dos curvas pronunciadas. Sin embargo, de manera general, los histogramas indican que, predominantemente, se eligen los pares de acciones más rápidos.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneDiscrete/inference.png" alt="">
 </figure>
 
+También se ha probado en un circuito diferente al de entrenamiento, obteniendo buenos resultados.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vNScgxvtlbk?si=uzAIITnDvrDqPDGn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### CarlaLaneContinuous
+
+- hemos aumentado a 10 puntos
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneContinuous/lane10.png" alt="">
+</figure>

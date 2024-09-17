@@ -655,6 +655,7 @@ class Vehicle_sensors:
         self._vehicle = vehicle
         self._world = world
         self._screen = screen
+        self.velocity = 0
         self.sensors = []
 
         self.color_text = color_text
@@ -713,18 +714,18 @@ class Vehicle_sensors:
             sensor.process_data()
 
         if self._screen != None:
-            if time.time_ns() - self._time_frame > SEG_TO_NANOSEG: 
-                self._write_frame = self._count_frame
+            elapsed_time = time.time_ns() - self._time_frame
+            if elapsed_time > SEG_TO_NANOSEG: 
+                self._write_frame = SEG_TO_NANOSEG * self._count_frame / elapsed_time
                 self._count_frame = 0
                 self._time_frame = time.time_ns()
 
             self._count_frame += 1
-            write_text(text="FPS: "+str(self._write_frame), img=self._screen, color=self.color_text,
-                       bold=True, point=(2, 0), size=23, side=LEFT)
-            
-            v = self._vehicle.get_velocity()
-            v = carla.Vector3D(v).length()
-            write_text(text=f"Vel: {v:.2f} m/s", img=self._screen, color=self.color_text,
+            write_text(text=f"FPS: {self._write_frame:.2f}", img=self._screen, color=self.color_text,
+                    bold=True, point=(2, 0), size=23, side=LEFT)
+
+            self.velocity = carla.Vector3D(self._vehicle.get_velocity()).length()
+            write_text(text=f"Vel: {self.velocity:.2f} m/s", img=self._screen, color=self.color_text,
                        bold=True, point=(2, 20), size=20, side=LEFT)
 
             if flip:

@@ -118,8 +118,8 @@ if __name__ == "__main__":
         '--delta', 
         type=float, 
         required=False, 
-        default=0.05,
-        help='Fixed delta second for CARLA simulator. By default 50ms.'
+        default=0.1,
+        help='Fixed delta second for CARLA simulator. By default 100ms.'
     )
     parser.add_argument(
         '--log_interval', 

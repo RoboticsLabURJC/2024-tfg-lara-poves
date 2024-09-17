@@ -32,7 +32,7 @@ def main(args):
         print("Model", model_file, "doesn't exit")
         exit(1)
 
-    env = env_class(train=False, port=args.port, human=True, normalize=True)
+    env = env_class(train=False, port=args.port, human=True, normalize=True, num_cir=args.num_cir)
     obs, _ = env.reset()
 
     total_reward = 0
@@ -87,7 +87,7 @@ if __name__ == "__main__":
         description="Execute an inference trial on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + \
-            "} --n <model_number> [--port <port_number>]"
+            "} --n <model_number> [--port <port_number>] --num_cir <NUM_CIR>"
     )
     parser.add_argument(
         '--env', 
@@ -115,6 +115,14 @@ if __name__ == "__main__":
         required=False, 
         default=6016,
         help='Port for Carla'
+    )
+    parser.add_argument(
+        '--num_cir', 
+        type=int, 
+        required=False, 
+        default=0,
+        choices=[0, 1],
+        help='Number of the circuit for the enviroment. By default 0.'
     )
 
     main(parser.parse_args())
