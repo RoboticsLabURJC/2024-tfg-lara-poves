@@ -20,7 +20,7 @@ MAX_DEV = 100
 
 class CarlaBase(gym.Env, ABC):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_points:int=5,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, num_cir:int=0):
         self._penalty_lane = -20
         self._first = True
         self._dev = 0
@@ -138,14 +138,22 @@ class CarlaBase(gym.Env, ABC):
         self.model = None
 
         # Init locations
-        self._town = 'Town05'
         z = 0.1
-        self._init_locations = [
-            carla.Transform(carla.Location(x=75.0, y=-144.5, z=z), carla.Rotation(yaw=4.0)),
-            carla.Transform(carla.Location(x=120.0, y=-137, z=z), carla.Rotation(yaw=22)),
-            carla.Transform(carla.Location(x=43.0, y=141.5, z=z), carla.Rotation(yaw=3)),
-            carla.Transform(carla.Location(x=111.0, y=135.5, z=z), carla.Rotation(yaw=-16))
-        ]
+        self._num_cir = num_cir
+        if self._num_cir == 0:
+            self._town = 'Town05'
+            self._init_locations = [
+                carla.Transform(carla.Location(x=75.0, y=-144.5, z=z), carla.Rotation(yaw=4.0)),
+                carla.Transform(carla.Location(x=120.0, y=-137, z=z), carla.Rotation(yaw=22)),
+                carla.Transform(carla.Location(x=43.0, y=141.5, z=z), carla.Rotation(yaw=3)),
+                carla.Transform(carla.Location(x=111.0, y=135.5, z=z), carla.Rotation(yaw=-16))
+            ]
+        else:
+            self._jump = True # No jumps
+            self._town = 'Town04'
+            self._init_locations = [
+                carla.Transform(carla.Location(x=-25.0, y=-252, z=z), carla.Rotation(yaw=125.0))
+            ]
 
         # Pygame window
         if self._human:
@@ -225,30 +233,35 @@ class CarlaBase(gym.Env, ABC):
 
             # Get deviation and velocity
             self._dev = self._camera.get_deviation()
-            self._velocity = carla.Vector3D(self.ego_vehicle.get_velocity()).length()
+            self._velocity = self._sensors.velocity
 
             # Reward function
             reward = self._calculate_reward()
 
             t = self.ego_vehicle.get_transform()
-            if self._index_loc >= 2:
-                if not self._jump and t.location.y < 13:
-                    t.location.y = -20
-                    self.ego_vehicle.set_transform(t)
-                    self._jump = True
-                elif t.location.y < -143: 
-                    terminated = True
-                    finish_ep = True
-                    print("termino", self._count_ep)
+            if self._num_cir == 0:
+                if self._index_loc >= 2:
+                    if not self._jump and t.location.y < 13:
+                        t.location.y = -20
+                        self.ego_vehicle.set_transform(t)
+                        self._jump = True
+                    elif t.location.y < -143: 
+                        terminated = True
+                        finish_ep = True
+                        print("termino", self._count_ep)
+                else:
+                    if not self._jump and t.location.y > -30:
+                        t.location.y = 15
+                        self.ego_vehicle.set_transform(t)
+                        self._jump = True
+                    elif t.location.x < 50:
+                        terminated = True
+                        finish_ep = True
+                        print("termino", self._count_ep)
             else:
-                if not self._jump and t.location.y > -30:
-                    t.location.y = 15
-                    self.ego_vehicle.set_transform(t)
-                    self._jump = True
-                elif t.location.x < 50:
+                if t.location.y > -24.5:
                     terminated = True
                     finish_ep = True
-                    print("termino", self._count_ep)
             
         except AssertionError:
             terminated = True
@@ -331,9 +344,9 @@ class CarlaBase(gym.Env, ABC):
         pass
 
 class CarlaLaneDiscrete(CarlaBase):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
-        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
+        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_cir=num_cir,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
         
         self._max_vel = 5.0
@@ -384,7 +397,7 @@ class CarlaLaneDiscrete(CarlaBase):
         return 0.75 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.25 * vel / self._max_vel
     
 class CarlaLaneContinuous(CarlaBase):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=200,
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
         if train and human:
             human = False
@@ -404,7 +417,7 @@ class CarlaLaneContinuous(CarlaBase):
     def _get_control(self, action:np.ndarray):
         assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
         throttle, steer = action
-
+        
         control = carla.VehicleControl()
         control.steer = steer 
         control.throttle = throttle
@@ -416,7 +429,7 @@ class CarlaLaneContinuous(CarlaBase):
         dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
         vel = np.clip(self._velocity, 0.0, self._max_vel)
 
-        return 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV  + 0.2 * vel / self._max_vel
+        return 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel 
 
 class CarlaLane(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
