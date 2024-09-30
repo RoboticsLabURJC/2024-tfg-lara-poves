@@ -105,6 +105,7 @@ if __name__ == "__main__":
         description="Plot data of an inference trial",
         usage="python3 %(prog)s --file <FILE>"
     )
+
     parser.add_argument(
         '--file', 
         type=str, 

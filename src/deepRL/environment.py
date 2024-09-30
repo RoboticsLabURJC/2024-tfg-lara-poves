@@ -9,7 +9,6 @@ import pygame
 import os
 import csv
 from abc import ABC, abstractmethod
-from scipy.special import expit
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -300,7 +299,7 @@ class CarlaBase(gym.Env, ABC):
 
             self._count_ep += 1
             self._writer_csv_train.writerow([self._count_ep, self._total_reward, self._count,
-                                       finish_ep, self._dev, exploration_rate])
+                                             finish_ep, self._dev, exploration_rate])
         
         return self._get_obs(), reward, terminated, False, self._get_info()
     

@@ -88,6 +88,7 @@ else:
 ```
 
 Para entrenar, hemos utilizado un *fixed_delta_seconds* de 50ms, lo que equivale a entrenar a 20 FPS. Por lo tanto, en la fase de inferencia, necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de entre 17 y 19 horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionaron los mejores resultados:
+
 ```yaml
 learning_rate: 0.0005 
 buffer_size: 10_000
