@@ -45,11 +45,11 @@ def main(args):
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
     sensors.add_collision()
 
-    camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5), carla.Rotation(pitch=-10.0, roll=90.0))
+    camera_transform = carla.Transform(carla.Location(z=2.5, x=0.5))
     sensors.add_camera_rgb(size_rect=(configcarla.SIZE_CAMERA, configcarla.SIZE_CAMERA), init=(0, 0), 
                            text='Driver view', transform=camera_transform)
     
-    camera_transform.location.x = -4.0
+    camera_transform.location.x = -5.0
     sensors.add_camera_rgb(size_rect=(configcarla.SIZE_CAMERA, configcarla.SIZE_CAMERA),
                            init=(configcarla.SIZE_CAMERA, 0),
                            text='World View', transform=camera_transform)
