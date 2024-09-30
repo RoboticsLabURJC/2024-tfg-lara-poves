@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-09-15T23:58:00
+last_modified_at: 2024-09-17T13:17:00
 categories:
   - Blog
 tags:
@@ -48,8 +48,6 @@ class Camera(Sensor):
   def get_lane_cm(self):
 ```
 
-Para todos los entrenamientos, hemos utilizado un *fixed_delta_seconds* de 50ms, lo que equivale a entrenar a 20 FPS. Por lo tanto, en la fase de inferencia, necesitamos operar al menos a esta velocidad. Es importante recordar que en esta etapa ya no utilizamos el modo síncrono de CARLA.
-
 ### CarlaLaneDiscrete
 
 Este entorno tiene un **espacio de acciones discreto**, por lo que lo entrenaremos utilizando un algoritmo **DQN**. Para combinar las acciones de aceleración y giro, hemos seguido la regla de que a mayor aceleración, menor es el giro; aún no se hemos incluido el freno. En total, contamos con 20 acciones disponibles.
@@ -84,12 +82,12 @@ Nuestro objetivo es que el coche circule por el centro del carril sin desviarse,
 if on_lane and no_collision: 
   dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
   vel = np.clip(self._speed, 0.0, self._max_vel) 
-  reward = 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
+  reward = 0.75 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.25 * vel / self._max_vel
 else:
   reward = -20
 ```
 
-Los entrenamientos tuvieron una duración de entre 17 y 19 horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionaron los mejores resultados:
+Para entrenar, hemos utilizado un *fixed_delta_seconds* de 50ms, lo que equivale a entrenar a 20 FPS. Por lo tanto, en la fase de inferencia, necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de entre 17 y 19 horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionaron los mejores resultados:
 ```yaml
 learning_rate: 0.0005 
 buffer_size: 10_000

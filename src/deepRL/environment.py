@@ -9,6 +9,7 @@ import pygame
 import os
 import csv
 from abc import ABC, abstractmethod
+from scipy.special import expit
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -37,16 +38,29 @@ class CarlaBase(gym.Env, ABC):
         self._train = train
         if self._train:
             assert alg != None, "Algorithms are required for training"
+
+            # Episode file
             dir_csv = PATH + '2024-tfg-lara-poves/src/deepRL/csv/train/' + self.__class__.__name__ + '/'
             if not os.path.exists(dir_csv):
                 os.makedirs(dir_csv)
             files = os.listdir(dir_csv)
             num_files = len(files) + 1
-            self._file_csv = open(dir_csv + alg + '_train_data_' + str(num_files) + '.csv',
-                                  mode='w', newline='')
-            self._writer_csv = csv.writer(self._file_csv)
-            self._writer_csv.writerow(["Episode", "Reward", "Num_steps", "Finish", "Deviation",
-                                       "Exploration_rate"])
+            self._train_csv = open(dir_csv + alg + '_train_data_' + str(num_files) + '.csv',
+                                   mode='w', newline='')
+            self._writer_csv_train = csv.writer(self._train_csv)
+            self._writer_csv_train.writerow(["Episode", "Reward", "Num_steps", "Finish", "Deviation",
+                                             "Exploration_rate"])
+            
+            # Action file
+            dir_csv = PATH + '2024-tfg-lara-poves/src/deepRL/csv/actions/' + self.__class__.__name__ + '/'
+            if not os.path.exists(dir_csv):
+                os.makedirs(dir_csv)
+            files = os.listdir(dir_csv)
+            num_files = len(files) + 1
+            self._actions_csv = open(dir_csv + alg + '_train_actions_' + str(num_files) + '.csv',
+                                     mode='w', newline='')
+            self._writer_csv_actions = csv.writer(self._actions_csv)
+            self._writer_csv_actions.writerow(["Throttle", "Steer", "Brake"])
         
         # States/Observations
         self._num_points_lane = num_points
@@ -221,7 +235,10 @@ class CarlaBase(gym.Env, ABC):
     def step(self, action:np.ndarray):
         # Exec action
         control = self._get_control(action)
-        self.ego_vehicle.apply_control(control) 
+        self.ego_vehicle.apply_control(control)
+
+        if self._train:
+            self._writer_csv_actions.writerow([control.throttle, control.steer, control.brake])
 
         terminated = False
         finish_ep = False
@@ -233,7 +250,7 @@ class CarlaBase(gym.Env, ABC):
 
             # Get deviation and velocity
             self._dev = self._camera.get_deviation()
-            self._velocity = self._sensors.velocity
+            self._velocity = carla.Vector3D(self.ego_vehicle.get_velocity()).length()
 
             # Reward function
             reward = self._calculate_reward()
@@ -282,7 +299,7 @@ class CarlaBase(gym.Env, ABC):
                 exploration_rate = -1.0 # No register
 
             self._count_ep += 1
-            self._writer_csv.writerow([self._count_ep, self._total_reward, self._count,
+            self._writer_csv_train.writerow([self._count_ep, self._total_reward, self._count,
                                        finish_ep, self._dev, exploration_rate])
         
         return self._get_obs(), reward, terminated, False, self._get_info()
@@ -327,7 +344,8 @@ class CarlaBase(gym.Env, ABC):
         self._sensors.destroy()
 
         if self._train:
-            self._file_csv.close()
+            self._train_csv.close()
+            self._actions_csv.close()
 
         pygame.quit()
 
@@ -408,6 +426,7 @@ class CarlaLaneContinuous(CarlaBase):
         
         self._max_vel = 15
         self._penalty_lane = -30
+        self._steer = 0
 
     def _create_actions(self):
         # Add brake
@@ -416,10 +435,10 @@ class CarlaLaneContinuous(CarlaBase):
         
     def _get_control(self, action:np.ndarray):
         assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
-        throttle, steer = action
+        throttle, self._steer = action
         
         control = carla.VehicleControl()
-        control.steer = steer 
+        control.steer = self._steer 
         control.throttle = throttle
 
         return control
@@ -429,8 +448,8 @@ class CarlaLaneContinuous(CarlaBase):
         dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
         vel = np.clip(self._velocity, 0.0, self._max_vel)
 
-        return 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel 
-
+        return 0.55 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.25 * vel / self._max_vel + 0.2 * (0.3 - abs(self._steer)) / 0.3
+    
 class CarlaLane(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):

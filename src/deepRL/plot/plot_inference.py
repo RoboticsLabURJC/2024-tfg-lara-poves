@@ -3,9 +3,6 @@ import matplotlib.gridspec as gridspec
 import argparse
 import csv
 import numpy as np
-import random
-import os
-import glob
 
 NUM_COLUMNS = 4
 NUM_ROWS = 2
@@ -58,9 +55,6 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], 
         ax.set_xticklabels([f'{tick:.2f}' for tick in bins_ticks], rotation=90)
         ax.set_ylabel('Frequency')
         ax.set_xlabel(key)
-    
-    if init == (0, 2) or init == (0, 1):
-       plt.legend()
 
 def main(args):
     data = []
@@ -107,41 +101,15 @@ def main(args):
     plt.show()
 
 if __name__ == "__main__":
-    possible_envs = [
-        "CarlaLaneDiscrete",
-        "CarlaLaneContinuous",
-        "CarlaLane"
-    ]
-    possible_algs = [
-        "DQN",
-        "PPO"
-    ]
-
     parser = argparse.ArgumentParser(
         description="Plot data of an inference trial",
-        usage="python3 %(prog)s --file <FILE> [--env <ENV>] [--alg <ALG>]"
+        usage="python3 %(prog)s --file <FILE>"
     )
     parser.add_argument(
         '--file', 
         type=str, 
         required=True, 
         help='Data file csv to plot.'
-    )
-    parser.add_argument(
-        '--env', 
-        type=str, 
-        required=False, 
-        default=None,
-        choices=possible_envs,
-        help='Gym environment. Possible values are: {' + ', '.join(possible_envs) + '}'
-    )
-    parser.add_argument(
-        '--alg', 
-        type=str, 
-        required=False, 
-        default=None,
-        choices=possible_algs,
-        help='The algorithm used. Possible values are: {' + ', '.join(possible_algs) + '}'
     )
 
     main(parser.parse_args())

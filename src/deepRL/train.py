@@ -83,6 +83,8 @@ def main(args):
     num_files = len(files) + 1
     model.save(model_dir + '/' + args.alg + '-' + args.env + '_' + str(num_files))
 
+    env.close()
+
 if __name__ == "__main__":
     possible_envs = list(env_callable.keys())
     possible_algs = list(alg_callable.keys())
