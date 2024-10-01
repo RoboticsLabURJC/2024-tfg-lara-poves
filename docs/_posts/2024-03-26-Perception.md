@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-10-01T12:46:00
+last_modified_at: 2024-10-01T21:52:00
 categories:
   - Blog
 tags:
@@ -297,8 +297,8 @@ Se han implementado algunas mejoras en la interfaz gráfica, incluyendo la visua
 
 Además, hemos integrado la **red de segmentación semántica EfficientViT** en nuestro código para comprender mejor el entorno. Para ello, se han añadido nuevos atributos a la clase *CameraRGB* y parámetros adicionales a la función correspondiente a la cámara en la clase *Vehicle_sensors*. La *flag **seg*** indica si se debe aplicar la segmentación semántica a la imagen captada por la cámara. En caso afirmativo, la imagen segmentada se mostrará en la posición ***init_extra*** de la pantalla, mientras que en la posición *init* se mostrará la imagen sin procesar.
 ```python
-def add_camera_rgb(self, size:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
-                   transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None, text:str=None)
+def add_camera_rgb(self, size:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False, text:str=None
+                   transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None)
 ```
 
 La red neuronal recibe como entrada una imagen en **RGB** con dimensiones de **512x512** píxeles, por tanto, es fundamental garantizar que la imagen esté en dicho formato. Para asegurar las dimensiones, configuramos directamente la cámara en Carla a 512x512, ya que realizar un reescalado podría deformar los objetos, lo que afectaría negativamente al rendimiento de la red neuronal.
