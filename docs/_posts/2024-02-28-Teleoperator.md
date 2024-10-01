@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-09-30T22:15:00
+last_modified_at: 2024-10-01T12:07:00
 categories:
   - Blog
 tags:
@@ -41,7 +41,7 @@ Hemos estado investigando cómo realizar acciones básicas en CARLA: la apertura
 ```python
 def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05, client:carla.Client=None)
 def add_one_vehicle(world:carla.World, ego_vehicle:bool=False, vehicle_type:str=None, 
-                    tag:str='*vehicle*', transform:carla.Transform=None)
+                    transform:carla.Transform=None)
 def add_vehicles_randomly(world:carla.World, number:int) # Spawn Points
 ```
 
@@ -49,9 +49,9 @@ En el modo asíncrono de CARLA, el servidor se ejecuta a máxima velocidad, mien
 
 ## Interfaz
 
-Para la Interacción Humano-Robot (HRI) hemos utilizado la biblioteca ***Pygame***, creando una pantalla que nos permite visualizar el contenido de ambas cámaras de manera simultánea.
-```python
-def setup_pygame(size:tuple[int, int], name:str)
+Para la Interacción Humano-Robot (HRI) hemos utilizado la biblioteca ***Pygame***, creando una pantalla que nos permite visualizar el contenido de ambas cámaras de manera simultánea. Para asegurar el correcto funcionamiento de esta biblioteca, es necesario configurar la siguiente variable de entorno:
+```bash
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 ```
 
 También hemos incluido un par de botones para aumentar o disminuir el *throttle*, es decir, la cantidad de acelerador que se aplica en el coche.
@@ -109,7 +109,8 @@ class Collision(Sensor):
             assert False # El vehículo ha chocado
 
 class Vehicle_sensors:
-    def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, text:str=None, transform:carla.Transform=carla.Transform())
+    def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None,
+                       text:str=None, transform:carla.Transform=carla.Transform())
     def add_collision(self)
 ```
 

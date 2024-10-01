@@ -20,8 +20,6 @@ Implementaremos una solución combinando múltiples redes neuronales para detect
 
 ## Detección de carril
 
-Buscamos seleccionar un entorno con una única vía y rodeado de vegetación para facilitar la detección de carril.
-
 ### Red neuronal de detección de carril
 
 Contamos con una red neuronal para detectar el carril, la cual nos proporciona dos máscaras que definen cada una de las líneas del mismo. Para mejorar la detección, especialmente en casos de líneas discontinuas o cuando la red neuronal proporciona líneas fragmentadas o incompletas, empleamos **regresión lineal** en los puntos obtenidos para cada línea a través de la red. Este procedimiento nos permite calcular los coeficientes de las rectas que mejor se ajustan a dichos puntos.

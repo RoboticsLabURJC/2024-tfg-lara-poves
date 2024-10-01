@@ -1,6 +1,6 @@
 ---
 title: "Percepción"
-last_modified_at: 2024-06-03T09:32:00
+last_modified_at: 2024-10-01T12:46:00
 categories:
   - Blog
 tags:
@@ -10,7 +10,6 @@ tags:
   - RNN
 ---
 
-## Índice
 ## Índice
 - [Clasificación vs detección vs segmentación](#clasificación-vs-detección-vs-segmentación)
 - [Deep learning](#deep-learning)
@@ -294,17 +293,14 @@ EfficientViT es evaluado en tres tareas principales: segmentación semántica, s
 
 ## Aplicación
 
-Hemos añadido varias mejoras en el manejo de los sensores, la principal es mostrar el número de *frames* por segundo a los que itera nuestro programa. También hemos integrado la **red de segmentación semántica EfficientViT** en nuestro código para poder comprender el entorno. Para ello, hemos añadido nuevos atributos en la clase *CameraRGB* y nuevos parámetros en la función referente a la cámara de la clase *Vehicle_sensors*.
+Se han implementado algunas mejoras en la interfaz gráfica, incluyendo la visualización del número de frames por segundo a los que itera nuestro programa, así como la velocidad del vehículo principal.
+
+Además, hemos integrado la **red de segmentación semántica EfficientViT** en nuestro código para comprender mejor el entorno. Para ello, se han añadido nuevos atributos a la clase *CameraRGB* y parámetros adicionales a la función correspondiente a la cámara en la clase *Vehicle_sensors*. La *flag **seg*** indica si se debe aplicar la segmentación semántica a la imagen captada por la cámara. En caso afirmativo, la imagen segmentada se mostrará en la posición ***init_extra*** de la pantalla, mientras que en la posición *init* se mostrará la imagen sin procesar.
 ```python
-def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
-                   transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None, text:str='')
+def add_camera_rgb(self, size:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
+                   transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None, text:str=None)
 ```
 
 La red neuronal recibe como entrada una imagen en **RGB** con dimensiones de **512x512** píxeles, por tanto, es fundamental garantizar que la imagen esté en dicho formato. Para asegurar las dimensiones, configuramos directamente la cámara en Carla a 512x512, ya que realizar un reescalado podría deformar los objetos, lo que afectaría negativamente al rendimiento de la red neuronal.
 
-Es fundamental recordar ejecutar nuestro programa en una GPU distinta de aquella en la que se está ejecutando el simulador Carla (en la GPU 0). Esto asegura una eficiencia computacional óptima al garantizar una distribución equitativa de la carga de trabajo entre las GPUs disponibles.
-```bash
-CUDA_VISIBLE_DEVICES=3 python3 autopilot.py
-```
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/z0IBeOkI8lY?si=oJe5oD3eFN9XI5VM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SlNwnUY0lb8?si=cgp-i6neLvApUVgq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
