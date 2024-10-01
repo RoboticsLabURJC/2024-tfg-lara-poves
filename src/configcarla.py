@@ -7,7 +7,6 @@ import sys
 import os
 from PIL import Image
 import time
-import torch
 import cv2
 from abc import ABC, abstractmethod
 
@@ -110,7 +109,8 @@ class Sensor(ABC):
 class CameraRGB(Sensor):      
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
                  text:str, screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], 
-                 lane:bool, canvas_seg:bool, transform:carla.Transform, vehicle, world):
+                 lane:bool, canvas_seg:bool, transform:carla.Transform, vehicle:carla.Vehicle,
+                 world:carla.World):
         super().__init__(sensor=sensor)
 
         self._screen = screen 
@@ -139,12 +139,9 @@ class CameraRGB(Sensor):
 
         self._lane = lane
         if lane:
-            self._trafo_matrix_vehicle_to_cam = np.array(
-                transform.get_inverse_matrix()
-            )
-
-            # Intrinsic matrix: transform camera space (3D) to image space (2D) 
+            self._trafo_matrix_vehicle_to_cam = np.array(transform.get_inverse_matrix())
             self._K = get_intrinsic_matrix(FOV, SIZE_CAMERA, SIZE_CAMERA)
+            self._threshold_road_per = 90.0
 
     def _points_lane(self, boundary:np.ndarray, trafo_matrix_global_to_camera:np.ndarray, side:int):
         projected_boundary = project_polyline(boundary, trafo_matrix_global_to_camera,self._K).astype(np.int32)
@@ -159,10 +156,6 @@ class CameraRGB(Sensor):
 
         # Get pixels of line lane
         pixels = []
-
-        if side == LEFT_LANE:
-            pixels.append((0,0))
-
         for y in range(rect.top, rect.bottom):
             for x in range(rect.left, rect.right):
                 color = black_surface.get_at((x, y))
@@ -204,16 +197,14 @@ class CameraRGB(Sensor):
             del lane_right[:size_right-size_left]
         elif size_left > size_right:
             del lane_left[:size_left-size_right]
-        assert len(lane_left) == len(lane_right), "Error in code"
 
         # Draw the lane 
         count_x = count_y = 0
         count_total = count_road = 0
         for i in range(len(lane_left)):
             x_left, y = lane_left[i]
-            x_right, y_right = lane_right[i]
+            x_right, _ = lane_right[i]
             img[y, x_left:x_right] = (255, 240, 255)
-            assert y == y_right, "Error in code"
 
             # Center of mass
             count_x += sum(range(x_left, x_right))
@@ -247,7 +238,6 @@ class CameraRGB(Sensor):
                     self._count_mem_road = 0
 
             # Draw center of mass and vehicle
-            img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
             cv2.line(img, (x_cm, 0), (x_cm, SIZE_CAMERA - 1), (0, 255, 0), 2)
             cv2.line(img, (middle, 0), (middle, SIZE_CAMERA - 1), (255, 0, 0), 2)
             cv2.circle(img, (x_cm, y_cm), 9, (0, 255, 0), -1)
@@ -304,7 +294,7 @@ class CameraRGB(Sensor):
         
         image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
         image_data = np.reshape(image_data, (image.height, image.width, 4))
-        image_data = image_data[:, :, (2, 1, 0)] # Swap blue and red channels
+        image_data = cv2.cvtColor(image_data, cv2.COLOR_BGR2RGB)
 
         # Semantic segmentation
         canvas = image_data
@@ -324,10 +314,12 @@ class CameraRGB(Sensor):
                 canvas, mask = self._seg_model.get_canvas(image_data, pred)
             else:
                 mask = pred
+                if (SIZE_CAMERA, SIZE_CAMERA) != mask.shape:
+                    mask = cv2.resize(mask, dsize=(SIZE_CAMERA, SIZE_CAMERA), interpolation=cv2.INTER_NEAREST)
 
         if self._lane:
             canvas = self._detect_lane(canvas, mask)
-  
+    
         image_surface = pygame.surfarray.make_surface(image_data[:, :, :3].swapaxes(0, 1))
         image_surface_extra = pygame.surfarray.make_surface(canvas[:, :, :3].swapaxes(0, 1))
 
@@ -342,6 +334,38 @@ class CameraRGB(Sensor):
 
         self.show_surface(surface=image_surface, pos=self.init, text=self.text)
         self.show_surface(surface=image_surface_extra, pos=self.init_extra, text=text_extra)
+
+    def get_lane_points(self, num_points:int=5, show:bool=False):
+        if not self._lane or self._error_lane:
+            return [np.full((num_points, 2), SIZE_CAMERA / 2, dtype=np.int32)] * 2
+        
+        lane_points = []
+        for side in range(2):
+            y_points = np.linspace(self._ymin_lane, SIZE_CAMERA - 1, num_points)
+            points = np.zeros((num_points, 2), dtype=np.int32)
+
+            for i, y in enumerate(y_points):
+                coef = self._coefficients[-1, side, 0:2]
+                points[i, 0] = int(y * coef[0] + coef[1]) # x
+                points[i, 1] = y
+
+                if points[i, 0] < 0:
+                    points[i, 0] = 0
+                elif points[i, 0] > SIZE_CAMERA - 1:
+                    points[i, 0] = SIZE_CAMERA - 1
+
+                if show and self._rect_extra != None and self._surface_seg != None:
+                    if side == LEFT_LANE:
+                        color = (0, 0, 200)
+                    else:
+                        color = (200, 0, 0)
+
+                    pygame.draw.circle(self._surface_seg, color, points[i], 6, 0)
+                    self._screen.blit(self._surface_seg, self._rect_extra)
+
+            lane_points.append(points)
+
+        return lane_points
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
