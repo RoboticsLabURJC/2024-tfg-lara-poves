@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: PID"
-last_modified_at: 2024-10-01T22:04:00
+last_modified_at: 2024-10-02T00:32:00
 categories:
   - Blog
 tags:
@@ -19,7 +19,26 @@ Implementaremos una solución combinando múltiples redes neuronales para detect
 
 ## Detección de carril
 
-...
+A partir de la ubicación del vehículo y de la cámara en Carla, podemos llevar a cabo la detección del carril. Contamos con la **transformación del vehículo a la cámara**, lo que, junto con la **posición del vehículo**, nos permite obtener los límites del carril en **3D** (visión global en Carla). También disponemos de la matriz intrínseca **K**, que convierte las coordenadas de 2D a 3D; al utilizar esta matriz, podemos proyectar esos límites a 2D. Para implementar esta funcionalidad, hemos añadido nuevos parámetros al sensor de la cámara:
+```python
+def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
+              text:str, screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], 
+              lane:bool, transform:carla.Transform, vehicle:carla.Vehicle, world:carla.World):
+```
+
+Utilizamos la función ***pygame.draw.lines*** para obtener los puntos que definen los límites el carril. Esta función devuelve el rectángulo dentro del cual se ha dibujado la línea, pero no los puntos de la línea en sí. Por ello, dibujamos la línea sobre una superficie negra y luego examinamos dicha superficie para localizar los límites del carril en píxeles. Para optimizar el rendimiento computacional, revisamos únicamente dentro de los límites del rectángulo y, en cuanto encontramos un punto, detenemos la búsqueda, ya que, al dibujar una línea continua, sabemos con certeza que hay un punto en cada altura *y*.
+
+Dado que tenemos los dos límites en cada altura del carril, podemos dibujarlo y calcular su **área** de manera sencilla. Además, determinamos su **centro de masas**, lo que nos permitirá calcular la **desviación** del carril. Usaremos estos datos para seguir el carril utilizando un controlador o un algoritmo de DRL.
+```python
+class Camera(Sensor):      
+  def get_lane_cm(self)    
+  def get_lane_area(self)
+  def get_deviation(self)
+
+  def process_data():
+    for i in range(len(self._lane_left)):
+      img[y, x_left:x_right] # Píxeles que pertenecen al carril en cada altura (y)
+```
 
 ### Red neuronal de segmentación semántica
 
@@ -27,7 +46,6 @@ Una vez que hemos determinado el área del carril, empleamos la red de segmentac
 ```python
 class Camera(Sensor):      
   def get_road_percentage(self)
-  def get_deviation(self)
 ```
 
 ## Controlador PID
