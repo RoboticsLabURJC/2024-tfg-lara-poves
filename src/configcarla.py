@@ -11,7 +11,7 @@ import torch
 import cv2
 from abc import ABC, abstractmethod
 
-PATH = '/home/lpoves/'
+PATH = '/home/alumnos/lara/'
 
 sys.path.insert(0, PATH + 'carla_lane_detector/ground_truth')
 from camera_geometry import (
@@ -121,6 +121,7 @@ class CameraRGB(Sensor):
         self.init_extra = init_extra
         self.text = text
         self.size_text = 20
+        self.size = size
         #self._deviation = 0
         #self._road_percentage = 0
         #self._error_lane = False 
@@ -135,16 +136,11 @@ class CameraRGB(Sensor):
 
         self._lane = lane
         if lane:
-            '''
-            file = PATH + '2024-tfg-lara-poves/best_model_torch.pth'
-            self._lane_model = torch.load(file)
-            self._lane_model.eval()
-            '''
             self._trafo_matrix_vehicle_to_cam = np.array(
                 transform.get_inverse_matrix()
             )
 
-            # Intrinsic matrix, transform camera space (3D) to image space (2D) 
+            # Intrinsic matrix: transform camera space (3D) to image space (2D) 
             self._K = get_intrinsic_matrix(FOV, SIZE_CAMERA, SIZE_CAMERA)
 
             '''
@@ -182,6 +178,7 @@ class CameraRGB(Sensor):
                 self._rect_extra = self._sub_screen.get_rect(topleft=init_extra)
         '''
 
+
     def _detect_lane(self, img:pygame.Surface):
         trafo_matrix_global_to_camera = get_matrix_global(self._vehicle, self._trafo_matrix_vehicle_to_cam)
 
@@ -200,12 +197,12 @@ class CameraRGB(Sensor):
 
         if (not check_inside_image(projected_right_boundary, SIZE_CAMERA, SIZE_CAMERA)
             or not check_inside_image(projected_left_boundary, SIZE_CAMERA, SIZE_CAMERA)):
-            self._screen.blit(self._sub_screen, self._rect_org)
             return
-        
+    
+
         # Dibujar en lane_display
         if len(projected_left_boundary) > 1:
-            pygame.draw.lines(
+            a = pygame.draw.lines(
                 img, (255, 0, 0), False, projected_left_boundary, 4
             )
         if len(projected_right_boundary) > 1:
@@ -216,6 +213,38 @@ class CameraRGB(Sensor):
                 projected_right_boundary,
                 4,
             )
+
+        print(".........................")
+        print(a)
+
+        '''
+        x = projected_left_boundary[:, 0]
+        y = projected_left_boundary[:, 1]
+
+        # Ajustar un polinomio de grado 1 (una línea recta)
+        coefficients = np.polyfit(x, y, 2)
+        polynomial = np.poly1d(coefficients)
+
+        # Generar nuevos puntos usando la función polinómica
+        x_new = np.linspace(x.min(), x.max(), num=100)  # 100 puntos entre el mínimo y máximo de x
+        y_new = polynomial(x_new)
+
+        # Convertir los nuevos puntos a enteros para dibujar
+        new_points = np.column_stack((x_new.astype(int), y_new.astype(int)))
+
+        # Dibuja los nuevos puntos en la imagen
+        for point in new_points:
+            pygame.draw.circle(img, (0, 0, 255), point, 3)
+        '''
+
+    def show_surface(self, surface:pygame.Surface, pos:tuple[int, int], text:str):
+        if pos != None:
+            if text != None:
+                write_text(text=text, img=surface, color=(0, 0, 0), side=RIGHT, bold=True,
+                           size=self.size_text, point=(SIZE_CAMERA, 0))
+
+            surface = pygame.transform.scale(surface, self.size)
+            self._screen.blit(surface, pos)
 
     def process_data(self):
         image = self.data
@@ -230,8 +259,14 @@ class CameraRGB(Sensor):
         # Semantic segmentation
         canvas = image_data
         mask = None
+        text_extra = None
 
         if self._seg:
+            if self.text != None:
+                text_extra = "Segmented " + self.text
+            else:
+                text_extra = "Segmented view"
+
             image_pil = Image.fromarray(image_data)
             pred = self._seg_model.predict(image_pil)
 
@@ -239,44 +274,16 @@ class CameraRGB(Sensor):
                 canvas, mask = self._seg_model.get_canvas(image_data, pred)
             else:
                 mask = pred
-            '''
-            if self._seg:
-                mask = pred
-
-                if (SIZE_CAMERA, SIZE_CAMERA) != mask.shape:
-                    mask = cv2.resize(mask, dsize=(SIZE_CAMERA, SIZE_CAMERA), interpolation=cv2.INTER_NEAREST)
-            else:
-                mask = None
-            '''
+  
         image_surface = pygame.surfarray.make_surface(image_data[:, :, :3].swapaxes(0, 1))
+        image_surface_extra = pygame.surfarray.make_surface(canvas[:, :, :3].swapaxes(0, 1))
 
         if self._lane:
-            self._detect_lane(image_surface)
-            self._screen.blit(image_surface, self.init_extra)
+            self._detect_lane(image_surface_extra)
 
-        if self.init != None:
-            if self.text != None:
-                write_text(text=self.text, img=image_surface, color=(0, 0, 0), side=RIGHT, bold=True,
-                           size=self.size_text, point=(SIZE_CAMERA, 0))
+        self.show_surface(surface=image_surface, pos=self.init, text=self.text)
+        self.show_surface(surface=image_surface_extra, pos=self.init_extra, text=text_extra)
 
-            self._screen.blit(image_surface, self.init)
-
-        '''
-        if self._seg or self._lane:
-            self._process_seg(image_data)
-
-        if self._rect_org != None:
-            # Reserve mirror effect
-            image_surface = pygame.surfarray.make_surface(image_data)
-            flipped_surface = pygame.transform.flip(image_surface, True, False)
-            screen_surface = pygame.transform.scale(flipped_surface, self._rect_org.size)
-
-            if self.text != None:
-                write_text(text=self.text, img=screen_surface, color=(0, 0, 0), side=RIGHT, bold=True,
-                           size=self._size_text, point=(self._rect_org.size[0], 0))
-                
-            self._screen.blit(screen_surface, self._rect_org)
-        '''
     '''
     def get_deviation(self):
         return self._deviation
@@ -580,7 +587,7 @@ class Vehicle_sensors:
     
     def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
                        transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
-                       text:str='', lane:bool=False, canvas_seg:bool=True):
+                       text:str=None, lane:bool=False, canvas_seg:bool=True):
         if self._screen == None:
             init = None
             init_extra = None
@@ -730,19 +737,14 @@ def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:floa
 
     return world, client
 
-def add_one_vehicle(world:carla.World, ego_vehicle:bool=False, vehicle_type:str=None, 
-                    tag:str='*vehicle*', transform:carla.Transform=None): 
+def add_one_vehicle(world:carla.World, ego_vehicle:bool=False, vehicle_type:str=None,
+                    transform:carla.Transform=None): 
     if transform == None:
         spawn_points = world.get_map().get_spawn_points()
         transform = random.choice(spawn_points)
 
     if vehicle_type == None:
-        vehicle_bp = world.get_blueprint_library().filter(tag)
-        try:
-            vehicle_bp = random.choice(vehicle_bp)
-        except IndexError:
-            print("No vehicle of type", tag, "found!")
-            return None
+        vehicle_bp = random.choice(vehicle_bp)
     else:
         try:
             vehicle_bp = world.get_blueprint_library().find(vehicle_type)

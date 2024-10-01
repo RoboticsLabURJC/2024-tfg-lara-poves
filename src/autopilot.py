@@ -22,7 +22,7 @@ def main(args):
     # Add sensors to Ego Vehicle
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
-    driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(roll=90.0, pitch=-2.0))
+    driver_transform = carla.Transform(carla.Location(z=2.0, x=1.25), carla.Rotation(pitch=-2.0))
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), transform=driver_transform,
                            seg=True, init_extra=(0, 0), text='Driver view')
     
@@ -30,7 +30,7 @@ def main(args):
     sensors.add_lidar(size_rect=((WIDTH - DECREASE) * 2, HEIGHT * 2), init=(WIDTH, 0), scale=38,
                       transform=lidar_transform, show_stats=True) 
     
-    world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
+    world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75))
     sensors.add_camera_rgb(size_rect=(WIDTH, HEIGHT), init=(0, HEIGHT),
                            transform=world_transform, text='World view')
     
