@@ -11,7 +11,7 @@ import torch
 import cv2
 from abc import ABC, abstractmethod
 
-PATH = '/home/alumnos/lara/'
+PATH = '/home/lpoves/'
 
 sys.path.insert(0, PATH + 'carla_lane_detector/ground_truth')
 from camera_geometry import (
@@ -122,10 +122,13 @@ class CameraRGB(Sensor):
         self.text = text
         self.size_text = 20
         self.size = size
-        #self._deviation = 0
-        #self._road_percentage = 0
-        #self._error_lane = False 
-        #self._angle_error = 0
+
+        # Lane detection
+        self._deviation = 0
+        self._road_percentage = 0
+        self._cm = np.zeros((2,), dtype=np.int32)
+        self._area = np.int32(0)
+        self._error_lane = False 
 
         self._seg = seg
         self._canvas_seg = canvas_seg
@@ -143,148 +146,119 @@ class CameraRGB(Sensor):
             # Intrinsic matrix: transform camera space (3D) to image space (2D) 
             self._K = get_intrinsic_matrix(FOV, SIZE_CAMERA, SIZE_CAMERA)
 
-            '''
-            # Constants
-            self._threshold_road_per = 90.0
-            self._threshold_lane_mask = 0.05
-            self._ymin_lane = 275 
-            self._angle_lane = 7
-            self._mem_max = 4
+    def _points_lane(self, boundary:np.ndarray, trafo_matrix_global_to_camera:np.ndarray, side:int):
+        projected_boundary = project_polyline(boundary, trafo_matrix_global_to_camera,self._K).astype(np.int32)
 
-            # Initialize
-            self._coefficients = np.zeros((SIZE_MEM, 2, 3), dtype=float)
-            self._count_coef = [0, 0] # Not use until having 5 measurements
-            self._count_mem_road = 0
-            self._count_no_lane = 0
-            self._count_mem_lane = [0, 0]
-            '''
+        if not check_inside_image(projected_boundary, SIZE_CAMERA, SIZE_CAMERA) or len(projected_boundary) <= 1:
+            return None
 
-        '''
-        self._cm = np.zeros((2,), dtype=np.int32)
-        self._area = np.int32(0)
-        self._surface_seg = None
+        # Draw the line lane
+        black_surface = pygame.Surface((SIZE_CAMERA, SIZE_CAMERA))
+        black_surface.fill((0, 0, 0))
+        rect = pygame.draw.lines(black_surface, (255, 0, 0), False, projected_boundary, 4)
 
-        self._rect_org = init #
-        self._rect_extra = init_extra #
+        # Get pixels of line lane
+        pixels = []
 
-        if init_extra != None or init != None: #
-            assert size != None, "size is required!" 
-            self._sub_screen = pygame.Surface((SIZE_CAMERA, SIZE_CAMERA)) #
+        if side == LEFT_LANE:
+            pixels.append((0,0))
 
-            if init != None:
-                self._rect_org = self._sub_screen.get_rect(topleft=init)
+        for y in range(rect.top, rect.bottom):
+            for x in range(rect.left, rect.right):
+                color = black_surface.get_at((x, y))
+                if color[0] == 255:
+                    pixels.append((x, y))
+                    break
 
-            if init_extra != None:
-                self._rect_extra = self._sub_screen.get_rect(topleft=init_extra)
-        '''
+        if side == LEFT_LANE:
+            x = 0
+        else:
+            x = SIZE_CAMERA - 1
 
+        for y in range(rect.bottom, SIZE_CAMERA):
+            pixels.append((x, y))
 
-    def _detect_lane(self, img:pygame.Surface):
+        return pixels
+
+    def _detect_lane(self, img:np.ndarray, mask:np.ndarray):
         trafo_matrix_global_to_camera = get_matrix_global(self._vehicle, self._trafo_matrix_vehicle_to_cam)
-
         waypoint = self._world.get_map().get_waypoint(
             self._vehicle.get_transform().location,
             project_to_road=True,
             lane_type=carla.LaneType.Driving,                
         )
         
+        # Get points of the lane
         _, left_boundary, right_boundary, _ = create_lane_lines(waypoint, self._vehicle)
 
-        projected_left_boundary = project_polyline(
-            left_boundary, trafo_matrix_global_to_camera,self._K).astype(np.int32)
-        projected_right_boundary = project_polyline(
-            right_boundary, trafo_matrix_global_to_camera, self._K).astype(np.int32)
+        lane_left = self._points_lane(left_boundary, trafo_matrix_global_to_camera, LEFT_LANE)
+        lane_right = self._points_lane(right_boundary, trafo_matrix_global_to_camera, RIGHT_LANE)
+        if lane_left == None or lane_right == None:
+            self._error_lane = True
+            assert False, "Lane lost"
 
-        if (not check_inside_image(projected_right_boundary, SIZE_CAMERA, SIZE_CAMERA)
-            or not check_inside_image(projected_left_boundary, SIZE_CAMERA, SIZE_CAMERA)):
-            return
-    
+        # Start in same height
+        size_left = len(lane_left)
+        size_right = len(lane_right)
+        if size_right > size_left:
+            del lane_right[:size_right-size_left]
+        elif size_left > size_right:
+            del lane_left[:size_left-size_right]
+        assert len(lane_left) == len(lane_right), "Error in code"
 
-        # Dibujar en lane_display
-        if len(projected_left_boundary) > 1:
-            a = pygame.draw.lines(
-                img, (255, 0, 0), False, projected_left_boundary, 4
-            )
-        if len(projected_right_boundary) > 1:
-            pygame.draw.lines(
-                img,
-                (0, 255, 0),
-                False,
-                projected_right_boundary,
-                4,
-            )
+        # Draw the lane 
+        count_x = count_y = 0
+        count_total = count_road = 0
+        for i in range(len(lane_left)):
+            x_left, y = lane_left[i]
+            x_right, y_right = lane_right[i]
+            img[y, x_left:x_right] = (255, 240, 255)
+            assert y == y_right, "Error in code"
 
-        print(".........................")
-        print(a)
+            # Center of mass
+            count_x += sum(range(x_left, x_right))
+            count_y += y * (x_right - x_left)
 
-        '''
-        x = projected_left_boundary[:, 0]
-        y = projected_left_boundary[:, 1]
+            # Road porcentage
+            count_total += x_right - x_left
+            if self._seg:
+                region_mask = mask[y, x_left:x_right]
+                count_road += np.count_nonzero(region_mask == ROAD)
 
-        # Ajustar un polinomio de grado 1 (una línea recta)
-        coefficients = np.polyfit(x, y, 2)
-        polynomial = np.poly1d(coefficients)
+        if count_total > 0:
+            # Calculate center of mass
+            x_cm = int(count_x / count_total)
+            y_cm = int(count_y / count_total) 
+            middle = int(SIZE_CAMERA / 2)
+            self._deviation = x_cm - SIZE_CAMERA / 2 
+            self._cm = np.array([x_cm, y_cm], dtype=np.int32)
+            self._area = count_total
 
-        # Generar nuevos puntos usando la función polinómica
-        x_new = np.linspace(x.min(), x.max(), num=100)  # 100 puntos entre el mínimo y máximo de x
-        y_new = polynomial(x_new)
+            # Calculate road porcentage
+            if self._seg:
+                self._road_percentage = count_road / count_total * 100
+                if self._road_percentage < self._threshold_road_per:
+                    self._count_mem_road += 1
 
-        # Convertir los nuevos puntos a enteros para dibujar
-        new_points = np.column_stack((x_new.astype(int), y_new.astype(int)))
+                    if self._count_mem_road > self._mem_max:
+                        self._error_lane = True
+                        assert False, "Low percentage of lane"
+                else:
+                    self._count_mem_road = 0
 
-        # Dibuja los nuevos puntos en la imagen
-        for point in new_points:
-            pygame.draw.circle(img, (0, 0, 255), point, 3)
-        '''
+            # Draw center of mass and vehicle
+            img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+            cv2.line(img, (x_cm, 0), (x_cm, SIZE_CAMERA - 1), (0, 255, 0), 2)
+            cv2.line(img, (middle, 0), (middle, SIZE_CAMERA - 1), (255, 0, 0), 2)
+            cv2.circle(img, (x_cm, y_cm), 9, (0, 255, 0), -1)
+        else:
+            self._deviation = SIZE_CAMERA / 2
+            self._road_percentage = 0
+            self._error_lane = True
+            assert False, "Area zero"
 
-    def show_surface(self, surface:pygame.Surface, pos:tuple[int, int], text:str):
-        if pos != None:
-            if text != None:
-                write_text(text=text, img=surface, color=(0, 0, 0), side=RIGHT, bold=True,
-                           size=self.size_text, point=(SIZE_CAMERA, 0))
+        return img
 
-            surface = pygame.transform.scale(surface, self.size)
-            self._screen.blit(surface, pos)
-
-    def process_data(self):
-        image = self.data
-        #self._error_lane = False
-        if image == None:
-            return 
-        
-        image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
-        image_data = np.reshape(image_data, (image.height, image.width, 4))
-        image_data = image_data[:, :, (2, 1, 0)] # Swap blue and red channels
-
-        # Semantic segmentation
-        canvas = image_data
-        mask = None
-        text_extra = None
-
-        if self._seg:
-            if self.text != None:
-                text_extra = "Segmented " + self.text
-            else:
-                text_extra = "Segmented view"
-
-            image_pil = Image.fromarray(image_data)
-            pred = self._seg_model.predict(image_pil)
-
-            if self._canvas_seg:
-                canvas, mask = self._seg_model.get_canvas(image_data, pred)
-            else:
-                mask = pred
-  
-        image_surface = pygame.surfarray.make_surface(image_data[:, :, :3].swapaxes(0, 1))
-        image_surface_extra = pygame.surfarray.make_surface(canvas[:, :, :3].swapaxes(0, 1))
-
-        if self._lane:
-            self._detect_lane(image_surface_extra)
-
-        self.show_surface(surface=image_surface, pos=self.init, text=self.text)
-        self.show_surface(surface=image_surface_extra, pos=self.init_extra, text=text_extra)
-
-    '''
     def get_deviation(self):
         return self._deviation
     
@@ -312,39 +286,62 @@ class CameraRGB(Sensor):
             self._area = 0
 
         return self._area
-    
-    def get_lane_points(self, num_points:int=5, show:bool=False):
-        if not self._lane or self._error_lane:
-            return [np.full((num_points, 2), SIZE_CAMERA / 2, dtype=np.int32)] * 2
+
+    def show_surface(self, surface:pygame.Surface, pos:tuple[int, int], text:str):
+        if pos != None:
+            if text != None:
+                write_text(text=text, img=surface, color=(0, 0, 0), side=RIGHT, bold=True,
+                           size=self.size_text, point=(SIZE_CAMERA, 0))
+
+            surface = pygame.transform.scale(surface, self.size)
+            self._screen.blit(surface, pos)
+
+    def process_data(self):
+        image = self.data
+        self._error_lane = False
+        if image == None:
+            return 
         
-        lane_points = []
-        for side in range(2):
-            y_points = np.linspace(self._ymin_lane, SIZE_CAMERA - 1, num_points)
-            points = np.zeros((num_points, 2), dtype=np.int32)
+        image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
+        image_data = np.reshape(image_data, (image.height, image.width, 4))
+        image_data = image_data[:, :, (2, 1, 0)] # Swap blue and red channels
 
-            for i, y in enumerate(y_points):
-                coef = self._coefficients[-1, side, 0:2]
-                points[i, 0] = int(y * coef[0] + coef[1]) # x
-                points[i, 1] = y
+        # Semantic segmentation
+        canvas = image_data
+        mask = None
+        text_extra = self.text
 
-                if points[i, 0] < 0:
-                    points[i, 0] = 0
-                elif points[i, 0] > SIZE_CAMERA - 1:
-                    points[i, 0] = SIZE_CAMERA - 1
+        if self._seg:
+            if self.text != None:
+                text_extra = "Segmented " + self.text
+            else:
+                text_extra = "Segmented view"
 
-                if show and self._rect_extra != None and self._surface_seg != None:
-                    if side == LEFT_LANE:
-                        color = (0, 0, 200)
-                    else:
-                        color = (200, 0, 0)
+            image_pil = Image.fromarray(image_data)
+            pred = self._seg_model.predict(image_pil)
 
-                    pygame.draw.circle(self._surface_seg, color, points[i], 6, 0)
-                    self._screen.blit(self._surface_seg, self._rect_extra)
+            if self._canvas_seg:
+                canvas, mask = self._seg_model.get_canvas(image_data, pred)
+            else:
+                mask = pred
 
-            lane_points.append(points)
+        if self._lane:
+            canvas = self._detect_lane(canvas, mask)
+  
+        image_surface = pygame.surfarray.make_surface(image_data[:, :, :3].swapaxes(0, 1))
+        image_surface_extra = pygame.surfarray.make_surface(canvas[:, :, :3].swapaxes(0, 1))
 
-        return lane_points
-        '''
+        if self._lane:
+            write_text(text="Deviation = "+str(int(abs(self._deviation)))+" (pixels)",
+                       img=image_surface_extra, color=(0, 0, 0), side=LEFT, size=self.size_text,
+                       point=(0, SIZE_CAMERA - self.size_text), bold=True)
+            if self._seg:
+                write_text(text=f"{self._road_percentage:.2f}% road", side=RIGHT, bold=True,
+                           img=image_surface_extra, color=(0, 0, 0), size=self.size_text,
+                           point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))
+
+        self.show_surface(surface=image_surface, pos=self.init, text=self.text)
+        self.show_surface(surface=image_surface_extra, pos=self.init_extra, text=text_extra)
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
