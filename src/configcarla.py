@@ -70,13 +70,6 @@ def get_angle_range(angle:float):
 
     return angle
 
-def carla_image_to_pygame(carla_image):
-    array = np.frombuffer(carla_image.raw_data, dtype=np.uint8)
-    array = np.reshape(array, (carla_image.height, carla_image.width, 4))
-    array = array[:, :, (2, 1, 0)]
-
-    return pygame.surfarray.make_surface(array[:, :, :3].swapaxes(0, 1))
-
 def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=False, side:int=FRONT, 
                size:int=50, color:tuple[int, int, int]=(255, 255, 255), background:tuple[int, int, int]=None):
     font = pygame.font.Font(pygame.font.match_font('tlwgtypo'), size)
@@ -226,22 +219,47 @@ class CameraRGB(Sensor):
 
     def process_data(self):
         image = self.data
-        self._error_lane = False
+        #self._error_lane = False
         if image == None:
             return 
+        
+        image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
+        image_data = np.reshape(image_data, (image.height, image.width, 4))
+        image_data = image_data[:, :, (2, 1, 0)] # Swap blue and red channels
 
-        img = carla_image_to_pygame(image)
+        # Semantic segmentation
+        canvas = image_data
+        mask = None
+
+        if self._seg:
+            image_pil = Image.fromarray(image_data)
+            pred = self._seg_model.predict(image_pil)
+
+            if self._canvas_seg:
+                canvas, mask = self._seg_model.get_canvas(image_data, pred)
+            else:
+                mask = pred
+            '''
+            if self._seg:
+                mask = pred
+
+                if (SIZE_CAMERA, SIZE_CAMERA) != mask.shape:
+                    mask = cv2.resize(mask, dsize=(SIZE_CAMERA, SIZE_CAMERA), interpolation=cv2.INTER_NEAREST)
+            else:
+                mask = None
+            '''
+        image_surface = pygame.surfarray.make_surface(image_data[:, :, :3].swapaxes(0, 1))
 
         if self._lane:
-            self._detect_lane(img)
-            self._screen.blit(img, self.init)
+            self._detect_lane(image_surface)
+            self._screen.blit(image_surface, self.init_extra)
 
         if self.init != None:
             if self.text != None:
-                write_text(text=self.text, img=img, color=(0, 0, 0), side=RIGHT, bold=True,
+                write_text(text=self.text, img=image_surface, color=(0, 0, 0), side=RIGHT, bold=True,
                            size=self.size_text, point=(SIZE_CAMERA, 0))
 
-            self._screen.blit(img, self.init)
+            self._screen.blit(image_surface, self.init)
 
         '''
         if self._seg or self._lane:

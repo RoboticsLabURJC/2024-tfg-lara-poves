@@ -116,7 +116,7 @@ También se ha probado en un circuito diferente al de entrenamiento, obteniendo 
 
 ### CarlaLaneContinuous
 
-- hemos aumentado a 10 puntos
+- fixed delta mas alto porque no daba tiempo  a evaluar la accion
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneContinuous/lane10.png" alt="">
 </figure>
