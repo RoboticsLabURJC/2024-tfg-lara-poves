@@ -158,9 +158,13 @@ class CameraRGB(Sensor):
         rect = pygame.draw.lines(black_surface, (255, 0, 0), False, projected_boundary, 4)
 
         # Get pixels of line lane
+        step = 1 if side == LEFT_LANE else -1
+        start = rect.left if side == LEFT_LANE else rect.right - 1
+        end = rect.right if side == LEFT_LANE else rect.left - 1
+
         pixels = []
         for y in range(rect.top, rect.bottom):
-            for x in range(rect.left, rect.right):
+            for x in range(start, end, step):
                 color = black_surface.get_at((x, y))
                 if color[0] == 255:
                     pixels.append((x, y))
@@ -232,13 +236,8 @@ class CameraRGB(Sensor):
             if self._seg:
                 self._road_percentage = count_road / count_total * 100
                 if self._road_percentage < self._threshold_road_per:
-                    self._count_mem_road += 1
-
-                    if self._count_mem_road > self._mem_max:
-                        self._error_lane = True
-                        assert False, "Low percentage of lane"
-                else:
-                    self._count_mem_road = 0
+                    self._error_lane = True
+                    assert False, "Low percentage of lane"
 
             # Draw center of mass and vehicle
             cv2.line(img, (x_cm, 0), (x_cm, SIZE_CAMERA - 1), (0, 255, 0), 2)
@@ -585,8 +584,8 @@ class Collision(Sensor):
 
     def process_data(self):
         if self.data != None:
-            other_actor = self.data.other_actor
-            assert False, f"The vehicle crashed with {other_actor.type_id}"
+            other_actor_id = self.data.other_actor.type_id
+            assert other_actor_id == 'static.road', f"The vehicle crashed with {other_actor_id}"
 
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface=None, 
@@ -795,12 +794,25 @@ def center_spectator(world:carla.World, transform:carla.Transform,
     yaw = math.radians(transform.rotation.yaw)
     spectator =  world.get_spectator()
 
-    transform.location.z = height
-    transform.location.x -= scale * math.cos(yaw)
-    transform.location.y -= scale * math.sin(yaw)
-    transform.rotation.pitch = pitch
+    copied_transform = carla.Transform(
+        location=carla.Location(
+            x=transform.location.x,
+            y=transform.location.y,
+            z=transform.location.z
+        ),
+        rotation=carla.Rotation(
+            pitch=transform.rotation.pitch,
+            yaw=transform.rotation.yaw,
+            roll=transform.rotation.roll
+        )
+    )
 
-    spectator.set_transform(transform)
+    copied_transform.location.z = height
+    copied_transform.location.x -= scale * math.cos(yaw)
+    copied_transform.location.y -= scale * math.sin(yaw)
+    copied_transform.rotation.pitch = pitch
+
+    spectator.set_transform(copied_transform)
     return spectator
 
 def setup_pygame(size:tuple[int, int], name:str=""):

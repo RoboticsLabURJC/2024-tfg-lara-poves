@@ -29,9 +29,9 @@ class CarlaBase(gym.Env, ABC):
         self._count_ep = 0
         self._total_reward = 0
         self._count = 0
-        self._jump = False
         self._human = human
         self._velocity = 0 # It must be update in reward function
+        self._first_steps = 0
 
         # CSV file
         self._train = train
@@ -154,15 +154,13 @@ class CarlaBase(gym.Env, ABC):
         z = 0.1
         self._num_cir = num_cir
         if self._num_cir == 0:
-            self._town = 'Town05'
+            self._town = 'Town04'
             self._init_locations = [
-                carla.Transform(carla.Location(x=75.0, y=-144.5, z=z), carla.Rotation(yaw=4.0)),
-                carla.Transform(carla.Location(x=120.0, y=-137, z=z), carla.Rotation(yaw=22)),
-                carla.Transform(carla.Location(x=43.0, y=141.5, z=z), carla.Rotation(yaw=3)),
-                carla.Transform(carla.Location(x=111.0, y=135.5, z=z), carla.Rotation(yaw=-16))
+                carla.Transform(carla.Location(x=352.65, y=-350.7, z=0.1), carla.Rotation(yaw=-137)),
+                carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0)),
+                carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7))
             ]
-        else:
-            self._jump = True # No jumps
+        else: # cambiar
             self._town = 'Town04'
             self._init_locations = [
                 carla.Transform(carla.Location(x=-25.0, y=-252, z=z), carla.Rotation(yaw=125.0))
@@ -192,7 +190,7 @@ class CarlaBase(gym.Env, ABC):
         self.ego_vehicle = configcarla.add_one_vehicle(world=self._world, ego_vehicle=True,
                                                         vehicle_type='vehicle.lincoln.mkz_2020',
                                                         transform=self._init_locations[self._index_loc])
-        transform = carla.Transform(carla.Location(z=1.5, x=1.6), carla.Rotation(roll=90.0))
+        transform = carla.Transform(carla.Location(x=0.5, z=1.7292))
         self._sensors = configcarla.Vehicle_sensors(vehicle=self.ego_vehicle, world=self._world,
                                                     screen=self._screen)
         self._camera = self._sensors.add_camera_rgb(transform=transform, seg=False, lane=True,
@@ -201,7 +199,7 @@ class CarlaBase(gym.Env, ABC):
         self._sensors.add_collision() # Raise an exception if the vehicle crashes
 
         if self._human:
-            world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75), carla.Rotation(roll=90.0))
+            world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75))
             self._sensors.add_camera_rgb(transform=world_transform, size_rect=(SIZE_CAMERA, SIZE_CAMERA),
                                          init=(0, 0), text='World view')
 
@@ -248,33 +246,26 @@ class CarlaBase(gym.Env, ABC):
             self._sensors.update_data()
 
             # Get deviation and velocity
+            dev_prev = self._dev
             self._dev = self._camera.get_deviation()
             self._velocity = carla.Vector3D(self.ego_vehicle.get_velocity()).length()
+   
+            # Lane change detection
+            if self._first_step <= 10:
+                self._first_step += 1
+            else:
+                assert abs(self._dev - dev_prev) <= 5, "Lost lane: changing lane"
 
             # Reward function
             reward = self._calculate_reward()
 
             t = self.ego_vehicle.get_transform()
             if self._num_cir == 0:
-                if self._index_loc >= 2:
-                    if not self._jump and t.location.y < 13:
-                        t.location.y = -20
-                        self.ego_vehicle.set_transform(t)
-                        self._jump = True
-                    elif t.location.y < -143: 
-                        terminated = True
-                        finish_ep = True
-                        print("termino", self._count_ep)
-                else:
-                    if not self._jump and t.location.y > -30:
-                        t.location.y = 15
-                        self.ego_vehicle.set_transform(t)
-                        self._jump = True
-                    elif t.location.x < 50:
-                        terminated = True
-                        finish_ep = True
-                        print("termino", self._count_ep)
-            else:
+                finish_ep = self._index_loc <= 1 and(t.location.x + 442) <= 3 and (t.location.y - 30) <= 3
+                finish_ep = finish_ep or self._index_loc == 2 and t.location.y > -24.5
+                terminated = finish_ep
+
+            else: # cambiar
                 if t.location.y > -24.5:
                     terminated = True
                     finish_ep = True
@@ -282,7 +273,7 @@ class CarlaBase(gym.Env, ABC):
         except AssertionError:
             terminated = True
             reward = self._penalty_lane
-            print("No termino", self._count_ep)
+            print("No termino", self._count_ep, "finish:", finish_ep)
 
         # Check if a key has been pressed
         if self._human:
@@ -314,7 +305,7 @@ class CarlaBase(gym.Env, ABC):
         # Reset variables
         self._total_reward = 0
         self._count = 0
-        self._jump = False
+        self._first_step = 0
 
         if self._first:
             self._first = False

@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-09-17T13:17:00
+last_modified_at: 2024-10-02T15:00:00
 categories:
   - Blog
 tags:
@@ -26,7 +26,7 @@ Para aumentar los frames por segundo y reducir el tiempo de entrenamiento, hemos
 
 A continuación, se muestra el mapa del recorrido que seguirán los vehículos. Los círculos representan los distintos puntos de inicio, de los cuales se selecciona uno de manera aleatoria al comienzo de cada episodio. Cada localización está marcada con una flecha que indica la dirección del recorrido.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/map.jpeg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/map.jpg" alt="">
 </figure>
 
 El vehículo del entorno consta de los siguientes **sensores**:
@@ -87,6 +87,13 @@ else:
   reward = -20
 ```
 
+La pérdida del carril puede deberse a que no se ha detectado una de las líneas, el área es cero o ha habido un cambio de carril, lo que indica que hemos perdido el anterior. Para abordar esta situación, añadiremos una nueva verificación en la función step:
+```python
+dev_prev = self._dev
+self._dev = self._camera.get_deviation()
+assert abs(self._dev - dev_prev) <= 5, "Lost lane: changing lane"
+```
+
 Para entrenar, hemos utilizado un *fixed_delta_seconds* de 50ms, lo que equivale a entrenar a 20 FPS. Por lo tanto, en la fase de inferencia, necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de entre 17 y 19 horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionaron los mejores resultados:
 
 ```yaml
@@ -111,12 +118,11 @@ En las siguiente gráficas, se presenta la información recopilada durante la in
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneDiscrete/inference.png" alt="">
 </figure>
 
-También se ha probado en un circuito diferente al de entrenamiento, obteniendo buenos resultados.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vNScgxvtlbk?si=uzAIITnDvrDqPDGn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ### CarlaLaneContinuous
 
 - fixed delta mas alto porque no daba tiempo  a evaluar la accion
+
+- aumentado el numero de puntos
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneContinuous/lane10.png" alt="">
 </figure>
