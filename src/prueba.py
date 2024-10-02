@@ -9,16 +9,16 @@ def main(args):
     screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), name='Follow lane')
 
     # Add Ego Vehicle
-    transform = carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0))
+    transform = carla.Transform(carla.Location(x=352.65, y=-350.7, z=0.1), carla.Rotation(yaw=-137))
     ego_vehicle = configcarla.add_one_vehicle(world=world, vehicle_type='vehicle.lincoln.mkz_2020',
                                               ego_vehicle=True, transform=transform)
 
     # Add sensors to Ego Vehicle
     sensors = configcarla.Vehicle_sensors(vehicle=ego_vehicle, world=world, screen=screen)
 
-    driver_transform = carla.Transform(carla.Location(x=0.5, z=1.7292))
+    driver_transform = carla.Transform(carla.Location(x=0.5, y=0.0, z=1.7292))
     camera = sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), transform=driver_transform,
-                                    seg=True, text='Driver view', init_extra=(SIZE_CAMERA, 0), 
+                                    seg=False, text='Driver view', init_extra=(SIZE_CAMERA, 0), 
                                     lane=True, canvas_seg=False)
     
     world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75))
@@ -28,24 +28,27 @@ def main(args):
     # Instance PID controller
     pid = configcarla.PID(ego_vehicle)
     
+    finish_ep = False
+    index_loc =
     try:
-        while True:
+        while not finish_ep:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     return
-           
-            sensors.update_data(flip=False)
+            
+            sensors.update_data()
             t = ego_vehicle.get_transform()
+            print(t)
+            #spectator = configcarla.center_spectator(transform=t, world=world, pitch=-90, height=150)
 
-            if t.location.y > -24.5:
-                print("Finish route")
-                return
+            finish_ep = index_loc == 0 and(t.location.x + 442) <= 3 and (t.location.y - 30) <= 3
+            finish_ep = finish_ep or index_loc == 1 and t.location.y > -24.5
             
             # Control vehicle
             error_road = camera.get_deviation()
-            camera.get_lane_points(show=True, num_points=10)
-            pygame.display.flip()
+
             pid.controll_vehicle(error_road)
+
 
     except KeyboardInterrupt:
         return

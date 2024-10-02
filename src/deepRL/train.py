@@ -70,7 +70,7 @@ def main(args):
                                              port=args.port, alg=args.alg, normalize=True, seed=SEED),
                                              n_envs=1)
     else:
-        env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port,
+        env = env_class(train=True, fixed_delta_seconds=args.delta, human=True, port=args.port,
                         alg=args.alg, normalize=True, seed=SEED)
 
     model = alg_class(policy, env, verbose=args.verbose, seed=SEED, tensorboard_log=log_dir, **model_params)
