@@ -157,13 +157,12 @@ class CarlaBase(gym.Env, ABC):
             self._town = 'Town04'
             self._init_locations = [
                 carla.Transform(carla.Location(x=352.65, y=-350.7, z=0.1), carla.Rotation(yaw=-137)),
-                carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0)),
-                carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7))
+                carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7)),
+                carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0))
             ]
-        else: # cambiar
-            self._town = 'Town04'
-            self._init_locations = [
-                carla.Transform(carla.Location(x=-25.0, y=-252, z=z), carla.Rotation(yaw=125.0))
+        else:
+            self._init_locations = [ # Merge routes 1 and 2 of circuit 0
+                carla.Transform(carla.Location(x=352.65, y=-350.7, z=0.1), carla.Rotation(yaw=-137)) 
             ]
 
         # Pygame window
@@ -259,21 +258,24 @@ class CarlaBase(gym.Env, ABC):
             # Reward function
             reward = self._calculate_reward()
 
+            # Check if the episode has finished
             t = self.ego_vehicle.get_transform()
             if self._num_cir == 0:
-                finish_ep = self._index_loc <= 1 and(t.location.x + 442) <= 3 and (t.location.y - 30) <= 3
-                finish_ep = finish_ep or self._index_loc == 2 and t.location.y > -24.5
-                terminated = finish_ep
-
-            else: # cambiar
-                if t.location.y > -24.5:
-                    terminated = True
-                    finish_ep = True
+                if self._index_loc == 0:
+                    finish_ep = abs(t.location.x + 7) <= 3 and abs(t.location.y - 55) <= 3
+                elif self._index_loc == 1:
+                    finish_ep =  abs(t.location.x + 442) <= 3 and abs(t.location.y - 30) <= 3
+                else:
+                    finish_ep = self._index_loc == 2 and t.location.y > -24.5
+            else: 
+                finish_ep =  abs(t.location.x + 442) <= 3 and abs(t.location.y - 30) <= 3
+            terminated = finish_ep
             
         except AssertionError:
             terminated = True
             reward = self._penalty_lane
-            print("No termino", self._count_ep, "finish:", finish_ep)
+            self._camera.error_lane = True
+            print("No termino", self._count_ep, "steps:", self._count, "index:", self._index_loc, "t:", self.ego_vehicle.get_transform())
 
         # Check if a key has been pressed
         if self._human:
@@ -281,6 +283,9 @@ class CarlaBase(gym.Env, ABC):
 
         self._total_reward += reward
         self._count += 1
+
+        if finish_ep:
+            print("Termino:", self._count_ep, "steps:", self._count, "index:", self._index_loc, "t:", t)
 
         if terminated and self._train:
             if self.model != None:

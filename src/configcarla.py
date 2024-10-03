@@ -128,7 +128,7 @@ class CameraRGB(Sensor):
         self._road_percentage = 0
         self._cm = np.zeros((2,), dtype=np.int32)
         self._area = np.int32(0)
-        self._error_lane = False 
+        self.error_lane = False 
         self._lane_left = []
         self._lane_right = []
         self._extra_surface = None
@@ -193,9 +193,7 @@ class CameraRGB(Sensor):
 
         self._lane_left = self._points_lane(left_boundary, trafo_matrix_global_to_camera, LEFT_LANE)
         self._lane_right = self._points_lane(right_boundary, trafo_matrix_global_to_camera, RIGHT_LANE)
-        if self._lane_left == None or self._lane_right == None:
-            self._error_lane = True
-            assert False, "Lane lost"
+        assert self._lane_left != None or self._lane_right != None, "Lane lost"
 
         # Start in same height
         size_left = len(self._lane_left)
@@ -235,9 +233,7 @@ class CameraRGB(Sensor):
             # Calculate road porcentage
             if self._seg:
                 self._road_percentage = count_road / count_total * 100
-                if self._road_percentage < self._threshold_road_per:
-                    self._error_lane = True
-                    assert False, "Low percentage of lane"
+                assert self._road_percentage >= self._threshold_road_per, "Low percentage of lane"
 
             # Draw center of mass and vehicle
             cv2.line(img, (x_cm, 0), (x_cm, SIZE_CAMERA - 1), (0, 255, 0), 2)
@@ -246,7 +242,7 @@ class CameraRGB(Sensor):
         else:
             self._deviation = SIZE_CAMERA / 2
             self._road_percentage = 0
-            self._error_lane = True
+            self.error_lane = True
             assert False, "Area zero"
 
         return img
@@ -258,7 +254,7 @@ class CameraRGB(Sensor):
         return self._road_percentage
     
     def get_lane_cm(self):
-        if self._error_lane:
+        if self.error_lane:
             # Move cm to the nearest corner
             if self._cm[0] < SIZE_CAMERA / 2:
                 x_cm = 0
@@ -274,7 +270,7 @@ class CameraRGB(Sensor):
         return self._cm
     
     def get_lane_area(self):
-        if self._error_lane:
+        if self.error_lane:
             self._area = 0
 
         return self._area
@@ -289,7 +285,7 @@ class CameraRGB(Sensor):
 
     def process_data(self):
         image = self.data
-        self._error_lane = False
+        self.error_lane = False
         if image == None:
             return 
         
@@ -340,7 +336,7 @@ class CameraRGB(Sensor):
             self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)
 
     def get_lane_points(self, num_points:int=5, show:bool=False):
-        if not self._lane or self._error_lane or len(self._lane_left) == 0 or len(self._lane_right) == 0:
+        if not self._lane or self.error_lane or len(self._lane_left) == 0 or len(self._lane_right) == 0:
             return [np.full((num_points, 2), SIZE_CAMERA / 2, dtype=np.int32)] * 2
         
         lane_points = []
