@@ -34,8 +34,9 @@ def main(args):
                 if event.type == pygame.QUIT:
                     return
            
-            sensors.update_data(flip=False)
+            sensors.update_data()
             t = ego_vehicle.get_transform()
+            print(t)
 
             if t.location.y > -24.5:
                 print("Finish route")
@@ -43,8 +44,6 @@ def main(args):
             
             # Control vehicle
             error_road = camera.get_deviation()
-            camera.get_lane_points(show=True, num_points=10)
-            pygame.display.flip()
             pid.controll_vehicle(error_road)
 
     except KeyboardInterrupt:
