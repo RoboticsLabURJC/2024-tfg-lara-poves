@@ -17,7 +17,7 @@ env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
     'CarlaLane': environment.CarlaLane,
-    'CarlaObstacle': environment.CarlaObstacle
+    'CarlaObstacleDiscrete': environment.CarlaObstacleDiscrete
 }
 
 def main(args):

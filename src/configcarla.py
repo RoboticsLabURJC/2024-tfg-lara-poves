@@ -128,7 +128,6 @@ class CameraRGB(Sensor):
         self._road_percentage = 0
         self._cm = np.zeros((2,), dtype=np.int32)
         self._area = np.int32(0)
-        self.error_lane = False 
         self._lane_left = []
         self._lane_right = []
         self._extra_surface = None
@@ -150,7 +149,7 @@ class CameraRGB(Sensor):
         projected_boundary = project_polyline(boundary, trafo_matrix_global_to_camera,self._K).astype(np.int32)
 
         if not check_inside_image(projected_boundary, SIZE_CAMERA, SIZE_CAMERA) or len(projected_boundary) <= 1:
-            return None
+            return []
 
         # Draw the line lane
         black_surface = pygame.Surface((SIZE_CAMERA, SIZE_CAMERA))
@@ -193,7 +192,7 @@ class CameraRGB(Sensor):
 
         self._lane_left = self._points_lane(left_boundary, trafo_matrix_global_to_camera, LEFT_LANE)
         self._lane_right = self._points_lane(right_boundary, trafo_matrix_global_to_camera, RIGHT_LANE)
-        assert self._lane_left != None or self._lane_right != None, "Lane lost"
+        assert len(self._lane_left) > 20 and len(self._lane_right) > 20, "Lane lost"
 
         # Start in same height
         size_left = len(self._lane_left)
@@ -242,7 +241,6 @@ class CameraRGB(Sensor):
         else:
             self._deviation = SIZE_CAMERA / 2
             self._road_percentage = 0
-            self.error_lane = True
             assert False, "Area zero"
 
         return img
@@ -254,25 +252,9 @@ class CameraRGB(Sensor):
         return self._road_percentage
     
     def get_lane_cm(self):
-        if self.error_lane:
-            # Move cm to the nearest corner
-            if self._cm[0] < SIZE_CAMERA / 2:
-                x_cm = 0
-            else:
-                x_cm = SIZE_CAMERA - 1
-            if self._cm[1] < SIZE_CAMERA / 2:
-                y_cm = 0
-            else:
-                y_cm = SIZE_CAMERA - 1
-
-            self._cm = np.array([x_cm, y_cm], dtype=np.int32)
-
         return self._cm
     
     def get_lane_area(self):
-        if self.error_lane:
-            self._area = 0
-
         return self._area
 
     def show_surface(self, surface:pygame.Surface, pos:tuple[int, int], text:str):
@@ -285,7 +267,6 @@ class CameraRGB(Sensor):
 
     def process_data(self):
         image = self.data
-        self.error_lane = False
         if image == None:
             return 
         
@@ -336,7 +317,7 @@ class CameraRGB(Sensor):
             self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)
 
     def get_lane_points(self, num_points:int=5, show:bool=False):
-        if not self._lane or self.error_lane or len(self._lane_left) == 0 or len(self._lane_right) == 0:
+        if not self._lane or len(self._lane_left) == 0 or len(self._lane_right) == 0:
             return [np.full((num_points, 2), SIZE_CAMERA / 2, dtype=np.int32)] * 2
         
         lane_points = []
