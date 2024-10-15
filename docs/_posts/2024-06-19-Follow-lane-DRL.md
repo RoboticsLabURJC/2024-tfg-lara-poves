@@ -16,7 +16,7 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 ```
 
 ## Índice
-- [Sigue carrils](#sigue-carril)
+- [Sigue carril](#sigue-carril)
   - [CarlaLaneDiscrete](#carlalanediscrete)
   - [CarlaLaneContinuous](#carlalanecontinuous)
 
@@ -26,7 +26,7 @@ Para aumentar los frames por segundo y reducir el tiempo de entrenamiento, hemos
 
 A continuación, se muestra el mapa del recorrido que seguirán los vehículos. Los círculos representan los distintos puntos de inicio, de los cuales se selecciona uno de manera aleatoria al comienzo de cada episodio. Cada localización está marcada con una flecha que indica la dirección del recorrido.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/map.jpg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/map.jpeg" alt="">
 </figure>
 
 El vehículo del entorno consta de los siguientes **sensores**:

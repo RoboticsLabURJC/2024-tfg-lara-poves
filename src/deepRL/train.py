@@ -26,7 +26,7 @@ env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
     'CarlaLane': environment.CarlaLane,
-    'CarlaObstacle': environment.CarlaObstacle
+    'CarlaObstacleDiscrete': environment.CarlaObstacleDiscrete
 }
 
 def check_dir(dir:str, env:str):
@@ -120,8 +120,8 @@ if __name__ == "__main__":
         '--delta', 
         type=float, 
         required=False, 
-        default=0.1,
-        help='Fixed delta second for CARLA simulator. By default 100ms.'
+        default=0.05,
+        help='Fixed delta second for CARLA simulator. By default 50ms.'
     )
     parser.add_argument(
         '--log_interval', 

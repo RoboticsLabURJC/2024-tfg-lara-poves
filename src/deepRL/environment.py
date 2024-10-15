@@ -21,7 +21,7 @@ MAX_DEV = 100
 class CarlaBase(gym.Env, ABC):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_points:int=5,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, num_cir:int=0):
-        self._penalty_lane = -20
+        self._penalty_lane = -30
         self._first = True
         self._dev = 0
         self._steer = 0
@@ -151,7 +151,6 @@ class CarlaBase(gym.Env, ABC):
         self.model = None
 
         # Init locations
-        z = 0.1
         self._num_cir = num_cir
         if self._num_cir == 0:
             self._town = 'Town04'
@@ -161,6 +160,7 @@ class CarlaBase(gym.Env, ABC):
                 carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0))
             ]
         else:
+            self._town = 'Town04'
             self._init_locations = [ # Merge routes 1 and 2 of circuit 0
                 carla.Transform(carla.Location(x=352.65, y=-350.7, z=0.1), carla.Rotation(yaw=-137)) 
             ]
@@ -253,7 +253,7 @@ class CarlaBase(gym.Env, ABC):
             if self._first_step <= 10:
                 self._first_step += 1
             else:
-                assert abs(self._dev - dev_prev) <= 5, "Lost lane: changing lane"
+                assert abs(self._dev - dev_prev) <= 50, "Lost lane: changing lane"
 
             # Reward function
             reward = self._calculate_reward()
@@ -266,16 +266,22 @@ class CarlaBase(gym.Env, ABC):
                 elif self._index_loc == 1:
                     finish_ep =  abs(t.location.x + 442) <= 3 and abs(t.location.y - 30) <= 3
                 else:
-                    finish_ep = self._index_loc == 2 and t.location.y > -24.5
+                    finish_ep = t.location.y > -24.5
             else: 
                 finish_ep =  abs(t.location.x + 442) <= 3 and abs(t.location.y - 30) <= 3
             terminated = finish_ep
             
-        except AssertionError:
+        except AssertionError as e:
             terminated = True
             reward = self._penalty_lane
             self._camera.error_lane = True
-            print("No termino", self._count_ep, "steps:", self._count, "index:", self._index_loc, "t:", self.ego_vehicle.get_transform())
+
+            if "changing" in str(e):
+                self._dev = dev_prev
+                
+            print(e)
+            print("No termino", self._count_ep, "steps:", self._count, "index:", self._index_loc, "t:",
+                  self.ego_vehicle.get_transform(), "dev:", self._dev)
 
         # Check if a key has been pressed
         if self._human:
@@ -362,22 +368,22 @@ class CarlaLaneDiscrete(CarlaBase):
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_cir=num_cir,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
         
-        self._max_vel = 5.0
+        self._max_vel = 15.0
 
     def _create_actions(self):
         self._max_steer = 0.18
         self.action_to_control = {
             0: (0.5, 0.0),
-            1: (0.5, 0.01), 
-            2: (0.5, -0.01),
+            1: (0.45, 0.01), 
+            2: (0.45, -0.01),
             3: (0.4, 0.02),
             4: (0.4, -0.02),
             5: (0.4, 0.04),
             6: (0.4, -0.04),
-            7: (0.3, 0.06),
-            8: (0.3, -0.06),
-            9: (0.3, 0.08),
-            10: (0.3, -0.08),
+            7: (0.4, 0.06),
+            8: (0.4, -0.06),
+            9: (0.4, 0.08),
+            10: (0.4, -0.08),
             11: (0.3, 0.1),
             12: (0.3, -0.1),
             13: (0.3, 0.12),
@@ -407,7 +413,68 @@ class CarlaLaneDiscrete(CarlaBase):
         dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
         vel = np.clip(self._velocity, 0.0, self._max_vel)
 
-        return 0.75 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.25 * vel / self._max_vel
+        return 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
+    
+class CarlaObstacleDiscrete(CarlaLaneDiscrete):
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
+        if train and human:
+            human = False
+            print("Warning: Can't activate human mode during training")
+
+        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
+        
+        new_space = spaces.Box(
+            low=0.0,
+            high=100.0,
+            shape=(1,),
+            dtype=np.float64
+        )
+
+        if not normalize:
+            self.observation_space["laser"] = new_space
+        else:
+            self._obs_norm["laser"] = new_space
+            self.observation_space["laser"] =  spaces.Box(
+                low=0.0,
+                high=1.0,
+                shape=(1,),
+                dtype=np.float64
+            )
+
+        # editar, añadir coche en 1 de cada 5 episodios
+    
+    def _get_info(self):
+        info = super()._get_info()
+        info["dist"] = self._dist
+        return info
+
+    def _get_obs_env(self):
+        obs = super()._get_obs_env()
+        self._dist = 20.0 # cambiar, coger del laser, si es menos de 1/2 metros parar el entrenemiento
+        obs["laser"] = self._dist
+        return obs
+        
+    def _create_actions(self):
+        self.action_to_control[21] = (0.4, 0.0)
+        self.action_to_control[22] = (0.3, 0.0)
+        self.action_to_control[23] = (0.2, 0.0)
+        self.action_to_control[24] = (0.1, 0.0)
+        self.action_to_control[25] = (0.3, 0.01)
+        self.action_to_control[26] = (0.3, -0.01)
+        self.action_to_control[27] = (0.2, 0.02)
+        self.action_to_control[28] = (0.2, -0.02)
+
+        self.action_space = spaces.Discrete(len(self.action_to_control))
+        
+    def _calculate_reward(self):
+        # Clip deviation and velocity
+        dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
+        vel = np.clip(self._velocity, 0.0, self._max_vel)
+
+        # editar
+        return 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
     
 class CarlaLaneContinuous(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0,
@@ -420,20 +487,19 @@ class CarlaLaneContinuous(CarlaBase):
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
         
         self._max_vel = 15
-        self._penalty_lane = -30
-        self._steer = 0
+        self._penalty_lane = -35
 
     def _create_actions(self):
         # Add brake
-        self.action_space = spaces.Box(low=np.array([0.0, -0.3]), high=np.array([1.0, 0.3]),
+        self.action_space = spaces.Box(low=np.array([0.0, -0.18]), high=np.array([1.0, 0.18]),
                                        shape=(2,), dtype=np.float64)
         
     def _get_control(self, action:np.ndarray):
         assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
-        throttle, self._steer = action
+        throttle, steer = action
         
         control = carla.VehicleControl()
-        control.steer = self._steer 
+        control.steer = steer 
         control.throttle = throttle
 
         return control
@@ -443,7 +509,7 @@ class CarlaLaneContinuous(CarlaBase):
         dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
         vel = np.clip(self._velocity, 0.0, self._max_vel)
 
-        return 0.55 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.25 * vel / self._max_vel + 0.2 * (0.3 - abs(self._steer)) / 0.3
+        return 0.7 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.3 * vel / self._max_vel
     
 class CarlaLane(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
@@ -475,82 +541,8 @@ class CarlaLane(CarlaBase):
         return control
     
     def _calculate_reward(self):
-        # Clip deviation
+        # Clip deviation and velocity
         dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
-        
-        # Don't exceed maximum velocity
-        if self._velocity > self._max_vel:
-            reward = -10
-        else:
-            reward = 0.7 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.3 * self._velocity / self._max_vel
-
-        return reward
-    
-class CarlaObstacle(CarlaBase):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
-        if train and human:
-            human = False
-            print("Warning: Can't activate human mode during training")
-
-        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
-        
-        new_space = spaces.Box(
-            low=0.0,
-            high=100.0,
-            shape=(1,),
-            dtype=np.float64
-        )
-
-        if not normalize:
-            self.observation_space["laser"] = new_space
-        else:
-            self._obs_norm["laser"] = new_space
-            self.observation_space["laser"] =  spaces.Box(
-                low=0.0,
-                high=1.0,
-                shape=(1,),
-                dtype=np.float64
-            )
-    
-    def _get_info(self):
-        info = super()._get_info()
-        info["dist"] = self._dist
-        return info
-
-    def _get_obs_env(self):
-        obs = super()._get_obs_env()
-        self._dist = 20.0
-        obs["laser"] = self._dist
-        return obs
-        
-    def _create_actions(self):
-        # Add brake
-        self.action_space = spaces.Box(low=np.array([0.1, -0.3, 0.0]), high=np.array([0.5, 0.3, 1.0]),
-                                       shape=(3,), dtype=np.float64)
-        
-    def _get_control(self, action:np.ndarray):
-        assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
-        throttle, steer, brake = action
-
-        control = carla.VehicleControl()
-        control.steer = steer 
-        control.throttle = throttle
-        control.brake = brake
-
-        return control
-    
-    def _calculate_reward(self):
-        # Get deviation
-        self._dev = self._camera.get_deviation()
-        dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
-
-        # Get velocity
-        velocity = self.ego_vehicle.get_velocity()
-        self._velocity = carla.Vector3D(velocity).length()
         vel = np.clip(self._velocity, 0.0, self._max_vel)
 
-        # Calculate reward
-        reward = 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
-        return reward
+        return 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
