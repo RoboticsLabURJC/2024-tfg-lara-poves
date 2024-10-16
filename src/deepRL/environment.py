@@ -152,17 +152,20 @@ class CarlaBase(gym.Env, ABC):
 
         # Init locations
         self._num_cir = num_cir
+        self._town = 'Town04'
         if self._num_cir == 0:
-            self._town = 'Town04'
             self._init_locations = [
                 carla.Transform(carla.Location(x=352.65, y=-350.7, z=0.1), carla.Rotation(yaw=-137)),
                 carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7)),
                 carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0))
             ]
-        else:
-            self._town = 'Town04'
+        elif self._num_cir == 1:
             self._init_locations = [ # Merge routes 1 and 2 of circuit 0
                 carla.Transform(carla.Location(x=352.65, y=-350.7, z=0.1), carla.Rotation(yaw=-137)) 
+            ]
+        else:
+            self._init_locations = [
+                carla.Transform(carla.Location(x=13.5, y=310, z=0.1), carla.Rotation(yaw=-48))
             ]
 
         # Pygame window
@@ -179,6 +182,14 @@ class CarlaBase(gym.Env, ABC):
             assert fixed_delta_seconds > 0.0, "In synchronous mode fidex_delta_seconds can't be 0.0"
         self._world, _ = configcarla.setup_carla(name_world=self._town, port=port, syn=self._train, 
                                                  fixed_delta_seconds=fixed_delta_seconds)
+        
+        # Set the weather to sunny
+        weather = carla.WeatherParameters(
+            cloudiness=10.0,   
+            precipitation=0.0,  
+            sun_altitude_angle=30.0  
+        )
+        self._world.set_weather(weather)
 
     def _swap_ego_vehicle(self):
         if self._train:
@@ -267,8 +278,10 @@ class CarlaBase(gym.Env, ABC):
                     finish_ep =  abs(t.location.x + 442) <= 3 and abs(t.location.y - 30) <= 3
                 else:
                     finish_ep = t.location.y > -24.5
-            else: 
+            elif self._num_cir == 1: 
                 finish_ep =  abs(t.location.x + 442) <= 3 and abs(t.location.y - 30) <= 3
+            else:
+                finish_ep = abs(t.location.x - 414) <= 3 and abs(t.location.y + 230) <= 3
             terminated = finish_ep
             
         except AssertionError as e:
@@ -484,7 +497,7 @@ class CarlaLaneContinuous(CarlaBase):
             print("Warning: Can't activate human mode during training")
 
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, num_cir=num_cir)
         
         self._max_vel = 15
         self._penalty_lane = -35

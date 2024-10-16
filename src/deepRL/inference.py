@@ -121,7 +121,7 @@ if __name__ == "__main__":
         type=int, 
         required=False, 
         default=0,
-        choices=[0, 1],
+        choices=[0, 2],
         help='Number of the circuit for the enviroment. By default 0.'
     )
 
