@@ -30,6 +30,8 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], 
             key += ' in pixels'
         elif key == 'Throttle':
             ax.set_ylim(-0.1, 1.1)
+        elif key == 'Dist':
+            data = np.nan_to_num(data, nan=10.0)
 
         ax.plot(range(len(data)), data, label=label) 
         ax.set_ylabel(key)
@@ -65,8 +67,19 @@ def main(args):
     file.close()
 
     num_rows = NUM_ROWS
+    brake = False
     if float(data[0]['Brake']) >= 0.0:
         num_rows += 1
+        brake = True
+
+    dist = False
+    try:
+        if data[0]['Dist'] == "nan" or float(data[0]['Dist']) < 10.0:
+            if not brake:
+                num_rows +=1
+            dist = True
+    except Exception:
+        pass
     
     csv_file = args.file.split('/')[-1].rsplit('_', 1)[0]
     plt.figure(figsize=(6 * NUM_COLUMNS, 8))
@@ -90,12 +103,26 @@ def main(args):
     
     # Extra row
     if num_rows > NUM_ROWS:
-        plot_data(data_csv=data, key='Accumulated reward', init=(2, 0), label=csv_file,
-                  title='Accumulated reward', num_rows=num_rows)
-        plot_data(data_csv=data, num_rows=num_rows, key='Brake', title='Brake of the vehicle',
-                  label=csv_file, init=(2, 2), size=2)
-        plot_data(data_csv=data, key='Brake', init=(2, 1), title='Histogram brake actions',
-                  hist=True, label=csv_file, num_rows=num_rows)
+        if brake:
+            plot_data(data_csv=data, num_rows=num_rows, key='Brake', title='Brake of the vehicle',
+                      label=csv_file, init=(2, 2), size=2)
+            plot_data(data_csv=data, key='Brake', init=(2, 1), title='Histogram brake actions',
+                      hist=True, label=csv_file, num_rows=num_rows)
+            
+        if dist:
+            plot_data(data_csv=data, key='Dist', init=(2, 0), label=csv_file,
+                      title='Distance front laser', num_rows=num_rows)
+
+        if not dist and brake:
+            init = (2, 0)
+        elif dist and not brake:
+            init = (2, 1)
+        else:
+            init = None
+ 
+        if init != None:
+            plot_data(data_csv=data, key='Accumulated reward', init=init, label=csv_file,
+                      title='Accumulated reward', num_rows=num_rows)
     
     plt.tight_layout()
     plt.show()

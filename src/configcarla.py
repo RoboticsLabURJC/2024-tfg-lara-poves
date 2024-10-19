@@ -356,11 +356,12 @@ class CameraRGB(Sensor):
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
-                 front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool=True):
+                 front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool=True, time_show:bool=True):
         super().__init__(sensor=sensor)
 
         self._rect = init
         self.show_stats = show_stats
+        self.time_show = time_show
 
         if init != None:
             assert size != None, "size is required!"
@@ -460,8 +461,9 @@ class Lidar(Sensor):
         for zone in range(NUM_ZONES):
             if len(meas_zones[DIST][zone]) != 0:
                 # Filter distances by z
-                filter = np.array(meas_zones[Z][zone]) > self._z_threshold
-                filtered_dist = np.array(meas_zones[DIST][zone])[filter]
+                filter_min = np.array(meas_zones[Z][zone]) > -self._z_threshold
+                filter_max = np.array(meas_zones[Z][zone]) < self._z_threshold
+                filtered_dist = np.array(meas_zones[DIST][zone])[filter_min & filter_max]
 
                 if len(filtered_dist) == 0:
                     self._stat_zones[zone][MIN] = np.nan
@@ -476,13 +478,13 @@ class Lidar(Sensor):
                     self._stat_zones[zone][i] = np.nan
 
             if self.show_stats and self._rect != None:
-                if time.time_ns() - self._time > SEG_TO_NANOSEG:
+                if not self.time_show or time.time_ns() - self._time > SEG_TO_NANOSEG:
                     self._time = time.time_ns()
                     self._stats_text = [
                         "Mean = {:.2f}".format(self._stat_zones[zone][MEAN]),
                         "Median = {:.2f}".format(self._stat_zones[zone][MEDIAN]),
                         "Std = {:.2f}".format(self._stat_zones[zone][STD]),
-                        "Min(z>{:.1f}) = {:.2f}".format(self._z_threshold, self._stat_zones[zone][MIN])
+                        "Min(|z|<{:.1f}) = {:.2f}".format(self._z_threshold, self._stat_zones[zone][MIN])
                     ]
 
                 # Write stats
@@ -547,13 +549,16 @@ class Lidar(Sensor):
         return self._i_threshold
     
     def set_z_threshold(self, z:float):
-        self._z_threshold = z
+        self._z_threshold = abs(z)
 
     def get_z_threshold(self):
         return self._z_threshold
     
     def get_stat_zones(self):
         return self._stat_zones
+    
+    def get_min_center(self):
+        return self._stat_zones[FRONT][MIN]
 
 class Collision(Sensor):
     def __init__(self, sensor):
@@ -608,14 +613,14 @@ class Vehicle_sensors:
         self.sensors.append(camera)
         return camera
     
-    def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25,
+    def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25, time_show:bool=True,
                   transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True):
         if self._screen == None:
             init = None
 
         sensor = self._put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, type=LIDAR)
         lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale,
-                      yaw=transform.rotation.yaw, screen=self._screen, show_stats=show_stats)
+                      yaw=transform.rotation.yaw, screen=self._screen, show_stats=show_stats, time_show=time_show)
         
         self.sensors.append(lidar)
         return lidar
@@ -811,11 +816,11 @@ def add_vehicles_randomly(world:carla.World, number:int):
 
     return vehicles
 
-def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000):
+def traffic_manager(client:carla.Client, vehicles:list[carla.Vehicle], port:int=5000, speed=-30.0):
     tm = client.get_trafficmanager(port)
     tm_port = tm.get_port()
     tm.set_global_distance_to_leading_vehicle(2.0)
-    tm.global_percentage_speed_difference(-30.0) 
+    tm.global_percentage_speed_difference(speed) 
 
     for v in vehicles:
         v.set_autopilot(True, tm_port)

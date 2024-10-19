@@ -66,12 +66,12 @@ def main(args):
     log_name = args.alg + '-' + args.env
 
     if args.alg != 'DQN':
-        env = make_vec_env(lambda: env_class(train=True, fixed_delta_seconds=args.delta, human=False,
+        env = make_vec_env(lambda: env_class(train=True, fixed_delta_seconds=args.delta, human=args.human,
                                              port=args.port, alg=args.alg, normalize=True, seed=SEED),
-                                             n_envs=1)
+                                             n_envs=1, num_cir=args.num_cir)
     else:
-        env = env_class(train=True, fixed_delta_seconds=args.delta, human=False, port=args.port,
-                        alg=args.alg, normalize=True, seed=SEED)
+        env = env_class(train=True, fixed_delta_seconds=args.delta, human=True, port=args.port,
+                        alg=args.alg, normalize=True, seed=SEED, num_cir=args.num_cir)
 
     model = alg_class(policy, env, verbose=args.verbose, seed=SEED, tensorboard_log=log_dir, **model_params)
     if args.alg == 'DQN':
@@ -92,8 +92,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Run a training on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
-            "} --alg {" + ",".join(possible_algs) + "} [--port <port_number>]" +\
-            "[--delta <fixed_delta_seconds>] [--log_interval <log_interval>] [--verbose <verbose>]"
+            "} --alg {" + ",".join(possible_algs) + "} [--port <port_number>] [--human <human>]" +\
+            "[--delta <fixed_delta_seconds>] [--log_interval <log_interval>] [--verbose <verbose>] [--num_cir <num_cir>]"
     )
     parser.add_argument(
         '--env', 
@@ -137,6 +137,22 @@ if __name__ == "__main__":
         default=0,
         choices=[0, 1, 2],
         help='Show basic (1) or detailed (2) training information, or hide it (0). Default is 0.'
+    )
+    parser.add_argument(
+        '--human', 
+        type=bool, 
+        required=False, 
+        default=False,
+        choices=[True, False],
+        help='Display or not Pygame screen. By default False.'
+    )
+    parser.add_argument(
+        '--num_cir', 
+        type=int, 
+        required=False, 
+        default=0,
+        choices=[0, 1, 2],
+        help='Number of the circuit for the enviroment. By default 0.'
     )
 
     main(parser.parse_args())

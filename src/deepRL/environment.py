@@ -17,13 +17,18 @@ from configcarla import SIZE_CAMERA, PATH
 import configcarla
 
 MAX_DEV = 100
+MAX_DIST_LASER = 10
+MIN_DIST_LASER = 4
 
 class CarlaBase(gym.Env, ABC):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_points:int=5,
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_points:int=5, passing:bool=False,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, num_cir:int=0):
         self._penalty_lane = -30
+        self._max_vel = 15.0
+        self._penalty_obstacle = -50
         self._first = True
         self._dev = 0
+        self._dist_laser = MAX_DIST_LASER
         self._steer = 0
         self._velocity = 0
         self._count_ep = 0
@@ -32,6 +37,8 @@ class CarlaBase(gym.Env, ABC):
         self._human = human
         self._velocity = 0 # It must be update in reward function
         self._first_steps = 0
+        self._passing = passing
+        self._front_vehicle = None
 
         # CSV file
         self._train = train
@@ -48,7 +55,7 @@ class CarlaBase(gym.Env, ABC):
                                    mode='w', newline='')
             self._writer_csv_train = csv.writer(self._train_csv)
             self._writer_csv_train.writerow(["Episode", "Reward", "Num_steps", "Finish", "Deviation",
-                                             "Exploration_rate"])
+                                             "Exploration_rate", "Distance"])
             
             # Action file
             dir_csv = PATH + '2024-tfg-lara-poves/src/deepRL/csv/actions/' + self.__class__.__name__ + '/'
@@ -155,13 +162,13 @@ class CarlaBase(gym.Env, ABC):
         self._town = 'Town04'
         if self._num_cir == 0:
             self._init_locations = [
-                carla.Transform(carla.Location(x=352.65, y=-350.7, z=0.1), carla.Rotation(yaw=-137)),
+                carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137)),
                 carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7)),
                 carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0))
             ]
         elif self._num_cir == 1:
             self._init_locations = [ # Merge routes 1 and 2 of circuit 0
-                carla.Transform(carla.Location(x=352.65, y=-350.7, z=0.1), carla.Rotation(yaw=-137)) 
+                carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137)) 
             ]
         else:
             self._init_locations = [
@@ -170,17 +177,23 @@ class CarlaBase(gym.Env, ABC):
 
         # Pygame window
         if self._human:
-            self._screen = configcarla.setup_pygame(size=(SIZE_CAMERA * 2, SIZE_CAMERA), 
+            mult = 2
+            if self._passing:
+                mult = 3
+
+            self._screen = configcarla.setup_pygame(size=(SIZE_CAMERA * mult, SIZE_CAMERA), 
                                                     name='Follow lane: ' + self.__class__.__name__)
             self._init_driver = (SIZE_CAMERA, 0)
+            self._init_laser = (SIZE_CAMERA * 2, 0)
         else:
             self._screen = None
             self._init_driver = None
+            self._init_laser = None
 
         # Init simulation
         if self._train:
             assert fixed_delta_seconds > 0.0, "In synchronous mode fidex_delta_seconds can't be 0.0"
-        self._world, _ = configcarla.setup_carla(name_world=self._town, port=port, syn=self._train, 
+        self._world, self._client = configcarla.setup_carla(name_world=self._town, port=port, syn=self._train, 
                                                  fixed_delta_seconds=fixed_delta_seconds)
         
         # Set the weather to sunny
@@ -212,6 +225,34 @@ class CarlaBase(gym.Env, ABC):
             world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75))
             self._sensors.add_camera_rgb(transform=world_transform, size_rect=(SIZE_CAMERA, SIZE_CAMERA),
                                          init=(0, 0), text='World view')
+            
+        if self._is_passing_ep: 
+            lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
+            self._lidar = self._sensors.add_lidar(init=self._init_laser,size_rect=(SIZE_CAMERA, SIZE_CAMERA),
+                                                  transform=lidar_transform, scale=22, time_show=False)
+            self._lidar.set_z_threshold(2.0)
+            
+            t = carla.Transform(
+                location=self._init_locations[self._index_loc].location,
+                rotation=self._init_locations[self._index_loc].rotation
+            )
+            if self._index_loc == 0:
+                if self._num_cir == 0 or self._num_cir == 1:
+                    t.location.x -= 5
+                    t.location.y -= 4
+                    t.rotation.yaw -= 6
+                else: # revisar cuando vaya inferencia
+                    t.location.y -= 5
+                    t.location.x += 5
+            else:
+                if self._index_loc == 1:
+                    t.location.y += 7
+                else:
+                    t.location.y += 7
+                    t.location.x -= 5
+
+            self._front_vehicle = configcarla.add_one_vehicle(world=self._world, vehicle_type='vehicle.carlamotors.carlacola', transform=t)
+            configcarla.traffic_manager(client=self._client, vehicles=[self._front_vehicle], port=7788, speed=20.0)
 
     def _get_obs_env(self):
         left_points, right_points = self._camera.get_lane_points(num_points=self._num_points_lane)
@@ -259,8 +300,12 @@ class CarlaBase(gym.Env, ABC):
             dev_prev = self._dev
             self._dev = self._camera.get_deviation()
             self._velocity = carla.Vector3D(self.ego_vehicle.get_velocity()).length()
+
+            if self._is_passing_ep:
+                self._dist_laser = self._lidar.get_min_center()
+                assert np.isnan(self._dist_laser) or self._dist_laser > MIN_DIST_LASER, "Distance exceeded: too close to the front car"
    
-            # Lane change detection
+            # Lane change detec tion
             if self._first_step <= 10:
                 self._first_step += 1
             else:
@@ -286,22 +331,25 @@ class CarlaBase(gym.Env, ABC):
             
         except AssertionError as e:
             terminated = True
-            reward = self._penalty_lane
-            self._camera.error_lane = True
 
-            if "changing" in str(e):
-                self._dev = dev_prev
+            if self._passing and "Distance" in str(e):
+                reward = self._penalty_obstacle
+            else:
+                reward = self._penalty_lane
+
+                if "changing" in str(e):
+                    self._dev = dev_prev
                 
             print(e)
             print("No termino", self._count_ep, "steps:", self._count, "index:", self._index_loc, "t:",
-                  self.ego_vehicle.get_transform(), "dev:", self._dev)
+                  self.ego_vehicle.get_transform(), "dev:", self._dev, "is_passing:", self._is_passing_ep,
+                  "dist:", self._dist_laser)
 
         # Check if a key has been pressed
         if self._human:
             self.render()
 
         self._total_reward += reward
-        self._count += 1
 
         if finish_ep:
             print("Termino:", self._count_ep, "steps:", self._count, "index:", self._index_loc, "t:", t)
@@ -314,8 +362,9 @@ class CarlaBase(gym.Env, ABC):
 
             self._count_ep += 1
             self._writer_csv_train.writerow([self._count_ep, self._total_reward, self._count,
-                                             finish_ep, self._dev, exploration_rate])
+                                             finish_ep, self._dev, exploration_rate, self._dist_laser])
         
+        self._count += 1
         return self._get_obs(), reward, terminated, False, self._get_info()
     
     def render(self):
@@ -335,6 +384,20 @@ class CarlaBase(gym.Env, ABC):
             self._first = False
         else:
             self._sensors.destroy()
+
+            if self._front_vehicle != None:
+                self._front_vehicle.destroy()
+
+        if self._passing:
+            self._dist_laser = MAX_DIST_LASER
+            pygame.draw.rect(self._screen, (0, 0, 0), (SIZE_CAMERA * 2, 0, SIZE_CAMERA, SIZE_CAMERA))
+
+            if self._count_ep % 5 == 0:
+                self._num_passing_ep = random.choice(range(self._count_ep, self._count_ep + 5))
+
+            self._is_passing_ep = True #self._count_ep == self._num_passing_ep or not self._train
+        else:
+            self._is_passing_ep = False
 
         self._swap_ego_vehicle()
 
@@ -377,14 +440,11 @@ class CarlaBase(gym.Env, ABC):
 
 class CarlaLaneDiscrete(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, passing=False):
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_cir=num_cir,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
-        
-        self._max_vel = 15.0
 
     def _create_actions(self):
-        self._max_steer = 0.18
         self.action_to_control = {
             0: (0.5, 0.0),
             1: (0.45, 0.01), 
@@ -414,9 +474,9 @@ class CarlaLaneDiscrete(CarlaBase):
         self.model = model
     
     def _get_control(self, action:np.ndarray):
-        throttle, self._steer = self.action_to_control[int(action)] # Use steer in reward
+        throttle, steer = self.action_to_control[int(action)]
         control = carla.VehicleControl()
-        control.steer = self._steer 
+        control.steer = steer 
         control.throttle = throttle
         
         return control
@@ -428,15 +488,11 @@ class CarlaLaneDiscrete(CarlaBase):
 
         return 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
     
-class CarlaObstacleDiscrete(CarlaLaneDiscrete):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
+class CarlaObstacleDiscrete(CarlaBase):
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
-        if train and human:
-            human = False
-            print("Warning: Can't activate human mode during training")
-
-        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
+        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, passing=True,
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, num_cir=num_cir)
         
         new_space = spaces.Box(
             low=0.0,
@@ -455,29 +511,60 @@ class CarlaObstacleDiscrete(CarlaLaneDiscrete):
                 shape=(1,),
                 dtype=np.float64
             )
-
-        # editar, añadir coche en 1 de cada 5 episodios
     
     def _get_info(self):
         info = super()._get_info()
-        info["dist"] = self._dist
+        info["dist"] = self._dist_laser
         return info
 
     def _get_obs_env(self):
         obs = super()._get_obs_env()
-        self._dist = 20.0 # cambiar, coger del laser, si es menos de 1/2 metros parar el entrenemiento
-        obs["laser"] = self._dist
+        obs["laser"] = self._dist_laser
         return obs
+    
+    def set_model(self, model):
+        self.model = model
+    
+    def _get_control(self, action:np.ndarray):
+        throttle, steer = self.action_to_control[int(action)]
+        control = carla.VehicleControl()
+        control.steer = steer 
+        control.throttle = throttle
+        
+        return control
         
     def _create_actions(self):
-        self.action_to_control[21] = (0.4, 0.0)
-        self.action_to_control[22] = (0.3, 0.0)
-        self.action_to_control[23] = (0.2, 0.0)
-        self.action_to_control[24] = (0.1, 0.0)
-        self.action_to_control[25] = (0.3, 0.01)
-        self.action_to_control[26] = (0.3, -0.01)
-        self.action_to_control[27] = (0.2, 0.02)
-        self.action_to_control[28] = (0.2, -0.02)
+        self.action_to_control = {
+            0: (0.5, 0.0),
+            1: (0.45, 0.01), 
+            2: (0.45, -0.01),
+            3: (0.4, 0.02),
+            4: (0.4, -0.02),
+            5: (0.4, 0.04),
+            6: (0.4, -0.04),
+            7: (0.4, 0.06),
+            8: (0.4, -0.06),
+            9: (0.4, 0.08),
+            10: (0.4, -0.08),
+            11: (0.3, 0.1),
+            12: (0.3, -0.1),
+            13: (0.3, 0.12),
+            14: (0.3, -0.12),
+            15: (0.2, 0.14),
+            16: (0.2, -0.14),
+            17: (0.2, 0.16),
+            18: (0.2, -0.16),
+            19: (0.1, 0.18),
+            20: (0.1, -0.18),
+            21: (0.4, 0.0),
+            22: (0.3, 0.0),
+            23: (0.2, 0.0),
+            24: (0.1, 0.0),
+            25: (0.3, 0.01),
+            26: (0.3, -0.01),
+            27: (0.2, 0.02),
+            28: (0.2, -0.02)
+        }
 
         self.action_space = spaces.Discrete(len(self.action_to_control))
         
@@ -499,7 +586,6 @@ class CarlaLaneContinuous(CarlaBase):
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, num_cir=num_cir)
         
-        self._max_vel = 15
         self._penalty_lane = -35
 
     def _create_actions(self):
@@ -522,7 +608,7 @@ class CarlaLaneContinuous(CarlaBase):
         dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
         vel = np.clip(self._velocity, 0.0, self._max_vel)
 
-        return 0.7 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.3 * vel / self._max_vel
+        return 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
     
 class CarlaLane(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,

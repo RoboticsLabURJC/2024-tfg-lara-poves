@@ -38,20 +38,6 @@ def main(args):
     total_reward = 0
     step = 0
 
-    dir_csv = dir + 'csv/inference/'
-    if not os.path.exists(dir_csv):
-        os.makedirs(dir_csv)
-    dir_csv += args.env + '/'
-    if not os.path.exists(dir_csv):
-        os.makedirs(dir_csv)
-
-    files = os.listdir(dir_csv)
-    num_files = len(files) + 1
-    file_csv = open(dir_csv + args.alg + '_' + 'data_' + args.n + '_' + str(num_files) +
-                    '.csv', mode='w', newline='')
-    writer_csv = csv.writer(file_csv)
-    writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Throttle",
-                         "Steer", "Deviation", "Velocity", "Brake", "Dist"])
     
     brake = -1.0
     try:
@@ -64,20 +50,15 @@ def main(args):
             else:
                 throttle, steer, brake = action
 
+            '''
             obs, reward, terminated, truncated, info = env.step(action)
 
-            try:
-                dist = info['dist']
-            except KeyError:
-                dist = 10.0
-
             step += 1
-            total_reward += reward
-            writer_csv.writerow([step, reward, total_reward, throttle, steer, info['deviation'], 
-                                 info['velocity'], brake, dist])        
+            total_reward += reward     
 
             if terminated or truncated:
                 break
+                '''
     except KeyboardInterrupt:
         return
     
