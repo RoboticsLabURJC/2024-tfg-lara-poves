@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-09-30T14:26:00
+last_modified_at: 2024-10-19T17:51:00
 categories:
   - Blog
 tags:
@@ -25,20 +25,20 @@ Una vez habituados con las funciones básicas de CARLA y realizado el teleoperad
 Hemos implementado una función llamada ***traffic_manager*** para controlar el tráfico de vehículos. Esta función activa el piloto automático en los vehículos proporcionados como entrada, para su correcto funcionamiento, es necesario habilitar el modo síncrono al configurar CARLA. Además, hemos definido varios parámetros para controlar la conducción y la relación entre los diferentes vehículos.
 ```python
 tm.set_global_distance_to_leading_vehicle(2.0)
-tm.global_percentage_speed_difference(-30.0) 
+tm.global_percentage_speed_difference(speed) 
 ```
 
 ## LIDAR
 
-Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva clase ***Lidar*** heredada de la clase *Sensor*. Al igual que en la implementación de la cámara, hemos agregado nuevos parámetros en el constructor para la visualización y sobrescrito la función *process_data()*. Esta función se encarga de visualizar el láser y actualizar las estadísticas relevantes a la zona frontal del láser, las cuales nos serán útiles para la detección de obstáculos.
+Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva clase ***Lidar*** heredada de la clase *Sensor*. Al igual que en la implementación de la cámara, hemos agregado nuevos parámetros en el constructor para la visualización y sobrescrito la función *process_data()*. Esta función se encarga de visualizar el láser y actualizar las estadísticas relevantes a la zona frontal del láser, las cuales nos serán útiles para la detección de obstáculos. El parámetro *time_show* determina si los datos del sensor láser deben actualizarse de forma continua o una vez por segundo.
 
 ```python
 class Vehicle_sensors:
-  def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25,
+  def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25, time_show=True,
                 transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True)
 
 class Lidar(Sensor): 
-  def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor,
+  def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, time_show=True,
                 scale:int, front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool)
 
   def process_data(self)

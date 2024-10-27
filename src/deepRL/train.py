@@ -67,8 +67,8 @@ def main(args):
 
     if args.alg != 'DQN':
         env = make_vec_env(lambda: env_class(train=True, fixed_delta_seconds=args.delta, human=args.human,
-                                             port=args.port, alg=args.alg, normalize=True, seed=SEED),
-                                             n_envs=1, num_cir=args.num_cir)
+                                             port=args.port, alg=args.alg, normalize=True, num_cir=args.num_cir,
+                                             seed=SEED), n_envs=1)
     else:
         env = env_class(train=True, fixed_delta_seconds=args.delta, human=True, port=args.port,
                         alg=args.alg, normalize=True, seed=SEED, num_cir=args.num_cir)

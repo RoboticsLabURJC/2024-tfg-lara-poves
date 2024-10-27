@@ -63,7 +63,7 @@ def main(args):
                 throttle, steer = action
             else:
                 throttle, steer, brake = action
-
+                
             obs, reward, terminated, truncated, info = env.step(action)
 
             try:
