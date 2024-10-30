@@ -24,7 +24,7 @@ FREC_PASSING = 3
 
 class CarlaBase(gym.Env, ABC):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_points:int=5, passing:bool=False,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, num_cir:int=0):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, num_cir:int=0, total_steps:int=0):
         self._penalty_lane = -30
         self._max_vel = 15.0
         self._penalty_obstacle = -60
@@ -34,6 +34,7 @@ class CarlaBase(gym.Env, ABC):
         self._steer = 0
         self._velocity = 0
         self._count_ep = 0
+        self._count_steps = 0
         self._total_reward = 0
         self._count = 0
         self._human = human
@@ -42,6 +43,7 @@ class CarlaBase(gym.Env, ABC):
         self._passing = passing
         self._front_vehicle = None
         self._exploration_rate = 1.0
+        self._total_steps = total_steps
 
         # CSV file
         self._train = train
@@ -255,16 +257,8 @@ class CarlaBase(gym.Env, ABC):
                     t.location.y += 7
                     t.location.x -= 5
 
-            if self.model != None and self._train:
-                if self._exploration_rate > 0:
-                    speed = random.randint(82, 87)
-                else:
-                    speed = random.randint(80, 85)
-            else:
-                speed = 70
-
             self._front_vehicle = configcarla.add_one_vehicle(world=self._world, vehicle_type='vehicle.carlamotors.carlacola', transform=t)
-            configcarla.traffic_manager(client=self._client, vehicles=[self._front_vehicle], port=7788, speed=speed)
+            configcarla.traffic_manager(client=self._client, vehicles=[self._front_vehicle], port=7788, speed=20)
 
     def _get_obs_env(self):
         left_points, right_points = self._camera.get_lane_points(num_points=self._num_points_lane)
@@ -293,6 +287,8 @@ class CarlaBase(gym.Env, ABC):
         return info
     
     def step(self, action:np.ndarray):
+        self._count_steps += 1
+
         # Exec action
         control = self._get_control(action)
         self.ego_vehicle.apply_control(control)
@@ -314,6 +310,12 @@ class CarlaBase(gym.Env, ABC):
             self._velocity = carla.Vector3D(self.ego_vehicle.get_velocity()).length()
            
             if self._is_passing_ep:
+                # Front vehicle
+                vel = carla.Vector3D(self._front_vehicle.get_velocity()).length()
+                target_vel = int(self._velocity)
+                if target_vel == 0:
+                    target_vel = 1
+
                 self._dist_laser = self._lidar.get_min_center()
                 assert np.isnan(self._dist_laser) or self._dist_laser > MIN_DIST_LASER, "Distance exceeded: too close to the front car"
 
@@ -401,11 +403,11 @@ class CarlaBase(gym.Env, ABC):
                 self._front_vehicle.destroy()
 
         if self._passing:
-            if self._count_ep % FREC_PASSING == 0:
-                self._num_passing_ep = random.choice(range(self._count_ep, self._count_ep + FREC_PASSING))
-
-            self._is_passing_ep = self._count_ep == self._num_passing_ep or not self._train
-            pygame.draw.rect(self._screen, (0, 0, 0), pygame.Rect(SIZE_CAMERA * 2, 0, SIZE_CAMERA, SIZE_CAMERA))
+            if self.model != None:
+                self._is_passing_ep = self._exploration_rate >= 0.5
+            else:
+                assert self._total_steps > 0, "Toatal steps is required"
+                self._is_passing_ep = self._count_steps > self._total_steps / 2
         else:
             self._is_passing_ep = False
 
@@ -452,10 +454,10 @@ class CarlaBase(gym.Env, ABC):
         pass
 
 class CarlaLaneDiscrete(CarlaBase):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, passing=False):
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0, 
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, total_steps:int=0):
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_cir=num_cir,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, total_steps=total_steps)
 
     def _create_actions(self):
         self.action_to_control = {
@@ -503,8 +505,8 @@ class CarlaLaneDiscrete(CarlaBase):
     
 class CarlaObstacleDiscrete(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
-        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, passing=True,
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, total_steps:int=0):
+        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, passing=True, total_steps=total_steps,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, num_cir=num_cir)
         
         new_space = spaces.Box(
@@ -600,20 +602,21 @@ class CarlaObstacleDiscrete(CarlaBase):
     
 class CarlaLaneContinuous(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, total_steps:int=0):
         if train and human:
             human = False
             print("Warning: Can't activate human mode during training")
 
-        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
+        self._max_steer = 0.2
+        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10, total_steps=total_steps,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, num_cir=num_cir)
         
         self._penalty_lane = -35
-        self._max_vel = 20
+        self._max_vel = 10
 
     def _create_actions(self):
         # Add brake
-        self.action_space = spaces.Box(low=np.array([0.0, -0.18]), high=np.array([1.0, 0.18]),
+        self.action_space = spaces.Box(low=np.array([0.0, -self._max_steer]), high=np.array([1.0, self._max_steer]),
                                        shape=(2,), dtype=np.float64)
         
     def _get_control(self, action:np.ndarray):
@@ -627,39 +630,55 @@ class CarlaLaneContinuous(CarlaBase):
         return control
     
     def _calculate_reward(self):
-        # Clip deviation and velocity
-        dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
-        vel = np.clip(self._velocity, 0.0, self._max_vel)
-
-        '''
-        if vel > 4:
-            factor = 0.9
+        # Deviation normalization
+        r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
+        r_vel = np.clip(self._velocity, 0.0, self._max_vel) / self._max_vel
+        
+        # Steer conversion
+        if abs(self._steer) > 0.14:
+            r_steer = 0
         else:
-            factor = 0.75 
+            r_steer = -50/7 * abs(self._steer) + 1
 
-        reward = np.clip(factor * dev + (1.0 - factor) * vel / self._max_vel - self._throttle * self._steer, 0.0, 1.0)
-
-        '''
-
-        if vel > 4:
-            if self._throttle > 0.5:
-                vel = 0
-            reward = 0.90 * dev + 0.1 * vel / self._max_vel 
+        # Throttle conversion
+        if self._throttle < 0.1 or self._throttle >= 0.6:
+            r_throttle = 0
+        elif self._throttle >= 0.1 and self._throttle <= 0.4:
+            r_throttle = 10/3 * self._throttle - 1/3
         else:
-            if self._throttle < 0.2:
-                vel = 0
-            reward = np.clip(0.7 * dev + 0.3 * vel / self._max_vel - self._steer, 0.0, 1.0)
+            r_throttle = -5 * self._throttle + 3
 
-        return reward
+        if r_steer == 0 and r_throttle == 0:
+            w_dev = 0.1
+            w_throttle = 0.45
+            w_steer = 0.45
+        elif r_steer == 0:
+            w_dev = 0.1
+            w_throttle = 0.1
+            w_steer = 0.8
+        elif r_throttle == 0:
+            w_dev = 0.1
+            w_throttle = 0.8
+            w_steer = 0.1
+        elif self._throttle >= 0.1 and self._throttle <= 0.4:
+            w_dev = 0.65
+            w_throttle = 0.25
+            w_steer = 0.1 # Lower accelerations, penalize large turns less
+        else:
+            w_dev = 0.5
+            w_throttle = 0.25
+            w_steer = 0.25
+
+        return w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer
     
 class CarlaLane(CarlaBase):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000,
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, total_steps:int=0,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
         if train and human:
             human = False
             print("Warning: Can't activate human mode during training")
 
-        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed,
+        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, total_steps=total_steps,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
         
         self._max_vel = 10
