@@ -44,6 +44,7 @@ class CarlaBase(gym.Env, ABC):
         self._front_vehicle = None
         self._exploration_rate = 1.0
         self._total_steps = total_steps
+        self._vel_percentage = 80
 
         # CSV file
         self._train = train
@@ -60,7 +61,7 @@ class CarlaBase(gym.Env, ABC):
                                    mode='w', newline='')
             self._writer_csv_train = csv.writer(self._train_csv)
             self._writer_csv_train.writerow(["Episode", "Reward", "Num_steps", "Finish", "Deviation",
-                                             "Exploration_rate", "Distance"])
+                                             "Exploration_rate", "Distance", "Mean veal"])
             
             # Action file
             dir_csv = PATH + '2024-tfg-lara-poves/src/deepRL/csv/actions/' + self.__class__.__name__ + '/'
@@ -258,7 +259,8 @@ class CarlaBase(gym.Env, ABC):
                     t.location.x -= 5
 
             self._front_vehicle = configcarla.add_one_vehicle(world=self._world, vehicle_type='vehicle.carlamotors.carlacola', transform=t)
-            configcarla.traffic_manager(client=self._client, vehicles=[self._front_vehicle], port=7788, speed=20)
+            self._tm = configcarla.traffic_manager(client=self._client, vehicles=[self._front_vehicle], 
+                                                   port=7788, speed=self._vel_percentage)
 
     def _get_obs_env(self):
         left_points, right_points = self._camera.get_lane_points(num_points=self._num_points_lane)
@@ -308,7 +310,8 @@ class CarlaBase(gym.Env, ABC):
             dev_prev = self._dev
             self._dev = self._camera.get_deviation()
             self._velocity = carla.Vector3D(self.ego_vehicle.get_velocity()).length()
-           
+            self._mean_vel += self._velocity
+
             if self._is_passing_ep:
                 # Front vehicle
                 vel = carla.Vector3D(self._front_vehicle.get_velocity()).length()
@@ -316,6 +319,15 @@ class CarlaBase(gym.Env, ABC):
                 if target_vel == 0:
                     target_vel = 1
 
+                if vel > target_vel and abs(vel - target_vel) > 0.4:
+                    self._vel_percentage += 1
+                    self._tm.global_percentage_speed_difference(self._vel_percentage)
+                    print("reduzco vel, vel:", vel, "target vel:", target_vel, "%", self._vel_percentage)
+                elif int(vel) != 0 and int(vel) + 1 < target_vel:
+                    self._vel_percentage = 1
+                    self._tm.global_percentage_speed_difference(self._vel_percentage)
+                    print("aumento vel, vel int:", int(vel),"vel", vel,"target_vel", target_vel, "%", self._vel_percentage)
+                
                 self._dist_laser = self._lidar.get_min_center()
                 assert np.isnan(self._dist_laser) or self._dist_laser > MIN_DIST_LASER, "Distance exceeded: too close to the front car"
 
@@ -355,18 +367,19 @@ class CarlaBase(gym.Env, ABC):
                     self._dev = dev_prev
 
             print(e)
-            print("No termino", self._count_ep, "steps:", self._count, "index:", self._index_loc, "t:",
-                  self.ego_vehicle.get_transform(), "dev:", self._dev, "is_passing:", self._is_passing_ep,
-                  "dist:", self._dist_laser)
+            print("No termino", self._count_ep, "steps:", self._count, "index:", self._index_loc,
+                  "dev:", self._dev, "is_passing:", self._is_passing_ep, "dist:", self._dist_laser)
 
         # Check if a key has been pressed
         if self._human:
             self.render()
 
         self._total_reward += reward
+        self._count += 1
 
         if finish_ep:
-            print("Termino:", self._count_ep, "steps:", self._count, "index:", self._index_loc, "t:", t)
+            print("Termino:", self._count_ep, "steps:", self._count, "index:", self._index_loc,
+                  "mean vel", self._mean_vel / self._count)
 
         if terminated and self._train:
             if self.model != None:
@@ -375,10 +388,10 @@ class CarlaBase(gym.Env, ABC):
                 self._exploration_rate = -1.0 # No register
 
             self._count_ep += 1
-            self._writer_csv_train.writerow([self._count_ep, self._total_reward, self._count,
-                                             finish_ep, self._dev, self._exploration_rate, self._dist_laser])
+            self._writer_csv_train.writerow([self._count_ep, self._total_reward, self._count, finish_ep,
+                                             self._dev, self._exploration_rate, self._dist_laser, 
+                                             self._mean_vel / self._count])
         
-        self._count += 1
         return self._get_obs(), reward, terminated, False, self._get_info()
     
     def render(self):
@@ -393,6 +406,7 @@ class CarlaBase(gym.Env, ABC):
         self._total_reward = 0
         self._count = 0
         self._first_step = 0
+        self._mean_vel = 0
 
         if self._first:
             self._first = False
@@ -404,10 +418,12 @@ class CarlaBase(gym.Env, ABC):
 
         if self._passing:
             if self.model != None:
-                self._is_passing_ep = self._exploration_rate >= 0.5
+                self._is_passing_ep = self._exploration_rate <= 0.63
             else:
                 assert self._total_steps > 0, "Toatal steps is required"
                 self._is_passing_ep = self._count_steps > self._total_steps / 2
+
+            self._vel_percentage = 80
         else:
             self._is_passing_ep = False
 
@@ -632,7 +648,6 @@ class CarlaLaneContinuous(CarlaBase):
     def _calculate_reward(self):
         # Deviation normalization
         r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
-        r_vel = np.clip(self._velocity, 0.0, self._max_vel) / self._max_vel
         
         # Steer conversion
         if abs(self._steer) > 0.14:
@@ -640,36 +655,34 @@ class CarlaLaneContinuous(CarlaBase):
         else:
             r_steer = -50/7 * abs(self._steer) + 1
 
-        # Throttle conversion
-        if self._throttle < 0.1 or self._throttle >= 0.6:
-            r_throttle = 0
-        elif self._throttle >= 0.1 and self._throttle <= 0.4:
-            r_throttle = 10/3 * self._throttle - 1/3
+        # Velocity and throttle conversion
+        if self._velocity > self._max_vel or self._throttle < 0.1 or self._throttle >= 0.6:
+            r_vel = 0
         else:
-            r_throttle = -5 * self._throttle + 3
+            r_vel = self._velocity / self._max_vel
 
-        if r_steer == 0 and r_throttle == 0:
+        if r_steer == 0 and r_vel == 0:
             w_dev = 0.1
-            w_throttle = 0.45
             w_steer = 0.45
+            w_vel = 0.45
         elif r_steer == 0:
             w_dev = 0.1
-            w_throttle = 0.1
             w_steer = 0.8
-        elif r_throttle == 0:
+            w_vel = 0.1
+        elif r_vel == 0:
             w_dev = 0.1
-            w_throttle = 0.8
             w_steer = 0.1
+            w_vel = 0.8
         elif self._throttle >= 0.1 and self._throttle <= 0.4:
             w_dev = 0.65
-            w_throttle = 0.25
             w_steer = 0.1 # Lower accelerations, penalize large turns less
+            w_vel = 0.25
         else:
-            w_dev = 0.5
-            w_throttle = 0.25
-            w_steer = 0.25
+            w_dev = 0.6
+            w_steer = 0.3
+            w_vel = 0.1
 
-        return w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer
+        return w_dev * r_dev + w_steer * r_steer + w_vel * r_vel
     
 class CarlaLane(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, total_steps:int=0,

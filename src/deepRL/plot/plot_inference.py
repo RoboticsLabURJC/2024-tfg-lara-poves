@@ -38,12 +38,8 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], 
         ax.set_xlabel('Step')
     else:
         if key == 'Steer':
-            if 'DQN' in label:
-                bins = np.linspace(-0.19, 0.19, 20)
-                bins_ticks = np.linspace(-0.2, 0.2, 21)
-            else:
-                bins = np.linspace(-0.3, 0.3, 13)
-                bins_ticks = bins
+            bins = np.linspace(-0.19, 0.19, 20)
+            bins_ticks = np.linspace(-0.2, 0.2, 21)
         else:
             if 'DQN' in label:
                 bins = np.linspace(0.05, 0.55, 6)

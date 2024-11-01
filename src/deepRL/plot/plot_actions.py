@@ -20,13 +20,14 @@ def histogram(data_csv:list[dict], key:str, subplot:int):
     extra = 0.05
     if key == 'Steer':
         extra /= 2
-        bins = np.arange(-0.3, 0.35, 0.05)
+        bins = np.arange(-0.18, 0.2, 0.02)
     else:
         bins = np.linspace(0.0, 1.0, 11)
      
     counts, edges, _ = plt.hist(data, bins=bins, edgecolor='black', zorder=1)
-    for count, edge in zip(counts, edges):
-        plt.text(edge + extra, count, str(int(count)), ha='center', va='bottom')
+    if key != 'Steer':
+        for count, edge in zip(counts, edges):
+            plt.text(edge + extra, count, str(int(count)), ha='center', va='bottom')
 
     plt.xticks(bins, rotation=90)
     plt.ylabel('Frecuency')
