@@ -22,8 +22,25 @@ MAX_DIST_LASER = 10
 MIN_DIST_LASER = 4
 FREC_PASSING = 3
 
+CIRCUIT_CONFIG = {
+    0: [
+        {"id": 0, "town": "Town04", "location": carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137))},
+        {"id": 1, "town": "Town04", "location": carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7))},
+        {"id": 2, "town": "Town04", "location": carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0))}
+    ],
+    1: [
+        {"id": 5, "town": "Town04", "location": carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137))}
+    ],
+    2: [
+        {"id": 3, "town": "Town04", "location": carla.Transform(carla.Location(x=13.5, y=310, z=0.1), carla.Rotation(yaw=-48))}
+    ],
+    3: [
+        {"id": 4, "town": "Town03", "location": carla.Transform(carla.Location(x=114, y=207.3, z=1.7))}
+    ]
+}
+
 class CarlaBase(gym.Env, ABC):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_points:int=5, passing:bool=False,
+    def __init__(self, human:bool, train:bool, config:list, alg:str=None, port:int=2000, num_points:int=5, passing:bool=False,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, num_cir:int=0, total_steps:int=0):
         self._penalty_lane = -30
         self._max_vel = 15.0
@@ -45,6 +62,9 @@ class CarlaBase(gym.Env, ABC):
         self._exploration_rate = 1.0
         self._total_steps = total_steps
         self._vel_percentage = 80
+
+        if passing and num_cir > 1:
+            assert True, "No passing mode available for circuit " + str(num_cir) 
 
         # CSV file
         self._train = train
@@ -163,24 +183,6 @@ class CarlaBase(gym.Env, ABC):
         self.np_random = seed
         self.model = None
 
-        # Init locations
-        self._num_cir = num_cir
-        self._town = 'Town04'
-        if self._num_cir == 0:
-            self._init_locations = [
-                carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137)),
-                carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7)),
-                carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0))
-            ]
-        elif self._num_cir == 1:
-            self._init_locations = [ # Merge routes 1 and 2 of circuit 0
-                carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137)) 
-            ]
-        else:
-            self._init_locations = [
-                carla.Transform(carla.Location(x=13.5, y=310, z=0.1), carla.Rotation(yaw=-48))
-            ]
-
         # Pygame window
         if self._human:
             mult = 2
@@ -199,26 +201,33 @@ class CarlaBase(gym.Env, ABC):
         # Init simulation
         if self._train:
             assert fixed_delta_seconds > 0.0, "In synchronous mode fidex_delta_seconds can't be 0.0"
-        self._world, self._client = configcarla.setup_carla(name_world=self._town, port=port, syn=self._train, 
+
+        self._world, self._client = configcarla.setup_carla(name_world="Town04", port=port, syn=self._train, 
                                                  fixed_delta_seconds=fixed_delta_seconds)
         
-        # Set the weather to sunny
-        weather = carla.WeatherParameters(
-            cloudiness=10.0,   
-            precipitation=0.0,  
-            sun_altitude_angle=30.0  
-        )
-        self._world.set_weather(weather)
+        self._town_locations = [(entry["id"], entry["town"], entry["location"]) for entry in config]
 
     def _swap_ego_vehicle(self):
         if self._train:
-            self._index_loc = random.randint(0, len(self._init_locations) - 1)
+            self._id, self._town, self._loc = random.choice(self._town_locations)
         else:
-            self._index_loc = 0
+            self._id, self._town, self._loc = self._town_locations[0]
 
-        self.ego_vehicle = configcarla.add_one_vehicle(world=self._world, ego_vehicle=True,
-                                                        vehicle_type='vehicle.lincoln.mkz_2020',
-                                                        transform=self._init_locations[self._index_loc])
+        town = self._world.get_map().name
+        if town != self._town: 
+            self._world, self._client = configcarla.setup_carla(name_world=self._town, client=self._client)
+        
+            # Set the weather to sunny
+            if self._town == 'Town04':
+                weather = carla.WeatherParameters(
+                    cloudiness=10.0,   
+                    precipitation=0.0,  
+                    sun_altitude_angle=30.0  
+                )
+                self._world.set_weather(weather)
+
+        self.ego_vehicle = configcarla.add_one_vehicle(world=self._world, ego_vehicle=True, vehicle_type='vehicle.lincoln.mkz_2020',
+                                                       transform=self._loc)
         transform = carla.Transform(carla.Location(x=0.5, z=1.7292))
         self._sensors = configcarla.Vehicle_sensors(vehicle=self.ego_vehicle, world=self._world,
                                                     screen=self._screen)
@@ -243,22 +252,18 @@ class CarlaBase(gym.Env, ABC):
                 rotation=self._init_locations[self._index_loc].rotation
             )
             
-            if self._index_loc == 0:
-                if self._num_cir == 0 or self._num_cir == 1:
-                    t.location.x -= 5
-                    t.location.y -= 4
-                    t.rotation.yaw -= 6
-                else: # revisar cuando vaya inferencia
-                    t.location.y -= 5
-                    t.location.x += 5
+            if self._id == 0 or self._id == 5:
+                t.location.x -= 5
+                t.location.y -= 4
+                t.rotation.yaw -= 6
+            elif self._id == 1:
+                t.location.y += 7
             else:
-                if self._index_loc == 1:
-                    t.location.y += 7
-                else:
-                    t.location.y += 7
-                    t.location.x -= 5
+                t.location.y += 7
+                t.location.x -= 5
 
-            self._front_vehicle = configcarla.add_one_vehicle(world=self._world, vehicle_type='vehicle.carlamotors.carlacola', transform=t)
+            self._front_vehicle = configcarla.add_one_vehicle(world=self._world, vehicle_type='vehicle.carlamotors.carlacola',
+                                                              transform=t)
             self._tm = configcarla.traffic_manager(client=self._client, vehicles=[self._front_vehicle], 
                                                    port=7788, speed=self._vel_percentage)
 
@@ -342,17 +347,16 @@ class CarlaBase(gym.Env, ABC):
 
             # Check if the episode has finished
             t = self.ego_vehicle.get_transform()
-            if self._num_cir == 0:
-                if self._index_loc == 0:
-                    finish_ep = abs(t.location.x + 7) <= 3 and abs(t.location.y - 55) <= 3
-                elif self._index_loc == 1:
-                    finish_ep =  abs(t.location.x + 442) <= 3 and abs(t.location.y - 30) <= 3
-                else:
-                    finish_ep = t.location.y > -24.5
-            elif self._num_cir == 1: 
+            if self._id == 0:
+                finish_ep = abs(t.location.x + 7) <= 3 and abs(t.location.y - 55) <= 3
+            elif self._id == 1 or self._id == 5:
                 finish_ep =  abs(t.location.x + 442) <= 3 and abs(t.location.y - 30) <= 3
-            else:
+            elif self._id == 2:
+                finish_ep = t.location.y > -24.5
+            elif self._id == 3:
                 finish_ep = abs(t.location.x - 414) <= 3 and abs(t.location.y + 230) <= 3
+            else:
+                finish_ep = abs(t.location.x - 165) <= 3 and abs(t.location.y + 208) <= 3
             terminated = finish_ep
             
         except AssertionError as e:
@@ -367,7 +371,7 @@ class CarlaBase(gym.Env, ABC):
                     self._dev = dev_prev
 
             print(e)
-            print("No termino", self._count_ep, "steps:", self._count, "index:", self._index_loc,
+            print("No termino", self._count_ep, "steps:", self._count, "id:", self._id,
                   "dev:", self._dev, "is_passing:", self._is_passing_ep, "dist:", self._dist_laser)
 
         # Check if a key has been pressed
@@ -378,7 +382,7 @@ class CarlaBase(gym.Env, ABC):
         self._count += 1
 
         if finish_ep:
-            print("Termino:", self._count_ep, "steps:", self._count, "index:", self._index_loc,
+            print("Termino:", self._count_ep, "steps:", self._count, "id:", self._id,
                   "mean vel", self._mean_vel / self._count)
 
         if terminated and self._train:
@@ -472,7 +476,14 @@ class CarlaBase(gym.Env, ABC):
 class CarlaLaneDiscrete(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0, 
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, total_steps:int=0):
-        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_cir=num_cir,
+        if train:
+            num_cir = 0
+        else:
+            num_cir = num_cir
+
+        config = CIRCUIT_CONFIG.get(self._num_cir, CIRCUIT_CONFIG[0])
+
+        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_cir=num_cir, config=config,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, total_steps=total_steps)
 
     def _create_actions(self):
@@ -522,8 +533,15 @@ class CarlaLaneDiscrete(CarlaBase):
 class CarlaObstacleDiscrete(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, total_steps:int=0):
+        if train:
+            num_cir = 0
+        else:
+            num_cir = num_cir
+
+        config = CIRCUIT_CONFIG.get(self._num_cir, CIRCUIT_CONFIG[0])    
+
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, passing=True, total_steps=total_steps,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, num_cir=num_cir)
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, num_cir=num_cir, config=config)
         
         new_space = spaces.Box(
             low=MIN_DIST_LASER - 1.0,
@@ -624,8 +642,15 @@ class CarlaLaneContinuous(CarlaBase):
             print("Warning: Can't activate human mode during training")
 
         self._max_steer = 0.2
-        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10, total_steps=total_steps,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, num_cir=num_cir)
+
+        if train:
+            config = CIRCUIT_CONFIG.get(0, []) 
+        else:
+            config = CIRCUIT_CONFIG.get(num_cir, [])
+
+        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
+                         total_steps=total_steps, normalize=normalize, fixed_delta_seconds=fixed_delta_seconds,
+                         num_cir=num_cir, config=config)
         
         self._penalty_lane = -35
         self._max_vel = 10
@@ -655,7 +680,7 @@ class CarlaLaneContinuous(CarlaBase):
         else:
             r_steer = -50/7 * abs(self._steer) + 1
 
-        # Velocity and throttle conversion
+        # Velocity conversion
         if self._velocity > self._max_vel or self._throttle < 0.1 or self._throttle >= 0.6:
             r_vel = 0
         else:
@@ -674,9 +699,9 @@ class CarlaLaneContinuous(CarlaBase):
             w_steer = 0.1
             w_vel = 0.8
         elif self._throttle >= 0.1 and self._throttle <= 0.4:
-            w_dev = 0.65
+            w_dev = 0.7
             w_steer = 0.1 # Lower accelerations, penalize large turns less
-            w_vel = 0.25
+            w_vel = 0.2
         else:
             w_dev = 0.6
             w_steer = 0.3

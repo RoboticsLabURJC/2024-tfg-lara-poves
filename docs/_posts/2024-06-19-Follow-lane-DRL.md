@@ -74,7 +74,7 @@ self.action_to_control = {
 
 Nuestro objetivo es que el coche circule por el centro del carril sin desviarse, manteniendo una conducción fluida y lo más rápida posible. Para lograrlo, hemos diseñado una función de recompensa que se basa principalmente en la desviación del carril y en la velocidad actual del coche, normalizando y ponderando estos valores según sus respectivos pesos. Sin embargo, si el coche pierde el carril o colisiona, el episodio se detiene y se asigna una recompensa negativa.
 ```python
-if on_lane and no_collision: 
+if not error: 
   dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
   vel = np.clip(self._speed, 0.0, self._max_vel) 
   reward = 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel

@@ -36,7 +36,6 @@ def main(args):
            
             sensors.update_data()
             t = ego_vehicle.get_transform()
-            print(t)
 
             if t.location.y > -24.5:
                 print("Finish route")

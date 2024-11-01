@@ -67,11 +67,10 @@ def main(args):
 
     if args.alg != 'DQN':
         env = make_vec_env(lambda: env_class(train=True, fixed_delta_seconds=args.delta, human=args.human,
-                                             port=args.port, alg=args.alg, normalize=True, num_cir=args.num_cir,
-                                             seed=SEED), n_envs=1)
+                                             port=args.port, alg=args.alg, normalize=True, seed=SEED), n_envs=1)
     else:
         env = env_class(train=True, fixed_delta_seconds=args.delta, human=args.human, port=args.port,
-                        alg=args.alg, normalize=True, seed=SEED, num_cir=args.num_cir)
+                        alg=args.alg, normalize=True, seed=SEED)
 
     model = alg_class(policy, env, verbose=args.verbose, seed=SEED, tensorboard_log=log_dir, **model_params)
     if args.alg == 'DQN':
@@ -145,14 +144,6 @@ if __name__ == "__main__":
         default=False,
         choices=[True, False],
         help='Display or not Pygame screen. By default False.'
-    )
-    parser.add_argument(
-        '--num_cir', 
-        type=int, 
-        required=False, 
-        default=0,
-        choices=[0, 1, 2],
-        help='Number of the circuit for the enviroment. By default 0.'
     )
 
     main(parser.parse_args())
