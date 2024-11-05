@@ -74,12 +74,16 @@ self.action_to_control = {
 
 Nuestro objetivo es que el coche circule por el centro del carril sin desviarse, manteniendo una conducción fluida y lo más rápida posible. Para lograrlo, hemos diseñado una función de recompensa que se basa principalmente en la desviación del carril y en la velocidad actual del coche, normalizando y ponderando estos valores según sus respectivos pesos. Sin embargo, si el coche pierde el carril o colisiona, el episodio se detiene y se asigna una recompensa negativa.
 ```python
-if not error: 
-  dev = np.clip(self._dev, -MAX_DEV, MAX_DEV)
-  vel = np.clip(self._speed, 0.0, self._max_vel) 
-  reward = 0.8 * (MAX_DEV - abs(dev)) / MAX_DEV + 0.2 * vel / self._max_vel
-else:
-  reward = -30
+def _calculate_reward(self, error:str):
+  if error == None:
+      # Clip deviation and velocity
+      r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
+      r_vel = np.clip(self._velocity, 0.0, self._max_vel) / self._max_vel
+      reward = 0.8 * r_dev + 0.2 * r_vel
+  else:
+      reward = -30
+
+  return reward
 ```
 
 La pérdida del carril puede deberse a que no se ha detectado una de las líneas, el área es cero o ha habido un cambio de carril, lo que indica que hemos perdido el anterior. Para abordar esta situación, añadiremos una nueva verificación en la función step:
@@ -116,12 +120,10 @@ En las siguiente gráficas, se presenta la información recopilada durante la in
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneDiscrete/inference_cir1.png" alt="">
 </figure>
 
-También hemos realizado pruebas de inferencia en un circuito no visto durente el entrenamiento (circuito 2) y este ha sido el resultado:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gSsCN9tu1wo?si=KVBxspStvVslhd4h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Hemos llevado a cabo pruebas de inferencia en varios circuitos que no se utilizaron durante el entrenamiento (como el circuito 2) y en otros de diferentes ciudades. Estos son los resultados obtenidos:
+
 
 ### CarlaLaneContinuous
-
-- fixed delta mas alto porque no daba tiempo  a evaluar la accion
 
 - aumentado el numero de puntos
 <figure class="align-center" style="max-width: 100%">

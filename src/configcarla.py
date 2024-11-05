@@ -734,24 +734,20 @@ class PID:
 
 def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:float=0.0, 
                 client:carla.Client=None, syn:bool=False):
-    
-    set_delta = False
     if client == None:
         client = carla.Client('localhost', port)
-        set_delta = True
 
     world = client.get_world()
     world = client.load_world(name_world)
 
-    if set_delta:
-        settings = world.get_settings()
-        settings.fixed_delta_seconds = fixed_delta_seconds
-        if syn:
-            settings.synchronous_mode = True
-        else:
-            settings.synchronous_mode = False
-        world.apply_settings(settings)
-        client.reload_world(False) # Reload world keeping settings
+    settings = world.get_settings()
+    settings.fixed_delta_seconds = fixed_delta_seconds
+    if syn:
+        settings.synchronous_mode = True
+    else:
+        settings.synchronous_mode = False
+    world.apply_settings(settings)
+    client.reload_world(False) # Reload world keeping settings
 
     return world, client
 
