@@ -225,6 +225,7 @@ class CarlaBase(gym.Env, ABC):
                 )
                 self._world.set_weather(weather)
 
+        self._map = self._world.get_map()
         self.ego_vehicle = configcarla.add_one_vehicle(world=self._world, ego_vehicle=True, vehicle_type='vehicle.lincoln.mkz_2020',
                                                        transform=self._loc)
         transform = carla.Transform(carla.Location(x=0.5, z=1.7292))
@@ -261,10 +262,14 @@ class CarlaBase(gym.Env, ABC):
                 t.location.y += 7
                 t.location.x -= 5
 
+            # Front vehicle
             self._front_vehicle = configcarla.add_one_vehicle(world=self._world, vehicle_type='vehicle.carlamotors.carlacola',
                                                               transform=t)
+
+            # Set traffic manager
             self._tm = configcarla.traffic_manager(client=self._client, vehicles=[self._front_vehicle], 
                                                    port=7788, speed=self._vel_percentage)
+            self._tm.ignore_lights_percentage(self._front_vehicle, 100)
 
     def _get_obs_env(self):
         left_points, right_points = self._camera.get_lane_points(num_points=self._num_points_lane)
@@ -292,6 +297,37 @@ class CarlaBase(gym.Env, ABC):
         info = {"deviation": self._dev, "velocity": self._velocity}
         return info
     
+    def _func_is_passing_ep(self):
+        # Front vehicle
+        self._vel_front += carla.Vector3D(self._front_vehicle.get_velocity()).length()
+        loc = self._front_vehicle.get_location()
+
+        # Module front vehicle velocity
+        if self._count_steps % 5 == 0:
+            if self._vel_percentage < 95 and self._vel_front > self._target_vel and abs(self._vel_front - self._target_vel) > 1:
+                self._vel_percentage += 1
+                print("reduzco vel, vel front:", self._vel_front, "target:", self._target_vel, "%", self._vel_percentage)
+            elif self._target_vel > self._vel_front and abs(self._target_vel - self._vel_front) > 0.5: 
+                self._vel_percentage -= 1
+                print("aumento vel, vel front:", self._vel_front, "target:", self._target_vel, "%", self._vel_percentage)
+
+            road_id = self._map.get_waypoint(loc, project_to_road=True, lane_type=carla.LaneType.Driving).road_id
+            print("road id:", road_id, "id:", self._id)
+            if self._vel_percentage > 85 and ((road_id == 35 and self._id == 0) or 
+                ((road_id == 1162 or road_id == 23) and self._id == 2) or (1073 == road_id and self._id == 1)):
+                print("retoco")
+                self._vel_percentage = 85
+
+            # Apply velocity
+            self._tm.global_percentage_speed_difference(int(np.clip(self._vel_percentage, 0, 95)))
+
+            # Reset mean vel front
+            self._vel_front = 0
+
+        # Check distance to front car
+        self._dist_laser = self._lidar.get_min_center()
+        assert np.isnan(self._dist_laser) or self._dist_laser > MIN_DIST_LASER, "Distance exceeded: too close to the front car"
+
     def step(self, action:np.ndarray):
         self._count_steps += 1
         terminated = False
@@ -314,25 +350,11 @@ class CarlaBase(gym.Env, ABC):
             self._dev = self._camera.get_deviation()
             self._velocity = carla.Vector3D(self.ego_vehicle.get_velocity()).length()
             self._mean_vel += self._velocity
+            loc = self.ego_vehicle.get_location()
 
+            # Obstacle trainings
             if self._is_passing_ep:
-                # Front vehicle
-                vel_front = carla.Vector3D(self._front_vehicle.get_velocity()).length()
-                target_vel = int(self._velocity)
-                if target_vel == 0:
-                    target_vel = 1
-
-                if vel_front > target_vel and abs(vel_front - target_vel) > 0.5:
-                    self._vel_percentage += 1
-                    self._tm.global_percentage_speed_difference(self._vel_percentage)
-                    print("reduzco vel, vel front:", vel_front, "target vel:", target_vel, "%", self._vel_percentage)
-                elif self._velocity > vel_front and abs(self._velocity - vel_front) > 1.0: 
-                    self._vel_percentage -= 1
-                    self._tm.global_percentage_speed_difference(self._vel_percentage)
-                    print("aumento vel: vel front ", vel_front, "vel ego", self._velocity, "%", self._vel_percentage)
-                
-                self._dist_laser = self._lidar.get_min_center()
-                assert np.isnan(self._dist_laser) or self._dist_laser > MIN_DIST_LASER, "Distance exceeded: too close to the front car"
+                self._func_is_passing_ep()
 
             # Lane change detection
             if abs(self._dev - dev_prev) > 50:
@@ -340,17 +362,16 @@ class CarlaBase(gym.Env, ABC):
                 assert False, "Lost lane: changing lane"
 
             # Check if the episode has finished
-            t = self.ego_vehicle.get_transform()
             if self._id == 0:
-                finish_ep = abs(t.location.x + 7) <= 3 and abs(t.location.y - 55) <= 3
+                finish_ep = abs(loc.x + 7) <= 3 and abs(loc.y - 55) <= 3
             elif self._id == 1 or self._id == 5:
-                finish_ep =  abs(t.location.x + 442) <= 3 and abs(t.location.y - 30) <= 3
+                finish_ep =  abs(loc.x + 442) <= 3 and abs(loc.y - 30) <= 3
             elif self._id == 2:
-                finish_ep = t.location.y > -24.5
+                finish_ep = loc.y > -24.5
             elif self._id == 3:
-                finish_ep = abs(t.location.x - 414) <= 3 and abs(t.location.y + 230) <= 3
+                finish_ep = abs(loc.x - 414) <= 3 and abs(loc.y + 230) <= 3
             else:
-                finish_ep = abs(t.location.x - 165) <= 3 and abs(t.location.y + 208) <= 3
+                finish_ep = abs(loc.x - 165) <= 3 and abs(loc.y + 208) <= 3
             terminated = finish_ep
             
         except AssertionError as e:
@@ -399,6 +420,7 @@ class CarlaBase(gym.Env, ABC):
         self._count = 0
         self._first_step = 0
         self._mean_vel = 0
+        self._dev = 0
 
         if self._first:
             self._first = False
@@ -409,11 +431,24 @@ class CarlaBase(gym.Env, ABC):
                 self._front_vehicle.destroy()
 
         if self._passing:
+            self._vel_front = 0
+
             if self.model != None:
                 self._is_passing_ep = self._exploration_rate <= 0.65
+
+                # Set target vel
+                if self._exploration_rate > 0.4:
+                    self._target_vel = random.uniform(0.9, 1.5)
+                elif self._exploration_rate > 0.3:
+                    self._target_vel = random.uniform(1.5, 2.5)
+                elif self._exploration_rate > 0:
+                    self._target_vel = random.uniform(1.5, 4)
+                else:
+                    self._target_vel = random.uniform(2, 6)
             else:
                 assert self._total_steps > 0, "Total steps is required"
                 self._is_passing_ep = self._count_steps > self._total_steps / 2
+                self._target_vel = 2
 
             self._vel_percentage = 80
         else:
@@ -648,12 +683,12 @@ class CarlaLaneContinuous(CarlaBase):
                          total_steps=total_steps, normalize=normalize, fixed_delta_seconds=fixed_delta_seconds,
                          num_cir=num_cir, config=config)
         
-        self._max_vel = 7
-        self._max_steer = 0.2
+        self._max_vel = 45
 
+        # Add velocity to observations
         new_space = spaces.Box(
             low=0.0,
-            high=20.0,
+            high=60.0,
             shape=(1,),
             dtype=np.float64
         )
@@ -676,7 +711,8 @@ class CarlaLaneContinuous(CarlaBase):
 
     def _create_actions(self):
         # Add brake
-        self.action_space = spaces.Box(low=np.array([0.0, -self._max_steer]), high=np.array([1.0, self._max_steer]),
+        self._max_steer = 0.14
+        self.action_space = spaces.Box(low=np.array([0.0, -self._max_steer]), high=np.array([0.6, self._max_steer]),
                                        shape=(2,), dtype=np.float64)
         
     def _get_control(self, action:np.ndarray):
@@ -691,55 +727,33 @@ class CarlaLaneContinuous(CarlaBase):
     
     def _calculate_reward(self, error:str):
         if error == None:
-            # Deviation normalization
+            # Deviation and steer normalization
             r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
-            
-            # Steer conversion
-            if abs(self._steer) > 0.14:
-                r_steer = 0
-            else:
-                r_steer = -50/7 * abs(self._steer) + 1
+            r_steer = -50/7 * abs(self._steer) + 1
 
             # Throttle conversion
-            if self._velocity > self._max_vel or self._throttle < 0.1 or self._throttle >= 0.6:
-                r_throttle = 0
-                '''
-                elif self._velocity > self._max_vel:
-                    r_throttle = -2 * self._throttle + 1.2
-                '''
+            if self._velocity > self._max_vel:
+                r_throttle = -5/3 * self._throttle + 1
             else:
-                r_throttle = 2 * self._throttle - 0.2
+                r_throttle = 5/3 * self._throttle
 
-            if r_steer == 0 and r_throttle == 0:
+            # Set weights
+            if self._velocity > self._max_vel:
                 w_dev = 0.1
-                w_throttle = 0.45
-                w_steer = 0.45
-            elif r_steer == 0:
-                w_dev = 0.1
-                w_throttle = 0.1
-                w_steer = 0.8
-            elif r_throttle == 0:
-                w_dev = 0.1
-                w_throttle = 0.8
-                w_steer = 0.1
-                '''
-                elif self._velocity > self._max_vel:
-                    w_dev = 0.25
-                    w_throttle = 0.5
-                    w_steer = 0.25
-                '''
-            elif self._throttle >= 0.1 and self._throttle <= 0.4:
-                w_dev = 0.65
+                w_throttle = 0.65
+                w_steer = 0.25
+            elif self._throttle < 0.5:
+                w_dev = 0.7
                 w_throttle = 0.25
-                w_steer = 0.1 # Lower accelerations, penalize large turns less
-            else:
-                w_dev = 0.75
-                w_throttle = 0
+                w_steer = 0.05 # Lower accelerations, penalize large turns less
+            else: # [0.5, 0.6) throttle
+                w_dev = 0.5
+                w_throttle = 0.15
                 w_steer = 0.25
 
             reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer
         else:
-            reward = -35
+            reward = -40
 
         return reward
     
