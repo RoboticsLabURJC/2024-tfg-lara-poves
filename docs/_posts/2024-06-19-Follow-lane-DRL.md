@@ -24,7 +24,7 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 
 Para aumentar los frames por segundo y reducir el tiempo de entrenamiento, hemos desactivado la segmentación. Hemos creado tres entornos de Gym que principalmente difieren en la función de recompensa y el espacio de acciones, lo cual determina el tipo de algoritmo que utilizaremos para entrenar. Emplearemos modelos predefinidos de la librería *stable-baselines3*, como se detalló en el apartado anterior.
 
-A continuación, se muestra el mapa que define los circuitos disponibles en nuestro entorno. El **circuito 0** está compuesto por 3 rutas, las cuales utilizamos para **entrenar** nuestro modelo. La ruta en la que se lleva a cabo cada episodio se elige de manera aleatoria. Cada una de estas rutas comienza en una dirección distinta: curva a la derecha, recto y curva a la izquierda, con el fin de evitar el *overfitting* del modelo.
+A continuación, se muestra el mapa que define los circuitos disponibles en nuestro entorno en el *Town04*. El **circuito 0** está compuesto por 3 rutas, las cuales utilizamos para **entrenar** nuestro modelo. La ruta en la que se lleva a cabo cada episodio se elige de manera aleatoria. Cada una de estas rutas comienza en una dirección distinta: curva a la derecha, recto y curva a la izquierda, con el fin de evitar el *overfitting* del modelo.
 
 Por otro lado, los **circuitos 1 y 2** disponen de una sola ruta cada uno. Estos se utilizan para la fase de **inferencia** para la evaluación del modelo. El circuito 1 corresponde a un recorrido que el modelo ha visto durante el entrenamiento, mientras que el circuito 2 es completamente nuevo, lo que nos permite evaluar el rendimiento del modelo en un escenario desconocido.
 <figure class="align-center" style="max-width: 100%">
@@ -93,7 +93,7 @@ self._dev = self._camera.get_deviation()
 assert abs(self._dev - dev_prev) <= 5, "Lost lane: changing lane"
 ```
 
-Para entrenar, hemos utilizado un *fixed_delta_seconds* de 50ms, lo que equivale a entrenar a 20 FPS. Por lo tanto, en la fase de inferencia, necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de 1 día y un par de horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionaron los mejores resultados:
+Para entrenar, hemos utilizado un *fixed_delta_seconds* de **50ms**, lo que equivale a entrenar a **20 FPS**. Por lo tanto, en la fase de inferencia, necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de 1 día y un par de horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionaron los mejores resultados:
 ```yaml
 learning_rate: 0.0005
 buffer_size: 20_000
@@ -120,12 +120,19 @@ En las siguiente gráficas, se presenta la información recopilada durante la in
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneDiscrete/inference_cir1.png" alt="">
 </figure>
 
-Hemos llevado a cabo pruebas de inferencia en varios circuitos que no se utilizaron durante el entrenamiento (como el circuito 2) y en otros de diferentes ciudades. Estos son los resultados obtenidos:
-
+Hemos llevado a cabo pruebas de inferencia en varios circuitos que no se utilizaron durante el entrenamiento (como el circuito 2) y en otros de diferentes ciudades (*Town03* y **). Estos son los resultados obtenidos:
 
 ### CarlaLaneContinuous
 
+- seguimos utilizando un fixed delta de 50ms, 20 FPS
 - aumentado el numero de puntos
-<figure class="align-center" style="max-width: 100%">
+- espacio de acciones continuo + definicon
+- cambios en las observaciones:
+  <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneContinuous/lane10.png" alt="">
 </figure>
+  - hemos añadido la velocidad al espacio de acciones para que pueda entender bien la funcion recompensa
+- funcon recompensa
+- training + parametros
+- inferencia cir 1: video + grafico
+- inferencia otros circuitos

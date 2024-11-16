@@ -25,8 +25,7 @@ alg_callable = {
 env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
-    'CarlaLane': environment.CarlaLane,
-    'CarlaObstacleDiscrete': environment.CarlaObstacleDiscrete
+    'CarlaObstacle': environment.CarlaObstacle, 
 }
 
 def check_dir(dir:str, env:str):

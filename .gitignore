@@ -5,3 +5,4 @@ src/deepRL/__pycache__/*
 src/deepRL/models.txt
 src/deepRL/csv/actions/*
 src/deepRL/log/*
+src/prueba*

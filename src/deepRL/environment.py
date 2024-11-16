@@ -20,7 +20,6 @@ import configcarla
 MAX_DEV = 100
 MAX_DIST_LASER = 10
 MIN_DIST_LASER = 4
-MAX_DIST_LASER_ALLOWED = 7
 FREC_PASSING = 3
 
 CIRCUIT_CONFIG = {
@@ -43,7 +42,7 @@ CIRCUIT_CONFIG = {
 class CarlaBase(gym.Env, ABC):
     def __init__(self, human:bool, train:bool, config:list, alg:str=None, port:int=2000, num_points:int=5,
                  passing:bool=False, fixed_delta_seconds:float=0.0, normalize:bool=False,
-                 seed:int=None, num_cir:int=0, total_steps:int=0):
+                 seed:int=None, num_cir:int=0, start_passing=1000):
         self._first = True
         self._dev = 0
         self._dist_laser = MAX_DIST_LASER
@@ -58,8 +57,8 @@ class CarlaBase(gym.Env, ABC):
         self._passing = passing
         self._front_vehicle = None
         self._exploration_rate = 1.0
-        self._total_steps = total_steps
         self._vel_percentage = 80
+        self._start_passing = start_passing
 
         if passing and num_cir > 1:
             assert True, "No passing mode available for circuit " + str(num_cir) 
@@ -329,7 +328,6 @@ class CarlaBase(gym.Env, ABC):
         assert np.isnan(self._dist_laser) or self._dist_laser > MIN_DIST_LASER, "Distance exceeded: too close to the front car"
 
     def step(self, action:np.ndarray):
-        self._count_steps += 1
         terminated = False
         finish_ep = False
         error = None
@@ -342,7 +340,8 @@ class CarlaBase(gym.Env, ABC):
 
         try:
             # Update data
-            self._world.tick()
+            if self._train:
+                self._world.tick()
             self._sensors.update_data()
 
             # Get deviation and velocity
@@ -432,7 +431,10 @@ class CarlaBase(gym.Env, ABC):
 
         if self._passing:
             self._vel_front = 0
+            self._is_passing_ep = self._count_ep > self._start_passing 
+            self._target_vel = random.uniform(10, 15)
 
+            '''
             if self.model != None:
                 self._is_passing_ep = self._exploration_rate <= 0.65
 
@@ -445,10 +447,9 @@ class CarlaBase(gym.Env, ABC):
                     self._target_vel = random.uniform(1.5, 4)
                 else:
                     self._target_vel = random.uniform(2, 6)
+                self._target_vel += 2
             else:
-                assert self._total_steps > 0, "Total steps is required"
-                self._is_passing_ep = self._count_steps > self._total_steps / 2
-                self._target_vel = 2
+            '''
 
             self._vel_percentage = 80
         else:
@@ -458,7 +459,8 @@ class CarlaBase(gym.Env, ABC):
 
         while True:
             try:
-                self._world.tick()
+                if self._train:
+                    self._world.tick()
                 self._sensors.update_data()
 
                 if self._camera.data != None:
@@ -555,7 +557,7 @@ class CarlaLaneDiscrete(CarlaBase):
             reward = -30
 
         return reward
-    
+'''  
 class CarlaObstacleDiscrete(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, total_steps:int=0):
@@ -667,10 +669,11 @@ class CarlaObstacleDiscrete(CarlaBase):
                 reward = -30
 
         return reward
-    
+   '''
+
 class CarlaLaneContinuous(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, total_steps:int=0):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
         if train and human:
             human = False
             print("Warning: Can't activate human mode during training")
@@ -680,7 +683,7 @@ class CarlaLaneContinuous(CarlaBase):
         config = CIRCUIT_CONFIG.get(num_cir, [])
 
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
-                         total_steps=total_steps, normalize=normalize, fixed_delta_seconds=fixed_delta_seconds,
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds,
                          num_cir=num_cir, config=config)
         
         self._max_vel = 45
@@ -711,8 +714,8 @@ class CarlaLaneContinuous(CarlaBase):
 
     def _create_actions(self):
         # Add brake
-        self._max_steer = 0.14
-        self.action_space = spaces.Box(low=np.array([0.0, -self._max_steer]), high=np.array([0.6, self._max_steer]),
+        self._max_steer = 0.2
+        self.action_space = spaces.Box(low=np.array([0.0, -self._max_steer]), high=np.array([1.0, self._max_steer]),
                                        shape=(2,), dtype=np.float64)
         
     def _get_control(self, action:np.ndarray):
@@ -727,27 +730,42 @@ class CarlaLaneContinuous(CarlaBase):
     
     def _calculate_reward(self, error:str):
         if error == None:
-            # Deviation and steer normalization
+            # Deviation normalization
             r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
-            r_steer = -50/7 * abs(self._steer) + 1
+            
+            # Steer conversion
+            if abs(self._steer) > 0.14:
+                r_steer = 0
+            else:
+                r_steer = -50/7 * abs(self._steer) + 1
 
             # Throttle conversion
+            if self._throttle >= 0.6:
+                r_throttle = 0
             if self._velocity > self._max_vel:
                 r_throttle = -5/3 * self._throttle + 1
             else:
                 r_throttle = 5/3 * self._throttle
 
             # Set weights
-            if self._velocity > self._max_vel:
+            if r_steer == 0:
+                w_dev = 0.1
+                w_throttle = 0.1
+                w_steer = 0.8
+            elif r_throttle == 0:
+                w_dev = 0.1
+                w_throttle = 0.8
+                w_steer = 0.1
+            elif self._velocity > self._max_vel:
                 w_dev = 0.1
                 w_throttle = 0.65
                 w_steer = 0.25
             elif self._throttle < 0.5:
-                w_dev = 0.7
+                w_dev = 0.65
                 w_throttle = 0.25
-                w_steer = 0.05 # Lower accelerations, penalize large turns less
+                w_steer = 0.1 # Lower accelerations, penalize large turns less
             else: # [0.5, 0.6) throttle
-                w_dev = 0.5
+                w_dev = 0.6
                 w_throttle = 0.15
                 w_steer = 0.25
 
@@ -757,47 +775,150 @@ class CarlaLaneContinuous(CarlaBase):
 
         return reward
     
-class CarlaLane(CarlaBase):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, total_steps:int=0,
+    
+class CarlaObstacle(CarlaBase):
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
         if train and human:
             human = False
             print("Warning: Can't activate human mode during training")
 
-        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, total_steps=total_steps,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
+        if train:
+            num_cir = 0
+        config = CIRCUIT_CONFIG.get(num_cir, [])
+
+        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds,
+                         num_cir=num_cir, config=config, passing=True, start_passing=1250)
         
-        self._max_vel = 10
-        self._penalty_lane = -30
-        
+        self._max_vel = 30
+
+        # Add velocity to observations
+        new_space = spaces.Box(
+            low=0.0,
+            high=60.0,
+            shape=(1,),
+            dtype=np.float64
+        )
+
+        # Add laser front distance to observations
+        new_space = spaces.Box(
+            low=MIN_DIST_LASER - 1.0,
+            high=MAX_DIST_LASER,
+            shape=(1,),
+            dtype=np.float64
+        )
+
+        if not normalize:
+            self.observation_space["velocity"] = new_space
+            self.observation_space["laser"] = new_space
+        else:
+            self._obs_norm["velocity"] = new_space
+            self.observation_space["velocity"] =  spaces.Box(
+                low=0.0,
+                high=1.0,
+                shape=(1,),
+                dtype=np.float64
+            )
+
+            self._obs_norm["laser"] = new_space
+            self.observation_space["laser"] =  spaces.Box(
+                low=0.0,
+                high=1.0,
+                shape=(1,),
+                dtype=np.float64
+            )
+
+    def _get_obs_env(self):
+        obs = super()._get_obs_env()
+        obs["velocity"] = self._velocity
+
+        if not self._is_passing_ep or np.isnan(self._dist_laser):
+            obs["laser"] = MAX_DIST_LASER
+        else:
+            obs["laser"] = self._dist_laser
+
+        return obs
+
     def _create_actions(self):
         # Add brake
-        self.action_space = spaces.Box(low=np.array([0.0, -0.3, 0.0]), high=np.array([1.0, 0.3, 1.0]),
-                                       shape=(3,), dtype=np.float64)
+        self._max_steer = 0.2
+        self.action_space = spaces.Box(low=np.array([0.0, -self._max_steer]), high=np.array([1.0, self._max_steer]),
+                                       shape=(2,), dtype=np.float64)
         
     def _get_control(self, action:np.ndarray):
         assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
-        self._throttle, steer, brake = action
-
+        self._throttle, self._steer = action
+        
         control = carla.VehicleControl()
-        control.steer = steer 
+        control.steer = self._steer 
         control.throttle = self._throttle
-        control.brake = brake
 
         return control
     
-    def _calculate_reward(self):
-        # Clip deviation and velocity
-        dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
-        vel = np.clip(self._velocity, 0.0, self._max_vel)
+    def _calculate_reward(self, error:str):
+        if error == None:
+            # Deviation normalization
+            r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
+            
+            # Steer conversion
+            if abs(self._steer) > 0.14:
+                r_steer = 0
+            else:
+                r_steer = -50/7 * abs(self._steer) + 1
 
-        if vel > 5:
-            if self._throttle > 0.5:
-                vel = 0
-            reward = 0.90 * dev + 0.1 * vel / self._max_vel
+            # Throttle conversion
+            if self._throttle >= 0.6:
+                r_throttle = 0
+            if self._velocity > self._max_vel:
+                r_throttle = -5/3 * self._throttle + 1
+            else:
+                r_throttle = 5/3 * self._throttle
+
+            # Laser conversion
+            if self._is_passing_ep and not np.isnan(self._dist_laser):
+                r_laser = np.clip(self._dist_laser, MIN_DIST_LASER, MAX_DIST_LASER) - MIN_DIST_LASER
+                r_laser /= (MAX_DIST_LASER - MIN_DIST_LASER)
+            else:
+                r_laser = 0
+
+            # Set weights
+            if r_steer == 0:
+                w_dev = 0.1
+                w_throttle = 0.1
+                w_steer = 0.8
+                w_laser = 0
+            elif r_throttle == 0:
+                w_dev = 0.1
+                w_throttle = 0.8
+                w_steer = 0.1
+                w_laser = 0
+            elif self._velocity > self._max_vel:
+                w_dev = 0.1
+                w_throttle = 0.65
+                w_steer = 0.25
+                w_laser = 0
+            elif r_laser != 0: # See vehicle front
+                w_dev = 0.35
+                w_throttle = 0
+                w_steer = 0.1
+                w_laser = 0.55
+            elif self._throttle < 0.5:
+                w_dev = 0.65
+                w_throttle = 0.25
+                w_steer = 0.1 # Lower accelerations, penalize large turns less
+                w_laser = 0
+            else: # [0.5, 0.6) throttle
+                w_dev = 0.6
+                w_throttle = 0.15
+                w_steer = 0.25
+                w_laser = 0
+
+            reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + r_laser * w_laser
         else:
-            if self._throttle < 0.2:
-                vel = 0
-            reward = 0.7 * dev + 0.3 * vel / self._max_vel
+            if "Distance" in error:
+                reward = -60
+            else:
+                reward = -40
 
         return reward
