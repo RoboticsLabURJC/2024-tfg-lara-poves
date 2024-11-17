@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-10-16T12:40:00
+last_modified_at: 2024-11-17T18:21:00
 categories:
   - Blog
 tags:
@@ -120,9 +120,12 @@ En las siguiente gráficas, se presenta la información recopilada durante la in
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneDiscrete/inference_cir1.png" alt="">
 </figure>
 
-Hemos llevado a cabo pruebas de inferencia en varios circuitos que no se utilizaron durante el entrenamiento (como el circuito 2) y en otros de diferentes ciudades (*Town03* y **). Estos son los resultados obtenidos:
-
 ### CarlaLaneContinuous
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_8V6v4zSf14?si=V4thqUEbBVT_WE6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+También hemos llevado a cabo pruebas en inferencia en varios circuitos que no se utilizaron durante el entrenamiento (como el circuito 2) y en otros de diferentes ciudades (*Town03* y *Town06*). Estos son los resultados obtenidos:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xwGdEURKPKQ?si=JB-aRyLaUJRMx_q6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - seguimos utilizando un fixed delta de 50ms, 20 FPS
 - aumentado el numero de puntos

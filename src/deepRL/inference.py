@@ -62,7 +62,7 @@ def main(args):
                 throttle, steer = action
             else:
                 throttle, steer, brake = action
-            print(throttle, steer)
+            print("Throttle:", throttle, "\t||\tsteer:", steer)
 
             obs, reward, terminated, truncated, info = env.step(action)
 
@@ -126,7 +126,7 @@ if __name__ == "__main__":
         type=int, 
         required=False, 
         default=0,
-        choices=[0, 1, 2, 3],
+        choices=[0, 1, 2, 3, 4],
         help='Number of the circuit for the enviroment. By default 0.'
     )
 

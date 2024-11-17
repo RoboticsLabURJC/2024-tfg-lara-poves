@@ -36,6 +36,9 @@ CIRCUIT_CONFIG = {
     ],
     3: [
         {"id": 4, "town": "Town03", "location": carla.Transform(carla.Location(x=114, y=207.3, z=1.7))}
+    ],
+    4: [
+        {"id": 6, "town": "Town06", "location": carla.Transform(carla.Location(x=457.83, y=244.7, z=0.1))}
     ]
 }
 
@@ -267,7 +270,7 @@ class CarlaBase(gym.Env, ABC):
 
             # Set traffic manager
             self._tm = configcarla.traffic_manager(client=self._client, vehicles=[self._front_vehicle], 
-                                                   port=7788, speed=self._vel_percentage)
+                                                   port=7788, speed=random.randint(40, 50))
             self._tm.ignore_lights_percentage(self._front_vehicle, 100)
 
     def _get_obs_env(self):
@@ -295,12 +298,13 @@ class CarlaBase(gym.Env, ABC):
     def _get_info(self):
         info = {"deviation": self._dev, "velocity": self._velocity}
         return info
-    
+    '''   
     def _func_is_passing_ep(self):
         # Front vehicle
         self._vel_front += carla.Vector3D(self._front_vehicle.get_velocity()).length()
         loc = self._front_vehicle.get_location()
 
+        
         # Module front vehicle velocity
         if self._count_steps % 5 == 0:
             if self._vel_percentage < 95 and self._vel_front > self._target_vel and abs(self._vel_front - self._target_vel) > 1:
@@ -322,11 +326,11 @@ class CarlaBase(gym.Env, ABC):
 
             # Reset mean vel front
             self._vel_front = 0
-
+        
         # Check distance to front car
         self._dist_laser = self._lidar.get_min_center()
         assert np.isnan(self._dist_laser) or self._dist_laser > MIN_DIST_LASER, "Distance exceeded: too close to the front car"
-
+    '''
     def step(self, action:np.ndarray):
         terminated = False
         finish_ep = False
@@ -353,7 +357,9 @@ class CarlaBase(gym.Env, ABC):
 
             # Obstacle trainings
             if self._is_passing_ep:
-                self._func_is_passing_ep()
+                # Check distance to front car
+                self._dist_laser = self._lidar.get_min_center()
+                assert np.isnan(self._dist_laser) or self._dist_laser > MIN_DIST_LASER, "Distance exceeded"
 
             # Lane change detection
             if abs(self._dev - dev_prev) > 50:
@@ -369,6 +375,8 @@ class CarlaBase(gym.Env, ABC):
                 finish_ep = loc.y > -24.5
             elif self._id == 3:
                 finish_ep = abs(loc.x - 414) <= 3 and abs(loc.y + 230) <= 3
+            elif self._id == 6:
+                finish_ep = abs(loc.x - 663) < 3 and abs(loc.y - 169) < 3
             else:
                 finish_ep = abs(loc.x - 165) <= 3 and abs(loc.y + 208) <= 3
             terminated = finish_ep
@@ -450,8 +458,6 @@ class CarlaBase(gym.Env, ABC):
                 self._target_vel += 2
             else:
             '''
-
-            self._vel_percentage = 80
         else:
             self._is_passing_ep = False
 
@@ -500,13 +506,13 @@ class CarlaBase(gym.Env, ABC):
 
 class CarlaLaneDiscrete(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0, 
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, total_steps:int=0):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
         if train:
             num_cir = 0
         config = CIRCUIT_CONFIG.get(num_cir, CIRCUIT_CONFIG[0])
 
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_cir=num_cir, config=config,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, total_steps=total_steps)
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
         
         self._max_vel = 15
 
@@ -774,8 +780,7 @@ class CarlaLaneContinuous(CarlaBase):
             reward = -40
 
         return reward
-    
-    
+     
 class CarlaObstacle(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
