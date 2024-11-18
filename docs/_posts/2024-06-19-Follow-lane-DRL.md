@@ -146,16 +146,16 @@ La función recompensa sigue el siguiente esquema:
 2. **Normalización lineal de elementos**  
   Si no hay errores, se normalizan los elementos de los que depende la recompensa:
   - **Desviación**:  
-    - Se limita el valor de la desviación al rango [-100, 100].  
-    - Se normaliza inversamente, donde una desviación de 0 tiene la mayor recompensa.  
+      - Se limita el valor de la desviación al rango [-100, 100].  
+      - Se normaliza inversamente, donde una desviación de 0 tiene la mayor recompensa.  
   - **Giro**:  
-    - Para giros bruscos, la recompensa es nula.  
-    - Para giros no bruscos, se normaliza inversamente considerando el rango [-0.14, 0.14], menores giros mayor recompensa.  
+      - Para giros bruscos, la recompensa es nula.  
+      - Para giros no bruscos, se normaliza inversamente considerando el rango [-0.14, 0.14], menores giros mayor recompensa.  
   - **Acelerador**:  
-    - Si las aceleraciones son bruscas [0.6, 1.0], la recompensa es nula.  
-    - Para aceleraciones no bruscas [0.0, 0.6):  
-      - Si se supera la velocidad máxima, se normaliza inversamente (aceleración 0 tiene mayor recompensa).  
-      - En caso contrario, se normaliza de forma que mayores aceleraciones otorgan mayor recompensa.  
+      - Si las aceleraciones son bruscas [0.6, 1.0], la recompensa es nula.  
+      - Para aceleraciones no bruscas [0.0, 0.6):  
+          - Si se supera la velocidad máxima, se normaliza inversamente (aceleración 0 tiene mayor recompensa).  
+          - En caso contrario, se normaliza de forma que mayores aceleraciones otorgan mayor recompensa.  
 
 3. **Asignación de pesos a los elementos**  
   Finalmente, se define el peso de cada elemento en la recompensa según los siguientes criterios:
