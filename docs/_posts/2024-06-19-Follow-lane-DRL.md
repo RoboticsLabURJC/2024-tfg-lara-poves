@@ -122,20 +122,124 @@ En las siguiente gráficas, se presenta la información recopilada durante la in
 
 ### CarlaLaneContinuous
 
+Como hemos comprobado con DQN, el espacio de acciones está restringido. Para conseguir un mejor comportamiento y mayor velocidad, debemos utilizar un algoritmo que permita un **espacio de acciones continuo**, como **PPO**. Seguiremos controlando dos elementos: el acelerador y el giro. Permitimos el rango completo para el acelerador (0-1) y limitamos el rango del giro a (-0.2, 0.2):
+```python
+self._max_steer = 0.2
+self.action_space = spaces.Box(
+    low=np.array([0.0, -self._max_steer]),
+    high=np.array([1.0, self._max_steer]),
+    shape=(2,),
+    dtype=np.float64
+)
+```
+
+Para los entrenamientos seguimos utilizando un fixed delta de 50ms (20 FPS), pero hemos introducido cambios en las observaciones:
+- Hemos añadido la velocidad actual del vehículo al espacio de observaciones para que pueda entender mejor la función recompensa.
+- En lugar de 5 puntos de cada línea del carril, ahora son 10.
+<figure class="align-center" style="max-width: 100%"> <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneContinuous/lane10.png" alt=""> </figure>
+
+La función recompensa sigue el siguiente esquema:
+
+1. **Comprobación de errores**  
+  Primero se verifica si ha ocurrido un error, como pérdida del carril o choque contra elementos de la carretera. Si ocurre, se finaliza el episodio y se asigna una recompensa negativa.
+
+2. **Normalización lineal de elementos**  
+  Si no hay errores, se normalizan los elementos de los que depende la recompensa:
+  - **Desviación**:  
+    - Se limita el valor de la desviación al rango [-100, 100].  
+    - Se normaliza inversamente, donde una desviación de 0 tiene la mayor recompensa.  
+  - **Giro**:  
+    - Para giros bruscos, la recompensa es nula.  
+    - Para giros no bruscos, se normaliza inversamente considerando el rango [-0.14, 0.14], menores giros mayor recompensa.  
+  - **Acelerador**:  
+    - Si las aceleraciones son bruscas [0.6, 1.0], la recompensa es nula.  
+    - Para aceleraciones no bruscas [0.0, 0.6):  
+      - Si se supera la velocidad máxima, se normaliza inversamente (aceleración 0 tiene mayor recompensa).  
+      - En caso contrario, se normaliza de forma que mayores aceleraciones otorgan mayor recompensa.  
+
+3. **Asignación de pesos a los elementos**  
+  Finalmente, se define el peso de cada elemento en la recompensa según los siguientes criterios:
+  - Si el giro o el acelerador son bruscos, tienen un peso muy elevado en la recompensa, mientras que los otros dos elementos tienen un peso mucho menor.
+  - Si se supera la velocidad máxima, el acelerador tiene mayor peso para intentar frenar, penalizando también el giro debido a la alta velocidad.
+  - Si el acelerador es bajo [0.0, 0.5), se penalizan menos los giros grandes, facilitando las curvas al reducir la velocidad.
+  - Si el acelerador está en un rango alto [0.5, 0.6), se penalizan más los giros bruscos, enfocándose en zonas rectas o con giros leves.
+
+```python
+if error == None:
+    # Deviation normalization
+    r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
+    
+    # Steer conversion
+    if abs(self._steer) > 0.14: # sharp turns
+        r_steer = 0
+    else:
+        r_steer = -50/7 * abs(self._steer) + 1
+
+    # Throttle conversion
+    if self._throttle >= 0.6: # sharp throttle
+        r_throttle = 0
+    if self._velocity > self._max_vel:
+        r_throttle = -5/3 * self._throttle + 1
+    else:
+        r_throttle = 5/3 * self._throttle
+
+    # Set weights
+    if r_steer == 0:
+        w_dev = 0.1
+        w_throttle = 0.1
+        w_steer = 0.8
+    elif r_throttle == 0:
+        w_dev = 0.1
+        w_throttle = 0.8
+        w_steer = 0.1
+    elif self._velocity > self._max_vel:
+        w_dev = 0.1
+        w_throttle = 0.65
+        w_steer = 0.25
+    elif self._throttle < 0.5:
+        w_dev = 0.65
+        w_throttle = 0.25
+        w_steer = 0.1 # Lower accelerations, penalize large turns less
+    else: # [0.5, 0.6) throttle
+        w_dev = 0.6
+        w_throttle = 0.15
+        w_steer = 0.25
+
+    reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer
+else:
+    reward = -40
+
+return reward
+```
+
+**Parémetros de entrenamiento**
+
+Al igual que en el entrenamiento anterior, el parámetro n_steps fue clave. Además, el batch_size también tuvo un gran impacto: inicialmente, con valores bajos no lograba converger. Por último, el coeficiente de entropía fue fundamental, ya que con valores bajos siempre aprendía las acciones límite y con valores altos no llegaba a converger.
+
+```yaml
+policy: "MultiInputPolicy"
+learning_rate: 0.0001
+gamma: 0.85
+gae_lambda: 0.9 
+n_steps: 512 # The number of steps to run for each environment per update
+batch_size: 1024 
+ent_coef: 0.1 # β
+clip_range: 0.15 
+n_timesteps: 4_000_000
+```
+
+Vemos cómo finalmente el entrenamiento converge con pocos episodios y de forma óptima.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneContinuous/train.png" alt="">
+</figure>
+
+En **inferencia** obtenemos muy buenos resultados, alcanzando grandes velocidades, superiores a 20 m/s. Finalmente, el modelo elige aceleraciones solo en el rango [0.5, 0.6) combinadas con giros sutiles. De este modo, se consigue seguir el carril de forma óptima y con una conducción suave. Cabe destacar que, si eliminamos la parte del rango bajo del acelerador ([0.0, 0.5)) en la función recompensa, unificando ambos rangos en uno con los mismos pesos, el entrenamiento no logra converger, aunque al final siempre seleccione el último rango.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneContinuous/inference.png" alt="">
+</figure>
+
+Este es el resultado del entrenamiento en un circuito visto durante el entrenamiento:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_8V6v4zSf14?si=V4thqUEbBVT_WE6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 También hemos llevado a cabo pruebas en inferencia en varios circuitos que no se utilizaron durante el entrenamiento (como el circuito 2) y en otros de diferentes ciudades (*Town03* y *Town06*). Estos son los resultados obtenidos:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xwGdEURKPKQ?si=JB-aRyLaUJRMx_q6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-- seguimos utilizando un fixed delta de 50ms, 20 FPS
-- aumentado el numero de puntos
-- espacio de acciones continuo + definicon
-- cambios en las observaciones:
-  <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneContinuous/lane10.png" alt="">
-</figure>
-  - hemos añadido la velocidad al espacio de acciones para que pueda entender bien la funcion recompensa
-- funcon recompensa
-- training + parametros
-- inferencia cir 1: video + grafico
-- inferencia otros circuitos

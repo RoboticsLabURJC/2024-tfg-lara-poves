@@ -470,7 +470,15 @@ class CarlaBase(gym.Env, ABC):
                 self._sensors.update_data()
 
                 if self._camera.data != None:
-                    break 
+                    if not self._is_passing_ep or self._id > 2:
+                        break 
+                    else:
+                        loc = self._front_vehicle.get_location()
+                        road_id = self._map.get_waypoint(loc, project_to_road=True, lane_type=carla.LaneType.Driving).road_id
+                        print("anaza coche front")
+                        
+                        if (road_id != 1162 and road_id != 23 and self._id == 2) or (1073 != road_id and self._id == 1) or  (road_id != 35 and self._id == 0):
+                            break
 
                 # Reset info
                 self._dev = self._camera.get_deviation()
@@ -794,12 +802,12 @@ class CarlaObstacle(CarlaBase):
 
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds,
-                         num_cir=num_cir, config=config, passing=True, start_passing=1250)
+                         num_cir=num_cir, config=config, passing=False, start_passing=1300) 
         
-        self._max_vel = 30
+        self._max_vel = 45
 
         # Add velocity to observations
-        new_space = spaces.Box(
+        new_space_vel = spaces.Box(
             low=0.0,
             high=60.0,
             shape=(1,),
@@ -807,7 +815,7 @@ class CarlaObstacle(CarlaBase):
         )
 
         # Add laser front distance to observations
-        new_space = spaces.Box(
+        new_space_laser = spaces.Box(
             low=MIN_DIST_LASER - 1.0,
             high=MAX_DIST_LASER,
             shape=(1,),
@@ -815,10 +823,10 @@ class CarlaObstacle(CarlaBase):
         )
 
         if not normalize:
-            self.observation_space["velocity"] = new_space
-            self.observation_space["laser"] = new_space
+            self.observation_space["velocity"] = new_space_vel
+            self.observation_space["laser"] = new_space_laser
         else:
-            self._obs_norm["velocity"] = new_space
+            self._obs_norm["velocity"] = new_space_vel
             self.observation_space["velocity"] =  spaces.Box(
                 low=0.0,
                 high=1.0,
@@ -826,7 +834,7 @@ class CarlaObstacle(CarlaBase):
                 dtype=np.float64
             )
 
-            self._obs_norm["laser"] = new_space
+            self._obs_norm["laser"] = new_space_laser
             self.observation_space["laser"] =  spaces.Box(
                 low=0.0,
                 high=1.0,
@@ -846,7 +854,6 @@ class CarlaObstacle(CarlaBase):
         return obs
 
     def _create_actions(self):
-        # Add brake
         self._max_steer = 0.2
         self.action_space = spaces.Box(low=np.array([0.0, -self._max_steer]), high=np.array([1.0, self._max_steer]),
                                        shape=(2,), dtype=np.float64)
@@ -904,6 +911,7 @@ class CarlaObstacle(CarlaBase):
                 w_steer = 0.25
                 w_laser = 0
             elif r_laser != 0: # See vehicle front
+                print("reward lser")
                 w_dev = 0.35
                 w_throttle = 0
                 w_steer = 0.1
