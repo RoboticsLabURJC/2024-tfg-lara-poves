@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-11-17T18:21:00
+last_modified_at: 2024-11-18T22:47:00
 categories:
   - Blog
 tags:
@@ -178,7 +178,7 @@ if error == None:
     # Throttle conversion
     if self._throttle >= 0.6: # sharp throttle
         r_throttle = 0
-    if self._velocity > self._max_vel:
+    elif self._velocity > self._max_vel:
         r_throttle = -5/3 * self._throttle + 1
     else:
         r_throttle = 5/3 * self._throttle

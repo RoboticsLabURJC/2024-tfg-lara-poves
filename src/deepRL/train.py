@@ -39,23 +39,6 @@ def check_dir(dir:str, env:str):
     return dir
 
 def main(args):
-    # Get hyperparams
-    config_path = PATH + '2024-tfg-lara-poves/src/deepRL/' + 'config/' + args.env + '.yml'
-    with open(config_path, 'r') as f:
-        config = yaml.safe_load(f)
-    
-    try:
-        model_params = config[args.alg]
-    except KeyError:
-        print("Algorithm", args.alg, "is not available for environment", args.env)
-        exit(1)
-
-    # Extract compulsory params
-    n_timesteps = model_params['n_timesteps']
-    model_params.pop('n_timesteps', None)
-    policy = model_params['policy']
-    model_params.pop('policy', None)
-
     alg_class = alg_callable[args.alg]
     env_class = env_callable[args.env]
 
@@ -66,16 +49,44 @@ def main(args):
 
     if args.alg != 'DQN':
         env = make_vec_env(lambda: env_class(train=True, fixed_delta_seconds=args.delta, human=args.human,
-                                             port=args.port, alg=args.alg, normalize=True, seed=SEED), n_envs=1)
+                                             retrain=args.n > 0, port=args.port, alg=args.alg, 
+                                             normalize=True, seed=SEED), n_envs=1)
     else:
         env = env_class(train=True, fixed_delta_seconds=args.delta, human=args.human, port=args.port,
-                        alg=args.alg, normalize=True, seed=SEED)
+                        alg=args.alg, normalize=True, seed=SEED, retrain=args.n > 0)
 
-    model = alg_class(policy, env, verbose=args.verbose, seed=SEED, tensorboard_log=log_dir, **model_params)
+    if args.n < 0:
+        # Get hyperparams
+        config_path = PATH + '2024-tfg-lara-poves/src/deepRL/' + 'config/' + args.env + '.yml'
+        with open(config_path, 'r') as f:
+            config = yaml.safe_load(f)
+        try:
+            model_params = config[args.alg]
+        except KeyError:
+            print("Algorithm", args.alg, "is not available for environment", args.env)
+            exit(1)
+
+        # Extract compulsory params
+        n_timesteps = model_params['n_timesteps']
+        model_params.pop('n_timesteps', None)
+        policy = model_params['policy']
+        model_params.pop('policy', None)
+
+        model = alg_class(policy, env, verbose=args.verbose, seed=SEED, tensorboard_log=log_dir, **model_params)
+    else:
+        dir = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/'
+        model_file = dir + 'model/' + args.env + '/' + args.alg + '-' + args.env + '_' + str(args.n)
+        try:
+            model = alg_class.load(model_file, env=env)
+            n_timesteps = args.n_timesteps
+        except:
+            print("Model", model_file, "doesn't exit")
+            exit(1)
+
     if args.alg == 'DQN':
         env.set_model(model)
-    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval,
-                tb_log_name=log_name, progress_bar=True)
+
+    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name, progress_bar=True)
     
     files = os.listdir(dir + 'model/' + args.env)
     num_files = len(files) + 1
@@ -91,7 +102,8 @@ if __name__ == "__main__":
         description="Run a training on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + "} [--port <port_number>] [--human <human>]" +\
-            "[--delta <fixed_delta_seconds>] [--log_interval <log_interval>] [--verbose <verbose>] [--num_cir <num_cir>]"
+            "[--delta <fixed_delta_seconds>] [--log_interval <log_interval>] [--verbose <verbose>]" +\
+            "[--num_cir <num_cir>] [--n <n_model>] [--n_timesteps <n_timesteps>]"
     )
     parser.add_argument(
         '--env', 
@@ -143,6 +155,20 @@ if __name__ == "__main__":
         default=False,
         choices=[True, False],
         help='Display or not Pygame screen. By default False.'
+    )
+    parser.add_argument(
+        '--n', 
+        type=int, 
+        required=False, 
+        default=-1,
+        help='Number of the model to be retrained. By default -1 (no model retraining).'
+    )
+    parser.add_argument(
+        '--n_timesteps', 
+        type=int, 
+        required=False, 
+        default=6000000,
+        help='Number of steps to retrain the model. By default 6,000,000.'
     )
 
     main(parser.parse_args())

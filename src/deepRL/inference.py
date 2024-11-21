@@ -58,11 +58,9 @@ def main(args):
             action, _ = model.predict(obs, deterministic=True)
             if args.alg == 'DQN':
                 throttle, steer = env.action_to_control[action.item()]
-            elif 'CarlaLaneContinuous' == args.env:
-                throttle, steer = action
             else:
-                throttle, steer, brake = action
-            print("Throttle:", throttle, "\t||\tsteer:", steer)
+                throttle, steer = action
+                print("Throttle:", throttle, "\t||\tsteer:", steer)
 
             obs, reward, terminated, truncated, info = env.step(action)
 

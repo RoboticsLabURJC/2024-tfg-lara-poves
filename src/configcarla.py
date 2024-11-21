@@ -53,6 +53,8 @@ MIN = 3
 # Measurements
 DIST = 0
 Z = 1
+X = 2
+Y = 3
 
 # Lane
 LEFT_LANE = 0
@@ -355,13 +357,15 @@ class CameraRGB(Sensor):
         return lane_points
         
 class Lidar(Sensor): 
-    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int,
+    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int, max_dist:int,
                  front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool=True, time_show:bool=True):
         super().__init__(sensor=sensor)
 
         self._rect = init
         self.show_stats = show_stats
         self.time_show = time_show
+        self._points_front = np.nan
+        self._max_dist = max_dist
 
         if init != None:
             assert size != None, "size is required!"
@@ -457,6 +461,56 @@ class Lidar(Sensor):
 
         return (r, g, b)
     
+    def get_points_front(self, num_points:int):
+        front_points = np.full(num_points, self._max_dist, dtype=np.float64)
+
+        try:
+            if np.isnan(self._points_front):
+                pass
+        except ValueError: # Is an array
+            #print("len:", len(self._points_front), len(self._x_prov), len(self._y_prov))
+
+            #print("array:", self._points_front)
+
+            if len(self._points_front) <= num_points:
+                for i in range (len(self._points_front)):
+                    #print(i)
+                    front_points[i] = self._points_front[i]
+                    '''
+                    thickness = 5
+                    color = (0, 255, 0)
+
+                    center = (
+                        int(self._x_prov[i] * self._scale + self._center_screen[0]),
+                        int(self._y_prov[i] * self._scale + self._center_screen[1]),
+                    )
+                    pygame.draw.circle(self._sub_screen, color, center, thickness)
+                    '''
+            else:
+                index = np.linspace(0, len(self._points_front) - 1, num_points, dtype=int)
+                j = 0
+
+                for i in index:
+                    #thickness = 5
+                    #color = (0, 255, 0)
+
+                    front_points[j] = self._points_front[i]
+                    #print("x:", self._x_prov[i], "y:", self._y_prov[i], "z:", self._points_front[i])
+                    '''
+                    center = (
+                        int(self._x_prov[i] * self._scale + self._center_screen[0]),
+                        int(self._y_prov[i] * self._scale + self._center_screen[1]),
+                    )
+                    print(center)
+                    pygame.draw.circle(self._sub_screen, color, center, thickness)
+
+                    j += 1
+
+        print("--------------------------result--------------------------")
+        print(front_points)
+        '''
+        return front_points
+    
     def _update_stats(self, meas_zones):
         for zone in range(NUM_ZONES):
             if len(meas_zones[DIST][zone]) != 0:
@@ -464,6 +518,21 @@ class Lidar(Sensor):
                 filter_min = np.array(meas_zones[Z][zone]) > -self._z_threshold
                 filter_max = np.array(meas_zones[Z][zone]) < self._z_threshold
                 filtered_dist = np.array(meas_zones[DIST][zone])[filter_min & filter_max]
+
+                if zone == FRONT:
+                    #self._x_prov = np.array(meas_zones[X][zone])[filter_min & filter_max]
+                    #self._y_prov = np.array(meas_zones[Y][zone])[filter_min & filter_max]
+
+                
+
+                    sorted_index = np.argsort(np.array(meas_zones[X][zone])[filter_min & filter_max])
+                    self._points_front = filtered_dist[sorted_index]
+                    #self._x_prov = self._x_prov[sorted_index]
+                    
+            
+
+
+                    #self.get_points_front(20) # QUITAAAAAAR ESTO Y EL X/Y, Y LOS DIBUJOS
 
                 if len(filtered_dist) == 0:
                     self._stat_zones[zone][MIN] = np.nan
@@ -476,6 +545,8 @@ class Lidar(Sensor):
             else:
                 for i in range(NUM_STATS):
                     self._stat_zones[zone][i] = np.nan
+                
+                self._points_front = np.nan
 
             if self.show_stats and self._rect != None:
                 if not self.time_show or time.time_ns() - self._time > SEG_TO_NANOSEG:
@@ -517,8 +588,12 @@ class Lidar(Sensor):
         lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
         lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 
-        dist_zones = [[] for _ in range(NUM_ZONES)]
-        z_zones = [[] for _ in range(NUM_ZONES)]
+        meas_zones = [
+            [[] for _ in range(NUM_ZONES)],  # dist_zones
+            [[] for _ in range(NUM_ZONES)],  # z_zones
+            [[] for _ in range(NUM_ZONES)]  # x_zones
+            #[[] for _ in range(NUM_ZONES)],  # y_zones
+        ]
 
         if self._rect != None:
             self._sub_screen.blit(self._image, (0, 0))
@@ -526,8 +601,11 @@ class Lidar(Sensor):
         for x, y, z, i in lidar_data:
             zone = self._get_zone(x=x, y=y)
             if zone < NUM_ZONES and i < self._i_threshold:
-                dist_zones[zone].append(math.sqrt(x ** 2 + y ** 2))
-                z_zones[zone].append(z)
+                meas_zones[DIST][zone].append(math.sqrt(x ** 2 + y ** 2))
+                meas_zones[Z][zone].append(z)
+                if zone == FRONT:
+                    meas_zones[X][zone].append(x)
+                    #meas_zones[Y][zone].append(y)
 
             if self._rect != None:
                 thickness = self._interpolate_thickness(num=z)
@@ -537,7 +615,7 @@ class Lidar(Sensor):
                           int(y * self._scale + self._center_screen[1]))
                 pygame.draw.circle(self._sub_screen, color, center, thickness)
 
-        self._update_stats(meas_zones=[dist_zones, z_zones])  
+        self._update_stats(meas_zones=meas_zones)  
 
         if self._rect != None:
             self._screen.blit(self._sub_screen, self._rect)
@@ -583,7 +661,8 @@ class Vehicle_sensors:
         self._count_frame = 0
         self._write_frame = 0
 
-    def _put_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform(), type:int=0):
+    def _put_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform(), type:int=0,
+                    max_dist_laser:int=10):
         try:
             sensor_bp = self._world.get_blueprint_library().find(sensor_type)
         except IndexError:
@@ -592,6 +671,7 @@ class Vehicle_sensors:
         
         if type == LIDAR:
             sensor_bp.set_attribute('rotation_frequency', '20')
+            sensor_bp.set_attribute('range', str(max_dist_laser))
         elif type == CAMERA:
             sensor_bp.set_attribute('image_size_x', str(SIZE_CAMERA))
             sensor_bp.set_attribute('image_size_y', str(SIZE_CAMERA))
@@ -614,12 +694,14 @@ class Vehicle_sensors:
         return camera
     
     def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25, time_show:bool=True,
-                  transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True):
+                  transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True, 
+                  max_dist:int=10):
         if self._screen == None:
             init = None
 
-        sensor = self._put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, type=LIDAR)
-        lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale,
+        sensor = self._put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, type=LIDAR, 
+                                  max_dist_laser=max_dist)
+        lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale, max_dist=max_dist,
                       yaw=transform.rotation.yaw, screen=self._screen, show_stats=show_stats, time_show=time_show)
         
         self.sensors.append(lidar)
