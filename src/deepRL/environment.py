@@ -45,7 +45,7 @@ CIRCUIT_CONFIG = {
 class CarlaBase(gym.Env, ABC):
     def __init__(self, human:bool, train:bool, config:list, alg:str=None, port:int=2000, num_points:int=5,
                  passing:bool=False, fixed_delta_seconds:float=0.0, normalize:bool=False,
-                 seed:int=None, num_cir:int=0, start_passing=1000):
+                 seed:int=None, num_cir:int=0, start_passing=1000, port_tm:int=1111):
         self._first = True
         self._dev = 0
         self._dist_laser = MAX_DIST_LASER
@@ -206,6 +206,7 @@ class CarlaBase(gym.Env, ABC):
         self._town_locations = [(entry["id"], entry["town"], entry["location"]) for entry in config]
         self._client = None
         self._port = port
+        self._port_tm = port_tm
 
     def _swap_ego_vehicle(self):
         if self._train:
@@ -247,7 +248,7 @@ class CarlaBase(gym.Env, ABC):
             lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
             self._lidar = self._sensors.add_lidar(init=self._init_laser,size_rect=(SIZE_CAMERA, SIZE_CAMERA),
                                                   transform=lidar_transform, scale=15, time_show=False,
-                                                  max_dist=MAX_DIST_LASER, front_angle=150) # 50º each part
+                                                  train=self._train, max_dist=MAX_DIST_LASER, front_angle=150) # 50º each part
             self._lidar.set_z_threshold(1.7)
 
             t = carla.Transform(
@@ -270,7 +271,7 @@ class CarlaBase(gym.Env, ABC):
                                                               vehicle_type='vehicle.carlamotors.carlacola')
 
             # Set traffic manager
-            self._tm = configcarla.traffic_manager(client=self._client, vehicles=[self._front_vehicle], port=7788)
+            self._tm = configcarla.traffic_manager(client=self._client, vehicles=[self._front_vehicle], port=self._port_tm)
             self._tm.ignore_lights_percentage(self._front_vehicle, 100)
             self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
 
@@ -409,8 +410,8 @@ class CarlaBase(gym.Env, ABC):
         if self._passing:
             self._vel_front = 0
             self._is_passing_ep = self._count_ep > self._start_passing 
-            self._target_vel = random.uniform(6, 14)
-            print("Target vellocity vehicle front:", self._target_vel, "m/s")
+            self._target_vel = random.uniform(5, 10)
+            print("Target velocity vehicle front:", self._target_vel, "m/s")
         else:
             self._is_passing_ep = False
 
@@ -519,7 +520,7 @@ class CarlaLaneDiscrete(CarlaBase):
 
 class CarlaLaneContinuous(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0, retrain:bool=False,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, port_tm:int=1111):
         if train and human:
             human = False
             print("Warning: Can't activate human mode during training")
@@ -621,7 +622,7 @@ class CarlaLaneContinuous(CarlaBase):
         return reward
      
 class CarlaObstacle(CarlaBase):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0,
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0, port_tm:int=1111,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, retrain:bool=False):
         if train and human:
             human = False
@@ -629,12 +630,14 @@ class CarlaObstacle(CarlaBase):
 
         if train:
             num_cir = 0
+        else:
+            retrain = True
         config = CIRCUIT_CONFIG.get(num_cir, [])
 
         # en funcion de retrainde poner passsing o no
 
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds,
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, port_tm=port_tm,
                          num_cir=num_cir, config=config, passing=retrain, start_passing=-1) 
         
         self._max_vel = 20
@@ -729,6 +732,9 @@ class CarlaObstacle(CarlaBase):
             if self._is_passing_ep and not np.isnan(self._dist_laser):
                 r_laser = np.clip(self._dist_laser, MIN_DIST_LASER, MAX_DIST_LASER) - MIN_DIST_LASER
                 r_laser /= (MAX_DIST_LASER - MIN_DIST_LASER)
+
+                if self._dist_laser <= 10:
+                    r_throttle = -5/3 * self._throttle + 1
             else:
                 r_laser = 0
 
@@ -750,19 +756,19 @@ class CarlaObstacle(CarlaBase):
                 w_laser = 0
             elif r_laser != 0:
                 if self._dist_laser <= 6: # Front vehicle too close
-                    w_dev = 0.15
-                    w_throttle = 0
-                    w_steer = 0.15
+                    w_dev = 0.1
+                    w_throttle = 0.2
+                    w_steer = 0
                     w_laser = 0.7
-                elif self._dist_laser < 10: # Medium distance
-                    w_dev = 0.35
-                    w_throttle = 0.1
-                    w_steer = 0.15
+                elif self._dist_laser <= 10: # Medium distance
+                    w_dev = 0.3
+                    w_throttle = 0.2
+                    w_steer = 0.1
                     w_laser = 0.4
                 else:
-                    w_dev = 0.5
-                    w_throttle = 0.15
-                    w_laser = 0.2
+                    w_dev = 0.45
+                    w_throttle = 0.1
+                    w_laser = 0.3
                     w_steer = 0.15
             elif self._throttle < 0.5:
                 w_dev = 0.65

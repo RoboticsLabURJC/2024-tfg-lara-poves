@@ -1,6 +1,6 @@
 PPO:
   policy: "MultiInputPolicy"
-  learning_rate: 0.0001
+  learning_rate: 0.001
   gamma: 0.85
   gae_lambda: 0.9 # γ
   n_steps: 512 # The number of steps to run for each environment per update
