@@ -92,7 +92,7 @@ class CarlaBase(gym.Env, ABC):
             self._actions_csv = open(dir_csv + alg + '_train_actions_' + str(num_files) + '.csv',
                                      mode='w', newline='')
             self._writer_csv_actions = csv.writer(self._actions_csv)
-            self._writer_csv_actions.writerow(["Throttle", "Steer", "Brake"])
+            self._writer_csv_actions.writerow(["Throttle", "Steer", "Brake", "Velocity front"])
         
         # States/Observations
         self._num_points_lane = num_points
@@ -247,7 +247,7 @@ class CarlaBase(gym.Env, ABC):
         if self._is_passing_ep: 
             lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
             self._lidar = self._sensors.add_lidar(init=self._init_laser,size_rect=(SIZE_CAMERA, SIZE_CAMERA),
-                                                  transform=lidar_transform, scale=15, time_show=False,
+                                                  transform=lidar_transform, scale=17, time_show=False, show_stats=False,
                                                   train=self._train, max_dist=MAX_DIST_LASER, front_angle=150) # 50º each part
             self._lidar.set_z_threshold(1.7)
 
@@ -310,20 +310,24 @@ class CarlaBase(gym.Env, ABC):
         control = self._get_control(action)
         self.ego_vehicle.apply_control(control)
         if self._train:
-            self._writer_csv_actions.writerow([control.throttle, control.steer, control.brake])
+            self._writer_csv_actions.writerow([control.throttle, control.steer, control.brake, self._target_vel])
 
         try:
-            # Update data
+            # Tick
             if self._train:
                 self._world.tick()
-            self._sensors.update_data()
 
-            # Get deviation and velocity
-            dev_prev = self._dev
-            self._dev = self._camera.get_deviation()
+            # Get velocity and location
             self._velocity = carla.Vector3D(self.ego_vehicle.get_velocity()).length()
             self._mean_vel += self._velocity
             loc = self.ego_vehicle.get_location()
+
+            # Update data
+            self._sensors.update_data(vel_ego=self._velocity, vel_front=self._target_vel, front_laser=True)
+
+            # Get deviation
+            dev_prev = self._dev
+            self._dev = self._camera.get_deviation()
 
             # Obstacle trainings
             if self._is_passing_ep:
@@ -411,7 +415,6 @@ class CarlaBase(gym.Env, ABC):
             self._vel_front = 0
             self._is_passing_ep = self._count_ep > self._start_passing 
             self._target_vel = random.uniform(5, 10)
-            print("Target velocity vehicle front:", self._target_vel, "m/s")
         else:
             self._is_passing_ep = False
 

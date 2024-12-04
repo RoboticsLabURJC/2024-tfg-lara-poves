@@ -608,7 +608,6 @@ class Vehicle_sensors:
         self._vehicle = vehicle
         self._world = world
         self._screen = screen
-        self.velocity = 0
         self.sensors = []
 
         self.color_text = color_text
@@ -674,9 +673,15 @@ class Vehicle_sensors:
         self.sensors.append(sensor_collision)
         return sensor_collision
 
-    def update_data(self, flip:bool=True):
+    def update_data(self, flip:bool=True, vel_ego:int=-1, vel_front:int=-1, front_laser=False):
+        offset = 20
+        dist_lidar = np.nan
+
         for sensor in self.sensors:
             sensor.process_data()
+
+            if type(sensor) == Lidar:
+                dist_lidar = sensor.get_min_center()
 
         if self._screen != None:
             elapsed_time = time.time_ns() - self._time_frame
@@ -686,12 +691,24 @@ class Vehicle_sensors:
                 self._time_frame = time.time_ns()
 
             self._count_frame += 1
-            write_text(text=f"FPS: {self._write_frame:.2f}", img=self._screen, color=self.color_text,
-                    bold=True, point=(2, 0), size=23, side=LEFT)
+            if vel_ego < 0:
+                vel_ego = carla.Vector3D(self._vehicle.get_velocity()).length()
 
-            self.velocity = carla.Vector3D(self._vehicle.get_velocity()).length()
-            write_text(text=f"Vel: {self.velocity:.2f} m/s", img=self._screen, color=self.color_text,
-                       bold=True, point=(2, 20), size=20, side=LEFT)
+            # Text to be written
+            text_write = [
+                f"FPS: {self._write_frame:.2f}",
+                f"Vel ego: {vel_ego:.2f} m/s"
+            ]
+
+            if vel_front > 0:
+                text_write.append(f"Vel front: {vel_front:.2f} m/s")
+            if front_laser:
+                text_write.append(f"Dist lidar: {dist_lidar:.2f} m")
+
+            # Write text
+            for i in range(len(text_write)):
+                write_text(text=text_write[i], img=self._screen, color=self.color_text, bold=True,
+                           point=(2, offset * i), size=20, side=LEFT)
 
             if flip:
                 pygame.display.flip()
