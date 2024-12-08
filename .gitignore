@@ -6,3 +6,4 @@ src/deepRL/models.txt
 src/deepRL/csv/actions/*
 src/deepRL/log/*
 src/prueba*
+src/deepRL/csv/target_vel/*

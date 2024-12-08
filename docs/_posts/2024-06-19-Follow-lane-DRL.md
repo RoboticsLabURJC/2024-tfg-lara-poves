@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-11-18T22:47:00
+last_modified_at: 2024-12-08T08:49:00
 categories:
   - Blog
 tags:
@@ -243,3 +243,6 @@ Este es el resultado del entrenamiento en un circuito visto durante el entrenami
 
 También hemos llevado a cabo pruebas en inferencia en varios circuitos que no se utilizaron durante el entrenamiento (como el circuito 2) y en otros de diferentes ciudades (*Town03* y *Town06*). Estos son los resultados obtenidos:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xwGdEURKPKQ?si=JB-aRyLaUJRMx_q6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Hemos evaluado si el modelo entrenado utilizando la percepción del carril basada en *ground truth* funcionaría con una configuración diferente de la cámara y empleando percepción mediante una red neuronal. Los resultados obtenidos han sido satisfactorios.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/E7peMuLgnAM?si=V5oh3Apb9pxuqtAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

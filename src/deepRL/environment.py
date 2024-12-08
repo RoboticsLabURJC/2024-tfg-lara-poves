@@ -23,6 +23,15 @@ MIN_DIST_LASER = 4
 FREC_PASSING = 3
 CHANGE_VEL_RATE = 5
 
+KEY_LASER = "laser"
+KEY_BACK = "back"
+KEY_VEL = "velocity"
+KEY_DEV = "deviation"
+KEY_CM = "cm"
+KEY_LEFT_POINTS = "left_points"
+KEY_RIGHT_POINTS = "right_points"
+KEY_AREA = "area"
+
 CIRCUIT_CONFIG = {
     0: [
         {"id": 0, "town": "Town04", "location": carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137))},
@@ -40,12 +49,15 @@ CIRCUIT_CONFIG = {
     ],
     4: [
         {"id": 6, "town": "Town06", "location": carla.Transform(carla.Location(x=457.83, y=244.7, z=0.1))}
+    ],
+    5: [
+        {"id":7, "town": "Town05", "location": carla.Transform(carla.Location(x=75.0, y=-144.5, z=0.1), carla.Rotation(yaw=4.0))}
     ]
 }
 
 class CarlaBase(gym.Env, ABC):
     def __init__(self, human:bool, train:bool, config:list, alg:str=None, port:int=2000, num_points:int=5,
-                 passing:bool=False, fixed_delta_seconds:float=0.0, normalize:bool=False,
+                 passing:bool=False, fixed_delta_seconds:float=0.0, normalize:bool=False, back_lidar:bool=False,
                  seed:int=None, num_cir:int=0, start_passing=1000, port_tm:int=1111, lane_network:bool=False):
         self._first = True
         self._dev = 0
@@ -64,9 +76,12 @@ class CarlaBase(gym.Env, ABC):
         self._vel_percentage = 80
         self._start_passing = start_passing
         self._lane_network = lane_network
+        self._back_lidar = back_lidar
+        self._dist_back = MAX_DIST_LASER
 
-        if passing and num_cir > 1:
-            assert True, "No passing mode available for circuit " + str(num_cir) 
+        if passing:
+            assert num_cir <= 1, "No passing mode available for circuit " + str(num_cir) 
+        assert (self._lane_network and num_cir == 5) or (not self._lane_network and num_cir != 5), "No matching circuit and type of lane detection"
 
         # CSV file
         self._train = train
@@ -95,40 +110,51 @@ class CarlaBase(gym.Env, ABC):
                                      mode='w', newline='')
             self._writer_csv_actions = csv.writer(self._actions_csv)
             self._writer_csv_actions.writerow(["Throttle", "Steer", "Brake"])
-        
+
+            if self._passing:
+                dir_csv = PATH + '2024-tfg-lara-poves/src/deepRL/csv/target_vel/' + self.__class__.__name__ + '/'
+                if not os.path.exists(dir_csv):
+                    os.makedirs(dir_csv)
+                files = os.listdir(dir_csv)
+                num_files = len(files) + 1
+                self._vel_csv = open(dir_csv + alg + '_train_target_vel_' + str(num_files) + '.csv',
+                                        mode='w', newline='')
+                self._writer_csv_vel = csv.writer(self._vel_csv)
+                self._writer_csv_vel.writerow(["Target velocity vehicle front"])
+
         # States/Observations
         self._num_points_lane = num_points
         self.observation_space = spaces.Dict(
             spaces={
-                "cm": spaces.Box(
+                KEY_CM: spaces.Box(
                     low=0,
                     high=SIZE_CAMERA - 1,
                     shape=(2,),
                     dtype=np.int32
                 ),
                 
-                "left_points": spaces.Box(
+                KEY_LEFT_POINTS: spaces.Box(
                     low=0,
                     high=SIZE_CAMERA - 1,
                     shape=(self._num_points_lane, 2),
                     dtype=np.int32
                 ),
 
-                "right_points": spaces.Box(
+                KEY_RIGHT_POINTS: spaces.Box(
                     low=0,
                     high=SIZE_CAMERA - 1,
                     shape=(self._num_points_lane, 2),
                     dtype=np.int32
                 ),
 
-                "area": spaces.Box(
+                KEY_AREA: spaces.Box(
                     low=0,
                     high=SIZE_CAMERA * SIZE_CAMERA,
                     shape=(1,),
                     dtype=np.int32
                 ),
 
-                "deviation": spaces.Box(
+                KEY_DEV: spaces.Box(
                     low=-SIZE_CAMERA / 2,
                     high=SIZE_CAMERA / 2,
                     shape=(1,),
@@ -142,35 +168,35 @@ class CarlaBase(gym.Env, ABC):
             self._obs_norm = self.observation_space # Use to normalize
             self.observation_space = spaces.Dict(
             spaces={
-                "cm": spaces.Box(
+                KEY_CM: spaces.Box(
                     low=0,
                     high=1,
                     shape=(2,),
                     dtype=np.float64
                 ),
                 
-                "left_points": spaces.Box(
+                KEY_LEFT_POINTS: spaces.Box(
                     low=0,
                     high=1,
                     shape=(self._num_points_lane, 2),
                     dtype=np.float64
                 ),
 
-                "right_points": spaces.Box(
+                KEY_RIGHT_POINTS: spaces.Box(
                     low=0,
                     high=1,
                     shape=(self._num_points_lane, 2),
                     dtype=np.float64
                 ),
 
-                "area": spaces.Box(
+                KEY_AREA: spaces.Box(
                     low=0,
                     high=1,
                     shape=(1,),
                     dtype=np.float64
                 ),
 
-                "deviation": spaces.Box(
+                KEY_DEV: spaces.Box(
                     low=0,
                     high=1,
                     shape=(1,),
@@ -191,10 +217,18 @@ class CarlaBase(gym.Env, ABC):
             if self._passing:
                 mult = 3
 
-            self._screen = configcarla.setup_pygame(size=(SIZE_CAMERA * mult, SIZE_CAMERA), 
-                                                    name='Follow lane: ' + self.__class__.__name__)
+            if not self._back_lidar:
+                self._init_laser = (SIZE_CAMERA * 2, 0)
+                rows = 1 
+            else:
+                self._init_laser = (0, SIZE_CAMERA)
+                self._init_back = (SIZE_CAMERA, SIZE_CAMERA)
+                mult = 2
+                rows = 2
+                
             self._init_driver = (SIZE_CAMERA, 0)
-            self._init_laser = (SIZE_CAMERA * 2, 0)
+            self._screen = configcarla.setup_pygame(size=(SIZE_CAMERA * mult, SIZE_CAMERA * rows), 
+                                                    name='Follow lane: ' + self.__class__.__name__)
         else:
             self._screen = None
             self._init_driver = None
@@ -251,8 +285,17 @@ class CarlaBase(gym.Env, ABC):
                                          init=(0, 0), text='World view')
             
         if self._is_passing_ep: 
+            if self._back_lidar:
+                angle = 100
+                if self._human:
+                    back_transform = carla.Transform(carla.Location(z=1.5, x=-1.5), carla.Rotation(yaw=180))
+                    self._sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), init=self._init_back,
+                                                 transform=back_transform, text='Back view')
+            else:
+                angle = 0
+
             lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
-            self._lidar = self._sensors.add_lidar(init=self._init_laser,size_rect=(SIZE_CAMERA, SIZE_CAMERA),
+            self._lidar = self._sensors.add_lidar(init=self._init_laser,size_rect=(SIZE_CAMERA, SIZE_CAMERA), back_angle=angle,
                                                   transform=lidar_transform, scale=17, time_show=False, show_stats=False,
                                                   train=self._train, max_dist=MAX_DIST_LASER, front_angle=150) # 50º each part
             self._lidar.set_z_threshold(1.7)
@@ -303,11 +346,11 @@ class CarlaBase(gym.Env, ABC):
     def _get_obs_env(self):
         left_points, right_points = self._camera.get_lane_points(num_points=self._num_points_lane)
         obs = {
-            "cm": self._camera.get_lane_cm(), 
-            "left_points": left_points,
-            "right_points": right_points, 
-            "area": np.array([self._camera.get_lane_area()], dtype=np.int32),
-            "deviation": np.array([self._dev], dtype=np.int32),
+            KEY_CM: self._camera.get_lane_cm(), 
+            KEY_LEFT_POINTS: left_points,
+            KEY_RIGHT_POINTS: right_points, 
+            KEY_AREA: np.array([self._camera.get_lane_area()], dtype=np.int32),
+            KEY_DEV: np.array([self._dev], dtype=np.int32),
         }
 
         return obs
@@ -323,7 +366,7 @@ class CarlaBase(gym.Env, ABC):
         return obs
     
     def _get_info(self):
-        info = {"deviation": self._dev, "velocity": self._velocity}
+        info = {KEY_DEV: self._dev, KEY_VEL: self._velocity}
         return info
 
     def step(self, action:np.ndarray):
@@ -346,7 +389,9 @@ class CarlaBase(gym.Env, ABC):
             else: # 65% probability 
                 self._target_vel = random.uniform(5, 10)
             self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
-            print(self._target_vel)
+
+            if self._train:
+                self._writer_csv_vel.writerow([self._target_vel])
 
         try:
             # Tick
@@ -357,6 +402,9 @@ class CarlaBase(gym.Env, ABC):
             self._velocity = carla.Vector3D(self.ego_vehicle.get_velocity()).length()
             self._mean_vel += self._velocity
             loc = self.ego_vehicle.get_location()
+
+            if self._back_lidar and self._is_passing_ep:
+                self._dist_back = self._lidar.get_min_back()
 
             # Update data
             if self._is_passing_ep:
@@ -390,6 +438,13 @@ class CarlaBase(gym.Env, ABC):
                 finish_ep = abs(loc.x - 414) <= 3 and abs(loc.y + 230) <= 3
             elif self._id == 6:
                 finish_ep = abs(loc.x - 663) < 3 and abs(loc.y - 169) < 3
+            elif self._id == 7 and not self._jump and loc.y > -30:
+                self._jump = True
+                t = self.ego_vehicle.get_transform()
+                t.location.y = 15
+                self.ego_vehicle.set_transform(t)
+            elif self._id == 7 and self._jump:
+                finish_ep = loc.x < 50
             else:
                 finish_ep = abs(loc.x - 165) <= 3 and abs(loc.y + 208) <= 3
             terminated = finish_ep
@@ -398,9 +453,9 @@ class CarlaBase(gym.Env, ABC):
             terminated = True
             error = str(e)
 
-            #print(error)
-            #print("No termino", self._count_ep, "steps:", self._count, "id:", self._id,
-             #     "dev:", self._dev, "is_passing:", self._is_passing_ep, "dist:", self._dist_laser)
+            print("Circuit not completed:", error)
+            print("No termino", self._count_ep, "steps:", self._count, "id:", self._id,
+                  "dev:", self._dev, "is_passing:", self._is_passing_ep, "dist:", self._dist_laser)
 
         # Check if a key has been pressed
         if self._human:
@@ -410,9 +465,10 @@ class CarlaBase(gym.Env, ABC):
         self._total_reward += reward
         self._count += 1
 
-        #if finish_ep:
-            #print("Termino:", self._count_ep, "steps:", self._count, "id:", self._id,
-             #     "mean vel", self._mean_vel / self._count, "passing:", self._is_passing_ep)
+        if finish_ep:
+            print("Circuit completed!")
+            print("Termino:", self._count_ep, "steps:", self._count, "id:", self._id,
+                 "mean vel", self._mean_vel / self._count, "passing:", self._is_passing_ep)
 
         if terminated and self._train:
             if self.model != None:
@@ -441,6 +497,7 @@ class CarlaBase(gym.Env, ABC):
         self._first_step = 0
         self._mean_vel = 0
         self._dev = 0
+        self._jump = False
 
         if self._first:
             self._first = False
@@ -586,10 +643,10 @@ class CarlaLaneContinuous(CarlaBase):
         )
 
         if not normalize:
-            self.observation_space["velocity"] = new_space
+            self.observation_space[KEY_VEL] = new_space
         else:
-            self._obs_norm["velocity"] = new_space
-            self.observation_space["velocity"] =  spaces.Box(
+            self._obs_norm[KEY_VEL] = new_space
+            self.observation_space[KEY_VEL] =  spaces.Box(
                 low=0.0,
                 high=1.0,
                 shape=(1,),
@@ -598,7 +655,7 @@ class CarlaLaneContinuous(CarlaBase):
 
     def _get_obs_env(self):
         obs = super()._get_obs_env()
-        obs["velocity"] = self._velocity
+        obs[KEY_VEL] = self._velocity
         return obs
 
     def _create_actions(self):
@@ -702,18 +759,18 @@ class CarlaObstacle(CarlaBase):
         )
 
         if not normalize:
-            self.observation_space["velocity"] = new_space_vel
-            self.observation_space["laser"] = new_space_laser
+            self.observation_space[KEY_VEL] = new_space_vel
+            self.observation_space[KEY_LASER] = new_space_laser
         else:
-            self._obs_norm["velocity"] = new_space_vel
-            self.observation_space["velocity"] =  spaces.Box(
+            self._obs_norm[KEY_VEL] = new_space_vel
+            self.observation_space[KEY_VEL] =  spaces.Box(
                 low=0.0,
                 high=1.0,
                 shape=(1,),
                 dtype=np.float64
             )
-            self._obs_norm["laser"] = new_space_laser
-            self.observation_space["laser"] =  spaces.Box(
+            self._obs_norm[KEY_LASER] = new_space_laser
+            self.observation_space[KEY_LASER] =  spaces.Box(
                 low=0.0,
                 high=1.0,
                 shape=(self._num_points_laser,),
@@ -722,18 +779,18 @@ class CarlaObstacle(CarlaBase):
 
     def _get_obs_env(self):
         obs = super()._get_obs_env()
-        obs["velocity"] = self._velocity
+        obs[KEY_VEL] = self._velocity
 
         if not self._is_passing_ep: # No passing
-            obs["laser"] = np.full(self._num_points_laser, MAX_DIST_LASER, dtype=np.float64)
+            obs[KEY_LASER] = np.full(self._num_points_laser, MAX_DIST_LASER, dtype=np.float64)
         else:
-            obs["laser"] = self._lidar.get_points_front(self._num_points_laser)
+            obs[KEY_LASER] = self._lidar.get_points_front(self._num_points_laser)
 
         return obs
     
     def _get_info(self):
         info = super()._get_info()
-        info["distance"] = self._dist_laser
+        info[KEY_LASER] = self._dist_laser
         return info
 
     def _create_actions(self):
@@ -831,3 +888,120 @@ class CarlaObstacle(CarlaBase):
                 reward = -40
 
         return reward
+    
+class CarlaPassing(CarlaBase):
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0, port_tm:int=1111,
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, retrain:bool=False,
+                 lane_network:bool=False):
+        if train and human:
+            human = False
+            print("Warning: Can't activate human mode during training")
+
+        if train:
+            num_cir = 0
+        else:
+            retrain = True
+        config = CIRCUIT_CONFIG.get(num_cir, [])
+
+        super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, port_tm=port_tm,
+                         num_cir=num_cir, config=config, passing=retrain, start_passing=-1,
+                         lane_network=lane_network, back_lidar=retrain) # ver si tengo que hacer 1 lane, obstacle, normal
+        
+        self._max_vel = 20
+
+        # Add velocity to observations
+        new_space_vel = spaces.Box(
+            low=0.0,
+            high=60.0,
+            shape=(1,),
+            dtype=np.float64
+        )
+
+        # Add laser front distance to observations
+        self._num_points_laser = 20
+        new_space_laser = spaces.Box(
+            low=MIN_DIST_LASER - 1.0,
+            high=MAX_DIST_LASER,
+            shape=(self._num_points_laser,),
+            dtype=np.float64
+        )
+
+        # Add laser back distance to observations
+        self._num_points_back = int(self._num_points_laser * 1.5)
+        new_space_back = spaces.Box(
+            low=MIN_DIST_LASER - 1.0,
+            high=MAX_DIST_LASER,
+            shape=(self._num_points_back,),
+            dtype=np.float64
+        )
+
+        if not normalize:
+            self.observation_space[KEY_VEL] = new_space_vel
+            self.observation_space[KEY_LASER] = new_space_laser
+            self.observation_space[KEY_BACK] = new_space_back
+        else:
+            self._obs_norm[KEY_VEL] = new_space_vel
+            self.observation_space[KEY_VEL] =  spaces.Box(
+                low=0.0,
+                high=1.0,
+                shape=(1,),
+                dtype=np.float64
+            )
+            self._obs_norm[KEY_LASER] = new_space_laser
+            self.observation_space[KEY_LASER] =  spaces.Box(
+                low=0.0,
+                high=1.0,
+                shape=(self._num_points_laser,),
+                dtype=np.float64
+            )
+            self._obs_norm[KEY_BACK] = new_space_back
+            self.observation_space[KEY_BACK] =  spaces.Box(
+                low=0.0,
+                high=1.0,
+                shape=(self._num_points_back,),
+                dtype=np.float64
+            )
+
+    def _get_obs_env(self):
+        obs = super()._get_obs_env()
+        obs[KEY_VEL] = self._velocity
+
+        if not self._is_passing_ep: # No passing
+            obs[KEY_LASER] = np.full(self._num_points_laser, MAX_DIST_LASER, dtype=np.float64)
+            obs[KEY_BACK] = np.full(self._num_points_back, MAX_DIST_LASER, dtype=np.float64)
+        else:
+            if not self._back_lidar:
+                obs[KEY_BACK] = np.full(self._num_points_back, MAX_DIST_LASER, dtype=np.float64)
+            else:
+                obs[KEY_BACK] = self._lidar.get_points_back(self._num_points_back)
+
+            obs[KEY_LASER] = self._lidar.get_points_front(self._num_points_laser)
+
+        print(obs[KEY_BACK])
+
+        return obs
+    
+    def _get_info(self):
+        info = super()._get_info()
+        info[KEY_LASER] = self._dist_laser
+        info[KEY_BACK] = self._dist_back
+        return info
+
+    def _create_actions(self):
+        self._max_steer = 0.2
+        self.action_space = spaces.Box(low=np.array([0.0, -self._max_steer]), high=np.array([1.0, self._max_steer]),
+                                       shape=(2,), dtype=np.float64)
+        
+    def _get_control(self, action:np.ndarray):
+        assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
+        self._throttle, self._steer = action
+        
+        control = carla.VehicleControl()
+        control.steer = self._steer 
+        control.throttle = self._throttle
+
+        return control
+    
+    def _calculate_reward(self, error:str):
+        return 1

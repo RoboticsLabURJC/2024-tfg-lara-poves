@@ -39,10 +39,11 @@ CAMERA = 1
 LIDAR = 2
 
 # Side
-NUM_ZONES = 3
+NUM_ZONES = 4
 LEFT = 0
 FRONT = 1
 RIGHT = 2
+BACK = 3
 
 # Stats
 NUM_STATS = 4
@@ -497,14 +498,17 @@ class CameraRGB(Sensor):
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int, max_dist:int,
-                 front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool=True, time_show:bool=True):
+                 front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool=True, time_show:bool=True,
+                 back_angle:int=0):
         super().__init__(sensor=sensor)
 
         self._rect = init
         self.show_stats = show_stats
         self.time_show = time_show
         self._points_front = np.nan
+        self._points_back = np.nan
         self._max_dist = max_dist
+        self._back = back_angle
 
         if init != None:
             assert size != None, "size is required!"
@@ -551,31 +555,40 @@ class Lidar(Sensor):
         angle2_sub = get_angle_range(angle2 - self._front_angle / 3)        
         self._angles = [angle1, angle1_add, angle2_sub, angle2]
 
+        # Add back right zone
+        self._angles.append(angle2 + self._back)
+
         if init != None:
             self._image = self._get_back_image()
 
     def _get_back_image(self):
         image = pygame.Surface(self._size_screen)
         mult = 10 * self._scale
-        text = ['FL', 'FF', 'FR']
+        text = ['FL', 'FF', 'FR', 'BACK']
         text_zone = ['Front-Left', 'Front-Front', 'Front-Right']
 
         for i in range(len(self._angles)):
-            x_line = self._center_screen[0] + mult * math.cos(math.radians(self._angles[i]))
-            y_line = self._center_screen[1] + mult * math.sin(math.radians(self._angles[i]))
-            pygame.draw.line(image, (70, 70, 70), self._center_screen, (x_line, y_line), 2)
+            if i != BACK or (i == BACK and self._back > 0):
+                x_line = self._center_screen[0] + mult * math.cos(math.radians(self._angles[i]))
+                y_line = self._center_screen[1] + mult * math.sin(math.radians(self._angles[i]))
+                pygame.draw.line(image, (70, 70, 70), self._center_screen, (x_line, y_line), 2)
 
-            if i < NUM_ZONES:
-                angle = self._angles[i] + self._front_angle / 6
-                x_zone = self._center_screen[0] + mult * math.cos(math.radians(angle))
-                y_zone = max(self._center_screen[1] + mult * math.sin(math.radians(angle)), 
-                             self._size_text * (NUM_STATS + 2)) # Make sure to write behind the text
-                
-                write_text(text=text[i], img=image, point=(x_zone, y_zone), bold=True, size=self._size_text)
+                if i < NUM_ZONES:
+                    if i == BACK:
+                        angle = self._angles[i] + self._back / 2
+                    else:
+                        angle = self._angles[i] + self._front_angle / 6
 
-                if self.show_stats:
-                    write_text(text=text_zone[i], img=image, side=i, color=(255, 165, 180), bold=True,
-                               point=(self._x_text[i], self._size_text), size=self._size_text)
+                    x_zone = self._center_screen[0] + mult * math.cos(math.radians(angle))
+                    y_zone = max(self._center_screen[1] + mult * math.sin(math.radians(angle)), 
+                                self._size_text * (NUM_STATS + 2)) # Make sure to write behind the text
+                    
+                    write_text(text=text[i], img=image, point=(x_zone, y_zone), bold=True, size=self._size_text)
+
+                    if self.show_stats and i != BACK:
+                        write_text(text=text_zone[i], img=image, side=i, color=(255, 165, 180), bold=True,
+                                point=(self._x_text[i], self._size_text), size=self._size_text)
+        
         return image
     
     def _interpolate_thickness(self, num:float):
@@ -619,6 +632,25 @@ class Lidar(Sensor):
                 
         return front_points
     
+    def get_points_back(self, num_points:int):
+        back_points = np.full(num_points, self._max_dist, dtype=np.float64)
+
+        try:
+            if np.isnan(self._points_back):
+                pass
+        except ValueError:
+            if len(self._points_back) <= num_points:
+                for i in range (len(self._points_back)):
+                    back_points[i] = self._points_back[i]
+            else:
+                j = 0
+                index = np.linspace(0, len(self._points_back) - 1, num_points, dtype=int)
+
+                for i in index:
+                    back_points[j] = self._points_back[i]
+                
+        return back_points
+    
     def _update_stats(self, meas_zones):
         for zone in range(NUM_ZONES):
             if len(meas_zones[DIST][zone]) != 0:
@@ -630,6 +662,15 @@ class Lidar(Sensor):
                 if zone == FRONT:
                     sorted_index = np.argsort(np.array(meas_zones[X][zone])[filter_min & filter_max])
                     self._points_front = filtered_dist[sorted_index]
+                elif zone == BACK:
+                    # dibujarme estos puntos para ver que est pasando
+                    #print(filtered_dist)
+                    #z_values = np.array(meas_zones[Z][zone])
+                    #filtered_z_values = z_values[filter_min & filter_max]
+                    #print(filtered_z_values)
+
+                    sorted_index = np.argsort(np.array(meas_zones[X][zone])[filter_min & filter_max])
+                    self._points_back = filtered_dist[sorted_index]
 
                 if len(filtered_dist) == 0:
                     self._stat_zones[zone][MIN] = np.nan
@@ -645,7 +686,7 @@ class Lidar(Sensor):
                 
                 self._points_front = np.nan
 
-            if self.show_stats and self._rect != None:
+            if self.show_stats and self._rect != None and zone != BACK:
                 if not self.time_show or time.time_ns() - self._time > SEG_TO_NANOSEG:
                     self._time = time.time_ns()
                     self._stats_text = [
@@ -699,7 +740,7 @@ class Lidar(Sensor):
             if zone < NUM_ZONES and i < self._i_threshold:
                 meas_zones[DIST][zone].append(math.sqrt(x ** 2 + y ** 2))
                 meas_zones[Z][zone].append(z)
-                if zone == FRONT:
+                if zone == FRONT or zone == BACK:
                     meas_zones[X][zone].append(x)
 
             if self._rect != None:
@@ -714,6 +755,12 @@ class Lidar(Sensor):
 
         if self._rect != None:
             self._screen.blit(self._sub_screen, self._rect)
+
+    def get_min_back(self):
+        if self._back == 0:
+            return np.nan
+        
+        return self._stat_zones[BACK][MIN]
     
     def set_i_threshold(self, i:float):
         self._i_threshold = i
@@ -795,14 +842,15 @@ class Vehicle_sensors:
     
     def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25, time_show:bool=True,
                   transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True, 
-                  max_dist:int=10, train:bool=True):
+                  max_dist:int=10, train:bool=True, back_angle:int=0):
         if self._screen == None:
             init = None
 
         sensor = self._put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, type=LIDAR, 
                                   max_dist_laser=max_dist, train=train)
-        lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale, max_dist=max_dist,
-                      yaw=transform.rotation.yaw, screen=self._screen, show_stats=show_stats, time_show=time_show)
+        lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale,
+                      max_dist=max_dist, yaw=transform.rotation.yaw, screen=self._screen, show_stats=show_stats,
+                      time_show=time_show, back_angle=back_angle)
         
         self.sensors.append(lidar)
         return lidar

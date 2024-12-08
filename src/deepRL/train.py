@@ -26,6 +26,7 @@ env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
     'CarlaObstacle': environment.CarlaObstacle, 
+    'CarlaPassing': environment.CarlaPassing
 }
 
 def check_dir(dir:str, env:str):

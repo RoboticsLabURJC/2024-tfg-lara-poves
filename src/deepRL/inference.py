@@ -16,7 +16,8 @@ alg_callable = {
 env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
-    'CarlaObstacle': environment.CarlaObstacle
+    'CarlaObstacle': environment.CarlaObstacle,
+    'CarlaPassing': environment.CarlaPassing
 }
 
 def main(args):
@@ -31,7 +32,6 @@ def main(args):
         print("Model", model_file, "doesn't exit")
         exit(1)
 
-    print(args.lane_network)
     env = env_class(train=False, port=args.port, human=True, normalize=True, num_cir=args.num_cir,
                     lane_network=args.lane_network)
     obs, _ = env.reset()
@@ -52,7 +52,7 @@ def main(args):
                     '.csv', mode='w', newline='')
     writer_csv = csv.writer(file_csv)
     writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Throttle",
-                         "Steer", "Deviation", "Velocity", "Brake", "Dist"])
+                         "Steer", "Deviation", "Velocity", "Brake", "Dist", "Dist back"])
     
     brake = -1.0
     try:
@@ -67,15 +67,21 @@ def main(args):
             obs, reward, terminated, truncated, info = env.step(action)
 
             try:
-                dist = info['distance']
-                print(dist) # quitar
+                dist = info[environment.KEY_LASER]
+                print("dist front:", dist) # quitar
             except KeyError:
                 dist = environment.MAX_DIST_LASER
 
+            try:
+                dist_back = info[environment.KEY_BACK]
+                print("dist back:", dist_back) # quitar
+            except KeyError:
+                dist_back = environment.MAX_DIST_LASER
+
             step += 1
             total_reward += reward
-            writer_csv.writerow([step, reward, total_reward, throttle, steer, info['deviation'], 
-                                 info['velocity'], brake, dist])        
+            writer_csv.writerow([step, reward, total_reward, throttle, steer, info[environment.KEY_DEV], 
+                                 info[environment.KEY_VEL], brake, dist, dist_back])        
 
             if terminated or truncated:
                 break
@@ -93,7 +99,7 @@ if __name__ == "__main__":
         description="Execute an inference trial on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + \
-            "} --n <model_number> [--port <port_number>] --num_cir <num_cir> --lane_network <lane_network>"
+            "} --n <model_number> [--port <port_number>] [--num_cir <num_cir>] [--port_tm <port_tm] [--lane_network <lane_network>]"
     )
     parser.add_argument(
         '--env', 
@@ -127,7 +133,7 @@ if __name__ == "__main__":
         type=int, 
         required=False, 
         default=0,
-        choices=[0, 1, 2, 3, 4],
+        choices=[0, 1, 2, 3, 4, 5],
         help='Number of the circuit for the enviroment. By default 0.'
     )
     parser.add_argument(
@@ -136,6 +142,13 @@ if __name__ == "__main__":
         required=False, 
         default=0,
         help='Detect the lane with the neuronal network instead of ground truth. By default 0 (0 = False).'
+    )
+    parser.add_argument(
+        '--port_tm', 
+        type=int, 
+        required=False, 
+        default=3456,
+        help='Port for the traffic manger. By default 3456.'
     )
 
     main(parser.parse_args())
