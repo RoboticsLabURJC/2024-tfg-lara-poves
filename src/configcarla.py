@@ -9,6 +9,7 @@ from PIL import Image
 import time
 import cv2
 from abc import ABC, abstractmethod
+import torch
 
 PATH = '/home/lpoves/'
 
@@ -111,7 +112,7 @@ class CameraRGB(Sensor):
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
                  text:str, screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], 
                  lane:bool, canvas_seg:bool, transform:carla.Transform, vehicle:carla.Vehicle,
-                 world:carla.World):
+                 world:carla.World, lane_network:bool):
         super().__init__(sensor=sensor)
 
         self._screen = screen 
@@ -123,6 +124,7 @@ class CameraRGB(Sensor):
         self.text = text
         self.size_text = 20
         self.size = size
+        self._lane_network = lane_network
 
         # Lane detection
         self._deviation = 0
@@ -132,6 +134,25 @@ class CameraRGB(Sensor):
         self._lane_left = []
         self._lane_right = []
         self._extra_surface = None
+
+        if self._lane_network:
+            file = PATH + '2024-tfg-lara-poves/best_model_torch.pth'
+            self._lane_model = torch.load(file)
+            self._lane_model.eval()
+
+            # Constants
+            self._threshold_road_per = 90.0
+            self._threshold_lane_mask = 0.05
+            self._ymin_lane = 275 
+            self._angle_lane = 7
+            self._mem_max = 4
+
+            # Initialize
+            self._coefficients = np.zeros((SIZE_MEM, 2, 3), dtype=float)
+            self._count_coef = [0, 0] # Not use until having 5 measurements
+            self._count_mem_road = 0
+            self._count_no_lane = 0
+            self._count_mem_lane = [0, 0]
 
         self._seg = seg
         self._canvas_seg = canvas_seg
@@ -179,47 +200,154 @@ class CameraRGB(Sensor):
             pixels.append((x, y))
 
         return pixels
+    
+    def _mask_lane(self, mask:list, index:int):
+        if index == LEFT_LANE:
+            lane = "left"
+        else:
+            lane = "right"
+
+        if self._count_mem_lane[index] >= self._mem_max:
+            self._error_lane = True
+            assert False, "Line " + lane + " not found"
+
+        mask = mask[:, int(SIZE_CAMERA / 2):int(SIZE_CAMERA + SIZE_CAMERA / 2)]
+        index_mask = np.where(mask > self._threshold_lane_mask)
+        if len(index_mask[0]) < 10:
+            self._count_mem_lane[index] += 1
+            return False
+        else:
+            self._count_mem_lane[index] = 0
+
+        # Previus linear regression
+        if self._count_coef[index] >= SIZE_MEM:
+            coefficients = self._coefficients[-1, index, 0:2]
+        else:
+            coefficients = np.polyfit(index_mask[0], index_mask[1], 1)
+
+        # Remove outliers
+        th = 60
+        x_coef = []
+        y_coef = []
+        for y, x in zip(index_mask[0], index_mask[1]):
+            x_1 = coefficients[0] * y + coefficients[1] + th
+            x_2 = coefficients[0] * y + coefficients[1] - th
+
+            if x_1 <= x <= x_2 or x_2 <= x <= x_1:
+                x_coef.append(x)
+                y_coef.append(y)
+
+        # Memory lane
+        if len(x_coef) < 20:
+            self._count_mem_lane[index] += 1
+            return False
+        else:
+            self._count_mem_lane[index] = 0
+
+        # Linear regression
+        coefficients = np.polyfit(y_coef, x_coef, 1)
+     
+        # Check measure
+        mean = np.mean(self._coefficients[:, index, 2])
+        angle = math.degrees(math.atan(coefficients[0])) % 180
+        diff = abs(mean - angle)
+        
+        if diff > self._angle_lane and self._count_coef[index] >= SIZE_MEM:
+            self._count_mem_lane[index] += 1
+            # It might get both bad measures at the same time, but that doesn't mean it has lost the lane
+            return  diff < 20 # Only return False for really bad measures
+        elif self._count_coef[index] >= SIZE_MEM:
+            self._count_mem_lane[index] = 0
+
+        # Update memory
+        for i in range(len(self._coefficients) - 1):
+            self._coefficients[i, index, :] = self._coefficients[i + 1, index, :]
+        self._coefficients[-1, index, 0:2] = coefficients
+        self._coefficients[-1, index, 2] = angle
+
+        # Update count 
+        self._count_coef[index] += 1
+
+        return True
 
     def _detect_lane(self, img:np.ndarray, mask:np.ndarray):
-        trafo_matrix_global_to_camera = get_matrix_global(self._vehicle, self._trafo_matrix_vehicle_to_cam)
-        waypoint = self._world.get_map().get_waypoint(
-            self._vehicle.get_transform().location,
-            project_to_road=True,
-            lane_type=carla.LaneType.Driving,                
-        )
-        
-        # Get points of the lane
-        _, left_boundary, right_boundary, _ = create_lane_lines(waypoint, self._vehicle)
+        if not self._lane_network:
+            trafo_matrix_global_to_camera = get_matrix_global(self._vehicle, self._trafo_matrix_vehicle_to_cam)
+            waypoint = self._world.get_map().get_waypoint(
+                self._vehicle.get_transform().location,
+                project_to_road=True,
+                lane_type=carla.LaneType.Driving,                
+            )
+            
+            # Get points of the lane
+            _, left_boundary, right_boundary, _ = create_lane_lines(waypoint, self._vehicle)
 
-        self._lane_left = self._points_lane(left_boundary, trafo_matrix_global_to_camera, LEFT_LANE)
-        self._lane_right = self._points_lane(right_boundary, trafo_matrix_global_to_camera, RIGHT_LANE)
-        assert len(self._lane_left) > 20 and len(self._lane_right) > 20, "Lane lost"
+            self._lane_left = self._points_lane(left_boundary, trafo_matrix_global_to_camera, LEFT_LANE)
+            self._lane_right = self._points_lane(right_boundary, trafo_matrix_global_to_camera, RIGHT_LANE)
+            assert len(self._lane_left) > 20 and len(self._lane_right) > 20, "Lane lost"
 
-        # Start in same height
-        size_left = len(self._lane_left)
-        size_right = len(self._lane_right)
-        if size_right > size_left:
-            del self._lane_right[:size_right-size_left]
-        elif size_left > size_right:
-            del self._lane_left[:size_left-size_right]
+            # Start in same height
+            size_left = len(self._lane_left)
+            size_right = len(self._lane_right)
+            if size_right > size_left:
+                del self._lane_right[:size_right-size_left]
+            elif size_left > size_right:
+                del self._lane_left[:size_left-size_right]
+
+            limitis_for = (0, len(self._lane_left))
+        else:
+            # Resize for the network, copy the image in the middle
+            image_lane = np.zeros((SIZE_CAMERA, SIZE_CAMERA * 2, 3), dtype=np.uint8)
+            image_lane[:SIZE_CAMERA, int(SIZE_CAMERA / 2):int(SIZE_CAMERA + SIZE_CAMERA / 2), :] = img
+
+            with torch.no_grad():
+                image_tensor = image_lane.transpose(2,0,1).astype('float32')/255
+                x_tensor = torch.from_numpy(image_tensor).to("cuda").unsqueeze(0)
+                model_output = torch.softmax(self._lane_model.forward(x_tensor), dim=1 ).cpu().numpy()
+
+            _, left_mask, right_mask = model_output[0]
+            see_line_left = self._mask_lane(mask=left_mask, index=LEFT_LANE)
+            see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
+
+            # Coefficients
+            coef_left = self._coefficients[-1, LEFT_LANE, 0:2]
+            coef_right = self._coefficients[-1, RIGHT_LANE, 0:2]
+
+            if see_line_left == False and see_line_right == False:
+                self._count_no_lane += 1
+
+                if self._count_no_lane >= self._mem_max / 2:
+                    self._error_lane = True
+                    assert False, "Lane not found"
+            else:
+                self._count_no_lane += 0
+
+            limitis_for = (self._ymin_lane, SIZE_CAMERA)
 
         # Draw the lane 
         count_x = count_y = 0
         count_total = count_road = 0
-        for i in range(len(self._lane_left)):
-            x_left, y = self._lane_left[i]
-            x_right, _ = self._lane_right[i]
-            img[y, x_left:x_right] = (255, 240, 255)
+        for i in range(limitis_for[0], limitis_for[1]):
+            if not self._lane_network:
+                x_left, y = self._lane_left[i]
+                x_right, _ = self._lane_right[i]
+            else:
+                y = i
+                x_left = max(int(y * coef_left[0] + coef_left[1]), 0)
+                x_right = min(int(y * coef_right[0] + coef_right[1]) + 1, SIZE_CAMERA - 1)
 
-            # Center of mass
-            count_x += sum(range(x_left, x_right))
-            count_y += y * (x_right - x_left)
+            if x_left < x_right:
+                img[y, x_left:x_right] = (255, 240, 255)
 
-            # Road porcentage
-            count_total += x_right - x_left
-            if self._seg:
-                region_mask = mask[y, x_left:x_right]
-                count_road += np.count_nonzero(region_mask == ROAD)
+                # Center of mass
+                count_x += sum(range(x_left, x_right))
+                count_y += y * (x_right - x_left)
+
+                # Road porcentage
+                count_total += x_right - x_left
+                if self._seg:
+                    region_mask = mask[y, x_left:x_right]
+                    count_road += np.count_nonzero(region_mask == ROAD)
 
         if count_total > 0:
             # Calculate center of mass
@@ -640,7 +768,7 @@ class Vehicle_sensors:
     
     def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
                        transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
-                       text:str=None, lane:bool=False, canvas_seg:bool=True):
+                       text:str=None, lane:bool=False, canvas_seg:bool=True, lane_network:bool=False):
         if self._screen == None:
             init = None
             init_extra = None
@@ -648,7 +776,7 @@ class Vehicle_sensors:
         sensor = self._put_sensor(sensor_type='sensor.camera.rgb', transform=transform, type=CAMERA)
         camera = CameraRGB(size=size_rect, init=init, sensor=sensor, screen=self._screen, seg=seg,
                            init_extra=init_extra, text=text, lane=lane, canvas_seg=canvas_seg,
-                           transform=transform, vehicle=self._vehicle, world=self._world)
+                           transform=transform, vehicle=self._vehicle, world=self._world, lane_network=lane_network)
 
         self.sensors.append(camera)
         return camera

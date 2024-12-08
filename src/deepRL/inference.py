@@ -31,7 +31,8 @@ def main(args):
         print("Model", model_file, "doesn't exit")
         exit(1)
 
-    env = env_class(train=False, port=args.port, human=True, normalize=True, num_cir=args.num_cir)
+    env = env_class(train=False, port=args.port, human=True, normalize=True, num_cir=args.num_cir,
+                    lane_network=args.lane_network)
     obs, _ = env.reset()
 
     total_reward = 0
@@ -65,9 +66,10 @@ def main(args):
             obs, reward, terminated, truncated, info = env.step(action)
 
             try:
-                dist = info['dist']
+                dist = info['distance']
+                print(dist) # quitar
             except KeyError:
-                dist = 10.0
+                dist = environment.MAX_DIST_LASER
 
             step += 1
             total_reward += reward
@@ -90,7 +92,7 @@ if __name__ == "__main__":
         description="Execute an inference trial on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + \
-            "} --n <model_number> [--port <port_number>] --num_cir <NUM_CIR>"
+            "} --n <model_number> [--port <port_number>] --num_cir <num_cir> --lane_network <lane_network>"
     )
     parser.add_argument(
         '--env', 
@@ -126,6 +128,14 @@ if __name__ == "__main__":
         default=0,
         choices=[0, 1, 2, 3, 4],
         help='Number of the circuit for the enviroment. By default 0.'
+    )
+    parser.add_argument(
+        '--lane_network', 
+        type=bool, 
+        required=False, 
+        default=False,
+        choices=[True, False],
+        help='Detect the lane with the neuronal network instead of ground truth. By default, it is set to False.'
     )
 
     main(parser.parse_args())

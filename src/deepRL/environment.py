@@ -9,7 +9,7 @@ import pygame
 import os
 import csv
 from abc import ABC, abstractmethod
-from colorama import Fore, Style
+import time
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -21,6 +21,7 @@ MAX_DEV = 100
 MAX_DIST_LASER = 15
 MIN_DIST_LASER = 4
 FREC_PASSING = 3
+CHANGE_VEL_RATE = 5
 
 CIRCUIT_CONFIG = {
     0: [
@@ -45,7 +46,7 @@ CIRCUIT_CONFIG = {
 class CarlaBase(gym.Env, ABC):
     def __init__(self, human:bool, train:bool, config:list, alg:str=None, port:int=2000, num_points:int=5,
                  passing:bool=False, fixed_delta_seconds:float=0.0, normalize:bool=False,
-                 seed:int=None, num_cir:int=0, start_passing=1000, port_tm:int=1111):
+                 seed:int=None, num_cir:int=0, start_passing=1000, port_tm:int=1111, lane_network:bool=False):
         self._first = True
         self._dev = 0
         self._dist_laser = MAX_DIST_LASER
@@ -62,6 +63,7 @@ class CarlaBase(gym.Env, ABC):
         self._exploration_rate = 1.0
         self._vel_percentage = 80
         self._start_passing = start_passing
+        self._lane_network = lane_network
 
         if passing and num_cir > 1:
             assert True, "No passing mode available for circuit " + str(num_cir) 
@@ -92,7 +94,7 @@ class CarlaBase(gym.Env, ABC):
             self._actions_csv = open(dir_csv + alg + '_train_actions_' + str(num_files) + '.csv',
                                      mode='w', newline='')
             self._writer_csv_actions = csv.writer(self._actions_csv)
-            self._writer_csv_actions.writerow(["Throttle", "Steer", "Brake", "Velocity front"])
+            self._writer_csv_actions.writerow(["Throttle", "Steer", "Brake"])
         
         # States/Observations
         self._num_points_lane = num_points
@@ -231,10 +233,14 @@ class CarlaBase(gym.Env, ABC):
         self._map = self._world.get_map()
         self.ego_vehicle = configcarla.add_one_vehicle(world=self._world, ego_vehicle=True, vehicle_type='vehicle.lincoln.mkz_2020',
                                                        transform=self._loc)
-        transform = carla.Transform(carla.Location(x=0.5, z=1.7292))
         self._sensors = configcarla.Vehicle_sensors(vehicle=self.ego_vehicle, world=self._world,
                                                     screen=self._screen)
-        self._camera = self._sensors.add_camera_rgb(transform=transform, seg=False, lane=True,
+        if self._lane_network:
+            transform = carla.Transform(carla.Location(z=1.7292, x=1.75))
+        else:
+            transform = carla.Transform(carla.Location(x=0.5, z=1.7292))
+
+        self._camera = self._sensors.add_camera_rgb(transform=transform, seg=False, lane=True, lane_network=self._lane_network,
                                                     canvas_seg=False, size_rect=(SIZE_CAMERA, SIZE_CAMERA),
                                                     init_extra=self._init_driver, text='Driver view')
         self._sensors.add_collision() # Raise an exception if the vehicle crashes
@@ -256,15 +262,35 @@ class CarlaBase(gym.Env, ABC):
                 rotation=self._loc.rotation
             )
             
+            prob = random.random()
             if self._id == 0 or self._id == 5:
-                t.location.x -= 5
-                t.location.y -= 4
-                t.rotation.yaw -= 6
+                if prob < 0.4: # 4.4m
+                    t.location.x -= 5
+                    t.location.y -= 4
+                    t.rotation.yaw -= 6
+                elif prob < 0.7: # 10m
+                    t.location.x -= 10
+                    t.location.y -= 8
+                    t.rotation.yaw -= 6
+                else: # 8m
+                    t.location.x -= 8
+                    t.location.y -= 6
+                    t.rotation.yaw -= 6
             elif self._id == 1:
-                t.location.y += 7
+                if prob < 0.5: # 5m
+                    t.location.y += 7
+                else: # 9m
+                    t.location.y += 11
             else:
-                t.location.y += 7
-                t.location.x -= 5
+                if prob < 0.4: # 6.6m
+                    t.location.y += 7
+                    t.location.x -= 5
+                elif prob < 0.7: # 4.4m
+                    t.location.y += 5
+                    t.location.x -= 4
+                else: # 10m
+                    t.location.y += 10
+                    t.location.x -= 7
 
             # Front vehicle
             self._front_vehicle = configcarla.add_one_vehicle(world=self._world, transform=t,
@@ -273,7 +299,6 @@ class CarlaBase(gym.Env, ABC):
             # Set traffic manager
             self._tm = configcarla.traffic_manager(client=self._client, vehicles=[self._front_vehicle], port=self._port_tm)
             self._tm.ignore_lights_percentage(self._front_vehicle, 100)
-            self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
 
     def _get_obs_env(self):
         left_points, right_points = self._camera.get_lane_points(num_points=self._num_points_lane)
@@ -310,7 +335,18 @@ class CarlaBase(gym.Env, ABC):
         control = self._get_control(action)
         self.ego_vehicle.apply_control(control)
         if self._train:
-            self._writer_csv_actions.writerow([control.throttle, control.steer, control.brake, self._target_vel])
+            self._writer_csv_actions.writerow([control.throttle, control.steer, control.brake])
+
+        if self._is_passing_ep and (self._count == 0 or time.time() - self._start_time >= CHANGE_VEL_RATE):
+            self._start_time = time.time()
+
+            prob = random.random()
+            if prob < 0.15: # 15% probability
+                self._target_vel = random.uniform(0, 5)
+            else: # 85% probability 
+                self._target_vel = random.uniform(5, 10)
+
+            self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
 
         try:
             # Tick
@@ -323,7 +359,10 @@ class CarlaBase(gym.Env, ABC):
             loc = self.ego_vehicle.get_location()
 
             # Update data
-            self._sensors.update_data(vel_ego=self._velocity, vel_front=self._target_vel, front_laser=True)
+            if self._is_passing_ep:
+                self._sensors.update_data(vel_ego=self._velocity, vel_front=self._target_vel, front_laser=True)
+            else:
+                self._sensors.update_data(vel_ego=self._velocity)
 
             # Get deviation
             dev_prev = self._dev
@@ -414,7 +453,7 @@ class CarlaBase(gym.Env, ABC):
         if self._passing:
             self._vel_front = 0
             self._is_passing_ep = self._count_ep > self._start_passing 
-            self._target_vel = random.uniform(5, 10)
+            self._target_vel = 0
         else:
             self._is_passing_ep = False
 
@@ -463,13 +502,13 @@ class CarlaBase(gym.Env, ABC):
 
 class CarlaLaneDiscrete(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0, retrain:bool=False,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, lane_network:bool=False):
         if train:
             num_cir = 0
         config = CIRCUIT_CONFIG.get(num_cir, CIRCUIT_CONFIG[0])
 
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_cir=num_cir, config=config,
-                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds)
+                         normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, lane_network=lane_network)
         
         self._max_vel = 15
 
@@ -523,7 +562,7 @@ class CarlaLaneDiscrete(CarlaBase):
 
 class CarlaLaneContinuous(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0, retrain:bool=False,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, port_tm:int=1111):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, port_tm:int=1111, lane_network:bool=False):
         if train and human:
             human = False
             print("Warning: Can't activate human mode during training")
@@ -534,7 +573,7 @@ class CarlaLaneContinuous(CarlaBase):
 
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds,
-                         num_cir=num_cir, config=config)
+                         num_cir=num_cir, config=config, lane_network=lane_network)
         
         self._max_vel = 45
 
@@ -626,7 +665,8 @@ class CarlaLaneContinuous(CarlaBase):
      
 class CarlaObstacle(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0, port_tm:int=1111,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, retrain:bool=False):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, retrain:bool=False,
+                 lane_network:bool=False):
         if train and human:
             human = False
             print("Warning: Can't activate human mode during training")
@@ -637,11 +677,10 @@ class CarlaObstacle(CarlaBase):
             retrain = True
         config = CIRCUIT_CONFIG.get(num_cir, [])
 
-        # en funcion de retrainde poner passsing o no
-
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, port_tm=port_tm,
-                         num_cir=num_cir, config=config, passing=retrain, start_passing=-1) 
+                         num_cir=num_cir, config=config, passing=retrain, start_passing=-1,
+                         lane_network=lane_network) 
         
         self._max_vel = 20
 
@@ -758,12 +797,12 @@ class CarlaObstacle(CarlaBase):
                 w_steer = 0.25
                 w_laser = 0
             elif r_laser != 0:
-                if self._dist_laser <= 6: # Front vehicle too close
-                    w_dev = 0.1
-                    w_throttle = 0.2
-                    w_steer = 0
-                    w_laser = 0.7
-                elif self._dist_laser <= 10: # Medium distance
+                #if self._dist_laser <= 6: # Front vehicle too close
+                 #   w_dev = 0.1
+                  #  w_throttle = 0.2
+                  #  w_steer = 0
+                   # w_laser = 0.7
+                if self._dist_laser <= 10: # Medium distance
                     w_dev = 0.3
                     w_throttle = 0.2
                     w_steer = 0.1
