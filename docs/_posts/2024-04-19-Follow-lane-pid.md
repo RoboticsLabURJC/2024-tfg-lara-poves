@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: PID"
-last_modified_at: 2024-10-02T10:47:00
+last_modified_at: 2024-12-08T15:21:00
 categories:
   - Blog
 tags:
@@ -12,6 +12,7 @@ Implementaremos una solución combinando múltiples redes neuronales para detect
 
 ## Índice
 - [Detección de carril](#detección-de-carril)
+  - [Red neuronal de detección de carril](#red-neuronal-de-detección-de-carril)
   - [Red neuronal de segmentación semántica](#red-neuronal-de-segmentación-semántica)
 - [Controlador PID](#controlador-pid)
 - [Profiling](#profiling)
@@ -39,6 +40,22 @@ class Camera(Sensor):
     for i in range(len(self._lane_left)):
       img[y, x_left:x_right] # Píxeles que pertenecen al carril en cada altura (y)
 ```
+
+### Red neuronal de detección de carril
+Contamos con una red neuronal para detectar el carril, la cual nos proporciona dos máscaras que definen cada una de las líneas del mismo. Para mejorar la detección, especialmente en casos de líneas discontinuas o cuando la red neuronal proporciona líneas fragmentadas o incompletas, empleamos regresión lineal en los puntos obtenidos para cada línea a través de la red. Este procedimiento nos permite calcular los coeficientes de las rectas que mejor se ajustan a dichos puntos.
+
+Hemos definido una altura máxima para la detección del carril, creando así la forma de un trapecio. Los puntos que se encuentren dentro de este trapecio delimitado pdefinen el área del carril. Además, hemos integrado una función de seguridad: si perdemos el seguimiento de una de las líneas del carril durante varias iteraciones consecutivas o perdemos ambas líneas del carril, detenemos la ejecución del programa. En casos donde no se detecten líneas, volvemos a utilizar la última medida válida.
+
+Para filtrar mediciones erróneas, hemos implementado una memoria que guarda las cinco últimas detecciones de las líneas, junto con el ángulo que cada una forma con la horizontal. Si el ángulo de la detección actual difiere lo suficiente de la media de los ángulos almacenados en esta memoria, descartamos la medida y empleamos la última detección válida. Estas mediciones incorrectas también se consideran al evaluar si hemos perdido el carril.
+
+Para **eliminar los outliers** de cada máscara, solo conservaremos los puntos que caen dentro de un umbral basado en la medida anterior. En la imagen siguiente, se muestra esta idea utilizando la siguiente codificación de colores:
+- Las líneas rojas en forma de cruz representan las dos detecciones de cada línea carril anteriores.
+- Las líneas cián que rodean a las anteriores delimitan la zona válida.
+- Los puntos verdes son los puntos válidos que tendremos en cuenta para la detección del carril, mientras que los azules o naranjas son los outliers.
+- Las líneas azules son el resultado de aplicar regresión lineal sobre los puntos válidos (verdes).
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_pid/remove_outliers.png" alt="">
+</figure>
 
 ### Red neuronal de segmentación semántica
 

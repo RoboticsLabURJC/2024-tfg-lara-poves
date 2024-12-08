@@ -149,18 +149,17 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         '--human', 
-        type=bool, 
+        type=int, 
         required=False, 
-        default=False,
-        choices=[True, False],
-        help='Display or not Pygame screen. By default False.'
+        default=0,
+        help='Display or not Pygame screen. By default 0. (0 = False)'
     )
     parser.add_argument(
         '--retrain', 
-        type=bool, 
+        type=int, 
         required=False, 
-        default=False,
-        help='If a model has to be reatrained'
+        default=0,
+        help='If a model has to be reatrained. By default 0. (0 = False)'
     )
     parser.add_argument(
         '--port_tm', 

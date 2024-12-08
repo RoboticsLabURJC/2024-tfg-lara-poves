@@ -208,7 +208,7 @@ class CameraRGB(Sensor):
             lane = "right"
 
         if self._count_mem_lane[index] >= self._mem_max:
-            self._error_lane = True
+            self._lane_left = [] # Mark error
             assert False, "Line " + lane + " not found"
 
         mask = mask[:, int(SIZE_CAMERA / 2):int(SIZE_CAMERA + SIZE_CAMERA / 2)]
@@ -296,6 +296,10 @@ class CameraRGB(Sensor):
 
             limitis_for = (0, len(self._lane_left))
         else:
+            # Mark no errors
+            self._lane_left = [1]
+            self._lane_right = [1]
+
             # Resize for the network, copy the image in the middle
             image_lane = np.zeros((SIZE_CAMERA, SIZE_CAMERA * 2, 3), dtype=np.uint8)
             image_lane[:SIZE_CAMERA, int(SIZE_CAMERA / 2):int(SIZE_CAMERA + SIZE_CAMERA / 2), :] = img
@@ -317,7 +321,7 @@ class CameraRGB(Sensor):
                 self._count_no_lane += 1
 
                 if self._count_no_lane >= self._mem_max / 2:
-                    self._error_lane = True
+                    self._lane_left = []
                     assert False, "Lane not found"
             else:
                 self._count_no_lane += 0
@@ -361,6 +365,7 @@ class CameraRGB(Sensor):
             # Calculate road porcentage
             if self._seg:
                 self._road_percentage = count_road / count_total * 100
+                self._lane_left = [] # Mark error
                 assert self._road_percentage >= self._threshold_road_per, "Low percentage of lane"
 
             # Draw center of mass and vehicle
@@ -370,6 +375,7 @@ class CameraRGB(Sensor):
         else:
             self._deviation = SIZE_CAMERA / 2
             self._road_percentage = 0
+            self._lane_left = [] # Mark error
             assert False, "Area zero"
 
         return img
@@ -451,16 +457,22 @@ class CameraRGB(Sensor):
         
         lane_points = []
         for side in range(2):
-            if side == LEFT_LANE:
-                lane = self._lane_left
+            if not self._lane_network:
+                if side == LEFT_LANE:
+                    lane = self._lane_left
+                else:
+                    lane = self._lane_right
+                y_points = np.linspace(lane[0][1], SIZE_CAMERA - 1, num_points)
             else:
-                lane = self._lane_right
+                y_points = np.linspace(self._ymin_lane, SIZE_CAMERA - 1, num_points)
 
-            y_points = np.linspace(lane[0][1], SIZE_CAMERA - 1, num_points)
             points = np.zeros((num_points, 2), dtype=np.int32)
-            
             for i, y in enumerate(y_points):
-                points[i, 0] = lane[int(y - lane[0][1])][0] # x
+                if self._lane_network:
+                    coef = self._coefficients[-1, side, 0:2]
+                    points[i, 0] = int(y * coef[0] + coef[1]) # x
+                else:
+                    points[i, 0] = lane[int(y - lane[0][1])][0] # x
                 points[i, 1] = y
 
                 if points[i, 0] < 0:

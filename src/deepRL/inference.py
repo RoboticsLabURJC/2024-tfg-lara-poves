@@ -31,6 +31,7 @@ def main(args):
         print("Model", model_file, "doesn't exit")
         exit(1)
 
+    print(args.lane_network)
     env = env_class(train=False, port=args.port, human=True, normalize=True, num_cir=args.num_cir,
                     lane_network=args.lane_network)
     obs, _ = env.reset()
@@ -131,11 +132,10 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         '--lane_network', 
-        type=bool, 
+        type=int, 
         required=False, 
-        default=False,
-        choices=[True, False],
-        help='Detect the lane with the neuronal network instead of ground truth. By default, it is set to False.'
+        default=0,
+        help='Detect the lane with the neuronal network instead of ground truth. By default 0 (0 = False).'
     )
 
     main(parser.parse_args())

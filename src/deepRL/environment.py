@@ -84,7 +84,7 @@ class CarlaBase(gym.Env, ABC):
             self._writer_csv_train = csv.writer(self._train_csv)
             self._writer_csv_train.writerow(["Episode", "Reward", "Num_steps", "Finish", "Deviation",
                                              "Exploration_rate", "Distance", "Mean veal"])
-            
+
             # Action file
             dir_csv = PATH + '2024-tfg-lara-poves/src/deepRL/csv/actions/' + self.__class__.__name__ + '/'
             if not os.path.exists(dir_csv):
@@ -236,7 +236,7 @@ class CarlaBase(gym.Env, ABC):
         self._sensors = configcarla.Vehicle_sensors(vehicle=self.ego_vehicle, world=self._world,
                                                     screen=self._screen)
         if self._lane_network:
-            transform = carla.Transform(carla.Location(z=1.7292, x=1.75))
+            transform = carla.Transform(carla.Location(z=1.4, x=1.75))
         else:
             transform = carla.Transform(carla.Location(x=0.5, z=1.7292))
 
@@ -341,12 +341,12 @@ class CarlaBase(gym.Env, ABC):
             self._start_time = time.time()
 
             prob = random.random()
-            if prob < 0.15: # 15% probability
+            if prob < 0.35: # 35% probability
                 self._target_vel = random.uniform(0, 5)
-            else: # 85% probability 
+            else: # 65% probability 
                 self._target_vel = random.uniform(5, 10)
-
             self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
+            print(self._target_vel)
 
         try:
             # Tick
@@ -398,9 +398,9 @@ class CarlaBase(gym.Env, ABC):
             terminated = True
             error = str(e)
 
-            print(error)
-            print("No termino", self._count_ep, "steps:", self._count, "id:", self._id,
-                  "dev:", self._dev, "is_passing:", self._is_passing_ep, "dist:", self._dist_laser)
+            #print(error)
+            #print("No termino", self._count_ep, "steps:", self._count, "id:", self._id,
+             #     "dev:", self._dev, "is_passing:", self._is_passing_ep, "dist:", self._dist_laser)
 
         # Check if a key has been pressed
         if self._human:
@@ -410,9 +410,9 @@ class CarlaBase(gym.Env, ABC):
         self._total_reward += reward
         self._count += 1
 
-        if finish_ep:
-            print("Termino:", self._count_ep, "steps:", self._count, "id:", self._id,
-                  "mean vel", self._mean_vel / self._count, "passing:", self._is_passing_ep)
+        #if finish_ep:
+            #print("Termino:", self._count_ep, "steps:", self._count, "id:", self._id,
+             #     "mean vel", self._mean_vel / self._count, "passing:", self._is_passing_ep)
 
         if terminated and self._train:
             if self.model != None:
