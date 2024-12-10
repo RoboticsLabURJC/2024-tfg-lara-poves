@@ -1,4 +1,4 @@
-Episode,Reward,Num_steps,Finish,Deviation,Exploration_rate
+Episode,Reward,Steps,Finish,Deviation,Exploration_rate
 1,290.44687048775484,697,False,126.0,0.9998912500000001
 2,187.37847314770144,476,False,-139.0,0.9998168749999999
 3,173.97383114752856,509,False,-129.0,0.9997373437500001

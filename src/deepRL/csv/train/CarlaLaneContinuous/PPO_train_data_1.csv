@@ -1,4 +1,4 @@
-Episode,Reward,Num_steps,Finish,Deviation,Exploration_rate,Distance,Mean veal
+Episode,Reward,Steps,Finish,Deviation,Exploration_rate,Distance,Mean veal
 1,133.03476089031275,1973,False,122.0,-1.0,10,0.7336080182028403
 2,-5.491096204858458,317,False,-142.0,-1.0,10,1.4855849972066921
 3,-18.797321569563,335,False,-133.0,-1.0,10,0.9945178142658421

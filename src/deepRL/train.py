@@ -79,7 +79,7 @@ def main(args):
         model_file = dir + 'model/CarlaBaseModels/' + args.alg + '-' + args.env
         try:
             model = alg_class.load(model_file, env=env, **model_params)
-        except:
+        except FileNotFoundError:
             print("Model", model_file, "doesn't exit")
             exit(1)
 

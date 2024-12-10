@@ -34,7 +34,6 @@ def main(args):
 
     env = env_class(train=False, port=args.port, human=True, normalize=True, num_cir=args.num_cir,
                     lane_network=args.lane_network)
-    obs, _ = env.reset()
 
     total_reward = 0
     step = 0
@@ -51,10 +50,14 @@ def main(args):
     file_csv = open(dir_csv + args.alg + '_' + 'data_' + args.n + '_' + str(num_files) +
                     '.csv', mode='w', newline='')
     writer_csv = csv.writer(file_csv)
-    writer_csv.writerow(["Step", "Reward", "Accumulated reward", "Throttle",
-                         "Steer", "Deviation", "Velocity", "Brake", "Dist", "Dist back"])
+    writer_csv.writerow([environment.KEY_STEPS, environment.KEY_REWARD, environment.KEY_ACC_REWARD, 
+                         environment.KEY_THROTTLE, environment.KEY_STEER, environment.KEY_DEV,
+                         environment.KEY_VEL, environment.KEY_BRAKE, environment.KEY_DISTANCE,
+                         environment.KEY_BACK])
     
     brake = -1.0
+    obs, info = env.reset()
+
     try:
         while True:
             action, _ = model.predict(obs, deterministic=True)

@@ -538,6 +538,7 @@ class Lidar(Sensor):
         # Calculate stats
         self._i_threshold = 0.987
         self._z_threshold = -1.6
+        self._back_dist_threshold = 10.0
         self._stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
 
         # Update per second
@@ -664,12 +665,31 @@ class Lidar(Sensor):
                     self._points_front = filtered_dist[sorted_index]
                 elif zone == BACK:
                     # dibujarme estos puntos para ver que est pasando
-                    #print(filtered_dist)
-                    #z_values = np.array(meas_zones[Z][zone])
-                    #filtered_z_values = z_values[filter_min & filter_max]
-                    #print(filtered_z_values)
+                    print(filtered_dist)
+                    dist_mask = filtered_dist < self._back_dist_threshold
+                    filtered_dist = filtered_dist[dist_mask]
+                    print("\nFiltered distances:", filtered_dist)
 
-                    sorted_index = np.argsort(np.array(meas_zones[X][zone])[filter_min & filter_max])
+                    # Aplicar el mismo filtro a los valores de X e Y
+                    x_values = np.array(meas_zones[X][zone])[filter_min & filter_max]
+                    filtered_x_values = x_values[dist_mask]
+
+                    y_values = np.array(meas_zones[X + 1][zone])[filter_min & filter_max]
+                    filtered_y_values = y_values[dist_mask]
+
+                    for i in range(len(filtered_y_values)):
+                        thickness = 2
+                        color = (0, 255, 0)
+
+                        x = filtered_x_values[i]
+                        y = filtered_y_values[i]
+
+                        center = (int(x * self._scale + self._center_screen[0]),
+                                int(y * self._scale + self._center_screen[1]))
+                        pygame.draw.circle(self._sub_screen, color, center, thickness)
+
+
+                    sorted_index = np.argsort(filtered_x_values)
                     self._points_back = filtered_dist[sorted_index]
 
                 if len(filtered_dist) == 0:
@@ -729,7 +749,8 @@ class Lidar(Sensor):
         meas_zones = [
             [[] for _ in range(NUM_ZONES)], # dist_zones
             [[] for _ in range(NUM_ZONES)], # z_zones
-            [[] for _ in range(NUM_ZONES)] # x_zones
+            [[] for _ in range(NUM_ZONES)], # x_zones
+            [[] for _ in range(NUM_ZONES)] # quitaaaaaaaaaaaaaaaaaaaaar
         ]
 
         if self._rect != None:
@@ -742,6 +763,7 @@ class Lidar(Sensor):
                 meas_zones[Z][zone].append(z)
                 if zone == FRONT or zone == BACK:
                     meas_zones[X][zone].append(x)
+                    meas_zones[X + 1][zone].append(y)
 
             if self._rect != None:
                 thickness = self._interpolate_thickness(num=z)
@@ -773,6 +795,12 @@ class Lidar(Sensor):
 
     def get_z_threshold(self):
         return self._z_threshold
+    
+    def get_back_dist_threshold(self):
+        return self._back_dist_threshold
+    
+    def set_back_dist_threshold(self, dist:float):
+        self._back_dist_threshold = dist
     
     def get_stat_zones(self):
         return self._stat_zones

@@ -3,6 +3,13 @@ import matplotlib.gridspec as gridspec
 import argparse
 import csv
 import numpy as np
+import os
+import sys
+
+current_dir = os.getcwd()
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+
+from deepRL.environment import KEY_DEV, KEY_THROTTLE, KEY_STEPS, KEY_STEER, KEY_BRAKE, KEY_BACK, KEY_REWARD, KEY_VEL, KEY_ACC_REWARD, KEY_DISTANCE
 
 NUM_COLUMNS = 4
 NUM_ROWS = 2
@@ -26,18 +33,18 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], 
     
     # Draw plot
     if not hist:
-        if key == 'Deviation':
+        if key == KEY_DEV:
             key += ' in pixels'
-        elif key == 'Throttle':
+        elif key == KEY_THROTTLE:
             ax.set_ylim(-0.1, 1.1)
-        elif key == 'Dist':
+        elif key == KEY_DISTANCE:
             data = np.nan_to_num(data, nan=10.0)
 
         ax.plot(range(len(data)), data, label=label) 
         ax.set_ylabel(key)
-        ax.set_xlabel('Step')
+        ax.set_xlabel(KEY_STEPS)
     else:
-        if key == 'Steer':
+        if key == KEY_STEER:
             bins = np.linspace(-0.19, 0.19, 20)
             bins_ticks = np.linspace(-0.2, 0.2, 21)
         else:
@@ -55,6 +62,8 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], 
         ax.set_xlabel(key)
 
 def main(args):
+    os.chdir(current_dir)
+
     data = []
     with open(args.file, 'r') as file:
         csv_reader = csv.DictReader(file)
@@ -64,16 +73,23 @@ def main(args):
 
     num_rows = NUM_ROWS
     brake = False
-    if float(data[0]['Brake']) >= 0.0:
+    if float(data[0][KEY_BRAKE]) >= 0.0:
         num_rows += 1
         brake = True
 
     dist = False
     try:
-        if data[0]['Dist'] == "nan" or float(data[0]['Dist']) < 10.0:
+        if data[0][KEY_DISTANCE] == "nan" or float(data[0][KEY_DISTANCE]) < 15.0:
             if not brake:
                 num_rows +=1
             dist = True
+    except Exception:
+        pass
+
+    back = False
+    try:
+        if data[0][KEY_BACK] == "nan" or float(data[0][KEY_BACK]) < 15.0:
+            back = True
     except Exception:
         pass
     
@@ -82,43 +98,56 @@ def main(args):
     gs = gridspec.GridSpec(num_rows, NUM_COLUMNS)
    
     # Plots
-    plot_data(data_csv=data, key='Reward', init=(0, 0), title='Reward per step', label=csv_file,
+    plot_data(data_csv=data, key=KEY_REWARD, init=(0, 0), title='Reward per step', label=csv_file,
               num_rows=num_rows)
-    plot_data(data_csv=data, key='Deviation', init=(1, 0), title='Deviation in absolute value',
+    plot_data(data_csv=data, key=KEY_DEV, init=(1, 0), title='Deviation in absolute value',
               label=csv_file, num_rows=num_rows)
-    plot_data(data_csv=data, key='Velocity', init=(0, 2), title='Velocity of the vehicle',
+    plot_data(data_csv=data, key=KEY_VEL, init=(0, 2), title='Velocity of the vehicle',
               label=csv_file, num_rows=num_rows, size=2)
-    plot_data(data_csv=data, key='Throttle', init=(1, 2), title='Throttle of the vehicle',
+    plot_data(data_csv=data, key=KEY_THROTTLE, init=(1, 2), title='Throttle of the vehicle',
               label=csv_file, num_rows=num_rows, size=2)
 
     # Histograms
-    plot_data(data_csv=data, key='Throttle', init=(1, 1), title='Histogram throttle actions',
+    plot_data(data_csv=data, key=KEY_THROTTLE, init=(1, 1), title='Histogram throttle actions',
                 hist=True, label=csv_file, num_rows=num_rows)
-    plot_data(data_csv=data, key='Steer', init=(0, 1), title='Histogram steer actions', hist=True,
+    plot_data(data_csv=data, key=KEY_STEER, init=(0, 1), title='Histogram steer actions', hist=True,
                 label=csv_file, num_rows=num_rows)
     
     # Extra row
     if num_rows > NUM_ROWS:
+        size_init = 1
+        size_brake = 2
+        init_brake = (2, 1)
+
+        if not dist and brake: # Only brake
+            init = (2, 0)
+        elif dist and not brake and not back: # Only front laser
+            init = (2, 1)
+        elif back and not brake: # Both laser
+            init = (2, 2)
+            size_init = 2
+        else: # All
+            init = None
+            size_brake = 1
+            init_brake = (2, 2)
+
         if brake:
-            plot_data(data_csv=data, num_rows=num_rows, key='Brake', title='Brake of the vehicle',
-                      label=csv_file, init=(2, 2), size=2)
-            plot_data(data_csv=data, key='Brake', init=(2, 1), title='Histogram brake actions',
+            plot_data(data_csv=data, num_rows=num_rows, key=KEY_BRAKE, title='Brake of the vehicle',
+                      label=csv_file, init=(init_brake[0], init_brake[1] + 1), size=size_brake)
+            plot_data(data_csv=data, key=KEY_BRAKE, init=init_brake, title='Histogram brake actions',
                       hist=True, label=csv_file, num_rows=num_rows)
             
         if dist:
-            plot_data(data_csv=data, key='Dist', init=(2, 0), label=csv_file,
-                      title='Distance front laser', num_rows=num_rows)
-
-        if not dist and brake:
-            init = (2, 0)
-        elif dist and not brake:
-            init = (2, 1)
-        else:
-            init = None
+            plot_data(data_csv=data, key=KEY_DISTANCE, init=(2, 0), label=csv_file,
+                      title='Distance front lidar', num_rows=num_rows)
+            
+        if back:
+            plot_data(data_csv=data, key=KEY_BACK, init=(2, 1), label=csv_file, title='Distance back lidar',
+                      num_rows=num_rows)
  
         if init != None:
-            plot_data(data_csv=data, key='Accumulated reward', init=init, label=csv_file,
-                      title='Accumulated reward', num_rows=num_rows)
+            plot_data(data_csv=data, key=KEY_ACC_REWARD, init=init, label=csv_file,
+                      title=KEY_ACC_REWARD, num_rows=num_rows, size=size_init)
     
     plt.tight_layout()
     plt.show()

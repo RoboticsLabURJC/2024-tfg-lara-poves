@@ -9,7 +9,6 @@ import pygame
 import os
 import csv
 from abc import ABC, abstractmethod
-import time
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -18,13 +17,12 @@ from configcarla import SIZE_CAMERA, PATH
 import configcarla
 
 MAX_DEV = 100
-MAX_DIST_LASER = 15
+MAX_DIST_LASER = 20
 MIN_DIST_LASER = 4
 FREC_PASSING = 3
-CHANGE_VEL_RATE = 5
 
 KEY_LASER = "laser"
-KEY_BACK = "back"
+KEY_BACK = "Distance back-right"
 KEY_VEL = "velocity"
 KEY_DEV = "deviation"
 KEY_CM = "cm"
@@ -32,26 +30,42 @@ KEY_LEFT_POINTS = "left_points"
 KEY_RIGHT_POINTS = "right_points"
 KEY_AREA = "area"
 
+KEY_REWARD = "Reward"
+KEY_STEPS = "Steps"
+KEY_EPISODE = "Episode"
+KEY_FINISH = "Finish"
+KEY_MEAN_VEL = "Mean vel"
+KEY_EXP_RATE = "Exploration_rate"
+KEY_ACC_REWARD = "Accumulated reward"
+KEY_DISTANCE = "Distance"
+
+KEY_THROTTLE = "Throttle"
+KEY_STEER = "Steer"
+KEY_BRAKE = "Brake"
+
+KEY_ID = "id"
+KEY_TOWN = "town"
+KEY_LOC = "location"
 CIRCUIT_CONFIG = {
     0: [
-        {"id": 0, "town": "Town04", "location": carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137))},
-        {"id": 1, "town": "Town04", "location": carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7))},
-        {"id": 2, "town": "Town04", "location": carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0))}
+        {KEY_ID: 0, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137))},
+        {KEY_ID: 1, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7))},
+        {KEY_ID: 2, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0))}
     ],
     1: [
-        {"id": 5, "town": "Town04", "location": carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137))}
+        {KEY_ID: 5, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137))}
     ],
     2: [
-        {"id": 3, "town": "Town04", "location": carla.Transform(carla.Location(x=13.5, y=310, z=0.1), carla.Rotation(yaw=-48))}
+        {KEY_ID: 3, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=13.5, y=310, z=0.1), carla.Rotation(yaw=-48))}
     ],
     3: [
-        {"id": 4, "town": "Town03", "location": carla.Transform(carla.Location(x=114, y=207.3, z=1.7))}
+        {KEY_ID: 4, KEY_TOWN: "Town03", KEY_LOC: carla.Transform(carla.Location(x=114, y=207.3, z=1.7))}
     ],
     4: [
-        {"id": 6, "town": "Town06", "location": carla.Transform(carla.Location(x=457.83, y=244.7, z=0.1))}
+        {KEY_ID: 6, KEY_TOWN: "Town06", KEY_LOC: carla.Transform(carla.Location(x=457.83, y=244.7, z=0.1))}
     ],
     5: [
-        {"id":7, "town": "Town05", "location": carla.Transform(carla.Location(x=75.0, y=-144.5, z=0.1), carla.Rotation(yaw=4.0))}
+        {KEY_ID:7, KEY_TOWN: "Town05", KEY_LOC: carla.Transform(carla.Location(x=75.0, y=-144.5, z=0.1), carla.Rotation(yaw=4.0))}
     ]
 }
 
@@ -97,8 +111,8 @@ class CarlaBase(gym.Env, ABC):
             self._train_csv = open(dir_csv + alg + '_train_data_' + str(num_files) + '.csv',
                                    mode='w', newline='')
             self._writer_csv_train = csv.writer(self._train_csv)
-            self._writer_csv_train.writerow(["Episode", "Reward", "Num_steps", "Finish", "Deviation",
-                                             "Exploration_rate", "Distance", "Mean veal"])
+            self._writer_csv_train.writerow([KEY_EPISODE, KEY_REWARD, KEY_STEPS, KEY_FINISH, KEY_DEV,
+                                             KEY_EXP_RATE, KEY_LASER, KEY_MEAN_VEL])
 
             # Action file
             dir_csv = PATH + '2024-tfg-lara-poves/src/deepRL/csv/actions/' + self.__class__.__name__ + '/'
@@ -109,7 +123,7 @@ class CarlaBase(gym.Env, ABC):
             self._actions_csv = open(dir_csv + alg + '_train_actions_' + str(num_files) + '.csv',
                                      mode='w', newline='')
             self._writer_csv_actions = csv.writer(self._actions_csv)
-            self._writer_csv_actions.writerow(["Throttle", "Steer", "Brake"])
+            self._writer_csv_actions.writerow([KEY_THROTTLE, KEY_STEER, KEY_BRAKE])
 
             if self._passing:
                 dir_csv = PATH + '2024-tfg-lara-poves/src/deepRL/csv/target_vel/' + self.__class__.__name__ + '/'
@@ -239,7 +253,7 @@ class CarlaBase(gym.Env, ABC):
             assert fixed_delta_seconds > 0.0, "In synchronous mode fidex_delta_seconds can't be 0.0"
 
         self._fixed_delta_seconds = fixed_delta_seconds        
-        self._town_locations = [(entry["id"], entry["town"], entry["location"]) for entry in config]
+        self._town_locations = [(entry[KEY_ID], entry[KEY_TOWN], entry[KEY_LOC]) for entry in config]
         self._client = None
         self._port = port
         self._port_tm = port_tm
@@ -380,19 +394,6 @@ class CarlaBase(gym.Env, ABC):
         if self._train:
             self._writer_csv_actions.writerow([control.throttle, control.steer, control.brake])
 
-        if self._is_passing_ep and (self._count == 0 or time.time() - self._start_time >= CHANGE_VEL_RATE):
-            self._start_time = time.time()
-
-            prob = random.random()
-            if prob < 0.35: # 35% probability
-                self._target_vel = random.uniform(0, 5)
-            else: # 65% probability 
-                self._target_vel = random.uniform(5, 10)
-            self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
-
-            if self._train:
-                self._writer_csv_vel.writerow([self._target_vel])
-
         try:
             # Tick
             if self._train:
@@ -515,6 +516,14 @@ class CarlaBase(gym.Env, ABC):
             self._is_passing_ep = False
 
         self._swap_ego_vehicle()
+
+        # Set target velocity (front vehicle)
+        if self._is_passing_ep:
+            self._target_vel = random.uniform(5, 10)
+            self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
+
+            if self._train:
+                self._writer_csv_vel.writerow([self._target_vel])
 
         while True:
             try:
@@ -832,7 +841,7 @@ class CarlaObstacle(CarlaBase):
                 r_laser = np.clip(self._dist_laser, MIN_DIST_LASER, MAX_DIST_LASER) - MIN_DIST_LASER
                 r_laser /= (MAX_DIST_LASER - MIN_DIST_LASER)
 
-                if self._dist_laser <= 10:
+                if self._dist_laser <= 15 and self._velocity > 4:
                     r_throttle = -5/3 * self._throttle + 1
             else:
                 r_laser = 0
@@ -854,19 +863,24 @@ class CarlaObstacle(CarlaBase):
                 w_steer = 0.25
                 w_laser = 0
             elif r_laser != 0:
-                #if self._dist_laser <= 6: # Front vehicle too close
-                 #   w_dev = 0.1
-                  #  w_throttle = 0.2
-                  #  w_steer = 0
-                   # w_laser = 0.7
-                if self._dist_laser <= 10: # Medium distance
+                if self._velocity <= 4:
                     w_dev = 0.3
-                    w_throttle = 0.2
-                    w_steer = 0.1
+                    w_throttle = 0.2 # Higher throttle, higher reward
+                    w_laser = 0.5
+                    w_steer = 0.0
+                elif self._dist_laser <= 10:
+                    w_dev = 0.3
+                    w_throttle = 0.3 # Higher throttle, lower reward
+                    w_steer = 0
                     w_laser = 0.4
+                elif self._dist_laser <= 15:
+                    w_dev = 0.4
+                    w_throttle = 0.2 # Higher throttle, lower reward
+                    w_steer = 0.1
+                    w_laser = 0.3
                 else:
                     w_dev = 0.45
-                    w_throttle = 0.1
+                    w_throttle = 0.1 # Higher throttle, higher reward
                     w_laser = 0.3
                     w_steer = 0.15
             elif self._throttle < 0.5:

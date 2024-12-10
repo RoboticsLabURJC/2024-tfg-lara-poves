@@ -2,6 +2,13 @@ import matplotlib.pyplot as plt
 import argparse
 import csv
 import numpy as np
+import os
+import sys
+
+current_dir = os.getcwd()
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+
+from deepRL.environment import KEY_BRAKE, KEY_THROTTLE, KEY_STEER
 
 NUM_ROWS = 1
 NUM_COLUMNS = 3
@@ -18,14 +25,14 @@ def histogram(data_csv:list[dict], key:str, subplot:int):
     
     # Draw histogram
     extra = 0.05
-    if key == 'Steer':
+    if key == KEY_STEER:
         extra /= 2
         bins = np.arange(-0.18, 0.2, 0.02)
     else:
         bins = np.linspace(0.0, 1.0, 11)
      
     counts, edges, _ = plt.hist(data, bins=bins, edgecolor='black', zorder=1)
-    if key != 'Steer':
+    if key != KEY_STEER:
         for count, edge in zip(counts, edges):
             plt.text(edge + extra, count, str(int(count)), ha='center', va='bottom')
 
@@ -34,6 +41,8 @@ def histogram(data_csv:list[dict], key:str, subplot:int):
     plt.xlabel('Value')
 
 def main(args):
+    os.chdir(current_dir)
+
     data = []
     with open(args.file, 'r') as file:
         csv_reader = csv.DictReader(file)
@@ -43,9 +52,9 @@ def main(args):
 
     plt.figure(figsize=(6 * NUM_COLUMNS, 5 * NUM_ROWS))
 
-    histogram(data_csv=data, key='Throttle', subplot=1)
-    histogram(data_csv=data, key='Steer', subplot=2)
-    histogram(data_csv=data, key='Brake', subplot=3)
+    histogram(data_csv=data, key=KEY_THROTTLE, subplot=1)
+    histogram(data_csv=data, key=KEY_STEER, subplot=2)
+    histogram(data_csv=data, key=KEY_BRAKE, subplot=3)
 
     plt.tight_layout()
     plt.show()
