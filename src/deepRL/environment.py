@@ -455,7 +455,7 @@ class CarlaBase(gym.Env, ABC):
             error = str(e)
 
             print("Circuit not completed:", error)
-            print("No termino", self._count_ep, "steps:", self._count, "id:", self._id,
+            print("No termino", self._count_ep, "steps:", self._count, "id:", self._id, "vel target:", self._target_vel,
                   "dev:", self._dev, "is_passing:", self._is_passing_ep, "dist:", self._dist_laser)
 
         # Check if a key has been pressed
@@ -519,7 +519,7 @@ class CarlaBase(gym.Env, ABC):
 
         # Set target velocity (front vehicle)
         if self._is_passing_ep:
-            self._target_vel = random.uniform(5, 10)
+            self._target_vel = random.uniform(6, 10)
             self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
 
             if self._train:
@@ -841,7 +841,7 @@ class CarlaObstacle(CarlaBase):
                 r_laser = np.clip(self._dist_laser, MIN_DIST_LASER, MAX_DIST_LASER) - MIN_DIST_LASER
                 r_laser /= (MAX_DIST_LASER - MIN_DIST_LASER)
 
-                if self._dist_laser <= 15 and self._velocity > 4:
+                if self._dist_laser <= 15:
                     r_throttle = -5/3 * self._throttle + 1
             else:
                 r_laser = 0
@@ -862,27 +862,22 @@ class CarlaObstacle(CarlaBase):
                 w_throttle = 0.65
                 w_steer = 0.25
                 w_laser = 0
+            elif self._velocity < 5 and r_laser == 0:
+                w_dev = 0.3
+                w_throttle = 0.7
+                w_laser = 0
+                w_steer = 0
             elif r_laser != 0:
-                if self._velocity <= 4:
-                    w_dev = 0.3
-                    w_throttle = 0.2 # Higher throttle, higher reward
-                    w_laser = 0.5
+                if self._dist_laser <= 8:
+                    w_dev = 0.1
+                    w_throttle = 0.1 # Higher throttle, lower reward
+                    w_laser = 0.8
                     w_steer = 0.0
-                elif self._dist_laser <= 10:
-                    w_dev = 0.3
-                    w_throttle = 0.3 # Higher throttle, lower reward
-                    w_steer = 0
-                    w_laser = 0.4
-                elif self._dist_laser <= 15:
-                    w_dev = 0.4
-                    w_throttle = 0.2 # Higher throttle, lower reward
-                    w_steer = 0.1
-                    w_laser = 0.3
                 else:
-                    w_dev = 0.45
-                    w_throttle = 0.1 # Higher throttle, higher reward
-                    w_laser = 0.3
-                    w_steer = 0.15
+                    w_dev = 0.4
+                    w_throttle = 0.2 # If dist < 15: Higher throttle, lower reward, else: higher reward
+                    w_steer = 0.0
+                    w_laser = 0.4
             elif self._throttle < 0.5:
                 w_dev = 0.65
                 w_throttle = 0.25
@@ -897,7 +892,7 @@ class CarlaObstacle(CarlaBase):
             reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + r_laser * w_laser
         else:
             if "Distance" in error:
-                reward = -60
+                reward = -50
             else:
                 reward = -40
 
