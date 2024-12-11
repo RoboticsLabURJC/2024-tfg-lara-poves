@@ -258,6 +258,9 @@ class CarlaBase(gym.Env, ABC):
         self._port = port
         self._port_tm = port_tm
 
+        if self._back_lidar:
+            self._town_locations.pop()
+
     def _swap_ego_vehicle(self):
         if self._train:
             self._id, self._town, self._loc = random.choice(self._town_locations)
@@ -409,7 +412,8 @@ class CarlaBase(gym.Env, ABC):
 
             # Update data
             if self._is_passing_ep:
-                self._sensors.update_data(vel_ego=self._velocity, vel_front=self._target_vel, front_laser=True)
+                self._sensors.update_data(vel_ego=self._velocity, vel_front=self._target_vel,
+                                          front_laser=True, back_lidar=self._back_lidar)
             else:
                 self._sensors.update_data(vel_ego=self._velocity)
 
@@ -456,7 +460,7 @@ class CarlaBase(gym.Env, ABC):
 
             print("Circuit not completed:", error)
             print("No termino", self._count_ep, "steps:", self._count, "id:", self._id, "vel target:", self._target_vel,
-                  "dev:", self._dev, "is_passing:", self._is_passing_ep, "dist:", self._dist_laser)
+                  "dev:", self._dev, "is_passing:", self._is_passing_ep, "dist:", self._dist_laser, "back:", self._back_lidar)
 
         # Check if a key has been pressed
         if self._human:
@@ -508,10 +512,10 @@ class CarlaBase(gym.Env, ABC):
             if self._front_vehicle != None and self._is_passing_ep:
                 self._front_vehicle.destroy()
 
+        self._target_vel = -1
         if self._passing:
             self._vel_front = 0
             self._is_passing_ep = self._count_ep > self._start_passing 
-            self._target_vel = 0
         else:
             self._is_passing_ep = False
 
@@ -862,11 +866,6 @@ class CarlaObstacle(CarlaBase):
                 w_throttle = 0.65
                 w_steer = 0.25
                 w_laser = 0
-            elif self._velocity < 5 and r_laser == 0:
-                w_dev = 0.3
-                w_throttle = 0.7
-                w_laser = 0
-                w_steer = 0
             elif r_laser != 0:
                 if self._dist_laser <= 8:
                     w_dev = 0.1
@@ -900,7 +899,7 @@ class CarlaObstacle(CarlaBase):
     
 class CarlaPassing(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0, port_tm:int=1111,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, retrain:bool=False,
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, retrain:int=0,
                  lane_network:bool=False):
         if train and human:
             human = False
@@ -908,14 +907,18 @@ class CarlaPassing(CarlaBase):
 
         if train:
             num_cir = 0
+            back = False
+            if retrain == 2:
+                back = True
         else:
-            retrain = True
+            retrain = True # Front and back lidar
+            back = True
         config = CIRCUIT_CONFIG.get(num_cir, [])
 
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, port_tm=port_tm,
                          num_cir=num_cir, config=config, passing=retrain, start_passing=-1,
-                         lane_network=lane_network, back_lidar=retrain) # ver si tengo que hacer 1 lane, obstacle, normal
+                         lane_network=lane_network, back_lidar=back) # ver si tengo que hacer 1 lane, obstacle, normal
         
         self._max_vel = 20
 

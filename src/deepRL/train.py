@@ -76,7 +76,11 @@ def main(args):
         model = alg_class(policy, env, verbose=args.verbose, seed=SEED, tensorboard_log=log_dir, **model_params)
     else:
         dir = '/home/lpoves/2024-tfg-lara-poves/src/deepRL/'
-        model_file = dir + 'model/CarlaBaseModels/' + args.alg + '-' + args.env
+        if args.env == 'CarlaPassing':
+            model_file = dir + 'model/CarlaBaseModels/' + args.alg + '-' + args.env + '_' + str(args.retrain)
+        else:
+            model_file = dir + 'model/CarlaBaseModels/' + args.alg + '-' + args.env
+
         try:
             model = alg_class.load(model_file, env=env, **model_params)
         except FileNotFoundError:
@@ -160,7 +164,7 @@ if __name__ == "__main__":
         type=int, 
         required=False, 
         default=0,
-        help='If a model has to be reatrained. By default 0. (0 = False)'
+        help='If a model has to be reatrained, 1: retraining lane, 2: retraining obstacle. By default 0. (0 = False)'
     )
     parser.add_argument(
         '--port_tm', 

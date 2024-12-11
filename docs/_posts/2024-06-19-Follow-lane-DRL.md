@@ -246,3 +246,9 @@ También hemos llevado a cabo pruebas en inferencia en varios circuitos que no s
 
 Hemos evaluado si el modelo entrenado utilizando la percepción del carril basada en *ground truth* funcionaría con una configuración diferente de la cámara y empleando percepción mediante una red neuronal. Los resultados obtenidos han sido satisfactorios.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/E7peMuLgnAM?si=V5oh3Apb9pxuqtAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### CarlaObstacle
+
+### CarlaPassing
+
+hemos eliminado la 3 al entrenar el adelantamiento (no el seguimiento del carril, ni el no chocarse) porque detectamos la vaya lateral con el lidar, lo que nos impde saber si hemos adelantado completamente al coche o es la vaya

@@ -348,11 +348,13 @@ class CameraRGB(Sensor):
                 count_x += sum(range(x_left, x_right))
                 count_y += y * (x_right - x_left)
 
+                '''
                 # Road porcentage
                 count_total += x_right - x_left
                 if self._seg:
                     region_mask = mask[y, x_left:x_right]
                     count_road += np.count_nonzero(region_mask == ROAD)
+                '''
 
         if count_total > 0:
             # Calculate center of mass
@@ -363,11 +365,13 @@ class CameraRGB(Sensor):
             self._cm = np.array([x_cm, y_cm], dtype=np.int32)
             self._area = count_total
 
+            '''
             # Calculate road porcentage
             if self._seg:
                 self._road_percentage = count_road / count_total * 100
                 self._lane_left = [] # Mark error
                 assert self._road_percentage >= self._threshold_road_per, "Low percentage of lane"
+            '''
 
             # Draw center of mass and vehicle
             cv2.line(img, (x_cm, 0), (x_cm, SIZE_CAMERA - 1), (0, 255, 0), 2)
@@ -377,7 +381,7 @@ class CameraRGB(Sensor):
             self._deviation = SIZE_CAMERA / 2
             self._road_percentage = 0
             self._lane_left = [] # Mark error
-            assert False, "Area zero"
+            #assert False, "Area zero"
 
         return img
 
@@ -449,8 +453,99 @@ class CameraRGB(Sensor):
                     write_text(text=f"{self._road_percentage:.2f}% road", side=RIGHT, bold=True,
                             img=self._extra_surface, color=(0, 0, 0), size=self.size_text,
                             point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))
+                    
+            if self._seg:
+                pass
+                '''
+                t= time.time()
+                index = np.argwhere(mask == ROAD)
+                index_sorted = index[np.argsort(index[:, 0])]  # Ordenar por 'y'
+                area = len(index)
+                print("index", time.time() - t)
+
+                # Calcular el centro de masas
+                # Obtener los valores únicos de 'y' (en la columna 0)
+                t = time.time()
+                unique_y, indices_y = np.unique(index_sorted[:, 0], return_inverse=True)
+                print("unique:", time.time() - t)
+
+                # Inicializamos listas para los puntos de izquierda y derecha
+                points_left = []
+                points_right = []
+
+                # Recorremos los valores únicos de 'y' solo una vez
+                t = time.time()
+                for i, y in enumerate(unique_y):
+                    # Obtener los índices de los puntos correspondientes a cada 'y'
+                    mask_y = indices_y == i  # Máscara booleana para puntos con 'y' igual al actual
+                    points_in_y = index_sorted[mask_y]  # Filtrar los puntos correspondientes a 'y'
+
+                    if len(points_in_y) > 50:
+                        # Encontrar el mínimo y máximo x de manera vectorizada
+                        min_x = np.min(points_in_y[:, 1])
+                        max_x = np.max(points_in_y[:, 1])
+
+                        # Guardar los resultados
+                        points_left.append((min_x, y))
+                        points_right.append((max_x, y))
+                print("for:", time.time() - t)     
+
+
+                # Convertir las listas en arrays para mayor eficiencia
+                points_left = np.array(points_left)
+                points_right = np.array(points_right)
+                
+                num_points = 20
+
+                points_left = self._get_points_seg(num_points=num_points, points=points_left)
+                points_right = self._get_points_seg(num_points=num_points, points=points_right)
+                '''
 
             self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)
+
+    def _get_points_seg(self, num_points:int, points:np.ndarray, show:bool=False):
+        points_final = np.full((num_points, 2), 0, dtype=np.int32)
+        i = 0
+
+        if len(points) <= num_points:
+            for x, y in points:
+                points_final[i, 0] = x
+                points_final[i, 1] = y
+                i += i
+        else:
+            # Obtener valores únicos de x y su punto mínimo correspondiente
+            points_array = np.array(points)
+            unique_x, counts = np.unique(points_array[:, 0], return_counts=True)
+
+            for x in unique_x:
+                points_in_x = points_array[points_array[:, 0] == x]
+                selected_point = points_in_x[np.random.choice(points_in_x.shape[0])]
+                points_final[i] = selected_point
+                i += 1
+
+            # 2. Seleccionar puntos adicionales basados en las frecuencias
+            remaining_points_to_select = 30 - i  # Los puntos restantes que necesitamos seleccionar
+
+            if remaining_points_to_select > 0:
+                # Crear un array con las probabilidades de selección para cada valor de x
+                probabilities = counts / counts.sum()
+
+                # Seleccionar los puntos adicionales según las frecuencias
+                for _ in range(remaining_points_to_select):
+                    x_selected = np.random.choice(unique_x, p=probabilities)
+                    points_in_x = points_array[points_array[:, 0] == x_selected]
+                    selected_point = points_in_x[np.random.choice(points_in_x.shape[0])]
+                    points_final[i] = selected_point
+                    i += 1
+
+        # Mostrar el resultado
+        points_final = points_final[points_final[:, 1].argsort()]
+
+        if show:
+            for x, y in points_final:
+                pygame.draw.circle(self._extra_surface, (0, 255, 255), (x, y), 5, 0)
+
+        return points_final        
 
     def get_lane_points(self, num_points:int=5, show:bool=False):
         if not self._lane or len(self._lane_left) == 0 or len(self._lane_right) == 0:
@@ -630,6 +725,7 @@ class Lidar(Sensor):
 
                 for i in index:
                     front_points[j] = self._points_front[i]
+                    j += 1
                 
         return front_points
     
@@ -649,6 +745,7 @@ class Lidar(Sensor):
 
                 for i in index:
                     back_points[j] = self._points_back[i]
+                    j += 1
                 
         return back_points
     
@@ -664,19 +761,18 @@ class Lidar(Sensor):
                     sorted_index = np.argsort(np.array(meas_zones[X][zone])[filter_min & filter_max])
                     self._points_front = filtered_dist[sorted_index]
                 elif zone == BACK:
-                    # dibujarme estos puntos para ver que est pasando
-                    print(filtered_dist)
                     dist_mask = filtered_dist < self._back_dist_threshold
                     filtered_dist = filtered_dist[dist_mask]
-                    print("\nFiltered distances:", filtered_dist)
+                    #print("\nFiltered distances:", filtered_dist)
 
-                    # Aplicar el mismo filtro a los valores de X e Y
                     x_values = np.array(meas_zones[X][zone])[filter_min & filter_max]
                     filtered_x_values = x_values[dist_mask]
 
-                    y_values = np.array(meas_zones[X + 1][zone])[filter_min & filter_max]
-                    filtered_y_values = y_values[dist_mask]
+                    #y_values = np.array(meas_zones[X + 1][zone])[filter_min & filter_max]
+                    #filtered_y_values = y_values[dist_mask]
 
+                    '''
+                    print("filtered dist", len(filtered_dist))
                     for i in range(len(filtered_y_values)):
                         thickness = 2
                         color = (0, 255, 0)
@@ -684,10 +780,10 @@ class Lidar(Sensor):
                         x = filtered_x_values[i]
                         y = filtered_y_values[i]
 
-                        center = (int(x * self._scale + self._center_screen[0]),
-                                int(y * self._scale + self._center_screen[1]))
+                        center = (int(x * 17 + self._center_screen[0]),
+                                int(y * 17 + self._center_screen[1]))
                         pygame.draw.circle(self._sub_screen, color, center, thickness)
-
+                    '''
 
                     sorted_index = np.argsort(filtered_x_values)
                     self._points_back = filtered_dist[sorted_index]
@@ -750,7 +846,7 @@ class Lidar(Sensor):
             [[] for _ in range(NUM_ZONES)], # dist_zones
             [[] for _ in range(NUM_ZONES)], # z_zones
             [[] for _ in range(NUM_ZONES)], # x_zones
-            [[] for _ in range(NUM_ZONES)] # quitaaaaaaaaaaaaaaaaaaaaar
+            #[[] for _ in range(NUM_ZONES)] # quitaaaaaaaaaaaaaaaaaaaaar
         ]
 
         if self._rect != None:
@@ -763,7 +859,7 @@ class Lidar(Sensor):
                 meas_zones[Z][zone].append(z)
                 if zone == FRONT or zone == BACK:
                     meas_zones[X][zone].append(x)
-                    meas_zones[X + 1][zone].append(y)
+                    #meas_zones[X + 1][zone].append(y)
 
             if self._rect != None:
                 thickness = self._interpolate_thickness(num=z)
@@ -889,7 +985,7 @@ class Vehicle_sensors:
         self.sensors.append(sensor_collision)
         return sensor_collision
 
-    def update_data(self, flip:bool=True, vel_ego:int=-1, vel_front:int=-1, front_laser=False):
+    def update_data(self, flip:bool=True, vel_ego:int=-1, vel_front:int=-1, front_laser=False, back_lidar=False):
         offset = 20
         dist_lidar = np.nan
 
@@ -898,6 +994,7 @@ class Vehicle_sensors:
 
             if type(sensor) == Lidar:
                 dist_lidar = sensor.get_min_center()
+                back_lidar = sensor.get_min_back()
 
         if self._screen != None:
             elapsed_time = time.time_ns() - self._time_frame
@@ -919,7 +1016,9 @@ class Vehicle_sensors:
             if vel_front > 0:
                 text_write.append(f"Vel front: {vel_front:.2f} m/s")
             if front_laser:
-                text_write.append(f"Dist lidar: {dist_lidar:.2f} m")
+                text_write.append(f"Dist front lidar: {dist_lidar:.2f} m")
+            if back_lidar:
+                text_write.append(f"Dist back lidar: {dist_lidar:.2f} m")
 
             # Write text
             for i in range(len(text_write)):
