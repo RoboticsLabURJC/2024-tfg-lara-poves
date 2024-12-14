@@ -19,7 +19,7 @@ def main(args):
     driver_transform = carla.Transform(carla.Location(x=0.5, z=1.7292))
     camera = sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), transform=driver_transform,
                                     seg=True, text='Driver view', init_extra=(SIZE_CAMERA, 0), 
-                                    lane=True, canvas_seg=False)
+                                    lane=True, canvas_seg=False, check_area_lane=True)
     
     world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75))
     sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), init=(0, 0), 

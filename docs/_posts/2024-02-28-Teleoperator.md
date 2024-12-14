@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-10-01T12:07:00
+last_modified_at: 2024-12-14T12:42:00
 categories:
   - Blog
 tags:
@@ -34,7 +34,7 @@ pip install pygame numpy==1.26.4 carla Pillow
 
 Para iniciar el simulador CARLA, usamos el siguiente comando:
 ```bash
-/opt/carla/CarlaUE4.sh -world-port=2000
+/opt/carla/CarlaUE4.sh -world-port=2000 -RenderOffScreen
 ```
 
 Hemos estado investigando cómo realizar acciones básicas en CARLA: la apertura de distintos entornos, el desplazamiento del observador y la colocación de uno o varios vehículos con la opción de seleccionar su modelo. Después, nos centramos en definir el vehículo que queríamos controlar, conocido como ***Ego Vehicle*** en CARLA, al que añadiremos los sensores. Para esta funcionalidad hemos integrado dos cámaras: una para simular la perspectiva del conductor y otra para visualizar el vehículo en su entorno.

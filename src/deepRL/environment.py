@@ -19,7 +19,7 @@ import configcarla
 MAX_DEV = 100
 MAX_DIST_LASER = 20
 MIN_DIST_LASER = 4
-FREC_PASSING = 3
+MAX_VEL = 60
 
 KEY_LASER = "laser"
 KEY_BACK = "Distance back-right"
@@ -472,7 +472,7 @@ class CarlaBase(gym.Env, ABC):
 
         if finish_ep:
             print("Circuit completed!")
-            print("Termino:", self._count_ep, "steps:", self._count, "id:", self._id,
+            print("Termino:", self._count_ep, "steps:", self._count, "id:", self._id, "target vel:", self._target_vel,
                  "mean vel", self._mean_vel / self._count, "passing:", self._is_passing_ep)
 
         if terminated and self._train:
@@ -501,7 +501,6 @@ class CarlaBase(gym.Env, ABC):
         self._count = 0
         self._first_step = 0
         self._mean_vel = 0
-        self._dev = 0
         self._jump = False
 
         if self._first:
@@ -510,9 +509,12 @@ class CarlaBase(gym.Env, ABC):
             self._sensors.destroy()
 
             if self._front_vehicle != None and self._is_passing_ep:
-                self._front_vehicle.destroy()
+                try:
+                    self._front_vehicle.destroy()
+                except RuntimeError:
+                    pass # It's so far away that it's not visible and not being processed.
 
-        self._target_vel = -1
+        self._target_vel = MAX_VEL
         if self._passing:
             self._vel_front = 0
             self._is_passing_ep = self._count_ep > self._start_passing 
@@ -523,7 +525,7 @@ class CarlaBase(gym.Env, ABC):
 
         # Set target velocity (front vehicle)
         if self._is_passing_ep:
-            self._target_vel = random.uniform(6, 10)
+            self._target_vel = random.uniform(6, 9)
             self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
 
             if self._train:
@@ -536,13 +538,8 @@ class CarlaBase(gym.Env, ABC):
                 self._sensors.update_data()
 
                 if self._camera.data != None:
+                    self._dev = self._camera.get_deviation()
                     break 
-
-                # Reset info
-                self._dev = self._camera.get_deviation()
-                self._velocity = 0
-                if self._is_passing_ep:
-                    self._dist_laser = self._lidar.get_min_center()
 
             except AssertionError:
                 pass
@@ -650,7 +647,7 @@ class CarlaLaneContinuous(CarlaBase):
         # Add velocity to observations
         new_space = spaces.Box(
             low=0.0,
-            high=60.0,
+            high=MAX_VEL,
             shape=(1,),
             dtype=np.float64
         )
@@ -732,7 +729,9 @@ class CarlaLaneContinuous(CarlaBase):
             reward = -40
 
         return reward
-     
+
+KEY_VEL_FRONT = "vel front"
+
 class CarlaObstacle(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0, port_tm:int=1111,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, retrain:bool=False,
@@ -749,7 +748,7 @@ class CarlaObstacle(CarlaBase):
 
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, port_tm=port_tm,
-                         num_cir=num_cir, config=config, passing=retrain, start_passing=-1,
+                         num_cir=num_cir, config=config, passing=False, start_passing=-1,
                          lane_network=lane_network) 
         
         self._max_vel = 20
@@ -757,7 +756,7 @@ class CarlaObstacle(CarlaBase):
         # Add velocity to observations
         new_space_vel = spaces.Box(
             low=0.0,
-            high=60.0,
+            high=MAX_VEL,
             shape=(1,),
             dtype=np.float64
         )
@@ -771,9 +770,17 @@ class CarlaObstacle(CarlaBase):
             dtype=np.float64
         )
 
+        new_space_vel_front = spaces.Box(
+            low=0.0,
+            high=MAX_VEL,
+            shape=(1,),
+            dtype=np.float64
+        )
+
         if not normalize:
             self.observation_space[KEY_VEL] = new_space_vel
             self.observation_space[KEY_LASER] = new_space_laser
+            self.observation_space[KEY_VEL_FRONT] = new_space_vel_front
         else:
             self._obs_norm[KEY_VEL] = new_space_vel
             self.observation_space[KEY_VEL] =  spaces.Box(
@@ -789,10 +796,20 @@ class CarlaObstacle(CarlaBase):
                 shape=(self._num_points_laser,),
                 dtype=np.float64
             )
+            
+            self._obs_norm[KEY_VEL_FRONT] = new_space_vel_front
+            self.observation_space[KEY_VEL_FRONT] =  spaces.Box(
+                low=0.0,
+                high=1.0,
+                shape=(1,),
+                dtype=np.float64
+            )
+            
 
     def _get_obs_env(self):
         obs = super()._get_obs_env()
         obs[KEY_VEL] = self._velocity
+        obs[KEY_VEL_FRONT] = self._target_vel
 
         if not self._is_passing_ep: # No passing
             obs[KEY_LASER] = np.full(self._num_points_laser, MAX_DIST_LASER, dtype=np.float64)
@@ -845,7 +862,7 @@ class CarlaObstacle(CarlaBase):
                 r_laser = np.clip(self._dist_laser, MIN_DIST_LASER, MAX_DIST_LASER) - MIN_DIST_LASER
                 r_laser /= (MAX_DIST_LASER - MIN_DIST_LASER)
 
-                if self._dist_laser <= 15:
+                if self._dist_laser <= 10:
                     r_throttle = -5/3 * self._throttle + 1
             else:
                 r_laser = 0
@@ -867,16 +884,21 @@ class CarlaObstacle(CarlaBase):
                 w_steer = 0.25
                 w_laser = 0
             elif r_laser != 0:
-                if self._dist_laser <= 8:
+                if self._dist_laser <= 6: # Front vehicle too close
                     w_dev = 0.1
-                    w_throttle = 0.1 # Higher throttle, lower reward
-                    w_laser = 0.8
-                    w_steer = 0.0
-                else:
-                    w_dev = 0.4
-                    w_throttle = 0.2 # If dist < 15: Higher throttle, lower reward, else: higher reward
-                    w_steer = 0.0
+                    w_throttle = 0.2
+                    w_steer = 0
+                    w_laser = 0.7
+                elif self._dist_laser <= 10: # Medium distance
+                    w_dev = 0.3
+                    w_throttle = 0.2
+                    w_steer = 0.1
                     w_laser = 0.4
+                else:
+                    w_dev = 0.45
+                    w_throttle = 0.1
+                    w_laser = 0.3
+                    w_steer = 0.15
             elif self._throttle < 0.5:
                 w_dev = 0.65
                 w_throttle = 0.25
@@ -891,7 +913,7 @@ class CarlaObstacle(CarlaBase):
             reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + r_laser * w_laser
         else:
             if "Distance" in error:
-                reward = -50
+                reward = -60
             else:
                 reward = -40
 
@@ -925,7 +947,7 @@ class CarlaPassing(CarlaBase):
         # Add velocity to observations
         new_space_vel = spaces.Box(
             low=0.0,
-            high=60.0,
+            high=MAX_VEL,
             shape=(1,),
             dtype=np.float64
         )
