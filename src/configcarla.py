@@ -128,6 +128,7 @@ class CameraRGB(Sensor):
         self._lane_network = lane_network
         self._lane = lane
         self._seg = seg
+        self._mask = []
         self._check_area_lane = self._seg and self._lane and check_area_lane
         self._check_lane_left = self._seg and self._lane and check_lane_left
         self._check_lane_right = self._seg and self._lane and check_lane_right
@@ -405,6 +406,8 @@ class CameraRGB(Sensor):
         else:
             self._deviation = SIZE_CAMERA / 2
             self._road_percentage = 0
+            self._road_left = 0
+            self._road_right = 0
             self._lane_left = [] # Mark error
             assert False, "Area zero"
 
@@ -439,6 +442,7 @@ class CameraRGB(Sensor):
     def process_data(self):
         image = self.data
         if image == None:
+            self._mask = []
             return 
         
         image_data = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
@@ -447,7 +451,6 @@ class CameraRGB(Sensor):
 
         # Semantic segmentation
         canvas = image_data
-        mask = None
         text_extra = self.text
 
         if self._seg:
@@ -460,14 +463,14 @@ class CameraRGB(Sensor):
             pred = self._seg_model.predict(image_pil)
 
             if self._canvas_seg:
-                canvas, mask = self._seg_model.get_canvas(image_data, pred)
+                canvas, self._mask = self._seg_model.get_canvas(image_data, pred)
             else:
-                mask = pred
-                if (SIZE_CAMERA, SIZE_CAMERA) != mask.shape:
-                    mask = cv2.resize(mask, dsize=(SIZE_CAMERA, SIZE_CAMERA), interpolation=cv2.INTER_NEAREST)
+                self._mask = pred
+                if (SIZE_CAMERA, SIZE_CAMERA) != self._mask.shape:
+                    self._mask = cv2.resize(self._mask, dsize=(SIZE_CAMERA, SIZE_CAMERA), interpolation=cv2.INTER_NEAREST)
 
         if self._lane:
-            canvas = self._detect_lane(canvas, mask)
+            canvas = self._detect_lane(canvas, self._mask)
     
         if self.init != None:
             surface = pygame.surfarray.make_surface(image_data[:, :, :3].swapaxes(0, 1))
@@ -484,98 +487,54 @@ class CameraRGB(Sensor):
                     write_text(text=f"{self._road_percentage:.2f}% road", side=RIGHT, bold=True,
                             img=self._extra_surface, color=(0, 0, 0), size=self.size_text,
                             point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))
-                    
-            if self._seg:
-                pass
-                '''
-                index = np.argwhere(mask == ROAD)
-                index_sorted = index[np.argsort(index[:, 0])]  # Ordenar por 'y'
-                area = len(index)
 
-                # Calcular el centro de masas
-                # Obtener los valores únicos de 'y' (en la columna 0)
-                unique_y, indices_y = np.unique(index_sorted[:, 0], return_inverse=True)
+            self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)    
 
-                # Inicializamos listas para los puntos de izquierda y derecha
-                points_left = []
-                points_right = []
+    def get_seg_data(self, num_points:int, show=False):
+        if len(self._mask) <= 0:
+            return 0, np.array([0, 0], dtype=np.int32), np.zeros((num_points, 2), dtype=np.int32), np.zeros((num_points, 2), dtype=np.int32)
 
-                # Recorremos los valores únicos de 'y' solo una vez
-                for i, y in enumerate(unique_y):
-                    # Obtener los índices de los puntos correspondientes a cada 'y'
-                    mask_y = indices_y == i  # Máscara booleana para puntos con 'y' igual al actual
-                    points_in_y = index_sorted[mask_y]  # Filtrar los puntos correspondientes a 'y'
+        index = np.argwhere(self._mask == ROAD)
+        index_sorted = index[np.argsort(index[:, 0])]  # Sort by y
 
-                    if len(points_in_y) > 50:
-                        # Encontrar el mínimo y máximo x de manera vectorizada
-                        min_x = np.min(points_in_y[:, 1])
-                        max_x = np.max(points_in_y[:, 1])
-
-                        # Guardar los resultados
-                        points_left.append((min_x, y))
-                        points_right.append((max_x, y))   
-
-
-                # Convertir las listas en arrays para mayor eficiencia
-                points_left = np.array(points_left)
-                points_right = np.array(points_right)
-                
-                num_points = 20
-
-                points_left = self._get_points_seg(num_points=num_points, points=points_left)
-                points_right = self._get_points_seg(num_points=num_points, points=points_right)
-                '''
-            self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)
-
-    def _get_points_seg(self, num_points:int, points:np.ndarray, show:bool=False):
-        points_final = np.full((num_points, 2), 0, dtype=np.int32)
-        i = 0
-
-        if len(points) <= num_points:
-            for x, y in points:
-                points_final[i, 0] = x
-                points_final[i, 1] = y
-                i += i
-        else:
-            # Obtener valores únicos de x y su punto mínimo correspondiente
-            points_array = np.array(points)
-            unique_x, counts = np.unique(points_array[:, 0], return_counts=True)
-
-            if len(unique_x) > num_points:
-                selected_index = np.linspace(0, len(unique_x) - 1, num_points, dtype=int)
-                unique_x = unique_x[selected_index]
-
-            print(unique_x)
-            for x in unique_x:
-                points_in_x = points_array[points_array[:, 0] == x]
-                selected_point = points_in_x[np.random.choice(points_in_x.shape[0])]
-                points_final[i] = selected_point
-                i += 1
-
-            # 2. Seleccionar puntos adicionales basados en las frecuencias
-            remaining_points_to_select = num_points - i  # Los puntos restantes que necesitamos seleccionar
-
-            if remaining_points_to_select > 0:
-                # Crear un array con las probabilidades de selección para cada valor de x
-                probabilities = counts / counts.sum()
-
-                # Seleccionar los puntos adicionales según las frecuencias
-                for _ in range(remaining_points_to_select):
-                    print(i)
-                    x_selected = np.random.choice(unique_x, p=probabilities)
-                    points_in_x = points_array[points_array[:, 0] == x_selected]
-                    selected_point = points_in_x[np.random.choice(points_in_x.shape[0])]
-                    points_final[i] = selected_point
-                    i += 1
-
-        # Mostrar el resultado
-        points_final = points_final[points_final[:, 1].argsort()]
+        area = len(index)
+        y_cm = np.mean(index[:, 0])
+        x_cm = np.mean(index[:, 1]) 
+        cm = np.array([x_cm, y_cm], dtype=np.int32)
 
         if show:
-            for x, y in points_final:
-                pygame.draw.circle(self._extra_surface, (0, 255, 255), (x, y), 5, 0)
+            pygame.draw.circle(self._extra_surface, (255, 0, 255), (x_cm, y_cm), 9, 0)
 
-        return points_final        
+        min_y = index[0, 0]
+        if self._lane:
+            if self._lane_network:
+                min_y = max(self._ymin_lane, min_y)
+            else:
+                min_y = max(min_y, self._lane_left[0][1], self._lane_right[0][1])
+
+        max_y= index[-1, 0] 
+        values_y = np.linspace(min_y, max_y, num_points, dtype=int)
+
+        points_final_left = np.zeros((num_points, 2), dtype=np.int32)
+        points_final_right = np.zeros((num_points, 2), dtype=np.int32)
+
+        j = 0
+        for y in values_y:
+            points_in_y = index_sorted[index_sorted[:, 0] == y]
+            if len(points_in_y) > 0:
+                points_final_left[j, 1] = y
+                points_final_left[j, 0] = np.min(points_in_y[:, 1])
+
+                points_final_right[j, 1] = y
+                points_final_right[j, 0] = np.max(points_in_y[:, 1])
+
+                if show:
+                    pygame.draw.circle(self._extra_surface, (101, 67, 33), (points_final_left[j, 0], y), 5, 0)
+                    pygame.draw.circle(self._extra_surface, (0, 0, 0), (points_final_right[j, 0], y), 5, 0)
+
+                j += 1
+
+        return area, cm, points_final_left, points_final_right
 
     def get_lane_points(self, num_points:int=5, show:bool=False):
         if not self._lane or len(self._lane_left) == 0 or len(self._lane_right) == 0:

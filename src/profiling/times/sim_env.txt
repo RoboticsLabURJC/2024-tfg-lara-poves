@@ -1,0 +1,4916 @@
+Lidar - Get points front: 42264
+Lidar - Get points back: 7081
+Lane - Get points lane: 18187
+Seg - Get data road: 9064
+Lidar - Process & Draw: 14889020
+Lidar - Stats: 5896075
+Lidar - Get points front: 26020
+Lidar - Get points back: 12859
+Lane - Get points lane: 6580
+Seg - Get data road: 5108
+Camera - Convert img: 3034458
+Seg - Predict: 687518381
+Lane - Ground truth: 76364863
+Lane - Get lane (draw, area, cm, %): 2050701
+Camera - Show in pygame: 1543494
+Camera - Convert img: 167243
+Camera - Show in pygame: 952551
+Lidar - Process & Draw: 11250769
+Lidar - Stats: 4788600
+Camera - Convert img: 135525
+Camera - Show in pygame: 945649
+Lidar - Get points front: 68864
+Lidar - Get points back: 5889
+Lane - Get points lane: 127032
+Seg - Get data road: 9571281
+Camera - Convert img: 887672
+Seg - Predict: 40735626
+Lane - Ground truth: 9516297
+Lane - Get lane (draw, area, cm, %): 2007836
+Camera - Show in pygame: 1994676
+Camera - Convert img: 131839
+Camera - Show in pygame: 1358573
+Lidar - Process & Draw: 12174907
+Lidar - Stats: 4755249
+Camera - Convert img: 109155
+Camera - Show in pygame: 1141727
+Lidar - Get points front: 21312
+Lidar - Get points back: 4687
+Lane - Get points lane: 69134
+Seg - Get data road: 7566660
+Camera - Convert img: 301746
+Seg - Predict: 39837700
+Lane - Ground truth: 8549896
+Lane - Get lane (draw, area, cm, %): 2016929
+Camera - Show in pygame: 1577304
+Camera - Convert img: 164228
+Camera - Show in pygame: 1072061
+Lidar - Process & Draw: 11615061
+Lidar - Stats: 4721649
+Camera - Convert img: 145680
+Camera - Show in pygame: 957017
+Lidar - Get points front: 19640
+Lidar - Get points back: 4187
+Lane - Get points lane: 67042
+Seg - Get data road: 7828064
+Camera - Convert img: 312853
+Seg - Predict: 39252684
+Lane - Ground truth: 8597127
+Lane - Get lane (draw, area, cm, %): 2013544
+Camera - Show in pygame: 1567229
+Camera - Convert img: 131469
+Camera - Show in pygame: 989045
+Lidar - Process & Draw: 11447587
+Lidar - Stats: 4664562
+Camera - Convert img: 90086
+Camera - Show in pygame: 958700
+Lidar - Get points front: 21002
+Lidar - Get points back: 4296
+Lane - Get points lane: 68273
+Seg - Get data road: 7586570
+Camera - Convert img: 296928
+Seg - Predict: 39532838
+Lane - Ground truth: 8534613
+Lane - Get lane (draw, area, cm, %): 1994325
+Camera - Show in pygame: 1593159
+Camera - Convert img: 142285
+Camera - Show in pygame: 1232624
+Lidar - Process & Draw: 11730485
+Lidar - Stats: 4681909
+Camera - Convert img: 143617
+Camera - Show in pygame: 954433
+Lidar - Get points front: 19900
+Lidar - Get points back: 4016
+Lane - Get points lane: 79490
+Seg - Get data road: 8030100
+Camera - Convert img: 305341
+Seg - Predict: 39040774
+Lane - Ground truth: 8710709
+Lane - Get lane (draw, area, cm, %): 1995617
+Camera - Show in pygame: 1549794
+Camera - Convert img: 124819
+Camera - Show in pygame: 977478
+Lidar - Process & Draw: 10975564
+Lidar - Stats: 4728869
+Camera - Convert img: 123697
+Camera - Show in pygame: 937197
+Lidar - Get points front: 19539
+Lidar - Get points back: 4156
+Lane - Get points lane: 77057
+Seg - Get data road: 7726401
+Camera - Convert img: 279703
+Seg - Predict: 37790455
+Lane - Ground truth: 8576166
+Lane - Get lane (draw, area, cm, %): 2012562
+Camera - Show in pygame: 1578296
+Camera - Convert img: 130167
+Camera - Show in pygame: 964619
+Lidar - Process & Draw: 11732167
+Lidar - Stats: 4638683
+Camera - Convert img: 136887
+Camera - Show in pygame: 926731
+Lidar - Get points front: 20140
+Lidar - Get points back: 4226
+Lane - Get points lane: 76456
+Seg - Get data road: 7686170
+Camera - Convert img: 285081
+Seg - Predict: 38894003
+Lane - Ground truth: 8564499
+Lane - Get lane (draw, area, cm, %): 2009167
+Camera - Show in pygame: 1552086
+Camera - Convert img: 109706
+Camera - Show in pygame: 1219614
+Lidar - Process & Draw: 11604204
+Lidar - Stats: 4690462
+Camera - Convert img: 80332
+Camera - Show in pygame: 952200
+Lidar - Get points front: 19900
+Lidar - Get points back: 4116
+Lane - Get points lane: 67732
+Seg - Get data road: 7850749
+Camera - Convert img: 258301
+Seg - Predict: 38955946
+Lane - Ground truth: 9193288
+Lane - Get lane (draw, area, cm, %): 2068707
+Camera - Show in pygame: 1633089
+Camera - Convert img: 97868
+Camera - Show in pygame: 1014023
+Lidar - Process & Draw: 12308999
+Lidar - Stats: 4995162
+Camera - Convert img: 91809
+Camera - Show in pygame: 953662
+Lidar - Get points front: 21482
+Lidar - Get points back: 4457
+Lane - Get points lane: 69795
+Seg - Get data road: 7804630
+Camera - Convert img: 307074
+Seg - Predict: 40087346
+Lane - Ground truth: 8678721
+Lane - Get lane (draw, area, cm, %): 2008957
+Camera - Show in pygame: 1563795
+Camera - Convert img: 145800
+Camera - Show in pygame: 966982
+Lidar - Process & Draw: 12040043
+Lidar - Stats: 4752906
+Camera - Convert img: 118439
+Camera - Show in pygame: 933632
+Lidar - Get points front: 20000
+Lidar - Get points back: 4246
+Lane - Get points lane: 68473
+Seg - Get data road: 7712601
+Camera - Convert img: 264179
+Seg - Predict: 39483443
+Lane - Ground truth: 8620142
+Lane - Get lane (draw, area, cm, %): 2035878
+Camera - Show in pygame: 1581231
+Camera - Convert img: 142776
+Camera - Show in pygame: 1138682
+Lidar - Process & Draw: 11589311
+Lidar - Stats: 4693896
+Camera - Convert img: 119701
+Camera - Show in pygame: 951498
+Lidar - Get points front: 21122
+Lidar - Get points back: 4216
+Lane - Get points lane: 69575
+Seg - Get data road: 8027466
+Camera - Convert img: 301466
+Seg - Predict: 40717539
+Lane - Ground truth: 10863904
+Lane - Get lane (draw, area, cm, %): 2766513
+Camera - Show in pygame: 1931780
+Camera - Convert img: 106871
+Camera - Show in pygame: 1204761
+Lidar - Process & Draw: 12178071
+Lidar - Stats: 4832166
+Camera - Convert img: 90047
+Camera - Show in pygame: 1091330
+Lidar - Get points front: 20922
+Lidar - Get points back: 5838
+Lane - Get points lane: 88984
+Seg - Get data road: 9959527
+Camera - Convert img: 301426
+Seg - Predict: 40160288
+Lane - Ground truth: 8569195
+Lane - Get lane (draw, area, cm, %): 2017721
+Camera - Show in pygame: 1560520
+Camera - Convert img: 127543
+Camera - Show in pygame: 1131961
+Lidar - Process & Draw: 11771006
+Lidar - Stats: 4703031
+Camera - Convert img: 115295
+Camera - Show in pygame: 1099322
+Lidar - Get points front: 20982
+Lidar - Get points back: 5448
+Lane - Get points lane: 75204
+Seg - Get data road: 7780604
+Camera - Convert img: 372773
+Seg - Predict: 42785595
+Lane - Ground truth: 8902911
+Lane - Get lane (draw, area, cm, %): 2059053
+Camera - Show in pygame: 1600840
+Camera - Convert img: 133993
+Camera - Show in pygame: 1193034
+Lidar - Process & Draw: 11927152
+Lidar - Stats: 5006739
+Camera - Convert img: 122195
+Camera - Show in pygame: 930176
+Lidar - Get points front: 21533
+Lidar - Get points back: 4647
+Lane - Get points lane: 73171
+Seg - Get data road: 8452359
+Camera - Convert img: 303118
+Seg - Predict: 40160818
+Lane - Ground truth: 10072308
+Lane - Get lane (draw, area, cm, %): 2120726
+Camera - Show in pygame: 1594711
+Camera - Convert img: 129035
+Camera - Show in pygame: 1017258
+Lidar - Process & Draw: 11873982
+Lidar - Stats: 5117988
+Camera - Convert img: 99310
+Camera - Show in pygame: 973642
+Lidar - Get points front: 23025
+Lidar - Get points back: 4777
+Lane - Get points lane: 75073
+Seg - Get data road: 7759091
+Camera - Convert img: 328097
+Seg - Predict: 35449135
+Lane - Ground truth: 9010062
+Lane - Get lane (draw, area, cm, %): 2155740
+Camera - Show in pygame: 1554490
+Camera - Convert img: 133852
+Camera - Show in pygame: 997257
+Lidar - Process & Draw: 11433636
+Lidar - Stats: 4741007
+Camera - Convert img: 123927
+Camera - Show in pygame: 889505
+Lidar - Get points front: 22995
+Lidar - Get points back: 4397
+Lane - Get points lane: 79440
+Seg - Get data road: 9706274
+Camera - Convert img: 292953
+Seg - Predict: 41878124
+Lane - Ground truth: 8500451
+Lane - Get lane (draw, area, cm, %): 2002588
+Camera - Show in pygame: 1560619
+Camera - Convert img: 116826
+Camera - Show in pygame: 1479096
+Lidar - Process & Draw: 11573067
+Lidar - Stats: 4770353
+Camera - Convert img: 126802
+Camera - Show in pygame: 1132953
+Lidar - Get points front: 24256
+Lidar - Get points back: 4647
+Lane - Get points lane: 71017
+Seg - Get data road: 8004392
+Camera - Convert img: 301385
+Seg - Predict: 40651920
+Lane - Ground truth: 8592521
+Lane - Get lane (draw, area, cm, %): 1995808
+Camera - Show in pygame: 1555591
+Camera - Convert img: 130888
+Camera - Show in pygame: 944578
+Lidar - Process & Draw: 13068057
+Lidar - Stats: 5321776
+Camera - Convert img: 125009
+Camera - Show in pygame: 956696
+Lidar - Get points front: 22194
+Lidar - Get points back: 4677
+Lane - Get points lane: 76355
+Seg - Get data road: 7722977
+Camera - Convert img: 320455
+Seg - Predict: 40258014
+Lane - Ground truth: 9458871
+Lane - Get lane (draw, area, cm, %): 2055267
+Camera - Show in pygame: 1601671
+Camera - Convert img: 136978
+Camera - Show in pygame: 1009506
+Lidar - Process & Draw: 13580081
+Lidar - Stats: 5354937
+Camera - Convert img: 113963
+Camera - Show in pygame: 933441
+Lidar - Get points front: 20020
+Lidar - Get points back: 4026
+Lane - Get points lane: 67782
+Seg - Get data road: 7724869
+Camera - Convert img: 302448
+Seg - Predict: 39050350
+Lane - Ground truth: 8543947
+Lane - Get lane (draw, area, cm, %): 1996779
+Camera - Show in pygame: 1558086
+Camera - Convert img: 150567
+Camera - Show in pygame: 1194616
+Lidar - Process & Draw: 11533857
+Lidar - Stats: 4760718
+Camera - Convert img: 127413
+Camera - Show in pygame: 940842
+Lidar - Get points front: 25098
+Lidar - Get points back: 4586
+Lane - Get points lane: 80502
+Seg - Get data road: 7764649
+Camera - Convert img: 305632
+Seg - Predict: 39323171
+Lane - Ground truth: 8797711
+Lane - Get lane (draw, area, cm, %): 1993023
+Camera - Show in pygame: 1563394
+Camera - Convert img: 128203
+Camera - Show in pygame: 951629
+Lidar - Process & Draw: 11486886
+Lidar - Stats: 4644040
+Camera - Convert img: 146772
+Camera - Show in pygame: 910486
+Lidar - Get points front: 20441
+Lidar - Get points back: 4276
+Lane - Get points lane: 76977
+Seg - Get data road: 7881246
+Camera - Convert img: 310850
+Seg - Predict: 39084250
+Lane - Ground truth: 8384416
+Lane - Get lane (draw, area, cm, %): 1998782
+Camera - Show in pygame: 1563874
+Camera - Convert img: 144509
+Camera - Show in pygame: 1029797
+Lidar - Process & Draw: 11716314
+Lidar - Stats: 4706246
+Camera - Convert img: 133382
+Camera - Show in pygame: 935424
+Lidar - Get points front: 31798
+Lidar - Get points back: 4336
+Lane - Get points lane: 83016
+Seg - Get data road: 7699951
+Camera - Convert img: 351471
+Seg - Predict: 40264183
+Lane - Ground truth: 8456566
+Lane - Get lane (draw, area, cm, %): 2015727
+Camera - Show in pygame: 1554841
+Camera - Convert img: 151169
+Camera - Show in pygame: 1082076
+Lidar - Process & Draw: 11897027
+Lidar - Stats: 4753577
+Camera - Convert img: 139290
+Camera - Show in pygame: 923857
+Lidar - Get points front: 20931
+Lidar - Get points back: 4617
+Lane - Get points lane: 71438
+Seg - Get data road: 7697608
+Camera - Convert img: 316568
+Seg - Predict: 38807061
+Lane - Ground truth: 8759492
+Lane - Get lane (draw, area, cm, %): 2029268
+Camera - Show in pygame: 1572707
+Camera - Convert img: 135875
+Camera - Show in pygame: 1022305
+Lidar - Process & Draw: 11874913
+Lidar - Stats: 4683871
+Camera - Convert img: 140402
+Camera - Show in pygame: 939350
+Lidar - Get points front: 32880
+Lidar - Get points back: 5018
+Lane - Get points lane: 88163
+Seg - Get data road: 7856057
+Camera - Convert img: 400936
+Seg - Predict: 38415558
+Lane - Ground truth: 8875187
+Lane - Get lane (draw, area, cm, %): 2045613
+Camera - Show in pygame: 1581711
+Camera - Convert img: 171329
+Camera - Show in pygame: 998310
+Lidar - Process & Draw: 11576242
+Lidar - Stats: 4886208
+Camera - Convert img: 121804
+Camera - Show in pygame: 859920
+Lidar - Get points front: 31047
+Lidar - Get points back: 6230
+Lane - Get points lane: 91158
+Seg - Get data road: 7999374
+Camera - Convert img: 304069
+Seg - Predict: 38604806
+Lane - Ground truth: 8578600
+Lane - Get lane (draw, area, cm, %): 2018592
+Camera - Show in pygame: 1596343
+Camera - Convert img: 134884
+Camera - Show in pygame: 1128957
+Lidar - Process & Draw: 11526897
+Lidar - Stats: 4695028
+Camera - Convert img: 124508
+Camera - Show in pygame: 994934
+Lidar - Get points front: 25468
+Lidar - Get points back: 4827
+Lane - Get points lane: 74372
+Seg - Get data road: 7700092
+Camera - Convert img: 625746
+Seg - Predict: 40535444
+Lane - Ground truth: 8752192
+Lane - Get lane (draw, area, cm, %): 2161648
+Camera - Show in pygame: 1697356
+Camera - Convert img: 145560
+Camera - Show in pygame: 1025631
+Lidar - Process & Draw: 11318242
+Lidar - Stats: 4698053
+Camera - Convert img: 130016
+Camera - Show in pygame: 1010418
+Lidar - Get points front: 23966
+Lidar - Get points back: 4617
+Lane - Get points lane: 70697
+Seg - Get data road: 8142971
+Camera - Convert img: 327114
+Seg - Predict: 38273534
+Lane - Ground truth: 8508945
+Lane - Get lane (draw, area, cm, %): 1992763
+Camera - Show in pygame: 1571867
+Camera - Convert img: 129546
+Camera - Show in pygame: 968334
+Lidar - Process & Draw: 11889275
+Lidar - Stats: 4806106
+Camera - Convert img: 117268
+Camera - Show in pygame: 960722
+Lidar - Get points front: 27772
+Lidar - Get points back: 4837
+Lane - Get points lane: 77587
+Seg - Get data road: 8248861
+Camera - Convert img: 731987
+Seg - Predict: 39475311
+Lane - Ground truth: 8579321
+Lane - Get lane (draw, area, cm, %): 2081437
+Camera - Show in pygame: 1566989
+Camera - Convert img: 129807
+Camera - Show in pygame: 1086963
+Lidar - Process & Draw: 11829615
+Lidar - Stats: 5014862
+Camera - Convert img: 124689
+Camera - Show in pygame: 952009
+Lidar - Get points front: 54953
+Lidar - Get points back: 5659
+Lane - Get points lane: 118269
+Seg - Get data road: 9649219
+Camera - Convert img: 726999
+Seg - Predict: 38570163
+Lane - Ground truth: 8552651
+Lane - Get lane (draw, area, cm, %): 2022077
+Camera - Show in pygame: 1578826
+Camera - Convert img: 130076
+Camera - Show in pygame: 1105111
+Lidar - Process & Draw: 11647109
+Lidar - Stats: 4776111
+Camera - Convert img: 118670
+Camera - Show in pygame: 974824
+Lidar - Get points front: 20210
+Lidar - Get points back: 4387
+Lane - Get points lane: 70106
+Seg - Get data road: 7877640
+Camera - Convert img: 297350
+Seg - Predict: 38806409
+Lane - Ground truth: 8928539
+Lane - Get lane (draw, area, cm, %): 2107065
+Camera - Show in pygame: 1736685
+Camera - Convert img: 133332
+Camera - Show in pygame: 978439
+Lidar - Process & Draw: 11543282
+Lidar - Stats: 4877565
+Camera - Convert img: 115014
+Camera - Show in pygame: 957888
+Lidar - Get points front: 19870
+Lidar - Get points back: 4357
+Lane - Get points lane: 68473
+Seg - Get data road: 7737939
+Camera - Convert img: 289538
+Seg - Predict: 39729516
+Lane - Ground truth: 9056061
+Lane - Get lane (draw, area, cm, %): 2021146
+Camera - Show in pygame: 1609734
+Camera - Convert img: 146381
+Camera - Show in pygame: 1049728
+Lidar - Process & Draw: 11223058
+Lidar - Stats: 4964445
+Camera - Convert img: 112991
+Camera - Show in pygame: 965570
+Lidar - Get points front: 26931
+Lidar - Get points back: 4507
+Lane - Get points lane: 79701
+Seg - Get data road: 7928136
+Camera - Convert img: 308777
+Seg - Predict: 40986525
+Lane - Ground truth: 8625050
+Lane - Get lane (draw, area, cm, %): 2034516
+Camera - Show in pygame: 1620750
+Camera - Convert img: 142385
+Camera - Show in pygame: 1015675
+Lidar - Process & Draw: 11808934
+Lidar - Stats: 4752966
+Camera - Convert img: 124078
+Camera - Show in pygame: 966020
+Lidar - Get points front: 19970
+Lidar - Get points back: 4547
+Lane - Get points lane: 68504
+Seg - Get data road: 7681825
+Camera - Convert img: 282607
+Seg - Predict: 39337623
+Lane - Ground truth: 8555775
+Lane - Get lane (draw, area, cm, %): 2043169
+Camera - Show in pygame: 1719129
+Camera - Convert img: 144689
+Camera - Show in pygame: 976045
+Lidar - Process & Draw: 11858088
+Lidar - Stats: 4696711
+Camera - Convert img: 132750
+Camera - Show in pygame: 961444
+Lidar - Get points front: 21643
+Lidar - Get points back: 4957
+Lane - Get points lane: 76766
+Seg - Get data road: 7850408
+Camera - Convert img: 297570
+Seg - Predict: 38030837
+Lane - Ground truth: 8477206
+Lane - Get lane (draw, area, cm, %): 2026945
+Camera - Show in pygame: 1587600
+Camera - Convert img: 126992
+Camera - Show in pygame: 1209298
+Lidar - Process & Draw: 11511724
+Lidar - Stats: 4695759
+Camera - Convert img: 113962
+Camera - Show in pygame: 957988
+Lidar - Get points front: 21843
+Lidar - Get points back: 4517
+Lane - Get points lane: 68654
+Seg - Get data road: 7773853
+Camera - Convert img: 297781
+Seg - Predict: 38718398
+Lane - Ground truth: 9167059
+Lane - Get lane (draw, area, cm, %): 1992643
+Camera - Show in pygame: 1575622
+Camera - Convert img: 129866
+Camera - Show in pygame: 905919
+Lidar - Process & Draw: 11788693
+Lidar - Stats: 4729520
+Camera - Convert img: 116507
+Camera - Show in pygame: 780280
+Lidar - Get points front: 21743
+Lidar - Get points back: 4407
+Lane - Get points lane: 71127
+Seg - Get data road: 7751680
+Camera - Convert img: 313784
+Seg - Predict: 40065663
+Lane - Ground truth: 8665220
+Lane - Get lane (draw, area, cm, %): 2013634
+Camera - Show in pygame: 1567771
+Camera - Convert img: 134043
+Camera - Show in pygame: 979361
+Lidar - Process & Draw: 11943687
+Lidar - Stats: 4666855
+Camera - Convert img: 114784
+Camera - Show in pygame: 957367
+Lidar - Get points front: 36264
+Lidar - Get points back: 10436
+Lane - Get points lane: 148465
+Seg - Get data road: 8021788
+Camera - Convert img: 327926
+Seg - Predict: 40658319
+Lane - Ground truth: 8442794
+Lane - Get lane (draw, area, cm, %): 2034957
+Camera - Show in pygame: 1581922
+Camera - Convert img: 131549
+Camera - Show in pygame: 1184141
+Lidar - Process & Draw: 11672347
+Lidar - Stats: 4674978
+Camera - Convert img: 125720
+Camera - Show in pygame: 957988
+Lidar - Get points front: 20811
+Lidar - Get points back: 4487
+Lane - Get points lane: 69275
+Seg - Get data road: 7808525
+Camera - Convert img: 278341
+Seg - Predict: 39464365
+Lane - Ground truth: 8642077
+Lane - Get lane (draw, area, cm, %): 2009468
+Camera - Show in pygame: 1569763
+Camera - Convert img: 140773
+Camera - Show in pygame: 1106844
+Lidar - Process & Draw: 16823365
+Lidar - Stats: 6095465
+Camera - Convert img: 117708
+Camera - Show in pygame: 888203
+Lidar - Get points front: 58849
+Lidar - Get points back: 5278
+Lane - Get points lane: 111188
+Seg - Get data road: 8077672
+Camera - Convert img: 333965
+Seg - Predict: 41036582
+Lane - Ground truth: 9105245
+Lane - Get lane (draw, area, cm, %): 2022848
+Camera - Show in pygame: 1817508
+Camera - Convert img: 138970
+Camera - Show in pygame: 1080784
+Lidar - Process & Draw: 11661310
+Lidar - Stats: 4830642
+Camera - Convert img: 109425
+Camera - Show in pygame: 970297
+Lidar - Get points front: 29034
+Lidar - Get points back: 5659
+Lane - Get points lane: 86921
+Seg - Get data road: 7809157
+Camera - Convert img: 295758
+Seg - Predict: 40664829
+Lane - Ground truth: 8820525
+Lane - Get lane (draw, area, cm, %): 2038161
+Camera - Show in pygame: 1549192
+Camera - Convert img: 173642
+Camera - Show in pygame: 1016557
+Lidar - Process & Draw: 11289128
+Lidar - Stats: 4873157
+Camera - Convert img: 107702
+Camera - Show in pygame: 965320
+Lidar - Get points front: 24808
+Lidar - Get points back: 4687
+Lane - Get points lane: 75134
+Seg - Get data road: 7589324
+Camera - Convert img: 299353
+Seg - Predict: 39383984
+Lane - Ground truth: 9777072
+Lane - Get lane (draw, area, cm, %): 1994536
+Camera - Show in pygame: 1558686
+Camera - Convert img: 147483
+Camera - Show in pygame: 1009816
+Lidar - Process & Draw: 15275695
+Lidar - Stats: 5591804
+Camera - Convert img: 151659
+Camera - Show in pygame: 946441
+Lidar - Get points front: 22624
+Lidar - Get points back: 4317
+Lane - Get points lane: 77156
+Seg - Get data road: 7787574
+Camera - Convert img: 333223
+Seg - Predict: 38969196
+Lane - Ground truth: 8591218
+Lane - Get lane (draw, area, cm, %): 2032783
+Camera - Show in pygame: 1600860
+Camera - Convert img: 149987
+Camera - Show in pygame: 1007694
+Lidar - Process & Draw: 11574990
+Lidar - Stats: 4884244
+Camera - Convert img: 103948
+Camera - Show in pygame: 1045752
+Lidar - Get points front: 25298
+Lidar - Get points back: 4467
+Lane - Get points lane: 78339
+Seg - Get data road: 7655013
+Camera - Convert img: 301706
+Seg - Predict: 38704927
+Lane - Ground truth: 8718161
+Lane - Get lane (draw, area, cm, %): 2063259
+Camera - Show in pygame: 1589763
+Camera - Convert img: 140392
+Camera - Show in pygame: 1177921
+Lidar - Process & Draw: 12031229
+Lidar - Stats: 5017685
+Camera - Convert img: 124559
+Camera - Show in pygame: 964168
+Lidar - Get points front: 20491
+Lidar - Get points back: 4187
+Lane - Get points lane: 67441
+Seg - Get data road: 7801225
+Camera - Convert img: 309047
+Seg - Predict: 38890186
+Lane - Ground truth: 8732553
+Lane - Get lane (draw, area, cm, %): 2087195
+Camera - Show in pygame: 1625808
+Camera - Convert img: 137438
+Camera - Show in pygame: 1081705
+Lidar - Process & Draw: 11699569
+Lidar - Stats: 5127472
+Camera - Convert img: 182476
+Camera - Show in pygame: 937527
+Lidar - Get points front: 23115
+Lidar - Get points back: 6099
+Lane - Get points lane: 70666
+Seg - Get data road: 8038353
+Camera - Convert img: 304370
+Seg - Predict: 38648151
+Lane - Ground truth: 8875588
+Lane - Get lane (draw, area, cm, %): 2038833
+Camera - Show in pygame: 1755744
+Camera - Convert img: 134944
+Camera - Show in pygame: 1158312
+Lidar - Process & Draw: 12086794
+Lidar - Stats: 4827950
+Camera - Convert img: 113862
+Camera - Show in pygame: 1127024
+Lidar - Get points front: 20471
+Lidar - Get points back: 4586
+Lane - Get points lane: 67352
+Seg - Get data road: 7702035
+Camera - Convert img: 298351
+Seg - Predict: 39641813
+Lane - Ground truth: 9139818
+Lane - Get lane (draw, area, cm, %): 2002187
+Camera - Show in pygame: 1561250
+Camera - Convert img: 135995
+Camera - Show in pygame: 1420327
+Lidar - Process & Draw: 12131571
+Lidar - Stats: 4633706
+Camera - Convert img: 548309
+Camera - Show in pygame: 1110479
+Lidar - Get points front: 22294
+Lidar - Get points back: 4517
+Lane - Get points lane: 69746
+Seg - Get data road: 7902978
+Camera - Convert img: 279723
+Seg - Predict: 38027392
+Lane - Ground truth: 9230705
+Lane - Get lane (draw, area, cm, %): 1986814
+Camera - Show in pygame: 1556714
+Camera - Convert img: 137197
+Camera - Show in pygame: 1216509
+Lidar - Process & Draw: 16806029
+Lidar - Stats: 6064979
+Camera - Convert img: 141554
+Camera - Show in pygame: 948214
+Lidar - Get points front: 19880
+Lidar - Get points back: 4197
+Lane - Get points lane: 65229
+Seg - Get data road: 7752291
+Camera - Convert img: 748852
+Seg - Predict: 38578626
+Lane - Ground truth: 8530707
+Lane - Get lane (draw, area, cm, %): 1996078
+Camera - Show in pygame: 1546008
+Camera - Convert img: 134353
+Camera - Show in pygame: 959110
+Lidar - Process & Draw: 11646938
+Lidar - Stats: 4758604
+Camera - Convert img: 143016
+Camera - Show in pygame: 931499
+Lidar - Get points front: 22645
+Lidar - Get points back: 4547
+Lane - Get points lane: 68884
+Seg - Get data road: 8057331
+Camera - Convert img: 313964
+Seg - Predict: 39524325
+Lane - Ground truth: 8560013
+Lane - Get lane (draw, area, cm, %): 2004690
+Camera - Show in pygame: 1566578
+Camera - Convert img: 129927
+Camera - Show in pygame: 975114
+Lidar - Process & Draw: 11676082
+Lidar - Stats: 4655238
+Camera - Convert img: 127813
+Camera - Show in pygame: 947492
+Lidar - Get points front: 57517
+Lidar - Get points back: 5498
+Lane - Get points lane: 114573
+Seg - Get data road: 9429056
+Camera - Convert img: 353745
+Seg - Predict: 40341351
+Lane - Ground truth: 8580102
+Lane - Get lane (draw, area, cm, %): 2017080
+Camera - Show in pygame: 1871369
+Camera - Convert img: 185069
+Camera - Show in pygame: 1105892
+Lidar - Process & Draw: 11432213
+Lidar - Stats: 4799356
+Camera - Convert img: 175866
+Camera - Show in pygame: 904457
+Lidar - Get points front: 19770
+Lidar - Get points back: 4206
+Lane - Get points lane: 74723
+Seg - Get data road: 7926645
+Camera - Convert img: 329508
+Seg - Predict: 39900353
+Lane - Ground truth: 8621023
+Lane - Get lane (draw, area, cm, %): 1999524
+Camera - Show in pygame: 1582122
+Camera - Convert img: 137258
+Camera - Show in pygame: 1043538
+Lidar - Process & Draw: 11458675
+Lidar - Stats: 4681377
+Camera - Convert img: 166852
+Camera - Show in pygame: 914523
+Lidar - Get points front: 20691
+Lidar - Get points back: 4567
+Lane - Get points lane: 67412
+Seg - Get data road: 7723137
+Camera - Convert img: 288857
+Seg - Predict: 39456272
+Lane - Ground truth: 8457797
+Lane - Get lane (draw, area, cm, %): 2035627
+Camera - Show in pygame: 1571285
+Camera - Convert img: 192250
+Camera - Show in pygame: 1163739
+Lidar - Process & Draw: 11646328
+Lidar - Stats: 4713416
+Camera - Convert img: 99019
+Camera - Show in pygame: 953241
+Lidar - Get points front: 21502
+Lidar - Get points back: 4467
+Lane - Get points lane: 71568
+Seg - Get data road: 7932844
+Camera - Convert img: 284250
+Seg - Predict: 39624908
+Lane - Ground truth: 8590087
+Lane - Get lane (draw, area, cm, %): 2049858
+Camera - Show in pygame: 1594250
+Camera - Convert img: 130006
+Camera - Show in pygame: 1035836
+Lidar - Process & Draw: 11682072
+Lidar - Stats: 4654157
+Camera - Convert img: 124509
+Camera - Show in pygame: 934403
+Lidar - Get points front: 21703
+Lidar - Get points back: 4327
+Lane - Get points lane: 70507
+Seg - Get data road: 7950179
+Camera - Convert img: 296178
+Seg - Predict: 39638238
+Lane - Ground truth: 8812363
+Lane - Get lane (draw, area, cm, %): 2017751
+Camera - Show in pygame: 1538936
+Camera - Convert img: 137348
+Camera - Show in pygame: 963457
+Lidar - Process & Draw: 11548139
+Lidar - Stats: 4707046
+Camera - Convert img: 116456
+Camera - Show in pygame: 937137
+Lidar - Get points front: 21743
+Lidar - Get points back: 4347
+Lane - Get points lane: 68563
+Seg - Get data road: 8136401
+Camera - Convert img: 307365
+Seg - Predict: 39938321
+Lane - Ground truth: 8605650
+Lane - Get lane (draw, area, cm, %): 2024190
+Camera - Show in pygame: 1582363
+Camera - Convert img: 133362
+Camera - Show in pygame: 1216079
+Lidar - Process & Draw: 11704746
+Lidar - Stats: 4768389
+Camera - Convert img: 119581
+Camera - Show in pygame: 964698
+Lidar - Get points front: 23556
+Lidar - Get points back: 4557
+Lane - Get points lane: 74623
+Seg - Get data road: 8009939
+Camera - Convert img: 294716
+Seg - Predict: 39311314
+Lane - Ground truth: 8815588
+Lane - Get lane (draw, area, cm, %): 2162540
+Camera - Show in pygame: 1633980
+Camera - Convert img: 175926
+Camera - Show in pygame: 1363461
+Lidar - Process & Draw: 12161858
+Lidar - Stats: 4776692
+Camera - Convert img: 118639
+Camera - Show in pygame: 1095817
+Lidar - Get points front: 21262
+Lidar - Get points back: 4317
+Lane - Get points lane: 69004
+Seg - Get data road: 7805381
+Camera - Convert img: 334646
+Seg - Predict: 39887114
+Lane - Ground truth: 8691841
+Lane - Get lane (draw, area, cm, %): 2048357
+Camera - Show in pygame: 1566459
+Camera - Convert img: 141293
+Camera - Show in pygame: 983637
+Lidar - Process & Draw: 11475428
+Lidar - Stats: 4710242
+Camera - Convert img: 144508
+Camera - Show in pygame: 936756
+Lidar - Get points front: 21001
+Lidar - Get points back: 4497
+Lane - Get points lane: 70136
+Seg - Get data road: 7667111
+Camera - Convert img: 301206
+Seg - Predict: 39680061
+Lane - Ground truth: 9768148
+Lane - Get lane (draw, area, cm, %): 2099053
+Camera - Show in pygame: 1639229
+Camera - Convert img: 136346
+Camera - Show in pygame: 1150239
+Lidar - Process & Draw: 14091484
+Lidar - Stats: 5395908
+Camera - Convert img: 130948
+Camera - Show in pygame: 1041014
+Lidar - Get points front: 25428
+Lidar - Get points back: 4838
+Lane - Get points lane: 85880
+Seg - Get data road: 8631780
+Camera - Convert img: 304640
+Seg - Predict: 39126333
+Lane - Ground truth: 8631390
+Lane - Get lane (draw, area, cm, %): 1996248
+Camera - Show in pygame: 1573018
+Camera - Convert img: 135074
+Camera - Show in pygame: 1129608
+Lidar - Process & Draw: 11653659
+Lidar - Stats: 4713957
+Camera - Convert img: 124669
+Camera - Show in pygame: 958369
+Lidar - Get points front: 21272
+Lidar - Get points back: 4727
+Lane - Get points lane: 68874
+Seg - Get data road: 7810207
+Camera - Convert img: 282106
+Seg - Predict: 39456724
+Lane - Ground truth: 8585720
+Lane - Get lane (draw, area, cm, %): 2034777
+Camera - Show in pygame: 1744678
+Camera - Convert img: 140993
+Camera - Show in pygame: 972149
+Lidar - Process & Draw: 11189106
+Lidar - Stats: 4736892
+Camera - Convert img: 125840
+Camera - Show in pygame: 956917
+Lidar - Get points front: 19500
+Lidar - Get points back: 4266
+Lane - Get points lane: 66891
+Seg - Get data road: 8055429
+Camera - Convert img: 303298
+Seg - Predict: 39556354
+Lane - Ground truth: 8495484
+Lane - Get lane (draw, area, cm, %): 2046454
+Camera - Show in pygame: 1569263
+Camera - Convert img: 158079
+Camera - Show in pygame: 1211652
+Lidar - Process & Draw: 11769244
+Lidar - Stats: 4819045
+Camera - Convert img: 118829
+Camera - Show in pygame: 980523
+Lidar - Get points front: 20822
+Lidar - Get points back: 4897
+Lane - Get points lane: 68203
+Seg - Get data road: 7766021
+Camera - Convert img: 851848
+Seg - Predict: 38900221
+Lane - Ground truth: 9324148
+Lane - Get lane (draw, area, cm, %): 2011130
+Camera - Show in pygame: 1605117
+Camera - Convert img: 134713
+Camera - Show in pygame: 1072812
+Lidar - Process & Draw: 11613949
+Lidar - Stats: 4743321
+Camera - Convert img: 138920
+Camera - Show in pygame: 1090889
+Lidar - Get points front: 22544
+Lidar - Get points back: 5598
+Lane - Get points lane: 86912
+Seg - Get data road: 10017756
+Camera - Convert img: 323219
+Seg - Predict: 40146296
+Lane - Ground truth: 8556937
+Lane - Get lane (draw, area, cm, %): 2010580
+Camera - Show in pygame: 1564354
+Camera - Convert img: 135986
+Camera - Show in pygame: 983597
+Lidar - Process & Draw: 11224630
+Lidar - Stats: 4748569
+Camera - Convert img: 123947
+Camera - Show in pygame: 957418
+Lidar - Get points front: 22725
+Lidar - Get points back: 5128
+Lane - Get points lane: 92510
+Seg - Get data road: 7906413
+Camera - Convert img: 288626
+Seg - Predict: 39643987
+Lane - Ground truth: 8517427
+Lane - Get lane (draw, area, cm, %): 2021025
+Camera - Show in pygame: 1570995
+Camera - Convert img: 191209
+Camera - Show in pygame: 1163980
+Lidar - Process & Draw: 11820411
+Lidar - Stats: 4774167
+Camera - Convert img: 153252
+Camera - Show in pygame: 919421
+Lidar - Get points front: 24968
+Lidar - Get points back: 5959
+Lane - Get points lane: 93111
+Seg - Get data road: 11488339
+Camera - Convert img: 808873
+Seg - Predict: 39387619
+Lane - Ground truth: 8598109
+Lane - Get lane (draw, area, cm, %): 2030490
+Camera - Show in pygame: 1682694
+Camera - Convert img: 139601
+Camera - Show in pygame: 1128596
+Lidar - Process & Draw: 11943256
+Lidar - Stats: 4769511
+Camera - Convert img: 125179
+Camera - Show in pygame: 1110569
+Lidar - Get points front: 24307
+Lidar - Get points back: 4667
+Lane - Get points lane: 81853
+Seg - Get data road: 7703737
+Camera - Convert img: 336048
+Seg - Predict: 39955207
+Lane - Ground truth: 8441943
+Lane - Get lane (draw, area, cm, %): 2020254
+Camera - Show in pygame: 1577174
+Camera - Convert img: 140292
+Camera - Show in pygame: 908804
+Lidar - Process & Draw: 11368297
+Lidar - Stats: 4817122
+Camera - Convert img: 105270
+Camera - Show in pygame: 785598
+Lidar - Get points front: 23636
+Lidar - Get points back: 4557
+Lane - Get points lane: 83176
+Seg - Get data road: 7697527
+Camera - Convert img: 245211
+Seg - Predict: 37981453
+Lane - Ground truth: 8707274
+Lane - Get lane (draw, area, cm, %): 2053115
+Camera - Show in pygame: 1586489
+Camera - Convert img: 133502
+Camera - Show in pygame: 1101255
+Lidar - Process & Draw: 11568641
+Lidar - Stats: 4658493
+Camera - Convert img: 112941
+Camera - Show in pygame: 967613
+Lidar - Get points front: 20351
+Lidar - Get points back: 4146
+Lane - Get points lane: 75474
+Seg - Get data road: 7825861
+Camera - Convert img: 700749
+Seg - Predict: 38525035
+Lane - Ground truth: 8494263
+Lane - Get lane (draw, area, cm, %): 1992041
+Camera - Show in pygame: 1571075
+Camera - Convert img: 129305
+Camera - Show in pygame: 992611
+Lidar - Process & Draw: 10937736
+Lidar - Stats: 4796552
+Camera - Convert img: 111648
+Camera - Show in pygame: 968854
+Lidar - Get points front: 20581
+Lidar - Get points back: 4227
+Lane - Get points lane: 76596
+Seg - Get data road: 7696686
+Camera - Convert img: 275046
+Seg - Predict: 38613158
+Lane - Ground truth: 8381301
+Lane - Get lane (draw, area, cm, %): 1990410
+Camera - Show in pygame: 1595653
+Camera - Convert img: 130598
+Camera - Show in pygame: 1151551
+Lidar - Process & Draw: 11562441
+Lidar - Stats: 4698433
+Camera - Convert img: 114903
+Camera - Show in pygame: 964568
+Lidar - Get points front: 18999
+Lidar - Get points back: 4336
+Lane - Get points lane: 67692
+Seg - Get data road: 8011723
+Camera - Convert img: 288036
+Seg - Predict: 38914443
+Lane - Ground truth: 8521312
+Lane - Get lane (draw, area, cm, %): 2035668
+Camera - Show in pygame: 1582362
+Camera - Convert img: 136696
+Camera - Show in pygame: 1181866
+Lidar - Process & Draw: 11492054
+Lidar - Stats: 4805355
+Camera - Convert img: 96826
+Camera - Show in pygame: 981163
+Lidar - Get points front: 24206
+Lidar - Get points back: 4397
+Lane - Get points lane: 74483
+Seg - Get data road: 7895687
+Camera - Convert img: 748812
+Seg - Predict: 39652199
+Lane - Ground truth: 8457837
+Lane - Get lane (draw, area, cm, %): 2009517
+Camera - Show in pygame: 1732639
+Camera - Convert img: 134294
+Camera - Show in pygame: 989937
+Lidar - Process & Draw: 12083639
+Lidar - Stats: 4647616
+Camera - Convert img: 121794
+Camera - Show in pygame: 966451
+Lidar - Get points front: 23375
+Lidar - Get points back: 4647
+Lane - Get points lane: 70526
+Seg - Get data road: 7649865
+Camera - Convert img: 276028
+Seg - Predict: 39906062
+Lane - Ground truth: 8532410
+Lane - Get lane (draw, area, cm, %): 2009278
+Camera - Show in pygame: 1577946
+Camera - Convert img: 132741
+Camera - Show in pygame: 1255729
+Lidar - Process & Draw: 11969887
+Lidar - Stats: 4687196
+Camera - Convert img: 117848
+Camera - Show in pygame: 969476
+Lidar - Get points front: 19440
+Lidar - Get points back: 4397
+Lane - Get points lane: 76045
+Seg - Get data road: 8075289
+Camera - Convert img: 294516
+Seg - Predict: 40026744
+Lane - Ground truth: 8435042
+Lane - Get lane (draw, area, cm, %): 2074737
+Camera - Show in pygame: 1777267
+Camera - Convert img: 145170
+Camera - Show in pygame: 1167996
+Lidar - Process & Draw: 11845328
+Lidar - Stats: 5454817
+Camera - Convert img: 140532
+Camera - Show in pygame: 1038520
+Lidar - Get points front: 23476
+Lidar - Get points back: 5278
+Lane - Get points lane: 84668
+Seg - Get data road: 8120026
+Camera - Convert img: 365723
+Seg - Predict: 38992752
+Lane - Ground truth: 8631419
+Lane - Get lane (draw, area, cm, %): 2232906
+Camera - Show in pygame: 1586509
+Camera - Convert img: 135705
+Camera - Show in pygame: 1019932
+Lidar - Process & Draw: 12020804
+Lidar - Stats: 4957536
+Camera - Convert img: 116706
+Camera - Show in pygame: 981063
+Lidar - Get points front: 25248
+Lidar - Get points back: 4557
+Lane - Get points lane: 80592
+Seg - Get data road: 7748775
+Camera - Convert img: 742943
+Seg - Predict: 38492255
+Lane - Ground truth: 8616326
+Lane - Get lane (draw, area, cm, %): 2121637
+Camera - Show in pygame: 1614952
+Camera - Convert img: 141885
+Camera - Show in pygame: 1292945
+Lidar - Process & Draw: 11281116
+Lidar - Stats: 4742109
+Camera - Convert img: 122485
+Camera - Show in pygame: 1115106
+Lidar - Get points front: 21092
+Lidar - Get points back: 4487
+Lane - Get points lane: 75694
+Seg - Get data road: 8068659
+Camera - Convert img: 698676
+Seg - Predict: 39758119
+Lane - Ground truth: 8756900
+Lane - Get lane (draw, area, cm, %): 2015056
+Camera - Show in pygame: 1603815
+Camera - Convert img: 141343
+Camera - Show in pygame: 1264842
+Lidar - Process & Draw: 11478694
+Lidar - Stats: 4730842
+Camera - Convert img: 140802
+Camera - Show in pygame: 1073052
+Lidar - Get points front: 23145
+Lidar - Get points back: 4547
+Lane - Get points lane: 81153
+Seg - Get data road: 7973474
+Camera - Convert img: 834552
+Seg - Predict: 38630164
+Lane - Ground truth: 9097093
+Lane - Get lane (draw, area, cm, %): 2002468
+Camera - Show in pygame: 1633429
+Camera - Convert img: 136176
+Camera - Show in pygame: 1004689
+Lidar - Process & Draw: 11878890
+Lidar - Stats: 4935932
+Camera - Convert img: 112961
+Camera - Show in pygame: 975274
+Lidar - Get points front: 22514
+Lidar - Get points back: 4747
+Lane - Get points lane: 76515
+Seg - Get data road: 7680803
+Camera - Convert img: 316198
+Seg - Predict: 38851098
+Lane - Ground truth: 9093157
+Lane - Get lane (draw, area, cm, %): 2068909
+Camera - Show in pygame: 1614811
+Camera - Convert img: 139241
+Camera - Show in pygame: 1045120
+Lidar - Process & Draw: 11990288
+Lidar - Stats: 5077076
+Camera - Convert img: 115955
+Camera - Show in pygame: 988504
+Lidar - Get points front: 22855
+Lidar - Get points back: 4477
+Lane - Get points lane: 73151
+Seg - Get data road: 8181439
+Camera - Convert img: 330400
+Seg - Predict: 39475352
+Lane - Ground truth: 8623898
+Lane - Get lane (draw, area, cm, %): 2035317
+Camera - Show in pygame: 1726730
+Camera - Convert img: 144067
+Camera - Show in pygame: 1066202
+Lidar - Process & Draw: 11959151
+Lidar - Stats: 5208194
+Camera - Convert img: 136606
+Camera - Show in pygame: 1034104
+Lidar - Get points front: 25058
+Lidar - Get points back: 4547
+Lane - Get points lane: 77897
+Seg - Get data road: 7809878
+Camera - Convert img: 498434
+Seg - Predict: 39311543
+Lane - Ground truth: 8496485
+Lane - Get lane (draw, area, cm, %): 1979363
+Camera - Show in pygame: 1582142
+Camera - Convert img: 132741
+Camera - Show in pygame: 1167365
+Lidar - Process & Draw: 11562040
+Lidar - Stats: 4786776
+Camera - Convert img: 120832
+Camera - Show in pygame: 962445
+Lidar - Get points front: 19720
+Lidar - Get points back: 4567
+Lane - Get points lane: 69075
+Seg - Get data road: 8203132
+Camera - Convert img: 300775
+Seg - Predict: 39416422
+Lane - Ground truth: 8515215
+Lane - Get lane (draw, area, cm, %): 2027926
+Camera - Show in pygame: 1572598
+Camera - Convert img: 128544
+Camera - Show in pygame: 1160995
+Lidar - Process & Draw: 11417151
+Lidar - Stats: 4766216
+Camera - Convert img: 126151
+Camera - Show in pygame: 953201
+Lidar - Get points front: 19970
+Lidar - Get points back: 4317
+Lane - Get points lane: 66791
+Seg - Get data road: 7840835
+Camera - Convert img: 289177
+Seg - Predict: 39012171
+Lane - Ground truth: 8632331
+Lane - Get lane (draw, area, cm, %): 2028617
+Camera - Show in pygame: 1776145
+Camera - Convert img: 122955
+Camera - Show in pygame: 966441
+Lidar - Process & Draw: 11716234
+Lidar - Stats: 4765504
+Camera - Convert img: 117818
+Camera - Show in pygame: 946330
+Lidar - Get points front: 23395
+Lidar - Get points back: 5208
+Lane - Get points lane: 70847
+Seg - Get data road: 7673962
+Camera - Convert img: 709252
+Seg - Predict: 39633491
+Lane - Ground truth: 9335374
+Lane - Get lane (draw, area, cm, %): 2010840
+Camera - Show in pygame: 1583163
+Camera - Convert img: 136967
+Camera - Show in pygame: 1521170
+Lidar - Process & Draw: 11801642
+Lidar - Stats: 4691704
+Camera - Convert img: 119921
+Camera - Show in pygame: 1038280
+Lidar - Get points front: 20752
+Lidar - Get points back: 4347
+Lane - Get points lane: 74713
+Seg - Get data road: 7896399
+Camera - Convert img: 669763
+Seg - Predict: 39994316
+Lane - Ground truth: 8548574
+Lane - Get lane (draw, area, cm, %): 2037781
+Camera - Show in pygame: 1588441
+Camera - Convert img: 136706
+Camera - Show in pygame: 1085651
+Lidar - Process & Draw: 11489801
+Lidar - Stats: 4763191
+Camera - Convert img: 120312
+Camera - Show in pygame: 974764
+Lidar - Get points front: 20411
+Lidar - Get points back: 4297
+Lane - Get points lane: 67292
+Seg - Get data road: 8069430
+Camera - Convert img: 304521
+Seg - Predict: 38254717
+Lane - Ground truth: 8821757
+Lane - Get lane (draw, area, cm, %): 2064151
+Camera - Show in pygame: 1628051
+Camera - Convert img: 141263
+Camera - Show in pygame: 987913
+Lidar - Process & Draw: 11734571
+Lidar - Stats: 4756602
+Camera - Convert img: 119380
+Camera - Show in pygame: 948524
+Lidar - Get points front: 23475
+Lidar - Get points back: 4677
+Lane - Get points lane: 73060
+Seg - Get data road: 7733662
+Camera - Convert img: 317670
+Seg - Predict: 40128899
+Lane - Ground truth: 8612230
+Lane - Get lane (draw, area, cm, %): 2023039
+Camera - Show in pygame: 1596363
+Camera - Convert img: 139130
+Camera - Show in pygame: 1060584
+Lidar - Process & Draw: 11489430
+Lidar - Stats: 4787157
+Camera - Convert img: 123446
+Camera - Show in pygame: 981003
+Lidar - Get points front: 23986
+Lidar - Get points back: 4546
+Lane - Get points lane: 74092
+Seg - Get data road: 7983440
+Camera - Convert img: 328527
+Seg - Predict: 40104002
+Lane - Ground truth: 8670099
+Lane - Get lane (draw, area, cm, %): 2015537
+Camera - Show in pygame: 1578406
+Camera - Convert img: 130798
+Camera - Show in pygame: 1124410
+Lidar - Process & Draw: 11315287
+Lidar - Stats: 4755840
+Camera - Convert img: 120953
+Camera - Show in pygame: 970908
+Lidar - Get points front: 21062
+Lidar - Get points back: 4306
+Lane - Get points lane: 67682
+Seg - Get data road: 7808345
+Camera - Convert img: 311831
+Seg - Predict: 39481060
+Lane - Ground truth: 8590889
+Lane - Get lane (draw, area, cm, %): 1986924
+Camera - Show in pygame: 1770156
+Camera - Convert img: 128704
+Camera - Show in pygame: 1008865
+Lidar - Process & Draw: 12069918
+Lidar - Stats: 5157838
+Camera - Convert img: 117117
+Camera - Show in pygame: 952941
+Lidar - Get points front: 21032
+Lidar - Get points back: 4557
+Lane - Get points lane: 68924
+Seg - Get data road: 7705099
+Camera - Convert img: 293473
+Seg - Predict: 40202712
+Lane - Ground truth: 8505398
+Lane - Get lane (draw, area, cm, %): 2563165
+Camera - Show in pygame: 1569022
+Camera - Convert img: 138369
+Camera - Show in pygame: 1002616
+Lidar - Process & Draw: 12056217
+Lidar - Stats: 4740507
+Camera - Convert img: 114373
+Camera - Show in pygame: 969195
+Lidar - Get points front: 19850
+Lidar - Get points back: 4286
+Lane - Get points lane: 68904
+Seg - Get data road: 7773492
+Camera - Convert img: 281085
+Seg - Predict: 39044650
+Lane - Ground truth: 8781456
+Lane - Get lane (draw, area, cm, %): 2067245
+Camera - Show in pygame: 1614421
+Camera - Convert img: 139511
+Camera - Show in pygame: 1023086
+Lidar - Process & Draw: 11996657
+Lidar - Stats: 5086440
+Camera - Convert img: 117848
+Camera - Show in pygame: 1005600
+Lidar - Get points front: 22534
+Lidar - Get points back: 4387
+Lane - Get points lane: 82304
+Seg - Get data road: 7788435
+Camera - Convert img: 331250
+Seg - Predict: 38972562
+Lane - Ground truth: 8667474
+Lane - Get lane (draw, area, cm, %): 2048527
+Camera - Show in pygame: 1584556
+Camera - Convert img: 145410
+Camera - Show in pygame: 1004398
+Lidar - Process & Draw: 11747591
+Lidar - Stats: 4858114
+Camera - Convert img: 141244
+Camera - Show in pygame: 979762
+Lidar - Get points front: 25649
+Lidar - Get points back: 4467
+Lane - Get points lane: 85980
+Seg - Get data road: 7650657
+Camera - Convert img: 318722
+Seg - Predict: 39177520
+Lane - Ground truth: 8636247
+Lane - Get lane (draw, area, cm, %): 2058742
+Camera - Show in pygame: 1607280
+Camera - Convert img: 126091
+Camera - Show in pygame: 1062727
+Lidar - Process & Draw: 11467086
+Lidar - Stats: 4744413
+Camera - Convert img: 134914
+Camera - Show in pygame: 950727
+Lidar - Get points front: 19490
+Lidar - Get points back: 4256
+Lane - Get points lane: 66511
+Seg - Get data road: 7895628
+Camera - Convert img: 360375
+Seg - Predict: 38992250
+Lane - Ground truth: 8956260
+Lane - Get lane (draw, area, cm, %): 2044351
+Camera - Show in pygame: 1556073
+Camera - Convert img: 137978
+Camera - Show in pygame: 997419
+Lidar - Process & Draw: 11902685
+Lidar - Stats: 4839326
+Camera - Convert img: 134474
+Camera - Show in pygame: 1306466
+Lidar - Get points front: 24707
+Lidar - Get points back: 4266
+Lane - Get points lane: 78949
+Seg - Get data road: 7758570
+Camera - Convert img: 326013
+Seg - Predict: 40079024
+Lane - Ground truth: 8726144
+Lane - Get lane (draw, area, cm, %): 2018471
+Camera - Show in pygame: 1583914
+Camera - Convert img: 127203
+Camera - Show in pygame: 1244401
+Lidar - Process & Draw: 11708141
+Lidar - Stats: 5237619
+Camera - Convert img: 152972
+Camera - Show in pygame: 1138081
+Lidar - Get points front: 30576
+Lidar - Get points back: 5658
+Lane - Get points lane: 109876
+Seg - Get data road: 8020456
+Camera - Convert img: 507126
+Seg - Predict: 41030102
+Lane - Ground truth: 8743158
+Lane - Get lane (draw, area, cm, %): 1997039
+Camera - Show in pygame: 1575673
+Camera - Convert img: 137699
+Camera - Show in pygame: 1151811
+Lidar - Process & Draw: 12396261
+Lidar - Stats: 4766377
+Camera - Convert img: 127653
+Camera - Show in pygame: 1104840
+Lidar - Get points front: 20241
+Lidar - Get points back: 4357
+Lane - Get points lane: 70337
+Seg - Get data road: 7821835
+Camera - Convert img: 295307
+Seg - Predict: 39112983
+Lane - Ground truth: 9218878
+Lane - Get lane (draw, area, cm, %): 2001325
+Camera - Show in pygame: 1551896
+Camera - Convert img: 139030
+Camera - Show in pygame: 1143880
+Lidar - Process & Draw: 12317012
+Lidar - Stats: 4698924
+Camera - Convert img: 106321
+Camera - Show in pygame: 1108325
+Lidar - Get points front: 23616
+Lidar - Get points back: 4827
+Lane - Get points lane: 74072
+Seg - Get data road: 7780153
+Camera - Convert img: 735401
+Seg - Predict: 38032389
+Lane - Ground truth: 8912634
+Lane - Get lane (draw, area, cm, %): 2119264
+Camera - Show in pygame: 1623875
+Camera - Convert img: 139982
+Camera - Show in pygame: 987754
+Lidar - Process & Draw: 11761151
+Lidar - Stats: 4747998
+Camera - Convert img: 124037
+Camera - Show in pygame: 944348
+Lidar - Get points front: 22003
+Lidar - Get points back: 4948
+Lane - Get points lane: 81393
+Seg - Get data road: 8993597
+Camera - Convert img: 289187
+Seg - Predict: 40004762
+Lane - Ground truth: 10392241
+Lane - Get lane (draw, area, cm, %): 2022498
+Camera - Show in pygame: 1579197
+Camera - Convert img: 148785
+Camera - Show in pygame: 993202
+Lidar - Process & Draw: 11645857
+Lidar - Stats: 4752125
+Camera - Convert img: 124378
+Camera - Show in pygame: 955214
+Lidar - Get points front: 21102
+Lidar - Get points back: 4607
+Lane - Get points lane: 68604
+Seg - Get data road: 7695395
+Camera - Convert img: 294355
+Seg - Predict: 40057592
+Lane - Ground truth: 8552300
+Lane - Get lane (draw, area, cm, %): 1998201
+Camera - Show in pygame: 1540158
+Camera - Convert img: 134023
+Camera - Show in pygame: 965811
+Lidar - Process & Draw: 11190709
+Lidar - Stats: 4762850
+Camera - Convert img: 120272
+Camera - Show in pygame: 947633
+Lidar - Get points front: 21322
+Lidar - Get points back: 4467
+Lane - Get points lane: 67863
+Seg - Get data road: 7741484
+Camera - Convert img: 317941
+Seg - Predict: 38755254
+Lane - Ground truth: 8658811
+Lane - Get lane (draw, area, cm, %): 2025852
+Camera - Show in pygame: 1564315
+Camera - Convert img: 134123
+Camera - Show in pygame: 957317
+Lidar - Process & Draw: 12662004
+Lidar - Stats: 6229849
+Camera - Convert img: 117468
+Camera - Show in pygame: 897396
+Lidar - Get points front: 21943
+Lidar - Get points back: 4507
+Lane - Get points lane: 72549
+Seg - Get data road: 8225597
+Camera - Convert img: 312563
+Seg - Predict: 38545105
+Lane - Ground truth: 8771721
+Lane - Get lane (draw, area, cm, %): 2039984
+Camera - Show in pygame: 1620620
+Camera - Convert img: 133412
+Camera - Show in pygame: 1138241
+Lidar - Process & Draw: 14704171
+Lidar - Stats: 5581448
+Camera - Convert img: 135936
+Camera - Show in pygame: 944117
+Lidar - Get points front: 22073
+Lidar - Get points back: 6220
+Lane - Get points lane: 80742
+Seg - Get data road: 7954927
+Camera - Convert img: 318701
+Seg - Predict: 39527611
+Lane - Ground truth: 8861088
+Lane - Get lane (draw, area, cm, %): 2080706
+Camera - Show in pygame: 1635422
+Camera - Convert img: 137638
+Camera - Show in pygame: 1002706
+Lidar - Process & Draw: 12086934
+Lidar - Stats: 5040210
+Camera - Convert img: 140752
+Camera - Show in pygame: 956757
+Lidar - Get points front: 25228
+Lidar - Get points back: 5979
+Lane - Get points lane: 71337
+Seg - Get data road: 7902628
+Camera - Convert img: 296318
+Seg - Predict: 39364675
+Lane - Ground truth: 8601414
+Lane - Get lane (draw, area, cm, %): 2003249
+Camera - Show in pygame: 1568691
+Camera - Convert img: 142255
+Camera - Show in pygame: 1037498
+Lidar - Process & Draw: 11700099
+Lidar - Stats: 4670550
+Camera - Convert img: 124668
+Camera - Show in pygame: 951158
+Lidar - Get points front: 22093
+Lidar - Get points back: 5018
+Lane - Get points lane: 68974
+Seg - Get data road: 7866383
+Camera - Convert img: 289367
+Seg - Predict: 40948259
+Lane - Ground truth: 8487052
+Lane - Get lane (draw, area, cm, %): 2000925
+Camera - Show in pygame: 1619157
+Camera - Convert img: 141874
+Camera - Show in pygame: 1011549
+Lidar - Process & Draw: 11250379
+Lidar - Stats: 4767819
+Camera - Convert img: 126561
+Camera - Show in pygame: 940131
+Lidar - Get points front: 20792
+Lidar - Get points back: 4437
+Lane - Get points lane: 70717
+Seg - Get data road: 7726832
+Camera - Convert img: 741291
+Seg - Predict: 31172178
+Lane - Ground truth: 8379559
+Lane - Get lane (draw, area, cm, %): 1984000
+Camera - Show in pygame: 1562362
+Camera - Convert img: 132150
+Camera - Show in pygame: 992771
+Lidar - Process & Draw: 11148646
+Lidar - Stats: 4704523
+Camera - Convert img: 97868
+Camera - Show in pygame: 971609
+Lidar - Get points front: 20951
+Lidar - Get points back: 4216
+Lane - Get points lane: 73010
+Seg - Get data road: 7775174
+Camera - Convert img: 307555
+Seg - Predict: 38556642
+Lane - Ground truth: 8503266
+Lane - Get lane (draw, area, cm, %): 2061286
+Camera - Show in pygame: 1580459
+Camera - Convert img: 137398
+Camera - Show in pygame: 968915
+Lidar - Process & Draw: 11844477
+Lidar - Stats: 4893228
+Camera - Convert img: 104368
+Camera - Show in pygame: 957047
+Lidar - Get points front: 21993
+Lidar - Get points back: 4276
+Lane - Get points lane: 72550
+Seg - Get data road: 7841014
+Camera - Convert img: 307204
+Seg - Predict: 40194458
+Lane - Ground truth: 8576247
+Lane - Get lane (draw, area, cm, %): 2001225
+Camera - Show in pygame: 1548842
+Camera - Convert img: 627129
+Camera - Show in pygame: 769283
+Lidar - Process & Draw: 11730676
+Lidar - Stats: 4744963
+Camera - Convert img: 597213
+Camera - Show in pygame: 743624
+Lidar - Get points front: 25789
+Lidar - Get points back: 4296
+Lane - Get points lane: 69265
+Seg - Get data road: 7753111
+Camera - Convert img: 738967
+Seg - Predict: 39169750
+Lane - Ground truth: 8515504
+Lane - Get lane (draw, area, cm, %): 1999113
+Camera - Show in pygame: 1555482
+Camera - Convert img: 135765
+Camera - Show in pygame: 956165
+Lidar - Process & Draw: 11568641
+Lidar - Stats: 4686224
+Camera - Convert img: 129196
+Camera - Show in pygame: 928665
+Lidar - Get points front: 20761
+Lidar - Get points back: 4707
+Lane - Get points lane: 75083
+Seg - Get data road: 7724098
+Camera - Convert img: 326123
+Seg - Predict: 38604394
+Lane - Ground truth: 8514102
+Lane - Get lane (draw, area, cm, %): 1994175
+Camera - Show in pygame: 1561300
+Camera - Convert img: 150167
+Camera - Show in pygame: 971038
+Lidar - Process & Draw: 11647529
+Lidar - Stats: 4679455
+Camera - Convert img: 127032
+Camera - Show in pygame: 981113
+Lidar - Get points front: 19860
+Lidar - Get points back: 4497
+Lane - Get points lane: 78158
+Seg - Get data road: 7849927
+Camera - Convert img: 302738
+Seg - Predict: 38650644
+Lane - Ground truth: 8603257
+Lane - Get lane (draw, area, cm, %): 2005392
+Camera - Show in pygame: 1582132
+Camera - Convert img: 157068
+Camera - Show in pygame: 965851
+Lidar - Process & Draw: 13544949
+Lidar - Stats: 5012409
+Camera - Convert img: 128785
+Camera - Show in pygame: 960502
+Lidar - Get points front: 22784
+Lidar - Get points back: 4647
+Lane - Get points lane: 79030
+Seg - Get data road: 7729446
+Camera - Convert img: 299513
+Seg - Predict: 40038333
+Lane - Ground truth: 8449844
+Lane - Get lane (draw, area, cm, %): 1987836
+Camera - Show in pygame: 1539808
+Camera - Convert img: 138028
+Camera - Show in pygame: 960272
+Lidar - Process & Draw: 11197489
+Lidar - Stats: 4773226
+Camera - Convert img: 122695
+Camera - Show in pygame: 946030
+Lidar - Get points front: 19720
+Lidar - Get points back: 4667
+Lane - Get points lane: 66611
+Seg - Get data road: 7815797
+Camera - Convert img: 274666
+Seg - Predict: 40118615
+Lane - Ground truth: 8532620
+Lane - Get lane (draw, area, cm, %): 2026794
+Camera - Show in pygame: 2009358
+Camera - Convert img: 146201
+Camera - Show in pygame: 1117549
+Lidar - Process & Draw: 12302309
+Lidar - Stats: 4755941
+Camera - Convert img: 144529
+Camera - Show in pygame: 987433
+Lidar - Get points front: 23476
+Lidar - Get points back: 4967
+Lane - Get points lane: 74002
+Seg - Get data road: 7786152
+Camera - Convert img: 735031
+Seg - Predict: 37673877
+Lane - Ground truth: 8501834
+Lane - Get lane (draw, area, cm, %): 2000905
+Camera - Show in pygame: 1552768
+Camera - Convert img: 139872
+Camera - Show in pygame: 972951
+Lidar - Process & Draw: 11507208
+Lidar - Stats: 4739276
+Camera - Convert img: 121053
+Camera - Show in pygame: 962264
+Lidar - Get points front: 20591
+Lidar - Get points back: 4316
+Lane - Get points lane: 67772
+Seg - Get data road: 7841766
+Camera - Convert img: 288176
+Seg - Predict: 39048175
+Lane - Ground truth: 8515845
+Lane - Get lane (draw, area, cm, %): 2000214
+Camera - Show in pygame: 1553148
+Camera - Convert img: 182025
+Camera - Show in pygame: 958520
+Lidar - Process & Draw: 11458534
+Lidar - Stats: 4721648
+Camera - Convert img: 128063
+Camera - Show in pygame: 953011
+Lidar - Get points front: 20180
+Lidar - Get points back: 4277
+Lane - Get points lane: 64678
+Seg - Get data road: 7804630
+Camera - Convert img: 288056
+Seg - Predict: 38266474
+Lane - Ground truth: 8563697
+Lane - Get lane (draw, area, cm, %): 1989198
+Camera - Show in pygame: 1564876
+Camera - Convert img: 138750
+Camera - Show in pygame: 986662
+Lidar - Process & Draw: 11690525
+Lidar - Stats: 4842071
+Camera - Convert img: 120652
+Camera - Show in pygame: 956956
+Lidar - Get points front: 21903
+Lidar - Get points back: 4507
+Lane - Get points lane: 69014
+Seg - Get data road: 7776247
+Camera - Convert img: 275587
+Seg - Predict: 39868727
+Lane - Ground truth: 8355853
+Lane - Get lane (draw, area, cm, %): 2011391
+Camera - Show in pygame: 1575141
+Camera - Convert img: 135745
+Camera - Show in pygame: 982696
+Lidar - Process & Draw: 11299623
+Lidar - Stats: 4754859
+Camera - Convert img: 120402
+Camera - Show in pygame: 972270
+Lidar - Get points front: 19459
+Lidar - Get points back: 4227
+Lane - Get points lane: 65139
+Seg - Get data road: 7804319
+Camera - Convert img: 279443
+Seg - Predict: 38419836
+Lane - Ground truth: 8512820
+Lane - Get lane (draw, area, cm, %): 2006954
+Camera - Show in pygame: 1555161
+Camera - Convert img: 134493
+Camera - Show in pygame: 972420
+Lidar - Process & Draw: 11545695
+Lidar - Stats: 4693456
+Camera - Convert img: 168234
+Camera - Show in pygame: 944538
+Lidar - Get points front: 20521
+Lidar - Get points back: 4497
+Lane - Get points lane: 70136
+Seg - Get data road: 7966805
+Camera - Convert img: 301376
+Seg - Predict: 37458723
+Lane - Ground truth: 8469756
+Lane - Get lane (draw, area, cm, %): 1990930
+Camera - Show in pygame: 1550043
+Camera - Convert img: 144959
+Camera - Show in pygame: 987072
+Lidar - Process & Draw: 11826370
+Lidar - Stats: 4792406
+Camera - Convert img: 126371
+Camera - Show in pygame: 950808
+Lidar - Get points front: 20581
+Lidar - Get points back: 4507
+Lane - Get points lane: 67602
+Seg - Get data road: 8142350
+Camera - Convert img: 329929
+Seg - Predict: 38128165
+Lane - Ground truth: 8971815
+Lane - Get lane (draw, area, cm, %): 2163350
+Camera - Show in pygame: 1567800
+Camera - Convert img: 140342
+Camera - Show in pygame: 961744
+Lidar - Process & Draw: 11246984
+Lidar - Stats: 4707227
+Camera - Convert img: 127032
+Camera - Show in pygame: 948193
+Lidar - Get points front: 28092
+Lidar - Get points back: 4487
+Lane - Get points lane: 81893
+Seg - Get data road: 8090542
+Camera - Convert img: 313324
+Seg - Predict: 38688772
+Lane - Ground truth: 8866946
+Lane - Get lane (draw, area, cm, %): 2081858
+Camera - Show in pygame: 1638227
+Camera - Convert img: 131389
+Camera - Show in pygame: 973452
+Lidar - Process & Draw: 12127125
+Lidar - Stats: 5202195
+Camera - Convert img: 121885
+Camera - Show in pygame: 978610
+Lidar - Get points front: 21532
+Lidar - Get points back: 4657
+Lane - Get points lane: 71228
+Seg - Get data road: 7970771
+Camera - Convert img: 295476
+Seg - Predict: 40375373
+Lane - Ground truth: 8856499
+Lane - Get lane (draw, area, cm, %): 2009628
+Camera - Show in pygame: 1560169
+Camera - Convert img: 140623
+Camera - Show in pygame: 1147374
+Lidar - Process & Draw: 12168437
+Lidar - Stats: 4590870
+Camera - Convert img: 118790
+Camera - Show in pygame: 940311
+Lidar - Get points front: 22454
+Lidar - Get points back: 4597
+Lane - Get points lane: 69805
+Seg - Get data road: 7684468
+Camera - Convert img: 313814
+Seg - Predict: 38859070
+Lane - Ground truth: 8540412
+Lane - Get lane (draw, area, cm, %): 2011351
+Camera - Show in pygame: 1608141
+Camera - Convert img: 390130
+Camera - Show in pygame: 1013222
+Lidar - Process & Draw: 11139181
+Lidar - Stats: 4916904
+Camera - Convert img: 115184
+Camera - Show in pygame: 944589
+Lidar - Get points front: 24477
+Lidar - Get points back: 4637
+Lane - Get points lane: 73601
+Seg - Get data road: 7621332
+Camera - Convert img: 291811
+Seg - Predict: 41296385
+Lane - Ground truth: 8559131
+Lane - Get lane (draw, area, cm, %): 2079674
+Camera - Show in pygame: 1633580
+Camera - Convert img: 135375
+Camera - Show in pygame: 946812
+Lidar - Process & Draw: 11408217
+Lidar - Stats: 4779326
+Camera - Convert img: 121534
+Camera - Show in pygame: 925819
+Lidar - Get points front: 20702
+Lidar - Get points back: 4547
+Lane - Get points lane: 68914
+Seg - Get data road: 7833392
+Camera - Convert img: 296708
+Seg - Predict: 39752140
+Lane - Ground truth: 8589636
+Lane - Get lane (draw, area, cm, %): 2065412
+Camera - Show in pygame: 2125513
+Camera - Convert img: 205922
+Camera - Show in pygame: 1085111
+Lidar - Process & Draw: 13149900
+Lidar - Stats: 4785876
+Camera - Convert img: 113882
+Camera - Show in pygame: 940982
+Lidar - Get points front: 22344
+Lidar - Get points back: 4467
+Lane - Get points lane: 73211
+Seg - Get data road: 7634271
+Camera - Convert img: 303148
+Seg - Predict: 40246448
+Lane - Ground truth: 8613062
+Lane - Get lane (draw, area, cm, %): 1979773
+Camera - Show in pygame: 1600449
+Camera - Convert img: 157178
+Camera - Show in pygame: 943436
+Lidar - Process & Draw: 11363329
+Lidar - Stats: 4814710
+Camera - Convert img: 129957
+Camera - Show in pygame: 922484
+Lidar - Get points front: 21863
+Lidar - Get points back: 4426
+Lane - Get points lane: 91228
+Seg - Get data road: 8055789
+Camera - Convert img: 296378
+Seg - Predict: 41684792
+Lane - Ground truth: 9005755
+Lane - Get lane (draw, area, cm, %): 2015907
+Camera - Show in pygame: 1636173
+Camera - Convert img: 130718
+Camera - Show in pygame: 994684
+Lidar - Process & Draw: 11245041
+Lidar - Stats: 4847238
+Camera - Convert img: 125009
+Camera - Show in pygame: 963157
+Lidar - Get points front: 25028
+Lidar - Get points back: 4377
+Lane - Get points lane: 81103
+Seg - Get data road: 8505399
+Camera - Convert img: 367565
+Seg - Predict: 38900213
+Lane - Ground truth: 9169102
+Lane - Get lane (draw, area, cm, %): 2189871
+Camera - Show in pygame: 1595923
+Camera - Convert img: 147964
+Camera - Show in pygame: 979431
+Lidar - Process & Draw: 11646117
+Lidar - Stats: 4713095
+Camera - Convert img: 99801
+Camera - Show in pygame: 957177
+Lidar - Get points front: 22795
+Lidar - Get points back: 4347
+Lane - Get points lane: 76125
+Seg - Get data road: 7826302
+Camera - Convert img: 779018
+Seg - Predict: 38682222
+Lane - Ground truth: 8489646
+Lane - Get lane (draw, area, cm, %): 2083731
+Camera - Show in pygame: 1607530
+Camera - Convert img: 138669
+Camera - Show in pygame: 957668
+Lidar - Process & Draw: 11605977
+Lidar - Stats: 4907720
+Camera - Convert img: 127062
+Camera - Show in pygame: 968174
+Lidar - Get points front: 41784
+Lidar - Get points back: 10646
+Lane - Get points lane: 132250
+Seg - Get data road: 8398928
+Camera - Convert img: 745998
+Seg - Predict: 39545727
+Lane - Ground truth: 8589026
+Lane - Get lane (draw, area, cm, %): 2271404
+Camera - Show in pygame: 1587490
+Camera - Convert img: 186412
+Camera - Show in pygame: 784186
+Lidar - Process & Draw: 13973186
+Lidar - Stats: 5175635
+Camera - Convert img: 114543
+Camera - Show in pygame: 792839
+Lidar - Get points front: 23866
+Lidar - Get points back: 4477
+Lane - Get points lane: 80773
+Seg - Get data road: 8534063
+Camera - Convert img: 384421
+Seg - Predict: 38618746
+Lane - Ground truth: 9018795
+Lane - Get lane (draw, area, cm, %): 2286607
+Camera - Show in pygame: 2073926
+Camera - Convert img: 211610
+Camera - Show in pygame: 1160625
+Lidar - Process & Draw: 12026493
+Lidar - Stats: 4965336
+Camera - Convert img: 119411
+Camera - Show in pygame: 811497
+Lidar - Get points front: 23826
+Lidar - Get points back: 4477
+Lane - Get points lane: 76155
+Seg - Get data road: 7925011
+Camera - Convert img: 327635
+Seg - Predict: 41857263
+Lane - Ground truth: 9931925
+Lane - Get lane (draw, area, cm, %): 2049178
+Camera - Show in pygame: 1598967
+Camera - Convert img: 205301
+Camera - Show in pygame: 796284
+Lidar - Process & Draw: 11699859
+Lidar - Stats: 5807200
+Camera - Convert img: 120943
+Camera - Show in pygame: 1166253
+Lidar - Get points front: 31638
+Lidar - Get points back: 4647
+Lane - Get points lane: 85620
+Seg - Get data road: 8422974
+Camera - Convert img: 275476
+Seg - Predict: 41569758
+Lane - Ground truth: 10969084
+Lane - Get lane (draw, area, cm, %): 2115768
+Camera - Show in pygame: 1616464
+Camera - Convert img: 199352
+Camera - Show in pygame: 801011
+Lidar - Process & Draw: 12219023
+Lidar - Stats: 4856723
+Camera - Convert img: 113882
+Camera - Show in pygame: 788853
+Lidar - Get points front: 23967
+Lidar - Get points back: 4827
+Lane - Get points lane: 74743
+Seg - Get data road: 10209446
+Camera - Convert img: 345813
+Seg - Predict: 38121415
+Lane - Ground truth: 8702237
+Lane - Get lane (draw, area, cm, %): 2041948
+Camera - Show in pygame: 1585297
+Camera - Convert img: 194994
+Camera - Show in pygame: 969946
+Lidar - Process & Draw: 11352414
+Lidar - Stats: 4823883
+Camera - Convert img: 105559
+Camera - Show in pygame: 991589
+Lidar - Get points front: 22904
+Lidar - Get points back: 4778
+Lane - Get points lane: 73722
+Seg - Get data road: 7959173
+Camera - Convert img: 317981
+Seg - Predict: 38074134
+Lane - Ground truth: 8591599
+Lane - Get lane (draw, area, cm, %): 2036650
+Camera - Show in pygame: 1649013
+Camera - Convert img: 200093
+Camera - Show in pygame: 992130
+Lidar - Process & Draw: 13167888
+Lidar - Stats: 6105711
+Camera - Convert img: 176227
+Camera - Show in pygame: 1104149
+Lidar - Get points front: 61262
+Lidar - Get points back: 6119
+Lane - Get points lane: 117428
+Seg - Get data road: 9828990
+Camera - Convert img: 331111
+Seg - Predict: 42549379
+Lane - Ground truth: 8723098
+Lane - Get lane (draw, area, cm, %): 1981536
+Camera - Show in pygame: 1566649
+Camera - Convert img: 132510
+Camera - Show in pygame: 952660
+Lidar - Process & Draw: 11651165
+Lidar - Stats: 4874720
+Camera - Convert img: 135315
+Camera - Show in pygame: 971378
+Lidar - Get points front: 24347
+Lidar - Get points back: 4547
+Lane - Get points lane: 77177
+Seg - Get data road: 7734523
+Camera - Convert img: 324661
+Seg - Predict: 41746465
+Lane - Ground truth: 8790691
+Lane - Get lane (draw, area, cm, %): 2082718
+Camera - Show in pygame: 1638367
+Camera - Convert img: 125530
+Camera - Show in pygame: 961373
+Lidar - Process & Draw: 12153034
+Lidar - Stats: 4996985
+Camera - Convert img: 103837
+Camera - Show in pygame: 938409
+Lidar - Get points front: 67763
+Lidar - Get points back: 6190
+Lane - Get points lane: 127903
+Seg - Get data road: 11341897
+Camera - Convert img: 324821
+Seg - Predict: 41526503
+Lane - Ground truth: 8570327
+Lane - Get lane (draw, area, cm, %): 2010059
+Camera - Show in pygame: 1859341
+Camera - Convert img: 141203
+Camera - Show in pygame: 969014
+Lidar - Process & Draw: 11445054
+Lidar - Stats: 4777983
+Camera - Convert img: 123176
+Camera - Show in pygame: 929065
+Lidar - Get points front: 23245
+Lidar - Get points back: 4707
+Lane - Get points lane: 71258
+Seg - Get data road: 7991091
+Camera - Convert img: 287575
+Seg - Predict: 39256491
+Lane - Ground truth: 8522845
+Lane - Get lane (draw, area, cm, %): 2014145
+Camera - Show in pygame: 1555482
+Camera - Convert img: 131298
+Camera - Show in pygame: 963146
+Lidar - Process & Draw: 11482280
+Lidar - Stats: 4698524
+Camera - Convert img: 128725
+Camera - Show in pygame: 942355
+Lidar - Get points front: 22434
+Lidar - Get points back: 4777
+Lane - Get points lane: 72169
+Seg - Get data road: 7761314
+Camera - Convert img: 289838
+Seg - Predict: 39466930
+Lane - Ground truth: 9458340
+Lane - Get lane (draw, area, cm, %): 2208770
+Camera - Show in pygame: 1720100
+Camera - Convert img: 193152
+Camera - Show in pygame: 970577
+Lidar - Process & Draw: 13126256
+Lidar - Stats: 5402749
+Camera - Convert img: 147853
+Camera - Show in pygame: 970377
+Lidar - Get points front: 23205
+Lidar - Get points back: 4607
+Lane - Get points lane: 81984
+Seg - Get data road: 8256963
+Camera - Convert img: 305171
+Seg - Predict: 39264603
+Lane - Ground truth: 8467322
+Lane - Get lane (draw, area, cm, %): 2001576
+Camera - Show in pygame: 1570785
+Camera - Convert img: 135945
+Camera - Show in pygame: 966020
+Lidar - Process & Draw: 11459776
+Lidar - Stats: 4688898
+Camera - Convert img: 126151
+Camera - Show in pygame: 954703
+Lidar - Get points front: 20460
+Lidar - Get points back: 4367
+Lane - Get points lane: 67342
+Seg - Get data road: 7957341
+Camera - Convert img: 284360
+Seg - Predict: 39639721
+Lane - Ground truth: 8617508
+Lane - Get lane (draw, area, cm, %): 1993925
+Camera - Show in pygame: 1571716
+Camera - Convert img: 187734
+Camera - Show in pygame: 933501
+Lidar - Process & Draw: 11471854
+Lidar - Stats: 4819957
+Camera - Convert img: 120672
+Camera - Show in pygame: 964357
+Lidar - Get points front: 43827
+Lidar - Get points back: 14102
+Lane - Get points lane: 130337
+Seg - Get data road: 8226096
+Camera - Convert img: 1043227
+Seg - Predict: 39478216
+Lane - Ground truth: 8453681
+Lane - Get lane (draw, area, cm, %): 2002067
+Camera - Show in pygame: 1566709
+Camera - Convert img: 161524
+Camera - Show in pygame: 946050
+Lidar - Process & Draw: 11351332
+Lidar - Stats: 5314455
+Camera - Convert img: 133532
+Camera - Show in pygame: 965640
+Lidar - Get points front: 23696
+Lidar - Get points back: 4737
+Lane - Get points lane: 91779
+Seg - Get data road: 7883618
+Camera - Convert img: 308076
+Seg - Predict: 40506109
+Lane - Ground truth: 8700074
+Lane - Get lane (draw, area, cm, %): 2002217
+Camera - Show in pygame: 1579999
+Camera - Convert img: 157719
+Camera - Show in pygame: 961234
+Lidar - Process & Draw: 11799429
+Lidar - Stats: 4928131
+Camera - Convert img: 118639
+Camera - Show in pygame: 958269
+Lidar - Get points front: 26780
+Lidar - Get points back: 5488
+Lane - Get points lane: 94032
+Seg - Get data road: 12272214
+Camera - Convert img: 310600
+Seg - Predict: 40856170
+Lane - Ground truth: 8514102
+Lane - Get lane (draw, area, cm, %): 2014115
+Camera - Show in pygame: 1574951
+Camera - Convert img: 540957
+Camera - Show in pygame: 832609
+Lidar - Process & Draw: 11224620
+Lidar - Stats: 4654586
+Camera - Convert img: 125119
+Camera - Show in pygame: 1136528
+Lidar - Get points front: 20040
+Lidar - Get points back: 4327
+Lane - Get points lane: 64568
+Seg - Get data road: 7867995
+Camera - Convert img: 296027
+Seg - Predict: 40084223
+Lane - Ground truth: 8676227
+Lane - Get lane (draw, area, cm, %): 2034215
+Camera - Show in pygame: 1584165
+Camera - Convert img: 145430
+Camera - Show in pygame: 1002245
+Lidar - Process & Draw: 11204519
+Lidar - Stats: 4836272
+Camera - Convert img: 123247
+Camera - Show in pygame: 996036
+Lidar - Get points front: 21252
+Lidar - Get points back: 4506
+Lane - Get points lane: 68714
+Seg - Get data road: 8863200
+Camera - Convert img: 330480
+Seg - Predict: 38975185
+Lane - Ground truth: 8527533
+Lane - Get lane (draw, area, cm, %): 2017921
+Camera - Show in pygame: 1573749
+Camera - Convert img: 139110
+Camera - Show in pygame: 990647
+Lidar - Process & Draw: 11592166
+Lidar - Stats: 4681609
+Camera - Convert img: 120192
+Camera - Show in pygame: 952110
+Lidar - Get points front: 19469
+Lidar - Get points back: 4276
+Lane - Get points lane: 75194
+Seg - Get data road: 7818460
+Camera - Convert img: 297960
+Seg - Predict: 38967633
+Lane - Ground truth: 8675717
+Lane - Get lane (draw, area, cm, %): 2007515
+Camera - Show in pygame: 1585487
+Camera - Convert img: 142446
+Camera - Show in pygame: 983237
+Lidar - Process & Draw: 11923327
+Lidar - Stats: 4794830
+Camera - Convert img: 126551
+Camera - Show in pygame: 1039101
+Lidar - Get points front: 20070
+Lidar - Get points back: 4076
+Lane - Get points lane: 68103
+Seg - Get data road: 7920255
+Camera - Convert img: 286763
+Seg - Predict: 39012812
+Lane - Ground truth: 9292378
+Lane - Get lane (draw, area, cm, %): 2006224
+Camera - Show in pygame: 1586709
+Camera - Convert img: 136286
+Camera - Show in pygame: 1151761
+Lidar - Process & Draw: 11946631
+Lidar - Stats: 4754568
+Camera - Convert img: 123667
+Camera - Show in pygame: 1129698
+Lidar - Get points front: 25048
+Lidar - Get points back: 4387
+Lane - Get points lane: 68693
+Seg - Get data road: 7907816
+Camera - Convert img: 294476
+Seg - Predict: 39021366
+Lane - Ground truth: 9418339
+Lane - Get lane (draw, area, cm, %): 1997169
+Camera - Show in pygame: 1570585
+Camera - Convert img: 153662
+Camera - Show in pygame: 1154325
+Lidar - Process & Draw: 12349260
+Lidar - Stats: 4749271
+Camera - Convert img: 136496
+Camera - Show in pygame: 1118672
+Lidar - Get points front: 22023
+Lidar - Get points back: 4877
+Lane - Get points lane: 71709
+Seg - Get data road: 8189571
+Camera - Convert img: 313334
+Seg - Predict: 40490616
+Lane - Ground truth: 8499691
+Lane - Get lane (draw, area, cm, %): 2008476
+Camera - Show in pygame: 1565737
+Camera - Convert img: 135504
+Camera - Show in pygame: 1110389
+Lidar - Process & Draw: 11786610
+Lidar - Stats: 4676721
+Camera - Convert img: 121483
+Camera - Show in pygame: 1128186
+Lidar - Get points front: 32249
+Lidar - Get points back: 4887
+Lane - Get points lane: 84058
+Seg - Get data road: 7874406
+Camera - Convert img: 334295
+Seg - Predict: 40347560
+Lane - Ground truth: 8465328
+Lane - Get lane (draw, area, cm, %): 1998142
+Camera - Show in pygame: 1566789
+Camera - Convert img: 152822
+Camera - Show in pygame: 981875
+Lidar - Process & Draw: 11691596
+Lidar - Stats: 4809471
+Camera - Convert img: 122315
+Camera - Show in pygame: 956366
+Lidar - Get points front: 21413
+Lidar - Get points back: 4416
+Lane - Get points lane: 68834
+Seg - Get data road: 7777059
+Camera - Convert img: 289157
+Seg - Predict: 39731569
+Lane - Ground truth: 8500601
+Lane - Get lane (draw, area, cm, %): 2138974
+Camera - Show in pygame: 1592878
+Camera - Convert img: 151239
+Camera - Show in pygame: 992351
+Lidar - Process & Draw: 11865729
+Lidar - Stats: 4824253
+Camera - Convert img: 112530
+Camera - Show in pygame: 966842
+Lidar - Get points front: 20991
+Lidar - Get points back: 4297
+Lane - Get points lane: 69855
+Seg - Get data road: 7756647
+Camera - Convert img: 326633
+Seg - Predict: 39080996
+Lane - Ground truth: 8530086
+Lane - Get lane (draw, area, cm, %): 2026824
+Camera - Show in pygame: 1601962
+Camera - Convert img: 142365
+Camera - Show in pygame: 957047
+Lidar - Process & Draw: 11688962
+Lidar - Stats: 4682409
+Camera - Convert img: 130918
+Camera - Show in pygame: 964829
+Lidar - Get points front: 20802
+Lidar - Get points back: 4396
+Lane - Get points lane: 68984
+Seg - Get data road: 8314250
+Camera - Convert img: 312072
+Seg - Predict: 40065714
+Lane - Ground truth: 8570717
+Lane - Get lane (draw, area, cm, %): 1993123
+Camera - Show in pygame: 1560219
+Camera - Convert img: 197098
+Camera - Show in pygame: 959650
+Lidar - Process & Draw: 11593538
+Lidar - Stats: 4734929
+Camera - Convert img: 172682
+Camera - Show in pygame: 928284
+Lidar - Get points front: 20691
+Lidar - Get points back: 4297
+Lane - Get points lane: 70116
+Seg - Get data road: 7606820
+Camera - Convert img: 708080
+Seg - Predict: 40009629
+Lane - Ground truth: 9403567
+Lane - Get lane (draw, area, cm, %): 1992452
+Camera - Show in pygame: 1566939
+Camera - Convert img: 209537
+Camera - Show in pygame: 1115226
+Lidar - Process & Draw: 12327558
+Lidar - Stats: 4661588
+Camera - Convert img: 180973
+Camera - Show in pygame: 1082347
+Lidar - Get points front: 21062
+Lidar - Get points back: 4477
+Lane - Get points lane: 76426
+Seg - Get data road: 7842747
+Camera - Convert img: 287054
+Seg - Predict: 39269330
+Lane - Ground truth: 8598740
+Lane - Get lane (draw, area, cm, %): 2029077
+Camera - Show in pygame: 1603003
+Camera - Convert img: 180192
+Camera - Show in pygame: 1162908
+Lidar - Process & Draw: 12237712
+Lidar - Stats: 4820128
+Camera - Convert img: 119090
+Camera - Show in pygame: 1133754
+Lidar - Get points front: 20361
+Lidar - Get points back: 4918
+Lane - Get points lane: 71858
+Seg - Get data road: 7694554
+Camera - Convert img: 291941
+Seg - Predict: 38064267
+Lane - Ground truth: 8582245
+Lane - Get lane (draw, area, cm, %): 1994325
+Camera - Show in pygame: 1573579
+Camera - Convert img: 140732
+Camera - Show in pygame: 972530
+Lidar - Process & Draw: 11525735
+Lidar - Stats: 4744814
+Camera - Convert img: 128123
+Camera - Show in pygame: 946581
+Lidar - Get points front: 20701
+Lidar - Get points back: 4567
+Lane - Get points lane: 69074
+Seg - Get data road: 7737759
+Camera - Convert img: 301476
+Seg - Predict: 40697960
+Lane - Ground truth: 8837000
+Lane - Get lane (draw, area, cm, %): 2076580
+Camera - Show in pygame: 1627201
+Camera - Convert img: 136386
+Camera - Show in pygame: 991830
+Lidar - Process & Draw: 11791146
+Lidar - Stats: 5070936
+Camera - Convert img: 176556
+Camera - Show in pygame: 936186
+Lidar - Get points front: 19820
+Lidar - Get points back: 4216
+Lane - Get points lane: 66941
+Seg - Get data road: 7829517
+Camera - Convert img: 295166
+Seg - Predict: 39961567
+Lane - Ground truth: 8606582
+Lane - Get lane (draw, area, cm, %): 1989898
+Camera - Show in pygame: 1580229
+Camera - Convert img: 132891
+Camera - Show in pygame: 976927
+Lidar - Process & Draw: 11126682
+Lidar - Stats: 4736380
+Camera - Convert img: 120762
+Camera - Show in pygame: 950487
+Lidar - Get points front: 21082
+Lidar - Get points back: 4347
+Lane - Get points lane: 67322
+Seg - Get data road: 8095198
+Camera - Convert img: 278261
+Seg - Predict: 39805341
+Lane - Ground truth: 8911543
+Lane - Get lane (draw, area, cm, %): 2093635
+Camera - Show in pygame: 1665488
+Camera - Convert img: 140602
+Camera - Show in pygame: 1020262
+Lidar - Process & Draw: 11947032
+Lidar - Stats: 5036033
+Camera - Convert img: 125560
+Camera - Show in pygame: 973922
+Lidar - Get points front: 19980
+Lidar - Get points back: 4577
+Lane - Get points lane: 69886
+Seg - Get data road: 8040486
+Camera - Convert img: 277519
+Seg - Predict: 39026474
+Lane - Ground truth: 8542024
+Lane - Get lane (draw, area, cm, %): 1997901
+Camera - Show in pygame: 1569382
+Camera - Convert img: 135505
+Camera - Show in pygame: 1074434
+Lidar - Process & Draw: 12028115
+Lidar - Stats: 4714577
+Camera - Convert img: 164208
+Camera - Show in pygame: 927122
+Lidar - Get points front: 21182
+Lidar - Get points back: 4176
+Lane - Get points lane: 67763
+Seg - Get data road: 7964571
+Camera - Convert img: 305402
+Seg - Predict: 37767269
+Lane - Ground truth: 8883561
+Lane - Get lane (draw, area, cm, %): 2087807
+Camera - Show in pygame: 1569843
+Camera - Convert img: 202406
+Camera - Show in pygame: 826019
+Lidar - Process & Draw: 12497715
+Lidar - Stats: 5117487
+Camera - Convert img: 116175
+Camera - Show in pygame: 952370
+Lidar - Get points front: 21393
+Lidar - Get points back: 4076
+Lane - Get points lane: 70837
+Seg - Get data road: 8009589
+Camera - Convert img: 320004
+Seg - Predict: 39309160
+Lane - Ground truth: 9435526
+Lane - Get lane (draw, area, cm, %): 2000634
+Camera - Show in pygame: 1573388
+Camera - Convert img: 185430
+Camera - Show in pygame: 941874
+Lidar - Process & Draw: 11429350
+Lidar - Stats: 4776993
+Camera - Convert img: 124388
+Camera - Show in pygame: 940522
+Lidar - Get points front: 21492
+Lidar - Get points back: 4577
+Lane - Get points lane: 69525
+Seg - Get data road: 7778469
+Camera - Convert img: 278561
+Seg - Predict: 41354132
+Lane - Ground truth: 8492830
+Lane - Get lane (draw, area, cm, %): 1991521
+Camera - Show in pygame: 1566138
+Camera - Convert img: 188224
+Camera - Show in pygame: 930267
+Lidar - Process & Draw: 11512034
+Lidar - Stats: 4734267
+Camera - Convert img: 134864
+Camera - Show in pygame: 932199
+Lidar - Get points front: 21252
+Lidar - Get points back: 4466
+Lane - Get points lane: 80943
+Seg - Get data road: 7679350
+Camera - Convert img: 295667
+Seg - Predict: 39808686
+Lane - Ground truth: 9474514
+Lane - Get lane (draw, area, cm, %): 2023159
+Camera - Show in pygame: 1592558
+Camera - Convert img: 161264
+Camera - Show in pygame: 1146202
+Lidar - Process & Draw: 11919050
+Lidar - Stats: 4781569
+Camera - Convert img: 152671
+Camera - Show in pygame: 1105412
+Lidar - Get points front: 22965
+Lidar - Get points back: 4597
+Lane - Get points lane: 72670
+Seg - Get data road: 7801955
+Camera - Convert img: 316408
+Seg - Predict: 38798378
+Lane - Ground truth: 9267982
+Lane - Get lane (draw, area, cm, %): 2014666
+Camera - Show in pygame: 1568942
+Camera - Convert img: 140572
+Camera - Show in pygame: 1156308
+Lidar - Process & Draw: 12166535
+Lidar - Stats: 4749620
+Camera - Convert img: 132029
+Camera - Show in pygame: 1112943
+Lidar - Get points front: 19029
+Lidar - Get points back: 4406
+Lane - Get points lane: 66421
+Seg - Get data road: 7648784
+Camera - Convert img: 303629
+Seg - Predict: 38917488
+Lane - Ground truth: 9345319
+Lane - Get lane (draw, area, cm, %): 2009098
+Camera - Show in pygame: 1578447
+Camera - Convert img: 151469
+Camera - Show in pygame: 1250581
+Lidar - Process & Draw: 11801232
+Lidar - Stats: 4669790
+Camera - Convert img: 133892
+Camera - Show in pygame: 1114745
+Lidar - Get points front: 19689
+Lidar - Get points back: 4576
+Lane - Get points lane: 66451
+Seg - Get data road: 7815085
+Camera - Convert img: 280785
+Seg - Predict: 39317042
+Lane - Ground truth: 9623330
+Lane - Get lane (draw, area, cm, %): 2158714
+Camera - Show in pygame: 1574190
+Camera - Convert img: 147122
+Camera - Show in pygame: 1162508
+Lidar - Process & Draw: 12051831
+Lidar - Stats: 4761499
+Camera - Convert img: 127863
+Camera - Show in pygame: 1081996
+Lidar - Get points front: 20391
+Lidar - Get points back: 4146
+Lane - Get points lane: 68934
+Seg - Get data road: 7663497
+Camera - Convert img: 314405
+Seg - Predict: 40114798
+Lane - Ground truth: 8537107
+Lane - Get lane (draw, area, cm, %): 2013714
+Camera - Show in pygame: 1567379
+Camera - Convert img: 146762
+Camera - Show in pygame: 1115637
+Lidar - Process & Draw: 12265294
+Lidar - Stats: 4754168
+Camera - Convert img: 125450
+Camera - Show in pygame: 1089367
+Lidar - Get points front: 20521
+Lidar - Get points back: 4477
+Lane - Get points lane: 67662
+Seg - Get data road: 7654854
+Camera - Convert img: 290750
+Seg - Predict: 39429843
+Lane - Ground truth: 9247080
+Lane - Get lane (draw, area, cm, %): 1994386
+Camera - Show in pygame: 1582973
+Camera - Convert img: 142976
+Camera - Show in pygame: 1165993
+Lidar - Process & Draw: 11835523
+Lidar - Stats: 4700336
+Camera - Convert img: 126952
+Camera - Show in pygame: 1100344
+Lidar - Get points front: 21232
+Lidar - Get points back: 4847
+Lane - Get points lane: 67012
+Seg - Get data road: 7889849
+Camera - Convert img: 280574
+Seg - Predict: 39296312
+Lane - Ground truth: 9255012
+Lane - Get lane (draw, area, cm, %): 2003500
+Camera - Show in pygame: 1662964
+Camera - Convert img: 144098
+Camera - Show in pygame: 1164521
+Lidar - Process & Draw: 12177110
+Lidar - Stats: 4636780
+Camera - Convert img: 127373
+Camera - Show in pygame: 1104279
+Lidar - Get points front: 20391
+Lidar - Get points back: 4346
+Lane - Get points lane: 68504
+Seg - Get data road: 7626870
+Camera - Convert img: 287094
+Seg - Predict: 39948738
+Lane - Ground truth: 9354512
+Lane - Get lane (draw, area, cm, %): 2026895
+Camera - Show in pygame: 1573388
+Camera - Convert img: 143237
+Camera - Show in pygame: 1144661
+Lidar - Process & Draw: 12142748
+Lidar - Stats: 4773848
+Camera - Convert img: 124068
+Camera - Show in pygame: 1100904
+Lidar - Get points front: 21102
+Lidar - Get points back: 4677
+Lane - Get points lane: 69725
+Seg - Get data road: 7665259
+Camera - Convert img: 297390
+Seg - Predict: 40708316
+Lane - Ground truth: 8473031
+Lane - Get lane (draw, area, cm, %): 1993935
+Camera - Show in pygame: 1554039
+Camera - Convert img: 142926
+Camera - Show in pygame: 1057879
+Lidar - Process & Draw: 11499736
+Lidar - Stats: 4689991
+Camera - Convert img: 121194
+Camera - Show in pygame: 946591
+Lidar - Get points front: 21312
+Lidar - Get points back: 4897
+Lane - Get points lane: 68814
+Seg - Get data road: 7691759
+Camera - Convert img: 277780
+Seg - Predict: 40019815
+Lane - Ground truth: 8512670
+Lane - Get lane (draw, area, cm, %): 2018733
+Camera - Show in pygame: 1575432
+Camera - Convert img: 136526
+Camera - Show in pygame: 964929
+Lidar - Process & Draw: 11420527
+Lidar - Stats: 4695649
+Camera - Convert img: 124147
+Camera - Show in pygame: 956997
+Lidar - Get points front: 20541
+Lidar - Get points back: 4827
+Lane - Get points lane: 67543
+Seg - Get data road: 7693851
+Camera - Convert img: 293785
+Seg - Predict: 41148561
+Lane - Ground truth: 8613322
+Lane - Get lane (draw, area, cm, %): 1979903
+Camera - Show in pygame: 1554701
+Camera - Convert img: 136076
+Camera - Show in pygame: 957919
+Lidar - Process & Draw: 11565806
+Lidar - Stats: 4673165
+Camera - Convert img: 119130
+Camera - Show in pygame: 939671
+Lidar - Get points front: 19980
+Lidar - Get points back: 4567
+Lane - Get points lane: 68503
+Seg - Get data road: 9165989
+Camera - Convert img: 820450
+Seg - Predict: 38370631
+Lane - Ground truth: 9415485
+Lane - Get lane (draw, area, cm, %): 2007856
+Camera - Show in pygame: 1566439
+Camera - Convert img: 136847
+Camera - Show in pygame: 975145
+Lidar - Process & Draw: 11189277
+Lidar - Stats: 4689280
+Camera - Convert img: 133302
+Camera - Show in pygame: 953542
+Lidar - Get points front: 20791
+Lidar - Get points back: 4888
+Lane - Get points lane: 68633
+Seg - Get data road: 7672460
+Camera - Convert img: 296478
+Seg - Predict: 37668459
+Lane - Ground truth: 8510297
+Lane - Get lane (draw, area, cm, %): 2008326
+Camera - Show in pygame: 1571205
+Camera - Convert img: 136787
+Camera - Show in pygame: 976166
+Lidar - Process & Draw: 11701702
+Lidar - Stats: 4766107
+Camera - Convert img: 123297
+Camera - Show in pygame: 960792
+Lidar - Get points front: 20671
+Lidar - Get points back: 5197
+Lane - Get points lane: 67512
+Seg - Get data road: 7738450
+Camera - Convert img: 293173
+Seg - Predict: 39510365
+Lane - Ground truth: 8610739
+Lane - Get lane (draw, area, cm, %): 2085913
+Camera - Show in pygame: 1563804
+Camera - Convert img: 150207
+Camera - Show in pygame: 976065
+Lidar - Process & Draw: 11692477
+Lidar - Stats: 4725735
+Camera - Convert img: 131318
+Camera - Show in pygame: 938348
+Lidar - Get points front: 20511
+Lidar - Get points back: 4207
+Lane - Get points lane: 69145
+Seg - Get data road: 7795045
+Camera - Convert img: 601029
+Seg - Predict: 39699590
+Lane - Ground truth: 8529656
+Lane - Get lane (draw, area, cm, %): 2059013
+Camera - Show in pygame: 1589103
+Camera - Convert img: 142155
+Camera - Show in pygame: 1115977
+Lidar - Process & Draw: 13182540
+Lidar - Stats: 4823673
+Camera - Convert img: 127523
+Camera - Show in pygame: 957728
+Lidar - Get points front: 23506
+Lidar - Get points back: 4326
+Lane - Get points lane: 81133
+Seg - Get data road: 7605218
+Camera - Convert img: 297760
+Seg - Predict: 40423635
+Lane - Ground truth: 8481664
+Lane - Get lane (draw, area, cm, %): 2009698
+Camera - Show in pygame: 1555511
+Camera - Convert img: 147643
+Camera - Show in pygame: 957908
+Lidar - Process & Draw: 11483191
+Lidar - Stats: 4826628
+Camera - Convert img: 123196
+Camera - Show in pygame: 808733
+Lidar - Get points front: 23365
+Lidar - Get points back: 4276
+Lane - Get points lane: 79901
+Seg - Get data road: 8631740
+Camera - Convert img: 367395
+Seg - Predict: 41175682
+Lane - Ground truth: 9451018
+Lane - Get lane (draw, area, cm, %): 1998382
+Camera - Show in pygame: 1599989
+Camera - Convert img: 142565
+Camera - Show in pygame: 1178812
+Lidar - Process & Draw: 12089118
+Lidar - Stats: 4860989
+Camera - Convert img: 108724
+Camera - Show in pygame: 1126924
+Lidar - Get points front: 20671
+Lidar - Get points back: 4327
+Lane - Get points lane: 69555
+Seg - Get data road: 7630876
+Camera - Convert img: 307254
+Seg - Predict: 38904359
+Lane - Ground truth: 9363326
+Lane - Get lane (draw, area, cm, %): 1995938
+Camera - Show in pygame: 1596664
+Camera - Convert img: 130437
+Camera - Show in pygame: 1131681
+Lidar - Process & Draw: 12666900
+Lidar - Stats: 4698553
+Camera - Convert img: 628190
+Camera - Show in pygame: 1409150
+Lidar - Get points front: 44888
+Lidar - Get points back: 6800
+Lane - Get points lane: 101013
+Seg - Get data road: 8145404
+Camera - Convert img: 323870
+Seg - Predict: 38642633
+Lane - Ground truth: 8634614
+Lane - Get lane (draw, area, cm, %): 1997170
+Camera - Show in pygame: 1726571
+Camera - Convert img: 133242
+Camera - Show in pygame: 989807
+Lidar - Process & Draw: 11262988
+Lidar - Stats: 4813567
+Camera - Convert img: 116826
+Camera - Show in pygame: 955965
+Lidar - Get points front: 21833
+Lidar - Get points back: 4396
+Lane - Get points lane: 70417
+Seg - Get data road: 7731609
+Camera - Convert img: 287675
+Seg - Predict: 40223963
+Lane - Ground truth: 8606622
+Lane - Get lane (draw, area, cm, %): 1995797
+Camera - Show in pygame: 1577476
+Camera - Convert img: 147343
+Camera - Show in pygame: 990949
+Lidar - Process & Draw: 11873050
+Lidar - Stats: 4631272
+Camera - Convert img: 128755
+Camera - Show in pygame: 955063
+Lidar - Get points front: 21082
+Lidar - Get points back: 4297
+Lane - Get points lane: 68403
+Seg - Get data road: 7851852
+Camera - Convert img: 293855
+Seg - Predict: 40505850
+Lane - Ground truth: 8815828
+Lane - Get lane (draw, area, cm, %): 1997710
+Camera - Show in pygame: 1574500
+Camera - Convert img: 145640
+Camera - Show in pygame: 961954
+Lidar - Process & Draw: 11516722
+Lidar - Stats: 4736340
+Camera - Convert img: 569842
+Camera - Show in pygame: 764065
+Lidar - Get points front: 20070
+Lidar - Get points back: 4276
+Lane - Get points lane: 68734
+Seg - Get data road: 7664398
+Camera - Convert img: 728792
+Seg - Predict: 41534145
+Lane - Ground truth: 9231036
+Lane - Get lane (draw, area, cm, %): 1990881
+Camera - Show in pygame: 1570434
+Camera - Convert img: 642181
+Camera - Show in pygame: 1440748
+Lidar - Process & Draw: 11929637
+Lidar - Stats: 5077646
+Camera - Convert img: 131799
+Camera - Show in pygame: 967373
+Lidar - Get points front: 22564
+Lidar - Get points back: 4477
+Lane - Get points lane: 72840
+Seg - Get data road: 7643856
+Camera - Convert img: 318231
+Seg - Predict: 40504838
+Lane - Ground truth: 8618109
+Lane - Get lane (draw, area, cm, %): 2411816
+Camera - Show in pygame: 1793070
+Camera - Convert img: 136576
+Camera - Show in pygame: 1183128
+Lidar - Process & Draw: 12148577
+Lidar - Stats: 4693376
+Camera - Convert img: 119391
+Camera - Show in pygame: 1115346
+Lidar - Get points front: 20151
+Lidar - Get points back: 4556
+Lane - Get points lane: 67813
+Seg - Get data road: 8230123
+Camera - Convert img: 352042
+Seg - Predict: 38537905
+Lane - Ground truth: 9426011
+Lane - Get lane (draw, area, cm, %): 1989397
+Camera - Show in pygame: 1569953
+Camera - Convert img: 601799
+Camera - Show in pygame: 978149
+Lidar - Process & Draw: 11680530
+Lidar - Stats: 4900059
+Camera - Convert img: 130577
+Camera - Show in pygame: 965119
+Lidar - Get points front: 24658
+Lidar - Get points back: 4607
+Lane - Get points lane: 84908
+Seg - Get data road: 9839165
+Camera - Convert img: 302687
+Seg - Predict: 38975626
+Lane - Ground truth: 8536105
+Lane - Get lane (draw, area, cm, %): 2120396
+Camera - Show in pygame: 1558376
+Camera - Convert img: 139731
+Camera - Show in pygame: 956887
+Lidar - Process & Draw: 11679678
+Lidar - Stats: 4865546
+Camera - Convert img: 130137
+Camera - Show in pygame: 944748
+Lidar - Get points front: 19359
+Lidar - Get points back: 4687
+Lane - Get points lane: 73952
+Seg - Get data road: 7643957
+Camera - Convert img: 1108316
+Seg - Predict: 39743547
+Lane - Ground truth: 8530838
+Lane - Get lane (draw, area, cm, %): 2043699
+Camera - Show in pygame: 1549112
+Camera - Convert img: 638997
+Camera - Show in pygame: 795553
+Lidar - Process & Draw: 11025599
+Lidar - Stats: 4741849
+Camera - Convert img: 620158
+Camera - Show in pygame: 792829
+Lidar - Get points front: 20401
+Lidar - Get points back: 4486
+Lane - Get points lane: 68934
+Seg - Get data road: 7954106
+Camera - Convert img: 302468
+Seg - Predict: 39544035
+Lane - Ground truth: 8738272
+Lane - Get lane (draw, area, cm, %): 2082308
+Camera - Show in pygame: 1607771
+Camera - Convert img: 149226
+Camera - Show in pygame: 982626
+Lidar - Process & Draw: 12197802
+Lidar - Stats: 6443372
+Camera - Convert img: 128764
+Camera - Show in pygame: 1185082
+Lidar - Get points front: 26590
+Lidar - Get points back: 5598
+Lane - Get points lane: 96646
+Seg - Get data road: 8955901
+Camera - Convert img: 319814
+Seg - Predict: 37966110
+Lane - Ground truth: 8450587
+Lane - Get lane (draw, area, cm, %): 2009729
+Camera - Show in pygame: 1559839
+Camera - Convert img: 146702
+Camera - Show in pygame: 984668
+Lidar - Process & Draw: 11100182
+Lidar - Stats: 4705585
+Camera - Convert img: 182305
+Camera - Show in pygame: 936025
+Lidar - Get points front: 21112
+Lidar - Get points back: 4697
+Lane - Get points lane: 67963
+Seg - Get data road: 7916519
+Camera - Convert img: 298682
+Seg - Predict: 40484807
+Lane - Ground truth: 8467743
+Lane - Get lane (draw, area, cm, %): 1980003
+Camera - Show in pygame: 1549532
+Camera - Convert img: 179161
+Camera - Show in pygame: 880591
+Lidar - Process & Draw: 11924969
+Lidar - Stats: 4693627
+Camera - Convert img: 186262
+Camera - Show in pygame: 943727
+Lidar - Get points front: 19029
+Lidar - Get points back: 4056
+Lane - Get points lane: 74062
+Seg - Get data road: 7669355
+Camera - Convert img: 308706
+Seg - Predict: 40431287
+Lane - Ground truth: 8466641
+Lane - Get lane (draw, area, cm, %): 2004410
+Camera - Show in pygame: 1539798
+Camera - Convert img: 192491
+Camera - Show in pygame: 950427
+Lidar - Process & Draw: 11697555
+Lidar - Stats: 4681268
+Camera - Convert img: 182115
+Camera - Show in pygame: 940732
+Lidar - Get points front: 19260
+Lidar - Get points back: 4157
+Lane - Get points lane: 73881
+Seg - Get data road: 7745540
+Camera - Convert img: 316629
+Seg - Predict: 37916755
+Lane - Ground truth: 8523998
+Lane - Get lane (draw, area, cm, %): 2014375
+Camera - Show in pygame: 1570174
+Camera - Convert img: 130828
+Camera - Show in pygame: 968734
+Lidar - Process & Draw: 11699789
+Lidar - Stats: 4744563
+Camera - Convert img: 126601
+Camera - Show in pygame: 951659
+Lidar - Get points front: 21111
+Lidar - Get points back: 4747
+Lane - Get points lane: 81473
+Seg - Get data road: 7690747
+Camera - Convert img: 276117
+Seg - Predict: 40228942
+Lane - Ground truth: 8546221
+Lane - Get lane (draw, area, cm, %): 2011902
+Camera - Show in pygame: 1590715
+Camera - Convert img: 137718
+Camera - Show in pygame: 979281
+Lidar - Process & Draw: 11285393
+Lidar - Stats: 4716911
+Camera - Convert img: 179702
+Camera - Show in pygame: 928984
+Lidar - Get points front: 20712
+Lidar - Get points back: 4537
+Lane - Get points lane: 69265
+Seg - Get data road: 7949909
+Camera - Convert img: 275807
+Seg - Predict: 39457966
+Lane - Ground truth: 8505839
+Lane - Get lane (draw, area, cm, %): 2001256
+Camera - Show in pygame: 1560249
+Camera - Convert img: 145460
+Camera - Show in pygame: 972160
+Lidar - Process & Draw: 11547579
+Lidar - Stats: 4778283
+Camera - Convert img: 126692
+Camera - Show in pygame: 956487
+Lidar - Get points front: 21803
+Lidar - Get points back: 4928
+Lane - Get points lane: 74763
+Seg - Get data road: 8078513
+Camera - Convert img: 288386
+Seg - Predict: 39872162
+Lane - Ground truth: 8864452
+Lane - Get lane (draw, area, cm, %): 2010280
+Camera - Show in pygame: 1590364
+Camera - Convert img: 132020
+Camera - Show in pygame: 967603
+Lidar - Process & Draw: 11662002
+Lidar - Stats: 4964165
+Camera - Convert img: 120963
+Camera - Show in pygame: 965349
+Lidar - Get points front: 19739
+Lidar - Get points back: 4286
+Lane - Get points lane: 66551
+Seg - Get data road: 7844490
+Camera - Convert img: 285592
+Seg - Predict: 39908126
+Lane - Ground truth: 8696378
+Lane - Get lane (draw, area, cm, %): 2085473
+Camera - Show in pygame: 1590054
+Camera - Convert img: 143677
+Camera - Show in pygame: 978569
+Lidar - Process & Draw: 11851618
+Lidar - Stats: 4855251
+Camera - Convert img: 125950
+Camera - Show in pygame: 946561
+Lidar - Get points front: 20251
+Lidar - Get points back: 4347
+Lane - Get points lane: 66790
+Seg - Get data road: 7846002
+Camera - Convert img: 313965
+Seg - Predict: 37886099
+Lane - Ground truth: 8621885
+Lane - Get lane (draw, area, cm, %): 1981115
+Camera - Show in pygame: 1589974
+Camera - Convert img: 145560
+Camera - Show in pygame: 959251
+Lidar - Process & Draw: 12388670
+Lidar - Stats: 5144507
+Camera - Convert img: 110407
+Camera - Show in pygame: 1070539
+Lidar - Get points front: 24888
+Lidar - Get points back: 4567
+Lane - Get points lane: 75935
+Seg - Get data road: 7935927
+Camera - Convert img: 313444
+Seg - Predict: 40391517
+Lane - Ground truth: 8424247
+Lane - Get lane (draw, area, cm, %): 1988286
+Camera - Show in pygame: 1534100
+Camera - Convert img: 583603
+Camera - Show in pygame: 785758
+Lidar - Process & Draw: 11176527
+Lidar - Stats: 4727777
+Camera - Convert img: 121934
+Camera - Show in pygame: 1112051
+Lidar - Get points front: 19540
+Lidar - Get points back: 4386
+Lane - Get points lane: 72550
+Seg - Get data road: 7627241
+Camera - Convert img: 283129
+Seg - Predict: 40193688
+Lane - Ground truth: 8543095
+Lane - Get lane (draw, area, cm, %): 1975507
+Camera - Show in pygame: 1546889
+Camera - Convert img: 128534
+Camera - Show in pygame: 1013572
+Lidar - Process & Draw: 12089658
+Lidar - Stats: 4733897
+Camera - Convert img: 147442
+Camera - Show in pygame: 939290
+Lidar - Get points front: 21042
+Lidar - Get points back: 4166
+Lane - Get points lane: 69375
+Seg - Get data road: 7829928
+Camera - Convert img: 294876
+Seg - Predict: 41032016
+Lane - Ground truth: 8558700
+Lane - Get lane (draw, area, cm, %): 1994044
+Camera - Show in pygame: 1561962
+Camera - Convert img: 139151
+Camera - Show in pygame: 1001244
+Lidar - Process & Draw: 11107393
+Lidar - Stats: 4689570
+Camera - Convert img: 127753
+Camera - Show in pygame: 931398
+Lidar - Get points front: 19480
+Lidar - Get points back: 4477
+Lane - Get points lane: 72439
+Seg - Get data road: 7682165
+Camera - Convert img: 279442
+Seg - Predict: 38594049
+Lane - Ground truth: 9144756
+Lane - Get lane (draw, area, cm, %): 1972011
+Camera - Show in pygame: 1548802
+Camera - Convert img: 637233
+Camera - Show in pygame: 1086863
+Lidar - Process & Draw: 11914874
+Lidar - Stats: 4795881
+Camera - Convert img: 607128
+Camera - Show in pygame: 1066743
+Lidar - Get points front: 19039
+Lidar - Get points back: 4296
+Lane - Get points lane: 69605
+Seg - Get data road: 7645339
+Camera - Convert img: 800169
+Seg - Predict: 39046603
+Lane - Ground truth: 9204176
+Lane - Get lane (draw, area, cm, %): 1985442
+Camera - Show in pygame: 1540039
+Camera - Convert img: 609702
+Camera - Show in pygame: 1079933
+Lidar - Process & Draw: 12054745
+Lidar - Stats: 4690191
+Camera - Convert img: 580348
+Camera - Show in pygame: 775592
+Lidar - Get points front: 20241
+Lidar - Get points back: 4437
+Lane - Get points lane: 78528
+Seg - Get data road: 7726222
+Camera - Convert img: 286823
+Seg - Predict: 40390795
+Lane - Ground truth: 9300731
+Lane - Get lane (draw, area, cm, %): 1990429
+Camera - Show in pygame: 1551225
+Camera - Convert img: 126702
+Camera - Show in pygame: 1153594
+Lidar - Process & Draw: 12190881
+Lidar - Stats: 4708429
+Camera - Convert img: 126080
+Camera - Show in pygame: 1127785
+Lidar - Get points front: 20782
+Lidar - Get points back: 4326
+Lane - Get points lane: 66310
+Seg - Get data road: 8004312
+Camera - Convert img: 738907
+Seg - Predict: 39209119
+Lane - Ground truth: 8881378
+Lane - Get lane (draw, area, cm, %): 2084281
+Camera - Show in pygame: 1804007
+Camera - Convert img: 145230
+Camera - Show in pygame: 994815
+Lidar - Process & Draw: 12415982
+Lidar - Stats: 5087491
+Camera - Convert img: 109054
+Camera - Show in pygame: 997148
+Lidar - Get points front: 22253
+Lidar - Get points back: 4316
+Lane - Get points lane: 68513
+Seg - Get data road: 7711349
+Camera - Convert img: 304761
+Seg - Predict: 38502791
+Lane - Ground truth: 9273291
+Lane - Get lane (draw, area, cm, %): 1973343
+Camera - Show in pygame: 1548371
+Camera - Convert img: 126812
+Camera - Show in pygame: 1163078
+Lidar - Process & Draw: 12158442
+Lidar - Stats: 4729551
+Camera - Convert img: 109405
+Camera - Show in pygame: 1129417
+Lidar - Get points front: 21783
+Lidar - Get points back: 4397
+Lane - Get points lane: 65830
+Seg - Get data road: 7709015
+Camera - Convert img: 274525
+Seg - Predict: 37468107
+Lane - Ground truth: 8863291
+Lane - Get lane (draw, area, cm, %): 2041907
+Camera - Show in pygame: 1619047
+Camera - Convert img: 142105
+Camera - Show in pygame: 980463
+Lidar - Process & Draw: 12050218
+Lidar - Stats: 5026399
+Camera - Convert img: 122185
+Camera - Show in pygame: 974143
+Lidar - Get points front: 20761
+Lidar - Get points back: 4307
+Lane - Get points lane: 65550
+Seg - Get data road: 7768375
+Camera - Convert img: 286924
+Seg - Predict: 40340168
+Lane - Ground truth: 8348692
+Lane - Get lane (draw, area, cm, %): 1998722
+Camera - Show in pygame: 1558296
+Camera - Convert img: 133953
+Camera - Show in pygame: 1157601
+Lidar - Process & Draw: 12035096
+Lidar - Stats: 4668829
+Camera - Convert img: 119341
+Camera - Show in pygame: 1137770
+Lidar - Get points front: 20801
+Lidar - Get points back: 4607
+Lane - Get points lane: 66791
+Seg - Get data road: 7704258
+Camera - Convert img: 287335
+Seg - Predict: 39132754
+Lane - Ground truth: 8682717
+Lane - Get lane (draw, area, cm, %): 2015497
+Camera - Show in pygame: 1621852
+Camera - Convert img: 126482
+Camera - Show in pygame: 989496
+Lidar - Process & Draw: 12181837
+Lidar - Stats: 4899087
+Camera - Convert img: 123076
+Camera - Show in pygame: 992610
+Lidar - Get points front: 18949
+Lidar - Get points back: 4617
+Lane - Get points lane: 64999
+Seg - Get data road: 7887415
+Camera - Convert img: 298020
+Seg - Predict: 39191582
+Lane - Ground truth: 8775357
+Lane - Get lane (draw, area, cm, %): 2026744
+Camera - Show in pygame: 1595001
+Camera - Convert img: 133281
+Camera - Show in pygame: 990177
+Lidar - Process & Draw: 11528129
+Lidar - Stats: 5016665
+Camera - Convert img: 125681
+Camera - Show in pygame: 968384
+Lidar - Get points front: 20220
+Lidar - Get points back: 4327
+Lane - Get points lane: 67262
+Seg - Get data road: 7896588
+Camera - Convert img: 321346
+Seg - Predict: 40969820
+Lane - Ground truth: 8952105
+Lane - Get lane (draw, area, cm, %): 2029698
+Camera - Show in pygame: 1619809
+Camera - Convert img: 149806
+Camera - Show in pygame: 985460
+Lidar - Process & Draw: 11474097
+Lidar - Stats: 4985868
+Camera - Convert img: 162476
+Camera - Show in pygame: 992200
+Lidar - Get points front: 41423
+Lidar - Get points back: 7281
+Lane - Get points lane: 118740
+Seg - Get data road: 8338197
+Camera - Convert img: 392653
+Seg - Predict: 39076259
+Lane - Ground truth: 8981519
+Lane - Get lane (draw, area, cm, %): 2046274
+Camera - Show in pygame: 1634260
+Camera - Convert img: 141524
+Camera - Show in pygame: 1013883
+Lidar - Process & Draw: 11989086
+Lidar - Stats: 5084177
+Camera - Convert img: 131368
+Camera - Show in pygame: 962656
+Lidar - Get points front: 27512
+Lidar - Get points back: 5679
+Lane - Get points lane: 92049
+Seg - Get data road: 7821414
+Camera - Convert img: 298972
+Seg - Predict: 39329341
+Lane - Ground truth: 9306420
+Lane - Get lane (draw, area, cm, %): 1995937
+Camera - Show in pygame: 1569603
+Camera - Convert img: 152070
+Camera - Show in pygame: 988555
+Lidar - Process & Draw: 11188416
+Lidar - Stats: 4835811
+Camera - Convert img: 123577
+Camera - Show in pygame: 975475
+Lidar - Get points front: 22073
+Lidar - Get points back: 4707
+Lane - Get points lane: 69615
+Seg - Get data road: 7770778
+Camera - Convert img: 315808
+Seg - Predict: 39332635
+Lane - Ground truth: 8518810
+Lane - Get lane (draw, area, cm, %): 2000514
+Camera - Show in pygame: 1574470
+Camera - Convert img: 130968
+Camera - Show in pygame: 982515
+Lidar - Process & Draw: 12272925
+Lidar - Stats: 4817113
+Camera - Convert img: 118850
+Camera - Show in pygame: 1078991
+Lidar - Get points front: 22695
+Lidar - Get points back: 5408
+Lane - Get points lane: 70046
+Seg - Get data road: 7951362
+Camera - Convert img: 310459
+Seg - Predict: 39705219
+Lane - Ground truth: 9303335
+Lane - Get lane (draw, area, cm, %): 1978421
+Camera - Show in pygame: 1556964
+Camera - Convert img: 138599
+Camera - Show in pygame: 1147915
+Lidar - Process & Draw: 12092633
+Lidar - Stats: 4744153
+Camera - Convert img: 129506
+Camera - Show in pygame: 1111841
+Lidar - Get points front: 19760
+Lidar - Get points back: 4326
+Lane - Get points lane: 68163
+Seg - Get data road: 7677838
+Camera - Convert img: 302338
+Seg - Predict: 42247453
+Lane - Ground truth: 9256484
+Lane - Get lane (draw, area, cm, %): 2029068
+Camera - Show in pygame: 1616785
+Camera - Convert img: 133601
+Camera - Show in pygame: 1153844
+Lidar - Process & Draw: 12359556
+Lidar - Stats: 4987851
+Camera - Convert img: 129025
+Camera - Show in pygame: 1109297
+Lidar - Get points front: 58178
+Lidar - Get points back: 5758
+Lane - Get points lane: 112921
+Seg - Get data road: 12031120
+Camera - Convert img: 350730
+Seg - Predict: 39665599
+Lane - Ground truth: 10153110
+Lane - Get lane (draw, area, cm, %): 2018743
+Camera - Show in pygame: 2113405
+Camera - Convert img: 139050
+Camera - Show in pygame: 1187195
+Lidar - Process & Draw: 12288689
+Lidar - Stats: 4813447
+Camera - Convert img: 125150
+Camera - Show in pygame: 1138631
+Lidar - Get points front: 23386
+Lidar - Get points back: 4717
+Lane - Get points lane: 85459
+Seg - Get data road: 8045323
+Camera - Convert img: 336238
+Seg - Predict: 38318733
+Lane - Ground truth: 9478670
+Lane - Get lane (draw, area, cm, %): 2061196
+Camera - Show in pygame: 1642734
+Camera - Convert img: 660739
+Camera - Show in pygame: 1172172
+Lidar - Process & Draw: 11786740
+Lidar - Stats: 4888691
+Camera - Convert img: 658846
+Camera - Show in pygame: 1127795
+Lidar - Get points front: 35704
+Lidar - Get points back: 4897
+Lane - Get points lane: 92279
+Seg - Get data road: 7742345
+Camera - Convert img: 1179484
+Seg - Predict: 39412527
+Lane - Ground truth: 8506651
+Lane - Get lane (draw, area, cm, %): 2014115
+Camera - Show in pygame: 1567921
+Camera - Convert img: 136476
+Camera - Show in pygame: 920913
+Lidar - Process & Draw: 11657164
+Lidar - Stats: 5138399
+Camera - Convert img: 130998
+Camera - Show in pygame: 976787
+Lidar - Get points front: 65710
+Lidar - Get points back: 5618
+Lane - Get points lane: 124228
+Seg - Get data road: 8103151
+Camera - Convert img: 2180416
+Seg - Predict: 41224227
+Lane - Ground truth: 8743730
+Lane - Get lane (draw, area, cm, %): 2022057
+Camera - Show in pygame: 1829576
+Camera - Convert img: 149416
+Camera - Show in pygame: 1594120
+Lidar - Process & Draw: 12314548
+Lidar - Stats: 4860478
+Camera - Convert img: 140593
+Camera - Show in pygame: 970257
+Lidar - Get points front: 23295
+Lidar - Get points back: 4087
+Lane - Get points lane: 73632
+Seg - Get data road: 7707131
+Camera - Convert img: 334336
+Seg - Predict: 41035832
+Lane - Ground truth: 8817350
+Lane - Get lane (draw, area, cm, %): 2006914
+Camera - Show in pygame: 1591325
+Camera - Convert img: 141053
+Camera - Show in pygame: 943156
+Lidar - Process & Draw: 11913862
+Lidar - Stats: 5108974
+Camera - Convert img: 135164
+Camera - Show in pygame: 1050639
+Lidar - Get points front: 46630
+Lidar - Get points back: 4837
+Lane - Get points lane: 97237
+Seg - Get data road: 8044353
+Camera - Convert img: 2907395
+Seg - Predict: 42110796
+Lane - Ground truth: 8557758
+Lane - Get lane (draw, area, cm, %): 2036969
+Camera - Show in pygame: 1594771
+Camera - Convert img: 149165
+Camera - Show in pygame: 1014414
+Lidar - Process & Draw: 11780781
+Lidar - Stats: 4873968
+Camera - Convert img: 127393
+Camera - Show in pygame: 1157971
+Lidar - Get points front: 21943
+Lidar - Get points back: 4386
+Lane - Get points lane: 76215
+Seg - Get data road: 7803408
+Camera - Convert img: 2331855
+Seg - Predict: 40530968
+Lane - Ground truth: 8563046
+Lane - Get lane (draw, area, cm, %): 2002818
+Camera - Show in pygame: 1569753
+Camera - Convert img: 133101
+Camera - Show in pygame: 994233
+Lidar - Process & Draw: 11825829
+Lidar - Stats: 4999639
+Camera - Convert img: 117778
+Camera - Show in pygame: 976006
+Lidar - Get points front: 28613
+Lidar - Get points back: 5678
+Lane - Get points lane: 77367
+Seg - Get data road: 8035018
+Camera - Convert img: 2428842
+Seg - Predict: 41881189
+Lane - Ground truth: 8927408
+Lane - Get lane (draw, area, cm, %): 2084401
+Camera - Show in pygame: 1567169
+Camera - Convert img: 134313
+Camera - Show in pygame: 1165913
+Lidar - Process & Draw: 11965250
+Lidar - Stats: 4800999
+Camera - Convert img: 120161
+Camera - Show in pygame: 1129538
+Lidar - Get points front: 28033
+Lidar - Get points back: 5118
+Lane - Get points lane: 81233
+Seg - Get data road: 8171624
+Camera - Convert img: 2408801
+Seg - Predict: 41582928
+Lane - Ground truth: 9237576
+Lane - Get lane (draw, area, cm, %): 2036069
+Camera - Show in pygame: 1557976
+Camera - Convert img: 142816
+Camera - Show in pygame: 1156278
+Lidar - Process & Draw: 12043037
+Lidar - Stats: 4645794
+Camera - Convert img: 124508
+Camera - Show in pygame: 1130669
+Lidar - Get points front: 21292
+Lidar - Get points back: 4697
+Lane - Get points lane: 69796
+Seg - Get data road: 7791400
+Camera - Convert img: 297220
+Seg - Predict: 42879759
+Lane - Ground truth: 9145507
+Lane - Get lane (draw, area, cm, %): 2070641
+Camera - Show in pygame: 1540139
+Camera - Convert img: 133291
+Camera - Show in pygame: 1157561
+Lidar - Process & Draw: 12427188
+Lidar - Stats: 4720497
+Camera - Convert img: 129436
+Camera - Show in pygame: 1120544
+Lidar - Get points front: 30917
+Lidar - Get points back: 4537
+Lane - Get points lane: 82074
+Seg - Get data road: 7666992
+Camera - Convert img: 342918
+Seg - Predict: 40861418
+Lane - Ground truth: 9062141
+Lane - Get lane (draw, area, cm, %): 1984370
+Camera - Show in pygame: 1545657
+Camera - Convert img: 150037
+Camera - Show in pygame: 959671
+Lidar - Process & Draw: 11436350
+Lidar - Stats: 4711583
+Camera - Convert img: 119461
+Camera - Show in pygame: 956325
+Lidar - Get points front: 20791
+Lidar - Get points back: 4467
+Lane - Get points lane: 69595
+Seg - Get data road: 9251928
+Camera - Convert img: 308476
+Seg - Predict: 42169084
+Lane - Ground truth: 8588715
+Lane - Get lane (draw, area, cm, %): 1974115
+Camera - Show in pygame: 1568391
+Camera - Convert img: 114903
+Camera - Show in pygame: 979661
+Lidar - Process & Draw: 11559135
+Lidar - Stats: 4743892
+Camera - Convert img: 109776
+Camera - Show in pygame: 970287
+Lidar - Get points front: 21031
+Lidar - Get points back: 4426
+Lane - Get points lane: 68985
+Seg - Get data road: 8139126
+Camera - Convert img: 295437
+Seg - Predict: 42334895
+Lane - Ground truth: 8445829
+Lane - Get lane (draw, area, cm, %): 2003269
+Camera - Show in pygame: 1546418
+Camera - Convert img: 137097
+Camera - Show in pygame: 962926
+Lidar - Process & Draw: 11570233
+Lidar - Stats: 4728979
+Camera - Convert img: 153092
+Camera - Show in pygame: 937177
+Lidar - Get points front: 22664
+Lidar - Get points back: 4377
+Lane - Get points lane: 71027
+Seg - Get data road: 8258015
+Camera - Convert img: 1730726
+Seg - Predict: 39813653
+Lane - Ground truth: 9328474
+Lane - Get lane (draw, area, cm, %): 2020305
+Camera - Show in pygame: 1569372
+Camera - Convert img: 625867
+Camera - Show in pygame: 1151972
+Lidar - Process & Draw: 12409922
+Lidar - Stats: 4726476
+Camera - Convert img: 597714
+Camera - Show in pygame: 1077138
+Lidar - Get points front: 21172
+Lidar - Get points back: 4256
+Lane - Get points lane: 71709
+Seg - Get data road: 7873564
+Camera - Convert img: 2362582
+Seg - Predict: 39987506
+Lane - Ground truth: 8538459
+Lane - Get lane (draw, area, cm, %): 2117502
+Camera - Show in pygame: 1569353
+Camera - Convert img: 150267
+Camera - Show in pygame: 975374
+Lidar - Process & Draw: 11479185
+Lidar - Stats: 4720426
+Camera - Convert img: 129806
+Camera - Show in pygame: 951689
+Lidar - Get points front: 19800
+Lidar - Get points back: 4487
+Lane - Get points lane: 74733
+Seg - Get data road: 7937370
+Camera - Convert img: 287264
+Seg - Predict: 40560603
+Lane - Ground truth: 8625280
+Lane - Get lane (draw, area, cm, %): 2016969
+Camera - Show in pygame: 1538887
+Camera - Convert img: 134022
+Camera - Show in pygame: 977157
+Lidar - Process & Draw: 11412825
+Lidar - Stats: 4710182
+Camera - Convert img: 123276
+Camera - Show in pygame: 956296
+Lidar - Get points front: 20682
+Lidar - Get points back: 4607
+Lane - Get points lane: 66300
+Seg - Get data road: 7959645
+Camera - Convert img: 283108
+Seg - Predict: 37836985
+Lane - Ground truth: 9011314
+Lane - Get lane (draw, area, cm, %): 2047145
+Camera - Show in pygame: 1610826
+Camera - Convert img: 129916
+Camera - Show in pygame: 972770
+Lidar - Process & Draw: 12424434
+Lidar - Stats: 4958667
+Camera - Convert img: 126602
+Camera - Show in pygame: 973892
+Lidar - Get points front: 19239
+Lidar - Get points back: 4487
+Lane - Get points lane: 115866
+Seg - Get data road: 8344296
+Camera - Convert img: 274955
+Seg - Predict: 39218864
+Lane - Ground truth: 8561515
+Lane - Get lane (draw, area, cm, %): 2014446
+Camera - Show in pygame: 1547519
+Camera - Convert img: 134644
+Camera - Show in pygame: 971940
+Lidar - Process & Draw: 11176988
+Lidar - Stats: 4763833
+Camera - Convert img: 122966
+Camera - Show in pygame: 1003427
+Lidar - Get points front: 21472
+Lidar - Get points back: 5649
+Lane - Get points lane: 73211
+Seg - Get data road: 7892111
+Camera - Convert img: 280675
+Seg - Predict: 39616555
+Lane - Ground truth: 8785852
+Lane - Get lane (draw, area, cm, %): 2076379
+Camera - Show in pygame: 1616825
+Camera - Convert img: 188184
+Camera - Show in pygame: 1178271
+Lidar - Process & Draw: 11463952
+Lidar - Stats: 4697632
+Camera - Convert img: 115024
+Camera - Show in pygame: 1128496
+Lidar - Get points front: 20181
+Lidar - Get points back: 4557
+Lane - Get points lane: 66480
+Seg - Get data road: 7820233
+Camera - Convert img: 303279
+Seg - Predict: 38050017
+Lane - Ground truth: 9547754
+Lane - Get lane (draw, area, cm, %): 2188979
+Camera - Show in pygame: 1636374
+Camera - Convert img: 152250
+Camera - Show in pygame: 1022256
+Lidar - Process & Draw: 11754160
+Lidar - Stats: 4821430
+Camera - Convert img: 120632
+Camera - Show in pygame: 961073
+Lidar - Get points front: 23335
+Lidar - Get points back: 4547
+Lane - Get points lane: 71068
+Seg - Get data road: 7742796
+Camera - Convert img: 325562
+Seg - Predict: 42225900
+Lane - Ground truth: 8834536
+Lane - Get lane (draw, area, cm, %): 2005742
+Camera - Show in pygame: 1574441
+Camera - Convert img: 159050
+Camera - Show in pygame: 1021675
+Lidar - Process & Draw: 11749494
+Lidar - Stats: 4817223
+Camera - Convert img: 125950
+Camera - Show in pygame: 961544
+Lidar - Get points front: 21372
+Lidar - Get points back: 4286
+Lane - Get points lane: 70938
+Seg - Get data road: 7769386
+Camera - Convert img: 286093
+Seg - Predict: 40118845
+Lane - Ground truth: 8779244
+Lane - Get lane (draw, area, cm, %): 2049288
+Camera - Show in pygame: 1675493
+Camera - Convert img: 132871
+Camera - Show in pygame: 974774
+Lidar - Process & Draw: 12162688
+Lidar - Stats: 4898457
+Camera - Convert img: 121755
+Camera - Show in pygame: 1044890
+Lidar - Get points front: 23165
+Lidar - Get points back: 4467
+Lane - Get points lane: 70757
+Seg - Get data road: 8249673
+Camera - Convert img: 705076
+Seg - Predict: 39734944
+Lane - Ground truth: 8633984
+Lane - Get lane (draw, area, cm, %): 2060515
+Camera - Show in pygame: 1636203
+Camera - Convert img: 128494
+Camera - Show in pygame: 1305925
+Lidar - Process & Draw: 11355448
+Lidar - Stats: 4937826
+Camera - Convert img: 108314
+Camera - Show in pygame: 1060924
+Lidar - Get points front: 20641
+Lidar - Get points back: 4547
+Lane - Get points lane: 68153
+Seg - Get data road: 8621485
+Camera - Convert img: 318421
+Seg - Predict: 38749024
+Lane - Ground truth: 8910452
+Lane - Get lane (draw, area, cm, %): 2118813
+Camera - Show in pygame: 1616113
+Camera - Convert img: 130567
+Camera - Show in pygame: 1139442
+Lidar - Process & Draw: 12350031
+Lidar - Stats: 4655328
+Camera - Convert img: 115265
+Camera - Show in pygame: 1109248
+Lidar - Get points front: 57427
+Lidar - Get points back: 5197
+Lane - Get points lane: 115364
+Seg - Get data road: 11199722
+Camera - Convert img: 879620
+Seg - Predict: 40261329
+Lane - Ground truth: 8553302
+Lane - Get lane (draw, area, cm, %): 2007054
+Camera - Show in pygame: 1868856
+Camera - Convert img: 136105
+Camera - Show in pygame: 1000202
+Lidar - Process & Draw: 11818268
+Lidar - Stats: 4704042
+Camera - Convert img: 118119
+Camera - Show in pygame: 960833
+Lidar - Get points front: 20981
+Lidar - Get points back: 4306
+Lane - Get points lane: 68634
+Seg - Get data road: 8452339
+Camera - Convert img: 307705
+Seg - Predict: 41222303
+Lane - Ground truth: 8625762
+Lane - Get lane (draw, area, cm, %): 2186586
+Camera - Show in pygame: 1588341
+Camera - Convert img: 152140
+Camera - Show in pygame: 963096
+Lidar - Process & Draw: 11368558
+Lidar - Stats: 4709060
+Camera - Convert img: 125760
+Camera - Show in pygame: 939421
+Lidar - Get points front: 61463
+Lidar - Get points back: 5638
+Lane - Get points lane: 113131
+Seg - Get data road: 10303768
+Camera - Convert img: 355657
+Seg - Predict: 40958104
+Lane - Ground truth: 8638270
+Lane - Get lane (draw, area, cm, %): 2000214
+Camera - Show in pygame: 1740481
+Camera - Convert img: 145299
+Camera - Show in pygame: 967853
+Lidar - Process & Draw: 10973211
+Lidar - Stats: 4654938
+Camera - Convert img: 134223
+Camera - Show in pygame: 957879
+Lidar - Get points front: 20251
+Lidar - Get points back: 4697
+Lane - Get points lane: 68423
+Seg - Get data road: 7937180
+Camera - Convert img: 304069
+Seg - Predict: 39394921
+Lane - Ground truth: 8590217
+Lane - Get lane (draw, area, cm, %): 2081077
+Camera - Show in pygame: 1594070
+Camera - Convert img: 133482
+Camera - Show in pygame: 965299
+Lidar - Process & Draw: 11670414
+Lidar - Stats: 4693546
+Camera - Convert img: 118960
+Camera - Show in pygame: 944498
+Lidar - Get points front: 20400
+Lidar - Get points back: 4107
+Lane - Get points lane: 67082
+Seg - Get data road: 7684527
+Camera - Convert img: 281866
+Seg - Predict: 39044941
+Lane - Ground truth: 8453400
+Lane - Get lane (draw, area, cm, %): 2001496
+Camera - Show in pygame: 1562392
+Camera - Convert img: 129987
+Camera - Show in pygame: 952240
+Lidar - Process & Draw: 11837006
+Lidar - Stats: 4746917
+Camera - Convert img: 124959
+Camera - Show in pygame: 941704
+Lidar - Get points front: 20841
+Lidar - Get points back: 4517
+Lane - Get points lane: 69976
+Seg - Get data road: 7814866
+Camera - Convert img: 303730
+Seg - Predict: 39280116
+Lane - Ground truth: 8589507
+Lane - Get lane (draw, area, cm, %): 1981705
+Camera - Show in pygame: 1587951
+Camera - Convert img: 132170
+Camera - Show in pygame: 1093783
+Lidar - Process & Draw: 11184971
+Lidar - Stats: 4763141
+Camera - Convert img: 116737
+Camera - Show in pygame: 953882
+Lidar - Get points front: 21022
+Lidar - Get points back: 4657
+Lane - Get points lane: 68644
+Seg - Get data road: 7841765
+Camera - Convert img: 291721
+Seg - Predict: 39182469
+Lane - Ground truth: 8814777
+Lane - Get lane (draw, area, cm, %): 2262040
+Camera - Show in pygame: 1580500
+Camera - Convert img: 127142
+Camera - Show in pygame: 972700
+Lidar - Process & Draw: 11980383
+Lidar - Stats: 5031637
+Camera - Convert img: 118530
+Camera - Show in pygame: 956175
+Lidar - Get points front: 19018
+Lidar - Get points back: 4217
+Lane - Get points lane: 67321
+Seg - Get data road: 8026515
+Camera - Convert img: 301306
+Seg - Predict: 40429425
+Lane - Ground truth: 8896631
+Lane - Get lane (draw, area, cm, %): 2055408
+Camera - Show in pygame: 1645628
+Camera - Convert img: 123227
+Camera - Show in pygame: 1022156
+Lidar - Process & Draw: 11894533
+Lidar - Stats: 5006459
+Camera - Convert img: 109155
+Camera - Show in pygame: 982204
+Lidar - Get points front: 23565
+Lidar - Get points back: 5919
+Lane - Get points lane: 73822
+Seg - Get data road: 7953154
+Camera - Convert img: 309057
+Seg - Predict: 39116580
+Lane - Ground truth: 8811312
+Lane - Get lane (draw, area, cm, %): 2045873
+Camera - Show in pygame: 1628592
+Camera - Convert img: 130387
+Camera - Show in pygame: 1003387
+Lidar - Process & Draw: 11634670
+Lidar - Stats: 5050145
+Camera - Convert img: 127803
+Camera - Show in pygame: 977758
+Lidar - Get points front: 19369
+Lidar - Get points back: 4517
+Lane - Get points lane: 66540
+Seg - Get data road: 8099666
+Camera - Convert img: 309348
+Seg - Predict: 40217364
+Lane - Ground truth: 8842929
+Lane - Get lane (draw, area, cm, %): 2054546
+Camera - Show in pygame: 1609333
+Camera - Convert img: 125610
+Camera - Show in pygame: 994113
+Lidar - Process & Draw: 11904519
+Lidar - Stats: 4967349
+Camera - Convert img: 106812
+Camera - Show in pygame: 960632
+Lidar - Get points front: 19960
+Lidar - Get points back: 4366
+Lane - Get points lane: 67532
+Seg - Get data road: 8306088
+Camera - Convert img: 329809
+Seg - Predict: 40707765
+Lane - Ground truth: 8773654
+Lane - Get lane (draw, area, cm, %): 2013505
+Camera - Show in pygame: 1609723
+Camera - Convert img: 579966
+Camera - Show in pygame: 807391
+Lidar - Process & Draw: 11596222
+Lidar - Stats: 4719885
+Camera - Convert img: 101713
+Camera - Show in pygame: 982486
+Lidar - Get points front: 25579
+Lidar - Get points back: 6269
+Lane - Get points lane: 71779
+Seg - Get data road: 8012723
+Camera - Convert img: 724335
+Seg - Predict: 40213228
+Lane - Ground truth: 9267481
+Lane - Get lane (draw, area, cm, %): 1975156
+Camera - Show in pygame: 1565236
+Camera - Convert img: 119440
+Camera - Show in pygame: 1176268
+Lidar - Process & Draw: 11969777
+Lidar - Stats: 4633896
+Camera - Convert img: 141584
+Camera - Show in pygame: 1132572
+Lidar - Get points front: 21032
+Lidar - Get points back: 4487
+Lane - Get points lane: 69545
+Seg - Get data road: 7776658
+Camera - Convert img: 285932
+Seg - Predict: 39939464
+Lane - Ground truth: 8482986
+Lane - Get lane (draw, area, cm, %): 1999112
+Camera - Show in pygame: 1561961
+Camera - Convert img: 137768
+Camera - Show in pygame: 1010067
+Lidar - Process & Draw: 11482620
+Lidar - Stats: 4649851
+Camera - Convert img: 139010
+Camera - Show in pygame: 953121
+Lidar - Get points front: 22094
+Lidar - Get points back: 4937
+Lane - Get points lane: 71989
+Seg - Get data road: 7900334
+Camera - Convert img: 326273
+Seg - Predict: 37346133
+Lane - Ground truth: 8566992
+Lane - Get lane (draw, area, cm, %): 2027195
+Camera - Show in pygame: 1562092
+Camera - Convert img: 144249
+Camera - Show in pygame: 1079262
+Lidar - Process & Draw: 11388278
+Lidar - Stats: 4748960
+Camera - Convert img: 121163
+Camera - Show in pygame: 954713
+Lidar - Get points front: 21082
+Lidar - Get points back: 4126
+Lane - Get points lane: 70036
+Seg - Get data road: 7876198
+Camera - Convert img: 302688
+Seg - Predict: 40763199
+Lane - Ground truth: 8478699
+Lane - Get lane (draw, area, cm, %): 2019663
+Camera - Show in pygame: 1554530
+Camera - Convert img: 160082
+Camera - Show in pygame: 990768
+Lidar - Process & Draw: 11772188
+Lidar - Stats: 4687657
+Camera - Convert img: 123817
+Camera - Show in pygame: 948624
+Lidar - Get points front: 19780
+Lidar - Get points back: 4136
+Lane - Get points lane: 71838
+Seg - Get data road: 8176813
+Camera - Convert img: 679958
+Seg - Predict: 37203277
+Lane - Ground truth: 9269034
+Lane - Get lane (draw, area, cm, %): 2016298
+Camera - Show in pygame: 1581861
+Camera - Convert img: 127252
+Camera - Show in pygame: 1155717
+Lidar - Process & Draw: 12000192
+Lidar - Stats: 4712434
+Camera - Convert img: 151349
+Camera - Show in pygame: 1119743
+Lidar - Get points front: 21132
+Lidar - Get points back: 4307
+Lane - Get points lane: 68974
+Seg - Get data road: 7759931
+Camera - Convert img: 307876
+Seg - Predict: 38188897
+Lane - Ground truth: 8867636
+Lane - Get lane (draw, area, cm, %): 2344094
+Camera - Show in pygame: 2054977
+Camera - Convert img: 196677
+Camera - Show in pygame: 1186173
+Lidar - Process & Draw: 12378575
+Lidar - Stats: 4813698
+Camera - Convert img: 114724
+Camera - Show in pygame: 976476
+Lidar - Get points front: 26480
+Lidar - Get points back: 5438
+Lane - Get points lane: 91679
+Seg - Get data road: 12272084
+Camera - Convert img: 586747
+Seg - Predict: 40840766
+Lane - Ground truth: 8558460
+Lane - Get lane (draw, area, cm, %): 2010219
+Camera - Show in pygame: 1595031
+Camera - Convert img: 135235
+Camera - Show in pygame: 1165673
+Lidar - Process & Draw: 11960072
+Lidar - Stats: 5035423
+Camera - Convert img: 114563
+Camera - Show in pygame: 1124070
+Lidar - Get points front: 22634
+Lidar - Get points back: 4637
+Lane - Get points lane: 71518
+Seg - Get data road: 8018392
+Camera - Convert img: 317029
+Seg - Predict: 40009199
+Lane - Ground truth: 9029050
+Lane - Get lane (draw, area, cm, %): 2101718
+Camera - Show in pygame: 1648262
+Camera - Convert img: 608169
+Camera - Show in pygame: 825868
+Lidar - Process & Draw: 11492255
+Lidar - Stats: 4977004
+Camera - Convert img: 595821
+Camera - Show in pygame: 791326
+Lidar - Get points front: 19309
+Lidar - Get points back: 4326
+Lane - Get points lane: 68784
+Seg - Get data road: 8003982
+Camera - Convert img: 301086
+Seg - Predict: 39394800
+Lane - Ground truth: 8889830
+Lane - Get lane (draw, area, cm, %): 2045873
+Camera - Show in pygame: 1637165
+Camera - Convert img: 132330
+Camera - Show in pygame: 1188547
+Lidar - Process & Draw: 12706501
+Lidar - Stats: 5028072
+Camera - Convert img: 95375
+Camera - Show in pygame: 1142157
+Lidar - Get points front: 22224
+Lidar - Get points back: 4356
+Lane - Get points lane: 70998
+Seg - Get data road: 7834966
+Camera - Convert img: 319313
+Seg - Predict: 39484355
+Lane - Ground truth: 8660194
+Lane - Get lane (draw, area, cm, %): 2054977
+Camera - Show in pygame: 1572217
+Camera - Convert img: 126261
+Camera - Show in pygame: 1043788
+Lidar - Process & Draw: 12007514
+Lidar - Stats: 5018227
+Camera - Convert img: 114984
+Camera - Show in pygame: 1119302
+Lidar - Get points front: 19550
+Lidar - Get points back: 4337
+Lane - Get points lane: 76867
+Seg - Get data road: 8051943
+Camera - Convert img: 294806
+Seg - Predict: 39410934
+Lane - Ground truth: 9357437
+Lane - Get lane (draw, area, cm, %): 1985242
+Camera - Show in pygame: 1562973
+Camera - Convert img: 132541
+Camera - Show in pygame: 1130178
+Lidar - Process & Draw: 12965362
+Lidar - Stats: 4588006
+Camera - Convert img: 121264
+Camera - Show in pygame: 1092622
+Lidar - Get points front: 21573
+Lidar - Get points back: 4326
+Lane - Get points lane: 69535
+Seg - Get data road: 7739050
+Camera - Convert img: 306063
+Seg - Predict: 40209662
+Lane - Ground truth: 9344597
+Lane - Get lane (draw, area, cm, %): 1967946
+Camera - Show in pygame: 1539087
+Camera - Convert img: 610302
+Camera - Show in pygame: 953662
+Lidar - Process & Draw: 12606259
+Lidar - Stats: 5107562
+Camera - Convert img: 575611
+Camera - Show in pygame: 974693
+Lidar - Get points front: 24167
+Lidar - Get points back: 6350
+Lane - Get points lane: 84067
+Seg - Get data road: 8006465
+Camera - Convert img: 294605
+Seg - Predict: 39862027
+Lane - Ground truth: 9035781
+Lane - Get lane (draw, area, cm, %): 2181448
+Camera - Show in pygame: 1773992
+Camera - Convert img: 137268
+Camera - Show in pygame: 1006392
+Lidar - Process & Draw: 11406525
+Lidar - Stats: 4996834
+Camera - Convert img: 110928
+Camera - Show in pygame: 960422
+Lidar - Get points front: 20231
+Lidar - Get points back: 4387
+Lane - Get points lane: 68103
+Seg - Get data road: 8215390
+Camera - Convert img: 339263
+Seg - Predict: 39251634
+Lane - Ground truth: 8620233
+Lane - Get lane (draw, area, cm, %): 2017070
+Camera - Show in pygame: 1573218
+Camera - Convert img: 142926
+Camera - Show in pygame: 966601
+Lidar - Process & Draw: 11388878
+Lidar - Stats: 4826067
+Camera - Convert img: 531313
+Camera - Show in pygame: 837406
+Lidar - Get points front: 38227
+Lidar - Get points back: 10817
+Lane - Get points lane: 154954
+Seg - Get data road: 8162721
+Camera - Convert img: 297219
+Seg - Predict: 41408074
+Lane - Ground truth: 8378768
+Lane - Get lane (draw, area, cm, %): 2065393
+Camera - Show in pygame: 1559428
+Camera - Convert img: 133772
+Camera - Show in pygame: 997018
+Lidar - Process & Draw: 11021222
+Lidar - Stats: 4710892
+Camera - Convert img: 128795
+Camera - Show in pygame: 952080
+Lidar - Get points front: 19449
+Lidar - Get points back: 4437
+Lane - Get points lane: 67001
+Seg - Get data road: 7785751
+Camera - Convert img: 1681583
+Seg - Predict: 42896885
+Lane - Ground truth: 8829959
+Lane - Get lane (draw, area, cm, %): 2065213
+Camera - Show in pygame: 1590424
+Camera - Convert img: 127953
+Camera - Show in pygame: 977808
+Lidar - Process & Draw: 11687250
+Lidar - Stats: 4972537
+Camera - Convert img: 117017
+Camera - Show in pygame: 950607
+Lidar - Get points front: 20872
+Lidar - Get points back: 4527
+Lane - Get points lane: 68083
+Seg - Get data road: 7876638
+Camera - Convert img: 286173
+Seg - Predict: 41762730
+Lane - Ground truth: 8490497
+Lane - Get lane (draw, area, cm, %): 2012192
+Camera - Show in pygame: 1550334
+Camera - Convert img: 138609
+Camera - Show in pygame: 1001063
+Lidar - Process & Draw: 11951880
+Lidar - Stats: 4786657
+Camera - Convert img: 121263
+Camera - Show in pygame: 954673
+Lidar - Get points front: 20371
+Lidar - Get points back: 4166
+Lane - Get points lane: 67342
+Seg - Get data road: 7747874
+Camera - Convert img: 2105483
+Seg - Predict: 40152185
+Lane - Ground truth: 8489275
+Lane - Get lane (draw, area, cm, %): 1995116
+Camera - Show in pygame: 1563884
+Camera - Convert img: 194383
+Camera - Show in pygame: 953331
+Lidar - Process & Draw: 12520980
+Lidar - Stats: 4665724
+Camera - Convert img: 117517
+Camera - Show in pygame: 954383
+Lidar - Get points front: 21482
+Lidar - Get points back: 4627
+Lane - Get points lane: 71067
+Seg - Get data road: 7899743
+Camera - Convert img: 295757
+Seg - Predict: 40493892
+Lane - Ground truth: 8633583
+Lane - Get lane (draw, area, cm, %): 2078062
+Camera - Show in pygame: 1607691
+Camera - Convert img: 132830
+Camera - Show in pygame: 1014503
+Lidar - Process & Draw: 11433927
+Lidar - Stats: 4673816
+Camera - Convert img: 125369
+Camera - Show in pygame: 952300
+Lidar - Get points front: 20100
+Lidar - Get points back: 4367
+Lane - Get points lane: 68183
+Seg - Get data road: 8220519
+Camera - Convert img: 319143
+Seg - Predict: 39895538
+Lane - Ground truth: 8634344
+Lane - Get lane (draw, area, cm, %): 2028867
+Camera - Show in pygame: 1576464
+Camera - Convert img: 191330
+Camera - Show in pygame: 948294
+Lidar - Process & Draw: 11422339
+Lidar - Stats: 4742891
+Camera - Convert img: 124599
+Camera - Show in pygame: 947533
+Lidar - Get points front: 21904
+Lidar - Get points back: 4436
+Lane - Get points lane: 70317
+Seg - Get data road: 8154600
+Camera - Convert img: 300354
+Seg - Predict: 39120145
+Lane - Ground truth: 8970132
+Lane - Get lane (draw, area, cm, %): 2179395
+Camera - Show in pygame: 1626979
+Camera - Convert img: 148644
+Camera - Show in pygame: 982375
+Lidar - Process & Draw: 11645356
+Lidar - Stats: 4725815
+Camera - Convert img: 116967
+Camera - Show in pygame: 961314
+Lidar - Get points front: 21002
+Lidar - Get points back: 4807
+Lane - Get points lane: 74692
+Seg - Get data road: 7871371
+Camera - Convert img: 317150
+Seg - Predict: 39172243
+Lane - Ground truth: 8783259
+Lane - Get lane (draw, area, cm, %): 2168378
+Camera - Show in pygame: 1618908
+Camera - Convert img: 159962
+Camera - Show in pygame: 983978
+Lidar - Process & Draw: 12171632
+Lidar - Stats: 4989574
+Camera - Convert img: 101813
+Camera - Show in pygame: 998359
+Lidar - Get points front: 24076
+Lidar - Get points back: 4567
+Lane - Get points lane: 76696
+Seg - Get data road: 8443515
+Camera - Convert img: 315076
+Seg - Predict: 39225845
+Lane - Ground truth: 8527583
+Lane - Get lane (draw, area, cm, %): 2105834
+Camera - Show in pygame: 1742154
+Camera - Convert img: 596642
+Camera - Show in pygame: 890586
+Lidar - Process & Draw: 12421400
+Lidar - Stats: 5126041
+Camera - Convert img: 116947
+Camera - Show in pygame: 1041264
+Lidar - Get points front: 21783
+Lidar - Get points back: 4296
+Lane - Get points lane: 74283
+Seg - Get data road: 8134228
+Camera - Convert img: 298371
+Seg - Predict: 39872853
+Lane - Ground truth: 8542435
+Lane - Get lane (draw, area, cm, %): 1996969
+Camera - Show in pygame: 1577905
+Camera - Convert img: 131549
+Camera - Show in pygame: 988184
+Lidar - Process & Draw: 10930616
+Lidar - Stats: 4649940
+Camera - Convert img: 108705
+Camera - Show in pygame: 959601
+Lidar - Get points front: 24797
+Lidar - Get points back: 5388
+Lane - Get points lane: 91869
+Seg - Get data road: 8077612
+Camera - Convert img: 298571
+Seg - Predict: 40611039
+Lane - Ground truth: 8679202
+Lane - Get lane (draw, area, cm, %): 2043920
+Camera - Show in pygame: 1568842
+Camera - Convert img: 210969
+Camera - Show in pygame: 972571
+Lidar - Process & Draw: 11656223
+Lidar - Stats: 4914380
+Camera - Convert img: 105339
+Camera - Show in pygame: 1125411
+Lidar - Get points front: 21062
+Lidar - Get points back: 4366
+Lane - Get points lane: 71188
+Seg - Get data road: 7721205
+Camera - Convert img: 311511
+Seg - Predict: 40263012
+Lane - Ground truth: 8584099
+Lane - Get lane (draw, area, cm, %): 2089799
+Camera - Show in pygame: 1557906
+Camera - Convert img: 137658
+Camera - Show in pygame: 977658
+Lidar - Process & Draw: 11328357
+Lidar - Stats: 4718474
+Camera - Convert img: 534228
+Camera - Show in pygame: 799089
+Lidar - Get points front: 21702
+Lidar - Get points back: 4417
+Lane - Get points lane: 68694
+Seg - Get data road: 7897449
+Camera - Convert img: 815262
+Seg - Predict: 39809968
+Lane - Ground truth: 8574964
+Lane - Get lane (draw, area, cm, %): 2003890
+Camera - Show in pygame: 1574691
+Camera - Convert img: 138469
+Camera - Show in pygame: 1172143
+Lidar - Process & Draw: 12342420
+Lidar - Stats: 4719846
+Camera - Convert img: 109806
+Camera - Show in pygame: 1133032
+Lidar - Get points front: 21322
+Lidar - Get points back: 4437
+Lane - Get points lane: 70927
+Seg - Get data road: 7774114
+Camera - Convert img: 295015
+Seg - Predict: 38599007
+Lane - Ground truth: 8527773
+Lane - Get lane (draw, area, cm, %): 1986182
+Camera - Show in pygame: 1565827
+Camera - Convert img: 124589
+Camera - Show in pygame: 960302
+Lidar - Process & Draw: 11395509
+Lidar - Stats: 4675148
+Camera - Convert img: 120522
+Camera - Show in pygame: 933321
+Lidar - Get points front: 20912
+Lidar - Get points back: 4006
+Lane - Get points lane: 71678
+Seg - Get data road: 7822076
+Camera - Convert img: 302197
+Seg - Predict: 38857277
+Lane - Ground truth: 9141621
+Lane - Get lane (draw, area, cm, %): 1998031
+Camera - Show in pygame: 1553098
+Camera - Convert img: 134493
+Camera - Show in pygame: 961463
+Lidar - Process & Draw: 12042397
+Lidar - Stats: 4771574
+Camera - Convert img: 117358
+Camera - Show in pygame: 933911
+Lidar - Get points front: 21793
+Lidar - Get points back: 4597
+Lane - Get points lane: 71068
+Seg - Get data road: 7630977
+Camera - Convert img: 298091
+Seg - Predict: 37639696
+Lane - Ground truth: 9164015
+Lane - Get lane (draw, area, cm, %): 2058332
+Camera - Show in pygame: 1596534
+Camera - Convert img: 626227
+Camera - Show in pygame: 895314
+Lidar - Process & Draw: 12535652
+Lidar - Stats: 4979219
+Camera - Convert img: 134814
+Camera - Show in pygame: 978049
+Lidar - Get points front: 20381
+Lidar - Get points back: 5288
+Lane - Get points lane: 70096
+Seg - Get data road: 7958863
+Camera - Convert img: 299323
+Seg - Predict: 39195268
+Lane - Ground truth: 9339970
+Lane - Get lane (draw, area, cm, %): 1999863
+Camera - Show in pygame: 1551086
+Camera - Convert img: 184779
+Camera - Show in pygame: 1170369
+Lidar - Process & Draw: 11648051
+Lidar - Stats: 4715709
+Camera - Convert img: 160232
+Camera - Show in pygame: 952500
+Lidar - Get points front: 20551
+Lidar - Get points back: 4517
+Lane - Get points lane: 81914
+Seg - Get data road: 7636565
+Camera - Convert img: 340735
+Seg - Predict: 37933331
+Lane - Ground truth: 8692473
+Lane - Get lane (draw, area, cm, %): 1987625
+Camera - Show in pygame: 1565897
+Camera - Convert img: 155906
+Camera - Show in pygame: 994463
+Lidar - Process & Draw: 11811878
+Lidar - Stats: 4756792
+Camera - Convert img: 113992
+Camera - Show in pygame: 957547
+Lidar - Get points front: 20771
+Lidar - Get points back: 4457
+Lane - Get points lane: 67462
+Seg - Get data road: 7845732
+Camera - Convert img: 686809
+Seg - Predict: 38363441
+Lane - Ground truth: 8923300
+Lane - Get lane (draw, area, cm, %): 2080826
+Camera - Show in pygame: 1623504
+Camera - Convert img: 130096
+Camera - Show in pygame: 1172613
+Lidar - Process & Draw: 12231983
+Lidar - Stats: 4988892
+Camera - Convert img: 112390
+Camera - Show in pygame: 1147875
+Lidar - Get points front: 20521
+Lidar - Get points back: 3896
+Lane - Get points lane: 66360
+Seg - Get data road: 7913034
+Camera - Convert img: 307104
+Seg - Predict: 37419914
+Lane - Ground truth: 8798643
+Lane - Get lane (draw, area, cm, %): 2082558
+Camera - Show in pygame: 1587589
+Camera - Convert img: 145049
+Camera - Show in pygame: 985790
+Lidar - Process & Draw: 11840552
+Lidar - Stats: 4897724
+Camera - Convert img: 119090
+Camera - Show in pygame: 957277
+Lidar - Get points front: 21172
+Lidar - Get points back: 4276
+Lane - Get points lane: 73852
+Seg - Get data road: 7864710
+Camera - Convert img: 311891
+Seg - Predict: 39567591
+Lane - Ground truth: 9019506
+Lane - Get lane (draw, area, cm, %): 2083760
+Camera - Show in pygame: 1598888
+Camera - Convert img: 122576
+Camera - Show in pygame: 989907
+Lidar - Process & Draw: 11538064
+Lidar - Stats: 4822131
+Camera - Convert img: 111699
+Camera - Show in pygame: 974843
+Lidar - Get points front: 19350
+Lidar - Get points back: 4937
+Lane - Get points lane: 67942
+Seg - Get data road: 7773834
+Camera - Convert img: 291030
+Seg - Predict: 37854392
+Lane - Ground truth: 8948579
+Lane - Get lane (draw, area, cm, %): 2002779
+Camera - Show in pygame: 1626178
+Camera - Convert img: 119951
+Camera - Show in pygame: 986832
+Lidar - Process & Draw: 11626789
+Lidar - Stats: 5058788
+Camera - Convert img: 112340
+Camera - Show in pygame: 999141
+Lidar - Get points front: 19920
+Lidar - Get points back: 4717
+Lane - Get points lane: 72179
+Seg - Get data road: 8148099
+Camera - Convert img: 295236
+Seg - Predict: 38990379
+Lane - Ground truth: 8614343
+Lane - Get lane (draw, area, cm, %): 1987936
+Camera - Show in pygame: 1582242
+Camera - Convert img: 121403
+Camera - Show in pygame: 1005951
+Lidar - Process & Draw: 11522521
+Lidar - Stats: 4756371
+Camera - Convert img: 106551
+Camera - Show in pygame: 979781
+Lidar - Get points front: 22624
+Lidar - Get points back: 4657
+Lane - Get points lane: 69495
+Seg - Get data road: 7742025
+Camera - Convert img: 303919
+Seg - Predict: 38501480
+Lane - Ground truth: 8649988
+Lane - Get lane (draw, area, cm, %): 1996248
+Camera - Show in pygame: 1584856
+Camera - Convert img: 133832
+Camera - Show in pygame: 981695
+Lidar - Process & Draw: 11637504
+Lidar - Stats: 4666194
+Camera - Convert img: 116857
+Camera - Show in pygame: 963626
+Lidar - Get points front: 21973
+Lidar - Get points back: 4507
+Lane - Get points lane: 70647
+Seg - Get data road: 7936709
+Camera - Convert img: 308156
+Seg - Predict: 38943157
+Lane - Ground truth: 8585890
+Lane - Get lane (draw, area, cm, %): 2002328
+Camera - Show in pygame: 1569933
+Camera - Convert img: 134513
+Camera - Show in pygame: 983317
+Lidar - Process & Draw: 11617434
+Lidar - Stats: 4739385
+Camera - Convert img: 112380
+Camera - Show in pygame: 971349
+Lidar - Get points front: 21502
+Lidar - Get points back: 4517
+Lane - Get points lane: 70647
+Seg - Get data road: 7734573
+Camera - Convert img: 303689
+Seg - Predict: 40072585
+Lane - Ground truth: 8446700
+Lane - Get lane (draw, area, cm, %): 1978421
+Camera - Show in pygame: 1544045
+Camera - Convert img: 132110
+Camera - Show in pygame: 966852
+Lidar - Process & Draw: 11816465
+Lidar - Stats: 4694046
+Camera - Convert img: 104298
+Camera - Show in pygame: 982916
+Lidar - Get points front: 23877
+Lidar - Get points back: 5979
+Lane - Get points lane: 78679
+Seg - Get data road: 8344335
+Camera - Convert img: 339794
+Seg - Predict: 39396072
+Lane - Ground truth: 9427614
+Lane - Get lane (draw, area, cm, %): 2047125
+Camera - Show in pygame: 1574952
+Camera - Convert img: 139742
+Camera - Show in pygame: 1162688
+Lidar - Process & Draw: 11461418
+Lidar - Stats: 4744884
+Camera - Convert img: 120492
+Camera - Show in pygame: 956415
+Lidar - Get points front: 22054
+Lidar - Get points back: 4667
+Lane - Get points lane: 70546
+Seg - Get data road: 8183123
+Camera - Convert img: 312803
+Seg - Predict: 39365666
+Lane - Ground truth: 8977954
+Lane - Get lane (draw, area, cm, %): 2101978
+Camera - Show in pygame: 1598066
+Camera - Convert img: 131128
+Camera - Show in pygame: 951167
+Lidar - Process & Draw: 11482210
+Lidar - Stats: 4968842
+Camera - Convert img: 109255
+Camera - Show in pygame: 953982
+Lidar - Get points front: 22514
+Lidar - Get points back: 4647
+Lane - Get points lane: 71217
+Seg - Get data road: 8309873
+Camera - Convert img: 313815
+Seg - Predict: 38927884
+Lane - Ground truth: 8990422
+Lane - Get lane (draw, area, cm, %): 2098293
+Camera - Show in pygame: 1650536
+Camera - Convert img: 132320
+Camera - Show in pygame: 956797
+Lidar - Process & Draw: 11342699
+Lidar - Stats: 4579554
+Camera - Convert img: 124268
+Camera - Show in pygame: 927252
+Lidar - Get points front: 19490
+Lidar - Get points back: 4166
+Lane - Get points lane: 65950
+Seg - Get data road: 7813544
+Camera - Convert img: 304560
+Seg - Predict: 39590606
+Lane - Ground truth: 8506611
+Lane - Get lane (draw, area, cm, %): 2004170
+Camera - Show in pygame: 1567560
+Camera - Convert img: 128154
+Camera - Show in pygame: 1019842
+Lidar - Process & Draw: 11560388
+Lidar - Stats: 4720006
+Camera - Convert img: 123988
+Camera - Show in pygame: 952661
+Lidar - Get points front: 19900
+Lidar - Get points back: 4136
+Lane - Get points lane: 72129
+Seg - Get data road: 8070030
+Camera - Convert img: 306854
+Seg - Predict: 39597998
+Lane - Ground truth: 8516766
+Lane - Get lane (draw, area, cm, %): 2015246
+Camera - Show in pygame: 1605448
+Camera - Convert img: 143948
+Camera - Show in pygame: 976767
+Lidar - Process & Draw: 11613708
+Lidar - Stats: 4682439
+Camera - Convert img: 114664
+Camera - Show in pygame: 940121
+Lidar - Get points front: 20802
+Lidar - Get points back: 4166
+Lane - Get points lane: 68674
+Seg - Get data road: 7883017
+Camera - Convert img: 308036
+Seg - Predict: 37509610
+Lane - Ground truth: 8920697
+Lane - Get lane (draw, area, cm, %): 2040174
+Camera - Show in pygame: 1600940
+Camera - Convert img: 130177
+Camera - Show in pygame: 1029206
+Lidar - Process & Draw: 11983959
+Lidar - Stats: 5067661
+Camera - Convert img: 112730
+Camera - Show in pygame: 975264
+Lidar - Get points front: 20992
+Lidar - Get points back: 4337
+Lane - Get points lane: 71157
+Seg - Get data road: 7891581
+Camera - Convert img: 297189
+Seg - Predict: 38600549
+Lane - Ground truth: 8897282
+Lane - Get lane (draw, area, cm, %): 2081897
+Camera - Show in pygame: 1636644
+Camera - Convert img: 572575
+Camera - Show in pygame: 892329
+Lidar - Process & Draw: 11777997
+Lidar - Stats: 4739285
+Camera - Convert img: 117378
+Camera - Show in pygame: 1096127
+Lidar - Get points front: 27051
+Lidar - Get points back: 5779
+Lane - Get points lane: 98519
+Seg - Get data road: 11190128
+Camera - Convert img: 699007
+Seg - Predict: 38874853
+Lane - Ground truth: 9347132
+Lane - Get lane (draw, area, cm, %): 2023089
+Camera - Show in pygame: 1603114
+Camera - Convert img: 170428
+Camera - Show in pygame: 1227626
+Lidar - Process & Draw: 11778968
+Lidar - Stats: 4879908
+Camera - Convert img: 103636
+Camera - Show in pygame: 1162708
+Lidar - Get points front: 20391
+Lidar - Get points back: 4147
+Lane - Get points lane: 71398
+Seg - Get data road: 8202130
+Camera - Convert img: 289668
+Seg - Predict: 39252696
+Lane - Ground truth: 9335894
+Lane - Get lane (draw, area, cm, %): 2068127
+Camera - Show in pygame: 1578807
+Camera - Convert img: 145720
+Camera - Show in pygame: 1177851
+Lidar - Process & Draw: 12167456
+Lidar - Stats: 4742119
+Camera - Convert img: 117437
+Camera - Show in pygame: 1136388
+Lidar - Get points front: 18869
+Lidar - Get points back: 4176
+Lane - Get points lane: 71568
+Seg - Get data road: 7813724
+Camera - Convert img: 302938
+Seg - Predict: 39359386
+Lane - Ground truth: 9235293
+Lane - Get lane (draw, area, cm, %): 1986924
+Camera - Show in pygame: 1580990
+Camera - Convert img: 142345
+Camera - Show in pygame: 1171421
+Lidar - Process & Draw: 11876206
+Lidar - Stats: 4723351
+Camera - Convert img: 126481
+Camera - Show in pygame: 1151872
+Lidar - Get points front: 20401
+Lidar - Get points back: 4606
+Lane - Get points lane: 69405
+Seg - Get data road: 7997892
+Camera - Convert img: 309177
+Seg - Predict: 38875485
+Lane - Ground truth: 9296305
+Lane - Get lane (draw, area, cm, %): 1985842
+Camera - Show in pygame: 1582813
+Camera - Convert img: 135675
+Camera - Show in pygame: 1164802
+Lidar - Process & Draw: 12141867
+Lidar - Stats: 4687166
+Camera - Convert img: 121424
+Camera - Show in pygame: 1130208
+Lidar - Get points front: 19259
+Lidar - Get points back: 4116
+Lane - Get points lane: 66140
+Seg - Get data road: 7808456
+Camera - Convert img: 290670
+Seg - Predict: 39792582
+Lane - Ground truth: 9256636
+Lane - Get lane (draw, area, cm, %): 1974054
+Camera - Show in pygame: 1548341
+Camera - Convert img: 135555
+Camera - Show in pygame: 1178522
+Lidar - Process & Draw: 11564835
+Lidar - Stats: 4719485
+Camera - Convert img: 110367
+Camera - Show in pygame: 1131330
+Lidar - Get points front: 19860
+Lidar - Get points back: 4146
+Lane - Get points lane: 68804
+Seg - Get data road: 8143061
+Camera - Convert img: 304230
+Seg - Predict: 39973355
+Lane - Ground truth: 9407263
+Lane - Get lane (draw, area, cm, %): 2030680
+Camera - Show in pygame: 1572277
+Camera - Convert img: 135214
+Camera - Show in pygame: 1202438
+Lidar - Process & Draw: 12200316
+Lidar - Stats: 4735529
+Camera - Convert img: 166692
+Camera - Show in pygame: 1128496
+Lidar - Get points front: 20911
+Lidar - Get points back: 4497
+Lane - Get points lane: 68313
+Seg - Get data road: 8022328
+Camera - Convert img: 301006
+Seg - Predict: 38578346
+Lane - Ground truth: 8573412
+Lane - Get lane (draw, area, cm, %): 1995346
+Camera - Show in pygame: 1555582
+Camera - Convert img: 136636
+Camera - Show in pygame: 1014594
+Lidar - Process & Draw: 11616573
+Lidar - Stats: 4684552
+Camera - Convert img: 124638
+Camera - Show in pygame: 961284
+Lidar - Get points front: 19319
+Lidar - Get points back: 4337
+Lane - Get points lane: 68984
+Seg - Get data road: 7890819
+Camera - Convert img: 299483
+Seg - Predict: 39631238
+Lane - Ground truth: 8474342
+Lane - Get lane (draw, area, cm, %): 1981196
+Camera - Show in pygame: 1574941
+Camera - Convert img: 149005
+Camera - Show in pygame: 989065
+Lidar - Process & Draw: 11986752
+Lidar - Stats: 4724182
+Camera - Convert img: 125249
+Camera - Show in pygame: 1089998
+Lidar - Get points front: 20381
+Lidar - Get points back: 4066
+Lane - Get points lane: 68223
+Seg - Get data road: 7846763
+Camera - Convert img: 300354
+Seg - Predict: 38930889
+Lane - Ground truth: 8580303
+Lane - Get lane (draw, area, cm, %): 2031021
+Camera - Show in pygame: 1626088
+Camera - Convert img: 134083
+Camera - Show in pygame: 804526
+Lidar - Process & Draw: 11364211
+Lidar - Stats: 4750322
+Camera - Convert img: 120943
+Camera - Show in pygame: 807702
+Lidar - Get points front: 20230
+Lidar - Get points back: 4106
+Lane - Get points lane: 68874
+Seg - Get data road: 7895727
+Camera - Convert img: 288427
+Seg - Predict: 39248850
+Lane - Ground truth: 8564609
+Lane - Get lane (draw, area, cm, %): 1989688
+Camera - Show in pygame: 1561510
+Camera - Convert img: 139161
+Camera - Show in pygame: 988054
+Lidar - Process & Draw: 11620249
+Lidar - Stats: 4750262
+Camera - Convert img: 122285
+Camera - Show in pygame: 959401
+Lidar - Get points front: 19890
+Lidar - Get points back: 4197
+Lane - Get points lane: 69576
+Seg - Get data road: 7837399
+Camera - Convert img: 295367
+Seg - Predict: 39516344
+Lane - Ground truth: 8382754
+Lane - Get lane (draw, area, cm, %): 1982367
+Camera - Show in pygame: 1550815
+Camera - Convert img: 133152
+Camera - Show in pygame: 974333
+Lidar - Process & Draw: 11301606
+Lidar - Stats: 4682310
+Camera - Convert img: 141704
+Camera - Show in pygame: 955564
+Lidar - Get points front: 21923
+Lidar - Get points back: 4337
+Lane - Get points lane: 70207
+Seg - Get data road: 7853453
+Camera - Convert img: 285431
+Seg - Predict: 38924969
+Lane - Ground truth: 8597237
+Lane - Get lane (draw, area, cm, %): 2020314
+Camera - Show in pygame: 1570455
+Camera - Convert img: 140442
+Camera - Show in pygame: 1001434
+Lidar - Process & Draw: 11653910
+Lidar - Stats: 4826407
+Camera - Convert img: 119200
+Camera - Show in pygame: 980823
+Lidar - Get points front: 21102
+Lidar - Get points back: 4346
+Lane - Get points lane: 67842
+Seg - Get data road: 7740142
+Camera - Convert img: 288816
+Seg - Predict: 39654172
+Lane - Ground truth: 8520662
+Lane - Get lane (draw, area, cm, %): 1988046
+Camera - Show in pygame: 1562172
+Camera - Convert img: 183828
+Camera - Show in pygame: 969696
+Lidar - Process & Draw: 10943205
+Lidar - Stats: 4657171
+Camera - Convert img: 164249
+Camera - Show in pygame: 951840
+Lidar - Get points front: 19980
+Lidar - Get points back: 4197
+Lane - Get points lane: 69445
+Seg - Get data road: 7777979
+Camera - Convert img: 299502
+Seg - Predict: 38705919
+Lane - Ground truth: 8653102
+Lane - Get lane (draw, area, cm, %): 2000455
+Camera - Show in pygame: 1583474
+Camera - Convert img: 140292
+Camera - Show in pygame: 1006932
+Lidar - Process & Draw: 11566608
+Lidar - Stats: 4758164
+Camera - Convert img: 123657
+Camera - Show in pygame: 970547
+Lidar - Get points front: 20541
+Lidar - Get points back: 4216
+Lane - Get points lane: 68364
+Seg - Get data road: 7703518
+Camera - Convert img: 312713
+Seg - Predict: 39420028
+Lane - Ground truth: 8480832
+Lane - Get lane (draw, area, cm, %): 2010940
+Camera - Show in pygame: 1576294
+Camera - Convert img: 144539
+Camera - Show in pygame: 987213
+Lidar - Process & Draw: 11396389
+Lidar - Stats: 4603339
+Camera - Convert img: 121343
+Camera - Show in pygame: 965039
+Lidar - Get points front: 21072
+Lidar - Get points back: 4927
+Lane - Get points lane: 81543
+Seg - Get data road: 8090872
+Camera - Convert img: 313704
+Seg - Predict: 39434270
+Lane - Ground truth: 8527914
+Lane - Get lane (draw, area, cm, %): 2022878
+Camera - Show in pygame: 1590455
+Camera - Convert img: 143326
+Camera - Show in pygame: 962886
+Lidar - Process & Draw: 11719068
+Lidar - Stats: 4791354
+Camera - Convert img: 118459
+Camera - Show in pygame: 955754
+Lidar - Get points front: 20251
+Lidar - Get points back: 4346
+Lane - Get points lane: 69746
+Seg - Get data road: 7945563
+Camera - Convert img: 302227
+Seg - Predict: 39695434
+Lane - Ground truth: 8887677
+Lane - Get lane (draw, area, cm, %): 2055558
+Camera - Show in pygame: 1603204
+Camera - Convert img: 191950
+Camera - Show in pygame: 956776
+Lidar - Process & Draw: 12184301
+Lidar - Stats: 4965336
+Camera - Convert img: 101493
+Camera - Show in pygame: 776133
+Lidar - Get points front: 24818
+Lidar - Get points back: 4477
+Lane - Get points lane: 76937
+Seg - Get data road: 8000876
+Camera - Convert img: 315938
+Seg - Predict: 40566241
+Lane - Ground truth: 8948729
+Lane - Get lane (draw, area, cm, %): 2117682
+Camera - Show in pygame: 1640881
+Camera - Convert img: 133442
+Camera - Show in pygame: 983608
+Lidar - Process & Draw: 12024450
+Lidar - Stats: 5006830
+Camera - Convert img: 120702
+Camera - Show in pygame: 962546
+Lidar - Get points front: 20721
+Lidar - Get points back: 4617
+Lane - Get points lane: 83346
+Seg - Get data road: 8007046
+Camera - Convert img: 289228
+Seg - Predict: 41138566
+Lane - Ground truth: 8659693
+Lane - Get lane (draw, area, cm, %): 2001546
+Camera - Show in pygame: 1564555
+Camera - Convert img: 130047
+Camera - Show in pygame: 986351
+Lidar - Process & Draw: 11382689
+Lidar - Stats: 4662198
+Camera - Convert img: 115925
+Camera - Show in pygame: 969877
+Lidar - Get points front: 20601
+Lidar - Get points back: 4366
+Lane - Get points lane: 68764
+Seg - Get data road: 7968697
+Camera - Convert img: 285832
+Seg - Predict: 39565078
+Lane - Ground truth: 8587302
+Lane - Get lane (draw, area, cm, %): 2028987
+Camera - Show in pygame: 1588862
+Camera - Convert img: 136186
+Camera - Show in pygame: 983937
+Lidar - Process & Draw: 11493677
+Lidar - Stats: 4689510
+Camera - Convert img: 162987
+Camera - Show in pygame: 956727
+Lidar - Get points front: 20661
+Lidar - Get points back: 4377
+Lane - Get points lane: 70627
+Seg - Get data road: 7814705
+Camera - Convert img: 263889
+Seg - Predict: 40305317
+Lane - Ground truth: 8624599
+Lane - Get lane (draw, area, cm, %): 1972693
+Camera - Show in pygame: 1560870
+Camera - Convert img: 133502
+Camera - Show in pygame: 992139
+Lidar - Process & Draw: 11591145
+Lidar - Stats: 4733626
+Camera - Convert img: 115996
+Camera - Show in pygame: 971048
+Lidar - Get points front: 21453
+Lidar - Get points back: 4266
+Lane - Get points lane: 69175
+Seg - Get data road: 7911772
+Camera - Convert img: 319953
+Seg - Predict: 39800764
+Lane - Ground truth: 9656810
+Lane - Get lane (draw, area, cm, %): 1991481
+Camera - Show in pygame: 1562082
+Camera - Convert img: 137107
+Camera - Show in pygame: 994123
+Lidar - Process & Draw: 11499466
+Lidar - Stats: 4718424
+Camera - Convert img: 120112
+Camera - Show in pygame: 961553
+Lidar - Get points front: 19630
+Lidar - Get points back: 4136
+Lane - Get points lane: 66230
+Seg - Get data road: 7753232
+Camera - Convert img: 294075
+Seg - Predict: 39535272
+Lane - Ground truth: 8638680
+Lane - Get lane (draw, area, cm, %): 1992633
+Camera - Show in pygame: 1543003
+Camera - Convert img: 135345
+Camera - Show in pygame: 978079
+Lidar - Process & Draw: 11433687
+Lidar - Stats: 4701679
+Camera - Convert img: 122325
+Camera - Show in pygame: 974263
+Lidar - Get points front: 21662
+Lidar - Get points back: 4587
+Lane - Get points lane: 72640
+Seg - Get data road: 7978143
+Camera - Convert img: 307044
+Seg - Predict: 39784650
+Lane - Ground truth: 8690920
+Lane - Get lane (draw, area, cm, %): 2000234
+Camera - Show in pygame: 1568972
+Camera - Convert img: 132971
+Camera - Show in pygame: 992721
+Lidar - Process & Draw: 11658647
+Lidar - Stats: 4846056
+Camera - Convert img: 130778
+Camera - Show in pygame: 959861
+Lidar - Get points front: 21683
+Lidar - Get points back: 4457
+Lane - Get points lane: 67572
+Seg - Get data road: 7729586
+Camera - Convert img: 314886
+Seg - Predict: 40261120
+Lane - Ground truth: 8548284
+Lane - Get lane (draw, area, cm, %): 1984179
+Camera - Show in pygame: 1563945
+Camera - Convert img: 140563
+Camera - Show in pygame: 962986
+Lidar - Process & Draw: 11482721
+Lidar - Stats: 4744494
+Camera - Convert img: 119191
+Camera - Show in pygame: 948624
+Lidar - Get points front: 19409
+Lidar - Get points back: 4046
+Lane - Get points lane: 67763
+Seg - Get data road: 8172835
+Camera - Convert img: 294536
+Seg - Predict: 40417616
+Lane - Ground truth: 8521473
+Lane - Get lane (draw, area, cm, %): 2008386
+Camera - Show in pygame: 1558586
+Camera - Convert img: 131930
+Camera - Show in pygame: 971940
+Lidar - Process & Draw: 12233776
+Lidar - Stats: 4949713
+Camera - Convert img: 122445
+Camera - Show in pygame: 1043748
+Lidar - Get points front: 21713
+Lidar - Get points back: 4497
+Lane - Get points lane: 70426
+Seg - Get data road: 7904191
+Camera - Convert img: 290299

@@ -1,0 +1,2440 @@
+Lidar - Process & Draw: 5572525
+Lidar - Stats: 4956884
+Camera - Convert img: 2909218
+Seg - Predict: 695158811
+Camera - Show in pygame: 1083489
+Lidar - Process & Draw: 4875440
+Lidar - Stats: 4808840
+Camera - Convert img: 157508
+Camera - Show in pygame: 1171501
+Camera - Convert img: 1264972
+Seg - Predict: 39987434
+Camera - Show in pygame: 1475531
+Lidar - Process & Draw: 5084888
+Lidar - Stats: 4660195
+Camera - Convert img: 133312
+Camera - Show in pygame: 1333927
+Camera - Convert img: 300785
+Seg - Predict: 39735122
+Camera - Show in pygame: 1058560
+Lidar - Process & Draw: 4686375
+Lidar - Stats: 4595939
+Camera - Convert img: 136035
+Camera - Show in pygame: 1122026
+Camera - Convert img: 301957
+Seg - Predict: 40394991
+Camera - Show in pygame: 1051370
+Lidar - Process & Draw: 4958326
+Lidar - Stats: 4651132
+Camera - Convert img: 124098
+Camera - Show in pygame: 1188276
+Camera - Convert img: 337911
+Seg - Predict: 40875357
+Camera - Show in pygame: 1092411
+Lidar - Process & Draw: 5408437
+Lidar - Stats: 4675699
+Camera - Convert img: 121714
+Camera - Show in pygame: 1193845
+Camera - Convert img: 319593
+Seg - Predict: 39666859
+Camera - Show in pygame: 1096017
+Lidar - Process & Draw: 5293052
+Lidar - Stats: 4684723
+Camera - Convert img: 132861
+Camera - Show in pygame: 1165351
+Camera - Convert img: 318161
+Seg - Predict: 39692318
+Camera - Show in pygame: 1082126
+Lidar - Process & Draw: 6129176
+Lidar - Stats: 4697932
+Camera - Convert img: 140232
+Camera - Show in pygame: 1159623
+Camera - Convert img: 302547
+Seg - Predict: 40508873
+Camera - Show in pygame: 1123639
+Lidar - Process & Draw: 6270951
+Lidar - Stats: 4775640
+Camera - Convert img: 172020
+Camera - Show in pygame: 1112782
+Camera - Convert img: 349569
+Seg - Predict: 41494813
+Camera - Show in pygame: 1075145
+Lidar - Process & Draw: 6900212
+Lidar - Stats: 4711223
+Camera - Convert img: 140452
+Camera - Show in pygame: 1018099
+Camera - Convert img: 327395
+Seg - Predict: 41182981
+Camera - Show in pygame: 1064890
+Lidar - Process & Draw: 7425556
+Lidar - Stats: 4663250
+Camera - Convert img: 129876
+Camera - Show in pygame: 990017
+Camera - Convert img: 1285334
+Seg - Predict: 39875695
+Camera - Show in pygame: 1055817
+Lidar - Process & Draw: 7958252
+Lidar - Stats: 4658984
+Camera - Convert img: 137288
+Camera - Show in pygame: 970988
+Camera - Convert img: 788752
+Seg - Predict: 39563934
+Camera - Show in pygame: 1426447
+Lidar - Process & Draw: 8818763
+Lidar - Stats: 5060490
+Camera - Convert img: 141754
+Camera - Show in pygame: 1247626
+Camera - Convert img: 816544
+Seg - Predict: 39377573
+Camera - Show in pygame: 1129728
+Lidar - Process & Draw: 8319418
+Lidar - Stats: 4732194
+Camera - Convert img: 133943
+Camera - Show in pygame: 984639
+Camera - Convert img: 319313
+Seg - Predict: 40221078
+Camera - Show in pygame: 1117790
+Lidar - Process & Draw: 9091255
+Lidar - Stats: 4801229
+Camera - Convert img: 147093
+Camera - Show in pygame: 1032481
+Camera - Convert img: 343750
+Seg - Predict: 42056101
+Camera - Show in pygame: 1474339
+Lidar - Process & Draw: 9043852
+Lidar - Stats: 4785955
+Camera - Convert img: 136847
+Camera - Show in pygame: 1136307
+Camera - Convert img: 736874
+Seg - Predict: 38778346
+Camera - Show in pygame: 1153153
+Lidar - Process & Draw: 8532930
+Lidar - Stats: 4712244
+Camera - Convert img: 129446
+Camera - Show in pygame: 1023668
+Camera - Convert img: 316559
+Seg - Predict: 40132463
+Camera - Show in pygame: 1152893
+Lidar - Process & Draw: 9064765
+Lidar - Stats: 5103086
+Camera - Convert img: 137678
+Camera - Show in pygame: 995505
+Camera - Convert img: 338211
+Seg - Predict: 40191473
+Camera - Show in pygame: 1086452
+Lidar - Process & Draw: 8358747
+Lidar - Stats: 4715339
+Camera - Convert img: 123978
+Camera - Show in pygame: 1028095
+Camera - Convert img: 333625
+Seg - Predict: 39271672
+Camera - Show in pygame: 1069527
+Lidar - Process & Draw: 8391827
+Lidar - Stats: 4794369
+Camera - Convert img: 136126
+Camera - Show in pygame: 1017698
+Camera - Convert img: 744245
+Seg - Predict: 39835434
+Camera - Show in pygame: 1556553
+Lidar - Process & Draw: 11915735
+Lidar - Stats: 5916014
+Camera - Convert img: 150597
+Camera - Show in pygame: 1341318
+Camera - Convert img: 351782
+Seg - Predict: 38807079
+Camera - Show in pygame: 1139523
+Lidar - Process & Draw: 8312667
+Lidar - Stats: 4637060
+Camera - Convert img: 157418
+Camera - Show in pygame: 1057979
+Camera - Convert img: 331701
+Seg - Predict: 42118797
+Camera - Show in pygame: 1169038
+Lidar - Process & Draw: 8497837
+Lidar - Stats: 4688017
+Camera - Convert img: 163177
+Camera - Show in pygame: 990157
+Camera - Convert img: 325592
+Seg - Predict: 38940502
+Camera - Show in pygame: 1145863
+Lidar - Process & Draw: 8529445
+Lidar - Stats: 4668569
+Camera - Convert img: 146541
+Camera - Show in pygame: 1039422
+Camera - Convert img: 331962
+Seg - Predict: 39439526
+Camera - Show in pygame: 1107374
+Lidar - Process & Draw: 8173207
+Lidar - Stats: 4580234
+Camera - Convert img: 151128
+Camera - Show in pygame: 980923
+Camera - Convert img: 323339
+Seg - Predict: 39935636
+Camera - Show in pygame: 1070298
+Lidar - Process & Draw: 8316373
+Lidar - Stats: 4681768
+Camera - Convert img: 153912
+Camera - Show in pygame: 1008825
+Camera - Convert img: 332733
+Seg - Predict: 40640231
+Camera - Show in pygame: 1138561
+Lidar - Process & Draw: 8865223
+Lidar - Stats: 4819796
+Camera - Convert img: 138520
+Camera - Show in pygame: 1019681
+Camera - Convert img: 782563
+Seg - Predict: 40537706
+Camera - Show in pygame: 1107254
+Lidar - Process & Draw: 8200918
+Lidar - Stats: 4769050
+Camera - Convert img: 172131
+Camera - Show in pygame: 1023318
+Camera - Convert img: 320094
+Seg - Predict: 42043513
+Camera - Show in pygame: 1100464
+Lidar - Process & Draw: 8795076
+Lidar - Stats: 4908580
+Camera - Convert img: 167814
+Camera - Show in pygame: 1106012
+Camera - Convert img: 366805
+Seg - Predict: 40273416
+Camera - Show in pygame: 1066452
+Lidar - Process & Draw: 8246137
+Lidar - Stats: 4690381
+Camera - Convert img: 182245
+Camera - Show in pygame: 1018790
+Camera - Convert img: 322608
+Seg - Predict: 40617868
+Camera - Show in pygame: 1063307
+Lidar - Process & Draw: 8613202
+Lidar - Stats: 4512042
+Camera - Convert img: 123587
+Camera - Show in pygame: 990567
+Camera - Convert img: 720580
+Seg - Predict: 39349800
+Camera - Show in pygame: 1467889
+Lidar - Process & Draw: 8273138
+Lidar - Stats: 4592783
+Camera - Convert img: 158529
+Camera - Show in pygame: 1264521
+Camera - Convert img: 373775
+Seg - Predict: 38910556
+Camera - Show in pygame: 1349441
+Lidar - Process & Draw: 9374873
+Lidar - Stats: 5088834
+Camera - Convert img: 150467
+Camera - Show in pygame: 1214957
+Camera - Convert img: 333824
+Seg - Predict: 38957718
+Camera - Show in pygame: 1104961
+Lidar - Process & Draw: 8309533
+Lidar - Stats: 4813708
+Camera - Convert img: 154733
+Camera - Show in pygame: 1206144
+Camera - Convert img: 334345
+Seg - Predict: 39380176
+Camera - Show in pygame: 1264401
+Lidar - Process & Draw: 9618861
+Lidar - Stats: 5062774
+Camera - Convert img: 142816
+Camera - Show in pygame: 1052171
+Camera - Convert img: 352744
+Seg - Predict: 39251702
+Camera - Show in pygame: 1076698
+Lidar - Process & Draw: 8329483
+Lidar - Stats: 4686184
+Camera - Convert img: 139371
+Camera - Show in pygame: 1008405
+Camera - Convert img: 319683
+Seg - Predict: 39715343
+Camera - Show in pygame: 1217601
+Lidar - Process & Draw: 9099868
+Lidar - Stats: 4733336
+Camera - Convert img: 134153
+Camera - Show in pygame: 1028736
+Camera - Convert img: 333273
+Seg - Predict: 38645585
+Camera - Show in pygame: 1182839
+Lidar - Process & Draw: 8767926
+Lidar - Stats: 4777814
+Camera - Convert img: 136737
+Camera - Show in pygame: 1013372
+Camera - Convert img: 315347
+Seg - Predict: 38623252
+Camera - Show in pygame: 1218161
+Lidar - Process & Draw: 9401092
+Lidar - Stats: 5177077
+Camera - Convert img: 134994
+Camera - Show in pygame: 1025741
+Camera - Convert img: 328898
+Seg - Predict: 38323288
+Camera - Show in pygame: 1181216
+Lidar - Process & Draw: 8546611
+Lidar - Stats: 4740447
+Camera - Convert img: 136626
+Camera - Show in pygame: 1025460
+Camera - Convert img: 321426
+Seg - Predict: 39541720
+Camera - Show in pygame: 1087003
+Lidar - Process & Draw: 8629516
+Lidar - Stats: 5021943
+Camera - Convert img: 132200
+Camera - Show in pygame: 1015194
+Camera - Convert img: 320805
+Seg - Predict: 40509393
+Camera - Show in pygame: 1107254
+Lidar - Process & Draw: 8215661
+Lidar - Stats: 4664702
+Camera - Convert img: 142125
+Camera - Show in pygame: 1016997
+Camera - Convert img: 341647
+Seg - Predict: 40121957
+Camera - Show in pygame: 1232493
+Lidar - Process & Draw: 8990773
+Lidar - Stats: 4754738
+Camera - Convert img: 154493
+Camera - Show in pygame: 1021274
+Camera - Convert img: 345332
+Seg - Predict: 39709524
+Camera - Show in pygame: 1084330
+Lidar - Process & Draw: 8788496
+Lidar - Stats: 4652564
+Camera - Convert img: 139932
+Camera - Show in pygame: 1000954
+Camera - Convert img: 1262348
+Seg - Predict: 39953523
+Camera - Show in pygame: 1097238
+Lidar - Process & Draw: 8290153
+Lidar - Stats: 4698154
+Camera - Convert img: 135495
+Camera - Show in pygame: 1143399
+Camera - Convert img: 855693
+Seg - Predict: 40817640
+Camera - Show in pygame: 1464054
+Lidar - Process & Draw: 11960202
+Lidar - Stats: 5736203
+Camera - Convert img: 130527
+Camera - Show in pygame: 1181516
+Camera - Convert img: 811957
+Seg - Predict: 39348659
+Camera - Show in pygame: 1304903
+Lidar - Process & Draw: 8421792
+Lidar - Stats: 4709891
+Camera - Convert img: 149586
+Camera - Show in pygame: 1127154
+Camera - Convert img: 322808
+Seg - Predict: 39050548
+Camera - Show in pygame: 1110348
+Lidar - Process & Draw: 8673573
+Lidar - Stats: 4713225
+Camera - Convert img: 156757
+Camera - Show in pygame: 997979
+Camera - Convert img: 331331
+Seg - Predict: 38332121
+Camera - Show in pygame: 1072852
+Lidar - Process & Draw: 8595495
+Lidar - Stats: 4833067
+Camera - Convert img: 169847
+Camera - Show in pygame: 1026131
+Camera - Convert img: 938098
+Seg - Predict: 40405456
+Camera - Show in pygame: 1425215
+Lidar - Process & Draw: 10800458
+Lidar - Stats: 4985427
+Camera - Convert img: 157047
+Camera - Show in pygame: 1054414
+Camera - Convert img: 344591
+Seg - Predict: 40797399
+Camera - Show in pygame: 1479937
+Lidar - Process & Draw: 12499267
+Lidar - Stats: 5526755
+Camera - Convert img: 185560
+Camera - Show in pygame: 1064239
+Camera - Convert img: 382348
+Seg - Predict: 40652510
+Camera - Show in pygame: 1209077
+Lidar - Process & Draw: 8488003
+Lidar - Stats: 4754799
+Camera - Convert img: 129115
+Camera - Show in pygame: 1009386
+Camera - Convert img: 782112
+Seg - Predict: 39380767
+Camera - Show in pygame: 1342450
+Lidar - Process & Draw: 8402984
+Lidar - Stats: 5373224
+Camera - Convert img: 143457
+Camera - Show in pygame: 1220665
+Camera - Convert img: 331872
+Seg - Predict: 40405997
+Camera - Show in pygame: 1234987
+Lidar - Process & Draw: 9371247
+Lidar - Stats: 5431041
+Camera - Convert img: 171169
+Camera - Show in pygame: 1179213
+Camera - Convert img: 822574
+Seg - Predict: 40218774
+Camera - Show in pygame: 1094865
+Lidar - Process & Draw: 8831152
+Lidar - Stats: 4688258
+Camera - Convert img: 140563
+Camera - Show in pygame: 1015876
+Camera - Convert img: 779768
+Seg - Predict: 40232485
+Camera - Show in pygame: 1303250
+Lidar - Process & Draw: 9346431
+Lidar - Stats: 7249670
+Camera - Convert img: 199732
+Camera - Show in pygame: 1190470
+Camera - Convert img: 760569
+Seg - Predict: 39189888
+Camera - Show in pygame: 1048926
+Lidar - Process & Draw: 8465569
+Lidar - Stats: 4703792
+Camera - Convert img: 150077
+Camera - Show in pygame: 1016106
+Camera - Convert img: 318712
+Seg - Predict: 39499907
+Camera - Show in pygame: 1129868
+Lidar - Process & Draw: 8237834
+Lidar - Stats: 4682529
+Camera - Convert img: 127573
+Camera - Show in pygame: 1021364
+Camera - Convert img: 308556
+Seg - Predict: 39773271
+Camera - Show in pygame: 1121787
+Lidar - Process & Draw: 8435804
+Lidar - Stats: 4682429
+Camera - Convert img: 124658
+Camera - Show in pygame: 984959
+Camera - Convert img: 308977
+Seg - Predict: 38852138
+Camera - Show in pygame: 1130048
+Lidar - Process & Draw: 8205676
+Lidar - Stats: 4646445
+Camera - Convert img: 129376
+Camera - Show in pygame: 1009636
+Camera - Convert img: 299392
+Seg - Predict: 39416501
+Camera - Show in pygame: 1236429
+Lidar - Process & Draw: 8430155
+Lidar - Stats: 4682859
+Camera - Convert img: 125300
+Camera - Show in pygame: 1014313
+Camera - Convert img: 320695
+Seg - Predict: 39390782
+Camera - Show in pygame: 1151350
+Lidar - Process & Draw: 8239597
+Lidar - Stats: 5228675
+Camera - Convert img: 126671
+Camera - Show in pygame: 1013302
+Camera - Convert img: 312262
+Seg - Predict: 39369880
+Camera - Show in pygame: 1113594
+Lidar - Process & Draw: 8564578
+Lidar - Stats: 4932477
+Camera - Convert img: 131158
+Camera - Show in pygame: 1008544
+Camera - Convert img: 761081
+Seg - Predict: 39174005
+Camera - Show in pygame: 1243320
+Lidar - Process & Draw: 8387170
+Lidar - Stats: 4751793
+Camera - Convert img: 131068
+Camera - Show in pygame: 1139533
+Camera - Convert img: 314034
+Seg - Predict: 39793071
+Camera - Show in pygame: 1130749
+Lidar - Process & Draw: 8222301
+Lidar - Stats: 4834800
+Camera - Convert img: 129886
+Camera - Show in pygame: 1010848
+Camera - Convert img: 323509
+Seg - Predict: 40189239
+Camera - Show in pygame: 1205542
+Lidar - Process & Draw: 8261670
+Lidar - Stats: 4742179
+Camera - Convert img: 131539
+Camera - Show in pygame: 1029036
+Camera - Convert img: 332513
+Seg - Predict: 39989738
+Camera - Show in pygame: 1106062
+Lidar - Process & Draw: 8176882
+Lidar - Stats: 4734357
+Camera - Convert img: 127603
+Camera - Show in pygame: 1022536
+Camera - Convert img: 375398
+Seg - Predict: 37901211
+Camera - Show in pygame: 1304062
+Lidar - Process & Draw: 8749518
+Lidar - Stats: 4737252
+Camera - Convert img: 154083
+Camera - Show in pygame: 1125211
+Camera - Convert img: 360175
+Seg - Predict: 38923025
+Camera - Show in pygame: 1112452
+Lidar - Process & Draw: 8447291
+Lidar - Stats: 4694087
+Camera - Convert img: 146241
+Camera - Show in pygame: 1031098
+Camera - Convert img: 359384
+Seg - Predict: 38618886
+Camera - Show in pygame: 1097509
+Lidar - Process & Draw: 8331776
+Lidar - Stats: 4999538
+Camera - Convert img: 141344
+Camera - Show in pygame: 1036727
+Camera - Convert img: 1206023
+Seg - Predict: 38584754
+Camera - Show in pygame: 1103949
+Lidar - Process & Draw: 8189742
+Lidar - Stats: 4631962
+Camera - Convert img: 119501
+Camera - Show in pygame: 1012752
+Camera - Convert img: 318872
+Seg - Predict: 40278965
+Camera - Show in pygame: 1067003
+Lidar - Process & Draw: 8240848
+Lidar - Stats: 4625713
+Camera - Convert img: 110518
+Camera - Show in pygame: 1008255
+Camera - Convert img: 289338
+Seg - Predict: 39399616
+Camera - Show in pygame: 1058940
+Lidar - Process & Draw: 8731721
+Lidar - Stats: 4637241
+Camera - Convert img: 134223
+Camera - Show in pygame: 1021704
+Camera - Convert img: 303379
+Seg - Predict: 39057007
+Camera - Show in pygame: 1039231
+Lidar - Process & Draw: 8802688
+Lidar - Stats: 4641577
+Camera - Convert img: 123377
+Camera - Show in pygame: 1015495
+Camera - Convert img: 652556
+Seg - Predict: 39117318
+Camera - Show in pygame: 1088075
+Lidar - Process & Draw: 8714595
+Lidar - Stats: 4884314
+Camera - Convert img: 115865
+Camera - Show in pygame: 1204371
+Camera - Convert img: 291000
+Seg - Predict: 40448281
+Camera - Show in pygame: 1058420
+Lidar - Process & Draw: 7933934
+Lidar - Stats: 4630280
+Camera - Convert img: 136526
+Camera - Show in pygame: 1138351
+Camera - Convert img: 292953
+Seg - Predict: 39637646
+Camera - Show in pygame: 1311212
+Lidar - Process & Draw: 11241175
+Lidar - Stats: 5834070
+Camera - Convert img: 128634
+Camera - Show in pygame: 1174716
+Camera - Convert img: 314095
+Seg - Predict: 39000882
+Camera - Show in pygame: 1181006
+Lidar - Process & Draw: 8341952
+Lidar - Stats: 4622408
+Camera - Convert img: 136766
+Camera - Show in pygame: 1171631
+Camera - Convert img: 835092
+Seg - Predict: 39687992
+Camera - Show in pygame: 1210490
+Lidar - Process & Draw: 9006466
+Lidar - Stats: 4908822
+Camera - Convert img: 156526
+Camera - Show in pygame: 1241978
+Camera - Convert img: 359133
+Seg - Predict: 39245783
+Camera - Show in pygame: 1083237
+Lidar - Process & Draw: 8333439
+Lidar - Stats: 4637972
+Camera - Convert img: 126962
+Camera - Show in pygame: 984629
+Camera - Convert img: 787921
+Seg - Predict: 39092502
+Camera - Show in pygame: 1095076
+Lidar - Process & Draw: 8196491
+Lidar - Stats: 4700436
+Camera - Convert img: 133782
+Camera - Show in pygame: 958489
+Camera - Convert img: 329208
+Seg - Predict: 39896376
+Camera - Show in pygame: 1099232
+Lidar - Process & Draw: 8381422
+Lidar - Stats: 4752275
+Camera - Convert img: 140923
+Camera - Show in pygame: 1053693
+Camera - Convert img: 716983
+Seg - Predict: 38714670
+Camera - Show in pygame: 1078801
+Lidar - Process & Draw: 8351446
+Lidar - Stats: 4734668
+Camera - Convert img: 121613
+Camera - Show in pygame: 872129
+Camera - Convert img: 318863
+Seg - Predict: 39946031
+Camera - Show in pygame: 1461610
+Lidar - Process & Draw: 9005455
+Lidar - Stats: 4929783
+Camera - Convert img: 141824
+Camera - Show in pygame: 1013652
+Camera - Convert img: 309017
+Seg - Predict: 39508049
+Camera - Show in pygame: 1298503
+Lidar - Process & Draw: 8471227
+Lidar - Stats: 4726716
+Camera - Convert img: 140712
+Camera - Show in pygame: 1006502
+Camera - Convert img: 458944
+Seg - Predict: 38808652
+Camera - Show in pygame: 1120253
+Lidar - Process & Draw: 8337966
+Lidar - Stats: 4953699
+Camera - Convert img: 135765
+Camera - Show in pygame: 1054284
+Camera - Convert img: 323730
+Seg - Predict: 39113252
+Camera - Show in pygame: 1116898
+Lidar - Process & Draw: 8664029
+Lidar - Stats: 4711803
+Camera - Convert img: 144939
+Camera - Show in pygame: 1031940
+Camera - Convert img: 325382
+Seg - Predict: 39333746
+Camera - Show in pygame: 1076337
+Lidar - Process & Draw: 8473580
+Lidar - Stats: 4970184
+Camera - Convert img: 130617
+Camera - Show in pygame: 999251
+Camera - Convert img: 302518
+Seg - Predict: 38303459
+Camera - Show in pygame: 1182678
+Lidar - Process & Draw: 8044202
+Lidar - Stats: 4662449
+Camera - Convert img: 123637
+Camera - Show in pygame: 1001113
+Camera - Convert img: 306053
+Seg - Predict: 39271682
+Camera - Show in pygame: 1185232
+Lidar - Process & Draw: 8316644
+Lidar - Stats: 4682860
+Camera - Convert img: 140312
+Camera - Show in pygame: 1021254
+Camera - Convert img: 313544
+Seg - Predict: 40757489
+Camera - Show in pygame: 1072261
+Lidar - Process & Draw: 8569546
+Lidar - Stats: 4683901
+Camera - Convert img: 128293
+Camera - Show in pygame: 991800
+Camera - Convert img: 316409
+Seg - Predict: 40365326
+Camera - Show in pygame: 1115757
+Lidar - Process & Draw: 8962329
+Lidar - Stats: 5623031
+Camera - Convert img: 141274
+Camera - Show in pygame: 956987
+Camera - Convert img: 307175
+Seg - Predict: 40725140
+Camera - Show in pygame: 1054685
+Lidar - Process & Draw: 8273037
+Lidar - Stats: 4678573
+Camera - Convert img: 128274
+Camera - Show in pygame: 988975
+Camera - Convert img: 787591
+Seg - Predict: 40558407
+Camera - Show in pygame: 1384483
+Lidar - Process & Draw: 8104973
+Lidar - Stats: 4709700
+Camera - Convert img: 134884
+Camera - Show in pygame: 1418926
+Camera - Convert img: 290859
+Seg - Predict: 40774815
+Camera - Show in pygame: 1068235
+Lidar - Process & Draw: 8207989
+Lidar - Stats: 4670451
+Camera - Convert img: 117107
+Camera - Show in pygame: 991759
+Camera - Convert img: 286523
+Seg - Predict: 40808946
+Camera - Show in pygame: 1057489
+Lidar - Process & Draw: 8427240
+Lidar - Stats: 4710552
+Camera - Convert img: 108454
+Camera - Show in pygame: 985920
+Camera - Convert img: 293364
+Seg - Predict: 40559289
+Camera - Show in pygame: 1084339
+Lidar - Process & Draw: 8501633
+Lidar - Stats: 4679935
+Camera - Convert img: 156166
+Camera - Show in pygame: 998760
+Camera - Convert img: 310910
+Seg - Predict: 41222241
+Camera - Show in pygame: 1095817
+Lidar - Process & Draw: 8469134
+Lidar - Stats: 4753927
+Camera - Convert img: 137668
+Camera - Show in pygame: 986371
+Camera - Convert img: 290409
+Seg - Predict: 41093827
+Camera - Show in pygame: 1152642
+Lidar - Process & Draw: 8694134
+Lidar - Stats: 5086680
+Camera - Convert img: 131569
+Camera - Show in pygame: 1017569
+Camera - Convert img: 319373
+Seg - Predict: 39294376
+Camera - Show in pygame: 1148897
+Lidar - Process & Draw: 8297314
+Lidar - Stats: 4726326
+Camera - Convert img: 115725
+Camera - Show in pygame: 1005320
+Camera - Convert img: 318952
+Seg - Predict: 40922297
+Camera - Show in pygame: 1131911
+Lidar - Process & Draw: 8604229
+Lidar - Stats: 4948181
+Camera - Convert img: 127262
+Camera - Show in pygame: 1089508
+Camera - Convert img: 319352
+Seg - Predict: 39126142
+Camera - Show in pygame: 1119833
+Lidar - Process & Draw: 8700995
+Lidar - Stats: 4951927
+Camera - Convert img: 119601
+Camera - Show in pygame: 1019070
+Camera - Convert img: 323759
+Seg - Predict: 39245564
+Camera - Show in pygame: 1093493
+Lidar - Process & Draw: 9045325
+Lidar - Stats: 4907188
+Camera - Convert img: 115114
+Camera - Show in pygame: 1073953
+Camera - Convert img: 284170
+Seg - Predict: 39265302
+Camera - Show in pygame: 1115697
+Lidar - Process & Draw: 8486270
+Lidar - Stats: 4687848
+Camera - Convert img: 111739
+Camera - Show in pygame: 998810
+Camera - Convert img: 297440
+Seg - Predict: 39072261
+Camera - Show in pygame: 1086823
+Lidar - Process & Draw: 8401732
+Lidar - Stats: 4682560
+Camera - Convert img: 129225
+Camera - Show in pygame: 1085060
+Camera - Convert img: 287675
+Seg - Predict: 39289179
+Camera - Show in pygame: 1157500
+Lidar - Process & Draw: 8549636
+Lidar - Stats: 5050006
+Camera - Convert img: 118329
+Camera - Show in pygame: 1030137
+Camera - Convert img: 306834
+Seg - Predict: 31978536
+Camera - Show in pygame: 1061314
+Lidar - Process & Draw: 8049059
+Lidar - Stats: 4846106
+Camera - Convert img: 138809
+Camera - Show in pygame: 1038410
+Camera - Convert img: 302818
+Seg - Predict: 38271180
+Camera - Show in pygame: 1068816
+Lidar - Process & Draw: 8408973
+Lidar - Stats: 4980940
+Camera - Convert img: 128184
+Camera - Show in pygame: 1008305
+Camera - Convert img: 1288377
+Seg - Predict: 39499476
+Camera - Show in pygame: 1219834
+Lidar - Process & Draw: 8476165
+Lidar - Stats: 4737743
+Camera - Convert img: 149136
+Camera - Show in pygame: 1159673
+Camera - Convert img: 309828
+Seg - Predict: 38767660
+Camera - Show in pygame: 1109036
+Lidar - Process & Draw: 8220849
+Lidar - Stats: 4795099
+Camera - Convert img: 152170
+Camera - Show in pygame: 1007974
+Camera - Convert img: 318812
+Seg - Predict: 40405347
+Camera - Show in pygame: 1152903
+Lidar - Process & Draw: 8472499
+Lidar - Stats: 4713937
+Camera - Convert img: 148304
+Camera - Show in pygame: 1016256
+Camera - Convert img: 322778
+Seg - Predict: 41237244
+Camera - Show in pygame: 1153233
+Lidar - Process & Draw: 8304866
+Lidar - Stats: 4759726
+Camera - Convert img: 137228
+Camera - Show in pygame: 1024699
+Camera - Convert img: 322558
+Seg - Predict: 40259265
+Camera - Show in pygame: 1141295
+Lidar - Process & Draw: 8161549
+Lidar - Stats: 4759066
+Camera - Convert img: 136787
+Camera - Show in pygame: 1021855
+Camera - Convert img: 316548
+Seg - Predict: 40622595
+Camera - Show in pygame: 1229859
+Lidar - Process & Draw: 8447291
+Lidar - Stats: 4643430
+Camera - Convert img: 134844
+Camera - Show in pygame: 1007994
+Camera - Convert img: 1142687
+Seg - Predict: 40129409
+Camera - Show in pygame: 1146213
+Lidar - Process & Draw: 8446240
+Lidar - Stats: 4639484
+Camera - Convert img: 125450
+Camera - Show in pygame: 1025220
+Camera - Convert img: 309678
+Seg - Predict: 38926169
+Camera - Show in pygame: 1057970
+Lidar - Process & Draw: 8125815
+Lidar - Stats: 4665544
+Camera - Convert img: 114954
+Camera - Show in pygame: 989045
+Camera - Convert img: 715692
+Seg - Predict: 39188827
+Camera - Show in pygame: 1128566
+Lidar - Process & Draw: 8406810
+Lidar - Stats: 4659684
+Camera - Convert img: 101724
+Camera - Show in pygame: 1168156
+Camera - Convert img: 292773
+Seg - Predict: 39937299
+Camera - Show in pygame: 1086122
+Lidar - Process & Draw: 8371857
+Lidar - Stats: 4714838
+Camera - Convert img: 104268
+Camera - Show in pygame: 1040504
+Camera - Convert img: 336329
+Seg - Predict: 39119131
+Camera - Show in pygame: 1053653
+Lidar - Process & Draw: 8344035
+Lidar - Stats: 4626274
+Camera - Convert img: 121634
+Camera - Show in pygame: 1011459
+Camera - Convert img: 310450
+Seg - Predict: 39438544
+Camera - Show in pygame: 1105672
+Lidar - Process & Draw: 9934820
+Lidar - Stats: 4841909
+Camera - Convert img: 162255
+Camera - Show in pygame: 1008885
+Camera - Convert img: 317870
+Seg - Predict: 39890918
+Camera - Show in pygame: 1064770
+Lidar - Process & Draw: 8031503
+Lidar - Stats: 4648257
+Camera - Convert img: 141423
+Camera - Show in pygame: 983988
+Camera - Convert img: 312162
+Seg - Predict: 39176519
+Camera - Show in pygame: 1161115
+Lidar - Process & Draw: 8358076
+Lidar - Stats: 5052158
+Camera - Convert img: 151469
+Camera - Show in pygame: 1035926
+Camera - Convert img: 318652
+Seg - Predict: 38901002
+Camera - Show in pygame: 1077549
+Lidar - Process & Draw: 8545910
+Lidar - Stats: 4622248
+Camera - Convert img: 137508
+Camera - Show in pygame: 995325
+Camera - Convert img: 296959
+Seg - Predict: 38289187
+Camera - Show in pygame: 1050158
+Lidar - Process & Draw: 7935326
+Lidar - Stats: 4639815
+Camera - Convert img: 152320
+Camera - Show in pygame: 1152893
+Camera - Convert img: 308206
+Seg - Predict: 40488551
+Camera - Show in pygame: 1117269
+Lidar - Process & Draw: 8207949
+Lidar - Stats: 4616199
+Camera - Convert img: 150949
+Camera - Show in pygame: 994284
+Camera - Convert img: 306724
+Seg - Predict: 39615282
+Camera - Show in pygame: 1165512
+Lidar - Process & Draw: 8933415
+Lidar - Stats: 4979147
+Camera - Convert img: 157909
+Camera - Show in pygame: 1020173
+Camera - Convert img: 309358
+Seg - Predict: 41153797
+Camera - Show in pygame: 1073453
+Lidar - Process & Draw: 8188700
+Lidar - Stats: 4704322
+Camera - Convert img: 124969
+Camera - Show in pygame: 1019592
+Camera - Convert img: 673168
+Seg - Predict: 38578433
+Camera - Show in pygame: 1093363
+Lidar - Process & Draw: 7966154
+Lidar - Stats: 4660255
+Camera - Convert img: 113963
+Camera - Show in pygame: 1173995
+Camera - Convert img: 299793
+Seg - Predict: 39437422
+Camera - Show in pygame: 1073814
+Lidar - Process & Draw: 8483235
+Lidar - Stats: 4692463
+Camera - Convert img: 133752
+Camera - Show in pygame: 1008955
+Camera - Convert img: 291991
+Seg - Predict: 38544954
+Camera - Show in pygame: 1056817
+Lidar - Process & Draw: 8365157
+Lidar - Stats: 4685083
+Camera - Convert img: 109396
+Camera - Show in pygame: 1002014
+Camera - Convert img: 306723
+Seg - Predict: 39081986
+Camera - Show in pygame: 1065451
+Lidar - Process & Draw: 8331786
+Lidar - Stats: 4674858
+Camera - Convert img: 115084
+Camera - Show in pygame: 1007413
+Camera - Convert img: 315928
+Seg - Predict: 39058430
+Camera - Show in pygame: 1127504
+Lidar - Process & Draw: 8518328
+Lidar - Stats: 5066069
+Camera - Convert img: 114774
+Camera - Show in pygame: 1027343
+Camera - Convert img: 322828
+Seg - Predict: 39459356
+Camera - Show in pygame: 1101936
+Lidar - Process & Draw: 8391576
+Lidar - Stats: 4687086
+Camera - Convert img: 133782
+Camera - Show in pygame: 1182337
+Camera - Convert img: 301686
+Seg - Predict: 41369283
+Camera - Show in pygame: 1105281
+Lidar - Process & Draw: 8354340
+Lidar - Stats: 4688108
+Camera - Convert img: 132119
+Camera - Show in pygame: 1177070
+Camera - Convert img: 340936
+Seg - Predict: 41010100
+Camera - Show in pygame: 1087294
+Lidar - Process & Draw: 8005884
+Lidar - Stats: 4662489
+Camera - Convert img: 118659
+Camera - Show in pygame: 1007203
+Camera - Convert img: 295246
+Seg - Predict: 39731047
+Camera - Show in pygame: 1098480
+Lidar - Process & Draw: 8410846
+Lidar - Stats: 4679635
+Camera - Convert img: 129656
+Camera - Show in pygame: 993291
+Camera - Convert img: 293885
+Seg - Predict: 39305523
+Camera - Show in pygame: 1074285
+Lidar - Process & Draw: 8351647
+Lidar - Stats: 4672083
+Camera - Convert img: 127002
+Camera - Show in pygame: 1016347
+Camera - Convert img: 291962
+Seg - Predict: 39874804
+Camera - Show in pygame: 1136729
+Lidar - Process & Draw: 8557788
+Lidar - Stats: 4722159
+Camera - Convert img: 147984
+Camera - Show in pygame: 1002986
+Camera - Convert img: 293494
+Seg - Predict: 39476542
+Camera - Show in pygame: 1178973
+Lidar - Process & Draw: 8239927
+Lidar - Stats: 4704303
+Camera - Convert img: 133542
+Camera - Show in pygame: 994373
+Camera - Convert img: 312042
+Seg - Predict: 40180646
+Camera - Show in pygame: 1170280
+Lidar - Process & Draw: 8189712
+Lidar - Stats: 4696040
+Camera - Convert img: 130497
+Camera - Show in pygame: 997058
+Camera - Convert img: 295657
+Seg - Predict: 39947724
+Camera - Show in pygame: 1095326
+Lidar - Process & Draw: 8597348
+Lidar - Stats: 4678483
+Camera - Convert img: 131659
+Camera - Show in pygame: 998359
+Camera - Convert img: 302548
+Seg - Predict: 39504324
+Camera - Show in pygame: 1133474
+Lidar - Process & Draw: 8501643
+Lidar - Stats: 4692524
+Camera - Convert img: 126220
+Camera - Show in pygame: 1006712
+Camera - Convert img: 710724
+Seg - Predict: 38359743
+Camera - Show in pygame: 1203440
+Lidar - Process & Draw: 8114218
+Lidar - Stats: 4679704
+Camera - Convert img: 144368
+Camera - Show in pygame: 1005491
+Camera - Convert img: 316909
+Seg - Predict: 39391844
+Camera - Show in pygame: 1067444
+Lidar - Process & Draw: 8127167
+Lidar - Stats: 4724683
+Camera - Convert img: 149596
+Camera - Show in pygame: 969025
+Camera - Convert img: 307656
+Seg - Predict: 39134415
+Camera - Show in pygame: 1167795
+Lidar - Process & Draw: 8360369
+Lidar - Stats: 4745735
+Camera - Convert img: 127913
+Camera - Show in pygame: 976566
+Camera - Convert img: 318551
+Seg - Predict: 39818139
+Camera - Show in pygame: 1101315
+Lidar - Process & Draw: 8108789
+Lidar - Stats: 4734559
+Camera - Convert img: 146761
+Camera - Show in pygame: 990548
+Camera - Convert img: 326854
+Seg - Predict: 38981624
+Camera - Show in pygame: 1198902
+Lidar - Process & Draw: 9004904
+Lidar - Stats: 5078077
+Camera - Convert img: 652807
+Camera - Show in pygame: 1017799
+Camera - Convert img: 697965
+Seg - Predict: 41509716
+Camera - Show in pygame: 1052101
+Lidar - Process & Draw: 8506791
+Lidar - Stats: 4679243
+Camera - Convert img: 686297
+Camera - Show in pygame: 976477
+Camera - Convert img: 817045
+Seg - Predict: 39052451
+Camera - Show in pygame: 1067033
+Lidar - Process & Draw: 8539720
+Lidar - Stats: 4671723
+Camera - Convert img: 691996
+Camera - Show in pygame: 997779
+Camera - Convert img: 705687
+Seg - Predict: 38866269
+Camera - Show in pygame: 1044650
+Lidar - Process & Draw: 8263062
+Lidar - Stats: 4683291
+Camera - Convert img: 135274
+Camera - Show in pygame: 1142237
+Camera - Convert img: 795824
+Seg - Predict: 38573206
+Camera - Show in pygame: 1128246
+Lidar - Process & Draw: 8437005
+Lidar - Stats: 4814328
+Camera - Convert img: 140573
+Camera - Show in pygame: 817926
+Camera - Convert img: 333424
+Seg - Predict: 40514611
+Camera - Show in pygame: 1105492
+Lidar - Process & Draw: 8633192
+Lidar - Stats: 4850332
+Camera - Convert img: 155976
+Camera - Show in pygame: 1042597
+Camera - Convert img: 340585
+Seg - Predict: 38598084
+Camera - Show in pygame: 1195597
+Lidar - Process & Draw: 8629757
+Lidar - Stats: 4856042
+Camera - Convert img: 154634
+Camera - Show in pygame: 1018971
+Camera - Convert img: 345773
+Seg - Predict: 39067414
+Camera - Show in pygame: 1141996
+Lidar - Process & Draw: 8450026
+Lidar - Stats: 4780056
+Camera - Convert img: 139862
+Camera - Show in pygame: 1026102
+Camera - Convert img: 323369
+Seg - Predict: 38719147
+Camera - Show in pygame: 1167364
+Lidar - Process & Draw: 8392668
+Lidar - Stats: 4799437
+Camera - Convert img: 148435
+Camera - Show in pygame: 1018590
+Camera - Convert img: 331021
+Seg - Predict: 38890706
+Camera - Show in pygame: 1204210
+Lidar - Process & Draw: 8570847
+Lidar - Stats: 5483340
+Camera - Convert img: 181665
+Camera - Show in pygame: 1200134
+Camera - Convert img: 331881
+Seg - Predict: 39564475
+Camera - Show in pygame: 1275439
+Lidar - Process & Draw: 8874506
+Lidar - Stats: 4795820
+Camera - Convert img: 134724
+Camera - Show in pygame: 1004288
+Camera - Convert img: 323048
+Seg - Predict: 39295388
+Camera - Show in pygame: 1080534
+Lidar - Process & Draw: 11194665
+Lidar - Stats: 5292271
+Camera - Convert img: 152030
+Camera - Show in pygame: 983697
+Camera - Convert img: 680228
+Seg - Predict: 38407976
+Camera - Show in pygame: 1078471
+Lidar - Process & Draw: 8348412
+Lidar - Stats: 4778474
+Camera - Convert img: 151158
+Camera - Show in pygame: 1182558
+Camera - Convert img: 329469
+Seg - Predict: 39496042
+Camera - Show in pygame: 1123769
+Lidar - Process & Draw: 8871683
+Lidar - Stats: 5170737
+Camera - Convert img: 612917
+Camera - Show in pygame: 867472
+Camera - Convert img: 340104
+Seg - Predict: 39111970
+Camera - Show in pygame: 1156278
+Lidar - Process & Draw: 9517729
+Lidar - Stats: 4963714
+Camera - Convert img: 162476
+Camera - Show in pygame: 1026873
+Camera - Convert img: 342878
+Seg - Predict: 41672241
+Camera - Show in pygame: 1254827
+Lidar - Process & Draw: 8286828
+Lidar - Stats: 4907830
+Camera - Convert img: 182676
+Camera - Show in pygame: 1070118
+Camera - Convert img: 360075
+Seg - Predict: 39944219
+Camera - Show in pygame: 1129537
+Lidar - Process & Draw: 8677880
+Lidar - Stats: 4980700
+Camera - Convert img: 708241
+Camera - Show in pygame: 1025250
+Camera - Convert img: 1220174
+Seg - Predict: 38769233
+Camera - Show in pygame: 1086172
+Lidar - Process & Draw: 8650839
+Lidar - Stats: 5021852
+Camera - Convert img: 164999
+Camera - Show in pygame: 1025991
+Camera - Convert img: 322067
+Seg - Predict: 38745847
+Camera - Show in pygame: 1062196
+Lidar - Process & Draw: 8425338
+Lidar - Stats: 4672023
+Camera - Convert img: 137968
+Camera - Show in pygame: 996136
+Camera - Convert img: 304079
+Seg - Predict: 40441651
+Camera - Show in pygame: 1068325
+Lidar - Process & Draw: 8263343
+Lidar - Stats: 4849882
+Camera - Convert img: 139430
+Camera - Show in pygame: 1034324
+Camera - Convert img: 340264
+Seg - Predict: 39021685
+Camera - Show in pygame: 1134274
+Lidar - Process & Draw: 8633402
+Lidar - Stats: 5113161
+Camera - Convert img: 180073
+Camera - Show in pygame: 1000021
+Camera - Convert img: 333654
+Seg - Predict: 39237871
+Camera - Show in pygame: 1100063
+Lidar - Process & Draw: 8412708
+Lidar - Stats: 5074602
+Camera - Convert img: 626707
+Camera - Show in pygame: 882133
+Camera - Convert img: 3173146
+Seg - Predict: 40685140
+Camera - Show in pygame: 1454068
+Lidar - Process & Draw: 9111335
+Lidar - Stats: 4775380
+Camera - Convert img: 135164
+Camera - Show in pygame: 1196639
+Camera - Convert img: 322738
+Seg - Predict: 41460742
+Camera - Show in pygame: 1163829
+Lidar - Process & Draw: 8161458
+Lidar - Stats: 4702229
+Camera - Convert img: 126030
+Camera - Show in pygame: 1012030
+Camera - Convert img: 807030
+Seg - Predict: 39106272
+Camera - Show in pygame: 1196299
+Lidar - Process & Draw: 8466510
+Lidar - Stats: 4665173
+Camera - Convert img: 166942
+Camera - Show in pygame: 1317151
+Camera - Convert img: 328616
+Seg - Predict: 38780590
+Camera - Show in pygame: 1082737
+Lidar - Process & Draw: 8142781
+Lidar - Stats: 4613124
+Camera - Convert img: 144148
+Camera - Show in pygame: 1176960
+Camera - Convert img: 319373
+Seg - Predict: 38576791
+Camera - Show in pygame: 1093453
+Lidar - Process & Draw: 8603357
+Lidar - Stats: 4943714
+Camera - Convert img: 150798
+Camera - Show in pygame: 995896
+Camera - Convert img: 332042
+Seg - Predict: 38929104
+Camera - Show in pygame: 1172422
+Lidar - Process & Draw: 8281600
+Lidar - Stats: 4714188
+Camera - Convert img: 139241
+Camera - Show in pygame: 1171891
+Camera - Convert img: 344280
+Seg - Predict: 38563852
+Camera - Show in pygame: 1117048
+Lidar - Process & Draw: 8259878
+Lidar - Stats: 4649580
+Camera - Convert img: 157338
+Camera - Show in pygame: 1033242
+Camera - Convert img: 348897
+Seg - Predict: 38961814
+Camera - Show in pygame: 1710226
+Lidar - Process & Draw: 9555406
+Lidar - Stats: 4735719
+Camera - Convert img: 152260
+Camera - Show in pygame: 1213875
+Camera - Convert img: 747871
+Seg - Predict: 38815734
+Camera - Show in pygame: 1085772
+Lidar - Process & Draw: 8256753
+Lidar - Stats: 4573084
+Camera - Convert img: 161013
+Camera - Show in pygame: 1025631
+Camera - Convert img: 363409
+Seg - Predict: 40432468
+Camera - Show in pygame: 1100534
+Lidar - Process & Draw: 8064142
+Lidar - Stats: 4543479
+Camera - Convert img: 144809
+Camera - Show in pygame: 971970
+Camera - Convert img: 307105
+Seg - Predict: 39382820
+Camera - Show in pygame: 1068666
+Lidar - Process & Draw: 8132184
+Lidar - Stats: 4574356
+Camera - Convert img: 125920
+Camera - Show in pygame: 845118
+Camera - Convert img: 319573
+Seg - Predict: 40284243
+Camera - Show in pygame: 1080364
+Lidar - Process & Draw: 8301260
+Lidar - Stats: 4527394
+Camera - Convert img: 125270
+Camera - Show in pygame: 1032061
+Camera - Convert img: 319082
+Seg - Predict: 39598948
+Camera - Show in pygame: 1186604
+Lidar - Process & Draw: 8627684
+Lidar - Stats: 4821079
+Camera - Convert img: 151058
+Camera - Show in pygame: 1045000
+Camera - Convert img: 370150
+Seg - Predict: 40001967
+Camera - Show in pygame: 1125181
+Lidar - Process & Draw: 8385928
+Lidar - Stats: 4852507
+Camera - Convert img: 160262
+Camera - Show in pygame: 1039692
+Camera - Convert img: 829093
+Seg - Predict: 39515551
+Camera - Show in pygame: 1083698
+Lidar - Process & Draw: 8094718
+Lidar - Stats: 4603711
+Camera - Convert img: 139471
+Camera - Show in pygame: 1031970
+Camera - Convert img: 339664
+Seg - Predict: 39064640
+Camera - Show in pygame: 1149127
+Lidar - Process & Draw: 8998995
+Lidar - Stats: 4829913
+Camera - Convert img: 153442
+Camera - Show in pygame: 1037428
+Camera - Convert img: 327315
+Seg - Predict: 39096036
+Camera - Show in pygame: 1136988
+Lidar - Process & Draw: 8457987
+Lidar - Stats: 6654121
+Camera - Convert img: 729713
+Camera - Show in pygame: 1195317
+Camera - Convert img: 336028
+Seg - Predict: 39516352
+Camera - Show in pygame: 1133564
+Lidar - Process & Draw: 8591790
+Lidar - Stats: 4651563
+Camera - Convert img: 138019
+Camera - Show in pygame: 1035825
+Camera - Convert img: 892549
+Seg - Predict: 39634891
+Camera - Show in pygame: 1099001
+Lidar - Process & Draw: 8277585
+Lidar - Stats: 4646074
+Camera - Convert img: 127453
+Camera - Show in pygame: 1150790
+Camera - Convert img: 358872
+Seg - Predict: 38688591
+Camera - Show in pygame: 1086543
+Lidar - Process & Draw: 8132185
+Lidar - Stats: 4655198
+Camera - Convert img: 166952
+Camera - Show in pygame: 977428
+Camera - Convert img: 346014
+Seg - Predict: 39097789
+Camera - Show in pygame: 1156648
+Lidar - Process & Draw: 8435804
+Lidar - Stats: 4603600
+Camera - Convert img: 133602
+Camera - Show in pygame: 982175
+Camera - Convert img: 344160
+Seg - Predict: 39706700
+Camera - Show in pygame: 1051690
+Lidar - Process & Draw: 8839674
+Lidar - Stats: 4609199
+Camera - Convert img: 156206
+Camera - Show in pygame: 961714
+Camera - Convert img: 382609
+Seg - Predict: 39072482
+Camera - Show in pygame: 1107364
+Lidar - Process & Draw: 8678461
+Lidar - Stats: 4836522
+Camera - Convert img: 135515
+Camera - Show in pygame: 1032421
+Camera - Convert img: 313884
+Seg - Predict: 39661913
+Camera - Show in pygame: 1138091
+Lidar - Process & Draw: 7916578
+Lidar - Stats: 4771263
+Camera - Convert img: 124198
+Camera - Show in pygame: 1014223
+Camera - Convert img: 324490
+Seg - Predict: 40031492
+Camera - Show in pygame: 1318914
+Lidar - Process & Draw: 8257083
+Lidar - Stats: 4621567
+Camera - Convert img: 144818
+Camera - Show in pygame: 1005020
+Camera - Convert img: 760339
+Seg - Predict: 39418334
+Camera - Show in pygame: 1146563
+Lidar - Process & Draw: 8222831
+Lidar - Stats: 4585553
+Camera - Convert img: 129446
+Camera - Show in pygame: 1007583
+Camera - Convert img: 310659
+Seg - Predict: 39822655
+Camera - Show in pygame: 1083178
+Lidar - Process & Draw: 8477146
+Lidar - Stats: 4703170
+Camera - Convert img: 127964
+Camera - Show in pygame: 1015966
+Camera - Convert img: 309108
+Seg - Predict: 39470793
+Camera - Show in pygame: 1206655
+Lidar - Process & Draw: 8478137
+Lidar - Stats: 4581477
+Camera - Convert img: 124168
+Camera - Show in pygame: 1000252
+Camera - Convert img: 312692
+Seg - Predict: 39479547
+Camera - Show in pygame: 1285614
+Lidar - Process & Draw: 8408202
+Lidar - Stats: 4613926
+Camera - Convert img: 129006
+Camera - Show in pygame: 1013212
+Camera - Convert img: 321226
+Seg - Predict: 39436962
+Camera - Show in pygame: 1162007
+Lidar - Process & Draw: 8088599
+Lidar - Stats: 4612974
+Camera - Convert img: 132360
+Camera - Show in pygame: 1006001
+Camera - Convert img: 319784
+Seg - Predict: 39986364
+Camera - Show in pygame: 1212263
+Lidar - Process & Draw: 8405127
+Lidar - Stats: 4606264
+Camera - Convert img: 140943
+Camera - Show in pygame: 1009185
+Camera - Convert img: 807711
+Seg - Predict: 39148206
+Camera - Show in pygame: 1069287
+Lidar - Process & Draw: 8384626
+Lidar - Stats: 4591612
+Camera - Convert img: 144739
+Camera - Show in pygame: 1003467
+Camera - Convert img: 332253
+Seg - Predict: 39749165
+Camera - Show in pygame: 1067765
+Lidar - Process & Draw: 8337856
+Lidar - Stats: 4688779
+Camera - Convert img: 143377
+Camera - Show in pygame: 997849
+Camera - Convert img: 312983
+Seg - Predict: 39668573
+Camera - Show in pygame: 1188386
+Lidar - Process & Draw: 8592771
+Lidar - Stats: 4647836
+Camera - Convert img: 135705
+Camera - Show in pygame: 975535
+Camera - Convert img: 312483
+Seg - Predict: 39590786
+Camera - Show in pygame: 1205553
+Lidar - Process & Draw: 8036320
+Lidar - Stats: 4662748
+Camera - Convert img: 142134
+Camera - Show in pygame: 1011560
+Camera - Convert img: 1309449
+Seg - Predict: 38936746
+Camera - Show in pygame: 1510373
+Lidar - Process & Draw: 14566152
+Lidar - Stats: 4993729
+Camera - Convert img: 161575
+Camera - Show in pygame: 1143809
+Camera - Convert img: 349548
+Seg - Predict: 39639409
+Camera - Show in pygame: 1220195
+Lidar - Process & Draw: 8378997
+Lidar - Stats: 4935842
+Camera - Convert img: 143607
+Camera - Show in pygame: 1069707
+Camera - Convert img: 320505
+Seg - Predict: 39832811
+Camera - Show in pygame: 1324953
+Lidar - Process & Draw: 8815868
+Lidar - Stats: 5068353
+Camera - Convert img: 156657
+Camera - Show in pygame: 1041705
+Camera - Convert img: 342728
+Seg - Predict: 40784610
+Camera - Show in pygame: 1181286
+Lidar - Process & Draw: 8372137
+Lidar - Stats: 4721759
+Camera - Convert img: 130567
+Camera - Show in pygame: 1013443
+Camera - Convert img: 340575
+Seg - Predict: 40298304
+Camera - Show in pygame: 1137820
+Lidar - Process & Draw: 8342172
+Lidar - Stats: 4704162
+Camera - Convert img: 141514
+Camera - Show in pygame: 998079
+Camera - Convert img: 338853
+Seg - Predict: 40267919
+Camera - Show in pygame: 1114315
+Lidar - Process & Draw: 8481092
+Lidar - Stats: 4696952
+Camera - Convert img: 132981
+Camera - Show in pygame: 1007773
+Camera - Convert img: 308236
+Seg - Predict: 39294617
+Camera - Show in pygame: 1105281
+Lidar - Process & Draw: 8699943
+Lidar - Stats: 4730362
+Camera - Convert img: 136176
+Camera - Show in pygame: 1016767
+Camera - Convert img: 325652
+Seg - Predict: 39946443
+Camera - Show in pygame: 1078410
+Lidar - Process & Draw: 8323153
+Lidar - Stats: 4726906
+Camera - Convert img: 132370
+Camera - Show in pygame: 1168957
+Camera - Convert img: 310399
+Seg - Predict: 39650174
+Camera - Show in pygame: 1081996
+Lidar - Process & Draw: 8220729
+Lidar - Stats: 4687897
+Camera - Convert img: 151700
+Camera - Show in pygame: 1010337
+Camera - Convert img: 1090068
+Seg - Predict: 39517064
+Camera - Show in pygame: 1478154
+Lidar - Process & Draw: 8495784
+Lidar - Stats: 4725164
+Camera - Convert img: 149095
+Camera - Show in pygame: 1424514
+Camera - Convert img: 389859
+Seg - Predict: 39797908
+Camera - Show in pygame: 1130158
+Lidar - Process & Draw: 8398487
+Lidar - Stats: 4725605
+Camera - Convert img: 139010
+Camera - Show in pygame: 1041905
+Camera - Convert img: 829634
+Seg - Predict: 39389941
+Camera - Show in pygame: 1201066
+Lidar - Process & Draw: 8257755
+Lidar - Stats: 4976123
+Camera - Convert img: 151660
+Camera - Show in pygame: 1229068
+Camera - Convert img: 339674
+Seg - Predict: 39009396
+Camera - Show in pygame: 1050808
+Lidar - Process & Draw: 7980545
+Lidar - Stats: 4733387
+Camera - Convert img: 120432
+Camera - Show in pygame: 1137990
+Camera - Convert img: 879219
+Seg - Predict: 39632277
+Camera - Show in pygame: 1184471
+Lidar - Process & Draw: 8171384
+Lidar - Stats: 4725333
+Camera - Convert img: 127343
+Camera - Show in pygame: 1142577
+Camera - Convert img: 1388269
+Seg - Predict: 39420919
+Camera - Show in pygame: 1340436
+Lidar - Process & Draw: 8578920
+Lidar - Stats: 4734228
+Camera - Convert img: 137748
+Camera - Show in pygame: 1214235
+Camera - Convert img: 1272464
+Seg - Predict: 40175989
+Camera - Show in pygame: 1206865
+Lidar - Process & Draw: 8356143
+Lidar - Stats: 4882422
+Camera - Convert img: 132080
+Camera - Show in pygame: 1127725
+Camera - Convert img: 333284
+Seg - Predict: 39672228
+Camera - Show in pygame: 1189928
+Lidar - Process & Draw: 8474031
+Lidar - Stats: 4729070
+Camera - Convert img: 158730
+Camera - Show in pygame: 977808
+Camera - Convert img: 336699
+Seg - Predict: 39187496
+Camera - Show in pygame: 1104089
+Lidar - Process & Draw: 8205455
+Lidar - Stats: 4731734
+Camera - Convert img: 160102
+Camera - Show in pygame: 993773
+Camera - Convert img: 327836
+Seg - Predict: 39922466
+Camera - Show in pygame: 1067204
+Lidar - Process & Draw: 8170032
+Lidar - Stats: 4727497
+Camera - Convert img: 158270
+Camera - Show in pygame: 965820
+Camera - Convert img: 331120
+Seg - Predict: 39453927
+Camera - Show in pygame: 1086032
+Lidar - Process & Draw: 7964031
+Lidar - Stats: 4769861
+Camera - Convert img: 144138
+Camera - Show in pygame: 973972
+Camera - Convert img: 357821
+Seg - Predict: 39469692
+Camera - Show in pygame: 1091140
+Lidar - Process & Draw: 8714335
+Lidar - Stats: 4723281
+Camera - Convert img: 170908
+Camera - Show in pygame: 1158461
+Camera - Convert img: 579446
+Seg - Predict: 39617125
+Camera - Show in pygame: 1161455
+Lidar - Process & Draw: 8508704
+Lidar - Stats: 4714728
+Camera - Convert img: 168725
+Camera - Show in pygame: 983226
+Camera - Convert img: 312582
+Seg - Predict: 41034569
+Camera - Show in pygame: 1221987
+Lidar - Process & Draw: 8450626
+Lidar - Stats: 4715910
+Camera - Convert img: 165560
+Camera - Show in pygame: 971799
+Camera - Convert img: 309017
+Seg - Predict: 39668572
+Camera - Show in pygame: 1141235
+Lidar - Process & Draw: 8445428
+Lidar - Stats: 4698463
+Camera - Convert img: 136477
+Camera - Show in pygame: 979440
+Camera - Convert img: 806208
+Seg - Predict: 38803986
+Camera - Show in pygame: 1157400
+Lidar - Process & Draw: 8119315
+Lidar - Stats: 4730251
+Camera - Convert img: 127482
+Camera - Show in pygame: 1226455
+Camera - Convert img: 321836
+Seg - Predict: 38937398
+Camera - Show in pygame: 1132643
+Lidar - Process & Draw: 8149691
+Lidar - Stats: 4695027
+Camera - Convert img: 133792
+Camera - Show in pygame: 1156599
+Camera - Convert img: 347075
+Seg - Predict: 40508723
+Camera - Show in pygame: 1176228
+Lidar - Process & Draw: 8724049
+Lidar - Stats: 4945076
+Camera - Convert img: 130287
+Camera - Show in pygame: 1026822
+Camera - Convert img: 311972
+Seg - Predict: 39433527
+Camera - Show in pygame: 1082146
+Lidar - Process & Draw: 8383164
+Lidar - Stats: 4612123
+Camera - Convert img: 125649
+Camera - Show in pygame: 1004078
+Camera - Convert img: 304931
+Seg - Predict: 39419626
+Camera - Show in pygame: 1073573
+Lidar - Process & Draw: 8629196
+Lidar - Stats: 4874240
+Camera - Convert img: 126371
+Camera - Show in pygame: 1022135
+Camera - Convert img: 1208768
+Seg - Predict: 38753229
+Camera - Show in pygame: 1063878
+Lidar - Process & Draw: 8213528
+Lidar - Stats: 4565993
+Camera - Convert img: 143227
+Camera - Show in pygame: 1144099
+Camera - Convert img: 329718
+Seg - Predict: 39735483
+Camera - Show in pygame: 1057699
+Lidar - Process & Draw: 8525550
+Lidar - Stats: 4596579
+Camera - Convert img: 150278
+Camera - Show in pygame: 1162307
+Camera - Convert img: 309658
+Seg - Predict: 40800133
+Camera - Show in pygame: 1077629
+Lidar - Process & Draw: 8340970
+Lidar - Stats: 4614677
+Camera - Convert img: 139080
+Camera - Show in pygame: 1157781
+Camera - Convert img: 368226
+Seg - Predict: 39665558
+Camera - Show in pygame: 1068626
+Lidar - Process & Draw: 8171394
+Lidar - Stats: 4554286
+Camera - Convert img: 170338
+Camera - Show in pygame: 1148346
+Camera - Convert img: 340325
+Seg - Predict: 38391122
+Camera - Show in pygame: 1068356
+Lidar - Process & Draw: 8756318
+Lidar - Stats: 4600565
+Camera - Convert img: 595981
+Camera - Show in pygame: 819459
+Camera - Convert img: 322347
+Seg - Predict: 40081066
+Camera - Show in pygame: 1092031
+Lidar - Process & Draw: 8417396
+Lidar - Stats: 4853638
+Camera - Convert img: 142666
+Camera - Show in pygame: 995204
+Camera - Convert img: 344240
+Seg - Predict: 39476421
+Camera - Show in pygame: 1092722
+Lidar - Process & Draw: 8268320
+Lidar - Stats: 4882942
+Camera - Convert img: 114683
+Camera - Show in pygame: 1030528
+Camera - Convert img: 347456
+Seg - Predict: 39039532
+Camera - Show in pygame: 1074915
+Lidar - Process & Draw: 8075469
+Lidar - Stats: 4593474
+Camera - Convert img: 143286
+Camera - Show in pygame: 1147926
+Camera - Convert img: 300505
+Seg - Predict: 39072631
+Camera - Show in pygame: 1112392
+Lidar - Process & Draw: 8544257
+Lidar - Stats: 4561276
+Camera - Convert img: 115384
+Camera - Show in pygame: 971248
+Camera - Convert img: 313984
+Seg - Predict: 40429833
+Camera - Show in pygame: 1121946
+Lidar - Process & Draw: 8644549
+Lidar - Stats: 4636008
+Camera - Convert img: 120972
+Camera - Show in pygame: 991158
+Camera - Convert img: 323589
+Seg - Predict: 39179522
+Camera - Show in pygame: 1062496
+Lidar - Process & Draw: 7678929
+Lidar - Stats: 4574216
+Camera - Convert img: 123386
+Camera - Show in pygame: 988344
+Camera - Convert img: 323089
+Seg - Predict: 39548411
+Camera - Show in pygame: 1112052
+Lidar - Process & Draw: 8484107
+Lidar - Stats: 4618392
+Camera - Convert img: 118679
+Camera - Show in pygame: 1013612
+Camera - Convert img: 331081
+Seg - Predict: 39070328
+Camera - Show in pygame: 1144140
+Lidar - Process & Draw: 8795608
+Lidar - Stats: 4848840
+Camera - Convert img: 154002
+Camera - Show in pygame: 1036156
+Camera - Convert img: 369659
+Seg - Predict: 40075858
+Camera - Show in pygame: 1135878
+Lidar - Process & Draw: 8485578
+Lidar - Stats: 5060471
+Camera - Convert img: 141765
+Camera - Show in pygame: 1041534
+Camera - Convert img: 347215
+Seg - Predict: 39954865
+Camera - Show in pygame: 1105582
+Lidar - Process & Draw: 8173718
+Lidar - Stats: 4900519
+Camera - Convert img: 563742
+Camera - Show in pygame: 854052
+Camera - Convert img: 332152
+Seg - Predict: 39979873
+Camera - Show in pygame: 1095596
+Lidar - Process & Draw: 9144595
+Lidar - Stats: 4902973
+Camera - Convert img: 131919
+Camera - Show in pygame: 1161246
+Camera - Convert img: 789143
+Seg - Predict: 38795182
+Camera - Show in pygame: 1058421
+Lidar - Process & Draw: 8667805
+Lidar - Stats: 5562660
+Camera - Convert img: 700539
+Camera - Show in pygame: 964268
+Camera - Convert img: 324020
+Seg - Predict: 41037652
+Camera - Show in pygame: 1033733
+Lidar - Process & Draw: 8006495
+Lidar - Stats: 4664832
+Camera - Convert img: 119771
+Camera - Show in pygame: 1149578
+Camera - Convert img: 334947
+Seg - Predict: 39375700
+Camera - Show in pygame: 1124220
+Lidar - Process & Draw: 8642637
+Lidar - Stats: 5006219
+Camera - Convert img: 120232
+Camera - Show in pygame: 1047093
+Camera - Convert img: 344351
+Seg - Predict: 38973843
+Camera - Show in pygame: 1068165
+Lidar - Process & Draw: 8107116
+Lidar - Stats: 4692044
+Camera - Convert img: 108805
+Camera - Show in pygame: 997889
+Camera - Convert img: 312733
+Seg - Predict: 39301658
+Camera - Show in pygame: 1070418
+Lidar - Process & Draw: 8150412
+Lidar - Stats: 4699054
+Camera - Convert img: 123176
+Camera - Show in pygame: 1017499
+Camera - Convert img: 335036
+Seg - Predict: 40452688
+Camera - Show in pygame: 1106864
+Lidar - Process & Draw: 8651921
+Lidar - Stats: 4987040
+Camera - Convert img: 138670
+Camera - Show in pygame: 1010648
+Camera - Convert img: 318431
+Seg - Predict: 40741534
+Camera - Show in pygame: 1070348
+Lidar - Process & Draw: 8804452
+Lidar - Stats: 5572535
+Camera - Convert img: 1102027
+Camera - Show in pygame: 1119512
+Camera - Convert img: 349478
+Seg - Predict: 39471775
+Camera - Show in pygame: 1074164
+Lidar - Process & Draw: 8344184
+Lidar - Stats: 4675208
+Camera - Convert img: 153041
+Camera - Show in pygame: 1156158
+Camera - Convert img: 316538
+Seg - Predict: 39548721
+Camera - Show in pygame: 1051690
+Lidar - Process & Draw: 8116020
+Lidar - Stats: 4852566
+Camera - Convert img: 607048
+Camera - Show in pygame: 859289
+Camera - Convert img: 979190
+Seg - Predict: 38795412
+Camera - Show in pygame: 1119643
+Lidar - Process & Draw: 8145675
+Lidar - Stats: 4664022
+Camera - Convert img: 127673
+Camera - Show in pygame: 1176488
+Camera - Convert img: 304551
+Seg - Predict: 40249661
+Camera - Show in pygame: 1111010
+Lidar - Process & Draw: 8458648
+Lidar - Stats: 4659805
+Camera - Convert img: 125129
+Camera - Show in pygame: 1161476
+Camera - Convert img: 856525
+Seg - Predict: 39080064
+Camera - Show in pygame: 1097759
+Lidar - Process & Draw: 8261340
+Lidar - Stats: 4687166
+Camera - Convert img: 141975
+Camera - Show in pygame: 1173354
+Camera - Convert img: 810835
+Seg - Predict: 38924919
+Camera - Show in pygame: 1079341
+Lidar - Process & Draw: 8184043
+Lidar - Stats: 4601797
+Camera - Convert img: 124969
+Camera - Show in pygame: 1146123
+Camera - Convert img: 833170
+Seg - Predict: 38727170
+Camera - Show in pygame: 1107224
+Lidar - Process & Draw: 8051743
+Lidar - Stats: 4572824
+Camera - Convert img: 659728
+Camera - Show in pygame: 1794072
+Camera - Convert img: 413365
+Seg - Predict: 41122180
+Camera - Show in pygame: 1375049
+Lidar - Process & Draw: 8346448
+Lidar - Stats: 4897595
+Camera - Convert img: 149737
+Camera - Show in pygame: 1333316
+Camera - Convert img: 1199664
+Seg - Predict: 38458443
+Camera - Show in pygame: 1075395
+Lidar - Process & Draw: 8547853
+Lidar - Stats: 4885386
+Camera - Convert img: 144539
+Camera - Show in pygame: 1188667
+Camera - Convert img: 329018
+Seg - Predict: 39405355
+Camera - Show in pygame: 1172793
+Lidar - Process & Draw: 8349463
+Lidar - Stats: 4599985
+Camera - Convert img: 138790
+Camera - Show in pygame: 1044128
+Camera - Convert img: 545815
+Seg - Predict: 39548270
+Camera - Show in pygame: 1059462
+Lidar - Process & Draw: 8603397
+Lidar - Stats: 4584461
+Camera - Convert img: 144869
+Camera - Show in pygame: 971980
+Camera - Convert img: 327445
+Seg - Predict: 40499760
+Camera - Show in pygame: 1075195
+Lidar - Process & Draw: 8288251
+Lidar - Stats: 4583329
+Camera - Convert img: 121764
+Camera - Show in pygame: 1022056
+Camera - Convert img: 317259
+Seg - Predict: 40508362
+Camera - Show in pygame: 1067023
+Lidar - Process & Draw: 7663676
+Lidar - Stats: 4573144
+Camera - Convert img: 119150
+Camera - Show in pygame: 1034053
+Camera - Convert img: 342658
+Seg - Predict: 39953282
+Camera - Show in pygame: 1083898
+Lidar - Process & Draw: 8075439
+Lidar - Stats: 4593104
+Camera - Convert img: 119140
+Camera - Show in pygame: 1006972
+Camera - Convert img: 307575
+Seg - Predict: 40363975
+Camera - Show in pygame: 1064649
+Lidar - Process & Draw: 7937239
+Lidar - Stats: 4581457
+Camera - Convert img: 120692
+Camera - Show in pygame: 995916
+Camera - Convert img: 320584
+Seg - Predict: 39696785
+Camera - Show in pygame: 1039151
+Lidar - Process & Draw: 8235190
+Lidar - Stats: 4538061
+Camera - Convert img: 113131
+Camera - Show in pygame: 1044609
+Camera - Convert img: 309948
+Seg - Predict: 39011169
+Camera - Show in pygame: 1070899
+Lidar - Process & Draw: 8313358
+Lidar - Stats: 4603299
+Camera - Convert img: 121494
+Camera - Show in pygame: 1048645
+Camera - Convert img: 301927
+Seg - Predict: 39020213
+Camera - Show in pygame: 1053082
+Lidar - Process & Draw: 8624740
+Lidar - Stats: 4605423
+Camera - Convert img: 119862
+Camera - Show in pygame: 1004809
+Camera - Convert img: 322157
+Seg - Predict: 40459929
+Camera - Show in pygame: 1067164
+Lidar - Process & Draw: 8108709
+Lidar - Stats: 4575547
+Camera - Convert img: 117338
+Camera - Show in pygame: 1177441
+Camera - Convert img: 1042796
+Seg - Predict: 39623775
+Camera - Show in pygame: 1091871
+Lidar - Process & Draw: 7991512
+Lidar - Stats: 4581827
+Camera - Convert img: 164488
+Camera - Show in pygame: 992090
+Camera - Convert img: 339733
+Seg - Predict: 41360310
+Camera - Show in pygame: 1109949
+Lidar - Process & Draw: 8852734
+Lidar - Stats: 4915191
+Camera - Convert img: 133862
+Camera - Show in pygame: 1022686
+Camera - Convert img: 304621
+Seg - Predict: 39757257
+Camera - Show in pygame: 1166794
+Lidar - Process & Draw: 9359430
+Lidar - Stats: 5168003
+Camera - Convert img: 152400
+Camera - Show in pygame: 1171161
+Camera - Convert img: 1813922
+Seg - Predict: 39588692
+Camera - Show in pygame: 1087884
+Lidar - Process & Draw: 8500822
+Lidar - Stats: 4967180
+Camera - Convert img: 126711
+Camera - Show in pygame: 1045721
+Camera - Convert img: 326314
+Seg - Predict: 39884971
+Camera - Show in pygame: 1086963
+Lidar - Process & Draw: 7773312
+Lidar - Stats: 4752084
+Camera - Convert img: 155135
+Camera - Show in pygame: 999712
+Camera - Convert img: 359363
+Seg - Predict: 39193334
+Camera - Show in pygame: 1165282
+Lidar - Process & Draw: 8459149
+Lidar - Stats: 5043065
+Camera - Convert img: 174003
+Camera - Show in pygame: 1050208
+Camera - Convert img: 338061
+Seg - Predict: 39440638
+Camera - Show in pygame: 1169057
+Lidar - Process & Draw: 8426560
+Lidar - Stats: 4955802
+Camera - Convert img: 144899
+Camera - Show in pygame: 1146083
+Camera - Convert img: 309178
+Seg - Predict: 39740892
+Camera - Show in pygame: 1129218
+Lidar - Process & Draw: 8644449
+Lidar - Stats: 4930725
+Camera - Convert img: 144248
+Camera - Show in pygame: 1024809
+Camera - Convert img: 322057
+Seg - Predict: 39709765
+Camera - Show in pygame: 1095256
+Lidar - Process & Draw: 8695346
+Lidar - Stats: 4954601
+Camera - Convert img: 143978
+Camera - Show in pygame: 1065120
+Camera - Convert img: 320785
+Seg - Predict: 39638427
+Camera - Show in pygame: 1081335
+Lidar - Process & Draw: 8458087
+Lidar - Stats: 4738955
+Camera - Convert img: 122615
+Camera - Show in pygame: 1073884
+Camera - Convert img: 321706
+Seg - Predict: 38842113
+Camera - Show in pygame: 1062176
+Lidar - Process & Draw: 8344576
+Lidar - Stats: 4706235
+Camera - Convert img: 126922
+Camera - Show in pygame: 997308
+Camera - Convert img: 310930
+Seg - Predict: 39711277
+Camera - Show in pygame: 1153945
+Lidar - Process & Draw: 8734495
+Lidar - Stats: 5242296
+Camera - Convert img: 675571
+Camera - Show in pygame: 1107184
+Camera - Convert img: 800931
+Seg - Predict: 40179235
+Camera - Show in pygame: 1084440
+Lidar - Process & Draw: 8432148
+Lidar - Stats: 4691852
+Camera - Convert img: 140833
+Camera - Show in pygame: 1160545
+Camera - Convert img: 351010
+Seg - Predict: 40064691
+Camera - Show in pygame: 1080814
+Lidar - Process & Draw: 8070692
+Lidar - Stats: 4712886
+Camera - Convert img: 131629
+Camera - Show in pygame: 1186534
+Camera - Convert img: 331672
+Seg - Predict: 40583625
+Camera - Show in pygame: 1071179
+Lidar - Process & Draw: 8263174
+Lidar - Stats: 4673445
+Camera - Convert img: 135144
+Camera - Show in pygame: 1196679
+Camera - Convert img: 358653
+Seg - Predict: 39846492
+Camera - Show in pygame: 1113584
+Lidar - Process & Draw: 8250133
+Lidar - Stats: 4673415
+Camera - Convert img: 685897
+Camera - Show in pygame: 1163819
+Camera - Convert img: 896365
+Seg - Predict: 38759218
+Camera - Show in pygame: 1080093
+Lidar - Process & Draw: 8109190
+Lidar - Stats: 4685184
+Camera - Convert img: 137738
+Camera - Show in pygame: 1181166
+Camera - Convert img: 874793
+Seg - Predict: 39322500
+Camera - Show in pygame: 1086172
+Lidar - Process & Draw: 8374693
+Lidar - Stats: 4730411
+Camera - Convert img: 700118
+Camera - Show in pygame: 1006552
+Camera - Convert img: 721070
+Seg - Predict: 38349408
+Camera - Show in pygame: 1093964
+Lidar - Process & Draw: 8434702
+Lidar - Stats: 4659094
+Camera - Convert img: 149526
+Camera - Show in pygame: 1187014
+Camera - Convert img: 358492
+Seg - Predict: 39689274
+Camera - Show in pygame: 1115767
+Lidar - Process & Draw: 8446940
+Lidar - Stats: 4680827
+Camera - Convert img: 129807
+Camera - Show in pygame: 1008075
+Camera - Convert img: 328917
+Seg - Predict: 39067674
+Camera - Show in pygame: 1074975
+Lidar - Process & Draw: 8410565
+Lidar - Stats: 4663810
+Camera - Convert img: 132180
+Camera - Show in pygame: 1001073
+Camera - Convert img: 313644
+Seg - Predict: 39235257
+Camera - Show in pygame: 1087384
+Lidar - Process & Draw: 8001697
+Lidar - Stats: 4677341
+Camera - Convert img: 157048
+Camera - Show in pygame: 996316
+Camera - Convert img: 334866
+Seg - Predict: 39350352
+Camera - Show in pygame: 1113313
+Lidar - Process & Draw: 7907295
+Lidar - Stats: 4674737
+Camera - Convert img: 143838
+Camera - Show in pygame: 1000172
+Camera - Convert img: 324561
+Seg - Predict: 39684227
+Camera - Show in pygame: 1142036
+Lidar - Process & Draw: 8156041
+Lidar - Stats: 4668919
+Camera - Convert img: 142876
+Camera - Show in pygame: 965490
+Camera - Convert img: 331642
+Seg - Predict: 39667171
+Camera - Show in pygame: 1162287
+Lidar - Process & Draw: 8239527
+Lidar - Stats: 4676910
+Camera - Convert img: 177067
+Camera - Show in pygame: 967543
+Camera - Convert img: 325913
+Seg - Predict: 38974533
+Camera - Show in pygame: 1177720
+Lidar - Process & Draw: 8297214
+Lidar - Stats: 4674847
+Camera - Convert img: 150828
+Camera - Show in pygame: 993502
+Camera - Convert img: 337160
+Seg - Predict: 39432155
+Camera - Show in pygame: 1160515
+Lidar - Process & Draw: 8343714
+Lidar - Stats: 4744432
+Camera - Convert img: 137689
+Camera - Show in pygame: 1179282
+Camera - Convert img: 492895
+Seg - Predict: 41322243
+Camera - Show in pygame: 1072311
+Lidar - Process & Draw: 8517247
+Lidar - Stats: 4697682
+Camera - Convert img: 134704
+Camera - Show in pygame: 1165552
+Camera - Convert img: 317420
+Seg - Predict: 39648241
+Camera - Show in pygame: 1065841
+Lidar - Process & Draw: 7901856
+Lidar - Stats: 4643700
+Camera - Convert img: 124878
+Camera - Show in pygame: 1010098
+Camera - Convert img: 329999
+Seg - Predict: 39292865
+Camera - Show in pygame: 1106322
+Lidar - Process & Draw: 8679022
+Lidar - Stats: 4975192
+Camera - Convert img: 129967
+Camera - Show in pygame: 1011810
+Camera - Convert img: 321266
+Seg - Predict: 38707930
+Camera - Show in pygame: 1073633
+Lidar - Process & Draw: 8068779
+Lidar - Stats: 4644301
+Camera - Convert img: 124848
+Camera - Show in pygame: 1163299
+Camera - Convert img: 316439
+Seg - Predict: 40307479
+Camera - Show in pygame: 1084330
+Lidar - Process & Draw: 8372818
+Lidar - Stats: 4674237
+Camera - Convert img: 132850
+Camera - Show in pygame: 1182798
+Camera - Convert img: 326173
+Seg - Predict: 40605510
+Camera - Show in pygame: 1448700
+Lidar - Process & Draw: 9710931
+Lidar - Stats: 4851295
+Camera - Convert img: 161935
+Camera - Show in pygame: 1205633
+Camera - Convert img: 392053
+Seg - Predict: 38974854
+Camera - Show in pygame: 1042206
+Lidar - Process & Draw: 8368953
+Lidar - Stats: 4666054
+Camera - Convert img: 146411
+Camera - Show in pygame: 991549
+Camera - Convert img: 316168
+Seg - Predict: 39683126
+Camera - Show in pygame: 1058120
+Lidar - Process & Draw: 8552570
+Lidar - Stats: 4669139
+Camera - Convert img: 162696
+Camera - Show in pygame: 990337
+Camera - Convert img: 352513
+Seg - Predict: 39789436
+Camera - Show in pygame: 1076909
+Lidar - Process & Draw: 8595585
+Lidar - Stats: 4747467
+Camera - Convert img: 129085
+Camera - Show in pygame: 1035866
+Camera - Convert img: 321936
+Seg - Predict: 39635603
+Camera - Show in pygame: 1074835
+Lidar - Process & Draw: 8283113
+Lidar - Stats: 4740507
+Camera - Convert img: 125580
+Camera - Show in pygame: 1039311
+Camera - Convert img: 857977
+Seg - Predict: 39267286
+Camera - Show in pygame: 1286405
+Lidar - Process & Draw: 8438417
+Lidar - Stats: 4699474
+Camera - Convert img: 121854
+Camera - Show in pygame: 1163129
+Camera - Convert img: 305381
+Seg - Predict: 40426789
+Camera - Show in pygame: 1146704
+Lidar - Process & Draw: 8196782
+Lidar - Stats: 4662920
+Camera - Convert img: 128975
+Camera - Show in pygame: 1165683
+Camera - Convert img: 317750
+Seg - Predict: 40378526
+Camera - Show in pygame: 1299335
+Lidar - Process & Draw: 11471413
+Lidar - Stats: 5906920
+Camera - Convert img: 134374
+Camera - Show in pygame: 1132222
+Camera - Convert img: 303679
+Seg - Predict: 40698860
+Camera - Show in pygame: 1178782
+Lidar - Process & Draw: 7995207
+Lidar - Stats: 4682800
+Camera - Convert img: 129085
+Camera - Show in pygame: 1022616
+Camera - Convert img: 617073
+Seg - Predict: 38486066
+Camera - Show in pygame: 1057760
+Lidar - Process & Draw: 8272266
+Lidar - Stats: 4715339
+Camera - Convert img: 120292
+Camera - Show in pygame: 995675
+Camera - Convert img: 330209
+Seg - Predict: 39007263
+Camera - Show in pygame: 1057990
+Lidar - Process & Draw: 8313329
+Lidar - Stats: 4778354
+Camera - Convert img: 134003
+Camera - Show in pygame: 995636
+Camera - Convert img: 312803
+Seg - Predict: 39537084
+Camera - Show in pygame: 1079001
+Lidar - Process & Draw: 8433510
+Lidar - Stats: 4705084
+Camera - Convert img: 139671
+Camera - Show in pygame: 1192082
+Camera - Convert img: 349809
+Seg - Predict: 39823898
+Camera - Show in pygame: 1349331
+Lidar - Process & Draw: 8408763
+Lidar - Stats: 4669530
+Camera - Convert img: 165561
+Camera - Show in pygame: 1477885
+Camera - Convert img: 427837
+Seg - Predict: 39030628
+Camera - Show in pygame: 1095546
+Lidar - Process & Draw: 8361031
+Lidar - Stats: 4646185
+Camera - Convert img: 135495
+Camera - Show in pygame: 1122397
+Camera - Convert img: 343179
+Seg - Predict: 39346026
+Camera - Show in pygame: 1067714
+Lidar - Process & Draw: 8284235
+Lidar - Stats: 4683460
+Camera - Convert img: 123657
+Camera - Show in pygame: 988044
+Camera - Convert img: 305662
+Seg - Predict: 39490383
+Camera - Show in pygame: 1106282
+Lidar - Process & Draw: 8277784
+Lidar - Stats: 4654147
+Camera - Convert img: 179902
+Camera - Show in pygame: 975265
+Camera - Convert img: 321626
+Seg - Predict: 39944860
+Camera - Show in pygame: 1110619
+Lidar - Process & Draw: 8356764
+Lidar - Stats: 4762470
+Camera - Convert img: 158951
+Camera - Show in pygame: 954633
+Camera - Convert img: 310420
+Seg - Predict: 39204161
+Camera - Show in pygame: 1102998
+Lidar - Process & Draw: 8324746
+Lidar - Stats: 4664883
+Camera - Convert img: 172761
+Camera - Show in pygame: 1161185
+Camera - Convert img: 768582
+Seg - Predict: 40998263
+Camera - Show in pygame: 1236409
+Lidar - Process & Draw: 8669877
+Lidar - Stats: 4979628
+Camera - Convert img: 152801
+Camera - Show in pygame: 845799
+Camera - Convert img: 328616
+Seg - Predict: 39795405
+Camera - Show in pygame: 1133343
+Lidar - Process & Draw: 8305586
+Lidar - Stats: 4658964
+Camera - Convert img: 138750
+Camera - Show in pygame: 997457
+Camera - Convert img: 318992
+Seg - Predict: 40145784
+Camera - Show in pygame: 1103749
+Lidar - Process & Draw: 8171414
+Lidar - Stats: 4652454
+Camera - Convert img: 182807
+Camera - Show in pygame: 971078
+Camera - Convert img: 745697
+Seg - Predict: 40516856
+Camera - Show in pygame: 1216279
+Lidar - Process & Draw: 8747975
+Lidar - Stats: 5003173
+Camera - Convert img: 152942
+Camera - Show in pygame: 1257892
+Camera - Convert img: 317070
+Seg - Predict: 39225523
+Camera - Show in pygame: 1101595
+Lidar - Process & Draw: 8482684
+Lidar - Stats: 4717682
+Camera - Convert img: 150217
+Camera - Show in pygame: 1016758
+Camera - Convert img: 347185
+Seg - Predict: 38408428
+Camera - Show in pygame: 1059121
+Lidar - Process & Draw: 8497487
+Lidar - Stats: 4712295
+Camera - Convert img: 139921
+Camera - Show in pygame: 1007002
+Camera - Convert img: 748271
+Seg - Predict: 38255306
+Camera - Show in pygame: 1063748
+Lidar - Process & Draw: 8282723
+Lidar - Stats: 4683981
+Camera - Convert img: 128695
+Camera - Show in pygame: 1003938
+Camera - Convert img: 696393
+Seg - Predict: 38539876
+Camera - Show in pygame: 1069547
+Lidar - Process & Draw: 7942918
+Lidar - Stats: 4691353
+Camera - Convert img: 135215
+Camera - Show in pygame: 1008675
+Camera - Convert img: 825598
+Seg - Predict: 38227735
+Camera - Show in pygame: 1076367
+Lidar - Process & Draw: 8064973
+Lidar - Stats: 4722980
+Camera - Convert img: 161474
+Camera - Show in pygame: 1014764
+Camera - Convert img: 812398
+Seg - Predict: 38693188
+Camera - Show in pygame: 1068656
+Lidar - Process & Draw: 8424306
+Lidar - Stats: 4663551
+Camera - Convert img: 142325
+Camera - Show in pygame: 1163890
+Camera - Convert img: 320705
+Seg - Predict: 39285714
+Camera - Show in pygame: 1110870
+Lidar - Process & Draw: 8494443
+Lidar - Stats: 4673987
+Camera - Convert img: 125620
+Camera - Show in pygame: 984628
+Camera - Convert img: 353104
+Seg - Predict: 39409731
+Camera - Show in pygame: 1123628
+Lidar - Process & Draw: 8530006
+Lidar - Stats: 4690892
+Camera - Convert img: 121344
+Camera - Show in pygame: 996717
+Camera - Convert img: 325552
+Seg - Predict: 38444262
+Camera - Show in pygame: 1092141
+Lidar - Process & Draw: 8681064
+Lidar - Stats: 4680846
+Camera - Convert img: 138489
+Camera - Show in pygame: 999992
+Camera - Convert img: 332773
+Seg - Predict: 39406277
+Camera - Show in pygame: 1134555
+Lidar - Process & Draw: 8425318
+Lidar - Stats: 4857714
+Camera - Convert img: 132961
+Camera - Show in pygame: 996506
+Camera - Convert img: 328657
+Seg - Predict: 38981194
+Camera - Show in pygame: 1062055
+Lidar - Process & Draw: 8100226
+Lidar - Stats: 4678484
+Camera - Convert img: 167653
+Camera - Show in pygame: 971949
+Camera - Convert img: 362438
+Seg - Predict: 39255598
+Camera - Show in pygame: 1127024
+Lidar - Process & Draw: 8362654
+Lidar - Stats: 4782109
+Camera - Convert img: 168024
+Camera - Show in pygame: 997879
+Camera - Convert img: 320795
+Seg - Predict: 40115710
+Camera - Show in pygame: 1128446
+Lidar - Process & Draw: 8495414
+Lidar - Stats: 4703321
+Camera - Convert img: 133712
+Camera - Show in pygame: 994183
+Camera - Convert img: 312272
+Seg - Predict: 39249229
+Camera - Show in pygame: 1104130
+Lidar - Process & Draw: 8437175
+Lidar - Stats: 4949413
+Camera - Convert img: 141384
+Camera - Show in pygame: 1001214
+Camera - Convert img: 345292
+Seg - Predict: 39991911
+Camera - Show in pygame: 1072021
+Lidar - Process & Draw: 8135880
+Lidar - Stats: 4693306
+Camera - Convert img: 156597
+Camera - Show in pygame: 983276
+Camera - Convert img: 328687
+Seg - Predict: 40235790
+Camera - Show in pygame: 1081796
+Lidar - Process & Draw: 7920445
+Lidar - Stats: 4649058
+Camera - Convert img: 169557
+Camera - Show in pygame: 997718
+Camera - Convert img: 338562
+Seg - Predict: 40359708
+Camera - Show in pygame: 1122187
+Lidar - Process & Draw: 8460541
+Lidar - Stats: 4709811
+Camera - Convert img: 166441
+Camera - Show in pygame: 1048185
+Camera - Convert img: 331682
+Seg - Predict: 41510948
+Camera - Show in pygame: 1299224
+Lidar - Process & Draw: 11935014
+Lidar - Stats: 5987974
+Camera - Convert img: 644945
+Camera - Show in pygame: 1017328
+Camera - Convert img: 782253
+Seg - Predict: 39915716
+Camera - Show in pygame: 1159282
+Lidar - Process & Draw: 8400480
+Lidar - Stats: 4659665
+Camera - Convert img: 134022
+Camera - Show in pygame: 1178962
+Camera - Convert img: 367977
+Seg - Predict: 39610766
+Camera - Show in pygame: 1075246
+Lidar - Process & Draw: 8559190
+Lidar - Stats: 4693636
+Camera - Convert img: 131378
+Camera - Show in pygame: 994584
+Camera - Convert img: 782353
+Seg - Predict: 38919030
+Camera - Show in pygame: 1068105
+Lidar - Process & Draw: 8267810
+Lidar - Stats: 4699835
+Camera - Convert img: 136877
+Camera - Show in pygame: 1159142
+Camera - Convert img: 373495
+Seg - Predict: 38745386
