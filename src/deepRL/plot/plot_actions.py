@@ -8,10 +8,10 @@ import sys
 current_dir = os.getcwd()
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from deepRL.environment import KEY_BRAKE, KEY_THROTTLE, KEY_STEER
+from deepRL.environment import KEY_THROTTLE, KEY_STEER
 
 NUM_ROWS = 1
-NUM_COLUMNS = 3
+NUM_COLUMNS = 2
 
 def histogram(data_csv:list[dict], key:str, subplot:int):
     # Extract data from csv
@@ -54,7 +54,6 @@ def main(args):
 
     histogram(data_csv=data, key=KEY_THROTTLE, subplot=1)
     histogram(data_csv=data, key=KEY_STEER, subplot=2)
-    histogram(data_csv=data, key=KEY_BRAKE, subplot=3)
 
     plt.tight_layout()
     plt.show()

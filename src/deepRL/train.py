@@ -90,10 +90,9 @@ def main(args):
     if args.alg == 'DQN':
         env.set_model(model)
 
-    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name, progress_bar=True)
-    
     files = os.listdir(dir + 'model/' + args.env)
     num_files = len(files) + 1
+    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name, progress_bar=True)
     model.save(model_dir + '/' + args.alg + '-' + args.env + '_' + str(num_files))
 
     env.close()

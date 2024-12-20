@@ -75,9 +75,10 @@ CIRCUIT_CONFIG = {
 }
 
 class CarlaBase(gym.Env, ABC):
-    def __init__(self, human:bool, train:bool, config:list, alg:str=None, port:int=2000, num_points:int=5, seg:bool=False,
-                 passing:bool=False, fixed_delta_seconds:float=0.0, normalize:bool=False, back_lidar:bool=False,
-                 seed:int=None, num_cir:int=0, start_passing=1000, port_tm:int=1111, lane_network:bool=False):
+    def __init__(self, human:bool, train:bool, config:list, alg:str=None, port:int=2000, num_points:int=5,
+                 seg:bool=False, passing:bool=False, fixed_delta_seconds:float=0.0, normalize:bool=False,
+                 back_lidar:bool=False, target_vel:float=8.5, seed:int=None, num_cir:int=0,
+                 start_passing:int=1000, port_tm:int=1111, lane_network:bool=False):
         self._first = True
         self._dev = 0
         self._dist_laser = MAX_DIST_LASER
@@ -98,6 +99,7 @@ class CarlaBase(gym.Env, ABC):
         self._back_lidar = back_lidar
         self._dist_back = MAX_DIST_LASER
         self._seg = seg
+        self._target_vel = target_vel
 
         if passing:
             assert num_cir <= 1, "No passing mode available for circuit " + str(num_cir) 
@@ -319,7 +321,7 @@ class CarlaBase(gym.Env, ABC):
 
             lidar_transform = carla.Transform(carla.Location(x=-0.5, z=1.8), carla.Rotation(yaw=90.0))
             self._lidar = self._sensors.add_lidar(init=self._init_laser,size_rect=(SIZE_CAMERA, SIZE_CAMERA), back_angle=angle,
-                                                  transform=lidar_transform, scale=17, time_show=False, show_stats=False,
+                                                  transform=lidar_transform, scale=14, time_show=False, show_stats=False,
                                                   train=self._train, max_dist=MAX_DIST_LASER, front_angle=150) # 50º each part
             self._lidar.set_z_threshold(1.7)
 
@@ -520,18 +522,19 @@ class CarlaBase(gym.Env, ABC):
                 except RuntimeError:
                     pass # It's so far away that it's not visible and not being processed.
 
-        self._target_vel = MAX_VEL
         if self._passing:
             self._vel_front = 0
             self._is_passing_ep = self._count_ep > self._start_passing 
         else:
             self._is_passing_ep = False
+            self._target_vel = MAX_VEL
 
         self._swap_ego_vehicle()
 
         # Set target velocity (front vehicle)
         if self._is_passing_ep:
-            self._target_vel = random.uniform(5, 9)
+            if self._train:
+                self._target_vel = random.uniform(5, 8)
             self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
 
             if self._train:
@@ -575,7 +578,8 @@ class CarlaBase(gym.Env, ABC):
 
 class CarlaLaneDiscrete(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0, retrain:bool=False,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, lane_network:bool=False):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, lane_network:bool=False,
+                 target_vel:float=8.5):
         if train:
             num_cir = 0
         config = CIRCUIT_CONFIG.get(num_cir, CIRCUIT_CONFIG[0])
@@ -634,8 +638,9 @@ class CarlaLaneDiscrete(CarlaBase):
         return reward
 
 class CarlaLaneContinuous(CarlaBase):
-    def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0, retrain:bool=False,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, port_tm:int=1111, lane_network:bool=False):
+    def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0, 
+                 retrain:bool=False, fixed_delta_seconds:float=0.0, normalize:bool=False,
+                 seed:int=None, port_tm:int=1111, lane_network:bool=False, target_vel:float=8.5):
         if train and human:
             human = False
             print("Warning: Can't activate human mode during training")
@@ -739,7 +744,7 @@ class CarlaLaneContinuous(CarlaBase):
 class CarlaObstacle(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0, port_tm:int=1111,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, retrain:bool=False,
-                 lane_network:bool=False):
+                 lane_network:bool=False, target_vel:float=8.5):
         if train and human:
             human = False
             print("Warning: Can't activate human mode during training")
@@ -753,7 +758,7 @@ class CarlaObstacle(CarlaBase):
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, port_tm=port_tm,
                          num_cir=num_cir, config=config, passing=retrain, start_passing=-1,
-                         lane_network=lane_network) 
+                         lane_network=lane_network, target_vel=target_vel) 
         
         self._max_vel = 20
 
@@ -850,7 +855,7 @@ class CarlaObstacle(CarlaBase):
                 r_laser /= (MAX_DIST_LASER - MIN_DIST_LASER)
 
                 if self._dist_laser <= laser_threshold:
-                    r_throttle = -5/3 * self._throttle + 1
+                   r_throttle = -5/3 * self._throttle + 1
             else:
                 r_laser = 0
 
@@ -871,21 +876,26 @@ class CarlaObstacle(CarlaBase):
                 w_steer = 0.25
                 w_laser = 0
             elif r_laser != 0:
-                if self._dist_laser <= 8: # Front vehicle too close
-                    w_dev = 0.1
+                if self._dist_laser <= 8: # Front vehicle is very close
+                    w_dev = 0.2
                     w_throttle = 0.2
                     w_steer = 0
-                    w_laser = 0.7
+                    w_laser = 0.6
                 elif self._dist_laser <= laser_threshold: # Medium distance
-                    w_dev = 0.3
-                    w_throttle = 0.1
-                    w_steer = 0.1
-                    w_laser = 0.5
-                else:
                     w_dev = 0.45
                     w_throttle = 0.1
+                    w_steer = 0.05
+                    w_laser = 0.4
+                elif self._dist_laser <= 15: # Large distance
+                    w_dev = 0.45
+                    w_throttle = 0.05
+                    w_laser = 0.4
+                    w_steer = 0.1
+                else: # Front vehicle is too far
+                    w_dev = 0.45
+                    w_throttle = 0.15
                     w_laser = 0.3
-                    w_steer = 0.15
+                    w_steer = 0.1
             elif self._throttle < 0.5:
                 w_dev = 0.65
                 w_throttle = 0.25
@@ -909,7 +919,7 @@ class CarlaObstacle(CarlaBase):
 class CarlaPassing(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=200, num_cir:int=0, port_tm:int=1111,
                  fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, retrain:int=0,
-                 lane_network:bool=False):
+                 lane_network:bool=False, target_vel:float=8.5):
         if train and human:
             human = False
             print("Warning: Can't activate human mode during training")
@@ -930,7 +940,7 @@ class CarlaPassing(CarlaBase):
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
                          normalize=normalize, fixed_delta_seconds=fixed_delta_seconds, port_tm=port_tm,
                          num_cir=num_cir, config=config, passing=retrain, start_passing=-1,
-                         lane_network=lane_network, back_lidar=back, seg=seg) # ver si tengo que hacer 1 lane, obstacle, normal
+                         lane_network=lane_network, back_lidar=back, seg=seg, target_vel=target_vel)
         
         self._max_vel = 20
         self._num_points_seg = self._num_points_lane

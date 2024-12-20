@@ -33,7 +33,7 @@ def main(args):
         exit(1)
 
     env = env_class(train=False, port=args.port, human=True, normalize=True, num_cir=args.num_cir,
-                    lane_network=args.lane_network)
+                    lane_network=args.lane_network, target_vel=args.target_vel)
 
     total_reward = 0
     step = 0
@@ -65,15 +65,16 @@ def main(args):
                 throttle, steer = env.action_to_control[action.item()]
             else:
                 throttle, steer = action
-                print("Throttle:", throttle, "\t||\tsteer:", steer)
+                print(f"Throttle: {throttle:.6f} \t||\tSteer: {steer:.7f}", end="")
 
             obs, reward, terminated, truncated, info = env.step(action)
 
             try:
                 dist = info[environment.KEY_LASER]
-                print("dist front:", dist) # quitar
+                print(f"\t||\tDist front: {dist:.6f}")
             except KeyError:
                 dist = environment.MAX_DIST_LASER
+                print()
 
             try:
                 dist_back = info[environment.KEY_BACK]
@@ -152,6 +153,13 @@ if __name__ == "__main__":
         required=False, 
         default=3456,
         help='Port for the traffic manger. By default 3456.'
+    )
+    parser.add_argument(
+        '--target_vel', 
+        type=float, 
+        required=False, 
+        default=6,
+        help='Velocity in m/s of the front vehicle. By default 6m/s.'
     )
 
     main(parser.parse_args())

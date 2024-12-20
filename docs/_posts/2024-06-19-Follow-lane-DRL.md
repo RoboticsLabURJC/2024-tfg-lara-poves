@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-12-08T08:49:00
+last_modified_at: 2024-12-20T14:56:00
 categories:
   - Blog
 tags:
@@ -16,11 +16,13 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 ```
 
 ## Índice
-- [Sigue carril](#sigue-carril)
+- [Entornos](#entornos)
   - [CarlaLaneDiscrete](#carlalanediscrete)
   - [CarlaLaneContinuous](#carlalanecontinuous)
+  - [CarlaObstacle](#carlaobstacle)
+  - [CarlaPassing](#carlapassing)
 
-## Sigue carril
+## Entornos
 
 Para aumentar los frames por segundo y reducir el tiempo de entrenamiento, hemos desactivado la segmentación. Hemos creado tres entornos de Gym que principalmente difieren en la función de recompensa y el espacio de acciones, lo cual determina el tipo de algoritmo que utilizaremos para entrenar. Emplearemos modelos predefinidos de la librería *stable-baselines3*, como se detalló en el apartado anterior.
 
@@ -212,6 +214,11 @@ else:
 return reward
 ```
 
+Desarrollamos un programa para analizar la exploración de acciones durante el entrenamiento, cuyos resultados se presentan en el siguiente histograma.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaLaneContinuous/actions.png" alt="">
+</figure>
+
 **Parémetros de entrenamiento**
 
 Al igual que en el entrenamiento anterior, el parámetro n_steps fue clave. Además, el batch_size también tuvo un gran impacto: inicialmente, con valores bajos no lograba converger. Por último, el coeficiente de entropía fue fundamental, ya que con valores bajos siempre aprendía las acciones límite y con valores altos no llegaba a converger.
@@ -248,6 +255,132 @@ Hemos evaluado si el modelo entrenado utilizando la percepción del carril basad
 <iframe width="560" height="315" src="https://www.youtube.com/embed/E7peMuLgnAM?si=V5oh3Apb9pxuqtAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### CarlaObstacle
+
+En este entorno, el objetivo es que el coche siga el carril mientras mantiene una velocidad de crucero definida por otro vehículo que circula delante a una velocidad constante, en el rango [5, 9], durante todo el episodio. El histograma a continuación muestra las velocidades utilizadas durante el entrenamiento.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/target_vel_dist.png" alt="">
+</figure>
+
+Hemos añadido a las observaciones 20 puntos correspondientes a la zona frontal del láser, que en publicaciones anteriores identificamos como la región **FRONT**. Si el láser no proporciona medidas suficientes, estos puntos se completan con el valor máximo del láser, es decir, su rango máximo, en este caso s eha estabelcido a 19.5 metros, ay que a partir de esa diatncia las medidas eran d emenor precion/calidad. En caso de que existan más puntos de los necesarios, se seleccionan de manera uniforme considerando que están ordenados por la coordenada x. A continuación, se presentan ejemplos ilustrativos de estas configuraciones:
+
+Hemos añadido a las observaciones 20 puntos correspondientes a la zona frontal del láser, que en publicaciones anteriores identificamos como la región **FRONT**. Si el láser no proporciona suficientes mediciones, estos puntos se rellenan con su rango máximo, establecido en 19.5 metros, ya que más allá de esta distancia las mediciones son menos precisas y de menor calidad. En caso de haber más puntos de los necesarios, se seleccionan de forma uniforme, asegurando una distribución equidistante y respetando el orden basado en la coordenada x. A continuación, se presentan ejemplos ilustrativos de estas configuraciones:
+<div class="image-container" style="display: flex; justify-content: center; max-width: 100%;">
+  <figure class="align-center" style="flex: 1; margin: 0; text-align: center;">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/laser_8m.png" alt="" style="width: 100%;">
+  </figure>
+  <figure class="align-center" style="flex: 1; margin: 0; text-align: center;">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/laser_13m.png" alt="" style="width: 100%;">
+  </figure>
+</div>
+
+Para este entorno, inicialmente entrenamos un modelo capaz de seguir el carril, reutilizando los parámetros de entrenamiento óptimos previamente determinados. Basándonos en la función de recompensa utilizada anteriormente, normalizamos todas las medidas y calculamos la recompensa final asignando diferentes pesos a los valores involucrados. Cuando **no hay mediciones del láser**, los pesos son muy similares a los de la función de recompensa original. Sin embargo, al incorporar nuevas observaciones, fue necesario realizar pequeños ajustes para obtener el comportamiento deseado. En estos casos, el peso del láser se establece en 0.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/train_lane.png" alt="">
+</figure>
+
+
+Para lograr el comportamiento deseado, el modelo debe ajustar su velocidad en función del vehículo que tiene delante, evitando colisiones en todo momento. Si el coche se aproxima demasiado al vehículo delantero (**menos de 4 metros**), se considera una **colisión**, lo que resulta en la finalización del episodio con una penalización muy severa (-60). Esta penalización es mayor que la de salirse del carril (-40), ya que una colisión se considera una acción más crítica.
+
+Para este propósito, utilizamos el modelo anterior y lo reentrenamos modificando únicamente la parte de la función de recompensa relacionada con las mediciones del láser. Los mismos parámetros de entrenamiento fueron reutilizados, con la excepción del número total de pasos, que en este caso se redujo a 3,000,000 para optimizar el tiempo de entrenamiento.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/train.png" alt="">
+</figure>
+
+Cuando tenemos mediciones del láser, el peso asignado al láser y el de los demás parámetros se ajustan según la distancia al vehículo que se encuentra delante. Es importante destacar que si la distancia es menor de 11 metros, el throttle se recompensa de forma inversa: a menor throttle, mayor recompensa. Por el contrario, si la distancia es mayor a 11 metros, se recompensa de manera directa: a mayor throttle, mayor recompensa.  
+```python
+if error == None:
+    # Deviation normalization
+    r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
+    
+    # Steer conversion
+    if abs(self._steer) > 0.14:
+        r_steer = 0
+    else:
+        r_steer = -50/7 * abs(self._steer) + 1
+
+    # Throttle conversion
+    if self._throttle >= 0.6:
+        r_throttle = 0
+    elif self._velocity > self._max_vel:
+        r_throttle = -5/3 * self._throttle + 1
+    else:
+        r_throttle = 5/3 * self._throttle
+
+    # Laser conversion
+    laser_threshold = 11
+    if self._is_passing_ep and not np.isnan(self._dist_laser):
+        r_laser = np.clip(self._dist_laser, MIN_DIST_LASER, MAX_DIST_LASER) - MIN_DIST_LASER
+        r_laser /= (MAX_DIST_LASER - MIN_DIST_LASER)
+
+        if self._dist_laser <= laser_threshold:
+            r_throttle = -5/3 * self._throttle + 1
+    else:
+        r_laser = 0
+
+    # Set weights
+    if r_steer == 0:
+        w_dev = 0.1
+        w_throttle = 0.1
+        w_steer = 0.8
+        w_laser = 0
+    elif r_throttle == 0:
+        w_dev = 0.1
+        w_throttle = 0.8
+        w_steer = 0.1
+        w_laser = 0
+    elif self._velocity > self._max_vel:
+        w_dev = 0.1
+        w_throttle = 0.65
+        w_steer = 0.25
+        w_laser = 0
+    elif r_laser != 0:
+        if self._dist_laser <= 8: # Front vehicle is very close
+            w_dev = 0.2
+            w_throttle = 0.2
+            w_steer = 0
+            w_laser = 0.6
+        elif self._dist_laser <= laser_threshold: # Medium distance
+            w_dev = 0.45
+            w_throttle = 0.1
+            w_steer = 0.05
+            w_laser = 0.4
+        elif self._dist_laser <= 15: # Large distance
+            w_dev = 0.45
+            w_throttle = 0.05
+            w_laser = 0.4
+            w_steer = 0.1
+        else: # Front vehicle is too far
+            w_dev = 0.45
+            w_throttle = 0.15
+            w_laser = 0.3
+            w_steer = 0.1
+    elif self._throttle < 0.5:
+        w_dev = 0.65
+        w_throttle = 0.25
+        w_steer = 0.1 # Lower accelerations, penalize large turns less
+        w_laser = 0
+    else: # [0.5, 0.6) throttle
+        w_dev = 0.6
+        w_throttle = 0.15
+        w_steer = 0.25
+        w_laser = 0
+
+    reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + r_laser * w_laser
+else:
+    if "Distance" in error:
+        reward = -60
+    else:
+        reward = -40
+
+return reward
+```
+
+Finalmente, logramos que nuestro vehículo mantuviera, más o menos, una velocidad de crucero establecida por el otro vehículo durante todo el recorrido, asegurando que no ocurriera una colisión. A continuación, se presentan los datos recolectados durante la inferencia cuando el coche delantero mantenía una velocidad constante de 6 m/s.
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/inference.png" alt="">
+</figure>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1TixtqW0HyU?si=jl-RNPEVhFF4vTjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### CarlaPassing
 
