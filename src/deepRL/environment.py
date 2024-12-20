@@ -22,7 +22,9 @@ MIN_DIST_LASER = 4
 MAX_VEL = 60
 
 KEY_LASER = "laser"
-KEY_BACK = "Distance back-right"
+KEY_LASER_RIGHT_FRONT = "Distance right front"
+KEY_LASER_RIGHT = "Distance right"
+KEY_LASER_RIGHT_BACK = "Distance right back"
 KEY_VEL = "velocity"
 KEY_DEV = "deviation"
 KEY_CM = "cm"
@@ -943,7 +945,7 @@ class CarlaPassing(CarlaBase):
                          lane_network=lane_network, back_lidar=back, seg=seg, target_vel=target_vel)
         
         self._max_vel = 20
-        self._num_points_seg = self._num_points_lane
+        self._num_points_seg = self._num_points_lane * 2
 
         # Add velocity to observations
         self.observation_space[KEY_VEL] = spaces.Box(
@@ -962,12 +964,23 @@ class CarlaPassing(CarlaBase):
             dtype=np.float64
         )
 
-        # Add laser back distance to observations
-        self._num_points_back = int(self._num_points_laser * 1.5)
-        self.observation_space[KEY_BACK] = spaces.Box(
+        # Add laser three right zones distance to observations
+        self.observation_space[KEY_LASER_RIGHT] = spaces.Box(
             low=MIN_DIST_LASER - 1.0,
             high=MAX_DIST_LASER,
-            shape=(self._num_points_back,),
+            shape=(self._num_points_laser,),
+            dtype=np.float64
+        )
+        self.observation_space[KEY_LASER_RIGHT_BACK] = spaces.Box(
+            low=MIN_DIST_LASER - 1.0,
+            high=MAX_DIST_LASER,
+            shape=(self._num_points_laser,),
+            dtype=np.float64
+        )
+        self.observation_space[KEY_LASER_RIGHT_FRONT] = spaces.Box(
+            low=MIN_DIST_LASER - 1.0,
+            high=MAX_DIST_LASER,
+            shape=(self._num_points_laser,),
             dtype=np.float64
         )
 
@@ -1010,10 +1023,22 @@ class CarlaPassing(CarlaBase):
                 shape=(self._num_points_laser,),
                 dtype=np.float64
             )
-            self.observation_space[KEY_BACK] = spaces.Box(
+            self.observation_space[KEY_LASER_RIGHT_FRONT] = spaces.Box(
                 low=0.0,
                 high=1.0,
-                shape=(self._num_points_back,),
+                shape=(self._num_points_laser,),
+                dtype=np.float64
+            )
+            self.observation_space[KEY_LASER_RIGHT] = spaces.Box(
+                low=0.0,
+                high=1.0,
+                shape=(self._num_points_laser,),
+                dtype=np.float64
+            )
+            self.observation_space[KEY_LASER_RIGHT_BACK] = spaces.Box(
+                low=0.0,
+                high=1.0,
+                shape=(self._num_points_laser,),
                 dtype=np.float64
             )
             self.observation_space[KEY_SEG_AREA] = spaces.Box(
@@ -1047,12 +1072,16 @@ class CarlaPassing(CarlaBase):
 
         if not self._is_passing_ep: # No passing
             obs[KEY_LASER] = np.full(self._num_points_laser, MAX_DIST_LASER, dtype=np.float64)
-            obs[KEY_BACK] = np.full(self._num_points_back, MAX_DIST_LASER, dtype=np.float64)
+            obs[KEY_LASER_RIGHT_FRONT] = np.full(self._num_points_laser, MAX_DIST_LASER, dtype=np.float64)
+            obs[KEY_LASER_RIGHT] = np.full(self._num_points_laser, MAX_DIST_LASER, dtype=np.float64)
+            obs[KEY_LASER_RIGHT_BACK] = np.full(self._num_points_laser, MAX_DIST_LASER, dtype=np.float64)
         else:
             if not self._back_lidar:
-                obs[KEY_BACK] = np.full(self._num_points_back, MAX_DIST_LASER, dtype=np.float64)
+                obs[KEY_LASER_RIGHT_FRONT] = np.full(self._num_points_laser, MAX_DIST_LASER, dtype=np.float64)
+                obs[KEY_LASER_RIGHT] = np.full(self._num_points_laser, MAX_DIST_LASER, dtype=np.float64)
+                obs[KEY_LASER_RIGHT_BACK] = np.full(self._num_points_laser, MAX_DIST_LASER, dtype=np.float64)
             else:
-                obs[KEY_BACK] = self._lidar.get_points_back(self._num_points_back)
+                pass # aun por implementar
 
             obs[KEY_LASER] = self._lidar.get_points_front(self._num_points_laser)
 
@@ -1069,13 +1098,13 @@ class CarlaPassing(CarlaBase):
         obs[KEY_SEG_POINTS_LEFT] = left
         obs[KEY_SEG_POINTS_RIGHT] = right
 
-        print(obs)
+        #print(obs)
         return obs
     
     def _get_info(self):
         info = super()._get_info()
         info[KEY_LASER] = self._dist_laser
-        info[KEY_BACK] = self._dist_back
+        info[KEY_LASER_RIGHT] = 0 # por implemenat
         return info
 
     def _create_actions(self):
@@ -1094,4 +1123,91 @@ class CarlaPassing(CarlaBase):
         return control
     
     def _calculate_reward(self, error:str):
-        return 1
+        if not self._seg: # CarlaLaneContinuous + CarlaObstacle
+            if error == None:
+                # Deviation normalization
+                r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
+                
+                # Steer conversion
+                if abs(self._steer) > 0.14:
+                    r_steer = 0
+                else:
+                    r_steer = -50/7 * abs(self._steer) + 1
+
+                # Throttle conversion
+                if self._throttle >= 0.6:
+                    r_throttle = 0
+                elif self._velocity > self._max_vel:
+                    r_throttle = -5/3 * self._throttle + 1
+                else:
+                    r_throttle = 5/3 * self._throttle
+
+                # Laser conversion
+                laser_threshold = 11
+                if self._is_passing_ep and not np.isnan(self._dist_laser):
+                    r_laser = np.clip(self._dist_laser, MIN_DIST_LASER, MAX_DIST_LASER) - MIN_DIST_LASER
+                    r_laser /= (MAX_DIST_LASER - MIN_DIST_LASER)
+
+                    if self._dist_laser <= laser_threshold:
+                        r_throttle = -5/3 * self._throttle + 1
+                else:
+                    r_laser = 0
+
+                # Set weights
+                if r_steer == 0:
+                    w_dev = 0.1
+                    w_throttle = 0.1
+                    w_steer = 0.8
+                    w_laser = 0
+                elif r_throttle == 0:
+                    w_dev = 0.1
+                    w_throttle = 0.8
+                    w_steer = 0.1
+                    w_laser = 0
+                elif self._velocity > self._max_vel:
+                    w_dev = 0.1
+                    w_throttle = 0.65
+                    w_steer = 0.25
+                    w_laser = 0
+                elif r_laser != 0:
+                    if self._dist_laser <= 8: # Front vehicle is very close
+                        w_dev = 0.2
+                        w_throttle = 0.2
+                        w_steer = 0
+                        w_laser = 0.6
+                    elif self._dist_laser <= laser_threshold: # Medium distance
+                        w_dev = 0.45
+                        w_throttle = 0.1
+                        w_steer = 0.05
+                        w_laser = 0.4
+                    elif self._dist_laser <= 15: # Large distance
+                        w_dev = 0.45
+                        w_throttle = 0.05
+                        w_laser = 0.4
+                        w_steer = 0.1
+                    else: # Front vehicle is too far
+                        w_dev = 0.45
+                        w_throttle = 0.15
+                        w_laser = 0.3
+                        w_steer = 0.1
+                elif self._throttle < 0.5:
+                    w_dev = 0.65
+                    w_throttle = 0.25
+                    w_steer = 0.1 # Lower accelerations, penalize large turns less
+                    w_laser = 0
+                else: # [0.5, 0.6) throttle
+                    w_dev = 0.6
+                    w_throttle = 0.15
+                    w_steer = 0.25
+                    w_laser = 0
+
+                reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + r_laser * w_laser
+            else:
+                if "Distance" in error:
+                    reward = -60
+                else:
+                    reward = -40
+
+            return reward
+        else:
+            return 1

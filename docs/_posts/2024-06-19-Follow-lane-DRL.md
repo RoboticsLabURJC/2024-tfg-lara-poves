@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-12-20T14:56:00
+last_modified_at: 2024-12-20T15:05:00
 categories:
   - Blog
 tags:
@@ -258,26 +258,23 @@ Hemos evaluado si el modelo entrenado utilizando la percepción del carril basad
 
 En este entorno, el objetivo es que el coche siga el carril mientras mantiene una velocidad de crucero definida por otro vehículo que circula delante a una velocidad constante, en el rango [5, 9], durante todo el episodio. El histograma a continuación muestra las velocidades utilizadas durante el entrenamiento.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/target_vel_dist.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/target_vel_hist.png" alt="">
 </figure>
 
 Hemos añadido a las observaciones 20 puntos correspondientes a la zona frontal del láser, que en publicaciones anteriores identificamos como la región **FRONT**. Si el láser no proporciona medidas suficientes, estos puntos se completan con el valor máximo del láser, es decir, su rango máximo, en este caso s eha estabelcido a 19.5 metros, ay que a partir de esa diatncia las medidas eran d emenor precion/calidad. En caso de que existan más puntos de los necesarios, se seleccionan de manera uniforme considerando que están ordenados por la coordenada x. A continuación, se presentan ejemplos ilustrativos de estas configuraciones:
 
 Hemos añadido a las observaciones 20 puntos correspondientes a la zona frontal del láser, que en publicaciones anteriores identificamos como la región **FRONT**. Si el láser no proporciona suficientes mediciones, estos puntos se rellenan con su rango máximo, establecido en 19.5 metros, ya que más allá de esta distancia las mediciones son menos precisas y de menor calidad. En caso de haber más puntos de los necesarios, se seleccionan de forma uniforme, asegurando una distribución equidistante y respetando el orden basado en la coordenada x. A continuación, se presentan ejemplos ilustrativos de estas configuraciones:
-<div class="image-container" style="display: flex; justify-content: center; max-width: 100%;">
-  <figure class="align-center" style="flex: 1; margin: 0; text-align: center;">
-    <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/laser_8m.png" alt="" style="width: 100%;">
-  </figure>
-  <figure class="align-center" style="flex: 1; margin: 0; text-align: center;">
-    <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/laser_13m.png" alt="" style="width: 100%;">
-  </figure>
-</div>
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/laser_8m.png" alt="">
+</figure>
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/laser_13m.png" alt="">
+</figure>
 
 Para este entorno, inicialmente entrenamos un modelo capaz de seguir el carril, reutilizando los parámetros de entrenamiento óptimos previamente determinados. Basándonos en la función de recompensa utilizada anteriormente, normalizamos todas las medidas y calculamos la recompensa final asignando diferentes pesos a los valores involucrados. Cuando **no hay mediciones del láser**, los pesos son muy similares a los de la función de recompensa original. Sin embargo, al incorporar nuevas observaciones, fue necesario realizar pequeños ajustes para obtener el comportamiento deseado. En estos casos, el peso del láser se establece en 0.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/train_lane.png" alt="">
 </figure>
-
 
 Para lograr el comportamiento deseado, el modelo debe ajustar su velocidad en función del vehículo que tiene delante, evitando colisiones en todo momento. Si el coche se aproxima demasiado al vehículo delantero (**menos de 4 metros**), se considera una **colisión**, lo que resulta en la finalización del episodio con una penalización muy severa (-60). Esta penalización es mayor que la de salirse del carril (-40), ya que una colisión se considera una acción más crítica.
 

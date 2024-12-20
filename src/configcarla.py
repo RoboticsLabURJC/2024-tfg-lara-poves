@@ -487,15 +487,17 @@ class CameraRGB(Sensor):
                     write_text(text=f"{self._road_percentage:.2f}% road", side=RIGHT, bold=True,
                             img=self._extra_surface, color=(0, 0, 0), size=self.size_text,
                             point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))
+                    
+            self.get_seg_data(num_points=20, show=True)  # quitaaar
 
-            self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)    
+            self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)  
 
     def get_seg_data(self, num_points:int, show=False):
         if len(self._mask) <= 0:
             return 0, np.array([0, 0], dtype=np.int32), np.zeros((num_points, 2), dtype=np.int32), np.zeros((num_points, 2), dtype=np.int32)
 
         index = np.argwhere(self._mask == ROAD)
-        index_sorted = index[np.argsort(index[:, 0])]  # Sort by y
+        index_sorted = index[np.argsort(index[:, 0])] # Sorted by y
 
         area = len(index)
         y_cm = np.mean(index[:, 0])
@@ -505,22 +507,40 @@ class CameraRGB(Sensor):
         if show:
             pygame.draw.circle(self._extra_surface, (255, 0, 255), (x_cm, y_cm), 9, 0)
 
-        min_y = index[0, 0]
+        min_y = index_sorted[0, 0]
+        max_y= index_sorted[-1, 0] 
         if self._lane:
             if self._lane_network:
                 min_y = max(self._ymin_lane, min_y)
             else:
                 min_y = max(min_y, self._lane_left[0][1], self._lane_right[0][1])
 
-        max_y= index[-1, 0] 
-        values_y = np.linspace(min_y, max_y, num_points, dtype=int)
+        try:
+            index_zero = np.where(index_sorted[:, 1] == 0)[0][0]
+            index_max = np.where(index_sorted[:, 1] == SIZE_CAMERA - 1)[0][0]
+            y_middle = max(index_sorted[index_zero, 0], index_sorted[index_max, 0])
+
+            # First 3/4 of the points from the non-maximum part to have more information
+            num_points_start = min(int(num_points * 3 / 4), y_middle - min_y)
+            y_start = np.linspace(min_y, y_middle, num=num_points_start, dtype=int)
+
+            # Last 1/4 of the points from the maximum part
+            num_points_end = num_points - num_points_start
+            y_end = np.linspace(y_middle + 1, max_y, num=num_points_end, dtype=int)
+
+            # Combine both parts
+            values_y = np.concatenate([y_start, y_end])
+        except Exception:
+            values_y = np.linspace(min_y, max_y, num_points, dtype=int)
 
         points_final_left = np.zeros((num_points, 2), dtype=np.int32)
         points_final_right = np.zeros((num_points, 2), dtype=np.int32)
 
-        j = 0
-        for y in values_y:
+        j = i = 0
+        y = values_y[i]
+        while True:
             points_in_y = index_sorted[index_sorted[:, 0] == y]
+
             if len(points_in_y) > 0:
                 points_final_left[j, 1] = y
                 points_final_left[j, 0] = np.min(points_in_y[:, 1])
@@ -533,6 +553,12 @@ class CameraRGB(Sensor):
                     pygame.draw.circle(self._extra_surface, (0, 0, 0), (points_final_right[j, 0], y), 5, 0)
 
                 j += 1
+                i += 1
+                if i >= len(values_y):
+                    break
+                y = values_y[i]
+            else:
+                y += 1
 
         return area, cm, points_final_left, points_final_right
 

@@ -77,7 +77,7 @@ def main(args):
                 print()
 
             try:
-                dist_back = info[environment.KEY_BACK]
+                dist_back = info[environment.KEY_LASER_RIGHT]
                 print("dist back:", dist_back) # quitar
             except KeyError:
                 dist_back = environment.MAX_DIST_LASER
