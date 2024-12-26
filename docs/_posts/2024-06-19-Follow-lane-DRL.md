@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-12-20T15:05:00
+last_modified_at: 2024-12-21T00:42:00
 categories:
   - Blog
 tags:
@@ -172,18 +172,20 @@ if error == None:
     r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
     
     # Steer conversion
-    if abs(self._steer) > 0.14: # sharp turns
+    limit_steer = 0.14
+    if abs(self._steer) > limit_steer:
         r_steer = 0
     else:
-        r_steer = -50/7 * abs(self._steer) + 1
+        r_steer = (limit_steer - abs(self._steer)) / limit_steer
 
     # Throttle conversion
-    if self._throttle >= 0.6: # sharp throttle
+    limit_throttle = 0.6
+    if self._throttle >= limit_throttle:
         r_throttle = 0
     elif self._velocity > self._max_vel:
-        r_throttle = -5/3 * self._throttle + 1
+        r_throttle = (limit_throttle - self._throttle) / limit_throttle
     else:
-        r_throttle = 5/3 * self._throttle
+        r_throttle = self._throttle / limit_throttle
 
     # Set weights
     if r_steer == 0:
@@ -256,7 +258,7 @@ Hemos evaluado si el modelo entrenado utilizando la percepción del carril basad
 
 ### CarlaObstacle
 
-En este entorno, el objetivo es que el coche siga el carril mientras mantiene una velocidad de crucero definida por otro vehículo que circula delante a una velocidad constante, en el rango [5, 9], durante todo el episodio. El histograma a continuación muestra las velocidades utilizadas durante el entrenamiento.
+En este entorno, el objetivo es que el coche siga el carril mientras mantiene una velocidad de crucero definida por otro vehículo que circula delante a una velocidad constante, en el rango [5, 9], durante todo el episodio. El siguiente histograma muestra las velocidades probadas durante el entrenamiento. El espacio de acciones es el mismo que en el entorno anterior.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/target_vel_hist.png" alt="">
 </figure>
@@ -290,18 +292,20 @@ if error == None:
     r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
     
     # Steer conversion
-    if abs(self._steer) > 0.14:
+    limit_steer = 0.14
+    if abs(self._steer) > limit_steer:
         r_steer = 0
     else:
-        r_steer = -50/7 * abs(self._steer) + 1
+        r_steer = (limit_steer - abs(self._steer)) / limit_steer
 
     # Throttle conversion
-    if self._throttle >= 0.6:
+    limit_throttle = 0.6
+    if self._throttle >= limit_throttle:
         r_throttle = 0
     elif self._velocity > self._max_vel:
-        r_throttle = -5/3 * self._throttle + 1
+        r_throttle = (limit_throttle - self._throttle) / limit_throttle
     else:
-        r_throttle = 5/3 * self._throttle
+        r_throttle = self._throttle / limit_throttle
 
     # Laser conversion
     laser_threshold = 11
@@ -310,7 +314,7 @@ if error == None:
         r_laser /= (MAX_DIST_LASER - MIN_DIST_LASER)
 
         if self._dist_laser <= laser_threshold:
-            r_throttle = -5/3 * self._throttle + 1
+            r_throttle = (limit_throttle - self._throttle) / limit_throttle
     else:
         r_laser = 0
 
@@ -381,4 +385,14 @@ Finalmente, logramos que nuestro vehículo mantuviera, más o menos, una velocid
 
 ### CarlaPassing
 
-hemos eliminado la 3 al entrenar el adelantamiento (no el seguimiento del carril, ni el no chocarse) porque detectamos la vaya lateral con el lidar, lo que nos impde saber si hemos adelantado completamente al coche o es la vaya
+obs añadidas
+
+entrenamientos base
+
+hemos eliminado la 3 al entrenar el adelantamiento (no el seguimiento del carril, ni el no chocarse) porque detectamos la vaya lateral con el lidar, lo que nos impde saber si hemos adelantado completamente al coche o es la vaya.
+
+maquina de estados
+
+func recompensa
+
+resultados
