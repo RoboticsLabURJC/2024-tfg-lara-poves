@@ -5,6 +5,7 @@ import os
 import yaml
 from stable_baselines3.common.env_util import make_vec_env
 import sys
+import warnings
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -48,6 +49,10 @@ def main(args):
     model_dir = check_dir(dir + 'model/', args.env)
     log_name = args.alg + '-' + args.env
 
+    if env_class == environment.CarlaPassing and args.delta < 0.1:
+        warnings.warn(f"Fixed delta seconds should be ≤ 100ms (10 FPS) for the environment {args.env}",
+                      UserWarning)
+
     if args.alg != 'DQN':
         env = make_vec_env(lambda: env_class(train=True, fixed_delta_seconds=args.delta, human=args.human,
                                              retrain=args.retrain, port=args.port, alg=args.alg, 
@@ -72,6 +77,9 @@ def main(args):
     policy = model_params['policy']
     model_params.pop('policy', None)
 
+    if env_class == environment.CarlaPassing:
+        model_params['policy_kwargs'] = dict(net_arch=dict(pi=[128, 128], vf=[128, 128]))
+
     if not args.retrain:
         model = alg_class(policy, env, verbose=args.verbose, seed=SEED, tensorboard_log=log_dir, **model_params)
     else:
@@ -90,12 +98,15 @@ def main(args):
     if args.alg == 'DQN':
         env.set_model(model)
 
+    try:
+        model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name, progress_bar=True)
+        env.close()
+    except:
+        pass # If the simulator crashes, save the model even if it's incomplete
+
     files = os.listdir(dir + 'model/' + args.env)
     num_files = len(files) + 1
-    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name, progress_bar=True)
     model.save(model_dir + '/' + args.alg + '-' + args.env + '_' + str(num_files))
-
-    env.close()
 
 if __name__ == "__main__":
     possible_envs = list(env_callable.keys())
@@ -156,14 +167,14 @@ if __name__ == "__main__":
         type=int, 
         required=False, 
         default=0,
-        help='Display or not Pygame screen. By default 0. (0 = False)'
+        help='Display or not Pygame screen. By default 0 (0 = False).'
     )
     parser.add_argument(
         '--retrain', 
         type=int, 
         required=False, 
         default=0,
-        help='If a model has to be reatrained, 1: retraining lane, 2: retraining obstacle. By default 0. (0 = False)'
+        help='If a model has to be reatrained, 1: retraining lane, 2: retraining obstacle. By default 0 (0 = False).'
     )
     parser.add_argument(
         '--port_tm', 

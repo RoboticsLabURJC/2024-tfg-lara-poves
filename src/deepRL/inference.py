@@ -34,7 +34,7 @@ def main(args):
         exit(1)
 
     env = env_class(train=False, port=args.port, human=True, normalize=True, num_cir=args.num_cir,
-                    lane_network=args.lane_network)
+                    lane_network=args.lane_network, target_vel=args.target_vel)
 
     total_reward = 0
     step = 0
@@ -80,7 +80,7 @@ def main(args):
                 dist_right_back = info[environment.KEY_LASER_RIGHT_BACK]
 
                 print(f"Dist right front: {dist_right_front:.2f}\t||\tDist right: {dist_right:.2f}" 
-                      f"\nDist right back: {dist_right_back:.2f}\n")
+                      f"\t||\tDist right back: {dist_right_back:.2f}\n")
             except KeyError:
                 dist_right_front = environment.MAX_DIST_LASER
                 dist_right = environment.MAX_DIST_LASER
@@ -88,8 +88,8 @@ def main(args):
 
             step += 1
             total_reward += reward
-            writer_csv.writerow([step, reward, total_reward, throttle, steer, info[environment.KEY_DEV], 
-                                 info[environment.KEY_VEL], dist_front, dist_right_front, dist_right,
+            writer_csv.writerow([step, reward, total_reward, info[environment.KEY_VEL], throttle, steer, 
+                                 info[environment.KEY_DEV], dist_front, dist_right_front, dist_right,
                                  dist_right_back])        
 
             if terminated or truncated:
@@ -108,7 +108,8 @@ if __name__ == "__main__":
         description="Execute an inference trial on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + \
-            "} --n <model_number> [--port <port_number>] [--num_cir <num_cir>] [--port_tm <port_tm] [--lane_network <lane_network>]"
+            "} --n <model_number> [--port <port_number>] [--num_cir <num_cir>] [--port_tm <port_tm]"
+            " [--lane_network <lane_network>] [--target_vel <target_vel>]"
     )
     parser.add_argument(
         '--env', 
@@ -158,6 +159,13 @@ if __name__ == "__main__":
         required=False, 
         default=3456,
         help='Port for the traffic manger. By default 3456.'
+    )
+    parser.add_argument(
+        '--target_vel', 
+        type=float, 
+        required=False, 
+        default=6.5,
+        help='Velocity of the front vehicle, By default 6.5 m/s'
     )
 
     main(parser.parse_args())

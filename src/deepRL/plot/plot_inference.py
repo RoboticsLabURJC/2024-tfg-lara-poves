@@ -9,7 +9,7 @@ import sys
 current_dir = os.getcwd()
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from deepRL.environment import KEY_DEV, KEY_THROTTLE, KEY_STEPS, KEY_STEER, KEY_BRAKE, KEY_BACK, KEY_REWARD, KEY_VEL, KEY_ACC_REWARD, KEY_DISTANCE
+from deepRL.environment import KEY_DEV, KEY_THROTTLE, KEY_STEPS, KEY_STEER, KEY_REWARD, KEY_VEL, KEY_ACC_REWARD, KEY_DISTANCE, KEY_LASER_RIGHT
 
 NUM_COLUMNS = 4
 NUM_ROWS = 2
@@ -23,7 +23,7 @@ def extract_data(key:str, data_csv:list[dict], val_abs:bool=False):
     return data
 
 def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], title:str, 
-              hist:bool=False, label:str=None, size:int=1):
+              hist:bool=False, label:str=None, size:int=1, file:str=None):
     # Extract data from csv
     data = extract_data(key=key, data_csv=data_csv, val_abs=key=='Deviation')
     
@@ -36,7 +36,10 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], 
         if key == KEY_DEV:
             key += ' in pixels'
         elif key == KEY_THROTTLE:
-            ax.set_ylim(-0.1, 1.1)
+            if file != None and 'Obstacle' in file:
+                ax.set_ylim(-0.1, 0.5)
+            else:
+                ax.set_ylim(-0.1, 1.1)
         elif key == KEY_DISTANCE:
             data = np.nan_to_num(data, nan=10.0)
 
@@ -72,23 +75,17 @@ def main(args):
     file.close()
 
     num_rows = NUM_ROWS
-    brake = False
-    if float(data[0][KEY_BRAKE]) >= 0.0:
-        num_rows += 1
-        brake = True
-
     dist = False
     try:
         if data[0][KEY_DISTANCE] == "nan" or float(data[0][KEY_DISTANCE]) < 15.0:
-            if not brake:
-                num_rows +=1
+            num_rows +=1
             dist = True
     except Exception:
         pass
 
     back = False
     try:
-        if data[0][KEY_BACK] == "nan" or float(data[0][KEY_BACK]) < 15.0:
+        if data[0][KEY_ACC_REWARD] == "nan" or float(data[0][KEY_LASER_RIGHT]) < 15.0:
             back = True
     except Exception:
         pass
@@ -105,7 +102,7 @@ def main(args):
     plot_data(data_csv=data, key=KEY_VEL, init=(0, 2), title='Velocity of the vehicle',
               label=csv_file, num_rows=num_rows, size=2)
     plot_data(data_csv=data, key=KEY_THROTTLE, init=(1, 2), title='Throttle of the vehicle',
-              label=csv_file, num_rows=num_rows, size=2)
+              label=csv_file, num_rows=num_rows, size=2, file=args.file)
 
     # Histograms
     plot_data(data_csv=data, key=KEY_THROTTLE, init=(1, 1), title='Histogram throttle actions',
@@ -114,40 +111,18 @@ def main(args):
                 label=csv_file, num_rows=num_rows)
     
     # Extra row
-    if num_rows > NUM_ROWS:
-        size_init = 1
-        size_brake = 2
-        init_brake = (2, 1)
-
-        if not dist and brake: # Only brake
-            init = (2, 0)
-        elif dist and not brake and not back: # Only front laser
-            init = (2, 1)
-        elif back and not brake: # Both laser
-            init = (2, 2)
-            size_init = 2
-        else: # All
-            init = None
-            size_brake = 1
-            init_brake = (2, 2)
-
-        if brake:
-            plot_data(data_csv=data, num_rows=num_rows, key=KEY_BRAKE, title='Brake of the vehicle',
-                      label=csv_file, init=(init_brake[0], init_brake[1] + 1), size=size_brake)
-            plot_data(data_csv=data, key=KEY_BRAKE, init=init_brake, title='Histogram brake actions',
-                      hist=True, label=csv_file, num_rows=num_rows)
-            
+    if num_rows > NUM_ROWS:    
         if dist:
-            plot_data(data_csv=data, key=KEY_DISTANCE, init=(2, 0), label=csv_file,
-                      title='Distance front lidar', num_rows=num_rows)
+            plot_data(data_csv=data, key=KEY_DISTANCE, init=(2, 2), label=csv_file,
+                      title='Distance front lidar', num_rows=num_rows, size=2)
             
         if back:
-            plot_data(data_csv=data, key=KEY_BACK, init=(2, 1), label=csv_file, title='Distance back lidar',
+            plot_data(data_csv=data, key=KEY_LASER_RIGHT, init=(2, 1), label=csv_file, title='Distance back lidar',
                       num_rows=num_rows)
  
-        if init != None:
-            plot_data(data_csv=data, key=KEY_ACC_REWARD, init=init, label=csv_file,
-                      title=KEY_ACC_REWARD, num_rows=num_rows, size=size_init)
+
+        plot_data(data_csv=data, key=KEY_ACC_REWARD, init=(2, 0), label=csv_file, title=KEY_ACC_REWARD,
+                  num_rows=num_rows)
     
     plt.tight_layout()
     plt.show()
