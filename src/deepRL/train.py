@@ -101,8 +101,8 @@ def main(args):
     try:
         model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name, progress_bar=True)
         env.close()
-    except:
-        pass # If the simulator crashes, save the model even if it's incomplete
+    except Exception as e:
+        print(e) # If the simulator crashes, save the model even if it's incomplete
 
     files = os.listdir(dir + 'model/' + args.env)
     num_files = len(files) + 1
