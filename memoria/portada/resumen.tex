@@ -2,21 +2,13 @@
 
 \chapter*{Resumen\markboth{Resumen}{Resumen}}
 
-Una de las principales áreas de estudio de la robótica es la navegación autónoma. En la actualidad, ésta se lleva a cabo mediante dos tipos de 
-algoritmos, enfoques clásicos que se 
-basan en la planificación de rutas y trayectorias mediante algoritmos que conocen el mapa del escenario, o cada vez tomando más protagonismo aquellos basados 
-en Inteligencia Artificial (IA), que consisten en aprender y adaptarse a escenarios. Dentro de la robótica aérea se están 
-creando una gran número de aplicaciones variadas gracias a la capacidad de los drones, que ofrecen una perspectiva diferente del 
-entorno y alcanzan zonas en los que un robot con ruedas o humanos no podrían llegar.
+La conducción autónoma se ha consolidado como una de las áreas más destacadas dentro de la robótica, estrechamente vinculada a los avances significativos en inteligencia artificial logrados en los últimos años. La inteligencia artificial, junto con el aprendizaje automático y el aprendizaje profundo, impulsa el desarrollo de tecnologías innovadoras que se basan en información proporcionada por sensores y cámaras para navegar de forma precisa. 
 
-En este TFG se explora un método de navegación basado en IA y aprendizaje por refuerzo, 
-cuyo objetivo es que el dron navegue en un área determinada, en este caso un carril de una carretera.
-Este tipo de navegación, tiene muchas aplicaciones, por ejemplo, la inspección de carreteras a gran altura para analizar el estado de las mismas, tráfico, 
-accidentes, primeros auxilios en desastres climatológicas.
+Estas técnicas permiten la implementación de soluciones avanzadas que facilitan la percepción e interacción con el entorno, tomando decisiones informadas en tiempo real. Los modelos predictivos generados buscan optimizar la seguridad, la eficiencia y la sostenibilidad en el sector del transporte, aspectos fundamentales en la evolución de los sistemas de movilidad autónoma. Por ejemplo, estos avances tienen aplicaciones en la gestión del tráfico urbano o la automatización de flotas de transporte público.
 
-Este trabajo propone el uso de técnicas de IA utilizando Deep Learning, como las redes neuronales de segmentación para la detección del carril y extracción 
-de sus características. Así como algoritmos de aprendizaje por refuerzo, en este caso, Q-learning, para que el sistema de control del 
-dron sea capaz de aprender las acciones a realizar en función de la información sensorial obtenida y sea capaz de generalizar.
+Este TFG se centra en desarrollar un sistema de conducción autónoma basado en IA y aprendizaje por refuerzo profundo (\textit{Deep Reinforcement Learning}), cuyo objetivo principal es lograr comportamientos específicos únicamente mediante la definición de recompensas y penalizaciones. El propósito final de este trabajo es implementar con éxito una maniobra de adelantamiento, logrando previamente comportamientos básicos como el seguimiento de carriles y la conducción segura detrás de otro vehículo sin colisión.
 
-Todo ello se ha realizado empleando el simulador AirSim, en el que se simula un entorno foto-realista, donde el dron realiza un seguimiento del carril. Por último, se emplea el middleware robótico ROS
-para las comunicaciones entre el simulador, y el software implementado en esta solución.
+Para la detección del entorno, se utilizan técnicas avanzadas de IA, como redes neuronales de segmentación semántica y redes neuronales específicas para la detección de las líneas de los carriles. Estas técnicas se combinan con algoritmos de aprendizaje por refuerzo profundo, como DQN y PPO, para que el vehículo aprenda a tomar las mejores acciones de control en función de la información sensorial obtenida en cada instante.
+
+Todo este trabajo se ha desarrollado en el simulador CARLA, una plataforma ampliamente utilizada para investigar y probar sistemas de conducción autónoma en entornos virtuales controlados. El uso de este simulador ha permitido recrear escenarios realistas y complejos, lo que ha facilitado el entrenamiento y la validación del modelo propuesto en situaciones representativas del mundo real.
+
