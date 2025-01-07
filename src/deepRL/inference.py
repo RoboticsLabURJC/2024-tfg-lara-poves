@@ -34,7 +34,7 @@ def main(args):
         exit(1)
 
     env = env_class(train=False, port=args.port, human=True, normalize=True, num_cir=args.num_cir,
-                    lane_network=args.lane_network, target_vel=args.target_vel)
+                    lane_network=args.lane_network, target_vel=args.target_vel, retrain=args.scene)
 
     total_reward = 0
     step = 0
@@ -109,7 +109,7 @@ if __name__ == "__main__":
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + \
             "} --n <model_number> [--port <port_number>] [--num_cir <num_cir>] [--port_tm <port_tm]"
-            " [--lane_network <lane_network>] [--target_vel <target_vel>]"
+            " [--lane_network <lane_network>] [--target_vel <target_vel>] [--scene <scene>]"
     )
     parser.add_argument(
         '--env', 
@@ -166,6 +166,14 @@ if __name__ == "__main__":
         required=False, 
         default=6.5,
         help='Velocity of the front vehicle, By default 6.5 m/s'
+    )
+    parser.add_argument(
+        '--scene', 
+        type=int, 
+        required=False, 
+        default=2,
+        choices=[0, 1, 2],
+        help='Types of model you want to test: 0 = lane, 1 = obstacle, 2 = passing. By default 2.'
     )
 
     main(parser.parse_args())

@@ -369,7 +369,7 @@ return reward
 
 Finalmente, logramos que nuestro vehículo mantuviera, con cierta estabilidad, la velocidad de crucero establecida por el vehículo delantero durante todo el recorrido, asegurando que no ocurrieran colisiones. A continuación, se presentan los datos recopilados durante la fase de inferencia. En la primera imagen, el vehículo delantero mantuvo una velocidad constante de 6.2 m/s, mientras que en la segunda imagen circulaba a 5 m/s.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/inference6.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/inference62.png" alt="">
 </figure>
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/inference5.png" alt="">

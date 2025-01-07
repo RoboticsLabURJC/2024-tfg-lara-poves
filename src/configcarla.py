@@ -904,7 +904,7 @@ class Vehicle_sensors:
         self._write_frame = 0
 
     def _put_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform(), type:int=0,
-                    max_dist_laser:int=10, train:bool=True):
+                    max_dist_laser:int=10, type_class:int=0):
         try:
             sensor_bp = self._world.get_blueprint_library().find(sensor_type)
         except IndexError:
@@ -914,12 +914,16 @@ class Vehicle_sensors:
         if type == LIDAR:
             sensor_bp.set_attribute('range', str(max_dist_laser))
 
-            if train:
+            if type_class == 0:
                 sensor_bp.set_attribute('rotation_frequency', '20')
             else:
                 sensor_bp.set_attribute('rotation_frequency', '100') 
-                sensor_bp.set_attribute('points_per_second', '200000')
                 sensor_bp.set_attribute('channels', '30')
+
+                if type_class == 1:
+                    sensor_bp.set_attribute('points_per_second', '200000') # CarlaObstacle inference
+                else:
+                    sensor_bp.set_attribute('points_per_second', '100000') # CarlaPassing inference
         elif type == CAMERA:
             sensor_bp.set_attribute('image_size_x', str(SIZE_CAMERA))
             sensor_bp.set_attribute('image_size_y', str(SIZE_CAMERA))
@@ -946,12 +950,12 @@ class Vehicle_sensors:
     
     def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25, time_show:bool=True,
                   transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True, 
-                  max_dist:int=10, train:bool=True, back_zone:int=0):
+                  max_dist:int=10, type_class:int=0, back_zone:int=0):
         if self._screen == None:
             init = None
 
         sensor = self._put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, type=LIDAR, 
-                                  max_dist_laser=max_dist, train=train)
+                                  max_dist_laser=max_dist, type_class=type_class)
         lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale,
                       max_dist=max_dist, yaw=transform.rotation.yaw, screen=self._screen, show_stats=show_stats,
                       time_show=time_show, back_zone=back_zone)
