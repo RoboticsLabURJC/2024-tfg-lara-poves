@@ -1191,16 +1191,11 @@ class CarlaPassing(CarlaBase):
                     w_steer = 0.05
                     w_throttle = 0.0
                 else:
-                    w_laser = 0.35
+                    w_laser = 0.3
                     w_dev = 0.5
-                    w_throttle = 0.05
+                    w_throttle = 0.1
                     w_steer = 0.1
-            #elif self._throttle < 0.5: 
-            #    w_dev = 0.6
-            #    w_throttle = 0.3
-            #    w_steer = 0.1 # Lower accelerations, penalize large turns less
-            #    w_laser = 0.0
-            else: # [0.5, 0.6) throttle
+            else:
                 w_dev = 0.6
                 w_throttle = 0.2
                 w_steer = 0.2

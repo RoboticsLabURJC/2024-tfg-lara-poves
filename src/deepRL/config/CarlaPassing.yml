@@ -7,5 +7,5 @@ PPO:
   batch_size: 512 
   ent_coef: 0.08
   clip_range: 0.15 # epsilon
-  n_timesteps: 4_000_000
+  n_timesteps: 2_000_000
   

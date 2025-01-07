@@ -387,6 +387,18 @@ obs añadidas
 
 entrenamientos base
 
+lane params:
+    PPO:
+  policy: "MultiInputPolicy"
+  learning_rate: 0.0001
+  gamma: 0.85
+  gae_lambda: 0.9 # γ
+  n_steps: 512 # The number of steps to run for each environment per update
+  batch_size: 512 
+  ent_coef: 0.08
+  clip_range: 0.15 # epsilon
+  n_timesteps: 4_000_000
+
 hemos eliminado la 3 al entrenar el adelantamiento (no el seguimiento del carril, ni el no chocarse) porque detectamos la vaya lateral con el lidar, lo que nos impde saber si hemos adelantado completamente al coche o es la vaya.
 
 maquina de estados
