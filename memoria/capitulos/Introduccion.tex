@@ -70,7 +70,7 @@ La Comisión Europea, consciente del potencial de los coches autónomos, destin�
 
 \begin{itemize}
     \item El conductor o pasajero establece el destino y el software del vehículo calcula automáticamente la mejor ruta.
-    \item Un sensor \textit{LIDAR} giratorio, montado en el techo, escanea un rango de 60 metros alrededor del vehículo, generando un mapa tridimensional dinámico del entorno.
+    \item Un sensor \ac{LiDAR} giratorio, montado en el techo, escanea un rango de 60 metros alrededor del vehículo, generando un mapa tridimensional dinámico del entorno.
     \item Un sensor ubicado en la rueda trasera izquierda mide los movimientos laterales del vehículo para determinar su posición exacta en relación con el mapa 3D.
     \item Los sistemas de radar, instalados en los parachoques delantero y trasero, calculan la distancia a los obstáculos cercanos.
     \item La inteligencia artificial del vehículo recopila datos de todos los sensores, así como de \textit{Google Street View} y cámaras internas, para interpretar el entorno y tomar decisiones.
@@ -80,7 +80,7 @@ La Comisión Europea, consciente del potencial de los coches autónomos, destin�
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=7cm]{figs/introducción/waymo.png}
+    \includegraphics[width=6cm]{figs/introducción/waymo.png}
   \end{center}
   \caption{Coche autónomo de Waymo con sensores y tecnología avanzada.}
   \label{waymo}
@@ -88,42 +88,45 @@ La Comisión Europea, consciente del potencial de los coches autónomos, destin�
 
 Tesla ha logrado un avance notable con su sistema \textit{Autopilot}, capaz de mantener un control preciso utilizando sofisticados algoritmos de inteligencia artificial para tomar decisiones rápidas y precisas. Modelos como el \textit{Model 3} y el \textit{Model Y} han implementado el sistema \textit{Tesla Vision}, que prescinde del uso de radar y utiliza un avanzado conjunto de cámaras junto con el procesamiento de redes neuronales desarrolladas por Tesla. Este sistema ofrece tres niveles principales: Piloto automático, Piloto automático mejorado y Capacidad de conducción autónoma total.
 
+\subsubsection{Piloto Automático}
+
 \begin{itemize}
-    \item \textbf{Piloto Automático}
-    \begin{itemize}
-        \item \textit{Control de crucero adaptativo al tráfico}: ajusta automáticamente la velocidad del vehículo para adecuarse al flujo del tráfico.
-        \item \textit{Autogiro}: permite mantener al vehículo dentro de un carril claramente delimitado.
-    \end{itemize}
-    \item \textbf{Piloto Automático Mejorado}
-    \begin{itemize}
-        \item \textit{Cambio automático de carril}: facilita el cambio al carril adyacente cuando el conductor activa el intermitente.
-        \item \textit{Navegar en piloto automático (Beta)}: mejora la funcionalidad de cambio de carril automático al proporcionar orientación activa para transitar desde la incorporación hasta la salida de autovías. Incluye sugerencias de cambio de carril y asistencia en intersecciones.
-        \item \textit{Autopark}: automatiza el proceso de estacionamiento en paralelo o perpendicular.
-        \item \textit{Dumb Summon}: permite mover el vehículo dentro o fuera de plazas de aparcamiento estrechas mediante la aplicación móvil.
-        \item \textit{Actually Smart Summon}: mejora las capacidades del vehículo para moverse de manera autónoma en entornos complejos, como plazas de aparcamiento, maniobrando alrededor de obstáculos y localizando al conductor dentro del área cercana.
-    \end{itemize}
-    \item \textbf{Capacidad de Conducción Autónoma Total}
-    \begin{itemize}
-        \item \textit{Integración completa}: incluye todas las funcionalidades del Piloto Automático básico y del Piloto Automático Mejorado.
-        \item \textit{Control de semáforos y señales de stop (Beta)}: detecta señales de tráfico como semáforos y señales de alto. A medida que el vehículo se acerca, ajusta automáticamente la velocidad y se detiene.
-    \end{itemize}
+    \item \textit{Control de crucero adaptativo al tráfico}: ajusta automáticamente la velocidad del vehículo para adecuarse al flujo del tráfico.
+    \item \textit{Autogiro}: permite mantener al vehículo dentro de un carril claramente delimitado.
+\end{itemize}
+
+\subsubsection{Piloto Automático Mejorado}
+
+\begin{itemize}
+    \item \textit{Cambio automático de carril}: facilita el cambio al carril adyacente cuando el conductor activa el intermitente.
+    \item \textit{Navegar en piloto automático (Beta)}: mejora la funcionalidad de cambio de carril automático al proporcionar orientación activa para transitar desde la incorporación hasta la salida de autovías. Incluye sugerencias de cambio de carril y asistencia en intersecciones.
+    \item \textit{Autopark}: automatiza el proceso de estacionamiento en paralelo o perpendicular.
+    \item \textit{Dumb Summon}: permite mover el vehículo dentro o fuera de plazas de aparcamiento estrechas mediante la aplicación móvil.
+    \item \textit{Actually Smart Summon}: mejora las capacidades del vehículo para moverse de manera autónoma en entornos complejos, como plazas de aparcamiento, maniobrando alrededor de obstáculos y localizando al conductor dentro del área cercana.
+\end{itemize}
+
+\subsubsection{Capacidad de Conducción Autónoma Total}
+
+\begin{itemize}
+    \item \textit{Integración completa}: incluye todas las funcionalidades del Piloto Automático básico y del Piloto Automático Mejorado.
+    \item \textit{Control de semáforos y señales de stop (Beta)}: detecta señales de tráfico como semáforos y señales de alto. A medida que el vehículo se acerca, ajusta automáticamente la velocidad y se detiene.
 \end{itemize}
 
 A pesar de las mejoras en el rendimiento que proporcionan estas características, no hacen que el coche sea autónomo, requieren un conductor totalmente atento, con las manos en el volante y preparado para tomar el control en cualquier momento \cite{tesla-autopilot}.
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=9cm]{figs/introducción/tesla_model_y.png}
+    \includegraphics[width=8cm]{figs/introducción/tesla_model_y.png}
   \end{center}
   \caption{\textit{Tesla Model Y} frenando ante un obstáculo.}
   \label{tesla}
 \end{figure}
 
-\textit{Cruise}, una empresa de \textit{General Motors}, ha destacado con su vehículo \textit{Cruise AV}, en el que el 40\% de su hardware está diseñado específicamente para la conducción autónoma. Este modelo integra una combinación de cámaras, \textit{LIDAR} y radar, permitiéndole realizar entre 200 y 800 maniobras diarias para sortear vehículos estacionados en doble fila \footnote{\url{https://www.getcruise.com/news/blog/2019/how-self-driving-cars-think-navigating-double-parked-vehicles/?_gl=1*81u4mi*_gcl_au*MTU2MzE4NjQzOC4xNzM2Njg4NzY2s}}. Además, el sistema es capaz de adaptarse a condiciones climáticas adversas, como la lluvia, asegurando una conducción segura y eficiente en entornos urbanos complejos.
+\textit{Cruise}, una empresa de \textit{General Motors}, ha destacado con su vehículo \textit{Cruise AV}, en el que el 40\% de su hardware está diseñado específicamente para la conducción autónoma. Este modelo integra una combinación de cámaras, \ac{LiDAR} y radar, permitiéndole realizar entre 200 y 800 maniobras diarias para sortear vehículos estacionados en doble fila \footnote{\url{https://www.getcruise.com/news/blog/2019/how-self-driving-cars-think-navigating-double-parked-vehicles/?_gl=1*81u4mi*_gcl_au*MTU2MzE4NjQzOC4xNzM2Njg4NzY2s}}. Además, el sistema es capaz de adaptarse a condiciones climáticas adversas, como la lluvia, asegurando una conducción segura y eficiente en entornos urbanos complejos.
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=9cm]{figs/introducción/cruise_av.png}
+    \includegraphics[width=8cm]{figs/introducción/cruise_av.png}
   \end{center}
   \caption{Detección de otros coches del \textit{Cruise AV}.}
   \label{cruise}
@@ -156,3 +159,34 @@ La superación de estos obstáculos requerirá soluciones innovadoras que satisf
 
 \section{Impacto de la IA en el transporte autónomo}
 \label{sec:ia-intro}
+
+Los coches autónomos son sistemas diseñados para tomar decisiones sin intervención humana, procesando flujos de datos provenientes de diversas fuentes a bordo, como cámaras, radares, \ac{LiDAR}, sensores ultrasónicos, unidades \ac{GPS} y sensores inerciales. Estos sistemas utilizan las observaciones recogidas para tomar decisiones sobre la conducción del vehículo, interpretando el entorno y respondiendo de manera adecuada a las situaciones que se presenten en la carretera. A través de los actuadores, el sistema de control ejecuta estas decisiones realizando maniobras como el giro del volante, la activación de los frenos y el ajuste del acelerador.
+
+Existen diversas soluciones en el ámbito de la conducción autónoma, sin embargo, las más relevantes en la actualidad son las que se basan en el \ac{ML}, debido a su capacidad para mejorar continuamente el rendimiento del sistema a través de la experiencia y la adaptación a nuevas situaciones. 
+
+\begin{itemize}
+    \item \textit{Aprendizaje supervisado}  \cite{supervised-learning} El aprendizaje supervisado consiste en algoritmos que son capaces de clasificar o predecir resultados mediante un conjunto de datos etiquetados, donde se conoce la respuesta correcta para cada entrada. Durante el proceso de entrenamiento, el modelo ajusta sus parámetros a medida que se le muestran estos datos, buscando reducir el error entre sus predicciones y las respuestas correctas. Esto tipo de aprendizaje requiere un análisis previo de los datos de entrenamiento para identificar qué características deben ser extraídas. El objetivo de este algoritmo de aprendizaje es predecir etiquetas para datos no vistos anteriormente.
+
+    \item \textit{End2End}  \cite{end2end-learning} Este enfoque es útil cuando resulta complicado identificar las características clave para el entrenamiento, ya que el algoritmo se encarga de extraer y aprender automáticamente esas características. En un sistema \textit{End2End} el sistema se optimiza de manera conjunta, todo el proceso de aprendizaje se entrena como un único bloque, donde los datos de entrada se mapean directamente a la salida final sin necesidad de pasos intermedios explícitos.
+    
+    \item \textit{Aprendizaje no supervisado} \cite{no-supervised-learning} El aprendizaje no supervisado no aprende a partir de esos datos de entrenamiento, sino que es el propio modelo quien es capaz de reconocer agrupaciones o patrones en un conjunto de datos a analizar sin tener previo conocimiento sobre ellos.
+
+    \item \textit{Aprendizaje por imitación} \cite{imitation-learning} El aprendizaje por imitación consiste en entrenar a los agentes para que reproduzcan el comportamiento observado de expertos humanos o de otros agentes. A diferencia del aprendizaje por refuerzo, que se basa en la prueba y error, este enfoque permite que los agentes adquieran habilidades simplemente observando y replicando acciones efectivas. Gracias a esto, los agentes pueden aprender rápidamente habilidades complejas, lo que hace que este tipo de aprendizaje sea ideal para aplicaciones en tareas específicas.
+
+    \item \textit{Aprendizaje por refuerzo}  \cite{imitation-learning} El aprendizaje por refuerzo busca enseñar a una máquina, llamada agente, mediante un sistema de recompensas y penalizaciones. El proceso de aprendizaje se desarrolla de la siguiente manera: el agente interactúa con un entorno, realizando acciones basadas en su estado actual (donde está en el entorno) y recibe un \textit{feedback} del entorno (recompensa). A través de este proceso, el agente va aprendiendo una política, una función que mapea los estados del agente a las acciones que debe tomar, con el objetivo de maximizar la final.
+
+\end{itemize}
+
+\clearpage % La iamgen salga después del texto, no salga antes el párrafo de abajo porque la imagen no cabe
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=9cm]{figs/introducción/RL.png}
+  \end{center}
+  \caption{Esquema del proceso de aprendizaje por refuerzo.}
+  \label{rl}
+\end{figure}
+
+Cada uno de estos enfoques de \ac{ML} tiene sus propias fortalezas y limitaciones. Sin embargo, en la mayoría de los sistemas autónomos modernos, se combinan varias técnicas para garantizar que el vehículo pueda adaptarse a una amplia variedad de condiciones de tráfico y entorno. Al integrar estas soluciones, los coches autónomos pueden mejorar continuamente su rendimiento y fiabilidad.
+
+Este \ac{TFG} propone una solución que combina el aprendizaje supervisado, concretamente redes neuronales para la detección de objetos y de carriles, con el aprendizaje por refuerzo para el control del vehículo. A partir de las observaciones, como los datos de los sensores, y mediante recompensas, el coche aprende a seleccionar las mejores acciones en cada momento.
