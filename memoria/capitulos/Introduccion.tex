@@ -29,7 +29,7 @@ La Sociedad de Ingenieros Automotrices (\ac{SAE}) ha establecido una clasificaci
     \item \textit{Nivel 0:} Ninguna autonomía. El conductor es completamente responsable de todas las tareas de conducción.
     \item \textit{Nivel 1:} Asistencia al conductor. El vehículo puede realizar una función específica (como el control de crucero), pero siempre requiere la supervisión activa del conductor.
     \item \textit{Nivel 2:} Automatización parcial. El vehículo cuenta con sistemas que pueden replicar tareas del conductor, pero el conductor debe estar preparado para intervenir en cualquier momento.
-    \item \textit{Nivel 3:} Automatización condicional. El vehículo puede tomar control completo en determinadas condiciones, pero el conductor debe estar disponible para retomar el control si el sistema lo solicita. Un ejemplo destacado de este nivel es el Autopilot de Tesla \footnote{\url{https://www.tesla.com/es_es/support/autopilot}}.
+    \item \textit{Nivel 3:} Automatización condicional. El vehículo puede tomar control completo en determinadas condiciones, pero el conductor debe estar disponible para retomar el control si el sistema lo solicita. Un ejemplo destacado de este nivel es el Autopilot de Tesla.
     \item \textit{Nivel 4:} Alta automatización. El vehículo puede operar de forma autónoma en condiciones específicas, sin necesidad de intervención humana, aunque pueden existir limitaciones geográficas o contextuales.
     \item \textit{Nivel 5:} Automatización total. El vehículo es completamente autónomo y no requiere intervención humana en ningún momento ni bajo ninguna circunstancia.
 \end{itemize}
@@ -58,13 +58,86 @@ rápido del ojo, cabeza u otras partes del cuerpo de animales o dispositivos) co
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=9cm]{figs/introducción/paris_1994.png}
+    \includegraphics[width=8cm]{figs/introducción/paris_1994.png}
   \end{center}
   \caption{Demostración en vico del funcionamiento de \textit{VaMP} en París.}
   \label{coche-geddes}
 \end{figure}
 
-La Comisión Europea, consciente del potencial de los coches autónomos, destinó 800 millones de euros al proyecto  \textit{EUREKA Prometheus}, una iniciativa que marcó un hito en el desarrollo de esta tecnología. Este programa facilitó la creación de numerosos prototipos que sentaron las bases de los vehículos autónomos modernos  \cite{history-vehicles}. Actualmente, este campo es liderado por empresas pioneras como  \textit{Waymo},  \textit{Tesla},  \textit{Cruise} y  \textit{NVIDIA } \cite{ai-self-driving-cars}.
+La Comisión Europea, consciente del potencial de los coches autónomos, destinó 800 millones de euros al proyecto  \textit{EUREKA Prometheus}, una iniciativa que marcó un hito en el desarrollo de esta tecnología. Este programa facilitó la creación de numerosos prototipos que sentaron las bases de los vehículos autónomos modernos  \cite{history-vehicles}. Actualmente, este campo es liderado por empresas como  \textit{Waymo},  \textit{Tesla},  \textit{Cruise} y  \textit{NVIDIA } \cite{ai-self-driving-cars}.
+
+\textit{Waymo} \footnote{\url{https://waymo.com/intl/es/}}, el sistema de conducción autónoma desarrollado por \textit{Google}, se ha consolidado como un referente en el sector de los vehículos sin conductor. Gracias a la integración de \ac{IA}, \textit{Waymo} destaca por su capacidad para planificar rutas complejas y reaccionar de forma inteligente ante diversos escenarios en la carretera. Un vehículo \textit{Waymo} es capaz de operar de manera segura y autónoma siguiendo los siguientes pasos:
+
+\begin{itemize}
+    \item El conductor o pasajero establece el destino y el software del vehículo calcula automáticamente la mejor ruta.
+    \item Un sensor \textit{LIDAR} giratorio, montado en el techo, escanea un rango de 60 metros alrededor del vehículo, generando un mapa tridimensional dinámico del entorno.
+    \item Un sensor ubicado en la rueda trasera izquierda mide los movimientos laterales del vehículo para determinar su posición exacta en relación con el mapa 3D.
+    \item Los sistemas de radar, instalados en los parachoques delantero y trasero, calculan la distancia a los obstáculos cercanos.
+    \item La inteligencia artificial del vehículo recopila datos de todos los sensores, así como de \textit{Google Street View} y cámaras internas, para interpretar el entorno y tomar decisiones.
+    \item La \ac{IA} simula los procesos perceptivos y de toma de decisiones de un ser humano mediante aprendizaje profundo, controlando sistemas clave como los frenos y la dirección.
+    \item El software del vehículo consulta \textit{Google Maps} para obtener información anticipada sobre señales de tráfico, puntos de referencia y semáforos.
+\end{itemize}
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=7cm]{figs/introducción/waymo.png}
+  \end{center}
+  \caption{Coche autónomo de Waymo con sensores y tecnología avanzada.}
+  \label{waymo}
+\end{figure}
+
+Tesla ha logrado un avance notable con su sistema \textit{Autopilot}, capaz de mantener un control preciso utilizando sofisticados algoritmos de inteligencia artificial para tomar decisiones rápidas y precisas. Modelos como el \textit{Model 3} y el \textit{Model Y} han implementado el sistema \textit{Tesla Vision}, que prescinde del uso de radar y utiliza un avanzado conjunto de cámaras junto con el procesamiento de redes neuronales desarrolladas por Tesla. Este sistema ofrece tres niveles principales: Piloto automático, Piloto automático mejorado y Capacidad de conducción autónoma total.
+
+\begin{itemize}
+    \item \textbf{Piloto Automático}
+    \begin{itemize}
+        \item \textit{Control de crucero adaptativo al tráfico}: ajusta automáticamente la velocidad del vehículo para adecuarse al flujo del tráfico.
+        \item \textit{Autogiro}: permite mantener al vehículo dentro de un carril claramente delimitado.
+    \end{itemize}
+    \item \textbf{Piloto Automático Mejorado}
+    \begin{itemize}
+        \item \textit{Cambio automático de carril}: facilita el cambio al carril adyacente cuando el conductor activa el intermitente.
+        \item \textit{Navegar en piloto automático (Beta)}: mejora la funcionalidad de cambio de carril automático al proporcionar orientación activa para transitar desde la incorporación hasta la salida de autovías. Incluye sugerencias de cambio de carril y asistencia en intersecciones.
+        \item \textit{Autopark}: automatiza el proceso de estacionamiento en paralelo o perpendicular.
+        \item \textit{Dumb Summon}: permite mover el vehículo dentro o fuera de plazas de aparcamiento estrechas mediante la aplicación móvil.
+        \item \textit{Actually Smart Summon}: mejora las capacidades del vehículo para moverse de manera autónoma en entornos complejos, como plazas de aparcamiento, maniobrando alrededor de obstáculos y localizando al conductor dentro del área cercana.
+    \end{itemize}
+    \item \textbf{Capacidad de Conducción Autónoma Total}
+    \begin{itemize}
+        \item \textit{Integración completa}: incluye todas las funcionalidades del Piloto Automático básico y del Piloto Automático Mejorado.
+        \item \textit{Control de semáforos y señales de stop (Beta)}: detecta señales de tráfico como semáforos y señales de alto. A medida que el vehículo se acerca, ajusta automáticamente la velocidad y se detiene.
+    \end{itemize}
+\end{itemize}
+
+A pesar de las mejoras en el rendimiento que proporcionan estas características, no hacen que el coche sea autónomo, requieren un conductor totalmente atento, con las manos en el volante y preparado para tomar el control en cualquier momento \cite{tesla-autopilot}.
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=9cm]{figs/introducción/tesla_model_y.png}
+  \end{center}
+  \caption{\textit{Tesla Model Y} frenando ante un obstáculo.}
+  \label{tesla}
+\end{figure}
+
+\textit{Cruise}, una empresa de \textit{General Motors}, ha destacado con su vehículo \textit{Cruise AV}, en el que el 40\% de su hardware está diseñado específicamente para la conducción autónoma. Este modelo integra una combinación de cámaras, \textit{LIDAR} y radar, permitiéndole realizar entre 200 y 800 maniobras diarias para sortear vehículos estacionados en doble fila \footnote{\url{https://www.getcruise.com/news/blog/2019/how-self-driving-cars-think-navigating-double-parked-vehicles/?_gl=1*81u4mi*_gcl_au*MTU2MzE4NjQzOC4xNzM2Njg4NzY2s}}. Además, el sistema es capaz de adaptarse a condiciones climáticas adversas, como la lluvia, asegurando una conducción segura y eficiente en entornos urbanos complejos.
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=9cm]{figs/introducción/cruise_av.png}
+  \end{center}
+  \caption{Detección de otros coches del \textit{Cruise AV}.}
+  \label{cruise}
+\end{figure}
+
+Por último, \textit{NVIDIA} ha desarrollado la plataforma \textit{NVIDIA DRIVE} \footnote{\url{https://www.nvidia.com/es-es/self-driving-cars/?utm_source}}, una solución de computación avanzada que demuestra cómo la inteligencia artificial puede integrarse de manera efectiva en los vehículos autónomos.
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=7cm]{figs/introducción/nvidia.png}
+  \end{center}
+  \caption{Coche autónomo de NVIDIA.}
+  \label{nvidia}
+\end{figure}
 
 \subsection{Desafíos actuales en la implementación de vehículos autónomos}
 \label{sec:desafíos}
@@ -74,6 +147,7 @@ Los vehículos autónomos enfrentan numerosos desafíos que deben ser superados 
 En el ámbito técnico, uno de los mayores retos radica en la detección y análisis de datos. Los vehículos autónomos necesitan identificar obstáculos de manera inequívoca, incluso a altas velocidades y largas distancias. Esto exige un software avanzado capaz de procesar grandes volúmenes de datos en tiempo real con un alto grado de precisión, un área que aún enfrenta importantes limitaciones. Además, garantizar un sistema seguro y fiable implica desarrollar tecnología tolerante a fallos y capaz de operar de manera eficiente en entornos no controlados. En el mundo real, los vehículos autónomos deben enfrentarse a miles de situaciones impredecibles durante la conducción, y los sistemas actuales todavía están lejos de resolver de manera eficiente todas estas incertidumbres.
 
 Otro desafío técnico crucial es la seguridad cibernética. Los vehículos autónomos, especialmente aquellos basados en \ac{DL}, son vulnerables a ataques que podrían comprometer su funcionalidad o la seguridad de sus ocupantes. Por ello, es imprescindible implementar estrategias robustas de defensa para mitigar estos riesgos y generar confianza en la tecnología.
+
 En el ámbito no técnico, las cuestiones legales y éticas presentan una barrera importante. Existe una preocupación creciente sobre la responsabilidad en caso de accidentes, ya que no está claro si la culpa recaería en el fabricante, el desarrollador del software o el propietario del vehículo. También es esencial salvaguardar la privacidad de los datos de los pasajeros, ya que los sistemas autónomos recopilan y procesan grandes cantidades de información personal.
 
 La aceptación por parte de los consumidores y las regulaciones gubernamentales son factores determinantes en el desarrollo de vehículos autónomos. En la actualidad, las políticas y normativas suelen avanzar a un ritmo más lento que el desarrollo tecnológico, lo que complica las pruebas y la implementación a gran escala.
