@@ -1,121 +1,94 @@
 \chapter{Objetivos}
 \label{cap:capitulo2}
 
-En esta sección se describe el problema a resolver junto con los objetivos y requisitos pautados en el desarrollo del TFG
+En esta sección del documento se describe el problema a resolver, marcando los los objetivos y requisitos pautados en el desarrollo del \ac{TFG}.
 
 \section{Descripción del problema}
 \label{sec:descripcion}
 
-El objetivo principal de este TFG, es desarrollar un comportamiento de navegación autónoma basado en seguimiento de carriles utilizando
-aprendizaje por refuerzo e Inteligencia Artificial, en el que el dron sea capaz de navegar de una manera robusta y autónoma por escenarios de carreteras. El enfoque de este trabajo de investigación 
-se centra en la creación de una solución eficiente y completa ante la problemática que puede llegar a tener la navegación autónoma, se 
-muestra un comportamiento capaz de realizar el seguimiento de un carril para demostrar la complejidad de mantener una trayectoria estable 
-y precisa utilizando un dron. 
+El objetivo principal de este \ac{TFG} es desarrollar un sistema de navegación autónoma capaz de realizar adelantamientos en entornos urbanos, empleando una combinación de aprendizaje por refuerzo con redes neuronales (\ac{DRL}) y diferentes técnicas de \ac{DL} para la percepción del entorno, con el fin de garantizar un comportamiento robusto, seguro y eficiente. El proyecto se centra en lograr una conducción suave y estable durante todo el recorrido, abordando tres subtareas principales: el seguimiento del carril para mantener la trayectoria correcta, el mantenimiento de una velocidad de crucero ajustada al vehículo delantero y la ejecución del adelantamiento, que incluye el cambio de carril y el retorno seguro al carril original.
 
 A continuación, se definen los siguientes sub-objetivos: 
 
 \begin{enumerate}
-    \item Estudio del arte de los drones con el objetivo de definir las posibilidades que puede ofrecer y definir 
-    la navegación autónoma dentro del entorno en el que se desarrollará el TFG. 
-    \item Análisis y uso de un sistema perceptivo basado en redes neuronales en la navegación autónoma de drones.
-    \item Desarrollo  de un sistema de control para drones utilizando técnicas de aprendizaje por refuerzo para lograr una navegación 
+    \item Estudio del simulador CARLA \footnote{\url{https://carla.org/}}, con el objetivo de comprender sus capacidades y definir el entorno de desarrollo del \ac{TFG}, incluyendo la implementación de un sistema de teleoperación.
+    \item Integración de sensores y técnicas de percepción, como la detección de carriles (con \textit{ground truth} y redes neuronales), segmentación semántica de imágenes captadas por la cámara y la división del \ac{LiDAR} en zonas de interés. Además, se desarrollará un sistema de seguimiento de carril basado en un controlador \ac{PID}.
+    \item Desarrollo de comportamiento sigue-carril basado en algoritmos de \ac{DRL} para lograr una navegación 
     autónoma y eficaz.
-    \item Análisis y desarrollo de una aplicación de navegación autónoma de drones basándonos en el seguimiento de un carril.
-    \item Análisis y comparativas de los diferentes comportamientos de navegación desarrollados en este trabajo, para validar formalmente su funcionamiento.
+    \item Expansión del sistema de control para incorporar comportamientos de velocidad de crucero y ejecución de adelantamientos.
+    \item Análisis y comparación de los diferentes comportamientos desarrollados en el proyecto para validar su correcto funcionamiento.
 \end{enumerate}
-\newpage
+
 \section{Requisitos}
 \label{sec:requisitos}
 
 Los requisitos que han de cumplirse en este trabajo son: 
 \begin{enumerate}
-    \item Uso del vehículo UAV en el entorno de simulación fotorrealista Airsim junto a Unreal Engine.
-    \item Utilización del middleware robótico ROS para así garantizar la interoperabilidad del trabajo en otro tipo de escenarios permitiendo
-    la reutilización del proyecto en diversas aplicaciones. 
-    \item Comportamiento robusto y en tiempo real para garantizar la navegación del dron dentro del escenario de carreteras.
-    \item Los sistemas desarrollados deben ser reactivos para poder reaccionar a su entorno de manera concisa y eficiente durante
-    la navegación en tiempo real.
-    \item Uso del algoritmo de Q-learning para el control autónomo del dron. 
+    \item Uso del entorno de simulación CARLA, que permite la creación de escenarios realistas y la emulación de diversos comportamientos de vehículos.
+    \item Aprovechamiento de CARLA, un simulador ampliamente utilizado en el campo de la conducción autónoma, para probar modelos y garantizar la reutilización del proyecto en aplicaciones futuras relacionadas con la movilidad y la navegación autónoma.
+    \item Integración de redes neuronales previamente desarrolladas para optimizar la percepción del entorno, mejorar la toma de decisiones del sistema autónomo.
+    \item Comportamiento robusto y reactivo en tiempo real, asegurando una navegación segura y eficiente del vehículo en diferentes escenarios.
+    \item Uso de los algoritmos \ac{DQN} y \ac{PPO} para el control autónomo del vehículo.
 \end{enumerate}
-
 
 \section{Metodología}
 \label{sec:metodologia}
 
-Este trabajo, comenzó oficialmente en Septiembre del 2023 aunque en Diciembre del 2022 se plantearon varias ideas a desarrollar, y se finalizó en Junio del 2024.
+Este TFG comenzó en febrero de 2024 y finalizó en marzo de 2025. La metodología de trabajo fue la siguiente:
 
-La metodología que se llevo a cabo fue:
+\begin{itemize}
+    \item Reuniones semanales a través de \textit{Teams} \footnote{\url{https://www.microsoft.com/es-es/microsoft-teams/log-in}}, con una duración de entre 30 y 60 minutos, para hacer un seguimiento de los problemas que hubieran podido surgir durante la semana y definir los nuevos objetivos a cumplir.
+    \item Contacto mediante el email de la universidad con el fin de solventar problemas urgentes e intercambiar contenido de avances significativos conseguidos.
+    \item Se siguió la metodología tradicional \textit{Waterfall} \footnote{\url{https://asana.com/es/resources/waterfall-project-management-methodology}}, en la que el proyecto se desarrolló de manera secuencial, con cada fase dependiendo de la finalización de la anterior, garantizando un avance lineal desde el inicio hasta la finalización del proyecto.
 
-\begin{enumerate}
-    \item Reuniones semanales mediante Teams\footnote{\url{https://www.microsoft.com/es-es/microsoft-teams/group-chat-software}} con una duración de media o una hora, con el fin de tener un control semanal y pactar los objetivos semanales a seguir. Gracias a estas reuniones, se tenia una organización global del proyecto. 
-    \item Contacto vía email de la universidad con el fin de solventar problemas urgentes. 
-    \item Utilización de la metodología Kanban\footnote{\url{https://canalinnova.com/que-es-y-para-que-sirve-el-kanban-definicion-fases-y-pasos/}}: Este tipo de metodología consiste en crear un flujo de trabajo
-    en equipos mediante la gestión visual. Se compone de varias fases:
-  
-    \begin{itemize}
-      \item \textbf{Fase 1: Inicio del proyecto}. Consiste en marcar los objetivos que se deben seguir dentro del proyecto junto la asignación e identificación de tareas. En esta fase, 
-      se define el tipo de aplicación que se iba a seguir que es la navegación autónoma de drones considerando un entorno de simulación de carreteras, la infraestructura, los tipos 
-      de algoritmos a seguir y las analíticas de los comportamientos desarrollados durante el TFG. 
-      \item \textbf{Fase 2: Diseño del tablero Kanban}. Se crea un tablero en donde se visualizarán las tareas y su estado. Cada tarea se definen en las columnas del tableros las
-      tareas que se deben realizar junto con indicadores visuales como se muestra en la figura \ref{fig:Kanban}
-      \item \textbf{Fase 3: Implementación del tablero Kanban}. Se asignan las tareas a realizar y se establecen límites de trabajo en progreso como el tiempo de desarrollo para 
-      completar dicha tarea. 
-      \item \textbf{Fase 4: Seguimiento y mejora continua}. Se realiza un flujo continuo y constante del trabajo identificando nuevas soluciones para mejorar la eficacia y la 
-      productividad hasta poder cambiar estrategias existentes por nuevas alternativas previamente definidas. En este trabajo se ha realizado varias tareas y seguimientos para encontrar
-      la mejor solución ante el problema a resolver.
+	\begin{figure}[ht]
+	  \begin{center}
+	    \includegraphics[width=7cm]{figs/objetivos/waterfall.png}
+	  \end{center}
+	  \caption{Metodología \textit{Waterfall}.}
+	  \label{waterfall}
+	\end{figure}
 
-      
-      A lo largo del desarrollo de este TFG, se marcaron estas 4 fases permitiendo cambios y mejoras continuas hasta llegar al resultado final.
+    \item Uso de un repositorio en \textit{GitHub}  \footnote{\url{https://github.com/}} para gestionar el control de versiones del código fuente, modelos y los datos más relevantes generados durante el desarrollo del proyecto.
+    \item Mantenimiento de un \textit{blog} \footnote{\url{https://roboticslaburjc.github.io/2024-tfg-lara-poves/}} con el propósito de documentar problemas, avances e investigaciones realizadas durante la implementación del proyecto, asegurando un registro claro del progreso y soluciones de los desafíos superados.
 
-    \end{itemize}
-  
-    \begin{figure} [H]
-        \begin{center}
-          \includegraphics[scale=0.3]{figs/objetivos/Kanban3.jpg}
-        \end{center}
-        \caption{Ilustración del tablero Kanban durante el desarrollo del TFG}
-        \label{fig:Kanban}
-        \vspace{-1.5em}
-      \end{figure}
-  
-    \item Tener un control de versiones mediante la plataforma GitHub\footnote{\url{https://github.com/RoboticsLabURJC/2022-tfg-barbara-villalba}}, con el objetivo de tener un almacenamiento de código y respaldos de ello.  
-    \item El uso de un blog\footnote{\url{https://roboticslaburjc.github.io/2022-tfg-barbara-villalba/}}, en el cual se describió brevemente los pasos que se siguieron para el desarrollo del TFG.
-\end{enumerate}
+	\begin{figure}[ht]
+	  \begin{center}
+	    \includegraphics[width=9cm]{figs/objetivos/github.png}
+	  \end{center}
+	  \caption{Seguimiento de trabajo en GitHub.}
+	  \label{github}
+	\end{figure}
 
-\begin{figure} [H]
-    \begin{center}
-      \includegraphics[width=0.7\textwidth,height=0.2\textwidth]{figs/objetivos/github.png}
-    \end{center}
-    \caption{Seguimiento de trabajo en GitHub}
-    \label{fig:github}
-    \vspace{-1.5em}
-  \end{figure}
+\end{itemize}
 
+\clearpage
 
 \section{Plan de trabajo}
 \label{sec:plantrabajo}
 
-Finalmente, los pasos a seguir de este trabajo han sido: 
-\begin{enumerate}
-    \item Comienzo del trabajo. 
-    \begin{itemize}
-        \item Búsqueda del problema a desarrollar y análisis del estado del arte del uso de los drones en aplicaciones robóticas.
-        \item Instalación de las diferentes librerías y aplicaciones de software. 
-        \item Preparación de configuración de toda la infraestructura, teniendo un análisis y estudio de comunicaciones para poder comenzar con el desarrollo. 
-    \end{itemize}
-    \item Desarrollo: Una vez se tuvo listo toda la infraestructura tanto de comunicaciones como de librerías de software, se dio a pie el comienzo del desarrollo del código
-        \begin{itemize}
-            \item En primer lugar, se desarrollo un teleoperador sencillo del drone para ver el funcionamiento del dron y dicho comportamiento.
-            \item Una vez finalizada la tarea del teleoperador, se comenzó con los algoritmos de percepción de detección de carril mediante redes neuronales.
-            \item Análisis y comparación de los resultados de los diferentes modelos que ofrece la red neuronal escogida con el propósito de tener la mejor solución. 
-            \item El siguiente paso fue estudiar la posibilidad de tener un algoritmo de aprendizaje no supervisado llamado clustering para agrupar las diferentes líneas que aparezcan en el escenario de la carretera.
-            \item Desarrollo del algoritmo de percepción junto con los dos puntos anteriormente mencionados.
-            \item Una vez finalizado el algoritmo de percepción, se comenzó el desarrollo de un controlador PID para ver el funcionamiento del componente perceptivo y de la navegación en el drone. 
-            \item A continuación, se desarrolló el algoritmo de aprendizaje por refuerzo para el seguimiento del carril.
-        \end{itemize}
-    \item Evaluación: Se realizó la comparativa de los resultados obtenidos en el aprendizaje por refuerzo.
-        
-    \item Redacción de la memoria del trabajo para la documentación de todo el proceso de investigación realizado. 
-\end{enumerate}
+Finalmente, los pasos a seguir de este trabajo han sido:
 
+\begin{enumerate}
+    \item Comienzo del trabajo:
+	\begin{itemize}
+		\item Desde el inicio, el tema del proyecto estuvo claro, centrado en la conducción autónoma en el simulador CARLA. El objetivo final sería lograr un comportamiento de adelantamiento mediante aprendizaje por refuerzo.
+		\item Se gestionó el acceso al servidor donde se desarrollaría el proyecto, el cual ya contaba con el simulador instalado.	
+		\item Se creó un entorno \textit{Conda} \footnote{\url{https://anaconda.org/}} y se procedió a la instalación de las librerías necesarias para el desarrollo.
+	\end{itemize}
+
+    \item Desarrollo del proyecto:
+	\begin{itemize}
+		\item Se desarrolló un teleoperador sencillo para explorar las diversas funcionalidades y configuraciones que ofrece el simulador CARLA.
+		\item Se implementó el manejo de sensores como el \ac{LiDAR} y la cámara, los cuales se utilizarían posteriormente para lograr comportamientos específicos en el sistema autónomo. Además, se integraron redes neuronales para la detección de carriles y la segmentación semántica. Para la identificación del carril, se incluyó una nueva forma de deteccion basada en  \textit{ground truth} en CARLA.	
+		\item Se configuró el autopiloto de CARLA, explorando las distintas opciones de configuración disponibles.
+		\item Se desarrolló un sistema de seguimiento de carriles basado en un controlador \ac{PID}.
+		\item En una primera etapa, se entrenó un modelo utilizando \ac{DQN} para que fuera capaz de seguir el carril. Posteriormente, se entrenó un nuevo modelo utilizando \ac{PPO} para mejorar el desempeño.
+		\item Se realizó un reentrenamiento del último modelo para que pudiera mantener una velocidad de crucero utilizando la información proporcionada por el \ac{LiDAR} sobre el coche delantero.
+		\item Finalmente, se reentrenó el modelo para extender el comportamiento y permitir la realización de adelantamientos en un entorno controlado.
+	\end{itemize}
+
+    \item Evaluación: Se compararon y analizaron los resultados obtenidos durante las diferentes fases y entrenamientos del proyecto.
+    \item Se redactó la memoria del trabajo, documentando todo el proceso de investigación realizado.
+\end{enumerate}
 

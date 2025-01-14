@@ -6,20 +6,20 @@ El avance tecnológico constante ha transformado nuestra forma de percibir el mu
 
 La capacidad de los vehículos autónomos para desenvolverse de manera segura en entornos complejos, no solo reducen los errores humanos, sino que también abren nuevas oportunidades en ámbitos esenciales. Desde mejorar la seguridad vial y promover la eficiencia energética hasta fomentar la inclusión social, convirtiéndose en pilares fundamentales para el desarrollo de ciudades más sostenibles. Aunque todavía queda un largo camino por recorrer, estos avances permiten vislumbrar un futuro donde el tráfico sea más fluido, los recursos urbanos estén mejor aprovechados y las personas con movilidad reducida o dificultades para conducir tengan un acceso más equitativo a los servicios de transporte.
 
-En este \ac{TFG}, nos centraremos en los sistemas de conducción autónoma, explorando su aplicación en la movilidad inteligente dentro de entornos urbanos. Analizaremos cómo la \ac{IA} contribuye a este campo, tanto en el aspecto sensorial como en el de control. En el ámbito del control, nos enfocaremos en \ac{DRL}, evaluando diferentes algoritmos para determinar cuáles ofrecen los mejores resultados.
+En este \ac{TFG}, nos centraremos en los sistemas de conducción autónoma, explorando su aplicación en la movilidad inteligente dentro de entornos urbanos. Analizaremos cómo la \ac{IA} y \ac{ML} contribuye a este campo, tanto en el aspecto sensorial como en el de control. En el ámbito del control, nos enfocaremos en \ac{DRL}, evaluando diferentes algoritmos para determinar cuáles ofrecen los mejores resultados.
 
 \section{Vehículos autónomos}
 \label{sec:vehículos}
 
 Un vehículo autónomo es aquel capaz de realizar todas las funciones de conducción entre un origen y un destino sin la intervención de un ser humano, más allá de indicar el punto de inicio y final del trayecto. En los niveles intermedios, donde aún se requiere la actuación de un conductor, la autonomía no es total.
 
-En la actualidad, la industria automotriz ha desarrollado una amplia gama de \ac{ADAS}, cuyo objetivo principal es reducir el riesgo de accidentes. Estos sistemas utilizan una red de sensores para analizar el entorno de conducción, procesando la información mediante la electrónica del vehículo. Con esta información, el sistema toma decisiones predefinidas y puede intervenir en elementos como el acelerador, los frenos o la dirección. Entre sus funcionalidades más comunes hoy en día se incluyen aquellos que corrigen desvíos involuntarios del carril o alertan al conductor sobre peligros inminentes que requieren una respuesta inmediata. Aunque estos avances representan pasos intermedios hacia la conducción autónoma completa, los \ac{ADAS} continúan asistiendo al conductor en tareas específicas, aunque aún requieren su supervisión activa. No solo mejoran la seguridad en los vehículos actuales, sino que también establecen las bases para la implementación futura de sistemas totalmente autónomos.
+En la actualidad, la industria automotriz ha desarrollado una amplia gama de \ac{ADAS}, cuyo objetivo principal es reducir el riesgo de accidentes. Estos sistemas utilizan una red de sensores para analizar el entorno de conducción, procesando la información mediante la electrónica del vehículo. Con esta información, el sistema toma decisiones predefinidas y puede intervenir en elementos como el acelerador, los frenos o la dirección. Entre sus funcionalidades más comunes hoy en día se incluyen aquellas que corrigen desvíos involuntarios del carril o alertan al conductor sobre peligros inminentes que requieren una respuesta inmediata. Aunque estos avances representan pasos intermedios hacia la conducción autónoma completa, los \ac{ADAS} continúan asistiendo al conductor en tareas específicas, aún requieren su supervisión activa. Los \ac{ADAS} establecen las bases para la implementación futura de sistemas totalmente autónomos.
 
 La Sociedad de Ingenieros Automotrices (\ac{SAE}) ha establecido una clasificación estandarizada de los niveles de autonomía de los vehículos, que abarca desde la conducción completamente manual hasta la conducción completamente autónoma. Esta categorización divide los vehículos autónomos en seis niveles, según el grado de intervención que se requiere del conductor y la capacidad del sistema del vehículo para tomar control \cite{autobild-autonomous}.
 
 \begin{figure} [ht]
   \begin{center}
-    \includegraphics[width=12cm]{figs/introducción/niveles.png}
+    \includegraphics[width=13cm]{figs/introducción/niveles.png}
   \end{center}
   \caption{Niveles de autonomía explicados(\ac{SAE}).}
   \label{aut-levels}
@@ -28,15 +28,15 @@ La Sociedad de Ingenieros Automotrices (\ac{SAE}) ha establecido una clasificaci
 \begin{itemize}
     \item \textit{Nivel 0:} Ninguna autonomía. El conductor es completamente responsable de todas las tareas de conducción.
     \item \textit{Nivel 1:} Asistencia al conductor. El vehículo puede realizar una función específica (como el control de crucero), pero siempre requiere la supervisión activa del conductor.
-    \item \textit{Nivel 2:} Automatización parcial. El vehículo cuenta con sistemas que pueden replicar tareas del conductor, pero el conductor debe estar preparado para intervenir en cualquier momento.
-    \item \textit{Nivel 3:} Automatización condicional. El vehículo puede tomar control completo en determinadas condiciones, pero el conductor debe estar disponible para retomar el control si el sistema lo solicita. Un ejemplo destacado de este nivel es el Autopilot de Tesla.
+    \item \textit{Nivel 2:} Automatización parcial. El vehículo cuenta con sistemas que pueden replicar tareas de conducción, pero el conductor debe estar preparado para intervenir en cualquier momento.
+    \item \textit{Nivel 3:} Automatización condicional. El vehículo puede tomar control completo en determinadas condiciones, pero el conductor debe estar disponible para retomar el control si el sistema lo solicita.
     \item \textit{Nivel 4:} Alta automatización. El vehículo puede operar de forma autónoma en condiciones específicas, sin necesidad de intervención humana, aunque pueden existir limitaciones geográficas o contextuales.
     \item \textit{Nivel 5:} Automatización total. El vehículo es completamente autónomo y no requiere intervención humana en ningún momento ni bajo ninguna circunstancia.
 \end{itemize}
 
 Hoy en día, no existen vehículos completamente autónomos disponibles comercialmente. Lo más cercano a la autonomía total que se puede encontrar en el mercado es el nivel 2+. Sin embargo, existen numerosos proyectos en desarrollo que están alcanzando el nivel 3, como es posible ver videos promocionales que muestran coches en movimiento sin intervención activa del conductor. No obstante, estas demostraciones se realizan en entornos extremadamente controlados y con condiciones específicas.
 
-En algunos países, la legislación aún no permite el uso de vehículos autónomos de nivel 3 o superior. Por ejemplo, en España, la ley prohíbe que el conductor suelte el volante durante la conducción, lo que impide el uso de vehículos de nivel 3. En cambio, en California, es legal el uso de vehículos con conducción semi-autónoma, lo que permite al conductor levantar las manos del volante en ciertas circunstancias \cite{carwow-autonomous}.
+En algunos países, la legislación aún no permite el uso de vehículos autónomos de nivel 3 o superior. Por ejemplo, en España, la ley prohíbe que el conductor suelte el volante durante la conducción, lo que impide el uso de vehículos de nivel 3. En cambio, en California, es legal el uso de vehículos con conducción semi-autónoma, lo que permite al conductor levantar las manos del volante en ciertas circunstancias \cite{carwow-autonomous}. 
 
 \subsection{Evolución histórica de los vehículos autónomos}
 \label{sec:historia}
@@ -47,7 +47,7 @@ En 1939, el diseñador industrial estadounidense Norman Bel Geddes revolucionó 
 
 \begin{figure} [ht]
   \begin{center}
-    \includegraphics[width=12cm]{figs/introducción/coche_geddes.png}
+    \includegraphics[width=8cm]{figs/introducción/coche_geddes.png}
   \end{center}
   \caption{Coche diseñado por Norman Bel Geddes en 1933.}
   \label{coche-geddes}
@@ -58,13 +58,13 @@ rápido del ojo, cabeza u otras partes del cuerpo de animales o dispositivos) co
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=8cm]{figs/introducción/paris_1994.png}
+    \includegraphics[width=7cm]{figs/introducción/paris_1994.png}
   \end{center}
   \caption{Demostración en vico del funcionamiento de \textit{VaMP} en París.}
   \label{coche-geddes}
 \end{figure}
 
-La Comisión Europea, consciente del potencial de los coches autónomos, destinó 800 millones de euros al proyecto  \textit{EUREKA Prometheus}, una iniciativa que marcó un hito en el desarrollo de esta tecnología. Este programa facilitó la creación de numerosos prototipos que sentaron las bases de los vehículos autónomos modernos  \cite{history-vehicles}. Actualmente, este campo es liderado por empresas como  \textit{Waymo},  \textit{Tesla},  \textit{Cruise} y  \textit{NVIDIA } \cite{ai-self-driving-cars}.
+La Comisión Europea, consciente del potencial de los coches autónomos, destinó 800 millones de euros al proyecto  \textit{EUREKA Prometheus}, una iniciativa que marcó un hito en el desarrollo de esta tecnología. Este programa facilitó la creación de numerosos prototipos que sentaron las bases de los vehículos autónomos modernos  \cite{history-vehicles}. Actualmente, este campo es liderado por empresas como \textit{Waymo}, \textit{Tesla}, \textit{Cruise} y \textit{NVIDIA } \cite{ai-self-driving-cars}.
 
 \textit{Waymo} \footnote{\url{https://waymo.com/intl/es/}}, el sistema de conducción autónoma desarrollado por \textit{Google}, se ha consolidado como un referente en el sector de los vehículos sin conductor. Gracias a la integración de \ac{IA}, \textit{Waymo} destaca por su capacidad para planificar rutas complejas y reaccionar de forma inteligente ante diversos escenarios en la carretera. Un vehículo \textit{Waymo} es capaz de operar de manera segura y autónoma siguiendo los siguientes pasos:
 
@@ -86,7 +86,9 @@ La Comisión Europea, consciente del potencial de los coches autónomos, destin�
   \label{waymo}
 \end{figure}
 
-Tesla ha logrado un avance notable con su sistema \textit{Autopilot}, capaz de mantener un control preciso utilizando sofisticados algoritmos de inteligencia artificial para tomar decisiones rápidas y precisas. Modelos como el \textit{Model 3} y el \textit{Model Y} han implementado el sistema \textit{Tesla Vision}, que prescinde del uso de radar y utiliza un avanzado conjunto de cámaras junto con el procesamiento de redes neuronales desarrolladas por Tesla. Este sistema ofrece tres niveles principales: Piloto automático, Piloto automático mejorado y Capacidad de conducción autónoma total.
+Un claro ejemplo son sus taxis sin conductor \footnote{\url{https://www.youtube.com/watch?v=JHgr9SgeicM}}, los cuales están ganando popularidad en ciertos estados de Estados Unidos, como San Francisco, donde  se han desplegado flotas de vehículos completamente autónomos para transporte de pasajeros. Estos taxis, que no requieren la intervención de un conductor humano, han generado interés por su potencial para revolucionar el transporte urbano, aunque también han suscitado debates sobre su regulación, seguridad y el impacto en el empleo dentro del sector del transporte.
+
+\textit{Tesla} ha logrado un avance notable con su sistema \textit{Autopilot}, capaz de mantener un control preciso utilizando sofisticados algoritmos de \ac{IA} para tomar decisiones rápidas y precisas. Modelos como el \textit{Model 3} y el \textit{Model Y} incorporan el sistema \textit{Tesla Vision}, que prescinde del uso de radar y utiliza un avanzado conjunto de cámaras junto con el procesamiento de redes neuronales desarrolladas por \textit{Tesla}. Este sistema ofrece tres niveles principales: Piloto automático, Piloto automático mejorado y Capacidad de conducción autónoma total.
 
 \subsubsection{Piloto Automático}
 
@@ -112,7 +114,7 @@ Tesla ha logrado un avance notable con su sistema \textit{Autopilot}, capaz de m
     \item \textit{Control de semáforos y señales de stop (Beta)}: detecta señales de tráfico como semáforos y señales de alto. A medida que el vehículo se acerca, ajusta automáticamente la velocidad y se detiene.
 \end{itemize}
 
-A pesar de las mejoras en el rendimiento que proporcionan estas características, no hacen que el coche sea autónomo, requieren un conductor totalmente atento, con las manos en el volante y preparado para tomar el control en cualquier momento \cite{tesla-autopilot}.
+A pesar de las mejoras en el rendimiento que proporcionan estas características, no hacen que el coche sea completamente autónomo, requieren un conductor totalmente atento, con las manos en el volante y preparado para tomar el control en cualquier momento \cite{tesla-autopilot}.
 
 \begin{figure}[ht]
   \begin{center}
@@ -124,9 +126,11 @@ A pesar de las mejoras en el rendimiento que proporcionan estas características
 
 \textit{Cruise}, una empresa de \textit{General Motors}, ha destacado con su vehículo \textit{Cruise AV}, en el que el 40\% de su hardware está diseñado específicamente para la conducción autónoma. Este modelo integra una combinación de cámaras, \ac{LiDAR} y radar, permitiéndole realizar entre 200 y 800 maniobras diarias para sortear vehículos estacionados en doble fila \footnote{\url{https://www.getcruise.com/news/blog/2019/how-self-driving-cars-think-navigating-double-parked-vehicles/?_gl=1*81u4mi*_gcl_au*MTU2MzE4NjQzOC4xNzM2Njg4NzY2s}}. Además, el sistema es capaz de adaptarse a condiciones climáticas adversas, como la lluvia, asegurando una conducción segura y eficiente en entornos urbanos complejos.
 
+\clearpage
+
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=8cm]{figs/introducción/cruise_av.png}
+    \includegraphics[width=9cm]{figs/introducción/cruise_av.png}
   \end{center}
   \caption{Detección de otros coches del \textit{Cruise AV}.}
   \label{cruise}
@@ -177,11 +181,9 @@ Existen diversas soluciones en el ámbito de la conducción autónoma, sin embar
 
 \end{itemize}
 
-\clearpage % La iamgen salga después del texto, no salga antes el párrafo de abajo porque la imagen no cabe
-
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=9cm]{figs/introducción/RL.png}
+    \includegraphics[width=7cm]{figs/introducción/RL.png}
   \end{center}
   \caption{Esquema del proceso de aprendizaje por refuerzo.}
   \label{rl}
