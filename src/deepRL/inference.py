@@ -164,8 +164,8 @@ if __name__ == "__main__":
         '--target_vel', 
         type=float, 
         required=False, 
-        default=6.5,
-        help='Velocity of the front vehicle, By default 6.5 m/s'
+        default=-1.0,
+        help='Velocity of the front vehicle, By default random velocities.'
     )
     parser.add_argument(
         '--scene', 

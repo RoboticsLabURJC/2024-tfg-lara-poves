@@ -260,7 +260,7 @@ Hemos evaluado si el modelo entrenado utilizando la percepción del carril basad
 
 En este entorno, el objetivo es que el coche siga el carril mientras mantiene una velocidad de crucero definida por otro vehículo que circula delante a una velocidad constante durante todo el episodio. Durante el entrenamiento, esta velocidad se ha fijado a de 7m/s.
 
-Hemos añadido a las observaciones 20 puntos correspondientes a la zona frontal del láser, que en publicaciones anteriores identificamos como la región **FRONT**. Si el láser no proporciona suficientes mediciones, estos puntos se rellenan con su rango máximo, establecido en 19.5 metros, ya que más allá de esta distancia las mediciones son menos precisas y de menor calidad. En caso de haber más puntos de los necesarios, se seleccionan de forma uniforme, asegurando una distribución equidistante y respetando el orden basado en la coordenada x. A continuación, se presentan ejemplos ilustrativos de estas configuraciones:
+Hemos añadido a las observaciones **20 puntos correspondientes a la zona frontal del láser**, que en publicaciones anteriores identificamos como la región **FRONT**. Si el láser no proporciona suficientes mediciones, estos puntos se rellenan con su rango máximo, establecido en 19.5 metros, ya que más allá de esta distancia las mediciones son menos precisas y de menor calidad. En caso de haber más puntos de los necesarios, se seleccionan de forma uniforme, asegurando una distribución equidistante y respetando el orden basado en la coordenada x. A continuación, se presentan ejemplos ilustrativos de estas configuraciones:
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/laser_8m.png" alt="">
 </figure>
@@ -280,7 +280,7 @@ Para este propósito, utilizamos el modelo anterior y lo reentrenamos modificand
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/train.png" alt="">
 </figure>
 
-Cuando tenemos mediciones del láser, el peso asignado al láser y el de los demás parámetros se ajustan según la distancia al vehículo que se encuentra delante. Es importante destacar que si la distancia es menor de 11 metros, el throttle se recompensa de forma inversa: a menor throttle, mayor recompensa. Por el contrario, si la distancia es mayor a 11 metros, se recompensa de manera directa: a mayor throttle, mayor recompensa.  
+Cuando tenemos mediciones del láser, el peso asignado al láser y el de los demás parámetros se ajustan según la distancia al vehículo que se encuentra delante. Es importante destacar que si la distancia es menor de 8 metros, el throttle se recompensa de forma inversa: a menor throttle, mayor recompensa. Por el contrario, si la distancia es mayor a 8 metros, se recompensa de manera directa: a mayor throttle, mayor recompensa.  
 ```python
 if error == None:
     # Deviation normalization
@@ -383,7 +383,7 @@ Estos son los videos que ilustran los comportamientos descritos en las gráficas
 
 ### CarlaPassing
 
-obs añadidas
+obs añadidas -> contar que haora entrenamos a 10 FPS
 
 entrenamientos base
 
@@ -399,10 +399,20 @@ lane params:
   clip_range: 0.15 # epsilon
   n_timesteps: 4_000_000
 
+  hemos bajado el ent coef ya queafecta a la aleatoriedad en elegir acciones, y dificualtaba la convergencia del entrenameinto al final
+
+- func recompensa, podemos quiatr el elif qu ehabia en los anteriores entornos, sin elllos en los anteriores no funcionaba. Tambien es el entrnamiento que nos ha proporcionado mayores velocidades. Con al func de recompensa antrior se quedba atascdo en 12m/s, aun qu eaumentasemos el peso del acelerador solo se conseguia un maximo de 18m/s y se quedaba tascado ahi
+
+- vidoe lane
+
+- explicar lser
+
+- video laser
+
 hemos eliminado la 3 al entrenar el adelantamiento (no el seguimiento del carril, ni el no chocarse) porque detectamos la vaya lateral con el lidar, lo que nos impde saber si hemos adelantado completamente al coche o es la vaya.
 
 maquina de estados
 
-func recompensa
+func recompensa + maquina de estados
 
 resultados

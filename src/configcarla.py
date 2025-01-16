@@ -920,10 +920,10 @@ class Vehicle_sensors:
                 sensor_bp.set_attribute('rotation_frequency', '100') 
                 sensor_bp.set_attribute('channels', '30')
 
-                if type_class == 1:
-                    sensor_bp.set_attribute('points_per_second', '200000') # CarlaObstacle inference
-                else:
-                    sensor_bp.set_attribute('points_per_second', '100000') # CarlaPassing inference
+                #if type_class == 1:
+                sensor_bp.set_attribute('points_per_second', '200000') # CarlaObstacle inference
+                #else:
+                #    sensor_bp.set_attribute('points_per_second', '100000') # CarlaPassing inference
         elif type == CAMERA:
             sensor_bp.set_attribute('image_size_x', str(SIZE_CAMERA))
             sensor_bp.set_attribute('image_size_y', str(SIZE_CAMERA))
