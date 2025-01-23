@@ -648,7 +648,7 @@ class Lidar(Sensor):
         self._i_threshold = 0.987
         self._z_threshold_down = -1.6
         self._z_threshold_up = 1.6
-        self._back_dist_threshold = 10.0
+        self._dist_threshold = np.full(NUM_ZONES, self._max_dist)
         self._stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
 
         # Update per second
@@ -755,18 +755,14 @@ class Lidar(Sensor):
                 filtered_dist = np.array(meas_zones[DIST][zone])[filter_min & filter_max]
 
                 # Get points zone
-                if zone == FRONT:
-                    sorted_index = np.argsort(np.array(meas_zones[X][zone])[filter_min & filter_max])
-                    self._points[zone] = filtered_dist[sorted_index]
-                else:
-                    dist_mask = filtered_dist < self._back_dist_threshold
-                    filtered_dist = filtered_dist[dist_mask]
+                dist_mask = filtered_dist < self._dist_threshold[zone]
+                filtered_dist = filtered_dist[dist_mask]
 
-                    x_values = np.array(meas_zones[X][zone])[filter_min & filter_max]
-                    filtered_x_values = x_values[dist_mask]
+                x_values = np.array(meas_zones[X][zone])[filter_min & filter_max]
+                filtered_x_values = x_values[dist_mask]
 
-                    sorted_index = np.argsort(filtered_x_values)
-                    self._points[zone] = filtered_dist[sorted_index]
+                sorted_index = np.argsort(filtered_x_values)
+                self._points[zone] = filtered_dist[sorted_index]
 
                 # Get min zone
                 if len(filtered_dist) == 0:
@@ -827,7 +823,6 @@ class Lidar(Sensor):
             [[] for _ in range(NUM_ZONES)], # dist_zones
             [[] for _ in range(NUM_ZONES)], # z_zones
             [[] for _ in range(NUM_ZONES)], # x_zones
-            #[[] for _ in range(NUM_ZONES)]
         ]
 
         if self._rect != None:
@@ -839,7 +834,6 @@ class Lidar(Sensor):
                 meas_zones[DIST][zone].append(math.sqrt(x ** 2 + y ** 2))
                 meas_zones[Z][zone].append(z)
                 meas_zones[X][zone].append(x)
-                #meas_zones[X + 1][zone].append(y)
 
             if self._rect != None:
                 thickness = self._interpolate_thickness(num=z)
@@ -869,11 +863,11 @@ class Lidar(Sensor):
     def get_z_threshold(self):
         return self._z_threshold_down, self._z_threshold_up
     
-    def get_back_dist_threshold(self):
-        return self._back_dist_threshold
+    def get_dist_threshold(self):
+        return self._dist_threshold
     
-    def set_back_dist_threshold(self, dist:float):
-        self._back_dist_threshold = dist
+    def set_dist_threshold(self, dist:float, zone:int):
+        self._dist_threshold[zone] = dist
     
     def get_stat_zones(self):
         return self._stat_zones
@@ -919,11 +913,7 @@ class Vehicle_sensors:
             else:
                 sensor_bp.set_attribute('rotation_frequency', '100') 
                 sensor_bp.set_attribute('channels', '30')
-
-                #if type_class == 1:
-                sensor_bp.set_attribute('points_per_second', '200000') # CarlaObstacle inference
-                #else:
-                #    sensor_bp.set_attribute('points_per_second', '100000') # CarlaPassing inference
+                sensor_bp.set_attribute('points_per_second', '200000') 
         elif type == CAMERA:
             sensor_bp.set_attribute('image_size_x', str(SIZE_CAMERA))
             sensor_bp.set_attribute('image_size_y', str(SIZE_CAMERA))
@@ -979,7 +969,6 @@ class Vehicle_sensors:
 
             if type(sensor) == Lidar:
                 dist_lidar = sensor.get_min(zone=FRONT)
-                dist_back_lidar = 0 # cambiaaaaar
 
         if self._screen != None:
             elapsed_time = time.time_ns() - self._time_frame
@@ -1002,8 +991,6 @@ class Vehicle_sensors:
                 text_write.append(f"Vel front: {vel_front:.2f} m/s")
             if front_laser:
                 text_write.append(f"Dist front lidar: {dist_lidar:.2f} m")
-            if back_lidar:
-                text_write.append(f"Dist back lidar: {dist_back_lidar:.2f} m")
 
             # Write text
             for i in range(len(text_write)):

@@ -34,7 +34,8 @@ def main(args):
         exit(1)
 
     env = env_class(train=False, port=args.port, human=True, normalize=True, num_cir=args.num_cir,
-                    lane_network=args.lane_network, target_vel=args.target_vel, retrain=args.scene)
+                    lane_network=args.lane_network, target_vel=args.target_vel, retrain=args.scene,
+                    port_tm=args.port_tm)
 
     total_reward = 0
     step = 0
