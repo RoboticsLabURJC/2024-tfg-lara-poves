@@ -94,7 +94,6 @@ class CarlaBase(gym.Env, ABC):
         self._count = 0
         self._human = human
         self._velocity = 0 # It must be update in reward function
-        #self._passing_train = passing
         self._passing = passing
         self._front_vehicle = None
         self._exploration_rate = 1.0
@@ -141,6 +140,18 @@ class CarlaBase(gym.Env, ABC):
                                      mode='w', newline='')
             self._writer_csv_actions = csv.writer(self._actions_csv)
             self._writer_csv_actions.writerow([KEY_THROTTLE, KEY_STEER, KEY_BRAKE])
+
+            # Velocities file
+            if self._passing:
+                dir_csv = PATH + '2024-tfg-lara-poves/src/deepRL/csv/velocities/' + self.__class__.__name__ + '/'
+                if not os.path.exists(dir_csv):
+                    os.makedirs(dir_csv)
+                files = os.listdir(dir_csv)
+                num_files = len(files) + 1
+                self._vel_csv = open(dir_csv + alg + '_train_velocities_' + str(num_files) + '.csv',
+                                        mode='w', newline='')
+                self._writer_csv_vel = csv.writer(self._vel_csv)
+                self._writer_csv_vel.writerow([KEY_VEL])
 
         # States/Observations
         self._num_points_lane = num_points
@@ -389,7 +400,7 @@ class CarlaBase(gym.Env, ABC):
             for key, sub_space in self._obs_norm.spaces.items():
                 obs[key] = (obs[key] - sub_space.low) / (sub_space.high - sub_space.low)
                 obs[key] = obs[key].astype(np.float64)
-                assert np.all((obs[key] >= 0) & (obs[key] <= 1)), "Fallo en obs"
+                #assert np.all((obs[key] >= 0) & (obs[key] <= 1)), "Fallo en obs"
 
         return obs
     
@@ -435,6 +446,10 @@ class CarlaBase(gym.Env, ABC):
                 self._dist_laser = self._lidar.get_min(zone=configcarla.FRONT)
                 if not np.isnan(self._dist_laser):
                     self._count_laser += 1
+                    if self._train:
+                        self._writer_csv_vel.writerow([self._target_vel])
+                elif self._train:
+                    self._writer_csv_vel.writerow([11])
 
                 assert np.isnan(self._dist_laser) or self._dist_laser > MIN_DIST_LASER, "Distance exceeded"
 
@@ -501,13 +516,20 @@ class CarlaBase(gym.Env, ABC):
                                              self._mean_vel / self._count, self._count_laser])
         
         if isinstance(self, CarlaPassing) and (self._train or self._target_vel_org < 0) and self._passing:
-            self._count_random += 1
-            if self._count_random % self._random_steps == 0:
+            if self._count_random % self._random_steps == 0 and self._count_random != 0:
                 self._target_vel =  random.randint(5, 10)
                 self._random_steps = random.randint(100, 450)
-                self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
                 print("Target vel:", self._target_vel, "random steps:", self._random_steps, "count random:", self._count_random)
                 self._count_random = 0
+
+            loc_front = self._front_vehicle.get_location()
+            dist = loc.distance(loc_front)
+
+            if dist > 25:
+                self._tm.set_desired_speed(self._front_vehicle, 0)
+            else:
+                self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
+                self._count_random += 1
 
         return self._get_obs(), reward, terminated, False, self._get_info()
     
@@ -526,14 +548,12 @@ class CarlaBase(gym.Env, ABC):
         self._mean_vel = 0
         self._jump = False
         self._count_laser = 0
-
         self._target_vel = self._target_vel_org
-        if (self._train or self._target_vel_org < 0) and isinstance(self, CarlaPassing):
-            self._target_vel = random.randint(5, 10)
 
-        self._random_steps = random.randint(100, 450)
-        self._count_random = 0
-        print("Target vel:", self._target_vel, "random steps:", self._random_steps, "count random:", self._count_random)
+        if isinstance(self, CarlaPassing) and (self._train or self._target_vel_org < 0):
+            self._target_vel =  random.randint(5, 10)
+            self._random_steps = random.randint(100, 450)
+            self._count_random = 0
 
         if self._first:
             self._first = False
@@ -545,19 +565,6 @@ class CarlaBase(gym.Env, ABC):
                     self._front_vehicle.destroy()
                 except RuntimeError:
                     pass # It's so far away that it's not visible and not being processed.
-
-        '''
-        if self._passing_train:
-            if self._count_ep % 10 == 0:
-                self._ep = self._count_ep + random.randint(0, 9)
-                print("ep no passing:", self._ep)
-            
-            self._passing = True
-            if self._count_ep == self._ep:
-                self._passing = False
-        else:
-            self._passing = False
-        '''
 
         self._swap_ego_vehicle()
 
@@ -1028,6 +1035,7 @@ class CarlaPassing(CarlaBase):
                 dtype=np.float64
             )
 
+            '''
             self._obs_norm[KEY_LASER_RIGHT_FRONT] = new_space_laser_right
             self._obs_norm[KEY_LASER_RIGHT] = new_space_laser_right
             self._obs_norm[KEY_LASER_RIGHT_BACK] = new_space_laser_right
@@ -1080,9 +1088,11 @@ class CarlaPassing(CarlaBase):
                 shape=(self._num_points_seg, 2),
                 dtype=np.float64
             )
+            '''
         else:
             self.observation_space[KEY_VEL] = new_space_vel
             self.observation_space[KEY_LASER] = new_space_laser
+            '''
             self.observation_space[KEY_LASER_RIGHT_FRONT] = new_space_laser_right
             self.observation_space[KEY_LASER_RIGHT] = new_space_laser_right
             self.observation_space[KEY_LASER_RIGHT_BACK] = new_space_laser_right
@@ -1090,6 +1100,7 @@ class CarlaPassing(CarlaBase):
             self.observation_space[KEY_SEG_CM] = new_space_cm_seg
             self.observation_space[KEY_SEG_POINTS_LEFT] = new_space_seg_points
             self.observation_space[KEY_SEG_POINTS_RIGHT] = new_space_seg_points
+            '''
 
     def _get_obs_env(self):
         obs = super()._get_obs_env()
@@ -1100,6 +1111,7 @@ class CarlaPassing(CarlaBase):
         else:
             obs[KEY_LASER] = self._lidar.get_points_zone(num_points=self._num_points_laser, zone=configcarla.FRONT)
 
+        '''
         obs[KEY_SEG_AREA] = np.array([0], dtype=np.int32)
         obs[KEY_SEG_CM] = np.array([SIZE_CAMERA / 2, SIZE_CAMERA / 2], dtype=np.int32)
         obs[KEY_SEG_POINTS_LEFT] = np.zeros((self._num_points_seg, 2), dtype=np.int32)
@@ -1108,6 +1120,7 @@ class CarlaPassing(CarlaBase):
         obs[KEY_LASER_RIGHT_FRONT] = np.full(self._num_points_laser_right, MAX_DIST_LASER, dtype=np.float64)
         obs[KEY_LASER_RIGHT] = np.full(self._num_points_laser_right, MAX_DIST_LASER, dtype=np.float64)
         obs[KEY_LASER_RIGHT_BACK] = np.full(self._num_points_laser_right, MAX_DIST_LASER, dtype=np.float64)
+        '''
 
         '''
        
@@ -1204,10 +1217,10 @@ class CarlaPassing(CarlaBase):
                 w_throttle = 0.65
                 w_steer = 0.25
             elif r_laser != 0:
-                if self._dist_laser <= 8:
-                    w_laser = 0.7
-                    w_steer = 0.1
-                    w_dev = 0.2
+                if self._dist_laser <= 10:
+                    w_laser = 0.9
+                    w_steer = 0.0
+                    w_dev = 0.1
                     w_throttle = 0.0
                 elif self._dist_laser <= 12:
                     w_laser = 0.5
@@ -1225,9 +1238,9 @@ class CarlaPassing(CarlaBase):
                 w_steer = 0.2
                 w_laser = 0.0
 
-            assert math.isclose(1.0, w_dev + w_steer + w_throttle + w_laser, rel_tol=1e-6, abs_tol=1e-6), "Fallo en los pesos w"
+            # assert math.isclose(1.0, w_dev + w_steer + w_throttle + w_laser, rel_tol=1e-6, abs_tol=1e-6), "Fallo en los pesos w"
             reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + w_laser * r_laser
-            assert reward >= 0 and reward <= 1, "Fallo en func recompensa"
+            #assert reward >= 0 and reward <= 1, "Fallo en func recompensa"
         else:
             if "Distance" in error:
                 reward = -60

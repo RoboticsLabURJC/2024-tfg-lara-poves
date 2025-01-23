@@ -44,12 +44,18 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, num_rows:in
         if key == KEY_COUNTER_LASER:
             plt.grid(axis='y', linestyle='--', linewidth=0.7) 
             plt.yticks(range(0, int(max(data)) + 10, 10))
+            plt.ylim(0, 100)
 
         plt.plot(range(len(data)), data, linewidth=1, label=key)
 
-        if key == KEY_REWARD:
+        if key == KEY_REWARD or key == KEY_MEAN_VEL:
+            if KEY_MEAN_VEL:
+                label = 'ep vel mean'
+            else:
+                label='ep rew mean'
+
             cumulative_avg = np.cumsum(data) / np.arange(1, len(data) + 1)
-            plt.plot(range(len(data)), cumulative_avg, label='ep rew mean', linewidth=2.5, color='orange')
+            plt.plot(range(len(data)), cumulative_avg, label=label, linewidth=2.5, color='orange')
             plt.legend()
 
         plt.ylabel(key)
@@ -84,7 +90,7 @@ def main(args):
     
     if num_rows >= 3:
         if args.mean_vel:
-            plot_data(data_csv=data, key=KEY_MEAN_VEL, sub_plot=3, title='Mean velocity histogram', num_rows=num_rows)
+            plot_data(data_csv=data, key=KEY_MEAN_VEL, sub_plot=3, title='Mean velocity', num_rows=num_rows)
         
         if args.laser:
             plot_data(data_csv=data, key=KEY_COUNTER_LASER, sub_plot=num_rows, title='Percentage of the vehicle visible', num_rows=num_rows)
@@ -112,7 +118,7 @@ if __name__ == "__main__":
         type=int, 
         required=False, 
         default=0,
-        help='Display a histogram showing the mean velocities of the episodes. Defaults to 0 (False).'
+        help='Display the mean velocities of the episodes. Defaults to 0 (False).'
     )
     parser.add_argument(
         '--laser', 

@@ -77,6 +77,9 @@ def main(args):
     policy = model_params['policy']
     model_params.pop('policy', None)
 
+    if env_class == environment.CarlaPassing:
+        model_params['policy_kwargs'] = dict(net_arch=dict(pi=[64, 64], vf=[64, 64]))
+
     if not args.retrain:
         model = alg_class(policy, env, verbose=args.verbose, seed=SEED, tensorboard_log=log_dir, **model_params)
     else:
