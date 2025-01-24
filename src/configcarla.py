@@ -913,7 +913,7 @@ class Vehicle_sensors:
             else:
                 sensor_bp.set_attribute('rotation_frequency', '100') 
                 sensor_bp.set_attribute('channels', '30')
-                sensor_bp.set_attribute('points_per_second', '200000') 
+                sensor_bp.set_attribute('points_per_second', '250000') 
         elif type == CAMERA:
             sensor_bp.set_attribute('image_size_x', str(SIZE_CAMERA))
             sensor_bp.set_attribute('image_size_y', str(SIZE_CAMERA))
@@ -959,8 +959,7 @@ class Vehicle_sensors:
         self.sensors.append(sensor_collision)
         return sensor_collision
 
-    def update_data(self, flip:bool=True, vel_ego:int=-1, vel_front:int=-1, front_laser:bool=False,
-                    back_lidar:bool=False):
+    def update_data(self, flip:bool=True, vel_ego:int=-1, vel_front:int=-1, front_laser:bool=False):
         offset = 20
         dist_lidar = np.nan
 

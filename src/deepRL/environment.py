@@ -9,7 +9,6 @@ import pygame
 import os
 import csv
 from abc import ABC, abstractmethod
-import math
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -49,6 +48,7 @@ KEY_SEG_POINTS_LEFT = "seg left points"
 KEY_SEG_POINTS_RIGHT = "seg right points"
 KEY_LANE = "lane"
 KEY_NUM_LANE = "num lane"
+KEY_RETURN = "return"
 
 KEY_THROTTLE = "Throttle"
 KEY_STEER = "Steer"
@@ -149,7 +149,7 @@ class CarlaBase(gym.Env, ABC):
             self._writer_csv_actions.writerow([KEY_THROTTLE, KEY_STEER, KEY_BRAKE])
 
             # Velocities file
-            if self._passing:
+            if self._passing and isinstance(self, CarlaPassing):
                 dir_csv = PATH + '2024-tfg-lara-poves/src/deepRL/csv/velocities/' + self.__class__.__name__ + '/'
                 if not os.path.exists(dir_csv):
                     os.makedirs(dir_csv)
@@ -441,8 +441,7 @@ class CarlaBase(gym.Env, ABC):
 
             # Update data
             if self._passing:
-                self._sensors.update_data(vel_ego=self._velocity, vel_front=self._target_vel,
-                                          front_laser=True, back_lidar=self._back_lidar)
+                self._sensors.update_data(vel_ego=self._velocity, vel_front=self._target_vel, front_laser=True)
             else:
                 self._sensors.update_data(vel_ego=self._velocity)
 
@@ -493,11 +492,7 @@ class CarlaBase(gym.Env, ABC):
         except AssertionError as e:
             terminated = True
             error = str(e)
-
             print("Circuit not completed:", error)
-            print("No termino", self._count_ep, "steps:", self._count, "id:", self._id, "vel target:", self._target_vel,
-                  "dev:", self._dev, "is_passing:", self._passing, "dist:", self._dist_laser,
-                  "back:", self._back_lidar, "mean vel:", self._mean_vel / self._count)
 
         # Check if a key has been pressed
         if self._human:
@@ -507,11 +502,6 @@ class CarlaBase(gym.Env, ABC):
         self._total_reward += reward
         self._count += 1
 
-        if finish_ep:
-            print("Circuit completed!")
-            print("Termino:", self._count_ep, "steps:", self._count, "id:", self._id, "target vel:", self._target_vel,
-                 "mean vel", self._mean_vel / self._count, "passing:", self._passing)
-
         if terminated and self._train:
             if self.model != None:
                 self._exploration_rate = self.model.exploration_rate
@@ -520,22 +510,22 @@ class CarlaBase(gym.Env, ABC):
 
             self._count_ep += 1
             self._count_laser = self._count_laser / self._count * 100.0
-            print("counter laser:", self._count_laser)
             self._writer_csv_train.writerow([self._count_ep, self._total_reward, self._count, finish_ep,
                                              self._dev, self._exploration_rate, self._dist_laser, 
                                              self._mean_vel / self._count, self._count_laser])
+            if finish_ep:
+                print("Circuit completed!")
         
         if isinstance(self, CarlaPassing) and (self._train or self._target_vel_org < 0) and self._passing:
             if self._count_random % self._random_steps == 0 and self._count_random != 0:
                 self._target_vel =  random.randint(5, 10)
                 self._random_steps = random.randint(100, 450)
-                print("Target vel:", self._target_vel, "random steps:", self._random_steps, "count random:", self._count_random)
                 self._count_random = 0
 
             loc_front = self._front_vehicle.get_location()
             dist = loc.distance(loc_front)
 
-            if dist > 25:
+            if dist > 30:
                 self._tm.set_desired_speed(self._front_vehicle, 0)
             else:
                 self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
@@ -1030,9 +1020,6 @@ class CarlaPassing(CarlaBase):
     def _get_info(self):
         info = super()._get_info()
         info[KEY_LASER] = self._dist_laser
-        info[KEY_LASER_RIGHT] = 0
-        info[KEY_LASER_RIGHT_FRONT] = 0
-        info[KEY_LASER_RIGHT_BACK] = 0
         return info
 
     def _create_actions(self):
@@ -1112,8 +1099,8 @@ class CarlaPassing(CarlaBase):
                     w_steer = 0.05
             else:
                 w_dev = 0.6
-                w_throttle = 0.2
-                w_steer = 0.2
+                w_throttle = 0.25 # 0.2
+                w_steer = 0.15 # 0.2
                 w_laser = 0.0
 
             # assert math.isclose(1.0, w_dev + w_steer + w_throttle + w_laser, rel_tol=1e-6, abs_tol=1e-6), "Fallo en los pesos w"
@@ -1300,14 +1287,17 @@ class CarlaOvertaken(CarlaBase):
             self.observation_space[KEY_LANE] = new_space_lane
             self.observation_space[KEY_NUM_LANE] = new_space_lane
 
+        self._overtaken_in_progress = False
+        self._return = False
+
     def _get_obs_env(self):
         obs = super()._get_obs_env()
 
         obs[KEY_VEL] = self._velocity
-        obs[KEY_LASER] = self._lidar.get_points_zone(num_points=self._num_points_laser, zone=configcarla.FRONT)
-        obs[KEY_LASER_RIGHT] = self._lidar.get_points_zone(num_points=self._num_points_laser_right, zone=configcarla.RIGHT)
-        obs[KEY_LASER_RIGHT_FRONT] = self._lidar.get_points_zone(num_points=self._num_points_laser_right, zone=configcarla.RIGHT_FRONT)
-        obs[KEY_LASER_RIGHT_BACK] = self._lidar.get_points_zone(num_points=self._num_points_laser_right, zone=configcarla.RIGHT_BACK)
+        obs[KEY_LASER] = self._laser_points_front
+        obs[KEY_LASER_RIGHT] = self._laser_points_right
+        obs[KEY_LASER_RIGHT_FRONT] = self._laser_points_right_front
+        obs[KEY_LASER_RIGHT_BACK] = self._laser_points_right_back
 
         area, cm, left, right, num_lane = self._camera.get_seg_data(num_points=self._num_points_seg)
         assert num_lane <= 2, "Scenario not compatible with this environment"
@@ -1324,11 +1314,7 @@ class CarlaOvertaken(CarlaBase):
     def _get_info(self):
         info = super()._get_info()
         info[KEY_LASER] = self._dist_laser
-        info[KEY_LASER_RIGHT] = 0
-        info[KEY_LASER_RIGHT_FRONT] = 0
-        info[KEY_LASER_RIGHT_BACK] = 0
-        info[KEY_NUM_LANE] = 0
-        info[KEY_LANE] = 0
+        info[KEY_RETURN] = self._return
         return info
 
     def _create_actions(self):
@@ -1337,7 +1323,6 @@ class CarlaOvertaken(CarlaBase):
                                        high=np.array([1.0, self._max_steer]),
                                        shape=(2,), dtype=np.float64)
        
-        
     def _get_control(self, action:np.ndarray):
         assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
         self._throttle, self._steer = action
@@ -1347,3 +1332,105 @@ class CarlaOvertaken(CarlaBase):
         control.throttle = self._throttle
 
         return control
+    
+    def step(self, action:np.ndarray):
+        terminated = False
+        finish_ep = False
+        error = None
+
+        # Exec action
+        control = self._get_control(action)
+        self.ego_vehicle.apply_control(control)
+        if self._train:
+            self._writer_csv_actions.writerow([control.throttle, control.steer, control.brake])
+
+        try:
+            # Tick
+            if self._train:
+                self._world.tick()
+
+            # Get velocity and location
+            self._velocity = carla.Vector3D(self.ego_vehicle.get_velocity()).length()
+            self._mean_vel += self._velocity
+            loc = self.ego_vehicle.get_location()
+
+            # Update data
+            self._sensors.update_data(vel_ego=self._velocity, vel_front=self._target_vel, front_laser=True)
+ 
+            # Get deviation
+            dev_prev = self._dev
+            self._dev = self._camera.get_deviation()
+
+            # Laser
+            self._dist_laser = self._lidar.get_min(zone=configcarla.FRONT)
+            assert np.isnan(self._dist_laser) or self._dist_laser > MIN_DIST_LASER, "Distance exceeded"
+
+            self._laser_points_front = self._lidar.get_points_zone(num_points=self._num_points_laser, zone=configcarla.FRONT)
+            self._laser_points_right = self._lidar.get_points_zone(num_points=self._num_points_laser_right, zone=configcarla.RIGHT)
+            self._laser_points_right_front = self._lidar.get_points_zone(num_points=self._num_points_laser_right, zone=configcarla.RIGHT_FRONT)
+            self._laser_points_right_back = self._lidar.get_points_zone(num_points=self._num_points_laser_right, zone=configcarla.RIGHT_BACK)
+
+            if self._overtaken_in_progress:
+                self._return = np.all(self._laser_points_right_back < MAX_DIST_LASER) and np.all(self._laser_points_right_front < MAX_DIST_LASER)
+                self._return = self._return and np.all(self._laser_points_front < MAX_DIST_LASER) and np.all(self._laser_points_right < MAX_DIST_LASER)
+
+            # Segmentation
+
+            # Lane change detection
+            if abs(self._dev - dev_prev) > 50:
+                # si lo ha visto con el laser a true el in porgress
+                # empezar sin que vea al otro coche (swap creos)
+
+                self._dev = dev_prev
+                assert False, "Lost lane: changing lane"
+
+            # Check if the episode has finished
+            if self._id == 0:
+                finish_ep = abs(loc.x + 7) <= 3 and abs(loc.y - 55) <= 3
+            elif self._id == 1 or self._id == 5:
+                finish_ep =  abs(loc.x + 442) <= 3 and abs(loc.y - 30) <= 3
+            elif self._id == 2:
+                finish_ep = loc.y > -24.5
+            elif self._id == 3:
+                finish_ep = abs(loc.x - 414) <= 3 and abs(loc.y + 230) <= 3
+            elif self._id == 6:
+                finish_ep = abs(loc.x - 663) < 3 and abs(loc.y - 169) < 3
+            elif self._id == 7 and not self._jump and loc.y > -30:
+                self._jump = True
+                t = self.ego_vehicle.get_transform()
+                t.location.y = 15
+                self.ego_vehicle.set_transform(t)
+            elif self._id == 7 and self._jump:
+                finish_ep = loc.x < 50
+            else:
+                finish_ep = abs(loc.x - 165) <= 3 and abs(loc.y + 208) <= 3
+            terminated = finish_ep
+            
+        except AssertionError as e:
+            terminated = True
+            error = str(e)
+
+            print("Circuit not completed:", error)
+            print("No termino", self._count_ep, "steps:", self._count, "id:", self._id, "vel target:", self._target_vel,
+                  "dev:", self._dev, "is_passing:", self._passing, "dist:", self._dist_laser,
+                  "back:", self._back_lidar, "mean vel:", self._mean_vel / self._count)
+
+        # Check if a key has been pressed
+        if self._human:
+            self.render()
+
+        reward = self._calculate_reward(error)
+        self._total_reward += reward
+        self._count += 1
+
+        if finish_ep:
+            print("Circuit completed!")
+            print("Termino:", self._count_ep, "steps:", self._count, "id:", self._id, "target vel:", self._target_vel,
+                 "mean vel", self._mean_vel / self._count, "passing:", self._passing)
+
+        if terminated and self._train:
+            self._writer_csv_train.writerow([self._count_ep, self._total_reward, self._count, finish_ep,
+                                             self._dev, self._exploration_rate, self._dist_laser, 
+                                             self._mean_vel / self._count, self._count_laser])
+
+        return self._get_obs(), reward, terminated, False, self._get_info()
