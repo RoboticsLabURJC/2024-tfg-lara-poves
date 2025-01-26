@@ -34,6 +34,8 @@ SIZE_CAMERA = 512
 SIZE_MEM = 5
 FOV = 110
 
+MAX_NUM_LANES = 4
+
 # Type
 CAMERA = 1
 LIDAR = 2
@@ -114,7 +116,7 @@ class CameraRGB(Sensor):
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
                  text:str, screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], lane:bool,
                  canvas_seg:bool, transform:carla.Transform, vehicle:carla.Vehicle, world:carla.World,
-                 lane_network:bool, check_area_lane:bool, check_lane_left:bool, check_lane_right:bool):
+                 lane_network:bool, check_area_lane:bool, check_num_lane:bool):
         super().__init__(sensor=sensor)
 
         self._screen = screen 
@@ -131,8 +133,7 @@ class CameraRGB(Sensor):
         self._seg = seg
         self._mask = []
         self._check_area_lane = self._seg and self._lane and check_area_lane
-        self._check_lane_left = self._seg and self._lane and check_lane_left
-        self._check_lane_right = self._seg and self._lane and check_lane_right
+        self._check_num_lane = self._seg and self._lane and check_num_lane
 
         # Lane detection
         self._deviation = 0
@@ -142,8 +143,7 @@ class CameraRGB(Sensor):
         self._lane_left = []
         self._lane_right = []
         self._extra_surface = None
-        self._road_left = 0
-        self._road_right = 0
+        self._num_lanes = [False] * (1 + (MAX_NUM_LANES - 1) * 2)
 
         if self._lane_network:
             file = PATH + '2024-tfg-lara-poves/best_model_torch.pth'
@@ -172,7 +172,9 @@ class CameraRGB(Sensor):
         if lane:
             self._trafo_matrix_vehicle_to_cam = np.array(transform.get_inverse_matrix())
             self._K = get_intrinsic_matrix(FOV, SIZE_CAMERA, SIZE_CAMERA)
+
         self._threshold_road_per = 90.0
+        self._threshold_area_road = 5000
 
     def _points_lane(self, boundary:np.ndarray, trafo_matrix_global_to_camera:np.ndarray, side:int):
         projected_boundary = project_polyline(boundary, trafo_matrix_global_to_camera,self._K).astype(np.int32)
@@ -338,7 +340,11 @@ class CameraRGB(Sensor):
         # Draw the lane 
         count_x = count_y = 0
         count_total = count_road = 0
-        count_road_left = count_road_right = count_total_left = count_total_right = 0
+        count_road_left = [0] * (MAX_NUM_LANES - 1)
+        count_road_right = [0] * (MAX_NUM_LANES - 1)
+        count_total_left = [0] * (MAX_NUM_LANES - 1)
+        count_total_right = [0] * (MAX_NUM_LANES - 1)
+
         for i in range(limitis_for[0], limitis_for[1]):
             if not self._lane_network:
                 x_left, y = self._lane_left[i]
@@ -351,20 +357,26 @@ class CameraRGB(Sensor):
             if x_left < x_right:
                 img[y, x_left:x_right] = (255, 240, 255)
                 width_lane = x_right - x_left
+                '''
+                x_left_org = x_left
+                x_right_org = x_right
 
-                if self._check_lane_left:
+                for i in range(MAX_NUM_LANES - 1):
                     bound_left = np.clip(x_left - width_lane, 0, x_left)
-                    img[y, bound_left:x_left] = (255, 217, 179)
                     region_mask = mask[y, bound_left:x_left]
-                    count_road_left += np.count_nonzero(region_mask == ROAD)
-                    count_total_left += x_left - bound_left
+                    count_road_left[i] += np.count_nonzero(region_mask == ROAD)
+                    count_total_left[i] += np.clip(x_left - bound_left, 0, SIZE_CAMERA)
+                    x_left = x_left - width_lane # move
 
-                if self._check_lane_right:
                     bound_right = np.clip(x_right + width_lane, x_right, SIZE_CAMERA)
-                    img[y, x_right:bound_right] = (255, 255, 204)
                     region_mask = mask[y, x_right:bound_right]
-                    count_road_right += np.count_nonzero(region_mask == ROAD)
-                    count_total_right += bound_right - x_right
+                    count_road_right[i] += np.count_nonzero(region_mask == ROAD)
+                    count_total_right[i] += np.clip(bound_right - x_right, 0, SIZE_CAMERA)
+                    x_right = x_right + width_lane # move
+
+                x_left = x_left_org
+                x_right = x_right_org
+                '''
 
                 # Center of mass
                 count_x += sum(range(x_left, x_right))
@@ -385,20 +397,27 @@ class CameraRGB(Sensor):
             self._cm = np.array([x_cm, y_cm], dtype=np.int32)
             self._area = count_total
 
-            if self._check_lane_left and count_total_left > 0:
-                self._road_left = count_road_left / count_total_left * 100
-            else:
-                self._road_left = 0
-            if self._check_lane_right and count_road_right > 0:
-                self._road_right = count_road_right / count_total_right * 100
-            else:
-                self._road_right = 0
-
             # Calculate road porcentage
             if self._check_area_lane:
                 self._road_percentage = count_road / count_total * 100
-                self._lane_left = [] # Mark error
                 assert self._road_percentage >= self._threshold_road_per, "Low percentage of lane"
+
+            '''
+            if self._check_num_lane:
+
+                
+                self._num_lanes[MAX_NUM_LANES - 1] = True
+
+                th = 99.5
+
+                for i in range(MAX_NUM_LANES - 1):
+                    #print("right", count_road_right[i] / count_total_right[i] * 100 , count_road_right[i] , count_total_right[i])
+                    #print("left", count_road_left[i] / count_total_left[i] * 100.0, count_road_left[i], count_total_left[i] )
+                    self._num_lanes[MAX_NUM_LANES - 2 - i] = count_road_left[i] / count_total_left[i] * 100 > self._threshold_road_per and count_total_left[i] >= th
+                    self._num_lanes[MAX_NUM_LANES + i] = count_road_right[i] / count_total_right[i] * 100 > self._threshold_road_per and count_total_right[i] >= th
+
+                #print(self._num_lanes)
+                '''
 
             # Draw center of mass and vehicle
             cv2.line(img, (x_cm, 0), (x_cm, SIZE_CAMERA - 1), (0, 255, 0), 2)
@@ -407,8 +426,6 @@ class CameraRGB(Sensor):
         else:
             self._deviation = SIZE_CAMERA / 2
             self._road_percentage = 0
-            self._road_left = 0
-            self._road_right = 0
             self._lane_left = [] # Mark error
             assert False, "Area zero"
 
@@ -425,12 +442,6 @@ class CameraRGB(Sensor):
     
     def get_lane_area(self):
         return self._area
-    
-    def check_lane_right(self):
-        return self._road_right >= self._threshold_road_per
-    
-    def check_lane_left(self):
-        return self._road_left >= self._threshold_road_per
 
     def show_surface(self, surface:pygame.Surface, pos:tuple[int, int], text:str):
         if text != None:
@@ -492,7 +503,7 @@ class CameraRGB(Sensor):
             self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)  
 
     def get_seg_data(self, num_points:int, show=False):
-        if len(self._mask) <= 0:
+        if len(self._mask) <= 0 or len(self._lane_left) <= 0 or len(self._lane_right):
             return (0, np.array([0, 0], dtype=np.int32), np.zeros((num_points, 2), dtype=np.int32),
                     np.zeros((num_points, 2), dtype=np.int32))
 
@@ -605,6 +616,31 @@ class CameraRGB(Sensor):
             self._screen.blit(self._extra_surface, self.init_extra)
             
         return lane_points
+    
+    def get_num_lane(self):
+        try:
+            count = 0
+
+            # Left part
+            for i in range(MAX_NUM_LANES - 2, -1, -1):
+                if self._num_lanes[i]:
+                    count += 1
+                else:
+                    break
+
+            index = count + 1
+            count += 1 # current lane
+
+            # Right part
+            for i in range(MAX_NUM_LANES, MAX_NUM_LANES * 2 - 1, 1):
+                if self._num_lanes[i]:
+                    count += 1
+                else:
+                    break
+        except Exception:
+            index = count = 1
+
+        return index, count
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int, max_dist:int,
@@ -923,7 +959,7 @@ class Vehicle_sensors:
     def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
                        transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
                        text:str=None, lane:bool=False, canvas_seg:bool=True, lane_network:bool=False,
-                       check_area_lane:bool=False, check_lane_left:bool=False, check_lane_right:bool=False):
+                       check_area_lane:bool=False, check_num_lane:bool=False):
         if self._screen == None:
             init = None
             init_extra = None
@@ -933,7 +969,7 @@ class Vehicle_sensors:
                            init_extra=init_extra, text=text, lane=lane, canvas_seg=canvas_seg,
                            transform=transform, vehicle=self._vehicle, world=self._world,
                            lane_network=lane_network, check_area_lane=check_area_lane,
-                           check_lane_left=check_lane_left, check_lane_right=check_lane_right)
+                           check_num_lane=check_num_lane)
 
         self.sensors.append(camera)
         return camera

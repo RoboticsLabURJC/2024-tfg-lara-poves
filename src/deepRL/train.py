@@ -6,6 +6,7 @@ import yaml
 from stable_baselines3.common.env_util import make_vec_env
 import sys
 import warnings
+import traceback
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -27,7 +28,8 @@ env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
     'CarlaObstacle': environment.CarlaObstacle, 
-    'CarlaPassing': environment.CarlaPassing
+    'CarlaPassing': environment.CarlaPassing,
+    'CarlaOvertaken': environment.CarlaOvertaken
 }
 
 def check_dir(dir:str, env:str):
@@ -78,7 +80,7 @@ def main(args):
     model_params.pop('policy', None)
 
     if env_class == environment.CarlaPassing:
-        model_params['policy_kwargs'] = dict(net_arch=dict(pi=[128, 128], vf=[128, 128]))
+        model_params['policy_kwargs'] = dict(net_arch=dict(pi=[64, 64], vf=[64, 64]))
 
     if not args.retrain:
         model = alg_class(policy, env, verbose=args.verbose, seed=SEED, tensorboard_log=log_dir, **model_params)
@@ -103,6 +105,7 @@ def main(args):
         env.close()
     except Exception as e:
         print(e) # If the simulator crashes, save the model even if it's incomplete
+        traceback.print_exc()
 
     files = os.listdir(dir + 'model/' + args.env)
     num_files = len(files) + 1
