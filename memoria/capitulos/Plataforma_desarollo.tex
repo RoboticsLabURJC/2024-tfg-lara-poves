@@ -322,7 +322,7 @@ Los actores en CARLA son los elementos que realizan acciones dentro de la simula
     \item \textit{Espectador.} El espectador  proporciona un punto de vista dentro de la simulación. Puede utilizarse para mover la vista en la ventana del simulador.
     \item \textit{Señales de tráfico y semáforos.} En CARLA, solo las señales de alto, ceda el paso y los semáforos son considerados actores.
 
-    \item  \textit{Vehículos.} Los vehículos en CARLA son un tipo especial de actor que simula la física de los vehículos de ruedas mediante componentes internos. Utilizan un controlador que define los atributos físicos del vehículo y otro que gestiona los comandos de conducción: aceleración, dirección y freno. CARLA ofrece varios tipos de vehículos, coches, motocicletas y bicicletas, además de una gran variedad de modelos. El vehículo que se desea controlar, al que se le añaden los sensores, conocido como \textit{Ego Vehicle}, será el agente en el proceso de aprendizaje. Si indicamos esta condición al simulador, este renderiza solo la zona cercana a este vehículo para optimizar recursos.
+    \item  \textit{Vehículos.} Los vehículos en CARLA son un tipo especial de actor que simula la física de los vehículos de ruedas mediante componentes internos. Utilizan un controlador que define los atributos físicos del vehículo y otro que gestiona los comandos de conducción: aceleración, dirección y freno. CARLA ofrece varios tipos de vehículos (coches, motocicletas y camiones... \footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/}}), además de una gran variedad de modelos. El vehículo que se desea controlar, al que se le añaden los sensores, conocido como \textit{Ego Vehicle}, será el agente en el proceso de aprendizaje. Si indicamos esta condición al simulador, este renderiza solo la zona cercana a este vehículo para optimizar recursos.
 	\begin{code}[h]
 	\begin{lstlisting}[language=python]
 	
@@ -340,10 +340,22 @@ Los actores en CARLA son los elementos que realizan acciones dentro de la simula
 
 \subsubsection{Traffic Manager}
 
+El \ac{TM} es el módulo encargado de controlar los vehículos en modo piloto automático dentro de una simulación. Su propósito principal es recrear condiciones de tráfico urbano realistas en el entorno simulado. Los usuarios tienen la posibilidad de personalizar ciertos comportamientos para configurar escenarios específicos de aprendizaje, lo que resulta esencial para entrenar sistemas de conducción bajo circunstancias particulares.
 
+El \ac{TM} está integrado en el lado cliente de CARLA, y es necesario especificar el puerto de conexión para su funcionamiento. Los usuarios pueden ajustar parámetros del flujo de tráfico, permitiendo, forzando o incentivando comportamientos específicos. Por ejemplo, se puede configurar que los vehículos ignoren los límites de velocidad, cambien de carril de forma obligatoria o adopten comportamientos personalizados. Estas capacidades permiten experimentar y simular situaciones esenciales para la formación y evaluación de sistemas de conducción autónoma.
 
-
-
+En nuestro caso, los entrenamientos estarán limitados al uso del piloto automático para el coche delantero con una velocidad fija e ignorando completamente las señales de tráfico para realizar el control adaptativo el tráfico y el adelantamiento. 
+\begin{code}[h]
+	\begin{lstlisting}[language=python]
+	
+	tm = client.get_trafficmanager(port)
+	vehicle.set_autopilot(True, tm.get_port())  
+	tm.ignore_lights_percentage(vehicle, 100) 
+	self._tm.set_desired_speed(vehicle, velocity) #km/h
+\end{lstlisting}
+\caption[Configuración del \ac{TM} en CARLA]{Configuración del \ac{TM} en CARLA.}
+\label{cod:tm_carla}
+\end{code}
 
 
 
