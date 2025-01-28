@@ -503,7 +503,7 @@ class CameraRGB(Sensor):
             self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)  
 
     def get_seg_data(self, num_points:int, show=False):
-        if len(self._mask) <= 0 or len(self._lane_left) <= 0 or len(self._lane_right):
+        if len(self._mask) <= 0 or len(self._lane_left) <= 0 or len(self._lane_right) <= 0:
             return (0, np.array([0, 0], dtype=np.int32), np.zeros((num_points, 2), dtype=np.int32),
                     np.zeros((num_points, 2), dtype=np.int32))
 
