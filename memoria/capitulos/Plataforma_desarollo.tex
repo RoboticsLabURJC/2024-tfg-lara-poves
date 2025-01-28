@@ -126,7 +126,6 @@ import gymnasium as gym
 class CarlaBase(gym.Env):
     def __init__(self):
         self.observation_space = obs_space
-        self.reward_range = (0.0, 1.0)
     
     def _get_obs(self):
         return obs
@@ -239,7 +238,7 @@ tensorboard --logdir=$DIR
 \subsection{Anaconda}
 \label{sec:conda}
 
-Anaconda \footnote{\url{https://www.anaconda.com/}} es una plataforma de distribución de software que facilita la gestión de entornos y bibliotecas para el desarrollo de aplicaciones en Python. Permite crear entornos aislados con versiones específicas de Python y otras dependencias, lo que ayuda a evitar conflictos entre proyectos y a garantizar que las aplicaciones se ejecuten con las versiones requeridas de las bibliotecas. En este \ac{TFG}, se crea un entorno Anaconda que nos permita utilizar la versión 3.10 de Python, ya que es la que necesitaremos para utilizar \textit{EfficientVit}.
+Anaconda \footnote{\url{https://www.anaconda.com/}} es una plataforma de distribución de software que facilita la gestión de entornos y bibliotecas para el desarrollo de aplicaciones en Python. Permite crear entornos aislados con versiones específicas de Python y otras dependencias, lo que ayuda a evitar conflictos entre proyectos y a garantizar que las aplicaciones se ejecuten con las versiones requeridas de las bibliotecas. En este \ac{TFG}, se crea un entorno Anaconda que nos permita utilizar la versión 3.10 de Python, ya que es la que necesitaremos para utilizar EfficientVit.
 
 \begin{code}[h]
 \begin{lstlisting}[language=bash]
