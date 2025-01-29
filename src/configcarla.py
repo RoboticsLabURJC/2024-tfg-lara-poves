@@ -645,7 +645,7 @@ class CameraRGB(Sensor):
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int, max_dist:int,
                  front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool=True, time_show:bool=True,
-                 back_zone:bool=False):
+                 back_zone:bool=False, front_narrow:bool=False):
         super().__init__(sensor=sensor)
 
         self._rect = init
@@ -698,6 +698,7 @@ class Lidar(Sensor):
         # Divide front zone
         angle1 = get_angle_range(-self._front_angle / 2 - yaw)
         angle2 = get_angle_range(self._front_angle / 2 - yaw)
+
         angle1_add = get_angle_range(angle1 + self._front_angle / 3)
         angle2_sub = get_angle_range(angle2 - self._front_angle / 3)        
         self._angles = [angle1, angle1_add, angle2_sub, angle2]
@@ -796,6 +797,13 @@ class Lidar(Sensor):
 
                 x_values = np.array(meas_zones[X][zone])[filter_min & filter_max]
                 filtered_x_values = x_values[dist_mask]
+
+                '''
+                z_values = np.array(meas_zones[Z][zone])[filter_min & filter_max]
+                filtered_z_values = z_values[dist_mask]
+
+                print(filtered_z_values)
+                '''
 
                 sorted_index = np.argsort(filtered_x_values)
                 self._points[zone] = filtered_dist[sorted_index]
@@ -910,6 +918,9 @@ class Lidar(Sensor):
     
     def get_min(self, zone:int):
         return self._stat_zones[zone][MIN]
+    
+    def get_mean(self, zone:int):
+        return self._stat_zones[zone][MEAN]
 
 class Collision(Sensor):
     def __init__(self, sensor):
@@ -946,6 +957,10 @@ class Vehicle_sensors:
 
             if type_class == 0:
                 sensor_bp.set_attribute('rotation_frequency', '20')
+            elif type_class == 4:
+                sensor_bp.set_attribute('rotation_frequency', '100') 
+                sensor_bp.set_attribute('channels', '30')
+                sensor_bp.set_attribute('points_per_second', '200000') 
             else:
                 sensor_bp.set_attribute('rotation_frequency', '100') 
                 sensor_bp.set_attribute('channels', '30')
@@ -976,7 +991,7 @@ class Vehicle_sensors:
     
     def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25, time_show:bool=True,
                   transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True, 
-                  max_dist:int=10, type_class:int=0, back_zone:int=0):
+                  max_dist:int=10, type_class:int=0, back_zone:int=0, front_narrow:bool=False):
         if self._screen == None:
             init = None
 
@@ -984,7 +999,7 @@ class Vehicle_sensors:
                                   max_dist_laser=max_dist, type_class=type_class)
         lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale,
                       max_dist=max_dist, yaw=transform.rotation.yaw, screen=self._screen, show_stats=show_stats,
-                      time_show=time_show, back_zone=back_zone)
+                      time_show=time_show, back_zone=back_zone, front_narrow=front_narrow)
         
         self.sensors.append(lidar)
         return lidar
@@ -995,7 +1010,7 @@ class Vehicle_sensors:
         self.sensors.append(sensor_collision)
         return sensor_collision
 
-    def update_data(self, flip:bool=True, vel_ego:int=-1, vel_front:int=-1, front_laser:bool=False):
+    def update_data(self, flip:bool=True, vel_ego:int=-1, vel_front:int=-1, front_laser:bool=False, mean:bool=False):
         offset = 20
         dist_lidar = np.nan
 
@@ -1003,7 +1018,10 @@ class Vehicle_sensors:
             sensor.process_data()
 
             if type(sensor) == Lidar:
-                dist_lidar = sensor.get_min(zone=FRONT)
+                if not mean:
+                    dist_lidar = sensor.get_min(zone=FRONT)
+                else:
+                    dist_lidar = sensor.get_mean(zone=FRONT)
 
         if self._screen != None:
             elapsed_time = time.time_ns() - self._time_frame
