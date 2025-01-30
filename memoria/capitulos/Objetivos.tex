@@ -1,20 +1,20 @@
 \chapter{Objetivos}
 \label{cap:capitulo2}
 
-En esta sección del documento se describe el problema a resolver, marcando los los objetivos y requisitos pautados en el desarrollo del \ac{TFG}.
+En esta sección del documento se describe el problema a resolver, marcando los objetivos y requisitos pautados en el desarrollo del \ac{TFG}.
 
 \section{Descripción del problema}
 \label{sec:descripcion}
 
-El objetivo principal de este \ac{TFG} es desarrollar un sistema de navegación autónoma que pueda desenvolverse de manera eficiente en entornos urbanos. Para ello, se emplearán técnicas de \ac{DRL} junto con diferentes enfoques de \ac{DL} para la percepción del entorno, con el propósito de garantizar un comportamiento robusto, seguro y eficiente. El proyecto se centra en lograr una conducción suave y estable durante todo el recorrido, abordando tres subtareas principales: el seguimiento del carril para mantener la trayectoria correcta, el mantenimiento de una velocidad de crucero ajustada al vehículo delantero y la ejecución del adelantamiento.
+El objetivo principal de este \ac{TFG} es desarrollar un sistema de navegación autónoma que pueda desenvolverse de manera eficiente en entornos urbanos. Para ello, se emplearán técnicas de \ac{DRL} para la toma de decisiones, junto con diferentes enfoques de \ac{DL} para la percepción del entorno, con el propósito de garantizar un comportamiento robusto, seguro y eficiente. El proyecto se centra en lograr una conducción segura y estable durante todo el recorrido, abordando tres subtareas principales: el seguimiento del carril para mantener la trayectoria correcta, el mantenimiento de una velocidad de crucero ajustada al vehículo delantero y la ejecución de la maniobra adelantamiento.
 
 A continuación, se definen los siguientes sub-objetivos: 
 
 \begin{enumerate}
-    \item Desarrollo de un comportamiento de seguimiento de carril basado en algoritmos de \ac{DRL}, orientado a lograr una navegación autónoma y eficiente.
-    \item Ampliación del comportamiento de seguimiento de carril para incorporar una respuesta adaptativa al tráfico, específicamente mediante el mantenimiento de una velocidad de crucero ajustada al vehículo que circula delante del propio coche.
-    \item Desarrollo de un modelo basado en \ac{DRL} capaz de ejecutar maniobras de adelantamiento, incluyendo el cambio de carril y el retorno seguro al carril original
-    \item Análisis y comparación de los diferentes comportamientos desarrollados en el proyecto para validar su correcto funcionamiento.
+    \item Desarrollo de un comportamiento de seguimiento de carril basado \ac{DL} para la percepción y en algoritmos de \ac{DRL} para la toma de decisiones, orientado a lograr una navegación autónoma y eficiente.
+    \item Ampliación del comportamiento de seguimiento de carril para incorporar una respuesta adaptativa al tráfico, mantenimiendo de una velocidad de crucero ajustada al vehículo que circula delante del propio coche.
+    \item Desarrollo de un modelo basado en \ac{DRL} capaz de ejecutar maniobras completas de adelantamiento, incluyendo el cambio de carril y el retorno seguro al carril original
+    \item Análisis y comparación de los diferentes comportamientos de navegación autónoma desarrollados en el proyecto para validar su correcto funcionamiento.
 \end{enumerate}
 
 \section{Requisitos}
@@ -25,7 +25,7 @@ Los requisitos que han de cumplirse en este trabajo son:
     \item Uso del entorno de simulación CARLA \footnote{\url{https://carla.org/}}, que posibilita la creación de escenarios realistas, la emulación de diversos comportamientos de vehículos y la prueba de modelos. Al ser un simulador ampliamente reconocido en el ámbito de la conducción autónoma, garantiza la reutilización del proyecto en aplicaciones futuras relacionadas con la movilidad y la navegación autónoma.
     \item Lograr un comportamiento de seguimiento de carril estable y sin oscilaciones, alcanzando velocidades superiores a los 70 km/h.
     \item Mantener el control de crucero asegurando una distancia de seguridad adecuada respecto al vehículo delantero, de acuerdo con las normas de la \ac{DGT} \footnote{\url{https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/conoce-el-estado-del-trafico/operaciones-especiales/4_O.-E.-Primero-de-Mayo-2023_Consejos-y-normas-de-Seguridad-Vial_V-I.pdf}}.
-   \item Durante los adelantamientos, el modelo debe ser capaz de evaluar los riesgos en el carril contrario, determinar si existe un carril disponible al que trasladarse y verificar que dicho carril esté libre de obstáculos o vehículos.
+   \item Durante los adelantamientos, el modelo debe ser capaz de identificar si hay un carril disponible al que pueda trasladarse y, al regresar a su carril, verificar que ha adelantado completamente al vehículo que se encontraba delante.
     \item Comportamiento robusto y reactivo en tiempo real, asegurando una navegación segura y eficiente del vehículo en diferentes escenarios.
     \item Uso de algotitmos de \ac{DRL} para tomar decisiones autónomas en situaciones complejas, dado que no se dispone de \textit{datasets} predefinidos que cubran todos los posibles escenarios.
 \end{enumerate}
@@ -68,8 +68,9 @@ Finalmente, los pasos a seguir de este trabajo han sido:
     \item Desarrollo del proyecto:
 	\begin{itemize}
 		\item Se desarrolló un teleoperador sencillo para explorar las diversas funcionalidades y configuraciones que ofrece el simulador CARLA.
-		\item Se implementó el manejo de sensores como el \ac{LiDAR} y la cámara, los cuales se utilizarían posteriormente para lograr comportamientos específicos en el sistema autónomo. Además, se integraron redes neuronales para la detección de carriles y la segmentación semántica. Para la identificación del carril, se incluyó una nueva forma de deteccion basada en  \textit{ground truth} en CARLA.	
+		\item Se implementó el manejo y visualización de sensores, como el \ac{LiDAR} y la cámara, cuyos datos se utilizarán posteriormente para lograr comportamientos específicos en el sistema autónomo. Además, se integraron redes neuronales para la detección de carriles y la segmentación semántica. Para la identificación del carril, también se incluyó una nueva forma de deteccion basada en \textit{ground truth} en CARLA.	
 		\item Se configuró el autopiloto de CARLA, explorando las distintas opciones de configuración disponibles.
+		\item A partir de los datos de los sensores y las herramientas integradas, se implementó la detección del carril, calculando variables como su área y centro de masas. Además, se aplicó un tratamiento inteligente a la nube de puntos del \ac{LiDAR}, filtrando estos puntos para detectar otros vehículos.
 		\item Se desarrolló un sistema de seguimiento de carriles basado en un controlador \ac{PID}.
 		\item En una primera etapa, se entrenó un modelo utilizando \ac{DQN} para que fuera capaz de seguir el carril. Posteriormente, se entrenó un nuevo modelo utilizando \ac{PPO} para mejorar el desempeño.
 		\item Se realizó un reentrenamiento del último modelo para que pudiera mantener una velocidad de crucero utilizando la información proporcionada por el \ac{LiDAR} sobre el coche delantero.
