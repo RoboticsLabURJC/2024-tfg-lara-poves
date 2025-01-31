@@ -19,22 +19,21 @@ Pygame \footnote{\url{https://www.pygame.org/docs/}} es una librería de Python 
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
-	 import pygame
+import pygame
 	
-	# Setup
-	pygame.init()
-	screen = pygame.display.set_mode(size, pygame.HWSURFACE | pygame.DOUBLEBUF)
-	pygame.display.set_caption(name)
+# Setup
+pygame.init()
+screen = pygame.display.set_mode(size, pygame.HWSURFACE | pygame.DOUBLEBUF)
+pygame.display.set_caption(name)
 
-	while True:
-	    for event in pygame.event.get():
-	        if event.type == pygame.QUIT:
-	            pygame.quit()
-	            break
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            break
 
-	    screen.fill("purple") # Fill the screen with a color
-	    pygame.display.flip() # Display your work on the screen
-
+    screen.fill("purple") # Fill the screen with a color
+    pygame.display.flip() # Display your work on the screen
 \end{lstlisting}
 \caption[Ejemplo de código en Python utilizando Pygame]{Ejemplo de código en Python utilizando Pygame para mostrar una interfaz gráfica}
 \label{cod:pygame}
@@ -72,16 +71,6 @@ index_sorted = index[np.argsort(index[:, 0])] # Sorted by y
 
 La librería Matplotlib \footnote{\url{https://matplotlib.org/}} es una herramienta popular en Python para crear gráficos y visualizaciones. Permite generar desde gráficos simples hasta complejos, como líneas, barras, histogramas y diagramas de dispersión. Es ampliamente utilizada gracias a su flexibilidad para personalizar los gráficos y su integración con otras librerías como NumPy y Pandas \footnote{\url{https://pandas.pydata.org/}}, librería de Python para la manipulación y análisis de datos. Además, ofrece la posibilidad de exportar los gráficos en diversos formatos. En este \ac{TFG}, se ha utilizado principalmente la librería Matplotlib para la visualización de los datos recopilados durante la inferencia y a lo largo de los entrenamientos.
 
-\begin{figure}[ht]
-  \begin{center}
-    \includegraphics[width=14cm]{figs/Plataformas_Desarollo/plot.png}
-  \end{center}
-  \caption{Ejemplo de gráficas de datos de entrenamiento con Matplotlib.}
-  \label{foto_plot}
-\end{figure}
-
-\newpage
-
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
 import matplotlib.pyplot as plt
@@ -90,20 +79,16 @@ import matplotlib.patches as mpatches
 if points:
 	# Scatter plot with colors based on finish
 	color_map = {0: 'red', 1: 'green'}
-	colors = [color_map[f] for f in finish] 
-	plt.scatter(range(len(data)), data, color=colors, s=7)
+	plt.scatter(range(len(data)), data, color=[color_map[f] for f in finish], s=7)
 	
 	# Legend
-        red_patch = mpatches.Patch(color='red', label='Finish = False')
-        green_patch = mpatches.Patch(color='green', label='Finish = True')
-        plt.legend(handles=[red_patch, green_patch])  
+	red_patch = mpatches.Patch(color='red', label='Finish = False')
+	green_patch = mpatches.Patch(color='green', label='Finish = True')
+	plt.legend(handles=[red_patch, green_patch])  
 else:
-	# Line plot raw data
 	plt.plot(range(len(data)), data, linewidth=1, label=key)
-
-	# Accumulative plot of the data
 	cumulative_avg = np.cumsum(data) / np.arange(1, len(data) + 1)
-        	plt.plot(range(len(data)), cumulative_avg, label=label, linewidth=2.5, color='orange')
+	plt.plot(range(len(data)), cumulative_avg, label=label, linewidth=2.5)
 	plt.legend()
 
 plt.ylabel(key)
@@ -113,6 +98,14 @@ plt.title(title)
 \caption[Ejemplo de código en Python para visualizar datos con Matplotlib]{Ejemplo de código en Python para visualizar datos con Matplotlib.}
 \label{cod:plot}
 \end{code}
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=14cm]{figs/Plataformas_Desarollo/plot.png}
+  \end{center}
+  \caption{Ejemplo de gráficas de datos de entrenamiento con Matplotlib.}
+  \label{foto_plot}
+\end{figure}
 
 \subsubsection{Gymnasium}
 \label{sec:gymnasium}
@@ -268,29 +261,71 @@ Visual Studio Code \footnote{\url{https://code.visualstudio.com/}} es un editor 
 
 En este \ac{TFG}, se utiliza Visual Studio Code como el editor principal para el desarrollo de todo el código, aprovechando sus extensiones para Python y YAML \footnote{\url{https https://www.ibm.com/es-es/topics/yaml}}, lo que optimiza la productividad y facilita la escritura del código.
 
-\section{EfficientVit}
-\label{sec:ef}
+\section{Herramientas para la detección de carril}
+\label{sec:herr}
 
-EfficientViT es un nuevo módulo dentro de la familia de Vision Transformers \footnote{\url{https://arxiv.org/pdf/1706.03762}} con atención lineal multi-escala, diseñado para realizar predicciones densas (por píxel) de alta resolución. Este modelo es capaz de capturar tanto detalles finos como características globales más amplias de las imágenes. Se basa en modelos previos de predicción densa de alta resolución \ac{SOTA} \footnote{\textbf{ \ac{SOTA}}: Métodos y tecnologías más avanzadas y actuales en un campo específico.}, aprovechando el aprendizaje a múltiples escalas y un campo receptivo global para comprender el contexto y las relaciones entre distintas partes de la imagen.
+Para la detección de carril, se ha utilizado la herramienta \textit{carla\_lane\_detector}, desarrollada por RoboticsLabURJC. Esta herramienta permite identificar con precisión las líneas que delimitan el carril dentro del simulador CARLA, proporcionando información esencial para el control y la navegación del vehículo autónomo, permitiendo además ajustar su trayectoria en función de la información obtenida. Existen dos técnicas principales para llevar a cabo esta detección: una basada en \ac{DL} y otra en información de CARLA.
 
-El principal desafío de los modelos \ac{SOTA} es que utilizan operaciones de hardware ineficientes, lo que limita su viabilidad en aplicaciones del mundo real. EfficientViT aborda este problema reemplazando dichas operaciones por alternativas más livianas y eficientes en términos de hardware, lo que permite una ejecución más rápida y su implementación en aplicaciones en tiempo real. Un cambio clave es la sustitución de la función \textit{softmax} \footnote{\url{https://jacar.es/funcion-softmax-activacion-para-la-clasificacion/}} por \textit{ReLU} \footnote{\url{https://jacar.es/la-funcion-unidad-rectificada-uniforme-relu-una-herramienta-esencial-para-el-aprendizaje-profundo/}}, lo cual reduce la complejidad computacional de cuadrática a lineal, sin comprometer la funcionalidad. Sin embargo, debido a que \textit{ReLU} por sí sola tiene una capacidad limitada para extraer información local, se incorporan capas convolucionales adicionales que permiten al modelo analizar los datos en diferentes niveles de detalle. 
+\subsection{Detección \ac{DL}}
+\label{sec:gt}
+
+El modelo basado en \ac{DL} ha sido entrenado con imágenes tomadas del simulador CARLA y se ha implementado utilizando la librería PyTorch \footnote{\url{https://pytorch.org/}}. Este modelo está diseñado para identificar las líneas del carril en entornos simulados, aprendiendo patrones a partir de un conjunto de datos amplio. Sin embargo, este enfoque presenta algunas limitaciones. Por ejemplo, si un vehículo está delante y oculta las líneas del carril, el modelo no es capaz de resolver esta situación de manera efectiva, lo que podría llevar a que no se detecte el carril o se haga de forma imprecisa.
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=6cm]{figs/Plataformas_Desarollo/time.png}
+    \includegraphics[width=6cm]{figs/Plataformas_Desarollo/carla_lane_dl.png}
   \end{center}
-  \caption{Comparación de latencias entre \textit{softmax} y \textit{ReLU}.}
-  \label{foto_eff}
+  \caption{Detección de carril basada en \ac{DL}.}
+  \label{dl_lane}
 \end{figure}
 
-EfficientViT ha sido evaluado en tres tareas principales: segmentación semántica, superresolución y \ac{SA}. En todos estos casos, ofrece mejoras significativas en términos de latencia y eficiencia, sin sacrificar el rendimiento \cite{efficientvit}. Por esta razón, EfficientViT se utilizará en este \ac{TFG} para detectar la calzada y otros elementos en tiempo real durante los entrenamientos y pruebas.
-
-\section{Herramientas para la detección de carril}
-\label{sec:herr}
 \subsection{Detección Ground-Truth}
 \label{sec:gt}
-\subsection{Detección \ac{DL}}
-\label{sec:gt}
+
+Por otro lado, la detección de carril basada en \textit{ground truth} aprovecha la ubicación del vehículo y la cámara dentro de CARLA para realizar la detección del carril. Gracias a la transformación de coordenadas entre el vehículo y la cámara, junto con la posición precisa del vehículo, es posible obtener los límites del carril en 3D, visión global en CARLA. Además, disponemos de la matriz intrínseca K, que permite la conversión de coordenadas de 2D a 3D. Utilizando esta matriz, los límites del carril pueden proyectarse a 2D. A diferencia de la solución basada en \ac{DL}, este enfoque no depende de la visibilidad directa de las líneas del carril, si hay elementos que obstruyen la visión, la detección sigue siendo precisa, ya que se basa en información global del entorno de CARLA y no en una imagen.
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=7cm]{figs/Plataformas_Desarollo/ground_truth.png}
+  \end{center}
+  \caption{Detección de carril basada en \textit{ground truth}.}
+  \label{dl_lane}
+\end{figure}
+
+\section{EfficientVit}
+\label{sec:ef}
+
+EfficientViT es un innovador módulo dentro de la familia de \textit{Vision Transformers} \footnote{\url{https://arxiv.org/pdf/1706.03762}}, utilizado con éxito en tareas como segmentación semántica, superresolución de imágenes y modelos de segmentación generalizados. Su principal ventaja es la significativa reducción de latencias sin perder rendimiento, haciendo posible su uso en aplicaciones de tiempo real. A diferencia de los modelos tradicionales que dependen de mecanismos de atención computacionalmente costosos o convoluciones de gran tamaño, EfficientViT emplea una atención lineal multiescala ligera. El cambio clave en este modelo es la sustitución de la función\textit{softmax} \footnote{\url{https://jacar.es/funcion-softmax-activacion-para-la-clasificacion/}} por \textit{ReLU} \footnote{\url{https://jacar.es/la-funcion-unidad-rectificada-uniforme-relu-una-herramienta-esencial-para-el-aprendizaje-profundo/}}, lo cual reduce la complejidad computacional de cuadrática a lineal sin comprometer la funcionalidad \cite{efficientvit}.
+
+La segmentación es el proceso de dividir una imagen en regiones significativas para identificar objetos y se divide en dos tipos principales: segmentación semántica y segmentación de instancias. En la segmentación semántica, se asigna una clase a cada píxel de la imagen, pero no se distingue entre diferentes instancias de la misma clase. En cambio, la segmentación de instancias no solo clasifica los píxeles en categorías, sino que también identifica y distingue las instancias individuales de un objeto. Por ejemplo, en una imagen con varios vehículos, la segmentación de instancias no solo clasificará los píxeles como vehículos, sino que también diferenciará entre cada vehículo de forma individual.
+
+En este\ac{TFG}, se utiliza el modelo EfficientViT Segmentation \footnote{\url{ https://github.com/mit-han-lab/efficientvit/blob/master/applications/efficientvit_seg}}  para detectar la calzada. Este modelo ha sido entrenado con \textit{Cityscapes Dataset} \footnote{\url{https://www.cityscapes-dataset.com/}}, diseñado para la comprensión semántica de escenas urbanas, centrándose en la segmentación de calles y objetos en entornos urbanos. Este \textit{dataset} incluye anotaciones poligonales que marcan con precisión los objetos en las imágenes realizando una segmentación semántica densa, asignando una etiqueta a cada píxel de la imagen. Además, para objetos como vehículos y personas, se emplea segmentación de instancias.
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=7cm]{figs/Plataformas_Desarollo/resultado_ef.png}
+  \end{center}
+  \caption{Resultado de segmentación semántica con EfficientViT.}
+  \label{foto_ef}
+\end{figure}
+
+Este conjunto de datos contiene imágenes reales tomadas en 50 ciudades en diferentes estaciones del año, condiciones meteorológicas variadas y a distintas horas del día. Las imágenes fueron seleccionadas manualmente, asegurando una gran cantidad de objetos dinámicos, así como variación en el fondo y en la disposición de las escenas. \textit{Cityscapes Dataset} incluye un total de 5,000 imágenes con anotaciones detalladas y 20,000 con anotaciones más generales, cubriendo 30 clases de objetos urbanos. Esto lo convierte en un recurso valioso para entrenar modelos de visión por computadora en entornos urbanos con muchos elementos.
+ 
+\begin{figure}[ht]
+  \begin{center}
+    % Imagen con datos detallados del dataset
+    \includegraphics[width=15cm]{figs/Plataformas_Desarollo/detallado-ef.png}
+    \caption{Ejemplo de imagen con datos detallados de \textit{Cityscapes Dataset}.}
+    \label{foto_ef_detallado}
+    
+    \vspace{0.5cm} % Espacio entre las dos imágenes
+    
+    % Imagen con datos más generales del dataset
+    \includegraphics[width=15cm]{figs/Plataformas_Desarollo/no_detallado_ef.png}
+    \caption{Ejemplo de imagen con datos más generales de \textit{Cityscapes Dataset}.}
+    \label{foto_ef_general}
+  \end{center}
+\end{figure}
 
 \section{Entorno de simulación}
 \label{sec:sim}
@@ -397,7 +432,9 @@ En nuestro caso, los entrenamientos estarán limitados al uso del piloto automá
 
 Carla es un simulador que requiere una gran capacidad computacional. La ejecución de algoritmos de aprendizaje por refuerzo, combinados con diversas redes neuronales para la percepción, incrementa aún más esta demanda de potencia de cálculo. Para satisfacer estos requisitos, es fundamental disponer de los recursos de hardware adecuados. Lo ideal es contar con una o varias \ac{GPU}, ya que están optimizadas para el procesamiento paralelo masivo, lo que en nuestro contexto acelera significativamente tanto la simulación como el entrenamiento de modelos de \ac{IA}. 
 
-El servidor Thor, ubicado en la Escuela de Ingeniería Superior de Fuenlabrada de la \ac{URJC}, está equipado con una GPU NVIDIA GeForce RTX 4090 con 24 GB de memoria, como se puede ver en la Figura \ref{fig:thor_nvidia}. Este servidor no solo permite gestionar la carga computacional intensiva del simulador, sino que también facilita el entrenamiento y la inferencia de modelos en tiempo real a lo largo del desarrollo de este \ac{TFG}.
+El servidor Thor, ubicado en la Escuela de Ingeniería Superior de Fuenlabrada de la \ac{URJC}, forma parte de la granja de servidores con \ac{GPU} de RoboticsLabURJC. Este servidor está diseñado para tareas que requieren un alto rendimiento, ya que su arquitectura \textit{x86\_64} y el potente procesador \textit{AMD Ryzen Threadripper 7960X} lo hacen adecuado para aplicaciones exigentes. La velocidad del procesador varía dependiendo de la carga de trabajo, oscilando entre 545 MHz en reposo y hasta 7786 MHz cuando se necesita el máximo rendimiento, lo que contribuye tanto a la optimización del consumo energético como a la mejora del desempeño del sistema. En cuanto al almacenamiento, el servidor cuenta con 125 GiB de memoria \ac{RAM} y su capacidad total de disco es de 24,8 TB, distribuida entre las diferentes unidades de almacenamiento.
+
+Además, el servidor está equipado con una \ac{GPU} NVIDIA GeForce RTX 4090 con 24 GB de memoria, lo que permite no solo gestionar cargas computacionales intensivas, sino también facilitar el entrenamiento y la inferencia de modelos en tiempo real. Esta capacidad es crucial para el desarrollo y las pruebas de este \ac{TFG}, como se puede observar en la Figura \ref{fig:thor_nvidia}.
 
 \begin{figure}[ht]
   \centering
