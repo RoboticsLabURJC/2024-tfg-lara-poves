@@ -179,7 +179,7 @@ Los métodos \textit{step} y \textit{reset} son esenciales para ejecutar un algo
 Stable-Baselines3 \footnote{\url{https://stable-baselines3.readthedocs.io/en/master/}} es una biblioteca de Python que nos proporciona implementaciones estables y fáciles de usar de algoritmos de aprendizaje por refuerzo basadas PyTorch \footnote{\url{https://pytorch.org/}} como \textit{backend}. Además, incluye compatibilidad con TensorBoard \footnote{\url{https://www.tensorflow.org/tensorboard?hl=es-419}}, lo que permite visualizar métricas del entrenamiento en tiempo real y analizar el rendimiento de los modelos. Entre las características principales de Stable-Baselines3 se encuentran tres tipos de políticas que permiten adaptar el modelo a diferentes tipos de datos:
 
  \begin{itemize} 
-\item \textit{MlpPolicy:} Diseñada para trabajar con estados en forma de vectores, como en el entorno \texttt{CartPole} \footnote{\url{https://gymnasium.farama.org/environments/classic_control/cart_pole/}}, el cual consiste un carro que sostiene un poste, cuyo objetivo es mantener el poste dentro de un cierto ángulo tanto tiempo como sea posible, moviéndose hacia la izquierda o hacia la derecha. 
+\item \textit{MlpPolicy:} Diseñada para trabajar con estados en forma de vectores, como en el entorno \textit{CartPole} \footnote{\url{https://gymnasium.farama.org/environments/classic_control/cart_pole/}}, el cual consiste un carro que sostiene un poste, cuyo objetivo es mantener el poste dentro de un cierto ángulo tanto tiempo como sea posible, moviéndose hacia la izquierda o hacia la derecha. 
 \item \textit{CnnPolicy:} Diseñada específicamente para procesar estados representados como imágenes, siendo ideal para aplicaciones como videojuegos.
 \item \textit{MultiInputPolicy:} Permite manejar observaciones más complejas organizadas en diccionarios, adecuadas para datos combinados. 
 \end{itemize} 
@@ -262,7 +262,7 @@ Visual Studio Code \footnote{\url{https://code.visualstudio.com/}} es un editor 
 En este \ac{TFG}, se utiliza Visual Studio Code como el editor principal para el desarrollo de todo el código, aprovechando sus extensiones para Python y YAML \footnote{\url{https https://www.ibm.com/es-es/topics/yaml}}, lo que optimiza la productividad y facilita la escritura del código.
 
 \section{Herramientas para la detección de carril}
-\label{sec:herr}
+\label{sec:herramientas_carril}
 
 Para la detección de carril, se ha utilizado la herramienta \textit{carla\_lane\_detector}, desarrollada por RoboticsLabURJC. Esta herramienta permite identificar con precisión las líneas que delimitan el carril dentro del simulador CARLA, proporcionando información esencial para el control y la navegación del vehículo autónomo, permitiendo además ajustar su trayectoria en función de la información obtenida. Existen dos técnicas principales para llevar a cabo esta detección: una basada en \ac{DL} y otra en información de CARLA.
 
@@ -279,7 +279,7 @@ El modelo basado en \ac{DL} ha sido entrenado con imágenes tomadas del simulado
   \label{dl_lane}
 \end{figure}
 
-\subsection{Detección Ground-Truth}
+\subsection{Detección ground truth}
 \label{sec:gt}
 
 Por otro lado, la detección de carril basada en \textit{ground truth} aprovecha la ubicación del vehículo y la cámara dentro de CARLA para realizar la detección del carril. Gracias a la transformación de coordenadas entre el vehículo y la cámara, junto con la posición precisa del vehículo, es posible obtener los límites del carril en 3D, visión global en CARLA. Además, disponemos de la matriz intrínseca K, que permite la conversión de coordenadas de 2D a 3D. Utilizando esta matriz, los límites del carril pueden proyectarse a 2D. A diferencia de la solución basada en \ac{DL}, este enfoque no depende de la visibilidad directa de las líneas del carril, si hay elementos que obstruyen la visión, la detección sigue siendo precisa, ya que se basa en información global del entorno de CARLA y no en una imagen.
@@ -299,7 +299,7 @@ EfficientViT es un innovador módulo dentro de la familia de \textit{Vision Tran
 
 La segmentación es el proceso de dividir una imagen en regiones significativas para identificar objetos y se divide en dos tipos principales: segmentación semántica y segmentación de instancias. En la segmentación semántica, se asigna una clase a cada píxel de la imagen, pero no se distingue entre diferentes instancias de la misma clase. En cambio, la segmentación de instancias no solo clasifica los píxeles en categorías, sino que también identifica y distingue las instancias individuales de un objeto. Por ejemplo, en una imagen con varios vehículos, la segmentación de instancias no solo clasificará los píxeles como vehículos, sino que también diferenciará entre cada vehículo de forma individual.
 
-En este\ac{TFG}, se utiliza el modelo EfficientViT Segmentation \footnote{\url{ https://github.com/mit-han-lab/efficientvit/blob/master/applications/efficientvit_seg}}  para detectar la calzada. Este modelo ha sido entrenado con \textit{Cityscapes Dataset} \footnote{\url{https://www.cityscapes-dataset.com/}}, diseñado para la comprensión semántica de escenas urbanas, centrándose en la segmentación de calles y objetos en entornos urbanos. Este \textit{dataset} incluye anotaciones poligonales que marcan con precisión los objetos en las imágenes realizando una segmentación semántica densa, asignando una etiqueta a cada píxel de la imagen. Además, para objetos como vehículos y personas, se emplea segmentación de instancias.
+En este \ac{TFG}, se utiliza el modelo EfficientViT Segmentation \footnote{\url{ https://github.com/mit-han-lab/efficientvit/blob/master/applications/efficientvit_seg}}  para detectar la calzada. Este modelo ha sido entrenado con \textit{Cityscapes Dataset} \footnote{\url{https://www.cityscapes-dataset.com/}}, diseñado para la comprensión semántica de escenas urbanas, centrándose en la segmentación de calles y objetos en entornos urbanos. Este \textit{dataset} incluye anotaciones poligonales que marcan con precisión los objetos en las imágenes realizando una segmentación semántica densa, asignando una etiqueta a cada píxel de la imagen. Además, para objetos como vehículos y personas, se emplea segmentación de instancias.
 
 \begin{figure}[ht]
   \begin{center}
@@ -309,7 +309,7 @@ En este\ac{TFG}, se utiliza el modelo EfficientViT Segmentation \footnote{\url{ 
   \label{foto_ef}
 \end{figure}
 
-Este conjunto de datos contiene imágenes reales tomadas en 50 ciudades en diferentes estaciones del año, condiciones meteorológicas variadas y a distintas horas del día. Las imágenes fueron seleccionadas manualmente, asegurando una gran cantidad de objetos dinámicos, así como variación en el fondo y en la disposición de las escenas. \textit{Cityscapes Dataset} incluye un total de 5,000 imágenes con anotaciones detalladas y 20,000 con anotaciones más generales, cubriendo 30 clases de objetos urbanos. Esto lo convierte en un recurso valioso para entrenar modelos de visión por computadora en entornos urbanos con muchos elementos.
+Este conjunto de datos contiene imágenes reales tomadas en 50 ciudades en diferentes estaciones del año, condiciones meteorológicas variadas y a distintas horas del día. Las imágenes fueron seleccionadas manualmente, asegurando una gran cantidad de objetos dinámicos, así como variación en el fondo y en la disposición de las escenas. \textit{Cityscapes Dataset} incluye un total de 5.000 imágenes con anotaciones detalladas y 20.000 con anotaciones más generales, cubriendo 30 clases de objetos urbanos. Esto lo convierte en un recurso valioso para entrenar modelos de visión por computadora en entornos urbanos con muchos elementos.
  
 \begin{figure}[ht]
   \begin{center}

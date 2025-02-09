@@ -6,15 +6,15 @@ En esta sección del documento se describe el problema a resolver, marcando los 
 \section{Descripción del problema}
 \label{sec:descripcion}
 
-El objetivo principal de este \ac{TFG} es desarrollar un sistema de navegación autónoma que pueda desenvolverse de manera eficiente en entornos urbanos. Para ello, se emplearán técnicas de \ac{DRL} para la toma de decisiones, junto con diferentes enfoques de \ac{DL} para la percepción del entorno, con el propósito de garantizar un comportamiento robusto, seguro y eficiente. El proyecto se centra en lograr una conducción segura y estable durante todo el recorrido, abordando tres subtareas principales: el seguimiento del carril para mantener la trayectoria correcta, el mantenimiento de una velocidad de crucero ajustada al vehículo delantero y la ejecución de la maniobra adelantamiento.
+El objetivo principal de este \ac{TFG} es desarrollar un sistema de conducción autónoma capaz de desenvolverse eficientemente en entornos urbanos. Para este propósito, se emplean técnicas de \ac{DRL} para la toma de decisiones, junto con diferentes enfoques de \ac{DL} para la percepción del entorno, con el objetivo de garantizar un comportamiento robusto, seguro y eficiente. El proyecto se centra en lograr una conducción segura y estable durante todo el recorrido, abordando tres subtareas principales: seguimiento del carril, control de velocidad adaptivo al vehículo de delante y llevar a cabo una maniobra de adelantamiento completa.
 
 A continuación, se definen los siguientes sub-objetivos: 
 
 \begin{enumerate}
-    \item Desarrollo de un comportamiento de seguimiento de carril basado \ac{DL} para la percepción y en algoritmos de \ac{DRL} para la toma de decisiones, orientado a lograr una navegación autónoma y eficiente.
-    \item Ampliación del comportamiento de seguimiento de carril para incorporar una respuesta adaptativa al tráfico, mantenimiendo de una velocidad de crucero ajustada al vehículo que circula delante del propio coche.
-    \item Desarrollo de un modelo basado en \ac{DRL} capaz de ejecutar maniobras completas de adelantamiento, incluyendo el cambio de carril y el retorno seguro al carril original
-    \item Análisis y comparación de los diferentes comportamientos de navegación autónoma desarrollados en el proyecto para validar su correcto funcionamiento.
+\item Desarrollo de un comportamiento de seguimiento de carril basado \ac{DL} para la percepción y en algoritmos de \ac{DRL} para la toma de decisiones, orientado a lograr una navegación autónoma y eficiente.
+\item Ampliación del comportamiento de seguimiento de carril para incorporar una respuesta adaptativa al tráfico, manteniendo una velocidad de crucero ajustada al vehículo que circula delante del propio coche.
+\item Desarrollo de un modelo basado en \ac{DRL} capaz de ejecutar maniobras completas de adelantamiento, incluyendo el cambio de carril y la vuelta al mismo.
+\item Análisis y comparación de los diferentes comportamientos de navegación autónoma desarrollados en el proyecto para validar su correcto funcionamiento.
 \end{enumerate}
 
 \section{Requisitos}
@@ -22,12 +22,9 @@ A continuación, se definen los siguientes sub-objetivos:
 
 Los requisitos que han de cumplirse en este trabajo son: 
 \begin{enumerate}
-    \item Uso del entorno de simulación CARLA \footnote{\url{https://carla.org/}}, que posibilita la creación de escenarios realistas, la emulación de diversos comportamientos de vehículos y la prueba de modelos. Al ser un simulador ampliamente reconocido en el ámbito de la conducción autónoma, garantiza la reutilización del proyecto en aplicaciones futuras relacionadas con la movilidad y la navegación autónoma.
-    \item Lograr un comportamiento de seguimiento de carril estable y sin oscilaciones, alcanzando velocidades superiores a los 70 km/h.
-    \item Mantener el control de crucero asegurando una distancia de seguridad adecuada respecto al vehículo delantero, de acuerdo con las normas de la \ac{DGT} \footnote{\url{https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/conoce-el-estado-del-trafico/operaciones-especiales/4_O.-E.-Primero-de-Mayo-2023_Consejos-y-normas-de-Seguridad-Vial_V-I.pdf}}.
-   \item Durante los adelantamientos, el modelo debe ser capaz de identificar si hay un carril disponible al que pueda trasladarse y, al regresar a su carril, verificar que ha adelantado completamente al vehículo que se encontraba delante.
-    \item Comportamiento robusto y reactivo en tiempo real, asegurando una navegación segura y eficiente del vehículo en diferentes escenarios.
-    \item Uso de algotitmos de \ac{DRL} para tomar decisiones autónomas en situaciones complejas, dado que no se dispone de \textit{datasets} predefinidos que cubran todos los posibles escenarios.
+\item Uso del entorno de simulación CARLA \footnote{\url{https://carla.org/}}, el cual permite la creación de escenarios realistas, la emulación de diversos comportamientos de vehículos y la prueba de modelos. Al ser un simulador ampliamente reconocido en el ámbito de la conducción autónoma, garantiza la reutilización del proyecto en aplicaciones futuras relacionadas con la conducción autónoma.
+\item Lograr un comportamiento de seguimiento de carril estable y sin oscilaciones, alcanzando velocidades superiores a los 70 km/h.
+\item Mantener el control de crucero asegurando una distancia de seguridad adecuada respecto al vehículo delantero, de acuerdo con las normas de la \ac{DGT} \footnote{\url{https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/conoce-el-estado-del-trafico/operaciones-especiales/4_O.-E.-Primero-de-Mayo-2023_Consejos-y-normas-de-Seguridad-Vial_V-I.pdf}}.
 \end{enumerate}
 
 \section{Metodología}
@@ -36,7 +33,7 @@ Los requisitos que han de cumplirse en este trabajo son:
 Este TFG comenzó en febrero de 2024 y finalizó en marzo de 2025. La metodología de trabajo fue la siguiente:
 
 \begin{itemize}
-\item Se siguió la metodología tradicional \textit{Scrum} \footnote{\url{https://www.nimblework.com/agile/scrum-methodology/}}, la cual se utiliza para la gestión de proyectos organizando el trabajo en ciclos cortos llamados \textit{sprints}, que suelen dudar entre de una a cuatro semanas. Esta metodología fomenta una organización eficiente al dividir el trabajo en tareas pequeñas y manejables y promueve la iteración y mejora continua al revisar y ajustar el trabajo regularmente.
+\item Se siguió la metodología tradicional \textit{Scrum} \footnote{\url{https://www.nimblework.com/agile/scrum-methodology/}}, la cual se utiliza para la gestión de proyectos organizando el trabajo en ciclos cortos llamados \textit{sprints}, que suelen durar entre de una y cuatro semanas. Esta metodología fomenta una organización eficiente al dividir el trabajo en tareas pequeñas y manejables y promueve la iteración y mejora continua al revisar y ajustar el trabajo regularmente.
 \item Durante cada \textit{sprint}, se realizaron reuniones semanales a través de \textit{Teams} \footnote{\url{https://www.microsoft.com/es-es/microsoft-teams/log-in}}, con una duración de entre 30 y 60 minutos, para hacer un seguimiento de los problemas que hubieran podido surgir durante la semana y definir los nuevos objetivos a cumplir.
 \item Contacto mediante el email de la universidad con el fin de solventar problemas urgentes e intercambiar contenido de avances significativos conseguidos.
 \item Se utilizó un repositorio en \textit{GitHub} \footnote{\url{https://github.com/}} para gestionar el control de versiones del código fuente, los modelos y los datos más relevantes generados a lo largo del desarrollo del proyecto. En la Figura \ref{fig:github} se observa que la mayor carga de trabajo tuvo lugar al inicio, coincidiendo con la creación de los entornos de desarrollo y la implementación de los módulos de percepción. Posteriormente, se llevaron a cabo los entrenamientos de los modelos, seguidos de iteraciones en las que se ajustaron parámetros y se optimizaron los resultados. Finalmente, se evidencia un último \textit{sprint} asociado a la elaboración de la memoria y a los ajustes finales en los entrenamientos.

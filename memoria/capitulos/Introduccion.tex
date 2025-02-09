@@ -34,7 +34,7 @@ En este contexto de avances continuos en la conducción autónoma, la Sociedad d
     \item \textit{Nivel 5:} Automatización total. El vehículo es completamente autónomo y no requiere intervención humana en ningún momento ni bajo ninguna circunstancia.
 \end{itemize}
 
-Hoy en día, no existen vehículos completamente autónomos, aquellos que alcanzan el nivel 5 de autonomía, disponibles comercialmente. Lo más cercano a la autonomía total que se puede encontrar en el mercado es el nivel 2+. Sin embargo, existen numerosos proyectos en desarrollo que están alcanzando el nivel 3, como es posible ver videos promocionales que muestran coches en movimiento sin intervención activa del conductor. No obstante, estas demostraciones se realizan en entornos extremadamente controlados y con condiciones específicas.
+Hoy en día, no existen vehículos completamente autónomos, aquellos que alcanzan el nivel 5 de autonomía, disponibles comercialmente. Lo más cercano a la autonomía total que se puede encontrar en el mercado es el nivel 2+. Sin embargo, existen numerosos proyectos en desarrollo que están alcanzando el nivel 3, como se puede ver videos promocionales que muestran coches en movimiento sin intervención activa del conductor. No obstante, estas demostraciones se realizan en entornos extremadamente controlados y con condiciones específicas.
 
 En algunos países, la legislación aún no permite el uso de vehículos autónomos de nivel 3 o superior. Por ejemplo, en España, la ley prohíbe que el conductor suelte el volante durante la conducción, lo que impide el uso de vehículos de nivel 3. En cambio, en California, es legal el uso de vehículos con conducción semi-autónoma, lo que permite al conductor levantar las manos del volante en ciertas circunstancias \cite{carwow-autonomous}. 
 
@@ -43,7 +43,7 @@ En algunos países, la legislación aún no permite el uso de vehículos autóno
 
 La primera vez que se puso en práctica el concepto de vehículo autónomo fue en 1925 en Nueva York. El ingeniero Francis Houdina diseñó el primer coche sin conductor, controlado de forma remota por radiofrecuencia. Sin embargo, este vehículo requería un coche escolta desde el cual se dirigía.
 
-En 1939, el diseñador industrial estadounidense Norman Bel Geddes revolucionó las ideas sobre transporte al presentar, en la Feria Futurama, un concepto visionario: vehículos eléctricos guiados de manera autónoma mediante radiocontrol en carreteras automáticas con circuitos eléctricos integrados en el pavimento. Aunque no se trataba del concepto moderna de coche autónomo, esta propuesta marcó un antes y un después, despertando el interés de numerosas empresas tecnológicas en el campo de la conducción autónoma.
+En 1939, el diseñador industrial estadounidense Norman Bel Geddes revolucionó las ideas sobre transporte al presentar, en la Feria Futurama, un concepto visionario: vehículos eléctricos guiados de manera autónoma mediante radiocontrol en carreteras automáticas con circuitos eléctricos integrados en el pavimento. Aunque no se trataba del concepto moderno de coche autónomo, esta propuesta marcó un antes y un después, despertando el interés de numerosas empresas tecnológicas en el campo de la conducción autónoma.
 
 \begin{figure} [ht]
   \begin{center}
@@ -194,7 +194,7 @@ El aprendizaje no supervisado opera en conjuntos de datos sin etiquetas, donde e
 
 \subsubsection{Aprendizaje por refuerzo}
 
-El aprendizaje por refuerzo es un enfoque de aprendizaje no supervisado donde un agente toma decisiones dentro de un entorno, buscando maximizar la recompensa final que recibe a lo largo del tiempo. Durante los entrenamientos, el agente observa su estado actual en el entorno, elige una acción basada en una política y recibe una recompensa. Utilizando esta retroalimentación, el agente ajusta su política para predecir las mejores acciones en futuros estados, optimizando el valor de las recompensas a largo plazo, considerando tanto las recompensas inmediatas como las futuras. Este proceso logra un equilibrio entre la exploración, al probar nuevas acciones para obtener más información sobre el entorno, y la explotación, al elegir las mejores acciones basadas en la experiencia previa.
+El aprendizaje por refuerzo es un enfoque de aprendizaje no supervisado donde un agente toma decisiones dentro de un entorno definido, buscando maximizar la recompensa final que recibe a lo largo del tiempo. Durante los entrenamientos, el agente observa su estado actual en el entorno, elige una acción basada en una política y recibe una recompensa. Utilizando esta retroalimentación, el agente ajusta su política para predecir las mejores acciones en futuros estados, optimizando el valor de las recompensas a largo plazo, considerando tanto las recompensas inmediatas como las futuras. De esta forma, construye una tabla que mapea los estados con las acciones llamada \textit{Q-table}, apuntando la recompensa que proporciona cada acción dado ese estado. Este proceso logra un equilibrio entre la exploración, al probar nuevas acciones para obtener más información sobre el entorno, y la explotación, al elegir las mejores acciones basadas en la experiencia previa.
 
 \begin{figure}[ht]
   \begin{center}
