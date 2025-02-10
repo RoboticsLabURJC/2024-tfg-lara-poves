@@ -167,13 +167,13 @@ El \ac{DRL} es un enfoque en el que los agentes de aprendizaje por refuerzo util
 
 \end{itemize}
 
-En este \ac{TFG}, solo se han utilizado los algoritmos de \ac{DQN} y \ac{PPO}, que son \textit{off-policy} y \textit{on-policy} respectivamente \cite{drl}.
+En este \ac{TFG}, solo se han utilizado los algoritmos de \ac{DQN} y \ac{PPO}, que son \textit{off-policy} y \textit{on-policy} respectivamente\cite{drl}.
 
-\subsection{Seguimiento de carril con DQN}
+\subsection{Seguimiento de carril con \ac{DQN}}
 
 \ac{DQN} es un algoritmo de \ac{DRL} que soportar un espacio de estados complejo y continuo, pero el espacio de acciones es discreto. Las acciones en un espacio discreto son predefinidas y limitadas, es decir, no existe una continuidad entre ellas, sino que están representadas por un número finito de opciones que el agente puede elegir en cada estado.
 
-\ac{DQN} es un algoritmo \textit{off-policy} ya que incluye una \textit{replay memory}. Esta técnica consiste en crear una memoria de reproducción de experiencias que almacena las k experiencias más recientes que un agente ha recopilado, ya que son las más relevantes, para así poder reutilizarlas. Si la memoria está llena, se descarta la experiencia más antigua para dar espacio a la más reciente. En cada paso de entrenamiento, se muestrea uno o más lotes de datos de forma aleatoria de la memoria para actualizar los parámetros de la red. El tamaño de la memoria debe ser lo suficientemente grande como para contener experiencias de diferentes episodios y políticas, lo que ayuda estabilizar y mejorar el entrenamiento. Al actualizar en cada paso del entrenamiento la red neuronal, la minimización del error entre las predicciones de la red y los valores reales se vuelve complicada. Para abordar este problema, se introduce una nueva red neural, \textit{target networ}, diseñada para aportar estabilidad al proceso de entrenamiento. La nueva red es una réplica de la red principal, \textit{policy network}, pero en lugar de actualizarla en cada paso, la igualamos a la red original cada cierto número de pasos, manteniendo un objetivo de entrenamiento constante.
+\ac{DQN} es un algoritmo \textit{off-policy} ya que incluye una \textit{replay memory}. Esta técnica consiste en crear una memoria de reproducción de experiencias que almacena las k experiencias más recientes que un agente ha recopilado, ya que son las más relevantes, para así poder reutilizarlas. Si la memoria está llena, se descarta la experiencia más antigua para dar espacio a la más reciente. En cada paso de entrenamiento, se muestrea uno o más lotes de datos de forma aleatoria de la memoria para actualizar los parámetros de la red. El tamaño de la memoria debe ser lo suficientemente grande como para contener experiencias de diferentes episodios y políticas, lo que ayuda estabilizar y mejorar el entrenamiento. Al actualizar en cada paso del entrenamiento la red neuronal, la minimización del error entre las predicciones de la red y los valores reales se vuelve complicada. Para abordar este problema, se introduce una nueva red neural, \textit{target networ}, diseñada para aportar estabilidad al proceso de entrenamiento. La nueva red es una réplica de la red principal, \textit{policy network}, pero en lugar de actualizarla en cada paso, la igualamos a la red original cada cierto número de pasos, manteniendo un objetivo de entrenamiento constante \cite{drl}.
 
 Ahora que ya sabemos en qué consiste el algoritmo de \ac{DQN}, llega la hora de construir el entorno de entrenamiento para que un coche autónomo sea capaz de seguir el carril. Primero, debemos elegir el circuito de entrenamiento para nuestro modelo, para ello, hemos elegido el Town04 de CARLA, ya que incluye tramos largos y sin intersecciones. Como vemos en la Figura \ref{fig:mapa}, se han definido cuatro rutas, las rutas uno, dos y tres se utilizan durante el entrenamiento, mientras que la cuatro se usa para examinar el modelo en inferencia y comprobar si es capaz de generalizar. Cada una de estas rutas de entrenamiento comienza en una dirección distinta: curva a la derecha, línea recta y curva a la izquierda, con el fin de evitar \textit{overfitting} en el modelo.
 
@@ -258,10 +258,10 @@ else:
 
 Para entrenar el modelo hemos utilizado un \textit{fixed\_delta\_seconds} de 50ms, lo que equivale a entrenar a 20 FPS, por lo tanto, en infrencia necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de un día y un par de horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionan los mejores resultados. 
 \begin{code}[h]
-\begin{lstlisting}[language=Python]
+\begin{lstlisting}[language=yaml]
 learning_rate: 0.0005 # Tasa de aprendizaje
-buffer_size: 20_000 # Tamano de la memoria
-batch_size: 1024 # Tamano del lote
+buffer_size: 20_000 # Capacidad de la memoria
+batch_size: 1024 # Capacidad del lote
 gamma: 0.85 # Factor de descuento: importancia de las recompensas futuras frente a las inmediatas
 target_update_interval: 1024 # Intervalo de actualizacion de la red neuronal objetivo
 train_freq: 256 # Frecuencia de entrenamiento
@@ -286,16 +286,147 @@ La frecuencia de entrenamiento resultó ser un factor clave en el proceso, al pr
 En inferencia en un circuito visto durante los entrenamientos, se observa que el seguimiento del carril es casi perfecto. No obstante, cuando el vehículo va en línea recta, en ocasiones, se percibe un pequeño balanceo. Esto se debe a una de las limitaciones de \ac{DQN}, su espacio de acciones es discreto no permite seleccionar la acción de giro óptima en cada momento. A continuación, se presenta la información recopilada durante la inferencia. Podemos observar claramente los momentos en los que se reduce la velocidad, correspondientes a las dos curvas pronunciadas al inicio del circuito. Sin embargo, de forma general, los histogramas indican se eligen los pares de acciones más rápidos.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=14cm]{figs/Diseño/inference_dqn.png}
+  \includegraphics[width=15cm]{figs/Diseño/inference_dqn.png}
   \caption{Gráficas de inferencia sigue-carril basado en \ac{DQN}.}
   \label{fig:inference_dqn}
 \end{figure}
 
-\subsection{Seguimiento de carril con PPO}
+\subsection{Seguimiento de carril con \ac{PPO}}
 
-El objetivo sigue siendo conseguir un seguimiento de carril fluido y la mayor velocidad posible, pero esta vez usamos el algoritmo \ac{PPO} que permite un espacio de acciones continuo. Se emplea la misma lógica para la finalización de un episodio, sensores, \textit{fixed\_delta\_seconds} de 50ms y circuito de entrenamiento \ref{fig:mapa} que en el entorno anterior.
+El algoritmo \textit{Actor-Critic} es un tipo de algortimo en el que cada agente consta de dos elementos que aprenden de manera conjunta, cada uno con su propia red neuronal: \textit{actor}, encargado de aprender la política óptima, y \textit{critic}, responsable de aprender la función de valor y proporcionar una señal de refuerzo a la política. El algoritmo \ac{A2C} se forma a partir de la unión del actor y el critic y es una algoritmo \textit{on-policy}. \ac{PPO} es un algoritmo \textit{on-policy} que puede considerarse como una extensión de \ac{A2C}, cuyo objetivo principal es evitar el deterioro del rendimiento. En los algoritmos basados en políticas, ajustar la tasa de aprendizaje puede ser una labor complicada. Un valor pequeño puede llevar a entrenamientos prolongados sin alcanzar la solución óptima, mientras que uno grande puede causar un colapso en el rendimiento. Con el objetivo de resolver esto, \textit{PPO} introduce un objetivo sustituto que asegura una mejora monótona del rendimiento, evitando cambios drásticos y arriesgados en la política que puedan afectar negativamente al despeño. Para lograrlo, \textit{PPO} mide cuánto ha cambiado la política después de cada actualización, garantizando que esta diferencia sea no negativa en cada iteración, asegurando así una mejora continua en el rendimiento. Además, que impide que esta razón crezca o disminuya demasiado dentro de un umbral controlado por un hiperparámetro (\textit{clip\_range}) \cite{drl}. 
 
-- obs a fig en 4.2
+El objetivo sigue siendo conseguir un seguimiento de carril fluido y la mayor velocidad posible, pero esta vez usamos el algoritmo \ac{PPO} que permite un \textbf{espacio de acciones continuo}. Se emplea la misma lógica para la finalización de un episodio, sensores, \textit{fixed\_delta\_seconds} de 50ms y circuito de entrenamiento \ref{fig:mapa} que en el entorno anterior. Seguimos controlando dos elementos: el acelerador y el giro, permitimos el rango completo para el acelerador y limitamos el rango del giro.
+
+\begin{code}[h]
+\begin{lstlisting}[language=Python]
+self._max_steer = 0.2
+self.action_space = spaces.Box(
+    low=np.array([0.0, -self._max_steer]),
+    high=np.array([1.0, self._max_steer]),
+    shape=(2,),
+    dtype=np.float64
+)
+\end{lstlisting}
+\caption[Espacio de acciones sigue-carril basado en \ac{PPO}]{Espacio de acciones sigue-carril basado en \ac{PPO}.}
+\label{cod:acc_ppo}
+\end{code}
+
+Sin embargo, se han llevado a cabo algunos cambios en las \textbf{observaciones}. Se ha añadido la \textbf{velocidad actual del vehículo} al espacio de observaciones para mejorar la comprensión de la función de recompensa y, en lugar de cinco, ahora el modelo recibe \textbf{diez puntos de cada línea del carril}, como se muestra en la Figura \ref{fig:puntos_carril}, para mejorar la comprensión del mismo, sobre todo en las curvas.
+
+En este caso, la función \textbf{recompensa} es más compleja y sigue el siguiente esquema:
+\begin{enumerate}
+    \item \textbf{Comprobación de errores:} Primero se verifica si ha ocurrido un error, como pérdida del carril o choque contra elementos de la carretera. Si ocurre, se finaliza el episodio y se asigna una recompensa negativa.
+
+    \item \textbf{Normalización lineal de elementos:} Si no hay errores, se normalizan los elementos de los que depende la recompensa:
+    \begin{itemize}
+        \item \textbf{Desviación:} Se limita el valor de la desviación al rango [-100, 100]. Se normaliza inversamente, donde una desviación de 0 tiene la mayor recompensa.
+        \item \textbf{Giro:} Para giros bruscos, la recompensa es nula. Para giros no bruscos, se normaliza inversamente considerando el rango [-0.14, 0.14], donde menores giros otorgan mayor recompensa.
+        \item \textbf{Acelerador:} Si las aceleraciones son bruscas en el rango [0.6, 1.0], la recompensa es nula. Para aceleraciones no bruscas en el rango [0.0, 0.6), si se supera la velocidad máxima, se normaliza inversamente, aceleración nula tiene mayor recompensa. En el caso contrario, se normaliza de forma que mayores aceleraciones otorgan mayor recompensa.
+    \end{itemize}
+
+    \item \textbf{Asignación de pesos a los elementos:} Finalmente, se define el peso de cada elemento en la recompensa según los siguientes criterios:
+    \begin{itemize}
+        \item Si el giro o el acelerador son bruscos, tienen un peso muy elevado en la recompensa, mientras que los otros dos elementos tienen un peso mucho menor.
+        \item Si se supera la velocidad máxima, el acelerador tiene mayor peso para intentar decelerar, penalizando también el giro debido a la alta velocidad, puesto que puede tener un gran impacto.
+        \item Si el acelerador es bajo, en el rango [0.0, 0.5), se penalizan menos los giros grandes, facilitando las curvas al reducir la velocidad.
+        \item Si el acelerador está en un rango alto [0.5, 0.6), se penalizan más los giros bruscos, enfocándose en zonas rectas o con giros leves.
+    \end{itemize}
+\end{enumerate}
+
+\begin{code}[h]
+\begin{lstlisting}[language=Python]
+if error == None:
+    # Deviation normalization
+    r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
+    
+    # Steer conversion
+    limit_steer = 0.14
+    if abs(self._steer) > limit_steer:
+        r_steer = 0
+    else:
+        r_steer = (limit_steer - abs(self._steer)) / limit_steer
+
+    # Throttle conversion
+    limit_throttle = 0.6
+    if self._throttle >= limit_throttle:
+        r_throttle = 0
+    elif self._velocity > self._max_vel:
+        r_throttle = (limit_throttle - self._throttle) / limit_throttle
+    else:
+        r_throttle = self._throttle / limit_throttle
+
+    # Set weights
+    if r_steer == 0:
+        w_dev = 0.1
+        w_throttle = 0.1
+        w_steer = 0.8
+    elif r_throttle == 0:
+        w_dev = 0.1
+        w_throttle = 0.8
+        w_steer = 0.1
+    elif self._velocity > self._max_vel:
+        w_dev = 0.1
+        w_throttle = 0.65
+        w_steer = 0.25
+    elif self._throttle < 0.5:
+        w_dev = 0.65
+        w_throttle = 0.25
+        w_steer = 0.1 # Lower accelerations, penalize large turns less
+    else: # [0.5, 0.6) throttle
+        w_dev = 0.6
+        w_throttle = 0.15
+        w_steer = 0.25
+
+    reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer
+else:
+    reward = -40
+
+\end{lstlisting}
+\caption[Función de recompensa para sigue-carril basado en \ac{PPO}]{Función de recompensa para sigue-carril basado en \ac{PPO}.}
+\label{cod:rew_ppo}
+\end{code}
+
+Al igual que en el entrenamiento anterior, el parámetro \textit{n\_steps} fue clave a la hora de adquirir convergencia, también influyó el tamaño del lote, que inicialmente era demasiado pequeño. Con valores bajos del coeficiente de entropía, el agente aprendía siempre que las acciones límite maximizaban la recompensa, mientras que, con valores demasiado altos, no conseguía converger. Finalmente, estos fueron los parámetros de entrenamiento utilizados:
+\begin{code}[h]
+\begin{lstlisting}[language=yaml]
+policy: "MultiInputPolicy"
+learning_rate: 0.0001
+gamma: 0.85
+gae_lambda: 0.9
+n_steps: 512 # Numero de pasos a ejecutar antes de cada actualizacion
+batch_size: 512 
+ent_coef: 0.1 # Coeficiente de entropia
+clip_range: 0.15 
+n_timesteps: 4_000_000
+
+\end{lstlisting}
+\caption[Hiperparámetros de entrenamiento para el sigue-carril basado en \ac{PPO}]{Hiperparámetros de entrenamiento para el sigue-carril basado en \ac{PPO}.}
+\label{cod:hiper_params_ppo}
+\end{code}
+
+Al analizar los parámetros de entrenamiento de ambos algoritmos, podemos ver como con \ac{PPO} necesitamos la mitad de \textit{steps} que con \ac{DQN} para lograr un entrenamiento exitoso. Los entrenamientos con \ac{PPO} duraron aproximadamente unas veinte horas. En el siguiente gráfico, se muestran los datos de entrenamiento, donde se puede observar cómo se logra rápidamente la convergencia, pero se necesitan más \textit{steps} para alcanzar altas velocidades.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=12cm]{figs/Diseño/train_ppo_carril.png}
+  \caption{Gráficas de entrenamiento sigue-carril basado en \ac{PPO}.}
+  \label{fig:train_ppo_carril}
+\end{figure}
+
+Debido a todos los inconvenientes con el coeficiente de entropía en  la exploración de acciones, también se desarrolló un programa para analizar la las frecuencia de las acciones tomadas durante el entrenamiento, cuyos resultados se presentan en el siguiente histograma.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=11cm]{figs/Diseño/actions_ppo_carril.png}
+  \caption{Histogramas de acciones tomadas durante el entrenamiento sigue-carril basado en \ac{PPO}.}
+  \label{fig:actions_ppo_carril}
+\end{figure}
+
+En inferencia obtenemos muy buenos resultados tanto en circuitos utilizados durante el entrenamiento como en nuevos, incluso cambiando la ciudad en el simulador CARLA. Se logran alcanzar altas velocidades, superiores a 20 m/s, manteniendo una conducción fluida y siguiendo con precisión el carril. Finalmente, el modelo elige siempre aceleraciones en el rango [0.5, 0.6) combinadas con giros sutiles. Cabe destacar que, si eliminamos la parte del rango bajo del acelerador en la función recompensa, unificando ambos rangos en uno con los mismos pesos, el entrenamiento no logra converger, aunque al final siempre seleccione acciones en dentro del rango alto del acelerador.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=15cm]{figs/Diseño/inference_ppo_carril.png}
+  \caption{Gráfico de los datos recopilados durante inferencia del modelo sigue-carril con \ac{PPO}.}
+  \label{fig:inference_ppo_carril}
+\end{figure}
 
 \subsection{Control adaptativo con PPO}
 
