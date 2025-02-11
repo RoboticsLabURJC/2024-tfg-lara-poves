@@ -58,9 +58,8 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, num_rows:in
             plt.plot(range(len(data)), cumulative_avg, label=label, linewidth=2.5, color='orange')
             plt.legend()
 
-        plt.ylabel(key)
-        plt.xlabel('Episode')
-    
+    plt.ylabel(key)
+    plt.xlabel('Episode')
     plt.title(title)
 
 def main(args):    

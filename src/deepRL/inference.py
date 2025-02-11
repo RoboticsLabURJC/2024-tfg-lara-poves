@@ -145,7 +145,7 @@ if __name__ == "__main__":
         type=int, 
         required=False, 
         default=0,
-        choices=[0, 1, 2, 3, 4, 5],
+        choices=[0, 1, 2, 3, 4, 5, 6, 7],
         help='Number of the circuit for the enviroment. By default 0.'
     )
     parser.add_argument(

@@ -22,9 +22,12 @@ def get_data():
                 for line in file:
                     task, time_ns = line.strip().split(": ")
                     time_ns = int(time_ns.split()[0])  
-                    sum[task] += time_ns
-                    count[task] += 1
-                    all_tasks.add(task)
+                    if not 'back' in task:
+                        if 'front' in task:
+                            task = 'Lidar - Get points'
+                        sum[task] += time_ns
+                        count[task] += 1
+                        all_tasks.add(task)
 
                 means = {task: sum[task] / count[task] for task in sum}
                 data[file_name] = means

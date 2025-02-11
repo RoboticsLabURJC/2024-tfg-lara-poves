@@ -7,6 +7,7 @@ from stable_baselines3.common.env_util import make_vec_env
 import sys
 import warnings
 import traceback
+from stable_baselines3.common.callbacks import CheckpointCallback
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -100,16 +101,19 @@ def main(args):
     if args.alg == 'DQN':
         env.set_model(model)
 
-    try:
-        model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name, progress_bar=True)
-        env.close()
-    except Exception as e:
-        print(e) # If the simulator crashes, save the model even if it's incomplete
-        traceback.print_exc()
+    # Save a checkpoint every 20_000 steps
+    checkpoint_callback = CheckpointCallback(
+        save_freq=20_000,
+        save_path=model_dir,
+        name_prefix=args.alg + '-' + args.env + '_' + str(args.num_file),
+        save_replay_buffer=True,
+        save_vecnormalize=True,
+    )
 
-    files = os.listdir(dir + 'model/' + args.env)
-    num_files = len(files) + 1
-    model.save(model_dir + '/' + args.alg + '-' + args.env + '_' + str(num_files))
+    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name,
+                progress_bar=True, callback=checkpoint_callback)
+    model.save(model_dir + args.alg + '-' + args.env + '_' + int(args.num_file))
+    env.close()
 
 if __name__ == "__main__":
     possible_envs = list(env_callable.keys())
@@ -120,7 +124,7 @@ if __name__ == "__main__":
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + "} [--port <port_number>] [--human <human>]" +\
             "[--delta <fixed_delta_seconds>] [--log_interval <log_interval>] [--verbose <verbose>]" +\
-            "[--num_cir <num_cir>] [--retrain <retrain>] [--port_tm <port_tm>]"
+            "[--num_cir <num_cir>] [--retrain <retrain>] [--port_tm <port_tm>] [--num_file <num_file>]"
     )
     parser.add_argument(
         '--env', 
@@ -186,5 +190,13 @@ if __name__ == "__main__":
         default=3456,
         help='Port for the traffic manger. By default 3456.'
     )
+    parser.add_argument(
+        '--num_file', 
+        type=int, 
+        required=False, 
+        default=1,
+        help='Number which identifies the model.'
+    )
+
 
     main(parser.parse_args())
