@@ -42,6 +42,8 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], 
                 ax.set_ylim(-0.1, 1.1)
         elif key == KEY_DISTANCE:
             data = np.nan_to_num(data, nan=10.0)
+        elif key == KEY_REWARD:
+            ax.set_ylim(bottom=0.0, top=1.0)
 
         ax.plot(range(len(data)), data, label=label) 
         ax.set_ylabel(key)
