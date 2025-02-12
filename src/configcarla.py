@@ -175,7 +175,7 @@ class CameraRGB(Sensor):
             self._trafo_matrix_vehicle_to_cam = np.array(transform.get_inverse_matrix())
             self._K = get_intrinsic_matrix(FOV, SIZE_CAMERA, SIZE_CAMERA)
 
-        self._threshold_road_per = 97.5
+        self._threshold_road_per = 90.0
         self._threshold_area_road = 5000
 
     def _points_lane(self, boundary:np.ndarray, trafo_matrix_global_to_camera:np.ndarray, side:int):
@@ -792,13 +792,6 @@ class Lidar(Sensor):
 
                 x_values = np.array(meas_zones[X][zone])[filter_min & filter_max]
                 filtered_x_values = x_values[dist_mask]
-
-                '''
-                z_values = np.array(meas_zones[Z][zone])[filter_min & filter_max]
-                filtered_z_values = z_values[dist_mask]
-
-                print(filtered_z_values)
-                '''
 
                 sorted_index = np.argsort(filtered_x_values)
                 self._points[zone] = filtered_dist[sorted_index]
