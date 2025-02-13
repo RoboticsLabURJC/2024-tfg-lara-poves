@@ -51,7 +51,7 @@ Teniendo los puntos límite del carril en todas las alturas, también es sencill
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=11cm]{figs/Diseño/lane10.png}
+  \includegraphics[width=11cm]{figs/Diseño/lane/lane10.png}
   \caption{Representación del carril: superficie, centro de masas, desviación y puntos de sus líneas.}
   \label{fig:puntos_carril}
 \end{figure}
@@ -62,7 +62,7 @@ El modelo de \ac{DL} para la detección de carril procesa imágenes de 512 x 102
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=11cm]{figs/Diseño/red_neuronal_carril.png}
+  \includegraphics[width=10cm]{figs/Diseño/lane/red_neuronal_carril.png}
   \caption{Detección de carril basada en \ac{DL}.}
   \label{fig:dl_final_carril}
 \end{figure}
@@ -71,7 +71,7 @@ A pesar de esta regresión, hemos implementado una técnica para eliminar los \t
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=11cm]{figs/Diseño/remove_outliers.png}
+  \includegraphics[width=11cm]{figs/Diseño/lane/remove_outliers.png}
   \caption{Eliminación de \textit{outliers} en la detección de carril basada en \ac{DL}.}
   \label{fig:outliers}
 \end{figure}
@@ -127,11 +127,13 @@ for y in range(rect.top, rect.bottom):
 \label{cod:gt_carril}
 \end{code}
 
+\newpage
+
 Como se mencionó en la sección anterior, este enfoque resulta más fiable que la detección de carril mediante \ac{DL}, ya que, a pesar de los posibles obstáculos que puedan afectar la visibilidad, es capaz de seguir detectando el carril gracias a la información obtenida directamente del simulador CARLA. Por lo tanto, esta será la técnica empleada durante los entrenamientos, ya que, en ciertos escenarios, es necesario tener un vehículo delante que pueda ocultar temporalmente las líneas del carril.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=11cm]{figs/Diseño/ground_truth.png}
+  \includegraphics[width=11cm]{figs/Diseño/lane/ground_truth.png}
   \caption{Detección de carril basada en \textit{ground thruth}.}
   \label{fig:gt_final_carril}
 \end{figure}
@@ -142,18 +144,118 @@ Con la red neuronal de segmentación semántica, podemos conocer con precisión 
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=12cm]{figs/Diseño/seg_points.png}
+  \includegraphics[width=10cm]{figs/Diseño/seg_points.png}
   \caption{Representación de la calzada: superficie, centro de masas y límites.}
   \label{fig:seg_params}
 \end{figure}
 
-También se utiliza la segmentación para saber si hay un carril a la izquierda que nos permita llevar a cabo la maniobra de adelantamiento. Para hacer esta comprobación, replicamos el carril actual a la izquierda y comprobamos que porcentaje de esta área es calzada, zona naranja en la Figura \ref{fig:seg_params}.
+También se utiliza la segmentación comprobar el porcentaje del área del carril que es carretera y para saber si hay un carril a la izquierda que nos permita llevar a cabo la maniobra de adelantamiento. Para hacer esta última comprobación, replicamos el carril actual a la izquierda y comprobamos que porcentaje de esta área es calzada, zona naranja en la Figura \ref{fig:seg_params}.
 
-\section{Percepción con \ac{LiDAR}}
+\section{Percepción con el \ac{LiDAR}}
+
+El \ac{LiDAR} es un sensor simulado de CARLA que proporciona como salida una nube de puntos que indica la distancia y la posición de los objetos en el entorno, permitiendo una reconstrucción de la escena para la percepción y navegación del vehículo autónomo. Se configura el \ac{LiDAR} con un alcance máximo de 19.5 metros, distancia suficiente para detectar obstáculos en la carretera, en nuestro caso otros vehículos. Para la representación gráfica de la información del \ac{LiDAR}, mostramos cada uno de los puntos de la nube en 2D, coordenadas \textit{x} e \textit{y}. Con el fin de mejorar la percepción visual, se ha interpolado el color de cada punto según su intensidad, siendo tonos rojos los valores más altos y azules los más bajos, y el tamaño según su altura, a mayor elevación mayor tamaño.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=7cm]{figs/Diseño/lidar/interpolate.png}
+  \caption{Visualización de la nube de puntos generada por el \ac{LiDAR}.}
+  \label{fig:interpolate_lidar}
+\end{figure}
+
+Con el fin de realizar un control adaptativo respecto al coche de delante, nos enfocamos en analizar la zona frontal del \ac{LiDAR} con una amplitud de 150º, dividida en tres subzonas de 50º: \textit{front-left}, \textit{front}, \textit{front-right}. Para determinar los ángulos que delimitan estas zonas independientemente de cómo se disponga el \ac{LiDAR} en el vehículo, debemos tener en cuenta la rotación del \ac{LiDAR} en el eje z (\textit{yaw}). Al ángulo deseado, la mitad de la zona frontal, le restamos el \textit{yaw} real y finalmente lo acotamos en un rango de [-180º, 180º]. Aunque ya hemos encontrado los ángulos extremos, es necesario calcular los dos ángulos intermedios que delimitan las tres zonas. Para ello, sumamos la amplitud de cada subzona al primer ángulo límite y se la restamos al segundo. En nuestro caso, con un \textit{yaw} de 90º, obtenemos los ángulos: [-165.0, -115.0, -65.0, -15.0]. 
+\begin{code}[h]
+\begin{lstlisting}[language=Python]
+angle1 = get_angle_range(-self._front_angle / 2 - yaw)
+angle2 = get_angle_range(self._front_angle / 2 - yaw)
+
+angle1_add = get_angle_range(angle1 + self._front_angle / 3)
+angle2_sub = get_angle_range(angle2 - self._front_angle / 3)        
+self._angles = [angle1, angle1_add, angle2_sub, angle2]
+\end{lstlisting}
+\caption[Cálculo de los ángulos de la zona frontal del \ac{LiDAR}]{Cálculo de los ángulos de la zona frontal del \ac{LiDAR}.}
+\label{cod:angle_lidar}
+\end{code}
+
+Como se puede observar en el dibujo \ref{fig:dib_angle}, dependiendo de que ángulo sea mayor, debemos seguir un criterio u otro para determinar si un punto pertenece o no la zona de interés o a una subzona concreta.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=10cm]{figs/Diseño/lidar/draw_angles.jpg}
+  \caption{Criterio para saber a qué zona pertenece un punto del \ac{LiDAR}.}
+  \label{fig:dib_angle}
+\end{figure}
+
+Para tener información adicional además de la visual, se ha creado un cálculo de estadísticas para cada subzona: mínimo, media, mediana y desviación estándar. Como se puede observar en la Figura \ref{fig:interpolate_lidar}, los puntos de color rojo corresponden al propio coche, por lo tanto, hemos realizado un filtrado por intensidad para eliminarlos de los cálculos estadísticos. De la misma manera, filtramos por altura para eliminar todos los puntos correspondientes a la calzada y otros elementos del entorno externos a la carretera (montañas, árboles…), quedándonos solo con información relevante para la conducción.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=10cm]{figs/Diseño/lidar/stats.png}
+  \caption{Criterio para saber a qué zona pertenece un punto del \ac{LiDAR}.}
+  \label{fig:dib_angle}
+\end{figure}
+
+Para saber cuándo poder volver al carril durante un adelantamiento, se han añadido dos subzonas en la parte derecha del \ac{LiDAR}: \textit{right} y \textit{back-right}. De nuevo, para intentar tener en cuenta solo información que concierne a la conducción, se ha realizado un filtrado por distancia dependiendo de la subzona, ya que, por ejemplo, necesitamos más rango del en la zona frontal del \ac{LiDAR} que en la lateral. De esta manera, nos aseguramos que el modelo recibe solo puntos dentro de la carreta. Los filtros de distancia aplicados según la zona son los siguientes:
+    \begin{itemize}
+        \item \textit{Front}: no aplicamos filtro distancia, disponemos del rango máximo del \ac{LiDAR}.
+        \item \textit{Right-front}: nos quedamos con distancias iguales o menores a 7m.
+        \item \textit{Right}: filtrado por distancia de 6m.
+        \item \textit{Right-back}: filtramos distancias inferiores a 9m.
+    \end{itemize}
+
+Una vez aplicados todos los filtros descritos, se ha implementado una función que extrae un número determinado de puntos de cada subzona, ordenados y equiespaciados en el eje \textit{x} , para ser utilizados como observaciones en los modelos.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=11cm]{figs/Diseño/lidar/laser_right.png}
+  \caption{Filtrado del \ac{LiDAR} zona derecha.}
+  \label{fig:laser_right}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=11cm]{figs/Diseño/lidar/laser_front.png}
+  \caption{Filtrado del \ac{LiDAR} subzona frontal.}
+  \label{fig:laser_front}
+\end{figure}
+
+Se llevó a cabo un \textit{profiling} para evaluar las latencias y determinar dónde estamos consumiendo más tiempo en nuestrocódigo, con el objetivo de mejorar su eficiencia. Como se puede observar en la Figura \ref{fig:profiling}, la mayor parte del tiempo se destina a realizar la predicción con EfficientVit. El resto de secciones presentan latencias acordes a su carga computacional, sin presenta una desventaja significativa en proceso de entrenamiento e inferencia.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=16cm]{figs/Diseño/profiling.png}
+  \caption{\textit{Profiling} del proceso percepción.}
+  \label{fig:profiling}
+\end{figure}
 
 \section{Conducción autónoma tradiconal}
-.....
+
+El proceso de toma de decisiones en la conducción autónoma tradicional está a basado en reglas predefinidas y sistemas matemáticos, sin aprovechar las capacidades del \ac{ML}, lo que limita su adaptación a entornos dinámicos y situaciones imprevistas. Para este tipo de conducción, se requieren modelos matemáticos complejos y muy detallados del vehículo y del entorno si desea un desempeño preciso y seguro. Una toma de decisiones tan rígida basada en reglas fijas y algoritmos deterministas no es adecua para situaciones reales donde la incertidumbre en un factor clave, necesitamos modelos capaces de adaptarse a escenarios cambiantes. 
+
+A pesar de ello, existen técnicas de control clásico que funcionan adecuadamente para ciertas habilidades de conducción. Un controlador \ac{PID} es un tipo de control ampliamente utilizado en sistemas automáticos para ajustar una variable y mantenerla en un valor deseado. En conducción autónoma, se usa para mantener un vehículo en el carril ajustando el ángulo del volante según la desviación del carril.
+
 \subsection{Controlador \ac{PID} para el seguimiento de carril}
+Para el seguimiento de carril basado en un controlador tradicional \footnote{\url{hdhhd}}, se ha implementado un controlador PD para controlar el giro. Al mismo tiempo, el acelerador se mantiene fijo a 0.5, mientras que con el freno regula la velocidad para mantenerla constante a aproximadamente 10m/s.
+\begin{code}[h]
+\begin{lstlisting}[language=Python]
+self._kp = 1 / (SIZE_CAMERA / 2)
+self._kd = -self._kp / 1.7
+self._throttle = 0.5
+\end{lstlisting}
+\caption[Definición de contantes para el controlador \ac{PID}]{Definición de contantes para el controlador \ac{PID}.}
+\label{cod:const_pid}
+\end{code}
+
+En la parte de percepción, ya hemos calculado la desviación respecto al centro del carril del vehículo. Esta desviación representa el error que recibe nuestro controlador. El componente proporcional se encarga de normalizar el error en un rango compatible con CARLA [0.0, 1.0], mientras que el signo del error ya indica el sentido del giro. Si el error supera cierto umbral, lo incrementamos ligeramente para mejorar el rendimiento en las curvas. El componente derivativo evita movimientos oscilatorios al salir de las curvas, ya que resta el error anterior reducido. Este componente resta el valor del error anterior, pero solo lo consideramos si su signo es diferente al del error actual, ya que, de lo contrario, podría causar inestabilidad y afectar negativamente la conducción durante las curvas.
+\begin{code}[h]
+\begin{lstlisting}[language=Python]
+# Difrente signo
+if (self._error > 0 and self._prev_error < 0) or (self._error < 0 and self._prev_error > 0):
+	self._prev_error = 0       
+
+# Aumento del error
+if error > 20:
+	error *= 1.15
+
+control.steer = self._kp * error + self._kd * self._prev_error
+\end{lstlisting}
+\caption[Regulación del giro mediante el controlador \ac{PID}]{Regulación del giro mediante el controlador \ac{PID}.}
+\label{cod:pid_giro}
+\end{code}
 
 \section{Conducción autónoma basada en \ac{DRL}}
 
@@ -167,7 +269,7 @@ El \ac{DRL} es un enfoque en el que los agentes de aprendizaje por refuerzo util
 
 \end{itemize}
 
-En este \ac{TFG}, solo se han utilizado los algoritmos de \ac{DQN} y \ac{PPO}, que son \textit{off-policy} y \textit{on-policy} respectivamente\cite{drl}.
+En este \ac{TFG}, solo se han utilizado los algoritmos de \ac{DQN} y \ac{PPO}, los cuales son \textit{off-policy} y \textit{on-policy} respectivamente\cite{drl}.
 
 \subsection{Seguimiento de carril con \ac{DQN}}
 
@@ -183,6 +285,8 @@ Ahora que ya sabemos en qué consiste el algoritmo de \ac{DQN}, llega la hora de
   \caption{Mapa del entorno de entrenamiento en CARLA con rutas definidas.}
   \label{fig:mapa}
 \end{figure}
+
+\newpage
 
 El vehículo autónomo incorpora los \textbf{sensores}:
 \begin{itemize}
@@ -201,10 +305,12 @@ El \textbf{espacio de observaciones} coincide con el espacio de estados y está 
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=10cm]{figs/Diseño/obs_dqn.png}
+  \includegraphics[width=9cm]{figs/Diseño/discrete/obs_dqn.png}
   \caption{Observaciones seguimiento de carril basado en \ac{DQN}.}
   \label{fig:dqn_obs}
 \end{figure}
+
+\newpage
 
 Como hemos mencionado al inicio, \ac{DQN} permite un \textbf{espacio de acciones discreto}. Las acciones están compuestas por un comando de acelerador y otro de giro, para combinarlo hemos seguido la regla de que, a mayor aceleración, menor es el giro. En total, se han definido 21 acciones disponibles entre las cuales el coche autónomo podrá seleccionar aquellas que maximicen la recompensa en cada situación.
 
@@ -256,7 +362,7 @@ else:
 \label{cod:rew_dqn}
 \end{code}
 
-Para entrenar el modelo hemos utilizado un \textit{fixed\_delta\_seconds} de 50ms, lo que equivale a entrenar a 20 FPS, por lo tanto, en infrencia necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de un día y un par de horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionan los mejores resultados. 
+Para entrenar el modelo hemos utilizado un \textit{fixed\_delta\_seconds} de 50ms, lo que equivale a entrenar a 20 \ac{FPS}, por lo tanto, en infrencia necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de un día y un par de horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionan los mejores resultados. 
 \begin{code}[h]
 \begin{lstlisting}[language=yaml]
 learning_rate: 0.0005 # Tasa de aprendizaje
@@ -278,15 +384,17 @@ n_timesteps: 8_000_000 # Numero total de steps
 La frecuencia de entrenamiento resultó ser un factor clave en el proceso, al principio se utilizó un valor menor, pero los modelos no lograban converger. El ratio de exploración se reduce gradualmente durante el 80\% del entrenamiento y, a partir de ese punto, se dejan de realizar acciones aleatorias. En la siguiente gráfica, se puede observar cómo el modelo finalmente converge.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=13cm]{figs/Diseño/train_dqn.png}
+  \includegraphics[width=13cm]{figs/Diseño/discrete/train_dqn.png}
   \caption{Gráfica de entrenamiento sigue-carril basado en \ac{DQN}.}
   \label{fig:train_dqn}
 \end{figure}
 
-En inferencia en un circuito visto durante los entrenamientos, se observa que el seguimiento del carril es casi perfecto. No obstante, cuando el vehículo va en línea recta, en ocasiones, se percibe un pequeño balanceo. Esto se debe a una de las limitaciones de \ac{DQN}, su espacio de acciones es discreto no permite seleccionar la acción de giro óptima en cada momento. A continuación, se presenta la información recopilada durante la inferencia. Podemos observar claramente los momentos en los que se reduce la velocidad, correspondientes a las dos curvas pronunciadas al inicio del circuito. Sin embargo, de forma general, los histogramas indican se eligen los pares de acciones más rápidos.
+\newpage
+
+En inferencia en un circuito visto durante el entrenamiento \footnote{\url{hhh}}, se observa que el seguimiento del carril es casi perfecto. No obstante, cuando el vehículo va en línea recta, en ocasiones, se percibe un pequeño balanceo. Esto se debe a una de las limitaciones de \ac{DQN}, su espacio de acciones es discreto no permite seleccionar la acción de giro óptima en cada momento. A continuación, se presenta la información recopilada durante la inferencia. Podemos observar claramente los momentos en los que se reduce la velocidad, correspondientes a las dos curvas pronunciadas al inicio del circuito. Sin embargo, de forma general, los histogramas indican se eligen los pares de acciones más rápidos.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=15cm]{figs/Diseño/inference_dqn.png}
+  \includegraphics[width=15cm]{figs/Diseño/discrete/inference_dqn.png}
   \caption{Gráficas de inferencia sigue-carril basado en \ac{DQN}.}
   \label{fig:inference_dqn}
 \end{figure}
@@ -333,7 +441,7 @@ En este caso, la función \textbf{recompensa} es más compleja y sigue el siguie
     \end{itemize}
 \end{enumerate}
 
-\begin{code}[h]
+\begin{code}[H]
 \begin{lstlisting}[language=Python]
 if error == None:
     # Deviation normalization
@@ -407,7 +515,7 @@ n_timesteps: 4_000_000
 Al analizar los parámetros de entrenamiento de ambos algoritmos, podemos ver como con \ac{PPO} necesitamos la mitad de \textit{steps} que con \ac{DQN} para lograr un entrenamiento exitoso. Los entrenamientos con \ac{PPO} duraron aproximadamente unas veinte horas. En el siguiente gráfico, se muestran los datos de entrenamiento, donde se puede observar cómo se logra rápidamente la convergencia, pero se necesitan más \textit{steps} para alcanzar altas velocidades.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=12cm]{figs/Diseño/train_ppo_carril.png}
+  \includegraphics[width=13cm]{figs/Diseño/cont/train_ppo_carril.png}
   \caption{Gráficas de entrenamiento sigue-carril basado en \ac{PPO}.}
   \label{fig:train_ppo_carril}
 \end{figure}
@@ -415,20 +523,74 @@ Al analizar los parámetros de entrenamiento de ambos algoritmos, podemos ver co
 Debido a todos los inconvenientes con el coeficiente de entropía en  la exploración de acciones, también se desarrolló un programa para analizar la las frecuencia de las acciones tomadas durante el entrenamiento, cuyos resultados se presentan en el siguiente histograma.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=11cm]{figs/Diseño/actions_ppo_carril.png}
+  \includegraphics[width=11cm]{figs/Diseño/cont/actions_ppo_carril.png}
   \caption{Histogramas de acciones tomadas durante el entrenamiento sigue-carril basado en \ac{PPO}.}
   \label{fig:actions_ppo_carril}
 \end{figure}
 
-En inferencia obtenemos muy buenos resultados tanto en circuitos utilizados durante el entrenamiento como en nuevos, incluso cambiando la ciudad en el simulador CARLA. Se logran alcanzar altas velocidades, superiores a 20 m/s, manteniendo una conducción fluida y siguiendo con precisión el carril. Finalmente, el modelo elige siempre aceleraciones en el rango [0.5, 0.6) combinadas con giros sutiles. Cabe destacar que, si eliminamos la parte del rango bajo del acelerador en la función recompensa, unificando ambos rangos en uno con los mismos pesos, el entrenamiento no logra converger, aunque al final siempre seleccione acciones en dentro del rango alto del acelerador.
+En inferencia obtenemos muy buenos resultados tanto en circuitos utilizados durante el entrenamiento \footnote{\url{hhh}} como en nuevos \footnote{\url{hyyy}}, incluso cambiando la ciudad en el simulador CARLA. A diferencia del modelo entrenado con \ac{DQN}, ahora si podemos elegir el giro exacto necesario en cada momento al disponer de un espacio de acciones continuo, lo que permite seguir el carril de forma más precisa y fluida. Además, se logran velocidades muy superiores, incluso superando los 20m/s. El modelo elige siempre aceleraciones en el rango [0.5, 0.6) combinadas con giros sutiles. Cabe destacar que, si eliminamos la parte del rango bajo del acelerador en la función recompensa, unificando ambos rangos en uno con los mismos pesos, el entrenamiento no logra converger, aunque al final siempre seleccione acciones en dentro del rango alto del acelerador.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=15cm]{figs/Diseño/inference_ppo_carril.png}
+  \includegraphics[width=15cm]{figs/Diseño/cont/inference_ppo_carril.png}
   \caption{Gráfico de los datos recopilados durante inferencia del modelo sigue-carril con \ac{PPO}.}
   \label{fig:inference_ppo_carril}
 \end{figure}
 
+Recordemos, que los entrenamientos se han realizado utilizando la técnica de detección de carril \textit{ground thruth}. Si la cambiamos por la detección de carril basada en \ac{DL}, lo que incluye cambiar la posición de la cámara y, por tanto, la visión de percepción, seguimos obteniendo un seguimiento del carril fluido y conciso \footnote{\url{jdjdj/}}.
+
 \subsection{Control adaptativo con PPO}
+
+Ahora el objetivo ha cambiado, el vehículo autónomo debe ser capaz de regular su velocidad en función del vehículo que tiene delante, controlado por el autopiloto de CARLA, además de seguir el carril. Para esta nueva funcionalidad, necesitamos añadir un nuevo sensor, el \textbf{\ac{LiDAR}}, cuyas \textbf{observaciones son veinte puntos de la subzona frontal}, como se muestra en la Figura \ref{fig:laser_front}. Mantenemos las mismas rutas de entrenamiento y resto de observaciones que en el apartado anterior. Seguimos utilizando el algoritmo de \textbf{\ac{PPO}} con el mismo espacio de acciones, ya que permite un control más fluido, preciso y un comportamiento más adaptativo al entorno. 
+
+\begin{code}[h]
+\begin{lstlisting}[language=Python]
+self._num_points_laser = 20
+self.observation_space[KEY_LASER] = spaces.Box(
+	low=MIN_DIST_LASER - 1.0,
+	high=MAX_DIST_LASER,
+	shape=(self._num_points_laser,),
+	dtype=np.float64
+)
+\end{lstlisting}
+\caption[Definición de observación frontal del \ac{LiDAR}]{Definición de observación frontal del \ac{LiDAR}.}
+\label{cod:obs_laser_front}
+\end{code}
+
+Un cambio clave respecto al modelo anterior es que, esta vez, hemos entrenado a 10 \ac{FPS} en lugar de 20 \ac{FPS}. A 20 \ac{FPS}, el agente no lograba un comportamiento adaptativo eficiente, sino un efecto de \textit{muelle}, acercándose demasiado al coche de delante, frenando bruscamente, alejándose y repitiendo el ciclo. En cambio, a 10 \ac{FPS}, se ha conseguido un comportamiento adaptativo más estable. Esto puede deberse a una reducción de ruido en las observaciones, los cambios en entorno y, por tanto, en las observaciones pueden ser más sutiles entre \textit{steps} consecutivos, permitiendo un mejor aprendizaje y compresión del escenario.
+
+Para facilitar el aprendizaje del modelo, primero se realizado un entrenamiento exclusivamente para aprender a seguir el carril. Durante este entrenamiento, se ha \textit{congelado} la observación referente al \ac{LiDAR}, es decir, los puntos siempre tienen un valor predeterminado, el rango máximo del \ac{LiDAR} 19.5m. Los hiperparámetros de entrenamiento siguen siendo los mismos \ref{cod:hiper_params_ppo}, pero se ha reducido levemente el coeficiente de entropía a 0.08 para favorecer al explotación de acciones. En la función de recompensa, al haber cambiado la frecuencia de simulación, podemos eliminar la distinción entre acelerador bajo y alto en la definición de pesos, fusionándolos en un solo bloque.
+
+\begin{code}[h]
+\begin{lstlisting}[language=Python]
+if r_steer == 0:
+	w_dev = 0.1, w_throttle = 0.1, w_steer = 0.8
+elif r_throttle == 0:
+	w_dev = 0.1, w_throttle = 0.8, w_steer = 0.1
+elif self._velocity > self._max_vel:
+	w_dev = 0.1, w_throttle = 0.65, w_steer = 0.25
+else:
+	w_dev = 0.6, w_throttle = 0.2, w_steer = 0.2
+\end{lstlisting}
+\caption[Función de recompensa sigue-carril para el control adaptativo con \ac{PPO}]{Función de recompensa sigue-carril para el control adaptativo con \ac{PPO}.}
+\label{cod:rew_carril_ppo_passing}
+\end{code}
+
+El modelo obtenido sigue el carril a la perfección \footnote{\url{jdjdj/}}, alcanzando una velocidad máxima de 17.7m/s, una vez lograda, se mantiene constante. De nuevo, se consigue una convergencia total rápidamente, pero seguimos necesitando un número elevado de \textit{steps} para adquirir altas velocidades. En inferencia, el modelo elige giros sutiles combinados con un valor del acelerador de aproximadme 0.49.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=7cm]{figs/Diseño/passing/train_base.png}
+  \caption{Datos de entrenamiento sigue-carril para el control adaptativo con \ac{PPO}.}
+  \label{fig:passing_train_base}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=9cm]{figs/Diseño/passing/actions_inference_base.png}
+  \caption{Histogramas de acciones tomadas en inferencia durante el sigue-carril para el control adaptativo con \ac{PPO}.}
+  \label{fig:passing_actions_inf_base}
+\end{figure}
+
 
 \subsection{Maniobra de adelantamiento con PPO}
 
