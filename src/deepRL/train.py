@@ -112,7 +112,7 @@ def main(args):
 
     model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name,
                 progress_bar=True, callback=checkpoint_callback)
-    model.save(model_dir + args.alg + '-' + args.env + '_' + str(args.num_file))
+    model.save(model_dir + '/' + args.alg + '-' + args.env + '_' + str(args.num_file))
     env.close()
 
 if __name__ == "__main__":

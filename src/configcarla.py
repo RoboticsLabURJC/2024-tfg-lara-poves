@@ -59,6 +59,7 @@ MIN = 3
 DIST = 0
 Z = 1
 X = 2
+Y = 3
 
 # Lane
 LEFT_LANE = 0
@@ -485,7 +486,7 @@ class CameraRGB(Sensor):
                     write_text(text=f"{self._road_percentage:.2f}% road", side=RIGHT, bold=True,
                             img=self._extra_surface, color=(0, 0, 0), size=self.size_text,
                             point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))
-
+                            
             self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)  
 
     def get_seg_data(self, num_points:int, show=False):
@@ -512,50 +513,59 @@ class CameraRGB(Sensor):
             else:
                 min_y = max(min_y, self._lane_left[0][1], self._lane_right[0][1])
 
-        try:
-            index_zero = np.where(index_sorted[:, 1] == 0)[0][0]
-            index_max = np.where(index_sorted[:, 1] == SIZE_CAMERA - 1)[0][0]
-            y_middle = max(index_sorted[index_zero, 0], index_sorted[index_max, 0])
+        points_final_left = points_final_right = 0
+        for lane in range(2):
+            try:
+                if lane == LEFT_LANE:
+                    index_limit = np.where(index_sorted[:, 1] == 0)[0][0]
+                    color = (101, 67, 33)
+                else:
+                    index_limit = np.where(index_sorted[:, 1] == SIZE_CAMERA - 1)[0][0]
+                    color = (0, 0, 0)
+                y_middle = index_sorted[index_limit, 0]
 
-            # First 3/4 of the points from the non-maximum part to have more information
-            num_points_start = min(int(num_points * 3 / 4), y_middle - min_y)
-            y_start = np.linspace(min_y, y_middle, num=num_points_start, dtype=int)
+                # First 3/4 of the points from the non-maximum part to have more information
+                num_points_start = min(int(num_points * 3 / 4), y_middle - min_y)
+                y_start = np.linspace(min_y, y_middle, num=num_points_start, dtype=int)
 
-            # Last 1/4 of the points from the maximum part
-            num_points_end = num_points - num_points_start
-            y_end = np.linspace(y_middle + 1, max_y, num=num_points_end, dtype=int)
+                # Last 1/4 of the points from the maximum part
+                num_points_end = num_points - num_points_start
+                y_end = np.linspace(y_middle + 1, max_y, num=num_points_end, dtype=int)
 
-            # Combine both parts
-            values_y = np.concatenate([y_start, y_end])
-        except Exception:
-            values_y = np.linspace(min_y, max_y, num_points, dtype=int)
+                # Combine both parts
+                values_y = np.concatenate([y_start, y_end])
+            except Exception:
+                values_y = np.linspace(min_y, max_y, num_points, dtype=int)
 
-        points_final_left = np.zeros((num_points, 2), dtype=np.int32)
-        points_final_right = np.zeros((num_points, 2), dtype=np.int32)
+            points_final = np.zeros((num_points, 2), dtype=np.int32)
 
-        j = i = 0
-        y = values_y[i]
-        while True:
-            points_in_y = index_sorted[index_sorted[:, 0] == y]
+            j = i = 0
+            y = values_y[i]
+            while True:
+                points_in_y = index_sorted[index_sorted[:, 0] == y]
 
-            if len(points_in_y) > 0:
-                points_final_left[j, 1] = y
-                points_final_left[j, 0] = np.min(points_in_y[:, 1])
+                if len(points_in_y) > 0:
+                    points_final[j, 1] = y
+                    if lane == LEFT_LANE:
+                        points_final[j, 0] = np.min(points_in_y[:, 1])
+                    else:
+                        points_final[j, 0] = np.max(points_in_y[:, 1])
 
-                points_final_right[j, 1] = y
-                points_final_right[j, 0] = np.max(points_in_y[:, 1])
+                    if show and self.init_extra != None:
+                        pygame.draw.circle(self._extra_surface, color, (points_final[j, 0], y), 5, 0)
 
-                if show:
-                    pygame.draw.circle(self._extra_surface, (101, 67, 33), (points_final_left[j, 0], y), 5, 0)
-                    pygame.draw.circle(self._extra_surface, (0, 0, 0), (points_final_right[j, 0], y), 5, 0)
+                    j += 1
+                    i += 1
+                    if i >= len(values_y):
+                        break
+                    y = values_y[i]
+                else:
+                    y += 1
 
-                j += 1
-                i += 1
-                if i >= len(values_y):
-                    break
-                y = values_y[i]
+            if lane == LEFT_LANE:
+                points_final_left = points_final
             else:
-                y += 1
+                points_final_right = points_final
 
         return area, cm, points_final_left, points_final_right
 
@@ -606,31 +616,6 @@ class CameraRGB(Sensor):
             
         return lane_points
     
-    def get_num_lane(self):
-        try:
-            count = 0
-
-            # Left part
-            for i in range(MAX_NUM_LANES - 2, -1, -1):
-                if self._num_lanes[i]:
-                    count += 1
-                else:
-                    break
-
-            index = count + 1
-            count += 1 # current lane
-
-            # Right part
-            for i in range(MAX_NUM_LANES, MAX_NUM_LANES * 2 - 1, 1):
-                if self._num_lanes[i]:
-                    count += 1
-                else:
-                    break
-        except Exception:
-            index = count = 1
-
-        return index, count
-    
     def check_lane_right(self):
         return self._road_right >= self._threshold_road_per
     
@@ -647,6 +632,8 @@ class Lidar(Sensor):
         self.show_stats = show_stats
         self.time_show = time_show
         self._points = [np.nan] * NUM_ZONES
+        self._points_x = [np.nan] * NUM_ZONES
+        self._points_y = [np.nan] * NUM_ZONES
         self._max_dist = max_dist
         self._back = back_zone
 
@@ -758,9 +745,9 @@ class Lidar(Sensor):
 
         return (r, g, b)
 
-    def get_points_zone(self, num_points:int, zone:int):
+    def get_points_zone(self, num_points:int, zone:int, show:bool=False):
         points = np.full(num_points, self._max_dist, dtype=np.float64)
-
+        
         try:
             if np.isnan(self._points[zone]):
                 pass
@@ -768,6 +755,11 @@ class Lidar(Sensor):
             if len(self._points[zone]) <= num_points:
                 for i in range (len(self._points[zone])):
                     points[i] = self._points[zone][i]
+
+                    if show and self._rect != None:
+                        center = (int(self._points_x[zone][i] * self._scale + self._center_screen[0]),
+                                  int(self._points_y[zone][i] * self._scale + self._center_screen[1]))
+                        pygame.draw.circle(self._sub_screen, (0, 255, 0), center, 4, 0)
             else:
                 j = 0
                 index = np.linspace(0, len(self._points[zone]) - 1, num_points, dtype=int)
@@ -775,6 +767,11 @@ class Lidar(Sensor):
                 for i in index:
                     points[j] = self._points[zone][i]
                     j += 1
+
+                    if show and self._rect != None:
+                        center = (int(self._points_x[zone][i] * self._scale + self._center_screen[0]),
+                                  int(self._points_y[zone][i] * self._scale + self._center_screen[1]))
+                        pygame.draw.circle(self._sub_screen, (0, 255, 0), center, 4, 0)
                 
         return points
     
@@ -791,10 +788,15 @@ class Lidar(Sensor):
                 filtered_dist = filtered_dist_z[dist_mask]
 
                 x_values = np.array(meas_zones[X][zone])[filter_min & filter_max]
-                filtered_x_values = x_values[dist_mask]
+                filtered_x = x_values[dist_mask]
 
-                sorted_index = np.argsort(filtered_x_values)
+                y_values = np.array(meas_zones[Y][zone])[filter_min & filter_max]
+                filtered_y = y_values[dist_mask]
+
+                sorted_index = np.argsort(filtered_x)
                 self._points[zone] = filtered_dist[sorted_index]
+                self._points_x[zone] = filtered_x[sorted_index]
+                self._points_y[zone] = filtered_y[sorted_index]
 
                 # Get stats zone
                 self._stat_zones[zone][MIN] = np.min(filtered_dist_z)
@@ -851,6 +853,7 @@ class Lidar(Sensor):
             [[] for _ in range(NUM_ZONES)], # dist_zones
             [[] for _ in range(NUM_ZONES)], # z_zones
             [[] for _ in range(NUM_ZONES)], # x_zones
+            [[] for _ in range(NUM_ZONES)] # y_zones
         ]
 
         if self._rect != None:
@@ -862,6 +865,7 @@ class Lidar(Sensor):
                 meas_zones[DIST][zone].append(math.sqrt(x ** 2 + y ** 2))
                 meas_zones[Z][zone].append(z)
                 meas_zones[X][zone].append(x)
+                meas_zones[Y][zone].append(y)
 
             if self._rect != None:
                 thickness = self._interpolate_thickness(num=z)

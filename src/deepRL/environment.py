@@ -82,17 +82,7 @@ CIRCUIT_CONFIG = {
         {KEY_ID: 7, KEY_TOWN: "Town05", KEY_LOC: carla.Transform(carla.Location(x=75.0, y=-144.5, z=0.1), carla.Rotation(yaw=4.0))}
     ],
     6: [
-        # Lane 2
-        {KEY_ID: 8, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-11, y=203, z=0.1), carla.Rotation(yaw=89))},
-        # Lane 1
-        {KEY_ID: 9, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-15, y=203, z=0.1), carla.Rotation(yaw=90))},
-        # Lane 3
-        {KEY_ID: 10, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-8, y=203, z=0.1), carla.Rotation(yaw=90))},
-        # Lane 4
-        {KEY_ID: 11, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-4.5, y=203, z=0.1), carla.Rotation(yaw=90))}
-    ],
-    7: [
-        {KEY_ID: 11, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-4.5, y=203, z=0.1), carla.Rotation(yaw=90))},
+        {KEY_ID: 11, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-10, y=300, z=0.1), carla.Rotation(yaw=292))},
         {KEY_ID: 0, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137))},
         {KEY_ID: 1, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7))},
         {KEY_ID: 2, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0))}
@@ -495,7 +485,7 @@ class CarlaBase(gym.Env, ABC):
             elif self._id == 10:
                 finish_ep = abs(loc.x + 412) <= 3 and abs(loc.y + 30) <= 3
             elif self._id == 11:
-                finish_ep = abs(loc.x + 467) <= 3 and abs(loc.y - 42) <= 3
+                finish_ep = abs(loc.x - 96) <= 3 and abs(loc.y + 362) <= 3
             elif self._id == 1 or self._id == 5:
                 finish_ep =  abs(loc.x + 442) <= 3 and abs(loc.y - 30) <= 3
             elif self._id == 2:
@@ -1169,11 +1159,11 @@ class CarlaOvertaken(CarlaBase):
                  lane_network:bool=False, target_vel:int=9): # aumentar la velocidad
         self._retrain = retrain
 
-        if fixed_delta_seconds > 0.1:
-            fixed_delta_seconds = 0.1
+        if fixed_delta_seconds < 1/9:
+            fixed_delta_seconds = 1/9
 
         if not retrain:
-            num_cir = 7
+            num_cir = 6
         else:
             num_cir = 0
         config = CIRCUIT_CONFIG.get(num_cir, [])
@@ -1484,7 +1474,7 @@ class CarlaOvertaken(CarlaBase):
             elif self._id == 10:
                 finish_ep = abs(loc.x + 412) <= 3 and abs(loc.y + 30) <= 3
             elif self._id == 11:
-                finish_ep = abs(loc.x + 467) <= 3 and abs(loc.y - 42) <= 3
+                finish_ep = abs(loc.x - 96) <= 3 and abs(loc.y + 362) <= 3
             elif self._id == 1 or self._id == 5:
                 finish_ep =  abs(loc.x + 442) <= 3 and abs(loc.y - 30) <= 3
             elif self._id == 2:
