@@ -49,7 +49,7 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, num_rows:in
         plt.plot(range(len(data)), data, linewidth=1, label=key)
 
         if key == KEY_REWARD or key == KEY_MEAN_VEL or key == KEY_COUNTER_LASER:
-            if KEY_MEAN_VEL:
+            if KEY_MEAN_VEL == key:
                 label = 'ep vel mean'
             else:
                 label='ep rew mean'
