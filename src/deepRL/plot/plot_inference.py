@@ -52,6 +52,11 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], 
         if key == KEY_STEER:
             bins = np.linspace(-0.19, 0.19, 20)
             bins_ticks = np.linspace(-0.2, 0.2, 21)
+        elif key == KEY_DISTANCE:
+            data = np.array(data)
+            data = data[~np.isnan(data)]
+            bins = np.arange(4, 21, 1)
+            bins_ticks = bins
         else:
             if 'DQN' in label:
                 bins = np.linspace(0.05, 0.55, 6)
@@ -116,7 +121,11 @@ def main(args):
     if num_rows > NUM_ROWS:    
         if dist:
             plot_data(data_csv=data, key=KEY_DISTANCE, init=(2, 2), label=csv_file,
-                      title='Distance front lidar', num_rows=num_rows, size=2)
+                      title='Distance front LiDAR', num_rows=num_rows, size=2)
+            
+            if not back:
+                plot_data(data_csv=data, key=KEY_DISTANCE, init=(2, 1), label=csv_file, hist=True,
+                          title='Histograms distance LiDAR', num_rows=num_rows, size=1)
             
         if back:
             plot_data(data_csv=data, key=KEY_LASER_RIGHT, init=(2, 1), label=csv_file, title='Distance back lidar',

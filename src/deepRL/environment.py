@@ -1109,6 +1109,7 @@ class CarlaPassing(CarlaBase):
             else:
                 r_throttle = self._throttle / limit_throttle
 
+            # LiDAR conversion
             if self._passing and not np.isnan(self._dist_laser):
                 r_laser = np.clip(self._dist_laser, MIN_DIST_LASER, MAX_DIST_LASER) - MIN_DIST_LASER
                 r_laser /= (MAX_DIST_LASER - MIN_DIST_LASER)       
@@ -1580,17 +1581,17 @@ class CarlaOvertaken(CarlaBase):
                 w_laser = 0.0
             elif self._overtaken_in_progress and not self._change_lane_left:
                 # Changing to left lane
-                w_dev = 0.8
+                w_dev = 0.6
                 w_throttle = 0.1
-                w_steer = 0.1
-                w_laser = 0.0
+                w_steer = 0.0
+                w_laser = 0.3
                 print("reward changing left, dev:", self._dev, "reward:", r_dev)
             elif self._overtaken_in_progress and self._change_lane_left and not self._change_lane_right and self._return:
                 # Changing to right lane
                 w_dev = 0.8
-                w_throttle = 0.1
+                w_throttle = 0.2
                 w_steer = 0.0
-                w_laser = 0.1
+                w_laser = 0.0
                 print("reward changing right, dev:", self._dev, "reward:", r_dev)
             else:
                 w_dev = 0.6

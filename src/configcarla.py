@@ -780,12 +780,12 @@ class Lidar(Sensor):
     
     def _update_stats(self, meas_zones):
         for zone in range(NUM_ZONES):
-            if len(meas_zones[DIST][zone]) != 0:
-                # Filter distances by z
-                filter_min = np.array(meas_zones[Z][zone]) > self._z_threshold_down
-                filter_max = np.array(meas_zones[Z][zone]) < self._z_threshold_up
-                filtered_dist_z = np.array(meas_zones[DIST][zone])[filter_min & filter_max]
+            # Filter distances by z
+            filter_min = np.array(meas_zones[Z][zone]) > self._z_threshold_down
+            filter_max = np.array(meas_zones[Z][zone]) < self._z_threshold_up
+            filtered_dist_z = np.array(meas_zones[DIST][zone])[filter_min & filter_max]
 
+            if len(filtered_dist_z) != 0:
                 # Get points zone
                 dist_mask = filtered_dist_z < self._dist_threshold[zone]
                 filtered_dist = filtered_dist_z[dist_mask]
