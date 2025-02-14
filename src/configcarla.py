@@ -950,8 +950,8 @@ class Vehicle_sensors:
                 sensor_bp.set_attribute('rotation_frequency', '100') 
                 sensor_bp.set_attribute('points_per_second', '200000') 
             else:
-                sensor_bp.set_attribute('rotation_frequency', '100') 
-                sensor_bp.set_attribute('points_per_second', '250000') 
+                sensor_bp.set_attribute('rotation_frequency', '110') 
+                sensor_bp.set_attribute('points_per_second', '300000') 
         elif type == CAMERA:
             sensor_bp.set_attribute('image_size_x', str(SIZE_CAMERA))
             sensor_bp.set_attribute('image_size_y', str(SIZE_CAMERA))
@@ -1128,6 +1128,10 @@ def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:floa
 
     settings = world.get_settings()
     settings.fixed_delta_seconds = fixed_delta_seconds
+    if fixed_delta_seconds > 0.1:
+        settings.max_substep_delta_time = 0.0333
+        settings.max_substeps = 4
+
     if syn:
         settings.synchronous_mode = True
     else:

@@ -35,6 +35,7 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], 
     if not hist:
         if key == KEY_DEV:
             key += ' in pixels'
+            ax.set_ylim(-20, 20)
         elif key == KEY_THROTTLE:
             if file != None and 'Obstacle' in file:
                 ax.set_ylim(-0.1, 0.5)
@@ -84,7 +85,7 @@ def main(args):
     num_rows = NUM_ROWS
     dist = False
     try:
-        if data[0][KEY_DISTANCE] == "nan" or float(data[0][KEY_DISTANCE]) < 15.0:
+        if data[0][KEY_DISTANCE] != "nan" or float(data[0][KEY_DISTANCE]) < 15.0:
             num_rows +=1
             dist = True
     except Exception:

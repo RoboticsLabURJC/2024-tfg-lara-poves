@@ -116,7 +116,7 @@ class CarlaBase(gym.Env, ABC):
         self._target_vel_org = target_vel
 
         if passing:
-            assert num_cir <= 1 or num_cir >= 6, "No passing mode available for circuit " + str(num_cir) 
+            assert num_cir <= 1 or num_cir >= 6 or num_cir == 4, "No passing mode available for circuit " + str(num_cir) 
         assert (self._lane_network and num_cir == 5) or (not self._lane_network and num_cir != 5), "No matching circuit and type of lane detection"
 
         # Set up the sensors but do not activate the measurements and tm yet
@@ -379,6 +379,11 @@ class CarlaBase(gym.Env, ABC):
                     t.location.y += 7
                 else: # 9m
                     t.location.y += 11
+            elif self._id == 11:
+                t.location.x += 4
+                t.location.y -= 10
+            elif self._id == 6:
+                t.location.x += 10
             else:
                 if prob < 0.4: # 6.6m
                     t.location.y += 7
@@ -649,7 +654,7 @@ class CarlaBase(gym.Env, ABC):
 
 class CarlaLaneDiscrete(CarlaBase):
     def __init__(self, human:bool, train:bool, alg:str=None, port:int=2000, num_cir:int=0, retrain:bool=False, target_vel:int=7,
-                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, lane_network:bool=False):
+                 fixed_delta_seconds:float=0.0, normalize:bool=False, seed:int=None, lane_network:bool=False, port_tm:int=2345):
         if train:
             num_cir = 0
         config = CIRCUIT_CONFIG.get(num_cir, CIRCUIT_CONFIG[0])

@@ -56,7 +56,10 @@ def main(args):
     writer_csv.writerow([environment.KEY_STEPS, environment.KEY_REWARD, environment.KEY_ACC_REWARD, environment.KEY_VEL,
                          environment.KEY_THROTTLE, environment.KEY_STEER, environment.KEY_DEV, environment.KEY_DISTANCE,
                          environment.KEY_LASER_RIGHT_FRONT, environment.KEY_LASER_RIGHT, environment.KEY_LASER_RIGHT_BACK])
-    
+
+    import time
+    time.sleep(5)
+
     obs, info = env.reset()
 
     try:
