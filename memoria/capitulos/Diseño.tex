@@ -229,7 +229,7 @@ El proceso de toma de decisiones en la conducción autónoma tradicional está a
 A pesar de ello, existen técnicas de control clásico que funcionan adecuadamente para ciertas habilidades de conducción. Un controlador \ac{PID} es un tipo de control ampliamente utilizado en sistemas automáticos para ajustar una variable y mantenerla en un valor deseado. En conducción autónoma, se usa para mantener un vehículo en el carril ajustando el ángulo del volante según la desviación del carril.
 
 \subsection{Controlador \ac{PID} para el seguimiento de carril}
-Para el seguimiento de carril basado en un controlador tradicional \footnote{\url{hdhhd}}, se ha implementado un controlador PD para controlar el giro. Al mismo tiempo, el acelerador se mantiene fijo a 0.5, mientras que con el freno regula la velocidad para mantenerla constante a aproximadamente 10m/s.
+Para el seguimiento de carril basado en un controlador tradicional \footnote{\url{https://youtu.be/mq5STc8-Z6Y}}, se ha implementado un controlador PD para controlar el giro. Al mismo tiempo, el acelerador se mantiene fijo a 0.5, mientras que con el freno regula la velocidad para mantenerla constante a aproximadamente 10m/s.
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
 self._kp = 1 / (SIZE_CAMERA / 2)
@@ -288,13 +288,13 @@ Ahora que ya sabemos en qué consiste el algoritmo de \ac{DQN}, llega la hora de
 
 \newpage
 
-El vehículo autónomo incorpora los \textbf{sensores}:
+El vehículo autónomo incorpora los sensores:
 \begin{itemize}
 		\item Cámara RGB: se utiliza para la detección de carril. Si se pierde la percepción, sale el carril o cambia de carril se genera una excepción que se captura y finaliza el episodio.
 		\item Sensor de colisión: si el coche se choca contra un elemento del entorno también detenemos el episodio.
 \end{itemize}
 
-El \textbf{espacio de observaciones} coincide con el espacio de estados y está basado en un diccionario, por lo tanto, empleamos la política \textit{MultiInputPolicy}. Las observaciones se normalizan para facilitar el aprendizaje al modelo e incluyen la siguiente información: 
+El espacio de observaciones coincide con el espacio de estados y está basado en un diccionario, por lo tanto, empleamos la política \textit{MultiInputPolicy}. Las observaciones se normalizan para facilitar el aprendizaje al modelo e incluyen la siguiente información: 
 \begin{itemize}
 		\item Desviación del carril.
 		\item Área del carril.
@@ -312,7 +312,7 @@ El \textbf{espacio de observaciones} coincide con el espacio de estados y está 
 
 \newpage
 
-Como hemos mencionado al inicio, \ac{DQN} permite un \textbf{espacio de acciones discreto}. Las acciones están compuestas por un comando de acelerador y otro de giro, para combinarlo hemos seguido la regla de que, a mayor aceleración, menor es el giro. En total, se han definido 21 acciones disponibles entre las cuales el coche autónomo podrá seleccionar aquellas que maximicen la recompensa en cada situación.
+Como hemos mencionado al inicio, \ac{DQN} permite un espacio de acciones discreto. Las acciones están compuestas por un comando de acelerador y otro de giro, para combinarlo hemos seguido la regla de que, a mayor aceleración, menor es el giro. En total, se han definido 21 acciones disponibles entre las cuales el coche autónomo podrá seleccionar aquellas que maximicen la recompensa en cada situación.
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -340,13 +340,12 @@ self.action_to_control = {
     19: (0.1, 0.18),
     20: (0.1, -0.18)
 }
-
 \end{lstlisting}
 \caption[Acciones disponibles para el seguimiento de carril basado en \ac{DQN}]{Acciones disponibles para el seguimiento de carril basado en \ac{DQN}.}
 \label{cod:acc_dqn}
 \end{code}
 
-Nuestro objetivo es que el coche circule por el centro del carril sin desviarse, manteniendo una conducción fluida y lo más rápida posible. Para lograrlo, hemos diseñado una \textbf{función de recompensa} que se basa principalmente en la desviación del carril y en la velocidad actual del coche, normalizando y ponderando estos valores según sus respectivos pesos. Sin embargo, si el coche pierde el carril o colisiona, el episodio se detiene y se asigna una recompensa negativa.
+Nuestro objetivo es que el coche circule por el centro del carril sin desviarse, manteniendo una conducción fluida y lo más rápida posible. Para lograrlo, hemos diseñado una función de recompensa que se basa principalmente en la desviación del carril y en la velocidad actual del coche, normalizando y ponderando estos valores según sus respectivos pesos. Sin embargo, si el coche pierde el carril o colisiona, el episodio se detiene y se asigna una recompensa negativa.
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -362,7 +361,7 @@ else:
 \label{cod:rew_dqn}
 \end{code}
 
-Para entrenar el modelo hemos utilizado un \textit{fixed\_delta\_seconds} de 50ms, lo que equivale a entrenar a 20 \ac{FPS}, por lo tanto, en infrencia necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de un día y un par de horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionan los mejores resultados. 
+Para entrenar el modelo hemos utilizado un \textit{fixed\_delta\_seconds} de 50ms, lo que equivale a entrenar a 20 \ac{FPS}, por lo tanto, en infrencia necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de un día y un par de horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros de entrenamiento que proporcionan los mejores resultados. 
 \begin{code}[h]
 \begin{lstlisting}[language=yaml]
 learning_rate: 0.0005 # Tasa de aprendizaje
@@ -391,7 +390,7 @@ La frecuencia de entrenamiento resultó ser un factor clave en el proceso, al pr
 
 \newpage
 
-En inferencia en un circuito visto durante el entrenamiento \footnote{\url{hhh}}, se observa que el seguimiento del carril es casi perfecto. No obstante, cuando el vehículo va en línea recta, en ocasiones, se percibe un pequeño balanceo. Esto se debe a una de las limitaciones de \ac{DQN}, su espacio de acciones es discreto no permite seleccionar la acción de giro óptima en cada momento. A continuación, se presenta la información recopilada durante la inferencia. Podemos observar claramente los momentos en los que se reduce la velocidad, correspondientes a las dos curvas pronunciadas al inicio del circuito. Sin embargo, de forma general, los histogramas indican se eligen los pares de acciones más rápidos.
+En inferencia en un circuito visto durante el entrenamiento \footnote{\url{https://youtu.be/rzy2Vg57zA8}}, se observa que el seguimiento del carril es bastante preciso, no obstante, ocasiones, se percibe un pequeño balanceo. Esto se debe a una de las limitaciones de \ac{DQN}, su espacio de acciones es discreto no permite seleccionar la acción de giro óptima en cada momento. A continuación, se presenta la información recopilada durante la inferencia. Podemos observar claramente los momentos en los que se reduce la velocidad, correspondientes a las dos curvas pronunciadas al inicio del circuito. Sin embargo, de forma general, los histogramas indican se eligen los pares de acciones más rápidos, llegando a alcanzar una velocidad de 14m/s.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=15cm]{figs/Diseño/discrete/inference_dqn.png}
@@ -401,9 +400,9 @@ En inferencia en un circuito visto durante el entrenamiento \footnote{\url{hhh}}
 
 \subsection{Seguimiento de carril con \ac{PPO}}
 
-El algoritmo \textit{Actor-Critic} es un tipo de algortimo en el que cada agente consta de dos elementos que aprenden de manera conjunta, cada uno con su propia red neuronal: \textit{actor}, encargado de aprender la política óptima, y \textit{critic}, responsable de aprender la función de valor y proporcionar una señal de refuerzo a la política. El algoritmo \ac{A2C} se forma a partir de la unión del actor y el critic y es una algoritmo \textit{on-policy}. \ac{PPO} es un algoritmo \textit{on-policy} que puede considerarse como una extensión de \ac{A2C}, cuyo objetivo principal es evitar el deterioro del rendimiento. En los algoritmos basados en políticas, ajustar la tasa de aprendizaje puede ser una labor complicada. Un valor pequeño puede llevar a entrenamientos prolongados sin alcanzar la solución óptima, mientras que uno grande puede causar un colapso en el rendimiento. Con el objetivo de resolver esto, \textit{PPO} introduce un objetivo sustituto que asegura una mejora monótona del rendimiento, evitando cambios drásticos y arriesgados en la política que puedan afectar negativamente al despeño. Para lograrlo, \textit{PPO} mide cuánto ha cambiado la política después de cada actualización, garantizando que esta diferencia sea no negativa en cada iteración, asegurando así una mejora continua en el rendimiento. Además, que impide que esta razón crezca o disminuya demasiado dentro de un umbral controlado por un hiperparámetro (\textit{clip\_range}) \cite{drl}. 
+El algoritmo \textit{Actor-Critic} es un tipo de algortimo en el que cada agente consta de dos elementos que aprenden de manera conjunta, cada uno con su propia red neuronal: \textit{actor}, encargado de aprender la política óptima, y \textit{critic}, responsable de aprender la función de valor y proporcionar una señal de refuerzo a la política. El algoritmo \ac{A2C} se forma a partir de la unión del actor y el critic y es una algoritmo \textit{on-policy}. \ac{PPO} es un algoritmo \textit{on-policy} que puede considerarse como una extensión de \ac{A2C}, cuyo objetivo principal es evitar el deterioro del rendimiento. En los algoritmos basados en políticas, ajustar la tasa de aprendizaje puede ser una labor complicada. Un valor pequeño puede llevar a entrenamientos prolongados sin alcanzar la solución óptima, mientras que uno grande puede causar un colapso en el rendimiento. Con el objetivo de resolver esto, \ac{PPO} introduce un objetivo sustituto que asegura una mejora monótona del rendimiento, evitando cambios drásticos y arriesgados en la política que puedan afectar negativamente al despeño. Para lograrlo, \ac{PPO} mide cuánto ha cambiado la política después de cada actualización, garantizando que esta diferencia sea no negativa en cada iteración, asegurando así una mejora continua en el rendimiento. Además, que impide que esta razón crezca o disminuya demasiado dentro de un umbral controlado por un hiperparámetro (\textit{clip\_range}) \cite{drl}. 
 
-El objetivo sigue siendo conseguir un seguimiento de carril fluido y la mayor velocidad posible, pero esta vez usamos el algoritmo \ac{PPO} que permite un \textbf{espacio de acciones continuo}. Se emplea la misma lógica para la finalización de un episodio, sensores, \textit{fixed\_delta\_seconds} de 50ms y circuito de entrenamiento \ref{fig:mapa} que en el entorno anterior. Seguimos controlando dos elementos: el acelerador y el giro, permitimos el rango completo para el acelerador y limitamos el rango del giro.
+El objetivo sigue siendo conseguir un seguimiento de carril fluido y la mayor velocidad posible, pero esta vez usamos el algoritmo \ac{PPO} que permite un espacio de acciones continuo. Se emplea la misma lógica para la finalización de un episodio, sensores, \textit{fixed\_delta\_seconds} de 50ms y circuito de entrenamiento \ref{fig:mapa} que en el entorno anterior. Seguimos controlando dos elementos: el acelerador y el giro, permitimos el rango completo para el acelerador y limitamos el rango del giro.
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -419,20 +418,20 @@ self.action_space = spaces.Box(
 \label{cod:acc_ppo}
 \end{code}
 
-Sin embargo, se han llevado a cabo algunos cambios en las \textbf{observaciones}. Se ha añadido la \textbf{velocidad actual del vehículo} al espacio de observaciones para mejorar la comprensión de la función de recompensa y, en lugar de cinco, ahora el modelo recibe \textbf{diez puntos de cada línea del carril}, como se muestra en la Figura \ref{fig:puntos_carril}, para mejorar la comprensión del mismo, sobre todo en las curvas.
+Sin embargo, se han llevado a cabo algunos cambios en las observaciones. Se ha añadido la velocidad actual del vehículo al espacio de observaciones para mejorar la comprensión de la función de recompensa y, en lugar de cinco, ahora el modelo recibe diez puntos de cada línea del carril, como se muestra en la Figura \ref{fig:puntos_carril}, para mejorar la comprensión del mismo, sobre todo en las curvas.
 
-En este caso, la función \textbf{recompensa} es más compleja y sigue el siguiente esquema:
+En este caso, la función recompensa es más compleja y sigue el siguiente esquema:
 \begin{enumerate}
-    \item \textbf{Comprobación de errores:} Primero se verifica si ha ocurrido un error, como pérdida del carril o choque contra elementos de la carretera. Si ocurre, se finaliza el episodio y se asigna una recompensa negativa.
+    \item \textit{Comprobación de errores:} Primero se verifica si ha ocurrido un error, como pérdida del carril o choque contra elementos de la carretera. Si ocurre, se finaliza el episodio y se asigna una recompensa negativa.
 
-    \item \textbf{Normalización lineal de elementos:} Si no hay errores, se normalizan los elementos de los que depende la recompensa:
+    \item \textit{Normalización lineal de elementos:} Si no hay errores, se normalizan los elementos de los que depende la recompensa:
     \begin{itemize}
-        \item \textbf{Desviación:} Se limita el valor de la desviación al rango [-100, 100]. Se normaliza inversamente, donde una desviación de 0 tiene la mayor recompensa.
-        \item \textbf{Giro:} Para giros bruscos, la recompensa es nula. Para giros no bruscos, se normaliza inversamente considerando el rango [-0.14, 0.14], donde menores giros otorgan mayor recompensa.
-        \item \textbf{Acelerador:} Si las aceleraciones son bruscas en el rango [0.6, 1.0], la recompensa es nula. Para aceleraciones no bruscas en el rango [0.0, 0.6), si se supera la velocidad máxima, se normaliza inversamente, aceleración nula tiene mayor recompensa. En el caso contrario, se normaliza de forma que mayores aceleraciones otorgan mayor recompensa.
+        \item \textit{Desviación:} Se limita el valor de la desviación al rango [-100, 100]. Se normaliza inversamente, donde una desviación de 0 tiene la mayor recompensa.
+        \item \textit{Giro:} Para giros bruscos, la recompensa es nula. Para giros no bruscos, se normaliza inversamente considerando el rango [-0.14, 0.14], donde menores giros otorgan mayor recompensa.
+        \item \textit{Acelerador:} Si las aceleraciones son bruscas en el rango [0.6, 1.0], la recompensa es nula. Para aceleraciones no bruscas en el rango [0.0, 0.6), si se supera la velocidad máxima, se normaliza inversamente, aceleración nula tiene mayor recompensa. En el caso contrario, se normaliza de forma que mayores aceleraciones otorgan mayor recompensa.
     \end{itemize}
 
-    \item \textbf{Asignación de pesos a los elementos:} Finalmente, se define el peso de cada elemento en la recompensa según los siguientes criterios:
+    \item \textit{Asignación de pesos a los elementos:} Finalmente, se define el peso de cada elemento en la recompensa según los siguientes criterios:
     \begin{itemize}
         \item Si el giro o el acelerador son bruscos, tienen un peso muy elevado en la recompensa, mientras que los otros dos elementos tienen un peso mucho menor.
         \item Si se supera la velocidad máxima, el acelerador tiene mayor peso para intentar decelerar, penalizando también el giro debido a la alta velocidad, puesto que puede tener un gran impacto.
@@ -443,10 +442,10 @@ En este caso, la función \textbf{recompensa} es más compleja y sigue el siguie
 
 \begin{code}[H]
 \begin{lstlisting}[language=Python]
-if error == None:
+if error is None:
     # Deviation normalization
     r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
-    
+
     # Steer conversion
     limit_steer = 0.14
     if abs(self._steer) > limit_steer:
@@ -463,38 +462,27 @@ if error == None:
     else:
         r_throttle = self._throttle / limit_throttle
 
-    # Set weights
+    # Set weight
     if r_steer == 0:
-        w_dev = 0.1
-        w_throttle = 0.1
-        w_steer = 0.8
+        w_dev, w_throttle, w_steer = 0.1, 0.1, 0.8
     elif r_throttle == 0:
-        w_dev = 0.1
-        w_throttle = 0.8
-        w_steer = 0.1
+        w_dev, w_throttle, w_steer = 0.1, 0.8, 0.1
     elif self._velocity > self._max_vel:
-        w_dev = 0.1
-        w_throttle = 0.65
-        w_steer = 0.25
+        w_dev, w_throttle, w_steer = 0.1, 0.65, 0.25
     elif self._throttle < 0.5:
-        w_dev = 0.65
-        w_throttle = 0.25
-        w_steer = 0.1 # Lower accelerations, penalize large turns less
-    else: # [0.5, 0.6) throttle
-        w_dev = 0.6
-        w_throttle = 0.15
-        w_steer = 0.25
+        w_dev, w_throttle, w_steer = 0.65, 0.25, 0.1
+    else:  # Throttle in range [0.5, 0.6)
+        w_dev, w_throttle, w_steer = 0.6, 0.15, 0.25
 
     reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer
 else:
     reward = -40
-
 \end{lstlisting}
 \caption[Función de recompensa para sigue-carril basado en \ac{PPO}]{Función de recompensa para sigue-carril basado en \ac{PPO}.}
 \label{cod:rew_ppo}
 \end{code}
 
-Al igual que en el entrenamiento anterior, el parámetro \textit{n\_steps} fue clave a la hora de adquirir convergencia, también influyó el tamaño del lote, que inicialmente era demasiado pequeño. Con valores bajos del coeficiente de entropía, el agente aprendía siempre que las acciones límite maximizaban la recompensa, mientras que, con valores demasiado altos, no conseguía converger. Finalmente, estos fueron los parámetros de entrenamiento utilizados:
+Al igual que en el entrenamiento anterior, el hiperparámetro \textit{n\_steps} fue clave a la hora de adquirir convergencia, también influyó el tamaño del lote, que inicialmente era demasiado pequeño. Con valores bajos del coeficiente de entropía, el agente aprendía siempre que las acciones límite maximizaban la recompensa, mientras que, con valores demasiado altos, no conseguía converger. Finalmente, estos fueron los hiperparámetros de entrenamiento utilizados:
 \begin{code}[h]
 \begin{lstlisting}[language=yaml]
 policy: "MultiInputPolicy"
@@ -506,11 +494,12 @@ batch_size: 512
 ent_coef: 0.1 # Coeficiente de entropia
 clip_range: 0.15 
 n_timesteps: 4_000_000
-
 \end{lstlisting}
 \caption[Hiperparámetros de entrenamiento para el sigue-carril basado en \ac{PPO}]{Hiperparámetros de entrenamiento para el sigue-carril basado en \ac{PPO}.}
 \label{cod:hiper_params_ppo}
 \end{code}
+
+\newpage
 
 Al analizar los parámetros de entrenamiento de ambos algoritmos, podemos ver como con \ac{PPO} necesitamos la mitad de \textit{steps} que con \ac{DQN} para lograr un entrenamiento exitoso. Los entrenamientos con \ac{PPO} duraron aproximadamente unas veinte horas. En el siguiente gráfico, se muestran los datos de entrenamiento, donde se puede observar cómo se logra rápidamente la convergencia, pero se necesitan más \textit{steps} para alcanzar altas velocidades.
 \begin{figure}[ht]
@@ -528,19 +517,21 @@ Debido a todos los inconvenientes con el coeficiente de entropía en  la explora
   \label{fig:actions_ppo_carril}
 \end{figure}
 
-En inferencia obtenemos muy buenos resultados tanto en circuitos utilizados durante el entrenamiento \footnote{\url{hhh}} como en nuevos \footnote{\url{hyyy}}, incluso cambiando la ciudad en el simulador CARLA. A diferencia del modelo entrenado con \ac{DQN}, ahora si podemos elegir el giro exacto necesario en cada momento al disponer de un espacio de acciones continuo, lo que permite seguir el carril de forma más precisa y fluida. Además, se logran velocidades muy superiores, incluso superando los 20m/s. El modelo elige siempre aceleraciones en el rango [0.5, 0.6) combinadas con giros sutiles. Cabe destacar que, si eliminamos la parte del rango bajo del acelerador en la función recompensa, unificando ambos rangos en uno con los mismos pesos, el entrenamiento no logra converger, aunque al final siempre seleccione acciones en dentro del rango alto del acelerador.
+\newpage
+
+En inferencia obtenemos muy buenos resultados tanto en circuitos utilizados durante el entrenamiento \footnote{\url{https://youtu.be/bZNfUwP14gc}} como en nuevos \footnote{\url{https://youtu.be/WRPLzKqJdto}}, incluso cambiando la ciudad en el simulador CARLA. A diferencia del modelo entrenado con \ac{DQN}, ahora si podemos elegir el giro exacto necesario en cada momento al disponer de un espacio de acciones continuo, lo que permite seguir el carril de forma más precisa y fluida. Además, se logran velocidades muy superiores, incluso superando los 20m/s. El modelo elige siempre aceleraciones en el rango [0.5, 0.6) combinadas con giros sutiles. Cabe destacar que, si eliminamos la parte del rango bajo del acelerador en la función recompensa, unificando ambos rangos en uno con los mismos pesos, el entrenamiento no logra converger, aunque al final siempre seleccione acciones en dentro del rango alto del acelerador.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=15cm]{figs/Diseño/cont/inference_ppo_carril.png}
+  \includegraphics[width=15cm]{figs/Diseño/cont/inference.png}
   \caption{Gráfico de los datos recopilados durante inferencia del modelo sigue-carril con \ac{PPO}.}
   \label{fig:inference_ppo_carril}
 \end{figure}
 
-Recordemos, que los entrenamientos se han realizado utilizando la técnica de detección de carril \textit{ground thruth}. Si la cambiamos por la detección de carril basada en \ac{DL}, lo que incluye cambiar la posición de la cámara y, por tanto, la visión de percepción, seguimos obteniendo un seguimiento del carril fluido y conciso \footnote{\url{jdjdj/}}.
+Recordemos, que los entrenamientos se han realizado utilizando la técnica de detección de carril \textit{ground thruth}. Si la cambiamos por la detección de carril basada en \ac{DL}, lo que incluye cambiar la posición de la cámara y, por tanto, la visión de percepción, seguimos obteniendo un seguimiento del carril fluido y conciso \footnote{\url{ https://youtu.be/8kOpXYqzIGM}} a altas velocidades.
 
 \subsection{Control adaptativo con PPO}
 
-Ahora el objetivo ha cambiado, el vehículo autónomo debe ser capaz de regular su velocidad en función del vehículo que tiene delante, controlado por el autopiloto de CARLA, además de seguir el carril. Para esta nueva funcionalidad, necesitamos añadir un nuevo sensor, el \textbf{\ac{LiDAR}}, cuyas \textbf{observaciones son veinte puntos de la subzona frontal}, como se muestra en la Figura \ref{fig:laser_front}. Mantenemos las mismas rutas de entrenamiento y resto de observaciones que en el apartado anterior. Seguimos utilizando el algoritmo de \textbf{\ac{PPO}} con el mismo espacio de acciones, ya que permite un control más fluido, preciso y un comportamiento más adaptativo al entorno. 
+Ahora el objetivo ha cambiado, el vehículo autónomo debe ser capaz de regular su velocidad en función del vehículo que tiene delante, controlado por el autopiloto de CARLA, además de seguir el carril. Para esta nueva funcionalidad, necesitamos añadir un nuevo sensor, el \ac{LiDAR}, cuyas observaciones son veinte puntos de la subzona frontal, como se muestra en la Figura \ref{fig:laser_front}. Mantenemos las mismas rutas de entrenamiento y resto de observaciones que en el apartado anterior. Seguimos utilizando el algoritmo de \ac{PPO} con el mismo espacio de acciones, ya que permite un control más fluido, preciso y un comportamiento más adaptativo al entorno. 
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -563,35 +554,157 @@ Para facilitar el aprendizaje del modelo, primero se realizado un entrenamiento 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
 if r_steer == 0:
-	w_dev = 0.1, w_throttle = 0.1, w_steer = 0.8
+    w_dev, w_throttle, w_steer = 0.1, 0.1, 0.8
 elif r_throttle == 0:
-	w_dev = 0.1, w_throttle = 0.8, w_steer = 0.1
+    w_dev, w_throttle, w_steer = 0.1, 0.8, 0.1
 elif self._velocity > self._max_vel:
-	w_dev = 0.1, w_throttle = 0.65, w_steer = 0.25
+    w_dev, w_throttle, w_steer = 0.1, 0.65, 0.25
 else:
-	w_dev = 0.6, w_throttle = 0.2, w_steer = 0.2
+    w_dev, w_throttle, w_steer = 0.6, 0.2, 0.2 # Follow Lane
 \end{lstlisting}
 \caption[Función de recompensa sigue-carril para el control adaptativo con \ac{PPO}]{Función de recompensa sigue-carril para el control adaptativo con \ac{PPO}.}
 \label{cod:rew_carril_ppo_passing}
 \end{code}
 
-El modelo obtenido sigue el carril a la perfección \footnote{\url{jdjdj/}}, alcanzando una velocidad máxima de 17.7m/s, una vez lograda, se mantiene constante. De nuevo, se consigue una convergencia total rápidamente, pero seguimos necesitando un número elevado de \textit{steps} para adquirir altas velocidades. En inferencia, el modelo elige giros sutiles combinados con un valor del acelerador de aproximadme 0.49.
+El modelo obtenido sigue el carril a la perfección \footnote{\url{https://youtu.be/flTo3YyFCHU}}, alcanzando velocidades superiores a 15m/s. De nuevo, se consigue una convergencia total rápidamente, pero seguimos necesitando un número elevado de \textit{steps} para adquirir altas velocidades. En inferencia, el modelo elige giros sutiles combinados con un valor del acelerador en el rango [0.47, 0.49].
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=7cm]{figs/Diseño/passing/train_base.png}
+  \includegraphics[width=8cm]{figs/Diseño/passing/train_base.png}
   \caption{Datos de entrenamiento sigue-carril para el control adaptativo con \ac{PPO}.}
   \label{fig:passing_train_base}
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=9cm]{figs/Diseño/passing/actions_inference_base.png}
+  \includegraphics[width=10cm]{figs/Diseño/passing/actions_inference_base.png}
   \caption{Histogramas de acciones tomadas en inferencia durante el sigue-carril para el control adaptativo con \ac{PPO}.}
   \label{fig:passing_actions_inf_base}
 \end{figure}
 
+Ahora, necesitamos reentrenar el modelo sigue-carril para lograr un control adaptativo al tráfico. Durante este entrenamiento si activamos la observación del \ac{LiDAR} reales, cuya mínima distancia es incluida y normalizada en la función de recompensa con el fin de conseguir de que el vehículo autónomo sea capaz de circular detrás de un camión adaptándose a su velocidad. Si el coche está a una distancia menor de 4m, se provoca una excepción y se finaliza el episodio dando una recompensa negativa. Se penaliza aún más que salirse del carril, ya que es una acción más grave y que puede tener consecuencias fatales en el mundo real. Los pesos de la función de recompensa cuando vemos el vehículo delantero, dependen de la distancia: cuanto más próximo esté, mayor es la relevancia del \ac{LiDAR}, puesto que aumentan la criticidad de la situación.
+
+\begin{code}[H]
+\begin{lstlisting}[language=Python]
+if error == None:
+    # Deviation normalization, Steer conversion and Throttle conversion
+
+    # LiDAR conversion
+    if self._passing and not np.isnan(self._dist_laser):
+        r_laser = (np.clip(self._dist_laser, MIN_DIST_LASER, MAX_DIST_LASER) - MIN_DIST_LASER) / (MAX_DIST_LASER - MIN_DIST_LASER)       
+    else:
+        r_laser = 0
+
+    # Set weights
+    # Filter inadequate actions
+    elif r_laser != 0:
+        if self._dist_laser <= 10:
+            w_laser, w_steer, w_dev, w_throttle = 0.9, 0.0, 0.1, 0.0
+        elif self._dist_laser <= 12:
+            w_laser, w_dev, w_steer, w_throttle = 0.5, 0.45, 0.05, 0.0
+        else:
+            w_laser, w_dev, w_throttle, w_steer = 0.4, 0.5, 0.05, 0.05
+    # Follow lane
+
+    reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + w_laser * r_laser
+else:
+    if "Distance" in error:
+        reward = -60
+    else:
+        reward = -40
+\end{lstlisting}
+\caption[Función de recompensa respecto al \ac{LiDAR} para control adaptativo con \ac{PPO}]{Función de recompensa respecto al \ac{LiDAR} para control adaptativo con \ac{PPO}.}
+\label{cod:rew_ppo_passing}
+\end{code}
+
+Como el modelo ya sabe seguir el carril con una velocidad adecuada, no son necesarios tantos episodios de entrenamiento, por lo que hemos reducido el número de \textit{steps} a la mitad, dos millones. También se ha disminuido a la mitad el coeficiente de entropía 0.04, para evitar acciones aleatorias que puedan tener resultados fatales durante el episodio, como provocar una colisión con el camión.
+
+La elección de velocidades del vehículo delantero fue crucial a la hora de lograr un comportamiento estable. Primeramente, se intentó estableciendo una velocidad constante durante un periodo de entre 100 y 450 \textit{steps} en el rango de [5, 10], escogiendo valores enteros y ambos de manera aleatoria. Sin embargo, se encontraron dos problemas:
+  \begin{itemize}
+        \item Para velocidades altas, el vehículo delantero se alejaba demasiado, sin que el agente pudiera verlo en ningún momento.
+        \item El modelo se sobreajustaba a las velocidades bajas, limitándose a alcanzar velocidades máximas de 7 m/s.
+    \end{itemize}
+Para evitar el primer desafío, se diseñó un compartimento para que el camión delantero se parase si no estaba siendo visto por el agente, pero, aun así, el modelo resultante seguía siendo demasiado lento. Por ello, se modificó este comportamiento para que el camión solo se parase a distancias superiores 30 metros, con la diferencia de distancia entre ambos vehículos se obtuvo directamente del simulador CARLA. De esta forma, garantizamos que el modelo pueda ver al vehículo delantero en todas las velocidades, a la vez que se generen ocasiones en las que no lo vea, lo que ayuda a evitar el sobreajuste del modelo y a mantener las altas velocidades.
+
+\begin{code}[H]
+\begin{lstlisting}[language=Python]
+if self._count_random % self._random_steps == 0 and self._count_random != 0:
+	self._target_vel =  random.randint(5, 10)
+	self._random_steps = random.randint(100, 450)
+	self._count_random = 0
+
+if loc_ego.distance(self._front_vehicle.get_location()) > 30:
+	self._tm.set_desired_speed(self._front_vehicle, 0)  # km/h
+else:
+	self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6)
+	self._count_random += 1
+\end{lstlisting}
+\caption[Función de recompensa respecto al \ac{LiDAR} para control adaptativo con \ac{PPO}]{Función de recompensa respecto al \ac{LiDAR} para control adaptativo con \ac{PPO}.}
+\label{cod:rew_ppo_passing}
+\end{code}
+
+El siguiente histograms muestra el número de \textit{steps} durante los que el agente ha observado las diferentes velocidades, así como aquellos en los que no ha detectado el camión delantero durante el reentrenamiento. La fracción de veces que ha visto el camión muy superior a la que no lo ve, pero debemos recordar que en el entrenamiento base de seguimiento de carril no ha visto un vehículo delante en ninguno de los episodios.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=9cm]{figs/Diseño/passing/velocities.png}
+  \caption{Histograma de velocidades vistas durante el entrenamiento para el control adaptativo con \ac{PPO}.}
+  \label{fig:velocities}
+\end{figure}
+
+\newpage
+
+Aunque no se alcanza una convergencia total como en entrenamientos anteriores, podemos decir que el modelo sí converge, ya que la recompensa promedio de los episodios aumenta de manera a lo largo del proceso de entrenamiento. Esto sugiere que, a pesar de los episodios no finalizados, el modelo está mejorando gradualmente su desempeño y aprendiendo de manera efectiva. 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=13cm]{figs/Diseño/passing/train.png}
+  \caption{Datos de reentrenamiento control adaptativo con \ac{PPO}.}
+  \label{fig:velocities}
+\end{figure}
+
+En la fase de inferencia, se obtienen buenos resultados a distintas velocidades, tanto altas como bajas, y se sigue manteniendo el seguimiento preciso del carril. La velocidad del coche delantero influye en la distancia de estabilización, es decir, la separación con la que el coche autónomo se mantiene del camión. A mayor velocidad, mayor es esta distancia de seguridad, lo que es lógico y necesario en un entorno real. También se lograr resultados satisfactorios en circuitos no vistos durante el entrenamiento, incluso cambiando de ciudad en CARLA \footnote{\url{https://youtu.be/ieMD1wqqEaY}}. 
+
+Los siguientes diagramas muestran los datos de inferencia recolectados cuando el coche delantero circula a 9 m/s y 5 m/s, respectivamente. Podemos verificar la teoría anterior analizando los histogramas de distancias del \ac{LiDAR}: si el vehículo delantero se desplaza a 9 m/s \footnote{\url{https://youtu.be/mN0Y2q6ny5w}}, el agente mantiene una distancia de unos 14-15 metros; mientras que si circula a 5 m/s \footnote{\url{https://youtu.be/Gvh9ZS0Sizc}}, la distancia se estabiliza en torno a los 13 metros. En cuanto a la velocidad, esta aumenta rápidamente al inicio y luego se estabiliza en un valor cercano al del coche delantero, podemos observar pequeñas fluctuaciones que indican ajustes constantes para mantener la distancia de seguridad. Esto también se refleja en el comportamiento del acelerador, donde la mayoría de las acciones se concentran en el rango [0.4, 0.5], lo que sugiere que el vehículo mantiene una aceleración constante en lugar de realizar ajustes bruscos, logrando así una conducción más suave.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=14cm]{figs/Diseño/passing/inference_9.png}
+  \caption{Datos de inferencia del control adaptativo con \ac{PPO}, donde el vehículo delantero mantiene una velocidad de 9m/s.}
+  \label{fig:infrence_passing}
+\end{figure}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=14cm]{figs/Diseño/passing/inference_5.png}
+  \caption{Datos de inferencia del control adaptativo con \ac{PPO}, donde el vehículo delantero mantiene una velocidad de 5m/s.}
+  \label{fig:infrence_passing}
+\end{figure}
 
 \subsection{Maniobra de adelantamiento con PPO}
 
-otro mapa
+En este apartado se describe como se ha alcanzo el objetivo final, realizar una maniobra de adelantamiento completa. Cuando se haya visualizado el vehículo delantero a menos de 15 metros, se inicia el cambio de carril a la izquierda y, una vez ya no detectemos el vehículo en la parte derecha del \ac{LiDAR}, el coche autónomo vuelve al carril original. Para ello, es necesario añadir nuevas observaciones al modelo, tanto referentes a la zona derecha del \ac{LiDAR}, como a la segmentación de la calzada. Estas son todas las observaciones que recibe el modelo:
+\begin{itemize}
+\item Velocidad del propio agente, es decir, del \textit{Ego Vehicle}.
+\item Desviación del carril.
+\item Centro de masas del carril.
+\item Área del carril.
+\item 10 puntos de la línea de carril izquierda.
+\item 10 puntos de la línea del carril derecha.
+\item 10 puntos de la subzona frontal del \ac{LiDAR}.
+\item 10 puntos de la subzona frontal derecha del \ac{LiDAR}.
+\item 10 puntos de la subzona derecha del \ac{LiDAR}.
+\item 10 puntos de la subzona trasera derecha del \ac{LiDAR}.
+\item Centro de masas de la calzada.
+\item Área de la calzada.
+\item 16 puntos del límite izquierdo de la calzada.
+\item 16 puntos del límite derecho de la calzada.
+\end{itemize}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=11cm]{figs/Diseño/overtaken/obs.png}
+  \caption{Observaciones en el modelo de adelantamiento con \ac{PPO}.}
+  \label{fig:obs_overtaken}
+\end{figure}
+
+\newpage
+
+Al igual que para el control adaptativo, se realiza un primer entrenamiento para conseguir un modelo capaz de seguir el carril de manera precisa y a altas velocidades. Se ha entrenado a 9 \ac{FPS}, pero esta vez no porque se obtuviera mejoren resultados, sino porque en inferencia se logra ir como máximo a unos 10 \ac{FPS}. Se han reutilizado tanto la función recompensa \ref{cod:rew_carril_ppo_passing} como los hiperparámetros de entrenamiento del modelo sigue-carril para el control adaptativo. Durante este entrenamiento, a diferencia del modelo anterior, no desactivamos las observaciones no relavaste para el seguimiento de carril, el agente recibe constantemente observaciones reales del carril, \ac{LiDAR} y segmentación de la calzada. El circuito usado durante todos entrenamientos, dispone de tres rutas en los que el coche va por el carril más a la derecha en una de ellas y, en las otras dos, por los carriles centrales. Para fomentar la visualización de todos los posibles estados en la calzada, se ha añadido una nueva ruta en la que el vehículo autónomo circula por el carril más a la izquierda, como se puede ver en la Figura \ref{fig:obs_overtaken}. Los resultados han sido…
