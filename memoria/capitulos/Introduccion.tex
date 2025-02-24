@@ -191,6 +191,13 @@ El aprendizaje supervisado se basa en algoritmos diseñados para clasificar o pr
 
 En el ámbito de la conducción autónoma, el aprendizaje supervisado juega un papel crucial, especialmente en la detección de objetos como peatones, señales de tráfico, otros vehículos o la carretera. Un algoritmo destacado para esta tarea es \ac{YOLO}, un modelo de detección de objetos en imágenes o videos en tiempo real basado en \ac{CNN}. A diferencia de otros métodos que realizan la detección en múltiples etapas, \ac{YOLO} integra la localización, segmentación y clasificación en un solo modelo, lo que lo hace extremadamente rápido y eficiente. \ac{YOLO} utiliza lo que se conoce como \textit{bounding boxes} para marcar los límites de los objetos detectados en la imagen o video \cite{yolo}. Otros modelos, como \textit{EfficientVit}, amplían la clasificación de imágenes, pasando de predicciones a nivel de imagen a predicciones a nivel de píxel, lo que resulta muy útil para identificar con exactitud, por ejemplo, los límites de la calzada. \textit{Tesla} también utiliza \ac{CNN} en su sistema \textit{Autopilot} para tareas de percepción visual \footnote{\url{https://www.tesla.com/es_es/AI}}. Todos los coches de \textit{Tesla} colaboran para crear una gran base de datos que sirve para entrenar sus redes neuronales \cite{tesla-dataset}. Existen otro tipo de modelos basados en \textit{imitation learning}, en el los que el agente aprende a realizar una tarea observando cómo la realiza un experto en ella, comúnmente un humano u otro modelo ya formado para ello \cite{imitation-learning}. El modelo \textit{ChauffeurNet} de \textit{Waymo} es un coche autónomo basado en \textit{imitation learning} que toma como entrada imágenes segmentadas semánticamente. Este modelo se entrena con demostraciones humanas y otros escenarios de conducción difíciles generados artificialmente, esta combinación logra que \textit{ChauffeurNet} ofrezca una conducción autónoma segura y eficiente hasta en situaciones inesperadas \cite{chauffeurnet-paper}.
 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=8cm]{figs/introducción/yolo.png}
+\end{center}
+\caption{YOLO identificación de objetos en la carretera \cite{yolo-detection}.}
+\label{yolo}
+\end{figure}
 
 \subsection{Aprendizaje semi-supervisado}
 
@@ -215,6 +222,14 @@ El aprendizaje por refuerzo es un enfoque de aprendizaje no supervisado donde un
 \end{figure}
 
 En el contexto de la conducción autónoma, el aprendizaje por refuerzo se aplica de manera efectiva en sistemas como \textit{AWS DeepRacer}, donde un coche autónomo se entrena para navegar por una pista de carreras \footnote{\url{https://burjcdigital.urjc.es/items/2951749e-f6a8-4369-a543-8be924a8fee9}\\ \url{ https://burjcdigital.urjc.es/items/f6ce4e69-199b-4f73-a136-0f4782eac351}}. A través de la simulación, el vehículo explora diversas acciones, como ajustar su velocidad o realizar giros, con el objetivo de maximizar su rendimiento en el circuito. Al principio, el agente toma decisiones aleatorias, pero a medida que recibe retroalimentación en forma de recompensas, como avanzar por la carretera sin salirse de ella o completar la carrera en el menor tiempo posible, ajusta su política de conducción para tomar decisiones más acertadas y optimizar su desempeño. Este proceso de aprendizaje es continuo, permitiendo al coche mejorar su capacidad para manejar diversas condiciones de la pista, combinando la exploración de nuevas tácticas con la explotación de las que ya han demostrado ser eficaces \cite{aws-deep-racer}.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=7cm]{figs/introducción/aws_racer.png}
+\end{center}
+\caption{Modelo \textit{AWS DeepRacer} \cite{aws-deepracer}.}
+\label{aws}
+\end{figure}
 
 Cada uno de estos enfoques de \ac{ML} tiene sus propias fortalezas y limitaciones. Sin embargo, en la mayoría de los sistemas autónomos modernos, se combinan varias técnicas para garantizar que el vehículo pueda adaptarse a una amplia variedad de condiciones de tráfico y entornos. Al integrar estas soluciones, los coches autónomos pueden mejorar continuamente su rendimiento y fiabilidad.
 

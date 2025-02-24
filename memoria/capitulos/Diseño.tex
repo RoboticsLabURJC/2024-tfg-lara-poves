@@ -1,17 +1,11 @@
 \chapter{Diseño e Implementación}
 \label{cap:capitulo4}
 
-El objetivo de este \ac{TFG} es desarrollar un sistema de conducción autónoma capaz de realizar seguimiento de carril, control adaptativo al tráfico y maniobras de adelantamiento completas de manera segura en un entorno simulado y controlado. En este capítulo, se establecen primero los fundamentos de la percepción, definiendo qué elementos del entorno pueden ser detectados y qué información estará disponible para los modelos de control. A continuación, se implementa un sistema de conducción autónoma tradicional basado en el seguimiento de carril mediante un controlador \ac{PID}. Posteriormente, se exploran algunos algoritmos de \ac{DRL}) aplicados a la conducción autónoma, desarrollando y evaluando distintos modelos para la generación de comportamientos inteligentes. Finalmente, se lleva a cabo un análisis comparativo de los diferentes enfoques implementados, destacando sus ventajas e inconvenientes en el contexto de la conducción autónoma en un escenario de carreras.
+El objetivo de este \ac{TFG} es desarrollar un sistema de conducción autónoma capaz de realizar seguimiento de carril, control adaptativo al tráfico y maniobras de adelantamiento completas de manera segura en un entorno simulado. En este capítulo, se establecen primero los fundamentos de la percepción, definiendo qué elementos del entorno pueden ser detectados y qué información estará disponible para los modelos de control. A continuación, se explica el sistema implementado de conducción autónoma tradicional basado en el seguimiento de carril mediante un controlador \ac{PID}. Posteriormente, se exploran algunos algoritmos basados en \ac{DRL}) aplicados a la conducción autónoma, desarrollando y evaluando distintos modelos para la generación de comportamientos inteligentes. Finalmente, se lleva a cabo un análisis comparativo de los diferentes enfoques implementados, destacando sus ventajas e inconvenientes en el contexto de la conducción autónoma en un escenario urbano.
 
 \section{Arquitectura general}
 
-El simulador CARLA nos proporciona un entorno de simulación avanzado que incluye el vehículo a controlar, la generación de tráfico, circuitos de prueba, así como sensores y actuadores simulados.
-
-Entre los sensores disponibles contamos con cámaras y sensores \ac{LiDAR}, los cuales permiten obtener información detallada del entorno. Estos datos son procesados en el bloque de percepción, donde se aplican herramientas avanzadas de detección de carril y segmentación semántica sobre las imágenes capturadas, así como un tratamiento inteligente de los datos provenientes del \ac{LiDAR}. El objetivo de este procesamiento es extraer información relevante y simplificada, que servirá como observaciones para los modelos de conducción autónoma.
-
-Los modelos de conducción autónoma, tanto los tradicionales como los basados en \ac{DRL}, procesan esta información para aprender a tomar decisiones óptimas y robustas en tiempo real. Estas decisiones se aplican directamente a los actuadores del vehículo dentro del simulador CARLA.
-
-El comportamiento resultante de estos procesos, así como las relaciones entre los distintos bloques funcionales del sistema, pueden observarse reflejados en el diagrama de diseño \ref{fig:arch}.
+A continuación, se detalla la arquitectura general del sistema, ilustrada en la Figura \ref{fig:arch}, que consta de tres módulos principales. El vehículo en CARLA incluye los sensores y actuadores que permiten al sistema interactuar con el entorno. Entre los sensores el sistema dispone de cámaras RGB y \ac{LiDAR}, mientras que los actuadores cuentan con acelerador, giro y freno. La información captada por los sensores se transfiere al módulo de percepción para su procesamiento inteligente, cuyo objetivo es extraer información relevante y simplificada, que servirá como observaciones para los modelos de conducción autónoma. Por su parte, la cámara RGB permite la detección del carril y de la calzada, mientras que \ac{LiDAR} posibilita la detección de otros vehículos en la carretera. Finalmente, con este post-procesado el módulo de toma de decisiones es capaz de conseguir diferentes comportamientos autónomos basados en diversos algoritmos. Estas decisiones se aplican directamente en los actuadores del vehículo CARLA.
 
 \begin{figure}[ht]
   \centering
@@ -22,11 +16,17 @@ El comportamiento resultante de estos procesos, así como las relaciones entre l
 
 \section{Percepción visual}
 
-La percepción visual se basa en las imágenes captadas por una cámara RGB, un sensor simulado en CARLA, con una resolución de 512 x 512 píxeles. Esta cámara se coloca con una perspectiva similar a la de un conductor. En esta sección, veremos cómo, a partir de esa información y aplicando diversas herramientas, es posible identificar el carril y segmentar la imagen.
+La percepción visual es esencial para entender el entorno y tomar decisiones informadas en un sistema de conducción autónoma. Una habilidad básica de la que deben disponer este tipo de sistema es de la detección del carril que debe seguir. Para ir aún más allá, también se ha añadido un submodulo capaz de segmentar la calzada, lo que, por ejemplo, permite al sistema comprobar la existencia de otros carriles.
+
+Las imágenes captadas por la cámara RGB del simulador CARLA tiene una resolución de 512 x 512 píxeles con un campo de visión de 90º, obtenido imágenes detallada con una perspectiva amplia. Esta cámara se coloca con una localización similar a la de un conductor. En esta sección, veremos cómo, a partir de esa información y aplicando diversas herramientas, es posible identificar el carril y segmentar la imagen.
 
 \subsection{Detección de carril}
 
-El objetivo es utilizar cada una de las herramientas de detección de carril para identificar los límites derecho e izquierdo del carril. Ademas, se definide una altura máxima para la detección del carril, creando así la forma de un trapecio. Al unir los puntos a la misma altura, podemos obtener el área del carril, su centro de masas y la desviación del coche con respecto al carril, considerando el centro de la imagen como el centro de nuestro vehículo.
+La detección del carril por el que debe circular nuestro vehículo autónomo es crucial para la toma de decisiones eficientes y seguras, garantizando que el vehículo no se desvíe a otros carriles o fuera de los límites de la carretera. Inicialmente, se usó el modelo basado en \ac{DL}, pero puesto que tiene cierta limitaciones imposibles de corregir, finalmente se terminó usando la técnica de \textit{ground truth}.
+
+
+
+
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]

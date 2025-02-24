@@ -269,7 +269,7 @@ En este \ac{TFG}, se utiliza Visual Studio Code como el editor principal para el
 Para la detección de carril, se ha utilizado la herramienta \textit{carla\_lane\_detector}, desarrollada por RoboticsLabURJC. Esta herramienta permite identificar con precisión las líneas que delimitan el carril dentro del simulador CARLA, proporcionando información crucial para el control y la navegación del vehículo autónomo, lo que permite además ajustar su trayectoria en función de la información obtenida. Existen dos técnicas principales para llevar a cabo esta detección: una basada en \ac{DL} y otra en información de CARLA.
 
 \subsection{Detección \ac{DL}}
-\label{sec:gt}
+\label{sec:carril_dl3}
 
 El modelo basado en \ac{DL} ha sido entrenado con imágenes tomadas del simulador CARLA y se ha implementado utilizando la librería PyTorch \footnote{\url{https://pytorch.org/}}. Este modelo de segmentación está diseñado para identificar las líneas del carril en entornos simulados, aprendiendo patrones a partir de un conjunto amplio de datos y generando una máscara que indica la probabilidad de que cada píxel pertenezca a una de las líneas de carril. Sin embargo, este enfoque presenta algunas limitaciones, por ejemplo, si un vehículo está delante y oculta las líneas del carril, el modelo no es capaz de resolver esta situación, lo que podría llevar a una detección del carril imprecisa o incluso nula.
 
