@@ -473,7 +473,7 @@ class CameraRGB(Sensor):
             canvas = self._detect_lane(canvas, self._mask)
     
         if self.init != None and self.update_screen:
-            surface = pygame.surfarray.make_surface(image_data[:, :, :3].swapaxes(0, 1))
+            surface = pygame.surfarray.make_surface(image_data[:, :, :3].swapaxes(0, 1))  
             self.show_surface(surface=surface, pos=self.init, text=self.text)
 
         if self.init_extra != None and self.update_screen:
@@ -486,7 +486,7 @@ class CameraRGB(Sensor):
                 if self._check_area_lane:
                     write_text(text=f"{self._road_percentage:.2f}% road", side=RIGHT, bold=True,
                             img=self._extra_surface, color=(0, 0, 0), size=self.size_text,
-                            point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))            
+                            point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))          
 
             self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)  
 
@@ -626,7 +626,7 @@ class CameraRGB(Sensor):
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int, max_dist:int,
                  front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool=True, time_show:bool=True,
-                 back_zone:bool=False, front_narrow:bool=False):
+                 back_zone:bool=False):
         super().__init__(sensor=sensor)
 
         self._rect = init
@@ -980,7 +980,7 @@ class Vehicle_sensors:
     
     def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25, time_show:bool=True,
                   transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True, 
-                  max_dist:int=10, type_class:int=0, back_zone:int=0, front_narrow:bool=False):
+                  max_dist:int=10, type_class:int=0, back_zone:int=0):
         if self._screen == None:
             init = None
 
@@ -988,7 +988,7 @@ class Vehicle_sensors:
                                   max_dist_laser=max_dist, type_class=type_class)
         lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale,
                       max_dist=max_dist, yaw=transform.rotation.yaw, screen=self._screen, show_stats=show_stats,
-                      time_show=time_show, back_zone=back_zone, front_narrow=front_narrow)
+                      time_show=time_show, back_zone=back_zone)
         
         self.sensors.append(lidar)
         return lidar

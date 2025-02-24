@@ -1179,7 +1179,7 @@ class CarlaOvertaken(CarlaBase):
             print("Warning: change fixed_delta_seconds to 1/5.")
 
         if train:
-            target_vel = 8
+            target_vel = 7
             if not retrain:
                 num_cir = 6
             else:
@@ -1415,10 +1415,12 @@ class CarlaOvertaken(CarlaBase):
             self._laser_points_right_back = self._lidar.get_points_zone(num_points=self._num_points_laser_right, zone=configcarla.RIGHT_BACK)
             self._dist_laser = self._lidar.get_min(zone=configcarla.FRONT)
 
+            num_carriles = 3
+
             if self._retrain:
                 self._per_over = self._overtaken_in_progress
-                if not self._change_lane_left and not self._change_lane_right and self._camera.check_lane_left():
-                    self._overtaken_in_progress = self._dist_laser <= 15
+                if not self._change_lane_left and not self._change_lane_right and num_carriles > 1:#self._camera.check_lane_left():
+                    self._overtaken_in_progress = self._dist_laser <= 17
 
                     if self._overtaken_in_progress != self._per_over:
                         if self._overtaken_in_progress:
@@ -1427,8 +1429,11 @@ class CarlaOvertaken(CarlaBase):
                             print("CORTO ADELANTAMIENTO")
 
                 # If can't' overtake, check if it's too close to the front vehicle
-                if not self._overtaken_in_progress and not self._camera.check_lane_left():
+                if not self._overtaken_in_progress and num_carriles == 1:# not self._camera.check_lane_left():
                     assert np.isnan(self._dist_laser) or self._dist_laser > MIN_DIST_LASER, "Distance exceeded"
+
+                if not self._camera.check_lane_left():
+                    print("not lane", self._camera._road_left)
 
                 # Check if It can return to the right lane
                 if self._overtaken_in_progress and self._change_lane_left and not self._return:
@@ -1538,14 +1543,20 @@ class CarlaOvertaken(CarlaBase):
         return self._get_obs(), reward, terminated, False, self._get_info()
     
     def _calculate_reward(self, error:str):
+
+        def sigmoid(x, a=10, b=0.5):
+            return 1 / (1 + np.exp(-a * (x - b)))
+
         if error == None:
             # Deviation normalization
             if self._overtaken_in_progress and not self._change_lane_left:
                 # Positive deviation
-                r_dev = np.clip(self._dev, 0, MAX_DEV_CHANGE) / MAX_DEV_CHANGE 
+                dev_norm = np.clip(self._dev, 0, MAX_DEV_CHANGE) / MAX_DEV_CHANGE
+                r_dev = sigmoid(dev_norm, a=10, b=0.7)
             elif self._overtaken_in_progress and self._change_lane_left and not self._change_lane_right and self._return:
                 # Negtaive deviation
-                r_dev = -np.clip(self._dev, -MAX_DEV_CHANGE, 0) / MAX_DEV_CHANGE 
+                dev_norm = abs(np.clip(self._dev, -MAX_DEV_CHANGE, 0))
+                r_dev = sigmoid(dev_norm, a=10, b=0.7)
             else:
                 r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
     
@@ -1589,10 +1600,10 @@ class CarlaOvertaken(CarlaBase):
                 w_laser = 0.0
             elif self._overtaken_in_progress and not self._change_lane_left:
                 # Changing to left lane
-                w_dev = 0.65
-                w_throttle = 0.2
+                w_dev = 0.6
+                w_throttle = 0.1
                 w_steer = 0.0
-                w_laser = 0.15
+                w_laser = 0.3
                 print("reward changing left, dev:", self._dev, "reward:", r_dev)
             elif self._overtaken_in_progress and self._change_lane_left and not self._change_lane_right and self._return:
                 # Changing to right lane
