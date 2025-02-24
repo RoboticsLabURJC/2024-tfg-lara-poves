@@ -187,18 +187,18 @@ Stable-Baselines3 \footnote{\url{https://stable-baselines3.readthedocs.io/en/mas
 \begin{code}[h] \begin{lstlisting}[language=Python] 
 from stable_baselines3.common.env_util import make_vec_env, PPO
 
-# Instanciar entorno
-env = make_vec_env(lambda: CarlaBase (), n_envs=1) 
+# Instantiate the environment
+env = make_vec_env(lambda: CarlaBase(), n_envs=1)
 
- # Creacion y configuracion del modelo
+# Create and configure the model
 model = PPO(policy, env, verbose=verbose, tensorboard_log=log_dir, **model_params)
 
-# Entrenamiento
-model.learn(total_timesteps=n_timesteps, log_interval=log_interval, tb_log_name=log_name, progress_bar=True) 
+# Training
+model.learn(total_timesteps=n_timesteps, log_interval=log_interval, tb_log_name=log_name, progress_bar=True)
 
 env.close()
-model.save(model_name) # Salvar modelo
-model = PPO.load(model_file, env=env, **new_model_params) # Cargar modelo
+model.save(model_name)  # Save the model
+model = PPO.load(model_file, env=env, **new_model_params)  # Load the model
 \end{lstlisting}
 \caption[Ejemplo de código con Stable-Baselines3]{Entrenamiento de un modelo \ac{PPO} con la biblioteca Stable-Baselines3.} 
 \label{cod:sb3} \end{code} 
@@ -440,7 +440,7 @@ Además, el servidor está equipado con una \ac{GPU} NVIDIA GeForce RTX 4090 con
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=7cm]{figs/Plataformas_Desarollo/thor.png}
+  \includegraphics[width=9cm]{figs/Plataformas_Desarollo/thor.png}
   \caption{Servidor Thor equipado con una \ac{GPU}.}
   \label{fig:thor_nvidia}
 \end{figure}
