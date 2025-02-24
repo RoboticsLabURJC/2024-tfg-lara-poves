@@ -114,6 +114,7 @@ class CarlaBase(gym.Env, ABC):
         self._seg = seg
         self._target_vel = target_vel
         self._target_vel_org = target_vel
+        self._update_screen = True
 
         if passing:
             assert num_cir <= 1 or num_cir >= 6 or num_cir == 4, "No passing mode available for circuit " + str(num_cir) 
@@ -315,7 +316,7 @@ class CarlaBase(gym.Env, ABC):
         self.ego_vehicle = configcarla.add_one_vehicle(world=self._world, ego_vehicle=True, vehicle_type='vehicle.lincoln.mkz_2020',
                                                        transform=self._loc)
         self._sensors = configcarla.Vehicle_sensors(vehicle=self.ego_vehicle, world=self._world,
-                                                    screen=self._screen)
+                                                    screen=self._screen, update_screen=self._update_screen)
         if self._lane_network:
             transform = carla.Transform(carla.Location(z=1.4, x=1.75))
         else:
@@ -423,7 +424,6 @@ class CarlaBase(gym.Env, ABC):
             for key, sub_space in self._obs_norm.spaces.items():
                 obs[key] = (obs[key] - sub_space.low) / (sub_space.high - sub_space.low)
                 obs[key] = obs[key].astype(np.float64)
-                assert np.all((obs[key] >= 0) & (obs[key] <= 1)), "Fallo en obs"
 
         return obs
     
@@ -558,6 +558,16 @@ class CarlaBase(gym.Env, ABC):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 print("Use Ctrl+C to stop the execution")
+
+            if self._train:
+                if event.type == pygame.KEYDOWN:  
+                    self._update_screen = not self._update_screen 
+                    self._sensors.update_screen = self._update_screen
+
+                    if self._update_screen:
+                        print("Refreshing screen")
+                    else:
+                        print("Stopping screen")
 
     def reset(self, seed=None):
         super().reset(seed=seed)
@@ -1164,13 +1174,16 @@ class CarlaOvertaken(CarlaBase):
                  lane_network:bool=False, target_vel:int=9): # aumentar la velocidad
         self._retrain = retrain
 
-        if fixed_delta_seconds < 1/9:
-            fixed_delta_seconds = 1/9
+        if train and fixed_delta_seconds < 1/5:
+            fixed_delta_seconds = 1/5
+            print("Warning: change fixed_delta_seconds to 1/5.")
 
-        if not retrain:
-            num_cir = 6
-        else:
-            num_cir = 0
+        if train:
+            target_vel = 8
+            if not retrain:
+                num_cir = 6
+            else:
+                num_cir = 0
         config = CIRCUIT_CONFIG.get(num_cir, [])
 
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
@@ -1576,10 +1589,10 @@ class CarlaOvertaken(CarlaBase):
                 w_laser = 0.0
             elif self._overtaken_in_progress and not self._change_lane_left:
                 # Changing to left lane
-                w_dev = 0.6
-                w_throttle = 0.1
+                w_dev = 0.65
+                w_throttle = 0.2
                 w_steer = 0.0
-                w_laser = 0.3
+                w_laser = 0.15
                 print("reward changing left, dev:", self._dev, "reward:", r_dev)
             elif self._overtaken_in_progress and self._change_lane_left and not self._change_lane_right and self._return:
                 # Changing to right lane
@@ -1588,9 +1601,14 @@ class CarlaOvertaken(CarlaBase):
                 w_steer = 0.0
                 w_laser = 0.0
                 print("reward changing right, dev:", self._dev, "reward:", r_dev)
-            else:
-                w_dev = 0.6
+            elif self._throttle < 0.5:
+                w_dev = 0.7
                 w_throttle = 0.2
+                w_steer = 0.1
+                w_laser = 0.0
+            else:
+                w_dev = 0.75
+                w_throttle = 0.05
                 w_steer = 0.2
                 w_laser = 0.0
 

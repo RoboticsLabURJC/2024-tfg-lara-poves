@@ -102,6 +102,7 @@ class Sensor(ABC):
         self.sensor = sensor
         self.sensor.listen(lambda data: self._callback_data(data))
         self.data = None
+        self.update_screen = True
 
     def _callback_data(self, data):
         self.data = data
@@ -471,11 +472,11 @@ class CameraRGB(Sensor):
         if self._lane:
             canvas = self._detect_lane(canvas, self._mask)
     
-        if self.init != None:
+        if self.init != None and self.update_screen:
             surface = pygame.surfarray.make_surface(image_data[:, :, :3].swapaxes(0, 1))
             self.show_surface(surface=surface, pos=self.init, text=self.text)
 
-        if self.init_extra != None:
+        if self.init_extra != None and self.update_screen:
             self._extra_surface = pygame.surfarray.make_surface(canvas[:, :, :3].swapaxes(0, 1))
 
             if self._lane:
@@ -485,8 +486,8 @@ class CameraRGB(Sensor):
                 if self._check_area_lane:
                     write_text(text=f"{self._road_percentage:.2f}% road", side=RIGHT, bold=True,
                             img=self._extra_surface, color=(0, 0, 0), size=self.size_text,
-                            point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))
-                            
+                            point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))            
+
             self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)  
 
     def get_seg_data(self, num_points:int, show=False):
@@ -856,7 +857,7 @@ class Lidar(Sensor):
             [[] for _ in range(NUM_ZONES)] # y_zones
         ]
 
-        if self._rect != None:
+        if self._rect != None and self.update_screen:
             self._sub_screen.blit(self._image, (0, 0))
 
         for x, y, z, i in lidar_data:
@@ -867,7 +868,7 @@ class Lidar(Sensor):
                 meas_zones[X][zone].append(x)
                 meas_zones[Y][zone].append(y)
 
-            if self._rect != None:
+            if self._rect != None and self.update_screen:
                 thickness = self._interpolate_thickness(num=z)
                 color = self._interpolate_color(num=i)
 
@@ -877,7 +878,7 @@ class Lidar(Sensor):
 
         self._update_stats(meas_zones=meas_zones)  
 
-        if self._rect != None:
+        if self._rect != None and self.update_screen:
             self._screen.blit(self._sub_screen, self._rect)
 
     def set_i_threshold(self, i:float):
@@ -921,7 +922,7 @@ class Collision(Sensor):
 
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface=None, 
-                 color_text:tuple[int, int, int]=(0, 0, 0)):
+                 color_text:tuple[int, int, int]=(0, 0, 0), update_screen:bool=True):
         self._vehicle = vehicle
         self._world = world
         self._screen = screen
@@ -931,6 +932,8 @@ class Vehicle_sensors:
         self._time_frame = -1.0
         self._count_frame = 0
         self._write_frame = 0
+        
+        self.update_screen = update_screen
 
     def _put_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform(), type:int=0,
                     max_dist_laser:int=10, type_class:int=0):
@@ -1001,6 +1004,7 @@ class Vehicle_sensors:
         dist_lidar = np.nan
 
         for sensor in self.sensors:
+            sensor.update_screen = self.update_screen
             sensor.process_data()
 
             if type(sensor) == Lidar:
@@ -1129,7 +1133,7 @@ def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:floa
     settings = world.get_settings()
     settings.fixed_delta_seconds = fixed_delta_seconds
     if fixed_delta_seconds > 0.1:
-        settings.max_substep_delta_time = 0.0333
+        settings.max_substep_delta_time = 0.05
         settings.max_substeps = 4
 
     if syn:
