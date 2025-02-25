@@ -8,14 +8,14 @@ En este capítulo se describen en detalle las tecnologías y herramientas emplea
 \subsection{Python}
 \label{sec:python}
 
-Python \footnote{\url{https://www.python.org/}} es un lenguaje de programación de alto nivel \footnote{\url{https://www.tecnologia-informatica.com/lenguaje-de-alto-nivel-que-es-ejemplos/}} interpretado \footnote{\textbf{Lenguaje de programación interpretado}: Lenguaje en el que las implementaciones se ejecutan directamente, sin necesidad de compilar el programa ni generar código máquina del mismo.} que ha ganado gran popularidad en los últimos años gracias a su simplicidad, versatilidad y enfoque multiparadigma \footnote{\textbf{Multiparadigma:} soporta programación orientada a objetos, funcional y procedimental.}. Posee una extensa colección de librerías que facilitan el desarrollo de aplicaciones en áreas muy diversas.
+Python\footnote{\url{https://www.python.org/}} es un lenguaje de programación de alto nivel\footnote{\url{https://www.tecnologia-informatica.com/lenguaje-de-alto-nivel-que-es-ejemplos/}} interpretado\footnote{\textbf{Lenguaje de programación interpretado}: Lenguaje en el que las implementaciones se ejecutan directamente, sin necesidad de compilar el programa ni generar código máquina del mismo.} que ha ganado gran popularidad en los últimos años gracias a su simplicidad, versatilidad y enfoque multiparadigma\footnote{\textbf{Multiparadigma:} soporta programación orientada a objetos, funcional y procedimental.}. Posee una extensa colección de librerías que facilitan el desarrollo de aplicaciones en áreas muy diversas.
 
 En este \ac{TFG}, Python 3 se emplea para el desarrollo completo del código, utilizando diversas bibliotecas tanto para la creación de entornos de entrenamiento y prueba de modelos, como para la implementación de comportamientos basados en \ac{DRL}.
 
 \subsubsection{Pygame}
 \label{sec:pygame}
 
-Pygame \footnote{\url{https://www.pygame.org/docs/}} es una librería de Python ampliamente utilizada para el desarrollo de juegos y aplicaciones multimedia. Proporciona un conjunto de herramientas que permite crear gráficos, visualizar imágenes y gestionar animaciones de manera sencilla y eficiente. Además, Pygame ofrece funcionalidades para la captura y el manejo de eventos de entrada, como las pulsaciones de teclas y los clics del ratón.
+Pygame\footnote{\url{https://www.pygame.org/docs/}} es una librería de Python ampliamente utilizada para el desarrollo de juegos y aplicaciones multimedia. Proporciona un conjunto de herramientas que permite crear gráficos, visualizar imágenes y gestionar animaciones de manera sencilla y eficiente. Además, Pygame ofrece funcionalidades para la captura y el manejo de eventos de entrada, como las pulsaciones de teclas y los clics del ratón.
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -52,7 +52,7 @@ En este caso, se ha utilizado Pygame para desarrollar la interfaz gráfica del p
 \subsubsection{NumPy}
 \label{sec:numpy}
 
-NumPy \footnote{\url{https://numpy.org/}} es una librería de Python que proporciona soporte para matrices y ofrece una extensa colección de funciones matemáticas y operaciones optimizadas para trabajar con estos arreglos. Es ampliamente utilizada por su eficiencia computacional y facilidad de uso. En este proyecto, ha sido muy útil para manejar los \textit{arrays} utilizados para clasificar los puntos del \ac{LiDAR}y las matrices de imágenes y máscaras, permitiéndonos analizar y filtrar estos datos de manera eficiente.
+NumPy\footnote{\url{https://numpy.org/}} es una librería de Python que proporciona soporte para matrices y ofrece una extensa colección de funciones matemáticas y operaciones optimizadas para trabajar con estos arreglos. Es ampliamente utilizada por su eficiencia computacional y facilidad de uso. En este proyecto, ha sido muy útil para manejar los \textit{arrays} utilizados para clasificar los puntos del \ac{LiDAR}y las matrices de imágenes y máscaras, permitiéndonos analizar y filtrar estos datos de manera eficiente.
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -69,7 +69,7 @@ index_sorted = index[np.argsort(index[:, 0])] # Sorted by y
 \subsubsection{Matplotlib}
 \label{sec:plot}
 
-La librería Matplotlib \footnote{\url{https://matplotlib.org/}} es una herramienta muy popular en Python para crear gráficos y otras visualizaciones. Permite generar todo tipo de diagramas, como líneas, barras o histogramas. Es comúnmente utilizada gracias a su flexibilidad para personalizar los gráficos y su integración con otras librerías como NumPy y Pandas \footnote{\url{https://pandas.pydata.org/}}, librería de Python para la manipulación y análisis de datos. Además, ofrece la posibilidad de exportar los gráficos en diversos formatos. En este \ac{TFG}, se ha utilizado principalmente para la visualización de los datos recopilados durante la inferencia y a lo largo de los entrenamientos.
+La librería Matplotlib\footnote{\url{https://matplotlib.org/}} es una herramienta muy popular en Python para crear gráficos y otras visualizaciones. Permite generar todo tipo de diagramas, como líneas, barras o histogramas. Es comúnmente utilizada gracias a su flexibilidad para personalizar los gráficos y su integración con otras librerías como NumPy y Pandas\footnote{\url{https://pandas.pydata.org/}}, librería de Python para la manipulación y análisis de datos. Además, ofrece la posibilidad de exportar los gráficos en diversos formatos. En este \ac{TFG}, se ha utilizado principalmente para la visualización de los datos recopilados durante la inferencia y a lo largo de los entrenamientos.
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -110,7 +110,7 @@ plt.title(title)
 \subsubsection{Gymnasium}
 \label{sec:gymnasium}
 
-Gymnasium \footnote{\url{https://pypi.org/project/gymnasium/}} es una biblioteca de Python desarrollada por OpenAI \footnote{\url{https://openai.com//}}, que proporciona herramientas para crear una amplia variedad de entornos, diseñados específicamente para aplicar y probar algoritmos de aprendizaje por refuerzo.
+Gymnasium\footnote{\url{https://pypi.org/project/gymnasium/}} es una biblioteca de Python desarrollada por OpenAI\footnote{\url{https://openai.com//}}, que proporciona herramientas para crear una amplia variedad de entornos, diseñados específicamente para aplicar y probar algoritmos de aprendizaje por refuerzo.
 
 En nuestro proyecto de conducción autónoma, hemos utilizado la biblioteca Gymnasium, combinada con el simulador CARLA, para crear los entornos de entrenamiento y prueba de nuestros modelos. Para ello, es necesario definir una clase personalizada que herede de la clase base \textit{Env} proporcionada por Gymnasium. En esta clase, configuramos las variables necesarias, como el espacio de observaciones, e implementamos los métodos fundamentales para el entrenamiento, \textit{step}, \textit{reset} y \textit{close}. En la fragmento de código \ref{cod:gym}, se muestra un ejemplo básico de implementación en Python.
 
@@ -173,17 +173,33 @@ self.observation_space = spaces.Dict(
 \label{cod:gymobs}
 \end{code}
 
-\subsubsection{Stable Baselines 3}
+\subsubsection{Stable-Baselines3}
 \label{sec:stable_baselines3}
 
-Stable-Baselines3 \footnote{\url{https://stable-baselines3.readthedocs.io/en/master/}} es una librería de Python que proporciona implementaciones estables y fáciles de usar de algoritmos de aprendizaje por refuerzo basadas PyTorch \footnote{\url{https://pytorch.org/}} como \textit{backend}. Además, incluye compatibilidad con TensorBoard \footnote{\url{https://www.tensorflow.org/tensorboard?hl=es-419}}, lo que permite visualizar métricas del entrenamiento en tiempo real y analizar el rendimiento de los modelos. Stable-Baselines3 ofrece tres tipos de políticas que permiten adaptar el modelo a diferentes tipos de datos:
+Stable-Baselines3\footnote{\url{https://stable-baselines3.readthedocs.io/en/master/}} es una librería de Python que proporciona implementaciones estables y fáciles de usar de algoritmos de aprendizaje por refuerzo basadas PyTorch\footnote{\url{https://pytorch.org/}} como \textit{backend}. Además, incluye compatibilidad con TensorBoard\footnote{\url{https://www.tensorflow.org/tensorboard?hl=es-419}}, lo que permite visualizar métricas del entrenamiento en tiempo real y analizar el rendimiento de los modelos. 
+
+De esta librería, utilizaremos algunos algoritmos basados en \ac{DRL} es un enfoque en el que los agentes de aprendizaje por refuerzo utilizan redes neuronales para tomar decisiones. Esta combinación les permite adaptarse mejor a entornos complejos donde las reglas no son evidentes ni fácilmente definibles, como es el caso de la conducción autónoma. Dentro de los algoritmos de \ac{DRL}, existen dos tipos claramente diferenciados:
+
+\begin{itemize}
+\item \textit{On-policy:} Son aquellos que actualizan el modelo solo con datos de la política actual, una vez que la política cambia, los datos anteriores se vuelven inservibles y se descartan.
+\item \textit{Off-policy:} Son aquellos que pueden usar cualquier dato recolectado durante el entrenamiento, independientemente de la política con la que hayan sido obtenidos.
+\end{itemize}
+
+En concreto, en este \ac{TFG} utilizaremos los algoritmos de \ac{DQN} y \ac{PPO}. \ac{DQN} es un algoritmo de \ac{DRL} que soportar un espacio de estados complejo y continuo, pero el espacio de acciones es discreto. Las acciones en un espacio discreto son predefinidas y limitadas, es decir, no existe una continuidad entre ellas, sino que están representadas por un número finito de opciones que el agente puede elegir en cada estado.
+
+\ac{DQN} es un algoritmo \textit{off-policy} ya que incluye una \textit{replay memory}. Esta técnica consiste en crear una memoria de reproducción de experiencias que almacena las k experiencias más recientes que un agente ha recopilado, ya que son las más relevantes, para así poder reutilizarlas. Si la memoria está llena, se descarta la experiencia más antigua para dar espacio a la más reciente. En cada paso de entrenamiento, se muestrea uno o más lotes de datos de forma aleatoria de la memoria para actualizar los parámetros de la red. El tamaño de la memoria debe ser lo suficientemente grande como para contener experiencias de diferentes episodios y políticas, lo que ayuda estabilizar y mejorar el entrenamiento. Al actualizar en cada paso del entrenamiento la red neuronal, la minimización del error entre las predicciones de la red y los valores reales se vuelve complicada. Para abordar este problema, se introduce una nueva red neural, \textit{target network}, diseñada para aportar estabilidad al proceso de entrenamiento. La nueva red es una réplica de la red principal, \textit{policy network}, pero en lugar de actualizarla en cada paso, la igualamos a la red original cada cierto número de pasos, manteniendo un objetivo de entrenamiento constante \cite{drl}.
+
+El algoritmo \textit{Actor-Critic} es un tipo de algortimo en el que cada agente consta de dos elementos que aprenden de manera conjunta, cada uno con su propia red neuronal: \textit{actor}, encargado de aprender la política óptima, y \textit{critic}, responsable de aprender la función de valor y proporcionar una señal de refuerzo a la política. El algoritmo \ac{A2C} se forma a partir de la unión del actor y el critic y es una algoritmo \textit{on-policy}. \ac{PPO} es un algoritmo \textit{on-policy} que puede considerarse como una extensión de \ac{A2C}, cuyo objetivo principal es evitar el deterioro del rendimiento. En los algoritmos basados en políticas, ajustar la tasa de aprendizaje puede ser una labor complicada. Un valor pequeño puede llevar a entrenamientos prolongados sin alcanzar la solución óptima, mientras que uno grande puede causar un colapso en el rendimiento. Con el objetivo de resolver esto, \ac{PPO} introduce un objetivo sustituto que asegura una mejora monótona del rendimiento, evitando cambios drásticos y arriesgados en la política que puedan afectar negativamente al despeño. Para lograrlo, \ac{PPO} mide cuánto ha cambiado la política después de cada actualización, garantizando que esta diferencia sea no negativa en cada iteración, asegurando así una mejora continua en el rendimiento. Además, que impide que esta razón crezca o disminuya demasiado dentro de un umbral controlado por un hiperparámetro (\textit{clip\_range}) \cite{drl}. 
+
+Dependiendo del escenario, puede ser necesario utilizar diferentes estructuras de datos para proporcionar las observaciones al modelo. Stable-Baselines3 ofrece tres tipos de políticas que permiten adaptar el modelo a distintas formas de entrega de los datos:
 
 \begin{itemize} 
-\item \textit{MlpPolicy:} Diseñada para trabajar con estados en forma de vectores, como en el entorno \textit{CartPole} \footnote{\url{https://gymnasium.farama.org/environments/classic_control/cart_pole/}}, el cual consiste un carro que sostiene un poste, cuyo objetivo es mantener el poste dentro de un cierto ángulo tanto tiempo como sea posible, moviéndose hacia la izquierda o hacia la derecha. 
+\item \textit{MlpPolicy:} Diseñada para trabajar con estados en forma de vectores, como en el entorno \textit{CartPole}\footnote{\url{https://gymnasium.farama.org/environments/classic_control/cart_pole/}}, el cual consiste un carro que sostiene un poste, cuyo objetivo es mantener el poste dentro de un cierto ángulo tanto tiempo como sea posible, moviéndose hacia la izquierda o hacia la derecha. 
 \item \textit{CnnPolicy:} Diseñada para procesar estados representados como imágenes, siendo ideal para aplicaciones como videojuegos.
 \item \textit{MultiInputPolicy:} Permite manejar observaciones más complejas organizadas en diccionarios, adecuadas para datos combinados. 
-\end{itemize} 
+\end{itemize}
 
+Para entrenar un modelo basado en un algoritmo de \ac{DRL} implementado en la librería Stable-Baselines3, debemos seguir los siguientes pasos: instanciar el entorno deseado, crear y configurar el modelo de aprendizaje, entrenarlo, cerrar el entorno y, por último, guardar el modelo.
 \begin{code}[h] \begin{lstlisting}[language=Python] 
 from stable_baselines3.common.env_util import make_vec_env, PPO
 
@@ -233,7 +249,7 @@ tensorboard --logdir=$DIR
 \subsection{Anaconda}
 \label{sec:conda}
 
-Anaconda \footnote{\url{https://www.anaconda.com/}} es una plataforma de distribución de software que facilita la gestión de entornos y librerías para el desarrollo de aplicaciones en Python. Permite crear entornos aislados con versiones específicas de Python y otras dependencias, lo que ayuda a evitar conflictos entre proyectos y a garantizar que las aplicaciones se ejecuten con las versiones requeridas de las bibliotecas. En este \ac{TFG}, se crea un entorno Anaconda que nos permita utilizar la versión 3.10 de Python, ya que es la que necesitaremos para utilizar EfficientVit.
+Anaconda\footnote{\url{https://www.anaconda.com/}} es una plataforma de distribución de software que facilita la gestión de entornos y librerías para el desarrollo de aplicaciones en Python. Permite crear entornos aislados con versiones específicas de Python y otras dependencias, lo que ayuda a evitar conflictos entre proyectos y a garantizar que las aplicaciones se ejecuten con las versiones requeridas de las bibliotecas. En este \ac{TFG}, se crea un entorno Anaconda que nos permita utilizar la versión 3.10 de Python, ya que es la que necesitaremos para utilizar EfficientVit.
 
 \begin{code}[h]
 \begin{lstlisting}[language=bash]
@@ -249,7 +265,7 @@ conda activate tfg
 \subsection{Visual Studio Code}
 \label{sec:vs_code}
 
-Visual Studio Code \footnote{\url{https://code.visualstudio.com/}} es un editor de código gratuito y compatible con varias plataformas, diseñado para crear, modificar y depurar código en varios lenguajes de programación. Este software también incluye herramientas adicionales como extensiones que optimizan la escritura en diferentes lenguajes, autocompletado de código y terminales integrados para hacer más eficiente la ejecución y depuración.
+Visual Studio Code\footnote{\url{https://code.visualstudio.com/}} es un editor de código gratuito y compatible con varias plataformas, diseñado para crear, modificar y depurar código en varios lenguajes de programación. Este software también incluye herramientas adicionales como extensiones que optimizan la escritura en diferentes lenguajes, autocompletado de código y terminales integrados para hacer más eficiente la ejecución y depuración.
 
 \begin{figure}[ht]
   \begin{center}
@@ -261,7 +277,7 @@ Visual Studio Code \footnote{\url{https://code.visualstudio.com/}} es un editor 
 
 \newpage
 
-En este \ac{TFG}, se utiliza Visual Studio Code como el editor principal para el desarrollo de todo el código, aprovechando sus extensiones para Python y YAML \footnote{\url{https https://www.ibm.com/es-es/topics/yaml}}, lo cual optimizó la productividad y facilitó la escritura del código.
+En este \ac{TFG}, se utiliza Visual Studio Code como el editor principal para el desarrollo de todo el código, aprovechando sus extensiones para Python y YAML\footnote{\url{https https://www.ibm.com/es-es/topics/yaml}}, lo cual optimizó la productividad y facilitó la escritura del código.
 
 \section{Herramientas para la detección de carril}
 \label{sec:herramientas_carril}
@@ -271,11 +287,11 @@ Para la detección de carril, se ha utilizado la herramienta \textit{carla\_lane
 \subsection{Detección \ac{DL}}
 \label{sec:carril_dl3}
 
-El modelo basado en \ac{DL} ha sido entrenado con imágenes tomadas del simulador CARLA y se ha implementado utilizando la librería PyTorch \footnote{\url{https://pytorch.org/}}. Este modelo de segmentación está diseñado para identificar las líneas del carril en entornos simulados, aprendiendo patrones a partir de un conjunto amplio de datos y generando una máscara que indica la probabilidad de que cada píxel pertenezca a una de las líneas de carril. Sin embargo, este enfoque presenta algunas limitaciones, por ejemplo, si un vehículo está delante y oculta las líneas del carril, el modelo no es capaz de resolver esta situación, lo que podría llevar a una detección del carril imprecisa o incluso nula.
+El modelo basado en \ac{DL} ha sido entrenado con imágenes tomadas del simulador CARLA y se ha implementado utilizando la librería PyTorch. Este modelo de segmentación está diseñado para identificar las líneas del carril en entornos simulados, aprendiendo patrones a partir de un conjunto amplio de datos y generando una máscara que indica la probabilidad de que cada píxel pertenezca a una de las líneas de carril. Sin embargo, este enfoque presenta algunas limitaciones, por ejemplo, si un vehículo está delante y oculta las líneas del carril, el modelo no es capaz de resolver esta situación, lo que podría llevar a una detección del carril imprecisa o incluso nula.
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=6cm]{figs/Plataformas_Desarollo/carla_lane_dl.png}
+    \includegraphics[width=13cm]{figs/Plataformas_Desarollo/carla_lane_dl.png}
   \end{center}
   \caption{Detección de carril basada en \ac{DL}.}
   \label{dl_lane}
@@ -297,11 +313,11 @@ Por otro lado, la detección de carril basada en \textit{ground truth} aprovecha
 \section{EfficientVit}
 \label{sec:ef}
 
-EfficientViT es un innovador módulo dentro de la familia de \textit{Vision Transformers} \footnote{\url{https://arxiv.org/pdf/1706.03762}}, utilizado con éxito en tareas como segmentación semántica, superresolución de imágenes y modelos de segmentación generalizados. Su principal ventaja es la significativa reducción de latencias sin perder rendimiento, haciendo posible su uso en aplicaciones de tiempo real. A diferencia de los modelos tradicionales que dependen de mecanismos de atención computacionalmente costosos o convoluciones de gran tamaño, EfficientViT emplea una atención lineal multiescala \footnote{\textbf{Multiescala:} enfoque que procesa información en distintos niveles de detalle simultáneamente para mejorar la eficiencia y precisión} ligera \cite{efficientvit}.
+EfficientViT es un innovador módulo dentro de la familia de \textit{Vision Transformers}\footnote{\url{https://arxiv.org/pdf/1706.03762}}, utilizado con éxito en tareas como segmentación semántica, superresolución de imágenes y modelos de segmentación generalizados. Su principal ventaja es la significativa reducción de latencias sin perder rendimiento, haciendo posible su uso en aplicaciones de tiempo real. A diferencia de los modelos tradicionales que dependen de mecanismos de atención computacionalmente costosos o convoluciones de gran tamaño, EfficientViT emplea una atención lineal multiescala\footnote{\textbf{Multiescala:} enfoque que procesa información en distintos niveles de detalle simultáneamente para mejorar la eficiencia y precisión} ligera \cite{efficientvit}.
 
 La segmentación es el proceso de dividir una imagen en regiones significativas para identificar objetos y se divide en dos tipos principales: segmentación semántica y segmentación de instancias. En la segmentación semántica, se asigna una clase a cada píxel de la imagen, pero no se distingue entre diferentes instancias de una misma clase. En cambio, la segmentación de instancias, no solo clasifica los píxeles en categorías, sino que también identifica y distingue las instancias individuales de un objeto. Por ejemplo, en una imagen con varios vehículos, la segmentación de instancias, además de clasificar los píxeles como vehículos, es capaz de diferenciar entre cada vehículo de forma individual.
 
-En este \ac{TFG}, se utiliza el modelo EfficientViT Segmentation \footnote{\url{ https://github.com/mit-han-lab/efficientvit/blob/master/applications/efficientvit_seg}} para detectar la calzada. Este modelo ha sido entrenado con \textit{Cityscapes Dataset} \footnote{\url{https://www.cityscapes-dataset.com/}}, diseñado para la comprensión semántica de escenas urbanas, centrándose en la segmentación de calles y objetos en entornos urbanos. Este \textit{dataset} incluye anotaciones poligonales, que marcan con precisión los objetos en las imágenes realizando una segmentación semántica densa, asignando una etiqueta a cada píxel de la imagen. Además, para objetos como vehículos y personas, se emplea segmentación de instancias.
+En este \ac{TFG}, se utiliza el modelo EfficientViT Segmentation\footnote{\url{https://github.com/mit-han-lab/efficientvit/blob/master/applications/efficientvit_seg}} para detectar la calzada. Este modelo ha sido entrenado con \textit{Cityscapes Dataset}\footnote{\url{https://www.cityscapes-dataset.com/}}, diseñado para la comprensión semántica de escenas urbanas, centrándose en la segmentación de calles y objetos en entornos urbanos. Este \textit{dataset} incluye anotaciones poligonales, que marcan con precisión los objetos en las imágenes realizando una segmentación semántica densa, asignando una etiqueta a cada píxel de la imagen. Además, para objetos como vehículos y personas, se emplea segmentación de instancias.
 
 \begin{figure}[ht]
 \begin{center}
@@ -331,7 +347,7 @@ Este conjunto de datos contiene imágenes reales tomadas en 50 ciudades durente 
 \subsection{CARLA}
 \label{sec:carla}
 
-CARLA \footnote{\url{https://github.com/carla-simulator/carla}} es un entorno de simulación de código abierto que se emplea en aplicaciones de conducción autónoma. CARLA se basa en \textit{Unreal Engine de Epic Games} \footnote{\url{https://www.unrealengine.com/en-US}}, lo que le permite generar entornos urbanos y rurales altamente detallados y realistas. Estos entornos son ideales para simular la interacción de los vehículos autónomos con el entorno, probando su capacidad de navegación, toma de decisiones y respuesta ante situaciones imprevistas.
+CARLA\footnote{\url{https://github.com/carla-simulator/carla}} es un entorno de simulación de código abierto que se emplea en aplicaciones de conducción autónoma. CARLA se basa en \textit{Unreal Engine de Epic Games}\footnote{\url{https://www.unrealengine.com/en-US}}, lo que le permite generar entornos urbanos y rurales altamente detallados y realistas. Estos entornos son ideales para simular la interacción de los vehículos autónomos con el entorno, probando su capacidad de navegación, toma de decisiones y respuesta ante situaciones imprevistas.
 
 \begin{code}[h]
 \begin{lstlisting}[language=bash]
@@ -353,6 +369,8 @@ Este simulador destaca por su capacidad de recrear escenarios dinámicos con una
 \label{carla}
 \end{figure}
 
+\newpage 
+
 En CARLA, los mapas son modelos tridimensionales detallados de ciudades y sus infraestructuras viales, que no solo incluyen la geometría de las carreteras y edificios, sino también objetos interactivos como semáforos, señales de tráfico y otros elementos estáticos, los cuales pueden activarse o desactivarse según las necesidades del usuario. CARLA ofrece una amplia selección de mapas predefinidos que se pueden cargar directamente. Por otro lado, el mundo en CARLA se refiere al entorno completo de la simulación, que incluye el mapa, el clima, el tiempo, los vehículos, los peatones y otros elementos dinámicos, permitiendo crear una simulación realista y modificable en tiempo real para ajustar factores como la hora del día, las condiciones climáticas o el tráfico.
 
 \subsubsection{Actores}
@@ -360,7 +378,7 @@ En CARLA, los mapas son modelos tridimensionales detallados de ciudades y sus in
 Los actores en CARLA son los elementos que realizan acciones dentro de la simulación y pueden interactuar con otros actores. Existen varios tipos de actores, cada uno con funcionalidades específicas:
 
 \begin{itemize}
-\item \textit{Sensores.} Los sensores \footnote{\url{https://carla.readthedocs.io/en/latest/core_sensors/}} son actores capaces de producir un flujo de datos y existen diversos tipos disponible. La mayoría de los sensores se anexan a un vehículo para recopilar información sobre su entorno, indicando la localización y rotación respecto al mismo. Los sensores escuchan datos y, cuando reciben información, llaman a una función descrita mediante una expresión \textit{Lambda} \footnote{\url{https://docs.python.org/3/reference/expressions.html}}. 
+\item \textit{Sensores.} Los sensores\footnote{\url{https://carla.readthedocs.io/en/latest/core_sensors/}} son actores capaces de producir un flujo de datos y existen diversos tipos disponible. La mayoría de los sensores se anexan a un vehículo para recopilar información sobre su entorno, indicando la localización y rotación respecto al mismo. Los sensores escuchan datos y, cuando reciben información, llaman a una función descrita mediante una expresión \textit{Lambda}\footnote{\url{https://docs.python.org/3/reference/expressions.html}}. 
 
 	\begin{code}[h]
 	\begin{lstlisting}[language=python]
@@ -378,7 +396,7 @@ Los actores en CARLA son los elementos que realizan acciones dentro de la simula
 \item \textit{Espectador.} El espectador proporciona un punto de vista dentro de la simulación. Puede utilizarse para mover la vista en la ventana del simulador.
 \item \textit{Señales de tráfico y semáforos.} En CARLA, solo las señales de \textit{stop}, ceda el paso y los semáforos son considerados actores.
 
-\item \textit{Vehículos.} Los vehículos en CARLA son un tipo especial de actor que simula la física de los vehículos de ruedas real. Utilizan un controlador que define los atributos físicos del vehículo y otro que gestiona los comandos de conducción: aceleración, dirección y freno. CARLA ofrece varios tipos de vehículos (coches, motocicletas y camiones... \footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/}}), además de una gran variedad de modelos. El vehículo que se desea controlar, al que se le añaden los sensores, conocido como \textit{Ego Vehicle}, será el agente en el proceso de aprendizaje. Si indicamos esta condición al simulador, este renderiza solo la zona cercana a este vehículo para optimizar recursos.
+\item \textit{Vehículos.} Los vehículos en CARLA son un tipo especial de actor que simula la física de los vehículos de ruedas real. Utilizan un controlador que define los atributos físicos del vehículo y otro que gestiona los comandos de conducción: aceleración, dirección y freno. CARLA ofrece varios tipos de vehículos (coches, motocicletas y camiones...\footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/}}), además de una gran variedad de modelos. El vehículo que se desea controlar, al que se le añaden los sensores, conocido como \textit{Ego Vehicle}, será el agente en el proceso de aprendizaje. Si indicamos esta condición al simulador, este renderiza solo la zona cercana a este vehículo para optimizar recursos.
 
 	\begin{code}[h]
 	\begin{lstlisting}[language=python]
@@ -395,16 +413,16 @@ Los actores en CARLA son los elementos que realizan acciones dentro de la simula
     \item \textit{Peatones.} Los peatones funcionan de manera similar a los vehículos. El control sobre ellos se proporciona mediante controladores.
 \end{itemize}
 
-En este \ac{TFG} se utiliza como \textit{Ego Vehicle} el modelo \textit{Lincoln MKZ 2020} \footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/\#lincoln-mkz-2020}}, sobre el cual solo se controlarán los actuadores de giro y aceleración. El acelerador (\textit{throttle}) tiene un rango de 0 a 1, mientras que el giro (\textit{steer}) varía entre -1 y 1, donde -1 es giro a la izquierda y 1 a la derecha. Para simular el tráfico, se emplea un camión \footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/\#carla-motors-carlacola}} controlado por el autopiloto de CARLA, ya que, al no contar con cristales en la parte trasera, facilita la detección mediante el \ac{LiDAR}.
+En este \ac{TFG} se utiliza como \textit{Ego Vehicle} el modelo \textit{Lincoln MKZ 2020}\footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/\#lincoln-mkz-2020}}, sobre el cual solo se controlarán los actuadores de giro y aceleración. El acelerador (\textit{throttle}) tiene un rango de 0 a 1, mientras que el giro (\textit{steer}) varía entre -1 y 1, donde -1 es giro a la izquierda y 1 a la derecha. Para simular el tráfico, se emplea un camión\footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/\#carla-motors-carlacola}} controlado por el autopiloto de CARLA, ya que, al no contar con cristales en la parte trasera, facilita la detección mediante el \ac{LiDAR}.
 
 Al vehículo principal se le añaden tres tipos de sensores:
 
 \begin{itemize}
-\item \textit{Detector de colisión} \footnote{\url{https://carla.readthedocs.io/en/latest/ref_sensors/\#collision-detector}}. Este sensor registra un evento cada vez que el vehículo colisiona con un objeto en el entorno. Para identificar contra qué vehículo se ha chocado, se debe consultar el atributo \textit{other\_actor} en los datos del sensor.
+\item \textit{Detector de colisión}\footnote{\url{https://carla.readthedocs.io/en/latest/ref_sensors/\#collision-detector}}. Este sensor registra un evento cada vez que el vehículo colisiona con un objeto en el entorno. Para identificar contra qué vehículo se ha chocado, se debe consultar el atributo \textit{other\_actor} en los datos del sensor.
 
-\item \textit{Cámara RGB} \footnote{\url{https://carla.readthedocs.io/en/latest/ref_sensors/\#rgb-camera}}. La cámara RGB actúa como una cámara convencional, capturando imágenes de la escena. Se pueden configurar distintos parámetros, como las dimensiones de la imagen y el campo de visión. En este caso, se establecen dimensiones de 512 × 512 píxeles para garantizar compatibilidad con EfficientVit. Para consultar la matriz que define la imagen, debemos mirar en los datos de salida el atributo \textit{raw\_data}.
+\item \textit{Cámara RGB}\footnote{\url{https://carla.readthedocs.io/en/latest/ref_sensors/\#rgb-camera}}. La cámara RGB actúa como una cámara convencional, capturando imágenes de la escena. Se pueden configurar distintos parámetros, como las dimensiones de la imagen y el campo de visión. En este caso, se establecen dimensiones de 512 × 512 píxeles para garantizar compatibilidad con EfficientVit. Para consultar la matriz que define la imagen, debemos mirar en los datos de salida el atributo \textit{raw\_data}.
 
-\item \textit{Sensor \ac{LiDAR}} \footnote{\url{https://carla.readthedocs.io/en/latest/ref_sensors/\#lidar}}. Este sensor simula un \ac{LiDAR} rotativo mediante \textit{ray-casting}, generando puntos al agregar un \ac{LiDAR} por cada canal distribuido en el campo visual vertical. Los datos se codifican en cuatro dimensiones: las primeras tres corresponden a la posición en \textit{x, y, z}, y la cuarta representa la intensidad de la señal reflejada. Se pueden configurar parámetros como los ángulos del campo de visión superior, inferior y horizontal, siendo en nuestro caso un láser de 360º, mientras que el resto de los atributos se mantienen con los valores por defecto. Además, es posible ajustar la frecuencia de rotación y la cantidad de puntos por segundo, lo cual adaptaremos dependiendo de los \ac{FPS} alcanzados. Al igual que en la cámara, los datos de salida incluyen la nube de puntos completa en el atributo \textit{raw\_data}.
+\item \textit{Sensor \ac{LiDAR}}\footnote{\url{https://carla.readthedocs.io/en/latest/ref_sensors/\#lidar}}. Este sensor simula un \ac{LiDAR} rotativo mediante \textit{ray-casting}, generando puntos al agregar un \ac{LiDAR} por cada canal distribuido en el campo visual vertical. Los datos se codifican en cuatro dimensiones: las primeras tres corresponden a la posición en \textit{x, y, z}, y la cuarta representa la intensidad de la señal reflejada. Se pueden configurar parámetros como los ángulos del campo de visión superior, inferior y horizontal, siendo en nuestro caso un láser de 360º, mientras que el resto de los atributos se mantienen con los valores por defecto. Además, es posible ajustar la frecuencia de rotación y la cantidad de puntos por segundo, lo cual adaptaremos dependiendo de los \ac{FPS} alcanzados. Al igual que en la cámara, los datos de salida incluyen la nube de puntos completa en el atributo \textit{raw\_data}.
 \end{itemize}
 
 \subsubsection{Traffic Manager}
