@@ -26,7 +26,7 @@ La detección del carril por el que debe circular nuestro vehículo autónomo es
 
 \subsubsection{Modelo basado en \ac{DL}}
 
-El modelo de \ac{DL} para la detección de carril expuesto es la sección \ref{sec:carril_dl3} procesa imágenes de 512 x 1024 píxeles, mientras que las nuestra son de 512 x 512 píxeles. Por ello, primero creamos una imagen vacía y colocamos la imagen capturada por la cámara RGB en el centro. Esta imagen se pasa como entrada al modelo, el cual devuelve dos máscaras que definen las líneas del carril. Para mejorar la detección, especialmente en situaciones donde las líneas están discontinuas o cuando la red neuronal devuelve líneas fragmentadas o incompletas, aplicamos regresión lineal a los puntos obtenidos para cada línea. Este procedimiento nos permite calcular los coeficientes de las rectas que mejor se ajustan a esos puntos, y con ello, conocer sus límites de forma continua. Además, antes de aplicar la regresión lineal, se han aplicado técnicas de eliminación \textit{outliers} basadas en las medidas anteriores para lograr una detección aún más precisa del carril.
+El modelo de \ac{DL} para la detección de carril expuesto es la sección \ref{sec:carril_dl3} procesa imágenes de 512 x 1024 píxeles, mientras que las nuestra son de 512 x 512 píxeles. Por ello, primero creamos una imagen vacía y colocamos la imagen capturada por la cámara RGB en el centro. Esta imagen se pasa como entrada al modelo, el cual devuelve dos máscaras que definen las líneas del carril. En algunas situaciones, las líneas del carril pueden ser discontinuas o la red neuronal puede devolver líneas fragmentadas o incompletas. Dado que reentrenar la red no es una opción viable, aplicamos un proceso de post-procesado para mejorar la detección y obtener una línea continua y completa en toda la imagen, sin importar las condiciones. Para lograrlo, utilizamos regresión lineal sobre los puntos detectados de cada línea del carril. Este procedimiento nos permite calcular los coeficientes de las rectas que mejor se ajustan a esos puntos, y con ello, conocer sus límites de forma continua. Además, antes de aplicar la regresión lineal, se han aplicado técnicas de eliminación \textit{outliers} basadas en las medidas anteriores para lograr una detección aún más precisa del carril.
 
 Una vez tenemos los coeficientes de las rectas que definen cada línea del carril, es muy sencillo calcular la coordenada \textit{x} de cada punto de la línea del carril dada la altura. Se ha definido una altura máxima para la detección del carril, creando así la forma de un trapecio como se puede observar en la Figura \ref{fig:dl_final_carril}. Al unir los puntos a la misma altura, podemos obtener el área del carril, su centro de masas y la desviación del coche con respecto al carril, considerando el centro de la imagen como el centro de nuestro vehículo. Además, podemos calcular \textit{n} puntos de cada línea del carril igualmente espaciados en el eje \textit{y} para terminar de conformar una representación simplificada de carril que, posteriormente, podrán recibir los modelos para la toma de decisiones.
 
@@ -151,48 +151,64 @@ Se ha implementado una función que extrae un número determinado de puntos de c
 \label{fig:laser_front}
 \end{figure}
 
-Se llevó a cabo un \textit{profiling} para evaluar las latencias y determinar dónde estamos consumiendo más tiempo en nuestrocódigo, con el objetivo de mejorar su eficiencia. Como se puede observar en la Figura \ref{fig:profiling}, la mayor parte del tiempo se destina a realizar la predicción con EfficientVit. El resto de secciones presentan latencias acordes a su carga computacional, sin presenta una desventaja significativa en proceso de entrenamiento e inferencia.
+Se realizó un \textit{profiling} para evaluar las latencias y detectar los procesos con mayor consumo de tiempo en el código, con el objetivo de optimizar su eficiencia. Como se observa en la Figura \ref{fig:profiling}, la mayor parte del tiempo de cómputo se destina a la predicción con EfficientVit, mientras que el resto de los procesos presentan latencias acordes a su carga computacional y no suponen un inconveniente significativo. Tras analizar los resultados desde un enfoque tanto computacional como de desempeño, se ha concluido que la combinación de EfficientVit para la segmentación de la calzada, \textit{ground truth} para detección del carril y el \ac{LiDAR} como fuente adicional de datos para detectar obstáculos en la carretera, permite un equilibrio entre precisión y eficiencia de procesamiento. La latencia total de esta unión es de aproximadamente 93 ms, lo que en el simulador CARLA nos permite iterar a unos 10 \ac{FPS}. Este rendimiento es adecuado para aplicaciones en tiempo real, permitiendo así lograr comportamientos reactivos y robustos en dinámicos.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=16cm]{figs/Diseño/profiling.png}
-  \caption{\textit{Profiling} del proceso percepción.}
+  \includegraphics[width=7cm]{figs/Diseño/profiling.png}
+  \caption{\textit{Profiling} del proceso de percepción.}
   \label{fig:profiling}
 \end{figure}
 
 \section{Toma de decisiones}
+
+El módulo de toma de decisiones permite a nuestro sistema interpretar el entorno de manera eficiente según los datos procedentes de percepción. Un sistema de conducción autónoma debe ser capaz de adaptarse a escenarios complejos y cambiantes, con variaciones en la dirección del carril, el número de carriles o el comportamiento de los demás vehículos en la carretera. Debe ser capaz de tomar decisiones informadas, seguras y óptimas, asegurando comportamientos realistas, evitando accidentes y respetando las normativas de tráfico en todo momento.
+
+La información procesada por los sensores puede interpretarse de diversas formas para la toma decisiones informadas. Existen métodos más tradicionales basados en reglas predefinidas y sistemas matemáticos, así como enfoques más avanzados basados en \ac{ML}. Sin embargo, una toma de decisiones rígida, basada en reglas fijas y algoritmos deterministas, no es adecuada para situaciones reales, donde la incertidumbre es un factor clave. En estos casos, necesitamos modelos capaces de adaptarse a escenarios cambiantes. Si se quisieran utilizar modelos matemáticos complejos y muy detallados del vehículo y del entorno, lo que podría generar una carga computacional excesiva. Por otro lado, el \ac{ML} permite gestionar esta información de forma más eficiente, adaptándose a las variaciones en el entorno y mejorando el rendimiento del sistema.
+
 \subsection{Conducción autónoma tradicional basada en un controlador \ac{PID}}
 
-El proceso de toma de decisiones en la conducción autónoma tradicional está a basado en reglas predefinidas y sistemas matemáticos, sin aprovechar las capacidades del \ac{ML}, lo que limita su adaptación a entornos dinámicos y situaciones imprevistas. Para este tipo de conducción, se requieren modelos matemáticos complejos y muy detallados del vehículo y del entorno si desea un desempeño preciso y seguro. Una toma de decisiones tan rígida basada en reglas fijas y algoritmos deterministas no es adecua para situaciones reales donde la incertidumbre en un factor clave, necesitamos modelos capaces de adaptarse a escenarios cambiantes. 
+A pesar de no ser la solución más óptima, existen técnicas de control clásico que funcionan adecuadamente para ciertas habilidades de conducción. Un controlador \ac{PID} es un tipo de control ampliamente utilizado en sistemas automáticos para ajustar una variable y mantenerla en un valor deseado. En conducción autónoma, se usa para mantener un vehículo en el carril ajustando el ángulo del volante según la desviación del carril.
 
-A pesar de ello, existen técnicas de control clásico que funcionan adecuadamente para ciertas habilidades de conducción. Un controlador \ac{PID} es un tipo de control ampliamente utilizado en sistemas automáticos para ajustar una variable y mantenerla en un valor deseado. En conducción autónoma, se usa para mantener un vehículo en el carril ajustando el ángulo del volante según la desviación del carril.
-
-Para el seguimiento de carril basado en un controlador tradicional \footnote{\url{https://youtu.be/mq5STc8-Z6Y}}, se ha implementado un controlador PD para controlar el giro. Al mismo tiempo, el acelerador se mantiene fijo a 0.5, mientras que con el freno regula la velocidad para mantenerla constante a aproximadamente 10m/s.
+Para el seguimiento de carril basado en un controlador tradicional\footnote{\url{https://youtu.be/mq5STc8-Z6Y}}, se ha implementado un controlador PD para controlar el giro. Al mismo tiempo, el acelerador se mantiene fijo a 0.5, mientras que con el freno regula la velocidad para mantenerla constante a aproximadamente 10 m/s.
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
 self._kp = 1 / (SIZE_CAMERA / 2)
 self._kd = -self._kp / 1.7
 self._throttle = 0.5
 \end{lstlisting}
-\caption[Definición de contantes para el controlador \ac{PID}]{Definición de contantes para el controlador \ac{PID}.}
+\caption[Definición de constantes para el controlador \ac{PID}]{Definición de contantes para el controlador \ac{PID}.}
 \label{cod:const_pid}
 \end{code}
 
-En la parte de percepción, ya hemos calculado la desviación respecto al centro del carril del vehículo. Esta desviación representa el error que recibe nuestro controlador. El componente proporcional se encarga de normalizar el error en un rango compatible con CARLA [0.0, 1.0], mientras que el signo del error ya indica el sentido del giro. Si el error supera cierto umbral, lo incrementamos ligeramente para mejorar el rendimiento en las curvas. El componente derivativo evita movimientos oscilatorios al salir de las curvas, ya que resta el error anterior reducido. Este componente resta el valor del error anterior, pero solo lo consideramos si su signo es diferente al del error actual, ya que, de lo contrario, podría causar inestabilidad y afectar negativamente la conducción durante las curvas.
+
+En la parte de percepción, ya hemos calculado la desviación respecto al centro del carril del vehículo. Esta desviación representa el error que recibe nuestro controlador. El componente proporcional se encarga de normalizar el error en el rango de giro, mientras que el signo del error ya indica el sentido del giro. Si el error supera cierto umbral, lo incrementamos ligeramente para mejorar el rendimiento en las curvas. El componente derivativo evita movimientos oscilatorios al salir de las curvas, ya que resta el error anterior reducido. Este componente resta el valor del error anterior, pero solo lo consideramos si su signo es diferente al del error actual, ya que, de lo contrario, podría causar inestabilidad y afectar negativamente la conducción durante las curvas.
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
-# Difrente signo
+# Different sign
 if (self._error > 0 and self._prev_error < 0) or (self._error < 0 and self._prev_error > 0):
-	self._prev_error = 0       
+    self._prev_error = 0       
 
-# Aumento del error
+# Increase in error
 if error > 20:
-	error *= 1.15
+    error *= 1.15
 
 control.steer = self._kp * error + self._kd * self._prev_error
 \end{lstlisting}
 \caption[Regulación del giro mediante el controlador \ac{PID}]{Regulación del giro mediante el controlador \ac{PID}.}
 \label{cod:pid_giro}
 \end{code}
+
+En los histogramas \ref{fig:comparativa}(a) se muestra la velocidad en m/s del coche autónomo y el error respecto al centro del carril en píxeles durante el circuito en el que se ajustó el controlador \ac{PID}, mientras que en los histogramas \ref{fig:comparativa}(b) se presenta la misma información, pero para un circuito en el que no se realizó el ajuste. Cabe destacar que este último circuito cuenta con dos curvas pronunciadas a la derecha. En ambos casos, podemos ver que el coche acelera al inicio, alcanzando rápidamente una velocidad de 10 m/s, la cual se mantiene constante durante todo el recorrido. Aunque en ambos escenarios el histograma de la desviación está bastante centrado, en el circuito sin ajuste, se observan desviaciones muy elevadas, superiores a 30 píxeles, con una frecuencia considerable. A pesar de las curvas acentuadas, estas desviaciones no deberían ser tan altas, puesto que el vehículo debería mantenerse dentro de los límites del carril para garantizar una conducción segura y eficiente. Esto sugiere que un controlador \ac{PID} no es capaz de generalizar adecuadamente ante carriles cambiantes, provocando inestabilidad en la trayectoria y en el comportamiento del vehículo.
+
+\begin{figure}[ht]
+  \centering
+  \subfigure[Histogramas del circuito ajustado.]{\includegraphics[width=0.45\textwidth]{figs/Diseño/pid/escenario_ajustado.png} \label{fig:pid_ajus}}
+  \hfill
+  \subfigure[Histogramas del circuito no ajustado.]{\includegraphics[width=0.45\textwidth]{figs/Diseño/pid/escenario_no_ajustado.png} \label{fig:pid_no_ajus}}
+  \caption{Comparativa de la velocidad y desviación del vehículo en dos escenarios: con y sin ajuste del controlador \ac{PID}.}
+\label{fig:comparativa}
+\end{figure}
+
 
 \subsection{Seguimiento de carril con \ac{DQN}}
 

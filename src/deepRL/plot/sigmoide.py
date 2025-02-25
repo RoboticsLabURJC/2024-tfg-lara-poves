@@ -6,7 +6,7 @@ def sigmoid(x, a=10, b=0.5):
 
 # Definir el rango de x
 x = np.linspace(0, 1, 100)
-y = sigmoid(x, a=10, b=0.7)
+y = sigmoid(x, a=10, b=0.85)
 
 # Graficar
 plt.plot(x, y, 'o-', label="sigmoid(a=0.1, b=90)")
