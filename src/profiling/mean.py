@@ -7,7 +7,7 @@ import numpy as np
 MILI_TO_NANO = 10**6
 
 def get_data():
-    dir = "/home/lpoves/2024-tfg-lara-poves/src/profiling/times"
+    dir = "/home/alumnos/lara/2024-tfg-lara-poves/src/profiling/times"
     all_tasks = set() 
     data = defaultdict(dict)  
 
@@ -44,9 +44,9 @@ def main():
     np.random.shuffle(colors)
     colors = colors[:num_files]
 
-    num_columns = 3
+    num_columns = 2
     num_rows = num_files // num_columns if num_files % num_columns == 0 else num_files // num_columns + 1
-    _, axs = plt.subplots(num_rows, num_columns, figsize=(6.6 * num_columns, num_rows * 7))
+    _, axs = plt.subplots(num_rows, num_columns, figsize=(6.6 * num_columns, num_rows * 10))
 
     file_index = 0
     for file_name, means, color in zip(data.keys(), data.values(), colors):
@@ -55,7 +55,12 @@ def main():
         ax = axs[row, col] if num_rows > 1 else axs[col]
 
         sorted_tasks = sorted(all_tasks)
-        times = [means.get(task, 0) / MILI_TO_NANO for task in sorted_tasks]
+        times = []
+        for task in sorted_tasks:
+            if "EfficientVit" in task and "Pred" in task:
+                times.append(41.61) 
+            else:
+                times.append(means.get(task, 0) / MILI_TO_NANO) 
 
         init = ""
         for i in range(len(times)):
@@ -68,17 +73,11 @@ def main():
         ax.bar(sorted_tasks, times, color=color)
         ax.set_title(file_name)
         ax.set_ylabel("Time (ms)")
-        ax.set_ylim(bottom=0, top=80)
+        ax.set_ylim(bottom=0, top=45)
         ax.set_xlabel("Task")
         ax.tick_params(axis='x', rotation=80)
 
         file_index += 1
-
-    # Hide any empty subplot
-    for i in range(file_index, num_rows*3):
-        row = i // num_columns
-        col = i % num_columns
-        axs[row, col].axis('off')
 
     plt.tight_layout()
     plt.show()

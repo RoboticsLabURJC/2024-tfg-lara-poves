@@ -1,0 +1,22 @@
+LiDAR: 13467025
+EfficientVit - Predicción: 32457581
+Carril basado en DL - Predicción: 11247576
+Carril basado en DL - Post-procesado: 8301499
+EfficientVit - Post-procesado: 9561363
+LiDAR: 13167735
+EfficientVit - Predicción: 33266178
+Carril basado en DL - Predicción: 11011296
+Carril basado en DL - Post-procesado: 10052312
+EfficientVit - Post-procesado: 9769593
+LiDAR: 12866547
+EfficientVit - Predicción: 34418833
+Carril basado en DL - Predicción: 13823243
+Carril basado en DL - Post-procesado: 8437608
+EfficientVit - Post-procesado: 9259755
+LiDAR: 12756607
+LiDAR: 11805042
+LiDAR: 8248280
+EfficientVit - Predicción: 905813779
+Ground truth - Predicción: 305868
+Ground truth - Post-procesado: 29866375
+EfficientVit - Post-procesado: 8344609
