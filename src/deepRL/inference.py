@@ -3,6 +3,8 @@ import argparse
 from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
 import csv
+import numpy as np
+import time
 
 alg_callable = {
     'DQN': DQN,
@@ -17,7 +19,8 @@ env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
     'CarlaObstacle': environment.CarlaObstacle,
-    'CarlaPassing': environment.CarlaPassing
+    'CarlaPassing': environment.CarlaPassing,
+    'CarlaOvertaken': environment.CarlaOvertaken
 }
 
 def main(args):
@@ -33,7 +36,8 @@ def main(args):
         exit(1)
 
     env = env_class(train=False, port=args.port, human=True, normalize=True, num_cir=args.num_cir,
-                    lane_network=args.lane_network, target_vel=args.target_vel)
+                    lane_network=args.lane_network, target_vel=args.target_vel, retrain=args.scene,
+                    port_tm=args.port_tm)
 
     total_reward = 0
     step = 0
@@ -50,42 +54,49 @@ def main(args):
     file_csv = open(dir_csv + args.alg + '_' + 'data_' + args.n + '_' + str(num_files) +
                     '.csv', mode='w', newline='')
     writer_csv = csv.writer(file_csv)
-    writer_csv.writerow([environment.KEY_STEPS, environment.KEY_REWARD, environment.KEY_ACC_REWARD, 
-                         environment.KEY_THROTTLE, environment.KEY_STEER, environment.KEY_DEV,
-                         environment.KEY_VEL, environment.KEY_BRAKE, environment.KEY_DISTANCE,
-                         environment.KEY_BACK])
-    
-    brake = -1.0
+    writer_csv.writerow([environment.KEY_STEPS, environment.KEY_REWARD, environment.KEY_ACC_REWARD, environment.KEY_VEL,
+                         environment.KEY_THROTTLE, environment.KEY_STEER, environment.KEY_DEV, environment.KEY_DISTANCE,
+                         environment.KEY_LASER_RIGHT_FRONT, environment.KEY_LASER_RIGHT, environment.KEY_LASER_RIGHT_BACK])
+
     obs, info = env.reset()
 
     try:
         while True:
+            #t = time.time_ns()
             action, _ = model.predict(obs, deterministic=True)
             if args.alg == 'DQN':
                 throttle, steer = env.action_to_control[action.item()]
+                #print("DQN:", time.time_ns() - t)
             else:
                 throttle, steer = action
-                print(f"Throttle: {throttle:.6f} \t||\tSteer: {steer:.7f}", end="")
+                #print("PPO:", time.time_ns() - t)
 
             obs, reward, terminated, truncated, info = env.step(action)
 
             try:
-                dist = info[environment.KEY_LASER]
-                print(f"\t||\tDist front: {dist:.6f}")
+                dist_front = info[environment.KEY_LASER]
             except KeyError:
-                dist = environment.MAX_DIST_LASER
-                print()
+                dist_front = np.nan
+
+            print(f"Throttle: {throttle:.6f}\t||\tSteer: {steer:.7f}\t||\tDist front: {dist_front:.2f}")
 
             try:
-                dist_back = info[environment.KEY_BACK]
-                print("dist back:", dist_back) # quitar
+                dist_right_front = info[environment.KEY_LASER_RIGHT_FRONT]
+                dist_right = info[environment.KEY_LASER_RIGHT]
+                dist_right_back = info[environment.KEY_LASER_RIGHT_BACK]
+
+                print(f"Dist right front: {dist_right_front:.2f}\t||\tDist right: {dist_right:.2f}" 
+                      f"\t||\tDist right back: {dist_right_back:.2f}\n")
             except KeyError:
-                dist_back = environment.MAX_DIST_LASER
+                dist_right_front = environment.MAX_DIST_LASER
+                dist_right = environment.MAX_DIST_LASER
+                dist_right_back = environment.MAX_DIST_LASER
 
             step += 1
             total_reward += reward
-            writer_csv.writerow([step, reward, total_reward, throttle, steer, info[environment.KEY_DEV], 
-                                 info[environment.KEY_VEL], brake, dist, dist_back])        
+            writer_csv.writerow([step, reward, total_reward, info[environment.KEY_VEL], throttle, steer, 
+                                 info[environment.KEY_DEV], dist_front, dist_right_front, dist_right,
+                                 dist_right_back])        
 
             if terminated or truncated:
                 break
@@ -103,7 +114,8 @@ if __name__ == "__main__":
         description="Execute an inference trial on a specified Gym environment",
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + \
-            "} --n <model_number> [--port <port_number>] [--num_cir <num_cir>] [--port_tm <port_tm] [--lane_network <lane_network>]"
+            "} --n <model_number> [--port <port_number>] [--num_cir <num_cir>] [--port_tm <port_tm]"
+            " [--lane_network <lane_network>] [--target_vel <target_vel>] [--scene <scene>]"
     )
     parser.add_argument(
         '--env', 
@@ -137,7 +149,7 @@ if __name__ == "__main__":
         type=int, 
         required=False, 
         default=0,
-        choices=[0, 1, 2, 3, 4, 5],
+        choices=[0, 1, 2, 3, 4, 5, 6],
         help='Number of the circuit for the enviroment. By default 0.'
     )
     parser.add_argument(
@@ -158,8 +170,16 @@ if __name__ == "__main__":
         '--target_vel', 
         type=float, 
         required=False, 
-        default=6,
-        help='Velocity in m/s of the front vehicle. By default 6m/s.'
+        default=-1.0,
+        help='Velocity of the front vehicle, By default random velocities.'
+    )
+    parser.add_argument(
+        '--scene', 
+        type=int, 
+        required=False, 
+        default=2,
+        choices=[0, 1, 2],
+        help='Types of model you want to test: 0 = lane, 1 = obstacle, 2 = passing. By default 2.'
     )
 
     main(parser.parse_args())

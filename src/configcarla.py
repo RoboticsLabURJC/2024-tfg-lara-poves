@@ -34,16 +34,19 @@ SIZE_CAMERA = 512
 SIZE_MEM = 5
 FOV = 110
 
+MAX_NUM_LANES = 4
+
 # Type
 CAMERA = 1
 LIDAR = 2
 
 # Side
-NUM_ZONES = 4
-LEFT = 0
+NUM_ZONES = 5
+LEFT_FRONT = 0
 FRONT = 1
-RIGHT = 2
-BACK = 3
+RIGHT_FRONT = 2
+RIGHT = 3
+RIGHT_BACK = 4
 
 # Stats
 NUM_STATS = 4
@@ -56,6 +59,7 @@ MIN = 3
 DIST = 0
 Z = 1
 X = 2
+Y = 3
 
 # Lane
 LEFT_LANE = 0
@@ -81,7 +85,7 @@ def write_text(text:str, img:pygame.Surface, point:tuple[int, int], bold:bool=Fa
     text = font.render(text, True, color)
     text_rect = text.get_rect()
 
-    if side == LEFT:
+    if side == LEFT_FRONT:
         text_rect.topleft = point 
     elif side == RIGHT:
         text_rect.topright = point
@@ -98,6 +102,7 @@ class Sensor(ABC):
         self.sensor = sensor
         self.sensor.listen(lambda data: self._callback_data(data))
         self.data = None
+        self.update_screen = True
 
     def _callback_data(self, data):
         self.data = data
@@ -113,7 +118,7 @@ class CameraRGB(Sensor):
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
                  text:str, screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], lane:bool,
                  canvas_seg:bool, transform:carla.Transform, vehicle:carla.Vehicle, world:carla.World,
-                 lane_network:bool, check_area_lane:bool, check_lane_left:bool, check_lane_right:bool):
+                 lane_network:bool, check_area_lane:bool, check_other_lane:bool):
         super().__init__(sensor=sensor)
 
         self._screen = screen 
@@ -130,8 +135,9 @@ class CameraRGB(Sensor):
         self._seg = seg
         self._mask = []
         self._check_area_lane = self._seg and self._lane and check_area_lane
-        self._check_lane_left = self._seg and self._lane and check_lane_left
-        self._check_lane_right = self._seg and self._lane and check_lane_right
+        self._check_other_lane = self._seg and self._lane and check_other_lane
+        self._road_left = 0
+        self._road_right = 0
 
         # Lane detection
         self._deviation = 0
@@ -141,8 +147,7 @@ class CameraRGB(Sensor):
         self._lane_left = []
         self._lane_right = []
         self._extra_surface = None
-        self._road_left = 0
-        self._road_right = 0
+        self._num_lanes = [False] * (1 + (MAX_NUM_LANES - 1) * 2)
 
         if self._lane_network:
             file = PATH + '2024-tfg-lara-poves/best_model_torch.pth'
@@ -171,7 +176,9 @@ class CameraRGB(Sensor):
         if lane:
             self._trafo_matrix_vehicle_to_cam = np.array(transform.get_inverse_matrix())
             self._K = get_intrinsic_matrix(FOV, SIZE_CAMERA, SIZE_CAMERA)
+
         self._threshold_road_per = 90.0
+        self._threshold_area_road = 5000
 
     def _points_lane(self, boundary:np.ndarray, trafo_matrix_global_to_camera:np.ndarray, side:int):
         projected_boundary = project_polyline(boundary, trafo_matrix_global_to_camera,self._K).astype(np.int32)
@@ -278,6 +285,7 @@ class CameraRGB(Sensor):
 
     def _detect_lane(self, img:np.ndarray, mask:np.ndarray):
         if not self._lane_network:
+            #t = time.time_ns()
             trafo_matrix_global_to_camera = get_matrix_global(self._vehicle, self._trafo_matrix_vehicle_to_cam)
             waypoint = self._world.get_map().get_waypoint(
                 self._vehicle.get_transform().location,
@@ -287,6 +295,8 @@ class CameraRGB(Sensor):
             
             # Get points of the lane
             _, left_boundary, right_boundary, _ = create_lane_lines(waypoint, self._vehicle)
+            #print("Ground Truth - Predicción:", time.time_ns() - t)
+            #t = time.time_ns()
 
             self._lane_left = self._points_lane(left_boundary, trafo_matrix_global_to_camera, LEFT_LANE)
             self._lane_right = self._points_lane(right_boundary, trafo_matrix_global_to_camera, RIGHT_LANE)
@@ -310,11 +320,14 @@ class CameraRGB(Sensor):
             image_lane = np.zeros((SIZE_CAMERA, SIZE_CAMERA * 2, 3), dtype=np.uint8)
             image_lane[:SIZE_CAMERA, int(SIZE_CAMERA / 2):int(SIZE_CAMERA + SIZE_CAMERA / 2), :] = img
 
+            #t = time.time_ns()
             with torch.no_grad():
                 image_tensor = image_lane.transpose(2,0,1).astype('float32')/255
                 x_tensor = torch.from_numpy(image_tensor).to("cuda").unsqueeze(0)
                 model_output = torch.softmax(self._lane_model.forward(x_tensor), dim=1 ).cpu().numpy()
+            #print("Carril DL - Predicción:", time.time_ns() - t)
 
+            t = time.time_ns()
             _, left_mask, right_mask = model_output[0]
             see_line_left = self._mask_lane(mask=left_mask, index=LEFT_LANE)
             see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
@@ -350,17 +363,16 @@ class CameraRGB(Sensor):
             if x_left < x_right:
                 img[y, x_left:x_right] = (255, 240, 255)
                 width_lane = x_right - x_left
+                
+                if self._check_other_lane:
+                    width_lane_offset = width_lane + int(width_lane / 2)
 
-                if self._check_lane_left:
-                    bound_left = np.clip(x_left - width_lane, 0, x_left)
-                    img[y, bound_left:x_left] = (255, 217, 179)
+                    bound_left = np.clip(x_left - width_lane_offset, 0, x_left)
                     region_mask = mask[y, bound_left:x_left]
                     count_road_left += np.count_nonzero(region_mask == ROAD)
                     count_total_left += x_left - bound_left
 
-                if self._check_lane_right:
-                    bound_right = np.clip(x_right + width_lane, x_right, SIZE_CAMERA)
-                    img[y, x_right:bound_right] = (255, 255, 204)
+                    bound_right = np.clip(x_right + width_lane_offset, x_right, SIZE_CAMERA)
                     region_mask = mask[y, x_right:bound_right]
                     count_road_right += np.count_nonzero(region_mask == ROAD)
                     count_total_right += bound_right - x_right
@@ -384,20 +396,20 @@ class CameraRGB(Sensor):
             self._cm = np.array([x_cm, y_cm], dtype=np.int32)
             self._area = count_total
 
-            if self._check_lane_left and count_total_left > 0:
-                self._road_left = count_road_left / count_total_left * 100
-            else:
-                self._road_left = 0
-            if self._check_lane_right and count_road_right > 0:
-                self._road_right = count_road_right / count_total_right * 100
-            else:
-                self._road_right = 0
-
             # Calculate road porcentage
             if self._check_area_lane:
                 self._road_percentage = count_road / count_total * 100
-                self._lane_left = [] # Mark error
                 assert self._road_percentage >= self._threshold_road_per, "Low percentage of lane"
+
+            if self._check_other_lane:
+                if count_total_left > 0:
+                    self._road_left = count_road_left / count_total_left * 100
+                else:
+                    self._road_left = 0
+                if count_road_right > 0:
+                    self._road_right = count_road_right / count_total_right * 100
+                else:
+                    self._road_right = 0
 
             # Draw center of mass and vehicle
             cv2.line(img, (x_cm, 0), (x_cm, SIZE_CAMERA - 1), (0, 255, 0), 2)
@@ -406,10 +418,17 @@ class CameraRGB(Sensor):
         else:
             self._deviation = SIZE_CAMERA / 2
             self._road_percentage = 0
-            self._road_left = 0
-            self._road_right = 0
+            self._area = 0
+            self._cm = np.array([0, 0], dtype=np.int32)
             self._lane_left = [] # Mark error
             assert False, "Area zero"
+
+        '''
+        if self._lane_network:
+            print("Carril DL - Procesado:", time.time_ns() - t)
+        else:
+            print("Ground Truth - Procesado:", time.time_ns() - t)
+        '''
 
         return img
 
@@ -424,12 +443,6 @@ class CameraRGB(Sensor):
     
     def get_lane_area(self):
         return self._area
-    
-    def check_lane_right(self):
-        return self._road_right >= self._threshold_road_per
-    
-    def check_lane_left(self):
-        return self._road_left >= self._threshold_road_per
 
     def show_surface(self, surface:pygame.Surface, pos:tuple[int, int], text:str):
         if text != None:
@@ -460,7 +473,9 @@ class CameraRGB(Sensor):
                 text_extra = "Segmented view"
 
             image_pil = Image.fromarray(image_data)
+            #t = time.time_ns()
             pred = self._seg_model.predict(image_pil)
+            #print("EfficientVit - Predicción:", time.time_ns() - t)
 
             if self._canvas_seg:
                 canvas, self._mask = self._seg_model.get_canvas(image_data, pred)
@@ -472,30 +487,31 @@ class CameraRGB(Sensor):
         if self._lane:
             canvas = self._detect_lane(canvas, self._mask)
     
-        if self.init != None:
-            surface = pygame.surfarray.make_surface(image_data[:, :, :3].swapaxes(0, 1))
+        if self.init != None and self.update_screen:
+            surface = pygame.surfarray.make_surface(image_data[:, :, :3].swapaxes(0, 1))  
             self.show_surface(surface=surface, pos=self.init, text=self.text)
 
-        if self.init_extra != None:
+        if self.init_extra != None and self.update_screen:
             self._extra_surface = pygame.surfarray.make_surface(canvas[:, :, :3].swapaxes(0, 1))
 
             if self._lane:
                 write_text(text="Deviation = "+str(int(abs(self._deviation)))+" (pixels)",
-                        img=self._extra_surface, color=(0, 0, 0), side=LEFT, size=self.size_text,
+                        img=self._extra_surface, color=(0, 0, 0), side=LEFT_FRONT, size=self.size_text,
                         point=(0, SIZE_CAMERA - self.size_text), bold=True)
                 if self._check_area_lane:
                     write_text(text=f"{self._road_percentage:.2f}% road", side=RIGHT, bold=True,
                             img=self._extra_surface, color=(0, 0, 0), size=self.size_text,
-                            point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))
+                            point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))          
 
-            self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)    
+            self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)  
 
     def get_seg_data(self, num_points:int, show=False):
-        if len(self._mask) <= 0:
-            return 0, np.array([0, 0], dtype=np.int32), np.zeros((num_points, 2), dtype=np.int32), np.zeros((num_points, 2), dtype=np.int32)
+        if len(self._mask) <= 0 or len(self._lane_left) <= 0 or len(self._lane_right) <= 0:
+            return (0, np.array([0, 0], dtype=np.int32), np.zeros((num_points, 2), dtype=np.int32),
+                    np.zeros((num_points, 2), dtype=np.int32))
 
         index = np.argwhere(self._mask == ROAD)
-        index_sorted = index[np.argsort(index[:, 0])]  # Sort by y
+        index_sorted = index[np.argsort(index[:, 0])] # Sorted by y
 
         area = len(index)
         y_cm = np.mean(index[:, 0])
@@ -505,40 +521,73 @@ class CameraRGB(Sensor):
         if show:
             pygame.draw.circle(self._extra_surface, (255, 0, 255), (x_cm, y_cm), 9, 0)
 
-        min_y = index[0, 0]
+        min_y = index_sorted[0, 0]
+        max_y= index_sorted[-1, 0] 
         if self._lane:
             if self._lane_network:
                 min_y = max(self._ymin_lane, min_y)
             else:
                 min_y = max(min_y, self._lane_left[0][1], self._lane_right[0][1])
 
-        max_y= index[-1, 0] 
-        values_y = np.linspace(min_y, max_y, num_points, dtype=int)
+        points_final_left = points_final_right = 0
+        for lane in range(2):
+            try:
+                if lane == LEFT_LANE:
+                    index_limit = np.where(index_sorted[:, 1] == 0)[0][0]
+                    color = (101, 67, 33)
+                else:
+                    index_limit = np.where(index_sorted[:, 1] == SIZE_CAMERA - 1)[0][0]
+                    color = (0, 0, 0)
+                y_middle = index_sorted[index_limit, 0]
 
-        points_final_left = np.zeros((num_points, 2), dtype=np.int32)
-        points_final_right = np.zeros((num_points, 2), dtype=np.int32)
+                # First 3/4 of the points from the non-maximum part to have more information
+                num_points_start = min(int(num_points * 3 / 4), y_middle - min_y)
+                y_start = np.linspace(min_y, y_middle, num=num_points_start, dtype=int)
 
-        j = 0
-        for y in values_y:
-            points_in_y = index_sorted[index_sorted[:, 0] == y]
-            if len(points_in_y) > 0:
-                points_final_left[j, 1] = y
-                points_final_left[j, 0] = np.min(points_in_y[:, 1])
+                # Last 1/4 of the points from the maximum part
+                num_points_end = num_points - num_points_start
+                y_end = np.linspace(y_middle + 1, max_y, num=num_points_end, dtype=int)
 
-                points_final_right[j, 1] = y
-                points_final_right[j, 0] = np.max(points_in_y[:, 1])
+                # Combine both parts
+                values_y = np.concatenate([y_start, y_end])
+            except Exception:
+                values_y = np.linspace(min_y, max_y, num_points, dtype=int)
 
-                if show:
-                    pygame.draw.circle(self._extra_surface, (101, 67, 33), (points_final_left[j, 0], y), 5, 0)
-                    pygame.draw.circle(self._extra_surface, (0, 0, 0), (points_final_right[j, 0], y), 5, 0)
+            points_final = np.zeros((num_points, 2), dtype=np.int32)
 
-                j += 1
+            j = i = 0
+            y = values_y[i]
+            while True:
+                points_in_y = index_sorted[index_sorted[:, 0] == y]
+
+                if len(points_in_y) > 0:
+                    points_final[j, 1] = y
+                    if lane == LEFT_LANE:
+                        points_final[j, 0] = np.min(points_in_y[:, 1])
+                    else:
+                        points_final[j, 0] = np.max(points_in_y[:, 1])
+
+                    if show and self.init_extra != None:
+                        pygame.draw.circle(self._extra_surface, color, (points_final[j, 0], y), 5, 0)
+
+                    j += 1
+                    i += 1
+                    if i >= len(values_y):
+                        break
+                    y = values_y[i]
+                else:
+                    y += 1
+
+            if lane == LEFT_LANE:
+                points_final_left = points_final
+            else:
+                points_final_right = points_final
 
         return area, cm, points_final_left, points_final_right
 
     def get_lane_points(self, num_points:int=5, show:bool=False):
         if not self._lane or len(self._lane_left) == 0 or len(self._lane_right) == 0:
-            return [np.full((num_points, 2), SIZE_CAMERA / 2, dtype=np.int32)] * 2
+            return [np.zeros((num_points, 2), dtype=np.int32)] * 2
         
         lane_points = []
         for side in range(2):
@@ -557,7 +606,10 @@ class CameraRGB(Sensor):
                     coef = self._coefficients[-1, side, 0:2]
                     points[i, 0] = int(y * coef[0] + coef[1]) # x
                 else:
-                    points[i, 0] = lane[int(y - lane[0][1])][0] # x
+                    try:
+                        points[i, 0] = lane[int(y - lane[0][1])][0] # x
+                    except IndexError:
+                        return [np.zeros((num_points, 2), dtype=np.int32)] * 2 
                 points[i, 1] = y
 
                 if points[i, 0] < 0:
@@ -579,20 +631,27 @@ class CameraRGB(Sensor):
             self._screen.blit(self._extra_surface, self.init_extra)
             
         return lane_points
+    
+    def check_lane_right(self):
+        return self._road_right >= self._threshold_road_per
+    
+    def check_lane_left(self):
+        return self._road_left >= self._threshold_road_per
         
 class Lidar(Sensor): 
     def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, scale:int, max_dist:int,
                  front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool=True, time_show:bool=True,
-                 back_angle:int=0):
+                 back_zone:bool=False):
         super().__init__(sensor=sensor)
 
         self._rect = init
         self.show_stats = show_stats
         self.time_show = time_show
-        self._points_front = np.nan
-        self._points_back = np.nan
+        self._points = [np.nan] * NUM_ZONES
+        self._points_x = [np.nan] * NUM_ZONES
+        self._points_y = [np.nan] * NUM_ZONES
         self._max_dist = max_dist
-        self._back = back_angle
+        self._back = back_zone
 
         if init != None:
             assert size != None, "size is required!"
@@ -621,8 +680,9 @@ class Lidar(Sensor):
 
         # Calculate stats
         self._i_threshold = 0.987
-        self._z_threshold = -1.6
-        self._back_dist_threshold = 10.0
+        self._z_threshold_down = -1.6
+        self._z_threshold_up = 1.6
+        self._dist_threshold = np.full(NUM_ZONES, self._max_dist)
         self._stat_zones = np.full((NUM_ZONES, NUM_STATS), 100.0) 
 
         # Update per second
@@ -636,12 +696,19 @@ class Lidar(Sensor):
         # Divide front zone
         angle1 = get_angle_range(-self._front_angle / 2 - yaw)
         angle2 = get_angle_range(self._front_angle / 2 - yaw)
+
         angle1_add = get_angle_range(angle1 + self._front_angle / 3)
         angle2_sub = get_angle_range(angle2 - self._front_angle / 3)        
         self._angles = [angle1, angle1_add, angle2_sub, angle2]
 
         # Add back right zone
-        self._angles.append(angle2 + self._back)
+        if self._back:
+            back_angle = self._front_angle / 3
+        else:
+            back_angle = 0
+
+        self._angles.append(angle2 + back_angle)
+        self._angles.append(angle2 + back_angle * 2)
 
         if init != None:
             self._image = self._get_back_image()
@@ -649,28 +716,24 @@ class Lidar(Sensor):
     def _get_back_image(self):
         image = pygame.Surface(self._size_screen)
         mult = 10 * self._scale
-        text = ['FL', 'FF', 'FR', 'BACK']
+        text = ['FL', 'FF', 'FR', 'R', 'BR']
         text_zone = ['Front-Left', 'Front-Front', 'Front-Right']
 
         for i in range(len(self._angles)):
-            if i != BACK or (i == BACK and self._back > 0):
+            if (i != RIGHT and i != RIGHT_BACK) or ((i == RIGHT or i == RIGHT_BACK) and self._back):
                 x_line = self._center_screen[0] + mult * math.cos(math.radians(self._angles[i]))
                 y_line = self._center_screen[1] + mult * math.sin(math.radians(self._angles[i]))
                 pygame.draw.line(image, (70, 70, 70), self._center_screen, (x_line, y_line), 2)
 
                 if i < NUM_ZONES:
-                    if i == BACK:
-                        angle = self._angles[i] + self._back / 2
-                    else:
-                        angle = self._angles[i] + self._front_angle / 6
-
+                    angle = self._angles[i] + self._front_angle / 6
                     x_zone = self._center_screen[0] + mult * math.cos(math.radians(angle))
                     y_zone = max(self._center_screen[1] + mult * math.sin(math.radians(angle)), 
                                 self._size_text * (NUM_STATS + 2)) # Make sure to write behind the text
                     
                     write_text(text=text[i], img=image, point=(x_zone, y_zone), bold=True, size=self._size_text)
 
-                    if self.show_stats and i != BACK:
+                    if self.show_stats and i != RIGHT and i != RIGHT_BACK:
                         write_text(text=text_zone[i], img=image, side=i, color=(255, 165, 180), bold=True,
                                 point=(self._x_text[i], self._size_text), size=self._size_text)
         
@@ -697,93 +760,79 @@ class Lidar(Sensor):
         b = int(self._color_min[2] + (self._color_max[2] - self._color_min[2]) * norm)
 
         return (r, g, b)
-    
-    def get_points_front(self, num_points:int):
-        front_points = np.full(num_points, self._max_dist, dtype=np.float64)
 
+    def get_points_zone(self, num_points:int, zone:int, show:bool=False):
+        points = np.full(num_points, self._max_dist, dtype=np.float64)
+        
         try:
-            if np.isnan(self._points_front):
+            if np.isnan(self._points[zone]):
                 pass
         except ValueError:
-            if len(self._points_front) <= num_points:
-                for i in range (len(self._points_front)):
-                    front_points[i] = self._points_front[i]
+            if len(self._points[zone]) <= num_points:
+                for i in range (len(self._points[zone])):
+                    points[i] = self._points[zone][i]
+
+                    if show and self._rect != None:
+                        center = (int(self._points_x[zone][i] * self._scale + self._center_screen[0]),
+                                  int(self._points_y[zone][i] * self._scale + self._center_screen[1]))
+                        pygame.draw.circle(self._sub_screen, (0, 255, 0), center, 4, 0)
             else:
                 j = 0
-                index = np.linspace(0, len(self._points_front) - 1, num_points, dtype=int)
+                index = np.linspace(0, len(self._points[zone]) - 1, num_points, dtype=int)
 
                 for i in index:
-                    front_points[j] = self._points_front[i]
+                    points[j] = self._points[zone][i]
                     j += 1
- 
-        return front_points
-    
-    def get_points_back(self, num_points:int):
-        back_points = np.full(num_points, self._max_dist, dtype=np.float64)
 
-        try:
-            if np.isnan(self._points_back):
-                pass
-        except ValueError:
-            if len(self._points_back) <= num_points:
-                for i in range (len(self._points_back)):
-                    back_points[i] = self._points_back[i]
-            else:
-                j = 0
-                index = np.linspace(0, len(self._points_back) - 1, num_points, dtype=int)
-
-                for i in index:
-                    back_points[j] = self._points_back[i]
-                    j += 1
+                    if show and self._rect != None:
+                        center = (int(self._points_x[zone][i] * self._scale + self._center_screen[0]),
+                                  int(self._points_y[zone][i] * self._scale + self._center_screen[1]))
+                        pygame.draw.circle(self._sub_screen, (0, 255, 0), center, 4, 0)
                 
-        return back_points
+        return points
     
     def _update_stats(self, meas_zones):
         for zone in range(NUM_ZONES):
-            if len(meas_zones[DIST][zone]) != 0:
-                # Filter distances by z
-                filter_min = np.array(meas_zones[Z][zone]) > -self._z_threshold
-                filter_max = np.array(meas_zones[Z][zone]) < self._z_threshold
-                filtered_dist = np.array(meas_zones[DIST][zone])[filter_min & filter_max]
+            # Filter distances by z
+            filter_min = np.array(meas_zones[Z][zone]) > self._z_threshold_down
+            filter_max = np.array(meas_zones[Z][zone]) < self._z_threshold_up
+            filtered_dist_z = np.array(meas_zones[DIST][zone])[filter_min & filter_max]
 
-                if zone == FRONT:
-                    sorted_index = np.argsort(np.array(meas_zones[X][zone])[filter_min & filter_max])
-                    self._points_front = filtered_dist[sorted_index]
-                elif zone == BACK:
-                    dist_mask = filtered_dist < self._back_dist_threshold
-                    filtered_dist = filtered_dist[dist_mask]
+            if len(filtered_dist_z) != 0:
+                # Get points zone
+                dist_mask = filtered_dist_z < self._dist_threshold[zone]
+                filtered_dist = filtered_dist_z[dist_mask]
 
-                    x_values = np.array(meas_zones[X][zone])[filter_min & filter_max]
-                    filtered_x_values = x_values[dist_mask]
+                x_values = np.array(meas_zones[X][zone])[filter_min & filter_max]
+                filtered_x = x_values[dist_mask]
 
-                    sorted_index = np.argsort(filtered_x_values)
-                    self._points_back = filtered_dist[sorted_index]
+                y_values = np.array(meas_zones[Y][zone])[filter_min & filter_max]
+                filtered_y = y_values[dist_mask]
 
-                if len(filtered_dist) == 0:
-                    self._stat_zones[zone][MIN] = np.nan
-                else:
-                    self._stat_zones[zone][MIN] = np.min(filtered_dist)
+                sorted_index = np.argsort(filtered_x)
+                self._points[zone] = filtered_dist[sorted_index]
+                self._points_x[zone] = filtered_x[sorted_index]
+                self._points_y[zone] = filtered_y[sorted_index]
 
-                self._stat_zones[zone][MEAN] = np.mean(meas_zones[DIST][zone])
-                self._stat_zones[zone][MEDIAN] = np.median(meas_zones[DIST][zone])
-                self._stat_zones[zone][STD] = np.std(meas_zones[DIST][zone])
+                # Get stats zone
+                self._stat_zones[zone][MIN] = np.min(filtered_dist_z)
+                self._stat_zones[zone][MEAN] = np.mean(filtered_dist_z)
+                self._stat_zones[zone][MEDIAN] = np.median(filtered_dist_z)
+                self._stat_zones[zone][STD] = np.std(filtered_dist_z)
             else:
                 for i in range(NUM_STATS):
                     self._stat_zones[zone][i] = np.nan
                 
-                if zone == FRONT:
-                    self._points_front = np.nan
-                elif zone == BACK:
-                    self._points_back = np.nan
+                self._points[zone] = np.nan
 
-            if self.show_stats and self._rect != None and zone != BACK:
+            if self.show_stats and self._rect != None and zone != RIGHT_BACK and zone != RIGHT:
                 if not self.time_show or time.time_ns() - self._time > SEG_TO_NANOSEG:
                     self._time = time.time_ns()
                     self._stats_text = [
                         "Mean = {:.2f}".format(self._stat_zones[zone][MEAN]),
                         "Median = {:.2f}".format(self._stat_zones[zone][MEDIAN]),
                         "Std = {:.2f}".format(self._stat_zones[zone][STD]),
-                        "Min(|z|<{:.1f}) = {:.2f}".format(self._z_threshold, self._stat_zones[zone][MIN])
+                        "Min = {:.2f}".format(self._stat_zones[zone][MIN])
                     ]
 
                 # Write stats
@@ -813,6 +862,7 @@ class Lidar(Sensor):
         if lidar == None:
             return 
         
+        #t = time.time_ns()
         lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
         lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 
@@ -820,9 +870,10 @@ class Lidar(Sensor):
             [[] for _ in range(NUM_ZONES)], # dist_zones
             [[] for _ in range(NUM_ZONES)], # z_zones
             [[] for _ in range(NUM_ZONES)], # x_zones
+            [[] for _ in range(NUM_ZONES)] # y_zones
         ]
 
-        if self._rect != None:
+        if self._rect != None and self.update_screen:
             self._sub_screen.blit(self._image, (0, 0))
 
         for x, y, z, i in lidar_data:
@@ -830,10 +881,10 @@ class Lidar(Sensor):
             if zone < NUM_ZONES and i < self._i_threshold:
                 meas_zones[DIST][zone].append(math.sqrt(x ** 2 + y ** 2))
                 meas_zones[Z][zone].append(z)
-                if zone == FRONT or zone == BACK:
-                    meas_zones[X][zone].append(x)
+                meas_zones[X][zone].append(x)
+                meas_zones[Y][zone].append(y)
 
-            if self._rect != None:
+            if self._rect != None and self.update_screen:
                 thickness = self._interpolate_thickness(num=z)
                 color = self._interpolate_color(num=i)
 
@@ -842,39 +893,40 @@ class Lidar(Sensor):
                 pygame.draw.circle(self._sub_screen, color, center, thickness)
 
         self._update_stats(meas_zones=meas_zones)  
+        #print("LiDAR:", time.time_ns() - t)
 
-        if self._rect != None:
+        if self._rect != None and self.update_screen:
             self._screen.blit(self._sub_screen, self._rect)
 
-    def get_min_back(self):
-        if self._back == 0:
-            return np.nan
-        
-        return self._stat_zones[BACK][MIN]
-    
     def set_i_threshold(self, i:float):
         self._i_threshold = i
 
     def get_i_threshold(self):
         return self._i_threshold
     
-    def set_z_threshold(self, z:float):
-        self._z_threshold = abs(z)
+    def set_z_threshold(self, z_down:float=None, z_up:float=None):
+        if z_down != None:
+            self._z_threshold_down = z_down
+        if z_up != None:
+            self._z_threshold_up = z_up
 
     def get_z_threshold(self):
-        return self._z_threshold
+        return self._z_threshold_down, self._z_threshold_up
     
-    def get_back_dist_threshold(self):
-        return self._back_dist_threshold
+    def get_dist_threshold(self):
+        return self._dist_threshold
     
-    def set_back_dist_threshold(self, dist:float):
-        self._back_dist_threshold = dist
+    def set_dist_threshold(self, dist:float, zone:int):
+        self._dist_threshold[zone] = dist
     
     def get_stat_zones(self):
         return self._stat_zones
     
-    def get_min_center(self):
-        return self._stat_zones[FRONT][MIN]
+    def get_min(self, zone:int):
+        return self._stat_zones[zone][MIN]
+    
+    def get_mean(self, zone:int):
+        return self._stat_zones[zone][MEAN]
 
 class Collision(Sensor):
     def __init__(self, sensor):
@@ -887,7 +939,7 @@ class Collision(Sensor):
 
 class Vehicle_sensors:
     def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface=None, 
-                 color_text:tuple[int, int, int]=(0, 0, 0)):
+                 color_text:tuple[int, int, int]=(0, 0, 0), update_screen:bool=True):
         self._vehicle = vehicle
         self._world = world
         self._screen = screen
@@ -897,9 +949,11 @@ class Vehicle_sensors:
         self._time_frame = -1.0
         self._count_frame = 0
         self._write_frame = 0
+        
+        self.update_screen = update_screen
 
     def _put_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform(), type:int=0,
-                    max_dist_laser:int=10, train:bool=True):
+                    max_dist_laser:int=10, type_class:int=0):
         try:
             sensor_bp = self._world.get_blueprint_library().find(sensor_type)
         except IndexError:
@@ -908,13 +962,16 @@ class Vehicle_sensors:
         
         if type == LIDAR:
             sensor_bp.set_attribute('range', str(max_dist_laser))
+            sensor_bp.set_attribute('channels', '30')
 
-            if train:
+            if type_class == 0:
                 sensor_bp.set_attribute('rotation_frequency', '20')
-            else:
+            elif type_class == 4:
                 sensor_bp.set_attribute('rotation_frequency', '100') 
-                sensor_bp.set_attribute('points_per_second', '200000')
-                sensor_bp.set_attribute('channels', '30')
+                sensor_bp.set_attribute('points_per_second', '200000') 
+            else:
+                sensor_bp.set_attribute('rotation_frequency', '110') 
+                sensor_bp.set_attribute('points_per_second', '300000') 
         elif type == CAMERA:
             sensor_bp.set_attribute('image_size_x', str(SIZE_CAMERA))
             sensor_bp.set_attribute('image_size_y', str(SIZE_CAMERA))
@@ -924,7 +981,7 @@ class Vehicle_sensors:
     def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, seg:bool=False,
                        transform:carla.Transform=carla.Transform(), init_extra:tuple[int, int]=None,
                        text:str=None, lane:bool=False, canvas_seg:bool=True, lane_network:bool=False,
-                       check_area_lane:bool=False, check_lane_left:bool=False, check_lane_right:bool=False):
+                       check_area_lane:bool=False, check_other_lane:bool=False):
         if self._screen == None:
             init = None
             init_extra = None
@@ -934,22 +991,21 @@ class Vehicle_sensors:
                            init_extra=init_extra, text=text, lane=lane, canvas_seg=canvas_seg,
                            transform=transform, vehicle=self._vehicle, world=self._world,
                            lane_network=lane_network, check_area_lane=check_area_lane,
-                           check_lane_left=check_lane_left, check_lane_right=check_lane_right)
-
+                           check_other_lane=check_other_lane)
         self.sensors.append(camera)
         return camera
     
     def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25, time_show:bool=True,
                   transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True, 
-                  max_dist:int=10, train:bool=True, back_angle:int=0):
+                  max_dist:int=10, type_class:int=0, back_zone:int=0):
         if self._screen == None:
             init = None
 
         sensor = self._put_sensor(sensor_type='sensor.lidar.ray_cast', transform=transform, type=LIDAR, 
-                                  max_dist_laser=max_dist, train=train)
+                                  max_dist_laser=max_dist, type_class=type_class)
         lidar = Lidar(size=size_rect, init=init, sensor=sensor, front_angle=front_angle, scale=scale,
                       max_dist=max_dist, yaw=transform.rotation.yaw, screen=self._screen, show_stats=show_stats,
-                      time_show=time_show, back_angle=back_angle)
+                      time_show=time_show, back_zone=back_zone)
         
         self.sensors.append(lidar)
         return lidar
@@ -960,17 +1016,24 @@ class Vehicle_sensors:
         self.sensors.append(sensor_collision)
         return sensor_collision
 
-    def update_data(self, flip:bool=True, vel_ego:int=-1, vel_front:int=-1, front_laser:bool=False,
-                    back_lidar:bool=False):
+    def update_data(self, flip:bool=True, vel_ego:int=-1, vel_front:int=-1, front_laser:bool=False, mean:bool=False):
         offset = 20
         dist_lidar = np.nan
 
         for sensor in self.sensors:
+            t = time.time_ns()
+            sensor.update_screen = self.update_screen
             sensor.process_data()
 
             if type(sensor) == Lidar:
-                dist_lidar = sensor.get_min_center()
-                dist_back_lidar = sensor.get_min_back()
+                if not mean:
+                    dist_lidar = sensor.get_min(zone=FRONT)
+                else:
+                    dist_lidar = sensor.get_mean(zone=FRONT)
+
+                #print("LiDAR:", time.time_ns() - t)
+            #elif type(sensor) == CameraRGB and sensor._lane:
+                #print("Detección de carril:", time.time_ns() - t)
 
         if self._screen != None:
             elapsed_time = time.time_ns() - self._time_frame
@@ -993,13 +1056,11 @@ class Vehicle_sensors:
                 text_write.append(f"Vel front: {vel_front:.2f} m/s")
             if front_laser:
                 text_write.append(f"Dist front lidar: {dist_lidar:.2f} m")
-            if back_lidar:
-                text_write.append(f"Dist back lidar: {dist_back_lidar:.2f} m")
 
             # Write text
             for i in range(len(text_write)):
                 write_text(text=text_write[i], img=self._screen, color=self.color_text, bold=True,
-                           point=(2, offset * i), size=20, side=LEFT)
+                           point=(2, offset * i), size=20, side=LEFT_FRONT)
 
             if flip:
                 pygame.display.flip()
@@ -1093,6 +1154,10 @@ def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:floa
 
     settings = world.get_settings()
     settings.fixed_delta_seconds = fixed_delta_seconds
+    if fixed_delta_seconds > 0.1:
+        settings.max_substep_delta_time = 0.05
+        settings.max_substeps = 4
+
     if syn:
         settings.synchronous_mode = True
     else:

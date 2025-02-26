@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: DRL"
-last_modified_at: 2024-12-20T14:56:00
+last_modified_at: 2025-01-01T18:58:00
 categories:
   - Blog
 tags:
@@ -172,18 +172,20 @@ if error == None:
     r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
     
     # Steer conversion
-    if abs(self._steer) > 0.14: # sharp turns
+    limit_steer = 0.14
+    if abs(self._steer) > limit_steer:
         r_steer = 0
     else:
-        r_steer = -50/7 * abs(self._steer) + 1
+        r_steer = (limit_steer - abs(self._steer)) / limit_steer
 
     # Throttle conversion
-    if self._throttle >= 0.6: # sharp throttle
+    limit_throttle = 0.6
+    if self._throttle >= limit_throttle:
         r_throttle = 0
     elif self._velocity > self._max_vel:
-        r_throttle = -5/3 * self._throttle + 1
+        r_throttle = (limit_throttle - self._throttle) / limit_throttle
     else:
-        r_throttle = 5/3 * self._throttle
+        r_throttle = self._throttle / limit_throttle
 
     # Set weights
     if r_steer == 0:
@@ -229,7 +231,7 @@ learning_rate: 0.0001
 gamma: 0.85
 gae_lambda: 0.9 
 n_steps: 512 # The number of steps to run for each environment per update
-batch_size: 1024 
+batch_size: 512 
 ent_coef: 0.1 # β
 clip_range: 0.15 
 n_timesteps: 4_000_000
@@ -256,64 +258,58 @@ Hemos evaluado si el modelo entrenado utilizando la percepción del carril basad
 
 ### CarlaObstacle
 
-En este entorno, el objetivo es que el coche siga el carril mientras mantiene una velocidad de crucero definida por otro vehículo que circula delante a una velocidad constante, en el rango [5, 9], durante todo el episodio. El histograma a continuación muestra las velocidades utilizadas durante el entrenamiento.
+En este entorno, el objetivo es que el coche siga el carril mientras mantiene una velocidad de crucero definida por otro vehículo que circula delante a una velocidad constante durante todo el episodio. Durante el entrenamiento, esta velocidad se ha fijado a de 7m/s.
+
+Hemos añadido a las observaciones **20 puntos correspondientes a la zona frontal del láser**, que en publicaciones anteriores identificamos como la región **FRONT**. Si el láser no proporciona suficientes mediciones, estos puntos se rellenan con su rango máximo, establecido en 19.5 metros, ya que más allá de esta distancia las mediciones son menos precisas y de menor calidad. En caso de haber más puntos de los necesarios, se seleccionan de forma uniforme, asegurando una distribución equidistante y respetando el orden basado en la coordenada x. A continuación, se presentan ejemplos ilustrativos de estas configuraciones:
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/target_vel_dist.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/laser_8m.png" alt="">
 </figure>
-
-Hemos añadido a las observaciones 20 puntos correspondientes a la zona frontal del láser, que en publicaciones anteriores identificamos como la región **FRONT**. Si el láser no proporciona medidas suficientes, estos puntos se completan con el valor máximo del láser, es decir, su rango máximo, en este caso s eha estabelcido a 19.5 metros, ay que a partir de esa diatncia las medidas eran d emenor precion/calidad. En caso de que existan más puntos de los necesarios, se seleccionan de manera uniforme considerando que están ordenados por la coordenada x. A continuación, se presentan ejemplos ilustrativos de estas configuraciones:
-
-Hemos añadido a las observaciones 20 puntos correspondientes a la zona frontal del láser, que en publicaciones anteriores identificamos como la región **FRONT**. Si el láser no proporciona suficientes mediciones, estos puntos se rellenan con su rango máximo, establecido en 19.5 metros, ya que más allá de esta distancia las mediciones son menos precisas y de menor calidad. En caso de haber más puntos de los necesarios, se seleccionan de forma uniforme, asegurando una distribución equidistante y respetando el orden basado en la coordenada x. A continuación, se presentan ejemplos ilustrativos de estas configuraciones:
-<div class="image-container" style="display: flex; justify-content: center; max-width: 100%;">
-  <figure class="align-center" style="flex: 1; margin: 0; text-align: center;">
-    <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/laser_8m.png" alt="" style="width: 100%;">
-  </figure>
-  <figure class="align-center" style="flex: 1; margin: 0; text-align: center;">
-    <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/laser_13m.png" alt="" style="width: 100%;">
-  </figure>
-</div>
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/laser_13m.png" alt="">
+</figure>
 
 Para este entorno, inicialmente entrenamos un modelo capaz de seguir el carril, reutilizando los parámetros de entrenamiento óptimos previamente determinados. Basándonos en la función de recompensa utilizada anteriormente, normalizamos todas las medidas y calculamos la recompensa final asignando diferentes pesos a los valores involucrados. Cuando **no hay mediciones del láser**, los pesos son muy similares a los de la función de recompensa original. Sin embargo, al incorporar nuevas observaciones, fue necesario realizar pequeños ajustes para obtener el comportamiento deseado. En estos casos, el peso del láser se establece en 0.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/train_lane.png" alt="">
 </figure>
 
-
 Para lograr el comportamiento deseado, el modelo debe ajustar su velocidad en función del vehículo que tiene delante, evitando colisiones en todo momento. Si el coche se aproxima demasiado al vehículo delantero (**menos de 4 metros**), se considera una **colisión**, lo que resulta en la finalización del episodio con una penalización muy severa (-60). Esta penalización es mayor que la de salirse del carril (-40), ya que una colisión se considera una acción más crítica.
 
-Para este propósito, utilizamos el modelo anterior y lo reentrenamos modificando únicamente la parte de la función de recompensa relacionada con las mediciones del láser. Los mismos parámetros de entrenamiento fueron reutilizados, con la excepción del número total de pasos, que en este caso se redujo a 3,000,000 para optimizar el tiempo de entrenamiento.
+Para este propósito, utilizamos el modelo anterior y lo reentrenamos modificando únicamente la parte de la función de recompensa relacionada con las mediciones del láser. Los mismos parámetros de entrenamiento fueron reutilizados, con la excepción del número total de pasos, que en este caso se redujo a 3_000_000 para optimizar el tiempo de entrenamiento.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/train.png" alt="">
 </figure>
 
-Cuando tenemos mediciones del láser, el peso asignado al láser y el de los demás parámetros se ajustan según la distancia al vehículo que se encuentra delante. Es importante destacar que si la distancia es menor de 11 metros, el throttle se recompensa de forma inversa: a menor throttle, mayor recompensa. Por el contrario, si la distancia es mayor a 11 metros, se recompensa de manera directa: a mayor throttle, mayor recompensa.  
+Cuando tenemos mediciones del láser, el peso asignado al láser y el de los demás parámetros se ajustan según la distancia al vehículo que se encuentra delante. Es importante destacar que si la distancia es menor de 8 metros, el throttle se recompensa de forma inversa: a menor throttle, mayor recompensa. Por el contrario, si la distancia es mayor a 8 metros, se recompensa de manera directa: a mayor throttle, mayor recompensa.  
 ```python
 if error == None:
     # Deviation normalization
     r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
     
     # Steer conversion
-    if abs(self._steer) > 0.14:
+    limit_steer = 0.14
+    if abs(self._steer) > limit_steer:
         r_steer = 0
     else:
-        r_steer = -50/7 * abs(self._steer) + 1
+        r_steer = (limit_steer - abs(self._steer)) / limit_steer
 
     # Throttle conversion
-    if self._throttle >= 0.6:
+    limit_throttle = 0.6
+    if self._throttle >= limit_throttle:
         r_throttle = 0
     elif self._velocity > self._max_vel:
-        r_throttle = -5/3 * self._throttle + 1
+        r_throttle = (limit_throttle - self._throttle) / limit_throttle
     else:
-        r_throttle = 5/3 * self._throttle
+        r_throttle = self._throttle / limit_throttle
 
     # Laser conversion
-    laser_threshold = 11
+    laser_threshold = 8
     if self._is_passing_ep and not np.isnan(self._dist_laser):
         r_laser = np.clip(self._dist_laser, MIN_DIST_LASER, MAX_DIST_LASER) - MIN_DIST_LASER
         r_laser /= (MAX_DIST_LASER - MIN_DIST_LASER)
 
         if self._dist_laser <= laser_threshold:
-            r_throttle = -5/3 * self._throttle + 1
+            r_throttle = (limit_throttle - self._throttle) / limit_throttle
     else:
         r_laser = 0
 
@@ -334,25 +330,21 @@ if error == None:
         w_steer = 0.25
         w_laser = 0
     elif r_laser != 0:
-        if self._dist_laser <= 8: # Front vehicle is very close
+         if self._dist_laser <= laser_threshold: # Short distance (4, 8]
             w_dev = 0.2
-            w_throttle = 0.2
+            w_throttle = 0.1 # brake
             w_steer = 0
-            w_laser = 0.6
-        elif self._dist_laser <= laser_threshold: # Medium distance
+            w_laser = 0.7
+        elif self._dist_laser <= 12: # Medium distance (8, 12]
+            w_dev = 0.45
+            w_throttle = 0.0
+            w_steer = 0.05
+            w_laser = 0.5
+        else: # Large distance (12, 19.5]
             w_dev = 0.45
             w_throttle = 0.1
-            w_steer = 0.05
-            w_laser = 0.4
-        elif self._dist_laser <= 15: # Large distance
-            w_dev = 0.45
-            w_throttle = 0.05
-            w_laser = 0.4
+            w_laser = 0.35
             w_steer = 0.1
-        else: # Front vehicle is too far
-            w_dev = 0.45
-            w_throttle = 0.15
-            w_laser = 0.3
             w_steer = 0.1
     elif self._throttle < 0.5:
         w_dev = 0.65
@@ -375,13 +367,52 @@ else:
 return reward
 ```
 
-Finalmente, logramos que nuestro vehículo mantuviera, más o menos, una velocidad de crucero establecida por el otro vehículo durante todo el recorrido, asegurando que no ocurriera una colisión. A continuación, se presentan los datos recolectados durante la inferencia cuando el coche delantero mantenía una velocidad constante de 6 m/s.
+Finalmente, logramos que nuestro vehículo mantuviera, con cierta estabilidad, la velocidad de crucero establecida por el vehículo delantero durante todo el recorrido, asegurando que no ocurrieran colisiones. A continuación, se presentan los datos recopilados durante la fase de inferencia. En la primera imagen, el vehículo delantero mantuvo una velocidad constante de 6.2 m/s, mientras que en la segunda imagen circulaba a 5 m/s.
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/inference.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/inference62.png" alt="">
+</figure>
+<figure class="align-center" style="max-width: 100%">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_deepRL/CarlaObstacle/inference5.png" alt="">
 </figure>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1TixtqW0HyU?si=jl-RNPEVhFF4vTjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Estos son los videos que ilustran los comportamientos descritos en las gráficas anteriores.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kX75_ReTSBA?si=yviTn-IVIyBftBTv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MZtuLWy2iWo?si=WxmqVFgoxlXIftb9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### CarlaPassing
 
-hemos eliminado la 3 al entrenar el adelantamiento (no el seguimiento del carril, ni el no chocarse) porque detectamos la vaya lateral con el lidar, lo que nos impde saber si hemos adelantado completamente al coche o es la vaya
+obs añadidas -> contar que haora entrenamos a 10 FPS
+
+entrenamientos base
+
+lane params:
+    PPO:
+  policy: "MultiInputPolicy"
+  learning_rate: 0.0001
+  gamma: 0.85
+  gae_lambda: 0.9 # γ
+  n_steps: 512 # The number of steps to run for each environment per update
+  batch_size: 512 
+  ent_coef: 0.08
+  clip_range: 0.15 # epsilon
+  n_timesteps: 4_000_000
+
+  hemos bajado el ent coef ya queafecta a la aleatoriedad en elegir acciones, y dificualtaba la convergencia del entrenameinto al final
+
+- func recompensa, podemos quiatr el elif qu ehabia en los anteriores entornos, sin elllos en los anteriores no funcionaba. Tambien es el entrnamiento que nos ha proporcionado mayores velocidades. Con al func de recompensa antrior se quedba atascdo en 12m/s, aun qu eaumentasemos el peso del acelerador solo se conseguia un maximo de 18m/s y se quedaba tascado ahi
+
+- vidoe lane
+
+- explicar lser
+
+- video laser
+
+hemos eliminado la 3 al entrenar el adelantamiento (no el seguimiento del carril, ni el no chocarse) porque detectamos la vaya lateral con el lidar, lo que nos impde saber si hemos adelantado completamente al coche o es la vaya.
+
+maquina de estados
+
+func recompensa + maquina de estados
+
+resultados

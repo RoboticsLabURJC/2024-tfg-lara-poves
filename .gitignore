@@ -8,3 +8,4 @@ src/deepRL/log/*
 src/prueba*
 src/deepRL/csv/target_vel/*
 memoria_prueba*
+src/deepRL/csv/velocities/*
