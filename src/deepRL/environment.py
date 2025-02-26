@@ -1335,7 +1335,9 @@ class CarlaOvertaken(CarlaBase):
         self._skip = False
         self._return = False
         self._middle = False
-        self._per_over = False # debug
+        self._per_over = False 
+        self._seen = False
+        self._counter_seen = 0
         return super().reset(seed)
 
     def _get_obs_env(self):
@@ -1425,8 +1427,14 @@ class CarlaOvertaken(CarlaBase):
                     if self._overtaken_in_progress != self._per_over:
                         if self._overtaken_in_progress:
                             print("EMPIEZA EL ADELANTAMINETO")
+                            self._seen = True
                         else:
                             print("CORTO ADELANTAMIENTO")
+                '''
+                if self._seen:
+                    self._counter_seen += 1
+                    assert self._counter_seen <= 300, "Exceed time to change the lane"
+                '''
 
                 # If can't' overtake, check if it's too close to the front vehicle
                 if not self._overtaken_in_progress and num_carriles == 1:# not self._camera.check_lane_left():
@@ -1626,6 +1634,9 @@ class CarlaOvertaken(CarlaBase):
         else:
             if "Distance" or "crashed" in error:
                 reward = -60
+            elif "time" in error:
+                reward = -20
+                print("EXCEDO TIEMPO EN CAMBIAR DE CARRIL: reward =", reward)
             else:
                 reward = -40
 
