@@ -5,6 +5,6 @@ PPO:
   gae_lambda: 0.9 # γ
   n_steps: 512 # The number of steps to run for each environment per update
   batch_size: 512 
-  ent_coef: 0.04
+  ent_coef: 0.08
   clip_range: 0.15 # epsilon
   n_timesteps: 2_000_000

@@ -60,8 +60,8 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], 
             bins_ticks = bins
         else:
             if 'DQN' in label:
-                bins = np.linspace(0.05, 0.55, 6)
-                bins_ticks = np.linspace(0.1, 0.5, 5)
+                bins = np.array([0.1, 0.2, 0.3, 0.4, 0.45, 0.5])
+                bins_ticks = np.array([0.1, 0.2, 0.3, 0.4, 0.45, 0.5])
             else:
                 bins = np.linspace(0.0, 1.0, 11)
                 bins_ticks = bins

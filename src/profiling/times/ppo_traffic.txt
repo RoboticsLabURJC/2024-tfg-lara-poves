@@ -1,0 +1,9629 @@
+Detección de carril: 13902119
+LiDAR: 11660785
+PPO: 483829841
+Detección de carril: 10958571
+LiDAR: 13636396
+PPO: 765509
+Detección de carril: 11574925
+LiDAR: 11527573
+PPO: 932852
+Detección de carril: 10866412
+LiDAR: 15911991
+PPO: 1829420
+Detección de carril: 10464083
+LiDAR: 12531483
+PPO: 4363336
+Detección de carril: 10614541
+LiDAR: 12409048
+PPO: 782224
+Detección de carril: 10428408
+LiDAR: 13879504
+PPO: 2684144
+Detección de carril: 10220183
+LiDAR: 12483180
+PPO: 638066
+Detección de carril: 10618116
+LiDAR: 12790415
+PPO: 3907686
+Detección de carril: 10943448
+LiDAR: 12477491
+PPO: 758408
+Detección de carril: 10937920
+LiDAR: 11299428
+PPO: 1766926
+Detección de carril: 11222431
+LiDAR: 13701734
+PPO: 731918
+Detección de carril: 10652168
+LiDAR: 12917438
+PPO: 2820270
+Detección de carril: 10493167
+LiDAR: 13794285
+PPO: 795134
+Detección de carril: 10703005
+LiDAR: 11473631
+PPO: 650285
+Detección de carril: 10470202
+LiDAR: 12558484
+PPO: 1507252
+Detección de carril: 10425074
+LiDAR: 12753550
+PPO: 3660422
+Detección de carril: 10183728
+LiDAR: 12405342
+PPO: 652638
+Detección de carril: 11372709
+LiDAR: 11243173
+PPO: 1648867
+Detección de carril: 10489211
+LiDAR: 11648516
+PPO: 736314
+Detección de carril: 10537675
+LiDAR: 11528153
+PPO: 748143
+Detección de carril: 10491465
+LiDAR: 12283658
+PPO: 595862
+Detección de carril: 10406396
+LiDAR: 13865232
+PPO: 990379
+Detección de carril: 11636158
+LiDAR: 12101282
+PPO: 945782
+Detección de carril: 10786821
+LiDAR: 11046315
+PPO: 1062008
+Detección de carril: 10855335
+LiDAR: 12508909
+PPO: 706089
+Detección de carril: 10472045
+LiDAR: 11223032
+PPO: 2807811
+Detección de carril: 10371894
+LiDAR: 11440741
+PPO: 1132405
+Detección de carril: 11745783
+LiDAR: 12097847
+PPO: 2400705
+Detección de carril: 10807493
+LiDAR: 11757902
+PPO: 4372330
+Detección de carril: 11213788
+LiDAR: 11719353
+PPO: 751829
+Detección de carril: 10928746
+LiDAR: 12350459
+PPO: 2150696
+Detección de carril: 10716695
+LiDAR: 11021947
+PPO: 3756737
+Detección de carril: 11072754
+LiDAR: 11926818
+PPO: 643254
+Detección de carril: 10685919
+LiDAR: 11518739
+PPO: 674741
+Detección de carril: 10601110
+LiDAR: 14924936
+PPO: 766070
+Detección de carril: 10675463
+LiDAR: 12527176
+PPO: 4718514
+Detección de carril: 11625020
+LiDAR: 12628861
+PPO: 4256895
+Detección de carril: 11127127
+LiDAR: 12490231
+PPO: 4489808
+Detección de carril: 11099786
+LiDAR: 11940328
+PPO: 711387
+Detección de carril: 10907514
+LiDAR: 11025052
+PPO: 728794
+Detección de carril: 11226677
+LiDAR: 10921786
+PPO: 2799739
+Detección de carril: 10740692
+LiDAR: 12205740
+PPO: 988607
+Detección de carril: 10622873
+LiDAR: 11302292
+PPO: 1334400
+Detección de carril: 10804508
+LiDAR: 12570112
+PPO: 738799
+Detección de carril: 11048248
+LiDAR: 12191588
+PPO: 2087690
+Detección de carril: 10940244
+LiDAR: 11245916
+PPO: 4376105
+Detección de carril: 11763361
+LiDAR: 11247299
+PPO: 879151
+Detección de carril: 10737867
+LiDAR: 13232745
+PPO: 2160281
+Detección de carril: 10524915
+LiDAR: 12677184
+PPO: 616283
+Detección de carril: 10611647
+LiDAR: 11857944
+PPO: 751027
+Detección de carril: 10592087
+LiDAR: 11326258
+PPO: 567269
+Detección de carril: 10719399
+LiDAR: 11149090
+PPO: 904219
+Detección de carril: 10388138
+LiDAR: 12533736
+PPO: 2448006
+Detección de carril: 11100105
+LiDAR: 12387986
+PPO: 1399159
+Detección de carril: 11215290
+LiDAR: 14069632
+PPO: 880694
+Detección de carril: 11213988
+LiDAR: 13424986
+PPO: 2133860
+Detección de carril: 10544965
+LiDAR: 14042131
+PPO: 2222505
+Detección de carril: 10823457
+LiDAR: 13491076
+PPO: 593939
+Detección de carril: 10572006
+LiDAR: 12157457
+PPO: 1068097
+Detección de carril: 10863027
+LiDAR: 13604958
+PPO: 2181322
+Detección de carril: 11096681
+LiDAR: 14904285
+PPO: 719128
+Detección de carril: 10871450
+LiDAR: 11623399
+PPO: 2444802
+Detección de carril: 10839992
+LiDAR: 13769127
+PPO: 4334493
+Detección de carril: 11101017
+LiDAR: 16034747
+PPO: 795154
+Detección de carril: 10498685
+LiDAR: 12932931
+PPO: 2903737
+Detección de carril: 10353396
+LiDAR: 13425757
+PPO: 700210
+Detección de carril: 10250259
+LiDAR: 12742132
+PPO: 2034691
+Detección de carril: 11025863
+LiDAR: 13168548
+PPO: 561500
+Detección de carril: 10748403
+LiDAR: 11910783
+PPO: 1269992
+Detección de carril: 10632809
+LiDAR: 12784406
+PPO: 777567
+Detección de carril: 10945422
+LiDAR: 12535689
+PPO: 2678104
+Detección de carril: 11162000
+LiDAR: 12015011
+PPO: 2581799
+Detección de carril: 10784918
+LiDAR: 11961080
+PPO: 579387
+Detección de carril: 10224260
+LiDAR: 10595692
+PPO: 793992
+Detección de carril: 10579758
+LiDAR: 13549555
+PPO: 1639422
+Detección de carril: 11065494
+LiDAR: 13709005
+PPO: 531836
+Detección de carril: 10930409
+LiDAR: 13052522
+PPO: 801033
+Detección de carril: 11197614
+LiDAR: 12380624
+PPO: 647531
+Detección de carril: 10485084
+LiDAR: 13428661
+PPO: 948106
+Detección de carril: 12278009
+LiDAR: 14668989
+PPO: 3494932
+Detección de carril: 11085744
+LiDAR: 13662586
+PPO: 3089447
+Detección de carril: 11360721
+LiDAR: 12253212
+PPO: 953384
+Detección de carril: 10970930
+LiDAR: 12101602
+PPO: 1396855
+Detección de carril: 10943619
+LiDAR: 15229828
+PPO: 1029228
+Detección de carril: 11435414
+LiDAR: 17869916
+PPO: 859251
+Detección de carril: 11022308
+LiDAR: 11507352
+PPO: 2644885
+Detección de carril: 10866041
+LiDAR: 12152920
+PPO: 1003079
+Detección de carril: 11712113
+LiDAR: 17116144
+PPO: 2142955
+Detección de carril: 11035387
+LiDAR: 14125536
+PPO: 762584
+Detección de carril: 11235050
+LiDAR: 13717338
+PPO: 852320
+Detección de carril: 11194489
+LiDAR: 12362267
+PPO: 780181
+Detección de carril: 11016469
+LiDAR: 15629693
+PPO: 1004731
+Detección de carril: 11473521
+LiDAR: 13757028
+PPO: 765710
+Detección de carril: 11115999
+LiDAR: 12685576
+PPO: 957229
+Detección de carril: 10982327
+LiDAR: 12191047
+PPO: 971751
+Detección de carril: 10889698
+LiDAR: 12048793
+PPO: 1186436
+Detección de carril: 11471919
+LiDAR: 11408452
+PPO: 880793
+Detección de carril: 11329793
+LiDAR: 13059352
+PPO: 2298520
+Detección de carril: 11323093
+LiDAR: 13246035
+PPO: 2205599
+Detección de carril: 12119770
+LiDAR: 11954639
+PPO: 2934953
+Detección de carril: 11146987
+LiDAR: 13639160
+PPO: 1071562
+Detección de carril: 10656374
+LiDAR: 15898892
+PPO: 3401280
+Detección de carril: 11246978
+LiDAR: 12680178
+PPO: 824799
+Detección de carril: 11090802
+LiDAR: 15716795
+PPO: 2242866
+Detección de carril: 10971852
+LiDAR: 12992291
+PPO: 911359
+Detección de carril: 10651387
+LiDAR: 11909101
+PPO: 687020
+Detección de carril: 11570488
+LiDAR: 14706876
+PPO: 4419631
+Detección de carril: 12803855
+LiDAR: 15510293
+PPO: 753721
+Detección de carril: 11006364
+LiDAR: 11837522
+PPO: 921004
+Detección de carril: 10977480
+LiDAR: 15731989
+PPO: 1341581
+Detección de carril: 11277735
+LiDAR: 15762435
+PPO: 4190805
+Detección de carril: 11230423
+LiDAR: 13553991
+PPO: 716165
+Detección de carril: 11265286
+LiDAR: 12548228
+PPO: 723385
+Detección de carril: 10637075
+LiDAR: 14354724
+PPO: 1814337
+Detección de carril: 10549342
+LiDAR: 14125156
+PPO: 4095591
+Detección de carril: 10728303
+LiDAR: 13161186
+PPO: 1962942
+Detección de carril: 10943769
+LiDAR: 14301102
+PPO: 648381
+Detección de carril: 10425565
+LiDAR: 12313613
+PPO: 881344
+Detección de carril: 12313703
+LiDAR: 10598126
+PPO: 810818
+Detección de carril: 10459136
+LiDAR: 12488949
+PPO: 782455
+Detección de carril: 11210022
+LiDAR: 12041841
+PPO: 762615
+Detección de carril: 11019253
+LiDAR: 11892536
+PPO: 652538
+Detección de carril: 10833012
+LiDAR: 14144044
+PPO: 1601015
+Detección de carril: 11002027
+LiDAR: 13681644
+PPO: 801554
+Detección de carril: 11105594
+LiDAR: 12668821
+PPO: 970239
+Detección de carril: 10740892
+LiDAR: 12607729
+PPO: 701031
+Detección de carril: 10539387
+LiDAR: 12497582
+PPO: 732399
+Detección de carril: 10694552
+LiDAR: 13356682
+PPO: 1908049
+Detección de carril: 10642083
+LiDAR: 12968795
+PPO: 553718
+Detección de carril: 10834624
+LiDAR: 12115233
+PPO: 551154
+Detección de carril: 10367326
+LiDAR: 12169996
+PPO: 1160046
+Detección de carril: 10772360
+LiDAR: 12969756
+PPO: 702183
+Detección de carril: 10862095
+LiDAR: 13300067
+PPO: 2144567
+Detección de carril: 11272016
+LiDAR: 12242796
+PPO: 722914
+Detección de carril: 11154278
+LiDAR: 12413845
+PPO: 1007425
+Detección de carril: 11336063
+LiDAR: 12491643
+PPO: 555011
+Detección de carril: 10807683
+LiDAR: 10871990
+PPO: 1174338
+Detección de carril: 10706971
+LiDAR: 11703129
+PPO: 904600
+Detección de carril: 10819031
+LiDAR: 16715087
+PPO: 557173
+Detección de carril: 14119056
+LiDAR: 12933041
+PPO: 865029
+Detección de carril: 11139606
+LiDAR: 15522071
+PPO: 2777325
+Detección de carril: 11403445
+LiDAR: 15582352
+PPO: 648151
+Detección de carril: 11356324
+LiDAR: 12972531
+PPO: 708272
+Detección de carril: 11401953
+LiDAR: 12179640
+PPO: 779420
+Detección de carril: 11050371
+LiDAR: 12192260
+PPO: 4389746
+Detección de carril: 12130716
+LiDAR: 14868622
+PPO: 3566871
+Detección de carril: 12134101
+LiDAR: 13505508
+PPO: 902046
+Detección de carril: 11263002
+LiDAR: 13066643
+PPO: 951230
+Detección de carril: 11117732
+LiDAR: 11506661
+PPO: 918921
+Detección de carril: 11731862
+LiDAR: 15787723
+PPO: 2573186
+Detección de carril: 10552667
+LiDAR: 11610559
+PPO: 3434130
+Detección de carril: 10722735
+LiDAR: 11161930
+PPO: 738919
+Detección de carril: 10562802
+LiDAR: 14230225
+PPO: 869576
+Detección de carril: 11113136
+LiDAR: 11998146
+PPO: 862476
+Detección de carril: 10946844
+LiDAR: 11549166
+PPO: 692649
+Detección de carril: 10305513
+LiDAR: 13679701
+PPO: 647160
+Detección de carril: 10532577
+LiDAR: 13273337
+PPO: 3871502
+Detección de carril: 10731508
+LiDAR: 13248118
+PPO: 1017561
+Detección de carril: 10926503
+LiDAR: 12436228
+PPO: 635042
+Detección de carril: 10896066
+LiDAR: 15215046
+PPO: 651256
+Detección de carril: 10830537
+LiDAR: 11806836
+PPO: 966033
+Detección de carril: 10945041
+LiDAR: 13045041
+PPO: 1130101
+Detección de carril: 11013885
+LiDAR: 12207693
+PPO: 605617
+Detección de carril: 10473407
+LiDAR: 11080506
+PPO: 4201150
+Detección de carril: 10892622
+LiDAR: 12956025
+PPO: 766059
+Detección de carril: 11054947
+LiDAR: 13571728
+PPO: 610064
+Detección de carril: 10795525
+LiDAR: 12345352
+PPO: 2366042
+Detección de carril: 11199196
+LiDAR: 15184480
+PPO: 1017460
+Detección de carril: 10731608
+LiDAR: 11601085
+PPO: 2715562
+Detección de carril: 10645968
+LiDAR: 13553130
+PPO: 625657
+Detección de carril: 10514879
+LiDAR: 13337022
+PPO: 637515
+Detección de carril: 10413617
+LiDAR: 11881529
+PPO: 567580
+Detección de carril: 10353175
+LiDAR: 11650058
+PPO: 609293
+Detección de carril: 10893874
+LiDAR: 13895088
+PPO: 638486
+Detección de carril: 10834804
+LiDAR: 12263137
+PPO: 1021967
+Detección de carril: 10993804
+LiDAR: 13868718
+PPO: 4203054
+Detección de carril: 11141298
+LiDAR: 13150009
+PPO: 545276
+Detección de carril: 10517824
+LiDAR: 13115447
+PPO: 2936356
+Detección de carril: 10620170
+LiDAR: 13245825
+PPO: 546898
+Detección de carril: 11241960
+LiDAR: 11616808
+PPO: 1305286
+Detección de carril: 10789295
+LiDAR: 12880010
+PPO: 1166967
+Detección de carril: 11759154
+LiDAR: 15104549
+PPO: 3203220
+Detección de carril: 10852762
+LiDAR: 12389738
+PPO: 735163
+Detección de carril: 10852040
+LiDAR: 11582266
+PPO: 2389718
+Detección de carril: 10866822
+LiDAR: 11685803
+PPO: 1739264
+Detección de carril: 10957801
+LiDAR: 13454350
+PPO: 3001224
+Detección de carril: 11818633
+LiDAR: 12015813
+PPO: 693880
+Detección de carril: 10711688
+LiDAR: 12393324
+PPO: 694381
+Detección de carril: 10977621
+LiDAR: 12877838
+PPO: 1033205
+Detección de carril: 10875575
+LiDAR: 10977991
+PPO: 579177
+Detección de carril: 10465165
+LiDAR: 11484448
+PPO: 2995215
+Detección de carril: 10991962
+LiDAR: 12002983
+PPO: 1112935
+Detección de carril: 10879441
+LiDAR: 11804643
+PPO: 685058
+Detección de carril: 10831990
+LiDAR: 11202561
+PPO: 1036269
+Detección de carril: 11135830
+LiDAR: 11101418
+PPO: 563534
+Detección de carril: 11067246
+LiDAR: 13692871
+PPO: 544895
+Detección de carril: 11220808
+LiDAR: 10979744
+PPO: 2172880
+Detección de carril: 10277430
+LiDAR: 11633333
+PPO: 577044
+Detección de carril: 10909477
+LiDAR: 11244164
+PPO: 3935548
+Detección de carril: 10842355
+LiDAR: 12182806
+PPO: 522791
+Detección de carril: 10808374
+LiDAR: 13327939
+PPO: 2580968
+Detección de carril: 11046725
+LiDAR: 12777095
+PPO: 502941
+Detección de carril: 10847453
+LiDAR: 11495254
+PPO: 1825945
+Detección de carril: 10290840
+LiDAR: 13152583
+PPO: 554509
+Detección de carril: 10380967
+LiDAR: 12927513
+PPO: 833863
+Detección de carril: 11454863
+LiDAR: 12234263
+PPO: 579457
+Detección de carril: 10379836
+LiDAR: 12757154
+PPO: 3838492
+Detección de carril: 10418294
+LiDAR: 14118255
+PPO: 573869
+Detección de carril: 10482581
+LiDAR: 12955205
+PPO: 4023882
+Detección de carril: 11022228
+LiDAR: 11631530
+PPO: 1503346
+Detección de carril: 10525846
+LiDAR: 11727656
+PPO: 600960
+Detección de carril: 11612301
+LiDAR: 11420922
+PPO: 1934699
+Detección de carril: 11066825
+LiDAR: 12070064
+PPO: 576092
+Detección de carril: 10232923
+LiDAR: 11687315
+PPO: 4440402
+Detección de carril: 10617936
+LiDAR: 14709291
+PPO: 2367074
+Detección de carril: 10607730
+LiDAR: 12571233
+PPO: 659428
+Detección de carril: 10302118
+LiDAR: 15328798
+PPO: 546728
+Detección de carril: 10887104
+LiDAR: 13438186
+PPO: 583183
+Detección de carril: 10953985
+LiDAR: 12845498
+PPO: 797648
+Detección de carril: 11060866
+LiDAR: 11377466
+PPO: 472015
+Detección de carril: 10936217
+LiDAR: 11823701
+PPO: 2644915
+Detección de carril: 10943659
+LiDAR: 12053589
+PPO: 955136
+Detección de carril: 11481814
+LiDAR: 11334210
+PPO: 4524520
+Detección de carril: 11053866
+LiDAR: 12021922
+PPO: 490652
+Detección de carril: 10422830
+LiDAR: 10893744
+PPO: 501530
+Detección de carril: 10922487
+LiDAR: 11238185
+PPO: 530093
+Detección de carril: 10760642
+LiDAR: 10098589
+PPO: 871079
+Detección de carril: 10857108
+LiDAR: 12459694
+PPO: 4628157
+Detección de carril: 10638807
+LiDAR: 12542019
+PPO: 796506
+Detección de carril: 10901405
+LiDAR: 11569746
+PPO: 2074591
+Detección de carril: 10764608
+LiDAR: 11509766
+PPO: 586918
+Detección de carril: 11316774
+LiDAR: 14800909
+PPO: 605877
+Detección de carril: 10734192
+LiDAR: 14125957
+PPO: 1012573
+Detección de carril: 11163542
+LiDAR: 12584083
+PPO: 742594
+Detección de carril: 10658647
+LiDAR: 12030234
+PPO: 2613237
+Detección de carril: 10219152
+LiDAR: 11543347
+PPO: 620950
+Detección de carril: 10283300
+LiDAR: 11418518
+PPO: 3157059
+Detección de carril: 10761173
+LiDAR: 12516431
+PPO: 782555
+Detección de carril: 11109310
+LiDAR: 11083351
+PPO: 1588815
+Detección de carril: 11249572
+LiDAR: 11583428
+PPO: 704096
+Detección de carril: 10877709
+LiDAR: 12521498
+PPO: 2270958
+Detección de carril: 11138634
+LiDAR: 12624123
+PPO: 911310
+Detección de carril: 11362222
+LiDAR: 11246477
+PPO: 704948
+Detección de carril: 10526617
+LiDAR: 10906943
+PPO: 1615155
+Detección de carril: 10918951
+LiDAR: 11397245
+PPO: 1217363
+Detección de carril: 10788745
+LiDAR: 10008232
+PPO: 3756508
+Detección de carril: 10956538
+LiDAR: 12592535
+PPO: 877719
+Detección de carril: 11394371
+LiDAR: 12041741
+PPO: 738558
+Detección de carril: 10958011
+LiDAR: 11548875
+PPO: 926102
+Detección de carril: 10808915
+LiDAR: 10969859
+PPO: 924170
+Detección de carril: 10846512
+LiDAR: 13813364
+PPO: 746079
+Detección de carril: 10901235
+LiDAR: 14330106
+PPO: 881275
+Detección de carril: 11208100
+LiDAR: 12138828
+PPO: 1119024
+Detección de carril: 10887704
+LiDAR: 13142578
+PPO: 4279569
+Detección de carril: 10363120
+LiDAR: 12689322
+PPO: 711126
+Detección de carril: 10997901
+LiDAR: 11753826
+PPO: 1766395
+Detección de carril: 10893934
+LiDAR: 12449929
+PPO: 1817161
+Detección de carril: 10901625
+LiDAR: 12697565
+PPO: 4311298
+Detección de carril: 11445489
+LiDAR: 14145497
+PPO: 969568
+Detección de carril: 11286267
+LiDAR: 14283375
+PPO: 1342112
+Detección de carril: 11141599
+LiDAR: 13360879
+PPO: 862846
+Detección de carril: 12549701
+LiDAR: 12887342
+PPO: 2408957
+Detección de carril: 11533362
+LiDAR: 11971565
+PPO: 4125226
+Detección de carril: 10743016
+LiDAR: 12379603
+PPO: 1013815
+Detección de carril: 10778549
+LiDAR: 11311606
+PPO: 551235
+Detección de carril: 10856987
+LiDAR: 12309377
+PPO: 671947
+Detección de carril: 10876628
+LiDAR: 12435448
+PPO: 873041
+Detección de carril: 10903057
+LiDAR: 10785129
+PPO: 772790
+Detección de carril: 10717267
+LiDAR: 13465827
+PPO: 2266661
+Detección de carril: 11154498
+LiDAR: 12072277
+PPO: 633389
+Detección de carril: 10748464
+LiDAR: 12693578
+PPO: 1747987
+Detección de carril: 10699499
+LiDAR: 14279269
+PPO: 801704
+Detección de carril: 10897289
+LiDAR: 11595766
+PPO: 558205
+Detección de carril: 10346675
+LiDAR: 12312241
+PPO: 1795759
+Detección de carril: 11346669
+LiDAR: 12518644
+PPO: 907865
+Detección de carril: 10689604
+LiDAR: 12708852
+PPO: 1682708
+Detección de carril: 11003660
+LiDAR: 14994392
+PPO: 574530
+Detección de carril: 10608191
+LiDAR: 11182901
+PPO: 2714469
+Detección de carril: 10978051
+LiDAR: 12772808
+PPO: 730787
+Detección de carril: 11351887
+LiDAR: 11546843
+PPO: 3466369
+Detección de carril: 11161259
+LiDAR: 12383920
+PPO: 642443
+Detección de carril: 10973124
+LiDAR: 12900281
+PPO: 3191062
+Detección de carril: 10820122
+LiDAR: 13317744
+PPO: 480177
+Detección de carril: 10907344
+LiDAR: 13765721
+PPO: 495270
+Detección de carril: 10902997
+LiDAR: 12081852
+PPO: 517284
+Detección de carril: 11297084
+LiDAR: 13537215
+PPO: 507298
+Detección de carril: 11590158
+LiDAR: 11446180
+PPO: 889176
+Detección de carril: 10767622
+LiDAR: 13222689
+PPO: 972403
+Detección de carril: 10816165
+LiDAR: 12983738
+PPO: 510513
+Detección de carril: 10641701
+LiDAR: 11242962
+PPO: 535631
+Detección de carril: 11038362
+LiDAR: 12429238
+PPO: 550504
+Detección de carril: 10791449
+LiDAR: 13217181
+PPO: 512406
+Detección de carril: 10842065
+LiDAR: 12043274
+PPO: 581761
+Detección de carril: 10384432
+LiDAR: 12339783
+PPO: 2126850
+Detección de carril: 10947865
+LiDAR: 13536254
+PPO: 2864037
+Detección de carril: 11553872
+LiDAR: 12510200
+PPO: 826431
+Detección de carril: 11005844
+LiDAR: 11895690
+PPO: 3706031
+Detección de carril: 10406786
+LiDAR: 13111181
+PPO: 1002198
+Detección de carril: 10950189
+LiDAR: 14888372
+PPO: 2763684
+Detección de carril: 10983880
+LiDAR: 13870991
+PPO: 1659954
+Detección de carril: 11163572
+LiDAR: 14091085
+PPO: 4527655
+Detección de carril: 11388302
+LiDAR: 14511811
+PPO: 701222
+Detección de carril: 11189261
+LiDAR: 14436277
+PPO: 1476836
+Detección de carril: 11014777
+LiDAR: 13151432
+PPO: 999654
+Detección de carril: 10722704
+LiDAR: 15676094
+PPO: 891249
+Detección de carril: 10961556
+LiDAR: 14457700
+PPO: 768293
+Detección de carril: 10687381
+LiDAR: 15349810
+PPO: 2173431
+Detección de carril: 11661105
+LiDAR: 12964198
+PPO: 1086385
+Detección de carril: 11158054
+LiDAR: 12525414
+PPO: 626799
+Detección de carril: 11213066
+LiDAR: 14611002
+PPO: 972482
+Detección de carril: 13601223
+LiDAR: 18604988
+PPO: 934946
+Detección de carril: 11054888
+LiDAR: 16618892
+PPO: 1660504
+Detección de carril: 10758729
+LiDAR: 13204152
+PPO: 755153
+Detección de carril: 11136020
+LiDAR: 12810936
+PPO: 848034
+Detección de carril: 11069600
+LiDAR: 12576431
+PPO: 918872
+Detección de carril: 10577284
+LiDAR: 12461147
+PPO: 745529
+Detección de carril: 10783106
+LiDAR: 16837813
+PPO: 974516
+Detección de carril: 10845190
+LiDAR: 13076829
+PPO: 2240593
+Detección de carril: 10754192
+LiDAR: 13841797
+PPO: 4332750
+Detección de carril: 10617565
+LiDAR: 14032796
+PPO: 652648
+Detección de carril: 11857193
+LiDAR: 12015552
+PPO: 1673043
+Detección de carril: 10734843
+LiDAR: 12805137
+PPO: 699269
+Detección de carril: 12090966
+LiDAR: 12454977
+PPO: 2515889
+Detección de carril: 10970450
+LiDAR: 14086798
+PPO: 600829
+Detección de carril: 10577795
+LiDAR: 15538436
+PPO: 3015586
+Detección de carril: 10959252
+LiDAR: 13198213
+PPO: 504133
+Detección de carril: 10814924
+LiDAR: 10940625
+PPO: 518345
+Detección de carril: 10977701
+LiDAR: 11890443
+PPO: 694862
+Detección de carril: 11912496
+LiDAR: 13403233
+PPO: 1368832
+Detección de carril: 11061768
+LiDAR: 12449498
+PPO: 1536977
+Detección de carril: 10767733
+LiDAR: 11048638
+PPO: 1382052
+Detección de carril: 10377372
+LiDAR: 12974654
+PPO: 4063352
+Detección de carril: 10772931
+LiDAR: 13639240
+PPO: 614400
+Detección de carril: 10810297
+LiDAR: 10735453
+PPO: 788203
+Detección de carril: 10949137
+LiDAR: 13249089
+PPO: 2498052
+Detección de carril: 11362893
+LiDAR: 12326913
+PPO: 1311135
+Detección de carril: 11356344
+LiDAR: 12402577
+PPO: 698238
+Detección de carril: 10788434
+LiDAR: 12812158
+PPO: 2186831
+Detección de carril: 10709003
+LiDAR: 14033457
+PPO: 656755
+Detección de carril: 11256522
+LiDAR: 11701916
+PPO: 1092705
+Detección de carril: 11124893
+LiDAR: 13101096
+PPO: 894034
+Detección de carril: 11527312
+LiDAR: 12486074
+PPO: 857338
+Detección de carril: 10895376
+LiDAR: 14326941
+PPO: 832511
+Detección de carril: 10481720
+LiDAR: 12017545
+PPO: 750156
+Detección de carril: 14747668
+LiDAR: 16398308
+PPO: 2805348
+Detección de carril: 11269352
+LiDAR: 14254061
+PPO: 711418
+Detección de carril: 11263864
+LiDAR: 13143209
+PPO: 4579764
+Detección de carril: 10966203
+LiDAR: 13906756
+PPO: 578996
+Detección de carril: 10726650
+LiDAR: 12677705
+PPO: 3072703
+Detección de carril: 11098945
+LiDAR: 12112118
+PPO: 611726
+Detección de carril: 11195260
+LiDAR: 13146024
+PPO: 2320964
+Detección de carril: 10744788
+LiDAR: 13362261
+PPO: 958311
+Detección de carril: 10940003
+LiDAR: 14097805
+PPO: 902897
+Detección de carril: 10909457
+LiDAR: 16048448
+PPO: 3866274
+Detección de carril: 10878190
+LiDAR: 15200264
+PPO: 1160848
+Detección de carril: 12106890
+LiDAR: 12892600
+PPO: 764077
+Detección de carril: 11250524
+LiDAR: 16559021
+PPO: 1072964
+Detección de carril: 11464818
+LiDAR: 13309701
+PPO: 2936776
+Detección de carril: 10487489
+LiDAR: 12561719
+PPO: 1158293
+Detección de carril: 11161820
+LiDAR: 12098828
+PPO: 2749393
+Detección de carril: 11253087
+LiDAR: 13007654
+PPO: 616454
+Detección de carril: 10711338
+LiDAR: 12110005
+PPO: 2849535
+Detección de carril: 10548881
+LiDAR: 13547932
+PPO: 660500
+Detección de carril: 10794954
+LiDAR: 13440038
+PPO: 809696
+Detección de carril: 10844138
+LiDAR: 13971053
+PPO: 587379
+Detección de carril: 10532657
+LiDAR: 12512374
+PPO: 1500932
+Detección de carril: 10645237
+LiDAR: 15668332
+PPO: 875535
+Detección de carril: 10910568
+LiDAR: 12470180
+PPO: 2643882
+Detección de carril: 10657225
+LiDAR: 12973101
+PPO: 1705853
+Detección de carril: 10683355
+LiDAR: 13691339
+PPO: 2050845
+Detección de carril: 10781013
+LiDAR: 12445904
+PPO: 534970
+Detección de carril: 10669403
+LiDAR: 12535549
+PPO: 557104
+Detección de carril: 10858089
+LiDAR: 16041678
+PPO: 748253
+Detección de carril: 10431884
+LiDAR: 11559762
+PPO: 1686704
+Detección de carril: 11667595
+LiDAR: 12474166
+PPO: 4338569
+Detección de carril: 10969718
+LiDAR: 14198497
+PPO: 587410
+Detección de carril: 10846422
+LiDAR: 13154165
+PPO: 1058483
+Detección de carril: 11246738
+LiDAR: 14138026
+PPO: 1115098
+Detección de carril: 11471608
+LiDAR: 13008054
+PPO: 2874492
+Detección de carril: 10623464
+LiDAR: 13055236
+PPO: 653028
+Detección de carril: 10509031
+LiDAR: 12185529
+PPO: 898330
+Detección de carril: 10579517
+LiDAR: 12896235
+PPO: 636724
+Detección de carril: 11040406
+LiDAR: 16545110
+PPO: 674170
+Detección de carril: 10553378
+LiDAR: 14588938
+PPO: 3767965
+Detección de carril: 10726821
+LiDAR: 13501962
+PPO: 1029559
+Detección de carril: 13396012
+LiDAR: 12554788
+PPO: 1136120
+Detección de carril: 10992022
+LiDAR: 15044548
+PPO: 744077
+Detección de carril: 10599799
+LiDAR: 13444205
+PPO: 768243
+Detección de carril: 10652328
+LiDAR: 14825266
+PPO: 859141
+Detección de carril: 10891981
+LiDAR: 12527317
+PPO: 986083
+Detección de carril: 10909698
+LiDAR: 11378598
+PPO: 2282375
+Detección de carril: 10448149
+LiDAR: 13516675
+PPO: 684446
+Detección de carril: 10785871
+LiDAR: 13208428
+PPO: 792921
+Detección de carril: 10345874
+LiDAR: 11994440
+PPO: 844649
+Detección de carril: 10742465
+LiDAR: 11656218
+PPO: 856777
+Detección de carril: 11028898
+LiDAR: 11877433
+PPO: 845200
+Detección de carril: 10456301
+LiDAR: 13183661
+PPO: 758208
+Detección de carril: 10787983
+LiDAR: 12166451
+PPO: 1309573
+Detección de carril: 11044282
+LiDAR: 15251821
+PPO: 2250517
+Detección de carril: 10883388
+LiDAR: 13518618
+PPO: 950719
+Detección de carril: 10648332
+LiDAR: 13139975
+PPO: 1050511
+Detección de carril: 11012042
+LiDAR: 12317229
+PPO: 629563
+Detección de carril: 10554410
+LiDAR: 12391080
+PPO: 3567341
+Detección de carril: 10777207
+LiDAR: 13125342
+PPO: 2242866
+Detección de carril: 10375128
+LiDAR: 17081442
+PPO: 1941710
+Detección de carril: 10792430
+LiDAR: 13351235
+PPO: 1106415
+Detección de carril: 11125224
+LiDAR: 12543351
+PPO: 991882
+Detección de carril: 11100637
+LiDAR: 12805749
+PPO: 1033164
+Detección de carril: 10966033
+LiDAR: 13761675
+PPO: 604425
+Detección de carril: 11008417
+LiDAR: 12252111
+PPO: 653599
+Detección de carril: 11140206
+LiDAR: 12167132
+PPO: 831789
+Detección de carril: 11069589
+LiDAR: 13045071
+PPO: 583744
+Detección de carril: 11028027
+LiDAR: 12918650
+PPO: 660720
+Detección de carril: 11112665
+LiDAR: 13448491
+PPO: 4205528
+Detección de carril: 11084102
+LiDAR: 14573996
+PPO: 808704
+Detección de carril: 11794337
+LiDAR: 15986805
+PPO: 3702425
+Detección de carril: 10652478
+LiDAR: 14817794
+PPO: 755323
+Detección de carril: 10767522
+LiDAR: 12672727
+PPO: 1158334
+Detección de carril: 13079002
+LiDAR: 14531781
+PPO: 2396589
+Detección de carril: 10850007
+LiDAR: 12808312
+PPO: 647721
+Detección de carril: 11303283
+LiDAR: 12784216
+PPO: 940444
+Detección de carril: 10659939
+LiDAR: 12399553
+PPO: 837097
+Detección de carril: 10996599
+LiDAR: 12888895
+PPO: 1823050
+Detección de carril: 10385434
+LiDAR: 13772272
+PPO: 774132
+Detección de carril: 10499156
+LiDAR: 11850192
+PPO: 2470971
+Detección de carril: 10316819
+LiDAR: 11611901
+PPO: 516492
+Detección de carril: 10443001
+LiDAR: 11420922
+PPO: 1001706
+Detección de carril: 10869396
+LiDAR: 13683237
+PPO: 1586132
+Detección de carril: 11960629
+LiDAR: 16785604
+PPO: 1318346
+Detección de carril: 11363265
+LiDAR: 13361610
+PPO: 1366840
+Detección de carril: 10911440
+LiDAR: 12875734
+PPO: 849156
+Detección de carril: 11323864
+LiDAR: 12457360
+PPO: 2077456
+Detección de carril: 10734733
+LiDAR: 12834381
+PPO: 638667
+Detección de carril: 10229658
+LiDAR: 13702256
+PPO: 3181306
+Detección de carril: 10192902
+LiDAR: 14522587
+PPO: 939573
+Detección de carril: 10693761
+LiDAR: 12411711
+PPO: 891219
+Detección de carril: 10731378
+LiDAR: 11473552
+PPO: 528410
+Detección de carril: 10707762
+LiDAR: 11641896
+PPO: 2166800
+Detección de carril: 10848525
+LiDAR: 19212678
+PPO: 646719
+Detección de carril: 10888947
+LiDAR: 11565230
+PPO: 821404
+Detección de carril: 11070291
+LiDAR: 12863947
+PPO: 1392688
+Detección de carril: 11131603
+LiDAR: 13977853
+PPO: 1147758
+Detección de carril: 10822195
+LiDAR: 12611114
+PPO: 2533786
+Detección de carril: 10721763
+LiDAR: 12662521
+PPO: 672488
+Detección de carril: 10704698
+LiDAR: 11557779
+PPO: 3535062
+Detección de carril: 11014236
+LiDAR: 12190497
+PPO: 689554
+Detección de carril: 11149360
+LiDAR: 11688918
+PPO: 4290797
+Detección de carril: 10544755
+LiDAR: 13308850
+PPO: 1587944
+Detección de carril: 10863447
+LiDAR: 14883544
+PPO: 890067
+Detección de carril: 10616834
+LiDAR: 12261384
+PPO: 641962
+Detección de carril: 10532917
+LiDAR: 10865991
+PPO: 4334903
+Detección de carril: 11431227
+LiDAR: 11566983
+PPO: 633218
+Detección de carril: 11607304
+LiDAR: 12224138
+PPO: 2709382
+Detección de carril: 10570734
+LiDAR: 13107906
+PPO: 561320
+Detección de carril: 11330795
+LiDAR: 11642267
+PPO: 2471292
+Detección de carril: 10606799
+LiDAR: 12213522
+PPO: 1058663
+Detección de carril: 11168380
+LiDAR: 12084407
+PPO: 512956
+Detección de carril: 10590554
+LiDAR: 11743981
+PPO: 508270
+Detección de carril: 10425454
+LiDAR: 13041395
+PPO: 995657
+Detección de carril: 11059334
+LiDAR: 13347849
+PPO: 585086
+Detección de carril: 11032834
+LiDAR: 11732693
+PPO: 3701434
+Detección de carril: 10631055
+LiDAR: 13307949
+PPO: 618656
+Detección de carril: 11141649
+LiDAR: 12532234
+PPO: 635522
+Detección de carril: 10782225
+LiDAR: 13499498
+PPO: 1858404
+Detección de carril: 10951861
+LiDAR: 13594092
+PPO: 1710951
+Detección de carril: 10884068
+LiDAR: 13251252
+PPO: 703966
+Detección de carril: 11096801
+LiDAR: 12473094
+PPO: 3212755
+Detección de carril: 11069399
+LiDAR: 13030338
+PPO: 931140
+Detección de carril: 10912762
+LiDAR: 16593943
+PPO: 676224
+Detección de carril: 10622533
+LiDAR: 13299506
+PPO: 562161
+Detección de carril: 11045593
+LiDAR: 15527099
+PPO: 1211644
+Detección de carril: 11057892
+LiDAR: 12495449
+PPO: 556833
+Detección de carril: 10988217
+LiDAR: 13192454
+PPO: 787683
+Detección de carril: 11505280
+LiDAR: 14016211
+PPO: 717456
+Detección de carril: 11035959
+LiDAR: 13180626
+PPO: 2385602
+Detección de carril: 11107237
+LiDAR: 12835854
+PPO: 779810
+Detección de carril: 11054647
+LiDAR: 12621479
+PPO: 1011040
+Detección de carril: 11067736
+LiDAR: 15816657
+PPO: 597024
+Detección de carril: 10833302
+LiDAR: 15295578
+PPO: 1743339
+Detección de carril: 11088508
+LiDAR: 14590010
+PPO: 1766775
+Detección de carril: 10841114
+LiDAR: 13476043
+PPO: 558906
+Detección de carril: 11557308
+LiDAR: 13632019
+PPO: 1143421
+Detección de carril: 11133737
+LiDAR: 14257036
+PPO: 843567
+Detección de carril: 10852741
+LiDAR: 13552669
+PPO: 3717098
+Detección de carril: 10704637
+LiDAR: 14285459
+PPO: 1788838
+Detección de carril: 11101618
+LiDAR: 15172883
+PPO: 2661980
+Detección de carril: 10987605
+LiDAR: 14601727
+PPO: 588562
+Detección de carril: 10708142
+LiDAR: 12370549
+PPO: 2719147
+Detección de carril: 10927325
+LiDAR: 13843980
+PPO: 738898
+Detección de carril: 10597394
+LiDAR: 12800981
+PPO: 4128191
+Detección de carril: 10898350
+LiDAR: 15754293
+PPO: 852230
+Detección de carril: 10996429
+LiDAR: 15451123
+PPO: 688512
+Detección de carril: 10946763
+LiDAR: 14243305
+PPO: 4787298
+Detección de carril: 11580242
+LiDAR: 14208462
+PPO: 886332
+Detección de carril: 11148069
+LiDAR: 13517587
+PPO: 855325
+Detección de carril: 11631050
+LiDAR: 14491991
+PPO: 1891374
+Detección de carril: 11269322
+LiDAR: 16565721
+PPO: 1567874
+Detección de carril: 11502636
+LiDAR: 15181746
+PPO: 891980
+Detección de carril: 11468403
+LiDAR: 14278408
+PPO: 2330048
+Detección de carril: 13068786
+LiDAR: 15655092
+PPO: 1371567
+Detección de carril: 10862676
+LiDAR: 14309404
+PPO: 2793099
+Detección de carril: 10666629
+LiDAR: 15808865
+PPO: 2742181
+Detección de carril: 11249793
+LiDAR: 16870322
+PPO: 949428
+Detección de carril: 10704316
+LiDAR: 18203441
+PPO: 653059
+Detección de carril: 10639739
+LiDAR: 14101159
+PPO: 535911
+Detección de carril: 10741113
+LiDAR: 14781740
+PPO: 2453896
+Detección de carril: 10469611
+LiDAR: 13357743
+PPO: 2197817
+Detección de carril: 11044592
+LiDAR: 16064372
+PPO: 2013529
+Detección de carril: 13377473
+LiDAR: 21166888
+PPO: 844338
+Detección de carril: 11034086
+LiDAR: 18310904
+PPO: 2846099
+Detección de carril: 10796276
+LiDAR: 17170456
+PPO: 809816
+Detección de carril: 10947835
+LiDAR: 13713192
+PPO: 683715
+Detección de carril: 11083560
+LiDAR: 13907616
+PPO: 3616896
+Detección de carril: 10523103
+LiDAR: 14015730
+PPO: 783276
+Detección de carril: 11391867
+LiDAR: 12872149
+PPO: 2762332
+Detección de carril: 11703128
+LiDAR: 13198954
+PPO: 4072927
+Detección de carril: 11635717
+LiDAR: 16694205
+PPO: 664256
+Detección de carril: 10982017
+LiDAR: 18305014
+PPO: 599377
+Detección de carril: 10615903
+LiDAR: 15660881
+PPO: 2865609
+Detección de carril: 10865721
+LiDAR: 16545690
+PPO: 2067630
+Detección de carril: 10750506
+LiDAR: 13975579
+PPO: 572757
+Detección de carril: 10811078
+LiDAR: 15511846
+PPO: 603453
+Detección de carril: 10707762
+LiDAR: 13154066
+PPO: 532346
+Detección de carril: 10854213
+LiDAR: 15988307
+PPO: 1857242
+Detección de carril: 10799991
+LiDAR: 14982914
+PPO: 1679573
+Detección de carril: 10625047
+LiDAR: 15202497
+PPO: 514129
+Detección de carril: 10855786
+LiDAR: 13654584
+PPO: 2373434
+Detección de carril: 10707081
+LiDAR: 15858230
+PPO: 506447
+Detección de carril: 10985903
+LiDAR: 14604101
+PPO: 1510587
+Detección de carril: 10467348
+LiDAR: 17073640
+PPO: 585116
+Detección de carril: 10871980
+LiDAR: 15895767
+PPO: 740651
+Detección de carril: 11305036
+LiDAR: 14963646
+PPO: 1491559
+Detección de carril: 11266428
+LiDAR: 14982614
+PPO: 2486865
+Detección de carril: 10849737
+LiDAR: 14021729
+PPO: 1404977
+Detección de carril: 10268547
+LiDAR: 14018043
+PPO: 539717
+Detección de carril: 10890889
+LiDAR: 18501321
+PPO: 596062
+Detección de carril: 10927144
+LiDAR: 17079830
+PPO: 3748986
+Detección de carril: 11200668
+LiDAR: 17431522
+PPO: 2963056
+Detección de carril: 11678171
+LiDAR: 20680922
+PPO: 693139
+Detección de carril: 10949618
+LiDAR: 17049513
+PPO: 2235595
+Detección de carril: 11153526
+LiDAR: 15081744
+PPO: 1784471
+Detección de carril: 10877329
+LiDAR: 16633373
+PPO: 1031451
+Detección de carril: 10642653
+LiDAR: 15114975
+PPO: 4624201
+Detección de carril: 11003459
+LiDAR: 14719085
+PPO: 583493
+Detección de carril: 10717166
+LiDAR: 13463384
+PPO: 514328
+Detección de carril: 10794773
+LiDAR: 13692871
+PPO: 2034210
+Detección de carril: 10849897
+LiDAR: 13639721
+PPO: 498875
+Detección de carril: 10734472
+LiDAR: 13639331
+PPO: 500158
+Detección de carril: 10745569
+LiDAR: 13296561
+PPO: 2560828
+Detección de carril: 10815765
+LiDAR: 15070788
+PPO: 2247363
+Detección de carril: 10734052
+LiDAR: 13368971
+PPO: 747732
+Detección de carril: 10822486
+LiDAR: 16965877
+PPO: 649613
+Detección de carril: 10951110
+LiDAR: 16021467
+PPO: 4359250
+Detección de carril: 10830567
+LiDAR: 16305397
+PPO: 839491
+Detección de carril: 11142420
+LiDAR: 15105249
+PPO: 3663547
+Detección de carril: 11002739
+LiDAR: 13386107
+PPO: 913794
+Detección de carril: 10809396
+LiDAR: 13953166
+PPO: 2668099
+Detección de carril: 10526327
+LiDAR: 17275516
+PPO: 2423069
+Detección de carril: 11424176
+LiDAR: 14351919
+PPO: 715623
+Detección de carril: 10749525
+LiDAR: 18476744
+PPO: 4401784
+Detección de carril: 11123210
+LiDAR: 16340390
+PPO: 684206
+Detección de carril: 10675273
+LiDAR: 14410808
+PPO: 1908620
+Detección de carril: 12480476
+LiDAR: 16807587
+PPO: 904740
+Detección de carril: 10840352
+LiDAR: 17163366
+PPO: 862866
+Detección de carril: 11050150
+LiDAR: 14226450
+PPO: 1645091
+Detección de carril: 10974756
+LiDAR: 17297178
+PPO: 619728
+Detección de carril: 11594204
+LiDAR: 13709546
+PPO: 2601569
+Detección de carril: 10291602
+LiDAR: 15489732
+PPO: 947194
+Detección de carril: 11348552
+LiDAR: 15740041
+PPO: 4324738
+Detección de carril: 10698518
+LiDAR: 14218327
+PPO: 523372
+Detección de carril: 10382059
+LiDAR: 13607842
+PPO: 866682
+Detección de carril: 11107888
+LiDAR: 15859512
+PPO: 559187
+Detección de carril: 11102580
+LiDAR: 17692767
+PPO: 534760
+Detección de carril: 11145074
+LiDAR: 16397036
+PPO: 2427796
+Detección de carril: 10905752
+LiDAR: 16289533
+PPO: 4849533
+Detección de carril: 11235721
+LiDAR: 15449380
+PPO: 634370
+Detección de carril: 10998592
+LiDAR: 13156359
+PPO: 3954678
+Detección de carril: 10946193
+LiDAR: 14576109
+PPO: 911940
+Detección de carril: 11701136
+LiDAR: 13485958
+PPO: 2617503
+Detección de carril: 10642173
+LiDAR: 14127128
+PPO: 573699
+Detección de carril: 10641752
+LiDAR: 16535295
+PPO: 581671
+Detección de carril: 11201850
+LiDAR: 15760512
+PPO: 2814130
+Detección de carril: 12167823
+LiDAR: 15696725
+PPO: 777858
+Detección de carril: 10512286
+LiDAR: 13720584
+PPO: 831398
+Detección de carril: 10826762
+LiDAR: 15094743
+PPO: 526637
+Detección de carril: 10925451
+LiDAR: 13328019
+PPO: 1847267
+Detección de carril: 11571890
+LiDAR: 14435045
+PPO: 4582578
+Detección de carril: 10963629
+LiDAR: 15991121
+PPO: 884349
+Detección de carril: 10452906
+LiDAR: 15104128
+PPO: 2491022
+Detección de carril: 10774423
+LiDAR: 16915581
+PPO: 493287
+Detección de carril: 11741006
+LiDAR: 15896347
+PPO: 729685
+Detección de carril: 10855636
+LiDAR: 13520571
+PPO: 2472844
+Detección de carril: 10958742
+LiDAR: 15196338
+PPO: 1814538
+Detección de carril: 10845270
+LiDAR: 14951497
+PPO: 4031073
+Detección de carril: 10725289
+LiDAR: 15449902
+PPO: 1606332
+Detección de carril: 10848145
+LiDAR: 18744420
+PPO: 591325
+Detección de carril: 10855586
+LiDAR: 16353870
+PPO: 579087
+Detección de carril: 11121739
+LiDAR: 16675327
+PPO: 2130265
+Detección de carril: 11628006
+LiDAR: 16578240
+PPO: 806991
+Detección de carril: 11345477
+LiDAR: 16892586
+PPO: 996629
+Detección de carril: 10687571
+LiDAR: 15967165
+PPO: 900784
+Detección de carril: 11051953
+LiDAR: 15816216
+PPO: 615762
+Detección de carril: 11591309
+LiDAR: 17713378
+PPO: 2466775
+Detección de carril: 10840263
+LiDAR: 15273544
+PPO: 746741
+Detección de carril: 10699820
+LiDAR: 19084995
+PPO: 664436
+Detección de carril: 11377055
+LiDAR: 16971485
+PPO: 1308752
+Detección de carril: 10855576
+LiDAR: 16907479
+PPO: 850668
+Detección de carril: 11277975
+LiDAR: 14894270
+PPO: 1986087
+Detección de carril: 10572287
+LiDAR: 15317511
+PPO: 804178
+Detección de carril: 10634010
+LiDAR: 12540728
+PPO: 628031
+Detección de carril: 10496973
+LiDAR: 15696615
+PPO: 663385
+Detección de carril: 10782205
+LiDAR: 12884287
+PPO: 4454504
+Detección de carril: 11207699
+LiDAR: 15383491
+PPO: 1935160
+Detección de carril: 11463856
+LiDAR: 18415953
+PPO: 819621
+Detección de carril: 11168900
+LiDAR: 16539611
+PPO: 1785674
+Detección de carril: 11062709
+LiDAR: 15831950
+PPO: 586158
+Detección de carril: 10885751
+LiDAR: 17076525
+PPO: 2275265
+Detección de carril: 10675723
+LiDAR: 14643871
+PPO: 568050
+Detección de carril: 11020736
+LiDAR: 13088246
+PPO: 2420395
+Detección de carril: 10846852
+LiDAR: 14340943
+PPO: 1307500
+Detección de carril: 10887965
+LiDAR: 13071040
+PPO: 2519986
+Detección de carril: 10660440
+LiDAR: 14520254
+PPO: 558605
+Detección de carril: 10759921
+LiDAR: 13790289
+PPO: 530113
+Detección de carril: 10730256
+LiDAR: 13631318
+PPO: 2879320
+Detección de carril: 10626388
+LiDAR: 13555353
+PPO: 2020499
+Detección de carril: 10566318
+LiDAR: 14286350
+PPO: 573929
+Detección de carril: 10837929
+LiDAR: 13457054
+PPO: 2993652
+Detección de carril: 10617344
+LiDAR: 15465456
+PPO: 550483
+Detección de carril: 10884409
+LiDAR: 13604257
+PPO: 2900362
+Detección de carril: 10627049
+LiDAR: 15821064
+PPO: 1674816
+Detección de carril: 10394638
+LiDAR: 16460893
+PPO: 2255455
+Detección de carril: 11558991
+LiDAR: 14641197
+PPO: 850497
+Detección de carril: 11217624
+LiDAR: 13588213
+PPO: 2645846
+Detección de carril: 10611767
+LiDAR: 14758395
+PPO: 2389027
+Detección de carril: 10593299
+LiDAR: 13331414
+PPO: 604375
+Detección de carril: 10789175
+LiDAR: 14497440
+PPO: 1823320
+Detección de carril: 10249889
+LiDAR: 14381675
+PPO: 842475
+Detección de carril: 11010741
+LiDAR: 15818961
+PPO: 2607969
+Detección de carril: 10501971
+LiDAR: 15868555
+PPO: 1914239
+Detección de carril: 10472245
+LiDAR: 15099661
+PPO: 663956
+Detección de carril: 10984060
+LiDAR: 13808026
+PPO: 1343975
+Detección de carril: 10971091
+LiDAR: 13428831
+PPO: 884660
+Detección de carril: 10487077
+LiDAR: 14025685
+PPO: 600368
+Detección de carril: 11043110
+LiDAR: 13119153
+PPO: 3364354
+Detección de carril: 10340536
+LiDAR: 13831091
+PPO: 916448
+Detección de carril: 11041427
+LiDAR: 12332442
+PPO: 2637833
+Detección de carril: 10523994
+LiDAR: 12859981
+PPO: 1560332
+Detección de carril: 10631066
+LiDAR: 13443384
+PPO: 1051161
+Detección de carril: 10827273
+LiDAR: 12820511
+PPO: 1622717
+Detección de carril: 10407877
+LiDAR: 13636996
+PPO: 2678526
+Detección de carril: 10603413
+LiDAR: 16914750
+PPO: 2209956
+Detección de carril: 10624206
+LiDAR: 18349131
+PPO: 1108289
+Detección de carril: 10677305
+LiDAR: 18642575
+PPO: 2663753
+Detección de carril: 11776009
+LiDAR: 13533050
+PPO: 1559000
+Detección de carril: 10945822
+LiDAR: 17300313
+PPO: 657296
+Detección de carril: 10985062
+LiDAR: 14633405
+PPO: 729123
+Detección de carril: 11555275
+LiDAR: 16445990
+PPO: 812671
+Detección de carril: 10948627
+LiDAR: 14199648
+PPO: 657135
+Detección de carril: 10937751
+LiDAR: 14728599
+PPO: 3228888
+Detección de carril: 10904169
+LiDAR: 14249243
+PPO: 551185
+Detección de carril: 10929568
+LiDAR: 13468862
+PPO: 510472
+Detección de carril: 10901234
+LiDAR: 12923817
+PPO: 2675080
+Detección de carril: 10799480
+LiDAR: 14502086
+PPO: 878570
+Detección de carril: 10981025
+LiDAR: 14255944
+PPO: 2382628
+Detección de carril: 10984851
+LiDAR: 13779382
+PPO: 503622
+Detección de carril: 10857639
+LiDAR: 12277618
+PPO: 504033
+Detección de carril: 10833823
+LiDAR: 17522159
+PPO: 3821365
+Detección de carril: 10768444
+LiDAR: 14659465
+PPO: 618737
+Detección de carril: 10776817
+LiDAR: 14203034
+PPO: 755384
+Detección de carril: 10347637
+LiDAR: 19579483
+PPO: 577524
+Detección de carril: 10994005
+LiDAR: 13482242
+PPO: 593248
+Detección de carril: 10901325
+LiDAR: 13878573
+PPO: 3138872
+Detección de carril: 10904730
+LiDAR: 13497796
+PPO: 529391
+Detección de carril: 10533118
+LiDAR: 12138058
+PPO: 3175227
+Detección de carril: 11123211
+LiDAR: 12974164
+PPO: 630955
+Detección de carril: 10803517
+LiDAR: 13483574
+PPO: 889316
+Detección de carril: 10809636
+LiDAR: 12934893
+PPO: 3746342
+Detección de carril: 10626549
+LiDAR: 15648963
+PPO: 677986
+Detección de carril: 10776076
+LiDAR: 13003558
+PPO: 3026131
+Detección de carril: 10729434
+LiDAR: 13187496
+PPO: 561681
+Detección de carril: 10509402
+LiDAR: 14264106
+PPO: 1594143
+Detección de carril: 10617816
+LiDAR: 14470048
+PPO: 469411
+Detección de carril: 11052613
+LiDAR: 13832193
+PPO: 3286165
+Detección de carril: 10942667
+LiDAR: 14183695
+PPO: 457683
+Detección de carril: 10699700
+LiDAR: 13399978
+PPO: 1380711
+Detección de carril: 11422314
+LiDAR: 15051809
+PPO: 991181
+Detección de carril: 10576373
+LiDAR: 14220100
+PPO: 2880591
+Detección de carril: 10596013
+LiDAR: 15565828
+PPO: 646589
+Detección de carril: 10726710
+LiDAR: 13122858
+PPO: 723686
+Detección de carril: 10719941
+LiDAR: 14570860
+PPO: 1049719
+Detección de carril: 13660552
+LiDAR: 17606617
+PPO: 891520
+Detección de carril: 11481062
+LiDAR: 15601191
+PPO: 1290474
+Detección de carril: 11276553
+LiDAR: 15487609
+PPO: 826251
+Detección de carril: 11860457
+LiDAR: 17913962
+PPO: 1359458
+Detección de carril: 12059448
+LiDAR: 14009070
+PPO: 949197
+Detección de carril: 14126758
+LiDAR: 17811247
+PPO: 959593
+Detección de carril: 11364426
+LiDAR: 20522792
+PPO: 1299768
+Detección de carril: 11172716
+LiDAR: 15075595
+PPO: 3070549
+Detección de carril: 11118644
+LiDAR: 14137064
+PPO: 780452
+Detección de carril: 11725963
+LiDAR: 13431295
+PPO: 933293
+Detección de carril: 12407475
+LiDAR: 15626570
+PPO: 4196574
+Detección de carril: 11165645
+LiDAR: 15830318
+PPO: 1183682
+Detección de carril: 11041097
+LiDAR: 13469414
+PPO: 3308389
+Detección de carril: 11512801
+LiDAR: 14217285
+PPO: 812541
+Detección de carril: 10935437
+LiDAR: 14132787
+PPO: 3043979
+Detección de carril: 11169972
+LiDAR: 12890867
+PPO: 678947
+Detección de carril: 11115189
+LiDAR: 14127790
+PPO: 677155
+Detección de carril: 11307820
+LiDAR: 15474529
+PPO: 2140020
+Detección de carril: 11648016
+LiDAR: 13356001
+PPO: 2007820
+Detección de carril: 10905781
+LiDAR: 14361864
+PPO: 597044
+Detección de carril: 10630965
+LiDAR: 13443904
+PPO: 1448723
+Detección de carril: 10924961
+LiDAR: 13272535
+PPO: 653109
+Detección de carril: 11473000
+LiDAR: 14818215
+PPO: 572157
+Detección de carril: 10826281
+LiDAR: 13885263
+PPO: 951431
+Detección de carril: 10649033
+LiDAR: 12760840
+PPO: 572277
+Detección de carril: 10970479
+LiDAR: 13102398
+PPO: 2197006
+Detección de carril: 10906553
+LiDAR: 14089372
+PPO: 663394
+Detección de carril: 10940053
+LiDAR: 17384681
+PPO: 753231
+Detección de carril: 11610849
+LiDAR: 17485413
+PPO: 2861723
+Detección de carril: 11640975
+LiDAR: 13839123
+PPO: 3054775
+Detección de carril: 11179116
+LiDAR: 13579220
+PPO: 2183426
+Detección de carril: 10831419
+LiDAR: 17522240
+PPO: 2311820
+Detección de carril: 11746254
+LiDAR: 14231858
+PPO: 885240
+Detección de carril: 11375884
+LiDAR: 13900385
+PPO: 1301500
+Detección de carril: 11027176
+LiDAR: 12304059
+PPO: 827783
+Detección de carril: 11089760
+LiDAR: 14168131
+PPO: 1616137
+Detección de carril: 12831418
+LiDAR: 19816103
+PPO: 1241370
+Detección de carril: 10757197
+LiDAR: 16450627
+PPO: 2063614
+Detección de carril: 11346389
+LiDAR: 14959809
+PPO: 700200
+Detección de carril: 11059615
+LiDAR: 13330102
+PPO: 628481
+Detección de carril: 11070822
+LiDAR: 11712172
+PPO: 1856490
+Detección de carril: 10748894
+LiDAR: 16301901
+PPO: 543423
+Detección de carril: 10857839
+LiDAR: 14587857
+PPO: 527769
+Detección de carril: 10904801
+LiDAR: 12414496
+PPO: 1035558
+Detección de carril: 11354932
+LiDAR: 16390896
+PPO: 1027796
+Detección de carril: 10849106
+LiDAR: 13122087
+PPO: 1604720
+Detección de carril: 10840613
+LiDAR: 15981046
+PPO: 1177533
+Detección de carril: 10856737
+LiDAR: 12825358
+PPO: 507098
+Detección de carril: 10895887
+LiDAR: 13829017
+PPO: 4159648
+Detección de carril: 10490293
+LiDAR: 15716495
+PPO: 546067
+Detección de carril: 11165235
+LiDAR: 13823630
+PPO: 526147
+Detección de carril: 10718608
+LiDAR: 14705935
+PPO: 3084140
+Detección de carril: 10647441
+LiDAR: 13158392
+PPO: 1039865
+Detección de carril: 11962251
+LiDAR: 13601533
+PPO: 925442
+Detección de carril: 10617225
+LiDAR: 12911208
+PPO: 739910
+Detección de carril: 10734512
+LiDAR: 13912263
+PPO: 816977
+Detección de carril: 10678318
+LiDAR: 13213826
+PPO: 3926204
+Detección de carril: 11207819
+LiDAR: 13111260
+PPO: 914404
+Detección de carril: 11595877
+LiDAR: 14735610
+PPO: 1249732
+Detección de carril: 10811289
+LiDAR: 14615509
+PPO: 1094737
+Detección de carril: 11604670
+LiDAR: 13956130
+PPO: 4215101
+Detección de carril: 13269090
+LiDAR: 14599064
+PPO: 1398687
+Detección de carril: 10534209
+LiDAR: 13195348
+PPO: 703495
+Detección de carril: 10688803
+LiDAR: 12713739
+PPO: 2000348
+Detección de carril: 10335268
+LiDAR: 13623406
+PPO: 807182
+Detección de carril: 10772991
+LiDAR: 14577390
+PPO: 2704765
+Detección de carril: 11079134
+LiDAR: 15240485
+PPO: 831038
+Detección de carril: 11009489
+LiDAR: 12666818
+PPO: 2732416
+Detección de carril: 10479086
+LiDAR: 13368230
+PPO: 1005553
+Detección de carril: 11517167
+LiDAR: 15709545
+PPO: 896317
+Detección de carril: 10963790
+LiDAR: 13002025
+PPO: 2964168
+Detección de carril: 10994466
+LiDAR: 14121561
+PPO: 1049810
+Detección de carril: 10585147
+LiDAR: 13439688
+PPO: 2464461
+Detección de carril: 11439209
+LiDAR: 14344808
+PPO: 1275901
+Detección de carril: 11431308
+LiDAR: 16807528
+PPO: 1913597
+Detección de carril: 11583818
+LiDAR: 13946866
+PPO: 2347995
+Detección de carril: 11256152
+LiDAR: 14959038
+PPO: 2959291
+Detección de carril: 10790718
+LiDAR: 14198918
+PPO: 719840
+Detección de carril: 10990740
+LiDAR: 14339640
+PPO: 1157743
+Detección de carril: 10781884
+LiDAR: 13080424
+PPO: 561320
+Detección de carril: 11216252
+LiDAR: 12960583
+PPO: 1504598
+Detección de carril: 10944260
+LiDAR: 13969991
+PPO: 515150
+Detección de carril: 10876307
+LiDAR: 13267788
+PPO: 959552
+Detección de carril: 10504394
+LiDAR: 12495849
+PPO: 554159
+Detección de carril: 10706641
+LiDAR: 12881954
+PPO: 2111366
+Detección de carril: 10534630
+LiDAR: 12702181
+PPO: 511404
+Detección de carril: 10883948
+LiDAR: 11713675
+PPO: 733530
+Detección de carril: 10604696
+LiDAR: 15047312
+PPO: 642232
+Detección de carril: 10916729
+LiDAR: 13536294
+PPO: 625397
+Detección de carril: 10860994
+LiDAR: 12865659
+PPO: 1630188
+Detección de carril: 10753291
+LiDAR: 13274398
+PPO: 858940
+Detección de carril: 10892441
+LiDAR: 14276265
+PPO: 4342805
+Detección de carril: 10734302
+LiDAR: 13699271
+PPO: 831208
+Detección de carril: 11017221
+LiDAR: 13023858
+PPO: 1118824
+Detección de carril: 10975337
+LiDAR: 14282004
+PPO: 594500
+Detección de carril: 11453030
+LiDAR: 12867121
+PPO: 941336
+Detección de carril: 10709154
+LiDAR: 13301939
+PPO: 551104
+Detección de carril: 10913373
+LiDAR: 12441497
+PPO: 720360
+Detección de carril: 10505927
+LiDAR: 13202199
+PPO: 564715
+Detección de carril: 11088208
+LiDAR: 12481748
+PPO: 703775
+Detección de carril: 10415259
+LiDAR: 13571198
+PPO: 1097502
+Detección de carril: 11109069
+LiDAR: 12871268
+PPO: 615782
+Detección de carril: 10890448
+LiDAR: 13157341
+PPO: 894575
+Detección de carril: 11011712
+LiDAR: 15835866
+PPO: 764628
+Detección de carril: 10879181
+LiDAR: 15747813
+PPO: 3372095
+Detección de carril: 10904620
+LiDAR: 15308878
+PPO: 754443
+Detección de carril: 10906143
+LiDAR: 12430320
+PPO: 923087
+Detección de carril: 11187989
+LiDAR: 14166419
+PPO: 696595
+Detección de carril: 11046615
+LiDAR: 13775156
+PPO: 865611
+Detección de carril: 10972202
+LiDAR: 13649165
+PPO: 758458
+Detección de carril: 11109771
+LiDAR: 14794840
+PPO: 2066559
+Detección de carril: 10574760
+LiDAR: 16855289
+PPO: 1147858
+Detección de carril: 10666750
+LiDAR: 14136784
+PPO: 1365798
+Detección de carril: 11670058
+LiDAR: 14157816
+PPO: 705568
+Detección de carril: 10914665
+LiDAR: 12775412
+PPO: 3257411
+Detección de carril: 11146035
+LiDAR: 15294837
+PPO: 2655461
+Detección de carril: 10651897
+LiDAR: 14336926
+PPO: 698137
+Detección de carril: 11045664
+LiDAR: 12170356
+PPO: 1782128
+Detección de carril: 11097883
+LiDAR: 14065145
+PPO: 554870
+Detección de carril: 10303299
+LiDAR: 12884838
+PPO: 1389243
+Detección de carril: 10219613
+LiDAR: 13098872
+PPO: 491664
+Detección de carril: 11504909
+LiDAR: 13118192
+PPO: 1805704
+Detección de carril: 10813542
+LiDAR: 12733158
+PPO: 550163
+Detección de carril: 10532086
+LiDAR: 12615180
+PPO: 497744
+Detección de carril: 10495280
+LiDAR: 16377205
+PPO: 520839
+Detección de carril: 11200198
+LiDAR: 12680428
+PPO: 702623
+Detección de carril: 10314096
+LiDAR: 14236254
+PPO: 3707413
+Detección de carril: 10752058
+LiDAR: 14974482
+PPO: 517394
+Detección de carril: 10932081
+LiDAR: 13717950
+PPO: 1998165
+Detección de carril: 10835976
+LiDAR: 13688715
+PPO: 984891
+Detección de carril: 10611857
+LiDAR: 15162316
+PPO: 3155717
+Detección de carril: 10705959
+LiDAR: 14665814
+PPO: 642313
+Detección de carril: 10953564
+LiDAR: 14628679
+PPO: 1328542
+Detección de carril: 10945843
+LiDAR: 13988279
+PPO: 702223
+Detección de carril: 10515771
+LiDAR: 15527970
+PPO: 3100764
+Detección de carril: 11019754
+LiDAR: 14120980
+PPO: 591726
+Detección de carril: 11270213
+LiDAR: 13694163
+PPO: 689383
+Detección de carril: 11228310
+LiDAR: 13448632
+PPO: 641962
+Detección de carril: 10981957
+LiDAR: 12801552
+PPO: 512946
+Detección de carril: 11083521
+LiDAR: 13918543
+PPO: 2064505
+Detección de carril: 10926663
+LiDAR: 12899591
+PPO: 2533816
+Detección de carril: 10742765
+LiDAR: 13429402
+PPO: 631326
+Detección de carril: 10863297
+LiDAR: 14053748
+PPO: 649984
+Detección de carril: 11194579
+LiDAR: 13236049
+PPO: 2754000
+Detección de carril: 10825801
+LiDAR: 13960386
+PPO: 489952
+Detección de carril: 11028187
+LiDAR: 13768006
+PPO: 1471588
+Detección de carril: 11132766
+LiDAR: 13434360
+PPO: 596553
+Detección de carril: 11069669
+LiDAR: 13491236
+PPO: 924880
+Detección de carril: 11018963
+LiDAR: 12357419
+PPO: 593209
+Detección de carril: 10973283
+LiDAR: 13062156
+PPO: 612758
+Detección de carril: 11491178
+LiDAR: 15086702
+PPO: 4303195
+Detección de carril: 10712239
+LiDAR: 13695816
+PPO: 822245
+Detección de carril: 10478384
+LiDAR: 13853114
+PPO: 954395
+Detección de carril: 11083361
+LiDAR: 12977709
+PPO: 502671
+Detección de carril: 10638037
+LiDAR: 12116565
+PPO: 2012267
+Detección de carril: 10643685
+LiDAR: 14062421
+PPO: 531055
+Detección de carril: 10575382
+LiDAR: 13678550
+PPO: 998321
+Detección de carril: 11211785
+LiDAR: 12238489
+PPO: 554399
+Detección de carril: 10815695
+LiDAR: 12751376
+PPO: 1067025
+Detección de carril: 11460602
+LiDAR: 12565434
+PPO: 622002
+Detección de carril: 10201756
+LiDAR: 17465474
+PPO: 669584
+Detección de carril: 10997461
+LiDAR: 12257999
+PPO: 3603005
+Detección de carril: 10561570
+LiDAR: 13713242
+PPO: 653800
+Detección de carril: 10647381
+LiDAR: 11742559
+PPO: 2072338
+Detección de carril: 10688373
+LiDAR: 13952955
+PPO: 849266
+Detección de carril: 10736165
+LiDAR: 13820845
+PPO: 661301
+Detección de carril: 11199496
+LiDAR: 13427630
+PPO: 4578752
+Detección de carril: 12305541
+LiDAR: 14125246
+PPO: 2982115
+Detección de carril: 11883462
+LiDAR: 12377941
+PPO: 637235
+Detección de carril: 10811719
+LiDAR: 13925073
+PPO: 681192
+Detección de carril: 10856968
+LiDAR: 13449332
+PPO: 548741
+Detección de carril: 10486076
+LiDAR: 12239190
+PPO: 1013805
+Detección de carril: 10770587
+LiDAR: 13912324
+PPO: 485435
+Detección de carril: 10835125
+LiDAR: 13512329
+PPO: 729244
+Detección de carril: 11145365
+LiDAR: 14034799
+PPO: 461970
+Detección de carril: 10713350
+LiDAR: 13145573
+PPO: 885802
+Detección de carril: 10875926
+LiDAR: 12702663
+PPO: 525655
+Detección de carril: 11484448
+LiDAR: 12239511
+PPO: 578866
+Detección de carril: 10610585
+LiDAR: 13600091
+PPO: 667361
+Detección de carril: 10830788
+LiDAR: 12155674
+PPO: 1422334
+Detección de carril: 10846501
+LiDAR: 13240696
+PPO: 592738
+Detección de carril: 10395549
+LiDAR: 12545895
+PPO: 1061056
+Detección de carril: 11139135
+LiDAR: 13370453
+PPO: 1063400
+Detección de carril: 10793021
+LiDAR: 13520901
+PPO: 761202
+Detección de carril: 10525806
+LiDAR: 13981298
+PPO: 669253
+Detección de carril: 10940495
+LiDAR: 17771647
+PPO: 789095
+Detección de carril: 10573178
+LiDAR: 14285278
+PPO: 2173591
+Detección de carril: 11017621
+LiDAR: 13453949
+PPO: 740381
+Detección de carril: 11274510
+LiDAR: 14104795
+PPO: 854564
+Detección de carril: 11747627
+LiDAR: 14553425
+PPO: 2852829
+Detección de carril: 11738332
+LiDAR: 15761613
+PPO: 954886
+Detección de carril: 12060951
+LiDAR: 14401964
+PPO: 996890
+Detección de carril: 11261410
+LiDAR: 13242149
+PPO: 4781789
+Detección de carril: 13200776
+LiDAR: 19207190
+PPO: 2753159
+Detección de carril: 11148229
+LiDAR: 13700353
+PPO: 1874288
+Detección de carril: 11390585
+LiDAR: 13978373
+PPO: 1048888
+Detección de carril: 12083846
+LiDAR: 16777522
+PPO: 1095810
+Detección de carril: 11370305
+LiDAR: 14600946
+PPO: 1174618
+Detección de carril: 11834397
+LiDAR: 16960789
+PPO: 1150813
+Detección de carril: 11462785
+LiDAR: 19801550
+PPO: 2037244
+Detección de carril: 10969108
+LiDAR: 15162617
+PPO: 916407
+Detección de carril: 11334981
+LiDAR: 15157729
+PPO: 1975211
+Detección de carril: 10813091
+LiDAR: 14127689
+PPO: 3956300
+Detección de carril: 11835499
+LiDAR: 13643267
+PPO: 2203436
+Detección de carril: 11207208
+LiDAR: 12755752
+PPO: 1828529
+Detección de carril: 10996048
+LiDAR: 14489357
+PPO: 1992587
+Detección de carril: 10876768
+LiDAR: 14699095
+PPO: 630885
+Detección de carril: 10952903
+LiDAR: 12385251
+PPO: 713260
+Detección de carril: 10864679
+LiDAR: 16284686
+PPO: 1080336
+Detección de carril: 11068488
+LiDAR: 12947012
+PPO: 680671
+Detección de carril: 12853260
+LiDAR: 12867942
+PPO: 2111637
+Detección de carril: 10852541
+LiDAR: 13160436
+PPO: 4579173
+Detección de carril: 10859862
+LiDAR: 13966616
+PPO: 817257
+Detección de carril: 11163482
+LiDAR: 15250459
+PPO: 701182
+Detección de carril: 10566828
+LiDAR: 14636711
+PPO: 1108468
+Detección de carril: 11075599
+LiDAR: 13997273
+PPO: 650885
+Detección de carril: 10798529
+LiDAR: 11961600
+PPO: 1453861
+Detección de carril: 11330906
+LiDAR: 12773159
+PPO: 1188299
+Detección de carril: 10961777
+LiDAR: 13154967
+PPO: 2129133
+Detección de carril: 10422059
+LiDAR: 12914913
+PPO: 1157152
+Detección de carril: 10583804
+LiDAR: 12679167
+PPO: 696515
+Detección de carril: 11138434
+LiDAR: 17512484
+PPO: 736345
+Detección de carril: 11360010
+LiDAR: 13667503
+PPO: 2207682
+Detección de carril: 10785920
+LiDAR: 16046425
+PPO: 664766
+Detección de carril: 11027847
+LiDAR: 15802435
+PPO: 1114046
+Detección de carril: 10927515
+LiDAR: 14231267
+PPO: 683214
+Detección de carril: 11093626
+LiDAR: 12684024
+PPO: 2447726
+Detección de carril: 10623905
+LiDAR: 12116345
+PPO: 2695181
+Detección de carril: 10857098
+LiDAR: 14976104
+PPO: 970599
+Detección de carril: 11202050
+LiDAR: 18251884
+PPO: 987585
+Detección de carril: 10813452
+LiDAR: 13349472
+PPO: 3588173
+Detección de carril: 11545090
+LiDAR: 15085280
+PPO: 573628
+Detección de carril: 11003319
+LiDAR: 13137520
+PPO: 616533
+Detección de carril: 10596904
+LiDAR: 12478203
+PPO: 892902
+Detección de carril: 10844639
+LiDAR: 11813256
+PPO: 2124486
+Detección de carril: 10422630
+LiDAR: 12170687
+PPO: 511565
+Detección de carril: 10778129
+LiDAR: 13287187
+PPO: 3219374
+Detección de carril: 10908506
+LiDAR: 13124781
+PPO: 497273
+Detección de carril: 10970059
+LiDAR: 13140074
+PPO: 648131
+Detección de carril: 10609303
+LiDAR: 14946650
+PPO: 2566766
+Detección de carril: 10775444
+LiDAR: 13469534
+PPO: 789305
+Detección de carril: 10850037
+LiDAR: 13739702
+PPO: 3190210
+Detección de carril: 10950349
+LiDAR: 14766367
+PPO: 1944774
+Detección de carril: 10929728
+LiDAR: 14912618
+PPO: 965362
+Detección de carril: 11530838
+LiDAR: 12548379
+PPO: 488320
+Detección de carril: 11022388
+LiDAR: 12723093
+PPO: 1938064
+Detección de carril: 10867534
+LiDAR: 12307965
+PPO: 495400
+Detección de carril: 10890829
+LiDAR: 12748642
+PPO: 2339843
+Detección de carril: 10754363
+LiDAR: 13889179
+PPO: 472525
+Detección de carril: 10865411
+LiDAR: 12895595
+PPO: 2863124
+Detección de carril: 10862736
+LiDAR: 14447774
+PPO: 4491280
+Detección de carril: 10844439
+LiDAR: 13241699
+PPO: 661722
+Detección de carril: 10803026
+LiDAR: 11951675
+PPO: 1692933
+Detección de carril: 10875015
+LiDAR: 12369428
+PPO: 525295
+Detección de carril: 10754763
+LiDAR: 12502409
+PPO: 1876971
+Detección de carril: 10742826
+LiDAR: 11961521
+PPO: 697376
+Detección de carril: 11285958
+LiDAR: 11964634
+PPO: 940424
+Detección de carril: 11091222
+LiDAR: 14836693
+PPO: 1877763
+Detección de carril: 10820323
+LiDAR: 12440455
+PPO: 727261
+Detección de carril: 11001677
+LiDAR: 13405827
+PPO: 2150886
+Detección de carril: 11302102
+LiDAR: 12485513
+PPO: 860854
+Detección de carril: 10380646
+LiDAR: 13020854
+PPO: 2870777
+Detección de carril: 11185736
+LiDAR: 16449785
+PPO: 743105
+Detección de carril: 11040425
+LiDAR: 12914283
+PPO: 1080265
+Detección de carril: 11015748
+LiDAR: 13719111
+PPO: 945312
+Detección de carril: 10513528
+LiDAR: 11533603
+PPO: 3663957
+Detección de carril: 10979383
+LiDAR: 13015005
+PPO: 1404747
+Detección de carril: 12113721
+LiDAR: 13478867
+PPO: 1015097
+Detección de carril: 10941385
+LiDAR: 13021746
+PPO: 878800
+Detección de carril: 10453748
+LiDAR: 14952688
+PPO: 1350004
+Detección de carril: 11004150
+LiDAR: 14023382
+PPO: 4761519
+Detección de carril: 11287760
+LiDAR: 15372704
+PPO: 922276
+Detección de carril: 12204608
+LiDAR: 13901827
+PPO: 1033235
+Detección de carril: 10436271
+LiDAR: 12836695
+PPO: 914224
+Detección de carril: 11111503
+LiDAR: 13034935
+PPO: 3982360
+Detección de carril: 11305567
+LiDAR: 13930461
+PPO: 1849561
+Detección de carril: 10963358
+LiDAR: 16602827
+PPO: 1276894
+Detección de carril: 11262121
+LiDAR: 13217912
+PPO: 583463
+Detección de carril: 11312838
+LiDAR: 12816004
+PPO: 559698
+Detección de carril: 11414683
+LiDAR: 13513991
+PPO: 1123831
+Detección de carril: 11462895
+LiDAR: 12798788
+PPO: 497373
+Detección de carril: 11168820
+LiDAR: 16212246
+PPO: 926933
+Detección de carril: 11838854
+LiDAR: 14088811
+PPO: 843978
+Detección de carril: 10990039
+LiDAR: 13538668
+PPO: 1291174
+Detección de carril: 12344319
+LiDAR: 13897702
+PPO: 3769597
+Detección de carril: 12001932
+LiDAR: 12585805
+PPO: 2701099
+Detección de carril: 11841358
+LiDAR: 13005952
+PPO: 941996
+Detección de carril: 11977565
+LiDAR: 11656738
+PPO: 1313569
+Detección de carril: 11554584
+LiDAR: 11578881
+PPO: 809436
+Detección de carril: 10595171
+LiDAR: 13549345
+PPO: 3813504
+Detección de carril: 10774232
+LiDAR: 12844016
+PPO: 980935
+Detección de carril: 10964761
+LiDAR: 11949462
+PPO: 1652121
+Detección de carril: 10870118
+LiDAR: 12520246
+PPO: 906833
+Detección de carril: 11322963
+LiDAR: 11729289
+PPO: 1040325
+Detección de carril: 11391116
+LiDAR: 16316153
+PPO: 812611
+Detección de carril: 11572591
+LiDAR: 12941934
+PPO: 696624
+Detección de carril: 11251615
+LiDAR: 12615239
+PPO: 1020895
+Detección de carril: 10561060
+LiDAR: 12407585
+PPO: 958851
+Detección de carril: 11144883
+LiDAR: 11872436
+PPO: 696805
+Detección de carril: 11231545
+LiDAR: 15285283
+PPO: 1211755
+Detección de carril: 10588872
+LiDAR: 12527016
+PPO: 1032753
+Detección de carril: 11325578
+LiDAR: 11292127
+PPO: 3386387
+Detección de carril: 11300760
+LiDAR: 12553907
+PPO: 714322
+Detección de carril: 10609814
+LiDAR: 12492874
+PPO: 1860487
+Detección de carril: 10723435
+LiDAR: 12987183
+PPO: 595552
+Detección de carril: 11005643
+LiDAR: 13723949
+PPO: 1014886
+Detección de carril: 11136591
+LiDAR: 13538929
+PPO: 4104194
+Detección de carril: 11185234
+LiDAR: 13292525
+PPO: 946253
+Detección de carril: 11047446
+LiDAR: 11375122
+PPO: 597836
+Detección de carril: 11052133
+LiDAR: 14773818
+PPO: 2539144
+Detección de carril: 11322372
+LiDAR: 13285805
+PPO: 573789
+Detección de carril: 10658357
+LiDAR: 12348105
+PPO: 553939
+Detección de carril: 11771763
+LiDAR: 14181391
+PPO: 858740
+Detección de carril: 10894886
+LiDAR: 11324726
+PPO: 909116
+Detección de carril: 10820282
+LiDAR: 12422128
+PPO: 984791
+Detección de carril: 10845720
+LiDAR: 18609405
+PPO: 2120961
+Detección de carril: 10958472
+LiDAR: 12079499
+PPO: 607770
+Detección de carril: 10787452
+LiDAR: 12596141
+PPO: 527329
+Detección de carril: 10936718
+LiDAR: 12304800
+PPO: 523182
+Detección de carril: 10810628
+LiDAR: 11958686
+PPO: 4223374
+Detección de carril: 10764058
+LiDAR: 12026889
+PPO: 507338
+Detección de carril: 10768664
+LiDAR: 11243203
+PPO: 915255
+Detección de carril: 11024922
+LiDAR: 14129522
+PPO: 1427952
+Detección de carril: 11066615
+LiDAR: 12680969
+PPO: 575902
+Detección de carril: 10767642
+LiDAR: 12481618
+PPO: 4536259
+Detección de carril: 11129370
+LiDAR: 12916467
+PPO: 911480
+Detección de carril: 12330178
+LiDAR: 11837292
+PPO: 836857
+Detección de carril: 10724087
+LiDAR: 11654115
+PPO: 860993
+Detección de carril: 10600189
+LiDAR: 10899602
+PPO: 974536
+Detección de carril: 11505630
+LiDAR: 14572744
+PPO: 2151558
+Detección de carril: 10500959
+LiDAR: 14577501
+PPO: 1371817
+Detección de carril: 11049440
+LiDAR: 11931304
+PPO: 870879
+Detección de carril: 11248490
+LiDAR: 12763495
+PPO: 3072602
+Detección de carril: 10998612
+LiDAR: 11680855
+PPO: 1740946
+Detección de carril: 10736265
+LiDAR: 12101112
+PPO: 4646285
+Detección de carril: 10907224
+LiDAR: 14094179
+PPO: 767151
+Detección de carril: 11217464
+LiDAR: 12619907
+PPO: 1224224
+Detección de carril: 11971225
+LiDAR: 13729186
+PPO: 723436
+Detección de carril: 10689324
+LiDAR: 12349387
+PPO: 1141999
+Detección de carril: 11668216
+LiDAR: 12785457
+PPO: 727372
+Detección de carril: 11135379
+LiDAR: 12067401
+PPO: 3145803
+Detección de carril: 10956709
+LiDAR: 11681296
+PPO: 879451
+Detección de carril: 11274760
+LiDAR: 12047661
+PPO: 2975405
+Detección de carril: 11156882
+LiDAR: 12823615
+PPO: 864269
+Detección de carril: 10872221
+LiDAR: 11002468
+PPO: 918501
+Detección de carril: 10904911
+LiDAR: 15490603
+PPO: 2833440
+Detección de carril: 10545015
+LiDAR: 13667954
+PPO: 582352
+Detección de carril: 11098433
+LiDAR: 12286502
+PPO: 1399429
+Detección de carril: 10920674
+LiDAR: 14202242
+PPO: 1674976
+Detección de carril: 10877840
+LiDAR: 13206936
+PPO: 1878184
+Detección de carril: 10387797
+LiDAR: 13919194
+PPO: 653810
+Detección de carril: 10587890
+LiDAR: 13108006
+PPO: 3434540
+Detección de carril: 10937490
+LiDAR: 12930958
+PPO: 952081
+Detección de carril: 10985011
+LiDAR: 13156940
+PPO: 1541113
+Detección de carril: 11118514
+LiDAR: 13644038
+PPO: 799971
+Detección de carril: 10646289
+LiDAR: 12292241
+PPO: 3170189
+Detección de carril: 11099144
+LiDAR: 13166905
+PPO: 1152655
+Detección de carril: 10984320
+LiDAR: 12075212
+PPO: 4375435
+Detección de carril: 10796646
+LiDAR: 15502611
+PPO: 595321
+Detección de carril: 10876828
+LiDAR: 11567754
+PPO: 734933
+Detección de carril: 10932983
+LiDAR: 11353239
+PPO: 565556
+Detección de carril: 10758479
+LiDAR: 12466515
+PPO: 939773
+Detección de carril: 10588080
+LiDAR: 12531603
+PPO: 2210046
+Detección de carril: 11075499
+LiDAR: 12487246
+PPO: 758038
+Detección de carril: 10393115
+LiDAR: 11775439
+PPO: 3617888
+Detección de carril: 11064122
+LiDAR: 12056193
+PPO: 720631
+Detección de carril: 10791919
+LiDAR: 12956597
+PPO: 1949041
+Detección de carril: 10701753
+LiDAR: 12161563
+PPO: 693240
+Detección de carril: 10950720
+LiDAR: 13942760
+PPO: 674752
+Detección de carril: 11324585
+LiDAR: 12119870
+PPO: 2563231
+Detección de carril: 10977921
+LiDAR: 11803210
+PPO: 2194593
+Detección de carril: 11073726
+LiDAR: 12016323
+PPO: 2138939
+Detección de carril: 11064022
+LiDAR: 14678433
+PPO: 862486
+Detección de carril: 10434548
+LiDAR: 14156404
+PPO: 2062002
+Detección de carril: 10833082
+LiDAR: 12337700
+PPO: 1801548
+Detección de carril: 10591455
+LiDAR: 12947994
+PPO: 678367
+Detección de carril: 12388516
+LiDAR: 14781440
+PPO: 2978400
+Detección de carril: 10502481
+LiDAR: 13990302
+PPO: 1465519
+Detección de carril: 10752881
+LiDAR: 12920061
+PPO: 797928
+Detección de carril: 11081928
+LiDAR: 13581774
+PPO: 690235
+Detección de carril: 10477183
+LiDAR: 13588334
+PPO: 697136
+Detección de carril: 10600369
+LiDAR: 12814361
+PPO: 618887
+Detección de carril: 10911029
+LiDAR: 11506331
+PPO: 861053
+Detección de carril: 10834383
+LiDAR: 11919797
+PPO: 3289120
+Detección de carril: 10819762
+LiDAR: 11907198
+PPO: 904690
+Detección de carril: 10981236
+LiDAR: 12270178
+PPO: 3194627
+Detección de carril: 10945963
+LiDAR: 12658836
+PPO: 703896
+Detección de carril: 10684877
+LiDAR: 12242736
+PPO: 4517960
+Detección de carril: 10485546
+LiDAR: 12482148
+PPO: 787903
+Detección de carril: 11006294
+LiDAR: 14915312
+PPO: 858660
+Detección de carril: 11449184
+LiDAR: 17366323
+PPO: 1801948
+Detección de carril: 10747692
+LiDAR: 12230677
+PPO: 1773696
+Detección de carril: 10608531
+LiDAR: 18696398
+PPO: 2452563
+Detección de carril: 11082048
+LiDAR: 12647048
+PPO: 1193096
+Detección de carril: 11324095
+LiDAR: 12212511
+PPO: 722414
+Detección de carril: 11049229
+LiDAR: 18372467
+PPO: 984541
+Detección de carril: 13674493
+LiDAR: 18723217
+PPO: 1395713
+Detección de carril: 11022719
+LiDAR: 15986043
+PPO: 4854890
+Detección de carril: 11021978
+LiDAR: 14442226
+PPO: 1128249
+Detección de carril: 10966644
+LiDAR: 13319436
+PPO: 1350935
+Detección de carril: 11505981
+LiDAR: 15609734
+PPO: 1119224
+Detección de carril: 11171324
+LiDAR: 12605806
+PPO: 667271
+Detección de carril: 10441789
+LiDAR: 13794115
+PPO: 567850
+Detección de carril: 10606839
+LiDAR: 11796280
+PPO: 1440010
+Detección de carril: 10988807
+LiDAR: 11547003
+PPO: 998201
+Detección de carril: 11136361
+LiDAR: 12750475
+PPO: 2247943
+Detección de carril: 10910789
+LiDAR: 11376515
+PPO: 2084296
+Detección de carril: 10596513
+LiDAR: 15403992
+PPO: 1866526
+Detección de carril: 10914896
+LiDAR: 13827355
+PPO: 650746
+Detección de carril: 10955097
+LiDAR: 11636789
+PPO: 617645
+Detección de carril: 11026164
+LiDAR: 12632466
+PPO: 2686868
+Detección de carril: 10590104
+LiDAR: 15087793
+PPO: 915095
+Detección de carril: 12385061
+LiDAR: 13507120
+PPO: 703465
+Detección de carril: 10482561
+LiDAR: 14255413
+PPO: 1111002
+Detección de carril: 11169501
+LiDAR: 12243197
+PPO: 811940
+Detección de carril: 11161338
+LiDAR: 12669121
+PPO: 3574312
+Detección de carril: 11125003
+LiDAR: 12554537
+PPO: 1010670
+Detección de carril: 11017872
+LiDAR: 13092532
+PPO: 2695421
+Detección de carril: 12833110
+LiDAR: 14310196
+PPO: 971921
+Detección de carril: 11591109
+LiDAR: 13224753
+PPO: 913112
+Detección de carril: 10953644
+LiDAR: 15678838
+PPO: 4179328
+Detección de carril: 10884389
+LiDAR: 15054604
+PPO: 765869
+Detección de carril: 11110982
+LiDAR: 12457191
+PPO: 1902029
+Detección de carril: 11598621
+LiDAR: 13888498
+PPO: 908185
+Detección de carril: 11158825
+LiDAR: 13549034
+PPO: 713380
+Detección de carril: 10874995
+LiDAR: 14951767
+PPO: 866612
+Detección de carril: 13469113
+LiDAR: 13556165
+PPO: 1170032
+Detección de carril: 11101578
+LiDAR: 13076167
+PPO: 1006825
+Detección de carril: 11449575
+LiDAR: 12955375
+PPO: 768994
+Detección de carril: 10876537
+LiDAR: 15755454
+PPO: 1566542
+Detección de carril: 10845090
+LiDAR: 12764546
+PPO: 962267
+Detección de carril: 11059875
+LiDAR: 16892365
+PPO: 1843972
+Detección de carril: 11099635
+LiDAR: 13257822
+PPO: 734552
+Detección de carril: 10457604
+LiDAR: 12995836
+PPO: 3137009
+Detección de carril: 11311866
+LiDAR: 11860257
+PPO: 865320
+Detección de carril: 10394087
+LiDAR: 11896772
+PPO: 4616490
+Detección de carril: 10631886
+LiDAR: 14053308
+PPO: 1272197
+Detección de carril: 10761123
+LiDAR: 13143390
+PPO: 815975
+Detección de carril: 11014476
+LiDAR: 12139740
+PPO: 2697083
+Detección de carril: 10849146
+LiDAR: 14024183
+PPO: 868835
+Detección de carril: 11319778
+LiDAR: 11067236
+PPO: 4380022
+Detección de carril: 10966564
+LiDAR: 13596997
+PPO: 654391
+Detección de carril: 10923188
+LiDAR: 11365037
+PPO: 4325228
+Detección de carril: 10529822
+LiDAR: 12718847
+PPO: 1909091
+Detección de carril: 10585096
+LiDAR: 12644945
+PPO: 845981
+Detección de carril: 11105654
+LiDAR: 13930611
+PPO: 1536336
+Detección de carril: 13838091
+LiDAR: 17579556
+PPO: 717667
+Detección de carril: 10553258
+LiDAR: 13057960
+PPO: 551735
+Detección de carril: 10570404
+LiDAR: 14204356
+PPO: 893183
+Detección de carril: 11500042
+LiDAR: 14635758
+PPO: 499897
+Detección de carril: 10775745
+LiDAR: 13858032
+PPO: 3304684
+Detección de carril: 10691157
+LiDAR: 14507335
+PPO: 490603
+Detección de carril: 10329689
+LiDAR: 11230693
+PPO: 485585
+Detección de carril: 10306074
+LiDAR: 12657023
+PPO: 3903399
+Detección de carril: 10690295
+LiDAR: 13134516
+PPO: 1159215
+Detección de carril: 10753721
+LiDAR: 11588996
+PPO: 518635
+Detección de carril: 11056881
+LiDAR: 14849192
+PPO: 608992
+Detección de carril: 10767132
+LiDAR: 12349948
+PPO: 556082
+Detección de carril: 10822626
+LiDAR: 12667759
+PPO: 1902461
+Detección de carril: 10980586
+LiDAR: 12777966
+PPO: 895116
+Detección de carril: 10523012
+LiDAR: 11569186
+PPO: 2345551
+Detección de carril: 10891450
+LiDAR: 11854268
+PPO: 666790
+Detección de carril: 10923779
+LiDAR: 11188851
+PPO: 640911
+Detección de carril: 11017370
+LiDAR: 16156111
+PPO: 3967477
+Detección de carril: 11178144
+LiDAR: 13085422
+PPO: 682102
+Detección de carril: 11111814
+LiDAR: 12171468
+PPO: 2510641
+Detección de carril: 11136872
+LiDAR: 12327394
+PPO: 1642987
+Detección de carril: 11050972
+LiDAR: 13764781
+PPO: 513507
+Detección de carril: 10849206
+LiDAR: 17241234
+PPO: 1332508
+Detección de carril: 11189341
+LiDAR: 13576025
+PPO: 622732
+Detección de carril: 10763285
+LiDAR: 12477311
+PPO: 649534
+Detección de carril: 10472085
+LiDAR: 12695822
+PPO: 1265897
+Detección de carril: 11274731
+LiDAR: 11824192
+PPO: 710225
+Detección de carril: 11322423
+LiDAR: 11918696
+PPO: 2866700
+Detección de carril: 11220418
+LiDAR: 13047595
+PPO: 748463
+Detección de carril: 11510617
+LiDAR: 12567888
+PPO: 4648107
+Detección de carril: 10979564
+LiDAR: 13892404
+PPO: 551375
+Detección de carril: 11266728
+LiDAR: 13021224
+PPO: 1252496
+Detección de carril: 10973454
+LiDAR: 12892891
+PPO: 920333
+Detección de carril: 12541959
+LiDAR: 12139460
+PPO: 1229301
+Detección de carril: 10987245
+LiDAR: 12011025
+PPO: 574009
+Detección de carril: 10684377
+LiDAR: 11944053
+PPO: 541069
+Detección de carril: 10696996
+LiDAR: 11634695
+PPO: 1863781
+Detección de carril: 10603574
+LiDAR: 11227108
+PPO: 2020098
+Detección de carril: 10682253
+LiDAR: 12996978
+PPO: 2488868
+Detección de carril: 10775344
+LiDAR: 12182645
+PPO: 904911
+Detección de carril: 10749495
+LiDAR: 12588589
+PPO: 4637732
+Detección de carril: 10969428
+LiDAR: 12856575
+PPO: 533207
+Detección de carril: 10944471
+LiDAR: 12717866
+PPO: 1822910
+Detección de carril: 10959964
+LiDAR: 14576650
+PPO: 4341523
+Detección de carril: 10927044
+LiDAR: 12599226
+PPO: 970850
+Detección de carril: 11032604
+LiDAR: 14742230
+PPO: 1016919
+Detección de carril: 10860083
+LiDAR: 12607989
+PPO: 917038
+Detección de carril: 11131123
+LiDAR: 12956286
+PPO: 775594
+Detección de carril: 11387652
+LiDAR: 14844856
+PPO: 1156851
+Detección de carril: 10887745
+LiDAR: 13312506
+PPO: 858410
+Detección de carril: 10747072
+LiDAR: 13189510
+PPO: 830387
+Detección de carril: 11460211
+LiDAR: 12910667
+PPO: 1500101
+Detección de carril: 10979003
+LiDAR: 12656903
+PPO: 1699413
+Detección de carril: 10998562
+LiDAR: 12719107
+PPO: 793041
+Detección de carril: 10954596
+LiDAR: 15910329
+PPO: 4139828
+Detección de carril: 11022809
+LiDAR: 13421250
+PPO: 790728
+Detección de carril: 10887194
+LiDAR: 12910677
+PPO: 875876
+Detección de carril: 11638181
+LiDAR: 13270732
+PPO: 3326687
+Detección de carril: 10548901
+LiDAR: 14000317
+PPO: 1139605
+Detección de carril: 11949122
+LiDAR: 12194633
+PPO: 1613523
+Detección de carril: 11184995
+LiDAR: 11975922
+PPO: 1582115
+Detección de carril: 11167908
+LiDAR: 12962576
+PPO: 961796
+Detección de carril: 10803828
+LiDAR: 15384082
+PPO: 2014570
+Detección de carril: 11203993
+LiDAR: 13314558
+PPO: 1015378
+Detección de carril: 12181123
+LiDAR: 12303327
+PPO: 901275
+Detección de carril: 11310103
+LiDAR: 14194280
+PPO: 2822474
+Detección de carril: 10918822
+LiDAR: 13824841
+PPO: 1917303
+Detección de carril: 11397686
+LiDAR: 12789383
+PPO: 2531123
+Detección de carril: 10734783
+LiDAR: 13339797
+PPO: 871750
+Detección de carril: 10667251
+LiDAR: 11542145
+PPO: 3284843
+Detección de carril: 10847323
+LiDAR: 12139189
+PPO: 649323
+Detección de carril: 10845580
+LiDAR: 11189592
+PPO: 2560536
+Detección de carril: 10940284
+LiDAR: 14284707
+PPO: 4781009
+Detección de carril: 10852411
+LiDAR: 13134926
+PPO: 1862190
+Detección de carril: 10400577
+LiDAR: 13765502
+PPO: 664677
+Detección de carril: 10857318
+LiDAR: 16467092
+PPO: 624416
+Detección de carril: 11216562
+LiDAR: 13485277
+PPO: 2832198
+Detección de carril: 11282783
+LiDAR: 12054391
+PPO: 1386980
+Detección de carril: 11361281
+LiDAR: 12959271
+PPO: 4792125
+Detección de carril: 10910449
+LiDAR: 13864752
+PPO: 551766
+Detección de carril: 11155691
+LiDAR: 11836411
+PPO: 3203631
+Detección de carril: 10801854
+LiDAR: 12127060
+PPO: 506096
+Detección de carril: 11045873
+LiDAR: 12067941
+PPO: 515300
+Detección de carril: 10959483
+LiDAR: 11813065
+PPO: 907474
+Detección de carril: 10856157
+LiDAR: 12686959
+PPO: 901445
+Detección de carril: 10762014
+LiDAR: 11455644
+PPO: 4380813
+Detección de carril: 10499537
+LiDAR: 12864286
+PPO: 556453
+Detección de carril: 10976729
+LiDAR: 15592738
+PPO: 677005
+Detección de carril: 10802466
+LiDAR: 12980573
+PPO: 571766
+Detección de carril: 11019675
+LiDAR: 12805789
+PPO: 2205359
+Detección de carril: 10772861
+LiDAR: 12548108
+PPO: 873072
+Detección de carril: 11143091
+LiDAR: 11943132
+PPO: 551765
+Detección de carril: 10720892
+LiDAR: 12092108
+PPO: 530232
+Detección de carril: 10404102
+LiDAR: 16209622
+PPO: 783967
+Detección de carril: 11778232
+LiDAR: 12520676
+PPO: 1275181
+Detección de carril: 11282623
+LiDAR: 14944817
+PPO: 1255331
+Detección de carril: 11586182
+LiDAR: 13175008
+PPO: 2177377
+Detección de carril: 11495956
+LiDAR: 11678361
+PPO: 1228009
+Detección de carril: 10916278
+LiDAR: 11383244
+PPO: 880874
+Detección de carril: 10954897
+LiDAR: 12342818
+PPO: 599147
+Detección de carril: 10643364
+LiDAR: 13542674
+PPO: 1563617
+Detección de carril: 11203392
+LiDAR: 12788212
+PPO: 583483
+Detección de carril: 10685648
+LiDAR: 12083405
+PPO: 829826
+Detección de carril: 10816447
+LiDAR: 15921525
+PPO: 686019
+Detección de carril: 10971882
+LiDAR: 14605373
+PPO: 2905869
+Detección de carril: 10300215
+LiDAR: 12608560
+PPO: 703755
+Detección de carril: 11449915
+LiDAR: 12815984
+PPO: 1653343
+Detección de carril: 11163652
+LiDAR: 14209023
+PPO: 958391
+Detección de carril: 10928245
+LiDAR: 14158316
+PPO: 3637448
+Detección de carril: 10718348
+LiDAR: 13301199
+PPO: 1782619
+Detección de carril: 10691057
+LiDAR: 12930047
+PPO: 955286
+Detección de carril: 10430452
+LiDAR: 15683144
+PPO: 1353679
+Detección de carril: 12405041
+LiDAR: 14490699
+PPO: 1273468
+Detección de carril: 11281400
+LiDAR: 12966511
+PPO: 953603
+Detección de carril: 11638761
+LiDAR: 14006095
+PPO: 1360741
+Detección de carril: 11125834
+LiDAR: 14375955
+PPO: 1322122
+Detección de carril: 11179396
+LiDAR: 13163881
+PPO: 2209165
+Detección de carril: 10679259
+LiDAR: 13670497
+PPO: 748523
+Detección de carril: 11340340
+LiDAR: 13438676
+PPO: 990820
+Detección de carril: 11504328
+LiDAR: 14360472
+PPO: 875856
+Detección de carril: 10622012
+LiDAR: 12444662
+PPO: 780712
+Detección de carril: 10709945
+LiDAR: 16906968
+PPO: 1022298
+Detección de carril: 10706830
+LiDAR: 12989336
+PPO: 537945
+Detección de carril: 10814373
+LiDAR: 10896238
+PPO: 981617
+Detección de carril: 12620658
+LiDAR: 13560531
+PPO: 2192309
+Detección de carril: 10919833
+LiDAR: 13995850
+PPO: 716555
+Detección de carril: 10727312
+LiDAR: 12281855
+PPO: 2448918
+Detección de carril: 10687591
+LiDAR: 12297328
+PPO: 671246
+Detección de carril: 11181699
+LiDAR: 12562150
+PPO: 678898
+Detección de carril: 11064131
+LiDAR: 12993162
+PPO: 809336
+Detección de carril: 11035858
+LiDAR: 17987563
+PPO: 695853
+Detección de carril: 10711778
+LiDAR: 14845827
+PPO: 535591
+Detección de carril: 10706640
+LiDAR: 12287133
+PPO: 571756
+Detección de carril: 11187798
+LiDAR: 12911799
+PPO: 1261781
+Detección de carril: 12731245
+LiDAR: 13932825
+PPO: 1013274
+Detección de carril: 11229201
+LiDAR: 12532465
+PPO: 972022
+Detección de carril: 11244164
+LiDAR: 14103393
+PPO: 1394992
+Detección de carril: 10763747
+LiDAR: 13348761
+PPO: 1257374
+Detección de carril: 11409344
+LiDAR: 15879352
+PPO: 926563
+Detección de carril: 12334966
+LiDAR: 19029471
+PPO: 1449295
+Detección de carril: 11611009
+LiDAR: 14279379
+PPO: 893382
+Detección de carril: 11567714
+LiDAR: 14461856
+PPO: 2375727
+Detección de carril: 11415323
+LiDAR: 13900525
+PPO: 691697
+Detección de carril: 10835105
+LiDAR: 12858188
+PPO: 694982
+Detección de carril: 10834183
+LiDAR: 14733046
+PPO: 2889995
+Detección de carril: 13330222
+LiDAR: 16011472
+PPO: 1450045
+Detección de carril: 10905872
+LiDAR: 13964463
+PPO: 642523
+Detección de carril: 11390626
+LiDAR: 15125931
+PPO: 896487
+Detección de carril: 10748423
+LiDAR: 16211665
+PPO: 3687372
+Detección de carril: 11173246
+LiDAR: 13526809
+PPO: 994375
+Detección de carril: 11134908
+LiDAR: 12428126
+PPO: 2824276
+Detección de carril: 11190012
+LiDAR: 13526299
+PPO: 871850
+Detección de carril: 10994766
+LiDAR: 15089386
+PPO: 1327590
+Detección de carril: 11145184
+LiDAR: 13868317
+PPO: 785870
+Detección de carril: 11142130
+LiDAR: 13484155
+PPO: 970610
+Detección de carril: 11701106
+LiDAR: 14498942
+PPO: 970390
+Detección de carril: 11133988
+LiDAR: 13207257
+PPO: 2231639
+Detección de carril: 10574851
+LiDAR: 13368310
+PPO: 717366
+Detección de carril: 11197173
+LiDAR: 13614794
+PPO: 1146375
+Detección de carril: 11202141
+LiDAR: 14966640
+PPO: 3869088
+Detección de carril: 10889227
+LiDAR: 13686241
+PPO: 781173
+Detección de carril: 10808765
+LiDAR: 13066353
+PPO: 765369
+Detección de carril: 10751167
+LiDAR: 12370629
+PPO: 847062
+Detección de carril: 10719690
+LiDAR: 13597367
+PPO: 612657
+Detección de carril: 10944430
+LiDAR: 14833658
+PPO: 1110080
+Detección de carril: 10715884
+LiDAR: 13657608
+PPO: 581570
+Detección de carril: 10415620
+LiDAR: 11956293
+PPO: 532777
+Detección de carril: 10829707
+LiDAR: 12153751
+PPO: 3273836
+Detección de carril: 11002899
+LiDAR: 12585595
+PPO: 2079969
+Detección de carril: 11195971
+LiDAR: 12367796
+PPO: 740511
+Detección de carril: 10836707
+LiDAR: 11915641
+PPO: 752269
+Detección de carril: 11332247
+LiDAR: 11978036
+PPO: 1616177
+Detección de carril: 10872110
+LiDAR: 13741955
+PPO: 630344
+Detección de carril: 10359464
+LiDAR: 15538956
+PPO: 1073065
+Detección de carril: 10911711
+LiDAR: 13631599
+PPO: 3950922
+Detección de carril: 11229492
+LiDAR: 13871251
+PPO: 645588
+Detección de carril: 11606563
+LiDAR: 12229145
+PPO: 2744024
+Detección de carril: 11579562
+LiDAR: 12611594
+PPO: 1073635
+Detección de carril: 14608488
+LiDAR: 12999632
+PPO: 1476285
+Detección de carril: 11211284
+LiDAR: 15763997
+PPO: 1100506
+Detección de carril: 11322022
+LiDAR: 13995209
+PPO: 4800579
+Detección de carril: 11061678
+LiDAR: 13740794
+PPO: 1065894
+Detección de carril: 11178665
+LiDAR: 14009010
+PPO: 2933472
+Detección de carril: 10897209
+LiDAR: 12992972
+PPO: 530654
+Detección de carril: 10730386
+LiDAR: 16694707
+PPO: 540097
+Detección de carril: 10894545
+LiDAR: 13906765
+PPO: 620380
+Detección de carril: 10780421
+LiDAR: 12178108
+PPO: 2489780
+Detección de carril: 10683104
+LiDAR: 12901353
+PPO: 463933
+Detección de carril: 10484363
+LiDAR: 12949927
+PPO: 816286
+Detección de carril: 10321707
+LiDAR: 11806014
+PPO: 3275469
+Detección de carril: 10524555
+LiDAR: 12089264
+PPO: 499347
+Detección de carril: 12017375
+LiDAR: 12206231
+PPO: 1162049
+Detección de carril: 11198124
+LiDAR: 13409923
+PPO: 2293292
+Detección de carril: 11212727
+LiDAR: 17343469
+PPO: 836496
+Detección de carril: 11017531
+LiDAR: 13481291
+PPO: 1068618
+Detección de carril: 11060175
+LiDAR: 14352610
+PPO: 844639
+Detección de carril: 11052614
+LiDAR: 12583391
+PPO: 4964336
+Detección de carril: 10896498
+LiDAR: 14605593
+PPO: 763966
+Detección de carril: 11288141
+LiDAR: 11961330
+PPO: 2878408
+Detección de carril: 10505195
+LiDAR: 15037898
+PPO: 1419970
+Detección de carril: 11838023
+LiDAR: 13064650
+PPO: 2443289
+Detección de carril: 11533602
+LiDAR: 12682712
+PPO: 782034
+Detección de carril: 10971912
+LiDAR: 12360554
+PPO: 811669
+Detección de carril: 11128809
+LiDAR: 15465115
+PPO: 648853
+Detección de carril: 10858440
+LiDAR: 13888017
+PPO: 3156720
+Detección de carril: 11114568
+LiDAR: 12163266
+PPO: 635672
+Detección de carril: 10916548
+LiDAR: 12973763
+PPO: 3201968
+Detección de carril: 10681242
+LiDAR: 14541927
+PPO: 629553
+Detección de carril: 11840807
+LiDAR: 14013377
+PPO: 1146075
+Detección de carril: 11569957
+LiDAR: 13031140
+PPO: 958040
+Detección de carril: 11122129
+LiDAR: 12927502
+PPO: 2576170
+Detección de carril: 11027266
+LiDAR: 12106700
+PPO: 1716178
+Detección de carril: 11154178
+LiDAR: 13946716
+PPO: 2420485
+Detección de carril: 10940354
+LiDAR: 11977755
+PPO: 740551
+Detección de carril: 11019433
+LiDAR: 11342643
+PPO: 535480
+Detección de carril: 10446266
+LiDAR: 13669757
+PPO: 1850652
+Detección de carril: 10801544
+LiDAR: 13646641
+PPO: 620440
+Detección de carril: 10478655
+LiDAR: 12644214
+PPO: 612838
+Detección de carril: 11197354
+LiDAR: 13272255
+PPO: 740962
+Detección de carril: 10736716
+LiDAR: 12128052
+PPO: 555411
+Detección de carril: 10732910
+LiDAR: 12049313
+PPO: 519066
+Detección de carril: 10617906
+LiDAR: 12651435
+PPO: 2585554
+Detección de carril: 11034096
+LiDAR: 12136344
+PPO: 933794
+Detección de carril: 10838460
+LiDAR: 12718716
+PPO: 4204135
+Detección de carril: 10895115
+LiDAR: 14299520
+PPO: 1044291
+Detección de carril: 10923559
+LiDAR: 14248794
+PPO: 2403810
+Detección de carril: 10634841
+LiDAR: 14385179
+PPO: 659448
+Detección de carril: 10802295
+LiDAR: 12692908
+PPO: 3124180
+Detección de carril: 10680821
+LiDAR: 11102289
+PPO: 696735
+Detección de carril: 10841104
+LiDAR: 11678612
+PPO: 1226737
+Detección de carril: 10760522
+LiDAR: 17220392
+PPO: 505616
+Detección de carril: 11084923
+LiDAR: 13840846
+PPO: 4548827
+Detección de carril: 11047467
+LiDAR: 15107433
+PPO: 610805
+Detección de carril: 10407026
+LiDAR: 14874470
+PPO: 542571
+Detección de carril: 10444373
+LiDAR: 14420043
+PPO: 1726364
+Detección de carril: 10744197
+LiDAR: 14998678
+PPO: 492045
+Detección de carril: 10344472
+LiDAR: 15459957
+PPO: 936968
+Detección de carril: 10715794
+LiDAR: 12430380
+PPO: 3316472
+Detección de carril: 10299814
+LiDAR: 13664979
+PPO: 470202
+Detección de carril: 10690576
+LiDAR: 13186766
+PPO: 1830121
+Detección de carril: 10876918
+LiDAR: 14500895
+PPO: 587700
+Detección de carril: 10694482
+LiDAR: 14136513
+PPO: 4328043
+Detección de carril: 10856357
+LiDAR: 12854211
+PPO: 1284765
+Detección de carril: 10802936
+LiDAR: 12745598
+PPO: 516051
+Detección de carril: 10906503
+LiDAR: 14506323
+PPO: 628471
+Detección de carril: 11723520
+LiDAR: 17454437
+PPO: 2237337
+Detección de carril: 11180428
+LiDAR: 15294506
+PPO: 2036914
+Detección de carril: 11379890
+LiDAR: 15160784
+PPO: 975287
+Detección de carril: 11249442
+LiDAR: 14086066
+PPO: 5272432
+Detección de carril: 11135269
+LiDAR: 14581858
+PPO: 835014
+Detección de carril: 10934585
+LiDAR: 15762305
+PPO: 652188
+Detección de carril: 11180828
+LiDAR: 14755661
+PPO: 648622
+Detección de carril: 11327080
+LiDAR: 13568303
+PPO: 1210964
+Detección de carril: 11190412
+LiDAR: 13396262
+PPO: 2041691
+Detección de carril: 11307069
+LiDAR: 14618072
+PPO: 4494535
+Detección de carril: 11014436
+LiDAR: 14207190
+PPO: 1583998
+Detección de carril: 11052194
+LiDAR: 13935789
+PPO: 521309
+Detección de carril: 10925632
+LiDAR: 13411585
+PPO: 4399381
+Detección de carril: 10795404
+LiDAR: 14789612
+PPO: 811779
+Detección de carril: 10989879
+LiDAR: 13655404
+PPO: 2558274
+Detección de carril: 10852831
+LiDAR: 13343612
+PPO: 789315
+Detección de carril: 10868255
+LiDAR: 14547665
+PPO: 557384
+Detección de carril: 10973584
+LiDAR: 14578753
+PPO: 1845063
+Detección de carril: 10347036
+LiDAR: 15011568
+PPO: 495651
+Detección de carril: 10931711
+LiDAR: 13412888
+PPO: 1054657
+Detección de carril: 11001878
+LiDAR: 15023106
+PPO: 493677
+Detección de carril: 11123361
+LiDAR: 13858522
+PPO: 495961
+Detección de carril: 11398378
+LiDAR: 14162853
+PPO: 2114782
+Detección de carril: 11208270
+LiDAR: 13866344
+PPO: 2128272
+Detección de carril: 10754273
+LiDAR: 12149274
+PPO: 2284259
+Detección de carril: 10685808
+LiDAR: 16946818
+PPO: 471063
+Detección de carril: 10395539
+LiDAR: 13810159
+PPO: 474528
+Detección de carril: 10966994
+LiDAR: 14959109
+PPO: 1993468
+Detección de carril: 11808378
+LiDAR: 12991539
+PPO: 1285195
+Detección de carril: 11292056
+LiDAR: 14279680
+PPO: 4853538
+Detección de carril: 10832461
+LiDAR: 14244366
+PPO: 1131844
+Detección de carril: 10907434
+LiDAR: 13279235
+PPO: 2074711
+Detección de carril: 10747892
+LiDAR: 13345235
+PPO: 642813
+Detección de carril: 11532390
+LiDAR: 14420674
+PPO: 931170
+Detección de carril: 10549693
+LiDAR: 14148321
+PPO: 3620151
+Detección de carril: 11653123
+LiDAR: 13073434
+PPO: 1686654
+Detección de carril: 10681783
+LiDAR: 13958323
+PPO: 613288
+Detección de carril: 10831259
+LiDAR: 15665428
+PPO: 802926
+Detección de carril: 10933624
+LiDAR: 13341219
+PPO: 661782
+Detección de carril: 11027536
+LiDAR: 11753335
+PPO: 493508
+Detección de carril: 10655794
+LiDAR: 13115317
+PPO: 3332215
+Detección de carril: 11562816
+LiDAR: 15096226
+PPO: 603945
+Detección de carril: 11241540
+LiDAR: 13126053
+PPO: 4660226
+Detección de carril: 10800833
+LiDAR: 13962089
+PPO: 487778
+Detección de carril: 11032433
+LiDAR: 12977618
+PPO: 501730
+Detección de carril: 10648382
+LiDAR: 13686342
+PPO: 4704003
+Detección de carril: 11588646
+LiDAR: 13725240
+PPO: 967665
+Detección de carril: 10995407
+LiDAR: 13334679
+PPO: 3925082
+Detección de carril: 10779250
+LiDAR: 13070229
+PPO: 759359
+Detección de carril: 10923779
+LiDAR: 12970417
+PPO: 4626575
+Detección de carril: 10767693
+LiDAR: 14164325
+PPO: 1634154
+Detección de carril: 10992513
+LiDAR: 14255153
+PPO: 4434694
+Detección de carril: 11988561
+LiDAR: 14923925
+PPO: 776926
+Detección de carril: 11079064
+LiDAR: 13222820
+PPO: 688031
+Detección de carril: 10908156
+LiDAR: 17378912
+PPO: 622443
+Detección de carril: 10334707
+LiDAR: 13543054
+PPO: 1081458
+Detección de carril: 11022067
+LiDAR: 13293166
+PPO: 762084
+Detección de carril: 11466982
+LiDAR: 12934654
+PPO: 4637351
+Detección de carril: 10672919
+LiDAR: 12668730
+PPO: 1990233
+Detección de carril: 10841234
+LiDAR: 13393548
+PPO: 552937
+Detección de carril: 10803387
+LiDAR: 13915348
+PPO: 837128
+Detección de carril: 10673621
+LiDAR: 13136630
+PPO: 635602
+Detección de carril: 10935737
+LiDAR: 13114957
+PPO: 3794885
+Detección de carril: 10729165
+LiDAR: 13199755
+PPO: 798549
+Detección de carril: 10771969
+LiDAR: 13460569
+PPO: 548942
+Detección de carril: 11016810
+LiDAR: 13079462
+PPO: 2984949
+Detección de carril: 10996469
+LiDAR: 13488282
+PPO: 1647234
+Detección de carril: 10770116
+LiDAR: 13938173
+PPO: 4300691
+Detección de carril: 10926964
+LiDAR: 12359623
+PPO: 634501
+Detección de carril: 11041056
+LiDAR: 12478593
+PPO: 4277517
+Detección de carril: 11192295
+LiDAR: 14454895
+PPO: 524404
+Detección de carril: 11213347
+LiDAR: 13166976
+PPO: 522972
+Detección de carril: 10926974
+LiDAR: 13192604
+PPO: 489901
+Detección de carril: 10868505
+LiDAR: 15206764
+PPO: 500367
+Detección de carril: 10853142
+LiDAR: 14550780
+PPO: 2395366
+Detección de carril: 10881184
+LiDAR: 13416413
+PPO: 2694280
+Detección de carril: 10970740
+LiDAR: 14345129
+PPO: 874393
+Detección de carril: 11495044
+LiDAR: 12677464
+PPO: 1034386
+Detección de carril: 10985432
+LiDAR: 12831948
+PPO: 826952
+Detección de carril: 10673230
+LiDAR: 13712320
+PPO: 814192
+Detección de carril: 10831900
+LiDAR: 17763014
+PPO: 1211625
+Detección de carril: 11004561
+LiDAR: 13150951
+PPO: 839431
+Detección de carril: 11080016
+LiDAR: 15463292
+PPO: 1287359
+Detección de carril: 11137713
+LiDAR: 13117771
+PPO: 778178
+Detección de carril: 11201329
+LiDAR: 12934172
+PPO: 4886949
+Detección de carril: 10786792
+LiDAR: 15080423
+PPO: 1733554
+Detección de carril: 11056760
+LiDAR: 12937788
+PPO: 651296
+Detección de carril: 10946493
+LiDAR: 16921931
+PPO: 841384
+Detección de carril: 11400941
+LiDAR: 21868709
+PPO: 727732
+Detección de carril: 11823621
+LiDAR: 14453904
+PPO: 668953
+Detección de carril: 11163522
+LiDAR: 12196937
+PPO: 1087907
+Detección de carril: 11387691
+LiDAR: 12019317
+PPO: 1643798
+Detección de carril: 10957540
+LiDAR: 11748097
+PPO: 1135599
+Detección de carril: 12003053
+LiDAR: 12013579
+PPO: 2622711
+Detección de carril: 12284459
+LiDAR: 21720425
+PPO: 846331
+Detección de carril: 11234389
+LiDAR: 16326910
+PPO: 677696
+Detección de carril: 10941716
+LiDAR: 13558398
+PPO: 861064
+Detección de carril: 11074567
+LiDAR: 13671469
+PPO: 2987173
+Detección de carril: 11239006
+LiDAR: 14162813
+PPO: 1155970
+Detección de carril: 10901815
+LiDAR: 13137861
+PPO: 728433
+Detección de carril: 10984651
+LiDAR: 13492778
+PPO: 820442
+Detección de carril: 10996680
+LiDAR: 13673071
+PPO: 4379410
+Detección de carril: 10922968
+LiDAR: 14064264
+PPO: 2182595
+Detección de carril: 11082770
+LiDAR: 12930678
+PPO: 672899
+Detección de carril: 11312688
+LiDAR: 14811284
+PPO: 620159
+Detección de carril: 10975787
+LiDAR: 17889485
+PPO: 726931
+Detección de carril: 10975137
+LiDAR: 13910561
+PPO: 622933
+Detección de carril: 11153006
+LiDAR: 15138531
+PPO: 1013485
+Detección de carril: 10921606
+LiDAR: 13394460
+PPO: 882196
+Detección de carril: 10532757
+LiDAR: 13680623
+PPO: 948006
+Detección de carril: 10995938
+LiDAR: 16962301
+PPO: 1926416
+Detección de carril: 10320055
+LiDAR: 14332580
+PPO: 1304855
+Detección de carril: 10713301
+LiDAR: 12601730
+PPO: 616313
+Detección de carril: 10714101
+LiDAR: 13320278
+PPO: 2328275
+Detección de carril: 10598607
+LiDAR: 13013603
+PPO: 551165
+Detección de carril: 10772690
+LiDAR: 15518515
+PPO: 928075
+Detección de carril: 10802927
+LiDAR: 15477443
+PPO: 1048568
+Detección de carril: 11563397
+LiDAR: 13211222
+PPO: 4865666
+Detección de carril: 10757217
+LiDAR: 13493229
+PPO: 1859224
+Detección de carril: 11752283
+LiDAR: 13685811
+PPO: 741973
+Detección de carril: 10634210
+LiDAR: 12596251
+PPO: 1821688
+Detección de carril: 11067796
+LiDAR: 13646641
+PPO: 834303
+Detección de carril: 11103851
+LiDAR: 14279700
+PPO: 1690780
+Detección de carril: 10943969
+LiDAR: 17761081
+PPO: 2243797
+Detección de carril: 11040245
+LiDAR: 15943489
+PPO: 785329
+Detección de carril: 12393133
+LiDAR: 19282824
+PPO: 861283
+Detección de carril: 10745459
+LiDAR: 16298717
+PPO: 777698
+Detección de carril: 10994005
+LiDAR: 15565596
+PPO: 1073365
+Detección de carril: 11907428
+LiDAR: 14823523
+PPO: 935095
+Detección de carril: 11047526
+LiDAR: 14033497
+PPO: 2437421
+Detección de carril: 12018957
+LiDAR: 14004693
+PPO: 1247288
+Detección de carril: 11670379
+LiDAR: 16993730
+PPO: 973834
+Detección de carril: 11253839
+LiDAR: 14616450
+PPO: 2483310
+Detección de carril: 12155123
+LiDAR: 14606685
+PPO: 924660
+Detección de carril: 11537999
+LiDAR: 15062746
+PPO: 3164291
+Detección de carril: 10707502
+LiDAR: 13771531
+PPO: 901044
+Detección de carril: 11625261
+LiDAR: 13467059
+PPO: 1472680
+Detección de carril: 10961076
+LiDAR: 14418991
+PPO: 1155059
+Detección de carril: 11620533
+LiDAR: 16093356
+PPO: 2533115
+Detección de carril: 11262512
+LiDAR: 14256345
+PPO: 2179430
+Detección de carril: 11430937
+LiDAR: 14504760
+PPO: 2941113
+Detección de carril: 11225376
+LiDAR: 14128542
+PPO: 1924153
+Detección de carril: 11398217
+LiDAR: 14987352
+PPO: 1069960
+Detección de carril: 11128919
+LiDAR: 12563261
+PPO: 866442
+Detección de carril: 11147658
+LiDAR: 13701885
+PPO: 4908662
+Detección de carril: 11284475
+LiDAR: 13356562
+PPO: 1894048
+Detección de carril: 10901746
+LiDAR: 13706623
+PPO: 1160988
+Detección de carril: 11359940
+LiDAR: 14694037
+PPO: 3449152
+Detección de carril: 11272998
+LiDAR: 14498571
+PPO: 879301
+Detección de carril: 11489386
+LiDAR: 14876344
+PPO: 970609
+Detección de carril: 11570418
+LiDAR: 16526222
+PPO: 1139155
+Detección de carril: 10869416
+LiDAR: 13046352
+PPO: 1080096
+Detección de carril: 11575526
+LiDAR: 13811642
+PPO: 696284
+Detección de carril: 11437547
+LiDAR: 14070514
+PPO: 1622016
+Detección de carril: 10378834
+LiDAR: 14135041
+PPO: 2184087
+Detección de carril: 11060656
+LiDAR: 13928318
+PPO: 550143
+Detección de carril: 11912286
+LiDAR: 13527812
+PPO: 2060810
+Detección de carril: 10521630
+LiDAR: 13375441
+PPO: 3181206
+Detección de carril: 11887378
+LiDAR: 15940785
+PPO: 2232731
+Detección de carril: 11476687
+LiDAR: 14272078
+PPO: 3684849
+Detección de carril: 11130272
+LiDAR: 13784110
+PPO: 770987
+Detección de carril: 11554343
+LiDAR: 12061732
+PPO: 681762
+Detección de carril: 11219366
+LiDAR: 13189479
+PPO: 1900007
+Detección de carril: 11205345
+LiDAR: 14801380
+PPO: 797678
+Detección de carril: 11176472
+LiDAR: 13560101
+PPO: 875896
+Detección de carril: 11345708
+LiDAR: 16414692
+PPO: 1023690
+Detección de carril: 11150232
+LiDAR: 14380803
+PPO: 4689760
+Detección de carril: 11279207
+LiDAR: 13749367
+PPO: 1808167
+Detección de carril: 11064712
+LiDAR: 13634623
+PPO: 885841
+Detección de carril: 11154678
+LiDAR: 15737728
+PPO: 546858
+Detección de carril: 11086055
+LiDAR: 13399727
+PPO: 2204798
+Detección de carril: 10748113
+LiDAR: 15286374
+PPO: 956829
+Detección de carril: 11838033
+LiDAR: 13877161
+PPO: 715133
+Detección de carril: 10951060
+LiDAR: 11605931
+PPO: 619628
+Detección de carril: 11066926
+LiDAR: 16393250
+PPO: 3814405
+Detección de carril: 11025823
+LiDAR: 14316545
+PPO: 1861628
+Detección de carril: 11087056
+LiDAR: 12688190
+PPO: 578946
+Detección de carril: 10687281
+LiDAR: 15847704
+PPO: 866632
+Detección de carril: 11089199
+LiDAR: 15170709
+PPO: 2543721
+Detección de carril: 11325637
+LiDAR: 14087820
+PPO: 596733
+Detección de carril: 10992032
+LiDAR: 15335979
+PPO: 815675
+Detección de carril: 11116471
+LiDAR: 13471617
+PPO: 4718984
+Detección de carril: 10690335
+LiDAR: 13000894
+PPO: 1387180
+Detección de carril: 11231876
+LiDAR: 12573577
+PPO: 478004
+Detección de carril: 10512486
+LiDAR: 13233786
+PPO: 592337
+Detección de carril: 10914965
+LiDAR: 17300424
+PPO: 763086
+Detección de carril: 10961736
+LiDAR: 14018455
+PPO: 798559
+Detección de carril: 10821314
+LiDAR: 14572723
+PPO: 583664
+Detección de carril: 10600169
+LiDAR: 15105190
+PPO: 2564383
+Detección de carril: 11855800
+LiDAR: 14296626
+PPO: 856958
+Detección de carril: 11071993
+LiDAR: 14510319
+PPO: 832801
+Detección de carril: 10975968
+LiDAR: 13657448
+PPO: 3062587
+Detección de carril: 11356925
+LiDAR: 14182332
+PPO: 1033605
+Detección de carril: 11042278
+LiDAR: 14229594
+PPO: 1985677
+Detección de carril: 11096090
+LiDAR: 13282631
+PPO: 660931
+Detección de carril: 10368578
+LiDAR: 13211583
+PPO: 2036744
+Detección de carril: 10827804
+LiDAR: 12710504
+PPO: 591316
+Detección de carril: 11064482
+LiDAR: 13158733
+PPO: 704837
+Detección de carril: 10777557
+LiDAR: 12652977
+PPO: 961415
+Detección de carril: 11594194
+LiDAR: 16335312
+PPO: 926242
+Detección de carril: 10935888
+LiDAR: 14367583
+PPO: 657085
+Detección de carril: 10964801
+LiDAR: 13882298
+PPO: 4084595
+Detección de carril: 12534267
+LiDAR: 17414616
+PPO: 945552
+Detección de carril: 11273458
+LiDAR: 14262494
+PPO: 4562869
+Detección de carril: 12038616
+LiDAR: 15740772
+PPO: 1794036
+Detección de carril: 11014256
+LiDAR: 13521813
+PPO: 636965
+Detección de carril: 11110822
+LiDAR: 13063990
+PPO: 690706
+Detección de carril: 10981106
+LiDAR: 12805027
+PPO: 580889
+Detección de carril: 10697516
+LiDAR: 15403782
+PPO: 1588996
+Detección de carril: 11161739
+LiDAR: 13294739
+PPO: 2148753
+Detección de carril: 11451648
+LiDAR: 13857060
+PPO: 4045465
+Detección de carril: 10755454
+LiDAR: 13829799
+PPO: 2111747
+Detección de carril: 11180878
+LiDAR: 11908259
+PPO: 1905485
+Detección de carril: 11030801
+LiDAR: 14523639
+PPO: 1026524
+Detección de carril: 10916488
+LiDAR: 13171171
+PPO: 4565312
+Detección de carril: 10727982
+LiDAR: 12776484
+PPO: 2258790
+Detección de carril: 10890048
+LiDAR: 13042016
+PPO: 510833
+Detección de carril: 11123431
+LiDAR: 13071060
+PPO: 1486300
+Detección de carril: 10855706
+LiDAR: 12418943
+PPO: 628551
+Detección de carril: 10857058
+LiDAR: 13685471
+PPO: 495179
+Detección de carril: 10946443
+LiDAR: 12691055
+PPO: 2575389
+Detección de carril: 10784418
+LiDAR: 13688454
+PPO: 1020175
+Detección de carril: 10842255
+LiDAR: 13161357
+PPO: 556974
+Detección de carril: 11082579
+LiDAR: 11848659
+PPO: 621531
+Detección de carril: 10931921
+LiDAR: 15217099
+PPO: 1922892
+Detección de carril: 10700471
+LiDAR: 13213837
+PPO: 505445
+Detección de carril: 10753471
+LiDAR: 12048441
+PPO: 554560
+Detección de carril: 10572677
+LiDAR: 12237338
+PPO: 4021008
+Detección de carril: 10884119
+LiDAR: 13976861
+PPO: 1480302
+Detección de carril: 11172936
+LiDAR: 14272579
+PPO: 2421085
+Detección de carril: 10805149
+LiDAR: 13177321
+PPO: 578857
+Detección de carril: 11427412
+LiDAR: 12834272
+PPO: 2203086
+Detección de carril: 10908065
+LiDAR: 12647007
+PPO: 594039
+Detección de carril: 10677957
+LiDAR: 12384661
+PPO: 879261
+Detección de carril: 10951511
+LiDAR: 17669172
+PPO: 2537612
+Detección de carril: 10979253
+LiDAR: 14032266
+PPO: 2591273
+Detección de carril: 11088579
+LiDAR: 15064819
+PPO: 2372953
+Detección de carril: 11313919
+LiDAR: 13103269
+PPO: 904369
+Detección de carril: 10673970
+LiDAR: 13549244
+PPO: 923959
+Detección de carril: 10905922
+LiDAR: 13440429
+PPO: 2320654
+Detección de carril: 11044031
+LiDAR: 16259528
+PPO: 948997
+Detección de carril: 11260018
+LiDAR: 12675281
+PPO: 789886
+Detección de carril: 10995538
+LiDAR: 13602495
+PPO: 885441
+Detección de carril: 10660951
+LiDAR: 12913471
+PPO: 2177096
+Detección de carril: 10851840
+LiDAR: 13561522
+PPO: 655873
+Detección de carril: 10584955
+LiDAR: 12589411
+PPO: 4580114
+Detección de carril: 10775625
+LiDAR: 14738835
+PPO: 1960238
+Detección de carril: 10744408
+LiDAR: 13177341
+PPO: 618467
+Detección de carril: 10823337
+LiDAR: 13795497
+PPO: 1433350
+Detección de carril: 11351777
+LiDAR: 13265605
+PPO: 2104687
+Detección de carril: 10919733
+LiDAR: 14524832
+PPO: 676775
+Detección de carril: 10505837
+LiDAR: 14153228
+PPO: 2306813
+Detección de carril: 11208200
+LiDAR: 13136629
+PPO: 631496
+Detección de carril: 10576443
+LiDAR: 12872069
+PPO: 839441
+Detección de carril: 11383245
+LiDAR: 17803225
+PPO: 733029
+Detección de carril: 10826301
+LiDAR: 13503965
+PPO: 1652732
+Detección de carril: 10721292
+LiDAR: 15032731
+PPO: 929567
+Detección de carril: 11162410
+LiDAR: 12784786
+PPO: 2110426
+Detección de carril: 11003780
+LiDAR: 13307047
+PPO: 787933
+Detección de carril: 11151063
+LiDAR: 13815858
+PPO: 2674279
+Detección de carril: 11048578
+LiDAR: 13177951
+PPO: 1417617
+Detección de carril: 10531715
+LiDAR: 12450600
+PPO: 841324
+Detección de carril: 11018863
+LiDAR: 12758988
+PPO: 688142
+Detección de carril: 10566068
+LiDAR: 17242987
+PPO: 1052163
+Detección de carril: 10820172
+LiDAR: 13219274
+PPO: 588031
+Detección de carril: 11011021
+LiDAR: 14003132
+PPO: 633149
+Detección de carril: 10755264
+LiDAR: 14066788
+PPO: 3457485
+Detección de carril: 10794363
+LiDAR: 14927070
+PPO: 503363
+Detección de carril: 10957310
+LiDAR: 14916013
+PPO: 2132419
+Detección de carril: 10828605
+LiDAR: 13596856
+PPO: 613730
+Detección de carril: 11766224
+LiDAR: 13856349
+PPO: 1553963
+Detección de carril: 12241053
+LiDAR: 13692972
+PPO: 4411719
+Detección de carril: 10539768
+LiDAR: 14628969
+PPO: 714301
+Detección de carril: 10698659
+LiDAR: 13305835
+PPO: 1030580
+Detección de carril: 11463506
+LiDAR: 12698395
+PPO: 907154
+Detección de carril: 11044402
+LiDAR: 13647783
+PPO: 757758
+Detección de carril: 11123001
+LiDAR: 13507581
+PPO: 1632852
+Detección de carril: 11043660
+LiDAR: 14028440
+PPO: 1983763
+Detección de carril: 11176241
+LiDAR: 13747164
+PPO: 649954
+Detección de carril: 11050321
+LiDAR: 14828271
+PPO: 1505520
+Detección de carril: 11618531
+LiDAR: 14379100
+PPO: 4797894
+Detección de carril: 10956889
+LiDAR: 14864986
+PPO: 569181
+Detección de carril: 10798389
+LiDAR: 16920558
+PPO: 1128739
+Detección de carril: 10795665
+LiDAR: 13369953
+PPO: 2223346
+Detección de carril: 12017234
+LiDAR: 18820495
+PPO: 2020039
+Detección de carril: 12618074
+LiDAR: 23114806
+PPO: 810017
+Detección de carril: 10903438
+LiDAR: 15899763
+PPO: 1189260
+Detección de carril: 11064122
+LiDAR: 13584737
+PPO: 2301955
+Detección de carril: 11220548
+LiDAR: 15026020
+PPO: 716104
+Detección de carril: 10946013
+LiDAR: 14207230
+PPO: 1436064
+Detección de carril: 11104563
+LiDAR: 14733166
+PPO: 2598083
+Detección de carril: 11783520
+LiDAR: 14386672
+PPO: 1015167
+Detección de carril: 11148148
+LiDAR: 13882940
+PPO: 749935
+Detección de carril: 11511299
+LiDAR: 14865607
+PPO: 1125414
+Detección de carril: 11112986
+LiDAR: 16045654
+PPO: 759890
+Detección de carril: 11323204
+LiDAR: 14540845
+PPO: 604695
+Detección de carril: 11001186
+LiDAR: 14277957
+PPO: 665718
+Detección de carril: 11272808
+LiDAR: 18844502
+PPO: 922927
+Detección de carril: 11237064
+LiDAR: 14859157
+PPO: 4543159
+Detección de carril: 11712223
+LiDAR: 15645517
+PPO: 637285
+Detección de carril: 11083000
+LiDAR: 13457425
+PPO: 571245
+Detección de carril: 11152426
+LiDAR: 14953630
+PPO: 527839
+Detección de carril: 11108979
+LiDAR: 14904096
+PPO: 639037
+Detección de carril: 10887985
+LiDAR: 19831225
+PPO: 1692152
+Detección de carril: 12518464
+LiDAR: 15737888
+PPO: 739900
+Detección de carril: 11446871
+LiDAR: 13745411
+PPO: 765489
+Detección de carril: 10897029
+LiDAR: 13028475
+PPO: 713530
+Detección de carril: 11221430
+LiDAR: 14224145
+PPO: 622903
+Detección de carril: 10811008
+LiDAR: 14781580
+PPO: 563683
+Detección de carril: 11107557
+LiDAR: 16412680
+PPO: 1866717
+Detección de carril: 11592361
+LiDAR: 15470663
+PPO: 1990294
+Detección de carril: 10782415
+LiDAR: 14315775
+PPO: 739519
+Detección de carril: 11426891
+LiDAR: 13973045
+PPO: 1275772
+Detección de carril: 11302111
+LiDAR: 13046843
+PPO: 749054
+Detección de carril: 11318917
+LiDAR: 13012622
+PPO: 2418161
+Detección de carril: 10849657
+LiDAR: 14718344
+PPO: 624485
+Detección de carril: 12527126
+LiDAR: 13801396
+PPO: 760451
+Detección de carril: 11158754
+LiDAR: 15278232
+PPO: 665097
+Detección de carril: 10950550
+LiDAR: 14924236
+PPO: 627740
+Detección de carril: 11279036
+LiDAR: 13576616
+PPO: 802886
+Detección de carril: 11054587
+LiDAR: 12215826
+PPO: 642863
+Detección de carril: 11010831
+LiDAR: 13003758
+PPO: 2270658
+Detección de carril: 11351056
+LiDAR: 13733713
+PPO: 785349
+Detección de carril: 10344152
+LiDAR: 14254051
+PPO: 574770
+Detección de carril: 11117943
+LiDAR: 12318791
+PPO: 3654223
+Detección de carril: 10913524
+LiDAR: 15527349
+PPO: 734372
+Detección de carril: 11305848
+LiDAR: 13466329
+PPO: 3657037
+Detección de carril: 11194129
+LiDAR: 13794795
+PPO: 626699
+Detección de carril: 10386156
+LiDAR: 12804987
+PPO: 650394
+Detección de carril: 10721523
+LiDAR: 19245047
+PPO: 548410
+Detección de carril: 11037461
+LiDAR: 14808270
+PPO: 827613
+Detección de carril: 10492075
+LiDAR: 14376447
+PPO: 4068890
+Detección de carril: 10253905
+LiDAR: 13718680
+PPO: 1225695
+Detección de carril: 10911340
+LiDAR: 14018544
+PPO: 613739
+Detección de carril: 10636824
+LiDAR: 14469567
+PPO: 1813956
+Detección de carril: 10874204
+LiDAR: 13352897
+PPO: 559928
+Detección de carril: 10374998
+LiDAR: 15976319
+PPO: 3051740
+Detección de carril: 10838691
+LiDAR: 14419461
+PPO: 512245
+Detección de carril: 10246734
+LiDAR: 13647362
+PPO: 1061056
+Detección de carril: 10651818
+LiDAR: 14004763
+PPO: 661662
+Detección de carril: 11792654
+LiDAR: 14731324
+PPO: 1309333
+Detección de carril: 10644356
+LiDAR: 13428551
+PPO: 1841989
+Detección de carril: 11194499
+LiDAR: 13580822
+PPO: 1113756
+Detección de carril: 10895136
+LiDAR: 13457946
+PPO: 2741421
+Detección de carril: 10468910
+LiDAR: 12794942
+PPO: 1758232
+Detección de carril: 10805069
+LiDAR: 13877080
+PPO: 2120771
+Detección de carril: 10672238
+LiDAR: 13692531
+PPO: 840383
+Detección de carril: 10858069
+LiDAR: 12499615
+PPO: 2134101
+Detección de carril: 11457988
+LiDAR: 12582090
+PPO: 584084
+Detección de carril: 10983249
+LiDAR: 14348464
+PPO: 594220
+Detección de carril: 10365864
+LiDAR: 14504040
+PPO: 1945436
+Detección de carril: 11229592
+LiDAR: 13505598
+PPO: 2108562
+Detección de carril: 10986484
+LiDAR: 12750435
+PPO: 946553
+Detección de carril: 12221133
+LiDAR: 14900530
+PPO: 769074
+Detección de carril: 10869486
+LiDAR: 16316684
+PPO: 2405051
+Detección de carril: 11398978
+LiDAR: 15084208
+PPO: 1017120
+Detección de carril: 11427622
+LiDAR: 15288538
+PPO: 589733
+Detección de carril: 11384978
+LiDAR: 13132673
+PPO: 839922
+Detección de carril: 10743946
+LiDAR: 14002010
+PPO: 504403
+Detección de carril: 11004932
+LiDAR: 14987842
+PPO: 739750
+Detección de carril: 10513318
+LiDAR: 15673871
+PPO: 2854221
+Detección de carril: 11126435
+LiDAR: 14452381
+PPO: 584675
+Detección de carril: 11209712
+LiDAR: 15305252
+PPO: 933073
+Detección de carril: 11331316
+LiDAR: 14543219
+PPO: 837738
+Detección de carril: 11167498
+LiDAR: 14652995
+PPO: 744838
+Detección de carril: 10956759
+LiDAR: 12648059
+PPO: 1332998
+Detección de carril: 11467993
+LiDAR: 12154833
+PPO: 707751
+Detección de carril: 10725529
+LiDAR: 14467143
+PPO: 746320
+Detección de carril: 10597875
+LiDAR: 13047013
+PPO: 4615989
+Detección de carril: 10989699
+LiDAR: 14047969
+PPO: 744468
+Detección de carril: 10892292
+LiDAR: 13089067
+PPO: 3326427
+Detección de carril: 10769405
+LiDAR: 12722722
+PPO: 1222511
+Detección de carril: 11638001
+LiDAR: 13279276
+PPO: 3319455
+Detección de carril: 11089470
+LiDAR: 12831798
+PPO: 535311
+Detección de carril: 10781013
+LiDAR: 19319280
+PPO: 992663
+Detección de carril: 11019654
+LiDAR: 14911377
+PPO: 553809
+Detección de carril: 11105363
+LiDAR: 12773449
+PPO: 4934221
+Detección de carril: 10648092
+LiDAR: 12685366
+PPO: 536142
+Detección de carril: 10636013
+LiDAR: 12744175
+PPO: 2167282
+Detección de carril: 11005452
+LiDAR: 12692347
+PPO: 485565
+Detección de carril: 11325277
+LiDAR: 13247708
+PPO: 2065237
+Detección de carril: 11021917
+LiDAR: 13832183
+PPO: 2372472
+Detección de carril: 10867764
+LiDAR: 14050092
+PPO: 1213677
+Detección de carril: 10920645
+LiDAR: 14642509
+PPO: 773431
+Detección de carril: 10882597
+LiDAR: 15345364
+PPO: 2357479
+Detección de carril: 10961226
+LiDAR: 13516885
+PPO: 1471918
+Detección de carril: 11578249
+LiDAR: 13153004
+PPO: 1153737
+Detección de carril: 11117973
+LiDAR: 13322020
+PPO: 2579756
+Detección de carril: 11065063
+LiDAR: 13641443
+PPO: 886612
+Detección de carril: 11277024
+LiDAR: 13724319
+PPO: 1938615
+Detección de carril: 10939532
+LiDAR: 15455740
+PPO: 2378031
+Detección de carril: 10770557
+LiDAR: 16878264
+PPO: 750466
+Detección de carril: 12004385
+LiDAR: 14922613
+PPO: 720411
+Detección de carril: 10385324
+LiDAR: 14919108
+PPO: 871860
+Detección de carril: 10895136
+LiDAR: 13228599
+PPO: 2259511
+Detección de carril: 10825250
+LiDAR: 14103994
+PPO: 1434371
+Detección de carril: 11105995
+LiDAR: 14675729
+PPO: 542742
+Detección de carril: 10329809
+LiDAR: 14426352
+PPO: 529501
+Detección de carril: 11120407
+LiDAR: 15602133
+PPO: 4134840
+Detección de carril: 11054547
+LiDAR: 15056326
+PPO: 558666
+Detección de carril: 11977784
+LiDAR: 15622413
+PPO: 673670
+Detección de carril: 10821764
+LiDAR: 17897898
+PPO: 1087657
+Detección de carril: 11310604
+LiDAR: 16060486
+PPO: 901495
+Detección de carril: 11038101
+LiDAR: 15530273
+PPO: 688762
+Detección de carril: 10332383
+LiDAR: 14360832
+PPO: 4591050
+Detección de carril: 10844639
+LiDAR: 13546850
+PPO: 1496246
+Detección de carril: 11723950
+LiDAR: 13669916
+PPO: 584676
+Detección de carril: 11090010
+LiDAR: 14244597
+PPO: 3960446
+Detección de carril: 11064762
+LiDAR: 14047769
+PPO: 1621014
+Detección de carril: 11736769
+LiDAR: 14089522
+PPO: 606899
+Detección de carril: 11494173
+LiDAR: 13776418
+PPO: 4351177
+Detección de carril: 11861930
+LiDAR: 13765401
+PPO: 1357365
+Detección de carril: 12334245
+LiDAR: 15230550
+PPO: 2758426
+Detección de carril: 10911540
+LiDAR: 13304613
+PPO: 630445
+Detección de carril: 10841114
+LiDAR: 15211220
+PPO: 815034
+Detección de carril: 10442380
+LiDAR: 14530069
+PPO: 611917
+Detección de carril: 10845580
+LiDAR: 12957047
+PPO: 660230
+Detección de carril: 10601802
+LiDAR: 13044409
+PPO: 511034
+Detección de carril: 10927264
+LiDAR: 14593415
+PPO: 664106
+Detección de carril: 10911661
+LiDAR: 12964869
+PPO: 1138314
+Detección de carril: 10910148
+LiDAR: 13008104
+PPO: 942387
+Detección de carril: 10928395
+LiDAR: 13535724
+PPO: 2881162
+Detección de carril: 10659309
+LiDAR: 13922038
+PPO: 661131
+Detección de carril: 10348368
+LiDAR: 17172540
+PPO: 4440484
+Detección de carril: 10862086
+LiDAR: 14907901
+PPO: 2131276
+Detección de carril: 10986374
+LiDAR: 13936761
+PPO: 4257927
+Detección de carril: 11130712
+LiDAR: 13427259
+PPO: 2457281
+Detección de carril: 10680872
+LiDAR: 15195937
+PPO: 4527204
+Detección de carril: 11540994
+LiDAR: 13041205
+PPO: 1005973
+Detección de carril: 11097032
+LiDAR: 12429569
+PPO: 5166533
+Detección de carril: 11440531
+LiDAR: 13198193
+PPO: 975978
+Detección de carril: 11012764
+LiDAR: 12487126
+PPO: 2712607
+Detección de carril: 11108168
+LiDAR: 14304618
+PPO: 744036
+Detección de carril: 11024261
+LiDAR: 12753720
+PPO: 968387
+Detección de carril: 11684561
+LiDAR: 13141116
+PPO: 749354
+Detección de carril: 11182781
+LiDAR: 13365686
+PPO: 2978470
+Detección de carril: 11021637
+LiDAR: 13760393
+PPO: 1844182
+Detección de carril: 10899672
+LiDAR: 12516631
+PPO: 727081
+Detección de carril: 11086736
+LiDAR: 13290041
+PPO: 2341605
+Detección de carril: 10713591
+LiDAR: 14264747
+PPO: 637875
+Detección de carril: 11906597
+LiDAR: 13095727
+PPO: 609413
+Detección de carril: 10803437
+LiDAR: 12771707
+PPO: 2102593
+Detección de carril: 10676835
+LiDAR: 14203164
+PPO: 1121698
+Detección de carril: 11176681
+LiDAR: 12676473
+PPO: 566247
+Detección de carril: 10390722
+LiDAR: 12788162
+PPO: 884399
+Detección de carril: 11324495
+LiDAR: 16258806
+PPO: 923648
+Detección de carril: 10971962
+LiDAR: 14232338
+PPO: 2628329
+Detección de carril: 11294681
+LiDAR: 13549364
+PPO: 927404
+Detección de carril: 11064943
+LiDAR: 12558484
+PPO: 928696
+Detección de carril: 11040115
+LiDAR: 12791757
+PPO: 609823
+Detección de carril: 10253594
+LiDAR: 16831063
+PPO: 2117916
+Detección de carril: 10880744
+LiDAR: 15040933
+PPO: 505435
+Detección de carril: 10689054
+LiDAR: 14205848
+PPO: 489932
+Detección de carril: 10698618
+LiDAR: 13574212
+PPO: 476361
+Detección de carril: 10656464
+LiDAR: 16798964
+PPO: 558064
+Detección de carril: 10763897
+LiDAR: 15104929
+PPO: 473818
+Detección de carril: 10856037
+LiDAR: 15413377
+PPO: 1511398
+Detección de carril: 10749435
+LiDAR: 13040994
+PPO: 1812064
+Detección de carril: 10700571
+LiDAR: 13358626
+PPO: 927855
+Detección de carril: 10708352
+LiDAR: 14260682
+PPO: 4697563
+Detección de carril: 11336283
+LiDAR: 14243546
+PPO: 505275
+Detección de carril: 11220278
+LiDAR: 12111377
+PPO: 699569
+Detección de carril: 10759981
+LiDAR: 13026423
+PPO: 4193219
+Detección de carril: 10977741
+LiDAR: 14164846
+PPO: 2166110
+Detección de carril: 10853582
+LiDAR: 14605173
+PPO: 760281
+Detección de carril: 11345938
+LiDAR: 13236130
+PPO: 2310057
+Detección de carril: 10896157
+LiDAR: 14417098
+PPO: 1710149
+Detección de carril: 11113296
+LiDAR: 13353087
+PPO: 1109230
+Detección de carril: 11003920
+LiDAR: 12419173
+PPO: 692799
+Detección de carril: 11104152
+LiDAR: 14176484
+PPO: 1058533
+Detección de carril: 11841068
+LiDAR: 19252388
+PPO: 1833446
+Detección de carril: 11187247
+LiDAR: 15286254
+PPO: 842145
+Detección de carril: 11111153
+LiDAR: 15728143
+PPO: 890138
+Detección de carril: 10952893
+LiDAR: 14570280
+PPO: 4652424
+Detección de carril: 11013936
+LiDAR: 15260525
+PPO: 1008907
+Detección de carril: 12075323
+LiDAR: 19793598
+PPO: 1529456
+Detección de carril: 13517996
+LiDAR: 20290741
+PPO: 848354
+Detección de carril: 11395303
+LiDAR: 16265717
+PPO: 1736499
+Detección de carril: 10567830
+LiDAR: 14225328
+PPO: 671226
+Detección de carril: 11111954
+LiDAR: 15672228
+PPO: 3380728
+Detección de carril: 10396030
+LiDAR: 14538742
+PPO: 2321314
+Detección de carril: 11275161
+LiDAR: 13814796
+PPO: 4039336
+Detección de carril: 11098093
+LiDAR: 13678609
+PPO: 1980419
+Detección de carril: 10952272
+LiDAR: 18969811
+PPO: 639117
+Detección de carril: 11807837
+LiDAR: 15594090
+PPO: 1319618
+Detección de carril: 11197153
+LiDAR: 13958153
+PPO: 751057
+Detección de carril: 10902477
+LiDAR: 15174995
+PPO: 749245
+Detección de carril: 10909277
+LiDAR: 17079098
+PPO: 4866678
+Detección de carril: 11216312
+LiDAR: 15664627
+PPO: 955026
+Detección de carril: 11445719
+LiDAR: 12894253
+PPO: 1907779
+Detección de carril: 11186727
+LiDAR: 13192343
+PPO: 1007335
+Detección de carril: 10783086
+LiDAR: 13350893
+PPO: 807893
+Detección de carril: 11409625
+LiDAR: 13877941
+PPO: 4737854
+Detección de carril: 11042428
+LiDAR: 13240236
+PPO: 2580337
+Detección de carril: 10944310
+LiDAR: 13774865
+PPO: 926903
+Detección de carril: 11806635
+LiDAR: 12474797
+PPO: 2240142
+Detección de carril: 10674922
+LiDAR: 14129403
+PPO: 1039964
+Detección de carril: 11208079
+LiDAR: 16059795
+PPO: 1521253
+Detección de carril: 11342393
+LiDAR: 15193634
+PPO: 2215304
+Detección de carril: 10962898
+LiDAR: 17194544
+PPO: 2563101
+Detección de carril: 10727772
+LiDAR: 16220057
+PPO: 1249251
+Detección de carril: 10723636
+LiDAR: 13127596
+PPO: 761322
+Detección de carril: 10977781
+LiDAR: 12935685
+PPO: 607380
+Detección de carril: 11097742
+LiDAR: 13355952
+PPO: 563333
+Detección de carril: 10968006
+LiDAR: 13833344
+PPO: 2116424
+Detección de carril: 11148309
+LiDAR: 14582498
+PPO: 759880
+Detección de carril: 10950329
+LiDAR: 17380925
+PPO: 942808
+Detección de carril: 10873573
+LiDAR: 19881411
+PPO: 1651901
+Detección de carril: 11412689
+LiDAR: 15164129
+PPO: 561250
+Detección de carril: 11170563
+LiDAR: 15389120
+PPO: 547909
+Detección de carril: 11098904
+LiDAR: 14305780
+PPO: 3052661
+Detección de carril: 11354220
+LiDAR: 14194341
+PPO: 710436
+Detección de carril: 11211915
+LiDAR: 13944773
+PPO: 1149681
+Detección de carril: 11100637
+LiDAR: 13593311
+PPO: 589793
+Detección de carril: 10955868
+LiDAR: 13397314
+PPO: 541630
+Detección de carril: 10831930
+LiDAR: 12630724
+PPO: 755554
+Detección de carril: 10956549
+LiDAR: 17473105
+PPO: 557564
+Detección de carril: 11100457
+LiDAR: 14812757
+PPO: 590774
+Detección de carril: 11179195
+LiDAR: 14250896
+PPO: 2580507
+Detección de carril: 10868746
+LiDAR: 16181449
+PPO: 588010
+Detección de carril: 11101027
+LiDAR: 14004944
+PPO: 906232
+Detección de carril: 12063845
+LiDAR: 14788080
+PPO: 1364325
+Detección de carril: 11410025
+LiDAR: 14508297
+PPO: 2739357
+Detección de carril: 10855215
+LiDAR: 14047909
+PPO: 2129153
+Detección de carril: 10862486
+LiDAR: 14284607
+PPO: 833582
+Detección de carril: 10856237
+LiDAR: 13524196
+PPO: 1942220
+Detección de carril: 10806872
+LiDAR: 13340348
+PPO: 825199
+Detección de carril: 11162240
+LiDAR: 12709403
+PPO: 4555607
+Detección de carril: 10859922
+LiDAR: 13879164
+PPO: 728813
+Detección de carril: 11313379
+LiDAR: 14380803
+PPO: 1085754
+Detección de carril: 10320195
+LiDAR: 13260016
+PPO: 586418
+Detección de carril: 10336871
+LiDAR: 15453547
+PPO: 2057345
+Detección de carril: 10824759
+LiDAR: 14322004
+PPO: 617265
+Detección de carril: 10446316
+LiDAR: 13285335
+PPO: 2115322
+Detección de carril: 11076019
+LiDAR: 13610947
+PPO: 971751
+Detección de carril: 11075199
+LiDAR: 12980964
+PPO: 2309356
+Detección de carril: 10942777
+LiDAR: 18009366
+PPO: 3109869
+Detección de carril: 10522040
+LiDAR: 13870120
+PPO: 2445021
+Detección de carril: 12458082
+LiDAR: 15951532
+PPO: 790427
+Detección de carril: 10918191
+LiDAR: 13322851
+PPO: 1202491
+Detección de carril: 10844539
+LiDAR: 17518333
+PPO: 532086
+Detección de carril: 11140867
+LiDAR: 13885072
+PPO: 5034112
+Detección de carril: 11053796
+LiDAR: 15066040
+PPO: 2373173
+Detección de carril: 10927935
+LiDAR: 14238237
+PPO: 797367
+Detección de carril: 11039495
+LiDAR: 14911687
+PPO: 1313449
+Detección de carril: 11263533
+LiDAR: 14002089
+PPO: 664386
+Detección de carril: 11159216
+LiDAR: 14647326
+PPO: 4650832
+Detección de carril: 11316023
+LiDAR: 16077252
+PPO: 548560
+Detección de carril: 10609844
+LiDAR: 16661836
+PPO: 885271
+Detección de carril: 10947505
+LiDAR: 15461740
+PPO: 553798
+Detección de carril: 11214219
+LiDAR: 13446518
+PPO: 548280
+Detección de carril: 11367491
+LiDAR: 15868996
+PPO: 1867117
+Detección de carril: 11248651
+LiDAR: 15260765
+PPO: 2712557
+Detección de carril: 12469880
+LiDAR: 13745722
+PPO: 611465
+Detección de carril: 10290531
+LiDAR: 12636733
+PPO: 2282366
+Detección de carril: 11318697
+LiDAR: 13297713
+PPO: 531755
+Detección de carril: 11024712
+LiDAR: 13363602
+PPO: 811618
+Detección de carril: 10922066
+LiDAR: 16764092
+PPO: 964029
+Detección de carril: 11874047
+LiDAR: 15716145
+PPO: 1163792
+Detección de carril: 11568455
+LiDAR: 13632250
+PPO: 1461704
+Detección de carril: 10863998
+LiDAR: 13057970
+PPO: 814583
+Detección de carril: 11746285
+LiDAR: 14221081
+PPO: 2063564
+Detección de carril: 10735454
+LiDAR: 15487619
+PPO: 2308815
+Detección de carril: 11561564
+LiDAR: 13257492
+PPO: 735324
+Detección de carril: 10929477
+LiDAR: 12874112
+PPO: 3550766
+Detección de carril: 11230283
+LiDAR: 14758605
+PPO: 2123265
+Detección de carril: 10964090
+LiDAR: 14045195
+PPO: 793652
+Detección de carril: 11129851
+LiDAR: 13646241
+PPO: 868775
+Detección de carril: 11154398
+LiDAR: 14151235
+PPO: 4106827
+Detección de carril: 10515501
+LiDAR: 15565517
+PPO: 1975762
+Detección de carril: 10541069
+LiDAR: 18181137
+PPO: 806150
+Detección de carril: 10951622
+LiDAR: 14916114
+PPO: 592187
+Detección de carril: 10828975
+LiDAR: 13716557
+PPO: 606929
+Detección de carril: 11540502
+LiDAR: 15179482
+PPO: 1403185
+Detección de carril: 11840397
+LiDAR: 13864691
+PPO: 662273
+Detección de carril: 10871670
+LiDAR: 14123834
+PPO: 4694828
+Detección de carril: 10797318
+LiDAR: 14813679
+PPO: 556022
+Detección de carril: 11713104
+LiDAR: 14012055
+PPO: 1173937
+Detección de carril: 10960895
+LiDAR: 15006521
+PPO: 699149
+Detección de carril: 11163331
+LiDAR: 20183729
+PPO: 634261
+Detección de carril: 10695504
+LiDAR: 15577736
+PPO: 611335
+Detección de carril: 11109320
+LiDAR: 14561827
+PPO: 2049243
+Detección de carril: 11459030
+LiDAR: 14803654
+PPO: 2345791
+Detección de carril: 11770872
+LiDAR: 11832835
+PPO: 686910
+Detección de carril: 10993925
+LiDAR: 12322427
+PPO: 734492
+Detección de carril: 10438625
+LiDAR: 14042601
+PPO: 2295626
+Detección de carril: 10692419
+LiDAR: 17605796
+PPO: 686269
+Detección de carril: 11080917
+LiDAR: 15989609
+PPO: 4979730
+Detección de carril: 11030110
+LiDAR: 16001818
+PPO: 758759
+Detección de carril: 11073536
+LiDAR: 14035420
+PPO: 749174
+Detección de carril: 10957140
+LiDAR: 13932855
+PPO: 726480
+Detección de carril: 11412529
+LiDAR: 14526033
+PPO: 4506282
+Detección de carril: 11253648
+LiDAR: 14460203
+PPO: 2446935
+Detección de carril: 10951601
+LiDAR: 13494962
+PPO: 878850
+Detección de carril: 11129861
+LiDAR: 13948388
+PPO: 1510707
+Detección de carril: 11446341
+LiDAR: 16238295
+PPO: 4893769
+Detección de carril: 12212180
+LiDAR: 14547696
+PPO: 715503
+Detección de carril: 11236111
+LiDAR: 13417855
+PPO: 724137
+Detección de carril: 10948386
+LiDAR: 13667323
+PPO: 4143143
+Detección de carril: 11018252
+LiDAR: 15391042
+PPO: 591806
+Detección de carril: 11021137
+LiDAR: 15459666
+PPO: 668181
+Detección de carril: 10643885
+LiDAR: 12932270
+PPO: 1992156
+Detección de carril: 11048688
+LiDAR: 16168039
+PPO: 1886126
+Detección de carril: 10855536
+LiDAR: 14496388
+PPO: 639858
+Detección de carril: 11245066
+LiDAR: 13051711
+PPO: 1824012
+Detección de carril: 11081898
+LiDAR: 19974171
+PPO: 2832559
+Detección de carril: 11099525
+LiDAR: 14419442
+PPO: 884580
+Detección de carril: 11342573
+LiDAR: 15588201
+PPO: 2292171
+Detección de carril: 11177794
+LiDAR: 13973847
+PPO: 765038
+Detección de carril: 10427147
+LiDAR: 14005425
+PPO: 717687
+Detección de carril: 11136251
+LiDAR: 13487641
+PPO: 4751314
+Detección de carril: 11175450
+LiDAR: 14334743
+PPO: 2047550
+Detección de carril: 10876878
+LiDAR: 13664338
+PPO: 639418
+Detección de carril: 11364336
+LiDAR: 13667593
+PPO: 2991098
+Detección de carril: 12008501
+LiDAR: 13585820
+PPO: 2347264
+Detección de carril: 10553308
+LiDAR: 12940182
+PPO: 703916
+Detección de carril: 10857698
+LiDAR: 11874088
+PPO: 552066
+Detección de carril: 11098093
+LiDAR: 15261277
+PPO: 828294
+Detección de carril: 11201540
+LiDAR: 13770780
+PPO: 1120176
+Detección de carril: 11205456
+LiDAR: 14001278
+PPO: 655052
+Detección de carril: 10913624
+LiDAR: 14262173
+PPO: 4254271
+Detección de carril: 11145725
+LiDAR: 14141431
+PPO: 2058817
+Detección de carril: 11007386
+LiDAR: 12717615
+PPO: 532437
+Detección de carril: 10959443
+LiDAR: 13093454
+PPO: 517454
+Detección de carril: 10696475
+LiDAR: 17050996
+PPO: 501209
+Detección de carril: 10536012
+LiDAR: 14902143
+PPO: 614740
+Detección de carril: 10798600
+LiDAR: 14766337
+PPO: 510954
+Detección de carril: 10978943
+LiDAR: 14620967
+PPO: 505265
+Detección de carril: 10842185
+LiDAR: 14551291
+PPO: 4607106
+Detección de carril: 11459230
+LiDAR: 15539608
+PPO: 1224314
+Detección de carril: 11598120
+LiDAR: 14524130
+PPO: 498645
+Detección de carril: 10999364
+LiDAR: 15035184
+PPO: 4600415
+Detección de carril: 11445469
+LiDAR: 14610431
+PPO: 938371
+Detección de carril: 10467337
+LiDAR: 15014463
+PPO: 2030104
+Detección de carril: 10520428
+LiDAR: 13650167
+PPO: 720071
+Detección de carril: 10987215
+LiDAR: 13965765
+PPO: 2156305
+Detección de carril: 10696615
+LiDAR: 14188091
+PPO: 614681
+Detección de carril: 10595321
+LiDAR: 16051163
+PPO: 1026033
+Detección de carril: 10362219
+LiDAR: 13865312
+PPO: 522942
+Detección de carril: 10964701
+LiDAR: 12930127
+PPO: 633810
+Detección de carril: 10820292
+LiDAR: 12645956
+PPO: 590323
+Detección de carril: 11252978
+LiDAR: 13400509
+PPO: 4668318
+Detección de carril: 10950529
+LiDAR: 13610907
+PPO: 708964
+Detección de carril: 10664346
+LiDAR: 13017008
+PPO: 1808398
+Detección de carril: 10960524
+LiDAR: 12811958
+PPO: 616243
+Detección de carril: 10991141
+LiDAR: 14358960
+PPO: 1932816
+Detección de carril: 10693310
+LiDAR: 13377564
+PPO: 1487703
+Detección de carril: 10380907
+LiDAR: 13418806
+PPO: 712549
+Detección de carril: 11257965
+LiDAR: 12637443
+PPO: 640489
+Detección de carril: 10881044
+LiDAR: 16951045
+PPO: 902467
+Detección de carril: 10863548
+LiDAR: 12975365
+PPO: 582802
+Detección de carril: 10919402
+LiDAR: 13676647
+PPO: 4472882
+Detección de carril: 11381602
+LiDAR: 13278234
+PPO: 887174
+Detección de carril: 11112495
+LiDAR: 13967197
+PPO: 1250974
+Detección de carril: 11066415
+LiDAR: 14391990
+PPO: 2244879
+Detección de carril: 10776857
+LiDAR: 16586893
+PPO: 578766
+Detección de carril: 11623508
+LiDAR: 15735184
+PPO: 739340
+Detección de carril: 11330184
+LiDAR: 14929934
+PPO: 677255
+Detección de carril: 10690856
+LiDAR: 17678255
+PPO: 783666
+Detección de carril: 11205435
+LiDAR: 17883516
+PPO: 1403034
+Detección de carril: 11061027
+LiDAR: 14353362
+PPO: 637204
+Detección de carril: 10479256
+LiDAR: 13802908
+PPO: 664556
+Detección de carril: 10572537
+LiDAR: 13141997
+PPO: 892612
+Detección de carril: 10867304
+LiDAR: 13302911
+PPO: 1204443
+Detección de carril: 11123471
+LiDAR: 23357464
+PPO: 1498128
+Detección de carril: 11093977
+LiDAR: 19078235
+PPO: 1445889
+Detección de carril: 11110672
+LiDAR: 14245899
+PPO: 869356
+Detección de carril: 11077151
+LiDAR: 15384052
+PPO: 4119257
+Detección de carril: 11511158
+LiDAR: 14553375
+PPO: 682213
+Detección de carril: 10809727
+LiDAR: 12971860
+PPO: 881074
+Detección de carril: 11096541
+LiDAR: 14498731
+PPO: 739690
+Detección de carril: 11198125
+LiDAR: 14473634
+PPO: 2119639
+Detección de carril: 11060186
+LiDAR: 14043753
+PPO: 1674325
+Detección de carril: 10820984
+LiDAR: 15512357
+PPO: 1687856
+Detección de carril: 11137583
+LiDAR: 15500138
+PPO: 737737
+Detección de carril: 11296293
+LiDAR: 14033287
+PPO: 807462
+Detección de carril: 11640014
+LiDAR: 13922549
+PPO: 1134047
+Detección de carril: 11394952
+LiDAR: 15718829
+PPO: 1074607
+Detección de carril: 10957129
+LiDAR: 16178244
+PPO: 1301351
+Detección de carril: 10694362
+LiDAR: 16259347
+PPO: 3473980
+Detección de carril: 11597318
+LiDAR: 14474465
+PPO: 1059775
+Detección de carril: 10464544
+LiDAR: 11916783
+PPO: 863227
+Detección de carril: 10559698
+LiDAR: 12232000
+PPO: 1338256
+Detección de carril: 10872371
+LiDAR: 18557556
+PPO: 651507
+Detección de carril: 11157823
+LiDAR: 16443286
+PPO: 2087240
+Detección de carril: 11316433
+LiDAR: 16820658
+PPO: 1453351
+Detección de carril: 11777672
+LiDAR: 14354743
+PPO: 4859648
+Detección de carril: 11847558
+LiDAR: 14438300
+PPO: 1022588
+Detección de carril: 11009238
+LiDAR: 15248327
+PPO: 1658711
+Detección de carril: 10653750
+LiDAR: 13536955
+PPO: 614301
+Detección de carril: 10993655
+LiDAR: 13828857
+PPO: 566097
+Detección de carril: 11013505
+LiDAR: 14325299
+PPO: 2249596
+Detección de carril: 11135240
+LiDAR: 15135576
+PPO: 1656558
+Detección de carril: 10558126
+LiDAR: 13867476
+PPO: 696384
+Detección de carril: 11068168
+LiDAR: 14151186
+PPO: 1935370
+Detección de carril: 13403393
+LiDAR: 16445670
+PPO: 1170572
+Detección de carril: 11053075
+LiDAR: 15487368
+PPO: 2042442
+Detección de carril: 11343174
+LiDAR: 13572499
+PPO: 1032653
+Detección de carril: 11213508
+LiDAR: 13930711
+PPO: 658758
+Detección de carril: 11178866
+LiDAR: 16372439
+PPO: 975317
+Detección de carril: 10688663
+LiDAR: 13287638
+PPO: 562171
+Detección de carril: 10819321
+LiDAR: 15268197
+PPO: 4938938
+Detección de carril: 11376244
+LiDAR: 14071665
+PPO: 570383
+Detección de carril: 10630675
+LiDAR: 13341099
+PPO: 517393
+Detección de carril: 10523884
+LiDAR: 13405997
+PPO: 957169
+Detección de carril: 11671991
+LiDAR: 17311030
+PPO: 1426440
+Detección de carril: 10475530
+LiDAR: 14056472
+PPO: 4215713
+Detección de carril: 11410476
+LiDAR: 15171761
+PPO: 861103
+Detección de carril: 11059875
+LiDAR: 19102212
+PPO: 972653
+Detección de carril: 11065874
+LiDAR: 14865337
+PPO: 646949
+Detección de carril: 11226016
+LiDAR: 16356775
+PPO: 1138784
+Detección de carril: 11063039
+LiDAR: 15124088
+PPO: 3174877
+Detección de carril: 11299417
+LiDAR: 13668374
+PPO: 1007205
+Detección de carril: 11206027
+LiDAR: 13254187
+PPO: 629904
+Detección de carril: 11962452
+LiDAR: 12780320
+PPO: 648793
+Detección de carril: 11660625
+LiDAR: 12851938
+PPO: 765669
+Detección de carril: 10998271
+LiDAR: 13148417
+PPO: 728193
+Detección de carril: 11198314
+LiDAR: 14350918
+PPO: 886202
+Detección de carril: 11605341
+LiDAR: 14776693
+PPO: 822405
+Detección de carril: 10532737
+LiDAR: 13747074
+PPO: 581370
+Detección de carril: 10402951
+LiDAR: 15187094
+PPO: 549342
+Detección de carril: 10578005
+LiDAR: 14032275
+PPO: 526297
+Detección de carril: 10483542
+LiDAR: 13151472
+PPO: 3130549
+Detección de carril: 10745539
+LiDAR: 12700419
+PPO: 531184
+Detección de carril: 10726269
+LiDAR: 13731500
+PPO: 504223
+Detección de carril: 11402564
+LiDAR: 12605325
+PPO: 659118
+Detección de carril: 10839862
+LiDAR: 12824286
+PPO: 501960
+Detección de carril: 10767732
+LiDAR: 12448027
+PPO: 1487813
+Detección de carril: 10972553
+LiDAR: 12389167
+PPO: 505986
+Detección de carril: 11383104
+LiDAR: 17752127
+PPO: 1741386
+Detección de carril: 11801908
+LiDAR: 14867069
+PPO: 483813
+Detección de carril: 11188620
+LiDAR: 15087784
+PPO: 483713
+Detección de carril: 12004616
+LiDAR: 13810510
+PPO: 4537680
+Detección de carril: 11074988
+LiDAR: 13928428
+PPO: 1896050
+Detección de carril: 11117653
+LiDAR: 13832623
+PPO: 518265
+Detección de carril: 10856828
+LiDAR: 13162369
+PPO: 549281
+Detección de carril: 10907855
+LiDAR: 15476382
+PPO: 1026995
+Detección de carril: 10953444
+LiDAR: 16152886
+PPO: 1026765
+Detección de carril: 11504248
+LiDAR: 14109212
+PPO: 4138286
+Detección de carril: 10918841
+LiDAR: 14281593
+PPO: 1619882
+Detección de carril: 10923609
+LiDAR: 13976381
+PPO: 798189
+Detección de carril: 11058763
+LiDAR: 13304604
+PPO: 737257
+Detección de carril: 10843538
+LiDAR: 14437979
+PPO: 790847
+Detección de carril: 10894705
+LiDAR: 13058281
+PPO: 718567
+Detección de carril: 11386039
+LiDAR: 15235357
+PPO: 931590
+Detección de carril: 11187378
+LiDAR: 13306026
+PPO: 4740668
+Detección de carril: 12637072
+LiDAR: 14717162
+PPO: 996689
+Detección de carril: 10979744
+LiDAR: 13688355
+PPO: 4078726
+Detección de carril: 10838801
+LiDAR: 13183800
+PPO: 1377946
+Detección de carril: 10865260
+LiDAR: 13158303
+PPO: 588912
+Detección de carril: 10569923
+LiDAR: 13707864
+PPO: 2116705
+Detección de carril: 10267486
+LiDAR: 13060294
+PPO: 660941
+Detección de carril: 10274175
+LiDAR: 14039967
+PPO: 531685
+Detección de carril: 10213544
+LiDAR: 15074483
+PPO: 536532
+Detección de carril: 10584364
+LiDAR: 13874196
+PPO: 518235
+Detección de carril: 10641081
+LiDAR: 14290226
+PPO: 1940558
+Detección de carril: 11152766
+LiDAR: 14408755
+PPO: 1506170
+Detección de carril: 10586739
+LiDAR: 13902709
+PPO: 540979
+Detección de carril: 10707392
+LiDAR: 13540601
+PPO: 3578738
+Detección de carril: 10796887
+LiDAR: 14413092
+PPO: 1862009
+Detección de carril: 10750066
+LiDAR: 13937231
+PPO: 1498088
+Detección de carril: 10658928
+LiDAR: 18197201
+PPO: 1006183
+Detección de carril: 10907214
+LiDAR: 15156367
+PPO: 4570270
+Detección de carril: 10637025
+LiDAR: 15467348
+PPO: 880663
+Detección de carril: 10579899
+LiDAR: 13915729
+PPO: 996369
+Detección de carril: 10978703
+LiDAR: 14459523
+PPO: 4471841
+Detección de carril: 10727281
+LiDAR: 14568176
+PPO: 1940027
+Detección de carril: 11026405
+LiDAR: 12444922
+PPO: 813572
+Detección de carril: 11282051
+LiDAR: 13226275
+PPO: 835835
+Detección de carril: 10472756
+LiDAR: 17457442
+PPO: 884950
+Detección de carril: 11273549
+LiDAR: 14104114
+PPO: 758238
+Detección de carril: 10871620
+LiDAR: 16728528
+PPO: 2305922
+Detección de carril: 11144814
+LiDAR: 14030463
+PPO: 2595700
+Detección de carril: 10932943
+LiDAR: 13959405
+PPO: 2293022
+Detección de carril: 11213508
+LiDAR: 12583442
+PPO: 606839
+Detección de carril: 10529212
+LiDAR: 12073039
+PPO: 2626517
+Detección de carril: 10912121
+LiDAR: 12452844
+PPO: 749444
+Detección de carril: 10710566
+LiDAR: 12758788
+PPO: 1265937
+Detección de carril: 11433871
+LiDAR: 12761281
+PPO: 4388534
+Detección de carril: 10729014
+LiDAR: 12851508
+PPO: 558615
+Detección de carril: 10990440
+LiDAR: 16852235
+PPO: 1561564
+Detección de carril: 10848545
+LiDAR: 14922914
+PPO: 564084
+Detección de carril: 10638306
+LiDAR: 13175569
+PPO: 527128
+Detección de carril: 10998001
+LiDAR: 13210401
+PPO: 2127882
+Detección de carril: 10776015
+LiDAR: 15487609
+PPO: 510974
+Detección de carril: 10992583
+LiDAR: 14002350
+PPO: 483171
+Detección de carril: 10879712
+LiDAR: 15534860
+PPO: 804609
+Detección de carril: 10908776
+LiDAR: 15740522
+PPO: 843407
+Detección de carril: 10366245
+LiDAR: 13904392
+PPO: 1542285
+Detección de carril: 10616523
+LiDAR: 14162983
+PPO: 471894
+Detección de carril: 10743006
+LiDAR: 13391135
+PPO: 2484392
+Detección de carril: 10747553
+LiDAR: 13815578
+PPO: 838589
+Detección de carril: 11024211
+LiDAR: 13341990
+PPO: 853713
+Detección de carril: 11747706
+LiDAR: 14500595
+PPO: 3535914
+Detección de carril: 10317491
+LiDAR: 13954848
+PPO: 586468
+Detección de carril: 10419065
+LiDAR: 13956471
+PPO: 708933
+Detección de carril: 11044292
+LiDAR: 13618789
+PPO: 567509
+Detección de carril: 10673871
+LiDAR: 13126614
+PPO: 3828026
+Detección de carril: 11493432
+LiDAR: 14665164
+PPO: 2217688
+Detección de carril: 10812160
+LiDAR: 14046867
+PPO: 640680
+Detección de carril: 10764208
+LiDAR: 12627618
+PPO: 2963587
+Detección de carril: 10986634
+LiDAR: 14119568
+PPO: 552406
+Detección de carril: 10940394
+LiDAR: 14610440
+PPO: 2224848
+Detección de carril: 11789410
+LiDAR: 14498561
+PPO: 1212756
+Detección de carril: 11051713
+LiDAR: 16228030
+PPO: 2280022
+Detección de carril: 11011953
+LiDAR: 14302124
+PPO: 1275471
+Detección de carril: 11297965
+LiDAR: 14823593
+PPO: 697777
+Detección de carril: 11070231
+LiDAR: 14512463
+PPO: 1046544
+Detección de carril: 10892552
+LiDAR: 14466663
+PPO: 2155293
+Detección de carril: 10935166
+LiDAR: 13308280
+PPO: 1435234
+Detección de carril: 11039504
+LiDAR: 12758136
+PPO: 655553
+Detección de carril: 10933594
+LiDAR: 13754325
+PPO: 1758542
+Detección de carril: 11328582
+LiDAR: 14493845
+PPO: 814002
+Detección de carril: 10931211
+LiDAR: 12834622
+PPO: 4716841
+Detección de carril: 10849406
+LiDAR: 14308674
+PPO: 830147
+Detección de carril: 10829947
+LiDAR: 12858919
+PPO: 616373
+Detección de carril: 10882537
+LiDAR: 13552018
+PPO: 1629096
+Detección de carril: 10452525
+LiDAR: 12641569
+PPO: 1057881
+Detección de carril: 11008107
+LiDAR: 14890635
+PPO: 1190633
+Detección de carril: 11228630
+LiDAR: 14413492
+PPO: 1278145
+Detección de carril: 11308992
+LiDAR: 13590927
+PPO: 737267
+Detección de carril: 11002409
+LiDAR: 14313391
+PPO: 585757
+Detección de carril: 11774136
+LiDAR: 14413673
+PPO: 1011181
+Detección de carril: 11155269
+LiDAR: 16491059
+PPO: 1951104
+Detección de carril: 10321808
+LiDAR: 14034369
+PPO: 1740135
+Detección de carril: 11915490
+LiDAR: 13529614
+PPO: 3628493
+Detección de carril: 11225896
+LiDAR: 13680814
+PPO: 497113
+Detección de carril: 10452846
+LiDAR: 13384534
+PPO: 500878
+Detección de carril: 10746791
+LiDAR: 12476230
+PPO: 2100340
+Detección de carril: 11233538
+LiDAR: 13463103
+PPO: 637915
+Detección de carril: 10753762
+LiDAR: 13034484
+PPO: 4359351
+Detección de carril: 10843748
+LiDAR: 13758912
+PPO: 507979
+Detección de carril: 11155640
+LiDAR: 13074265
+PPO: 4144205
+Detección de carril: 10732589
+LiDAR: 12997920
+PPO: 483161
+Detección de carril: 10952462
+LiDAR: 13220998
+PPO: 1944444
+Detección de carril: 10932442
+LiDAR: 14088280
+PPO: 4641858
+Detección de carril: 10790647
+LiDAR: 14806127
+PPO: 1944845
+Detección de carril: 10668843
+LiDAR: 13205854
+PPO: 476982
+Detección de carril: 10490713
+LiDAR: 17812309
+PPO: 2455959
+Detección de carril: 11713255
+LiDAR: 16758152
+PPO: 930639
+Detección de carril: 10649184
+LiDAR: 14448155
+PPO: 756456
+Detección de carril: 10744618
+LiDAR: 12830616
+PPO: 476231
+Detección de carril: 10729175
+LiDAR: 14759516
+PPO: 505165
+Detección de carril: 10892442
+LiDAR: 14652985
+PPO: 1403014
+Detección de carril: 11656078
+LiDAR: 13750239
+PPO: 800672
+Detección de carril: 11291245
+LiDAR: 13592430
+PPO: 883878
+Detección de carril: 11325077
+LiDAR: 17720029
+PPO: 637755
+Detección de carril: 11156591
+LiDAR: 13326237
+PPO: 623705
+Detección de carril: 10993395
+LiDAR: 13515614
+PPO: 1059014
+Detección de carril: 11357205
+LiDAR: 17434046
+PPO: 604616
+Detección de carril: 13259195
+LiDAR: 16110582
+PPO: 1284224
+Detección de carril: 10648542
+LiDAR: 15946223
+PPO: 2583171
+Detección de carril: 10897109
+LiDAR: 15344943
+PPO: 1158774
+Detección de carril: 11969302
+LiDAR: 12781992
+PPO: 2341596
+Detección de carril: 10955978
+LiDAR: 13946025
+PPO: 1463957
+Detección de carril: 10730507
+LiDAR: 20105160
+PPO: 1062359
+Detección de carril: 13797520
+LiDAR: 18853975
+PPO: 2093489
+Detección de carril: 11050681
+LiDAR: 15731448
+PPO: 849967
+Detección de carril: 11288552
+LiDAR: 15445515
+PPO: 4709350
+Detección de carril: 11545019
+LiDAR: 14745465
+PPO: 668272
+Detección de carril: 10849146
+LiDAR: 13115457
+PPO: 2447235
+Detección de carril: 10672449
+LiDAR: 13752682
+PPO: 1819264
+Detección de carril: 11613353
+LiDAR: 13198012
+PPO: 2220722
+Detección de carril: 11320260
+LiDAR: 15566789
+PPO: 683184
+Detección de carril: 10929367
+LiDAR: 14674988
+PPO: 630916
+Detección de carril: 10875596
+LiDAR: 17653638
+PPO: 876757
+Detección de carril: 10853563
+LiDAR: 14815091
+PPO: 2203246
+Detección de carril: 10869397
+LiDAR: 15557295
+PPO: 1067877
+Detección de carril: 10849086
+LiDAR: 12626738
+PPO: 609103
+Detección de carril: 11439159
+LiDAR: 14038345
+PPO: 745729
+Detección de carril: 10894114
+LiDAR: 12661009
+PPO: 1470006
+Detección de carril: 10848846
+LiDAR: 14109692
+PPO: 548680
+Detección de carril: 10507549
+LiDAR: 13100685
+PPO: 3961168
+Detección de carril: 10704426
+LiDAR: 13757609
+PPO: 781984
+Detección de carril: 11747116
+LiDAR: 13077950
+PPO: 1462725
+Detección de carril: 10750086
+LiDAR: 13503625
+PPO: 817657
+Detección de carril: 11046965
+LiDAR: 12196475
+PPO: 2425261
+Detección de carril: 11646012
+LiDAR: 14102762
+PPO: 2498753
+Detección de carril: 11055939
+LiDAR: 16927549
+PPO: 1608054
+Detección de carril: 10516452
+LiDAR: 13806904
+PPO: 646348
+Detección de carril: 11057110
+LiDAR: 15441499
+PPO: 5199913
+Detección de carril: 11105383
+LiDAR: 14070062
+PPO: 592767
+Detección de carril: 10908245
+LiDAR: 14822962
+PPO: 651517
+Detección de carril: 10460647
+LiDAR: 15243249
+PPO: 692689
+Detección de carril: 10813802
+LiDAR: 12888413
+PPO: 1942942
+Detección de carril: 10593980
+LiDAR: 14206499
+PPO: 571546
+Detección de carril: 11109360
+LiDAR: 17212140
+PPO: 924960
+Detección de carril: 10975818
+LiDAR: 18570787
+PPO: 2505163
+Detección de carril: 11562026
+LiDAR: 16228251
+PPO: 789366
+Detección de carril: 10882907
+LiDAR: 13789377
+PPO: 3723858
+Detección de carril: 10512727
+LiDAR: 14403267
+PPO: 1845023
+Detección de carril: 10672929
+LiDAR: 15030217
+PPO: 2858758
+Detección de carril: 10281077
+LiDAR: 13217412
+PPO: 803096
+Detección de carril: 10661952
+LiDAR: 15174465
+PPO: 552056
+Detección de carril: 10913964
+LiDAR: 13149018
+PPO: 571505
+Detección de carril: 10808865
+LiDAR: 14854089
+PPO: 533447
+Detección de carril: 11010370
+LiDAR: 16912817
+PPO: 644656
+Detección de carril: 10997140
+LiDAR: 15214055
+PPO: 736825
+Detección de carril: 10861785
+LiDAR: 14318799
+PPO: 2512064
+Detección de carril: 11860928
+LiDAR: 13418456
+PPO: 1071473
+Detección de carril: 11187128
+LiDAR: 15237891
+PPO: 788774
+Detección de carril: 10952452
+LiDAR: 14096403
+PPO: 3380608
+Detección de carril: 11322152
+LiDAR: 15560619
+PPO: 1613994
+Detección de carril: 10681722
+LiDAR: 14153019
+PPO: 558917
+Detección de carril: 10527069
+LiDAR: 13042747
+PPO: 1681786
+Detección de carril: 10416642
+LiDAR: 13472047
+PPO: 535831
+Detección de carril: 11500322
+LiDAR: 12199941
+PPO: 582281
+Detección de carril: 10479546
+LiDAR: 12555280
+PPO: 1789390
+Detección de carril: 10972993
+LiDAR: 12659717
+PPO: 514079
+Detección de carril: 10940905
+LiDAR: 11643269
+PPO: 4497109
+Detección de carril: 10636975
+LiDAR: 12834873
+PPO: 1373760
+Detección de carril: 10588912
+LiDAR: 13093665
+PPO: 497914
+Detección de carril: 10398794
+LiDAR: 15738770
+PPO: 481478
+Detección de carril: 10717467
+LiDAR: 13673883
+PPO: 2128703
+Detección de carril: 10703345
+LiDAR: 14858326
+PPO: 479606
+Detección de carril: 10740322
+LiDAR: 14057264
+PPO: 2799749
+Detección de carril: 10853612
+LiDAR: 13560521
+PPO: 953784
+Detección de carril: 10875896
+LiDAR: 15490323
+PPO: 944620
+Detección de carril: 10677225
+LiDAR: 12598734
+PPO: 747892
+Detección de carril: 10864670
+LiDAR: 14568067
+PPO: 645898
+Detección de carril: 11123411
+LiDAR: 14007779
+PPO: 4184515
+Detección de carril: 10879592
+LiDAR: 14348925
+PPO: 729334
+Detección de carril: 10786471
+LiDAR: 11899516
+PPO: 998642
+Detección de carril: 10628883
+LiDAR: 15976178
+PPO: 681252
+Detección de carril: 11156161
+LiDAR: 15384252
+PPO: 566467
+Detección de carril: 10845190
+LiDAR: 13874767
+PPO: 528219
+Detección de carril: 11998045
+LiDAR: 13938673
+PPO: 4884395
+Detección de carril: 11267860
+LiDAR: 13321940
+PPO: 2053129
+Detección de carril: 10833983
+LiDAR: 12274634
+PPO: 605908
+Detección de carril: 10834584
+LiDAR: 13065242
+PPO: 4131675
+Detección de carril: 10797758
+LiDAR: 13858131
+PPO: 550483
+Detección de carril: 10201215
+LiDAR: 15079972
+PPO: 551215
+Detección de carril: 10784408
+LiDAR: 13059022
+PPO: 4173609
+Detección de carril: 10769495
+LiDAR: 14890134
+PPO: 495260
+Detección de carril: 10731148
+LiDAR: 13990993
+PPO: 698918
+Detección de carril: 10991952
+LiDAR: 14328194
+PPO: 768864
+Detección de carril: 10882607
+LiDAR: 14723482
+PPO: 496391
+Detección de carril: 11003210
+LiDAR: 13892153
+PPO: 927624
+Detección de carril: 10989399
+LiDAR: 13102207
+PPO: 1920368
+Detección de carril: 11383555
+LiDAR: 13209240
+PPO: 3762947
+Detección de carril: 10928836
+LiDAR: 13472307
+PPO: 517273
+Detección de carril: 10861404
+LiDAR: 13392126
+PPO: 487167
+Detección de carril: 10814213
+LiDAR: 14962013
+PPO: 486847
+Detección de carril: 10893453
+LiDAR: 13734244
+PPO: 542692
+Detección de carril: 11358347
+LiDAR: 13396403
+PPO: 485955
+Detección de carril: 10845019
+LiDAR: 13928839
+PPO: 478194
+Detección de carril: 10896598
+LiDAR: 13755767
+PPO: 3889148
+Detección de carril: 11165585
+LiDAR: 13754524
+PPO: 479296
+Detección de carril: 11264665
+LiDAR: 12801632
+PPO: 613949
+Detección de carril: 10831570
+LiDAR: 13007645
+PPO: 526587
+Detección de carril: 11398508
+LiDAR: 14110393
+PPO: 1200798
+Detección de carril: 11600233
+LiDAR: 14856634
+PPO: 1184503
+Detección de carril: 11581805
+LiDAR: 14089763
+PPO: 905902
+Detección de carril: 10634301
+LiDAR: 13328410
+PPO: 692319
+Detección de carril: 10871169
+LiDAR: 14363097
+PPO: 2336017
+Detección de carril: 10669494
+LiDAR: 13946084
+PPO: 2526155
+Detección de carril: 10882947
+LiDAR: 18056558
+PPO: 1903792
+Detección de carril: 10984922
+LiDAR: 14636240
+PPO: 541590
+Detección de carril: 11016288
+LiDAR: 14568818
+PPO: 543302
+Detección de carril: 11075519
+LiDAR: 13920666
+PPO: 673700
+Detección de carril: 10947565
+LiDAR: 13306927
+PPO: 4023782
+Detección de carril: 11074537
+LiDAR: 16138965
+PPO: 1290224
+Detección de carril: 10572677
+LiDAR: 13859824
+PPO: 1310634
+Detección de carril: 11031803
+LiDAR: 13579540
+PPO: 488209
+Detección de carril: 10663044
+LiDAR: 12720960
+PPO: 3920345
+Detección de carril: 11396906
+LiDAR: 14829802
+PPO: 1001696
+Detección de carril: 11495054
+LiDAR: 13251273
+PPO: 1504107
+Detección de carril: 11275812
+LiDAR: 14236254
+PPO: 690896
+Detección de carril: 11375443
+LiDAR: 13838021
+PPO: 498184
+Detección de carril: 10322198
+LiDAR: 13619991
+PPO: 1586642
+Detección de carril: 11451879
+LiDAR: 14686105
+PPO: 1522646
+Detección de carril: 10660831
+LiDAR: 16562236
+PPO: 491274
+Detección de carril: 10865421
+LiDAR: 14269324
+PPO: 728664
+Detección de carril: 11001667
+LiDAR: 14292158
+PPO: 2441627
+Detección de carril: 11844623
+LiDAR: 14961933
+PPO: 824519
+Detección de carril: 11501203
+LiDAR: 13467059
+PPO: 4077614
+Detección de carril: 10635242
+LiDAR: 12897227
+PPO: 2288675
+Detección de carril: 10895486
+LiDAR: 12031716
+PPO: 952632
+Detección de carril: 10965342
+LiDAR: 14353552
+PPO: 1468474
+Detección de carril: 11162640
+LiDAR: 16477998
+PPO: 862506
+Detección de carril: 10886773
+LiDAR: 11654916
+PPO: 721092
+Detección de carril: 11319378
+LiDAR: 17152640
+PPO: 4246980
+Detección de carril: 11183011
+LiDAR: 14420403
+PPO: 915326
+Detección de carril: 11044371
+LiDAR: 12683253
+PPO: 1984134
+Detección de carril: 10806872
+LiDAR: 15080092
+PPO: 1313779
+Detección de carril: 10813512
+LiDAR: 15082686
+PPO: 606878
+Detección de carril: 10563323
+LiDAR: 15378664
+PPO: 825930
+Detección de carril: 10852301
+LiDAR: 13884632
+PPO: 4928072
+Detección de carril: 12393795
+LiDAR: 14872538
+PPO: 758899
+Detección de carril: 10747542
+LiDAR: 13285145
+PPO: 2180221
+Detección de carril: 10819591
+LiDAR: 13682706
+PPO: 1160457
+Detección de carril: 10962988
+LiDAR: 12415217
+PPO: 2301184
+Detección de carril: 11046585
+LiDAR: 12942185
+PPO: 911290
+Detección de carril: 11249853
+LiDAR: 12700609
+PPO: 2985239
+Detección de carril: 10593419
+LiDAR: 13823579
+PPO: 1511078
+Detección de carril: 10651497
+LiDAR: 13570817
+PPO: 3460620
+Detección de carril: 10855206
+LiDAR: 13734905
+PPO: 722875
+Detección de carril: 10807703
+LiDAR: 12955115
+PPO: 656734
+Detección de carril: 10921786
+LiDAR: 12660208
+PPO: 626058
+Detección de carril: 10613649
+LiDAR: 14976365
+PPO: 3906505
+Detección de carril: 10634000
+LiDAR: 15024768
+PPO: 1346288
+Detección de carril: 11239257
+LiDAR: 14092006
+PPO: 3872182
+Detección de carril: 11417777
+LiDAR: 14157826
+PPO: 635563
+Detección de carril: 10804268
+LiDAR: 14030783
+PPO: 508920
+Detección de carril: 10413727
+LiDAR: 12965710
+PPO: 4052856
+Detección de carril: 10824999
+LiDAR: 15320175
+PPO: 479256
+Detección de carril: 10609473
+LiDAR: 13594523
+PPO: 873953
+Detección de carril: 10993494
+LiDAR: 15426356
+PPO: 2078877
+Detección de carril: 11254990
+LiDAR: 15265112
+PPO: 1022108
+Detección de carril: 11222882
+LiDAR: 13713703
+PPO: 2751836
+Detección de carril: 12193862
+LiDAR: 15681142
+PPO: 1312577
+Detección de carril: 10923348
+LiDAR: 12379183
+PPO: 3839083
+Detección de carril: 11169160
+LiDAR: 14256966
+PPO: 680861
+Detección de carril: 10940324
+LiDAR: 14471180
+PPO: 812941
+Detección de carril: 11117252
+LiDAR: 13790749
+PPO: 696745
+Detección de carril: 10646048
+LiDAR: 13073714
+PPO: 3017759
+Detección de carril: 10714993
+LiDAR: 13683337
+PPO: 1119916
+Detección de carril: 11445719
+LiDAR: 12699597
+PPO: 1774256
+Detección de carril: 10920714
+LiDAR: 12649992
+PPO: 1132855
+Detección de carril: 10870359
+LiDAR: 17424992
+PPO: 710606
+Detección de carril: 11354250
+LiDAR: 15322990
+PPO: 661051
+Detección de carril: 10769846
+LiDAR: 14676741
+PPO: 1646062
+Detección de carril: 10879452
+LiDAR: 14165847
+PPO: 2378701
+Detección de carril: 10885832
+LiDAR: 14003712
+PPO: 618646
+Detección de carril: 10958873
+LiDAR: 12437260
+PPO: 3619230
+Detección de carril: 10943729
+LiDAR: 16041267
+PPO: 1810041
+Detección de carril: 10852131
+LiDAR: 13781606
+PPO: 2080019
+Detección de carril: 10909838
+LiDAR: 15827644
+PPO: 4105266
+Detección de carril: 11052504
+LiDAR: 14504941
+PPO: 955968
+Detección de carril: 10882256
+LiDAR: 13673022
+PPO: 568301
+Detección de carril: 10794042
+LiDAR: 14068861
+PPO: 540679
+Detección de carril: 10839922
+LiDAR: 13097119
+PPO: 666810
+Detección de carril: 10810367
+LiDAR: 12811767
+PPO: 4313321
+Detección de carril: 11528865
+LiDAR: 14164936
+PPO: 578406
+Detección de carril: 10914495
+LiDAR: 16462055
+PPO: 1055599
+Detección de carril: 11001126
+LiDAR: 14274552
+PPO: 1864663
+Detección de carril: 10648933
+LiDAR: 12921153
+PPO: 2335696
+Detección de carril: 10820933
+LiDAR: 14826457
+PPO: 624185
+Detección de carril: 10833783
+LiDAR: 12535540
+PPO: 1076790
+Detección de carril: 10601160
+LiDAR: 16987560
+PPO: 2311540
+Detección de carril: 11318767
+LiDAR: 16097732
+PPO: 2605285
+Detección de carril: 11031332
+LiDAR: 15985002
+PPO: 803096
+Detección de carril: 11465630
+LiDAR: 15407327
+PPO: 4636440
+Detección de carril: 11221921
+LiDAR: 15883929
+PPO: 2375677
+Detección de carril: 10747953
+LiDAR: 15139071
+PPO: 786931
+Detección de carril: 11109240
+LiDAR: 14304047
+PPO: 2202785
+Detección de carril: 10740421
+LiDAR: 16411498
+PPO: 1533562
+Detección de carril: 13194267
+LiDAR: 18364574
+PPO: 950169
+Detección de carril: 11024802
+LiDAR: 17689292
+PPO: 1188610
+Detección de carril: 11639913
+LiDAR: 15114814
+PPO: 3891482
+Detección de carril: 12099869
+LiDAR: 13936501
+PPO: 1041467
+Detección de carril: 11525741
+LiDAR: 13432728
+PPO: 1143491
+Detección de carril: 11105584
+LiDAR: 15706691
+PPO: 808344
+Detección de carril: 11515134
+LiDAR: 12932371
+PPO: 748614
+Detección de carril: 10673911
+LiDAR: 17630764
+PPO: 656124
+Detección de carril: 11774988
+LiDAR: 15363060
+PPO: 1096190
+Detección de carril: 11494943
+LiDAR: 15602784
+PPO: 2262406
+Detección de carril: 11110472
+LiDAR: 16402474
+PPO: 799160
+Detección de carril: 11204234
+LiDAR: 16249162
+PPO: 886943
+Detección de carril: 10727322
+LiDAR: 14943625
+PPO: 2554698
+Detección de carril: 11959076
+LiDAR: 13407430
+PPO: 2083475
+Detección de carril: 11361322
+LiDAR: 12756323
+PPO: 859421
+Detección de carril: 11062459
+LiDAR: 16361732
+PPO: 732138
+Detección de carril: 12332322
+LiDAR: 14177345
+PPO: 875235
+Detección de carril: 12010395
+LiDAR: 12287444
+PPO: 667520
+Detección de carril: 10457313
+LiDAR: 15468540
+PPO: 651977
+Detección de carril: 10940424
+LiDAR: 14343577
+PPO: 1695797
+Detección de carril: 11077782
+LiDAR: 16246468
+PPO: 879151
+Detección de carril: 10830778
+LiDAR: 16465569
+PPO: 787012
+Detección de carril: 11078323
+LiDAR: 16441813
+PPO: 2378622
+Detección de carril: 12403709
+LiDAR: 13476273
+PPO: 829235
+Detección de carril: 11444728
+LiDAR: 12540887
+PPO: 577394
+Detección de carril: 10777037
+LiDAR: 13382532
+PPO: 4115271
+Detección de carril: 11374291
+LiDAR: 14386232
+PPO: 1905655
+Detección de carril: 11330215
+LiDAR: 14176704
+PPO: 3363732
+Detección de carril: 12134782
+LiDAR: 15304942
+PPO: 982808
+Detección de carril: 10903298
+LiDAR: 19429306
+PPO: 739349
+Detección de carril: 11043200
+LiDAR: 15029765
+PPO: 3283021
+Detección de carril: 10905111
+LiDAR: 13587091
+PPO: 1874528
+Detección de carril: 10826902
+LiDAR: 14256375
+PPO: 580759
+Detección de carril: 11049269
+LiDAR: 14142513
+PPO: 2033559
+Detección de carril: 10361047
+LiDAR: 14187851
+PPO: 1877583
+Detección de carril: 10813402
+LiDAR: 15968648
+PPO: 1415003
+Detección de carril: 11606482
+LiDAR: 13549044
+PPO: 2407595
+Detección de carril: 10363611
+LiDAR: 14045846
+PPO: 773541
+Detección de carril: 10984852
+LiDAR: 16743371
+PPO: 731648
+Detección de carril: 11008727
+LiDAR: 13790149
+PPO: 727031
+Detección de carril: 10620901
+LiDAR: 14854821
+PPO: 2357970
+Detección de carril: 13088176
+LiDAR: 14340632
+PPO: 1240999
+Detección de carril: 12441707
+LiDAR: 13975730
+PPO: 2062352
+Detección de carril: 11737160
+LiDAR: 13539069
+PPO: 815875
+Detección de carril: 11125915
+LiDAR: 12944038
+PPO: 2610793
+Detección de carril: 10608321
+LiDAR: 13000964
+PPO: 845760
+Detección de carril: 11219126
+LiDAR: 12462258
+PPO: 1719373
+Detección de carril: 10752680
+LiDAR: 14438590
+PPO: 659629
+Detección de carril: 11139966
+LiDAR: 14384509
+PPO: 728463
+Detección de carril: 11116852
+LiDAR: 14369676
+PPO: 900854
+Detección de carril: 11403856
+LiDAR: 13050219
+PPO: 746451
+Detección de carril: 10908676
+LiDAR: 12485002
+PPO: 2830765
+Detección de carril: 11615437
+LiDAR: 14567045
+PPO: 4645504
+Detección de carril: 10967004
+LiDAR: 13276452
+PPO: 2235394
+Detección de carril: 10763917
+LiDAR: 13518358
+PPO: 570114
+Detección de carril: 10943038
+LiDAR: 11163883
+PPO: 2727029
+Detección de carril: 11373550
+LiDAR: 12981194
+PPO: 635242
+Detección de carril: 10780482
+LiDAR: 11912255
+PPO: 499586
+Detección de carril: 10504053
+LiDAR: 13543926
+PPO: 707571
+Detección de carril: 10811238
+LiDAR: 11971335
+PPO: 936367
+Detección de carril: 10833963
+LiDAR: 13682736
+PPO: 515361
+Detección de carril: 11075198
+LiDAR: 16902401
+PPO: 495080
+Detección de carril: 10977841
+LiDAR: 13881557
+PPO: 693130
+Detección de carril: 11439020
+LiDAR: 13241278
+PPO: 477613
+Detección de carril: 10352954
+LiDAR: 15876908
+PPO: 792951
+Detección de carril: 10234546
+LiDAR: 14161982
+PPO: 857268
+Detección de carril: 11344796
+LiDAR: 14019346
+PPO: 1918375
+Detección de carril: 10608753
+LiDAR: 14553094
+PPO: 2275976
+Detección de carril: 11051863
+LiDAR: 16179987
+PPO: 766270
+Detección de carril: 11216572
+LiDAR: 13256010
+PPO: 3773293
+Detección de carril: 11508754
+LiDAR: 14810884
+PPO: 700411
+Detección de carril: 11032334
+LiDAR: 14804324
+PPO: 2249305
+Detección de carril: 11349303
+LiDAR: 12873071
+PPO: 863727
+Detección de carril: 10802165
+LiDAR: 12852800
+PPO: 3595023
+Detección de carril: 11041647
+LiDAR: 13587402
+PPO: 895816
+Detección de carril: 11052073
+LiDAR: 12504061
+PPO: 3321839
+Detección de carril: 11579061
+LiDAR: 15274987
+PPO: 1015537
+Detección de carril: 10825480
+LiDAR: 14842091
+PPO: 1173016
+Detección de carril: 12135383
+LiDAR: 14121971
+PPO: 927124
+Detección de carril: 11546572
+LiDAR: 14993271
+PPO: 996809
+Detección de carril: 11296373
+LiDAR: 13575174
+PPO: 951730
+Detección de carril: 11256443
+LiDAR: 13959295
+PPO: 3014004
+Detección de carril: 10661532
+LiDAR: 13619110
+PPO: 823717
+Detección de carril: 10718288
+LiDAR: 12412523
+PPO: 946453
+Detección de carril: 11055388
+LiDAR: 14118686
+PPO: 4254261
+Detección de carril: 11179216
+LiDAR: 13265554
+PPO: 757217
+Detección de carril: 10990720
+LiDAR: 13407219
+PPO: 3097780
+Detección de carril: 10731949
+LiDAR: 11835770
+PPO: 1171844
+Detección de carril: 10940824
+LiDAR: 11479079
+PPO: 2547246
+Detección de carril: 11191675
+LiDAR: 12040119
+PPO: 1819805
+Detección de carril: 11344756
+LiDAR: 14112137
+PPO: 3630347
+Detección de carril: 10651036
+LiDAR: 12861413
+PPO: 2123355
+Detección de carril: 11074728
+LiDAR: 13781095
+PPO: 843196
+Detección de carril: 11314922
+LiDAR: 13626681
+PPO: 616894
+Detección de carril: 10640621
+LiDAR: 13662746
+PPO: 667801
+Detección de carril: 10780702
+LiDAR: 16753325
+PPO: 657556
+Detección de carril: 10918081
+LiDAR: 15290100
+PPO: 1062819
+Detección de carril: 10802115
+LiDAR: 14629139
+PPO: 832130
+Detección de carril: 10746361
+LiDAR: 13017429
+PPO: 563113
+Detección de carril: 10333586
+LiDAR: 12709203
+PPO: 477202
+Detección de carril: 10600910
+LiDAR: 13168398
+PPO: 692799
+Detección de carril: 10550925
+LiDAR: 14116303
+PPO: 598056
+Detección de carril: 10504855
+LiDAR: 13818672
+PPO: 520699
+Detección de carril: 10414348
+LiDAR: 14576860
+PPO: 2284559
+Detección de carril: 11105544
+LiDAR: 13284363
+PPO: 2292551
+Detección de carril: 10751237
+LiDAR: 12965190
+PPO: 692018
+Detección de carril: 10963379
+LiDAR: 13193876
+PPO: 2309757
+Detección de carril: 10775695
+LiDAR: 12719468
+PPO: 701141
+Detección de carril: 10793422
+LiDAR: 12224068
+PPO: 550693
+Detección de carril: 10882767
+LiDAR: 11855489
+PPO: 690165
+Detección de carril: 10484995
+LiDAR: 11340920
+PPO: 878230
+Detección de carril: 11162530
+LiDAR: 14562559
+PPO: 753020
+Detección de carril: 11524699
+LiDAR: 14943535
+PPO: 2082383
+Detección de carril: 10920003
+LiDAR: 12508048
+PPO: 626589
+Detección de carril: 10926704
+LiDAR: 14104775
+PPO: 1795458
+Detección de carril: 10683976
+LiDAR: 12937378
+PPO: 662473
+Detección de carril: 10633430
+LiDAR: 12589691
+PPO: 662764
+Detección de carril: 10746401
+LiDAR: 12643783
+PPO: 3203010
+Detección de carril: 10817237
+LiDAR: 13445116
+PPO: 805650
+Detección de carril: 10851981
+LiDAR: 12922205
+PPO: 576864
+Detección de carril: 10726761
+LiDAR: 12711045
+PPO: 2439613
+Detección de carril: 10744177
+LiDAR: 11999107
+PPO: 1540142
+Detección de carril: 10788695
+LiDAR: 12573467
+PPO: 4634146
+Detección de carril: 10727191
+LiDAR: 14281713
+PPO: 1967659
+Detección de carril: 11081718
+LiDAR: 13871963
+PPO: 4737794
+Detección de carril: 10815685
+LiDAR: 12938239
+PPO: 744878
+Detección de carril: 10928036
+LiDAR: 12758607
+PPO: 3830960
+Detección de carril: 10667711
+LiDAR: 13234327
+PPO: 690716
+Detección de carril: 10612007
+LiDAR: 17610943
+PPO: 821053
+Detección de carril: 10413126
+LiDAR: 14070584
+PPO: 897139
+Detección de carril: 11853266
+LiDAR: 12238820
+PPO: 650906
+Detección de carril: 10774653
+LiDAR: 12460155
+PPO: 573869
+Detección de carril: 10638517
+LiDAR: 12032678
+PPO: 559186
+Detección de carril: 10709444
+LiDAR: 12860471
+PPO: 904350
+Detección de carril: 10908896
+LiDAR: 14613806
+PPO: 839641
+Detección de carril: 11079385
+LiDAR: 14395516
+PPO: 543993
+Detección de carril: 10742454
+LiDAR: 17784045
+PPO: 2114522
+Detección de carril: 11061848
+LiDAR: 16457968
+PPO: 638947
+Detección de carril: 10943369
+LiDAR: 13357343
+PPO: 609422
+Detección de carril: 10370302
+LiDAR: 16653764
+PPO: 1763330
+Detección de carril: 10472165
+LiDAR: 14188722
+PPO: 1112304
+Detección de carril: 10817067
+LiDAR: 14138406
+PPO: 1538970
+Detección de carril: 10759851
+LiDAR: 12695942
+PPO: 513738
+Detección de carril: 10701592
+LiDAR: 14408645
+PPO: 575362
+Detección de carril: 10619058
+LiDAR: 16432569
+PPO: 3485097
+Detección de carril: 11353280
+LiDAR: 16669308
+PPO: 2169575
+Detección de carril: 11247249
+LiDAR: 12950347
+PPO: 528561
+Detección de carril: 10703225
+LiDAR: 15687371
+PPO: 871629
+Detección de carril: 10834093
+LiDAR: 13430835
+PPO: 792860
+Detección de carril: 11282302
+LiDAR: 12456629
+PPO: 990250
+Detección de carril: 10890509
+LiDAR: 13286606
+PPO: 3872524
+Detección de carril: 11138073
+LiDAR: 12320424
+PPO: 525816
+Detección de carril: 11077361
+LiDAR: 13244403
+PPO: 614010
+Detección de carril: 10640830
+LiDAR: 12379844
+PPO: 915937
+Detección de carril: 10798890
+LiDAR: 14434274
+PPO: 471173
+Detección de carril: 10756606
+LiDAR: 14017654
+PPO: 554560
+Detección de carril: 10307376
+LiDAR: 14493985
+PPO: 1927999
+Detección de carril: 11173577
+LiDAR: 14410829
+PPO: 678407
+Detección de carril: 11040005
+LiDAR: 12116865
+PPO: 682364
+Detección de carril: 10957830
+LiDAR: 13752993
+PPO: 511695
+Detección de carril: 10443162
+LiDAR: 13228428
+PPO: 2142313
+Detección de carril: 10864129
+LiDAR: 13577156
+PPO: 887784
+Detección de carril: 10650726
+LiDAR: 12724966
+PPO: 564604
+Detección de carril: 10719018
+LiDAR: 12309728
+PPO: 4729190
+Detección de carril: 10954416
+LiDAR: 12866411
+PPO: 754362
+Detección de carril: 11067957
+LiDAR: 15463282
+PPO: 595892
+Detección de carril: 11302082
+LiDAR: 15404363
+PPO: 2401166
+Detección de carril: 11040115
+LiDAR: 13882609
+PPO: 991191
+Detección de carril: 10913483
+LiDAR: 13944593
+PPO: 628161
+Detección de carril: 10771248
+LiDAR: 15353947
+PPO: 1073375
+Detección de carril: 10730977
+LiDAR: 12372573
+PPO: 1260849
+Detección de carril: 10536993
+LiDAR: 13031691
+PPO: 527890
+Detección de carril: 10877129
+LiDAR: 13666943
+PPO: 541770
+Detección de carril: 10813332
+LiDAR: 11777993
+PPO: 1151523
+Detección de carril: 10811449
+LiDAR: 12590442
+PPO: 717607
+Detección de carril: 10288147
+LiDAR: 12454667
+PPO: 485915
+Detección de carril: 10601831
+LiDAR: 13318364
+PPO: 599748
+Detección de carril: 10961927
+LiDAR: 15764057
+PPO: 2939401
+Detección de carril: 10629494
+LiDAR: 14910895
+PPO: 2049573
+Detección de carril: 11075619
+LiDAR: 14695870
+PPO: 2034591
+Detección de carril: 10513028
+LiDAR: 14910585
+PPO: 604756
+Detección de carril: 11020926
+LiDAR: 15781725
+PPO: 2251138
+Detección de carril: 10832510
+LiDAR: 13911633
+PPO: 1369653
+Detección de carril: 11336645
+LiDAR: 13566460
+PPO: 526237
+Detección de carril: 10644065
+LiDAR: 17344871
+PPO: 542752
+Detección de carril: 10778679
+LiDAR: 13896079
+PPO: 635943
+Detección de carril: 11410516
+LiDAR: 17859149
+PPO: 2136464
+Detección de carril: 11427641
+LiDAR: 16065164
+PPO: 1555796
+Detección de carril: 10637255
+LiDAR: 14710472
+PPO: 640500
+Detección de carril: 11083732
+LiDAR: 13068256
+PPO: 2952470
+Detección de carril: 11104232
+LiDAR: 13519509
+PPO: 1106565
+Detección de carril: 11628606
+LiDAR: 14570920
+PPO: 2724165
+Detección de carril: 11310504
+LiDAR: 15401568
+PPO: 961836
+Detección de carril: 12039098
+LiDAR: 18490134
+PPO: 842625
+Detección de carril: 10493177
+LiDAR: 17148534
+PPO: 650775
+Detección de carril: 10476892
+LiDAR: 15088435
+PPO: 3080955
+Detección de carril: 10809366
+LiDAR: 15504415
+PPO: 793611
+Detección de carril: 11378167
+LiDAR: 14204035
+PPO: 1910553
+Detección de carril: 11116341
+LiDAR: 14921472
+PPO: 799641
+Detección de carril: 11246889
+LiDAR: 13708515
+PPO: 2493395
+Detección de carril: 11395263
+LiDAR: 14347963
+PPO: 919843
+Detección de carril: 10959754
+LiDAR: 13460460
+PPO: 796947
+Detección de carril: 11192375
+LiDAR: 15260605
+PPO: 791389
+Detección de carril: 11157083
+LiDAR: 17770905
+PPO: 873503
+Detección de carril: 10948476
+LiDAR: 18594513
+PPO: 1879706
+Detección de carril: 11214960
+LiDAR: 14498712
+PPO: 2641099
+Detección de carril: 11536277
+LiDAR: 13396152
+PPO: 2031506
+Detección de carril: 11264034
+LiDAR: 13531577
+PPO: 2690984
+Detección de carril: 10663405
+LiDAR: 13302540
+PPO: 1038913
+Detección de carril: 10886133
+LiDAR: 12515850
+PPO: 853582
+Detección de carril: 10932012
+LiDAR: 12305410
+PPO: 2463790
+Detección de carril: 11188230
+LiDAR: 13777901
+PPO: 639829
+Detección de carril: 10911810
+LiDAR: 13214788
+PPO: 1981390
+Detección de carril: 10921335
+LiDAR: 13969320
+PPO: 1742939
+Detección de carril: 11243032
+LiDAR: 14754159
+PPO: 2445372
+Detección de carril: 11476485
+LiDAR: 13975429
+PPO: 957100
+Detección de carril: 10914865
+LiDAR: 13198754
+PPO: 757237
+Detección de carril: 10725699
+LiDAR: 13377744
+PPO: 709724
+Detección de carril: 10913133
+LiDAR: 17107732
+PPO: 694902
+Detección de carril: 10492296
+LiDAR: 16248121
+PPO: 2238990
+Detección de carril: 11813026
+LiDAR: 16861288
+PPO: 885160
+Detección de carril: 11694015
+LiDAR: 15750156
+PPO: 848515
+Detección de carril: 10981927
+LiDAR: 16486662
+PPO: 944961
+Detección de carril: 11051292
+LiDAR: 15255527
+PPO: 2417149
+Detección de carril: 14345009
+LiDAR: 16414102
+PPO: 1176551
+Detección de carril: 10477724
+LiDAR: 16160538
+PPO: 4372850
+Detección de carril: 12554268
+LiDAR: 14951948
+PPO: 859822
+Detección de carril: 11310945
+LiDAR: 14603740
+PPO: 2578854
+Detección de carril: 12007209
+LiDAR: 13871502
+PPO: 5268347
+Detección de carril: 11798313
+LiDAR: 15276419
+PPO: 1483706
+Detección de carril: 11447813
+LiDAR: 14259950
+PPO: 912872
+Detección de carril: 11271615
+LiDAR: 16513732
+PPO: 650585
+Detección de carril: 11346710
+LiDAR: 14826397
+PPO: 826492
+Detección de carril: 11315833
+LiDAR: 13705841
+PPO: 2181092
+Detección de carril: 10372465
+LiDAR: 14323887
+PPO: 552035
+Detección de carril: 11351828
+LiDAR: 13396112
+PPO: 566688
+Detección de carril: 11094988
+LiDAR: 16143902
+PPO: 1731171
+Detección de carril: 10480127
+LiDAR: 15177289
+PPO: 1551419
+Detección de carril: 10635292
+LiDAR: 13781796
+PPO: 890959
+Detección de carril: 11480141
+LiDAR: 17650944
+PPO: 963349
+Detección de carril: 10702544
+LiDAR: 13274097
+PPO: 801804
+Detección de carril: 10672419
+LiDAR: 11728988
+PPO: 4386100
+Detección de carril: 10707601
+LiDAR: 12697925
+PPO: 1755638
+Detección de carril: 10885791
+LiDAR: 12493686
+PPO: 1678011
+Detección de carril: 11305116
+LiDAR: 17610523
+PPO: 814142
+Detección de carril: 10974636
+LiDAR: 16759925
+PPO: 760161
+Detección de carril: 11376584
+LiDAR: 14701949
+PPO: 912111
+Detección de carril: 11211514
+LiDAR: 15714412
+PPO: 1825254
+Detección de carril: 11123101
+LiDAR: 13970032
+PPO: 894385
+Detección de carril: 11686274
+LiDAR: 13163570
+PPO: 913363
+Detección de carril: 10897650
+LiDAR: 14097154
+PPO: 912412
+Detección de carril: 11261089
+LiDAR: 14420233
+PPO: 4940791
+Detección de carril: 10617385
+LiDAR: 15007242
+PPO: 2385561
+Detección de carril: 11049770
+LiDAR: 14600315
+PPO: 4983886
+Detección de carril: 11151253
+LiDAR: 15020792
+PPO: 967205
+Detección de carril: 11067246
+LiDAR: 13373608
+PPO: 1461223
+Detección de carril: 10877629
+LiDAR: 14471350
+PPO: 672468
+Detección de carril: 10766651
+LiDAR: 13047464
+PPO: 2844006
+Detección de carril: 10584906
+LiDAR: 12591665
+PPO: 963078
+Detección de carril: 10991832
+LiDAR: 14665024
+PPO: 815896
+Detección de carril: 11178004
+LiDAR: 15679660
+PPO: 1837322
+Detección de carril: 11110462
+LiDAR: 14945558
+PPO: 1812134
+Detección de carril: 11240259
+LiDAR: 15012440
+PPO: 858600
+Detección de carril: 11329062
+LiDAR: 13637968
+PPO: 4226009
+Detección de carril: 10842486
+LiDAR: 13782858
+PPO: 736165
+Detección de carril: 11255341
+LiDAR: 16523648
+PPO: 734732
+Detección de carril: 10964150
+LiDAR: 12512104
+PPO: 701632
+Detección de carril: 10941456
+LiDAR: 13398826
+PPO: 915856
+Detección de carril: 11673223
+LiDAR: 15483022
+PPO: 2089043
+Detección de carril: 11019033
+LiDAR: 15254095
+PPO: 1440380
+Detección de carril: 11563037
+LiDAR: 12407205
+PPO: 3190550
+Detección de carril: 11393941
+LiDAR: 14103233
+PPO: 968937
+Detección de carril: 11309372
+LiDAR: 14372140
+PPO: 2303207
+Detección de carril: 11360881
+LiDAR: 13409913
+PPO: 2105378
+Detección de carril: 11134177
+LiDAR: 13383874
+PPO: 961746
+Detección de carril: 11651401
+LiDAR: 12836885
+PPO: 1008026
+Detección de carril: 11263613
+LiDAR: 15888546
+PPO: 955246
+Detección de carril: 11255241
+LiDAR: 15088475
+PPO: 2755882
+Detección de carril: 11302963
+LiDAR: 15204420
+PPO: 865070
+Detección de carril: 12211549
+LiDAR: 13700203
+PPO: 3671830
+Detección de carril: 11176382
+LiDAR: 12874573
+PPO: 709084
+Detección de carril: 10848094
+LiDAR: 12425954
+PPO: 835836
+Detección de carril: 11488674
+LiDAR: 13643077
+PPO: 4518231
+Detección de carril: 11579381
+LiDAR: 14539563
+PPO: 1162791
+Detección de carril: 10767953
+LiDAR: 12489299
+PPO: 955987
+Detección de carril: 10725269
+LiDAR: 16188641
+PPO: 638207
+Detección de carril: 10851840
+LiDAR: 14934361
+PPO: 5123708
+Detección de carril: 10942677
+LiDAR: 14121871
+PPO: 784338
+Detección de carril: 11848880
+LiDAR: 13915058
+PPO: 1015848
+Detección de carril: 12082063
+LiDAR: 13769608
+PPO: 1197142
+Detección de carril: 11625542
+LiDAR: 15337141
+PPO: 1182050
+Detección de carril: 14295755
+LiDAR: 16044171
+PPO: 960484
+Detección de carril: 11121188
+LiDAR: 14337968
+PPO: 2607527
+Detección de carril: 11231855
+LiDAR: 13958474
+PPO: 1799224
+Detección de carril: 11390516
+LiDAR: 13450966
+PPO: 4565632
+Detección de carril: 11061437
+LiDAR: 13942159
+PPO: 629974
+Detección de carril: 11115219
+LiDAR: 11718772
+PPO: 624896
+Detección de carril: 10779391
+LiDAR: 12967153
+PPO: 1755498
+Detección de carril: 11224324
+LiDAR: 11217614
+PPO: 2011927
+Detección de carril: 11502365
+LiDAR: 13011530
+PPO: 3358144
+Detección de carril: 11164283
+LiDAR: 12307163
+PPO: 2153400
+Detección de carril: 11130442
+LiDAR: 12957278
+PPO: 3874527
+Detección de carril: 10968287
+LiDAR: 12579216
+PPO: 4627236
+Detección de carril: 11068818
+LiDAR: 16283784
+PPO: 2478753
+Detección de carril: 11402884
+LiDAR: 16753746
+PPO: 2412483
+Detección de carril: 10557485
+LiDAR: 15128996
+PPO: 886572
+Detección de carril: 11169351
+LiDAR: 13936971
+PPO: 3766543
+Detección de carril: 11315893
+LiDAR: 14682270
+PPO: 1593913
+Detección de carril: 11083711
+LiDAR: 14917465
+PPO: 1090721
+Detección de carril: 12021271
+LiDAR: 14652104
+PPO: 928676
+Detección de carril: 11250303
+LiDAR: 11187648
+PPO: 927284
+Detección de carril: 11344977
+LiDAR: 11824984
+PPO: 1818564
+Detección de carril: 10950179
+LiDAR: 12369348
+PPO: 904850
+Detección de carril: 11354962
+LiDAR: 11972056
+PPO: 2415678
+Detección de carril: 10696856
+LiDAR: 14862773
+PPO: 1027035
+Detección de carril: 10954485
+LiDAR: 11681205
+PPO: 3221808
+Detección de carril: 10909237
+LiDAR: 12990257
+PPO: 613399
+Detección de carril: 10729115
+LiDAR: 14027418
+PPO: 1131994
+Detección de carril: 10589312
+LiDAR: 12639797
+PPO: 607319
+Detección de carril: 10766531
+LiDAR: 12478894
+PPO: 592236
+Detección de carril: 10406395
+LiDAR: 11576277
+PPO: 618726
+Detección de carril: 10610815
+LiDAR: 11995381
+PPO: 564274
+Detección de carril: 10655162
+LiDAR: 13509874
+PPO: 606588
+Detección de carril: 10790858
+LiDAR: 14383948
+PPO: 925872
+Detección de carril: 11818193
+LiDAR: 13286647
+PPO: 661722
+Detección de carril: 10743947
+LiDAR: 11986779
+PPO: 601561
+Detección de carril: 11127557
+LiDAR: 12411471
+PPO: 2661910
+Detección de carril: 10570905
+LiDAR: 12628560
+PPO: 563493
+Detección de carril: 10839862
+LiDAR: 12219961
+PPO: 2538484
+Detección de carril: 10898901
+LiDAR: 12633417
+PPO: 1896441
+Detección de carril: 10840172
+LiDAR: 12783745
+PPO: 617084
+Detección de carril: 10861285
+LiDAR: 12132560
+PPO: 1398567
+Detección de carril: 11318797
+LiDAR: 15798600
+PPO: 4481546
+Detección de carril: 10526007
+LiDAR: 12749373
+PPO: 1725793
+Detección de carril: 10692028
+LiDAR: 11936292
+PPO: 2544302
+Detección de carril: 10696665
+LiDAR: 12603222
+PPO: 975076
+Detección de carril: 10693901
+LiDAR: 12066199
+PPO: 696475
+Detección de carril: 10456792
+LiDAR: 11539351
+PPO: 3810860
+Detección de carril: 10578216
+LiDAR: 13860275
+PPO: 1870923
+Detección de carril: 11460291
+LiDAR: 15904650
+PPO: 1527723
+Detección de carril: 10452145
+LiDAR: 13398095
+PPO: 939362
+Detección de carril: 11071062
+LiDAR: 16604590
+PPO: 835975
+Detección de carril: 10672689
+LiDAR: 14333652
+PPO: 751647
+Detección de carril: 10853242
+LiDAR: 12857717
+PPO: 4643761
+Detección de carril: 10946173
+LiDAR: 13967107
+PPO: 1041336
+Detección de carril: 11053706
+LiDAR: 14983475
+PPO: 818980
+Detección de carril: 10753751
+LiDAR: 14368725
+PPO: 672999
+Detección de carril: 10754032
+LiDAR: 13841026
+PPO: 2398902
+Detección de carril: 10990480
+LiDAR: 12687750
+PPO: 642413
+Detección de carril: 11195380
+LiDAR: 10244311
+PPO: 1686443
+Detección de carril: 10823928
+LiDAR: 13400449
+PPO: 4852507
+Detección de carril: 10797097
+LiDAR: 11866656
+PPO: 2076374
+Detección de carril: 10349500
+LiDAR: 13595064
+PPO: 3890210
+Detección de carril: 11316503
+LiDAR: 13040394
+PPO: 744697
+Detección de carril: 10928546
+LiDAR: 11626073
+PPO: 4249935
+Detección de carril: 11260318
+LiDAR: 13837681
+PPO: 1104813
+Detección de carril: 11494112
+LiDAR: 12703314
+PPO: 1562706
+Detección de carril: 12172270
+LiDAR: 14652475
+PPO: 911791
+Detección de carril: 10759159
+LiDAR: 14852136
+PPO: 1819355
+Detección de carril: 10749746
+LiDAR: 13902579
+PPO: 584125
+Detección de carril: 11342613
+LiDAR: 12670103
+PPO: 2503881
+Detección de carril: 10788213
+LiDAR: 12564493
+PPO: 614100
+Detección de carril: 11027115
+LiDAR: 11506131
+PPO: 689073
+Detección de carril: 11456285
+LiDAR: 13080364
+PPO: 1435784
+Detección de carril: 11738573
+LiDAR: 12348516
+PPO: 1281049
+Detección de carril: 10912151
+LiDAR: 12494196
+PPO: 718447
+Detección de carril: 11568575
+LiDAR: 14432341
+PPO: 961045
+Detección de carril: 11347320
+LiDAR: 12466404
+PPO: 2169164
+Detección de carril: 10821054
+LiDAR: 17208074
+PPO: 592627
+Detección de carril: 10733000
+LiDAR: 14558332
+PPO: 594310
+Detección de carril: 10333055
+LiDAR: 14141060
+PPO: 3793353
+Detección de carril: 10471233
+LiDAR: 13772812
+PPO: 2075853
+Detección de carril: 10522792
+LiDAR: 13724700
+PPO: 2713128
+Detección de carril: 10966543
+LiDAR: 12999763
+PPO: 2061451
+Detección de carril: 10563824
+LiDAR: 13056429
+PPO: 2495688
+Detección de carril: 12480997
+LiDAR: 15387487
+PPO: 2768131
+Detección de carril: 11318977
+LiDAR: 14155582
+PPO: 883477
+Detección de carril: 10850669
+LiDAR: 22552556
+PPO: 943739
+Detección de carril: 10460287
+LiDAR: 12927353
+PPO: 647851
+Detección de carril: 11090602
+LiDAR: 13712642
+PPO: 1868849
+Detección de carril: 10975027
+LiDAR: 15210439
+PPO: 591185
+Detección de carril: 11064122
+LiDAR: 12499555
+PPO: 2211378
+Detección de carril: 11124523
+LiDAR: 14632444
+PPO: 723525
+Detección de carril: 11580192
+LiDAR: 16091493
+PPO: 1094007
+Detección de carril: 11329373
+LiDAR: 16351938
+PPO: 1098994
+Detección de carril: 10800993
+LiDAR: 13728065
+PPO: 641551
+Detección de carril: 11593143
+LiDAR: 14856593
+PPO: 553818
+Detección de carril: 10547369
+LiDAR: 14577701
+PPO: 1179776
+Detección de carril: 10629093
+LiDAR: 14028890
+PPO: 1004080
+Detección de carril: 11943112
+LiDAR: 14120219
+PPO: 4948623
+Detección de carril: 11137643
+LiDAR: 15095405
+PPO: 1257073
+Detección de carril: 11322593
+LiDAR: 14338209
+PPO: 898040
+Detección de carril: 10868496
+LiDAR: 13616636
+PPO: 731057
+Detección de carril: 11159516
+LiDAR: 16324355
+PPO: 3243621
+Detección de carril: 11686835
+LiDAR: 13446148
+PPO: 2087140
+Detección de carril: 11312588
+LiDAR: 12456179
+PPO: 2443589
+Detección de carril: 11575625
+LiDAR: 17280303
+PPO: 2914473
+Detección de carril: 11092074
+LiDAR: 14046407
+PPO: 853372
+Detección de carril: 11307300
+LiDAR: 13223080
+PPO: 1029298
+Detección de carril: 11403816
+LiDAR: 15222047
+PPO: 1182010
+Detección de carril: 11322853
+LiDAR: 14755671
+PPO: 3022356
+Detección de carril: 11125314
+LiDAR: 13125503
+PPO: 1354520
+Detección de carril: 10916378
+LiDAR: 13930491
+PPO: 762274
+Detección de carril: 10782435
+LiDAR: 14220150
+PPO: 4593555
+Detección de carril: 11848789
+LiDAR: 14342495
+PPO: 1927198
+Detección de carril: 10987005
+LiDAR: 18469033
+PPO: 1338386
+Detección de carril: 11616718
+LiDAR: 17880662
+PPO: 883378
+Detección de carril: 11034076
+LiDAR: 16653754
+PPO: 844689
+Detección de carril: 10874184
+LiDAR: 13515373
+PPO: 921475
+Detección de carril: 10569663
+LiDAR: 18963902
+PPO: 690746
+Detección de carril: 10668222
+LiDAR: 14207200
+PPO: 2542740
+Detección de carril: 10822345
+LiDAR: 14073548
+PPO: 724506
+Detección de carril: 12310468
+LiDAR: 17432383
+PPO: 844819
+Detección de carril: 10730627
+LiDAR: 16542967
+PPO: 968917
+Detección de carril: 10624977
+LiDAR: 14698153
+PPO: 608521
+Detección de carril: 10725368
+LiDAR: 16186727
+PPO: 666750
+Detección de carril: 10697537
+LiDAR: 14875502
+PPO: 2572085
+Detección de carril: 10730657
+LiDAR: 19636941
+PPO: 4963545
+Detección de carril: 11029389
+LiDAR: 15715164
+PPO: 794052
+Detección de carril: 10562222
+LiDAR: 13453850
+PPO: 1215169
+Detección de carril: 10822996
+LiDAR: 13714895
+PPO: 1277845
+Detección de carril: 10802646
+LiDAR: 13645249
+PPO: 3148627
+Detección de carril: 11503396
+LiDAR: 14898157
+PPO: 705188
+Detección de carril: 10884099
+LiDAR: 13073554
+PPO: 565826
+Detección de carril: 10627290
+LiDAR: 16990474
+PPO: 639208
+Detección de carril: 10426246
+LiDAR: 13336122
+PPO: 1934369
+Detección de carril: 10789706
+LiDAR: 12774190
+PPO: 493737
+Detección de carril: 10827964
+LiDAR: 15271632
+PPO: 2326612
+Detección de carril: 10661922
+LiDAR: 15936478
+PPO: 642432
+Detección de carril: 11316754
+LiDAR: 14773347
+PPO: 2344570
+Detección de carril: 10557905
+LiDAR: 16409244
+PPO: 1033154
+Detección de carril: 10540449
+LiDAR: 18477126
+PPO: 632488
+Detección de carril: 10958121
+LiDAR: 14797635
+PPO: 2667749
+Detección de carril: 12201934
+LiDAR: 16921460
+PPO: 1200318
+Detección de carril: 11074377
+LiDAR: 15558806
+PPO: 1023720
+Detección de carril: 10410602
+LiDAR: 15514630
+PPO: 1356874
+Detección de carril: 12953122
+LiDAR: 17738587
+PPO: 1575315
+Detección de carril: 11076370
+LiDAR: 16375133
+PPO: 735273
+Detección de carril: 11845554
+LiDAR: 13930251
+PPO: 914013
+Detección de carril: 10832281
+LiDAR: 14706516
+PPO: 675673
+Detección de carril: 10597415
+LiDAR: 14671664
+PPO: 886443
+Detección de carril: 12697094
+LiDAR: 18456814
+PPO: 1020996
+Detección de carril: 11058643
+LiDAR: 18387850
+PPO: 894995
+Detección de carril: 11445760
+LiDAR: 16342123
+PPO: 1282101
+Detección de carril: 11053806
+LiDAR: 14403187
+PPO: 584505
+Detección de carril: 10885791
+LiDAR: 13407700
+PPO: 4051414
+Detección de carril: 10753851
+LiDAR: 15477944
+PPO: 524915
+Detección de carril: 10683796
+LiDAR: 15544215
+PPO: 519747
+Detección de carril: 10825640
+LiDAR: 16574394
+PPO: 514048
+Detección de carril: 11060076
+LiDAR: 14871165
+PPO: 571365
+Detección de carril: 11178524
+LiDAR: 13416403
+PPO: 2483991
+Detección de carril: 11501213
+LiDAR: 15148295
+PPO: 1309803
+Detección de carril: 10864860
+LiDAR: 14139998
+PPO: 499246
+Detección de carril: 10668974
+LiDAR: 16113627
+PPO: 1894398
+Detección de carril: 10671778
+LiDAR: 13179705
+PPO: 4093638
+Detección de carril: 10927124
+LiDAR: 14305158
+PPO: 482380
+Detección de carril: 10539517
+LiDAR: 14996455
+PPO: 467448
+Detección de carril: 10468710
+LiDAR: 16347010
+PPO: 1752763
+Detección de carril: 10827853
+LiDAR: 15381909
+PPO: 562171
+Detección de carril: 10821774
+LiDAR: 13213726
+PPO: 4545692
+Detección de carril: 11642607
+LiDAR: 18485698
+PPO: 786461
+Detección de carril: 11017571
+LiDAR: 16301070
+PPO: 2351019
+Detección de carril: 11330765
+LiDAR: 15685820
+PPO: 4186599
+Detección de carril: 11122289
+LiDAR: 14623410
+PPO: 737497
+Detección de carril: 11079174
+LiDAR: 14339670
+PPO: 772229
+Detección de carril: 11072274
+LiDAR: 13725050
+PPO: 2270719
+Detección de carril: 11027355
+LiDAR: 19324519
+PPO: 1795148
+Detección de carril: 11453491
+LiDAR: 18822087
+PPO: 3418796
+Detección de carril: 11212656
+LiDAR: 14173709
+PPO: 860393
+Detección de carril: 11005643
+LiDAR: 14852848
+PPO: 2839189
+Detección de carril: 11208320
+LiDAR: 14487234
+PPO: 727922
+Detección de carril: 11048558
+LiDAR: 14339651
+PPO: 806501
+Detección de carril: 11016229
+LiDAR: 19883595
+PPO: 659950
+Detección de carril: 10921726
+LiDAR: 14106007
+PPO: 694631
+Detección de carril: 11447702
+LiDAR: 13593301
+PPO: 851719
+Detección de carril: 10962448
+LiDAR: 13363633
+PPO: 1168299
+Detección de carril: 11352459
+LiDAR: 13669156
+PPO: 642573
+Detección de carril: 11074297
+LiDAR: 16489396
+PPO: 1727906
+Detección de carril: 10962948
+LiDAR: 14975985
+PPO: 1477687
+Detección de carril: 10974426
+LiDAR: 14967782
+PPO: 649724
+Detección de carril: 10720952
+LiDAR: 12827371
+PPO: 780311
+Detección de carril: 10639819
+LiDAR: 12634188
+PPO: 683975
+Detección de carril: 10654021
+LiDAR: 15074604
+PPO: 2576220
+Detección de carril: 10901776
+LiDAR: 15807844
+PPO: 4637671
+Detección de carril: 11915300
+LiDAR: 16914069
+PPO: 2032157
+Detección de carril: 11078353
+LiDAR: 17841813
+PPO: 678247
+Detección de carril: 11084392
+LiDAR: 17452554
+PPO: 960524
+Detección de carril: 10961666
+LiDAR: 13402612
+PPO: 992383
+Detección de carril: 11011582
+LiDAR: 15791539
+PPO: 4051444
+Detección de carril: 10986444
+LiDAR: 15960795
+PPO: 2547407
+Detección de carril: 10794383
+LiDAR: 14511221
+PPO: 896928
+Detección de carril: 10853153
+LiDAR: 15120142
+PPO: 577134
+Detección de carril: 10920494
+LiDAR: 12774612
+PPO: 543373
+Detección de carril: 10429361
+LiDAR: 14150825
+PPO: 809706
+Detección de carril: 10468109
+LiDAR: 14595468
+PPO: 4740357
+Detección de carril: 10954385
+LiDAR: 15552077
+PPO: 522481
+Detección de carril: 10831719
+LiDAR: 12600297
+PPO: 538385
+Detección de carril: 10709164
+LiDAR: 14403438
+PPO: 808224
+Detección de carril: 10771649
+LiDAR: 14179689
+PPO: 1287700
+Detección de carril: 10902206
+LiDAR: 15572037
+PPO: 730556
+Detección de carril: 10837088
+LiDAR: 14573585
+PPO: 1150381
+Detección de carril: 10871180
+LiDAR: 13970522
+PPO: 1391487
+Detección de carril: 10785840
+LiDAR: 19362585
+PPO: 2394385
+Detección de carril: 10753691
+LiDAR: 14611031
+PPO: 2773830
+Detección de carril: 10907855
+LiDAR: 14850454
+PPO: 502170
+Detección de carril: 10923969
+LiDAR: 14004022
+PPO: 617394
+Detección de carril: 10261907
+LiDAR: 13591759
+PPO: 506807
+Detección de carril: 10935367
+LiDAR: 13874677
+PPO: 2782222
+Detección de carril: 10811389
+LiDAR: 16264475
+PPO: 595331
+Detección de carril: 10563233
+LiDAR: 14150264
+PPO: 620880
+Detección de carril: 10360266
+LiDAR: 14156724
+PPO: 617495
+Detección de carril: 10588401
+LiDAR: 13317974
+PPO: 555911
+Detección de carril: 10378193
+LiDAR: 14123644
+PPO: 553168
+Detección de carril: 10707381
+LiDAR: 12751276
+PPO: 1098613
+Detección de carril: 11032384
+LiDAR: 13442332
+PPO: 3128216
+Detección de carril: 11254931
+LiDAR: 12105198
+PPO: 537995
+Detección de carril: 10853702
+LiDAR: 14787739
+PPO: 497162
+Detección de carril: 10771429
+LiDAR: 13670869
+PPO: 860192
+Detección de carril: 10698388
+LiDAR: 16096792
+PPO: 2984759
+Detección de carril: 10807803
+LiDAR: 16969472
+PPO: 527208
+Detección de carril: 10615993
+LiDAR: 14692706
+PPO: 1515004
+Detección de carril: 10296600
+LiDAR: 15003586
+PPO: 520848
+Detección de carril: 10798559
+LiDAR: 14300362
+PPO: 621641
+Detección de carril: 10743336
+LiDAR: 14399562
+PPO: 597495
+Detección de carril: 10707983
+LiDAR: 13407159
+PPO: 919132
+Detección de carril: 12882214
+LiDAR: 16877543
+PPO: 3018510
+Detección de carril: 11653183
+LiDAR: 15966834
+PPO: 649653
+Detección de carril: 10733441
+LiDAR: 14211226
+PPO: 786181
+Detección de carril: 11091272
+LiDAR: 13691330
+PPO: 677816
+Detección de carril: 10437372
+LiDAR: 13820574
+PPO: 2283887
+Detección de carril: 10327797
+LiDAR: 13441822
+PPO: 469110
+Detección de carril: 10699559
+LiDAR: 15963870
+PPO: 568951
+Detección de carril: 11231415
+LiDAR: 14601327
+PPO: 473046
+Detección de carril: 10723846
+LiDAR: 14524601
+PPO: 467347
+Detección de carril: 10715844
+LiDAR: 13275240
+PPO: 592507
+Detección de carril: 10744328
+LiDAR: 16324586
+PPO: 584285
+Detección de carril: 10980094
+LiDAR: 13484977
+PPO: 1333068
+Detección de carril: 10867634
+LiDAR: 13401160
+PPO: 888535
+Detección de carril: 10771829
+LiDAR: 13488462
+PPO: 914986
+Detección de carril: 10597224
+LiDAR: 13925053
+PPO: 1654525
+Detección de carril: 10765810
+LiDAR: 12738647
+PPO: 490122
+Detección de carril: 10284561
+LiDAR: 15643745
+PPO: 796386
+Detección de carril: 10882627
+LiDAR: 15553799
+PPO: 485004
+Detección de carril: 10882056
+LiDAR: 14215052
+PPO: 2105859
+Detección de carril: 10735464
+LiDAR: 15303901
+PPO: 2462428
+Detección de carril: 11147488
+LiDAR: 18343773
+PPO: 487007
+Detección de carril: 10564235
+LiDAR: 14633335
+PPO: 1748417
+Detección de carril: 11994671
+LiDAR: 14128631
+PPO: 892681
+Detección de carril: 10841084
+LiDAR: 12923306
+PPO: 3908819
+Detección de carril: 11440552
+LiDAR: 13979355
+PPO: 760071
+Detección de carril: 10875276
+LiDAR: 16641896
+PPO: 930399
+Detección de carril: 12333724
+LiDAR: 16278075
+PPO: 959232
+Detección de carril: 11323845
+LiDAR: 17441297
+PPO: 861043
+Detección de carril: 11010310
+LiDAR: 16263724
+PPO: 887214
+Detección de carril: 11419520
+LiDAR: 15109476
+PPO: 678938
+Detección de carril: 10878100
+LiDAR: 15707702
+PPO: 1177883
+Detección de carril: 10824229
+LiDAR: 13929530
+PPO: 545256
+Detección de carril: 10648162
+LiDAR: 14025566
+PPO: 1020575
+Detección de carril: 10967195
+LiDAR: 13070370
+PPO: 946503
+Detección de carril: 11159887
+LiDAR: 13388130
+PPO: 708673
+Detección de carril: 10744768
+LiDAR: 13827736
+PPO: 516772
+Detección de carril: 11169021
+LiDAR: 14063102
+PPO: 2383609
+Detección de carril: 10902897
+LiDAR: 12822153
+PPO: 1470116
+Detección de carril: 10610615
+LiDAR: 14716842
+PPO: 2315967
+Detección de carril: 10998703
+LiDAR: 17034080
+PPO: 880122
+Detección de carril: 10984812
+LiDAR: 18444866
+PPO: 2040960
+Detección de carril: 10796667
+LiDAR: 15877519
+PPO: 735604
+Detección de carril: 10869257
+LiDAR: 13717269
+PPO: 4533343
+Detección de carril: 11277935
+LiDAR: 15583635
+PPO: 553869
+Detección de carril: 11056480
+LiDAR: 15776356
+PPO: 557634
+Detección de carril: 10517684
+LiDAR: 14526634
+PPO: 988087
+Detección de carril: 12321856
+LiDAR: 13047795
+PPO: 2309536
+Detección de carril: 13379437
+LiDAR: 18340067
+PPO: 802936
+Detección de carril: 10873223
+LiDAR: 16958756
+PPO: 1905826
+Detección de carril: 10604796
+LiDAR: 15126903
+PPO: 3354799
+Detección de carril: 10737077
+LiDAR: 14773889
+PPO: 627551
+Detección de carril: 10657767
+LiDAR: 14399231
+PPO: 4501896
+Detección de carril: 11424136
+LiDAR: 15063556
+PPO: 572567
+Detección de carril: 11276724
+LiDAR: 14408705
+PPO: 1198675
+Detección de carril: 10915096
+LiDAR: 13383163
+PPO: 2008621
+Detección de carril: 10584345
+LiDAR: 19193100
+PPO: 1387040
+Detección de carril: 11301431
+LiDAR: 13314589
+PPO: 614360
+Detección de carril: 10716625
+LiDAR: 13660322
+PPO: 1022899
+Detección de carril: 11056931
+LiDAR: 12906902
+PPO: 802845
+Detección de carril: 12700279
+LiDAR: 15101955
+PPO: 1007535
+Detección de carril: 11577328
+LiDAR: 16688527
+PPO: 2378351
+Detección de carril: 12644474
+LiDAR: 18900276
+PPO: 938481
+Detección de carril: 11212516
+LiDAR: 14195523
+PPO: 930869
+Detección de carril: 11346600
+LiDAR: 14133479
+PPO: 1406479
+Detección de carril: 10751328
+LiDAR: 14360483
+PPO: 2106589
+Detección de carril: 12669723
+LiDAR: 14787049
+PPO: 2061501
+Detección de carril: 11040125
+LiDAR: 13515363
+PPO: 903187
+Detección de carril: 11701136
+LiDAR: 14835592
+PPO: 2167933
+Detección de carril: 11172655
+LiDAR: 17894973
+PPO: 1090881
+Detección de carril: 10999033
+LiDAR: 15914916
+PPO: 631025
+Detección de carril: 10734072
+LiDAR: 16151815
+PPO: 1337836
+Detección de carril: 11013725
+LiDAR: 19964527
+PPO: 3431986
+Detección de carril: 10944060
+LiDAR: 16501775
+PPO: 1874549
+Detección de carril: 11042889
+LiDAR: 17115493
+PPO: 754783
+Detección de carril: 10830538
+LiDAR: 14793057
+PPO: 620599
+Detección de carril: 11247760
+LiDAR: 17248235
+PPO: 945732
+Detección de carril: 10982849
+LiDAR: 16157172
+PPO: 2660768
+Detección de carril: 10869857
+LiDAR: 13929921
+PPO: 816997
+Detección de carril: 11062178
+LiDAR: 13573471
+PPO: 873723
+Detección de carril: 11047286
+LiDAR: 12887883
+PPO: 522441
+Detección de carril: 10693250
+LiDAR: 14565503
+PPO: 653820
+Detección de carril: 10787532
+LiDAR: 13971483
+PPO: 4411890
+Detección de carril: 11105734
+LiDAR: 14500094
+PPO: 3779752
+Detección de carril: 11069950
+LiDAR: 14720227
+PPO: 3551136
+Detección de carril: 11194539
+LiDAR: 17010865
+PPO: 714812
+Detección de carril: 10836306
+LiDAR: 16013616
+PPO: 776205
+Detección de carril: 11055999
+LiDAR: 13759302
+PPO: 2056814
+Detección de carril: 11105214
+LiDAR: 14516179
+PPO: 1271285
+Detección de carril: 10885090
+LiDAR: 13308299
+PPO: 4289094
+Detección de carril: 12443069
+LiDAR: 14563479
+PPO: 1563097
+Detección de carril: 11036109
+LiDAR: 13591688
+PPO: 689574
+Detección de carril: 10595982
+LiDAR: 13537416
+PPO: 656394
+Detección de carril: 11419981
+LiDAR: 16885615
+PPO: 687431
+Detección de carril: 10667121
+LiDAR: 14733898
+PPO: 566448
+Detección de carril: 10703506
+LiDAR: 14499022
+PPO: 2461957
+Detección de carril: 10910910
+LiDAR: 18027014
+PPO: 995658
+Detección de carril: 10971381
+LiDAR: 16246939
+PPO: 788935
+Detección de carril: 10935407
+LiDAR: 14055791
+PPO: 769695
+Detección de carril: 10511135
+LiDAR: 15922607
+PPO: 1445269
+Detección de carril: 11283283
+LiDAR: 16749980
+PPO: 964039
+Detección de carril: 11094938
+LiDAR: 14201772
+PPO: 606409
+Detección de carril: 11411127
+LiDAR: 15543964
+PPO: 805069
+Detección de carril: 11329363
+LiDAR: 12631645
+PPO: 3123459
+Detección de carril: 10705688
+LiDAR: 13442332
+PPO: 915376
+Detección de carril: 11677951
+LiDAR: 13915549
+PPO: 802535
+Detección de carril: 11237024
+LiDAR: 14648268
+PPO: 1404957
+Detección de carril: 11217945
+LiDAR: 14354483
+PPO: 4546113
+Detección de carril: 10866812
+LiDAR: 14959209
+PPO: 1911985
+Detección de carril: 10618697
+LiDAR: 13404095
+PPO: 545546
+Detección de carril: 10814043
+LiDAR: 14471080
+PPO: 707131
+Detección de carril: 10707111
+LiDAR: 14740658
+PPO: 524394
+Detección de carril: 10830898
+LiDAR: 12988405
+PPO: 1492660
+Detección de carril: 10806071
+LiDAR: 13043458
+PPO: 2842344
+Detección de carril: 11437977
+LiDAR: 14116553
+PPO: 597775
+Detección de carril: 10648422
+LiDAR: 16419430
+PPO: 1166426
+Detección de carril: 11625922
+LiDAR: 13344774
+PPO: 755865
+Detección de carril: 11011572
+LiDAR: 14229764
+PPO: 3470164
+Detección de carril: 11060046
+LiDAR: 14181421
+PPO: 776406
+Detección de carril: 10821043
+LiDAR: 14866338
+PPO: 1072433
+Detección de carril: 11198735
+LiDAR: 16415103
+PPO: 829957
+Detección de carril: 10898611
+LiDAR: 13153615
+PPO: 3738821
+Detección de carril: 11258256
+LiDAR: 13908788
+PPO: 630365
+Detección de carril: 10850689
+LiDAR: 13236221
+PPO: 2405432
+Detección de carril: 10933664
+LiDAR: 14735710
+PPO: 759800
+Detección de carril: 10753110
+LiDAR: 14227792
+PPO: 1029719
+Detección de carril: 11132004
+LiDAR: 13803679
+PPO: 3758711
+Detección de carril: 10965082
+LiDAR: 16474253
+PPO: 1277303
+Detección de carril: 11118654
+LiDAR: 13779382
+PPO: 1172916
+Detección de carril: 10807493
+LiDAR: 14267662
+PPO: 780281
+Detección de carril: 10819671
+LiDAR: 11710370
+PPO: 545065
+Detección de carril: 10714042
+LiDAR: 13951623
+PPO: 583634
+Detección de carril: 11112826
+LiDAR: 16010481
+PPO: 3510184
+Detección de carril: 10915086
+LiDAR: 16376525
+PPO: 545697
+Detección de carril: 10837258
+LiDAR: 15555181
+PPO: 3567391
+Detección de carril: 11403966
+LiDAR: 15550424
+PPO: 672408
+Detección de carril: 10767252
+LiDAR: 13394901
+PPO: 2552624
+Detección de carril: 11041297
+LiDAR: 15429651
+PPO: 1142951
+Detección de carril: 10866933
+LiDAR: 14097174
+PPO: 643173
+Detección de carril: 10787663
+LiDAR: 12606426
+PPO: 789676
+Detección de carril: 10156408
+LiDAR: 15037428
+PPO: 537313
+Detección de carril: 10914796
+LiDAR: 15523273
+PPO: 2383719
+Detección de carril: 11099044
+LiDAR: 15182127
+PPO: 3070329
+Detección de carril: 10700622
+LiDAR: 17342166
+PPO: 4102762
+Detección de carril: 10749595
+LiDAR: 14836353
+PPO: 570574
+Detección de carril: 10575462
+LiDAR: 13207236
+PPO: 1663478
+Detección de carril: 10300566
+LiDAR: 13732542
+PPO: 4288303
+Detección de carril: 10245543
+LiDAR: 14450459
+PPO: 747972
+Detección de carril: 10229127
+LiDAR: 14280441
+PPO: 482451
+Detección de carril: 11046324
+LiDAR: 18276491
+PPO: 589813
+Detección de carril: 10670696
+LiDAR: 14851036
+PPO: 1502575
+Detección de carril: 10911821
+LiDAR: 12605395
+PPO: 665047
+Detección de carril: 11036219
+LiDAR: 15701062
+PPO: 2004815
+Detección de carril: 10733581
+LiDAR: 16413590
+PPO: 673129
+Detección de carril: 10845621
+LiDAR: 17986372
+PPO: 587239
+Detección de carril: 10944500
+LiDAR: 13198744
+PPO: 562141
+Detección de carril: 10514209
+LiDAR: 14797384
+PPO: 637685
+Detección de carril: 11279107
+LiDAR: 15128866
+PPO: 2897647
+Detección de carril: 10620019
+LiDAR: 14956134
+PPO: 2015272
+Detección de carril: 10414348
+LiDAR: 13845322
+PPO: 917309
+Detección de carril: 10506087
+LiDAR: 14323196
+PPO: 596973
+Detección de carril: 10635973
+LiDAR: 13835177
+PPO: 1756589
+Detección de carril: 10833192
+LiDAR: 13852603
+PPO: 678337
+Detección de carril: 10513057
+LiDAR: 12597122
+PPO: 857608
+Detección de carril: 10485286
+LiDAR: 14211447
+PPO: 4494975
+Detección de carril: 10661382
+LiDAR: 14544821
+PPO: 708152
+Detección de carril: 10954325
+LiDAR: 16700645
+PPO: 549042
+Detección de carril: 10758920
+LiDAR: 12064666
+PPO: 2352021
+Detección de carril: 10976679
+LiDAR: 13685400
+PPO: 2420014
+Detección de carril: 10321568
+LiDAR: 13895027
+PPO: 501279
+Detección de carril: 10729035
+LiDAR: 13246976
+PPO: 1882881
+Detección de carril: 10925712
+LiDAR: 12077336
+PPO: 2711085
+Detección de carril: 10410301
+LiDAR: 12014671
+PPO: 911500
+Detección de carril: 10641472
+LiDAR: 14387373
+PPO: 1746234
+Detección de carril: 10686840
+LiDAR: 13178953
+PPO: 1624089
+Detección de carril: 10847944
+LiDAR: 15731127
+PPO: 3842468
+Detección de carril: 10485125
+LiDAR: 15343501
+PPO: 479375
+Detección de carril: 10280204
+LiDAR: 16489286
+PPO: 2833621
+Detección de carril: 10943819
+LiDAR: 15820884
+PPO: 523643
+Detección de carril: 11295602
+LiDAR: 15110778
+PPO: 1150843
+Detección de carril: 10813362
+LiDAR: 15214866
+PPO: 504274
+Detección de carril: 10643445
+LiDAR: 15032019
+PPO: 632107
+Detección de carril: 10647311
+LiDAR: 13080754
+PPO: 517113
+Detección de carril: 10680811
+LiDAR: 13384304
+PPO: 787362
+Detección de carril: 10606699
+LiDAR: 13359677
+PPO: 733511
+Detección de carril: 10884750
+LiDAR: 14663501
+PPO: 4563409
+Detección de carril: 10859161
+LiDAR: 14263475
+PPO: 684947
+Detección de carril: 10842947
+LiDAR: 13753313
+PPO: 1436135
+Detección de carril: 12189866
+LiDAR: 15863668
+PPO: 757066
+Detección de carril: 11053816
+LiDAR: 13084260
+PPO: 956197
+Detección de carril: 10768944
+LiDAR: 12798928
+PPO: 2506836
+Detección de carril: 10835094
+LiDAR: 13368320
+PPO: 592377
+Detección de carril: 10523172
+LiDAR: 12537332
+PPO: 889407
+Detección de carril: 11445569
+LiDAR: 12187583
+PPO: 1473411
+Detección de carril: 10731658
+LiDAR: 14664343
+PPO: 945621
+Detección de carril: 10992523
+LiDAR: 12995155
+PPO: 1040926
+Detección de carril: 10881455
+LiDAR: 12130727
+PPO: 650966
+Detección de carril: 11061208
+LiDAR: 12499846
+PPO: 760752
+Detección de carril: 10828575
+LiDAR: 12688170
+PPO: 2537782
+Detección de carril: 10686731
+LiDAR: 13278925
+PPO: 644876
+Detección de carril: 10785269
+LiDAR: 12835554
+PPO: 1548545
+Detección de carril: 11028898
+LiDAR: 12534678
+PPO: 921295
+Detección de carril: 10703085
+LiDAR: 15554080
+PPO: 1257654
+Detección de carril: 10415780
+LiDAR: 13767835
+PPO: 1290764
+Detección de carril: 10855336
+LiDAR: 12148704
+PPO: 1031402
+Detección de carril: 11243863
+LiDAR: 12447375
+PPO: 725749
+Detección de carril: 10747422
+LiDAR: 12808072
+PPO: 559056
+Detección de carril: 10847343
+LiDAR: 12975115
+PPO: 2160020
+Detección de carril: 11471338
+LiDAR: 12798257
+PPO: 546327
+Detección de carril: 10622062
+LiDAR: 13845883
+PPO: 1260438
+Detección de carril: 11480572
+LiDAR: 14930976
+PPO: 4229303
+Detección de carril: 10816677
+LiDAR: 14034850
+PPO: 507318
+Detección de carril: 10753030
+LiDAR: 13049127
+PPO: 919702
+Detección de carril: 10776125
+LiDAR: 13478197
+PPO: 4163444
+Detección de carril: 11210453
+LiDAR: 12966562
+PPO: 500388
+Detección de carril: 10726009
+LiDAR: 13643858
+PPO: 652828
+Detección de carril: 10684827
+LiDAR: 12338882
+PPO: 2194213
+Detección de carril: 11372348
+LiDAR: 13825502
+PPO: 502401
+Detección de carril: 10590905
+LiDAR: 12916035
+PPO: 935968
+Detección de carril: 10688924
+LiDAR: 12650533
+PPO: 508090
+Detección de carril: 10770437
+LiDAR: 13848757
+PPO: 563703
+Detección de carril: 10834253
+LiDAR: 14665124
+PPO: 539006
+Detección de carril: 10681172
+LiDAR: 13488663
+PPO: 1593503
+Detección de carril: 10625187
+LiDAR: 11667505
+PPO: 495280
+Detección de carril: 10795655
+LiDAR: 13627193
+PPO: 731958
+Detección de carril: 10472606
+LiDAR: 15694993
+PPO: 504153
+Detección de carril: 10623074
+LiDAR: 13799183
+PPO: 512216
+Detección de carril: 11129992
+LiDAR: 15503823
+PPO: 1069169
+Detección de carril: 11753976
+LiDAR: 15470773
+PPO: 957620
+Detección de carril: 10980094
+LiDAR: 16178294
+PPO: 850127
+Detección de carril: 11015057
+LiDAR: 16623118
+PPO: 1481313
+Detección de carril: 10406045
+LiDAR: 16698423
+PPO: 796105
+Detección de carril: 11888550
+LiDAR: 17366734
+PPO: 783787
+Detección de carril: 11027335
+LiDAR: 14856293
+PPO: 787162
+Detección de carril: 11103842
+LiDAR: 13321609
+PPO: 1138464
+Detección de carril: 11061528
+LiDAR: 14173169
+PPO: 2758096
+Detección de carril: 11475274
+LiDAR: 14659375
+PPO: 842996
+Detección de carril: 11571690
+LiDAR: 15734643
+PPO: 2521678
+Detección de carril: 13994639
+LiDAR: 24305370
+PPO: 1531719
+Detección de carril: 10558306
+LiDAR: 15582593
+PPO: 920283
+Detección de carril: 11056650
+LiDAR: 13503214
+PPO: 4474415
+Detección de carril: 11791533
+LiDAR: 16412259
+PPO: 815705
+Detección de carril: 11026274
+LiDAR: 15906523
+PPO: 855075
+Detección de carril: 10862216
+LiDAR: 15006391
+PPO: 619548
+Detección de carril: 10805951
+LiDAR: 13740694
+PPO: 727051
+Detección de carril: 11018663
+LiDAR: 14122161
+PPO: 609393
+Detección de carril: 11084763
+LiDAR: 12705056
+PPO: 2038766
+Detección de carril: 12013589
+LiDAR: 15089596
+PPO: 3055416
+Detección de carril: 11373880
+LiDAR: 12541548
+PPO: 635342
+Detección de carril: 11286268
+LiDAR: 13118221
+PPO: 1091392
+Detección de carril: 11024602
+LiDAR: 12916556
+PPO: 3017910
+Detección de carril: 12061351
+LiDAR: 14835832
+PPO: 1905545
+Detección de carril: 11442754
+LiDAR: 17429479
+PPO: 3250722
+Detección de carril: 11503316
+LiDAR: 17679347
+PPO: 2573496
+Detección de carril: 11496426
+LiDAR: 16626613
+PPO: 1181659
+Detección de carril: 11188279
+LiDAR: 18884732
+PPO: 2193321
+Detección de carril: 11326109
+LiDAR: 16754737

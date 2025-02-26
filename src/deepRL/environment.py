@@ -86,6 +86,9 @@ CIRCUIT_CONFIG = {
         {KEY_ID: 0, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=352.65, y=-351, z=0.1), carla.Rotation(yaw=-137))},
         {KEY_ID: 1, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7))},
         {KEY_ID: 2, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-25.0, y=-252, z=0.1), carla.Rotation(yaw=125.0))}
+    ],
+    7: [
+        {KEY_ID: 1, KEY_TOWN: "Town04", KEY_LOC: carla.Transform(carla.Location(x=-8.76, y=60.8, z=0.1), carla.Rotation(yaw=89.7))}
     ]
 }
 
@@ -287,9 +290,6 @@ class CarlaBase(gym.Env, ABC):
         self._client = None
         self._port = port
         self._port_tm = port_tm
-
-        if self._back_lidar and num_cir == 0:
-            self._town_locations.pop()
 
     def _swap_ego_vehicle(self):
         if self._train:
@@ -604,7 +604,7 @@ class CarlaBase(gym.Env, ABC):
             self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6) # km/h
 
         data = dist = False
-        goal_dist = random.uniform(30, 45)
+        goal_dist = random.uniform(20, 40)
 
         while not data or not dist:
             try:
@@ -1179,11 +1179,11 @@ class CarlaOvertaken(CarlaBase):
             print("Warning: change fixed_delta_seconds to 1/5.")
 
         if train:
-            target_vel = 7
+            target_vel = 6
             if not retrain:
                 num_cir = 6
             else:
-                num_cir = 0
+                num_cir = 7
         config = CIRCUIT_CONFIG.get(num_cir, [])
 
         super().__init__(human=human, train=train, alg=alg, port=port, seed=seed, num_points=10,
@@ -1335,7 +1335,9 @@ class CarlaOvertaken(CarlaBase):
         self._skip = False
         self._return = False
         self._middle = False
-        self._per_over = False # debug
+        self._per_over = False 
+        self._seen = False
+        self._counter_seen = 0
         return super().reset(seed)
 
     def _get_obs_env(self):
@@ -1420,13 +1422,17 @@ class CarlaOvertaken(CarlaBase):
             if self._retrain:
                 self._per_over = self._overtaken_in_progress
                 if not self._change_lane_left and not self._change_lane_right and num_carriles > 1:#self._camera.check_lane_left():
-                    self._overtaken_in_progress = self._dist_laser <= 17
+                    self._overtaken_in_progress = not np.isnan(self._dist_laser)
 
                     if self._overtaken_in_progress != self._per_over:
                         if self._overtaken_in_progress:
                             print("EMPIEZA EL ADELANTAMINETO")
+                            self._seen = True
                         else:
                             print("CORTO ADELANTAMIENTO")
+                if self._seen:
+                    self._counter_seen += 1
+                    assert self._counter_seen <= 300, "Exceed time to change the lane"
 
                 # If can't' overtake, check if it's too close to the front vehicle
                 if not self._overtaken_in_progress and num_carriles == 1:# not self._camera.check_lane_left():
@@ -1543,7 +1549,6 @@ class CarlaOvertaken(CarlaBase):
         return self._get_obs(), reward, terminated, False, self._get_info()
     
     def _calculate_reward(self, error:str):
-
         def sigmoid(x, a=10, b=0.5):
             return 1 / (1 + np.exp(-a * (x - b)))
 
@@ -1552,11 +1557,11 @@ class CarlaOvertaken(CarlaBase):
             if self._overtaken_in_progress and not self._change_lane_left:
                 # Positive deviation
                 dev_norm = np.clip(self._dev, 0, MAX_DEV_CHANGE) / MAX_DEV_CHANGE
-                r_dev = sigmoid(dev_norm, a=10, b=0.7)
+                r_dev = sigmoid(dev_norm, a=10, b=0.85)
             elif self._overtaken_in_progress and self._change_lane_left and not self._change_lane_right and self._return:
                 # Negtaive deviation
                 dev_norm = abs(np.clip(self._dev, -MAX_DEV_CHANGE, 0))
-                r_dev = sigmoid(dev_norm, a=10, b=0.7)
+                r_dev = sigmoid(dev_norm, a=10, b=0.85)
             else:
                 r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
     
@@ -1601,9 +1606,9 @@ class CarlaOvertaken(CarlaBase):
             elif self._overtaken_in_progress and not self._change_lane_left:
                 # Changing to left lane
                 w_dev = 0.6
-                w_throttle = 0.1
+                w_throttle = 0.2
                 w_steer = 0.0
-                w_laser = 0.3
+                w_laser = 0.2
                 print("reward changing left, dev:", self._dev, "reward:", r_dev)
             elif self._overtaken_in_progress and self._change_lane_left and not self._change_lane_right and self._return:
                 # Changing to right lane
@@ -1627,6 +1632,9 @@ class CarlaOvertaken(CarlaBase):
         else:
             if "Distance" or "crashed" in error:
                 reward = -60
+            elif "time" in error:
+                reward = -20
+                print("EXCEDO TIEMPO EN CAMBIAR DE CARRIL: reward =", reward)
             else:
                 reward = -40
 
