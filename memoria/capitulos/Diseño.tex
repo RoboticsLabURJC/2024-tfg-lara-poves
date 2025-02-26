@@ -151,10 +151,10 @@ Se ha implementado una función que extrae un número determinado de puntos de c
 \label{fig:laser_front}
 \end{figure}
 
-Se realizó un \textit{profiling} para evaluar las latencias y detectar los procesos con mayor consumo de tiempo en el código, con el objetivo de optimizar su eficiencia. Como se observa en la Figura \ref{fig:profiling}, la mayor parte del tiempo de cómputo se destina a la predicción con EfficientVit, mientras que el resto de los procesos presentan latencias acordes a su carga computacional y no suponen un inconveniente significativo. Tras analizar los resultados desde un enfoque tanto computacional como de desempeño, se ha concluido que la combinación de EfficientVit para la segmentación de la calzada, \textit{ground truth} para detección del carril y el \ac{LiDAR} como fuente adicional de datos para detectar obstáculos en la carretera, permite un equilibrio entre precisión y eficiencia de procesamiento. La latencia total de esta unión es de aproximadamente 93 ms, lo que en el simulador CARLA nos permite iterar a unos 10 \ac{FPS}. Este rendimiento es adecuado para aplicaciones en tiempo real, permitiendo así lograr comportamientos reactivos y robustos en dinámicos.
+Se realizó un \textit{profiling} para evaluar las latencias y detectar los procesos con mayor consumo de tiempo en el código, con el objetivo de optimizar su eficiencia. Como se observa en la Figura \ref{fig:profiling}, la mayor parte del tiempo de cómputo se destina a la predicción con EfficientVit, mientras que el resto de los procesos presentan latencias acordes a su carga computacional y no suponen un inconveniente significativo. Tras analizar los resultados desde un enfoque tanto computacional como de desempeño, se ha concluido que la combinación de EfficientVit para la segmentación de la calzada, \textit{ground truth} para detección del carril y el \ac{LiDAR} como fuente adicional de datos para detectar obstáculos en la carretera, permite un equilibrio entre precisión y eficiencia de procesamiento. La latencia total de esta unión es de aproximadamente 70 ms, lo que en el servidor Thor \ref{sec:thor} permite iterar el simulador CARLA a una tasa de unos 10-12 \ac{FPS}. Este es el enfoque que usaremos para entrenar los modelos y evaluarlos. Sin embargo, en un entorno real no tenemos esa percepción basada en \textit{ground truth}, ya que es una técnica exclusiva del simulador CARLA. Si adoptamos un enfoque más realista utilizando la detección de carril basad en \ac{DL}, obtenemos latencias de 75 ms, lo cual no supone una diferencia significativa en términos de coste computacional. Este rendimiento es adecuado para aplicaciones en tiempo real, permitiendo así lograr comportamientos reactivos y robustos en dinámicos.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=7cm]{figs/Diseño/profiling.png}
+  \includegraphics[width=10cm]{figs/Diseño/profiling.png}
   \caption{\textit{Profiling} del proceso de percepción.}
   \label{fig:profiling}
 \end{figure}
@@ -321,13 +321,25 @@ En la gráfica \ref{fig:train_dqn}, se puede observar cómo el modelo finalmente
   \label{fig:train_dqn}
 \end{figure}
 
-En inferencia, usamos el modo asíncrono de CARLA, permitiendo que el simulador ejecute a la máxima velocidad posible. En un circuito visto durante el entrenamiento\footnote{\url{https://youtu.be/rzy2Vg57zA8}}, se observa que el seguimiento del carril es bastante preciso, no obstante, ocasiones, se percibe un pequeño balanceo. Esto se debe a una de las limitaciones de \ac{DQN}, su espacio de acciones es discreto no permite seleccionar la acción de giro óptima en cada momento. En la Figura \ref{fig:inference_dqn}, se presentan las acciones tomadas durante inferencia. Los histogramas indican mayoritariamente se eligen los pares de acciones más rápidos y giros más suaves, llegando a alcanzar una velocidad de 50 km/h.
+En inferencia, usamos el modo asíncrono de CARLA, permitiendo que el simulador ejecute a la máxima velocidad posible. En un circuito visto durante el entrenamiento\footnote{\url{https://youtu.be/rzy2Vg57zA8}}, se observa que el seguimiento del carril es bastante preciso; no obstante, en ocasiones, se percibe un pequeño balanceo. Esto se debe a una de las limitaciones de \ac{DQN}, su espacio de acciones es discreto y no permite seleccionar la acción de giro óptima en cada momento. En la Figura \ref{fig:inference_dqn}, se presentan las acciones tomadas durante la inferencia. Los histogramas indican que mayoritariamente se eligen los pares de acciones más rápidos y giros más suaves, llegando a alcanzar una velocidad de 50 km/h.
+
 \begin{figure}[ht]
-  \centering
-  \includegraphics[width=10cm]{figs/Diseño/discrete/inference_dqn.png}
-  \caption{Gráficas de inferencia sigue-carril basado en \ac{DQN}.}
-  \label{fig:inference_dqn}
+\centering
+\includegraphics[width=10cm]{figs/Diseño/discrete/inference_dqn.png}
+\caption{Gráficas de inferencia sigue-carril basado en \ac{DQN}.}
+\label{fig:inference_dqn}
 \end{figure}
+
+Para analizar el rendimiento del sistema, se ha llevado a cabo un \textit{profiling} que permite evaluar tanto el tiempo dedicado a la detección del carril como el tiempo que \ac{DQN} emplea para seleccionar la mejor acción a partir de las observaciones dadas. Como podemos observar en la Figura \ref{fig:profiling_dqn}, el tiempo que tarda \ac{DQN} en tomar la decisión más óptima es mínimo. Si lo sumamos con el coste de la percepción, obtenemos latencias de 12 ms. Como se ve en el vídeo anterior\footnotemark, en inferencia logramos ejecutar CARLA a 60 \ac{FPS} en el servidor Thor \ref{sec:thor}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=8cm]{figs/Diseño/discrete/profiling.png}
+\caption{\textit{Profiling} en inferencia del sigue-carril basado en \ac{DQN}.}
+\label{fig:profiling_dqn}
+\end{figure}
+
+\footnotetext{\url{https://youtu.be/rzy2Vg57zA8}}
 
 En la Figura \ref{fig:comparativa_dqn}, se muestra la velocidad del coche autónomos en m/s y el error al centro del carril en píxeles del modelo basado en \ac{DQN}, comparando un escenario visto durante el entrenamiento, el mostrado en el vídeo, con otro circuito no visto previamente. En ambos casos, el histograma referente a la desviación del carril se mantiene concentrado en el centro, lo que indica que el modelo es capaz de seguir el carril de forma precia. Sin embargo, el histograma de la velocidad se desplaza hacia la izquierda, evidenciando un comportamiento más lento y un modelo con dificultades para generalizar en nuevos entornos.
 \begin{figure}[ht]
@@ -343,9 +355,7 @@ Si comparamos este comportamiento con el obtenido con el controlador \ac{PID} \r
 
 \subsection{Seguimiento de carril con \ac{PPO}}
 
-El algoritmo \textit{Actor-Critic} es un tipo de algortimo en el que cada agente consta de dos elementos que aprenden de manera conjunta, cada uno con su propia red neuronal: \textit{actor}, encargado de aprender la política óptima, y \textit{critic}, responsable de aprender la función de valor y proporcionar una señal de refuerzo a la política. El algoritmo \ac{A2C} se forma a partir de la unión del actor y el critic y es una algoritmo \textit{on-policy}. \ac{PPO} es un algoritmo \textit{on-policy} que puede considerarse como una extensión de \ac{A2C}, cuyo objetivo principal es evitar el deterioro del rendimiento. En los algoritmos basados en políticas, ajustar la tasa de aprendizaje puede ser una labor complicada. Un valor pequeño puede llevar a entrenamientos prolongados sin alcanzar la solución óptima, mientras que uno grande puede causar un colapso en el rendimiento. Con el objetivo de resolver esto, \ac{PPO} introduce un objetivo sustituto que asegura una mejora monótona del rendimiento, evitando cambios drásticos y arriesgados en la política que puedan afectar negativamente al despeño. Para lograrlo, \ac{PPO} mide cuánto ha cambiado la política después de cada actualización, garantizando que esta diferencia sea no negativa en cada iteración, asegurando así una mejora continua en el rendimiento. Además, que impide que esta razón crezca o disminuya demasiado dentro de un umbral controlado por un hiperparámetro (\textit{clip\_range}) \cite{drl}. 
-
-El objetivo sigue siendo conseguir un seguimiento de carril fluido y la mayor velocidad posible, pero esta vez usamos el algoritmo \ac{PPO} que permite un espacio de acciones continuo. Se emplea la misma lógica para la finalización de un episodio, sensores, \textit{fixed\_delta\_seconds} de 50ms y circuito de entrenamiento \ref{fig:mapa} que en el entorno anterior. Seguimos controlando dos elementos: el acelerador y el giro, permitimos el rango completo para el acelerador y limitamos el rango del giro.
+El objetivo sigue siendo conseguir un seguimiento de carril fluido a velocidades significativas, pero esta vez usamos el algoritmo \ac{PPO} que permite tanto un espacio de observaciones como de acciones continuo, lo cual es lo idóneo para nuestro escenario. El modelo podrá elegir la combinación de acelerador y giro más óptima en cada momento, sin limitarse a pares predefinidos como ocurría con \ac{DQN}. Se emplea la misma lógica para la finalización de un episodio, sensores, \textit{fixed\_delta\_seconds} de 50 ms y circuito de entrenamiento \ref{fig:mapa} que en el entorno anterior. Seguimos controlando dos elementos: el acelerador y el giro, permitimos el rango completo para el acelerador [0.0, 1.0] y limitamos el rango del giro a [-0.2, 0.2], ya que al entrenar el modelo basado en \ac{DQN} comprobamos que estos valores eran suficientes. Esto agiliza los entrenamientos y facilita la convergencia del modelo.
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -361,27 +371,41 @@ self.action_space = spaces.Box(
 \label{cod:acc_ppo}
 \end{code}
 
-Sin embargo, se han llevado a cabo algunos cambios en las observaciones. Se ha añadido la velocidad actual del vehículo al espacio de observaciones para mejorar la comprensión de la función de recompensa y, en lugar de cinco, ahora el modelo recibe diez puntos de cada línea del carril, como se muestra en la Figura \ref{fig:puntos_carril}, para mejorar la comprensión del mismo, sobre todo en las curvas.
+Sin embargo, se han llevado a cabo algunos cambios en las observaciones. Se ha añadido la velocidad actual del vehículo al espacio de observaciones para mejorar la comprensión de la función de recompensa, ya que, si se excede una velocidad máxima, en este caso de 45 m/s, el acelerador se normaliza inversamente. En lugar de cinco, ahora el modelo recibe diez puntos de cada línea del carril para mejorar la comprensión del mismo sobre todo en las curvas, como se muestra en la Figura \ref{fig:puntos_carril_ppo}.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=9cm]{figs/Diseño/cont/lane10.png}
+\caption{Observaciones sigue-carril basado en \ac{PPO}.}
+\label{fig:puntos_carril_ppo}
+\end{figure}
 
 En este caso, la función recompensa es más compleja y sigue el siguiente esquema:
 \begin{enumerate}
-    \item \textit{Comprobación de errores:} Primero se verifica si ha ocurrido un error, como pérdida del carril o choque contra elementos de la carretera. Si ocurre, se finaliza el episodio y se asigna una recompensa negativa.
+\item \textit{Comprobación de errores:} Primero se verifica si ha ocurrido un error, como pérdida del carril o choque contra elementos de la carretera. Si ocurre, se finaliza el episodio y se asigna una recompensa negativa.
 
-    \item \textit{Normalización lineal de elementos:} Si no hay errores, se normalizan los elementos de los que depende la recompensa:
-    \begin{itemize}
-        \item \textit{Desviación:} Se limita el valor de la desviación al rango [-100, 100]. Se normaliza inversamente, donde una desviación de 0 tiene la mayor recompensa.
-        \item \textit{Giro:} Para giros bruscos, la recompensa es nula. Para giros no bruscos, se normaliza inversamente considerando el rango [-0.14, 0.14], donde menores giros otorgan mayor recompensa.
-        \item \textit{Acelerador:} Si las aceleraciones son bruscas en el rango [0.6, 1.0], la recompensa es nula. Para aceleraciones no bruscas en el rango [0.0, 0.6), si se supera la velocidad máxima, se normaliza inversamente, aceleración nula tiene mayor recompensa. En el caso contrario, se normaliza de forma que mayores aceleraciones otorgan mayor recompensa.
-    \end{itemize}
+\item \textit{Normalización lineal de elementos:} Si no hay errores, se normalizan los elementos de los que depende la recompensa:
+\begin{itemize}
+\item \textit{Desviación:} Se limita el valor de la desviación al rango [-100, 100] píxeles. Se lleva a cabo un normalizado inversamente proporcional, cuanto mayor sea el error al centro del carril menor es la recompensa proporcionada.
+\item \textit{Giro:} Para giros bruscos, en los rangos [-0.2, -0.14] y [0.14, 0.2], la recompensa es nula. En cambio, para giros no bruscos, dentro del límite [-0.14, 0.14], de nuevo la recompensa se normaliza inversamente, donde menores giros otorgan mayor recompensa.
+\item \textit{Acelerador:} Si las aceleraciones son bruscas, en el rango [0.6, 1.0], la recompensa es nula. Para aceleraciones no bruscas, en la franja [0.0, 0.6), si se supera la velocidad máxima, se normaliza inversamente, donde aceleraciones bajas tiene mayor recompensa. En el caso contrario, se normaliza de forma que mayores aceleraciones otorgan mayor recompensa.
+\end{itemize}
 
-    \item \textit{Asignación de pesos a los elementos:} Finalmente, se define el peso de cada elemento en la recompensa según los siguientes criterios:
-    \begin{itemize}
-        \item Si el giro o el acelerador son bruscos, tienen un peso muy elevado en la recompensa, mientras que los otros dos elementos tienen un peso mucho menor.
-        \item Si se supera la velocidad máxima, el acelerador tiene mayor peso para intentar decelerar, penalizando también el giro debido a la alta velocidad, puesto que puede tener un gran impacto.
-        \item Si el acelerador es bajo, en el rango [0.0, 0.5), se penalizan menos los giros grandes, facilitando las curvas al reducir la velocidad.
-        \item Si el acelerador está en un rango alto [0.5, 0.6), se penalizan más los giros bruscos, enfocándose en zonas rectas o con giros leves.
-    \end{itemize}
+\item \textit{Asignación de pesos a los elementos:} Finalmente, se define el peso de cada elemento en la recompensa según los siguientes criterios:
+\begin{itemize}
+\item Si el giro o el acelerador son bruscos, tienen un peso muy elevado en la recompensa, mientras que los otros dos elementos tienen un peso mucho menor.
+\item Si se supera la velocidad máxima, el acelerador tiene mayor peso para intentar decelerar, penalizando también el giro debido a la alta velocidad, puesto que puede tener un gran impacto.
+\item Si el acelerador es bajo, en el rango [0.0, 0.5), se penalizan menos los giros grandes, facilitando las curvas al reducir la velocidad.
+\item Si el acelerador está en un rango alto [0.5, 0.6), se penalizan más los giros bruscos, enfocándose en zonas rectas o con giros leves.
+\end{itemize}
 \end{enumerate}
+
+  \begin{myequation}[h]
+    \begin{equation} 
+      \text{reward} = w_{\text{dev}} \cdot r_{\text{dev}} + w_{\text{throttle}} \cdot r_{\text{throttle}} + w_{\text{steer}} \cdot r_{\text{steer}}
+    \end{equation} 
+    \caption{Función de recompensa para sigue-carril basado en \ac{PPO}.}
+\label{eq:rew_ppo}
+  \end{myequation}
 
 \begin{code}[H]
 \begin{lstlisting}[language=Python]
@@ -406,13 +430,13 @@ if error is None:
         r_throttle = self._throttle / limit_throttle
 
     # Set weight
-    if r_steer == 0:
+    if r_steer == 0: # Steer in range [-0.2, -0.14] or [0.14, 0.2]
         w_dev, w_throttle, w_steer = 0.1, 0.1, 0.8
-    elif r_throttle == 0:
+    elif r_throttle == 0: # Throttle in range [0.6, 1.0]
         w_dev, w_throttle, w_steer = 0.1, 0.8, 0.1
     elif self._velocity > self._max_vel:
         w_dev, w_throttle, w_steer = 0.1, 0.65, 0.25
-    elif self._throttle < 0.5:
+    elif self._throttle < 0.5: # Throttle in range [0.0, 0.5)
         w_dev, w_throttle, w_steer = 0.65, 0.25, 0.1
     else:  # Throttle in range [0.5, 0.6)
         w_dev, w_throttle, w_steer = 0.6, 0.15, 0.25
@@ -426,21 +450,37 @@ else:
 \end{code}
 
 Al igual que en el entrenamiento anterior, el hiperparámetro \textit{n\_steps} fue clave a la hora de adquirir convergencia, también influyó el tamaño del lote, que inicialmente era demasiado pequeño. Con valores bajos del coeficiente de entropía, el agente aprendía siempre que las acciones límite maximizaban la recompensa, mientras que, con valores demasiado altos, no conseguía converger. Finalmente, estos fueron los hiperparámetros de entrenamiento utilizados:
-\begin{code}[h]
-\begin{lstlisting}[language=yaml]
-policy: "MultiInputPolicy"
-learning_rate: 0.0001
-gamma: 0.85
-gae_lambda: 0.9
-n_steps: 512 # Numero de pasos a ejecutar antes de cada actualizacion
-batch_size: 512 
-ent_coef: 0.1 # Coeficiente de entropia
-clip_range: 0.15 
-n_timesteps: 4_000_000
-\end{lstlisting}
-\caption[Hiperparámetros de entrenamiento para el sigue-carril basado en \ac{PPO}]{Hiperparámetros de entrenamiento para el sigue-carril basado en \ac{PPO}.}
-\label{cod:hiper_params_ppo}
-\end{code}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Hiperparámetro} & \textbf{Valor} & \textbf{Descripción} \\ \hline
+policy & MultiInputPolicy & Política utilizada en el agente. \\ \hline
+learning\_rate & 0.0001 & Tasa de aprendizaje para la optimización. \\ \hline
+gamma & 0.85 & Factor de descuento para las recompensas futuras. \\ \hline
+gae\_lambda & 0.9 & Parámetro para la estimación de ventajas generalizadas (GAE). \\ \hline
+n\_steps & 512 & Número de pasos a ejecutar antes de cada actualización. \\ \hline
+batch\_size & 512 & Tamaño del lote utilizado para el entrenamiento. \\ \hline
+ent\_coef & 0.1 & Coeficiente de entropía: controla el equilibrio entre la exploración y la explotación. \\ \hline
+clip\_range & 0.15 & Rango de recorte para la actualización de la política. \\ \hline
+n\_timesteps & 4,000,000 & Número total de pasos de tiempo para el entrenamiento. \\ \hline
+\end{tabular}
+\caption{Hiperparámetros de entrenamiento para el sigue-carril basado en \ac{PPO}.}
+\label{tab:hiper_params_ppo}
+\end{table}
+
+\newpage
+
+No obstante, el parámetro que tuvo un mayor impacto en la obtención de un comportamiento eficiente del modelo fue el coeficiente de entropía. Cuando sus valores eran bajos, el agente apenas exploraba el entorno, limitándose a explotar las primeras acciones que probó, lo que llevó a una solución ineficiente. Durante los primeros entrenamientos, el agente siempre se decantaba por las acciones extremas dentro de los límites definidos como correctos tanto para el acelerador como para el giro, [-0.14, 0.14] para el giro y [0.0, 0.6] para el acelerador. Combinado con estos dos factores, el vehículo se quedaba completamente inmóvil o rápidamente se salía del carril. Posteriormente, se logró regular el comportamiento del acelerador, pero el agente continuaba eligiendo las acciones extremas para el giro, lo que resultó en un comportamiento tipo péndulo. 
+
+Para evaluar el equilibrio entre exploración y explotación durante el entrenamiento, se desarrolló un programa para analizar la frecuencia de las acciones tomadas. Finalmente, tras numerosas pruebas y análisis, se determinó que valores dentro del rango [0.08, 0.1] eran los más óptimos para nuestra aplicación. En el gráfico \ref{fig:actions_ppo_carril}, se muestran los histogramas de las acciones tomadas durante el entrenamiento, donde se observa que finalmente ambas distribuciones están centradas, indicando que el modelo ha aprendido que las mejores acciones son giros suaves y aceleraciones moderadas, permitiendo alcanzar velocidades significativas sin excederse, lo que garantiza una conducción segura y precisa dentro del carril.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=11cm]{figs/Diseño/cont/actions.png}
+  \caption{Histogramas de acciones tomadas durante el entrenamiento sigue-carril basado en \ac{PPO}.}
+  \label{fig:actions_ppo_carril}
+\end{figure}
 
 \newpage
 
@@ -451,16 +491,6 @@ Al analizar los parámetros de entrenamiento de ambos algoritmos, podemos ver co
   \caption{Gráficas de entrenamiento sigue-carril basado en \ac{PPO}.}
   \label{fig:train_ppo_carril}
 \end{figure}
-
-Debido a todos los inconvenientes con el coeficiente de entropía en  la exploración de acciones, también se desarrolló un programa para analizar la las frecuencia de las acciones tomadas durante el entrenamiento, cuyos resultados se presentan en el siguiente histograma.
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=11cm]{figs/Diseño/cont/actions_ppo_carril.png}
-  \caption{Histogramas de acciones tomadas durante el entrenamiento sigue-carril basado en \ac{PPO}.}
-  \label{fig:actions_ppo_carril}
-\end{figure}
-
-\newpage
 
 En inferencia obtenemos muy buenos resultados tanto en circuitos utilizados durante el entrenamiento \footnote{\url{https://youtu.be/bZNfUwP14gc}} como en nuevos \footnote{\url{https://youtu.be/WRPLzKqJdto}}, incluso cambiando la ciudad en el simulador CARLA. A diferencia del modelo entrenado con \ac{DQN}, ahora si podemos elegir el giro exacto necesario en cada momento al disponer de un espacio de acciones continuo, lo que permite seguir el carril de forma más precisa y fluida. Además, se logran velocidades muy superiores, incluso superando los 20m/s. El modelo elige siempre aceleraciones en el rango [0.5, 0.6) combinadas con giros sutiles. Cabe destacar que, si eliminamos la parte del rango bajo del acelerador en la función recompensa, unificando ambos rangos en uno con los mismos pesos, el entrenamiento no logra converger, aunque al final siempre seleccione acciones en dentro del rango alto del acelerador.
 \begin{figure}[ht]
@@ -474,7 +504,7 @@ Recordemos, que los entrenamientos se han realizado utilizando la técnica de de
 
 \subsection{Control adaptativo con PPO}
 
-Ahora el objetivo ha cambiado, el vehículo autónomo debe ser capaz de regular su velocidad en función del vehículo que tiene delante, controlado por el autopiloto de CARLA, además de seguir el carril. Para esta nueva funcionalidad, necesitamos añadir un nuevo sensor, el \ac{LiDAR}, cuyas observaciones son veinte puntos de la subzona frontal, como se muestra en la Figura \ref{fig:laser_front}. Mantenemos las mismas rutas de entrenamiento y resto de observaciones que en el apartado anterior. Seguimos utilizando el algoritmo de \ac{PPO} con el mismo espacio de acciones, ya que permite un control más fluido, preciso y un comportamiento más adaptativo al entorno. 
+Una vez que el coche es capaz de seguir el carril de forma precisa y fluida, se define un nuevo objetivo. El vehículo autónomo debe ser capaz de regular su velocidad en función del vehículo que tiene delante. Para este nuevo comportamiento, necesitamos añadir un nuevo sensor, el \ac{LiDAR}, cuyas observaciones son veinte puntos de la subzona frontal, como se muestra en la Figura \ref{fig:laser_front}. Mantenemos las mismas rutas de entrenamiento y resto de observaciones que en el apartado anterior. Seguimos utilizando el algoritmo de \ac{PPO} con el mismo espacio de acciones, ya que permite desempeño más adaptativo al entorno.
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -490,9 +520,9 @@ self.observation_space[KEY_LASER] = spaces.Box(
 \label{cod:obs_laser_front}
 \end{code}
 
-Un cambio clave respecto al modelo anterior es que, esta vez, hemos entrenado a 10 \ac{FPS} en lugar de 20 \ac{FPS}. A 20 \ac{FPS}, el agente no lograba un comportamiento adaptativo eficiente, sino un efecto de \textit{muelle}, acercándose demasiado al coche de delante, frenando bruscamente, alejándose y repitiendo el ciclo. En cambio, a 10 \ac{FPS}, se ha conseguido un comportamiento adaptativo más estable. Esto puede deberse a una reducción de ruido en las observaciones, los cambios en entorno y, por tanto, en las observaciones pueden ser más sutiles entre \textit{steps} consecutivos, permitiendo un mejor aprendizaje y compresión del escenario.
+En este nuevo escenario las observaciones han cambiado, por lo tanto, no podemos reutilizar el modelo anterior de seguimiento de carril, pero si sus parámetros y función de recompensa. Para facilitar el aprendizaje del modelo, hemos utilizado la estrategia de \textit{Curriculum Learning}. Consiste en presentar al modelo las tareas de manera progresiva, comenzando con ejemplos simples y aumentando gradualmente la complejidad. Este enfoque imita la forma en que los humanos aprenden, empezando por conceptos básicos antes de abordar problemas más difíciles. Reducir la complejidad al inicio evita que el agente aprenda de manera irregular, con grandes fluctuaciones en la política, mejorando la estabilidad del entrenamiento y aumentando la velocidad de convergencia. Además, al aprender de forma estructurada, el modelo tiende a desarrollar representaciones más sólidas que mejoran la generalización \cite{curriculum-learning}.
 
-Para facilitar el aprendizaje del modelo, primero se realizado un entrenamiento exclusivamente para aprender a seguir el carril. Durante este entrenamiento, se ha \textit{congelado} la observación referente al \ac{LiDAR}, es decir, los puntos siempre tienen un valor predeterminado, el rango máximo del \ac{LiDAR} 19.5m. Los hiperparámetros de entrenamiento siguen siendo los mismos \ref{cod:hiper_params_ppo}, pero se ha reducido levemente el coeficiente de entropía a 0.08 para favorecer al explotación de acciones. En la función de recompensa, al haber cambiado la frecuencia de simulación, podemos eliminar la distinción entre acelerador bajo y alto en la definición de pesos, fusionándolos en un solo bloque.
+Al haber cambiado la frecuencia de simulación, podemos simplificar la función de recompensa referente al seguimiento del carril, se elimina la distinción entre acelerador bajo y alto en la definición de pesos, fusionándolos en un solo bloque. Se han preservado los valores de los hiperparámetros de entrenamiento utilizados en el comportamiento sigue-carril basado en \ac{PPO} \ref{tab:hiper_params_ppo}, exceptuando el coeficiente de entropía, el cual se ha reducido levemente a 0.08 para favorecer al explotación de acciones. 
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -525,7 +555,7 @@ El modelo obtenido sigue el carril a la perfección \footnote{\url{https://youtu
   \label{fig:passing_actions_inf_base}
 \end{figure}
 
-Ahora, necesitamos reentrenar el modelo sigue-carril para lograr un control adaptativo al tráfico. Durante este entrenamiento si activamos la observación del \ac{LiDAR} reales, cuya mínima distancia es incluida y normalizada en la función de recompensa con el fin de conseguir de que el vehículo autónomo sea capaz de circular detrás de un camión adaptándose a su velocidad. Si el coche está a una distancia menor de 4m, se provoca una excepción y se finaliza el episodio dando una recompensa negativa. Se penaliza aún más que salirse del carril, ya que es una acción más grave y que puede tener consecuencias fatales en el mundo real. Los pesos de la función de recompensa cuando vemos el vehículo delantero, dependen de la distancia: cuanto más próximo esté, mayor es la relevancia del \ac{LiDAR}, puesto que aumentan la criticidad de la situación.
+Ahora, necesitamos reentrenar el modelo sigue-carril para lograr un control adaptativo al tráfico. Si el coche está a una distancia menor de 4 metros, se provoca una excepción y se finaliza el episodio dando una recompensa negativa. Esta acción se penaliza aún más que salirse del carril, puesto que es más grave y que puede tener consecuencias fatales en el mundo real. Mientras el coche se encuentre a más de 20 metros del vehículo delantero, no se obtienen mediciones del \ac{LiDAR}, recibe la recompensa asociada al seguimiento del carril. Sin embargo, si la distancia mínima captada por el \ac{LiDAR} está en el rango de 4 a 20 metros, esta medida se normaliza y se tiene en cuenta en la recompensa. Su peso depende de la distancia a la que el coche se sitúa del camión: cuanto más próximo esté, mayor es la relevancia del \ac{LiDAR}, puesto que aumentan la criticidad de la situación. Una vez vemos el vehículo, el peso del acelerador disminuye drásticamente, deja de ser relevante ir a altas velocidades, el objetivo es no chocarse contra el coche de delante y mantener la distancia de seguridad adecuada.
 
 \begin{code}[H]
 \begin{lstlisting}[language=Python]
@@ -546,7 +576,7 @@ if error == None:
         elif self._dist_laser <= 12:
             w_laser, w_dev, w_steer, w_throttle = 0.5, 0.45, 0.05, 0.0
         else:
-            w_laser, w_dev, w_throttle, w_steer = 0.4, 0.5, 0.05, 0.05
+            w_laser, w_dev, w_steer, w_throttle = 0.4, 0.5, 0.05, 0.05
     # Follow lane
 
     reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + w_laser * r_laser
@@ -560,9 +590,9 @@ else:
 \label{cod:rew_ppo_passing}
 \end{code}
 
-Como el modelo ya sabe seguir el carril con una velocidad adecuada, no son necesarios tantos episodios de entrenamiento, por lo que hemos reducido el número de \textit{steps} a la mitad, dos millones. También se ha disminuido a la mitad el coeficiente de entropía 0.04, para evitar acciones aleatorias que puedan tener resultados fatales durante el episodio, como provocar una colisión con el camión.
+Como el modelo ya ha aprendido a seguir el carril con una velocidad adecuada, no son necesarios tantos episodios de entrenamiento, por lo que hemos reducido el número de \textit{steps} a la mitad. También se ha disminuido a la mitad el coeficiente de entropía 0.04, para agilizar el entrenamiento evitando escenarios poco probables.
 
-La elección de velocidades del vehículo delantero fue crucial a la hora de lograr un comportamiento estable. Primeramente, se intentó estableciendo una velocidad constante durante un periodo de entre 100 y 450 \textit{steps} en el rango de [5, 10], escogiendo valores enteros y ambos de manera aleatoria. Sin embargo, se encontraron dos problemas:
+La elección de velocidades del vehículo delantero, controlado por el autopiloto de CARLA, fue crucial a la hora de lograr un comportamiento estable. Primeramente, se intentó estableciendo una velocidad constante durante un periodo de entre 100 y 450 \textit{steps} en el rango de [5, 10], escogiendo valores enteros y ambos de manera aleatoria. Sin embargo, se encontraron dos problemas:
   \begin{itemize}
         \item Para velocidades altas, el vehículo delantero se alejaba demasiado, sin que el agente pudiera verlo en ningún momento.
         \item El modelo se sobreajustaba a las velocidades bajas, limitándose a alcanzar velocidades máximas de 7 m/s.
