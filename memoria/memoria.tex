@@ -1,0 +1,46 @@
+% !TEX root = memoria.tex
+
+\input{estilo.tex} % archivo de configuración de estilo
+
+\makeindex
+
+\begin{document}
+\baselineskip 1.35\baselineskip
+
+\frontmatter
+
+\lstdefinelanguage{yaml}{
+  morekeywords={true,false,null,y,n},
+  sensitive=false,
+  morecomment=[l]{\#},
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\input{portada/indice.tex} % aqui se cargan todas las "primeras paginas"
+
+% Bibliografia
+\let\OLDthebibliography=\thebibliography
+\def\thebibliography#1{\OLDthebibliography{#1}
+\addcontentsline{toc}{chapter}{\bibname}}
+
+\mainmatter
+
+\setcounter{page}{1}
+
+\input{capitulos/Introduccion}
+\input{capitulos/Objetivos}
+\input{capitulos/Plataforma_desarollo}
+\input{capitulos/Diseño}
+\input{capitulos/Conclusiones}
+%\input{portada/Anexo}
+%\input{portada/AnexoII}
+
+\clearpage
+\thispagestyle{empty}
+
+\printindex \nocite{*}
+\appendix
+\bibliographystyle{apalike} \bibliography{bibliografia}
+
+\end{document}
