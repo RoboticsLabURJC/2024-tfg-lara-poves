@@ -1430,11 +1430,9 @@ class CarlaOvertaken(CarlaBase):
                             self._seen = True
                         else:
                             print("CORTO ADELANTAMIENTO")
-                '''
                 if self._seen:
                     self._counter_seen += 1
                     assert self._counter_seen <= 300, "Exceed time to change the lane"
-                '''
 
                 # If can't' overtake, check if it's too close to the front vehicle
                 if not self._overtaken_in_progress and num_carriles == 1:# not self._camera.check_lane_left():
