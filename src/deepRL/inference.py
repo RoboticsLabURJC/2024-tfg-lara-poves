@@ -4,6 +4,7 @@ from stable_baselines3 import DQN, A2C, DDPG, TD3, SAC, PPO
 import os
 import csv
 import numpy as np
+import time
 
 alg_callable = {
     'DQN': DQN,
@@ -61,11 +62,14 @@ def main(args):
 
     try:
         while True:
+            #t = time.time_ns()
             action, _ = model.predict(obs, deterministic=True)
             if args.alg == 'DQN':
                 throttle, steer = env.action_to_control[action.item()]
+                #print("DQN:", time.time_ns() - t)
             else:
                 throttle, steer = action
+                #print("PPO:", time.time_ns() - t)
 
             obs, reward, terminated, truncated, info = env.step(action)
 

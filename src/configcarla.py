@@ -285,6 +285,7 @@ class CameraRGB(Sensor):
 
     def _detect_lane(self, img:np.ndarray, mask:np.ndarray):
         if not self._lane_network:
+            #t = time.time_ns()
             trafo_matrix_global_to_camera = get_matrix_global(self._vehicle, self._trafo_matrix_vehicle_to_cam)
             waypoint = self._world.get_map().get_waypoint(
                 self._vehicle.get_transform().location,
@@ -294,6 +295,8 @@ class CameraRGB(Sensor):
             
             # Get points of the lane
             _, left_boundary, right_boundary, _ = create_lane_lines(waypoint, self._vehicle)
+            #print("Ground Truth - Predicción:", time.time_ns() - t)
+            #t = time.time_ns()
 
             self._lane_left = self._points_lane(left_boundary, trafo_matrix_global_to_camera, LEFT_LANE)
             self._lane_right = self._points_lane(right_boundary, trafo_matrix_global_to_camera, RIGHT_LANE)
@@ -317,11 +320,14 @@ class CameraRGB(Sensor):
             image_lane = np.zeros((SIZE_CAMERA, SIZE_CAMERA * 2, 3), dtype=np.uint8)
             image_lane[:SIZE_CAMERA, int(SIZE_CAMERA / 2):int(SIZE_CAMERA + SIZE_CAMERA / 2), :] = img
 
+            #t = time.time_ns()
             with torch.no_grad():
                 image_tensor = image_lane.transpose(2,0,1).astype('float32')/255
                 x_tensor = torch.from_numpy(image_tensor).to("cuda").unsqueeze(0)
                 model_output = torch.softmax(self._lane_model.forward(x_tensor), dim=1 ).cpu().numpy()
+            #print("Carril DL - Predicción:", time.time_ns() - t)
 
+            t = time.time_ns()
             _, left_mask, right_mask = model_output[0]
             see_line_left = self._mask_lane(mask=left_mask, index=LEFT_LANE)
             see_line_right = self._mask_lane(mask=right_mask, index=RIGHT_LANE)
@@ -417,6 +423,13 @@ class CameraRGB(Sensor):
             self._lane_left = [] # Mark error
             assert False, "Area zero"
 
+        '''
+        if self._lane_network:
+            print("Carril DL - Procesado:", time.time_ns() - t)
+        else:
+            print("Ground Truth - Procesado:", time.time_ns() - t)
+        '''
+
         return img
 
     def get_deviation(self):
@@ -460,7 +473,9 @@ class CameraRGB(Sensor):
                 text_extra = "Segmented view"
 
             image_pil = Image.fromarray(image_data)
+            #t = time.time_ns()
             pred = self._seg_model.predict(image_pil)
+            #print("EfficientVit - Predicción:", time.time_ns() - t)
 
             if self._canvas_seg:
                 canvas, self._mask = self._seg_model.get_canvas(image_data, pred)
@@ -847,6 +862,7 @@ class Lidar(Sensor):
         if lidar == None:
             return 
         
+        #t = time.time_ns()
         lidar_data = np.copy(np.frombuffer(lidar.raw_data, dtype=np.dtype('f4')))
         lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 
@@ -877,6 +893,7 @@ class Lidar(Sensor):
                 pygame.draw.circle(self._sub_screen, color, center, thickness)
 
         self._update_stats(meas_zones=meas_zones)  
+        #print("LiDAR:", time.time_ns() - t)
 
         if self._rect != None and self.update_screen:
             self._screen.blit(self._sub_screen, self._rect)
@@ -1004,6 +1021,7 @@ class Vehicle_sensors:
         dist_lidar = np.nan
 
         for sensor in self.sensors:
+            t = time.time_ns()
             sensor.update_screen = self.update_screen
             sensor.process_data()
 
@@ -1012,6 +1030,10 @@ class Vehicle_sensors:
                     dist_lidar = sensor.get_min(zone=FRONT)
                 else:
                     dist_lidar = sensor.get_mean(zone=FRONT)
+
+                #print("LiDAR:", time.time_ns() - t)
+            #elif type(sensor) == CameraRGB and sensor._lane:
+                #print("Detección de carril:", time.time_ns() - t)
 
         if self._screen != None:
             elapsed_time = time.time_ns() - self._time_frame

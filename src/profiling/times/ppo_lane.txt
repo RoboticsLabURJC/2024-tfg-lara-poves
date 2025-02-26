@@ -1,0 +1,6069 @@
+Detección de carril: 107532385
+PPO: 459012297
+Detección de carril: 10706740
+PPO: 4045856
+Detección de carril: 10529242
+PPO: 1585741
+Detección de carril: 10137158
+PPO: 548781
+Detección de carril: 10497613
+PPO: 2555058
+Detección de carril: 10481479
+PPO: 1764081
+Detección de carril: 10528169
+PPO: 510343
+Detección de carril: 10734983
+PPO: 3359366
+Detección de carril: 10325453
+PPO: 1846275
+Detección de carril: 10138420
+PPO: 637875
+Detección de carril: 10044317
+PPO: 499205
+Detección de carril: 10264270
+PPO: 609513
+Detección de carril: 10455500
+PPO: 475330
+Detección de carril: 10156296
+PPO: 3589264
+Detección de carril: 10527058
+PPO: 905240
+Detección de carril: 10069496
+PPO: 777317
+Detección de carril: 10487809
+PPO: 2492183
+Detección de carril: 10454148
+PPO: 1445459
+Detección de carril: 11570558
+PPO: 692138
+Detección de carril: 11820967
+PPO: 658487
+Detección de carril: 10197399
+PPO: 4197605
+Detección de carril: 10641281
+PPO: 1835779
+Detección de carril: 11452660
+PPO: 1649497
+Detección de carril: 10269559
+PPO: 754773
+Detección de carril: 10363550
+PPO: 582752
+Detección de carril: 10763747
+PPO: 3466518
+Detección de carril: 10512977
+PPO: 2422478
+Detección de carril: 10726550
+PPO: 589392
+Detección de carril: 10438954
+PPO: 513939
+Detección de carril: 9937435
+PPO: 1587794
+Detección de carril: 10562992
+PPO: 1640784
+Detección de carril: 10586659
+PPO: 2007470
+Detección de carril: 10864989
+PPO: 500938
+Detección de carril: 10417101
+PPO: 2349457
+Detección de carril: 10244951
+PPO: 409941
+Detección de carril: 10222266
+PPO: 411233
+Detección de carril: 10326665
+PPO: 395979
+Detección de carril: 10293785
+PPO: 385904
+Detección de carril: 10219142
+PPO: 370080
+Detección de carril: 10253033
+PPO: 367276
+Detección de carril: 10268296
+PPO: 435469
+Detección de carril: 10336550
+PPO: 1463616
+Detección de carril: 10913063
+PPO: 642834
+Detección de carril: 10540388
+PPO: 1929110
+Detección de carril: 10315438
+PPO: 455479
+Detección de carril: 10768824
+PPO: 668963
+Detección de carril: 9891496
+PPO: 439966
+Detección de carril: 10378243
+PPO: 3207086
+Detección de carril: 10598186
+PPO: 1338676
+Detección de carril: 10743616
+PPO: 443862
+Detección de carril: 10583153
+PPO: 3831541
+Detección de carril: 10667811
+PPO: 1914529
+Detección de carril: 10418804
+PPO: 450542
+Detección de carril: 10540658
+PPO: 3724309
+Detección de carril: 11328831
+PPO: 619498
+Detección de carril: 10133582
+PPO: 4530730
+Detección de carril: 10744227
+PPO: 2015041
+Detección de carril: 10510152
+PPO: 443151
+Detección de carril: 10540459
+PPO: 1149040
+Detección de carril: 10735003
+PPO: 708733
+Detección de carril: 11553622
+PPO: 2705976
+Detección de carril: 10469601
+PPO: 1042278
+Detección de carril: 10458414
+PPO: 673320
+Detección de carril: 9916644
+PPO: 3514701
+Detección de carril: 11045543
+PPO: 688592
+Detección de carril: 11321530
+PPO: 590294
+Detección de carril: 10306023
+PPO: 618256
+Detección de carril: 10465524
+PPO: 3764469
+Detección de carril: 10732489
+PPO: 2415707
+Detección de carril: 10532225
+PPO: 501269
+Detección de carril: 10329550
+PPO: 802986
+Detección de carril: 10464533
+PPO: 469301
+Detección de carril: 10194925
+PPO: 859411
+Detección de carril: 10725058
+PPO: 468039
+Detección de carril: 9940821
+PPO: 882085
+Detección de carril: 11497407
+PPO: 4260160
+Detección de carril: 10294997
+PPO: 535641
+Detección de carril: 10558185
+PPO: 1318967
+Detección de carril: 10773191
+PPO: 484554
+Detección de carril: 10748624
+PPO: 632938
+Detección de carril: 10399986
+PPO: 487298
+Detección de carril: 10530834
+PPO: 511544
+Detección de carril: 10620750
+PPO: 1379078
+Detección de carril: 10207905
+PPO: 623334
+Detección de carril: 10387327
+PPO: 540348
+Detección de carril: 10373556
+PPO: 2904358
+Detección de carril: 10661422
+PPO: 460497
+Detección de carril: 10291171
+PPO: 466356
+Detección de carril: 10577965
+PPO: 483452
+Detección de carril: 10335398
+PPO: 482481
+Detección de carril: 10548551
+PPO: 2754180
+Detección de carril: 10260134
+PPO: 1664250
+Detección de carril: 11828329
+PPO: 509752
+Detección de carril: 10594380
+PPO: 1017361
+Detección de carril: 10857919
+PPO: 631656
+Detección de carril: 10216447
+PPO: 471313
+Detección de carril: 10478775
+PPO: 3683828
+Detección de carril: 11555255
+PPO: 632108
+Detección de carril: 10890328
+PPO: 4009971
+Detección de carril: 10739640
+PPO: 1155970
+Detección de carril: 10701563
+PPO: 480367
+Detección de carril: 10721863
+PPO: 1769679
+Detección de carril: 10450192
+PPO: 700871
+Detección de carril: 10658467
+PPO: 441258
+Detección de carril: 10234946
+PPO: 2115984
+Detección de carril: 10403691
+PPO: 448449
+Detección de carril: 10229958
+PPO: 446065
+Detección de carril: 10447608
+PPO: 4534976
+Detección de carril: 10570864
+PPO: 2162464
+Detección de carril: 10425455
+PPO: 444323
+Detección de carril: 10115756
+PPO: 3923350
+Detección de carril: 10598656
+PPO: 1287970
+Detección de carril: 10667541
+PPO: 438013
+Detección de carril: 10590444
+PPO: 2616371
+Detección de carril: 10984000
+PPO: 988767
+Detección de carril: 10720982
+PPO: 465404
+Detección de carril: 10756576
+PPO: 434368
+Detección de carril: 10876017
+PPO: 2601890
+Detección de carril: 10829316
+PPO: 1684780
+Detección de carril: 10810206
+PPO: 453497
+Detección de carril: 11222270
+PPO: 983939
+Detección de carril: 10337170
+PPO: 1186757
+Detección de carril: 10165010
+PPO: 511444
+Detección de carril: 10496843
+PPO: 994015
+Detección de carril: 10557524
+PPO: 462701
+Detección de carril: 10633720
+PPO: 3573020
+Detección de carril: 13833344
+PPO: 933244
+Detección de carril: 10890719
+PPO: 2485994
+Detección de carril: 10443282
+PPO: 699819
+Detección de carril: 11410977
+PPO: 533317
+Detección de carril: 10850697
+PPO: 4242243
+Detección de carril: 10507218
+PPO: 1825824
+Detección de carril: 10258492
+PPO: 519396
+Detección de carril: 10662463
+PPO: 504143
+Detección de carril: 10330790
+PPO: 517743
+Detección de carril: 10583874
+PPO: 4269264
+Detección de carril: 11414953
+PPO: 992192
+Detección de carril: 10515039
+PPO: 1097552
+Detección de carril: 13499318
+PPO: 857739
+Detección de carril: 13125892
+PPO: 1552771
+Detección de carril: 11970253
+PPO: 2674068
+Detección de carril: 11242611
+PPO: 984911
+Detección de carril: 11051362
+PPO: 786701
+Detección de carril: 10845881
+PPO: 582011
+Detección de carril: 10784668
+PPO: 607079
+Detección de carril: 10500998
+PPO: 536362
+Detección de carril: 10600930
+PPO: 654742
+Detección de carril: 10804459
+PPO: 3665670
+Detección de carril: 10663885
+PPO: 1759133
+Detección de carril: 10884559
+PPO: 965331
+Detección de carril: 10618116
+PPO: 4554585
+Detección de carril: 10824508
+PPO: 536643
+Detección de carril: 10853502
+PPO: 667811
+Detección de carril: 10654561
+PPO: 943368
+Detección de carril: 10756495
+PPO: 546577
+Detección de carril: 10702093
+PPO: 571786
+Detección de carril: 10904159
+PPO: 2772658
+Detección de carril: 10898971
+PPO: 1220427
+Detección de carril: 10835906
+PPO: 510573
+Detección de carril: 10824739
+PPO: 506256
+Detección de carril: 10120563
+PPO: 485786
+Detección de carril: 10755234
+PPO: 2722422
+Detección de carril: 11087076
+PPO: 701943
+Detección de carril: 10839461
+PPO: 663525
+Detección de carril: 10754382
+PPO: 446977
+Detección de carril: 10633349
+PPO: 3112523
+Detección de carril: 11080035
+PPO: 1443806
+Detección de carril: 11211684
+PPO: 465545
+Detección de carril: 10893333
+PPO: 1744892
+Detección de carril: 10571936
+PPO: 867463
+Detección de carril: 10599548
+PPO: 469741
+Detección de carril: 10903678
+PPO: 455720
+Detección de carril: 10910008
+PPO: 4236344
+Detección de carril: 10192431
+PPO: 462049
+Detección de carril: 10499066
+PPO: 445995
+Detección de carril: 10733761
+PPO: 443100
+Detección de carril: 10875636
+PPO: 4143043
+Detección de carril: 10686709
+PPO: 616093
+Detección de carril: 11111704
+PPO: 583854
+Detección de carril: 10562923
+PPO: 3947076
+Detección de carril: 10806130
+PPO: 484574
+Detección de carril: 10578136
+PPO: 897939
+Detección de carril: 10656835
+PPO: 2760219
+Detección de carril: 10967715
+PPO: 2766669
+Detección de carril: 12061772
+PPO: 3614462
+Detección de carril: 11077332
+PPO: 744347
+Detección de carril: 11447391
+PPO: 836827
+Detección de carril: 10743286
+PPO: 2673979
+Detección de carril: 10384613
+PPO: 2221684
+Detección de carril: 10678969
+PPO: 1900207
+Detección de carril: 10542211
+PPO: 1027967
+Detección de carril: 10875976
+PPO: 4644632
+Detección de carril: 11338547
+PPO: 1451978
+Detección de carril: 10996419
+PPO: 605987
+Detección de carril: 10895946
+PPO: 3618939
+Detección de carril: 10985692
+PPO: 1406599
+Detección de carril: 10632869
+PPO: 537103
+Detección de carril: 10900895
+PPO: 3091140
+Detección de carril: 10636003
+PPO: 1658210
+Detección de carril: 10677666
+PPO: 526768
+Detección de carril: 10695803
+PPO: 3199424
+Detección de carril: 10890889
+PPO: 636203
+Detección de carril: 10744518
+PPO: 569862
+Detección de carril: 11420450
+PPO: 563003
+Detección de carril: 12194723
+PPO: 591605
+Detección de carril: 11082899
+PPO: 543863
+Detección de carril: 10937930
+PPO: 526447
+Detección de carril: 10344011
+PPO: 489842
+Detección de carril: 10657886
+PPO: 508470
+Detección de carril: 10266804
+PPO: 4047107
+Detección de carril: 10613980
+PPO: 454858
+Detección de carril: 10507488
+PPO: 1018672
+Detección de carril: 10819361
+PPO: 447277
+Detección de carril: 10464984
+PPO: 4532042
+Detección de carril: 10941635
+PPO: 723826
+Detección de carril: 10659489
+PPO: 1950964
+Detección de carril: 11912235
+PPO: 659578
+Detección de carril: 10794172
+PPO: 3957892
+Detección de carril: 10695654
+PPO: 1795538
+Detección de carril: 10836646
+PPO: 534880
+Detección de carril: 10167113
+PPO: 4033366
+Detección de carril: 10869487
+PPO: 2067430
+Detección de carril: 11147387
+PPO: 1148780
+Detección de carril: 11275822
+PPO: 593027
+Detección de carril: 10524013
+PPO: 538515
+Detección de carril: 10879863
+PPO: 3117700
+Detección de carril: 10718808
+PPO: 1522785
+Detección de carril: 11384145
+PPO: 474479
+Detección de carril: 10892681
+PPO: 1787146
+Detección de carril: 10656083
+PPO: 1796810
+Detección de carril: 11002588
+PPO: 518135
+Detección de carril: 10676745
+PPO: 492726
+Detección de carril: 11036029
+PPO: 4370728
+Detección de carril: 10624436
+PPO: 1375292
+Detección de carril: 10735063
+PPO: 516031
+Detección de carril: 10765359
+PPO: 1075128
+Detección de carril: 10626689
+PPO: 1478138
+Detección de carril: 10635552
+PPO: 507679
+Detección de carril: 11751772
+PPO: 1007745
+Detección de carril: 12237568
+PPO: 867573
+Detección de carril: 10813862
+PPO: 2547938
+Detección de carril: 10762674
+PPO: 656964
+Detección de carril: 10919252
+PPO: 784557
+Detección de carril: 10722945
+PPO: 615913
+Detección de carril: 10776485
+PPO: 4117224
+Detección de carril: 11074436
+PPO: 1454452
+Detección de carril: 10838210
+PPO: 530984
+Detección de carril: 10625227
+PPO: 2635239
+Detección de carril: 10985642
+PPO: 2165048
+Detección de carril: 10631165
+PPO: 517814
+Detección de carril: 10720702
+PPO: 477403
+Detección de carril: 10747232
+PPO: 474899
+Detección de carril: 10809406
+PPO: 451063
+Detección de carril: 10766451
+PPO: 443161
+Detección de carril: 10625847
+PPO: 3832973
+Detección de carril: 10725989
+PPO: 503523
+Detección de carril: 10843828
+PPO: 1939817
+Detección de carril: 10981726
+PPO: 477613
+Detección de carril: 10743175
+PPO: 3896389
+Detección de carril: 10898340
+PPO: 1890622
+Detección de carril: 10637966
+PPO: 505876
+Detección de carril: 10913163
+PPO: 3095807
+Detección de carril: 10761113
+PPO: 509962
+Detección de carril: 10832100
+PPO: 669213
+Detección de carril: 10659298
+PPO: 4603830
+Detección de carril: 10780782
+PPO: 1346969
+Detección de carril: 11034276
+PPO: 526918
+Detección de carril: 10767572
+PPO: 3740202
+Detección de carril: 11135679
+PPO: 1290464
+Detección de carril: 10688983
+PPO: 549212
+Detección de carril: 10722915
+PPO: 3628163
+Detección de carril: 10730276
+PPO: 1685932
+Detección de carril: 10497243
+PPO: 566107
+Detección de carril: 10730656
+PPO: 524594
+Detección de carril: 10871930
+PPO: 2915003
+Detección de carril: 10757437
+PPO: 1077731
+Detección de carril: 10719890
+PPO: 531194
+Detección de carril: 10812420
+PPO: 2157847
+Detección de carril: 11149200
+PPO: 1536637
+Detección de carril: 11041958
+PPO: 697416
+Detección de carril: 12526926
+PPO: 648492
+Detección de carril: 10695073
+PPO: 1771592
+Detección de carril: 10568220
+PPO: 626739
+Detección de carril: 10956418
+PPO: 2459443
+Detección de carril: 11013474
+PPO: 2390740
+Detección de carril: 10860623
+PPO: 532997
+Detección de carril: 10721994
+PPO: 3383973
+Detección de carril: 10821304
+PPO: 1523186
+Detección de carril: 10559497
+PPO: 531405
+Detección de carril: 10760391
+PPO: 1679373
+Detección de carril: 11086265
+PPO: 987945
+Detección de carril: 10319283
+PPO: 531885
+Detección de carril: 10305683
+PPO: 3078160
+Detección de carril: 11140276
+PPO: 1078443
+Detección de carril: 10179462
+PPO: 2402196
+Detección de carril: 10557163
+PPO: 549672
+Detección de carril: 10612808
+PPO: 1410546
+Detección de carril: 12015782
+PPO: 1750831
+Detección de carril: 10979604
+PPO: 929968
+Detección de carril: 10469281
+PPO: 559998
+Detección de carril: 10717466
+PPO: 3793303
+Detección de carril: 10832020
+PPO: 1426100
+Detección de carril: 10303810
+PPO: 1534713
+Detección de carril: 11692693
+PPO: 1301241
+Detección de carril: 11005874
+PPO: 1700124
+Detección de carril: 10832841
+PPO: 500468
+Detección de carril: 10231781
+PPO: 4140479
+Detección de carril: 10632388
+PPO: 2352001
+Detección de carril: 10905140
+PPO: 465946
+Detección de carril: 10398243
+PPO: 454018
+Detección de carril: 10643464
+PPO: 3972034
+Detección de carril: 10716184
+PPO: 1595445
+Detección de carril: 10755855
+PPO: 451744
+Detección de carril: 10798148
+PPO: 469030
+Detección de carril: 10525475
+PPO: 460347
+Detección de carril: 10509061
+PPO: 3091020
+Detección de carril: 10670375
+PPO: 1755598
+Detección de carril: 10531655
+PPO: 580408
+Detección de carril: 10518696
+PPO: 465294
+Detección de carril: 10881244
+PPO: 4026366
+Detección de carril: 10596173
+PPO: 1816630
+Detección de carril: 10753401
+PPO: 450151
+Detección de carril: 10665047
+PPO: 2172620
+Detección de carril: 10581851
+PPO: 1168950
+Detección de carril: 10532947
+PPO: 453276
+Detección de carril: 10544905
+PPO: 2568348
+Detección de carril: 10718568
+PPO: 593688
+Detección de carril: 10629654
+PPO: 3274458
+Detección de carril: 10776987
+PPO: 466266
+Detección de carril: 10772169
+PPO: 497804
+Detección de carril: 10145079
+PPO: 2431090
+Detección de carril: 10575692
+PPO: 1001967
+Detección de carril: 10712178
+PPO: 526728
+Detección de carril: 11408843
+PPO: 501530
+Detección de carril: 10531395
+PPO: 1474382
+Detección de carril: 11108408
+PPO: 1598831
+Detección de carril: 11207738
+PPO: 517223
+Detección de carril: 10256799
+PPO: 3623826
+Detección de carril: 10755944
+PPO: 1500672
+Detección de carril: 10623374
+PPO: 668032
+Detección de carril: 10802946
+PPO: 3652129
+Detección de carril: 10778639
+PPO: 1776259
+Detección de carril: 11074807
+PPO: 464213
+Detección de carril: 10550483
+PPO: 1279337
+Detección de carril: 10254155
+PPO: 1781027
+Detección de carril: 10580719
+PPO: 4439752
+Detección de carril: 11012994
+PPO: 633480
+Detección de carril: 10855726
+PPO: 474278
+Detección de carril: 10223388
+PPO: 477383
+Detección de carril: 10680620
+PPO: 459636
+Detección de carril: 10740792
+PPO: 459375
+Detección de carril: 10484073
+PPO: 2708701
+Detección de carril: 10667832
+PPO: 563894
+Detección de carril: 10592156
+PPO: 4817784
+Detección de carril: 10841695
+PPO: 759039
+Detección de carril: 10479967
+PPO: 1681005
+Detección de carril: 10585437
+PPO: 547699
+Detección de carril: 10095916
+PPO: 795004
+Detección de carril: 10667100
+PPO: 2789894
+Detección de carril: 10881625
+PPO: 1319238
+Detección de carril: 11039143
+PPO: 2465994
+Detección de carril: 10834293
+PPO: 658306
+Detección de carril: 10633859
+PPO: 536152
+Detección de carril: 10712979
+PPO: 1773325
+Detección de carril: 10513688
+PPO: 1819495
+Detección de carril: 10737106
+PPO: 529532
+Detección de carril: 10477793
+PPO: 3453549
+Detección de carril: 11711902
+PPO: 735053
+Detección de carril: 11853587
+PPO: 3059492
+Detección de carril: 11029429
+PPO: 1010050
+Detección de carril: 11071142
+PPO: 756616
+Detección de carril: 10832430
+PPO: 531555
+Detección de carril: 10675803
+PPO: 2472994
+Detección de carril: 10816646
+PPO: 1764181
+Detección de carril: 10288667
+PPO: 580319
+Detección de carril: 10860222
+PPO: 2925028
+Detección de carril: 11112214
+PPO: 1094077
+Detección de carril: 11102819
+PPO: 906863
+Detección de carril: 10887724
+PPO: 724747
+Detección de carril: 10824729
+PPO: 4693196
+Detección de carril: 10931871
+PPO: 1746825
+Detección de carril: 10994186
+PPO: 597595
+Detección de carril: 11107297
+PPO: 4038304
+Detección de carril: 10415008
+PPO: 1658871
+Detección de carril: 11446671
+PPO: 604565
+Detección de carril: 11221249
+PPO: 2392092
+Detección de carril: 10822936
+PPO: 768934
+Detección de carril: 10873373
+PPO: 1067006
+Detección de carril: 11898404
+PPO: 871269
+Detección de carril: 11030961
+PPO: 2629651
+Detección de carril: 10611826
+PPO: 1002047
+Detección de carril: 10652028
+PPO: 735304
+Detección de carril: 10794833
+PPO: 4624241
+Detección de carril: 11136310
+PPO: 1134488
+Detección de carril: 10714342
+PPO: 553227
+Detección de carril: 10696444
+PPO: 4893429
+Detección de carril: 10701803
+PPO: 1744411
+Detección de carril: 10871479
+PPO: 1049820
+Detección de carril: 11017320
+PPO: 603854
+Detección de carril: 11328321
+PPO: 4400422
+Detección de carril: 10676494
+PPO: 1809841
+Detección de carril: 10781373
+PPO: 793011
+Detección de carril: 12026498
+PPO: 3772051
+Detección de carril: 10732499
+PPO: 1232777
+Detección de carril: 10968286
+PPO: 595281
+Detección de carril: 10694421
+PPO: 627951
+Detección de carril: 11163642
+PPO: 3017909
+Detección de carril: 10868716
+PPO: 783717
+Detección de carril: 10793872
+PPO: 1293028
+Detección de carril: 10710466
+PPO: 519707
+Detección de carril: 11000114
+PPO: 4493493
+Detección de carril: 10624916
+PPO: 1633964
+Detección de carril: 10805300
+PPO: 458904
+Detección de carril: 10736735
+PPO: 3887967
+Detección de carril: 10822865
+PPO: 1492089
+Detección de carril: 10886001
+PPO: 511755
+Detección de carril: 11434943
+PPO: 4450157
+Detección de carril: 10659909
+PPO: 1672742
+Detección de carril: 11121849
+PPO: 449350
+Detección de carril: 10673991
+PPO: 4092606
+Detección de carril: 10791498
+PPO: 1363564
+Detección de carril: 10915907
+PPO: 486146
+Detección de carril: 10783987
+PPO: 438424
+Detección de carril: 10535872
+PPO: 456160
+Detección de carril: 10550083
+PPO: 4050032
+Detección de carril: 10786311
+PPO: 1230063
+Detección de carril: 10610804
+PPO: 446996
+Detección de carril: 10776926
+PPO: 2057175
+Detección de carril: 11206276
+PPO: 620149
+Detección de carril: 10675693
+PPO: 877819
+Detección de carril: 10810357
+PPO: 461609
+Detección de carril: 10908556
+PPO: 4252078
+Detección de carril: 10987876
+PPO: 1643709
+Detección de carril: 10683094
+PPO: 869816
+Detección de carril: 10517394
+PPO: 459065
+Detección de carril: 10966253
+PPO: 2996216
+Detección de carril: 10767992
+PPO: 1620434
+Detección de carril: 10632137
+PPO: 446846
+Detección de carril: 10627380
+PPO: 4183664
+Detección de carril: 11138264
+PPO: 785419
+Detección de carril: 10480838
+PPO: 462901
+Detección de carril: 11083681
+PPO: 3222930
+Detección de carril: 10881785
+PPO: 2310268
+Detección de carril: 10502030
+PPO: 800141
+Detección de carril: 10619818
+PPO: 515841
+Detección de carril: 10911060
+PPO: 2670253
+Detección de carril: 10813001
+PPO: 625737
+Detección de carril: 10309459
+PPO: 567760
+Detección de carril: 10230149
+PPO: 458424
+Detección de carril: 10673470
+PPO: 2390559
+Detección de carril: 11175230
+PPO: 484454
+Detección de carril: 10189717
+PPO: 4335995
+Detección de carril: 10654972
+PPO: 1492960
+Detección de carril: 10678638
+PPO: 533488
+Detección de carril: 10908635
+PPO: 679579
+Detección de carril: 10884540
+PPO: 1363675
+Detección de carril: 10473067
+PPO: 498224
+Detección de carril: 10732689
+PPO: 2226050
+Detección de carril: 10789495
+PPO: 885070
+Detección de carril: 10998502
+PPO: 516742
+Detección de carril: 10607209
+PPO: 2213512
+Detección de carril: 10856437
+PPO: 2031526
+Detección de carril: 10596684
+PPO: 544795
+Detección de carril: 10916848
+PPO: 1811492
+Detección de carril: 11515976
+PPO: 668582
+Detección de carril: 10759460
+PPO: 4604571
+Detección de carril: 10650465
+PPO: 1667224
+Detección de carril: 10763616
+PPO: 493668
+Detección de carril: 10697136
+PPO: 2088993
+Detección de carril: 11212777
+PPO: 516802
+Detección de carril: 10986814
+PPO: 477603
+Detección de carril: 10697476
+PPO: 4064273
+Detección de carril: 10693640
+PPO: 1483286
+Detección de carril: 10993323
+PPO: 491714
+Detección de carril: 10632578
+PPO: 3429482
+Detección de carril: 11084122
+PPO: 1668276
+Detección de carril: 10845641
+PPO: 507659
+Detección de carril: 10635081
+PPO: 3045981
+Detección de carril: 10832961
+PPO: 1395383
+Detección de carril: 11130682
+PPO: 470763
+Detección de carril: 10760601
+PPO: 476301
+Detección de carril: 10574230
+PPO: 2594207
+Detección de carril: 11322622
+PPO: 1149189
+Detección de carril: 10186562
+PPO: 1202290
+Detección de carril: 11102719
+PPO: 488330
+Detección de carril: 10488820
+PPO: 3346576
+Detección de carril: 10861615
+PPO: 2341395
+Detección de carril: 10680901
+PPO: 446375
+Detección de carril: 10680480
+PPO: 3252515
+Detección de carril: 11624229
+PPO: 1706314
+Detección de carril: 10978482
+PPO: 439386
+Detección de carril: 10999965
+PPO: 996930
+Detección de carril: 11327179
+PPO: 444853
+Detección de carril: 10736044
+PPO: 2578043
+Detección de carril: 10763897
+PPO: 1767395
+Detección de carril: 11098773
+PPO: 452244
+Detección de carril: 10783236
+PPO: 1371977
+Detección de carril: 10953454
+PPO: 515551
+Detección de carril: 10230929
+PPO: 619407
+Detección de carril: 10291301
+PPO: 444563
+Detección de carril: 10479336
+PPO: 492315
+Detección de carril: 10266003
+PPO: 428589
+Detección de carril: 10453908
+PPO: 4244897
+Detección de carril: 11072233
+PPO: 1580062
+Detección de carril: 10289699
+PPO: 911730
+Detección de carril: 12169174
+PPO: 1565451
+Detección de carril: 10760331
+PPO: 1768037
+Detección de carril: 10893753
+PPO: 609253
+Detección de carril: 13739692
+PPO: 952883
+Detección de carril: 10735384
+PPO: 4833929
+Detección de carril: 11076230
+PPO: 1197463
+Detección de carril: 10464574
+PPO: 2206741
+Detección de carril: 10622032
+PPO: 628993
+Detección de carril: 10815244
+PPO: 4576799
+Detección de carril: 10699600
+PPO: 1632261
+Detección de carril: 10808134
+PPO: 506677
+Detección de carril: 10852881
+PPO: 1654174
+Detección de carril: 10740340
+PPO: 740491
+Detección de carril: 11301601
+PPO: 661762
+Detección de carril: 12697825
+PPO: 2489449
+Detección de carril: 10818899
+PPO: 1710290
+Detección de carril: 10934395
+PPO: 4384979
+Detección de carril: 10910158
+PPO: 560339
+Detección de carril: 10554249
+PPO: 2481286
+Detección de carril: 12055422
+PPO: 719319
+Detección de carril: 10795004
+PPO: 550182
+Detección de carril: 10887654
+PPO: 3524165
+Detección de carril: 10856036
+PPO: 986193
+Detección de carril: 10549022
+PPO: 540618
+Detección de carril: 11026555
+PPO: 4118917
+Detección de carril: 11135350
+PPO: 710686
+Detección de carril: 10993013
+PPO: 644166
+Detección de carril: 11008617
+PPO: 575852
+Detección de carril: 10914505
+PPO: 674401
+Detección de carril: 10602692
+PPO: 2385392
+Detección de carril: 10609954
+PPO: 2793860
+Detección de carril: 10905982
+PPO: 587489
+Detección de carril: 10722394
+PPO: 2053700
+Detección de carril: 11168769
+PPO: 461228
+Detección de carril: 10776345
+PPO: 4964826
+Detección de carril: 11037761
+PPO: 912622
+Detección de carril: 10629033
+PPO: 572617
+Detección de carril: 10758008
+PPO: 458574
+Detección de carril: 10873523
+PPO: 4383587
+Detección de carril: 11263193
+PPO: 2179339
+Detección de carril: 11223673
+PPO: 587119
+Detección de carril: 11222631
+PPO: 4353101
+Detección de carril: 11124182
+PPO: 1786044
+Detección de carril: 10759931
+PPO: 838209
+Detección de carril: 11118864
+PPO: 3263881
+Detección de carril: 11169711
+PPO: 595912
+Detección de carril: 10599698
+PPO: 969628
+Detección de carril: 11083361
+PPO: 666339
+Detección de carril: 10813031
+PPO: 612678
+Detección de carril: 10682353
+PPO: 611756
+Detección de carril: 10948125
+PPO: 4087369
+Detección de carril: 10948496
+PPO: 2064245
+Detección de carril: 11088478
+PPO: 652268
+Detección de carril: 10766560
+PPO: 2768131
+Detección de carril: 10842525
+PPO: 1198404
+Detección de carril: 11154218
+PPO: 1546682
+Detección de carril: 10920664
+PPO: 547028
+Detección de carril: 10659980
+PPO: 3646380
+Detección de carril: 10685347
+PPO: 2161803
+Detección de carril: 10258762
+PPO: 589713
+Detección de carril: 10620871
+PPO: 509621
+Detección de carril: 10491184
+PPO: 549652
+Detección de carril: 10666289
+PPO: 521490
+Detección de carril: 10608471
+PPO: 2739789
+Detección de carril: 10792309
+PPO: 634812
+Detección de carril: 10737366
+PPO: 1925205
+Detección de carril: 10854625
+PPO: 453717
+Detección de carril: 10793962
+PPO: 3717138
+Detección de carril: 10738939
+PPO: 1485950
+Detección de carril: 10480197
+PPO: 453496
+Detección de carril: 10636324
+PPO: 456841
+Detección de carril: 10737257
+PPO: 450802
+Detección de carril: 10909657
+PPO: 467528
+Detección de carril: 10698337
+PPO: 474819
+Detección de carril: 10700561
+PPO: 4356626
+Detección de carril: 11074737
+PPO: 1882340
+Detección de carril: 11104442
+PPO: 453697
+Detección de carril: 10849827
+PPO: 872931
+Detección de carril: 13779742
+PPO: 985172
+Detección de carril: 10962648
+PPO: 882877
+Detección de carril: 10599118
+PPO: 479375
+Detección de carril: 11738052
+PPO: 1752543
+Detección de carril: 10860403
+PPO: 1171754
+Detección de carril: 10876317
+PPO: 1215391
+Detección de carril: 10862646
+PPO: 772049
+Detección de carril: 10792560
+PPO: 519837
+Detección de carril: 10879812
+PPO: 2263808
+Detección de carril: 10946013
+PPO: 2152268
+Detección de carril: 10759561
+PPO: 553518
+Detección de carril: 11134437
+PPO: 3456313
+Detección de carril: 10505325
+PPO: 1944073
+Detección de carril: 10527338
+PPO: 499446
+Detección de carril: 10682223
+PPO: 3026843
+Detección de carril: 10733350
+PPO: 1814016
+Detección de carril: 10705379
+PPO: 510062
+Detección de carril: 10689043
+PPO: 3401149
+Detección de carril: 10835405
+PPO: 1408242
+Detección de carril: 10672278
+PPO: 500778
+Detección de carril: 10851769
+PPO: 2155614
+Detección de carril: 10902006
+PPO: 1201409
+Detección de carril: 10900824
+PPO: 527528
+Detección de carril: 10868024
+PPO: 2705336
+Detección de carril: 11579471
+PPO: 766641
+Detección de carril: 10726110
+PPO: 494358
+Detección de carril: 10591576
+PPO: 2733098
+Detección de carril: 11904995
+PPO: 1085593
+Detección de carril: 10806812
+PPO: 3901267
+Detección de carril: 10947764
+PPO: 1634685
+Detección de carril: 11027686
+PPO: 548821
+Detección de carril: 10863117
+PPO: 2985871
+Detección de carril: 10765329
+PPO: 1578750
+Detección de carril: 10798649
+PPO: 604505
+Detección de carril: 11233818
+PPO: 2374135
+Detección de carril: 10954786
+PPO: 1225746
+Detección de carril: 11145844
+PPO: 642243
+Detección de carril: 11227729
+PPO: 668993
+Detección de carril: 10883728
+PPO: 4905968
+Detección de carril: 10939463
+PPO: 2413965
+Detección de carril: 11146586
+PPO: 2197607
+Detección de carril: 10843898
+PPO: 594220
+Detección de carril: 10850498
+PPO: 588381
+Detección de carril: 11659822
+PPO: 3716828
+Detección de carril: 11017080
+PPO: 572036
+Detección de carril: 11034927
+PPO: 2175754
+Detección de carril: 11043550
+PPO: 589062
+Detección de carril: 10119831
+PPO: 508820
+Detección de carril: 10635552
+PPO: 4134369
+Detección de carril: 10591395
+PPO: 497453
+Detección de carril: 10639829
+PPO: 622232
+Detección de carril: 10678898
+PPO: 465435
+Detección de carril: 10963648
+PPO: 2906681
+Detección de carril: 10801764
+PPO: 1876430
+Detección de carril: 10620530
+PPO: 454808
+Detección de carril: 10498585
+PPO: 3805302
+Detección de carril: 10624716
+PPO: 1537097
+Detección de carril: 11365798
+PPO: 4938096
+Detección de carril: 10853182
+PPO: 2113220
+Detección de carril: 11005662
+PPO: 686149
+Detección de carril: 10495911
+PPO: 725308
+Detección de carril: 10849676
+PPO: 728683
+Detección de carril: 11084162
+PPO: 4137804
+Detección de carril: 10604185
+PPO: 918781
+Detección de carril: 11021957
+PPO: 764087
+Detección de carril: 10934945
+PPO: 737717
+Detección de carril: 12555449
+PPO: 2200542
+Detección de carril: 11925977
+PPO: 629012
+Detección de carril: 11955310
+PPO: 2521998
+Detección de carril: 11634544
+PPO: 1726114
+Detección de carril: 10517694
+PPO: 570253
+Detección de carril: 10409410
+PPO: 3524496
+Detección de carril: 11256773
+PPO: 1732763
+Detección de carril: 10531415
+PPO: 1994250
+Detección de carril: 11046965
+PPO: 467678
+Detección de carril: 10810938
+PPO: 4715219
+Detección de carril: 11436665
+PPO: 1658912
+Detección de carril: 10899392
+PPO: 917409
+Detección de carril: 11632823
+PPO: 481689
+Detección de carril: 10440767
+PPO: 478544
+Detección de carril: 10566848
+PPO: 2487757
+Detección de carril: 10760722
+PPO: 453867
+Detección de carril: 10946163
+PPO: 1183221
+Detección de carril: 11079144
+PPO: 680981
+Detección de carril: 10667040
+PPO: 4486722
+Detección de carril: 10696455
+PPO: 2076854
+Detección de carril: 10597564
+PPO: 908124
+Detección de carril: 10273484
+PPO: 3775816
+Detección de carril: 10914504
+PPO: 1886917
+Detección de carril: 10338732
+PPO: 683444
+Detección de carril: 10583304
+PPO: 4272649
+Detección de carril: 11158474
+PPO: 648192
+Detección de carril: 10695163
+PPO: 539517
+Detección de carril: 10609984
+PPO: 2803214
+Detección de carril: 10819050
+PPO: 1718352
+Detección de carril: 11098474
+PPO: 1079114
+Detección de carril: 10735223
+PPO: 1303193
+Detección de carril: 11113406
+PPO: 2569200
+Detección de carril: 10498344
+PPO: 2486585
+Detección de carril: 10902546
+PPO: 2924608
+Detección de carril: 10992252
+PPO: 453266
+Detección de carril: 10975607
+PPO: 669073
+Detección de carril: 10806722
+PPO: 1846235
+Detección de carril: 10757487
+PPO: 446767
+Detección de carril: 10740521
+PPO: 444763
+Detección de carril: 10507599
+PPO: 4249254
+Detección de carril: 10773771
+PPO: 441619
+Detección de carril: 10500057
+PPO: 704646
+Detección de carril: 10910559
+PPO: 451073
+Detección de carril: 10600119
+PPO: 4183924
+Detección de carril: 10431143
+PPO: 1581014
+Detección de carril: 10661271
+PPO: 468379
+Detección de carril: 10941536
+PPO: 995427
+Detección de carril: 10616333
+PPO: 665617
+Detección de carril: 10615071
+PPO: 470362
+Detección de carril: 10519416
+PPO: 3871201
+Detección de carril: 10749304
+PPO: 1350915
+Detección de carril: 10725599
+PPO: 603454
+Detección de carril: 10885290
+PPO: 1201659
+Detección de carril: 10697596
+PPO: 449110
+Detección de carril: 10752439
+PPO: 443041
+Detección de carril: 10310751
+PPO: 4248342
+Detección de carril: 10937199
+PPO: 758248
+Detección de carril: 10405294
+PPO: 798008
+Detección de carril: 10621050
+PPO: 589483
+Detección de carril: 10961295
+PPO: 653400
+Detección de carril: 10771949
+PPO: 1261720
+Detección de carril: 10107643
+PPO: 2401236
+Detección de carril: 10548360
+PPO: 999473
+Detección de carril: 10876968
+PPO: 520468
+Detección de carril: 11037170
+PPO: 472395
+Detección de carril: 11008948
+PPO: 1932445
+Detección de carril: 10384542
+PPO: 896457
+Detección de carril: 12050695
+PPO: 1619933
+Detección de carril: 11271435
+PPO: 2148553
+Detección de carril: 11324805
+PPO: 2090444
+Detección de carril: 10550233
+PPO: 1007565
+Detección de carril: 10511815
+PPO: 530783
+Detección de carril: 10626829
+PPO: 2778797
+Detección de carril: 10567960
+PPO: 1516817
+Detección de carril: 10707431
+PPO: 2075733
+Detección de carril: 10578576
+PPO: 1248410
+Detección de carril: 10548290
+PPO: 631356
+Detección de carril: 10679739
+PPO: 865390
+Detección de carril: 11197503
+PPO: 1062007
+Detección de carril: 10867063
+PPO: 587950
+Detección de carril: 10806991
+PPO: 761983
+Detección de carril: 10726140
+PPO: 696945
+Detección de carril: 10919001
+PPO: 611786
+Detección de carril: 11446160
+PPO: 910989
+Detección de carril: 10643565
+PPO: 589282
+Detección de carril: 10540709
+PPO: 502841
+Detección de carril: 10408989
+PPO: 3480729
+Detección de carril: 11580102
+PPO: 1007915
+Detección de carril: 11233879
+PPO: 551495
+Detección de carril: 12674209
+PPO: 4793457
+Detección de carril: 10934656
+PPO: 1181919
+Detección de carril: 10774623
+PPO: 1968550
+Detección de carril: 10859922
+PPO: 569011
+Detección de carril: 10604776
+PPO: 506577
+Detección de carril: 10678918
+PPO: 4422266
+Detección de carril: 11660424
+PPO: 518164
+Detección de carril: 10984751
+PPO: 592788
+Detección de carril: 10292474
+PPO: 511585
+Detección de carril: 10682534
+PPO: 3460440
+Detección de carril: 10893623
+PPO: 793111
+Detección de carril: 10641241
+PPO: 506436
+Detección de carril: 10792240
+PPO: 513508
+Detección de carril: 10443702
+PPO: 530413
+Detección de carril: 10583714
+PPO: 3542673
+Detección de carril: 10851700
+PPO: 516211
+Detección de carril: 10994826
+PPO: 594830
+Detección de carril: 10888906
+PPO: 524664
+Detección de carril: 11224774
+PPO: 2074220
+Detección de carril: 10349499
+PPO: 1044801
+Detección de carril: 10783817
+PPO: 1204504
+Detección de carril: 10706330
+PPO: 1254830
+Detección de carril: 10864810
+PPO: 458475
+Detección de carril: 10712038
+PPO: 4118786
+Detección de carril: 11063450
+PPO: 435209
+Detección de carril: 10248236
+PPO: 2655681
+Detección de carril: 10777877
+PPO: 987135
+Detección de carril: 10990160
+PPO: 475850
+Detección de carril: 10710946
+PPO: 441058
+Detección de carril: 10939683
+PPO: 442790
+Detección de carril: 10204109
+PPO: 440327
+Detección de carril: 10604485
+PPO: 892772
+Detección de carril: 10669954
+PPO: 530673
+Detección de carril: 10725429
+PPO: 509452
+Detección de carril: 10747432
+PPO: 499747
+Detección de carril: 10140643
+PPO: 2426574
+Detección de carril: 11305146
+PPO: 959113
+Detección de carril: 11252426
+PPO: 1323333
+Detección de carril: 10893053
+PPO: 910619
+Detección de carril: 12126129
+PPO: 634711
+Detección de carril: 11480893
+PPO: 4895412
+Detección de carril: 11116621
+PPO: 534619
+Detección de carril: 10334727
+PPO: 688653
+Detección de carril: 10254916
+PPO: 486717
+Detección de carril: 10628321
+PPO: 506026
+Detección de carril: 10844629
+PPO: 3017438
+Detección de carril: 10461259
+PPO: 474188
+Detección de carril: 10839731
+PPO: 1430716
+Detección de carril: 10368158
+PPO: 2448136
+Detección de carril: 11923583
+PPO: 901565
+Detección de carril: 10905892
+PPO: 1111683
+Detección de carril: 11153126
+PPO: 1655557
+Detección de carril: 10876487
+PPO: 1470446
+Detección de carril: 10385224
+PPO: 655152
+Detección de carril: 10806341
+PPO: 2169435
+Detección de carril: 10841734
+PPO: 1873487
+Detección de carril: 11045874
+PPO: 579918
+Detección de carril: 10789365
+PPO: 607700
+Detección de carril: 10898180
+PPO: 704076
+Detección de carril: 10395790
+PPO: 630234
+Detección de carril: 10431013
+PPO: 548841
+Detección de carril: 10942357
+PPO: 558896
+Detección de carril: 12024164
+PPO: 4579453
+Detección de carril: 10716545
+PPO: 815435
+Detección de carril: 10993414
+PPO: 2237648
+Detección de carril: 11453250
+PPO: 693621
+Detección de carril: 10851720
+PPO: 631657
+Detección de carril: 10776886
+PPO: 4236173
+Detección de carril: 10659729
+PPO: 1137502
+Detección de carril: 11102930
+PPO: 2235905
+Detección de carril: 10984731
+PPO: 1867628
+Detección de carril: 10642403
+PPO: 656303
+Detección de carril: 10602973
+PPO: 2689512
+Detección de carril: 11075949
+PPO: 1912766
+Detección de carril: 10756596
+PPO: 666920
+Detección de carril: 10969568
+PPO: 2342316
+Detección de carril: 10617855
+PPO: 736004
+Detección de carril: 10750587
+PPO: 1458459
+Detección de carril: 10307927
+PPO: 685618
+Detección de carril: 10395389
+PPO: 688492
+Detección de carril: 10683645
+PPO: 678738
+Detección de carril: 10759460
+PPO: 551014
+Detección de carril: 10855275
+PPO: 1976643
+Detección de carril: 12651905
+PPO: 528070
+Detección de carril: 10764537
+PPO: 492876
+Detección de carril: 10905621
+PPO: 501620
+Detección de carril: 10776966
+PPO: 902767
+Detección de carril: 11691671
+PPO: 4062871
+Detección de carril: 11025022
+PPO: 1811903
+Detección de carril: 10583904
+PPO: 765258
+Detección de carril: 10893182
+PPO: 517073
+Detección de carril: 10647570
+PPO: 531565
+Detección de carril: 10623344
+PPO: 910559
+Detección de carril: 10272453
+PPO: 1443365
+Detección de carril: 10758669
+PPO: 1214419
+Detección de carril: 10804728
+PPO: 509622
+Detección de carril: 10161464
+PPO: 462039
+Detección de carril: 11111774
+PPO: 2666857
+Detección de carril: 10897179
+PPO: 489260
+Detección de carril: 10749505
+PPO: 1723810
+Detección de carril: 10876027
+PPO: 1824973
+Detección de carril: 10797157
+PPO: 1089780
+Detección de carril: 10165130
+PPO: 936638
+Detección de carril: 10158501
+PPO: 833702
+Detección de carril: 10508620
+PPO: 1189371
+Detección de carril: 11136531
+PPO: 685798
+Detección de carril: 11709168
+PPO: 869346
+Detección de carril: 10822175
+PPO: 3161898
+Detección de carril: 10534038
+PPO: 636083
+Detección de carril: 10660481
+PPO: 495240
+Detección de carril: 10802024
+PPO: 1596127
+Detección de carril: 10874514
+PPO: 729414
+Detección de carril: 10943348
+PPO: 4576649
+Detección de carril: 10538866
+PPO: 496562
+Detección de carril: 10542292
+PPO: 484113
+Detección de carril: 10480307
+PPO: 447027
+Detección de carril: 10448449
+PPO: 4931987
+Detección de carril: 11237724
+PPO: 893733
+Detección de carril: 10469050
+PPO: 440587
+Detección de carril: 10558346
+PPO: 2342346
+Detección de carril: 10632758
+PPO: 477373
+Detección de carril: 10606338
+PPO: 448348
+Detección de carril: 10735173
+PPO: 469962
+Detección de carril: 10826582
+PPO: 470463
+Detección de carril: 11097522
+PPO: 2183576
+Detección de carril: 10639959
+PPO: 715203
+Detección de carril: 10661111
+PPO: 864399
+Detección de carril: 11656979
+PPO: 2437610
+Detección de carril: 11028777
+PPO: 2351160
+Detección de carril: 10613970
+PPO: 670616
+Detección de carril: 10480828
+PPO: 516061
+Detección de carril: 10204520
+PPO: 456351
+Detección de carril: 10191159
+PPO: 447608
+Detección de carril: 10444323
+PPO: 4350287
+Detección de carril: 10781523
+PPO: 479306
+Detección de carril: 10226583
+PPO: 1127127
+Detección de carril: 10547619
+PPO: 1156521
+Detección de carril: 11825704
+PPO: 3771831
+Detección de carril: 10659889
+PPO: 663134
+Detección de carril: 10887994
+PPO: 556082
+Detección de carril: 10824047
+PPO: 1785944
+Detección de carril: 11111252
+PPO: 599537
+Detección de carril: 10448328
+PPO: 499396
+Detección de carril: 10729405
+PPO: 487318
+Detección de carril: 10963980
+PPO: 3943250
+Detección de carril: 10906612
+PPO: 1225936
+Detección de carril: 10745258
+PPO: 460076
+Detección de carril: 10708783
+PPO: 466626
+Detección de carril: 10645207
+PPO: 610975
+Detección de carril: 10652718
+PPO: 445184
+Detección de carril: 10595382
+PPO: 2039798
+Detección de carril: 10750046
+PPO: 604375
+Detección de carril: 10578275
+PPO: 439996
+Detección de carril: 10874124
+PPO: 487899
+Detección de carril: 13293166
+PPO: 697366
+Detección de carril: 13011639
+PPO: 519186
+Detección de carril: 10783076
+PPO: 518915
+Detección de carril: 10870819
+PPO: 4838926
+Detección de carril: 12395607
+PPO: 1581895
+Detección de carril: 10584635
+PPO: 2254023
+Detección de carril: 10461639
+PPO: 3053252
+Detección de carril: 11693013
+PPO: 1794277
+Detección de carril: 10919893
+PPO: 1057902
+Detección de carril: 10761563
+PPO: 1574484
+Detección de carril: 11762258
+PPO: 557144
+Detección de carril: 11271635
+PPO: 2274473
+Detección de carril: 15774974
+PPO: 1216321
+Detección de carril: 11373450
+PPO: 667331
+Detección de carril: 10811679
+PPO: 755324
+Detección de carril: 10894234
+PPO: 1880107
+Detección de carril: 10659759
+PPO: 1525039
+Detección de carril: 10485796
+PPO: 556232
+Detección de carril: 10873633
+PPO: 547089
+Detección de carril: 10697165
+PPO: 547739
+Detección de carril: 10097639
+PPO: 816576
+Detección de carril: 10682613
+PPO: 469330
+Detección de carril: 10169556
+PPO: 463512
+Detección de carril: 10915196
+PPO: 472686
+Detección de carril: 11042178
+PPO: 448308
+Detección de carril: 10717576
+PPO: 2036584
+Detección de carril: 11428753
+PPO: 924760
+Detección de carril: 10914935
+PPO: 707581
+Detección de carril: 10899382
+PPO: 680700
+Detección de carril: 10806832
+PPO: 989338
+Detección de carril: 10768363
+PPO: 2132308
+Detección de carril: 11619501
+PPO: 733771
+Detección de carril: 10569142
+PPO: 545736
+Detección de carril: 10518405
+PPO: 523713
+Detección de carril: 10448208
+PPO: 880813
+Detección de carril: 10515210
+PPO: 516802
+Detección de carril: 10679359
+PPO: 2787160
+Detección de carril: 11433040
+PPO: 2605345
+Detección de carril: 11374802
+PPO: 2533365
+Detección de carril: 11121888
+PPO: 3351965
+Detección de carril: 10833582
+PPO: 1376885
+Detección de carril: 10367286
+PPO: 4373742
+Detección de carril: 10670876
+PPO: 486517
+Detección de carril: 10691537
+PPO: 618216
+Detección de carril: 10531335
+PPO: 448009
+Detección de carril: 10996789
+PPO: 2272681
+Detección de carril: 10413056
+PPO: 611456
+Detección de carril: 10298932
+PPO: 444934
+Detección de carril: 10478064
+PPO: 648362
+Detección de carril: 10686400
+PPO: 437112
+Detección de carril: 10244030
+PPO: 2199420
+Detección de carril: 10565166
+PPO: 434118
+Detección de carril: 10882416
+PPO: 2216015
+Detección de carril: 10614400
+PPO: 562131
+Detección de carril: 10749475
+PPO: 436711
+Detección de carril: 10674141
+PPO: 543904
+Detección de carril: 10364742
+PPO: 434908
+Detección de carril: 10955176
+PPO: 1150882
+Detección de carril: 10650585
+PPO: 472675
+Detección de carril: 11232656
+PPO: 2273562
+Detección de carril: 10428008
+PPO: 460998
+Detección de carril: 10821675
+PPO: 459255
+Detección de carril: 10617265
+PPO: 457232
+Detección de carril: 10995357
+PPO: 607770
+Detección de carril: 10228406
+PPO: 2002873
+Detección de carril: 10787442
+PPO: 763516
+Detección de carril: 10792990
+PPO: 1037361
+Detección de carril: 10652348
+PPO: 482610
+Detección de carril: 10447187
+PPO: 1960359
+Detección de carril: 10309569
+PPO: 515390
+Detección de carril: 10095945
+PPO: 470392
+Detección de carril: 10728544
+PPO: 452886
+Detección de carril: 10998612
+PPO: 4101019
+Detección de carril: 10736455
+PPO: 817508
+Detección de carril: 10507168
+PPO: 1391457
+Detección de carril: 13722547
+PPO: 865009
+Detección de carril: 11055608
+PPO: 564044
+Detección de carril: 10582662
+PPO: 552437
+Detección de carril: 10499997
+PPO: 548400
+Detección de carril: 10692849
+PPO: 2594838
+Detección de carril: 10769115
+PPO: 4216594
+Detección de carril: 10748954
+PPO: 647901
+Detección de carril: 10686139
+PPO: 1866986
+Detección de carril: 10597505
+PPO: 477523
+Detección de carril: 11288851
+PPO: 1944934
+Detección de carril: 11050281
+PPO: 571956
+Detección de carril: 10227224
+PPO: 535090
+Detección de carril: 10971631
+PPO: 2613967
+Detección de carril: 10680650
+PPO: 2151137
+Detección de carril: 10881114
+PPO: 715293
+Detección de carril: 10654241
+PPO: 442600
+Detección de carril: 10625998
+PPO: 1191263
+Detección de carril: 10511505
+PPO: 440277
+Detección de carril: 10659469
+PPO: 427457
+Detección de carril: 10761833
+PPO: 593839
+Detección de carril: 10719049
+PPO: 441929
+Detección de carril: 10629964
+PPO: 440878
+Detección de carril: 10211500
+PPO: 876107
+Detección de carril: 10733431
+PPO: 441298
+Detección de carril: 10999063
+PPO: 4320622
+Detección de carril: 10795635
+PPO: 1543036
+Detección de carril: 10902627
+PPO: 437793
+Detección de carril: 10727161
+PPO: 442499
+Detección de carril: 11002779
+PPO: 1837663
+Detección de carril: 10861715
+PPO: 444654
+Detección de carril: 10213453
+PPO: 1459079
+Detección de carril: 10364001
+PPO: 433677
+Detección de carril: 10650936
+PPO: 4227350
+Detección de carril: 10708733
+PPO: 438374
+Detección de carril: 10727331
+PPO: 595562
+Detección de carril: 10594160
+PPO: 436490
+Detección de carril: 10717527
+PPO: 1422003
+Detección de carril: 10718298
+PPO: 486246
+Detección de carril: 10119571
+PPO: 491334
+Detección de carril: 10389149
+PPO: 462991
+Detección de carril: 10265262
+PPO: 4885977
+Detección de carril: 10439546
+PPO: 464092
+Detección de carril: 10540378
+PPO: 1586452
+Detección de carril: 10903058
+PPO: 473927
+Detección de carril: 10532907
+PPO: 458735
+Detección de carril: 10885170
+PPO: 4847399
+Detección de carril: 11094648
+PPO: 1878454
+Detección de carril: 10668142
+PPO: 4015440
+Detección de carril: 10833552
+PPO: 474558
+Detección de carril: 10676424
+PPO: 1162900
+Detección de carril: 10746571
+PPO: 1583157
+Detección de carril: 10902256
+PPO: 894945
+Detección de carril: 10439445
+PPO: 542421
+Detección de carril: 10591646
+PPO: 1627113
+Detección de carril: 10574741
+PPO: 510953
+Detección de carril: 10738578
+PPO: 493567
+Detección de carril: 10484714
+PPO: 4605894
+Detección de carril: 10798849
+PPO: 1785744
+Detección de carril: 10606879
+PPO: 758017
+Detección de carril: 10672939
+PPO: 646179
+Detección de carril: 10698588
+PPO: 4957896
+Detección de carril: 11153807
+PPO: 509982
+Detección de carril: 10537343
+PPO: 547349
+Detección de carril: 10854955
+PPO: 1253257
+Detección de carril: 11105344
+PPO: 918741
+Detección de carril: 10540578
+PPO: 2214963
+Detección de carril: 10696595
+PPO: 494589
+Detección de carril: 10262878
+PPO: 436291
+Detección de carril: 10588220
+PPO: 436380
+Detección de carril: 10680020
+PPO: 4861060
+Detección de carril: 10901745
+PPO: 453196
+Detección de carril: 10610534
+PPO: 1380150
+Detección de carril: 10706430
+PPO: 879712
+Detección de carril: 10127433
+PPO: 450232
+Detección de carril: 10915015
+PPO: 5040802
+Detección de carril: 11025723
+PPO: 542792
+Detección de carril: 10708653
+PPO: 522211
+Detección de carril: 10863097
+PPO: 2214974
+Detección de carril: 11752052
+PPO: 988997
+Detección de carril: 10327927
+PPO: 548220
+Detección de carril: 10269538
+PPO: 537234
+Detección de carril: 11010289
+PPO: 510033
+Detección de carril: 10404383
+PPO: 492205
+Detección de carril: 10011057
+PPO: 463512
+Detección de carril: 10093141
+PPO: 454127
+Detección de carril: 10147223
+PPO: 448900
+Detección de carril: 10104999
+PPO: 1765163
+Detección de carril: 10659389
+PPO: 583243
+Detección de carril: 10490463
+PPO: 435339
+Detección de carril: 10434618
+PPO: 4771204
+Detección de carril: 11645772
+PPO: 1611490
+Detección de carril: 11199727
+PPO: 903367
+Detección de carril: 11108439
+PPO: 2316978
+Detección de carril: 10824759
+PPO: 972101
+Detección de carril: 10707100
+PPO: 693531
+Detección de carril: 12313553
+PPO: 4322875
+Detección de carril: 11588345
+PPO: 2133430
+Detección de carril: 11579502
+PPO: 825320
+Detección de carril: 11012253
+PPO: 650375
+Detección de carril: 10585577
+PPO: 3580330
+Detección de carril: 10327827
+PPO: 573539
+Detección de carril: 10409460
+PPO: 1239496
+Detección de carril: 10575842
+PPO: 572266
+Detección de carril: 10381918
+PPO: 572977
+Detección de carril: 10811719
+PPO: 3541352
+Detección de carril: 10974456
+PPO: 2222956
+Detección de carril: 10663965
+PPO: 1041437
+Detección de carril: 10516402
+PPO: 581470
+Detección de carril: 10625687
+PPO: 3583336
+Detección de carril: 10808985
+PPO: 585867
+Detección de carril: 11281700
+PPO: 536182
+Detección de carril: 10763647
+PPO: 634861
+Detección de carril: 10225932
+PPO: 1807917
+Detección de carril: 10643054
+PPO: 856807
+Detección de carril: 10155816
+PPO: 467358
+Detección de carril: 11274259
+PPO: 2957177
+Detección de carril: 11312587
+PPO: 1986698
+Detección de carril: 10703615
+PPO: 589723
+Detección de carril: 10217269
+PPO: 4606894
+Detección de carril: 10711707
+PPO: 1831142
+Detección de carril: 10382439
+PPO: 955867
+Detección de carril: 10483642
+PPO: 4151355
+Detección de carril: 11389073
+PPO: 1944935
+Detección de carril: 10684717
+PPO: 525416
+Detección de carril: 11779053
+PPO: 2889165
+Detección de carril: 11265977
+PPO: 1623188
+Detección de carril: 10865601
+PPO: 514749
+Detección de carril: 11284215
+PPO: 509521
+Detección de carril: 10810677
+PPO: 1959947
+Detección de carril: 10663054
+PPO: 1826806
+Detección de carril: 10368097
+PPO: 468689
+Detección de carril: 10474548
+PPO: 500557
+Detección de carril: 11017391
+PPO: 3472267
+Detección de carril: 10779681
+PPO: 491834
+Detección de carril: 10820943
+PPO: 679228
+Detección de carril: 10738408
+PPO: 1089249
+Detección de carril: 11115218
+PPO: 869046
+Detección de carril: 10650075
+PPO: 1200508
+Detección de carril: 10958462
+PPO: 749535
+Detección de carril: 10683095
+PPO: 609273
+Detección de carril: 10199962
+PPO: 493908
+Detección de carril: 11206046
+PPO: 708894
+Detección de carril: 10484173
+PPO: 2380154
+Detección de carril: 10892992
+PPO: 1333469
+Detección de carril: 10681352
+PPO: 739019
+Detección de carril: 10341668
+PPO: 602412
+Detección de carril: 11177143
+PPO: 683545
+Detección de carril: 11014116
+PPO: 2653427
+Detección de carril: 11159837
+PPO: 1863642
+Detección de carril: 10812099
+PPO: 1876892
+Detección de carril: 10379926
+PPO: 1691912
+Detección de carril: 10428389
+PPO: 2340654
+Detección de carril: 13008555
+PPO: 714071
+Detección de carril: 12251919
+PPO: 3138491
+Detección de carril: 10573328
+PPO: 600590
+Detección de carril: 10857478
+PPO: 684587
+Detección de carril: 10838369
+PPO: 4850654
+Detección de carril: 10829856
+PPO: 1883171
+Detección de carril: 10558395
+PPO: 518575
+Detección de carril: 10508340
+PPO: 3482012
+Detección de carril: 10974786
+PPO: 2290247
+Detección de carril: 10800362
+PPO: 502080
+Detección de carril: 10515550
+PPO: 4418980
+Detección de carril: 10573969
+PPO: 2221293
+Detección de carril: 10533969
+PPO: 562581
+Detección de carril: 10906012
+PPO: 547940
+Detección de carril: 10653259
+PPO: 479646
+Detección de carril: 10292573
+PPO: 513217
+Detección de carril: 10707471
+PPO: 509872
+Detección de carril: 11130481
+PPO: 3440189
+Detección de carril: 10793231
+PPO: 2274633
+Detección de carril: 10909377
+PPO: 548410
+Detección de carril: 10650885
+PPO: 1851464
+Detección de carril: 10701332
+PPO: 538144
+Detección de carril: 10557875
+PPO: 1642126
+Detección de carril: 10511605
+PPO: 499787
+Detección de carril: 10878050
+PPO: 482561
+Detección de carril: 10174634
+PPO: 470082
+Detección de carril: 10729554
+PPO: 3900024
+Detección de carril: 10895696
+PPO: 661100
+Detección de carril: 10291571
+PPO: 560349
+Detección de carril: 10760622
+PPO: 450623
+Detección de carril: 10415208
+PPO: 4375234
+Detección de carril: 10694702
+PPO: 523713
+Detección de carril: 11236582
+PPO: 532936
+Detección de carril: 10492737
+PPO: 433797
+Detección de carril: 10527469
+PPO: 4060247
+Detección de carril: 11373340
+PPO: 1011692
+Detección de carril: 10819380
+PPO: 441608
+Detección de carril: 10866852
+PPO: 2585504
+Detección de carril: 11378317
+PPO: 1730250
+Detección de carril: 11237184
+PPO: 458013
+Detección de carril: 10644165
+PPO: 2897607
+Detección de carril: 10975647
+PPO: 1981240
+Detección de carril: 11004761
+PPO: 492215
+Detección de carril: 10448329
+PPO: 897639
+Detección de carril: 11192506
+PPO: 552937
+Detección de carril: 11148378
+PPO: 1929231
+Detección de carril: 10677316
+PPO: 2201843
+Detección de carril: 10717306
+PPO: 556753
+Detección de carril: 10687521
+PPO: 1753785
+Detección de carril: 11289352
+PPO: 1321471
+Detección de carril: 11189100
+PPO: 492676
+Detección de carril: 10563242
+PPO: 3013503
+Detección de carril: 10585086
+PPO: 482671
+Detección de carril: 10659028
+PPO: 754923
+Detección de carril: 10236859
+PPO: 1875840
+Detección de carril: 10541020
+PPO: 874564
+Detección de carril: 10461880
+PPO: 1569547
+Detección de carril: 11117362
+PPO: 861674
+Detección de carril: 10319825
+PPO: 517314
+Detección de carril: 10587830
+PPO: 527628
+Detección de carril: 11256723
+PPO: 1553272
+Detección de carril: 10970500
+PPO: 1058723
+Detección de carril: 10584325
+PPO: 1839474
+Detección de carril: 10928826
+PPO: 565275
+Detección de carril: 11044461
+PPO: 550343
+Detección de carril: 10677246
+PPO: 568090
+Detección de carril: 10506868
+PPO: 4534916
+Detección de carril: 10990640
+PPO: 1663008
+Detección de carril: 10642963
+PPO: 658337
+Detección de carril: 10696334
+PPO: 4281422
+Detección de carril: 10471944
+PPO: 1796840
+Detección de carril: 10206603
+PPO: 942817
+Detección de carril: 10519246
+PPO: 695282
+Detección de carril: 10079180
+PPO: 487368
+Detección de carril: 10493287
+PPO: 467457
+Detección de carril: 10649243
+PPO: 3661644
+Detección de carril: 10887884
+PPO: 2165779
+Detección de carril: 10169597
+PPO: 1013715
+Detección de carril: 10365363
+PPO: 482560
+Detección de carril: 11132074
+PPO: 479476
+Detección de carril: 10677886
+PPO: 4104595
+Detección de carril: 10688182
+PPO: 656374
+Detección de carril: 10532557
+PPO: 497693
+Detección de carril: 10714041
+PPO: 517373
+Detección de carril: 10630685
+PPO: 2422648
+Detección de carril: 11796410
+PPO: 808645
+Detección de carril: 11096610
+PPO: 619398
+Detección de carril: 10505095
+PPO: 2499634
+Detección de carril: 10602642
+PPO: 1150952
+Detección de carril: 10479466
+PPO: 543443
+Detección de carril: 10525236
+PPO: 538405
+Detección de carril: 10597455
+PPO: 4680626
+Detección de carril: 11060236
+PPO: 639919
+Detección de carril: 10772239
+PPO: 647400
+Detección de carril: 10803417
+PPO: 635402
+Detección de carril: 11290594
+PPO: 1064561
+Detección de carril: 10694652
+PPO: 987715
+Detección de carril: 10952322
+PPO: 580719
+Detección de carril: 11184824
+PPO: 2184497
+Detección de carril: 11010370
+PPO: 1493030
+Detección de carril: 10173884
+PPO: 590905
+Detección de carril: 10472245
+PPO: 506267
+Detección de carril: 10945302
+PPO: 2292921
+Detección de carril: 11063250
+PPO: 1723199
+Detección de carril: 10841364
+PPO: 461619
+Detección de carril: 10228155
+PPO: 451334
+Detección de carril: 10797537
+PPO: 1066826
+Detección de carril: 10750276
+PPO: 1246998
+Detección de carril: 10746079
+PPO: 454999
+Detección de carril: 10662593
+PPO: 4933759
+Detección de carril: 10603774
+PPO: 436060
+Detección de carril: 10430482
+PPO: 450232
+Detección de carril: 10346204
+PPO: 565977
+Detección de carril: 10608181
+PPO: 1818954
+Detección de carril: 10463872
+PPO: 1872094
+Detección de carril: 10858279
+PPO: 1243032
+Detección de carril: 10767603
+PPO: 587790
+Detección de carril: 10428339
+PPO: 1004651
+Detección de carril: 10338783
+PPO: 934315
+Detección de carril: 10341918
+PPO: 490933
+Detección de carril: 10532616
+PPO: 444994
+Detección de carril: 9988552
+PPO: 457122
+Detección de carril: 10114853
+PPO: 4685644
+Detección de carril: 10521630
+PPO: 459095
+Detección de carril: 10522321
+PPO: 1682658
+Detección de carril: 10274576
+PPO: 585386
+Detección de carril: 10418514
+PPO: 436251
+Detección de carril: 10493938
+PPO: 3621733
+Detección de carril: 10871150
+PPO: 1897363
+Detección de carril: 10617985
+PPO: 551736
+Detección de carril: 10526577
+PPO: 434798
+Detección de carril: 10510673
+PPO: 3416773
+Detección de carril: 10781854
+PPO: 3117410
+Detección de carril: 10818209
+PPO: 1270614
+Detección de carril: 10725589
+PPO: 648612
+Detección de carril: 10559207
+PPO: 914975
+Detección de carril: 10578777
+PPO: 4645353
+Detección de carril: 10910639
+PPO: 1069349
+Detección de carril: 10795374
+PPO: 1001065
+Detección de carril: 10547780
+PPO: 1284084
+Detección de carril: 10719890
+PPO: 512927
+Detección de carril: 10496762
+PPO: 2389668
+Detección de carril: 10299364
+PPO: 758068
+Detección de carril: 10478424
+PPO: 1439400
+Detección de carril: 10730236
+PPO: 486597
+Detección de carril: 10518645
+PPO: 2538403
+Detección de carril: 11080125
+PPO: 1627223
+Detección de carril: 10602512
+PPO: 503161
+Detección de carril: 11086385
+PPO: 2036814
+Detección de carril: 10886001
+PPO: 506967
+Detección de carril: 10733441
+PPO: 500628
+Detección de carril: 10628592
+PPO: 552316
+Detección de carril: 10275738
+PPO: 455720
+Detección de carril: 10645387
+PPO: 5072720
+Detección de carril: 10694832
+PPO: 2059959
+Detección de carril: 11117602
+PPO: 480788
+Detección de carril: 10736274
+PPO: 4633836
+Detección de carril: 10646739
+PPO: 1747695
+Detección de carril: 10557775
+PPO: 615742
+Detección de carril: 10718638
+PPO: 474809
+Detección de carril: 10509742
+PPO: 4149202
+Detección de carril: 12324279
+PPO: 1963432
+Detección de carril: 12156505
+PPO: 632648
+Detección de carril: 10760040
+PPO: 637305
+Detección de carril: 10676774
+PPO: 691096
+Detección de carril: 10696514
+PPO: 498935
+Detección de carril: 10349168
+PPO: 3025901
+Detección de carril: 10773822
+PPO: 1292647
+Detección de carril: 10769605
+PPO: 1571679
+Detección de carril: 10723535
+PPO: 696434
+Detección de carril: 10819922
+PPO: 1431478
+Detección de carril: 10749935
+PPO: 684036
+Detección de carril: 10758368
+PPO: 4249083
+Detección de carril: 10677967
+PPO: 872821
+Detección de carril: 12277258
+PPO: 1134578
+Detección de carril: 11663689
+PPO: 1498189
+Detección de carril: 11296703
+PPO: 1032723
+Detección de carril: 10601230
+PPO: 507819
+Detección de carril: 10715444
+PPO: 969848
+Detección de carril: 10807312
+PPO: 879281
+Detección de carril: 11990814
+PPO: 3657547
+Detección de carril: 10887184
+PPO: 730727
+Detección de carril: 10690846
+PPO: 1775348
+Detección de carril: 10528610
+PPO: 1303984
+Detección de carril: 10731868
+PPO: 535762
+Detección de carril: 10823627
+PPO: 1816951
+Detección de carril: 10675973
+PPO: 2242325
+Detección de carril: 10692048
+PPO: 490783
+Detección de carril: 10838129
+PPO: 502450
+Detección de carril: 10650034
+PPO: 477904
+Detección de carril: 10745960
+PPO: 5109306
+Detección de carril: 10732329
+PPO: 473136
+Detección de carril: 10827793
+PPO: 504704
+Detección de carril: 10815766
+PPO: 478294
+Detección de carril: 10609834
+PPO: 581090
+Detección de carril: 10828985
+PPO: 3956080
+Detección de carril: 11269743
+PPO: 1951325
+Detección de carril: 10691597
+PPO: 471574
+Detección de carril: 10933303
+PPO: 506827
+Detección de carril: 10693520
+PPO: 491534
+Detección de carril: 11060165
+PPO: 2606206
+Detección de carril: 11151453
+PPO: 4233890
+Detección de carril: 10328267
+PPO: 1016129
+Detección de carril: 10363961
+PPO: 485335
+Detección de carril: 10677997
+PPO: 1333328
+Detección de carril: 10731348
+PPO: 1015598
+Detección de carril: 10807433
+PPO: 640921
+Detección de carril: 11070811
+PPO: 694051
+Detección de carril: 10692288
+PPO: 666840
+Detección de carril: 10711948
+PPO: 554600
+Detección de carril: 10548651
+PPO: 516923
+Detección de carril: 10869727
+PPO: 4943505
+Detección de carril: 10786871
+PPO: 963528
+Detección de carril: 10875856
+PPO: 1428563
+Detección de carril: 11067085
+PPO: 477683
+Detección de carril: 10656364
+PPO: 461379
+Detección de carril: 10724967
+PPO: 3812292
+Detección de carril: 10651917
+PPO: 2218970
+Detección de carril: 10740862
+PPO: 509431
+Detección de carril: 10212322
+PPO: 441779
+Detección de carril: 10092981
+PPO: 2880561
+Detección de carril: 10575141
+PPO: 498775
+Detección de carril: 10689033
+PPO: 1453742
+Detección de carril: 11685883
+PPO: 865080
+Detección de carril: 10532166
+PPO: 525155
+Detección de carril: 10325382
+PPO: 511004
+Detección de carril: 10883859
+PPO: 1872415
+Detección de carril: 10757798
+PPO: 1897603
+Detección de carril: 11088518
+PPO: 752690
+Detección de carril: 10857468
+PPO: 564184
+Detección de carril: 10767622
+PPO: 713941
+Detección de carril: 11056008
+PPO: 458484
+Detección de carril: 10698768
+PPO: 458624
+Detección de carril: 10661061
+PPO: 451253
+Detección de carril: 10664126
+PPO: 458545
+Detección de carril: 10888155
+PPO: 3587040
+Detección de carril: 10797077
+PPO: 455329
+Detección de carril: 10619137
+PPO: 3625319
+Detección de carril: 10846802
+PPO: 610344
+Detección de carril: 10491794
+PPO: 797367
+Detección de carril: 11282923
+PPO: 1079564
+Detección de carril: 12465122
+PPO: 889656
+Detección de carril: 10806952
+PPO: 1038272
+Detección de carril: 10671908
+PPO: 505956
+Detección de carril: 10826982
+PPO: 4702300
+Detección de carril: 10949208
+PPO: 485004
+Detección de carril: 10715774
+PPO: 1744371
+Detección de carril: 10116717
+PPO: 693670
+Detección de carril: 10638126
+PPO: 524995
+Detección de carril: 10538766
+PPO: 3990391
+Detección de carril: 10778038
+PPO: 1429324
+Detección de carril: 10824198
+PPO: 1852785
+Detección de carril: 10446316
+PPO: 657215
+Detección de carril: 10213153
+PPO: 623524
+Detección de carril: 10297070
+PPO: 846721
+Detección de carril: 10155957
+PPO: 472456
+Detección de carril: 10599578
+PPO: 4662769
+Detección de carril: 10949177
+PPO: 1970474
+Detección de carril: 10681853
+PPO: 1771452
+Detección de carril: 10791469
+PPO: 854584
+Detección de carril: 10752059
+PPO: 514930
+Detección de carril: 10276169
+PPO: 511555
+Detección de carril: 10386024
+PPO: 2583952
+Detección de carril: 11521513
+PPO: 516802
+Detección de carril: 10691728
+PPO: 1832745
+Detección de carril: 10729815
+PPO: 779950
+Detección de carril: 10559617
+PPO: 4545282
+Detección de carril: 12282465
+PPO: 2308665
+Detección de carril: 10938542
+PPO: 508981
+Detección de carril: 10795775
+PPO: 502220
+Detección de carril: 11134098
+PPO: 491404
+Detección de carril: 11126776
+PPO: 4663711
+Detección de carril: 10901295
+PPO: 676003
+Detección de carril: 10559086
+PPO: 1175350
+Detección de carril: 10706450
+PPO: 628712
+Detección de carril: 10628882
+PPO: 457613
+Detección de carril: 10663004
+PPO: 2640478
+Detección de carril: 10931240
+PPO: 473316
+Detección de carril: 10682193
+PPO: 1402894
+Detección de carril: 11245065
+PPO: 461379
+Detección de carril: 10682414
+PPO: 3741004
+Detección de carril: 10738999
+PPO: 1707396
+Detección de carril: 10782264
+PPO: 486056
+Detección de carril: 11078353
+PPO: 3195598
+Detección de carril: 11322393
+PPO: 1590218
+Detección de carril: 10758528
+PPO: 509521
+Detección de carril: 10684967
+PPO: 505936
+Detección de carril: 10746931
+PPO: 3826033
+Detección de carril: 10674151
+PPO: 1563227
+Detección de carril: 11004200
+PPO: 838379
+Detección de carril: 10828595
+PPO: 3935268
+Detección de carril: 10590714
+PPO: 1422494
+Detección de carril: 10512766
+PPO: 462991
+Detección de carril: 10356961
+PPO: 2365291
+Detección de carril: 11315592
+PPO: 1880296
+Detección de carril: 10890018
+PPO: 935397
+Detección de carril: 10947555
+PPO: 573288
+Detección de carril: 11482985
+PPO: 2281323
+Detección de carril: 10803917
+PPO: 1626583
+Detección de carril: 10531505
+PPO: 542351
+Detección de carril: 10609943
+PPO: 558946
+Detección de carril: 10566728
+PPO: 591646
+Detección de carril: 10582402
+PPO: 627490
+Detección de carril: 10663245
+PPO: 4759205
+Detección de carril: 10805340
+PPO: 2043403
+Detección de carril: 10663605
+PPO: 591866
+Detección de carril: 11015728
+PPO: 553989
+Detección de carril: 10542923
+PPO: 2756514
+Detección de carril: 10465215
+PPO: 1707746
+Detección de carril: 10296008
+PPO: 977069
+Detección de carril: 11018592
+PPO: 704356
+Detección de carril: 10693040
+PPO: 493728
+Detección de carril: 10691987
+PPO: 4240570
+Detección de carril: 11486271
+PPO: 651767
+Detección de carril: 10565947
+PPO: 2300563
+Detección de carril: 11005272
+PPO: 609383
+Detección de carril: 10879292
+PPO: 443451
+Detección de carril: 10352394
+PPO: 470452
+Detección de carril: 10960194
+PPO: 3923039
+Detección de carril: 10394547
+PPO: 465615
+Detección de carril: 10175796
+PPO: 1018823
+Detección de carril: 10216668
+PPO: 426185
+Detección de carril: 10451243
+PPO: 1234810
+Detección de carril: 10336900
+PPO: 2201143
+Detección de carril: 10390251
+PPO: 600920
+Detección de carril: 10582282
+PPO: 486086
+Detección de carril: 10246483
+PPO: 473527
+Detección de carril: 10298953
+PPO: 2716994
+Detección de carril: 11376534
+PPO: 804127
+Detección de carril: 10185440
+PPO: 644065
+Detección de carril: 10576573
+PPO: 2087451
+Detección de carril: 10763686
+PPO: 446757
+Detección de carril: 10376941
+PPO: 454569
+Detección de carril: 10644836
+PPO: 443110
+Detección de carril: 10294937
+PPO: 4674226
+Detección de carril: 10632648
+PPO: 514339
+Detección de carril: 10588691
+PPO: 1028627
+Detección de carril: 10793772
+PPO: 908235
+Detección de carril: 10542882
+PPO: 429571
+Detección de carril: 10853082
+PPO: 4151105
+Detección de carril: 10602232
+PPO: 603393
+Detección de carril: 10584495
+PPO: 1974629
+Detección de carril: 10594741
+PPO: 666329
+Detección de carril: 11249752
+PPO: 4381924
+Detección de carril: 10768113
+PPO: 598907
+Detección de carril: 10581430
+PPO: 1737912
+Detección de carril: 10404583
+PPO: 726570
+Detección de carril: 10703285
+PPO: 894795
+Detección de carril: 10376570
+PPO: 570904
+Detección de carril: 10433527
+PPO: 428008
+Detección de carril: 10538145
+PPO: 572797
+Detección de carril: 10544274
+PPO: 431242
+Detección de carril: 10578376
+PPO: 441518
+Detección de carril: 10531885
+PPO: 4544110
+Detección de carril: 10629433
+PPO: 1057180
+Detección de carril: 10158310
+PPO: 1603948
+Detección de carril: 10680170
+PPO: 1556947
+Detección de carril: 11026114
+PPO: 879632
+Detección de carril: 12590121
+PPO: 2049193
+Detección de carril: 10927344
+PPO: 824879
+Detección de carril: 10282668
+PPO: 538175
+Detección de carril: 11155510
+PPO: 561140
+Detección de carril: 11011822
+PPO: 1318056
+Detección de carril: 10536843
+PPO: 617014
+Detección de carril: 11286437
+PPO: 540849
+Detección de carril: 10442711
+PPO: 565506
+Detección de carril: 10706961
+PPO: 489261
+Detección de carril: 10445585
+PPO: 497323
+Detección de carril: 10608861
+PPO: 3426989
+Detección de carril: 10930569
+PPO: 1906316
+Detección de carril: 10420116
+PPO: 846061
+Detección de carril: 10732489
+PPO: 1019864
+Detección de carril: 11218015
+PPO: 540198
+Detección de carril: 10979733
+PPO: 2924658
+Detección de carril: 10712398
+PPO: 511084
+Detección de carril: 11050781
+PPO: 1900447
+Detección de carril: 11063981
+PPO: 633779
+Detección de carril: 11076870
+PPO: 597595
+Detección de carril: 10654240
+PPO: 564454
+Detección de carril: 10544124
+PPO: 4650982
+Detección de carril: 11131704
+PPO: 1945736
+Detección de carril: 10591375
+PPO: 1775258
+Detección de carril: 10675013
+PPO: 669133
+Detección de carril: 10711146
+PPO: 595181
+Detección de carril: 10683865
+PPO: 508300
+Detección de carril: 10247174
+PPO: 502070
+Detección de carril: 10752539
+PPO: 4716611
+Detección de carril: 11427431
+PPO: 1333549
+Detección de carril: 10427287
+PPO: 2237438
+Detección de carril: 10970730
+PPO: 512886
+Detección de carril: 10769606
+PPO: 470181
+Detección de carril: 10459877
+PPO: 466596
+Detección de carril: 10168705
+PPO: 462390
+Detección de carril: 10524364
+PPO: 449080
+Detección de carril: 10688112
+PPO: 433836
+Detección de carril: 10423461
+PPO: 430722
+Detección de carril: 10588021
+PPO: 433516
+Detección de carril: 10601400
+PPO: 3442352
+Detección de carril: 10562102
+PPO: 528500
+Detección de carril: 10545866
+PPO: 1858844
+Detección de carril: 10512346
+PPO: 430582
+Detección de carril: 10476532
+PPO: 473337
+Detección de carril: 10191881
+PPO: 429791
+Detección de carril: 10628061
+PPO: 2344119
+Detección de carril: 10492767
+PPO: 3556665
+Detección de carril: 10246213
+PPO: 1704741
+Detección de carril: 10552777
+PPO: 507919
+Detección de carril: 10583834
+PPO: 432584
+Detección de carril: 10185781
+PPO: 428890
+Detección de carril: 10053852
+PPO: 426256
+Detección de carril: 10682373
+PPO: 513768
+Detección de carril: 10142486
+PPO: 429149
+Detección de carril: 10337301
+PPO: 4327832
+Detección de carril: 10471033
+PPO: 489151
+Detección de carril: 10162036
+PPO: 693240
+Detección de carril: 10385785
+PPO: 799130
+Detección de carril: 10476492
+PPO: 426916
+Detección de carril: 10124859
+PPO: 475681
+Detección de carril: 10446997
+PPO: 427447
+Detección de carril: 10544935
+PPO: 2915734
+Detección de carril: 12421627
+PPO: 1122340
+Detección de carril: 10826020
+PPO: 602712
+Detección de carril: 10512386
+PPO: 4400963
+Detección de carril: 10973044
+PPO: 521439
+Detección de carril: 10319544
+PPO: 512666
+Detección de carril: 10776255
+PPO: 487057
+Detección de carril: 10553188
+PPO: 3866674
+Detección de carril: 10656154
+PPO: 903718
+Detección de carril: 10821905
+PPO: 632047
+Detección de carril: 10828755
+PPO: 463121
+Detección de carril: 10158510
+PPO: 4614817
+Detección de carril: 11020304
+PPO: 1858143
+Detección de carril: 10100202
+PPO: 446276
+Detección de carril: 10671577
+PPO: 2280602
+Detección de carril: 10656694
+PPO: 2443790
+Detección de carril: 10219212
+PPO: 492605
+Detección de carril: 10465174
+PPO: 434999
+Detección de carril: 10616803
+PPO: 2268705
+Detección de carril: 10778469
+PPO: 597254
+Detección de carril: 10200713
+PPO: 538665
+Detección de carril: 10774513
+PPO: 480217
+Detección de carril: 10143668
+PPO: 445645
+Detección de carril: 10445485
+PPO: 455369
+Detección de carril: 10622853
+PPO: 4886628
+Detección de carril: 11085764
+PPO: 1583999
+Detección de carril: 11514913
+PPO: 1716659
+Detección de carril: 10747492
+PPO: 2064967
+Detección de carril: 10585156
+PPO: 665778
+Detección de carril: 11244655
+PPO: 5006640
+Detección de carril: 10853362
+PPO: 994847
+Detección de carril: 10307686
+PPO: 2281243
+Detección de carril: 11030811
+PPO: 1147207
+Detección de carril: 10506077
+PPO: 1660294
+Detección de carril: 10657777
+PPO: 552467
+Detección de carril: 10291711
+PPO: 469591
+Detección de carril: 10618376
+PPO: 2100560
+Detección de carril: 10615542
+PPO: 630624
+Detección de carril: 10539798
+PPO: 2403008
+Detección de carril: 10935246
+PPO: 948076
+Detección de carril: 10536823
+PPO: 4800428
+Detección de carril: 10648722
+PPO: 1967820
+Detección de carril: 10523042
+PPO: 468249
+Detección de carril: 10165421
+PPO: 4314803
+Detección de carril: 10480358
+PPO: 1708487
+Detección de carril: 10578546
+PPO: 433246
+Detección de carril: 10328247
+PPO: 3285234
+Detección de carril: 10525205
+PPO: 1008998
+Detección de carril: 10662673
+PPO: 1853626
+Detección de carril: 10403200
+PPO: 2144386
+Detección de carril: 10681662
+PPO: 465385
+Detección de carril: 10554239
+PPO: 931961
+Detección de carril: 10894625
+PPO: 579978
+Detección de carril: 10631256
+PPO: 5157508
+Detección de carril: 10444764
+PPO: 866592
+Detección de carril: 10891059
+PPO: 3323312
+Detección de carril: 10908836
+PPO: 510322
+Detección de carril: 10651717
+PPO: 1322642
+Detección de carril: 10527599
+PPO: 1495134
+Detección de carril: 10584695
+PPO: 865781
+Detección de carril: 10564254
+PPO: 771909
+Detección de carril: 10971912
+PPO: 633649
+Detección de carril: 10603944
+PPO: 4933409
+Detección de carril: 10495881
+PPO: 1141818
+Detección de carril: 11501674
+PPO: 550394
+Detección de carril: 10408148
+PPO: 683845
+Detección de carril: 10703625
+PPO: 535962
+Detección de carril: 10733901
+PPO: 4379661
+Detección de carril: 10817487
+PPO: 517644
+Detección de carril: 10635782
+PPO: 1059173
+Detección de carril: 10959442
+PPO: 1895891
+Detección de carril: 10462440
+PPO: 694462
+Detección de carril: 10619728
+PPO: 1426419
+Detección de carril: 12120931
+PPO: 3786593
+Detección de carril: 11050260
+PPO: 1186146
+Detección de carril: 10407577
+PPO: 478405
+Detección de carril: 10684437
+PPO: 469220
+Detección de carril: 10515220
+PPO: 2059679
+Detección de carril: 10775134
+PPO: 660300
+Detección de carril: 10830758
+PPO: 441418
+Detección de carril: 10623314
+PPO: 641732
+Detección de carril: 11007616
+PPO: 447598
+Detección de carril: 10669945
+PPO: 432505
+Detección de carril: 11063640
+PPO: 4227861
+Detección de carril: 10920393
+PPO: 473026
+Detección de carril: 11403225
+PPO: 915015
+Detección de carril: 10816927
+PPO: 761463
+Detección de carril: 10438064
+PPO: 603934
+Detección de carril: 11595495
+PPO: 567069
+Detección de carril: 11257844
+PPO: 2536500
+Detección de carril: 10756986
+PPO: 1119124
+Detección de carril: 10654682
+PPO: 521260
+Detección de carril: 10524264
+PPO: 1148318
+Detección de carril: 10471875
+PPO: 640319
+Detección de carril: 10646408
+PPO: 2015211
+Detección de carril: 10495039
+PPO: 435489
+Detección de carril: 10738879
+PPO: 449030
+Detección de carril: 10386315
+PPO: 4847489
+Detección de carril: 13175999
+PPO: 2034610
+Detección de carril: 10985893
+PPO: 625117
+Detección de carril: 10343510
+PPO: 4835852
+Detección de carril: 10804137
+PPO: 575521
+Detección de carril: 10350181
+PPO: 718949
+Detección de carril: 10477463
+PPO: 557364
+Detección de carril: 10624565
+PPO: 549582
+Detección de carril: 10678568
+PPO: 3673041
+Detección de carril: 10833582
+PPO: 1756419
+Detección de carril: 10490563
+PPO: 624025
+Detección de carril: 10344462
+PPO: 4258568
+Detección de carril: 10816587
+PPO: 1885184
+Detección de carril: 10865280
+PPO: 563062
+Detección de carril: 10330541
+PPO: 3969460
+Detección de carril: 10279323
+PPO: 1096079
+Detección de carril: 10173533
+PPO: 1723990
+Detección de carril: 10692138
+PPO: 489792
+Detección de carril: 10574089
+PPO: 490643
+Detección de carril: 10261386
+PPO: 3576054
+Detección de carril: 10814043
+PPO: 488960
+Detección de carril: 10253494
+PPO: 485164
+Detección de carril: 10405684
+PPO: 1871013
+Detección de carril: 10810788
+PPO: 886622
+Detección de carril: 11953458
+PPO: 2092949
+Detección de carril: 11281290
+PPO: 742865
+Detección de carril: 11033504
+PPO: 2357750
+Detección de carril: 11606523
+PPO: 707821
+Detección de carril: 10901766
+PPO: 711988
+Detección de carril: 10827303
+PPO: 591626
+Detección de carril: 11072654
+PPO: 4684001
+Detección de carril: 11159907
+PPO: 1715076
+Detección de carril: 10755705
+PPO: 965322
+Detección de carril: 10721623
+PPO: 2207723
+Detección de carril: 13671028
+PPO: 1368162
+Detección de carril: 10589974
+PPO: 2306011
+Detección de carril: 10907164
+PPO: 2266953
+Detección de carril: 10796636
+PPO: 570444
+Detección de carril: 10849116
+PPO: 1195861
+Detección de carril: 10802815
+PPO: 2452203
+Detección de carril: 11084332
+PPO: 719279
+Detección de carril: 10959193
+PPO: 523042
+Detección de carril: 10654852
+PPO: 641751
+Detección de carril: 10923939
+PPO: 776276
+Detección de carril: 10945291
+PPO: 1122439
+Detección de carril: 12095072
+PPO: 1156911
+Detección de carril: 12392833
+PPO: 1490056
+Detección de carril: 11578019
+PPO: 819050
+Detección de carril: 11256732
+PPO: 730737
+Detección de carril: 11077462
+PPO: 647911
+Detección de carril: 11765042
+PPO: 945352
+Detección de carril: 11784141
+PPO: 625287
+Detección de carril: 10609423
+PPO: 569673
+Detección de carril: 11161429
+PPO: 672658
+Detección de carril: 10822114
+PPO: 2814010
+Detección de carril: 10414677
+PPO: 4498872
+Detección de carril: 10679899
+PPO: 467998
+Detección de carril: 10919812
+PPO: 746881
+Detección de carril: 10576553
+PPO: 784057
+Detección de carril: 10925341
+PPO: 811659
+Detección de carril: 10741984
+PPO: 1430045
+Detección de carril: 11237894
+PPO: 609733
+Detección de carril: 11235180
+PPO: 573799
+Detección de carril: 11383094
+PPO: 544074
+Detección de carril: 10912662
+PPO: 498655
+Detección de carril: 11083821
+PPO: 1885775
+Detección de carril: 12325100
+PPO: 4907300
+Detección de carril: 11432549
+PPO: 789055
+Detección de carril: 10773040
+PPO: 2356778
+Detección de carril: 10505666
+PPO: 523383
+Detección de carril: 11438508
+PPO: 1892615
+Detección de carril: 10824369
+PPO: 946994
+Detección de carril: 11582436
+PPO: 1082389
+Detección de carril: 11408553
+PPO: 659419
+Detección de carril: 10997711
+PPO: 596714
+Detección de carril: 10648352
+PPO: 4136543
+Detección de carril: 10766450
+PPO: 629213
+Detección de carril: 10676014
+PPO: 849166
+Detección de carril: 12236516
+PPO: 2110566
+Detección de carril: 11146075
+PPO: 614340
+Detección de carril: 11044902
+PPO: 567799
+Detección de carril: 10972752
+PPO: 1116310
+Detección de carril: 10370461
+PPO: 2156865
+Detección de carril: 11132735
+PPO: 1056881
+Detección de carril: 11308381
+PPO: 4756091
+Detección de carril: 11066364
+PPO: 583383
+Detección de carril: 11174578
+PPO: 1816420
+Detección de carril: 10564384
+PPO: 693960
+Detección de carril: 10779731
+PPO: 559907
+Detección de carril: 10705929
+PPO: 4629399
+Detección de carril: 10807613
+PPO: 1193657
+Detección de carril: 10517954
+PPO: 2467055
+Detección de carril: 10871099
+PPO: 480547
+Detección de carril: 11183532
+PPO: 4604992
+Detección de carril: 11169691
+PPO: 556312
+Detección de carril: 10397301
+PPO: 1437516
+Detección de carril: 11232236
+PPO: 683305
+Detección de carril: 10570504
+PPO: 591295
+Detección de carril: 10580249
+PPO: 562061
+Detección de carril: 10747051
+PPO: 3939184
+Detección de carril: 11001797
+PPO: 676284
+Detección de carril: 10887293
+PPO: 803938
+Detección de carril: 10521981
+PPO: 1889321
+Detección de carril: 10917640
+PPO: 1201349
+Detección de carril: 10617866
+PPO: 600049
+Detección de carril: 11638131
+PPO: 680861
+Detección de carril: 10654061
+PPO: 1337425
+Detección de carril: 11428343
+PPO: 1285115
+Detección de carril: 11168509
+PPO: 516762
+Detección de carril: 13336181
+PPO: 858630
+Detección de carril: 10580949
+PPO: 1976242
+Detección de carril: 10756135
+PPO: 559357
+Detección de carril: 10574320
+PPO: 3368410
+Detección de carril: 10618507
+PPO: 651296
+Detección de carril: 10290249
+PPO: 552096
+Detección de carril: 10217610
+PPO: 504504
+Detección de carril: 10375168
+PPO: 1975130
+Detección de carril: 10532887
+PPO: 2197197
+Detección de carril: 11999778
+PPO: 486426
+Detección de carril: 10115044
+PPO: 985993
+Detección de carril: 11103270
+PPO: 2117777
+Detección de carril: 10633509
+PPO: 1295962
+Detección de carril: 10683125
+PPO: 495430
+Detección de carril: 10550063
+PPO: 791588
+Detección de carril: 10895967
+PPO: 528080
+Detección de carril: 10145010
+PPO: 509501
+Detección de carril: 10655032
+PPO: 489120
+Detección de carril: 10433005
+PPO: 4618362
+Detección de carril: 10857659
+PPO: 525806
+Detección de carril: 10253925
+PPO: 1628836
+Detección de carril: 10242067
+PPO: 1346489
+Detección de carril: 10391903
+PPO: 537834
+Detección de carril: 10349199
+PPO: 540318
+Detección de carril: 10849626
+PPO: 484223
+Detección de carril: 10311312
+PPO: 4264306
+Detección de carril: 10723796
+PPO: 532957
+Detección de carril: 10936889
+PPO: 562051
+Detección de carril: 10568050
+PPO: 540979
+Detección de carril: 10740071
+PPO: 1007495
+Detección de carril: 10668953
+PPO: 607600
+Detección de carril: 10757057
+PPO: 563683
+Detección de carril: 10741813
+PPO: 577124
+Detección de carril: 10570404
+PPO: 598977
+Detección de carril: 10626950
+PPO: 713440
+Detección de carril: 10228235
+PPO: 5104318
+Detección de carril: 10490873
+PPO: 702214
+Detección de carril: 11023890
+PPO: 827653
+Detección de carril: 10892201
+PPO: 757687
+Detección de carril: 10859641
+PPO: 2480195
+Detección de carril: 10805008
+PPO: 651406
+Detección de carril: 10833912
+PPO: 810347
+Detección de carril: 10918781
+PPO: 1161699
+Detección de carril: 11208770
+PPO: 825009
+Detección de carril: 10451323
+PPO: 2618274
+Detección de carril: 10541801
+PPO: 797948
+Detección de carril: 10818048
+PPO: 2101191
+Detección de carril: 10686319
+PPO: 746861
+Detección de carril: 10310229
+PPO: 1105664
+Detección de carril: 10672989
+PPO: 2241414
+Detección de carril: 10714892
+PPO: 1294449
+Detección de carril: 10779250
+PPO: 526818
+Detección de carril: 10834284
+PPO: 910008
+Detección de carril: 11759393
+PPO: 4655358
+Detección de carril: 11118663
+PPO: 590153
+Detección de carril: 10792400
+PPO: 1528505
+Detección de carril: 10553858
+PPO: 488910
+Detección de carril: 11185485
+PPO: 455269
+Detección de carril: 10615723
+PPO: 458634
+Detección de carril: 11257735
+PPO: 456031
+Detección de carril: 11806505
+PPO: 812831
+Detección de carril: 10818058
+PPO: 568530
+Detección de carril: 10531505
+PPO: 519687
+Detección de carril: 10818981
+PPO: 575301
+Detección de carril: 11105634
+PPO: 1829520
+Detección de carril: 10736425
+PPO: 3827435
+Detección de carril: 10997520
+PPO: 534339
+Detección de carril: 10859522
+PPO: 899041
+Detección de carril: 10632277
+PPO: 718268
+Detección de carril: 11704821
+PPO: 1107576
+Detección de carril: 10770486
+PPO: 643565
+Detección de carril: 11111473
+PPO: 2068873
+Detección de carril: 10757196
+PPO: 1196372
+Detección de carril: 10921675
+PPO: 600359
+Detección de carril: 10925211
+PPO: 666850
+Detección de carril: 12126640
+PPO: 4177765
+Detección de carril: 10883718
+PPO: 2101251
+Detección de carril: 10739209
+PPO: 674141
+Detección de carril: 10635763
+PPO: 752650
+Detección de carril: 10763927
+PPO: 563603
+Detección de carril: 10711718
+PPO: 4828100
+Detección de carril: 11461753
+PPO: 2634388
+Detección de carril: 11150622
+PPO: 943729
+Detección de carril: 10893502
+PPO: 747062
+Detección de carril: 10763195
+PPO: 977029
+Detección de carril: 10742023
+PPO: 699820
+Detección de carril: 10891590
+PPO: 5141784
+Detección de carril: 10715894
+PPO: 588771
+Detección de carril: 13097740
+PPO: 573438
+Detección de carril: 11026925
+PPO: 563964
+Detección de carril: 10576924
+PPO: 1148549
+Detección de carril: 10565587
+PPO: 1004731
+Detección de carril: 10828114
+PPO: 540939
+Detección de carril: 10756406
+PPO: 3962459
+Detección de carril: 11014066
+PPO: 798318
+Detección de carril: 10837318
+PPO: 2421436
+Detección de carril: 10946223
+PPO: 606268
+Detección de carril: 10748253
+PPO: 624545
+Detección de carril: 10773712
+PPO: 585747
+Detección de carril: 11041597
+PPO: 2488617
+Detección de carril: 10656725
+PPO: 2978038
+Detección de carril: 11061106
+PPO: 716565
+Detección de carril: 10798679
+PPO: 1614074
+Detección de carril: 10858139
+PPO: 2010775
+Detección de carril: 11118574
+PPO: 1083049
+Detección de carril: 10981606
+PPO: 772670
+Detección de carril: 10579327
+PPO: 5112180
+Detección de carril: 10915987
+PPO: 540959
+Detección de carril: 10707461
+PPO: 2933732
+Detección de carril: 10686750
+PPO: 3419197
+Detección de carril: 10244440
+PPO: 946703
+Detección de carril: 10644666
+PPO: 725409
+Detección de carril: 10601030
+PPO: 1240478
+Detección de carril: 10727883
+PPO: 1382513
+Detección de carril: 10366796
+PPO: 465164
+Detección de carril: 10599187
+PPO: 442410
+Detección de carril: 10438094
+PPO: 1299177
+Detección de carril: 11083931
+PPO: 1941099
+Detección de carril: 10637325
+PPO: 435199
+Detección de carril: 10439656
+PPO: 889287
+Detección de carril: 10762004
+PPO: 1205024
+Detección de carril: 10462530
+PPO: 495761
+Detección de carril: 10659048
+PPO: 2803435
+Detección de carril: 10924980
+PPO: 487087
+Detección de carril: 10742875
+PPO: 544184
+Detección de carril: 12973722
+PPO: 3710918
+Detección de carril: 10993033
+PPO: 1785223
+Detección de carril: 10558676
+PPO: 2116654
+Detección de carril: 11079074
+PPO: 579086
+Detección de carril: 10789195
+PPO: 742233
+Detección de carril: 10355879
+PPO: 486336
+Detección de carril: 10535311
+PPO: 535771
+Detección de carril: 11337485
+PPO: 2126990
+Detección de carril: 11165185
+PPO: 711708
+Detección de carril: 10840983
+PPO: 1235611
+Detección de carril: 10363761
+PPO: 2161823
+Detección de carril: 10597896
+PPO: 496401
+Detección de carril: 11124553
+PPO: 1831914
+Detección de carril: 10737917
+PPO: 1874347
+Detección de carril: 10644215
+PPO: 966423
+Detección de carril: 10255217
+PPO: 520417
+Detección de carril: 10596353
+PPO: 473186
+Detección de carril: 10625537
+PPO: 457372
+Detección de carril: 10730566
+PPO: 2538673
+Detección de carril: 10317431
+PPO: 3061656
+Detección de carril: 10281517
+PPO: 2489900
+Detección de carril: 10974325
+PPO: 1333108
+Detección de carril: 10621121
+PPO: 3304843
+Detección de carril: 11213337
+PPO: 1427050
+Detección de carril: 10734151
+PPO: 590965
+Detección de carril: 10911380
+PPO: 637185
+Detección de carril: 10790397
+PPO: 578706
+Detección de carril: 10697186
+PPO: 2652616
+Detección de carril: 10410912
+PPO: 2537381
+Detección de carril: 10819050
+PPO: 1676899
+Detección de carril: 10790577
+PPO: 773721
+Detección de carril: 10624856
+PPO: 508820
+Detección de carril: 10714552
+PPO: 487628
+Detección de carril: 10792870
+PPO: 478324
+Detección de carril: 10621190
+PPO: 1971485
+Detección de carril: 10944580
+PPO: 982257
+Detección de carril: 10658147
+PPO: 469130
+Detección de carril: 10883618
+PPO: 4997756
+Detección de carril: 11250022
+PPO: 1660695
+Detección de carril: 10773962
+PPO: 571326
+Detección de carril: 10553679
+PPO: 440476
+Detección de carril: 10225151
+PPO: 445264
+Detección de carril: 10500969
+PPO: 1250573
+Detección de carril: 10284190
+PPO: 479456
+Detección de carril: 10266894
+PPO: 468629
+Detección de carril: 10416912
+PPO: 638326
+Detección de carril: 10223358
+PPO: 451864
+Detección de carril: 10087963
+PPO: 596423
+Detección de carril: 10644847
+PPO: 835294
+Detección de carril: 10603704
+PPO: 1810812
+Detección de carril: 10655412
+PPO: 442610
+Detección de carril: 10865170
+PPO: 896067
+Detección de carril: 10670796
+PPO: 439926
+Detección de carril: 10985232
+PPO: 4830624
+Detección de carril: 11965606
+PPO: 2027850
+Detección de carril: 11089710
+PPO: 913483
+Detección de carril: 10665899
+PPO: 571525
+Detección de carril: 10659860
+PPO: 538295
+Detección de carril: 10722504
+PPO: 484593
+Detección de carril: 10749846
+PPO: 472025
+Detección de carril: 10498465
+PPO: 454018
+Detección de carril: 10553999
+PPO: 673379
+Detección de carril: 10504574
+PPO: 452765
+Detección de carril: 10573158
+PPO: 667982
+Detección de carril: 10611887
+PPO: 461188
+Detección de carril: 10961306
+PPO: 450442
+Detección de carril: 10825750
+PPO: 459545
+Detección de carril: 11215921
+PPO: 1818844
+Detección de carril: 11221279
+PPO: 1926006
+Detección de carril: 11094587
+PPO: 1261600
+Detección de carril: 10758318
+PPO: 1747305
+Detección de carril: 10725348
+PPO: 1110562
+Detección de carril: 10714061
+PPO: 658547
+Detección de carril: 10778679
+PPO: 544744
+Detección de carril: 11159596
+PPO: 2596762
+Detección de carril: 11308682
+PPO: 690876
+Detección de carril: 10920334
+PPO: 1748698
+Detección de carril: 10861094
+PPO: 537564
+Detección de carril: 10733521
+PPO: 524273
+Detección de carril: 10621612
+PPO: 4043522
+Detección de carril: 11934209
+PPO: 570814
+Detección de carril: 10799561
+PPO: 1903021
+Detección de carril: 10855635
+PPO: 1481123
+Detección de carril: 10471033
+PPO: 461789
+Detección de carril: 10616653
+PPO: 593549
+Detección de carril: 10318272
+PPO: 1757782
+Detección de carril: 11966929
+PPO: 874163
+Detección de carril: 10702173
+PPO: 1103240
+Detección de carril: 11024552
+PPO: 626308
+Detección de carril: 10989778
+PPO: 637275
+Detección de carril: 11044511
+PPO: 944320
+Detección de carril: 10344612
+PPO: 1336593
+Detección de carril: 10335829
+PPO: 1055748
+Detección de carril: 11474723
+PPO: 1057721
+Detección de carril: 11138003
+PPO: 622212
+Detección de carril: 10861364
+PPO: 576052
+Detección de carril: 10785570
+PPO: 1688035
+Detección de carril: 10768644
+PPO: 545917
+Detección de carril: 10758769
+PPO: 544594
+Detección de carril: 10115064
+PPO: 543183
+Detección de carril: 10618386
+PPO: 536722
+Detección de carril: 10644696
+PPO: 520768
+Detección de carril: 10698568
+PPO: 530103
+Detección de carril: 10771428
+PPO: 2366994
+Detección de carril: 10792530
+PPO: 2696272
+Detección de carril: 10833191
+PPO: 679759
+Detección de carril: 10758138
+PPO: 468069
+Detección de carril: 11176641
+PPO: 728012
+Detección de carril: 10521149
+PPO: 1506181
+Detección de carril: 11034406
+PPO: 446165
+Detección de carril: 10896547
+PPO: 1509516
+Detección de carril: 11971425
+PPO: 793461
+Detección de carril: 10913594
+PPO: 704727
+Detección de carril: 10530924
+PPO: 451784
+Detección de carril: 11098894
+PPO: 4433302
+Detección de carril: 10977711
+PPO: 542762
+Detección de carril: 10750807
+PPO: 1800677
+Detección de carril: 10635352
+PPO: 611185
+Detección de carril: 10999463
+PPO: 450753
+Detección de carril: 10507178
+PPO: 444503
+Detección de carril: 10708242
+PPO: 4902452
+Detección de carril: 10699970
+PPO: 694401
+Detección de carril: 10551426
+PPO: 2010484
+Detección de carril: 10583513
+PPO: 1832404
+Detección de carril: 10601510
+PPO: 543904
+Detección de carril: 10807453
+PPO: 461890
+Detección de carril: 11069079
+PPO: 442881
+Detección de carril: 11189021
+PPO: 823056
+Detección de carril: 10952031
+PPO: 482631
+Detección de carril: 10935406
+PPO: 1588495
+Detección de carril: 11594524
+PPO: 583984
+Detección de carril: 10766080
+PPO: 644776
+Detección de carril: 10959363
+PPO: 501629
+Detección de carril: 10726931
+PPO: 1887909
+Detección de carril: 10871059
+PPO: 1851503
+Detección de carril: 10545556
+PPO: 595081
+Detección de carril: 12078197
+PPO: 1804171
+Detección de carril: 11296433
+PPO: 661532
+Detección de carril: 10871669
+PPO: 1121989
+Detección de carril: 11017591
+PPO: 673710
+Detección de carril: 11137572
+PPO: 531184
+Detección de carril: 10899262
+PPO: 647471
+Detección de carril: 10792850
+PPO: 465284
+Detección de carril: 11096900
+PPO: 3963511
+Detección de carril: 11209080
+PPO: 513788
+Detección de carril: 11150221
+PPO: 438353
+Detección de carril: 10873793
+PPO: 446687
+Detección de carril: 11356674
+PPO: 544234
+Detección de carril: 10901025
+PPO: 2185089
+Detección de carril: 10822555
+PPO: 2283938
+Detección de carril: 10730787
+PPO: 1242021
+Detección de carril: 10701452
+PPO: 2112408
+Detección de carril: 10816567
+PPO: 482951
+Detección de carril: 10828704
+PPO: 640590
+Detección de carril: 10992883
+PPO: 1007135
+Detección de carril: 10733771
+PPO: 515882
+Detección de carril: 10572306
+PPO: 520368
+Detección de carril: 10702524
+PPO: 3828857
+Detección de carril: 10703816
+PPO: 785128
+Detección de carril: 10483913
+PPO: 918501
+Detección de carril: 10678998
+PPO: 2284849
+Detección de carril: 10738508
+PPO: 2962946
+Detección de carril: 10778869
+PPO: 1455193
+Detección de carril: 10730697
+PPO: 1140897
+Detección de carril: 10756475
+PPO: 515330
+Detección de carril: 10753842
+PPO: 636794
+Detección de carril: 11115980
+PPO: 1825404
+Detección de carril: 10551445
+PPO: 581210
+Detección de carril: 10593068
+PPO: 682193
+Detección de carril: 10643394
+PPO: 443010
+Detección de carril: 10602382
+PPO: 925511
+Detección de carril: 11347731
+PPO: 480167
+Detección de carril: 10955947
+PPO: 448048
+Detección de carril: 10796275
+PPO: 2944508
+Detección de carril: 10903618
+PPO: 524824
+Detección de carril: 11043080
+PPO: 600269
+Detección de carril: 10890909
+PPO: 434628
+Detección de carril: 10826963
+PPO: 447567
+Detección de carril: 10904430
+PPO: 1006904
+Detección de carril: 10442280
+PPO: 488009
+Detección de carril: 10720431
+PPO: 505445
+Detección de carril: 10831509
+PPO: 501459
+Detección de carril: 10784959
+PPO: 531465
+Detección de carril: 10932752
+PPO: 3454721
+Detección de carril: 10857528
+PPO: 601821
+Detección de carril: 10811569
+PPO: 618607
+Detección de carril: 11247709
+PPO: 1281381
+Detección de carril: 11321631
+PPO: 802865
+Detección de carril: 10460066
+PPO: 617274
+Detección de carril: 10455681
+PPO: 908135
+Detección de carril: 10901906
+PPO: 539276
+Detección de carril: 10673941
+PPO: 685047
+Detección de carril: 10828164
+PPO: 500277
+Detección de carril: 10574940
+PPO: 471644
+Detección de carril: 10722574
+PPO: 822736
+Detección de carril: 11438157
+PPO: 467027
+Detección de carril: 11455104
+PPO: 599368
+Detección de carril: 10915616
+PPO: 512937
+Detección de carril: 10470923
+PPO: 1416795
+Detección de carril: 10877289
+PPO: 1675006
+Detección de carril: 11630228
+PPO: 843096
+Detección de carril: 11178254
+PPO: 899452
+Detección de carril: 10963949
+PPO: 3279385
+Detección de carril: 10884249
+PPO: 2509159
+Detección de carril: 10417622
+PPO: 5064778
+Detección de carril: 11144463
+PPO: 800001
+Detección de carril: 11745774
+PPO: 779250
+Detección de carril: 11522946
+PPO: 1780436
+Detección de carril: 11089379
+PPO: 1000244
+Detección de carril: 11570788
+PPO: 811268
+Detección de carril: 10894354
+PPO: 602492
+Detección de carril: 10549031
+PPO: 2379322
+Detección de carril: 10851760
+PPO: 839931
+Detección de carril: 10718938
+PPO: 644005
+Detección de carril: 10646529
+PPO: 554830
+Detección de carril: 10865901
+PPO: 508530
+Detección de carril: 10502471
+PPO: 504945
+Detección de carril: 10597365
+PPO: 487859
+Detección de carril: 10272393
+PPO: 1026403
+Detección de carril: 10529802
+PPO: 2486764
+Detección de carril: 10470282
+PPO: 1565571
+Detección de carril: 10616964
+PPO: 465375
+Detección de carril: 10674001
+PPO: 512416
+Detección de carril: 10977360
+PPO: 471915
+Detección de carril: 11405458
+PPO: 612227
+Detección de carril: 11099545
+PPO: 496521
+Detección de carril: 10209928
+PPO: 1345296
+Detección de carril: 10634391
+PPO: 539817
+Detección de carril: 10562481
+PPO: 2308194
+Detección de carril: 10572236
+PPO: 1090911
+Detección de carril: 10712439
+PPO: 2224948
+Detección de carril: 10783176
+PPO: 473777
+Detección de carril: 10624395
+PPO: 3877321
+Detección de carril: 10871800
+PPO: 1495474
+Detección de carril: 10748193
+PPO: 508230
+Detección de carril: 10584475
+PPO: 502231
+Detección de carril: 10866943
+PPO: 1426430
+Detección de carril: 11224815
+PPO: 702834
+Detección de carril: 10515421
+PPO: 579798
+Detección de carril: 10299203
+PPO: 557034
+Detección de carril: 10539227
+PPO: 4440823
+Detección de carril: 10966092
+PPO: 1914770
+Detección de carril: 10831900
+PPO: 581410
+Detección de carril: 10857788
+PPO: 548010
+Detección de carril: 10991621
+PPO: 4305659
+Detección de carril: 11427502
+PPO: 1058172
+Detección de carril: 11041237
+PPO: 485275
+Detección de carril: 10521209
+PPO: 1756499
+Detección de carril: 11331957
+PPO: 635502
+Detección de carril: 11206968
+PPO: 538415
+Detección de carril: 10698197
+PPO: 478464
+Detección de carril: 10303880
+PPO: 807803
+Detección de carril: 10904930
+PPO: 459716
+Detección de carril: 10730777
+PPO: 561590
+Detección de carril: 11046585
+PPO: 481448
+Detección de carril: 10860934
+PPO: 473727
+Detección de carril: 10415840
+PPO: 469200
+Detección de carril: 10316649
+PPO: 1378958
+Detección de carril: 10315398
+PPO: 610525
+Detección de carril: 10520418
+PPO: 883407
+Detección de carril: 10581160
+PPO: 467658
+Detección de carril: 11426850
+PPO: 1980869
+Detección de carril: 14771915
+PPO: 1162070
+Detección de carril: 10926804
+PPO: 575872
+Detección de carril: 10960505
+PPO: 527078
+Detección de carril: 10479226
+PPO: 512305
+Detección de carril: 11221420
+PPO: 529752
+Detección de carril: 10851489
+PPO: 926643
+Detección de carril: 10427758
+PPO: 587931
+Detección de carril: 10519377
+PPO: 485084
+Detección de carril: 10728724
+PPO: 475189
+Detección de carril: 11039434
+PPO: 598916
+Detección de carril: 10564685
+PPO: 4545132
+Detección de carril: 10634009
+PPO: 809586
+Detección de carril: 10384543
+PPO: 1374321
+Detección de carril: 11500262
+PPO: 857709
+Detección de carril: 10795565
+PPO: 608401
+Detección de carril: 11105324
+PPO: 4686134
+Detección de carril: 10803768
+PPO: 1040826
+Detección de carril: 10630515
+PPO: 1545399
+Detección de carril: 10785389
+PPO: 764858
+Detección de carril: 10696825
+PPO: 2391471
+Detección de carril: 10797888
+PPO: 2311490
+Detección de carril: 10703996
+PPO: 2979602
+Detección de carril: 11454032
+PPO: 3306406
+Detección de carril: 10870558
+PPO: 1910884
+Detección de carril: 10835645
+PPO: 805280
+Detección de carril: 10815084
+PPO: 528210
+Detección de carril: 10743316
+PPO: 2000830
+Detección de carril: 11163010
+PPO: 501289
+Detección de carril: 10665357
+PPO: 509582
+Detección de carril: 10569303
+PPO: 488008
+Detección de carril: 10570504
+PPO: 699048
+Detección de carril: 10637294
+PPO: 1593292
+Detección de carril: 10913654
+PPO: 982627
+Detección de carril: 10340546
+PPO: 2102804
+Detección de carril: 10563424
+PPO: 841143
+Detección de carril: 10406496
+PPO: 831639
+Detección de carril: 10779590
+PPO: 794693
+Detección de carril: 11520452
+PPO: 1574094
+Detección de carril: 10769024
+PPO: 513227
+Detección de carril: 10738609
+PPO: 505976
+Detección de carril: 10526227
+PPO: 1656008
+Detección de carril: 10646789
+PPO: 506506
+Detección de carril: 10554209
+PPO: 4541716
+Detección de carril: 11169290
+PPO: 1893927
+Detección de carril: 10649043
+PPO: 844739
+Detección de carril: 10555781
+PPO: 604505
+Detección de carril: 11224884
+PPO: 2599205
+Detección de carril: 10748173
+PPO: 472946
+Detección de carril: 10988257
+PPO: 968236
+Detección de carril: 10401328
+PPO: 1223823
+Detección de carril: 10884729
+PPO: 646779
+Detección de carril: 11261490
+PPO: 4103693
+Detección de carril: 10616704
+PPO: 483392
+Detección de carril: 10950089
+PPO: 515541
+Detección de carril: 10626369
+PPO: 1831243
+Detección de carril: 10687731
+PPO: 1932206
+Detección de carril: 11842369
+PPO: 706680
+Detección de carril: 10939543
+PPO: 986134
+Detección de carril: 10680320
+PPO: 566398
+Detección de carril: 10714101
+PPO: 2880100
+Detección de carril: 10741343
+PPO: 525395
+Detección de carril: 10508701
+PPO: 515781
+Detección de carril: 10418865
+PPO: 811448
+Detección de carril: 10816276
+PPO: 496592
+Detección de carril: 10449120
+PPO: 671186
+Detección de carril: 10531434
+PPO: 459806
+Detección de carril: 10500267
+PPO: 469431
+Detección de carril: 10552236
+PPO: 4967872
+Detección de carril: 10653720
+PPO: 1570968
+Detección de carril: 10597294
+PPO: 557384
+Detección de carril: 10631817
+PPO: 738649
+Detección de carril: 10564194
+PPO: 1943973
+Detección de carril: 10336519
+PPO: 440737
+Detección de carril: 10637185
+PPO: 569182
+Detección de carril: 10658387
+PPO: 915466
+Detección de carril: 10531434
+PPO: 5031348
+Detección de carril: 12897898
+PPO: 822255
+Detección de carril: 11071252
+PPO: 741313
+Detección de carril: 11190532
+PPO: 688973
+Detección de carril: 10793091
+PPO: 1439820
+Detección de carril: 11101048
+PPO: 663785
+Detección de carril: 10886673
+PPO: 691106
+Detección de carril: 10601070
+PPO: 638146
+Detección de carril: 10610244
+PPO: 1658732
+Detección de carril: 10871349
+PPO: 873292
+Detección de carril: 10870628
+PPO: 592197
+Detección de carril: 11245215
+PPO: 2947703
+Detección de carril: 11040416
+PPO: 1310865
+Detección de carril: 11015337
+PPO: 730275
+Detección de carril: 10787702
+PPO: 1889931
+Detección de carril: 10978812
+PPO: 581660
+Detección de carril: 10885460
+PPO: 517273
+Detección de carril: 10930689
+PPO: 2438342
+Detección de carril: 10868756
+PPO: 1303273
+Detección de carril: 10999293
+PPO: 513227
+Detección de carril: 11592381
+PPO: 503843
+Detección de carril: 10533889
+PPO: 699609
+Detección de carril: 10554380
+PPO: 4744954
+Detección de carril: 10723826
+PPO: 2050064
+Detección de carril: 10349289
+PPO: 1096961
+Detección de carril: 11242692
+PPO: 512075
+Detección de carril: 10442050
+PPO: 494189
+Detección de carril: 10651216
+PPO: 3833003
+Detección de carril: 10891830
+PPO: 2078797
+Detección de carril: 10875746
+PPO: 605596
+Detección de carril: 11206416
+PPO: 784477
+Detección de carril: 10786330
+PPO: 478895
+Detección de carril: 10721542
+PPO: 3152753
+Detección de carril: 10902947
+PPO: 481780
+Detección de carril: 10735434
+PPO: 599738
+Detección de carril: 10443531
+PPO: 533158
+Detección de carril: 10887093
+PPO: 506597
+Detección de carril: 10445544
+PPO: 3924472
+Detección de carril: 10418484
+PPO: 1076160
+Detección de carril: 11353710
+PPO: 516542
+Detección de carril: 10849046
+PPO: 480057
+Detección de carril: 10728974
+PPO: 2937698
+Detección de carril: 10920584
+PPO: 457432
+Detección de carril: 10299323
+PPO: 962627
+Detección de carril: 10036044
+PPO: 4765305
+Detección de carril: 10546016
+PPO: 498825
+Detección de carril: 10311432
+PPO: 1804963
+Detección de carril: 10808704
+PPO: 628151
+Detección de carril: 10785119
+PPO: 435579
+Detección de carril: 10714111
+PPO: 3871121
+Detección de carril: 10988817
+PPO: 1019453
+Detección de carril: 10318994
+PPO: 1955610
+Detección de carril: 10632729
+PPO: 595682
+Detección de carril: 10996639
+PPO: 662373
+Detección de carril: 10877759
+PPO: 931130
+Detección de carril: 10600029
+PPO: 501840
+Detección de carril: 11227389
+PPO: 569733
+Detección de carril: 10561730
+PPO: 483782
+Detección de carril: 11077111
+PPO: 2417450
+Detección de carril: 10956348
+PPO: 2219240
+Detección de carril: 10813742
+PPO: 488540
+Detección de carril: 10787873
+PPO: 500948
+Detección de carril: 10576072
+PPO: 2215915
+Detección de carril: 10432645
+PPO: 480617
+Detección de carril: 10562482
+PPO: 922727
+Detección de carril: 10586819
+PPO: 558496
+Detección de carril: 11449114
+PPO: 2190587
+Detección de carril: 10514510
+PPO: 906883
+Detección de carril: 10579458
+PPO: 437252
+Detección de carril: 10588851
+PPO: 438033
+Detección de carril: 10113962
+PPO: 4934981
+Detección de carril: 10939573
+PPO: 2138537
+Detección de carril: 10748172
+PPO: 1576297
+Detección de carril: 10865681
+PPO: 1845565
+Detección de carril: 10949407
+PPO: 479236
+Detección de carril: 10798219
+PPO: 456832
+Detección de carril: 10866292
+PPO: 563073
+Detección de carril: 11042168
+PPO: 599417
+Detección de carril: 10997140
+PPO: 1058973
+Detección de carril: 10719098
+PPO: 1847907
+Detección de carril: 10843197
+PPO: 562261
+Detección de carril: 10807783
+PPO: 451253
+Detección de carril: 10734232
+PPO: 457984
+Detección de carril: 10858320
+PPO: 478705
+Detección de carril: 10654721
+PPO: 4943114
+Detección de carril: 10872602
+PPO: 485776
+Detección de carril: 10791599
+PPO: 2107140
+Detección de carril: 10930960
+PPO: 572036
+Detección de carril: 10823526
+PPO: 500517
+Detección de carril: 10816015
+PPO: 481829
+Detección de carril: 10980866
+PPO: 438494
+Detección de carril: 10779060
+PPO: 3851772
+Detección de carril: 11221089
+PPO: 766130
+Detección de carril: 10580699
+PPO: 1344626
+Detección de carril: 10549112
+PPO: 433767
+Detección de carril: 10446366
+PPO: 883207
+Detección de carril: 11771332
+PPO: 626509
+Detección de carril: 10517414
+PPO: 548461
+Detección de carril: 10755454
+PPO: 1245476
+Detección de carril: 10349800
+PPO: 495950
+Detección de carril: 10642654
+PPO: 746270
+Detección de carril: 10714441
+PPO: 482821
+Detección de carril: 10841615
+PPO: 3112393
+Detección de carril: 10383100
+PPO: 1263323
+Detección de carril: 10617154
+PPO: 580839
+Detección de carril: 10581340
+PPO: 434427
+Detección de carril: 10782094
+PPO: 2164306
+Detección de carril: 10467929
+PPO: 437052
+Detección de carril: 10368548
+PPO: 1873857
+Detección de carril: 10287246
+PPO: 477854
+Detección de carril: 10348948
+PPO: 430963
+Detección de carril: 10221986
+PPO: 459856
+Detección de carril: 10751709
+PPO: 4084234
+Detección de carril: 10824939
+PPO: 1065043
+Detección de carril: 10835786
+PPO: 1348992
+Detección de carril: 10629273
+PPO: 458604
+Detección de carril: 10566338
+PPO: 438614
+Detección de carril: 10583484
+PPO: 433577
+Detección de carril: 10649694
+PPO: 4176373
+Detección de carril: 10973193
+PPO: 743226
+Detección de carril: 10546928
+PPO: 1529756
+Detección de carril: 10625107
+PPO: 443601
+Detección de carril: 10549532
+PPO: 437442
+Detección de carril: 10854584
+PPO: 468179
+Detección de carril: 10631246
+PPO: 472335
+Detección de carril: 10624095
+PPO: 695813
+Detección de carril: 10767933
+PPO: 1971675
+Detección de carril: 10417002
+PPO: 578606
+Detección de carril: 10591235
+PPO: 434027
+Detección de carril: 10518325
+PPO: 438334
+Detección de carril: 10595993
+PPO: 4835221
+Detección de carril: 10689955
+PPO: 789054
+Detección de carril: 10554599
+PPO: 1772774
+Detección de carril: 10569002
+PPO: 434808
+Detección de carril: 10679919
+PPO: 2498894
+Detección de carril: 11147978
+PPO: 969017
+Detección de carril: 10698387
+PPO: 681482
+Detección de carril: 10816346
+PPO: 510132
+Detección de carril: 10659328
+PPO: 479146
+Detección de carril: 11242401
+PPO: 810638
+Detección de carril: 11740115
+PPO: 495531
+Detección de carril: 11432619
+PPO: 873783
+Detección de carril: 11744641
+PPO: 3473008
+Detección de carril: 11137632
+PPO: 2374085
+Detección de carril: 11477838
+PPO: 1154058
+Detección de carril: 11303734
+PPO: 623434
+Detección de carril: 10892381
+PPO: 789675
+Detección de carril: 10852301
+PPO: 5039841
+Detección de carril: 11213187
+PPO: 2340193
+Detección de carril: 10711247
+PPO: 702043
+Detección de carril: 10263379
+PPO: 469551
+Detección de carril: 10306464
+PPO: 4347853
+Detección de carril: 10621612
+PPO: 463862
+Detección de carril: 10769986
+PPO: 1439099
+Detección de carril: 10635642
+PPO: 960024
+Detección de carril: 10169346
+PPO: 524414
+Detección de carril: 10230449
+PPO: 4124645
+Detección de carril: 10682553
+PPO: 491254
+Detección de carril: 11330344
+PPO: 2467376
+Detección de carril: 11249602
+PPO: 1324155
+Detección de carril: 10675803
+PPO: 3425727
+Detección de carril: 10715984
+PPO: 1600253
+Detección de carril: 10719029
+PPO: 524825
+Detección de carril: 10636373
+PPO: 1018221
+Detección de carril: 10811218
+PPO: 2096724
+Detección de carril: 10732379
+PPO: 574640
+Detección de carril: 10665298
+PPO: 1161779
+Detección de carril: 10349690
+PPO: 2033769
+Detección de carril: 10829406
+PPO: 914806
+Detección de carril: 10242337
+PPO: 454147
+Detección de carril: 10559277
+PPO: 2629371
+Detección de carril: 10497444
+PPO: 450212
+Detección de carril: 10679378
+PPO: 585567
+Detección de carril: 10578756
+PPO: 458374
+Detección de carril: 10630224
+PPO: 443502
+Detección de carril: 10523323
+PPO: 4679034
+Detección de carril: 10818469
+PPO: 1146145
+Detección de carril: 10761463
+PPO: 439845
+Detección de carril: 10569863
+PPO: 440597
+Detección de carril: 10557554
+PPO: 1051202
+Detección de carril: 10488751
+PPO: 447097
+Detección de carril: 10802585
+PPO: 729454
+Detección de carril: 10728773
+PPO: 1925776
+Detección de carril: 10629404
+PPO: 654391
+Detección de carril: 10595611
+PPO: 2224428
+Detección de carril: 10605146
+PPO: 1705813
+Detección de carril: 10708983
+PPO: 849296
+Detección de carril: 10538405
+PPO: 739199
+Detección de carril: 10796736
+PPO: 500377
+Detección de carril: 10750166
+PPO: 490783
+Detección de carril: 10351122
+PPO: 4346140
+Detección de carril: 10696515
+PPO: 1627764
+Detección de carril: 10816316
+PPO: 513036
+Detección de carril: 10678738
+PPO: 540498
+Detección de carril: 11125384
+PPO: 4368454
+Detección de carril: 10978782
+PPO: 1038583
+Detección de carril: 11658461
+PPO: 726330
+Detección de carril: 11414452
+PPO: 591486
+Detección de carril: 11206928
+PPO: 4114239
+Detección de carril: 11053155
+PPO: 2295395
+Detección de carril: 11110422
+PPO: 571405
+Detección de carril: 10270120
+PPO: 5032329
+Detección de carril: 10883217
+PPO: 562191
+Detección de carril: 10754903
+PPO: 858620
+Detección de carril: 10685378
+PPO: 476211
+Detección de carril: 11135900
+PPO: 483612
+Detección de carril: 11100396
+PPO: 842976
+Detección de carril: 10747172
+PPO: 769996
+Detección de carril: 10593609
+PPO: 4930044
+Detección de carril: 10657696
+PPO: 810678
+Detección de carril: 10630284
+PPO: 535922
+Detección de carril: 11287419
+PPO: 582852
+Detección de carril: 10251461
+PPO: 4172557
+Detección de carril: 11668176
+PPO: 1701496
+Detección de carril: 10345123
+PPO: 489060
+Detección de carril: 10680671
+PPO: 4541686
+Detección de carril: 10782846
+PPO: 508450
+Detección de carril: 10615082
+PPO: 2188884
+Detección de carril: 10873693
+PPO: 630034
+Detección de carril: 10736405
+PPO: 3550967
+Detección de carril: 10775674
+PPO: 2287894
+Detección de carril: 10526367
+PPO: 598116
+Detección de carril: 10576263
+PPO: 551825
+Detección de carril: 10921085
+PPO: 3568332
+Detección de carril: 10707531
+PPO: 617545
+Detección de carril: 11136310
+PPO: 544704
+Detección de carril: 10620299
+PPO: 489471
+Detección de carril: 10530684
+PPO: 5040672
+Detección de carril: 10393856
+PPO: 472385
+Detección de carril: 10191260
+PPO: 1598640
+Detección de carril: 10204840
+PPO: 764057
+Detección de carril: 10549142
+PPO: 485295
+Detección de carril: 10738218
+PPO: 487909
+Detección de carril: 11132555
+PPO: 1886256
+Detección de carril: 10891560
+PPO: 508640
+Detección de carril: 10881255
+PPO: 581411
+Detección de carril: 11610418
+PPO: 857528
+Detección de carril: 10960394
+PPO: 3287928
+Detección de carril: 10708903
+PPO: 1995431
+Detección de carril: 12169554
+PPO: 2283336
+Detección de carril: 10668632
+PPO: 599518
+Detección de carril: 10682373
+PPO: 1924153
+Detección de carril: 11052613
+PPO: 666318
+Detección de carril: 10328318
+PPO: 1021948
+Detección de carril: 10931420
+PPO: 4637591
+Detección de carril: 10899873
+PPO: 935717
+Detección de carril: 10600219
+PPO: 1036098
+Detección de carril: 10842576
+PPO: 483091
+Detección de carril: 10799281
+PPO: 485154
+Detección de carril: 10484363
+PPO: 3485907
+Detección de carril: 11559251
+PPO: 1492880
+Detección de carril: 11626683
+PPO: 1355843
+Detección de carril: 10584255
+PPO: 799841
+Detección de carril: 10515210
+PPO: 653089
+Detección de carril: 10982108
+PPO: 1040005
+Detección de carril: 11145805
+PPO: 2484221
+Detección de carril: 11010190
+PPO: 624977
+Detección de carril: 11238094
+PPO: 665247
+Detección de carril: 10844419
+PPO: 1860577
+Detección de carril: 10951591
+PPO: 552907
+Detección de carril: 10527248
+PPO: 609573
+Detección de carril: 11331245
+PPO: 543272
+Detección de carril: 11035748
+PPO: 3999264
+Detección de carril: 10676184
+PPO: 1202481
+Detección de carril: 11121588
+PPO: 2270928
+Detección de carril: 10545306
+PPO: 710426
+Detección de carril: 10415919
+PPO: 521359
+Detección de carril: 10788985
+PPO: 4821520
+Detección de carril: 10435290
+PPO: 1165605
+Detección de carril: 10798910
+PPO: 4447183
+Detección de carril: 10922306
+PPO: 546938
+Detección de carril: 10789686
+PPO: 640880
+Detección de carril: 10732349
+PPO: 616454
+Detección de carril: 10621471
+PPO: 604746
+Detección de carril: 10831258
+PPO: 626038
+Detección de carril: 11130101
+PPO: 738798
+Detección de carril: 10793973
+PPO: 2313222
+Detección de carril: 11251595
+PPO: 764638
+Detección de carril: 10773561
+PPO: 794983
+Detección de carril: 10688373
+PPO: 603764
+Detección de carril: 11071702
+PPO: 612196
+Detección de carril: 11092724
+PPO: 759700
+Detección de carril: 11034557
+PPO: 4292178
+Detección de carril: 10667681
+PPO: 748524
+Detección de carril: 10946063
+PPO: 641081
+Detección de carril: 10489541
+PPO: 1775749
+Detección de carril: 11067376
+PPO: 633539
+Detección de carril: 10756115
+PPO: 2603852
+Detección de carril: 10729134
+PPO: 2022953
+Detección de carril: 10697997
+PPO: 708712
+Detección de carril: 10527229
+PPO: 1602857
+Detección de carril: 10580068
+PPO: 614951
+Detección de carril: 10722153
+PPO: 681792
+Detección de carril: 10943479
+PPO: 5000941
+Detección de carril: 10448139
+PPO: 674842
+Detección de carril: 10831278
+PPO: 1415703
+Detección de carril: 10671607
+PPO: 522371
+Detección de carril: 10774884
+PPO: 777397
+Detección de carril: 10734762
+PPO: 2202214
+Detección de carril: 10826211
+PPO: 727622
+Detección de carril: 10413536
+PPO: 547649
+Detección de carril: 10524244
+PPO: 772339
+Detección de carril: 10574641
+PPO: 525676
+Detección de carril: 10293525
+PPO: 514319
+Detección de carril: 10664336
+PPO: 593108
+Detección de carril: 10696795
+PPO: 465154
+Detección de carril: 10006550
+PPO: 463922
+Detección de carril: 10685057
+PPO: 4955913
+Detección de carril: 10861074
+PPO: 2143015
+Detección de carril: 11603307
+PPO: 477643
+Detección de carril: 10621481
+PPO: 465465
+Detección de carril: 10723376
+PPO: 3742647
+Detección de carril: 13429673
+PPO: 692599
+Detección de carril: 10955646
+PPO: 1769970
+Detección de carril: 10772760
+PPO: 512777
+Detección de carril: 10907644
+PPO: 2177017
+Detección de carril: 10949387
+PPO: 508020
+Detección de carril: 10628131
+PPO: 1918565
+Detección de carril: 10733550
+PPO: 860643
+Detección de carril: 10488239
+PPO: 475169
+Detección de carril: 10782285
+PPO: 508440
+Detección de carril: 10667240
+PPO: 483201
+Detección de carril: 10607059
+PPO: 468850
+Detección de carril: 10664988
+PPO: 4933830
+Detección de carril: 10614561
+PPO: 2426734
+Detección de carril: 10702935
+PPO: 3692871
+Detección de carril: 10520708
+PPO: 529492
+Detección de carril: 10678147
+PPO: 544164
+Detección de carril: 10529942
+PPO: 1811863
+Detección de carril: 10689584
+PPO: 498134
+Detección de carril: 10839011
+PPO: 797056
+Detección de carril: 10375328
+PPO: 585356
+Detección de carril: 10617224
+PPO: 2821222
+Detección de carril: 11762939
+PPO: 1052233
+Detección de carril: 11913567
+PPO: 636334
+Detección de carril: 10696965
+PPO: 517224
+Detección de carril: 11773446
+PPO: 4423397
+Detección de carril: 11447162
+PPO: 530353
+Detección de carril: 10522041
+PPO: 2272731
+Detección de carril: 10374607
+PPO: 2079408
+Detección de carril: 10590274
+PPO: 441779
+Detección de carril: 11101638
+PPO: 741984
+Detección de carril: 10727331
+PPO: 447608
+Detección de carril: 10381098
+PPO: 431573
+Detección de carril: 11288931
+PPO: 3915307
+Detección de carril: 10446336
+PPO: 1622156
+Detección de carril: 10728283
+PPO: 617435
+Detección de carril: 10617896
+PPO: 508350
+Detección de carril: 10850868
+PPO: 489971
+Detección de carril: 10620860
+PPO: 441458
+Detección de carril: 10595011
+PPO: 605787
+Detección de carril: 11028418
+PPO: 438284
+Detección de carril: 10195406
+PPO: 2378391
+Detección de carril: 10376540
+PPO: 793832
+Detección de carril: 10414798
+PPO: 584755
+Detección de carril: 10809546
+PPO: 494088
+Detección de carril: 10454268
+PPO: 511405
+Detección de carril: 10597625
+PPO: 497012
+Detección de carril: 10680781
+PPO: 3445686
+Detección de carril: 10990730
+PPO: 490122
+Detección de carril: 10212892
+PPO: 1873707
+Detección de carril: 10691027
+PPO: 490583
+Detección de carril: 10434117
+PPO: 565326
+Detección de carril: 10670065
+PPO: 2675952
+Detección de carril: 11085083
+PPO: 2128733
+Detección de carril: 10516052
+PPO: 638006
+Detección de carril: 10657595
+PPO: 5194684
+Detección de carril: 11446871
+PPO: 1001917
+Detección de carril: 11278967
+PPO: 719620
+Detección de carril: 10570213
+PPO: 546317
+Detección de carril: 10406496
+PPO: 3334728
+Detección de carril: 10883898
+PPO: 906172
+Detección de carril: 10536042
+PPO: 3251823
+Detección de carril: 10652708
+PPO: 501539
+Detección de carril: 10768775
+PPO: 659318
+Detección de carril: 10388809
+PPO: 1959416
+Detección de carril: 10684456
+PPO: 520618
+Detección de carril: 10347075
+PPO: 593589
+Detección de carril: 10838390
+PPO: 4415956
+Detección de carril: 11620614
+PPO: 1964424
+Detección de carril: 11738623
+PPO: 913804
+Detección de carril: 10619718
+PPO: 3723478
+Detección de carril: 11680464
+PPO: 1922150
+Detección de carril: 11059224
+PPO: 872741
+Detección de carril: 10905351
+PPO: 690014
+Detección de carril: 10948306
+PPO: 529632
+Detección de carril: 11323745
+PPO: 3327197
+Detección de carril: 11305246
+PPO: 559316
+Detección de carril: 10762505
+PPO: 1383946
+Detección de carril: 10695844
+PPO: 1111894
+Detección de carril: 11355402
+PPO: 580719
+Detección de carril: 10696806
+PPO: 1102199
+Detección de carril: 10930419
+PPO: 1623277
+Detección de carril: 11093516
+PPO: 570794
+Detección de carril: 10843517
+PPO: 882146
+Detección de carril: 10754943
+PPO: 494338
+Detección de carril: 10892181
+PPO: 4389175
+Detección de carril: 10811469
+PPO: 590474
+Detección de carril: 10733231
+PPO: 2132118
+Detección de carril: 10236819
+PPO: 1140777
+Detección de carril: 11979557
+PPO: 3304503
+Detección de carril: 10827343
+PPO: 1513331
+Detección de carril: 10880363
+PPO: 845480
+Detección de carril: 10698748
+PPO: 4803743
+Detección de carril: 10261566
+PPO: 2031926
+Detección de carril: 11023070
+PPO: 2094151
+Detección de carril: 10745018
+PPO: 554830
+Detección de carril: 10933623
+PPO: 657726
+Detección de carril: 10423301
+PPO: 606078
+Detección de carril: 11164814
+PPO: 612658
+Detección de carril: 10699209
+PPO: 4596229
+Detección de carril: 10404653
+PPO: 853062
+Detección de carril: 10686940
+PPO: 1400160
+Detección de carril: 11205175
+PPO: 531825
+Detección de carril: 10984971
+PPO: 4394283
+Detección de carril: 10742124
+PPO: 727602
+Detección de carril: 10336509
+PPO: 891870
+Detección de carril: 10635653
+PPO: 827633
+Detección de carril: 10672278
+PPO: 549472
+Detección de carril: 10736896
+PPO: 2542188
+Detección de carril: 10544215
+PPO: 3181127
+Detección de carril: 10592658
+PPO: 470032
+Detección de carril: 10691447
+PPO: 1422875
+Detección de carril: 10928236
+PPO: 2154712
+Detección de carril: 10388409
+PPO: 1104672
+Detección de carril: 10978993
+PPO: 659748
+Detección de carril: 10759480
+PPO: 569723
+Detección de carril: 10575050
+PPO: 3799302
+Detección de carril: 11248680
+PPO: 1226136
+Detección de carril: 10748263
+PPO: 571746
+Detección de carril: 10807663
+PPO: 600289
+Detección de carril: 10637766
+PPO: 622502
+Detección de carril: 11226096
+PPO: 4955113
+Detección de carril: 10892461
+PPO: 757217
+Detección de carril: 10779710
+PPO: 883478
+Detección de carril: 11658701
+PPO: 858500
+Detección de carril: 11559722
+PPO: 4254561
+Detección de carril: 10893393
+PPO: 2143876
+Detección de carril: 11146947
+PPO: 549131
+Detección de carril: 10170227
+PPO: 521529
+Detección de carril: 10351132
+PPO: 502040
+Detección de carril: 10699980
+PPO: 4297407
+Detección de carril: 10768965
+PPO: 490332
+Detección de carril: 10765700
+PPO: 1530778
+Detección de carril: 10878530
+PPO: 540518
+Detección de carril: 11089950
+PPO: 5047843
+Detección de carril: 10851088
+PPO: 491615
+Detección de carril: 10573558
+PPO: 1782569
+Detección de carril: 12046679
+PPO: 2064836
+Detección de carril: 10853593
+PPO: 2316297
+Detección de carril: 11134087
+PPO: 2725897
+Detección de carril: 11106866
+PPO: 793962
+Detección de carril: 10528760
+PPO: 657085
+Detección de carril: 10951340
+PPO: 3822638
+Detección de carril: 11078053
+PPO: 2164147
+Detección de carril: 10798459
+PPO: 525976
+Detección de carril: 10637015
+PPO: 815535
+Detección de carril: 10749805
+PPO: 501179
+Detección de carril: 10709024
+PPO: 490653
+Detección de carril: 10765650
+PPO: 745649
+Detección de carril: 10853932
+PPO: 558806
+Detección de carril: 10773592
+PPO: 467257
+Detección de carril: 10619148
+PPO: 1414081
+Detección de carril: 10151600
+PPO: 447407
+Detección de carril: 10388568
+PPO: 552146
+Detección de carril: 10536101
+PPO: 434067
+Detección de carril: 10651286
+PPO: 441348
+Detección de carril: 10871860
+PPO: 2433344
+Detección de carril: 10532316
+PPO: 1974439
+Detección de carril: 11114798
+PPO: 938571
+Detección de carril: 10455650
+PPO: 2011615
+Detección de carril: 10666900
+PPO: 668703
+Detección de carril: 10771488
+PPO: 446506
+Detección de carril: 10296790
+PPO: 453837
+Detección de carril: 10119191
+PPO: 497614
+Detección de carril: 10792821
+PPO: 432925
+Detección de carril: 10606910
+PPO: 434658
+Detección de carril: 10659429
+PPO: 430542
+Detección de carril: 10656093
+PPO: 428118
+Detección de carril: 10603544
+PPO: 429821
+Detección de carril: 10792410
+PPO: 432204
+Detección de carril: 10570194
+PPO: 542832
+Detección de carril: 10803236
+PPO: 432455
+Detección de carril: 10637776
+PPO: 434838
+Detección de carril: 10605717
+PPO: 433246
+Detección de carril: 10648643
+PPO: 442190
+Detección de carril: 10803897
+PPO: 2889004
+Detección de carril: 11171134
+PPO: 443061
+Detección de carril: 10956969
+PPO: 1158795
+Detección de carril: 10892351
+PPO: 492456
+Detección de carril: 10608822
+PPO: 515551
+Detección de carril: 10649253
+PPO: 689624
+Detección de carril: 10138119
+PPO: 503863
+Detección de carril: 10555781
+PPO: 4326089
+Detección de carril: 10640500
+PPO: 1015057
+Detección de carril: 10715483
+PPO: 1819595
+Detección de carril: 10500478
+PPO: 515550
+Detección de carril: 10697316
+PPO: 515320
+Detección de carril: 10524694
+PPO: 4954431
+Detección de carril: 11478379
+PPO: 2067881
+Detección de carril: 10800402
+PPO: 1515625
+Detección de carril: 10678498
+PPO: 712489
+Detección de carril: 10402990
+PPO: 825590
+Detección de carril: 11067046
+PPO: 1339598
+Detección de carril: 10751478
+PPO: 476742
+Detección de carril: 10254776
+PPO: 450722
+Detección de carril: 10157278
+PPO: 3743327
+Detección de carril: 11047035
+PPO: 2031205
+Detección de carril: 10668152
+PPO: 2072167
+Detección de carril: 10700321
+PPO: 537283
+Detección de carril: 11030370
+PPO: 530944
+Detección de carril: 10633519
+PPO: 795093
+Detección de carril: 10729294
+PPO: 566668
+Detección de carril: 10606579
+PPO: 485675
+Detección de carril: 10936639
+PPO: 471374
+Detección de carril: 10451374
+PPO: 462139
+Detección de carril: 10603834
+PPO: 470682
+Detección de carril: 10808054
+PPO: 3243361
+Detección de carril: 10843848
+PPO: 792640
+Detección de carril: 10764247
+PPO: 480627
+Detección de carril: 10278892
+PPO: 4058224
+Detección de carril: 10588301
+PPO: 1854758
+Detección de carril: 10292553
+PPO: 465695
+Detección de carril: 10580449
+PPO: 2522970
+Detección de carril: 10397742
+PPO: 1944073
+Detección de carril: 10444423
+PPO: 888054
+Detección de carril: 10443241
+PPO: 1110882
+Detección de carril: 10335979
+PPO: 1845123
+Detección de carril: 12688000
+PPO: 1244504
+Detección de carril: 10560989
+PPO: 2180992
+Detección de carril: 10900403
+PPO: 602763
+Detección de carril: 11270844
+PPO: 580870
+Detección de carril: 10827463
+PPO: 585186
+Detección de carril: 11269982
+PPO: 3110169
+Detección de carril: 10686870
+PPO: 1166046
+Detección de carril: 10931932
+PPO: 1211625
+Detección de carril: 10419115
+PPO: 579177
+Detección de carril: 10348918
+PPO: 566268
+Detección de carril: 11002398
+PPO: 3896810
+Detección de carril: 10715123
+PPO: 1941099
+Detección de carril: 11034145
+PPO: 729194
+Detección de carril: 10423140
+PPO: 616523
+Detección de carril: 10777607
+PPO: 3575524
+Detección de carril: 10836527
+PPO: 854995
+Detección de carril: 10603794
+PPO: 1616798
+Detección de carril: 10589583
+PPO: 694201
+Detección de carril: 10466016
+PPO: 535641
+Detección de carril: 10266474
+PPO: 4541616
+Detección de carril: 10890879
+PPO: 657175
+Detección de carril: 10485755
+PPO: 1088548
+Detección de carril: 11087036
+PPO: 498575
+Detección de carril: 10951110
+PPO: 4156273
+Detección de carril: 10792290
+PPO: 1868028
+Detección de carril: 10688512
+PPO: 503752
+Detección de carril: 10563233
+PPO: 2754931
+Detección de carril: 10989649
+PPO: 605576
+Detección de carril: 10315198
+PPO: 2420274
+Detección de carril: 10920413
+PPO: 3404565
+Detección de carril: 10422860
+PPO: 1021606
+Detección de carril: 10532977
+PPO: 856096
+Detección de carril: 10353366
+PPO: 1904413
+Detección de carril: 10619328
+PPO: 468870
+Detección de carril: 10512106
+PPO: 441488
+Detección de carril: 10907845
+PPO: 433577
+Detección de carril: 11264033
+PPO: 3330212
+Detección de carril: 10911951
+PPO: 2134251
+Detección de carril: 11823942
+PPO: 579157
+Detección de carril: 10854614
+PPO: 512686
+Detección de carril: 10686059
+PPO: 4897805
+Detección de carril: 10856036
+PPO: 2369027
+Detección de carril: 10969799
+PPO: 450662
+Detección de carril: 10581461
+PPO: 511825
+Detección de carril: 10630244
+PPO: 4752255
+Detección de carril: 10432254
+PPO: 2529180
+Detección de carril: 10423571
+PPO: 595712
+Detección de carril: 10880713
+PPO: 1307490
+Detección de carril: 10633289
+PPO: 990490
+Detección de carril: 10443502
+PPO: 1316133
+Detección de carril: 10314937
+PPO: 1260168
+Detección de carril: 11498489
+PPO: 533998
+Detección de carril: 10602212
+PPO: 2067611
+Detección de carril: 11314610
+PPO: 987786
+Detección de carril: 11744211
+PPO: 3143920
+Detección de carril: 10411733
+PPO: 562462
+Detección de carril: 11378897
+PPO: 633098
+Detección de carril: 11383705
+PPO: 876077
+Detección de carril: 11197443
+PPO: 3683858
+Detección de carril: 11028697
+PPO: 1038953
+Detección de carril: 11094086
+PPO: 668442
+Detección de carril: 10847954
+PPO: 638607
+Detección de carril: 11618010
+PPO: 3676076
+Detección de carril: 10856817
+PPO: 1975210
+Detección de carril: 10680050
+PPO: 1018052
+Detección de carril: 10862185
+PPO: 4782651
+Detección de carril: 11011592
+PPO: 2241683
+Detección de carril: 11148560
+PPO: 596172
+Detección de carril: 10519446
+PPO: 4053988
+Detección de carril: 10866462
+PPO: 880653
+Detección de carril: 10822565
+PPO: 991912
+Detección de carril: 10865841
+PPO: 692208
+Detección de carril: 10645648
+PPO: 5004817
+Detección de carril: 11540723
+PPO: 678727
+Detección de carril: 11638831
+PPO: 631886
+Detección de carril: 10791519
+PPO: 4890754
+Detección de carril: 11129750
+PPO: 1783970
+Detección de carril: 10965322
+PPO: 757808
+Detección de carril: 10764708
+PPO: 4609599
+Detección de carril: 10591756
+PPO: 1896682
+Detección de carril: 10680040
+PPO: 1130020
+Detección de carril: 10617305
+PPO: 578646
+Detección de carril: 10747752
+PPO: 2271209
+Detección de carril: 10659519
+PPO: 1807707
+Detección de carril: 11010159
+PPO: 987255
+Detección de carril: 10969117
+PPO: 5235086
+Detección de carril: 10838640
+PPO: 1829069
+Detección de carril: 11137893
+PPO: 530824
+Detección de carril: 11192416
+PPO: 4804284
+Detección de carril: 10820072
+PPO: 1855269
+Detección de carril: 10750166
+PPO: 750216
+Detección de carril: 11196441
+PPO: 676705
+Detección de carril: 11046835
+PPO: 1157031
+Detección de carril: 14565412
+PPO: 887484
+Detección de carril: 10977491
+PPO: 3970191
+Detección de carril: 10887674
+PPO: 1439380
+Detección de carril: 10978261
+PPO: 684817
+Detección de carril: 11586001
+PPO: 873413
+Detección de carril: 11121639
+PPO: 660661
+Detección de carril: 10670265
+PPO: 557304
+Detección de carril: 11338247
+PPO: 2158778
+Detección de carril: 11476715
+PPO: 2149194
+Detección de carril: 10986234
+PPO: 557243
+Detección de carril: 11194108
+PPO: 2868914
+Detección de carril: 14235133
+PPO: 775925
+Detección de carril: 13411355
+PPO: 2093579
+Detección de carril: 11111032
+PPO: 1319007
+Detección de carril: 10827543
+PPO: 950059
+Detección de carril: 10899011
+PPO: 1833456
+Detección de carril: 11121138
+PPO: 634331
+Detección de carril: 10991442
+PPO: 1666513
+Detección de carril: 11046304
+PPO: 581620
+Detección de carril: 11137802
+PPO: 576703
+Detección de carril: 10679299
+PPO: 3233646
+Detección de carril: 10763426
+PPO: 1180116
+Detección de carril: 10359685
+PPO: 499596
+Detección de carril: 10536663
+PPO: 1297625
+Detección de carril: 10872131
+PPO: 548099
+Detección de carril: 12414967
+PPO: 640640
+Detección de carril: 10811588
+PPO: 4547755
+Detección de carril: 10945021
+PPO: 545877
+Detección de carril: 10601060
+PPO: 1836520
+Detección de carril: 10869196
+PPO: 535510
+Detección de carril: 10789576
+PPO: 3514782
+Detección de carril: 10356039
+PPO: 465104
+Detección de carril: 10537814
+PPO: 593849
+Detección de carril: 10537274
+PPO: 453616
+Detección de carril: 10633870
+PPO: 3713192
+Detección de carril: 10746831
+PPO: 613879
+Detección de carril: 10706620
+PPO: 1016680
+Detección de carril: 10481739
+PPO: 1065833
+Detección de carril: 12297248
+PPO: 698548
+Detección de carril: 10444063
+PPO: 689664
+Detección de carril: 10422040
+PPO: 1584739
+Detección de carril: 10956007
+PPO: 1308601
+Detección de carril: 10245692
+PPO: 987264
+Detección de carril: 10690846
+PPO: 1901549
+Detección de carril: 10488529
+PPO: 1181249
+Detección de carril: 10273715
+PPO: 1540493
+Detección de carril: 10631125
+PPO: 471153
+Detección de carril: 10595872
+PPO: 480228
+Detección de carril: 10459396
+PPO: 3518027
+Detección de carril: 10920604
+PPO: 1298256
+Detección de carril: 11027576
+PPO: 469691
+Detección de carril: 10725519
+PPO: 4346140
+Detección de carril: 10924520
+PPO: 935747
+Detección de carril: 11151984
+PPO: 500448
+Detección de carril: 10201635
+PPO: 4048640
+Detección de carril: 10864569
+PPO: 1390244
+Detección de carril: 10876998
+PPO: 461719
+Detección de carril: 10844479
+PPO: 4295093
+Detección de carril: 11544969
+PPO: 1484979
+Detección de carril: 11386570
+PPO: 1285907
+Detección de carril: 10888896
+PPO: 481008
+Detección de carril: 10550054
+PPO: 490412
+Detección de carril: 11041357
+PPO: 659429
+Detección de carril: 11055358
+PPO: 2514397
+Detección de carril: 10587740
+PPO: 608542
+Detección de carril: 11059144
+PPO: 613228
+Detección de carril: 11337515
+PPO: 504744
+Detección de carril: 11441022
+PPO: 3360658
+Detección de carril: 11047657
+PPO: 1631380
+Detección de carril: 11013795
+PPO: 611896
+Detección de carril: 10978471
+PPO: 4336455
+Detección de carril: 10724396
+PPO: 1625121
+Detección de carril: 11278215
+PPO: 555922
+Detección de carril: 11487362
+PPO: 2207192
+Detección de carril: 11781848
+PPO: 1815268
+Detección de carril: 10605026
+PPO: 713841
+Detección de carril: 10868175
+PPO: 653309
+Detección de carril: 11062879
+PPO: 615162
+Detección de carril: 10864939
+PPO: 2115904
+Detección de carril: 10619178
+PPO: 1501523
+Detección de carril: 10590193
+PPO: 1975080
+Detección de carril: 10605897
+PPO: 531365
+Detección de carril: 10306815
+PPO: 504264
+Detección de carril: 11313839
+PPO: 495070
+Detección de carril: 11109621
+PPO: 4464329
+Detección de carril: 11168810
+PPO: 484244
+Detección de carril: 10398173
+PPO: 1277324
+Detección de carril: 11140547
+PPO: 605217
+Detección de carril: 10992112
+PPO: 3845211
+Detección de carril: 10775634
+PPO: 1258405
+Detección de carril: 11284585
+PPO: 591386
+Detección de carril: 10720101
+PPO: 2203656
+Detección de carril: 11203612
+PPO: 1366779
+Detección de carril: 10893102
+PPO: 1004781
+Detección de carril: 10816076
+PPO: 3945293
+Detección de carril: 10736425
+PPO: 1520862
+Detección de carril: 11603738
+PPO: 495220
+Detección de carril: 11572711
+PPO: 979763
+Detección de carril: 10451974
+PPO: 700912
+Detección de carril: 10640500
+PPO: 4761549
+Detección de carril: 10769215
+PPO: 1577519
+Detección de carril: 10642934
+PPO: 459726
+Detección de carril: 10718698
+PPO: 2460605
+Detección de carril: 10488850
+PPO: 1361872
+Detección de carril: 10888575
+PPO: 960835
+Detección de carril: 10710536
+PPO: 3844511
+Detección de carril: 10187634
+PPO: 1785614
+Detección de carril: 10536703
+PPO: 481789
+Detección de carril: 11110972
+PPO: 1471198
+Detección de carril: 11948420
+PPO: 1653434
+Detección de carril: 11091042
+PPO: 689765
+Detección de carril: 11035729
+PPO: 2191558
+Detección de carril: 11447511
+PPO: 1347741
+Detección de carril: 11007586
+PPO: 496322
+Detección de carril: 10343280
+PPO: 2951098
+Detección de carril: 11421131
+PPO: 889286
+Detección de carril: 11073726
+PPO: 2642110
+Detección de carril: 10745990
+PPO: 595722
+Detección de carril: 10613859
+PPO: 601781
+Detección de carril: 10694722
+PPO: 953453
+Detección de carril: 10896157
+PPO: 4658142
+Detección de carril: 10953604
+PPO: 1716149
+Detección de carril: 10767351
+PPO: 902997
+Detección de carril: 11991906
+PPO: 2674319
+Detección de carril: 10968016
+PPO: 2314424
+Detección de carril: 12274624
+PPO: 4824044
+Detección de carril: 11391077
+PPO: 1884413
+Detección de carril: 10716745
+PPO: 591015
+Detección de carril: 10439906
+PPO: 3230972
+Detección de carril: 10965041
+PPO: 1457456
+Detección de carril: 11285026
+PPO: 487979
+Detección de carril: 10708062
+PPO: 1948069
+Detección de carril: 11116841
+PPO: 1832074
+Detección de carril: 11099655
+PPO: 622232
+Detección de carril: 10776446
+PPO: 4329846
+Detección de carril: 11254580
+PPO: 1033465
+Detección de carril: 10515350
+PPO: 575361
+Detección de carril: 10382959
+PPO: 2362357
+Detección de carril: 11333009
+PPO: 848355
+Detección de carril: 10814613
+PPO: 587419
+Detección de carril: 10854664
+PPO: 519727
+Detección de carril: 10803787
+PPO: 3648504
+Detección de carril: 10817748
+PPO: 1838193
+Detección de carril: 10721252
+PPO: 813472
+Detección de carril: 10336841
+PPO: 477323
+Detección de carril: 10817228
+PPO: 4121300
+Detección de carril: 11086775
+PPO: 1270504
+Detección de carril: 10585927
+PPO: 622953
+Detección de carril: 10232392
+PPO: 4448575
+Detección de carril: 10556733
+PPO: 1336573
+Detección de carril: 10784128
+PPO: 812429
+Detección de carril: 10681382
+PPO: 4763682
+Detección de carril: 10570043
+PPO: 1638761
+Detección de carril: 10803938
+PPO: 504424
+Detección de carril: 10886813
+PPO: 3267226
+Detección de carril: 11141749
+PPO: 1799464
+Detección de carril: 10796176
+PPO: 513337
+Detección de carril: 10697686
+PPO: 3760844
+Detección de carril: 11267980
+PPO: 810708
+Detección de carril: 10905431
+PPO: 509711
+Detección de carril: 10722674
+PPO: 1950524
+Detección de carril: 10934996
+PPO: 2139609
+Detección de carril: 10849606
+PPO: 480918
+Detección de carril: 10749946
+PPO: 2828833
+Detección de carril: 10644386
+PPO: 540869
+Detección de carril: 10626689
+PPO: 751769
+Detección de carril: 10811619
+PPO: 2075162
+Detección de carril: 10697957
+PPO: 612888
+Detección de carril: 10474799
+PPO: 442641
+Detección de carril: 10331672
+PPO: 443702
+Detección de carril: 10472466
+PPO: 445364
+Detección de carril: 11076811
+PPO: 1549476
+Detección de carril: 10844459
+PPO: 1498548
+Detección de carril: 10701321
+PPO: 451183
+Detección de carril: 10715764
+PPO: 1848849
+Detección de carril: 10733381
+PPO: 1116100
+Detección de carril: 10837529
+PPO: 460126
+Detección de carril: 10747942
+PPO: 2444831
+Detección de carril: 10642673
+PPO: 1436105
+Detección de carril: 10301417
+PPO: 435429
+Detección de carril: 11386319
+PPO: 910979
+Detección de carril: 10694341
+PPO: 665247
+Detección de carril: 10996579
+PPO: 2419483
+Detección de carril: 11114908
+PPO: 717085
+Detección de carril: 11384125
+PPO: 616473
+Detección de carril: 10882436
+PPO: 2508768
+Detección de carril: 11232927
+PPO: 873363
+Detección de carril: 10634040
+PPO: 2022402
+Detección de carril: 11098804
+PPO: 915727
+Detección de carril: 10672869
+PPO: 496571
+Detección de carril: 10331522
+PPO: 4400583
+Detección de carril: 10948807
+PPO: 1278546
+Detección de carril: 11364897
+PPO: 455350
+Detección de carril: 10498195
+PPO: 2862784
+Detección de carril: 10584435
+PPO: 1217613
+Detección de carril: 10487288
+PPO: 440397
+Detección de carril: 10605497
+PPO: 3996090
+Detección de carril: 10844659
+PPO: 659869
+Detección de carril: 10704527
+PPO: 482611
+Detección de carril: 10802906
+PPO: 462480
+Detección de carril: 10823396
+PPO: 2869264
+Detección de carril: 11089089
+PPO: 1311215
+Detección de carril: 10906863
+PPO: 555290
+Detección de carril: 11198705
+PPO: 437182
+Detección de carril: 11462384
+PPO: 2434856
+Detección de carril: 10599548
+PPO: 1506691
+Detección de carril: 10680100
+PPO: 535440
+Detección de carril: 10803256
