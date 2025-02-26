@@ -110,9 +110,6 @@ def main(args):
         save_vecnormalize=True,
     )
 
-    model = alg_class.load(dir + 'model/CarlaOvertaken/' + args.alg + '-' + args.env + '_1', env=env, **model_params)
-    n_timesteps = n_timesteps - 460_000
-
     model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name,
                 progress_bar=True, callback=checkpoint_callback)
     model.save(model_dir + '/' + args.alg + '-' + args.env + '_' + str(args.num_file))

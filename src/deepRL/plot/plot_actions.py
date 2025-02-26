@@ -27,7 +27,7 @@ def histogram(data_csv:list[dict], key:str, subplot:int):
     extra = 0.05
     if key == KEY_STEER:
         extra /= 2
-        bins = np.arange(-0.18, 0.2, 0.02)
+        bins = np.arange(-0.2, 0.22, 0.02)
     else:
         bins = np.linspace(0.0, 1.0, 11)
      

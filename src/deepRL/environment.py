@@ -17,7 +17,7 @@ from configcarla import SIZE_CAMERA, PATH
 import configcarla
 
 MAX_DEV = 100
-MAX_DEV_CHANGE = 135
+MAX_DEV_CHANGE = 120
 MAX_DIST_LASER = 19.5
 MIN_DIST_LASER = 4
 MAX_VEL = 60
@@ -143,6 +143,7 @@ class CarlaBase(gym.Env, ABC):
             num_files = len(files) + 1
             self._train_csv = open(dir_csv + alg + '_train_data_' + str(num_files) + '.csv',
                                    mode='w', newline='')
+            print("Data train saved in", self._train_csv)
             self._writer_csv_train = csv.writer(self._train_csv)
             self._writer_csv_train.writerow([KEY_EPISODE, KEY_REWARD, KEY_STEPS, KEY_FINISH, KEY_DEV,
                                              KEY_EXP_RATE, KEY_LASER, KEY_MEAN_VEL, KEY_COUNTER_LASER, KEY_TRUNCATED])
@@ -1430,6 +1431,7 @@ class CarlaOvertaken(CarlaBase):
                             self._seen = True
                         else:
                             print("CORTO ADELANTAMIENTO")
+                
                 if self._seen:
                     self._counter_seen += 1
                     assert self._counter_seen <= 300, "Exceed time to change the lane"
@@ -1446,14 +1448,14 @@ class CarlaOvertaken(CarlaBase):
                     assert self._dev <= MAX_DEV_CHANGE, "Driving on the shoulder, lane lost"
 
                     if not self._middle:
-                        self._middle = (np.all(self._laser_points_right_back >= 10) and 
+                        self._middle = (np.all(self._laser_points_front >= 10) and 
                             np.all(self._laser_points_right_front == MAX_DIST_LASER))
                         
                         if self._middle:
                             print("MIDDLE A TRUE")
 
                     self._return = (self._middle and np.all(self._laser_points_right == MAX_DIST_LASER) and
-                        np.all(self._laser_points_front == MAX_DIST_LASER))
+                        np.all(self._laser_points_right_back == MAX_DIST_LASER))
 
                     # Mensaje si todas las condiciones se cumplen
                     if self._return:
@@ -1541,6 +1543,7 @@ class CarlaOvertaken(CarlaBase):
 
         if terminated and self._train:
             self._count_ep += 1
+            print("Episode", self._count_ep)
             self._writer_csv_train.writerow([self._count_ep, self._total_reward, self._count, finish_ep,
                                              self._dev, self._exploration_rate, self._dist_laser, 
                                              self._mean_vel / self._count, self._count_laser,
@@ -1557,11 +1560,11 @@ class CarlaOvertaken(CarlaBase):
             if self._overtaken_in_progress and not self._change_lane_left:
                 # Positive deviation
                 dev_norm = np.clip(self._dev, 0, MAX_DEV_CHANGE) / MAX_DEV_CHANGE
-                r_dev = sigmoid(dev_norm, a=10, b=0.85)
+                r_dev = sigmoid(dev_norm, a=10, b=0.7)
             elif self._overtaken_in_progress and self._change_lane_left and not self._change_lane_right and self._return:
                 # Negtaive deviation
-                dev_norm = abs(np.clip(self._dev, -MAX_DEV_CHANGE, 0))
-                r_dev = sigmoid(dev_norm, a=10, b=0.85)
+                dev_norm = abs(np.clip(self._dev, -MAX_DEV_CHANGE, 0)) / MAX_DEV_CHANGE
+                r_dev = sigmoid(dev_norm, a=10, b=0.7)
             else:
                 r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
     
