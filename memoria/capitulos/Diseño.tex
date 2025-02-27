@@ -327,7 +327,7 @@ En inferencia, usamos el modo asíncrono de CARLA, permitiendo que el simulador 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=10cm]{figs/Diseño/discrete/inference_dqn.png}
-\caption{Gráficas de inferencia sigue-carril basado en \ac{DQN}.}
+\caption{Histogramas de las acciones escogidas en inferencia por el modelo sigue-carril basado en \ac{DQN}.}
 \label{fig:inference_dqn}
 \end{figure}
 
@@ -485,7 +485,7 @@ Para evaluar el equilibrio entre exploración y explotación durante el entrenam
 
 \newpage
 
-Al analizar los parámetros de entrenamiento de ambos algoritmos, podemos ver como con \ac{PPO} necesitamos la mitad de \textit{steps} que con \ac{DQN} para lograr un entrenamiento exitoso. Los entrenamientos con \ac{PPO} duraron aproximadamente unas veinte horas. En el siguiente gráfico, se muestran los datos de entrenamiento, donde se puede observar cómo se logra rápidamente la convergencia, pero se necesitan más \textit{steps} para alcanzar altas velocidades.
+Al analizar los parámetros de entrenamiento de ambos algoritmos, podemos ver como con \ac{PPO} necesitamos la mitad de \textit{steps} que con \ac{DQN} para lograr un entrenamiento exitoso. Los entrenamientos con \ac{PPO} duraron aproximadamente unas 20 horas. En el gráfico \ref{fig:train_ppo_carril} se muestran los datos de entrenamiento, el último \textit{plot} muestra la evaluación de la velocidad media en cada episodio. Podemos observar cómo se logra rápidamente la convergencia, pero se necesitan más \textit{steps} para alcanzar velocidades significativas.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=13cm]{figs/Diseño/cont/train_ppo_carril.png}
@@ -493,15 +493,26 @@ Al analizar los parámetros de entrenamiento de ambos algoritmos, podemos ver co
   \label{fig:train_ppo_carril}
 \end{figure}
 
-En inferencia obtenemos muy buenos resultados tanto en circuitos utilizados durante el entrenamiento \footnote{\url{https://youtu.be/bZNfUwP14gc}} como en nuevos \footnote{\url{https://youtu.be/WRPLzKqJdto}}, incluso cambiando la ciudad en el simulador CARLA. A diferencia del modelo entrenado con \ac{DQN}, ahora si podemos elegir el giro exacto necesario en cada momento al disponer de un espacio de acciones continuo, lo que permite seguir el carril de forma más precisa y fluida. Además, se logran velocidades muy superiores, incluso superando los 20m/s. El modelo elige siempre aceleraciones en el rango [0.5, 0.6) combinadas con giros sutiles. Cabe destacar que, si eliminamos la parte del rango bajo del acelerador en la función recompensa, unificando ambos rangos en uno con los mismos pesos, el entrenamiento no logra converger, aunque al final siempre seleccione acciones en dentro del rango alto del acelerador.
+En inferencia obtenemos muy buenos resultados tanto en circuitos vistos durante el entrenamiento\footnote{\url{https://youtu.be/bZNfUwP14gc}} como en nuevos\footnote{\url{https://youtu.be/WRPLzKqJdto}}, incluso cambiando la ciudad en el simulador CARLA. Como reflejan los histogramas de la Figura \ref{fig:inference_ppo_carril},  el modelo siempre elige aceleraciones en el rango alto [0.5, 0.6), combinadas con giros sutiles.
 \begin{figure}[ht]
-  \centering
-  \includegraphics[width=15cm]{figs/Diseño/cont/inference.png}
-  \caption{Gráfico de los datos recopilados durante inferencia del modelo sigue-carril con \ac{PPO}.}
-  \label{fig:inference_ppo_carril}
+\centering
+\includegraphics[width=10cm]{figs/Diseño/cont/inference.png}
+\caption{Histogramas de las acciones escogidas en inferencia por el modelo sigue-carril basado en \ac{PPO}.}
+\label{fig:inference_ppo_carril}
+\end{figure} 
+
+A diferencia del modelo basado en \ac{DQN}, ahora el agente puede elegir la combinación de acciones más óptima al disponer de un espacio de acciones continuo. Esto le permite seleccionar el giro exacto necesario en cada momento, alcanzando velocidades significativamente superiores en comparación con los modelos basados en \ac{DQN} \ref{fig:comparativa_dqn} o en el controlador \ac{PID} \ref{fig:comparativa_pid}. Como se observa en la Figura \ref{fig:comparativa_ppo}, este enfoque da lugar a una conducción más fluida y segura, respetando con mayor precisión los límites del carril, tanto en escenarios vistos durante el entrenamiento como en nuevos entornos.
+
+\begin{figure}[ht]
+\centering
+\subfigure[Histogramas de un circuito visto durante el entrenameinto.]{\includegraphics[width=0.45\textwidth]{figs/Diseño/cont/train_env.png} \label{fig:pid_ajus}}
+\hfill
+\subfigure[Histogramas de un circuito no visto durante el entrenamiento.]{\includegraphics[width=0.45\textwidth]{figs/Diseño/cont/no_train_env.png} \label{fig:pid_no_ajus}}
+\caption{Comparativa de la velocidad y desviación del vehículo basado en \ac{PPO} en escenarios visto y no visto durante el entrenamiento.}
+\label{fig:comparativa_ppo}
 \end{figure}
 
-Recordemos, que los entrenamientos se han realizado utilizando la técnica de detección de carril \textit{ground thruth}. Si la cambiamos por la detección de carril basada en \ac{DL}, lo que incluye cambiar la posición de la cámara y, por tanto, la visión de percepción, seguimos obteniendo un seguimiento del carril fluido y conciso \footnote{\url{ https://youtu.be/8kOpXYqzIGM}} a altas velocidades.
+Recordemos que los entrenamientos se han realizado utilizando la técnica de detección de carril \textit{ground thruth}. Si sustituimos esta percepción por un modelo basado en \ac{DL}, estamos aplicando aplicando \textit{transfer learning}\footnote{\url{https://www.unir.net/revista/ingenieria/transfer-learning/}}, donde un modelo previamente entrenado para tarea específica se reutiliza para otra similar. En este caso, el modelo original aprendió con datos perfectos procedentes de \textit{ground truth}, pero ahora se ajusta para trabajar con la salida de otra red neuronal, que puede introducir cierto ruido o variabilidad, haciéndolo más realista. Este cambio también implica modificar la posición de la cámara, alterando la percepción visual, lo que puede considerarse un caso de \textit{sim2sim}. A pesar de estos ajustes, el modelo mantiene un seguimiento del carril fluido y preciso\footnote{\url{https://youtu.be/8kOpXYqzIGM}} sin reducir la velocidad. Esto demuestra la capacidad del modelo para generalizar a nuevas condiciones, un aspecto clave en el desarrollo de sistemas de conducción autónoma robustos y adaptables.
 
 \subsection{Control adaptativo con PPO}
 
@@ -521,9 +532,11 @@ self.observation_space[KEY_LASER] = spaces.Box(
 \label{cod:obs_laser_front}
 \end{code}
 
+Un cambio clave respecto al modelo anterior es que, esta vez, hemos entrenado a 10 \ac{FPS} en lugar de 20 \ac{FPS}. A 20 \ac{FPS}, el agente no lograba un comportamiento adaptativo eficiente, sino un efecto de \textit{muelle}, acercándose demasiado al coche de delante, frenando bruscamente, alejándose y repitiendo el ciclo. En cambio, a 10 \ac{FPS}, se ha conseguido un comportamiento adaptativo más estable. Esto puede deberse a que, al aumentar los\ac{FPS} en CARLA, el coche puede alcanzar velocidades más altas en menos tiempo, provocando cambios más bruscos y aumentado el ruido, lo que dificulta el comportamiento eficiente del agente. Además, al tener más tiempo para reaccionar a los cambios en el tráfico, facilita un aprendizaje más estable.
+
 En este nuevo escenario las observaciones han cambiado, por lo tanto, no podemos reutilizar el modelo anterior de seguimiento de carril, pero si sus parámetros y función de recompensa. Para facilitar el aprendizaje del modelo, hemos utilizado la estrategia de \textit{curriculum learning}. Consiste en presentar al modelo las tareas de manera progresiva, comenzando con ejemplos simples y aumentando gradualmente la complejidad. Este enfoque imita la forma en que los humanos aprenden, empezando por conceptos básicos antes de abordar problemas más difíciles. Reducir la complejidad al inicio evita que el agente aprenda de manera irregular, con grandes fluctuaciones en la política, mejorando la estabilidad del entrenamiento y aumentando la velocidad de convergencia. Además, al aprender de forma estructurada, el modelo tiende a desarrollar representaciones más sólidas que mejoran la generalización \cite{curriculum-learning}.
 
-Al haber cambiado la frecuencia de simulación, podemos simplificar la función de recompensa referente al seguimiento del carril, se elimina la distinción entre acelerador bajo y alto en la definición de pesos, fusionándolos en un solo bloque. Se han preservado los valores de los hiperparámetros de entrenamiento utilizados en el comportamiento sigue-carril basado en \ac{PPO} \ref{tab:hiper_params_ppo}, exceptuando el coeficiente de entropía, el cual se ha reducido levemente a 0.08 para favorecer al explotación de acciones. 
+Al haber cambiado la frecuencia de simulación, podemos simplificar la función de recompensa referente al seguimiento del carril, se elimina la distinción entre acelerador bajo y alto en la definición de pesos, fusionándolos en un solo bloque.
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -540,7 +553,7 @@ else:
 \label{cod:rew_carril_ppo_passing}
 \end{code}
 
-El modelo obtenido sigue el carril a la perfección \footnote{\url{https://youtu.be/flTo3YyFCHU}}, alcanzando velocidades superiores a 15m/s. De nuevo, se consigue una convergencia total rápidamente, pero seguimos necesitando un número elevado de \textit{steps} para adquirir altas velocidades. En inferencia, el modelo elige giros sutiles combinados con un valor del acelerador en el rango [0.47, 0.49].
+Se han preservado los valores de los hiperparámetros de entrenamiento utilizados en el comportamiento sigue-carril basado en \ac{PPO} \ref{tab:hiper_params_ppo}, exceptuando el coeficiente de entropía, el cual se ha reducido levemente a 0.08 para favorecer al explotación de acciones. El entrenamiento duró unas 28 horas y se obtuvieron resultados muy similares a los del apartado anterior \ref{fig:train_ppo_carril}. De nuevo, se consigue una convergencia total rápidamente, pero seguimos necesitando un número elevado de \textit{steps} para adquirir velocidades significativas.
 
 \begin{figure}[ht]
   \centering
@@ -549,6 +562,7 @@ El modelo obtenido sigue el carril a la perfección \footnote{\url{https://youtu
   \label{fig:passing_train_base}
 \end{figure}
 
+El modelo adquirido sigue el carril de manera eficiente\footnote{\url{https://youtu.be/flTo3YyFCHU}}, eligiendo giros sutiles combinados con valores del acelerador en el rango de [0.47, 0.49]. Estos valores de acelerador son ligeramente inferiores en comparación con el modelo sin \ac{LiDAR}, puesto que estas observaciones no son necesarias para el seguimiento de carril, solo aportan ruido al modelo. Aun así, obtenemos un modelo capaz de seguir el carril a la perfección en inferencia, alcanzando velocidades en torno a los 55 km/h.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=10cm]{figs/Diseño/passing/actions_inference_base.png}
@@ -556,7 +570,7 @@ El modelo obtenido sigue el carril a la perfección \footnote{\url{https://youtu
   \label{fig:passing_actions_inf_base}
 \end{figure}
 
-Ahora, necesitamos reentrenar el modelo sigue-carril para lograr un control adaptativo al tráfico. Si el coche está a una distancia menor de 4 metros, se provoca una excepción y se finaliza el episodio dando una recompensa negativa. Esta acción se penaliza aún más que salirse del carril, puesto que es más grave y que puede tener consecuencias fatales en el mundo real. Mientras el coche se encuentre a más de 20 metros del vehículo delantero, no se obtienen mediciones del \ac{LiDAR}, recibe la recompensa asociada al seguimiento del carril. Sin embargo, si la distancia mínima captada por el \ac{LiDAR} está en el rango de 4 a 20 metros, esta medida se normaliza y se tiene en cuenta en la recompensa. Su peso depende de la distancia a la que el coche se sitúa del camión: cuanto más próximo esté, mayor es la relevancia del \ac{LiDAR}, puesto que aumentan la criticidad de la situación. Una vez vemos el vehículo, el peso del acelerador disminuye drásticamente, deja de ser relevante ir a altas velocidades, el objetivo es no chocarse contra el coche de delante y mantener la distancia de seguridad adecuada.
+Ahora, necesitamos reentrenar el modelo sigue-carril para lograr un control adaptativo al tráfico. Si el coche está a una distancia menor de 4 metros, se provoca una excepción y se finaliza el episodio dando una recompensa negativa. Esta acción se penaliza aún más que salirse del carril, puesto que es más grave y que puede tener consecuencias fatales en el mundo real. Mientras el coche se encuentre a más de 20 metros del vehículo delantero, no se obtienen mediciones del \ac{LiDAR}, recibe la recompensa asociada al seguimiento del carril. Sin embargo, si la distancia mínima captada por el \ac{LiDAR} está en el rango de 4 a 20 metros, esta medida se normaliza y se tiene en cuenta en la recompensa. Su peso depende de la distancia a la que el coche se sitúa del camión: cuanto más próximo esté, mayor es la relevancia del \ac{LiDAR}, puesto que aumentan la criticidad de la situación. Una vez vemos el vehículo, el peso del acelerador disminuye drásticamente, deja de ser relevante ir a altas velocidades, el objetivo es no colisionar con el coche de delante y mantener la distancia de seguridad adecuada.
 
 \begin{code}[H]
 \begin{lstlisting}[language=Python]
@@ -591,9 +605,7 @@ else:
 \label{cod:rew_ppo_passing}
 \end{code}
 
-Como el modelo ya ha aprendido a seguir el carril con una velocidad adecuada, no son necesarios tantos episodios de entrenamiento, por lo que hemos reducido el número de \textit{steps} a la mitad. También se ha disminuido a la mitad el coeficiente de entropía 0.04, para agilizar el entrenamiento evitando escenarios poco probables.
-
-La elección de velocidades del vehículo delantero, controlado por el autopiloto de CARLA, fue crucial a la hora de lograr un comportamiento estable. Primeramente, se intentó estableciendo una velocidad constante durante un periodo de entre 100 y 450 \textit{steps} en el rango de [5, 10], escogiendo valores enteros y ambos de manera aleatoria. Sin embargo, se encontraron dos problemas:
+-----La elección de velocidades del vehículo delantero, controlado por el autopiloto de CARLA, fue crucial a la hora de lograr un comportamiento estable. Primeramente, se intentó estableciendo una velocidad constante durante un periodo de entre 100 y 450 \textit{steps} en el rango de [5, 10], escogiendo valores enteros y ambos de manera aleatoria. Sin embargo, se encontraron dos problemas:
   \begin{itemize}
         \item Para velocidades altas, el vehículo delantero se alejaba demasiado, sin que el agente pudiera verlo en ningún momento.
         \item El modelo se sobreajustaba a las velocidades bajas, limitándose a alcanzar velocidades máximas de 7 m/s.
@@ -627,7 +639,7 @@ El siguiente histograms muestra el número de \textit{steps} durante los que el 
 
 \newpage
 
-Aunque no se alcanza una convergencia total como en entrenamientos anteriores, podemos decir que el modelo sí converge, ya que la recompensa promedio de los episodios aumenta de manera a lo largo del proceso de entrenamiento. Esto sugiere que, a pesar de los episodios no finalizados, el modelo está mejorando gradualmente su desempeño y aprendiendo de manera efectiva. 
+Como el modelo ya ha aprendido a seguir el carril con una velocidad adecuada, no son necesarios tantos episodios de entrenamiento, por lo que hemos reducido el número de \textit{steps} a la mitad. También se ha disminuido a la mitad el coeficiente de entropía 0.04, para agilizar el entrenamiento evitando escenarios poco probables. Aunque no se alcanza una convergencia total como en entrenamientos anteriores, podemos decir que el modelo sí converge, ya que la recompensa promedio de los episodios aumenta de manera a lo largo del proceso de entrenamiento. Esto sugiere que, a pesar de los episodios no finalizados, el modelo está mejorando gradualmente su desempeño y aprendiendo de manera efectiva. 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=13cm]{figs/Diseño/passing/train.png}
@@ -638,6 +650,13 @@ Aunque no se alcanza una convergencia total como en entrenamientos anteriores, p
 En la fase de inferencia, se obtienen buenos resultados a distintas velocidades, tanto altas como bajas, y se sigue manteniendo el seguimiento preciso del carril. La velocidad del coche delantero influye en la distancia de estabilización, es decir, la separación con la que el coche autónomo se mantiene del camión. A mayor velocidad, mayor es esta distancia de seguridad, lo que es lógico y necesario en un entorno real. También se lograr resultados satisfactorios en circuitos no vistos durante el entrenamiento, incluso cambiando de ciudad en CARLA \footnote{\url{https://youtu.be/ieMD1wqqEaY}}. 
 
 Los siguientes diagramas muestran los datos de inferencia recolectados cuando el coche delantero circula a 9 m/s y 5 m/s, respectivamente. Podemos verificar la teoría anterior analizando los histogramas de distancias del \ac{LiDAR}: si el vehículo delantero se desplaza a 9 m/s \footnote{\url{https://youtu.be/mN0Y2q6ny5w}}, el agente mantiene una distancia de unos 14-15 metros; mientras que si circula a 5 m/s \footnote{\url{https://youtu.be/Gvh9ZS0Sizc}}, la distancia se estabiliza en torno a los 13 metros. En cuanto a la velocidad, esta aumenta rápidamente al inicio y luego se estabiliza en un valor cercano al del coche delantero, podemos observar pequeñas fluctuaciones que indican ajustes constantes para mantener la distancia de seguridad. Esto también se refleja en el comportamiento del acelerador, donde la mayoría de las acciones se concentran en el rango [0.4, 0.5], lo que sugiere que el vehículo mantiene una aceleración constante en lugar de realizar ajustes bruscos, logrando así una conducción más suave.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=9cm]{figs/Diseño/passing/dist_vel.png}
+  \caption{....}
+  \label{fig:dist_vel}
+\end{figure}
 
 \begin{figure}[ht]
   \centering
@@ -711,14 +730,14 @@ Se ha ajustado la frecuencia de ejecución de CARLA a 5 \ac{FPS}, ya que en infe
 
 Una vez el coche ha logrado seguir el carril con precisión, debemos definir el escenario en el cual llevaremos a cabo el adelantamiento. Para ello, es necesario construir una espacie de máquina de estados que nos permita modificar la recompensa según la fase del adelantamiento en que esta el agente.
 \begin{enumerate}
-    \item El agente circula por su carril hasta que detecta con el \ac{LiDAR} al vehículo que circula delante suyo. Durante este tramo, recibe la recompensa del sigue-carril (\ref{cod:rew_ppo_lane_overtaken}).
-    \item Una vez detectado el vehículo delantero, se inicia la maniobra de adelantamiento y la recompensa cambia para incentivar al agente a cambiar al carril de la izquierda, si lo hay, lo cual se comprueba con la red de segmentación EfficientNet \ref{sec:per_ef}. Si el camión deja de ser percibido, se corta el adelantamiento y se vuelve al modo sigue-carril.
-    \item Una vez en el carril izquierdo, se retoma la recompensa sigue-carril hasta que el agente detecta que ha sobrepasado al otro vehículo y que es seguro volver al carril inicial.
-    \item En este momento, la función de recompensa cambia para animar al modelo a desplazarse al carril de la derecha.
-    \item Una vez realizado el cambio de carril, la maniobra de adelantamiento ha finalizado y se reanuda la recompensa sigue-carril hasta finalizar el recorrido.
+\item El agente circula por su carril hasta que detecta con el \ac{LiDAR} al vehículo que circula delante suyo. Durante este tramo, recibe la recompensa del sigue-carril (\ref{cod:rew_ppo_lane_overtaken}).
+\item Una vez detectado el vehículo delantero a menos de 20 metros (rango del \ac{LiDAR}), se inicia la maniobra de adelantamiento y la recompensa cambia para incentivar al agente a cambiar al carril de la izquierda, si lo hay, lo cual se comprueba con la red de segmentación EfficientVit \ref{sec:per_ef}. Si el camión deja de ser percibido, se corta el adelantamiento y se vuelve al modo sigue-carril.
+\item Una vez en el carril izquierdo, se retoma la recompensa sigue-carril hasta que el agente detecta que ha sobrepasado al otro vehículo y que es seguro volver al carril inicial.
+\item En este momento, la función de recompensa cambia para animar al modelo a desplazarse al carril de la derecha.
+\item Una vez realizado el cambio de carril, la maniobra de adelantamiento ha finalizado y se reanuda la recompensa sigue-carril hasta finalizar el recorrido.
 \end{enumerate}
 
-Para diseñar las recompensas para los cambios de carril, hemos modificado la normalización de la recompensa. Si queremos que el agente se desplace al carril de la izquierda, lo cual supone una desviación positiva, cuanto mayor sea la desviación, mayor será la recompensa. Si la desviación es negativa, el valor de la recompensa será cero. Por el contrario, si el objetivo es volver al carril de la derecha, cuanto más negativa sea la desviación, mayor será la recompensa. Si la desviación es positiva, la recompensa es nula. Una vez normalizada la desviación, aplicamos la función \textit{sigmoide} para acentuar la diferencia entre desviaciones muy grandes y aquellas más centradas. Esto permite que el modelo aprenda más rápidamente cuáles son las acciones óptimas. En el caso del cambio de carril a la izquierda, también se tiene en cuenta el valor del \ac{LiDAR} en la recompensa, para evitar que el agente colisione con el vehículo delantero. \textbf{aún tengo que probar que esto funciona -> Además, para agilizar aún más los entrenamientos, si el cambio de carril no se ha realizado al cabo de x \textit{steps}, se finaliza el episodio dando una recompensa negativa.} 
+Para diseñar las recompensas para los cambios de carril, hemos modificado la normalización de la recompensa. Si queremos que el agente se desplace al carril de la izquierda, lo cual supone una desviación positiva, cuanto mayor sea la desviación, mayor será la recompensa. Si la desviación es negativa, el valor de la recompensa será cero. Por el contrario, si el objetivo es volver al carril de la derecha, cuanto más negativa sea la desviación, mayor será la recompensa. Si la desviación es positiva, la recompensa es nula. Una vez normalizada la desviación, aplicamos la función \textit{sigmoide} para acentuar la diferencia entre desviaciones muy grandes y aquellas más centradas. Esto permite que el modelo aprenda más rápidamente cuáles son las acciones óptimas. En el caso del cambio de carril a la izquierda, también se tiene en cuenta el valor del \ac{LiDAR} en la recompensa para realizar una maniobra más segura, evitando que el agente se aproxime demasiado al vehículo delantero o incluso colisiones contra él.
 
 \textbf{foto de la sigmoide y si me funiona en el accril poner las dos juntas y poner un areferenci a la foto en este texto, ecuaion con formula sigmoide: return 1 / (1 + np.exp(-a * (x - b))), tambien los pesos y parametro b de la sigmoide estan por ajustar}
 
@@ -751,8 +770,6 @@ if error is None:
 else:
     if "crashed" in error:
         reward = -60 #  Crashed into the vehicle in front
-    elif "time" in error:
-        reward = -20 # por ver si lo dejo
     else:
         reward = -40 # Lane lost
 \end{lstlisting}
@@ -760,6 +777,6 @@ else:
 \label{cod:rew_ppo_overtaken}
 \end{code}
 
-El entrenamiento se ha llevado a cabo en un circuito con cuatro carriles, donde nuestro coche circula por uno de los carriles centrales. El vehículo delantero siempre lleva una velocidad de 6 m/s y, al igual que haciendo en el control adaptativo, para evitar perderlo de vista, si se aleja a más de 25 metros del agente se detiene.
+El entrenamiento se ha llevado a cabo en un circuito con cuatro carriles, donde nuestro coche circula por uno de los carriles centrales. El vehículo delantero comienza a una distancia aleatoria de 20 a 40 metros del agente y mantiene una velocidad constante de 6 m/s durante todo el recorrido. Sin embargo, para evitar perderlo de vista, si se aleja a más de 25 metros del agente, el vehículo delantero se detiene.
 
 \textbf{datos de este ultim train (6 m/s aun por definir y si bajo el coef de entropia), inderencia + plots de steer y throttle + video, profiling}
