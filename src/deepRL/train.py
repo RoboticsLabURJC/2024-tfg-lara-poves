@@ -5,6 +5,9 @@ import os
 import yaml
 from stable_baselines3.common.env_util import make_vec_env
 import sys
+import warnings
+import traceback
+from stable_baselines3.common.callbacks import CheckpointCallback
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -26,7 +29,8 @@ env_callable = {
     'CarlaLaneDiscrete': environment.CarlaLaneDiscrete,
     'CarlaLaneContinuous': environment.CarlaLaneContinuous,
     'CarlaObstacle': environment.CarlaObstacle, 
-    'CarlaPassing': environment.CarlaPassing
+    'CarlaPassing': environment.CarlaPassing,
+    'CarlaOvertaken': environment.CarlaOvertaken
 }
 
 def check_dir(dir:str, env:str):
@@ -47,6 +51,10 @@ def main(args):
     log_dir = check_dir(dir + 'log/', args.env)
     model_dir = check_dir(dir + 'model/', args.env)
     log_name = args.alg + '-' + args.env
+
+    if env_class == environment.CarlaPassing and args.delta < 0.1:
+        warnings.warn(f"Fixed delta seconds should be ≤ 100ms (10 FPS) for the environment {args.env}",
+                      UserWarning)
 
     if args.alg != 'DQN':
         env = make_vec_env(lambda: env_class(train=True, fixed_delta_seconds=args.delta, human=args.human,
@@ -72,6 +80,9 @@ def main(args):
     policy = model_params['policy']
     model_params.pop('policy', None)
 
+    if env_class == environment.CarlaOvertaken:
+        model_params['policy_kwargs'] = dict(net_arch=dict(pi=[64, 64], vf=[64, 64]))
+
     if not args.retrain:
         model = alg_class(policy, env, verbose=args.verbose, seed=SEED, tensorboard_log=log_dir, **model_params)
     else:
@@ -90,11 +101,21 @@ def main(args):
     if args.alg == 'DQN':
         env.set_model(model)
 
-    files = os.listdir(dir + 'model/' + args.env)
-    num_files = len(files) + 1
-    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name, progress_bar=True)
-    model.save(model_dir + '/' + args.alg + '-' + args.env + '_' + str(num_files))
+    # Save a checkpoint every 20_000 steps
+    checkpoint_callback = CheckpointCallback(
+        save_freq=20_000,
+        save_path=model_dir,
+        name_prefix=args.alg + '-' + args.env + '_' + str(args.num_file),
+        save_replay_buffer=True,
+        save_vecnormalize=True,
+    )
 
+    model = alg_class.load(dir + 'model/CarlaOvertaken/' + args.alg + '-' + args.env + '_1', env=env, **model_params)
+    n_timesteps = n_timesteps - 460_000
+
+    model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name,
+                progress_bar=True, callback=checkpoint_callback)
+    model.save(model_dir + '/' + args.alg + '-' + args.env + '_' + str(args.num_file))
     env.close()
 
 if __name__ == "__main__":
@@ -106,7 +127,7 @@ if __name__ == "__main__":
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + "} [--port <port_number>] [--human <human>]" +\
             "[--delta <fixed_delta_seconds>] [--log_interval <log_interval>] [--verbose <verbose>]" +\
-            "[--num_cir <num_cir>] [--retrain <retrain>] [--port_tm <port_tm>]"
+            "[--num_cir <num_cir>] [--retrain <retrain>] [--port_tm <port_tm>] [--num_file <num_file>]"
     )
     parser.add_argument(
         '--env', 
@@ -156,14 +177,14 @@ if __name__ == "__main__":
         type=int, 
         required=False, 
         default=0,
-        help='Display or not Pygame screen. By default 0. (0 = False)'
+        help='Display or not Pygame screen. By default 0 (0 = False).'
     )
     parser.add_argument(
         '--retrain', 
         type=int, 
         required=False, 
         default=0,
-        help='If a model has to be reatrained, 1: retraining lane, 2: retraining obstacle. By default 0. (0 = False)'
+        help='If a model has to be reatrained, 1: retraining lane, 2: retraining obstacle. By default 0 (0 = False).'
     )
     parser.add_argument(
         '--port_tm', 
@@ -171,6 +192,13 @@ if __name__ == "__main__":
         required=False, 
         default=3456,
         help='Port for the traffic manger. By default 3456.'
+    )
+    parser.add_argument(
+        '--num_file', 
+        type=int, 
+        required=False, 
+        default=1,
+        help='Number which identifies the model.'
     )
 
     main(parser.parse_args())
