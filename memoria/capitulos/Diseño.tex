@@ -82,6 +82,7 @@ De esta manera, obtenemos los límites de ambos lados del carril y aplicamos el 
 Al basarse en información obtenida directamente del simulador CARLA este enfoque resulta más fiable que la detección de carril mediante \ac{DL}, puesto que, a pesar de los posibles obstáculos que puedan afectar la visibilidad, es capaz de seguir detectando el carril como se muestra en la figura \ref{fig:gt_final_carril}. Por lo tanto, esta será la técnica empleada durante los entrenamientos, ya que, en ciertos escenarios, es necesario tener un vehículo delante que puede ocultar temporalmente las líneas del carril.
 
 \subsection{Segmentación de la calzada}
+\label{sec:per_ef}
 
 Comprender la ubicación del carril por el que circulamos es fundamental, pero también buscamos obtener más información sobre la calzada: sus límites, su área y la presencia de otros carriles. Para ello, incluimos en la percepción de la red neuronal de segmentación semántica EfficientVit \ref{sec:ef}. Al igual que para el carril, necesitamos una representación simplificada de la misma, para ello, analizamos la máscara de segmentación que nos proporciona EfficientVit para calcular su área, centro de masas y \textit{n} puntos igualmente espaciados de cada límite lateral de la calzada. Con el fin proporcionar información más valiosa al modelo, seleccionamos solo un cuarto de los puntos de la parte totalmente vertical, como se puede apreciar en la Figura \ref{fig:seg_params}. Esta funcionalidad ha sido implementada principalmente con la librería NumPy para maximizar la eficiencia computacional.
 \begin{figure}[ht]
@@ -409,7 +410,7 @@ En este caso, la función recompensa es más compleja y sigue el siguiente esque
 
 \begin{code}[H]
 \begin{lstlisting}[language=Python]
-if error is None:
+if error == None:
     # Deviation normalization
     r_dev = (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
 
@@ -520,7 +521,7 @@ self.observation_space[KEY_LASER] = spaces.Box(
 \label{cod:obs_laser_front}
 \end{code}
 
-En este nuevo escenario las observaciones han cambiado, por lo tanto, no podemos reutilizar el modelo anterior de seguimiento de carril, pero si sus parámetros y función de recompensa. Para facilitar el aprendizaje del modelo, hemos utilizado la estrategia de \textit{Curriculum Learning}. Consiste en presentar al modelo las tareas de manera progresiva, comenzando con ejemplos simples y aumentando gradualmente la complejidad. Este enfoque imita la forma en que los humanos aprenden, empezando por conceptos básicos antes de abordar problemas más difíciles. Reducir la complejidad al inicio evita que el agente aprenda de manera irregular, con grandes fluctuaciones en la política, mejorando la estabilidad del entrenamiento y aumentando la velocidad de convergencia. Además, al aprender de forma estructurada, el modelo tiende a desarrollar representaciones más sólidas que mejoran la generalización \cite{curriculum-learning}.
+En este nuevo escenario las observaciones han cambiado, por lo tanto, no podemos reutilizar el modelo anterior de seguimiento de carril, pero si sus parámetros y función de recompensa. Para facilitar el aprendizaje del modelo, hemos utilizado la estrategia de \textit{curriculum learning}. Consiste en presentar al modelo las tareas de manera progresiva, comenzando con ejemplos simples y aumentando gradualmente la complejidad. Este enfoque imita la forma en que los humanos aprenden, empezando por conceptos básicos antes de abordar problemas más difíciles. Reducir la complejidad al inicio evita que el agente aprenda de manera irregular, con grandes fluctuaciones en la política, mejorando la estabilidad del entrenamiento y aumentando la velocidad de convergencia. Además, al aprender de forma estructurada, el modelo tiende a desarrollar representaciones más sólidas que mejoran la generalización \cite{curriculum-learning}.
 
 Al haber cambiado la frecuencia de simulación, podemos simplificar la función de recompensa referente al seguimiento del carril, se elimina la distinción entre acelerador bajo y alto en la definición de pesos, fusionándolos en un solo bloque. Se han preservado los valores de los hiperparámetros de entrenamiento utilizados en el comportamiento sigue-carril basado en \ac{PPO} \ref{tab:hiper_params_ppo}, exceptuando el coeficiente de entropía, el cual se ha reducido levemente a 0.08 para favorecer al explotación de acciones. 
 
@@ -612,7 +613,7 @@ else:
 	self._tm.set_desired_speed(self._front_vehicle, self._target_vel * 3.6)
 	self._count_random += 1
 \end{lstlisting}
-\caption[Función de recompensa respecto al \ac{LiDAR} para control adaptativo con \ac{PPO}]{Función de recompensa respecto al \ac{LiDAR} para control adaptativo con \ac{PPO}.}
+\caption[Función de recompensa respecto al \ac{LiDAR} para el control adaptativo con \ac{PPO}]{Función de recompensa respecto al \ac{LiDAR} para control adaptativo con \ac{PPO}.}
 \label{cod:rew_ppo_passing}
 \end{code}
 
@@ -693,4 +694,72 @@ Es necesario analizar todas las subzonas del \ac{LiDAR}, excluyendo la del lado 
 \label{fig:laser_right}
 \end{figure}
 
-Al igual que para el control adaptativo, se realiza un primer entrenamiento para conseguir un modelo capaz de seguir el carril de manera precisa y a altas velocidades. Se ha entrenado a 9 \ac{FPS}, pero esta vez no porque se obtuviera mejoren resultados, sino porque en inferencia se logra ir como máximo a unos 10 \ac{FPS}. Se han reutilizado tanto la función recompensa \ref{cod:rew_carril_ppo_passing} como los hiperparámetros de entrenamiento del modelo sigue-carril para el control adaptativo. Durante este entrenamiento, a diferencia del modelo anterior, no desactivamos las observaciones no relavaste para el seguimiento de carril, el agente recibe constantemente observaciones reales del carril, \ac{LiDAR} y segmentación de la calzada. El circuito usado durante todos entrenamientos, dispone de tres rutas en los que el coche va por el carril más a la derecha en una de ellas y, en las otras dos, por los carriles centrales. Para fomentar la visualización de todos los posibles estados en la calzada, se ha añadido una nueva ruta en la que el vehículo autónomo circula por el carril más a la izquierda, como se puede ver en la Figura \ref{fig:obs_overtaken}. Los resultados han sido…
+El circuito usado durante todos entrenamientos, dispone de tres rutas en los que el coche va por el carril más a la derecha en una de ellas y, en las otras dos, por los carriles centrales. Para fomentar la visualización de todos los posibles estados en la calzada, se ha añadido una nueva ruta en la que el vehículo autónomo circula por el carril más a la izquierda, como se puede ver en la Figura \ref{fig:obs_overtaken}.
+
+Al igual que para el control adaptativo basado en \ac{PPO}, se ha empleado la estrategia de \textit{curriculum learning}, primero se ha entrenado un modelo capaz de seguir el carril de manera precisa con las nuevas observaciones. Sin embargo, debido al incremento significativamente la cantidad de datos que recibe el modelo en comparación con comportamientos anteriores, el conjunto de observaciones se vuelve más complejo, ralentizando la convergencia y haciendo más difícil la obtención de soluciones óptimas. Por esta razón, hemos tenido que modificar la función de recompensa del sigue-carril. \textbf{ RECOMPENSA (por completar, estoy probando un entrenamiento nuevo con sigmoide para ver si consigo un modelo más preciso)}
+\begin{code}[h]
+\begin{lstlisting}[language=Python]
+# reward lane
+\end{lstlisting}
+\caption[Función de recompensa sigue-carril para el adelantamiento basado en \ac{PPO}]{Función de recompensa sigue-carril para el adelantamiento basado en \ac{PPO}.}
+\label{cod:rew_ppo_lane_overtaken}
+\end{code}
+
+Se ha ajustado la frecuencia de ejecución de CARLA a 5 \ac{FPS}, ya que en inferencia se logra ir como máximo a unos 10 \ac{FPS}. De este modo, garantizamos que los modelos puedan probarse incluso cuando haya otros programas o entrenamientos en curso, puesto que el número de \ac{FPS} en inferencia siempre debe ser mayor al fijado en los entrenamientos con el modo síncrono de CARLA. No obstante, se han reutilizado los parámetros de seguimiento de carril basado en \ac{PPO} \ref{tab:hiper_params_ppo}, exceptuando el coeficiente de entropía que, como también se hizo en el control adaptativo al tráfico basado en \ac{PPO}, se ha reducido a 0.08 para fomentar la explotación frente a la exploración.
+
+\textbf{EVALUCION DEL SIGUE CARRIL: DATOS DE TRAIN + video + INFRENCIA (histogramas steer y throttle)}
+
+Una vez el coche ha logrado seguir el carril con precisión, debemos definir el escenario en el cual llevaremos a cabo el adelantamiento. Para ello, es necesario construir una espacie de máquina de estados que nos permita modificar la recompensa según la fase del adelantamiento en que esta el agente.
+\begin{enumerate}
+    \item El agente circula por su carril hasta que detecta con el \ac{LiDAR} al vehículo que circula delante suyo. Durante este tramo, recibe la recompensa del sigue-carril (\ref{cod:rew_ppo_lane_overtaken}).
+    \item Una vez detectado el vehículo delantero, se inicia la maniobra de adelantamiento y la recompensa cambia para incentivar al agente a cambiar al carril de la izquierda, si lo hay, lo cual se comprueba con la red de segmentación EfficientNet \ref{sec:per_ef}. Si el camión deja de ser percibido, se corta el adelantamiento y se vuelve al modo sigue-carril.
+    \item Una vez en el carril izquierdo, se retoma la recompensa sigue-carril hasta que el agente detecta que ha sobrepasado al otro vehículo y que es seguro volver al carril inicial.
+    \item En este momento, la función de recompensa cambia para animar al modelo a desplazarse al carril de la derecha.
+    \item Una vez realizado el cambio de carril, la maniobra de adelantamiento ha finalizado y se reanuda la recompensa sigue-carril hasta finalizar el recorrido.
+\end{enumerate}
+
+Para diseñar las recompensas para los cambios de carril, hemos modificado la normalización de la recompensa. Si queremos que el agente se desplace al carril de la izquierda, lo cual supone una desviación positiva, cuanto mayor sea la desviación, mayor será la recompensa. Si la desviación es negativa, el valor de la recompensa será cero. Por el contrario, si el objetivo es volver al carril de la derecha, cuanto más negativa sea la desviación, mayor será la recompensa. Si la desviación es positiva, la recompensa es nula. Una vez normalizada la desviación, aplicamos la función \textit{sigmoide} para acentuar la diferencia entre desviaciones muy grandes y aquellas más centradas. Esto permite que el modelo aprenda más rápidamente cuáles son las acciones óptimas. En el caso del cambio de carril a la izquierda, también se tiene en cuenta el valor del \ac{LiDAR} en la recompensa, para evitar que el agente colisione con el vehículo delantero. \textbf{aún tengo que probar que esto funciona -> Además, para agilizar aún más los entrenamientos, si el cambio de carril no se ha realizado al cabo de x \textit{steps}, se finaliza el episodio dando una recompensa negativa.} 
+
+\textbf{foto de la sigmoide y si me funiona en el accril poner las dos juntas y poner un areferenci a la foto en este texto, ecuaion con formula sigmoide: return 1 / (1 + np.exp(-a * (x - b))), tambien los pesos y parametro b de la sigmoide estan por ajustar}
+
+\begin{code}[h]
+\begin{lstlisting}[language=Python]
+if error is None:
+    # Deviation normalization
+    if self._overtaken_in_progress and left_lane:
+        # Positive deviation
+        dev_norm = np.clip(self._dev, 0, MAX_DEV_CHANGE) / MAX_DEV_CHANGE
+        r_dev = sigmoid(dev_norm, a=10, b=0.85)
+    elif self._overtaken_in_progress and right_lane:
+        # Negative deviation 
+        dev_norm = abs(np.clip(self._dev, -MAX_DEV_CHANGE, 0)) / MAX_DEV_CHANGE
+        r_dev = sigmoid(dev_norm, a=10, b=0.85)
+    else:
+        r_dev = # Por definir
+
+    # Steer, throttle and LiDAR conversion
+
+    # Set weights
+    # Filter inadequate actions
+    elif self._overtaken_in_progress and left_lane:
+        w_dev, w_throttle, w_steer, w_laser = 0.6, 0.2, 0.0, 0.2
+    elif self._overtaken_in_progress and right_lane:
+        w_dev, w_throttle, w_steer, w_laser = 0.8, 0.2, 0.0, 0.0  
+    # Follow lane
+
+    reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + w_laser * r_laser
+else:
+    if "crashed" in error:
+        reward = -60 #  Crashed into the vehicle in front
+    elif "time" in error:
+        reward = -20 # por ver si lo dejo
+    else:
+        reward = -40 # Lane lost
+\end{lstlisting}
+\caption[Función de recompensa para el adelantamiento basado en \ac{PPO}]{Función de recompensa para el adelantamiento basado en \ac{PPO}.}
+\label{cod:rew_ppo_overtaken}
+\end{code}
+
+El entrenamiento se ha llevado a cabo en un circuito con cuatro carriles, donde nuestro coche circula por uno de los carriles centrales. El vehículo delantero siempre lleva una velocidad de 6 m/s y, al igual que haciendo en el control adaptativo, para evitar perderlo de vista, si se aleja a más de 25 metros del agente se detiene.
+
+\textbf{datos de este ultim train (6 m/s aun por definir y si bajo el coef de entropia), inderencia + plots de steer y throttle + video, profiling}
