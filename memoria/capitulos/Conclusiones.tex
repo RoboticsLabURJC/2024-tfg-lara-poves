@@ -1,15 +1,16 @@
 \chapter{Conclusiones}
 \label{cap:capitulo5}
 
-El objetivo principal de este \ac{TFG} era desarrollar un sistema de conducción autónoma capaz de seguir el carril de manera fluida, adaptarse a la velocidad del vehículo delantero y realizar maniobras de adelantamiento de forma segura. Para ello, se han empleado algoritmos de \ac{DRL} para la toma de decisiones, específicamente \ac{DQN} y \ac{PPO}, decantándonos por PPO debido a su mejor capacidad de adaptación al entorno. Estos algoritmos se combinan con modelos basados en \ac{IA} para la percepción, obteniendo un sistema robusto, seguro y eficiente. El modelo resultante ha demostrado un desempeño correcto en CARLA, el simulador de referencia para conducción autónoma, validando su funcionamiento en entornos simulados. Estos resultados evidencian el potencial que tienen este tipo de algoritmos en tareas de conducción autónoma, optimizando la toma de decisiones en tiempo real y demostrando una gran capacidad de generalización en diferentes escenarios.
+El objetivo principal de este \ac{TFG} era desarrollar un sistema de conducción autónoma capaz de seguir el carril de manera fluida, realizar un control de crucero adaptativo y llevar a cabo una maniobra de adelantamiento. Para ello, se han empleado algoritmos de \ac{DRL} para la toma de decisiones, específicamente \ac{DQN} y \ac{PPO}, decantándonos por PPO debido a su mejor desempeño y capacidad de adaptación al entorno. Estos algoritmos se combinan con modelos basados en \ac{DL} para la percepción, obteniendo un sistema robusto, seguro y eficiente. El modelo resultante ha demostrado un desempeño correcto en CARLA, el simulador de referencia para conducción autónoma, validando su funcionamiento en entornos simulados. Estos resultados evidencian el potencial que tienen este tipo de algoritmos en tareas de conducción autónoma, optimizando la toma de decisiones en tiempo real y demostrando una gran capacidad de generalización en diferentes escenarios.
 
 En esta sección se analizan los objetivos cumplidos y las competencias obtenidas durante el desarrollo de este \ac{TFG}, además de posibles líneas futuras del proyecto.
+
 \section{Objetivos cumplidos}
 
 Los objetivos presentados en la sección \ref{sec:descripcion} se han alcanzado con éxito.
 
 \begin{enumerate}
-\item Se han obtenido varios modelos basados en \ac{DQN} y \ac{PPO} capaces de seguir el carril de forma precisa y a velocidades significativas. 
+\item Se han obtenido varios modelos basados en \ac{DQN} y \ac{PPO} capaces de seguir el carril de forma precisa y a velocidades óptimas. 
 \item Se ha conseguido un modelo basado en \ac{PPO} capaz de adaptarse a la velocidad del coche delantero basándose en las mediciones de la zona frontal del \ac{LiDAR}, manteniendo el seguimiento efectivo del carril.
 \item Se ha diseñado un modelo basado en \ac{PPO} capaz de realizar maniobras completas de adelantamiento, utilizando la información proporcionada por todos los elementos de percepción: detección de carril, obstáculo de alrededor y segmentación de la calzada.
 \item Se ha llevado a cabo un análisis y comparación de cada uno de los comportamientos de conducción autónomos obtenidos.
@@ -21,35 +22,36 @@ En la sección \ref{sec:requisitos} se propusieron los requisitos de este \ac{TF
 
 \begin{enumerate}
 \item Se ha utilizado el entorno de simulación CARLA para el desarrollo de los diferentes comportamientos autónomos.
-\item Se han empleadolos algoritmos de \ac{PPO} y \ac{DQN} para la toma de decisiones, mientras que, para la percepción, se ha utilizado un modelo basado en \ac{DL} para la detección de carril y una red neuronal de segmentación semántica para comprender la calzada.
-\item Se ha obtenido un modelo capaz de seguir el carril de forma fluida alcanzado velocidades de 20m/s.
-\item El modelo de control adaptativo al tráfico además de ajustar su velocidad a la del vehículo delantero, lograr también regular automáticamente la distancia de seguridad, aumentando la separación si la velocidad del vehículo aumenta. \textbf{completar con que se se respetan las dist marcadas por la dgt, hace refrencia a la fot anterior, añadir que la distancia de sguridad se calcula con la regla del cuadrado: inserta ecuacion dist\_sec = velkmh / 10 ** 2}
+\item Se han empleado los algoritmos de \ac{PPO} y \ac{DQN} para la toma de decisiones, mientras que, para la percepción, se ha utilizado un modelo basado en \ac{DL} para la detección de carril y la red neuronal de segmentación EfficientVit semántica para comprender la calzada.
+\item Se ha obtenido un modelo capaz de seguir el carril de forma fluida, alcanzando velocidades entorno a los 72 km/h.
+\item El modelo de control de crucero adaptativo además de ajustar su velocidad a la del vehículo delantero, lograr también regular automáticamente la distancia de seguridad, aumentando la separación si la velocidad del vehículo aumenta. Además, se ha comprobado que respeta las distancias mínimas de seguridad marcadas por la \ac{DGT}.
 \end{enumerate}
 
 \section{Balance global y competencias adquiridas}
 
 Durante el desarrollo de este \ac{TFG}, el reto de implementar una aplicación de navegación autónoma en entornos urbanos capaz de ofrecer diferentes habilidades de conducción, ha sido un proceso complejo, pero enriquecedor. Combinar algoritmos de \ac{DRL} para la toma de decisiones con técnicas avanzadas de \ac{IA} para la percepción, ha resultado ser una solución prometedora que, con mayor estudio y progreso, puede llegar a ofrecer modelos robustos y eficientes en entornos reales y variados de conducción.
 
-Al inicio de este proyecto, apenas tenía conocimientos básicos sobre \ac{DRL} y el alcance que podían tener soluciones basadas en redes neuronales para la percepción del entorno. Este ha sido mi primer gran trabajo en el campo, durante su desarrollo he aprendido numerosos conceptos y técnicas de desarrollo y análisis de resultados.
+Al inicio de este proyecto, apenas tenía conocimientos básicos sobre \ac{DRL} y el alcance que podían tener soluciones basadas en redes neuronales para la percepción del entorno. Este ha sido mi primer gran trabajo en este campo, durante su desarrollo he aprendido numerosos conceptos, técnicas de desarrollo y análisis de resultados.
 
 Destacando las siguientes competencias:
 
 \begin{itemize}
-  \item Mejorar la organización y planificación gracias a la metodología \textit{scrum}.
-  \item Nuevos conocimientos en el uso de simuladores robóticos.
-  \item Nueva concepción en el ámbito de la percepción, por ejemplo, la diferencia entre clasificación, detección y segmentación en imágenes.
-  \item Ampliación de conocimientos en redes neuronales, incluyendo su funcionamiento, los tipos más utilizados y los distintos métodos de entrenamiento.
-  \item Afianzar mis conocimientos sobre aprendizaje por refuerzo y ampliarlos con el aprendizaje de algoritmos \ac{DRL}.
-  \item Capacidad para analizar resultados y gráficas basadas en los datos recolectados durante los entrenamientos y pruebas, con el fin de optimizar y mejorar los modelos autónomos desarrollados, así como detectar y abordar los problemas surgidos durante el proceso.
-  \item Generación de documentación detallada, mejorando la presentación y explicación de los procesos y resultados obtenidos gracias al desarrollo de la memoria.
+\item Mejorar la organización y planificación gracias a la metodología \textit{scrum}.
+\item Nuevos conocimientos en el uso de simuladores robóticos.
+\item Aprendizaje de nuevos conceptos en el ámbito de la percepción, por ejemplo, la diferencia entre clasificación, detección y segmentación en imágenes.
+\item Ampliación de conocimientos en redes neuronales, incluyendo su funcionamiento, los tipos más utilizados y los distintos métodos de entrenamiento.
+\item Afianzar mis conocimientos sobre aprendizaje por refuerzo y ampliarlos con el estudio de algoritmos \ac{DRL}.
+\item Capacidad para analizar resultados y gráficas basadas en los datos recolectados durante los entrenamientos y pruebas, con el fin de optimizar y mejorar los modelos autónomos desarrollados, así como detectar y abordar los problemas surgidos durante el proceso.
+\item Generación de documentación detallada, mejorando la presentación y explicación de los procesos y resultados obtenidos gracias al desarrollo de la memoria.
 \end{itemize}
 
 \section{Líneas futuras}
 
 A pesar de que se han obtenido resultados eficientes y satisfactorios en el desarrollo de este \ac{TFG}, se proponen líneas futuras de crecimiento a partir de este trabajo. 
 \begin{itemize}
-    \item Explorar otros algoritmos de \ac{DRL} que utilicen un espacio de acciones continuo, como Deep Deterministic Policy Gradient (DDPG) o Soft Actor-Critic (SAC), con el fin de comparar los resultados y evaluar si se obtienen comportamientos más óptimos.
-    \item \textbf{Mejorar el adelantamiento (dependiendo un poco de lo que me dé tiempo a hacer).}
-    \item Adaptar los diferentes comportamientos autónomos a escenarios menos controlados y condiciones adversas, climas menos favorables, circuitos más complejos o situaciones de tráfico más elaboradas.
-	\item Fusionar los datos de todos ellos para las diferentes habilidades de percepción, con el objetivo de obtener comportamientos más robustos del sistema autónomo. Si un sensor falla o proporcionan mediciones con mucho ruido, se podrá contrastar la información entre los sensores para detectar y corregir posibles errores, mejorando la fiabilidad del sistema.
+\item Explorar otros algoritmos de \ac{DRL} que utilicen un espacio de acciones continuo, como Deep Deterministic Policy Gradient (DDPG) o Soft Actor-Critic (SAC), con el fin de comparar los resultados y evaluar si se obtienen comportamientos más óptimos.
+\item \textbf{Mejorar el adelantamiento (dependiendo un poco de lo que me dé tiempo a hacer).}
+\item Adaptar los diferentes comportamientos autónomos a escenarios menos controlados y condiciones adversas, climas menos favorables, circuitos más complejos o situaciones de tráfico más elaboradas.
+\item Fusionar los datos de todos los sensores para las diferentes habilidades de percepción, con el objetivo de obtener comportamientos más robustos del sistema autónomo. Si un sensor falla o proporciona mediciones con mucho ruido, se podrá contrastar la información entre los ellos para detectar y corregir posibles errores, mejorando la fiabilidad del sistema.
 \end{itemize}
+

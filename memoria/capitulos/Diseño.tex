@@ -661,7 +661,7 @@ En la fase de inferencia, se obtienen buenos resultados a distintas velocidades,
 
 La velocidad del coche delantero influye directamente en la distancia de estabilización, es decir, la separación con la que el coche autónomo se mantiene del camión. A mayor velocidad, mayor es esta distancia de seguridad, lo que es lógico y necesario en un entorno real. Sin embargo, esta medida no es la distancia real que separa los vehículos, sino la distancia del \ac{LiDAR} al vehículo delantero, el cual está desplazado 0.5 metros hacia atrás con respecto al centro del coche. El modelo de coche usado tiene una longitud de aproximadamente 5 metros. Por lo tanto, para obtener la distancia real entre los vehículos, debemos restar 3 metros a las distancias medidas por el \ac{LiDAR}.
 
-En los siguientes vídeos podemos ver cómo, si el vehículo delantero se desplaza a 9 m/s\footnote{\url{https://youtu.be/mN0Y2q6ny5w}}, se mantiene una distancia de seguridad de entre 11 y 12 metros, mientras que, si circula a 5 m/s\footnote{\url{https://youtu.be/Gvh9ZS0Sizc}}, la distancia se reduce a 10 metros. Tomando como referencia la regla del cuadrado\footnote{\url{https://www.caranddriver.com/es/movilidad/a40815294/distancia-de-seguridad-correcta-vehiculos/}} marcada por la \ac{DGT},  se ha calculado el percentil 90 para cada una de las velocidades, verificando que en todos los casos que se respeta la distancia de seguridad recomendada.
+En los siguientes vídeos podemos ver cómo, si el vehículo delantero se desplaza a 9 m/s\footnote{\url{https://youtu.be/mN0Y2q6ny5w}}, se mantiene una distancia de seguridad entre 11 y 12 metros, mientras que, si circula a 5 m/s\footnote{\url{https://youtu.be/Gvh9ZS0Sizc}}, la distancia se reduce a 10 metros. Tomando como referencia la regla del cuadrado\footnote{\url{https://www.caranddriver.com/es/movilidad/a40815294/distancia-de-seguridad-correcta-vehiculos/}} marcada por la \ac{DGT},  se ha calculado el percentil 90 para cada una de las velocidades, verificando que en todos los casos se respeta la distancia de seguridad recomendada.
 
 Se ha llevado a cabo un \textit{profiling} para analizar el rendimiento del sistema ahora que hemos introducido un nuevo sensor, lo que claramente aumenta la latencia total. El tiempo de respuesta se duplica en comparación con el modelo sigue-carril basado en \ac{PPO} \ref{fig:profiling_ppo}, pasando de 12 ms a 27 ms. Como resultado, el número de \ac{FPS} a los que podemos ejecutar en CARLA también se reduce, disminuyendo de 60 a 27-30 \ac{FPS}. A pesar de esto, esta velocidad de ejecución sigue siendo suficiente para que el sistema pueda reaccionar en tiempo real a las diferentes situaciones planteadas.
 
@@ -674,7 +674,7 @@ Se ha llevado a cabo un \textit{profiling} para analizar el rendimiento del sist
 
 \subsection{Maniobra de adelantamiento con PPO}
 
-En este apartado se describe como se ha alcanzo el objetivo final, realizar una maniobra de adelantamiento completa. Cuando se haya visualizado el vehículo delantero a menos de 15 metros, se inicia el cambio de carril a la izquierda y, una vez  no detectemos el vehículo en la parte derecha del \ac{LiDAR}, el coche autónomo vuelve al carril original. Para ello, es necesario añadir nuevas observaciones al modelo, tanto referentes a la zona derecha del \ac{LiDAR}, como a la segmentación de la calzada. Estas son todas las observaciones que recibe el modelo:
+En este apartado se describe como se ha alcanzado el objetivo final, realizar una maniobra de adelantamiento completa. Esta maniobra comienza cuando el agenta detecta al vehículo delantero con el \ac{LiDAR}, y termina cuando ha regresado al carril inicial. Para ello, es necesario añadir nuevas observaciones al modelo, tanto referentes a la zona derecha del \ac{LiDAR}, como a la segmentación de la calzada, con el fin de determinar si existe un carril al que desplazarse. Estas son todas las observaciones que recibe el modelo:
 \begin{itemize}
 \item Velocidad del propio agente, es decir, del \textit{Ego Vehicle}.
 \item Desviación del carril.
@@ -693,41 +693,62 @@ En este apartado se describe como se ha alcanzo el objetivo final, realizar una 
 \end{itemize}
 
 \begin{figure}[ht]
-  \centering
-  \includegraphics[width=11cm]{figs/Diseño/overtaken/obs.png}
-  \caption{Observaciones en el modelo de adelantamiento con \ac{PPO}.}
-  \label{fig:obs_overtaken}
+\centering
+\includegraphics[width=9cm]{figs/Diseño/overtaken/obs.png}
+\caption{Observaciones que recibe el modelo de adelantamiento basado en \ac{PPO}.}
+\label{fig:obs_overtaken}
 \end{figure}
 
-Es necesario analizar todas las subzonas del \ac{LiDAR}, excluyendo la del lado izquierdo, para determinar cuándo es seguro regresar al carril inicial durante un adelantamiento. Para intentar tener en cuenta solo información que concierne a la conducción, se ha realizado un filtrado por distancia dependiendo de la subzona, ya que, por ejemplo, necesitamos más rango en la zona frontal del \ac{LiDAR} que en la lateral. De esta manera, nos aseguramos que el modelo recibe solo puntos dentro de la carreta. Los filtros de distancia aplicados según la zona son los siguientes:
+El circuito usado durante todos los entrenamientos dispone de tres rutas en los que el coche va por el carril más a la derecha en una de ellas y, en las otras dos, por los carriles centrales. Para fomentar la visualización de todos los posibles estados en la calzada, se ha añadido una nueva ruta en la que el vehículo autónomo circula por el carril más a la izquierda, como se observa en la Figura \ref{fig:obs_overtaken}.
+
+\newpage
+
+Como hemos visto en la definición de las observaciones, es necesario analizar todas las subzonas del \ac{LiDAR}, excluyendo la del lado izquierdo, para determinar cuándo es seguro regresar al carril inicial durante el adelantamiento. Para intentar tener en cuenta solo información que concierne a la conducción, se ha realizado un filtrado por distancia dependiendo de la subzona, ya que, por ejemplo, necesitamos más rango en la zona frontal del \ac{LiDAR} que en la lateral. De esta manera, nos aseguramos que el modelo recibe solo puntos dentro de la carreta. Los filtros de distancia aplicados según la subzona son los siguientes:
 \begin{itemize}
-\item \textit{Front}: no aplicamos filtro distancia, por lo que disponemos del rango total del \ac{LiDAR}, como se muestra en la Figura \ref{fig:laser_front}.
-\item \textit{Right-front}: nos quedamos con distancias iguales o menores a 7m.
-\item \textit{Right}: filtrado por distancia de 6m.
-\item \textit{Right-back}: filtramos distancias inferiores a 9m.
+\item \textit{Front}: no aplicamos filtro distancia, por lo que disponemos del rango total del \ac{LiDAR} (20 metros), como se muestra en la Figura \ref{fig:laser_front}.
+\item \textit{Right-front}: nos quedamos con distancias iguales o menores a 7 metros.
+\item \textit{Right}: filtrado por distancia de 6 metros.
+\item \textit{Right-back}: filtramos distancias inferiores a 9 metros.
 \end{itemize}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=11cm]{figs/Diseño/lidar/laser_right.png}
-\caption{Filtrado del \ac{LiDAR} zona derecha.}
+\includegraphics[width=12cm]{figs/Diseño/lidar/laser_right.png}
+\caption{Filtrado por distancia del \ac{LiDAR} zona derecha.}
 \label{fig:laser_right}
 \end{figure}
 
-El circuito usado durante todos los entrenamientos, dispone de tres rutas en los que el coche va por el carril más a la derecha en una de ellas y, en las otras dos, por los carriles centrales. Para fomentar la visualización de todos los posibles estados en la calzada, se ha añadido una nueva ruta en la que el vehículo autónomo circula por el carril más a la izquierda, como se puede ver en la Figura \ref{fig:obs_overtaken}.
+\newpage
 
-Al igual que para el control adaptativo basado en \ac{PPO}, se ha empleado la estrategia de \textit{curriculum learning}, primero se ha entrenado un modelo capaz de seguir el carril de manera precisa con las nuevas observaciones. Sin embargo, debido al incremento significativamente la cantidad de datos que recibe el modelo en comparación con comportamientos anteriores, el conjunto de observaciones se vuelve más complejo, ralentizando la convergencia y haciendo más difícil la obtención de soluciones óptimas. Por esta razón, hemos tenido que modificar la función de recompensa del sigue-carril. \textbf{ RECOMPENSA (por completar, estoy probando un entrenamiento nuevo con sigmoide para ver si consigo un modelo más preciso)}
+Al igual que para el control de crucero adaptativo basado en \ac{PPO}, se ha empleado la estrategia de \textit{curriculum learning}, primero se ha entrenado un modelo capaz de seguir el carril de manera precisa con las nuevas observaciones. Sin embargo, debido al incremento significativamente la cantidad de datos que recibe el modelo, en comparación con comportamientos anteriores, el conjunto de observaciones se vuelve más complejo, ralentizando la convergencia y haciendo más difícil la obtención de soluciones óptimas. Por esta razón, se ha tenido que modificar la función de recompensa del sigue-carril, volviendo a la distinción entre acelerador bajo [0.0, 0.5) y alto [0.5, 0.6). Además, en esta ocasión se ha incrementado el peso de la desviación y reducido el del acelerador respecto al modelo sigue-carril basado en \ac{PPO} \ref{cod:rew_ppo}, dado que la presencia de mayor ruido dificulta el seguimiento del carril, y más a altas velocidades, es fundamental reforzar aún más la precisión para evitar que el modelo se vuelva inestable.
+
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
-# reward lane
+elif self._throttle < 0.5:  # Low throttle
+    w_dev, w_throttle, w_steer = 0.7, 0.2, 0.1
+else:  # High throttle
+    w_dev, w_throttle, w_steer = 0.75, 0.05, 0.2
 \end{lstlisting}
 \caption[Función de recompensa sigue-carril para el adelantamiento basado en \ac{PPO}]{Función de recompensa sigue-carril para el adelantamiento basado en \ac{PPO}.}
 \label{cod:rew_ppo_lane_overtaken}
 \end{code}
 
-Se ha ajustado la frecuencia de ejecución de CARLA a 5 \ac{FPS}, ya que en inferencia se logra ir como máximo a unos 10 \ac{FPS}. De este modo, garantizamos que los modelos puedan probarse incluso cuando haya otros programas o entrenamientos en curso, puesto que el número de \ac{FPS} en inferencia siempre debe ser mayor al fijado en los entrenamientos con el modo síncrono de CARLA. No obstante, se han reutilizado los parámetros de seguimiento de carril basado en \ac{PPO} \ref{tab:hiper_params_ppo}, exceptuando el coeficiente de entropía que, como también se hizo en el control adaptativo al tráfico basado en \ac{PPO}, se ha reducido a 0.08 para fomentar la explotación frente a la exploración.
+Se ha ajustado la frecuencia de ejecución de CARLA a 5 \ac{FPS}, ya que en inferencia se logra ir como máximo a unos 10 \ac{FPS}. De este modo, garantizamos que podemos probar los modelos incluso cuando haya otros programas o entrenamientos en curso, puesto que el número de \ac{FPS} en inferencia siempre debe ser mayor al fijado en los entrenamientos con el modo síncrono de CARLA. No obstante, se han reutilizado los parámetros de seguimiento de carril basado en \ac{PPO} \ref{tab:hiper_params_ppo}, exceptuando el coeficiente de entropía que, como también se hizo en el control de crucero adaptativo basado, se ha reducido a 0.08 para fomentar la explotación frente a la exploración.
 
-\textbf{EVALUCION DEL SIGUE CARRIL: DATOS DE TRAIN + video + INFRENCIA (histogramas steer y throttle)}
+La Figura \ref{fig:train_lane_overtaken} muestra que el modelo finalmente converge, ya que 
+se observa una tendencia ascendente en la recompensa media, que finalmente se estabiliza, y
+en la gran mayoría de los episodios se completa el recorrido, aunque existen algunas excepciones, en contraste con el entrenamiento previo del sigue-carril basado en \ac{PPO} \ref{fig:train_ppo_carril}, donde no ocurrían estos fallos. Esto se debe a que el agente se ve afectado por la información innecesaria en las observaciones (\ac{LiDAR} y segmentación de la calzada), dando lugar a episodios más caóticos y un aprendizaje menos estable. Esta inestabilidad también se refleja en la gráfica de velocidad, donde se observa una tendencia errática.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=10cm]{figs/Diseño/overtaken/train_lane.png}
+\caption{Datos del entrenamiento sigue-carril para el adelantamiento basado en \ac{PPO}.}
+\label{fig:train_lane_overtaken}
+\end{figure}
+
+-------------------------------------------
+
+inferencia carril -> HACER
 
 Una vez el coche ha logrado seguir el carril con precisión, debemos definir el escenario en el cual llevaremos a cabo el adelantamiento. Para ello, es necesario construir una espacie de máquina de estados que nos permita modificar la recompensa según la fase del adelantamiento en que esta el agente.
 \begin{enumerate}
