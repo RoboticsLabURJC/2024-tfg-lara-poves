@@ -6,7 +6,7 @@ En esta sección del documento se describe el problema a resolver, marcando los 
 \section{Descripción del problema}
 \label{sec:descripcion}
 
-El objetivo principal de este \ac{TFG} es desarrollar un sistema de conducción autónoma capaz de desenvolverse eficientemente en entornos urbanos. Para lograrlo, se emplean técnicas de \ac{DRL} para la toma de decisiones, junto con diferentes enfoques de \ac{DL} para la percepción del entorno, con el objetivo de garantizar un comportamiento robusto, seguro y eficiente. El proyecto se centra en conseguir una conducción segura y estable durante todo el recorrido, abordando tres subtareas principales: seguimiento del carril, control adaptivo respecto al vehículo de delante y llevar a cabo una maniobra de adelantamiento completa.
+El objetivo principal de este \ac{TFG} es desarrollar un sistema de conducción autónoma capaz de desenvolverse eficientemente en entornos urbanos. Para lograrlo, se emplean técnicas de \ac{DRL} para la toma de decisiones, junto con diferentes enfoques de \ac{DL} para la percepción del entorno, con el objetivo de garantizar un comportamiento robusto, seguro y eficiente. El proyecto se centra en conseguir una conducción segura y estable durante todo el recorrido, abordando tres subtareas principales: seguimiento del carril, control de crucero adaptivo y llevar a cabo una maniobra de adelantamiento completa.
 
 A continuación, se definen los siguientes sub-objetivos: 
 
@@ -26,7 +26,7 @@ Los requisitos que han de cumplirse en este trabajo son:
 \item Uso del entorno de simulación CARLA\footnote{\url{https://carla.org/}}, el cual permite la simulación de escenarios realistas, diversos comportamientos de vehículos y la prueba de modelos. Al ser un simulador ampliamente reconocido en el ámbito de la conducción autónoma, garantiza la reutilización del proyecto en aplicaciones futuras de este campo.
 \item Usar modelos de \ac{DL} para la percepción visual y algoritmos de \ac{DRL} para la toma de decisiones.
 \item Lograr un comportamiento sigue-carril estable y sin oscilaciones, alcanzando velocidades en torno a los 70 km/h.
-\item Mantener el control adaptativo al tráfico asegurando una distancia de seguridad adecuada respecto al vehículo delantero, de acuerdo con las normas de la \ac{DGT}\footnote{\url{https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/conoce-el-estado-del-trafico/operaciones-especiales/4_O.-E.-Primero-de-Mayo-2023_Consejos-y-normas-de-Seguridad-Vial_V-I.pdf}}.
+\item Mantener un control de crucero adaptativo respecto al vehículo delantero, asegurando una distancia de seguridad adecuada respecto al vehículo delantero, de acuerdo con las normas de la \ac{DGT}\footnote{\url{https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/conoce-el-estado-del-trafico/operaciones-especiales/4_O.-E.-Primero-de-Mayo-2023_Consejos-y-normas-de-Seguridad-Vial_V-I.pdf}}.
 \end{enumerate}
 
 \section{Metodología}
