@@ -178,7 +178,7 @@ Por ello, en este \ac{TFG} se ha empezado directamente con algoritmos basados en
 
 A pesar de no ser la solución más óptima, existen técnicas de control clásico que funcionan adecuadamente para ciertas habilidades de conducción. Un controlador \ac{PID} es un tipo de control ampliamente utilizado en sistemas automáticos para ajustar una variable y mantenerla en un valor deseado. En conducción autónoma, se usa para mantener un vehículo en el carril ajustando el ángulo del volante según la desviación respecto al centro carril.
 
-Para el seguimiento de carril basado en un controlador tradicional\footnote{\url{https://youtu.be/mq5STc8-Z6Y}}, se ha implementado un controlador PD para ajustar el giro. Al mismo tiempo, el acelerador se mantiene fijo a 0.5, mientras que con el freno se regula la velocidad para mantenerla constante a 10 m/s aproximadamente.
+Para el seguimiento de carril basado en un controlador tradicional\footnote{\url{https://youtu.be/zRQmGSzB0eg}}, se ha implementado un controlador PD para ajustar el giro. Al mismo tiempo, el acelerador se mantiene fijo a 0.5, mientras que con el freno se regula la velocidad para mantenerla constante a 10 m/s aproximadamente.
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
 self._kp = 1 / (SIZE_CAMERA / 2)
@@ -218,6 +218,14 @@ En los histogramas \ref{fig:comparativa_pid}(a) se muestra la velocidad en m/s d
 \label{fig:comparativa_pid}
 \end{figure}
 
+El controlador \ac{PID} es una solución sencilla para corregir el error de la desviación con el objetivo de seguir un carril y, por lo tanto, tiene un bajo costo computacional, de apenas 20 µs como muestra la Figura \ref{fig:profiling_pid}. La latencia total depende principalmente del tiempo empleado en la detección del carril, aproximadamente 10-11 ms. Esto nos permite ejecutar CARLA a unos 70 \ac{FPS} en el servidor Thor \ref{sec:thor}, lo que lo hace adecuado para aplicaciones en tiempo real donde se requiere un sistema reactivo.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=8cm]{figs/Diseño/pid/profiling.png}
+\caption{\textit{Profiling} del sigue-carril basado en un controlado \ac{PID}.}
+\label{fig:profiling_pid}
+\end{figure}
+
 \subsection{Seguimiento de carril basado en \ac{DQN}}
 
 Como se describió en la sección \ref{sec:stable_baselines3}, \ac{DQN} es un algoritmo \textit{off policy} que permite un espacio de observaciones continuo, pero el espacio de acciones es discreto. Ahora que ya sabemos cómo funciona el algoritmo \ac{DQN}, es el momento de construir el entorno de entrenamiento para que nuestro coche autónomo sea capaz de seguir el carril. Primero, debemos elegir el circuito de entrenamiento para nuestro modelo. Para ello, hemos elegido el Town04 de CARLA, ya que incluye tramos largos y sin intersecciones. Como se muestra en la Figura \ref{fig:mapa}, se han definido cuatro rutas. Las rutas uno, dos y tres, representadas por los colores rosa, amarillo y \textit{aqua} respectivamente, se utilizan durante el entrenamiento, mientras que la ruta cuatro, en color azul, se emplea para examinar el modelo en inferencia y comprobar si es capaz de generalizar. Cada una de estas rutas de entrenamiento comienza en una dirección y un punto distinto: curva a la derecha, línea recta y curva a la izquierda, con el fin de evitar \textit{overfitting} en el modelo.
@@ -228,8 +236,6 @@ Como se describió en la sección \ref{sec:stable_baselines3}, \ac{DQN} es un al
   \caption{Mapa del entorno de entrenamiento en CARLA con rutas definidas.}
   \label{fig:mapa}
 \end{figure}
-
-\newpage
 
 El espacio de observaciones coincide con el espacio de estados y está basado en un diccionario, por lo tanto, empleamos la política \textit{MultiInputPolicy} \ref{sec:stable_baselines3}. Las observaciones se normalizan para facilitar el aprendizaje al modelo e incluyen la siguiente información: 
 \begin{itemize}
@@ -294,8 +300,6 @@ else:
 \label{cod:rew_dqn}
 \end{code}
 
-\newpage
-
 Durante los entrenamientos utilizamos el modo síncrono de CARLA, en el cual el cliente puede indicar al servidor cuándo ejecutar \textit{world.tick()} y el tiempo simulado de cada \textit{steps} \textit{fixed\_delta\_seconds}, tras el cual la simulación se detiene hasta que se llama de nuevo a \textit{tick}. Hemos utilizado un \textit{fixed\_delta\_seconds} de 50 ms en CARLA, lo que equivale a entrenar a 20 \ac{FPS}; por lo tanto, en inferencia necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de 26 horas. Tras realizar diversas pruebas, identificamos los hiperparámetros de entrenamiento que proporcionan los mejores resultados.
 \begin{table}[ht]
 \centering
@@ -318,6 +322,8 @@ n\_timesteps & 8,000,000 & Número total de \textit{steps} para el entrenamiento
 \label{tab:hiperparametros}
 \end{table}
 
+\newpage
+
 La frecuencia de entrenamiento resultó ser un factor clave en el proceso, al principio se utilizó un valor menor, pero los modelos no lograban converger. Esto se debe a que, al actualizar el modelo con ejemplares demasiado consecutivos, los datos están altamente correlacionados, generando inestabilidad y dificultando la convergencia. Sin embargo, al aumentar el valor de este hiperparámetro, la memoria acumula datos más diversos y significativos antes de actualizar los pesos del modelo.
 
 En la gráfica \ref{fig:train_dqn}, se puede observar cómo el modelo finalmente converge. El primer \textit{plot} muestra la recompensa obtenida en cada episodio (azul) y la recompensa promedio acumulada por episodio (amarillo), que finalmente se estabiliza en un valor de 3.500 aproximadamente. En el segundo \textit{plot} se muestra el número de \textit{steps} por episodio. A pesar de que al inicio los episodios son más largos y, por lo tanto, acumulan una mayor recompensa, no es ese el comportamiento que deseado. Buscamos que el modelo alcance velocidades significativas, por lo que, a medida que aprende, los episodios tienen menos \textit{steps}, logrando completar el circuito más rápido sin comprometer la eficiencia. Los puntos verdes indican que el agente ha sido capaz de completar con éxito el circuito, mientras que los rojos señalan que ha tomado una acción que ha provocado el fin del episodio, como salirse del carril. Finalmente, en el último \textit{plot} se muestra cómo evoluciona el ratio de exploración, su valor se reduce gradualmente durante el 80\% del entrenamiento y, a partir de ese punto, se dejan de realizar acciones aleatorias.
@@ -328,6 +334,8 @@ En la gráfica \ref{fig:train_dqn}, se puede observar cómo el modelo finalmente
 \label{fig:train_dqn}
 \end{figure}
 
+\newpage
+
 En inferencia, usamos el modo asíncrono de CARLA, permitiendo que el simulador ejecute a la máxima velocidad posible. En un circuito visto durante el entrenamiento\footnote{\url{https://youtu.be/rzy2Vg57zA8}}, se observa que el seguimiento del carril es bastante preciso; no obstante, en ocasiones, se percibe un pequeño balanceo. Esto se debe a una de las limitaciones de \ac{DQN}, su espacio de acciones es discreto, lo que limita la capacidad de seleccionar la acción más precisa en cada instante. En la Figura \ref{fig:inference_dqn}, se presentan las acciones tomadas durante la inferencia. Los histogramas indican que mayoritariamente se eligen los pares de acciones más rápidos y giros suaves, llegando a alcanzar una velocidad de 50 km/h.
 
 \begin{figure}[ht]
@@ -336,8 +344,6 @@ En inferencia, usamos el modo asíncrono de CARLA, permitiendo que el simulador 
 \caption{Histogramas de las acciones escogidas en inferencia por el modelo sigue-carril basado en \ac{DQN}.}
 \label{fig:inference_dqn}
 \end{figure}
-
-\newpage
 
 En la Figura \ref{fig:comparativa_dqn}, se muestra la velocidad del coche autónomo en m/s y el error al centro del carril en píxeles del modelo basado en \ac{DQN}, comparando un escenario visto durante el entrenamiento\footnotemark[4], con otro circuito no visto previamente. En ambos casos, el histograma referente a la desviación del carril se mantiene concentrado en el centro, lo que indica que el modelo es capaz de seguir el carril de forma precisa. Sin embargo, el histograma de la velocidad se desplaza hacia la izquierda, evidenciando un comportamiento más lento y un modelo con dificultades para generalizar en nuevos entornos.
 \begin{figure}[ht]
@@ -350,7 +356,8 @@ En la Figura \ref{fig:comparativa_dqn}, se muestra la velocidad del coche autón
 \end{figure}
 
 Si comparamos este comportamiento con el obtenido con el controlador \ac{PID} \ref{fig:comparativa_pid}, vemos que, aunque el modelo basado en \ac{DQN} puede alcanzar velocidades superiores, generalmente es más lento. Esto se debe nuevamente a que el espacio de acciones es discreto y debemos definir pares fijos de acciones, el modelo no puede elegir el giro más conveniente en cada momento. No obstante, sí observamos una mejora significativa en la desviación respecto al centro del carril, especialmente en el escenario no ajustado o no visto durante el entrenamiento, el cual es el mismo en ambos casos. El modelo basado en \ac{DQN} es capaz de mantenerse dentro de los límites del carril con mayor precisión, garantizando una conducción más segura que el controlador \ac{PID}.
-Para analizar el rendimiento del sistema, se ha llevado a cabo un \textit{profiling} que permite evaluar tanto el tiempo dedicado a la detección del carril, como el tiempo que \ac{DQN} emplea para seleccionar la mejor acción a partir de las observaciones dadas. Como podemos observar en la Figura \ref{fig:profiling_dqn}, el tiempo que tarda \ac{DQN} en tomar la decisión más óptima es mínimo. Si lo sumamos con el coste de la percepción, obtenemos latencias de 12 ms. Como se ve en el vídeo anterior\footnotemark[4], en inferencia logramos ejecutar CARLA a 60 \ac{FPS} en el servidor Thor \ref{sec:thor}.
+
+Para analizar el rendimiento del sistema, se ha llevado a cabo un \textit{profiling} que permite evaluar tanto el tiempo dedicado a la detección del carril, como el tiempo que \ac{DQN} emplea para seleccionar la mejor acción a partir de las observaciones dadas. Como podemos observar en la Figura \ref{fig:profiling_dqn}, el tiempo que tarda \ac{DQN} en tomar la decisión más óptima es mínimo, aunque superior al del controlador tradicional \ac{PID} \ref{fig:profiling_pid}. Esto se debe a que el modelo basado en \ac{DQN} requiere una fase de inferencia en la red neuronal, añadiendo un ligero coste computacional en comparación con las operaciones algebraicas simples del \ac{PID}. Si sumamos el tiempo de decisión con el coste de la percepción, obtenemos latencias de 12 ms. Apenas hay diferencia con el PID, por lo que el sistema sigue siendo totalmente apto para aplicaciones en tiempo real. Como se ve en el vídeo anterior\footnotemark[4], en inferencia logramos ejecutar CARLA a 60-62 \ac{FPS}.
 
 \begin{figure}[ht]
 \centering
@@ -473,6 +480,8 @@ n\_timesteps & 4,000,000 & Número total de \textit{steps} para el entrenamiento
 \label{tab:hiper_params_ppo}
 \end{table}
 
+\newpage
+
 No obstante, el parámetro que tuvo un mayor impacto en la obtención de un comportamiento eficiente fue el coeficiente de entropía. Cuando sus valores eran bajos, el agente apenas exploraba el entorno, limitándose a explotar las primeras acciones que había probado, lo que conllevó en una solución ineficaz. Durante los primeros entrenamientos, el agente siempre se decantaba por las acciones extremas dentro de los límites definidos como correctos, tanto para el acelerador ([0.0, 0.6]) como para el giro ([-0.14, 0.14]). Combinado con estos dos factores, el vehículo se quedaba completamente inmóvil o rápidamente se salía del carril. Posteriormente, se logró regular el comportamiento del acelerador, pero el agente continuaba eligiendo las acciones extremas para el giro, lo que resultó en un comportamiento tipo péndulo. 
 
 Para evaluar el equilibrio entre exploración y explotación durante el entrenamiento, se desarrolló un programa para analizar la frecuencia de las acciones tomadas. Finalmente, tras numerosas pruebas y análisis, se determinó que valores dentro del rango [0.08, 0.1] para el coeficiente de entropía eran los más óptimos para nuestra aplicación. En el gráfico \ref{fig:actions_ppo_carril}, se muestran los histogramas de estas acciones, donde se observa que finalmente ambas distribuciones están centradas, indicando que el modelo ha aprendido que las mejores acciones son giros suaves y aceleraciones moderadas, permitiendo alcanzar velocidades significativas sin excederse. Esto garantiza una conducción segura y precisa dentro del carril.
@@ -581,7 +590,7 @@ El modelo adquirido sigue el carril de manera eficiente\footnote{\url{https://yo
 \centering
 \includegraphics[width=10cm]{figs/Diseño/passing/actions_inference_base.png}
 \caption{Histogramas de acciones tomadas en inferencia para el seguimiento del carril del modelo de control de crucero adaptativo basado en \ac{PPO}.}
-\label{fig:passing_actions_inf_base}
+\label{fig:passing_inference_lane}
 \end{figure}
 
 \newpage
@@ -674,7 +683,7 @@ Se ha llevado a cabo un \textit{profiling} para analizar el rendimiento del sist
 
 \subsection{Maniobra de adelantamiento basada en PPO}
 
-En este apartado se describe como se ha alcanzado el objetivo final, realizar una maniobra de adelantamiento completa. Esta maniobra comienza cuando el agenta detecta al vehículo delantero con el \ac{LiDAR}, y termina cuando ha regresado al carril inicial. Para ello, es necesario añadir nuevas observaciones al modelo, tanto referentes a la zona derecha del \ac{LiDAR}, como a la segmentación de la calzada, con el fin de determinar si existe un carril al que desplazarse. Estas son todas las observaciones que recibe el modelo:
+En este apartado se describe como se ha alcanzado el objetivo final, realizar una maniobra de adelantamiento completa. Esta maniobra comienza cuando el agenta detecta al vehículo delantero con el \ac{LiDAR}, y termina cuando ha regresado al carril inicial. Para ello, es necesario añadir nuevas observaciones al modelo, tanto referentes a la zona derecha del \ac{LiDAR}, como a la segmentación de la calzada con EfficientVit, con el fin de determinar si existe un carril al que desplazarse. Estas son todas las observaciones que recibe el modelo:
 \begin{itemize}
 \item Velocidad del propio agente, es decir, del \textit{Ego Vehicle}.
 \item Desviación del carril.
@@ -746,7 +755,7 @@ en la gran mayoría de los episodios se completa el recorrido, aunque existen al
 \label{fig:train_lane_overtaken}
 \end{figure}
 
-\textbf{inferencia carril + video (no he podido hacer aún porque tengo todo atope y los resultados no son los reales)}
+Al igual que en los modelos anteriores de seguimiento de carril basados en \ac{PPO}, este modelo aprende que las acciones más óptimas son valores del acelerador moderados y giros sutiles. Similar al control de crucero adaptativo, obtenemos velocidades ligeramente inferiores a las del modelo exclusivo de seguimiento de carril debido al ruido introducido por las observaciones del \ac{LiDAR} y la segmentación de la calzada, que no son relevantes para esta tarea. Aun así, en inferencia logramos alcanzar velocidades de 40 km/h y un seguimiento de carril fluido y preceiso\footnote{\url{https://youtu.be/KbqZBtF94Zg?si=ZCgzfXDVZrmrB-cF}}.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=10cm]{figs/Diseño/overtaken/inference_lane.png}
@@ -847,10 +856,10 @@ El entrenamiento se ha llevado a cabo en un circuito con cuatro carriles, donde 
 \label{fig:inference_overtaken}
 \end{figure}
 
-\textbf{profiling, cuando libere la GPU lo hago para que sea real y en las mismas condiones que los anteriores}
+Al introducir la red neuronal EfficientVit y su post-procesado para la segmentación de la calzada, la latencia aumenta drásticamente en más de 50 ms. Como vimos en el apartado de percepción \ref{fig:profiling}, estas operaciones son de las más costosas en términos computacionales. Aunque contamos con un modelo más complejo, que considera una mayor cantidad de información para la toma de decisiones, el incremento en la latencia respecto al a los modelos anteriores basados en \ac{PPO} es mínimo. Finalmente, el sistema alcanza una latencia total de 86 ms, permitiéndonos ejecutar el simulador CARLA a 10 \ac{FPS} en el servidor Thor. A pesar de este decremento en la velocidad de ejecución, el sistema sigue siendo válido para aplicaciones en tiempo real.
 \begin{figure}[ht]
 \centering
-\includegraphics[width=5cm]{figs/Diseño/overtaken/profiling.png}
+\includegraphics[width=8cm]{figs/Diseño/overtaken/profiling.png}
 \caption{\textit{Profiling} del modelo de adelantamiento basado en \ac{PPO}.}
 \label{fig:profiling_overtaken}
 \end{figure}
