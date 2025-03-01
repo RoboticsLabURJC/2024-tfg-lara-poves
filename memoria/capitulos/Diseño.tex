@@ -1,7 +1,7 @@
 \chapter{Diseño e Implementación}
 \label{cap:capitulo4}
 
-El objetivo de este \ac{TFG} es desarrollar un sistema de conducción autónoma capaz de realizar seguimiento de carril, control de crucero adaptativo y maniobras de adelantamiento completas de manera segura en un entorno simulado. En este capítulo, se establecen primero los fundamentos de la percepción, definiendo qué elementos del entorno pueden ser detectados y qué información estará disponible para los modelos de control. A continuación, se explica el sistema implementado de conducción autónoma tradicional basado en el seguimiento de carril mediante un controlador \ac{PID}. Posteriormente, se exploran algunos algoritmos basados en \ac{DRL} aplicados a la conducción autónoma, desarrollando y evaluando distintos modelos para la generación de comportamientos inteligentes. Finalmente, se lleva a cabo un análisis comparativo de los diferentes enfoques implementados, destacando sus ventajas e inconvenientes en el contexto de la conducción autónoma en un escenario urbano.
+El objetivo de este \ac{TFG} es desarrollar un sistema de conducción autónoma capaz de realizar seguimiento de carril, control de crucero adaptativo y maniobras de adelantamiento completas de manera segura en un entorno simulado. En este capítulo, se establecen primero los fundamentos de la percepción, definiendo qué elementos del entorno pueden ser detectados y qué información estará disponible para los modelos de toma de decisiones. A continuación, se explica el sistema implementado de conducción autónoma tradicional basado en el seguimiento de carril mediante un controlador \ac{PID}. Posteriormente, se exploran algoritmos basados en \ac{DRL} aplicados a la conducción autónoma, desarrollando y evaluando distintos modelos para la generación de comportamientos inteligentes. Finalmente, se lleva a cabo un análisis comparativo de los diferentes enfoques implementados, destacando sus ventajas e inconvenientes en el contexto de la conducción autónoma en un escenario urbano.
 
 \section{Arquitectura general}
 
@@ -22,11 +22,11 @@ Las imágenes captadas por la cámara RGB del simulador CARLA tiene una resoluci
 
 \subsection{Detección del carril}
 
-La detección del carril por el que debe circular nuestro vehículo autónomo es crucial para la toma de decisiones eficientes y seguras, garantizando que no se desvíe a otros carriles o fuera de los límites de la carretera. Inicialmente, se usó un modelo basado en \ac{DL}, pero puesto que tiene ciertas limitaciones imposibles de corregir, finalmente se terminó usando la técnica de \textit{ground truth}.
+La detección del carril por el que debe circular nuestro vehículo autónomo es crucial para la toma de decisiones eficientes y seguras, garantizando que no se desvíe a otros carriles o fuera de los límites de la carretera. En esta sección, se analizan las fortalezas y debilidades de distintas técnicas de detección de carril: una perfecta basada en información de CARLA (\textit{ground truth}) y otra más realista basada en un modelo de \ac{DL}.
 
 \subsubsection{Modelo basado en \ac{DL}}
 
-El modelo basado en \ac{DL} para la detección de carril expuesto es la sección \ref{sec:carril_dl3} procesa imágenes de 512 x 1024 píxeles, mientras que las nuestras son de 512 x 512 píxeles. Por ello, primero creamos una imagen vacía y colocamos la imagen capturada por la cámara RGB en el centro. Esta imagen se pasa como entrada al modelo, el cual devuelve dos máscaras de segmentación que definen las líneas del carril. En algunas situaciones, las líneas del carril pueden ser discontinuas o incompletas y, dado que reentrenar la red no es una opción viable, aplicamos un proceso de post-procesado para mejorar la detección y obtener una línea continua en toda la imagen sin importar las condiciones. Para lograrlo, aplicamos una regresión lineal a los puntos detectados de cada línea del carril. Este procedimiento nos permite calcular los coeficientes de las rectas que mejor se ajustan a esos puntos. Además, antes de aplicar la regresión lineal, se han aplicado técnicas de eliminación \textit{outliers} basadas en las medidas anteriores para lograr una detección aún más precisa del carril.
+El modelo basado en \ac{DL} para la detección de carril expuesto es la sección \ref{sec:carril_dl3} procesa imágenes de 512 x 1024 píxeles, mientras que las nuestras son de 512 x 512 píxeles. Por ello, primero creamos una imagen vacía y colocamos la imagen capturada por la cámara RGB en el centro. Esta imagen se pasa como entrada al modelo, el cual devuelve dos máscaras de segmentación que definen las líneas del carril. En algunas situaciones, las líneas del carril pueden ser discontinuas o incompletas. Por ello, aplicamos un proceso de post-procesado para mejorar la detección y obtener una línea continua en toda la imagen sin importar las condiciones. Para lograrlo, aplicamos una regresión lineal a los puntos detectados de cada línea del carril. Este procedimiento nos permite calcular los coeficientes de las rectas que mejor se ajustan a esos puntos. Además, antes de aplicar la regresión lineal, se han aplicado técnicas de eliminación \textit{outliers} basadas en las medidas anteriores para lograr una detección aún más precisa del carril. 
 
 Una vez tenemos los coeficientes de las rectas que definen cada línea del carril, es muy sencillo calcular la coordenada \textit{x} de cada punto de la línea dada la altura. Se ha definido una altura máxima para la detección del carril, creando así la forma de un trapecio como se puede observar en la Figura \ref{fig:dl_final_carril}. Al unir los puntos a la misma altura, podemos obtener el área del carril, su centro de masas y la desviación del coche con respecto al carril, considerando el centro de la imagen como el centro de nuestro vehículo. Además, podemos calcular \textit{n} puntos de cada línea del carril, igualmente espaciados en el eje \textit{y}, para terminar de conformar la representación simplificada de carril que, posteriormente, podrán recibir los modelos para la toma de decisiones.
 
@@ -39,8 +39,7 @@ Una vez tenemos los coeficientes de las rectas que definen cada línea del carri
 
 Se ha implementado un sistema de memoria para filtrar mediciones erróneas. Este sistema almacena las cinco últimas detecciones de las líneas, junto con el ángulo que cada una forma con la horizontal. Si el ángulo de la detección actual difiere lo suficiente de la media de los ángulos almacenados o si no se detecta ninguna línea, descartamos la medida y utilizamos la última detección válida. Si esto ocurre durante más de cinco iteraciones consecutivas, determinamos que se ha perdido el carril.
 
-A pesar de todos estos refinamientos en la detección de carril basada en \ac{DL}, cuando en la carretera hay un vehículo que obstruye la visibilidad de las líneas del carril, el modelo es incapaz de detectarlo de forma eficiente.
-
+Gracias al post-procesado aplicado, aunque el modelo basado en \ac{DL} no sea capaz de detectar completamente las líneas del carril, esta solución hace que sea eficiente en la mayoría de situaciones. A excepción de escenarios muy concretos donde hay un vehículo que obstruye la visibilidad de las líneas del carril, como se ve en la Figura \ref{fig:dl_final_carril_obs}. La única forma de mitigar este problema es reentrenar el modelo con un \textit{dataset} más amplio. Sin embargo, dado que este \ac{TFG} está enfocado en generar comportamientos de toma de decisiones, y reentrenar el modelo requería tiempo y la generación de nuevos \textit{datasets}, se optó por emplear la técnica de \textit{ground truth}.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=14cm]{figs/Diseño/lane/lane_dl_obs.png}
@@ -50,29 +49,9 @@ A pesar de todos estos refinamientos en la detección de carril basada en \ac{DL
 
 \subsubsection{Ground truth}
 
-Si deseamos interactuar con otros vehículos en la carretera el modelo de detección de carril basado en \ac{DL} no es viable. Por esta razón, surge la necesidad de utilizar \textit{ground thruth} para asegurar una detección del carril fiable en cualquier tipo de situación, incluso cuando la visibilidad es limitada. 
+Si deseamos interactuar con otros vehículos en la carretera el modelo de detección de carril basado en \ac{DL} no es viable. Por esta razón, surge la necesidad de utilizar \textit{ground thruth} para asegurar una detección del carril fiable en cualquier tipo de situación, incluso cuando la visibilidad es limitada. Además, al proporcionar una percepción perfecta, es idóneo para el proceso de entrenamiento, asegurándonos qué medidas erróneas en la percepción del carril no afecten negativamente al proceso de toma de decisiones. 
 
-Una vez aplicada la técnica de \textit{ground thruth}, descrita en la sección \ref{sec:gt}, obtenemos algunos puntos de la línea del carril, pero no todos. Para obtener los límites completos del carril, utilizamos la función \textit{pygame.draw.lines}. Sin embargo, esta función solo devuelve el rectángulo que rodea la línea dibujada, pero no los puntos de la línea en sí. Por lo tanto, dibujamos la línea sobre una superficie negra y luego analizamos esta superficie para localizar los límites del carril en términos de píxeles. Para optimizar el rendimiento computacional, restringimos la búsqueda al área dentro del rectángulo que encierra la línea. Al encontrar un punto, detenemos la búsqueda, ya que, dado que la línea es continua, podemos asumir con certeza que en cada altura habrá un punto que marcará el límite del carril. Si buscamos el extremo izquierdo, comenzamos desde el inicio de la imagen (x = 0), mientras que, si buscamos el derecho, empezamos desde el final de la imagen. El siguiente código ilustra este proceso:
-
-\begin{code}[h]
-\begin{lstlisting}[language=Python]
-
-rect = pygame.draw.lines(black_surface, (255, 0, 0), False, projected_boundary, 4)
-pixels = []
-for y in range(rect.top, rect.bottom):
-    for x in range(start, end, step):
-        color = black_surface.get_at((x, y))
-        if color[0] == 255:
-            pixels.append((x, y)) # Limits of the lane
-            break
-\end{lstlisting}
-\caption[Identificación de puntos del carril con información de \textit{ground thruth}]{Identificación de puntos del carril con información de \textit{ground thruth}.}
-\label{cod:gt_carril}
-\end{code}
-
-\newpage
-
-De esta manera, obtenemos los límites de ambos lados del carril y aplicamos el mismo post-procesado que en el modelo basado en \ac{DL}, unimos los puntos a la misma altura para formar un trapecio y calcular las métricas del carril. 
+Una vez aplicada la técnica de \textit{ground thruth}, descrita en la sección \ref{sec:gt}, obtenemos algunos puntos de la línea del carril, pero no todos. Para completar esta información, utilizamos la función \textit{pygame.draw.lines}, que, a partir de este conjunto de puntos, reconstruye con precisión las líneas completa del carril. Posteriormente, aplicamos un proceso de post-procesado similar al anterior para determinar los límites de cada línea del carril a cada altura, permitiéndonos calcular sus métricas.
 
 \begin{figure}[ht]
 \centering
@@ -81,33 +60,37 @@ De esta manera, obtenemos los límites de ambos lados del carril y aplicamos el 
 \label{fig:gt_final_carril}
 \end{figure}
 
-Al basarse en información obtenida directamente del simulador CARLA, este enfoque resulta más fiable que la detección de carril mediante \ac{DL}, puesto que, a pesar de los posibles obstáculos que puedan afectar la visibilidad, es capaz de seguir detectando el carril como se muestra en la figura \ref{fig:gt_final_carril}. Por lo tanto, esta será la técnica empleada durante los entrenamientos, puesto que, en ciertos escenarios, es necesario tener un vehículo delante que puede ocultar temporalmente las líneas del carril.
+\newpage
+
+Al basarse en información obtenida directamente del simulador CARLA, este enfoque resulta más fiable que la detección de carril mediante \ac{DL}, puesto que, a pesar de los posibles obstáculos que puedan afectar la visibilidad, es capaz de seguir detectando el carril como se muestra en la Figura \ref{fig:gt_final_carril}. Dado que este \ac{TFG} se centra en la generación de comportamientos para la toma de decisiones, es fundamental contar con una percepción lo más precisa posible durante los entrenamientos para evitar que influya negativamente en el aprendizaje del modelo. Por ello, esta será la técnica empleada en el proceso de entrenamiento. Además, en ciertos escenarios se da la presencia de un vehículo delantero puede ocultar temporalmente las líneas del carril, lo que hace aún más necesario un método de detección robusto y fiable en cualquier tipo de situación.
 
 \subsection{Segmentación de la calzada}
 \label{sec:per_ef}
 
-Comprender la ubicación del carril por el que circulamos es fundamental, pero también buscamos obtener más información sobre la calzada: sus límites, su área y la presencia de otros carriles. Para ello, incluimos en la percepción de la red neuronal de segmentación semántica EfficientVit \ref{sec:ef}. Al igual que para el carril, necesitamos una representación simplificada de la misma. Para ello, analizamos la máscara de segmentación que nos proporciona EfficientVit calculando su área, centro de masas y \textit{n} puntos igualmente espaciados en el eje \textit{y} de cada límite lateral de la calzada. Con el fin proporcionar información más valiosa al modelo, seleccionamos solo un cuarto de los puntos de la parte totalmente vertical, como se puede apreciar en la Figura \ref{fig:seg_params}. Esta funcionalidad ha sido implementada principalmente con la librería NumPy para maximizar la eficiencia computacional.
+Comprender la ubicación del carril por el que circulamos es fundamental, pero también buscamos obtener más información sobre la calzada: sus límites, su área y la presencia de otros carriles. Para ello, incluimos en el sistema de percepción la red neuronal de segmentación semántica EfficientVit descrita en la sección\ref{sec:ef}. Al igual que para el carril, necesitamos una representación simplificada de la misma. Para ello, analizamos la máscara de segmentación que nos proporciona EfficientVit calculando su área, centro de masas y \textit{n} puntos igualmente espaciados en el eje \textit{y} de cada límite lateral de la calzada. Con el fin proporcionar información más valiosa al modelo, seleccionamos solo un cuarto de los puntos de la parte totalmente vertical, como se puede apreciar en la Figura \ref{fig:seg_params}. Esta funcionalidad ha sido implementada principalmente con la librería NumPy para maximizar la eficiencia computacional.
 \begin{figure}[ht]
 \centering
-\includegraphics[width=10cm]{figs/Diseño/seg_points.png}
+\includegraphics[width=13cm]{figs/Diseño/seg_points.pdf}
 \caption{Representación de la calzada: superficie, centro de masas y límites.}
 \label{fig:seg_params}
 \end{figure}
 
 También se utiliza la segmentación para comprobar el porcentaje del área del carril que es calzada, y para saber si hay un carril a la izquierda. Esto nos proporciona más conocimiento acerca del entorno, lo que nos permitiría realizar maniobras como un adelantamiento, donde es necesario verificar la existencia de un carril al que podamos desplazarnos. Para hacer esta última comprobación, replicamos el carril actual a la izquierda y comprobamos que porcentaje de ese área es calzada, zona naranja en la Figura \ref{fig:seg_params}.
 
-\section{Percepción basada en \ac{LiDAR}}
+\section{Percepción basada en LiDAR}
 
-La percepción visual nos aporta mucha información sobre la calzada, pero también necesitamos detectar otros elementos que pueda haber en la carretera. Para ello, añadimos un nuevo sensor a la percepción, el \ac{LiDAR}, que complementa la visión con datos precisos sobre obstáculos u otros vehículos que puedan aparecer durante la conducción. El \ac{LiDAR} es un sensor simulado de CARLA que proporciona como salida una nube de puntos que indica la distancia y la posición de los objetos en el entorno, permitiendo una reconstrucción de la escena para la percepción y navegación del vehículo autónomo. Se configura el \ac{LiDAR} con un alcance máximo de 20 metros, distancia suficiente para detectar obstáculos en la carretera, en nuestro caso otros vehículos. Para la representación gráfica de la información del \ac{LiDAR}, mostramos cada uno de los puntos de la nube en 2D, coordenadas \textit{x} e \textit{y}. Con el fin de mejorar la percepción visual, se ha interpolado el color de cada punto según su intensidad, siendo tonos rojos los valores más altos y azules los más bajos, y el tamaño según su altura, a mayor elevación mayor tamaño.
+La percepción visual nos aporta mucha información sobre la calzada, pero también necesitamos detectar otros elementos que pueda haber en la carretera. Para ello, añadimos un nuevo sensor a la percepción, el \ac{LiDAR}. Si bien es posible detectar otros vehículos mediante la cámara y estimar su distancia, el \ac{LiDAR} ofrece mediciones más fiables, especialmente en condiciones adversas como lluvia o baja iluminación. Por lo tanto, para garantizar la seguridad en la conducción autónoma, optamos por utilizar el \ac{LiDAR} para la detección de obstáculos.
+
+El \ac{LiDAR} es un sensor simulado de CARLA que proporciona como salida una nube de puntos que indica la distancia y la posición de los objetos en el entorno, permitiendo una reconstrucción de la escena para la percepción y navegación del vehículo autónomo. Se configura el \ac{LiDAR} con un alcance máximo de 20 metros, distancia suficiente para detectar obstáculos en la carretera, en nuestro caso otros vehículos. Para la representación gráfica de la información del \ac{LiDAR}, mostramos cada uno de los puntos de la nube en 2D, coordenadas \textit{x} e \textit{y}. Con el fin de mejorar la percepción visual, se ha interpolado el color de cada punto según su intensidad, siendo tonos rojos los valores más altos y azules los más bajos, y el tamaño según su altura, a mayor elevación mayor tamaño.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=10cm]{figs/Diseño/lidar/interpolate.png}
-\caption{Visualización de la nube de puntos generada por el \ac{LiDAR}.}
+\includegraphics[width=7cm]{figs/Diseño/lidar/interpolate.png}
+\caption{Visualización de la nube de puntos y zonas del \ac{LiDAR}.}
 \label{fig:interpolate_lidar}
 \end{figure}
 
-Para identificar otros vehículos en la trayectoria del coche, nos enfocamos en analizar la zona frontal del \ac{LiDAR} con una amplitud de 150º, dividida en tres subzonas de 50º: \textit{front-left}, \textit{front}, \textit{front-right}. Para determinar los ángulos que delimitan estas zonas, independientemente de cómo se disponga el \ac{LiDAR} en el vehículo, debemos tener en cuenta su rotación en el eje z (\textit{yaw}). Partiendo del \textit{yaw} del \ac{LiDAR}, si queremos calcular los ángulos límite debemos sumarle y restarle la mitad del ángulo frontal. Posteriormente este ángulo se acota en un rango de [-180º, 180º]. Aunque ya hemos encontrado los ángulos extremos, es necesario calcular los dos ángulos intermedios que delimitan las tres zonas. Para ello, sumamos la amplitud de cada subzona al primer ángulo límite y se la restamos al segundo. Posteriormente, se incluyó la posibilidad de añadir dos nuevas subzonas en la parte lateral derecha del \ac{LiDAR}, \textit{right} y \textit{back-right}, permitiendo así la detección de obstáculos en un rango más amplio. En nuestro caso, con un \textit{yaw} de 90º, obtenemos los ángulos: [-165.0, -115.0, -65.0, -15.0, 35.0, 85.0].
+Para identificar otros vehículos en la trayectoria del coche, nos enfocamos en analizar la zona frontal del \ac{LiDAR} con una amplitud de 150º, dividida en tres subzonas de 50º: \textit{front-left}, \textit{front}, \textit{front-right}, como se ve en la Figura \ref{fig:interpolate_lidar}. Para determinar los ángulos que delimitan estas zonas, independientemente de cómo se disponga el \ac{LiDAR} en el vehículo, debemos tener en cuenta su rotación en el eje z (\textit{yaw}). Partiendo del \textit{yaw} del \ac{LiDAR}, si queremos calcular los ángulos límite debemos sumarle y restarle la mitad del ángulo frontal. Posteriormente este ángulo se acota en un rango de [-180º, 180º]. Aunque ya hemos encontrado los ángulos extremos, es necesario calcular los dos ángulos intermedios que delimitan las tres zonas. Para ello, sumamos la amplitud de cada subzona al primer ángulo límite y se la restamos al segundo. Posteriormente, se incluyó la posibilidad de añadir dos nuevas subzonas en la parte lateral derecha del \ac{LiDAR}, \textit{right} y \textit{back-right}, permitiendo así la detección de obstáculos en un rango más amplio. En nuestro caso, con un \textit{yaw} de 90º, obtenemos los ángulos: [-165.0, -115.0, -65.0, -15.0, 35.0, 85.0].
 
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
@@ -136,7 +119,7 @@ Como se puede observar en el dibujo \ref{fig:dib_angle}, dependiendo de que áng
   \label{fig:dib_angle}
 \end{figure}
 
-Para tener información adicional, se ha creado un cálculo de estadísticas para cada subzona: mínimo, media, mediana y desviación estándar. Como se puede observar en la Figura \ref{fig:stats_lidar}, los puntos de color rojo corresponden al propio coche, por lo tanto, hemos realizado un filtrado por intensidad para eliminarlos de los cálculos estadísticos. De la misma manera, filtramos por altura para eliminar todos los puntos correspondientes a la calzada y otros elementos del entorno externos a la carretera (montañas, árboles…), quedándonos solo con información relevante para la conducción.
+Para tener información adicional, se ha creado un cálculo de estadísticas para cada subzona: mínimo, media, mediana y desviación estándar. Dado que el \ac{LiDAR} se ha ubicado en el techo del vehículo y no en la parte frontal, algunos elementos detectados corresponden al propio coche, puntos en rojo, como se observa en la Figura \ref{fig:stats_lidar}. Para evitar que afecten los cálculos estadísticos, se ha aplicado un filtrado por intensidad para eliminarlos. De la misma manera, filtramos por altura para eliminar todos los puntos correspondientes a la calzada y otros elementos del entorno externos a la carretera (montañas, árboles…), quedándonos solo con información relevante para la conducción.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=11cm]{figs/Diseño/lidar/stats.png}
@@ -146,7 +129,7 @@ Para tener información adicional, se ha creado un cálculo de estadísticas par
 
 \newpage
 
-Se ha implementado una función que extrae un número determinado de puntos de cada subzona, los cuales están ordenados y distribuidos de manera equidistante a lo largo del eje \textit{x}. Estos puntos se utilizan como observaciones para los modelos, garantizando una representación precisa y bien estructurada de la información obtenida del \ac{LiDAR}.
+Se ha implementado una función que extrae un número determinado de puntos de cada subzona, los cuales están ordenados y distribuidos de manera equidistante a lo largo del eje \textit{x}. Estos puntos se utilizan como observaciones para los modelos, garantizando una representación precisa y bien estructurada de la información obtenida del \ac{LiDAR}. En la Figura \ref{fig:laser_front} se muestra este proceso en la subzona frontal del \ac{LiDAR}, colocando un vehículo delante a diferentes distancias.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=12cm]{figs/Diseño/lidar/laser_front.png}
@@ -162,7 +145,7 @@ Se realizó un \textit{profiling} para evaluar las latencias y detectar los proc
   \label{fig:profiling}
 \end{figure}
 
-Tras analizar los resultados desde un enfoque tanto computacional como de desempeño, se ha concluido que la combinación de EfficientVit para la segmentación de la calzada, \textit{ground truth} para detección del carril y el \ac{LiDAR} como fuente adicional de datos para detectar obstáculos en la carretera, permite un equilibrio entre precisión y eficiencia de procesamiento. La latencia total de esta unión es de aproximadamente 70 ms, lo que en el servidor Thor \ref{sec:thor} permite iterar en simulador CARLA a unos 10-12 \ac{FPS}. Este es el enfoque que usaremos para entrenar los modelos y evaluarlos. Sin embargo, en un entorno real no tenemos esa percepción basada en \textit{ground truth}, ya que es una técnica exclusiva del simulador CARLA. Si adoptamos por un enfoque más realista utilizando la detección de carril basad en \ac{DL}, obtenemos latencias de 75 ms, lo cual no supone una diferencia significativa en términos de coste computacional. Este rendimiento es adecuado para aplicaciones en tiempo real, permitiendo así lograr comportamientos reactivos y robustos en entornos dinámicos.
+Tras analizar los resultados desde un enfoque tanto computacional como de desempeño, se ha concluido que la combinación de EfficientVit para la segmentación de la calzada, \textit{ground truth} para detección del carril y el \ac{LiDAR} como fuente adicional de datos para detectar obstáculos en la carretera, permite un equilibrio entre precisión y eficiencia de procesamiento. La latencia total de esta unión es de aproximadamente 70 ms, lo que en el servidor Thor, descrito en la sección \ref{sec:thor}, nos permite iterar a unos 14 \ac{FPS} en el simulador CARLA. Este es el enfoque que usaremos para entrenar los modelos y evaluarlos. Sin embargo, en un entorno real no tenemos esa percepción basada en \textit{ground truth}, ya que es una técnica exclusiva del simulador CARLA. Si adoptamos por un enfoque más realista utilizando la detección de carril basad en \ac{DL}, obtenemos latencias de 75 ms, lo cual no supone una diferencia significativa en términos de coste computacional. Este rendimiento es adecuado para aplicaciones en tiempo real, permitiendo así lograr comportamientos reactivos y robustos en entornos dinámicos.
 
 \section{Toma de decisiones}
 
