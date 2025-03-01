@@ -2,13 +2,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 import csv
 import argparse
-from matplotlib import rcParams
 
-# Configurar la fuente para que sea similar a LaTeX (Computer Modern)
-rcParams['font.family'] = 'serif'
-rcParams['font.serif'] = ['Computer Modern']
-rcParams['text.usetex'] = False  # Si tienes LaTeX instalado, puedes cambiar esto a True
-
+# Configurar fuente similar a LaTeX
+plt.rcParams.update({
+    "font.family": "serif",
+    "font.serif": ["Computer Modern"],
+    "text.usetex": False,  # Si tienes LaTeX instalado, ponlo en True
+    "axes.titlesize": 16,
+    "axes.labelsize": 20,
+    "xtick.labelsize": 15,
+    "ytick.labelsize": 15
+})
 
 def main(args):
     data = {}
@@ -21,45 +25,43 @@ def main(args):
                     data[key] = []
                 data[key].append(float(value))
 
-    num_columns = 2
-    fig, axes = plt.subplots(1, num_columns, figsize=(6 * num_columns, 6))
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6))  # 2 gráficos en la misma fila
 
-    if num_columns == 1:
-        axes = [axes]
+    # Diccionario para personalizar cada variable
+    config = {
+        'velocity': {
+            'title': 'las velocidades',
+            'xlabel': 'Velocidad en m/s',
+            'color': 'blue',
+            'bin_width': 0.5,
+            'xlim': (0, 25),
+            'index': 0
+        },
+        'deviation': {
+            'title': 'la desviación del carril',
+            'xlabel': 'Desviación en píxeles',
+            'color': 'red',
+            'bin_width': 2,
+            'xlim': (-50, 50),  # Fijamos el rango de la desviación
+            'index': 1
+        }
+    }
 
-    label_fontsize = 14  # Aumentamos el tamaño de las etiquetas de los ejes
+    for key, values in data.items():
+        if key in config:
+            cfg = config[key]
 
-    for i, (key, values) in enumerate(data.items()):
-        if key == 'velocity':
-            key_title = 'las velocidades'
-            key = 'Velocidad en m/s'
-            color = 'blue'
-            index = 0
-            bin_width = 0.5
-        elif key == 'deviation':
-            key_title = 'la desviación del carril'
-            key = 'Desviación en píxeles'
-            color = 'red'
-            index = 1
-            bin_width = 2
-        else:
-            key_title = ''
-            continue  # Si no es una de las claves esperadas, lo ignoramos
+            values = np.array(values)
+            bins = np.arange(min(values), max(values) + cfg['bin_width'], cfg['bin_width'])
 
-        values = np.array(values)
-        bins = np.arange(min(values), max(values) + bin_width, bin_width)
-        axes[index].hist(values, bins=bins, edgecolor='black', alpha=0.7, color=color)
-        axes[index].set_xlabel(key, fontsize=label_fontsize)
-        axes[index].set_ylabel('Frecuencia', fontsize=label_fontsize)
-
-        if 'vel' in key.lower():
-            axes[index].set_xlim(0, 25)
-        elif 'des' in key.lower():
-            axes[index].set_xlim(-50, 50)
+            ax = axes[cfg['index']]
+            ax.hist(values, bins=bins, edgecolor='black', alpha=0.7, color=cfg['color'])
+            ax.set_xlabel(cfg["xlabel"], fontsize=16, fontweight='bold')
+            ax.set_ylabel('Frecuencia', fontsize=16, fontweight='bold')
+            ax.set_xlim(cfg["xlim"])  # Aplicar límites del eje X
 
     plt.tight_layout()
     plt.show()
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
