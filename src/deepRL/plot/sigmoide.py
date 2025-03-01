@@ -11,7 +11,7 @@ y = sigmoid(x, a=10, b=0.85)
 # Graficar
 plt.plot(x, y, 'o-', label="sigmoid(a=10, b=0.85)")
 plt.xlabel("Desviación normalizada")
-plt.ylabel("Sigmoid Value")
+plt.ylabel("Recompensa desviacoón")
 plt.legend()
 plt.grid()
 plt.show()

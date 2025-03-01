@@ -642,11 +642,11 @@ Para resolver esta situación, se diseñó un compartimento para que el camión 
 \label{fig:velocities}
 \end{figure}
 
-Como el modelo ya ha aprendido a seguir el carril con una velocidad adecuada, no son necesarios tantos episodios de entrenamiento, por lo que hemos reducido el número total de \textit{steps} a la mitad. También se ha disminuido a la mitad el coeficiente de entropía 0.04 para agilizar el entrenamiento evitando escenarios poco probables. En la Figura \ref{fig:train_traffic} se puede ver que, aunque no se alcanza una convergencia total como en entrenamientos anteriores, podemos decir que el modelo sí converge, ya que la recompensa promedio de los episodios aumenta de manera progresiva a lo largo del proceso de entrenamiento. Esto sugiere que, a pesar de los episodios no finalizados (puntos rojos), el modelo está mejorando gradualmente su desempeño y aprendiendo de manera efectiva.
+Como el modelo ya ha aprendido a seguir el carril con una velocidad adecuada, no son necesarios tantos episodios de entrenamiento, por lo que hemos reducido el número total de \textit{steps} a la mitad. También se ha disminuido a la mitad el coeficiente de entropía 0.04 para agilizar el entrenamiento evitando escenarios poco probables. Los entrenamientos duraron aproximadamente 15 horas. En la Figura \ref{fig:train_traffic} se puede ver que, aunque no se alcanza una convergencia total como en entrenamientos anteriores, podemos decir que el modelo sí converge, ya que la recompensa promedio de los episodios aumenta de manera progresiva a lo largo del proceso de entrenamiento. Esto sugiere que, a pesar de los episodios no finalizados (puntos rojos), el modelo está mejorando gradualmente su desempeño y aprendiendo de manera efectiva.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=13cm]{figs/Diseño/passing/train.png}
-\caption{Datos de reentrenamiento del control adaptativo al tráfico basado en \ac{PPO}.}
+\caption{Datos del reentrenamiento del control adaptativo al tráfico basado en \ac{PPO}.}
 \label{fig:train_traffic}
 \end{figure}
 
@@ -672,7 +672,7 @@ Se ha llevado a cabo un \textit{profiling} para analizar el rendimiento del sist
 \label{fig:profiling_ppo_passing}
 \end{figure}
 
-\subsection{Maniobra de adelantamiento con PPO}
+\subsection{Maniobra de adelantamiento basada en PPO}
 
 En este apartado se describe como se ha alcanzado el objetivo final, realizar una maniobra de adelantamiento completa. Esta maniobra comienza cuando el agenta detecta al vehículo delantero con el \ac{LiDAR}, y termina cuando ha regresado al carril inicial. Para ello, es necesario añadir nuevas observaciones al modelo, tanto referentes a la zona derecha del \ac{LiDAR}, como a la segmentación de la calzada, con el fin de determinar si existe un carril al que desplazarse. Estas son todas las observaciones que recibe el modelo:
 \begin{itemize}
@@ -733,7 +733,7 @@ else:  # High throttle
 \label{cod:rew_ppo_lane_overtaken}
 \end{code}
 
-Se ha ajustado la frecuencia de ejecución de CARLA a 5 \ac{FPS}, ya que en inferencia se logra ir como máximo a unos 10 \ac{FPS}. De este modo, garantizamos que podemos probar los modelos incluso cuando haya otros programas o entrenamientos en curso, puesto que el número de \ac{FPS} en inferencia siempre debe ser mayor al fijado en los entrenamientos con el modo síncrono de CARLA. No obstante, se han reutilizado los parámetros de seguimiento de carril basado en \ac{PPO} \ref{tab:hiper_params_ppo}, exceptuando el coeficiente de entropía que, como también se hizo en el control de crucero adaptativo basado, se ha reducido a 0.08 para fomentar la explotación frente a la exploración.
+Se ha ajustado la frecuencia de ejecución de CARLA a 5 \ac{FPS}, ya que en inferencia se logra alcanzar como máximo a unos 10 \ac{FPS}. De este modo, garantizamos que podemos probar los modelos incluso cuando haya otros programas o entrenamientos en curso, puesto que el número de \ac{FPS} en inferencia siempre debe ser mayor al fijado en los entrenamientos con el modo síncrono de CARLA. No obstante, se han reutilizado los parámetros de seguimiento de carril basado en \ac{PPO} \ref{tab:hiper_params_ppo}, exceptuando el coeficiente de entropía que, como también se hizo en el control de crucero adaptativo basado, se ha reducido a 0.08 para fomentar la explotación frente a la exploración. Los entrenamientos duraron aproximadamente 4 días y 12 horas.
 
 La Figura \ref{fig:train_lane_overtaken} muestra que el modelo finalmente converge, ya que 
 se observa una tendencia ascendente en la recompensa media, que finalmente se estabiliza, y
@@ -746,26 +746,53 @@ en la gran mayoría de los episodios se completa el recorrido, aunque existen al
 \label{fig:train_lane_overtaken}
 \end{figure}
 
--------------------------------------------
+\textbf{inferencia carril + video (no he podido hacer aún porque tengo todo atope y los resultados no son los reales)}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=10cm]{figs/Diseño/overtaken/inference_lane.png}
+\caption{Datos en inferencia del sigue-carril para el adelantamiento basado en \ac{PPO}.}
+\label{fig:inference_lane_overtaken}
+\end{figure}
 
-inferencia carril -> HACER
+Una vez el coche ha logrado seguir el carril con precisión, debemos definir el escenario donde llevaremos a cabo el adelantamiento. Para ello, es necesario construir una máquina de estados que nos permita modificar la recompensa según la fase del adelantamiento en que esté el agente.
 
-Una vez el coche ha logrado seguir el carril con precisión, debemos definir el escenario en el cual llevaremos a cabo el adelantamiento. Para ello, es necesario construir una espacie de máquina de estados que nos permita modificar la recompensa según la fase del adelantamiento en que esta el agente.
 \begin{enumerate}
-\item El agente circula por su carril hasta que detecta con el \ac{LiDAR} al vehículo que circula delante suyo. Durante este tramo, recibe la recompensa del sigue-carril (\ref{cod:rew_ppo_lane_overtaken}).
-\item Una vez detectado el vehículo delantero a menos de 20 metros (rango del \ac{LiDAR}), se inicia la maniobra de adelantamiento y la recompensa cambia para incentivar al agente a cambiar al carril de la izquierda, si lo hay, lo cual se comprueba con la red de segmentación EfficientVit \ref{sec:per_ef}. Si el camión deja de ser percibido, se corta el adelantamiento y se vuelve al modo sigue-carril.
-\item Una vez en el carril izquierdo, se retoma la recompensa sigue-carril hasta que el agente detecta que ha sobrepasado al otro vehículo y que es seguro volver al carril inicial.
-\item En este momento, la función de recompensa cambia para animar al modelo a desplazarse al carril de la derecha.
+\item El agente circula por su carril hasta que detecta con el \ac{LiDAR} al vehículo que circula delante suyo (alcance de 20 metros). Durante este tramo, recibe la recompensa del sigue-carril (\ref{cod:rew_ppo_lane_overtaken}).
+\item Una vez detectado el vehículo delantero, se inicia la maniobra de adelantamiento y la recompensa cambia para incentivar al agente a cambiar al carril de la izquierda, si lo hay, lo cual se comprueba con la red de segmentación EfficientVit \ref{sec:per_ef}. Si el camión deja de ser percibido, se interrumpe el adelantamiento y se vuelve al modo sigue-carril.
+\item Una vez el agente está en el carril izquierdo, se retoma la recompensa sigue-carril hasta que el agente detecta con el \ac{LiDAR} que ha sobrepasado al otro vehículo y que es seguro volver al carril inicial.
+\item En este momento, la función de recompensa cambia para que el modelo que debe desplazarse al carril de la derecha.
 \item Una vez realizado el cambio de carril, la maniobra de adelantamiento ha finalizado y se reanuda la recompensa sigue-carril hasta finalizar el recorrido.
 \end{enumerate}
 
-Para diseñar las recompensas para los cambios de carril, hemos modificado la normalización de la recompensa. Si queremos que el agente se desplace al carril de la izquierda, lo cual supone una desviación positiva, cuanto mayor sea la desviación, mayor será la recompensa. Si la desviación es negativa, el valor de la recompensa será cero. Por el contrario, si el objetivo es volver al carril de la derecha, cuanto más negativa sea la desviación, mayor será la recompensa. Si la desviación es positiva, la recompensa es nula. Una vez normalizada la desviación, aplicamos la función \textit{sigmoide} para acentuar la diferencia entre desviaciones muy grandes y aquellas más centradas. Esto permite que el modelo aprenda más rápidamente cuáles son las acciones óptimas. En el caso del cambio de carril a la izquierda, también se tiene en cuenta el valor del \ac{LiDAR} en la recompensa para realizar una maniobra más segura, evitando que el agente se aproxime demasiado al vehículo delantero o incluso colisiones contra él.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=10cm]{figs/Diseño/overtaken/esquema.png}
+\caption{Esquema de las fases del adelantamiento.}
+\label{fig:esquema_overtaken}
+\end{figure}
 
-\textbf{foto de la sigmoide y si me funiona en el accril poner las dos juntas y poner un areferenci a la foto en este texto, ecuaion con formula sigmoide: return 1 / (1 + np.exp(-a * (x - b))), tambien los pesos y parametro b de la sigmoide estan por ajustar}
+Para diseñar las recompensas para los cambios de carril, hemos modificado la normalización de la recompensa, permitiendo al modelo que aprenda de manera eficiente sin necesidad de indicaciones explícitas sobre cuándo y con qué magnitud realizar el giro, solamente especificamos en qué dirección debe moverse. Si queremos que el agente se desplace al carril de la izquierda, lo cual supone una desviación positiva, cuanto mayor sea la desviación, mayor será la recompensa. \textbf{Si la desviación es negativa, el valor de la recompensa será cero (aún por determinar)}. Por el contrario, si el objetivo es volver al carril de la derecha, cuanto más negativa sea la desviación, mayor será la recompensa. \textbf{Si la desviación es positiva, la recompensa es nula (aún por determinar)}. Una vez normalizada la desviación, aplicamos la función \textit{sigmoide} para acentuar la diferencia entre grandes desviaciones y aquellas más centradas. Esto permite al modelo aprender más rápido cuáles son las acciones óptimas. 
 
-\begin{code}[h]
+  \begin{myequation}[H]
+    \begin{equation} 
+       r_{\text{dev}} = \frac{1}{1 + e^{-a \cdot (dev_{\text{norm}} - b)}}
+    \end{equation} 
+    \caption{Fórmula de la función \textit{sigmoide}.}
+\label{eq:sigmoid_deviation}
+  \end{myequation}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=7cm]{figs/Diseño/overtaken/sigmoide.png}
+\caption{Función \textit{sigmoide} aplicada a la desviación para el cambio de carril.}
+\label{fig:sigmoide}
+\end{figure}
+
+En el caso del cambio de carril a la izquierda, también se tiene en cuenta el valor del \ac{LiDAR} en la recompensa para realizar una maniobra más segura, evitando que el agente se aproxime demasiado al vehículo delantero o incluso colisiones contra él. Tanto si se choca con el vehículo, como si se sale o cambia de carril de manera incorrecta, es decir, cuando no debe o hacia el lado equivocado, el episodio se finaliza con una recompensa negativa. \textbf{Dependiendo de cómo salgan las pruebas aquí habrá que añadir más técnicas que se han usado en la función de recompensa, y los pesos también están por definir}
+
+\begin{code}[H]
 \begin{lstlisting}[language=Python]
-if error is None:
+if error == None:
     # Deviation normalization
     if self._overtaken_in_progress and left_lane:
         # Positive deviation
@@ -776,29 +803,55 @@ if error is None:
         dev_norm = abs(np.clip(self._dev, -MAX_DEV_CHANGE, 0)) / MAX_DEV_CHANGE
         r_dev = sigmoid(dev_norm, a=10, b=0.85)
     else:
-        r_dev = # Por definir
+        r_dev =  (MAX_DEV - abs(np.clip(self._dev, -MAX_DEV, MAX_DEV))) / MAX_DEV
 
     # Steer, throttle and LiDAR conversion
 
     # Set weights
     # Filter inadequate actions
+    elif self._velocity > self._max_vel:
+        if not self._overtaken_in_progress:
+            w_dev, w_throttle, w_steer, w_lidar = 0.1, 0.65, 0.25, 0.0
+        else:
+            w_dev, w_throttle, w_steer, w_lidar = 0.35, 0.65, 0.0, 0.0
     elif self._overtaken_in_progress and left_lane:
-        w_dev, w_throttle, w_steer, w_laser = 0.6, 0.2, 0.0, 0.2
+        w_dev, w_throttle, w_steer, w_lidar = 0.6, 0.2, 0.0, 0.2
     elif self._overtaken_in_progress and right_lane:
-        w_dev, w_throttle, w_steer, w_laser = 0.8, 0.2, 0.0, 0.0  
+        w_dev, w_throttle, w_steer, w_lidar = 0.85, 0.15, 0.0, 0.0  
     # Follow lane
 
-    reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + w_laser * r_laser
+    reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + w_laser * r_lidar
 else:
     if "crashed" in error:
-        reward = -60 #  Crashed into the vehicle in front
+        reward = -60  # Crashed into the vehicle in front
     else:
-        reward = -40 # Lane lost
+        reward = -40  # Lane lost
 \end{lstlisting}
 \caption[Función de recompensa para el adelantamiento basado en \ac{PPO}]{Función de recompensa para el adelantamiento basado en \ac{PPO}.}
 \label{cod:rew_ppo_overtaken}
 \end{code}
 
-El entrenamiento se ha llevado a cabo en un circuito con cuatro carriles, donde nuestro coche circula por uno de los carriles centrales. El vehículo delantero comienza a una distancia aleatoria de 20 a 40 metros del agente y mantiene una velocidad constante de 6 m/s durante todo el recorrido. Sin embargo, para evitar perderlo de vista, si se aleja a más de 25 metros del agente, el vehículo delantero se detiene.
+El entrenamiento se ha llevado a cabo en un circuito con cuatro carriles, donde nuestro coche circula por el carril central izquierdo. El vehículo delantero comienza a una distancia aleatoria de 20 a 40 metros del agente y mantiene una velocidad constante de 6 m/s durante todo el recorrido. Sin embargo, para evitar perderlo de vista, si se aleja a más de 25 metros del agente se detiene. Al igual que en el reentrenamiento de control de crucero adaptativo, disminuimos el coeficiente de entropía a 0.04 para acelerar el entrenamiento evitando escenarios infrecuentes. \textbf{duración + datos train}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=7cm]{figs/Diseño/overtaken/train.png}
+\caption{Datos del reentrenamiento para el modelo de adelantamiento basado en \ac{PPO}.}
+\label{fig:train_overtaken}
+\end{figure}
 
-\textbf{datos de este ultim train (6 m/s aun por definir y si bajo el coef de entropia), inderencia + plots de steer y throttle + video, profiling}
+\textbf{datos inferencia (histogramas steer y throttle) + video}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=5cm]{figs/Diseño/overtaken/inference.png}
+\caption{Acciones escogidas en inferencia durante adelantamiento basado en \ac{PPO}.}
+\label{fig:inference_overtaken}
+\end{figure}
+
+\textbf{profiling, cuando libere la GPU lo hago para que sea real y en las mismas condiones que los anteriores}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=5cm]{figs/Diseño/overtaken/profiling.png}
+\caption{\textit{Profiling} del modelo de adelantamiento basado en \ac{PPO}.}
+\label{fig:profiling_overtaken}
+\end{figure}
+
