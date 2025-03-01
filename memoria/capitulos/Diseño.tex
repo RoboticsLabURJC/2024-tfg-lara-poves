@@ -149,24 +149,18 @@ Tras analizar los resultados desde un enfoque tanto computacional como de desemp
 
 \section{Toma de decisiones}
 
-El módulo de toma de decisiones permite a nuestro sistema interpretar el entorno de manera eficiente según los datos procedentes de la percepción. Un sistema de conducción autónoma debe ser capaz de adaptarse a escenarios complejos y cambiantes, con variaciones en la dirección del carril, el número de carriles o el comportamiento del resto vehículos en la carretera. Debe tener la capacidad de tomar decisiones informadas, seguras y óptimas, asegurando comportamientos realistas, evitando accidentes y respetando las normativas de tráfico en todo momento.
+El módulo de toma de decisiones permite a nuestro sistema interpretar el entorno de manera eficiente según los datos procedentes de la percepción. Este sistema de conducción autónoma debe ser capaz de seguir el carril con precisión, mantener un control de crucero adaptativo respetando la distancia de seguridad respecto al vehículo delantero y realizar maniobras de adelantamiento de forma segura. Debe tener la capacidad de tomar decisiones informadas, seguras y óptimas, garantizando comportamientos realistas y eficientes. Para ello, se han implementado dos tipos de soluciones: una basada en técnicas tradicionales de conducción autónoma y otra en \ac{ML}, que permite gestionar la información de manera más eficiente al adaptarse mejor a las condiciones cambiantes del entorno, a diferencia de las soluciones tradicionales que se rigen por normas predefinidas.
 
-La información procesada por los sensores puede interpretarse de diversas formas para la toma decisiones informadas. Existen métodos más tradicionales basados en reglas predefinidas y sistemas matemáticos, así como enfoques más avanzados basados en \ac{ML}. Sin embargo, una toma de decisiones rígida, basada en reglas fijas y algoritmos deterministas, no es adecuada para situaciones reales, donde la incertidumbre es un factor clave. En estos casos, necesitamos modelos capaces de adaptarse a escenarios cambiantes. Este tipo de soluciones requieren modelos matemáticos complejos y detallados del vehículo y del entorno, lo que podría generar una carga computacional excesiva. Por otro lado, el \ac{ML} permite gestionar esta información de forma más eficiente, adaptándose a las variaciones en el entorno y mejorando el rendimiento del sistema.
+\subsection{Sigue carril basado en un controlador PID}
 
-Para la conducción autónoma basada en \ac{ML}, nos centraremos en el aprendizaje por refuerzo, descrito en la primera sección \ref{sec:refuerzo}. Como se ha comprobado en anteriores \ac{TFG}\footnote{\url{https://burjcdigital.urjc.es/items/f6ce4e69-199b-4f73-a136-0f4782eac351}} que han empleado este enfoque, en particular \textit{Q-learning}\footnote{\url{https://www.cs.us.es/~fsancho/Blog/posts/Aprendizaje_por_Refuerzo_Q_Learning.md}}, un algoritmo basado en tablas, presenta ciertas limitaciones que dificultan su escalabilidad para nuestro objetivo. Cuando los estados y las acciones son continuos o muy numerosos, como ocurre en nuestro escenario de conducción autónoma, no es práctico utilizar una tabla para almacenar los valores de las acciones, ya que sería necesario explorar cada estado al menos una vez para encontrar la solución más óptima. 
+Existen técnicas de control clásico que funcionan eficientemente para ciertas habilidades de conducción donde los escenarios no son cambiantes ni dinámicos, pero es muy difícil su convergencia a comportamientos realistas cuando el entorno es complejo. Un controlador \ac{PID} es un tipo de control tradicional ampliamente utilizado en sistemas automáticos para ajustar una variable y mantenerla en un valor deseado. En conducción autónoma, se usa para mantener un vehículo en el carril ajustando el ángulo del volante según la desviación respecto al centro carril.
 
-Por ello, en este \ac{TFG} se ha empezado directamente con algoritmos basados en \ac{DRL}. En su lugar, estos algoritmos usan redes neuronales diseñadas para aprender la función que mapea estados-acciones. Estas redes son capaces de estimar el valor de estados no explorados, ya que aprenden las relaciones entre los diferentes pares estado-acción. Esto permite que los algoritmos basados en \ac{DRL} generalizar de manera más eficiente, mejorar su rendimiento en entornos complejos donde las reglas no son evidentes y adaptarse a nuevas situaciones sin necesidad de explorar cada uno de los estados de forma explícita. Por ejemplo, aunque hayan sido entrenadas con curvas de 30º o menos, los modelos resultantes son capaces de generalizar y tomar adecuadamente una curva de 40º. En este \ac{TFG} se han utilizado los algoritmos de \ac{DQN} y \ac{PPO}.
-
-\subsection{Conducción autónoma tradicional basada en un controlador \ac{PID}}
-
-A pesar de no ser la solución más óptima, existen técnicas de control clásico que funcionan adecuadamente para ciertas habilidades de conducción. Un controlador \ac{PID} es un tipo de control ampliamente utilizado en sistemas automáticos para ajustar una variable y mantenerla en un valor deseado. En conducción autónoma, se usa para mantener un vehículo en el carril ajustando el ángulo del volante según la desviación respecto al centro carril.
-
-Para el seguimiento de carril basado en un controlador tradicional\footnote{\url{https://youtu.be/zRQmGSzB0eg}}, se ha implementado un controlador PD para ajustar el giro. Al mismo tiempo, el acelerador se mantiene fijo a 0.5, mientras que con el freno se regula la velocidad para mantenerla constante a 10 m/s aproximadamente.
+Para el seguimiento de carril basado en un controlador tradicional, se ha implementado un controlador PD para ajustar el giro y un controlador proporcional para regular el acelerador, con el objetivo de mantener una velocidad constante de 10 m/s y seguir el carril de forma precisa. El valor del acelerador se ha limitado al rango [0.0, 0.5]. A continuación, se presentan las constantes definidas para los controladores:
 \begin{code}[h]
 \begin{lstlisting}[language=Python]
-self._kp = 1 / (SIZE_CAMERA / 2)
-self._kd = -self._kp / 1.7
-self._throttle = 0.5
+self._kp_dev = 1 / (SIZE_CAMERA / 2)
+self._kd_dev = -self._kp_dev / 1.7
+self._kp_vel = 1.75
 \end{lstlisting}
 \caption[Definición de constantes para el controlador \ac{PID}]{Definición de constantes para el controlador \ac{PID}.}
 \label{cod:const_pid}
@@ -190,24 +184,18 @@ control.steer = self._kp * error + self._kd * self._prev_error
 \label{cod:pid_giro}
 \end{code}
 
-En los histogramas \ref{fig:comparativa_pid}(a) se muestra la velocidad en m/s del coche autónomo y el error respecto al centro del carril en píxeles durante el circuito en el que se ajustó el controlador \ac{PID}, mientras que en los histogramas \ref{fig:comparativa_pid}(b) se presenta la misma información, pero en un circuito en el que no se realizó el ajuste. En ambos casos, podemos ver que el coche acelera al inicio, alcanzando rápidamente una velocidad de 10 m/s, la cual se mantiene constante durante todo el recorrido. Aunque en ambos escenarios el histograma de la desviación está bastante centrado, en el circuito sin ajuste, se observan desviaciones muy elevadas, superiores a 30 píxeles, con una frecuencia considerable. A pesar de que el circuito dispone de curvas pronunciadas, estas desviaciones no deberían ser tan altas, puesto que el vehículo debería mantenerse dentro de los límites del carril para garantizar una conducción segura y eficiente. Esto sugiere que un controlador \ac{PID} no es capaz de generalizar adecuadamente ante carriles cambiantes, provocando inestabilidad en la trayectoria y el comportamiento del vehículo.
+En los histogramas \ref{fig:comparativa_pid}(a) se muestra la velocidad en m/s del coche autónomo y el error respecto al centro del carril en píxeles durante el circuito en el que se ajustó\footnote{\url{https://youtu.be/Me3KQ3X_n-0}} el controlador \ac{PID}, mientras que en los histogramas \ref{fig:comparativa_pid}(b) se presenta la misma información, pero en un circuito en el que no se realizó el ajuste\footnote{\url{https://youtu.be/ygVov8ERqFI}}. En ambos casos, podemos ver que el coche acelera al inicio, alcanzando rápidamente una velocidad de 10 m/s, la cual se mantiene constante durante todo el recorrido. Aunque en ambos escenarios el histograma de la desviación está bastante centrado, en el circuito sin ajuste, se observan desviaciones muy elevadas, entre 35 y 45 píxeles, con una frecuencia considerable. A pesar de que el circuito dispone de curvas pronunciadas, estas desviaciones no deberían ser tan altas, puesto que el vehículo debería mantenerse dentro de los límites del carril para garantizar una conducción segura y eficiente. Esto sugiere que un controlador \ac{PID} no es capaz de generalizar adecuadamente ante carriles cambiantes, provocando inestabilidad en la trayectoria y el comportamiento del vehículo, lo cual no es óptimo en entornos de conducción autónoma.
 
 \begin{figure}[ht]
 \centering
-\subfigure[Histogramas del circuito ajustado.]{\includegraphics[width=0.45\textwidth]{figs/Diseño/pid/escenario_ajustado.png} \label{fig:pid_ajus}}
+\subfigure[Histogramas del circuito ajustado.]{\includegraphics[width=0.45\textwidth]{figs/Diseño/pid/ajustado.png} \label{fig:pid_ajus}}
 \hfill
-\subfigure[Histogramas del circuito no ajustado.]{\includegraphics[width=0.45\textwidth]{figs/Diseño/pid/escenario_no_ajustado.png} \label{fig:pid_no_ajus}}
+\subfigure[Histogramas del circuito no ajustado.]{\includegraphics[width=0.45\textwidth]{figs/Diseño/pid/no_ajustado.png} \label{fig:pid_no_ajus}}
 \caption{Comparativa de la velocidad y desviación del vehículo basado en un controlador \ac{PID}.}
 \label{fig:comparativa_pid}
 \end{figure}
 
-El controlador \ac{PID} es una solución sencilla para corregir el error de la desviación con el objetivo de seguir un carril y, por lo tanto, tiene un bajo costo computacional, de apenas 20 µs como muestra la Figura \ref{fig:profiling_pid}. La latencia total depende principalmente del tiempo empleado en la detección del carril, aproximadamente 10-11 ms. Esto nos permite ejecutar CARLA a unos 70 \ac{FPS} en el servidor Thor \ref{sec:thor}, lo que lo hace adecuado para aplicaciones en tiempo real donde se requiere un sistema reactivo.
-\begin{figure}[ht]
-\centering
-\includegraphics[width=8cm]{figs/Diseño/pid/profiling.png}
-\caption{\textit{Profiling} del sigue-carril basado en un controlado \ac{PID}.}
-\label{fig:profiling_pid}
-\end{figure}
+El controlador \ac{PID} es una solución sencilla para corregir el error de la desviación con el objetivo de seguir un carril y, por lo tanto, tiene un bajo costo computacional, de apenas 20 µs. La latencia total depende principalmente del tiempo empleado en la detección del carril, aproximadamente 10-11 ms. Esto nos permite ejecutar CARLA a unos 70 \ac{FPS} en el servidor Thor, haciéndolo adecuado para aplicaciones en tiempo real donde se requiere un sistema reactivo.
 
 \subsection{Seguimiento de carril basado en \ac{DQN}}
 
