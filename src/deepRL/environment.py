@@ -325,7 +325,7 @@ class CarlaBase(gym.Env, ABC):
         if self._lane_network:
             transform = carla.Transform(carla.Location(z=1.4, x=1.75))
         else:
-            transform = carla.Transform(carla.Location(x=0.5, z=1.7292))
+            transform = carla.Transform(carla.Location(x=0.5, z=1.7292)) 
 
         self._camera = self._sensors.add_camera_rgb(transform=transform, seg=self._seg, lane=True,
                                                     lane_network=self._lane_network, canvas_seg=False, 
