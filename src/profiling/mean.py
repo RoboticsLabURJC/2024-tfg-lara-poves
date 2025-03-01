@@ -47,7 +47,7 @@ def main(args):
             plt.text(i, t, f"{t:.2f}", ha='center', va='bottom', fontsize=10)
 
     plt.ylabel("Time (ms)")
-    plt.ylim(bottom=0, top=45)
+    plt.ylim(bottom=0, top=55)
     plt.xlabel("Task")
     plt.xticks(rotation=args.rot)
     plt.tight_layout()

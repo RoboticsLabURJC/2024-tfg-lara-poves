@@ -23,7 +23,7 @@ def main(args):
     velocities = data[KEY_VEL]
     bins = [5, 6, 7, 8, 9, 10, 11, 12]
 
-    labels = ["vel 5", "vel 6", "vel 7", "vel 8", "vel 9", "vel 9", "not seen car", ""]
+    labels = ["vel 5 m/s", "vel 6 m/s", "vel 7 m/s", "vel 8 m/s", "vel 9 m/s", "vel 10 m/s", "not seen car", ""]
     plt.xticks(bins, labels, rotation=45) 
 
     plt.hist(velocities, bins=bins, edgecolor='black', align='left', rwidth=0.8, color='skyblue')

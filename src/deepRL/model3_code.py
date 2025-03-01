@@ -1671,15 +1671,15 @@ class CarlaOvertaken(CarlaBase):
                     w_steer = 0.0
                     w_laser = 0.0
                     w_seen = 0.2
-                    print(f"\033[93mreward exeed max vel {self._max_vel} m/s\033[0m")
-                    print(f"\033[93mcounter seen: {self._counter_seen} reward: {r_seen}\033[0m")
+                    print("reward exeed max vel", self._max_vel, "m/s")
+                    print("counter seen:", self._counter_seen, "reward:", r_seen)
             elif self._overtaken_in_progress and not self._change_lane_left:
                 # Changing to left lane
-                w_dev = 0.6
+                w_dev = 0.5
                 w_throttle = 0.2
                 w_steer = 0.0
-                w_laser = 0.15
-                w_seen = 0.05
+                w_laser = 0.2
+                w_seen = 0.1
                 print("counter seen:", self._counter_seen, "reward:", r_seen)
                 print("reward changing left, dev:", self._dev, "reward:", r_dev, "w:", w_dev, "dist", self._dist_laser)
             elif self._overtaken_in_progress and self._change_lane_left and not self._change_lane_right and self._return:
@@ -1716,7 +1716,6 @@ class CarlaOvertaken(CarlaBase):
                 reward = -self._error_crash
             elif "time" in error:
                 reward = -20
-                print("\033[94mtoo much time\033[0m")
             else:
                 reward = -self._error_lane
 

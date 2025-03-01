@@ -1,0 +1,7187 @@
+Detección de carril: 136748347
+PID: 50497
+Detección de carril: 108383431
+PID: 43496
+Detección de carril: 11396982
+PID: 12048
+Detección de carril: 10358249
+PID: 20862
+Detección de carril: 10247782
+PID: 9644
+Detección de carril: 10190986
+PID: 9214
+Detección de carril: 10520986
+PID: 8773
+Detección de carril: 9832554
+PID: 9594
+Detección de carril: 10887911
+PID: 9134
+Detección de carril: 10625694
+PID: 9484
+Detección de carril: 10253831
+PID: 9654
+Detección de carril: 10255624
+PID: 9495
+Detección de carril: 10507656
+PID: 33060
+Detección de carril: 11805801
+PID: 24837
+Detección de carril: 11133513
+PID: 19519
+Detección de carril: 10579645
+PID: 24327
+Detección de carril: 11123338
+PID: 16295
+Detección de carril: 11231882
+PID: 27141
+Detección de carril: 11422921
+PID: 15414
+Detección de carril: 10227682
+PID: 11037
+Detección de carril: 11182658
+PID: 9645
+Detección de carril: 10550691
+PID: 9664
+Detección de carril: 11119662
+PID: 10677
+Detección de carril: 10470880
+PID: 13701
+Detección de carril: 10371820
+PID: 11948
+Detección de carril: 10439192
+PID: 10726
+Detección de carril: 10309806
+PID: 23576
+Detección de carril: 10761980
+PID: 11507
+Detección de carril: 10190817
+PID: 11257
+Detección de carril: 10605904
+PID: 11076
+Detección de carril: 10757634
+PID: 10746
+Detección de carril: 10285038
+PID: 11067
+Detección de carril: 10331869
+PID: 10276
+Detección de carril: 10442326
+PID: 10246
+Detección de carril: 10280642
+PID: 10015
+Detección de carril: 10337969
+PID: 11568
+Detección de carril: 10411620
+PID: 12509
+Detección de carril: 10358009
+PID: 12870
+Detección de carril: 10199258
+PID: 12919
+Detección de carril: 10819408
+PID: 12479
+Detección de carril: 10467865
+PID: 12159
+Detección de carril: 10504140
+PID: 12629
+Detección de carril: 10293352
+PID: 13371
+Detección de carril: 10323146
+PID: 11868
+Detección de carril: 10365721
+PID: 12229
+Detección de carril: 10437409
+PID: 13661
+Detección de carril: 10312961
+PID: 13791
+Detección de carril: 10349466
+PID: 12439
+Detección de carril: 10469808
+PID: 13621
+Detección de carril: 10421545
+PID: 13901
+Detección de carril: 10458831
+PID: 15504
+Detección de carril: 10706116
+PID: 18588
+Detección de carril: 10396687
+PID: 11627
+Detección de carril: 10285689
+PID: 11317
+Detección de carril: 10313101
+PID: 9975
+Detección de carril: 12072635
+PID: 13450
+Detección de carril: 10871486
+PID: 18488
+Detección de carril: 11229328
+PID: 14512
+Detección de carril: 11082515
+PID: 14111
+Detección de carril: 10384990
+PID: 13170
+Detección de carril: 10698354
+PID: 14462
+Detección de carril: 10719086
+PID: 15693
+Detección de carril: 10223545
+PID: 12428
+Detección de carril: 10113409
+PID: 10707
+Detección de carril: 10290787
+PID: 10856
+Detección de carril: 10423108
+PID: 10435
+Detección de carril: 10695019
+PID: 11608
+Detección de carril: 12120998
+PID: 14271
+Detección de carril: 13385853
+PID: 21302
+Detección de carril: 14222990
+PID: 16726
+Detección de carril: 10489799
+PID: 13601
+Detección de carril: 10544802
+PID: 25189
+Detección de carril: 10698945
+PID: 20210
+Detección de carril: 10472312
+PID: 13510
+Detección de carril: 10644683
+PID: 12870
+Detección de carril: 10733888
+PID: 12849
+Detección de carril: 10720678
+PID: 12098
+Detección de carril: 10486213
+PID: 12750
+Detección de carril: 10579084
+PID: 12179
+Detección de carril: 10362916
+PID: 11798
+Detección de carril: 10343607
+PID: 11677
+Detección de carril: 10557020
+PID: 12199
+Detección de carril: 10701930
+PID: 12820
+Detección de carril: 10815001
+PID: 10226
+Detección de carril: 10587887
+PID: 10997
+Detección de carril: 10354684
+PID: 10556
+Detección de carril: 10473023
+PID: 9194
+Detección de carril: 10589009
+PID: 9234
+Detección de carril: 10453713
+PID: 10225
+Detección de carril: 10511992
+PID: 13841
+Detección de carril: 10543410
+PID: 19820
+Detección de carril: 10903886
+PID: 20992
+Detección de carril: 10522057
+PID: 33591
+Detección de carril: 10658444
+PID: 10546
+Detección de carril: 10743031
+PID: 9345
+Detección de carril: 10301504
+PID: 10015
+Detección de carril: 10453123
+PID: 24738
+Detección de carril: 10738625
+PID: 10435
+Detección de carril: 10617171
+PID: 10486
+Detección de carril: 10912247
+PID: 21022
+Detección de carril: 11575242
+PID: 36716
+Detección de carril: 10617902
+PID: 19149
+Detección de carril: 11069055
+PID: 13410
+Detección de carril: 10529178
+PID: 13230
+Detección de carril: 10246531
+PID: 10907
+Detección de carril: 10270126
+PID: 11788
+Detección de carril: 10611583
+PID: 20431
+Detección de carril: 10412932
+PID: 17056
+Detección de carril: 10349556
+PID: 31989
+Detección de carril: 10281503
+PID: 8904
+Detección de carril: 10413022
+PID: 8964
+Detección de carril: 10038265
+PID: 9314
+Detección de carril: 10746477
+PID: 8914
+Detección de carril: 9998985
+PID: 9365
+Detección de carril: 9983202
+PID: 8633
+Detección de carril: 10344539
+PID: 21342
+Detección de carril: 11418064
+PID: 8873
+Detección de carril: 10555798
+PID: 20622
+Detección de carril: 10486493
+PID: 8793
+Detección de carril: 10406783
+PID: 9274
+Detección de carril: 10622389
+PID: 20871
+Detección de carril: 10556579
+PID: 9184
+Detección de carril: 10822252
+PID: 20671
+Detección de carril: 10336386
+PID: 19890
+Detección de carril: 10632425
+PID: 21393
+Detección de carril: 10695179
+PID: 12019
+Detección de carril: 11292744
+PID: 13300
+Detección de carril: 10706676
+PID: 12659
+Detección de carril: 10393633
+PID: 11677
+Detección de carril: 10615869
+PID: 10936
+Detección de carril: 10255765
+PID: 10486
+Detección de carril: 10333201
+PID: 10175
+Detección de carril: 10409327
+PID: 9354
+Detección de carril: 11084249
+PID: 13410
+Detección de carril: 10563260
+PID: 10485
+Detección de carril: 10979390
+PID: 23395
+Detección de carril: 10973571
+PID: 19980
+Detección de carril: 15551971
+PID: 21913
+Detección de carril: 10827149
+PID: 14782
+Detección de carril: 10659906
+PID: 12629
+Detección de carril: 10219109
+PID: 15543
+Detección de carril: 10563680
+PID: 9775
+Detección de carril: 10597191
+PID: 10145
+Detección de carril: 10883464
+PID: 8873
+Detección de carril: 10631032
+PID: 9004
+Detección de carril: 10605934
+PID: 9705
+Detección de carril: 10456848
+PID: 20931
+Detección de carril: 10916985
+PID: 14311
+Detección de carril: 10561437
+PID: 8703
+Detección de carril: 10683121
+PID: 9163
+Detección de carril: 10896584
+PID: 8843
+Detección de carril: 10618754
+PID: 9675
+Detección de carril: 10610531
+PID: 9675
+Detección de carril: 10673317
+PID: 9044
+Detección de carril: 10827470
+PID: 9415
+Detección de carril: 10576300
+PID: 20652
+Detección de carril: 10402727
+PID: 9504
+Detección de carril: 10181551
+PID: 8983
+Detección de carril: 10694899
+PID: 9764
+Detección de carril: 10424770
+PID: 9084
+Detección de carril: 10138948
+PID: 9344
+Detección de carril: 11129277
+PID: 10706
+Detección de carril: 10361925
+PID: 21012
+Detección de carril: 10380674
+PID: 9264
+Detección de carril: 10476018
+PID: 8843
+Detección de carril: 10239309
+PID: 9644
+Detección de carril: 10400994
+PID: 20020
+Detección de carril: 10450299
+PID: 17847
+Detección de carril: 10558522
+PID: 10096
+Detección de carril: 10475277
+PID: 10185
+Detección de carril: 10455247
+PID: 11237
+Detección de carril: 10245980
+PID: 10907
+Detección de carril: 10308795
+PID: 21603
+Detección de carril: 10509158
+PID: 9475
+Detección de carril: 9994909
+PID: 9985
+Detección de carril: 10423509
+PID: 9194
+Detección de carril: 10539033
+PID: 9875
+Detección de carril: 10505543
+PID: 9555
+Detección de carril: 10670351
+PID: 9274
+Detección de carril: 10328204
+PID: 9164
+Detección de carril: 10438922
+PID: 9234
+Detección de carril: 10400313
+PID: 22254
+Detección de carril: 10345389
+PID: 15654
+Detección de carril: 10193199
+PID: 9745
+Detección de carril: 10240521
+PID: 9294
+Detección de carril: 10888532
+PID: 10937
+Detección de carril: 10671213
+PID: 9164
+Detección de carril: 10499072
+PID: 9184
+Detección de carril: 10595078
+PID: 9234
+Detección de carril: 10521436
+PID: 8643
+Detección de carril: 10534416
+PID: 21733
+Detección de carril: 10408315
+PID: 9144
+Detección de carril: 11045770
+PID: 33791
+Detección de carril: 11248748
+PID: 16105
+Detección de carril: 11365764
+PID: 25308
+Detección de carril: 11416571
+PID: 20531
+Detección de carril: 10867110
+PID: 21543
+Detección de carril: 11320616
+PID: 21393
+Detección de carril: 11927054
+PID: 18298
+Detección de carril: 11524224
+PID: 17637
+Detección de carril: 11600811
+PID: 19189
+Detección de carril: 11484624
+PID: 35484
+Detección de carril: 11281627
+PID: 15093
+Detección de carril: 11011829
+PID: 24017
+Detección de carril: 10972269
+PID: 23215
+Detección de carril: 10796142
+PID: 22624
+Detección de carril: 10713247
+PID: 21933
+Detección de carril: 11472196
+PID: 12169
+Detección de carril: 10699746
+PID: 10726
+Detección de carril: 10629560
+PID: 12209
+Detección de carril: 10913630
+PID: 11297
+Detección de carril: 10730573
+PID: 11116
+Detección de carril: 10462507
+PID: 10726
+Detección de carril: 10290577
+PID: 10647
+Detección de carril: 10231497
+PID: 9935
+Detección de carril: 10488306
+PID: 9695
+Detección de carril: 10819809
+PID: 9254
+Detección de carril: 10975243
+PID: 9485
+Detección de carril: 10906460
+PID: 9885
+Detección de carril: 10210085
+PID: 9835
+Detección de carril: 10275865
+PID: 9635
+Detección de carril: 10632454
+PID: 16995
+Detección de carril: 10656350
+PID: 12729
+Detección de carril: 10469638
+PID: 19670
+Detección de carril: 10608197
+PID: 11908
+Detección de carril: 10780268
+PID: 11518
+Detección de carril: 10547576
+PID: 11297
+Detección de carril: 10661459
+PID: 11628
+Detección de carril: 10431160
+PID: 22524
+Detección de carril: 10378910
+PID: 11017
+Detección de carril: 11016306
+PID: 11978
+Detección de carril: 11835626
+PID: 12880
+Detección de carril: 10573535
+PID: 15483
+Detección de carril: 10629089
+PID: 10957
+Detección de carril: 10608458
+PID: 11818
+Detección de carril: 10502708
+PID: 11858
+Detección de carril: 11097969
+PID: 23265
+Detección de carril: 10868452
+PID: 13641
+Detección de carril: 10156404
+PID: 17927
+Detección de carril: 11631577
+PID: 18288
+Detección de carril: 10471080
+PID: 12509
+Detección de carril: 10145417
+PID: 24247
+Detección de carril: 11513398
+PID: 36125
+Detección de carril: 11724678
+PID: 15985
+Detección de carril: 10632895
+PID: 13500
+Detección de carril: 10787810
+PID: 13119
+Detección de carril: 10618444
+PID: 11127
+Detección de carril: 10592133
+PID: 10396
+Detección de carril: 10725665
+PID: 9815
+Detección de carril: 10204917
+PID: 11347
+Detección de carril: 10762761
+PID: 9244
+Detección de carril: 10478381
+PID: 21112
+Detección de carril: 10468667
+PID: 17025
+Detección de carril: 10579675
+PID: 15844
+Detección de carril: 10100359
+PID: 16054
+Detección de carril: 10302384
+PID: 15133
+Detección de carril: 10722882
+PID: 9134
+Detección de carril: 10926269
+PID: 9615
+Detección de carril: 11042565
+PID: 17347
+Detección de carril: 10242113
+PID: 16164
+Detección de carril: 10136634
+PID: 15643
+Detección de carril: 10373132
+PID: 10245
+Detección de carril: 10447895
+PID: 10336
+Detección de carril: 10416518
+PID: 9655
+Detección de carril: 10358250
+PID: 9354
+Detección de carril: 11184480
+PID: 9665
+Detección de carril: 10777304
+PID: 9604
+Detección de carril: 10700797
+PID: 9485
+Detección de carril: 10396297
+PID: 9535
+Detección de carril: 10945488
+PID: 10957
+Detección de carril: 10873108
+PID: 8964
+Detección de carril: 10585213
+PID: 9785
+Detección de carril: 10924647
+PID: 10376
+Detección de carril: 10811185
+PID: 20842
+Detección de carril: 10482788
+PID: 9535
+Detección de carril: 10733638
+PID: 10727
+Detección de carril: 10783883
+PID: 9935
+Detección de carril: 10872638
+PID: 10005
+Detección de carril: 11303330
+PID: 12188
+Detección de carril: 11438685
+PID: 11207
+Detección de carril: 11614942
+PID: 22894
+Detección de carril: 11324932
+PID: 11427
+Detección de carril: 11327055
+PID: 11558
+Detección de carril: 11862366
+PID: 37256
+Detección de carril: 10907471
+PID: 26180
+Detección de carril: 10364068
+PID: 17146
+Detección de carril: 11099051
+PID: 13410
+Detección de carril: 10353361
+PID: 14642
+Detección de carril: 13225951
+PID: 13861
+Detección de carril: 11877399
+PID: 28503
+Detección de carril: 10931908
+PID: 15303
+Detección de carril: 10588087
+PID: 15183
+Detección de carril: 10351849
+PID: 12649
+Detección de carril: 10623751
+PID: 11407
+Detección de carril: 10547346
+PID: 10336
+Detección de carril: 10598564
+PID: 10306
+Detección de carril: 10889734
+PID: 10205
+Detección de carril: 10468406
+PID: 9715
+Detección de carril: 10449928
+PID: 19760
+Detección de carril: 10604242
+PID: 9394
+Detección de carril: 10435817
+PID: 22324
+Detección de carril: 10500975
+PID: 19339
+Detección de carril: 10685575
+PID: 9495
+Detección de carril: 10062571
+PID: 8794
+Detección de carril: 10450269
+PID: 8944
+Detección de carril: 10485262
+PID: 9244
+Detección de carril: 10564071
+PID: 20641
+Detección de carril: 10772166
+PID: 16004
+Detección de carril: 10530700
+PID: 16084
+Detección de carril: 10190706
+PID: 15644
+Detección de carril: 10485763
+PID: 9694
+Detección de carril: 10032957
+PID: 10015
+Detección de carril: 10724774
+PID: 9334
+Detección de carril: 10790744
+PID: 9955
+Detección de carril: 10162593
+PID: 11547
+Detección de carril: 11473448
+PID: 13581
+Detección de carril: 11165392
+PID: 30817
+Detección de carril: 10442958
+PID: 20631
+Detección de carril: 10716402
+PID: 10616
+Detección de carril: 10652515
+PID: 10216
+Detección de carril: 10728940
+PID: 10186
+Detección de carril: 10768120
+PID: 11317
+Detección de carril: 11289429
+PID: 24497
+Detección de carril: 10755151
+PID: 9985
+Detección de carril: 12019774
+PID: 12429
+Detección de carril: 10045555
+PID: 10055
+Detección de carril: 10494756
+PID: 10355
+Detección de carril: 10771044
+PID: 14983
+Detección de carril: 10715099
+PID: 14222
+Detección de carril: 10371620
+PID: 16445
+Detección de carril: 10314183
+PID: 12439
+Detección de carril: 11103638
+PID: 32189
+Detección de carril: 11015264
+PID: 21052
+Detección de carril: 10292971
+PID: 12509
+Detección de carril: 10666446
+PID: 12219
+Detección de carril: 10476177
+PID: 12218
+Detección de carril: 10654027
+PID: 17987
+Detección de carril: 10464090
+PID: 10916
+Detección de carril: 10709912
+PID: 12539
+Detección de carril: 10654377
+PID: 11548
+Detección de carril: 10679285
+PID: 12890
+Detección de carril: 10754038
+PID: 24977
+Detección de carril: 10436327
+PID: 17306
+Detección de carril: 10608829
+PID: 9454
+Detección de carril: 10592294
+PID: 8964
+Detección de carril: 10816102
+PID: 8804
+Detección de carril: 10415886
+PID: 8884
+Detección de carril: 10408506
+PID: 9484
+Detección de carril: 10506634
+PID: 9284
+Detección de carril: 10798295
+PID: 9625
+Detección de carril: 10686757
+PID: 9525
+Detección de carril: 10639095
+PID: 8973
+Detección de carril: 10545313
+PID: 8794
+Detección de carril: 10065746
+PID: 9103
+Detección de carril: 10852848
+PID: 9294
+Detección de carril: 10925598
+PID: 9685
+Detección de carril: 10699666
+PID: 19810
+Detección de carril: 10460534
+PID: 19149
+Detección de carril: 10829422
+PID: 11287
+Detección de carril: 10770964
+PID: 20491
+Detección de carril: 10792536
+PID: 18318
+Detección de carril: 10547015
+PID: 16455
+Detección de carril: 10769332
+PID: 9644
+Detección de carril: 10579985
+PID: 9625
+Detección de carril: 10660347
+PID: 9214
+Detección de carril: 10847319
+PID: 10376
+Detección de carril: 10262424
+PID: 9214
+Detección de carril: 10394484
+PID: 9514
+Detección de carril: 10546805
+PID: 17247
+Detección de carril: 10609259
+PID: 17016
+Detección de carril: 10624182
+PID: 9745
+Detección de carril: 10510880
+PID: 16555
+Detección de carril: 11193854
+PID: 16054
+Detección de carril: 10491882
+PID: 10025
+Detección de carril: 10198468
+PID: 9154
+Detección de carril: 10158707
+PID: 9755
+Detección de carril: 11140814
+PID: 34652
+Detección de carril: 10953711
+PID: 28944
+Detección de carril: 10364248
+PID: 16245
+Detección de carril: 10711955
+PID: 14122
+Detección de carril: 10936003
+PID: 14942
+Detección de carril: 10698565
+PID: 15033
+Detección de carril: 10856794
+PID: 15894
+Detección de carril: 10521537
+PID: 15022
+Detección de carril: 11573579
+PID: 26119
+Detección de carril: 10892879
+PID: 26661
+Detección de carril: 11067433
+PID: 16015
+Detección de carril: 10959360
+PID: 19049
+Detección de carril: 10910996
+PID: 17666
+Detección de carril: 11126653
+PID: 27913
+Detección de carril: 10848030
+PID: 20561
+Detección de carril: 11293985
+PID: 20411
+Detección de carril: 10489328
+PID: 15454
+Detección de carril: 10615559
+PID: 32139
+Detección de carril: 10810544
+PID: 44978
+Detección de carril: 11084118
+PID: 27622
+Detección de carril: 10904516
+PID: 15213
+Detección de carril: 10830644
+PID: 16275
+Detección de carril: 10582609
+PID: 14111
+Detección de carril: 10913730
+PID: 15243
+Detección de carril: 10485312
+PID: 13691
+Detección de carril: 10581467
+PID: 14372
+Detección de carril: 10995845
+PID: 13440
+Detección de carril: 10748139
+PID: 14031
+Detección de carril: 10733397
+PID: 26440
+Detección de carril: 10805827
+PID: 25268
+Detección de carril: 10856774
+PID: 14943
+Detección de carril: 10509208
+PID: 13681
+Detección de carril: 10568057
+PID: 13841
+Detección de carril: 10525863
+PID: 14552
+Detección de carril: 10512152
+PID: 13821
+Detección de carril: 10423108
+PID: 13470
+Detección de carril: 10452271
+PID: 13691
+Detección de carril: 10340612
+PID: 14402
+Detección de carril: 10421485
+PID: 25058
+Detección de carril: 10811686
+PID: 12649
+Detección de carril: 11014963
+PID: 25018
+Detección de carril: 11035915
+PID: 15153
+Detección de carril: 10840599
+PID: 27131
+Detección de carril: 10707278
+PID: 27342
+Detección de carril: 10183885
+PID: 19519
+Detección de carril: 10816523
+PID: 13120
+Detección de carril: 10865007
+PID: 22934
+Detección de carril: 11277080
+PID: 11608
+Detección de carril: 10456408
+PID: 14592
+Detección de carril: 10724343
+PID: 12489
+Detección de carril: 10544000
+PID: 13370
+Detección de carril: 10496508
+PID: 15444
+Detección de carril: 10559164
+PID: 16185
+Detección de carril: 10529088
+PID: 31297
+Detección de carril: 10181472
+PID: 22504
+Detección de carril: 10419472
+PID: 14231
+Detección de carril: 10634849
+PID: 28764
+Detección de carril: 11539948
+PID: 22354
+Detección de carril: 10410869
+PID: 13000
+Detección de carril: 10336125
+PID: 12619
+Detección de carril: 10653176
+PID: 24337
+Detección de carril: 10196856
+PID: 22213
+Detección de carril: 10727308
+PID: 24136
+Detección de carril: 10543320
+PID: 13740
+Detección de carril: 10595939
+PID: 13541
+Detección de carril: 10291468
+PID: 13861
+Detección de carril: 12769229
+PID: 13600
+Detección de carril: 10219679
+PID: 27111
+Detección de carril: 10541036
+PID: 24708
+Detección de carril: 10645434
+PID: 15053
+Detección de carril: 10573516
+PID: 26370
+Detección de carril: 10740118
+PID: 24828
+Detección de carril: 10652285
+PID: 24808
+Detección de carril: 10583560
+PID: 31277
+Detección de carril: 10496399
+PID: 14432
+Detección de carril: 10478672
+PID: 14883
+Detección de carril: 10719416
+PID: 17497
+Detección de carril: 10172478
+PID: 26189
+Detección de carril: 10605744
+PID: 51558
+Detección de carril: 10958358
+PID: 23626
+Detección de carril: 10561267
+PID: 24577
+Detección de carril: 10584282
+PID: 15203
+Detección de carril: 10665655
+PID: 41242
+Detección de carril: 10489178
+PID: 20010
+Detección de carril: 10562508
+PID: 18428
+Detección de carril: 10321715
+PID: 17116
+Detección de carril: 10729452
+PID: 11157
+Detección de carril: 10393903
+PID: 9895
+Detección de carril: 10288474
+PID: 11348
+Detección de carril: 10439112
+PID: 23115
+Detección de carril: 10682380
+PID: 25429
+Detección de carril: 10585703
+PID: 14702
+Detección de carril: 10654037
+PID: 15564
+Detección de carril: 10677793
+PID: 23977
+Detección de carril: 10579474
+PID: 39019
+Detección de carril: 11396060
+PID: 12309
+Detección de carril: 10453544
+PID: 12148
+Detección de carril: 10384639
+PID: 25749
+Detección de carril: 10709691
+PID: 20721
+Detección de carril: 10575569
+PID: 20040
+Detección de carril: 10151857
+PID: 22464
+Detección de carril: 14249981
+PID: 21382
+Detección de carril: 10579965
+PID: 14852
+Detección de carril: 10357608
+PID: 12829
+Detección de carril: 10360603
+PID: 11798
+Detección de carril: 10410228
+PID: 11989
+Detección de carril: 10563901
+PID: 11959
+Detección de carril: 10878216
+PID: 11037
+Detección de carril: 10412762
+PID: 10826
+Detección de carril: 10737213
+PID: 11156
+Detección de carril: 10073809
+PID: 11177
+Detección de carril: 10235153
+PID: 11648
+Detección de carril: 10271608
+PID: 11908
+Detección de carril: 12692944
+PID: 15984
+Detección de carril: 12141048
+PID: 15253
+Detección de carril: 15360481
+PID: 18268
+Detección de carril: 10480745
+PID: 15143
+Detección de carril: 10408676
+PID: 16105
+Detección de carril: 10375316
+PID: 13680
+Detección de carril: 11175726
+PID: 12999
+Detección de carril: 10687377
+PID: 12670
+Detección de carril: 10501346
+PID: 11767
+Detección de carril: 11762384
+PID: 11538
+Detección de carril: 10862152
+PID: 11577
+Detección de carril: 10538733
+PID: 12539
+Detección de carril: 10566114
+PID: 14903
+Detección de carril: 10556029
+PID: 26159
+Detección de carril: 10580997
+PID: 25709
+Detección de carril: 10849994
+PID: 16244
+Detección de carril: 11322749
+PID: 15073
+Detección de carril: 10474025
+PID: 13040
+Detección de carril: 10833790
+PID: 14672
+Detección de carril: 10390789
+PID: 12068
+Detección de carril: 10313281
+PID: 11477
+Detección de carril: 10635459
+PID: 12178
+Detección de carril: 10692616
+PID: 12559
+Detección de carril: 10735801
+PID: 11127
+Detección de carril: 10298860
+PID: 11036
+Detección de carril: 10494786
+PID: 11507
+Detección de carril: 10622930
+PID: 11738
+Detección de carril: 10263867
+PID: 21713
+Detección de carril: 10746697
+PID: 27672
+Detección de carril: 10854751
+PID: 19649
+Detección de carril: 10577842
+PID: 19710
+Detección de carril: 10514506
+PID: 10526
+Detección de carril: 10429417
+PID: 11147
+Detección de carril: 10392191
+PID: 13110
+Detección de carril: 11795976
+PID: 12989
+Detección de carril: 10395536
+PID: 11898
+Detección de carril: 10394194
+PID: 11467
+Detección de carril: 10443649
+PID: 10816
+Detección de carril: 10307062
+PID: 10435
+Detección de carril: 10299902
+PID: 11187
+Detección de carril: 10265499
+PID: 11568
+Detección de carril: 10558452
+PID: 12639
+Detección de carril: 10546084
+PID: 12559
+Detección de carril: 10473513
+PID: 14241
+Detección de carril: 10396848
+PID: 13150
+Detección de carril: 10737003
+PID: 11788
+Detección de carril: 10544000
+PID: 13921
+Detección de carril: 10616120
+PID: 12899
+Detección de carril: 10821471
+PID: 11888
+Detección de carril: 11635222
+PID: 14402
+Detección de carril: 11456492
+PID: 13871
+Detección de carril: 11696355
+PID: 21783
+Detección de carril: 11246144
+PID: 14673
+Detección de carril: 10915533
+PID: 13621
+Detección de carril: 10990637
+PID: 17737
+Detección de carril: 10501706
+PID: 29765
+Detección de carril: 10950696
+PID: 22775
+Detección de carril: 10695540
+PID: 24717
+Detección de carril: 10901411
+PID: 23205
+Detección de carril: 10658945
+PID: 11588
+Detección de carril: 10746717
+PID: 23345
+Detección de carril: 10900881
+PID: 11227
+Detección de carril: 11466527
+PID: 12889
+Detección de carril: 10759017
+PID: 10676
+Detección de carril: 10616049
+PID: 47051
+Detección de carril: 14014975
+PID: 47151
+Detección de carril: 10719126
+PID: 17216
+Detección de carril: 10700247
+PID: 31127
+Detección de carril: 11036286
+PID: 43786
+Detección de carril: 10708810
+PID: 23946
+Detección de carril: 10873799
+PID: 23715
+Detección de carril: 11476212
+PID: 17517
+Detección de carril: 11084909
+PID: 17196
+Detección de carril: 10900009
+PID: 41022
+Detección de carril: 10765807
+PID: 26110
+Detección de carril: 11243460
+PID: 25228
+Detección de carril: 10676030
+PID: 13140
+Detección de carril: 10897807
+PID: 13179
+Detección de carril: 10488066
+PID: 10566
+Detección de carril: 10924737
+PID: 10246
+Detección de carril: 10453254
+PID: 9094
+Detección de carril: 10585333
+PID: 9444
+Detección de carril: 11527169
+PID: 11347
+Detección de carril: 11391223
+PID: 20731
+Detección de carril: 11257260
+PID: 9986
+Detección de carril: 11640450
+PID: 12339
+Detección de carril: 11721043
+PID: 15453
+Detección de carril: 11552527
+PID: 13491
+Detección de carril: 11059451
+PID: 14562
+Detección de carril: 10785787
+PID: 14892
+Detección de carril: 10466864
+PID: 14311
+Detección de carril: 10824215
+PID: 27101
+Detección de carril: 10851256
+PID: 24497
+Detección de carril: 10531121
+PID: 24718
+Detección de carril: 10708379
+PID: 30496
+Detección de carril: 10827530
+PID: 18688
+Detección de carril: 10846058
+PID: 32169
+Detección de carril: 11460248
+PID: 30045
+Detección de carril: 10758765
+PID: 22985
+Detección de carril: 10523510
+PID: 26470
+Detección de carril: 11605558
+PID: 13561
+Detección de carril: 10563120
+PID: 11778
+Detección de carril: 10666355
+PID: 10806
+Detección de carril: 10917936
+PID: 10486
+Detección de carril: 10748019
+PID: 10305
+Detección de carril: 10721779
+PID: 20521
+Detección de carril: 10636169
+PID: 20120
+Detección de carril: 10897316
+PID: 11928
+Detección de carril: 10135753
+PID: 17316
+Detección de carril: 10567046
+PID: 16365
+Detección de carril: 10405832
+PID: 10666
+Detección de carril: 10422287
+PID: 9734
+Detección de carril: 10397760
+PID: 9254
+Detección de carril: 10155362
+PID: 10535
+Detección de carril: 10547636
+PID: 9575
+Detección de carril: 10523048
+PID: 9244
+Detección de carril: 10720217
+PID: 9634
+Detección de carril: 10647668
+PID: 9634
+Detección de carril: 10336506
+PID: 10175
+Detección de carril: 11415509
+PID: 9595
+Detección de carril: 10217126
+PID: 10656
+Detección de carril: 10563219
+PID: 25138
+Detección de carril: 10865998
+PID: 20832
+Detección de carril: 10899489
+PID: 11988
+Detección de carril: 11016706
+PID: 12268
+Detección de carril: 10596019
+PID: 12609
+Detección de carril: 11030226
+PID: 12288
+Detección de carril: 10561767
+PID: 26099
+Detección de carril: 10785707
+PID: 23536
+Detección de carril: 10791175
+PID: 14412
+Detección de carril: 10697453
+PID: 12599
+Detección de carril: 10660026
+PID: 13891
+Detección de carril: 10526094
+PID: 11698
+Detección de carril: 10633045
+PID: 12479
+Detección de carril: 10634898
+PID: 11267
+Detección de carril: 10657552
+PID: 11478
+Detección de carril: 10428396
+PID: 28843
+Detección de carril: 10430449
+PID: 19039
+Detección de carril: 10453474
+PID: 19540
+Detección de carril: 10465161
+PID: 10436
+Detección de carril: 10623991
+PID: 20611
+Detección de carril: 10864717
+PID: 18628
+Detección de carril: 10840840
+PID: 12239
+Detección de carril: 10527555
+PID: 11057
+Detección de carril: 10814811
+PID: 22874
+Detección de carril: 11423602
+PID: 21302
+Detección de carril: 10819738
+PID: 18318
+Detección de carril: 11150660
+PID: 19069
+Detección de carril: 10175272
+PID: 11467
+Detección de carril: 10668099
+PID: 11408
+Detección de carril: 10815672
+PID: 11317
+Detección de carril: 10765245
+PID: 22645
+Detección de carril: 10186529
+PID: 10646
+Detección de carril: 11313566
+PID: 12869
+Detección de carril: 10627857
+PID: 11437
+Detección de carril: 10664573
+PID: 11086
+Detección de carril: 10686726
+PID: 12469
+Detección de carril: 10656520
+PID: 12288
+Detección de carril: 10969064
+PID: 10986
+Detección de carril: 10688860
+PID: 11127
+Detección de carril: 10687557
+PID: 10106
+Detección de carril: 10664202
+PID: 10045
+Detección de carril: 10555598
+PID: 10336
+Detección de carril: 10533014
+PID: 10016
+Detección de carril: 10809272
+PID: 9895
+Detección de carril: 10826407
+PID: 10846
+Detección de carril: 10483979
+PID: 23886
+Detección de carril: 10815992
+PID: 18759
+Detección de carril: 10582739
+PID: 19289
+Detección de carril: 10652695
+PID: 11057
+Detección de carril: 10906329
+PID: 10937
+Detección de carril: 10191477
+PID: 20311
+Detección de carril: 10792035
+PID: 19550
+Detección de carril: 10920931
+PID: 17697
+Detección de carril: 10340432
+PID: 11026
+Detección de carril: 10724264
+PID: 10475
+Detección de carril: 10758876
+PID: 10185
+Detección de carril: 10686276
+PID: 10816
+Detección de carril: 10765275
+PID: 19049
+Detección de carril: 10651704
+PID: 17467
+Detección de carril: 10193069
+PID: 16134
+Detección de carril: 10331970
+PID: 15744
+Detección de carril: 10369136
+PID: 9605
+Detección de carril: 9951484
+PID: 10175
+Detección de carril: 10684834
+PID: 17376
+Detección de carril: 10995775
+PID: 16735
+Detección de carril: 10497240
+PID: 17156
+Detección de carril: 10662570
+PID: 10105
+Detección de carril: 10602529
+PID: 16655
+Detección de carril: 10478351
+PID: 16375
+Detección de carril: 10830605
+PID: 15904
+Detección de carril: 10666946
+PID: 11417
+Detección de carril: 10911637
+PID: 9985
+Detección de carril: 10879939
+PID: 9855
+Detección de carril: 10777714
+PID: 10335
+Detección de carril: 11334968
+PID: 10155
+Detección de carril: 11293415
+PID: 10426
+Detección de carril: 11301437
+PID: 10436
+Detección de carril: 10847780
+PID: 19109
+Detección de carril: 10385080
+PID: 16855
+Detección de carril: 10449177
+PID: 10486
+Detección de carril: 10428636
+PID: 19540
+Detección de carril: 10777814
+PID: 19830
+Detección de carril: 10861201
+PID: 11878
+Detección de carril: 10931327
+PID: 20381
+Detección de carril: 10769452
+PID: 19009
+Detección de carril: 10789893
+PID: 19159
+Detección de carril: 10562228
+PID: 10977
+Detección de carril: 10407013
+PID: 19780
+Detección de carril: 12188059
+PID: 19870
+Detección de carril: 10322947
+PID: 18548
+Detección de carril: 11074854
+PID: 19820
+Detección de carril: 10587677
+PID: 13800
+Detección de carril: 11190690
+PID: 28964
+Detección de carril: 12685913
+PID: 29094
+Detección de carril: 10767579
+PID: 23996
+Detección de carril: 10710864
+PID: 24557
+Detección de carril: 11749976
+PID: 29564
+Detección de carril: 10822081
+PID: 14813
+Detección de carril: 10468387
+PID: 18659
+Detección de carril: 11300536
+PID: 16835
+Detección de carril: 11212182
+PID: 15964
+Detección de carril: 11497845
+PID: 10796
+Detección de carril: 10496469
+PID: 14893
+Detección de carril: 10335955
+PID: 14742
+Detección de carril: 10561056
+PID: 14832
+Detección de carril: 10731154
+PID: 13731
+Detección de carril: 10598303
+PID: 14592
+Detección de carril: 10225358
+PID: 9705
+Detección de carril: 10390659
+PID: 9775
+Detección de carril: 11542282
+PID: 9434
+Detección de carril: 10288494
+PID: 9514
+Detección de carril: 10940010
+PID: 32129
+Detección de carril: 10725525
+PID: 14532
+Detección de carril: 10312400
+PID: 9585
+Detección de carril: 10116162
+PID: 21262
+Detección de carril: 10379341
+PID: 12438
+Detección de carril: 11524034
+PID: 10836
+Detección de carril: 10215333
+PID: 11568
+Detección de carril: 10753698
+PID: 10465
+Detección de carril: 11143878
+PID: 10686
+Detección de carril: 10565954
+PID: 10235
+Detección de carril: 10592574
+PID: 10025
+Detección de carril: 10397760
+PID: 22795
+Detección de carril: 10359091
+PID: 32980
+Detección de carril: 10826538
+PID: 14352
+Detección de carril: 10687088
+PID: 9024
+Detección de carril: 10219119
+PID: 9544
+Detección de carril: 10155262
+PID: 8873
+Detección de carril: 10601067
+PID: 8964
+Detección de carril: 10514716
+PID: 8913
+Detección de carril: 11389571
+PID: 9044
+Detección de carril: 10838766
+PID: 9414
+Detección de carril: 10232439
+PID: 9434
+Detección de carril: 10931827
+PID: 8903
+Detección de carril: 10849434
+PID: 22354
+Detección de carril: 10602459
+PID: 16575
+Detección de carril: 10448636
+PID: 13761
+Detección de carril: 10628729
+PID: 10085
+Detección de carril: 10729020
+PID: 15072
+Detección de carril: 10615950
+PID: 15153
+Detección de carril: 10656591
+PID: 18558
+Detección de carril: 10707869
+PID: 16015
+Detección de carril: 10743042
+PID: 22955
+Detección de carril: 10745746
+PID: 38618
+Detección de carril: 10863354
+PID: 22054
+Detección de carril: 11198841
+PID: 19439
+Detección de carril: 11335569
+PID: 17476
+Detección de carril: 10578733
+PID: 13099
+Detección de carril: 10717553
+PID: 14783
+Detección de carril: 10362746
+PID: 12950
+Detección de carril: 10391550
+PID: 23726
+Detección de carril: 10269666
+PID: 15864
+Detección de carril: 10691765
+PID: 11027
+Detección de carril: 10090174
+PID: 10356
+Detección de carril: 10438971
+PID: 11748
+Detección de carril: 11938451
+PID: 9825
+Detección de carril: 10408696
+PID: 18227
+Detección de carril: 10455797
+PID: 15964
+Detección de carril: 10150515
+PID: 10025
+Detección de carril: 10347192
+PID: 9404
+Detección de carril: 11654021
+PID: 9715
+Detección de carril: 10520896
+PID: 10426
+Detección de carril: 10465011
+PID: 12508
+Detección de carril: 10622419
+PID: 11297
+Detección de carril: 12075188
+PID: 13230
+Detección de carril: 10665595
+PID: 13861
+Detección de carril: 11751128
+PID: 15474
+Detección de carril: 10857535
+PID: 24958
+Detección de carril: 10651182
+PID: 13821
+Detección de carril: 10717993
+PID: 16165
+Detección de carril: 10886128
+PID: 15924
+Detección de carril: 10808200
+PID: 17767
+Detección de carril: 10554366
+PID: 26861
+Detección de carril: 11015985
+PID: 13831
+Detección de carril: 10452973
+PID: 24868
+Detección de carril: 10718796
+PID: 15343
+Detección de carril: 11633720
+PID: 19509
+Detección de carril: 10614367
+PID: 12269
+Detección de carril: 10783834
+PID: 13750
+Detección de carril: 12591730
+PID: 12749
+Detección de carril: 10278658
+PID: 13971
+Detección de carril: 10261673
+PID: 12139
+Detección de carril: 10883404
+PID: 29375
+Detección de carril: 10552192
+PID: 21313
+Detección de carril: 10874000
+PID: 14191
+Detección de carril: 11421750
+PID: 12098
+Detección de carril: 11666980
+PID: 12679
+Detección de carril: 11022384
+PID: 29565
+Detección de carril: 11171430
+PID: 19439
+Detección de carril: 10850304
+PID: 20070
+Detección de carril: 10678173
+PID: 14632
+Detección de carril: 10672395
+PID: 12188
+Detección de carril: 11024959
+PID: 12188
+Detección de carril: 11139492
+PID: 11047
+Detección de carril: 11230370
+PID: 11788
+Detección de carril: 11202367
+PID: 13420
+Detección de carril: 10901912
+PID: 13000
+Detección de carril: 11171881
+PID: 15944
+Detección de carril: 11031218
+PID: 11838
+Detección de carril: 10986941
+PID: 13961
+Detección de carril: 10671363
+PID: 24097
+Detección de carril: 10510860
+PID: 11117
+Detección de carril: 11136517
+PID: 11537
+Detección de carril: 10417820
+PID: 10165
+Detección de carril: 10442347
+PID: 11197
+Detección de carril: 10417139
+PID: 23526
+Detección de carril: 10777564
+PID: 15884
+Detección de carril: 10619244
+PID: 9995
+Detección de carril: 10519934
+PID: 16575
+Detección de carril: 10400543
+PID: 21502
+Detección de carril: 10476950
+PID: 12619
+Detección de carril: 10242194
+PID: 19489
+Detección de carril: 10771795
+PID: 14893
+Detección de carril: 10488887
+PID: 15253
+Detección de carril: 10992009
+PID: 33100
+Detección de carril: 10890075
+PID: 10006
+Detección de carril: 10291818
+PID: 9995
+Detección de carril: 10117395
+PID: 10186
+Detección de carril: 10614938
+PID: 9614
+Detección de carril: 10537841
+PID: 9244
+Detección de carril: 10459913
+PID: 9504
+Detección de carril: 10550380
+PID: 15153
+Detección de carril: 10483729
+PID: 14292
+Detección de carril: 10213310
+PID: 14512
+Detección de carril: 10422917
+PID: 9054
+Detección de carril: 10018165
+PID: 9184
+Detección de carril: 10343407
+PID: 10405
+Detección de carril: 10277246
+PID: 11177
+Detección de carril: 10834730
+PID: 10716
+Detección de carril: 10416418
+PID: 10986
+Detección de carril: 10098546
+PID: 11167
+Detección de carril: 10889734
+PID: 13431
+Detección de carril: 11474049
+PID: 11979
+Detección de carril: 13743293
+PID: 11407
+Detección de carril: 10102442
+PID: 11708
+Detección de carril: 11331643
+PID: 23836
+Detección de carril: 10755250
+PID: 11217
+Detección de carril: 10931867
+PID: 24206
+Detección de carril: 11913283
+PID: 12889
+Detección de carril: 10805927
+PID: 12459
+Detección de carril: 10364810
+PID: 11016
+Detección de carril: 11689164
+PID: 10686
+Detección de carril: 10804785
+PID: 11146
+Detección de carril: 11335018
+PID: 12288
+Detección de carril: 10628889
+PID: 26841
+Detección de carril: 10682540
+PID: 16425
+Detección de carril: 10857656
+PID: 9935
+Detección de carril: 11073913
+PID: 10707
+Detección de carril: 10212629
+PID: 10496
+Detección de carril: 10575018
+PID: 9945
+Detección de carril: 11061925
+PID: 21162
+Detección de carril: 11151730
+PID: 10797
+Detección de carril: 11177579
+PID: 21242
+Detección de carril: 11028133
+PID: 15393
+Detección de carril: 10594127
+PID: 12029
+Detección de carril: 10449778
+PID: 13701
+Detección de carril: 11930489
+PID: 18148
+Detección de carril: 10648018
+PID: 49555
+Detección de carril: 11387328
+PID: 45158
+Detección de carril: 11101714
+PID: 30987
+Detección de carril: 10987652
+PID: 29905
+Detección de carril: 11226894
+PID: 17726
+Detección de carril: 10941622
+PID: 29425
+Detección de carril: 10508066
+PID: 31087
+Detección de carril: 11039621
+PID: 29395
+Detección de carril: 11517273
+PID: 25138
+Detección de carril: 11114585
+PID: 16646
+Detección de carril: 10651453
+PID: 13891
+Detección de carril: 10578543
+PID: 16294
+Detección de carril: 11781374
+PID: 14943
+Detección de carril: 10637291
+PID: 28323
+Detección de carril: 10737874
+PID: 16625
+Detección de carril: 10958608
+PID: 16725
+Detección de carril: 10438330
+PID: 16254
+Detección de carril: 10970827
+PID: 13721
+Detección de carril: 10874912
+PID: 14872
+Detección de carril: 10945789
+PID: 15053
+Detección de carril: 10530350
+PID: 18848
+Detección de carril: 10685875
+PID: 29915
+Detección de carril: 13011917
+PID: 28503
+Detección de carril: 11487559
+PID: 39540
+Detección de carril: 10747318
+PID: 27632
+Detección de carril: 11038930
+PID: 40702
+Detección de carril: 12247880
+PID: 13200
+Detección de carril: 10645765
+PID: 11948
+Detección de carril: 10831225
+PID: 19299
+Detección de carril: 10709011
+PID: 23395
+Detección de carril: 10967412
+PID: 17716
+Detección de carril: 10487214
+PID: 17216
+Detección de carril: 9977263
+PID: 12579
+Detección de carril: 11336620
+PID: 13410
+Detección de carril: 11076877
+PID: 24728
+Detección de carril: 11785960
+PID: 15153
+Detección de carril: 10481376
+PID: 14422
+Detección de carril: 11324712
+PID: 15584
+Detección de carril: 10722982
+PID: 15924
+Detección de carril: 11171040
+PID: 18879
+Detección de carril: 11179913
+PID: 15703
+Detección de carril: 11091349
+PID: 15984
+Detección de carril: 11204550
+PID: 15423
+Detección de carril: 10750514
+PID: 15874
+Detección de carril: 10712776
+PID: 18458
+Detección de carril: 10801530
+PID: 15093
+Detección de carril: 10341835
+PID: 19649
+Detección de carril: 10765086
+PID: 51117
+Detección de carril: 10437860
+PID: 30987
+Detección de carril: 10563891
+PID: 45799
+Detección de carril: 11275298
+PID: 28924
+Detección de carril: 10443999
+PID: 21092
+Detección de carril: 10487015
+PID: 13851
+Detección de carril: 10093238
+PID: 11628
+Detección de carril: 10690312
+PID: 11627
+Detección de carril: 10562318
+PID: 11187
+Detección de carril: 10305519
+PID: 18148
+Detección de carril: 10435756
+PID: 13951
+Detección de carril: 10821340
+PID: 11868
+Detección de carril: 10522488
+PID: 12249
+Detección de carril: 11203399
+PID: 11358
+Detección de carril: 11333556
+PID: 15824
+Detección de carril: 10904426
+PID: 19149
+Detección de carril: 10996676
+PID: 15884
+Detección de carril: 9887487
+PID: 14231
+Detección de carril: 10407945
+PID: 13000
+Detección de carril: 10762691
+PID: 11558
+Detección de carril: 10577651
+PID: 11497
+Detección de carril: 10466333
+PID: 16244
+Detección de carril: 10447514
+PID: 10135
+Detección de carril: 10455977
+PID: 10216
+Detección de carril: 10335315
+PID: 9825
+Detección de carril: 10055681
+PID: 10286
+Detección de carril: 10113719
+PID: 9805
+Detección de carril: 10658233
+PID: 9624
+Detección de carril: 10375536
+PID: 8904
+Detección de carril: 10276396
+PID: 9515
+Detección de carril: 10709111
+PID: 9835
+Detección de carril: 10348945
+PID: 10005
+Detección de carril: 10310837
+PID: 9815
+Detección de carril: 10782471
+PID: 10175
+Detección de carril: 10631604
+PID: 9615
+Detección de carril: 10893790
+PID: 9895
+Detección de carril: 10161201
+PID: 10195
+Detección de carril: 10762702
+PID: 10646
+Detección de carril: 10394674
+PID: 11237
+Detección de carril: 10620246
+PID: 12329
+Detección de carril: 11694873
+PID: 15363
+Detección de carril: 12961840
+PID: 15323
+Detección de carril: 10373963
+PID: 24577
+Detección de carril: 10615689
+PID: 13531
+Detección de carril: 10358400
+PID: 15924
+Detección de carril: 11019069
+PID: 16975
+Detección de carril: 10119158
+PID: 13641
+Detección de carril: 10230386
+PID: 12649
+Detección de carril: 10404790
+PID: 12079
+Detección de carril: 10835953
+PID: 12589
+Detección de carril: 10566565
+PID: 13390
+Detección de carril: 10644092
+PID: 12479
+Detección de carril: 10398130
+PID: 13791
+Detección de carril: 10619855
+PID: 15584
+Detección de carril: 10863684
+PID: 13761
+Detección de carril: 10944917
+PID: 12750
+Detección de carril: 10510680
+PID: 20901
+Detección de carril: 12739154
+PID: 25018
+Detección de carril: 10387895
+PID: 14703
+Detección de carril: 10367844
+PID: 11317
+Detección de carril: 10585253
+PID: 11247
+Detección de carril: 10660247
+PID: 11377
+Detección de carril: 9937593
+PID: 9615
+Detección de carril: 10727729
+PID: 9915
+Detección de carril: 10523370
+PID: 25668
+Detección de carril: 10166148
+PID: 22814
+Detección de carril: 10218889
+PID: 9534
+Detección de carril: 10324678
+PID: 13511
+Detección de carril: 10125397
+PID: 38879
+Detección de carril: 10998219
+PID: 16475
+Detección de carril: 10265639
+PID: 17676
+Detección de carril: 10477219
+PID: 9034
+Detección de carril: 10037834
+PID: 9665
+Detección de carril: 10163144
+PID: 9404
+Detección de carril: 10171547
+PID: 9304
+Detección de carril: 10117105
+PID: 15283
+Detección de carril: 10201001
+PID: 14822
+Detección de carril: 10653967
+PID: 9395
+Detección de carril: 10316556
+PID: 9114
+Detección de carril: 10468826
+PID: 16085
+Detección de carril: 10434044
+PID: 15734
+Detección de carril: 9997454
+PID: 14812
+Detección de carril: 10243706
+PID: 14893
+Detección de carril: 10296917
+PID: 8933
+Detección de carril: 10313752
+PID: 9414
+Detección de carril: 10204156
+PID: 9665
+Detección de carril: 10496269
+PID: 11347
+Detección de carril: 10811566
+PID: 9294
+Detección de carril: 10715571
+PID: 22263
+Detección de carril: 10469838
+PID: 9765
+Detección de carril: 10668489
+PID: 9575
+Detección de carril: 10607046
+PID: 24847
+Detección de carril: 10749322
+PID: 9564
+Detección de carril: 10428195
+PID: 9725
+Detección de carril: 10443589
+PID: 9124
+Detección de carril: 10408135
+PID: 8973
+Detección de carril: 10542469
+PID: 9063
+Detección de carril: 10704714
+PID: 10035
+Detección de carril: 10032416
+PID: 22173
+Detección de carril: 10524531
+PID: 9494
+Detección de carril: 10383498
+PID: 9274
+Detección de carril: 10491041
+PID: 10035
+Detección de carril: 10435696
+PID: 9294
+Detección de carril: 10580175
+PID: 9714
+Detección de carril: 10485953
+PID: 22775
+Detección de carril: 10306572
+PID: 9604
+Detección de carril: 10382526
+PID: 21302
+Detección de carril: 11018910
+PID: 10065
+Detección de carril: 10900660
+PID: 9995
+Detección de carril: 10379902
+PID: 22724
+Detección de carril: 10842423
+PID: 10135
+Detección de carril: 10346331
+PID: 10366
+Detección de carril: 10171457
+PID: 10696
+Detección de carril: 10016542
+PID: 10116
+Detección de carril: 10408536
+PID: 9444
+Detección de carril: 9993958
+PID: 10075
+Detección de carril: 10341715
+PID: 23846
+Detección de carril: 9955549
+PID: 9484
+Detección de carril: 9975220
+PID: 9784
+Detección de carril: 10769973
+PID: 21733
+Detección de carril: 10937166
+PID: 9735
+Detección de carril: 10316988
+PID: 10095
+Detección de carril: 11035664
+PID: 11667
+Detección de carril: 10808731
+PID: 24336
+Detección de carril: 10219660
+PID: 12720
+Detección de carril: 10022251
+PID: 12399
+Detección de carril: 10754880
+PID: 24878
+Detección de carril: 10993592
+PID: 23175
+Detección de carril: 10638424
+PID: 17777
+Detección de carril: 10551462
+PID: 17647
+Detección de carril: 10879108
+PID: 20892
+Detección de carril: 10386252
+PID: 17627
+Detección de carril: 10717483
+PID: 18649
+Detección de carril: 10553965
+PID: 10926
+Detección de carril: 10490039
+PID: 19539
+Detección de carril: 10631443
+PID: 19279
+Detección de carril: 10760889
+PID: 23626
+Detección de carril: 10669771
+PID: 24187
+Detección de carril: 10980442
+PID: 23605
+Detección de carril: 12239627
+PID: 29104
+Detección de carril: 11308247
+PID: 17136
+Detección de carril: 11003947
+PID: 15704
+Detección de carril: 10899889
+PID: 14481
+Detección de carril: 10716261
+PID: 24738
+Detección de carril: 10652445
+PID: 21803
+Detección de carril: 10503930
+PID: 42264
+Detección de carril: 10964066
+PID: 21763
+Detección de carril: 10559935
+PID: 12519
+Detección de carril: 10486614
+PID: 20862
+Detección de carril: 10658293
+PID: 36285
+Detección de carril: 10340984
+PID: 18958
+Detección de carril: 11375239
+PID: 19699
+Detección de carril: 10872177
+PID: 18568
+Detección de carril: 10185247
+PID: 19189
+Detección de carril: 10513945
+PID: 20971
+Detección de carril: 10645244
+PID: 9885
+Detección de carril: 10390969
+PID: 35464
+Detección de carril: 10601918
+PID: 33711
+Detección de carril: 10671974
+PID: 9334
+Detección de carril: 10530019
+PID: 10165
+Detección de carril: 10319401
+PID: 10836
+Detección de carril: 10392511
+PID: 16656
+Detección de carril: 10265189
+PID: 15683
+Detección de carril: 10522698
+PID: 16234
+Detección de carril: 10428225
+PID: 15524
+Detección de carril: 10187902
+PID: 15234
+Detección de carril: 10555699
+PID: 15654
+Detección de carril: 10496780
+PID: 9535
+Detección de carril: 11485195
+PID: 23246
+Detección de carril: 10631823
+PID: 31398
+Detección de carril: 10851896
+PID: 25889
+Detección de carril: 10778095
+PID: 25028
+Detección de carril: 10986271
+PID: 23516
+Detección de carril: 10844686
+PID: 22594
+Detección de carril: 10832998
+PID: 21102
+Detección de carril: 11504725
+PID: 12850
+Detección de carril: 10547776
+PID: 12489
+Detección de carril: 11086963
+PID: 12098
+Detección de carril: 10253661
+PID: 11558
+Detección de carril: 10330297
+PID: 15594
+Detección de carril: 10689882
+PID: 11838
+Detección de carril: 11035815
+PID: 25559
+Detección de carril: 10683092
+PID: 20611
+Detección de carril: 10513824
+PID: 20801
+Detección de carril: 11426927
+PID: 11578
+Detección de carril: 11318363
+PID: 12218
+Detección de carril: 11236750
+PID: 12058
+Detección de carril: 11190149
+PID: 10526
+Detección de carril: 10464079
+PID: 10306
+Detección de carril: 11042766
+PID: 11808
+Detección de carril: 10727508
+PID: 22093
+Detección de carril: 10910786
+PID: 11097
+Detección de carril: 10581608
+PID: 11157
+Detección de carril: 10464881
+PID: 10506
+Detección de carril: 10505191
+PID: 10486
+Detección de carril: 10322314
+PID: 9674
+Detección de carril: 10059137
+PID: 9194
+Detección de carril: 10419242
+PID: 9604
+Detección de carril: 10739547
+PID: 9224
+Detección de carril: 10527586
+PID: 9875
+Detección de carril: 11016626
+PID: 9975
+Detección de carril: 10598483
+PID: 9384
+Detección de carril: 10473013
+PID: 10346
+Detección de carril: 11355058
+PID: 10325
+Detección de carril: 10380754
+PID: 37186
+Detección de carril: 12178655
+PID: 32209
+Detección de carril: 10620246
+PID: 19109
+Detección de carril: 10959219
+PID: 16756
+Detección de carril: 11187765
+PID: 16235
+Detección de carril: 10540204
+PID: 14342
+Detección de carril: 10520645
+PID: 12429
+Detección de carril: 11113813
+PID: 12439
+Detección de carril: 10706276
+PID: 11888
+Detección de carril: 12364336
+PID: 11587
+Detección de carril: 10392401
+PID: 10416
+Detección de carril: 10902514
+PID: 10035
+Detección de carril: 10460024
+PID: 9584
+Detección de carril: 10442356
+PID: 9284
+Detección de carril: 10357048
+PID: 20882
+Detección de carril: 10263586
+PID: 9435
+Detección de carril: 10629931
+PID: 22354
+Detección de carril: 10804205
+PID: 10125
+Detección de carril: 10459542
+PID: 9264
+Detección de carril: 10795542
+PID: 9695
+Detección de carril: 9859465
+PID: 9785
+Detección de carril: 10326571
+PID: 10075
+Detección de carril: 10439282
+PID: 26080
+Detección de carril: 10512884
+PID: 16485
+Detección de carril: 10023363
+PID: 34392
+Detección de carril: 10597342
+PID: 15103
+Detección de carril: 10329005
+PID: 15233
+Detección de carril: 10651974
+PID: 14823
+Detección de carril: 10040969
+PID: 10556
+Detección de carril: 10932769
+PID: 9405
+Detección de carril: 9984713
+PID: 9445
+Detección de carril: 10438490
+PID: 9224
+Detección de carril: 10258789
+PID: 10706
+Detección de carril: 10542719
+PID: 9625
+Detección de carril: 9977022
+PID: 9084
+Detección de carril: 10181692
+PID: 9845
+Detección de carril: 10375336
+PID: 9224
+Detección de carril: 10380583
+PID: 9164
+Detección de carril: 10511041
+PID: 9294
+Detección de carril: 10414945
+PID: 10025
+Detección de carril: 10364990
+PID: 10416
+Detección de carril: 10412772
+PID: 10856
+Detección de carril: 10692556
+PID: 12028
+Detección de carril: 11589352
+PID: 12549
+Detección de carril: 10562428
+PID: 13160
+Detección de carril: 10942004
+PID: 12309
+Detección de carril: 10656101
+PID: 12839
+Detección de carril: 10119678
+PID: 13942
+Detección de carril: 10810544
+PID: 13351
+Detección de carril: 10159208
+PID: 14412
+Detección de carril: 10764615
+PID: 12860
+Detección de carril: 10685916
+PID: 14081
+Detección de carril: 10638173
+PID: 12209
+Detección de carril: 10822082
+PID: 12199
+Detección de carril: 10934803
+PID: 11888
+Detección de carril: 10567807
+PID: 12308
+Detección de carril: 10665524
+PID: 12289
+Detección de carril: 11148306
+PID: 14942
+Detección de carril: 10903865
+PID: 18268
+Detección de carril: 10394825
+PID: 16995
+Detección de carril: 10608658
+PID: 15463
+Detección de carril: 10356737
+PID: 12649
+Detección de carril: 10400594
+PID: 24036
+Detección de carril: 10692175
+PID: 18698
+Detección de carril: 9917131
+PID: 33881
+Detección de carril: 10650932
+PID: 16855
+Detección de carril: 11025840
+PID: 16645
+Detección de carril: 10270828
+PID: 37236
+Detección de carril: 11188777
+PID: 32699
+Detección de carril: 10640587
+PID: 14923
+Detección de carril: 10338220
+PID: 54632
+Detección de carril: 11282669
+PID: 27852
+Detección de carril: 10371489
+PID: 25779
+Detección de carril: 10391190
+PID: 17496
+Detección de carril: 10433043
+PID: 10546
+Detección de carril: 10414905
+PID: 10736
+Detección de carril: 10149594
+PID: 10436
+Detección de carril: 10037434
+PID: 10216
+Detección de carril: 10578713
+PID: 17406
+Detección de carril: 10421455
+PID: 15663
+Detección de carril: 11156858
+PID: 32900
+Detección de carril: 10696311
+PID: 16605
+Detección de carril: 11032801
+PID: 15203
+Detección de carril: 10547656
+PID: 16205
+Detección de carril: 10119849
+PID: 15193
+Detección de carril: 9946806
+PID: 15243
+Detección de carril: 10056513
+PID: 15935
+Detección de carril: 9998966
+PID: 15694
+Detección de carril: 10324819
+PID: 14932
+Detección de carril: 10252950
+PID: 14732
+Detección de carril: 10582960
+PID: 9374
+Detección de carril: 10777283
+PID: 9073
+Detección de carril: 10706387
+PID: 9304
+Detección de carril: 10625614
+PID: 15092
+Detección de carril: 10451091
+PID: 15073
+Detección de carril: 10430549
+PID: 15123
+Detección de carril: 10439802
+PID: 14822
+Detección de carril: 10259199
+PID: 15463
+Detección de carril: 10585344
+PID: 14823
+Detección de carril: 10334634
+PID: 9214
+Detección de carril: 10442937
+PID: 9114
+Detección de carril: 10537381
+PID: 9304
+Detección de carril: 10630892
+PID: 9545
+Detección de carril: 10574887
+PID: 9304
+Detección de carril: 10527486
+PID: 9465
+Detección de carril: 11429962
+PID: 9424
+Detección de carril: 10479983
+PID: 9835
+Detección de carril: 11047703
+PID: 9374
+Detección de carril: 11364152
+PID: 8933
+Detección de carril: 11314687
+PID: 9274
+Detección de carril: 11420568
+PID: 31368
+Detección de carril: 10729402
+PID: 8983
+Detección de carril: 11055444
+PID: 9734
+Detección de carril: 9997494
+PID: 9073
+Detección de carril: 10653406
+PID: 9214
+Detección de carril: 10585984
+PID: 9584
+Detección de carril: 10533945
+PID: 9785
+Detección de carril: 10500705
+PID: 9184
+Detección de carril: 10515537
+PID: 9344
+Detección de carril: 10709081
+PID: 11277
+Detección de carril: 10449868
+PID: 10556
+Detección de carril: 10787570
+PID: 10877
+Detección de carril: 11568821
+PID: 11858
+Detección de carril: 10524892
+PID: 32430
+Detección de carril: 11769686
+PID: 14792
+Detección de carril: 10791235
+PID: 12009
+Detección de carril: 10980451
+PID: 10405
+Detección de carril: 10567326
+PID: 10276
+Detección de carril: 10864726
+PID: 10146
+Detección de carril: 10580416
+PID: 9544
+Detección de carril: 10455587
+PID: 9444
+Detección de carril: 10416788
+PID: 10326
+Detección de carril: 10532563
+PID: 9335
+Detección de carril: 11086331
+PID: 11017
+Detección de carril: 10375004
+PID: 22174
+Detección de carril: 10490539
+PID: 10566
+Detección de carril: 10325220
+PID: 9815
+Detección de carril: 10509148
+PID: 9404
+Detección de carril: 10328855
+PID: 8833
+Detección de carril: 10335264
+PID: 8974
+Detección de carril: 10866589
+PID: 8953
+Detección de carril: 10188682
+PID: 9975
+Detección de carril: 10295856
+PID: 9795
+Detección de carril: 10391290
+PID: 9705
+Detección de carril: 10294372
+PID: 9705
+Detección de carril: 10312801
+PID: 9054
+Detección de carril: 10393182
+PID: 20731
+Detección de carril: 10601788
+PID: 9184
+Detección de carril: 9917162
+PID: 9334
+Detección de carril: 10328895
+PID: 9685
+Detección de carril: 10593105
+PID: 21072
+Detección de carril: 10978629
+PID: 8984
+Detección de carril: 10475477
+PID: 9374
+Detección de carril: 10573164
+PID: 9714
+Detección de carril: 11352294
+PID: 10165
+Detección de carril: 10364519
+PID: 11107
+Detección de carril: 10392621
+PID: 22204
+Detección de carril: 10768681
+PID: 10175
+Detección de carril: 10690913
+PID: 10195
+Detección de carril: 10196765
+PID: 10366
+Detección de carril: 10538352
+PID: 9344
+Detección de carril: 10438851
+PID: 9925
+Detección de carril: 12052895
+PID: 10015
+Detección de carril: 10331088
+PID: 9435
+Detección de carril: 10840689
+PID: 10065
+Detección de carril: 10578804
+PID: 9224
+Detección de carril: 10435036
+PID: 11978
+Detección de carril: 12360430
+PID: 8903
+Detección de carril: 10169754
+PID: 9194
+Detección de carril: 10378860
+PID: 9214
+Detección de carril: 10552704
+PID: 8854
+Detección de carril: 10493575
+PID: 8813
+Detección de carril: 10387393
+PID: 9554
+Detección de carril: 10460194
+PID: 21813
+Detección de carril: 10375997
+PID: 16165
+Detección de carril: 10391841
+PID: 16085
+Detección de carril: 10399131
+PID: 9244
+Detección de carril: 10468686
+PID: 10196
+Detección de carril: 10550972
+PID: 10446
+Detección de carril: 10900370
+PID: 10385
+Detección de carril: 10481045
+PID: 10365
+Detección de carril: 10447084
+PID: 9264
+Detección de carril: 10225188
+PID: 10877
+Detección de carril: 10582980
+PID: 14933
+Detección de carril: 10890074
+PID: 13871
+Detección de carril: 11951031
+PID: 12188
+Detección de carril: 10042632
+PID: 15043
+Detección de carril: 10503680
+PID: 12569
+Detección de carril: 11036667
+PID: 16876
+Detección de carril: 10184336
+PID: 31257
+Detección de carril: 11883408
+PID: 20381
+Detección de carril: 10972048
+PID: 15684
+Detección de carril: 11103317
+PID: 28162
+Detección de carril: 11719931
+PID: 17647
+Detección de carril: 10703452
+PID: 33391
+Detección de carril: 11842086
+PID: 18648
+Detección de carril: 10143675
+PID: 18928
+Detección de carril: 10557951
+PID: 16394
+Detección de carril: 10700257
+PID: 13661
+Detección de carril: 10811306
+PID: 11668
+Detección de carril: 10171467
+PID: 10786
+Detección de carril: 10740087
+PID: 10015
+Detección de carril: 10554746
+PID: 11407
+Detección de carril: 10418330
+PID: 11667
+Detección de carril: 10405811
+PID: 9725
+Detección de carril: 12866686
+PID: 15994
+Detección de carril: 12254239
+PID: 17917
+Detección de carril: 11343792
+PID: 14232
+Detección de carril: 10126138
+PID: 12800
+Detección de carril: 10425721
+PID: 13410
+Detección de carril: 10180219
+PID: 23486
+Detección de carril: 11102966
+PID: 9955
+Detección de carril: 10709531
+PID: 10306
+Detección de carril: 10806739
+PID: 12078
+Detección de carril: 10630201
+PID: 10086
+Detección de carril: 10697423
+PID: 9244
+Detección de carril: 10267893
+PID: 9735
+Detección de carril: 10341715
+PID: 9084
+Detección de carril: 10399592
+PID: 9775
+Detección de carril: 10446292
+PID: 11347
+Detección de carril: 10600717
+PID: 10686
+Detección de carril: 9855749
+PID: 10957
+Detección de carril: 10696080
+PID: 13640
+Detección de carril: 11316590
+PID: 11848
+Detección de carril: 10643901
+PID: 11027
+Detección de carril: 11047072
+PID: 14172
+Detección de carril: 11579889
+PID: 15133
+Detección de carril: 11905512
+PID: 17386
+Detección de carril: 10399292
+PID: 18027
+Detección de carril: 10290176
+PID: 15423
+Detección de carril: 10662019
+PID: 15393
+Detección de carril: 10651424
+PID: 15173
+Detección de carril: 10894331
+PID: 13811
+Detección de carril: 10341093
+PID: 11808
+Detección de carril: 10256625
+PID: 22995
+Detección de carril: 10976335
+PID: 12189
+Detección de carril: 10022461
+PID: 11047
+Detección de carril: 9984203
+PID: 23195
+Detección de carril: 10751435
+PID: 9715
+Detección de carril: 10656711
+PID: 23035
+Detección de carril: 10383758
+PID: 18548
+Detección de carril: 10275143
+PID: 17506
+Detección de carril: 10835392
+PID: 10146
+Detección de carril: 10437940
+PID: 9224
+Detección de carril: 10300362
+PID: 16254
+Detección de carril: 10977016
+PID: 9574
+Detección de carril: 10520294
+PID: 15384
+Detección de carril: 10639545
+PID: 8994
+Detección de carril: 10585103
+PID: 39199
+Detección de carril: 10959169
+PID: 16265
+Detección de carril: 11047773
+PID: 14952
+Detección de carril: 10950436
+PID: 9945
+Detección de carril: 10293011
+PID: 9845
+Detección de carril: 10062041
+PID: 9564
+Detección de carril: 10153129
+PID: 16415
+Detección de carril: 10691834
+PID: 9143
+Detección de carril: 10135782
+PID: 9685
+Detección de carril: 10254403
+PID: 18518
+Detección de carril: 10548478
+PID: 10666
+Detección de carril: 10543970
+PID: 10315
+Detección de carril: 10323016
+PID: 10295
+Detección de carril: 11092491
+PID: 15313
+Detección de carril: 11063517
+PID: 21222
+Detección de carril: 11427268
+PID: 11678
+Detección de carril: 10098326
+PID: 18638
+Detección de carril: 11866693
+PID: 11067
+Detección de carril: 10176865
+PID: 11748
+Detección de carril: 10472593
+PID: 11407
+Detección de carril: 10018775
+PID: 10596
+Detección de carril: 10834250
+PID: 10075
+Detección de carril: 10071957
+PID: 15694
+Detección de carril: 10585474
+PID: 21182
+Detección de carril: 10275914
+PID: 17096
+Detección de carril: 10635829
+PID: 12418
+Detección de carril: 12641886
+PID: 15424
+Detección de carril: 10588558
+PID: 11988
+Detección de carril: 10258027
+PID: 22684
+Detección de carril: 11061934
+PID: 27652
+Detección de carril: 10840589
+PID: 30195
+Detección de carril: 10975724
+PID: 15564
+Detección de carril: 11219813
+PID: 11998
+Detección de carril: 10721049
+PID: 21593
+Detección de carril: 10709181
+PID: 10376
+Detección de carril: 10526224
+PID: 28133
+Detección de carril: 10791926
+PID: 13000
+Detección de carril: 10650943
+PID: 12358
+Detección de carril: 11015835
+PID: 12078
+Detección de carril: 10270216
+PID: 10626
+Detección de carril: 10501096
+PID: 10696
+Detección de carril: 10716342
+PID: 12058
+Detección de carril: 10962524
+PID: 23686
+Detección de carril: 11222228
+PID: 10977
+Detección de carril: 10869503
+PID: 19209
+Detección de carril: 10381545
+PID: 10045
+Detección de carril: 10415937
+PID: 9514
+Detección de carril: 10477390
+PID: 17356
+Detección de carril: 10235333
+PID: 11888
+Detección de carril: 10869433
+PID: 15773
+Detección de carril: 10301593
+PID: 9485
+Detección de carril: 10349877
+PID: 9655
+Detección de carril: 10318429
+PID: 18769
+Detección de carril: 10708890
+PID: 16044
+Detección de carril: 10020598
+PID: 16164
+Detección de carril: 10452613
+PID: 8894
+Detección de carril: 10408375
+PID: 9695
+Detección de carril: 9988070
+PID: 15914
+Detección de carril: 10362806
+PID: 15383
+Detección de carril: 10619184
+PID: 39780
+Detección de carril: 11509822
+PID: 15584
+Detección de carril: 11178110
+PID: 15123
+Detección de carril: 10817645
+PID: 32429
+Detección de carril: 11003386
+PID: 9865
+Detección de carril: 10433474
+PID: 9865
+Detección de carril: 11652709
+PID: 16205
+Detección de carril: 11500238
+PID: 15213
+Detección de carril: 11313586
+PID: 15243
+Detección de carril: 10026317
+PID: 15613
+Detección de carril: 10362185
+PID: 14632
+Detección de carril: 10776202
+PID: 14242
+Detección de carril: 10160770
+PID: 17287
+Detección de carril: 10666526
+PID: 23606
+Detección de carril: 10976966
+PID: 9675
+Detección de carril: 10416798
+PID: 9644
+Detección de carril: 10518382
+PID: 17086
+Detección de carril: 10443298
+PID: 16365
+Detección de carril: 10782432
+PID: 16735
+Detección de carril: 10604081
+PID: 9695
+Detección de carril: 11393477
+PID: 22254
+Detección de carril: 10753578
+PID: 26981
+Detección de carril: 11008004
+PID: 22534
+Detección de carril: 10952760
+PID: 19399
+Detección de carril: 10410619
+PID: 17827
+Detección de carril: 10787369
+PID: 17977
+Detección de carril: 10848932
+PID: 16385
+Detección de carril: 10517520
+PID: 17165
+Detección de carril: 10405612
+PID: 15703
+Detección de carril: 10737403
+PID: 10256
+Detección de carril: 10660316
+PID: 18808
+Detección de carril: 10572885
+PID: 9504
+Detección de carril: 10955384
+PID: 9865
+Detección de carril: 11012449
+PID: 10115
+Detección de carril: 10733167
+PID: 9425
+Detección de carril: 10484411
+PID: 10746
+Detección de carril: 10594026
+PID: 12750
+Detección de carril: 10992730
+PID: 26110
+Detección de carril: 10179609
+PID: 16004
+Detección de carril: 10237867
+PID: 25208
+Detección de carril: 10746607
+PID: 15523
+Detección de carril: 11948527
+PID: 21973
+Detección de carril: 10388204
+PID: 13060
+Detección de carril: 10476027
+PID: 13170
+Detección de carril: 10428186
+PID: 11317
+Detección de carril: 10619205
+PID: 10566
+Detección de carril: 10580696
+PID: 23345
+Detección de carril: 10512232
+PID: 11518
+Detección de carril: 10642780
+PID: 20591
+Detección de carril: 10611773
+PID: 10216
+Detección de carril: 10780990
+PID: 9695
+Detección de carril: 10492002
+PID: 9664
+Detección de carril: 10128422
+PID: 19099
+Detección de carril: 10662209
+PID: 17466
+Detección de carril: 10229565
+PID: 22514
+Detección de carril: 10503950
+PID: 11949
+Detección de carril: 11269499
+PID: 12649
+Detección de carril: 10544171
+PID: 20421
+Detección de carril: 10584001
+PID: 25669
+Detección de carril: 11230660
+PID: 19329
+Detección de carril: 10169975
+PID: 10065
+Detección de carril: 10457360
+PID: 21843
+Detección de carril: 10265198
+PID: 9354
+Detección de carril: 10374994
+PID: 9705
+Detección de carril: 10529940
+PID: 9414
+Detección de carril: 10479243
+PID: 9595
+Detección de carril: 10442718
+PID: 9314
+Detección de carril: 10564512
+PID: 21592
+Detección de carril: 10538082
+PID: 10977
+Detección de carril: 10557411
+PID: 11318
+Detección de carril: 12863742
+PID: 21352
+Detección de carril: 10946640
+PID: 9735
+Detección de carril: 11130799
+PID: 9875
+Detección de carril: 10377950
+PID: 9494
+Detección de carril: 10440524
+PID: 9325
+Detección de carril: 10469077
+PID: 9174
+Detección de carril: 10383869
+PID: 21833
+Detección de carril: 10088661
+PID: 9895
+Detección de carril: 10002892
+PID: 9675
+Detección de carril: 10565412
+PID: 18688
+Detección de carril: 10365090
+PID: 21613
+Detección de carril: 10559955
+PID: 9344
+Detección de carril: 10452943
+PID: 17366
+Detección de carril: 10521918
+PID: 10636
+Detección de carril: 10884045
+PID: 9084
+Detección de carril: 10653597
+PID: 10657
+Detección de carril: 11054333
+PID: 9024
+Detección de carril: 10709902
+PID: 9575
+Detección de carril: 10285289
+PID: 9093
+Detección de carril: 10793158
+PID: 9374
+Detección de carril: 10625524
+PID: 17096
+Detección de carril: 10532794
+PID: 9364
+Detección de carril: 10377389
+PID: 21132
+Detección de carril: 10348415
+PID: 9164
+Detección de carril: 10370838
+PID: 8673
+Detección de carril: 10374775
+PID: 32359
+Detección de carril: 10425471
+PID: 9274
+Detección de carril: 10387363
+PID: 15003
+Detección de carril: 10473594
+PID: 9114
+Detección de carril: 10728089
+PID: 9505
+Detección de carril: 10080779
+PID: 15323
+Detección de carril: 10625695
+PID: 9635
+Detección de carril: 10612814
+PID: 15463
+Detección de carril: 10156424
+PID: 9425
+Detección de carril: 10187381
+PID: 21642
+Detección de carril: 10891397
+PID: 10216
+Detección de carril: 10854811
+PID: 8944
+Detección de carril: 10936295
+PID: 21162
+Detección de carril: 10699366
+PID: 9875
+Detección de carril: 10778917
+PID: 16014
+Detección de carril: 10377218
+PID: 9394
+Detección de carril: 10434505
+PID: 15353
+Detección de carril: 10410278
+PID: 9123
+Detección de carril: 10259800
+PID: 9484
+Detección de carril: 11353696
+PID: 18898
+Detección de carril: 10485872
+PID: 9835
+Detección de carril: 10193801
+PID: 20250
+Detección de carril: 10785957
+PID: 11548
+Detección de carril: 11440558
+PID: 11868
+Detección de carril: 10379973
+PID: 10987
+Detección de carril: 10552294
+PID: 22804
+Detección de carril: 11017317
+PID: 21563
+Detección de carril: 10863634
+PID: 21512
+Detección de carril: 10390498
+PID: 9474
+Detección de carril: 10333282
+PID: 19199
+Detección de carril: 10214532
+PID: 10226
+Detección de carril: 9967949
+PID: 9054
+Detección de carril: 10376557
+PID: 14793
+Detección de carril: 10418040
+PID: 9044
+Detección de carril: 10436318
+PID: 15073
+Detección de carril: 10387875
+PID: 9053
+Detección de carril: 10368045
+PID: 9044
+Detección de carril: 10470660
+PID: 19109
+Detección de carril: 11056005
+PID: 12839
+Detección de carril: 10542909
+PID: 18378
+Detección de carril: 10558853
+PID: 12860
+Detección de carril: 10394364
+PID: 11167
+Detección de carril: 10405991
+PID: 11197
+Detección de carril: 10399021
+PID: 11848
+Detección de carril: 10018365
+PID: 9524
+Detección de carril: 10674388
+PID: 9244
+Detección de carril: 10719827
+PID: 10616
+Detección de carril: 10545333
+PID: 17467
+Detección de carril: 10281313
+PID: 13781
+Detección de carril: 11485395
+PID: 9044
+Detección de carril: 10442326
+PID: 16585
+Detección de carril: 10497000
+PID: 23746
+Detección de carril: 11025620
+PID: 12479
+Detección de carril: 10528507
+PID: 10356
+Detección de carril: 10997627
+PID: 10937
+Detección de carril: 10601979
+PID: 10716
+Detección de carril: 10603130
+PID: 11066
+Detección de carril: 11627901
+PID: 22304
+Detección de carril: 10902583
+PID: 10036
+Detección de carril: 10614227
+PID: 18088
+Detección de carril: 10628759
+PID: 9765
+Detección de carril: 10343477
+PID: 10035
+Detección de carril: 10137084
+PID: 10766
+Detección de carril: 10104145
+PID: 9945
+Detección de carril: 10234613
+PID: 21863
+Detección de carril: 10962373
+PID: 11277
+Detección de carril: 10715280
+PID: 25789
+Detección de carril: 10848802
+PID: 12269
+Detección de carril: 10682510
+PID: 10726
+Detección de carril: 10651413
+PID: 11367
+Detección de carril: 10529488
+PID: 12820
+Detección de carril: 10475467
+PID: 10616
+Detección de carril: 10388375
+PID: 23485
+Detección de carril: 11366956
+PID: 21803
+Detección de carril: 10429918
+PID: 17627
+Detección de carril: 10696030
+PID: 10245
+Detección de carril: 10491101
+PID: 18168
+Detección de carril: 10469718
+PID: 16285
+Detección de carril: 10580206
+PID: 16115
+Detección de carril: 10436348
+PID: 9614
+Detección de carril: 10380744
+PID: 16415
+Detección de carril: 10419382
+PID: 21563
+Detección de carril: 10463318
+PID: 9855
+Detección de carril: 10380663
+PID: 10246
+Detección de carril: 9960097
+PID: 20812
+Detección de carril: 10400854
+PID: 11498
+Detección de carril: 10380283
+PID: 18037
+Detección de carril: 10261063
+PID: 10266
+Detección de carril: 10264507
+PID: 10666
+Detección de carril: 10438280
+PID: 14031
+Detección de carril: 10374894
+PID: 12139
+Detección de carril: 11286845
+PID: 9724
+Detección de carril: 10531151
+PID: 10496
+Detección de carril: 10342405
+PID: 43095
+Detección de carril: 10862133
+PID: 31548
+Detección de carril: 11936709
+PID: 35864
+Detección de carril: 10941373
+PID: 17176
+Detección de carril: 10752737
+PID: 13901
+Detección de carril: 11116827
+PID: 13090
+Detección de carril: 10612094
+PID: 11287
+Detección de carril: 10761010
+PID: 11538
+Detección de carril: 10524111
+PID: 11147
+Detección de carril: 10116093
+PID: 21843
+Detección de carril: 10218207
+PID: 10085
+Detección de carril: 10797003
+PID: 17726
+Detección de carril: 10430348
+PID: 11347
+Detección de carril: 10070845
+PID: 10957
+Detección de carril: 10451992
+PID: 9595
+Detección de carril: 10416988
+PID: 9985
+Detección de carril: 10767949
+PID: 17747
+Detección de carril: 10733478
+PID: 16645
+Detección de carril: 9944533
+PID: 9595
+Detección de carril: 10631403
+PID: 9584
+Detección de carril: 10847970
+PID: 9625
+Detección de carril: 10569469
+PID: 17246
+Detección de carril: 9882669
+PID: 18528
+Detección de carril: 10925348
+PID: 9264
+Detección de carril: 9982991
+PID: 16816
+Detección de carril: 10339852
+PID: 9354
+Detección de carril: 11013571
+PID: 9965
+Detección de carril: 9848298
+PID: 9614
+Detección de carril: 10924607
+PID: 11417
+Detección de carril: 10277947
+PID: 10115
+Detección de carril: 10298499
+PID: 11337
+Detección de carril: 10459543
+PID: 11538
+Detección de carril: 10619405
+PID: 10947
+Detección de carril: 10886529
+PID: 27341
+Detección de carril: 10489428
+PID: 12829
+Detección de carril: 12785724
+PID: 16204
+Detección de carril: 11027283
+PID: 24177
+Detección de carril: 10683331
+PID: 20091
+Detección de carril: 10294283
+PID: 20020
+Detección de carril: 10430899
+PID: 19961
+Detección de carril: 10605083
+PID: 13491
+Detección de carril: 10486754
+PID: 12739
+Detección de carril: 10550190
+PID: 12629
+Detección de carril: 10378380
+PID: 25239
+Detección de carril: 10434074
+PID: 35323
+Detección de carril: 10183965
+PID: 19350
+Detección de carril: 10190366
+PID: 12539
+Detección de carril: 10682260
+PID: 21443
+Detección de carril: 11092601
+PID: 13230
+Detección de carril: 11202859
+PID: 12529
+Detección de carril: 10142262
+PID: 10816
+Detección de carril: 10350668
+PID: 24277
+Detección de carril: 10819658
+PID: 13891
+Detección de carril: 10102603
+PID: 23405
+Detección de carril: 10518613
+PID: 24527
+Detección de carril: 10767820
+PID: 25458
+Detección de carril: 10777153
+PID: 23195
+Detección de carril: 10444400
+PID: 11838
+Detección de carril: 10720348
+PID: 11298
+Detección de carril: 10064414
+PID: 19860
+Detección de carril: 10045416
+PID: 11237
+Detección de carril: 10410089
+PID: 20661
+Detección de carril: 10546124
+PID: 18057
+Detección de carril: 10893110
+PID: 16695
+Detección de carril: 10415326
+PID: 10015
+Detección de carril: 10950597
+PID: 9284
+Detección de carril: 11827433
+PID: 9294
+Detección de carril: 10220671
+PID: 15173
+Detección de carril: 10435175
+PID: 9174
+Detección de carril: 10355926
+PID: 10105
+Detección de carril: 10405912
+PID: 15714
+Detección de carril: 10486323
+PID: 9515
+Detección de carril: 10528928
+PID: 9694
+Detección de carril: 10574226
+PID: 9374
+Detección de carril: 10427515
+PID: 15834
+Detección de carril: 10296375
+PID: 15263
+Detección de carril: 10310037
+PID: 9665
+Detección de carril: 10728019
+PID: 11227
+Detección de carril: 9980148
+PID: 14592
+Detección de carril: 10388115
+PID: 15063
+Detección de carril: 10620867
+PID: 14512
+Detección de carril: 10483059
+PID: 9014
+Detección de carril: 10583100
+PID: 9184
+Detección de carril: 10765786
+PID: 9093
+Detección de carril: 10405451
+PID: 8853
+Detección de carril: 10362496
+PID: 9454
+Detección de carril: 10542859
+PID: 8994
+Detección de carril: 10189975
+PID: 15243
+Detección de carril: 10856033
+PID: 9414
+Detección de carril: 10468806
+PID: 33881
+Detección de carril: 10752065
+PID: 33611
+Detección de carril: 10338360
+PID: 15103
+Detección de carril: 10490369
+PID: 15654
+Detección de carril: 10577972
+PID: 14692
+Detección de carril: 10379422
+PID: 9054
+Detección de carril: 10342485
+PID: 9044
+Detección de carril: 10430940
+PID: 9093
+Detección de carril: 10513895
+PID: 9104
+Detección de carril: 10550841
+PID: 14983
+Detección de carril: 10334824
+PID: 9454
+Detección de carril: 10305990
+PID: 15113
+Detección de carril: 10887130
+PID: 14963
+Detección de carril: 10410408
+PID: 14733
+Detección de carril: 10391650
+PID: 9324
+Detección de carril: 10596811
+PID: 9444
+Detección de carril: 11461179
+PID: 9064
+Detección de carril: 10395306
+PID: 15123
+Detección de carril: 10526063
+PID: 9524
+Detección de carril: 10431931
+PID: 20110
+Detección de carril: 10295604
+PID: 15133
+Detección de carril: 10542579
+PID: 8953
+Detección de carril: 10710923
+PID: 32018
+Detección de carril: 11979794
+PID: 22214
+Detección de carril: 11139562
+PID: 18177
+Detección de carril: 12218997
+PID: 17557
+Detección de carril: 10448686
+PID: 27622
+Detección de carril: 12363475
+PID: 35474
+Detección de carril: 11464154
+PID: 29465
+Detección de carril: 11032731
+PID: 32649
+Detección de carril: 11707953
+PID: 38549
+Detección de carril: 11137038
+PID: 16675
+Detección de carril: 10704474
+PID: 15143
+Detección de carril: 10728210
+PID: 20161
+Detección de carril: 12987870
+PID: 27732
+Detección de carril: 10792396
+PID: 13681
+Detección de carril: 10667497
+PID: 13270
+Detección de carril: 10426202
+PID: 25399
+Detección de carril: 10767959
+PID: 13179
+Detección de carril: 10768650
+PID: 23075
+Detección de carril: 10306721
+PID: 18688
+Detección de carril: 10649981
+PID: 12329
+Detección de carril: 10488507
+PID: 22494
+Detección de carril: 10790725
+PID: 13561
+Detección de carril: 11222488
+PID: 29725
+Detección de carril: 11553038
+PID: 19319
+Detección de carril: 12294531
+PID: 25879
+Detección de carril: 13030314
+PID: 40722
+Detección de carril: 12778162
+PID: 18097
+Detección de carril: 10928302
+PID: 26240
+Detección de carril: 12101468
+PID: 13491
+Detección de carril: 10270938
+PID: 17296
+Detección de carril: 10769802
+PID: 10817
+Detección de carril: 10665715
+PID: 11888
+Detección de carril: 10703562
+PID: 13351
+Detección de carril: 11250370
+PID: 27502
+Detección de carril: 10787830
+PID: 15533
+Detección de carril: 10918918
+PID: 43405
+Detección de carril: 11701793
+PID: 31097
+Detección de carril: 11195818
+PID: 47502
+Detección de carril: 11483202
+PID: 19099
+Detección de carril: 11073943
+PID: 14001
+Detección de carril: 10797454
+PID: 20992
+Detección de carril: 10502427
+PID: 17757
+Detección de carril: 10751965
+PID: 17907
+Detección de carril: 10377439
+PID: 16806
+Detección de carril: 10408095
+PID: 10997
+Detección de carril: 11158560
+PID: 16956
+Detección de carril: 11030988
+PID: 10135
+Detección de carril: 12359378
+PID: 22664
+Detección de carril: 10555799
+PID: 15944
+Detección de carril: 10661057
+PID: 12188
+Detección de carril: 10583100
+PID: 15273
+Detección de carril: 11091769
+PID: 28783
+Detección de carril: 10780399
+PID: 29685
+Detección de carril: 11334888
+PID: 28754
+Detección de carril: 11093262
+PID: 30967
+Detección de carril: 11036386
+PID: 17467
+Detección de carril: 11534591
+PID: 18568
+Detección de carril: 10700237
+PID: 32309
+Detección de carril: 11014673
+PID: 14131
+Detección de carril: 10500916
+PID: 21983
+Detección de carril: 10812307
+PID: 13460
+Detección de carril: 11101655
+PID: 31738
+Detección de carril: 10339080
+PID: 25439
+Detección de carril: 11087403
+PID: 22234
+Detección de carril: 10951137
+PID: 16124
+Detección de carril: 11518986
+PID: 22614
+Detección de carril: 10581477
+PID: 12950
+Detección de carril: 10298539
+PID: 23786
+Detección de carril: 10384279
+PID: 21302
+Detección de carril: 10550450
+PID: 22865
+Detección de carril: 10427744
+PID: 23355
+Detección de carril: 11169348
+PID: 22003
+Detección de carril: 10960001
+PID: 13251
+Detección de carril: 10500055
+PID: 13140
+Detección de carril: 10629871
+PID: 16154
+Detección de carril: 11161705
+PID: 15503
+Detección de carril: 11017798
+PID: 26730
+Detección de carril: 10727779
+PID: 11918
+Detección de carril: 10852597
+PID: 24837
+Detección de carril: 11349871
+PID: 24988
+Detección de carril: 10929904
+PID: 17556
+Detección de carril: 11401759
+PID: 24086
+Detección de carril: 11620269
+PID: 12468
+Detección de carril: 11574551
+PID: 23555
+Detección de carril: 10692415
+PID: 22044
+Detección de carril: 10670061
+PID: 22334
+Detección de carril: 10975353
+PID: 13510
+Detección de carril: 10805776
+PID: 12889
+Detección de carril: 11257451
+PID: 26761
+Detección de carril: 10886088
+PID: 21232
+Detección de carril: 10679185
+PID: 12218
+Detección de carril: 10302295
+PID: 32298
+Detección de carril: 14054866
+PID: 32499
+Detección de carril: 10732125
+PID: 13360
+Detección de carril: 10702320
+PID: 27362
+Detección de carril: 10646506
+PID: 17927
+Detección de carril: 10628970
+PID: 18598
+Detección de carril: 9944373
+PID: 16295
+Detección de carril: 10289636
+PID: 17256
+Detección de carril: 10384700
+PID: 15823
+Detección de carril: 10677363
+PID: 9765
+Detección de carril: 10375376
+PID: 34061
+Detección de carril: 9971294
+PID: 9385
+Detección de carril: 9758120
+PID: 9584
+Detección de carril: 10480184
+PID: 15473
+Detección de carril: 10375425
+PID: 14983
+Detección de carril: 10336186
+PID: 16345
+Detección de carril: 11252733
+PID: 15924
+Detección de carril: 10333101
+PID: 9204
+Detección de carril: 10253552
+PID: 9404
+Detección de carril: 10514857
+PID: 8984
+Detección de carril: 10704173
+PID: 9644
+Detección de carril: 10904115
+PID: 9775
+Detección de carril: 10607557
+PID: 15714
+Detección de carril: 10697152
+PID: 9174
+Detección de carril: 10277237
+PID: 9254
+Detección de carril: 10338940
+PID: 15002
+Detección de carril: 10427324
+PID: 9184
+Detección de carril: 10345901
+PID: 15564
+Detección de carril: 10176915
+PID: 15413
+Detección de carril: 10119078
+PID: 15463
+Detección de carril: 9706082
+PID: 15393
+Detección de carril: 10552704
+PID: 14673
+Detección de carril: 10468146
+PID: 15153
+Detección de carril: 10267582
+PID: 15263
+Detección de carril: 10294533
+PID: 33320
+Detección de carril: 10496339
+PID: 9043
+Detección de carril: 10131156
+PID: 10316
+Detección de carril: 10168963
+PID: 11167
+Detección de carril: 9844091
+PID: 10365
+Detección de carril: 9957753
+PID: 10766
+Detección de carril: 10515628
+PID: 10166
+Detección de carril: 10337849
+PID: 19369
+Detección de carril: 10377709
+PID: 10095
+Detección de carril: 10283907
+PID: 18457
+Detección de carril: 10346692
+PID: 10336
+Detección de carril: 9934618
+PID: 9935
+Detección de carril: 9921188
+PID: 10015
+Detección de carril: 10833328
+PID: 9705
+Detección de carril: 10491972
+PID: 10647
+Detección de carril: 10031125
+PID: 19440
+Detección de carril: 10316055
+PID: 10255
+Detección de carril: 10403117
+PID: 18488
+Detección de carril: 10494676
+PID: 10215
+Detección de carril: 10126349
+PID: 10296
+Detección de carril: 10257116
+PID: 18478
+Detección de carril: 10686256
+PID: 9785
+Detección de carril: 10438912
+PID: 16776
+Detección de carril: 10203385
+PID: 16175
+Detección de carril: 10371159
+PID: 17086
+Detección de carril: 10436128
+PID: 9605
+Detección de carril: 10285849
+PID: 16906
+Detección de carril: 10626496
+PID: 16154
+Detección de carril: 10319801
+PID: 16104
+Detección de carril: 10635399
+PID: 16365
+Detección de carril: 10412201
+PID: 19800
+Detección de carril: 10687187
+PID: 21353
+Detección de carril: 10583621
+PID: 21382
+Detección de carril: 10830244
+PID: 22905
+Detección de carril: 10232619
+PID: 24628
+Detección de carril: 10962995
+PID: 47722
+Detección de carril: 11698468
+PID: 23175
+Detección de carril: 10549398
+PID: 18027
+Detección de carril: 10480384
+PID: 29594
+Detección de carril: 10520244
+PID: 17908
+Detección de carril: 10650202
+PID: 43566
+Detección de carril: 11132592
+PID: 15915
+Detección de carril: 10612275
+PID: 14873
+Detección de carril: 10658874
+PID: 15153
+Detección de carril: 10401154
+PID: 14452
+Detección de carril: 10380634
+PID: 24827
+Detección de carril: 10577501
+PID: 25349
+Detección de carril: 10473704
+PID: 10646
+Detección de carril: 10491472
+PID: 20111
+Detección de carril: 10357208
+PID: 17897
+Detección de carril: 10378050
+PID: 10125
+Detección de carril: 10514756
+PID: 9935
+Detección de carril: 10335484
+PID: 10406
+Detección de carril: 11133382
+PID: 11057
+Detección de carril: 10650542
+PID: 9875
+Detección de carril: 10457470
+PID: 10045
+Detección de carril: 10412631
+PID: 9635
+Detección de carril: 10518852
+PID: 20952
+Detección de carril: 11013942
+PID: 10606
+Detección de carril: 10513224
+PID: 19600
+Detección de carril: 10388705
+PID: 9775
+Detección de carril: 10428996
+PID: 23085
+Detección de carril: 10895463
+PID: 10356
+Detección de carril: 10641508
+PID: 12739
+Detección de carril: 10459102
+PID: 19810
+Detección de carril: 10371088
+PID: 17537
+Detección de carril: 10599444
+PID: 17427
+Detección de carril: 10692996
+PID: 17145
+Detección de carril: 10825026
+PID: 10455
+Detección de carril: 10434345
+PID: 10486
+Detección de carril: 10664964
+PID: 11277
+Detección de carril: 10023052
+PID: 10416
+Detección de carril: 10972469
+PID: 9985
+Detección de carril: 10609490
+PID: 27692
+Detección de carril: 10844185
+PID: 18798
+Detección de carril: 10806288
+PID: 9804
+Detección de carril: 10474195
+PID: 10486
+Detección de carril: 10159219
+PID: 18228
+Detección de carril: 11205522
+PID: 9445
+Detección de carril: 10633937
+PID: 20801
+Detección de carril: 11032089
+PID: 12719
+Detección de carril: 10930065
+PID: 12769
+Detección de carril: 10665745
+PID: 27221
+Detección de carril: 10679466
+PID: 22464
+Detección de carril: 10902693
+PID: 23956
+Detección de carril: 10668980
+PID: 25108
+Detección de carril: 10929414
+PID: 24587
+Detección de carril: 10596159
+PID: 23906
+Detección de carril: 10733066
+PID: 25078
+Detección de carril: 10638013
+PID: 23776
+Detección de carril: 10738705
+PID: 20932
+Detección de carril: 10891397
+PID: 36335
+Detección de carril: 10813188
+PID: 20672
+Detección de carril: 10407233
+PID: 19650
+Detección de carril: 10313181
+PID: 26891
+Detección de carril: 10914611
+PID: 18227
+Detección de carril: 10545082
+PID: 34222
+Detección de carril: 10964387
+PID: 22134
+Detección de carril: 10778866
+PID: 25208
+Detección de carril: 10508136
+PID: 20511
+Detección de carril: 10616150
+PID: 21632
+Detección de carril: 10452132
+PID: 22284
+Detección de carril: 10750042
+PID: 14992
+Detección de carril: 10397539
+PID: 13049
+Detección de carril: 10812417
+PID: 26039
+Detección de carril: 10692976
+PID: 14191
+Detección de carril: 10667148
+PID: 25579
+Detección de carril: 10836905
+PID: 15033
+Detección de carril: 10582689
+PID: 33151
+Detección de carril: 10580335
+PID: 17196
+Detección de carril: 10482618
+PID: 21562
+Detección de carril: 10457510
+PID: 11347
+Detección de carril: 11230079
+PID: 12109
+Detección de carril: 10663953
+PID: 21633
+Detección de carril: 10831046
+PID: 13030
+Detección de carril: 10485712
+PID: 26410
+Detección de carril: 11918311
+PID: 16805
+Detección de carril: 10771295
+PID: 14031
+Detección de carril: 10671684
+PID: 12519
+Detección de carril: 11986023
+PID: 16445
+Detección de carril: 11001083
+PID: 13501
+Detección de carril: 10499293
+PID: 24046
+Detección de carril: 10208012
+PID: 19269
+Detección de carril: 10941482
+PID: 10896
+Detección de carril: 10512092
+PID: 11357
+Detección de carril: 10419763
+PID: 38378
+Detección de carril: 10590892
+PID: 11628
+Detección de carril: 10404810
+PID: 20561
+Detección de carril: 10480916
+PID: 11788
+Detección de carril: 11737377
+PID: 17226
+Detección de carril: 10662771
+PID: 13711
+Detección de carril: 11017457
+PID: 13200
+Detección de carril: 10865257
+PID: 12069
+Detección de carril: 10558422
+PID: 11979
+Detección de carril: 10612424
+PID: 24707
+Detección de carril: 10514085
+PID: 13430
+Detección de carril: 10629791
+PID: 21383
+Detección de carril: 10317808
+PID: 11297
+Detección de carril: 10562168
+PID: 10637
+Detección de carril: 10784735
+PID: 11237
+Detección de carril: 9897272
+PID: 10766
+Detección de carril: 10507765
+PID: 10997
+Detección de carril: 10432001
+PID: 23416
+Detección de carril: 10444029
+PID: 19620
+Detección de carril: 10608539
+PID: 18568
+Detección de carril: 10829162
+PID: 18057
+Detección de carril: 10522518
+PID: 9745
+Detección de carril: 10614878
+PID: 22585
+Detección de carril: 10663151
+PID: 15003
+Detección de carril: 10460545
+PID: 15614
+Detección de carril: 10432251
+PID: 43776
+Detección de carril: 11878330
+PID: 32088
+Detección de carril: 10838276
+PID: 29424
+Detección de carril: 11161906
+PID: 30967
+Detección de carril: 10821962
+PID: 84117
+Detección de carril: 11485466
+PID: 25369
+Detección de carril: 10304228
+PID: 14252
+Detección de carril: 10101060
+PID: 23135
+Detección de carril: 10508647
+PID: 10366
+Detección de carril: 10130144
+PID: 17357
+Detección de carril: 10497921
+PID: 9845
+Detección de carril: 10147220
+PID: 16204
+Detección de carril: 10451521
+PID: 9335
+Detección de carril: 10110064
+PID: 16014
+Detección de carril: 10525903
+PID: 15514
+Detección de carril: 11327526
+PID: 32499
+Detección de carril: 10557260
+PID: 25839
+Detección de carril: 10835682
+PID: 17116
+Detección de carril: 10528036
+PID: 21142
+Detección de carril: 10285630
+PID: 19239
+Detección de carril: 10324699
+PID: 10636
+Detección de carril: 10678094
+PID: 10777
+Detección de carril: 10490540
+PID: 9765
+Detección de carril: 10516399
+PID: 17967
+Detección de carril: 10535688
+PID: 33150
+Detección de carril: 10906759
+PID: 38628
+Detección de carril: 10576069
+PID: 17917
+Detección de carril: 10696291
+PID: 16255
+Detección de carril: 10645294
+PID: 15744
+Detección de carril: 10378010
+PID: 15213
+Detección de carril: 10495698
+PID: 20912
+Detección de carril: 9960537
+PID: 15944
+Detección de carril: 9976943
+PID: 32850
+Detección de carril: 10259570
+PID: 16195
+Detección de carril: 10164786
+PID: 15333
+Detección de carril: 10535578
+PID: 19219
+Detección de carril: 11662193
+PID: 24026
+Detección de carril: 10471871
+PID: 20040
+Detección de carril: 10077454
+PID: 13290
+Detección de carril: 10723703
+PID: 20321
+Detección de carril: 10216355
+PID: 10927
+Detección de carril: 10548628
+PID: 25779
+Detección de carril: 10531291
+PID: 18798
+Detección de carril: 10571973
+PID: 17457
+Detección de carril: 10895543
+PID: 16565
+Detección de carril: 10643091
+PID: 18097
+Detección de carril: 10767329
+PID: 16945
+Detección de carril: 10748390
+PID: 17246
+Detección de carril: 10829362
+PID: 18177
+Detección de carril: 10699376
+PID: 18368
+Detección de carril: 10662750
+PID: 34973
+Detección de carril: 10953811
+PID: 12069
+Detección de carril: 10642730
+PID: 22164
+Detección de carril: 10456799
+PID: 18358
+Detección de carril: 10615379
+PID: 17707
+Detección de carril: 10461736
+PID: 47642
+Detección de carril: 11462030
+PID: 27281
+Detección de carril: 10540926
+PID: 20571
+Detección de carril: 10589079
+PID: 17937
+Detección de carril: 10528637
+PID: 17858
+Detección de carril: 10699136
+PID: 10186
+Detección de carril: 10259690
+PID: 34692
+Detección de carril: 10281863
+PID: 16324
+Detección de carril: 10323106
+PID: 14773
+Detección de carril: 10118928
+PID: 15143
+Detección de carril: 10276436
+PID: 14913
+Detección de carril: 10071506
+PID: 33440
+Detección de carril: 11962908
+PID: 9505
+Detección de carril: 10026467
+PID: 25839
+Detección de carril: 11105340
+PID: 14933
+Detección de carril: 11082005
+PID: 17456
+Detección de carril: 11214105
+PID: 15334
+Detección de carril: 11542653
+PID: 15443
+Detección de carril: 10548057
+PID: 15864
+Detección de carril: 10651393
+PID: 15614
+Detección de carril: 10716432
+PID: 9724
+Detección de carril: 10213240
+PID: 16285
+Detección de carril: 10009502
+PID: 14702
+Detección de carril: 10327132
+PID: 9344
+Detección de carril: 10500074
+PID: 15163
+Detección de carril: 10701209
+PID: 10907
+Detección de carril: 10978288
+PID: 25048
+Detección de carril: 10434755
+PID: 17106
+Detección de carril: 11454880
+PID: 15473
+Detección de carril: 10111807
+PID: 33811
+Detección de carril: 10853419
+PID: 21332
+Detección de carril: 10571542
+PID: 16775
+Detección de carril: 10062883
+PID: 9274
+Detección de carril: 10605394
+PID: 15373
+Detección de carril: 10244487
+PID: 15734
+Detección de carril: 9972506
+PID: 14802
+Detección de carril: 10347283
+PID: 15023
+Detección de carril: 10429718
+PID: 9154
+Detección de carril: 10403898
+PID: 15614
+Detección de carril: 11512687
+PID: 14803
+Detección de carril: 10111025
+PID: 15413
+Detección de carril: 10472572
+PID: 9234
+Detección de carril: 10072497
+PID: 9815
+Detección de carril: 9938043
+PID: 15143
+Detección de carril: 10693356
+PID: 22454
+Detección de carril: 10956025
+PID: 20732
+Detección de carril: 9996612
+PID: 20871
+Detección de carril: 10499924
+PID: 9294
+Detección de carril: 10609380
+PID: 29975
+Detección de carril: 10604813
+PID: 16896
+Detección de carril: 10293031
+PID: 15073
+Detección de carril: 10173009
+PID: 9505
+Detección de carril: 10359151
+PID: 9173
+Detección de carril: 10570821
+PID: 9163
+Detección de carril: 10338990
+PID: 15364
+Detección de carril: 10097375
+PID: 15534
+Detección de carril: 10334253
+PID: 24147
+Detección de carril: 10476209
+PID: 9234
+Detección de carril: 10323447
+PID: 15193
+Detección de carril: 10465361
+PID: 9304
+Detección de carril: 10230526
+PID: 14872
+Detección de carril: 10376386
+PID: 9004
+Detección de carril: 10129213
+PID: 9184
+Detección de carril: 10029101
+PID: 14853
+Detección de carril: 10049602
+PID: 8973
+Detección de carril: 10495347
+PID: 15073
+Detección de carril: 10242424
+PID: 23726
+Detección de carril: 10071175
+PID: 9104
+Detección de carril: 10938728
+PID: 23786
+Detección de carril: 10343157
+PID: 8943
+Detección de carril: 10313902
+PID: 8773
+Detección de carril: 10357088
+PID: 15083
+Detección de carril: 10702079
+PID: 9053
+Detección de carril: 10459893
+PID: 9153
+Detección de carril: 10610221
+PID: 14652
+Detección de carril: 10340042
+PID: 9594
+Detección de carril: 9956281
+PID: 8863
+Detección de carril: 10200951
+PID: 9304
+Detección de carril: 10130675
+PID: 14522
+Detección de carril: 10266170
+PID: 9224
+Detección de carril: 10677683
+PID: 9064
+Detección de carril: 10337258
+PID: 9084
+Detección de carril: 10355816
+PID: 15383
+Detección de carril: 10349737
+PID: 9264
+Detección de carril: 10444550
+PID: 16044
+Detección de carril: 10318860
+PID: 20371
+Detección de carril: 10569760
+PID: 10697
+Detección de carril: 10570350
+PID: 8973
+Detección de carril: 10372791
+PID: 9875
+Detección de carril: 10450469
+PID: 12579
+Detección de carril: 10398460
+PID: 21582
+Detección de carril: 10851166
+PID: 16375
+Detección de carril: 10086108
+PID: 24817
+Detección de carril: 10938028
+PID: 15203
+Detección de carril: 10781611
+PID: 8973
+Detección de carril: 10642880
+PID: 8874
+Detección de carril: 10394314
+PID: 15754
+Detección de carril: 10959058
+PID: 15093
+Detección de carril: 10776733
+PID: 14432
+Detección de carril: 10606997
+PID: 15003
+Detección de carril: 10958858
+PID: 9425
+Detección de carril: 10379081
+PID: 25478
+Detección de carril: 10932709
+PID: 13130
+Detección de carril: 10803844
+PID: 68764
+Detección de carril: 12635286
+PID: 22133
+Detección de carril: 13123234
+PID: 31047
+Detección de carril: 10830154
+PID: 16525
+Detección de carril: 11260305
+PID: 14963
+Detección de carril: 11562943
+PID: 15213
+Detección de carril: 10276767
+PID: 13460
+Detección de carril: 11007813
+PID: 11848
+Detección de carril: 10704143
+PID: 10306
+Detección de carril: 10478161
+PID: 17556
+Detección de carril: 10759998
+PID: 9955
+Detección de carril: 10193621
+PID: 21914
+Detección de carril: 10595118
+PID: 10586
+Detección de carril: 11267516
+PID: 33230
+Detección de carril: 13016072
+PID: 23766
+Detección de carril: 14777840
+PID: 20631
+Detección de carril: 10609510
+PID: 24297
+Detección de carril: 10809983
+PID: 27692
+Detección de carril: 10260882
+PID: 13360
+Detección de carril: 10625023
+PID: 12329
+Detección de carril: 10575989
+PID: 22004
+Detección de carril: 10605093
+PID: 11828
+Detección de carril: 10211277
+PID: 11217
+Detección de carril: 11056626
+PID: 10646
+Detección de carril: 10474065
+PID: 11107
+Detección de carril: 10371650
+PID: 10817
+Detección de carril: 11257710
+PID: 11898
+Detección de carril: 10646165
+PID: 13431
+Detección de carril: 11283520
+PID: 24497
+Detección de carril: 10248082
+PID: 10416
+Detección de carril: 10300332
+PID: 18508
+Detección de carril: 10388545
+PID: 9885
+Detección de carril: 10332610
+PID: 18237
+Detección de carril: 10434655
+PID: 18508
+Detección de carril: 10412171
+PID: 17447
+Detección de carril: 10109012
+PID: 38138
+Detección de carril: 10206029
+PID: 9484
+Detección de carril: 10427765
+PID: 16164
+Detección de carril: 10416157
+PID: 16095
+Detección de carril: 10397469
+PID: 15313
+Detección de carril: 10345861
+PID: 9764
+Detección de carril: 10431810
+PID: 47812
+Detección de carril: 11727362
+PID: 39831
+Detección de carril: 12699404
+PID: 27772
+Detección de carril: 10969935
+PID: 20641
+Detección de carril: 12470197
+PID: 35013
+Detección de carril: 10907391
+PID: 27702
+Detección de carril: 10502949
+PID: 21392
+Detección de carril: 10542919
+PID: 19179
+Detección de carril: 10451131
+PID: 19219
+Detección de carril: 11196950
+PID: 18758
+Detección de carril: 10752837
+PID: 20501
+Detección de carril: 10886189
+PID: 20762
+Detección de carril: 10751104
+PID: 16184
+Detección de carril: 10468427
+PID: 15754
+Detección de carril: 10558602
+PID: 16304
+Detección de carril: 10308895
+PID: 16034
+Detección de carril: 10538452
+PID: 15904
+Detección de carril: 10399312
+PID: 15343
+Detección de carril: 11035364
+PID: 15303
+Detección de carril: 10217807
+PID: 15824
+Detección de carril: 10619084
+PID: 15604
+Detección de carril: 10422717
+PID: 15413
+Detección de carril: 10477360
+PID: 14802
+Detección de carril: 10224977
+PID: 9865
+Detección de carril: 10679646
+PID: 9735
+Detección de carril: 10604512
+PID: 19890
+Detección de carril: 11354177
+PID: 13290
+Detección de carril: 10206770
+PID: 21873
+Detección de carril: 10696372
+PID: 10386
+Detección de carril: 10813278
+PID: 20661
+Detección de carril: 10778015
+PID: 14112
+Detección de carril: 11027112
+PID: 15353
+Detección de carril: 10548107
+PID: 15333
+Detección de carril: 11303991
+PID: 36566
+Detección de carril: 11511555
+PID: 16805
+Detección de carril: 10722070
+PID: 32689
+Detección de carril: 10637943
+PID: 22845
+Detección de carril: 10760218
+PID: 18568
+Detección de carril: 11515932
+PID: 23786
+Detección de carril: 10782091
+PID: 16565
+Detección de carril: 10636611
+PID: 30376
+Detección de carril: 12366860
+PID: 18508
+Detección de carril: 11296590
+PID: 28674
+Detección de carril: 10604973
+PID: 15604
+Detección de carril: 10343457
+PID: 15273
+Detección de carril: 10916785
+PID: 17977
+Detección de carril: 10756042
+PID: 16285
+Detección de carril: 10667458
+PID: 36325
+Detección de carril: 11767773
+PID: 15263
+Detección de carril: 10744985
+PID: 27461
+Detección de carril: 10447214
+PID: 14662
+Detección de carril: 11147174
+PID: 15634
+Detección de carril: 10368765
+PID: 26561
+Detección de carril: 10673797
+PID: 13169
+Detección de carril: 10571382
+PID: 39720
+Detección de carril: 11031949
+PID: 11928
+Detección de carril: 10329155
+PID: 11207
+Detección de carril: 10715600
+PID: 10155
+Detección de carril: 10643201
+PID: 10706
+Detección de carril: 10400153
+PID: 19539
+Detección de carril: 10471301
+PID: 9614
+Detección de carril: 10506644
+PID: 17366
+Detección de carril: 11365745
+PID: 22174
+Detección de carril: 11192543
+PID: 17697
+Detección de carril: 10545122
+PID: 12549
+Detección de carril: 10437179
+PID: 10326
+Detección de carril: 10358820
+PID: 23506
+Detección de carril: 10468026
+PID: 18979
+Detección de carril: 10252219
+PID: 18048
+Detección de carril: 10342015
+PID: 10376
+Detección de carril: 10247332
+PID: 19279
+Detección de carril: 10418872
+PID: 9254
+Detección de carril: 10817555
+PID: 10546
+Detección de carril: 10193280
+PID: 18437
+Detección de carril: 10359171
+PID: 16194
+Detección de carril: 10318410
+PID: 16354
+Detección de carril: 11076076
+PID: 10907
+Detección de carril: 10905458
+PID: 9945
+Detección de carril: 10264377
+PID: 22304
+Detección de carril: 10303767
+PID: 19369
+Detección de carril: 10730423
+PID: 17276
+Detección de carril: 10545774
+PID: 19840
+Detección de carril: 10519514
+PID: 24267
+Detección de carril: 10620396
+PID: 13280
+Detección de carril: 10526154
+PID: 23275
+Detección de carril: 10907111
+PID: 22434
+Detección de carril: 10758105
+PID: 26230
+Detección de carril: 10473775
+PID: 29925
+Detección de carril: 10870215
+PID: 19169
+Detección de carril: 10445221
+PID: 11317
+Detección de carril: 10126609
+PID: 10696
+Detección de carril: 9937442
+PID: 9704
+Detección de carril: 10326462
+PID: 9615
+Detección de carril: 10489569
+PID: 9535
+Detección de carril: 10542458
+PID: 9484
+Detección de carril: 10218478
+PID: 9384
+Detección de carril: 11008304
+PID: 25639
+Detección de carril: 10386222
+PID: 9675
+Detección de carril: 10472122
+PID: 17847
+Detección de carril: 11027803
+PID: 21652
+Detección de carril: 10431441
+PID: 9484
+Detección de carril: 10716291
+PID: 9174
+Detección de carril: 10543089
+PID: 16134
+Detección de carril: 10250967
+PID: 13110
+Detección de carril: 9971524
+PID: 34513
+Detección de carril: 10610372
+PID: 21943
+Detección de carril: 10567477
+PID: 21703
+Detección de carril: 10693357
+PID: 18669
+Detección de carril: 10296055
+PID: 22945
+Detección de carril: 10327473
+PID: 21733
+Detección de carril: 10723242
+PID: 14432
+Detección de carril: 10638324
+PID: 12459
+Detección de carril: 10250987
+PID: 24166
+Detección de carril: 10665505
+PID: 20722
+Detección de carril: 10633727
+PID: 20982
+Detección de carril: 10157175
+PID: 21011
+Detección de carril: 10959019
+PID: 20060
+Detección de carril: 10847671
+PID: 12059
+Detección de carril: 10240962
+PID: 21302
+Detección de carril: 10563360
+PID: 12869
+Detección de carril: 10638363
+PID: 29594
+Detección de carril: 11625268
+PID: 34823
+Detección de carril: 11023797
+PID: 28454
+Detección de carril: 10771054
+PID: 21853
+Detección de carril: 10278479
+PID: 13831
+Detección de carril: 10575849
+PID: 27601
+Detección de carril: 10613436
+PID: 25378
+Detección de carril: 10687588
+PID: 25318
+Detección de carril: 10568297
+PID: 22263
+Detección de carril: 10454355
+PID: 20911
+Detección de carril: 10019496
+PID: 19490
+Detección de carril: 10669280
+PID: 19840
+Detección de carril: 10642440
+PID: 23636
+Detección de carril: 10907881
+PID: 10897
+Detección de carril: 10600627
+PID: 37166
+Detección de carril: 10735250
+PID: 21423
+Detección de carril: 10362696
+PID: 16906
+Detección de carril: 10490099
+PID: 28253
+Detección de carril: 10841611
+PID: 43275
+Detección de carril: 10399231
+PID: 28854
+Detección de carril: 11288668
+PID: 24237
+Detección de carril: 10514997
+PID: 20611
+Detección de carril: 10600125
+PID: 21572
+Detección de carril: 10657672
+PID: 23486
+Detección de carril: 10838056
+PID: 12730
+Detección de carril: 10426163
+PID: 12829
+Detección de carril: 10621979
+PID: 26149
+Detección de carril: 10440714
+PID: 22494
+Detección de carril: 10817194
+PID: 41613
+Detección de carril: 10703212
+PID: 22825
+Detección de carril: 10376507
+PID: 20992
+Detección de carril: 10341263
+PID: 11958
+Detección de carril: 10692175
+PID: 20050
+Detección de carril: 10590691
+PID: 11788
+Detección de carril: 10262765
+PID: 11047
+Detección de carril: 10592564
+PID: 21363
+Detección de carril: 10446002
+PID: 11837
+Detección de carril: 10446433
+PID: 20811
+Detección de carril: 10530440
+PID: 11267
+Detección de carril: 10728169
+PID: 14081
+Detección de carril: 10523520
+PID: 16204
+Detección de carril: 10472353
+PID: 36145
+Detección de carril: 10955885
+PID: 31537
+Detección de carril: 11796246
+PID: 27131
+Detección de carril: 11028044
+PID: 27783
+Detección de carril: 10743893
+PID: 17747
+Detección de carril: 10469267
+PID: 30346
+Detección de carril: 10737925
+PID: 13481
+Detección de carril: 10122623
+PID: 12669
+Detección de carril: 10493224
+PID: 12338
+Detección de carril: 10466904
+PID: 24577
+Detección de carril: 10593185
+PID: 19910
+Detección de carril: 10567426
+PID: 11467
+Detección de carril: 10267643
+PID: 21032
+Detección de carril: 10376507
+PID: 18077
+Detección de carril: 9914799
+PID: 20351
+Detección de carril: 10226660
+PID: 19920
+Detección de carril: 10406152
+PID: 23495
+Detección de carril: 11054003
+PID: 12719
+Detección de carril: 10659306
+PID: 12129
+Detección de carril: 10453334
+PID: 22303
+Detección de carril: 10617071
+PID: 18758
+Detección de carril: 11561270
+PID: 17937
+Detección de carril: 10344519
+PID: 18468
+Detección de carril: 10529128
+PID: 16555
+Detección de carril: 11039361
+PID: 11548
+Detección de carril: 11418104
+PID: 23655
+Detección de carril: 10550891
+PID: 23947
+Detección de carril: 10472042
+PID: 38108
+Detección de carril: 10910796
+PID: 13580
+Detección de carril: 10366872
+PID: 23635
+Detección de carril: 10323697
+PID: 12749
+Detección de carril: 10314473
+PID: 12669
+Detección de carril: 10650793
+PID: 13120
+Detección de carril: 10648830
+PID: 22474
+Detección de carril: 10308414
+PID: 19099
+Detección de carril: 10535969
+PID: 37236
+Detección de carril: 10801651
+PID: 22304
+Detección de carril: 10704494
+PID: 21282
+Detección de carril: 10505543
+PID: 12800
+Detección de carril: 10443849
+PID: 17917
+Detección de carril: 10565523
+PID: 26951
+Detección de carril: 10434285
+PID: 13751
+Detección de carril: 10561757
+PID: 16966
+Detección de carril: 11327347
+PID: 14973
+Detección de carril: 10387985
+PID: 12299
+Detección de carril: 10525112
+PID: 12059
+Detección de carril: 10944337
+PID: 13851
+Detección de carril: 11007973
+PID: 14021
+Detección de carril: 10477139
+PID: 13531
+Detección de carril: 10924998
+PID: 48463
+Detección de carril: 10766657
+PID: 14672
+Detección de carril: 10804736
+PID: 25719
+Detección de carril: 10847871
+PID: 14071
+Detección de carril: 10693708
+PID: 13681
+Detección de carril: 10603801
+PID: 13070
+Detección de carril: 10754489
+PID: 13741
+Detección de carril: 10703422
+PID: 27722
+Detección de carril: 10829663
+PID: 13341
+Detección de carril: 10625054
+PID: 26951
+Detección de carril: 10471080
+PID: 14071
+Detección de carril: 10489228
+PID: 13030
+Detección de carril: 10516759
+PID: 26811
+Detección de carril: 10442497
+PID: 41383
+Detección de carril: 10772987
+PID: 13891
+Detección de carril: 10695530
+PID: 14011
+Detección de carril: 10612975
+PID: 28353
+Detección de carril: 10445251
+PID: 14121
+Detección de carril: 10117014
+PID: 42234
+Detección de carril: 10282515
+PID: 13981
+Detección de carril: 10803083
+PID: 18578
+Detección de carril: 10822462
+PID: 26921
+Detección de carril: 10515237
+PID: 22994
+Detección de carril: 10404560
+PID: 16285
+Detección de carril: 10786968
+PID: 14662
+Detección de carril: 10975624
+PID: 25469
+Detección de carril: 10853629
+PID: 14282
+Detección de carril: 10835452
+PID: 25198
+Detección de carril: 10521327
+PID: 27442
+Detección de carril: 10688530
+PID: 15373
+Detección de carril: 10460895
+PID: 26550
+Detección de carril: 11061043
+PID: 27962
+Detección de carril: 10883765
+PID: 29806
+Detección de carril: 10676291
+PID: 24638
+Detección de carril: 10609600
+PID: 14352
+Detección de carril: 10387463
+PID: 26049
+Detección de carril: 10560235
+PID: 13420
+Detección de carril: 10510751
+PID: 25919
+Detección de carril: 11723687
+PID: 21923
+Detección de carril: 10214993
+PID: 26049
+Detección de carril: 10181782
+PID: 12569
+Detección de carril: 9999897
+PID: 17897
+Detección de carril: 10365320
+PID: 11017
+Detección de carril: 9949451
+PID: 11097
+Detección de carril: 10024043
+PID: 17356
+Detección de carril: 10575859
+PID: 17026
+Detección de carril: 10848772
+PID: 9765
+Detección de carril: 11351944
+PID: 15864
+Detección de carril: 10770123
+PID: 14902
+Detección de carril: 10346692
+PID: 19289
+Detección de carril: 9995480
+PID: 9494
+Detección de carril: 10338199
+PID: 9244
+Detección de carril: 10936195
+PID: 33110
+Detección de carril: 10231878
+PID: 9764
+Detección de carril: 10278899
+PID: 9855
+Detección de carril: 10035681
+PID: 15714
+Detección de carril: 10410889
+PID: 9414
+Detección de carril: 10133139
+PID: 10706
+Detección de carril: 10454385
+PID: 9795
+Detección de carril: 10455095
+PID: 22193
+Detección de carril: 10894001
+PID: 11047
+Detección de carril: 10587807
+PID: 10727
+Detección de carril: 10581307
+PID: 11548
+Detección de carril: 9982571
+PID: 10877
+Detección de carril: 11636404
+PID: 27652
+Detección de carril: 10324328
+PID: 10847
+Detección de carril: 10329936
+PID: 28083
+Detección de carril: 10355656
+PID: 13800
+Detección de carril: 10806298
+PID: 11778
+Detección de carril: 10398861
+PID: 24006
+Detección de carril: 10105948
+PID: 12729
+Detección de carril: 10402296
+PID: 18368
+Detección de carril: 10554767
+PID: 10646
+Detección de carril: 10031875
+PID: 10656
+Detección de carril: 10931878
+PID: 10206
+Detección de carril: 10468456
+PID: 19739
+Detección de carril: 10493023
+PID: 16845
+Detección de carril: 10074519
+PID: 9855
+Detección de carril: 10662010
+PID: 9404
+Detección de carril: 10870034
+PID: 18127
+Detección de carril: 10298119
+PID: 11848
+Detección de carril: 10190255
+PID: 18207
+Detección de carril: 10414655
+PID: 9445
+Detección de carril: 10337799
+PID: 9785
+Detección de carril: 10687889
+PID: 17847
+Detección de carril: 10835462
+PID: 10496
+Detección de carril: 11296710
+PID: 17888
+Detección de carril: 10245459
+PID: 34552
+Detección de carril: 10144616
+PID: 15783
+Detección de carril: 10021329
+PID: 15063
+Detección de carril: 10279921
+PID: 9294
+Detección de carril: 11273566
+PID: 15413
+Detección de carril: 10708380
+PID: 9194
+Detección de carril: 10435066
+PID: 9645
+Detección de carril: 10646446
+PID: 14713
+Detección de carril: 11172672
+PID: 15263
+Detección de carril: 10275524
+PID: 15303
+Detección de carril: 10647156
+PID: 16245
+Detección de carril: 10383027
+PID: 14863
+Detección de carril: 10126669
+PID: 15042
+Detección de carril: 10084866
+PID: 14482
+Detección de carril: 10401145
+PID: 14161
+Detección de carril: 10521517
+PID: 15975
+Detección de carril: 10375616
+PID: 16224
+Detección de carril: 10673647
+PID: 14953
+Detección de carril: 10548418
+PID: 9374
+Detección de carril: 10794931
+PID: 9274
+Detección de carril: 10515197
+PID: 9234
+Detección de carril: 10373432
+PID: 9384
+Detección de carril: 10565834
+PID: 33240
+Detección de carril: 10498642
+PID: 14952
+Detección de carril: 10070133
+PID: 14582
+Detección de carril: 10366031
+PID: 9274
+Detección de carril: 10340552
+PID: 9425
+Detección de carril: 10330408
+PID: 15533
+Detección de carril: 9956922
+PID: 14832
+Detección de carril: 10179590
+PID: 14842
+Detección de carril: 10380243
+PID: 32469
+Detección de carril: 10296426
+PID: 16415
+Detección de carril: 10897456
+PID: 10365
+Detección de carril: 10287142
+PID: 15914
+Detección de carril: 10708589
+PID: 8924
+Detección de carril: 10386973
+PID: 21362
+Detección de carril: 10691394
+PID: 9514
+Detección de carril: 10630832
+PID: 9103
+Detección de carril: 10213961
+PID: 9314
+Detección de carril: 10594938
+PID: 8814
+Detección de carril: 11194746
+PID: 9154
+Detección de carril: 11152742
+PID: 15864
+Detección de carril: 9945445
+PID: 9634
+Detección de carril: 10024945
+PID: 8784
+Detección de carril: 10393973
+PID: 14502
+Detección de carril: 10303166
+PID: 21583
+Detección de carril: 10878406
+PID: 8964
+Detección de carril: 10502959
+PID: 9064
+Detección de carril: 10282875
+PID: 9815
+Detección de carril: 10279771
+PID: 11037
+Detección de carril: 10744163
+PID: 22094
+Detección de carril: 10737174
+PID: 9975
+Detección de carril: 10207361
+PID: 19971
+Detección de carril: 11047143
+PID: 10036
+Detección de carril: 10524621
+PID: 17316
+Detección de carril: 10185298
+PID: 9955
+Detección de carril: 10143875
+PID: 9024
+Detección de carril: 10480575
+PID: 28924
+Detección de carril: 11823297
+PID: 20391
+Detección de carril: 10437890
+PID: 14932
+Detección de carril: 10608178
+PID: 21993
+Detección de carril: 10789192
+PID: 10716
+Detección de carril: 10503550
+PID: 10285
+Detección de carril: 10541006
+PID: 31849
+Detección de carril: 10836413
+PID: 21523
+Detección de carril: 10670012
+PID: 10356
+Detección de carril: 10434325
+PID: 9655
+Detección de carril: 10660277
+PID: 9725
+Detección de carril: 10572393
+PID: 9194
+Detección de carril: 10523559
+PID: 8994
+Detección de carril: 10460995
+PID: 9154
+Detección de carril: 10181542
+PID: 15173
+Detección de carril: 10463459
+PID: 13871
+Detección de carril: 10598052
+PID: 14072
+Detección de carril: 11162667
+PID: 14482
+Detección de carril: 10598403
+PID: 9214
+Detección de carril: 10929815
+PID: 14792
+Detección de carril: 10580165
+PID: 14341
+Detección de carril: 10740508
+PID: 14302
+Detección de carril: 10535999
+PID: 15303
+Detección de carril: 10456819
+PID: 14912
+Detección de carril: 10237076
+PID: 15444
+Detección de carril: 10327853
+PID: 9625
+Detección de carril: 10207852
+PID: 10045
+Detección de carril: 10996466
+PID: 36435
+Detección de carril: 10802071
+PID: 30086
+Detección de carril: 10359371
+PID: 20360
+Detección de carril: 13445943
+PID: 29084
+Detección de carril: 10388665
+PID: 21923
+Detección de carril: 10606104
+PID: 25028
+Detección de carril: 10719837
+PID: 14693
+Detección de carril: 10827530
+PID: 15814
+Detección de carril: 10908602
+PID: 16264
+Detección de carril: 10642370
+PID: 25058
+Detección de carril: 10112278
+PID: 11968
+Detección de carril: 10136164
+PID: 12739
+Detección de carril: 12585601
+PID: 48122
+Detección de carril: 10358720
+PID: 14883
+Detección de carril: 10855422
+PID: 13330
+Detección de carril: 12422193
+PID: 17757
+Detección de carril: 12825013
+PID: 21563
+Detección de carril: 11242498
+PID: 14301
+Detección de carril: 10228573
+PID: 11888
+Detección de carril: 10228674
+PID: 25128
+Detección de carril: 11639709
+PID: 12228
+Detección de carril: 10475066
+PID: 23896
+Detección de carril: 10892167
+PID: 11237
+Detección de carril: 10556660
+PID: 11708
+Detección de carril: 10782622
+PID: 26400
+Detección de carril: 11064268
+PID: 14862
+Detección de carril: 10576920
+PID: 21963
+Detección de carril: 10077835
+PID: 11067
+Detección de carril: 10076904
+PID: 9875
+Detección de carril: 10752787
+PID: 20241
+Detección de carril: 10726758
+PID: 10576
+Detección de carril: 10408255
+PID: 17266
+Detección de carril: 10358540
+PID: 10666
+Detección de carril: 10235163
+PID: 10305
+Detección de carril: 10596861
+PID: 15693
+Detección de carril: 10378981
+PID: 17106
+Detección de carril: 10600526
+PID: 10286
+Detección de carril: 10286721
+PID: 10295
+Detección de carril: 10694358
+PID: 17166
+Detección de carril: 10330147
+PID: 9865
+Detección de carril: 10675911
+PID: 14722
+Detección de carril: 10684093
+PID: 18678
+Detección de carril: 11767492
+PID: 43335
+Detección de carril: 10967441
+PID: 30606
+Detección de carril: 10977236
+PID: 21522
+Detección de carril: 11089236
+PID: 34442
+Detección de carril: 10967242
+PID: 21903
+Detección de carril: 10881392
+PID: 30626
+Detección de carril: 10908422
+PID: 25148
+Detección de carril: 10216946
+PID: 24196
+Detección de carril: 10818557
+PID: 20921
+Detección de carril: 10421425
+PID: 12429
+Detección de carril: 10256555
+PID: 20401
+Detección de carril: 10299240
+PID: 19960
+Detección de carril: 10263646
+PID: 18699
+Detección de carril: 10736592
+PID: 18188
+Detección de carril: 10487174
+PID: 17727
+Detección de carril: 10548618
+PID: 15804
+Detección de carril: 10502137
+PID: 16615
+Detección de carril: 10455878
+PID: 10055
+Detección de carril: 10595068
+PID: 10656
+Detección de carril: 10454035
+PID: 10806
+Detección de carril: 10402716
+PID: 20772
+Detección de carril: 10368245
+PID: 17437
+Detección de carril: 10730433
+PID: 16355
+Detección de carril: 11413186
+PID: 24898
+Detección de carril: 11423111
+PID: 25649
+Detección de carril: 10926780
+PID: 26039
+Detección de carril: 10774229
+PID: 18969
+Detección de carril: 10890345
+PID: 16765
+Detección de carril: 10627938
+PID: 12329
+Detección de carril: 10930186
+PID: 12209
+Detección de carril: 10475998
+PID: 12089
+Detección de carril: 10494065
+PID: 24246
+Detección de carril: 11634582
+PID: 11397
+Detección de carril: 10506204
+PID: 21873
+Detección de carril: 10686727
+PID: 11898
+Detección de carril: 10390438
+PID: 11307
+Detección de carril: 10334243
+PID: 23446
+Detección de carril: 10170886
+PID: 17316
+Detección de carril: 10238919
+PID: 11338
+Detección de carril: 10512052
+PID: 11507
+Detección de carril: 10596440
+PID: 26300
+Detección de carril: 14764450
+PID: 31939
+Detección de carril: 10796463
+PID: 15553
+Detección de carril: 10717293
+PID: 25128
+Detección de carril: 11015074
+PID: 26791
+Detección de carril: 10565433
+PID: 13871
+Detección de carril: 11014212
+PID: 14792
+Detección de carril: 10739607
+PID: 14492
+Detección de carril: 10353202
+PID: 26260
+Detección de carril: 10651323
+PID: 12979
+Detección de carril: 10203916
+PID: 20601
+Detección de carril: 11867504
+PID: 11557
+Detección de carril: 10396768
+PID: 11127
+Detección de carril: 10416447
+PID: 11587
+Detección de carril: 10463860
+PID: 23655
+Detección de carril: 10546855
+PID: 11808
+Detección de carril: 10387604
+PID: 23205
+Detección de carril: 10514296
+PID: 14913
+Detección de carril: 10958117
+PID: 11707
+Detección de carril: 11029466
+PID: 49325
+Detección de carril: 11503563
+PID: 16856
+Detección de carril: 10145527
+PID: 24157
+Detección de carril: 10204477
+PID: 12289
+Detección de carril: 10041049
+PID: 11918
+Detección de carril: 10024224
+PID: 10546
+Detección de carril: 10496719
+PID: 28614
+Detección de carril: 10297368
+PID: 19740
+Detección de carril: 10359531
+PID: 36184
+Detección de carril: 10601989
+PID: 17647
+Detección de carril: 10314042
+PID: 16885
+Detección de carril: 10208322
+PID: 9284
+Detección de carril: 10446443
+PID: 16415
+Detección de carril: 10975774
+PID: 9865
+Detección de carril: 10096984
+PID: 16124
+Detección de carril: 10308454
+PID: 9634
+Detección de carril: 10328014
+PID: 9384
+Detección de carril: 10390097
+PID: 9665
+Detección de carril: 10504480
+PID: 16685
+Detección de carril: 10633536
+PID: 9334
+Detección de carril: 10644313
+PID: 9704
+Detección de carril: 10862233
+PID: 16024
+Detección de carril: 10191417
+PID: 11016
+Detección de carril: 10288904
+PID: 9274
+Detección de carril: 10368525
+PID: 22695
+Detección de carril: 11036296
+PID: 9044
+Detección de carril: 10322426
+PID: 9134
+Detección de carril: 10061691
+PID: 9334
+Detección de carril: 10671283
+PID: 21653
+Detección de carril: 10728310
+PID: 15994
+Detección de carril: 10526374
+PID: 9495
+Detección de carril: 10411300
+PID: 15584
+Detección de carril: 11177459
+PID: 9545
+Detección de carril: 10522589
+PID: 9394
+Detección de carril: 10303737
+PID: 9014
+Detección de carril: 10439222
+PID: 9093
+Detección de carril: 10386963
+PID: 10005
+Detección de carril: 10257197
+PID: 9354
+Detección de carril: 10210296
+PID: 10096
+Detección de carril: 10503549
+PID: 42694
+Detección de carril: 10625634
+PID: 9725
+Detección de carril: 10347913
+PID: 16395
+Detección de carril: 10928032
+PID: 10085
+Detección de carril: 10137796
+PID: 22795
+Detección de carril: 10224857
+PID: 33130
+Detección de carril: 10396568
+PID: 15663
+Detección de carril: 10430729
+PID: 45199
+Detección de carril: 12103311
+PID: 33521
+Detección de carril: 11224932
+PID: 31407
+Detección de carril: 10756192
+PID: 16485
+Detección de carril: 11696045
+PID: 14592
+Detección de carril: 10592955
+PID: 12949
+Detección de carril: 10439092
+PID: 11567
+Detección de carril: 11121154
+PID: 25058
+Detección de carril: 10885979
+PID: 13670
+Detección de carril: 10707868
+PID: 21993
+Detección de carril: 10407955
+PID: 11197
+Detección de carril: 10562409
+PID: 10877
+Detección de carril: 10707629
+PID: 13420
+Detección de carril: 10665174
+PID: 10405
+Detección de carril: 10790694
+PID: 9874
+Detección de carril: 10416789
+PID: 22564
+Detección de carril: 11698208
+PID: 12850
+Detección de carril: 10750443
+PID: 39790
+Detección de carril: 10981273
+PID: 37997
+Detección de carril: 10789842
+PID: 36756
+Detección de carril: 11432355
+PID: 18758
+Detección de carril: 11156588
+PID: 16074
+Detección de carril: 11077798
+PID: 16055
+Detección de carril: 11177911
+PID: 16184
+Detección de carril: 11109256
+PID: 10085
+Detección de carril: 9943692
+PID: 16175
+Detección de carril: 10371339
+PID: 10155
+Detección de carril: 11454369
+PID: 21032
+Detección de carril: 10638013
+PID: 17586
+Detección de carril: 10866279
+PID: 12649
+Detección de carril: 10617662
+PID: 24667
+Detección de carril: 10638163
+PID: 11568
+Detección de carril: 10833810
+PID: 21873
+Detección de carril: 10908533
+PID: 11437
+Detección de carril: 10585814
+PID: 11167
+Detección de carril: 11032109
+PID: 40281
+Detección de carril: 10527425
+PID: 27181
+Detección de carril: 10728530
+PID: 24778
+Detección de carril: 10677703
+PID: 25658
+Detección de carril: 10828742
+PID: 23445
+Detección de carril: 10858587
+PID: 15924
+Detección de carril: 10224517
+PID: 13851
+Detección de carril: 10405591
+PID: 22654
+Detección de carril: 10719857
+PID: 16245
+Detección de carril: 10662209
+PID: 15113
+Detección de carril: 10198267
+PID: 15964
+Detección de carril: 10984738
+PID: 15994
+Detección de carril: 10623591
+PID: 15444
+Detección de carril: 10587717
+PID: 9955
+Detección de carril: 10652475
+PID: 10646
+Detección de carril: 10432712
+PID: 17096
+Detección de carril: 10503940
+PID: 8804
+Detección de carril: 10427625
+PID: 13801
+Detección de carril: 10434164
+PID: 9995
+Detección de carril: 11574060
+PID: 17116
+Detección de carril: 10086709
+PID: 14833
+Detección de carril: 11934426
+PID: 37426
+Detección de carril: 11008103
+PID: 21422
+Detección de carril: 10894431
+PID: 26460
+Detección de carril: 10879158
+PID: 23406
+Detección de carril: 11078069
+PID: 23215
+Detección de carril: 10770093
+PID: 25168
+Detección de carril: 11596293
+PID: 13441
+Detección de carril: 10626305
+PID: 24277
+Detección de carril: 10651223
+PID: 20050
+Detección de carril: 10756523
+PID: 25368
+Detección de carril: 10723533
+PID: 14372
+Detección de carril: 10896685
+PID: 26220
+Detección de carril: 10902974
+PID: 22183
+Detección de carril: 10572074
+PID: 21322
+Detección de carril: 10308554
+PID: 45338
+Detección de carril: 12587664
+PID: 43205
+Detección de carril: 10886720
+PID: 31357
+Detección de carril: 10987282
+PID: 18067
+Detección de carril: 11335900
+PID: 28043
+Detección de carril: 11028213
+PID: 30596
+Detección de carril: 11435680
+PID: 23445
+Detección de carril: 11207315
+PID: 24948
+Detección de carril: 11217130
+PID: 16385
+Detección de carril: 11278383
+PID: 24017
+Detección de carril: 11932142
+PID: 35614
+Detección de carril: 13309657
+PID: 44608
+Detección de carril: 10946260
+PID: 24527
+Detección de carril: 11765970
+PID: 46550
+Detección de carril: 10882273
+PID: 19460
+Detección de carril: 11201827
+PID: 30927
+Detección de carril: 11411834
+PID: 28883
+Detección de carril: 11191571
+PID: 28383
+Detección de carril: 11298593
+PID: 22124
+Detección de carril: 10677072
+PID: 24877
+Detección de carril: 11162276
+PID: 21172
+Detección de carril: 10955284
+PID: 22303
+Detección de carril: 10137536
+PID: 18708
+Detección de carril: 10195042
+PID: 19189
+Detección de carril: 10305860
+PID: 18508
+Detección de carril: 10514025
+PID: 9074
+Detección de carril: 10487255
+PID: 15673
+Detección de carril: 10477650
+PID: 14372
+Detección de carril: 10390168
+PID: 16045
+Detección de carril: 10133189
+PID: 19360
+Detección de carril: 9972716
+PID: 15724
+Detección de carril: 10557371
+PID: 15543
+Detección de carril: 10629970
+PID: 16424
+Detección de carril: 10209674
+PID: 14983
+Detección de carril: 10006547
+PID: 14662
+Detección de carril: 9969621
+PID: 15854
+Detección de carril: 10107420
+PID: 15633
+Detección de carril: 9920847
+PID: 9485
+Detección de carril: 10429428
+PID: 15263
+Detección de carril: 10348725
+PID: 17747
+Detección de carril: 10474796
+PID: 15514
+Detección de carril: 10502649
+PID: 16145
+Detección de carril: 10220772
+PID: 15413
+Detección de carril: 10203555
+PID: 15143
+Detección de carril: 10182233
+PID: 14843
+Detección de carril: 9938494
+PID: 15713
+Detección de carril: 9960878
+PID: 15704
+Detección de carril: 9939656
+PID: 9925
+Detección de carril: 9688956
+PID: 10636
+Detección de carril: 10201833
+PID: 18198
+Detección de carril: 10189404
+PID: 17968
+Detección de carril: 9409864
+PID: 16195
+Detección de carril: 9940667
+PID: 16735
+Detección de carril: 10361154
+PID: 10476
+Detección de carril: 10129714
+PID: 16986
+Detección de carril: 10012176
+PID: 18428
+Detección de carril: 9920497
+PID: 17316
+Detección de carril: 10388415
+PID: 25259
+Detección de carril: 9750629
+PID: 14032
+Detección de carril: 10080569
+PID: 12529
+Detección de carril: 9806535
+PID: 25949
+Detección de carril: 10066839
+PID: 29284
+Detección de carril: 9707434
+PID: 28162
+Detección de carril: 10213922
+PID: 16174
+Detección de carril: 9691009
+PID: 21423
+Detección de carril: 9700945
+PID: 18688
+Detección de carril: 9902089
+PID: 10787
+Detección de carril: 9542505
+PID: 10296
+Detección de carril: 9959306
+PID: 10356
+Detección de carril: 10659466
+PID: 20251
+Detección de carril: 9493220
+PID: 16504
+Detección de carril: 9567863
+PID: 15744
+Detección de carril: 9635716
+PID: 24137
+Detección de carril: 9870391
+PID: 8883
+Detección de carril: 9166315
+PID: 15003
+Detección de carril: 9574022
+PID: 14963
+Detección de carril: 9275010
+PID: 14953
+Detección de carril: 9834196
+PID: 9244
+Detección de carril: 9556506
+PID: 15584
+Detección de carril: 9593412
+PID: 15354
+Detección de carril: 9347730
+PID: 16715
+Detección de carril: 9957062
+PID: 17496
+Detección de carril: 10326842
+PID: 11337
+Detección de carril: 9671630
+PID: 18377
+Detección de carril: 9664380
+PID: 24096
+Detección de carril: 9871543
+PID: 20331
+Detección de carril: 9750749
+PID: 19399
+Detección de carril: 9671600
+PID: 11187
+Detección de carril: 9574493
+PID: 16575
+Detección de carril: 9718682
+PID: 16645
+Detección de carril: 9534773
+PID: 17727
+Detección de carril: 9578669
+PID: 20932
+Detección de carril: 9278505
+PID: 17226
+Detección de carril: 9590938
+PID: 33411
+Detección de carril: 9770010
+PID: 10826
+Detección de carril: 9677739
+PID: 23605
+Detección de carril: 9770510
+PID: 18918
+Detección de carril: 9789519
+PID: 18618
+Detección de carril: 9717921
+PID: 10546
+Detección de carril: 9890071
+PID: 16685
+Detección de carril: 9526500
+PID: 10095
+Detección de carril: 9331836
+PID: 15984
+Detección de carril: 9728216
+PID: 14842
+Detección de carril: 10075281
+PID: 15263
+Detección de carril: 9598269
+PID: 15803
+Detección de carril: 9152715
+PID: 15043
+Detección de carril: 9978215
+PID: 33871
+Detección de carril: 10020118
+PID: 15073
+Detección de carril: 9809729
+PID: 14682
+Detección de carril: 9589987
+PID: 9885
+Detección de carril: 9337174
+PID: 15924
+Detección de carril: 9342983
+PID: 9434
+Detección de carril: 9790470
+PID: 9354
+Detección de carril: 9654414
+PID: 14922
+Detección de carril: 9651279
+PID: 33280
+Detección de carril: 10224187
+PID: 14842
+Detección de carril: 9786675
+PID: 15153
+Detección de carril: 9833045
+PID: 9034
+Detección de carril: 9709177
+PID: 9224
+Detección de carril: 9783789
+PID: 9474
+Detección de carril: 9721215
+PID: 14903
+Detección de carril: 9857952
+PID: 15223
+Detección de carril: 9635335
+PID: 14542
+Detección de carril: 9686302
+PID: 9254
+Detección de carril: 9348331
+PID: 16595
+Detección de carril: 9421161
+PID: 9384
+Detección de carril: 9917633
+PID: 9454
+Detección de carril: 9665601
+PID: 8733
+Detección de carril: 9669136
+PID: 15584
+Detección de carril: 9837432
+PID: 15623
+Detección de carril: 10312090
+PID: 17707
+Detección de carril: 10089834
+PID: 10436
+Detección de carril: 9476314
+PID: 20291
+Detección de carril: 10309596
+PID: 19810
+Detección de carril: 10142683
+PID: 12830
+Detección de carril: 9766073
+PID: 23536
+Detección de carril: 10154040
+PID: 20211
+Detección de carril: 9803139
+PID: 21883
+Detección de carril: 9889130
+PID: 22073
+Detección de carril: 10444991
+PID: 19009
+Detección de carril: 9707264
+PID: 16314
+Detección de carril: 10097174
+PID: 17647
+Detección de carril: 9717509
+PID: 10596
+Detección de carril: 9672872
+PID: 16074
+Detección de carril: 10017994
+PID: 16195
+Detección de carril: 10198638
+PID: 16175
+Detección de carril: 10002702
+PID: 9925
+Detección de carril: 9456023
+PID: 9905
+Detección de carril: 9491908
+PID: 9915
+Detección de carril: 9740464
+PID: 9804
+Detección de carril: 9742117
+PID: 15734
+Detección de carril: 9831793
+PID: 9374
+Detección de carril: 9813986
+PID: 15884
+Detección de carril: 9784581
+PID: 20251
+Detección de carril: 9899375
+PID: 15083
+Detección de carril: 9906766
+PID: 9184
+Detección de carril: 10068912
+PID: 9194
+Detección de carril: 10353432
+PID: 15493
+Detección de carril: 10021790
+PID: 9685
+Detección de carril: 9993737
+PID: 14742
+Detección de carril: 10224908
+PID: 14692
+Detección de carril: 10001480
+PID: 8934
+Detección de carril: 10192409
+PID: 9284
+Detección de carril: 10239019
+PID: 11167
+Detección de carril: 10383718
+PID: 20531
+Detección de carril: 11284852
+PID: 16745
+Detección de carril: 10204677
+PID: 16004
+Detección de carril: 10043243
+PID: 15384
+Detección de carril: 9898494
+PID: 19449
+Detección de carril: 9886234
+PID: 9455
+Detección de carril: 10001280
+PID: 15103
+Detección de carril: 10062361
+PID: 15494
+Detección de carril: 11192272
+PID: 15123
+Detección de carril: 10107721
+PID: 15363
+Detección de carril: 10232750
+PID: 16595
+Detección de carril: 10161152
+PID: 16505
+Detección de carril: 9924603
+PID: 16955
+Detección de carril: 10179368
+PID: 22624
+Detección de carril: 10536500
+PID: 20882
+Detección de carril: 10098076
+PID: 17947
+Detección de carril: 10561417
+PID: 17997
+Detección de carril: 10554597
+PID: 19369
+Detección de carril: 10254363
+PID: 11798
+Detección de carril: 10251808
+PID: 11478
+Detección de carril: 10170235
+PID: 10616
+Detección de carril: 10367644
+PID: 13270
+Detección de carril: 10333592
+PID: 10556
+Detección de carril: 10113489
+PID: 23195
+Detección de carril: 10481977
+PID: 21303
+Detección de carril: 10083153
+PID: 18077
+Detección de carril: 9964263
+PID: 20421
+Detección de carril: 10364529
+PID: 18408
+Detección de carril: 10283417
+PID: 10866
+Detección de carril: 10246720
+PID: 9614
+Detección de carril: 10196455
+PID: 11848
+Detección de carril: 10342476
+PID: 17246
+Detección de carril: 10558622
+PID: 15654
+Detección de carril: 10342275
+PID: 16986
+Detección de carril: 10316727
+PID: 14692
+Detección de carril: 10007939
+PID: 34993
+Detección de carril: 10227502
+PID: 12810
+Detección de carril: 10044424
+PID: 14952
+Detección de carril: 10746347
+PID: 17206
+Detección de carril: 10332210
+PID: 15153
+Detección de carril: 10628970
+PID: 14912
+Detección de carril: 10594737
+PID: 15773
+Detección de carril: 10650803
+PID: 19560
+Detección de carril: 10551422
+PID: 16485
+Detección de carril: 10280592
+PID: 10866
+Detección de carril: 10277317
+PID: 16895
+Detección de carril: 10127641
+PID: 16515
+Detección de carril: 9850241
+PID: 9665
+Detección de carril: 10154080
+PID: 19109
+Detección de carril: 10349366
+PID: 10546
+Detección de carril: 10213661
+PID: 19409
+Detección de carril: 11720511
+PID: 12128
+Detección de carril: 9879915
+PID: 12880
+Detección de carril: 10079418
+PID: 19710
+Detección de carril: 10301683
+PID: 10146
+Detección de carril: 10488436
+PID: 20991
+Detección de carril: 10517882
+PID: 11337
+Detección de carril: 10274243
+PID: 10145
+Detección de carril: 10309916
+PID: 17947
+Detección de carril: 10644132
+PID: 10326
+Detección de carril: 9805513
+PID: 16755
+Detección de carril: 10088512
+PID: 12099
+Detección de carril: 10806989
+PID: 30286
+Detección de carril: 12678752
+PID: 26360
+Detección de carril: 13103786
+PID: 22694
+Detección de carril: 10362216
+PID: 26961
+Detección de carril: 10247773
+PID: 25599
+Detección de carril: 10392031
+PID: 12989
+Detección de carril: 10259310
+PID: 13000
+Detección de carril: 10718185
+PID: 14242
+Detección de carril: 10740768
+PID: 13721
+Detección de carril: 10446964
+PID: 13671
+Detección de carril: 10566024
+PID: 34192
+Detección de carril: 10966601
+PID: 27983
+Detección de carril: 10204186
+PID: 31728
+Detección de carril: 10401956
+PID: 25799
+Detección de carril: 10154742
+PID: 28022
+Detección de carril: 11170670
+PID: 236028
+Detección de carril: 11088905
+PID: 22514
+Detección de carril: 10448225
+PID: 16295
+Detección de carril: 10742852
+PID: 18067
+Detección de carril: 10407634
+PID: 16846
+Detección de carril: 10330808
+PID: 14582
+Detección de carril: 9951894
+PID: 32069
+Detección de carril: 10557300
+PID: 14011
+Detección de carril: 10275204
+PID: 24657
+Detección de carril: 10085897
+PID: 11057
+Detección de carril: 10242724
+PID: 10856
+Detección de carril: 11111820
+PID: 11237
+Detección de carril: 11042745
+PID: 10115
+Detección de carril: 10950426
+PID: 19960
+Detección de carril: 10507896
+PID: 17066
+Detección de carril: 10462698
+PID: 9955
+Detección de carril: 10398570
+PID: 22554
+Detección de carril: 10249024
+PID: 11938
+Detección de carril: 10469498
+PID: 23506
+Detección de carril: 10214802
+PID: 14472
+Detección de carril: 10592975
+PID: 14301
+Detección de carril: 10678945
+PID: 29504
+Detección de carril: 10869153
+PID: 16315
+Detección de carril: 10246360
+PID: 29534
+Detección de carril: 10412382
+PID: 15874
+Detección de carril: 10230647
+PID: 18528
+Detección de carril: 10346902
+PID: 23706
+Detección de carril: 10233370
+PID: 26631
+Detección de carril: 10336487
+PID: 21803
+Detección de carril: 10029231
+PID: 11107
+Detección de carril: 10040398
+PID: 10847
+Detección de carril: 10175944
+PID: 18047
+Detección de carril: 10328585
+PID: 17427
+Detección de carril: 10294713
+PID: 9835
+Detección de carril: 9966006
+PID: 16906
+Detección de carril: 9882600
+PID: 10395
+Detección de carril: 10107470
+PID: 10056
+Detección de carril: 10208543
+PID: 10095
+Detección de carril: 10291329
+PID: 23265
+Detección de carril: 10433634
+PID: 20191
+Detección de carril: 9944503
+PID: 22514
+Detección de carril: 11640951
+PID: 13360
+Detección de carril: 10317437
+PID: 22294
+Detección de carril: 10979670
+PID: 26020
+Detección de carril: 11570876
+PID: 21793
+Detección de carril: 10383738
+PID: 20801
+Detección de carril: 10672475
+PID: 16315
+Detección de carril: 10198707
+PID: 13531
+Detección de carril: 10746958
+PID: 19380
+Detección de carril: 9758872
+PID: 26060
+Detección de carril: 11284802
+PID: 20191
+Detección de carril: 10074029
+PID: 14312
+Detección de carril: 10099508
+PID: 42243
+Detección de carril: 9836450
+PID: 20361
+Detección de carril: 9696999
+PID: 10406
+Detección de carril: 12119416
+PID: 12158
+Detección de carril: 11479868
+PID: 15564
+Detección de carril: 10455356
+PID: 26871
+Detección de carril: 9691440
+PID: 12849
+Detección de carril: 9598740
+PID: 20451
+Detección de carril: 9624939
+PID: 14282
+Detección de carril: 10339121
+PID: 29795
+Detección de carril: 11230840
+PID: 30175
+Detección de carril: 10329616
+PID: 15664
+Detección de carril: 10178868
+PID: 30106
+Detección de carril: 11002585
+PID: 14202
+Detección de carril: 10848061
+PID: 23776
+Detección de carril: 9964172
+PID: 16284
+Detección de carril: 9920156
+PID: 13000
+Detección de carril: 9948510
+PID: 23956
+Detección de carril: 9900246
+PID: 23115
+Detección de carril: 9747475
+PID: 9935
+Detección de carril: 10045146
+PID: 19300
+Detección de carril: 9844141
+PID: 12970
+Detección de carril: 10161582
+PID: 13250
+Detección de carril: 10244067
+PID: 26229
+Detección de carril: 10311248
+PID: 14192
+Detección de carril: 9682957
+PID: 25068
+Detección de carril: 9767155
+PID: 13461
+Detección de carril: 9850981
+PID: 12919
+Detección de carril: 9750210
+PID: 24377
+Detección de carril: 10135502
+PID: 12839
+Detección de carril: 10019677
+PID: 22174
+Detección de carril: 10561097
+PID: 12930
+Detección de carril: 10032056
+PID: 13130
+Detección de carril: 10121612
+PID: 25338
+Detección de carril: 10356377
+PID: 22695
+Detección de carril: 10062432
+PID: 13200
+Detección de carril: 10068711
+PID: 13891
+Detección de carril: 10367072
+PID: 28924
+Detección de carril: 10393893
+PID: 25288
+Detección de carril: 10300642
+PID: 13270
+Detección de carril: 10458481
+PID: 12249
+Detección de carril: 10320502
+PID: 12428
+Detección de carril: 10340282
+PID: 26009
+Detección de carril: 10249896
+PID: 14552
+Detección de carril: 10192839
+PID: 28754
+Detección de carril: 10759707
+PID: 19460
+Detección de carril: 10087670
+PID: 25449
+Detección de carril: 10420303
+PID: 23155
+Detección de carril: 10538062
+PID: 26621
+Detección de carril: 10101861
+PID: 15904
+Detección de carril: 10668630
+PID: 29655
+Detección de carril: 10083143
+PID: 29195
+Detección de carril: 10169704
+PID: 38989
+Detección de carril: 10294503
+PID: 33521
+Detección de carril: 10136765
+PID: 24337
+Detección de carril: 10148031
+PID: 16415
+Detección de carril: 10307863
+PID: 24897
+Detección de carril: 10271829
+PID: 22114
+Detección de carril: 10353943
+PID: 22804
+Detección de carril: 10150044
+PID: 13200
+Detección de carril: 10029102
+PID: 21483
+Detección de carril: 9924773
+PID: 16995
+Detección de carril: 10204396
+PID: 18207
+Detección de carril: 10286131
+PID: 17757
+Detección de carril: 10292139
+PID: 15624
+Detección de carril: 10268695
+PID: 9725
+Detección de carril: 10110395
+PID: 14552
+Detección de carril: 9823090
+PID: 15514
+Detección de carril: 9896000
+PID: 14993
+Detección de carril: 10351950
+PID: 15153
+Detección de carril: 9971064
+PID: 9194
+Detección de carril: 10134771
+PID: 9604
+Detección de carril: 9559912
+PID: 15073
+Detección de carril: 10651523
+PID: 9365
+Detección de carril: 9941458
+PID: 15373
+Detección de carril: 9916000
+PID: 9685
+Detección de carril: 9909190
+PID: 22334
+Detección de carril: 9983923
+PID: 15704
+Detección de carril: 10207382
+PID: 9574
+Detección de carril: 9690700
+PID: 14612
+Detección de carril: 10739918
+PID: 9515
+Detección de carril: 10743172
+PID: 9354
+Detección de carril: 10713297
+PID: 9534
+Detección de carril: 10757594
+PID: 9835
+Detección de carril: 9587974
+PID: 9345
+Detección de carril: 9797421
+PID: 16535
+Detección de carril: 10048400
+PID: 10056
+Detección de carril: 10007829
+PID: 34693
+Detección de carril: 10294042
+PID: 10296
+Detección de carril: 10347804
+PID: 10326
+Detección de carril: 10983376
+PID: 21423
+Detección de carril: 10914952
+PID: 17947
+Detección de carril: 9844442
+PID: 20751
+Detección de carril: 10466824
+PID: 14673
+Detección de carril: 10280021
+PID: 21963
+Detección de carril: 10557371
+PID: 23716
+Detección de carril: 10461495
+PID: 26310
+Detección de carril: 10160921
+PID: 19139
+Detección de carril: 10555047
+PID: 26731
+Detección de carril: 10377098
+PID: 25168
+Detección de carril: 10436408
+PID: 22815
+Detección de carril: 10851296
+PID: 20901
+Detección de carril: 10876044
+PID: 21422
+Detección de carril: 10219179
+PID: 35393
+Detección de carril: 10579444
+PID: 13901
+Detección de carril: 10477971
+PID: 18448
+Detección de carril: 10319181
+PID: 26360
+Detección de carril: 10136433
+PID: 12439
+Detección de carril: 10081991
+PID: 24467
+Detección de carril: 11432987
+PID: 14281
+Detección de carril: 10565413
+PID: 15073
+Detección de carril: 12941510
+PID: 18428
+Detección de carril: 10328434
+PID: 27241
+Detección de carril: 10296196
+PID: 23405
+Detección de carril: 10277156
+PID: 20611
+Detección de carril: 10238728
+PID: 14442
+Detección de carril: 10906239
+PID: 20340
+Detección de carril: 10081921
+PID: 11247
+Detección de carril: 10173249
+PID: 18688
+Detección de carril: 10219860
+PID: 11046
+Detección de carril: 10286391
+PID: 26481
+Detección de carril: 10024174
+PID: 10055
+Detección de carril: 10617722
+PID: 9485
+Detección de carril: 10202594
+PID: 11047
+Detección de carril: 10628258
+PID: 33681
+Detección de carril: 11143458
+PID: 33150
+Detección de carril: 10520755
+PID: 21313
+Detección de carril: 10132778
+PID: 19289
+Detección de carril: 10079297
+PID: 11057
+Detección de carril: 10003692
+PID: 11057
+Detección de carril: 9797191
+PID: 17467
+Detección de carril: 10235925
+PID: 9725
+Detección de carril: 10482728
+PID: 17317
+Detección de carril: 10145087
+PID: 21983
+Detección de carril: 10297938
+PID: 16485
+Detección de carril: 9679392
+PID: 16976
+Detección de carril: 11195186
+PID: 36115
+Detección de carril: 10361395
+PID: 30225
+Detección de carril: 10349056
+PID: 27141
+Detección de carril: 9921758
+PID: 16805
+Detección de carril: 10102753
+PID: 14502
+Detección de carril: 11193524
+PID: 24537
+Detección de carril: 11247155
+PID: 39360
+Detección de carril: 11378915
+PID: 31878
+Detección de carril: 10259310
+PID: 12269
+Detección de carril: 10036632
+PID: 20622
+Detección de carril: 9929831
+PID: 12509
+Detección de carril: 10315284
+PID: 23556
+Detección de carril: 10128051
+PID: 12609
+Detección de carril: 10125998
+PID: 22584
+Detección de carril: 10210285
+PID: 25047
+Detección de carril: 9856220
+PID: 22484
+Detección de carril: 10103704
+PID: 21412
+Detección de carril: 10271177
+PID: 16765
+Detección de carril: 10432832
+PID: 13801
+Detección de carril: 10508778
+PID: 16726
+Detección de carril: 10471671
+PID: 14593
+Detección de carril: 10168672
+PID: 13921
+Detección de carril: 10658754
+PID: 18027
+Detección de carril: 10189954
+PID: 28082
+Detección de carril: 9758913
+PID: 11978
+Detección de carril: 10306121
+PID: 21112
+Detección de carril: 9949551
+PID: 11387
+Detección de carril: 9872644
+PID: 10626
+Detección de carril: 10143744
+PID: 21893
+Detección de carril: 10045877
+PID: 25139
+Detección de carril: 10273821
+PID: 18929
+Detección de carril: 10251307
+PID: 18909
+Detección de carril: 10298099
+PID: 12168
+Detección de carril: 10192138
+PID: 13350
+Detección de carril: 10002791
+PID: 12098
+Detección de carril: 10017013
+PID: 21592
+Detección de carril: 11165461
+PID: 18408
+Detección de carril: 10234182
+PID: 10586
+Detección de carril: 10548617
+PID: 10826
+Detección de carril: 11044568
+PID: 14452
+Detección de carril: 9971193
+PID: 27722
+Detección de carril: 9954809
+PID: 17747
+Detección de carril: 10136263
+PID: 14562
+Detección de carril: 9978384
+PID: 32930
+Detección de carril: 10335566
+PID: 15403
+Detección de carril: 9963693
+PID: 14392
+Detección de carril: 12352368
+PID: 19900
+Detección de carril: 10027419
+PID: 12749
+Detección de carril: 10139698
+PID: 14412
+Detección de carril: 10038666
+PID: 27272
+Detección de carril: 10324399
+PID: 14683
+Detección de carril: 10000699
+PID: 26319
+Detección de carril: 10143825
+PID: 14391
+Detección de carril: 10190596
+PID: 31597
+Detección de carril: 10343026
+PID: 26120
+Detección de carril: 10376027
+PID: 24347
+Detección de carril: 10710613
+PID: 12139
+Detección de carril: 9828568
+PID: 11908
+Detección de carril: 10521066
+PID: 44217
+Detección de carril: 10495688
+PID: 11698
+Detección de carril: 10135702
+PID: 20872
+Detección de carril: 10199529
+PID: 19249
+Detección de carril: 10099568
+PID: 20621
+Detección de carril: 11398684
+PID: 37646
+Detección de carril: 11190209
+PID: 15403
+Detección de carril: 10210055
+PID: 26259
+Detección de carril: 9982080
+PID: 15153
+Detección de carril: 11431614
+PID: 13090
+Detección de carril: 9949100
+PID: 13761
+Detección de carril: 10369156
+PID: 12890
+Detección de carril: 10164295
+PID: 13571
+Detección de carril: 10295714
+PID: 12970
+Detección de carril: 10483940
+PID: 24827
+Detección de carril: 10251408
+PID: 12218
+Detección de carril: 9766274
+PID: 21612
+Detección de carril: 10491141
+PID: 12199
+Detección de carril: 10273191
+PID: 12158
+Detección de carril: 10362275
+PID: 13210
+Detección de carril: 10506413
+PID: 13180
+Detección de carril: 9800285
+PID: 13230
+Detección de carril: 10955103
+PID: 12910
+Detección de carril: 10000028
+PID: 23816
+Detección de carril: 10590471
+PID: 14452
+Detección de carril: 10570551
+PID: 32570
+Detección de carril: 10395346
+PID: 16014
+Detección de carril: 9941999
+PID: 11828
+Detección de carril: 10027669
+PID: 10667
+Detección de carril: 10042522
+PID: 22334
+Detección de carril: 10122753
+PID: 9124
+Detección de carril: 9749668
+PID: 17987
+Detección de carril: 10506974
+PID: 15994
+Detección de carril: 9953557
+PID: 16374
+Detección de carril: 10099357
+PID: 8934
+Detección de carril: 9811993
+PID: 14291
+Detección de carril: 9870851
+PID: 15654
+Detección de carril: 9557818
+PID: 9865
+Detección de carril: 9896020
+PID: 15313
+Detección de carril: 9834947
+PID: 14652
+Detección de carril: 9688255
+PID: 9024
+Detección de carril: 9902509
+PID: 9224
+Detección de carril: 9883481
+PID: 9054
+Detección de carril: 9916020
+PID: 14833
+Detección de carril: 9994149
+PID: 9264
+Detección de carril: 10105698
+PID: 9334
+Detección de carril: 9905224
+PID: 15053
+Detección de carril: 9949721
+PID: 15263
+Detección de carril: 9897532
+PID: 15494
+Detección de carril: 9587914
+PID: 15754
+Detección de carril: 9772293
+PID: 15714
+Detección de carril: 9700835
+PID: 9194
+Detección de carril: 9938825
+PID: 9975
+Detección de carril: 9437426
+PID: 16335
+Detección de carril: 9865263
+PID: 15243
+Detección de carril: 10042612
+PID: 31888
+Detección de carril: 11047523
+PID: 9455
+Detección de carril: 10015320
+PID: 19640
+Detección de carril: 9660172
+PID: 15563
+Detección de carril: 9534984
+PID: 9804
+Detección de carril: 10323167
+PID: 16125
+Detección de carril: 9975470
+PID: 9835
+Detección de carril: 10546385
+PID: 25359
+Detección de carril: 9883872
+PID: 22314
+Detección de carril: 10167881
+PID: 9705
+Detección de carril: 10003172
+PID: 9544
+Detección de carril: 10321745
+PID: 16995
+Detección de carril: 9797150
+PID: 15393
+Detección de carril: 9902520
+PID: 9084
+Detección de carril: 9838923
+PID: 15123
+Detección de carril: 9781347
+PID: 15103
+Detección de carril: 9776989
+PID: 26801
+Detección de carril: 10296896
+PID: 15984
+Detección de carril: 9681214
+PID: 9174
+Detección de carril: 9828518
+PID: 9905
+Detección de carril: 9808427
+PID: 10636
+Detección de carril: 10431310
+PID: 33821
+Detección de carril: 10064995
+PID: 16084
+Detección de carril: 9830922
+PID: 13831
+Detección de carril: 10168743
+PID: 15413
+Detección de carril: 9800675
+PID: 9945
+Detección de carril: 10277137
+PID: 10405
+Detección de carril: 10172488
+PID: 10546
+Detección de carril: 10903675
+PID: 11157
+Detección de carril: 10491120
+PID: 14452
+Detección de carril: 9764892
+PID: 13821
+Detección de carril: 10042943
+PID: 10727
+Detección de carril: 9989832
+PID: 10175
+Detección de carril: 10237948
+PID: 22584
+Detección de carril: 9500571
+PID: 17216
+Detección de carril: 9786735
+PID: 16054
+Detección de carril: 9972475
+PID: 16485
+Detección de carril: 10315234
+PID: 9294
+Detección de carril: 9831002
+PID: 9094
+Detección de carril: 9944032
+PID: 16205
+Detección de carril: 9757771
+PID: 9344
+Detección de carril: 9976401
+PID: 19058
+Detección de carril: 10013859
+PID: 11207
+Detección de carril: 10062762
+PID: 23095
+Detección de carril: 9999867
+PID: 11267
+Detección de carril: 9812444
+PID: 22644
+Detección de carril: 9559670
+PID: 43475
+Detección de carril: 10236466
+PID: 12869
+Detección de carril: 9858614
+PID: 12970
+Detección de carril: 9837661
+PID: 11437
+Detección de carril: 10155393
+PID: 28503
+Detección de carril: 9810590
+PID: 14902
+Detección de carril: 10028801
+PID: 25638
+Detección de carril: 10046127
+PID: 10406
+Detección de carril: 10002961
+PID: 11086
+Detección de carril: 10499042
+PID: 18198
+Detección de carril: 9483085
+PID: 9604
+Detección de carril: 9827887
+PID: 16565
+Detección de carril: 10216014
+PID: 14582
+Detección de carril: 10947892
+PID: 11828
+Detección de carril: 9962080
+PID: 24186
+Detección de carril: 9923261
+PID: 10987
+Detección de carril: 10032176
+PID: 20601
+Detección de carril: 10571373
+PID: 22734
+Detección de carril: 10377559
+PID: 23226
+Detección de carril: 10377589
+PID: 16375
+Detección de carril: 10486584
+PID: 15263
+Detección de carril: 10112968
+PID: 25528
+Detección de carril: 9911703
+PID: 11687
+Detección de carril: 10244938
+PID: 11668
+Detección de carril: 9840936
+PID: 21102
+Detección de carril: 9994469
+PID: 10966
+Detección de carril: 10112768
+PID: 9685
+Detección de carril: 9747235
+PID: 9204
+Detección de carril: 9964043
+PID: 9895
+Detección de carril: 9641986
+PID: 9815
+Detección de carril: 9950803
+PID: 9354
+Detección de carril: 10561918
+PID: 9675
+Detección de carril: 10126138
+PID: 9895
+Detección de carril: 10093228
+PID: 21282
+Detección de carril: 9792403
+PID: 9655
+Detección de carril: 10207712
+PID: 18398
+Detección de carril: 10205699
+PID: 10266
+Detección de carril: 10327393
+PID: 9504
+Detección de carril: 10157245
+PID: 10767
+Detección de carril: 10222454
+PID: 11697
+Detección de carril: 10621838
+PID: 15143
+Detección de carril: 10471381
+PID: 14292
+Detección de carril: 12241330
+PID: 38539
+Detección de carril: 10621999
+PID: 16575
+Detección de carril: 9936912
+PID: 14522
+Detección de carril: 10049973
+PID: 25920
+Detección de carril: 10140970
+PID: 16695
+Detección de carril: 10449647
+PID: 23376
+Detección de carril: 10462778
+PID: 10856
+Detección de carril: 10978258
+PID: 10516
+Detección de carril: 10349917
+PID: 10365
+Detección de carril: 10220031
+PID: 11998
+Detección de carril: 10596991
+PID: 13911
+Detección de carril: 10267342
+PID: 11498
+Detección de carril: 10148682
+PID: 27412
+Detección de carril: 10286551
+PID: 16004
+Detección de carril: 11888066
+PID: 40011
+Detección de carril: 10138648
+PID: 14903
+Detección de carril: 10151837
+PID: 12479
+Detección de carril: 10237307
+PID: 15684
+Detección de carril: 11325374
+PID: 26700
+Detección de carril: 10399071
+PID: 13291
+Detección de carril: 12082780
+PID: 29555
+Detección de carril: 10086969
+PID: 13130
+Detección de carril: 10372511
+PID: 12509
+Detección de carril: 11189398
+PID: 13200
+Detección de carril: 10493004
+PID: 26520
+Detección de carril: 11744609
+PID: 23686
+Detección de carril: 10700628
+PID: 22624
+Detección de carril: 10161672
+PID: 17697
+Detección de carril: 10435376
+PID: 27592
+Detección de carril: 12821578
+PID: 15694
+Detección de carril: 10243305
+PID: 36776
+Detección de carril: 12230894
+PID: 16285
+Detección de carril: 10260442
+PID: 19810
+Detección de carril: 13344380
+PID: 41182
+Detección de carril: 10546184
+PID: 24988
+Detección de carril: 10432472
+PID: 21542
+Detección de carril: 10047409
+PID: 12248
+Detección de carril: 10312851
+PID: 13571
+Detección de carril: 10061901
+PID: 12449
+Detección de carril: 10072587
+PID: 12680
+Detección de carril: 9953447
+PID: 21893
+Detección de carril: 10215273
+PID: 11308
+Detección de carril: 10008551
+PID: 21002
+Detección de carril: 9926756
+PID: 11617
+Detección de carril: 10078656
+PID: 11067
+Detección de carril: 9799293
+PID: 18888
+Detección de carril: 9858262
+PID: 17186
+Detección de carril: 10793238
+PID: 30075
+Detección de carril: 10277097
+PID: 19980
+Detección de carril: 10075532
+PID: 14972
+Detección de carril: 9948880
+PID: 26310
+Detección de carril: 10271618
+PID: 12309
+Detección de carril: 9909700
+PID: 11176
+Detección de carril: 10166259
+PID: 11077
+Detección de carril: 9745652
+PID: 10436
+Detección de carril: 9747595
+PID: 10275
+Detección de carril: 10203315
+PID: 10106
+Detección de carril: 9756268
+PID: 9835
+Detección de carril: 9887848
+PID: 9765
+Detección de carril: 9924052
+PID: 10366
+Detección de carril: 11514280
+PID: 26680
+Detección de carril: 10558192
+PID: 12359
+Detección de carril: 10173890
+PID: 18137
+Detección de carril: 9830121
+PID: 10566
+Detección de carril: 10008780
+PID: 10446
+Detección de carril: 11122977
+PID: 15383
+Detección de carril: 10124606
+PID: 16916
+Detección de carril: 10257938
+PID: 12068
+Detección de carril: 10000679
+PID: 11066
+Detección de carril: 10180591
+PID: 28724
+Detección de carril: 10969034
+PID: 34052
+Detección de carril: 10618303
+PID: 17526
+Detección de carril: 10432512
+PID: 13840
+Detección de carril: 9805212
+PID: 28783
+Detección de carril: 10318289
+PID: 13310
+Detección de carril: 10590501
+PID: 37486
+Detección de carril: 10194161
+PID: 17276
+Detección de carril: 9945655
+PID: 11177
+Detección de carril: 9949551
+PID: 10757
+Detección de carril: 9942510
+PID: 18227
+Detección de carril: 9869610
+PID: 9635
+Detección de carril: 10262435
+PID: 15193
+Detección de carril: 9729127
+PID: 9545
+Detección de carril: 9987128
+PID: 9715
+Detección de carril: 9743660
+PID: 33270
+Detección de carril: 10326732
+PID: 14652
+Detección de carril: 10502578
+PID: 18378
+Detección de carril: 10872308
+PID: 10847
+Detección de carril: 9889670
+PID: 11898
+Detección de carril: 9588154
+PID: 17676
+Detección de carril: 10036222
+PID: 16385
+Detección de carril: 10178468
+PID: 11918
+Detección de carril: 10095272
+PID: 39760
+Detección de carril: 11453808
+PID: 17376
+Detección de carril: 10550341
+PID: 33171
+Detección de carril: 9879495
+PID: 21773
+Detección de carril: 10515558
+PID: 24157
+Detección de carril: 10539984
+PID: 13520
+Detección de carril: 10266140
+PID: 14191
+Detección de carril: 11392885
+PID: 14783
+Detección de carril: 11194706
+PID: 26880
+Detección de carril: 11715544
+PID: 22374
+Detección de carril: 9669246
+PID: 18468
+Detección de carril: 9984373
+PID: 15543
+Detección de carril: 10619334
+PID: 20171
+Detección de carril: 10126068
+PID: 23816
+Detección de carril: 10215363
+PID: 17657
+Detección de carril: 10249015
+PID: 11567
+Detección de carril: 9940487
+PID: 9875
+Detección de carril: 10080980
+PID: 9324
+Detección de carril: 9967057
+PID: 9615
+Detección de carril: 10111276
+PID: 17797
+Detección de carril: 9981059
+PID: 20150
+Detección de carril: 10007529
+PID: 15073
+Detección de carril: 10100830
+PID: 15463
+Detección de carril: 9988640
+PID: 15733
+Detección de carril: 10112127
+PID: 16074
+Detección de carril: 9801136
+PID: 15013
+Detección de carril: 9749768
+PID: 14261
+Detección de carril: 9938003
+PID: 14481
+Detección de carril: 9895228
+PID: 9254
+Detección de carril: 10052897
+PID: 13971
+Detección de carril: 10375515
+PID: 23215
+Detección de carril: 9810120
+PID: 9525
+Detección de carril: 9751131
+PID: 32929
+Detección de carril: 10046217
+PID: 9395
+Detección de carril: 9966687
+PID: 9074
+Detección de carril: 9960978
+PID: 15934
+Detección de carril: 9511448
+PID: 9976
+Detección de carril: 9954308
+PID: 15013
+Detección de carril: 9969842
+PID: 15684
+Detección de carril: 9882259
+PID: 19790
+Detección de carril: 9819785
+PID: 11447
+Detección de carril: 9877952
+PID: 15103
+Detección de carril: 9989081
+PID: 9124
+Detección de carril: 10245700
+PID: 16305
+Detección de carril: 9982181
+PID: 9034
+Detección de carril: 9729277
+PID: 9574
+Detección de carril: 9949731
+PID: 9114
+Detección de carril: 10224998
+PID: 9394
+Detección de carril: 10064335
+PID: 8884
+Detección de carril: 9612641
+PID: 9525
+Detección de carril: 9801818
+PID: 20711
+Detección de carril: 9999797
+PID: 9134
+Detección de carril: 10324369
+PID: 16165
+Detección de carril: 9971394
+PID: 9094
+Detección de carril: 10040378
+PID: 8893
+Detección de carril: 9847777
+PID: 16726
+Detección de carril: 9811592
+PID: 8993
+Detección de carril: 10028130
+PID: 9103
+Detección de carril: 10147691
+PID: 9524
+Detección de carril: 9655696
+PID: 9555
+Detección de carril: 9579571
+PID: 9394
+Detección de carril: 10255774
+PID: 23235
+Detección de carril: 9600903
+PID: 9104
+Detección de carril: 10472092
+PID: 33721
+Detección de carril: 10345690
+PID: 23575
+Detección de carril: 10125588
+PID: 23426
+Detección de carril: 11517775
+PID: 25058
+Detección de carril: 12072955
+PID: 40932
+Detección de carril: 10087270
+PID: 31869
+Detección de carril: 10671033
+PID: 29735
+Detección de carril: 10214532
+PID: 36325
+Detección de carril: 9977163
+PID: 19149
+Detección de carril: 10357178
+PID: 15964
+Detección de carril: 10233030
+PID: 27972
+Detección de carril: 10558573
+PID: 14642
+Detección de carril: 10897836

@@ -466,6 +466,7 @@ class CameraRGB(Sensor):
         canvas = image_data
         text_extra = self.text
 
+        t = time.time_ns()
         if self._seg:
             if self.text != None:
                 text_extra = "Segmented " + self.text
@@ -483,7 +484,10 @@ class CameraRGB(Sensor):
                 self._mask = pred
                 if (SIZE_CAMERA, SIZE_CAMERA) != self._mask.shape:
                     self._mask = cv2.resize(self._mask, dsize=(SIZE_CAMERA, SIZE_CAMERA), interpolation=cv2.INTER_NEAREST)
+        #if self._seg:
+        #    print("Segmentacion de la calzada:", time.time_ns() - t)
 
+        t = time.time_ns()
         if self._lane:
             canvas = self._detect_lane(canvas, self._mask)
     
@@ -504,6 +508,8 @@ class CameraRGB(Sensor):
                             point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))          
 
             self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)  
+        #if self._lane:
+        #    print("Detección de carril:", time.time_ns() - t)
 
     def get_seg_data(self, num_points:int, show=False):
         if len(self._mask) <= 0 or len(self._lane_left) <= 0 or len(self._lane_right) <= 0:
@@ -1021,7 +1027,7 @@ class Vehicle_sensors:
         dist_lidar = np.nan
 
         for sensor in self.sensors:
-            t = time.time_ns()
+            #t = time.time_ns()
             sensor.update_screen = self.update_screen
             sensor.process_data()
 
@@ -1142,6 +1148,7 @@ class PID:
            error *= 1.15
 
         control.steer = self._kp * error + self._kd * self._prev_error
+        print("Throttle:", self._throttle, "\t||\tSteer:", control.steer, "\t||\tBrake:", control.brake)
         self._vehicle.apply_control(control)
 
 def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:float=0.0, 

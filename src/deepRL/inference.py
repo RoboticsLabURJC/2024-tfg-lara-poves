@@ -62,7 +62,7 @@ def main(args):
 
     try:
         while True:
-            #t = time.time_ns()
+            t = time.time_ns()
             action, _ = model.predict(obs, deterministic=True)
             if args.alg == 'DQN':
                 throttle, steer = env.action_to_control[action.item()]
@@ -78,15 +78,18 @@ def main(args):
             except KeyError:
                 dist_front = np.nan
 
-            print(f"Throttle: {throttle:.6f}\t||\tSteer: {steer:.7f}\t||\tDist front: {dist_front:.2f}")
+            try:
+                # Truncated throttle
+                throttle = info[environment.KEY_THROTTLE]
+            except KeyError:
+                pass
+
+            print(f"\033[92mThrottle: {throttle:.6f}\t||\tSteer: {steer:.7f}\t||\tDist front: {dist_front:.2f}\033[0m")
 
             try:
                 dist_right_front = info[environment.KEY_LASER_RIGHT_FRONT]
                 dist_right = info[environment.KEY_LASER_RIGHT]
                 dist_right_back = info[environment.KEY_LASER_RIGHT_BACK]
-
-                print(f"Dist right front: {dist_right_front:.2f}\t||\tDist right: {dist_right:.2f}" 
-                      f"\t||\tDist right back: {dist_right_back:.2f}\n")
             except KeyError:
                 dist_right_front = environment.MAX_DIST_LASER
                 dist_right = environment.MAX_DIST_LASER

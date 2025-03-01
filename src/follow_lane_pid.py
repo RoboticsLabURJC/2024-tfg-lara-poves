@@ -3,6 +3,7 @@ import carla
 import configcarla
 from configcarla import SIZE_CAMERA
 import argparse
+import time
 
 def main(args):
     world, _ = configcarla.setup_carla(name_world='Town04', port=args.port, syn=False)
@@ -18,7 +19,7 @@ def main(args):
 
     driver_transform = carla.Transform(carla.Location(x=0.5, z=1.7292))
     camera = sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), transform=driver_transform,
-                                    seg=True, text='Driver view', init_extra=(SIZE_CAMERA, 0), 
+                                    seg=False, text='Driver view', init_extra=(SIZE_CAMERA, 0), 
                                     lane=True, canvas_seg=False, check_area_lane=True)
     
     world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75))
@@ -27,6 +28,8 @@ def main(args):
     
     # Instance PID controller
     pid = configcarla.PID(ego_vehicle)
+
+    time.sleep(6)
     
     try:
         while True:
@@ -43,7 +46,9 @@ def main(args):
             
             # Control vehicle
             error_road = camera.get_deviation()
+            #t = time.time_ns()
             pid.controll_vehicle(error_road)
+            #print("PID:", time.time_ns() - t)
 
     except KeyboardInterrupt:
         return

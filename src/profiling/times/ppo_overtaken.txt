@@ -1,0 +1,3023 @@
+Segmentacion de la calzada: 52270399
+Detección de carril: 12723636
+LiDAR: 13053315
+PPO: 1605431
+Segmentacion de la calzada: 54244478
+Detección de carril: 12914566
+LiDAR: 12782055
+PPO: 3038962
+Segmentacion de la calzada: 51819276
+Detección de carril: 13202311
+LiDAR: 11357468
+PPO: 1109691
+Segmentacion de la calzada: 50567581
+Detección de carril: 12671768
+LiDAR: 11974252
+PPO: 1128659
+Segmentacion de la calzada: 51747097
+Detección de carril: 12475992
+LiDAR: 14145830
+PPO: 1143822
+Segmentacion de la calzada: 49012696
+Detección de carril: 12849797
+LiDAR: 11265809
+PPO: 1044631
+Segmentacion de la calzada: 52170588
+Detección de carril: 12824709
+LiDAR: 15031231
+PPO: 1305707
+Segmentacion de la calzada: 50580469
+Detección de carril: 13224875
+LiDAR: 12316039
+PPO: 2669683
+Segmentacion de la calzada: 51203704
+Detección de carril: 12638127
+LiDAR: 24373587
+PPO: 1404116
+Segmentacion de la calzada: 51720887
+Detección de carril: 13071823
+LiDAR: 22300397
+PPO: 5202378
+Segmentacion de la calzada: 52926072
+Detección de carril: 12855997
+LiDAR: 26642693
+PPO: 1413030
+Segmentacion de la calzada: 50092801
+Detección de carril: 14140341
+LiDAR: 14752709
+PPO: 2078678
+Segmentacion de la calzada: 52482570
+Detección de carril: 13032464
+LiDAR: 12416321
+PPO: 1042379
+Segmentacion de la calzada: 49929915
+Detección de carril: 12724658
+LiDAR: 29927397
+PPO: 1103441
+Segmentacion de la calzada: 50915036
+Detección de carril: 13386731
+LiDAR: 12638327
+PPO: 2159721
+Segmentacion de la calzada: 53553361
+Detección de carril: 13226708
+LiDAR: 14112339
+PPO: 2553166
+Segmentacion de la calzada: 51933599
+Detección de carril: 13327291
+LiDAR: 13810101
+PPO: 1201960
+Segmentacion de la calzada: 52581781
+Detección de carril: 12240705
+LiDAR: 11297937
+PPO: 1009358
+Segmentacion de la calzada: 50515332
+Detección de carril: 12767253
+LiDAR: 12941376
+PPO: 1262472
+Segmentacion de la calzada: 51942352
+Detección de carril: 13170864
+LiDAR: 12982809
+PPO: 1879827
+Segmentacion de la calzada: 51763992
+Detección de carril: 13579222
+LiDAR: 15891493
+PPO: 1046775
+Segmentacion de la calzada: 51478770
+Detección de carril: 12914646
+LiDAR: 12165021
+PPO: 963629
+Segmentacion de la calzada: 52124688
+Detección de carril: 12758349
+LiDAR: 15592861
+PPO: 1201489
+Segmentacion de la calzada: 51031913
+Detección de carril: 13059474
+LiDAR: 13132956
+PPO: 1638632
+Segmentacion de la calzada: 49837024
+Detección de carril: 13108880
+LiDAR: 28686918
+PPO: 2406735
+Segmentacion de la calzada: 50987026
+Detección de carril: 13427772
+LiDAR: 12961036
+PPO: 2241965
+Segmentacion de la calzada: 49938669
+Detección de carril: 12671197
+LiDAR: 22098952
+PPO: 4866880
+Segmentacion de la calzada: 51170934
+Detección de carril: 12975538
+LiDAR: 25859417
+PPO: 1155590
+Segmentacion de la calzada: 49170925
+Detección de carril: 12930169
+LiDAR: 23946280
+PPO: 2222645
+Segmentacion de la calzada: 51655497
+Detección de carril: 13484639
+LiDAR: 25218457
+PPO: 2725958
+Segmentacion de la calzada: 52521178
+Detección de carril: 12920344
+LiDAR: 28783574
+PPO: 2877006
+Segmentacion de la calzada: 48693503
+Detección de carril: 13307330
+LiDAR: 15397555
+PPO: 1030641
+Segmentacion de la calzada: 47451542
+Detección de carril: 13742460
+LiDAR: 16004565
+PPO: 1115950
+Segmentacion de la calzada: 52370400
+Detección de carril: 12879092
+LiDAR: 19734402
+PPO: 2434546
+Segmentacion de la calzada: 50571877
+Detección de carril: 12661142
+LiDAR: 12014953
+PPO: 2771907
+Segmentacion de la calzada: 51204775
+Detección de carril: 13113727
+LiDAR: 11631182
+PPO: 1565150
+Segmentacion de la calzada: 52731266
+Detección de carril: 12839822
+LiDAR: 18601877
+PPO: 2309007
+Segmentacion de la calzada: 51702639
+Detección de carril: 13011462
+LiDAR: 27428553
+PPO: 1848579
+Segmentacion de la calzada: 49810614
+Detección de carril: 13155510
+LiDAR: 31492356
+PPO: 1527343
+Segmentacion de la calzada: 51843773
+Detección de carril: 13512971
+LiDAR: 30229273
+PPO: 2826199
+Segmentacion de la calzada: 49983466
+Detección de carril: 13092735
+LiDAR: 31036977
+PPO: 4809693
+Segmentacion de la calzada: 52401347
+Detección de carril: 12971782
+LiDAR: 22908168
+PPO: 1071742
+Segmentacion de la calzada: 51479592
+Detección de carril: 12659389
+LiDAR: 12354057
+PPO: 1118413
+Segmentacion de la calzada: 50246194
+Detección de carril: 13034116
+LiDAR: 14282738
+PPO: 2348927
+Segmentacion de la calzada: 50244932
+Detección de carril: 12987827
+LiDAR: 24892824
+PPO: 3033103
+Segmentacion de la calzada: 50718739
+Detección de carril: 13164363
+LiDAR: 22523515
+PPO: 1251375
+Segmentacion de la calzada: 50033392
+Detección de carril: 12908116
+LiDAR: 13890944
+PPO: 2756975
+Segmentacion de la calzada: 50514230
+Detección de carril: 13128800
+LiDAR: 12135355
+PPO: 1064372
+Segmentacion de la calzada: 53406920
+Detección de carril: 13190703
+LiDAR: 17293426
+PPO: 2253042
+Segmentacion de la calzada: 53733444
+Detección de carril: 13079275
+LiDAR: 12881204
+PPO: 1077942
+Segmentacion de la calzada: 52620699
+Detección de carril: 14167232
+LiDAR: 18288002
+PPO: 1468674
+Segmentacion de la calzada: 52568390
+Detección de carril: 12918271
+LiDAR: 15064951
+PPO: 1256834
+Segmentacion de la calzada: 51140828
+Detección de carril: 13506242
+LiDAR: 12873182
+PPO: 2015462
+Segmentacion de la calzada: 51902461
+Detección de carril: 13012324
+LiDAR: 14661721
+PPO: 1029589
+Segmentacion de la calzada: 50993495
+Detección de carril: 13284335
+LiDAR: 12324683
+PPO: 1354871
+Segmentacion de la calzada: 49743463
+Detección de carril: 13284185
+LiDAR: 11487635
+PPO: 1661866
+Segmentacion de la calzada: 50682835
+Detección de carril: 12909187
+LiDAR: 14431673
+PPO: 2768412
+Segmentacion de la calzada: 50893024
+Detección de carril: 12932673
+LiDAR: 13826436
+PPO: 1087276
+Segmentacion de la calzada: 50565077
+Detección de carril: 12431554
+LiDAR: 11991247
+PPO: 1456956
+Segmentacion de la calzada: 51444288
+Detección de carril: 12874164
+LiDAR: 12026842
+PPO: 1253428
+Segmentacion de la calzada: 49265649
+Detección de carril: 12828846
+LiDAR: 12411884
+PPO: 1181259
+Segmentacion de la calzada: 49781530
+Detección de carril: 12846853
+LiDAR: 12361088
+PPO: 1361742
+Segmentacion de la calzada: 50915587
+Detección de carril: 12858962
+LiDAR: 12975558
+PPO: 2019628
+Segmentacion de la calzada: 50520169
+Detección de carril: 12823788
+LiDAR: 11691804
+PPO: 1148680
+Segmentacion de la calzada: 49740188
+Detección de carril: 12904541
+LiDAR: 30934581
+PPO: 2060100
+Segmentacion de la calzada: 50600420
+Detección de carril: 13424578
+LiDAR: 12921646
+PPO: 1303554
+Segmentacion de la calzada: 50794504
+Detección de carril: 13424417
+LiDAR: 13651872
+PPO: 1327870
+Segmentacion de la calzada: 51016470
+Detección de carril: 12991342
+LiDAR: 12267065
+PPO: 2892911
+Segmentacion de la calzada: 50445756
+Detección de carril: 12902227
+LiDAR: 12270621
+PPO: 3049948
+Segmentacion de la calzada: 49152037
+Detección de carril: 13255982
+LiDAR: 30886689
+PPO: 2605265
+Segmentacion de la calzada: 50638958
+Detección de carril: 14847653
+LiDAR: 31191801
+PPO: 1339328
+Segmentacion de la calzada: 50781464
+Detección de carril: 13024722
+LiDAR: 34048096
+PPO: 2521057
+Segmentacion de la calzada: 51909242
+Detección de carril: 12750977
+LiDAR: 33641040
+PPO: 2223406
+Segmentacion de la calzada: 50405295
+Detección de carril: 12910610
+LiDAR: 28129735
+PPO: 1456366
+Segmentacion de la calzada: 48686231
+Detección de carril: 13551360
+LiDAR: 14773921
+PPO: 1242201
+Segmentacion de la calzada: 50534871
+Detección de carril: 12997571
+LiDAR: 12802796
+PPO: 2295716
+Segmentacion de la calzada: 50842296
+Detección de carril: 13376875
+LiDAR: 14436210
+PPO: 2706107
+Segmentacion de la calzada: 51777743
+Detección de carril: 12479827
+LiDAR: 28870176
+PPO: 2846460
+Segmentacion de la calzada: 52184008
+Detección de carril: 13016691
+LiDAR: 12406677
+PPO: 974285
+Segmentacion de la calzada: 50760102
+Detección de carril: 13616057
+LiDAR: 13782861
+PPO: 1777532
+Segmentacion de la calzada: 53992927
+Detección de carril: 14250588
+LiDAR: 16760630
+PPO: 2258961
+Segmentacion de la calzada: 50095506
+Detección de carril: 12937200
+LiDAR: 22749147
+PPO: 943598
+Segmentacion de la calzada: 49605544
+Detección de carril: 13285888
+LiDAR: 14917137
+PPO: 1481794
+Segmentacion de la calzada: 51916223
+Detección de carril: 12648022
+LiDAR: 23430038
+PPO: 958952
+Segmentacion de la calzada: 49560225
+Detección de carril: 13072995
+LiDAR: 13637009
+PPO: 864810
+Segmentacion de la calzada: 49158497
+Detección de carril: 13014577
+LiDAR: 14864919
+PPO: 1113907
+Segmentacion de la calzada: 49949214
+Detección de carril: 12773332
+LiDAR: 13221270
+PPO: 1603529
+Segmentacion de la calzada: 52950529
+Detección de carril: 12943799
+LiDAR: 11361845
+PPO: 2246382
+Segmentacion de la calzada: 51236323
+Detección de carril: 13101638
+LiDAR: 14287124
+PPO: 1783721
+Segmentacion de la calzada: 51599834
+Detección de carril: 13271856
+LiDAR: 12377893
+PPO: 1076930
+Segmentacion de la calzada: 53466850
+Detección de carril: 12931731
+LiDAR: 17587080
+PPO: 1048488
+Segmentacion de la calzada: 53244254
+Detección de carril: 13400852
+LiDAR: 12681512
+PPO: 2287073
+Segmentacion de la calzada: 51767097
+Detección de carril: 12920034
+LiDAR: 12937841
+PPO: 1085614
+Segmentacion de la calzada: 51221630
+Detección de carril: 13030000
+LiDAR: 17181106
+PPO: 4330858
+Segmentacion de la calzada: 54547777
+Detección de carril: 15395332
+LiDAR: 14983749
+PPO: 1640824
+Segmentacion de la calzada: 53391396
+Detección de carril: 13145896
+LiDAR: 15127046
+PPO: 1182150
+Segmentacion de la calzada: 52354697
+Detección de carril: 12999675
+LiDAR: 12368018
+PPO: 1064962
+Segmentacion de la calzada: 51981701
+Detección de carril: 12745409
+LiDAR: 15218825
+PPO: 1644280
+Segmentacion de la calzada: 53537097
+Detección de carril: 13252908
+LiDAR: 12782416
+PPO: 1637279
+Segmentacion de la calzada: 52605236
+Detección de carril: 14011156
+LiDAR: 13083591
+PPO: 3586200
+Segmentacion de la calzada: 52020491
+Detección de carril: 13039254
+LiDAR: 25194770
+PPO: 1074738
+Segmentacion de la calzada: 48931112
+Detección de carril: 13116951
+LiDAR: 13753926
+PPO: 4679626
+Segmentacion de la calzada: 51371057
+Detección de carril: 12819241
+LiDAR: 24094785
+PPO: 2227634
+Segmentacion de la calzada: 51282944
+Detección de carril: 13920037
+LiDAR: 24526739
+PPO: 1383084
+Segmentacion de la calzada: 51101359
+Detección de carril: 13220880
+LiDAR: 22822429
+PPO: 960935
+Segmentacion de la calzada: 52236468
+Detección de carril: 12618657
+LiDAR: 20229973
+PPO: 1033615
+Segmentacion de la calzada: 50650026
+Detección de carril: 12997671
+LiDAR: 15037510
+PPO: 1622396
+Segmentacion de la calzada: 51509697
+Detección de carril: 13018983
+LiDAR: 12352083
+PPO: 980976
+Segmentacion de la calzada: 51163513
+Detección de carril: 13348172
+LiDAR: 18886238
+PPO: 2119930
+Segmentacion de la calzada: 50823127
+Detección de carril: 13036149
+LiDAR: 23922073
+PPO: 880903
+Segmentacion de la calzada: 49902112
+Detección de carril: 12663204
+LiDAR: 12924060
+PPO: 1096641
+Segmentacion de la calzada: 51772074
+Detección de carril: 12885332
+LiDAR: 13338507
+PPO: 1431237
+Segmentacion de la calzada: 53057851
+Detección de carril: 13130092
+LiDAR: 15380109
+PPO: 1037090
+Segmentacion de la calzada: 52527849
+Detección de carril: 12437894
+LiDAR: 13391698
+PPO: 3198163
+Segmentacion de la calzada: 52281396
+Detección de carril: 13283113
+LiDAR: 24387248
+PPO: 2663643
+Segmentacion de la calzada: 52128524
+Detección de carril: 12686730
+LiDAR: 13162782
+PPO: 1010560
+Segmentacion de la calzada: 51436706
+Detección de carril: 12664917
+LiDAR: 12690937
+PPO: 4141511
+Segmentacion de la calzada: 50773572
+Detección de carril: 13265497
+LiDAR: 12527509
+PPO: 1166076
+Segmentacion de la calzada: 53530006
+Detección de carril: 12950529
+LiDAR: 15502684
+PPO: 2361747
+Segmentacion de la calzada: 53922370
+Detección de carril: 13777703
+LiDAR: 14161804
+PPO: 4892959
+Segmentacion de la calzada: 53057010
+Detección de carril: 12513869
+LiDAR: 23559334
+PPO: 1101297
+Segmentacion de la calzada: 51854940
+Detección de carril: 12880744
+LiDAR: 16175213
+PPO: 1583107
+Segmentacion de la calzada: 49477449
+Detección de carril: 12681993
+LiDAR: 22972445
+PPO: 3637829
+Segmentacion de la calzada: 51588436
+Detección de carril: 12884450
+LiDAR: 13608516
+PPO: 1188540
+Segmentacion de la calzada: 53797892
+Detección de carril: 13035699
+LiDAR: 14250438
+PPO: 2389939
+Segmentacion de la calzada: 53352477
+Detección de carril: 12964391
+LiDAR: 12772741
+PPO: 5265242
+Segmentacion de la calzada: 51816472
+Detección de carril: 12564656
+LiDAR: 14312082
+PPO: 1085614
+Segmentacion de la calzada: 52046500
+Detección de carril: 12879543
+LiDAR: 12542091
+PPO: 2641149
+Segmentacion de la calzada: 51266799
+Detección de carril: 12865531
+LiDAR: 20251435
+PPO: 1477417
+Segmentacion de la calzada: 52435259
+Detección de carril: 12988247
+LiDAR: 15827947
+PPO: 2386854
+Segmentacion de la calzada: 53168318
+Detección de carril: 13029980
+LiDAR: 13102520
+PPO: 1121608
+Segmentacion de la calzada: 51999329
+Detección de carril: 18658823
+LiDAR: 14530242
+PPO: 1209482
+Segmentacion de la calzada: 51065364
+Detección de carril: 13484789
+LiDAR: 15810251
+PPO: 2148033
+Segmentacion de la calzada: 54769213
+Detección de carril: 15706193
+LiDAR: 35482609
+PPO: 1073195
+Segmentacion de la calzada: 51521215
+Detección de carril: 13057302
+LiDAR: 14935726
+PPO: 2437932
+Segmentacion de la calzada: 52912801
+Detección de carril: 12783938
+LiDAR: 13320650
+PPO: 2367265
+Segmentacion de la calzada: 52472585
+Detección de carril: 13180679
+LiDAR: 13517549
+PPO: 1722028
+Segmentacion de la calzada: 51481834
+Detección de carril: 14060391
+LiDAR: 12501289
+PPO: 2593157
+Segmentacion de la calzada: 53503046
+Detección de carril: 12959013
+LiDAR: 12766842
+PPO: 2744967
+Segmentacion de la calzada: 50389140
+Detección de carril: 13107407
+LiDAR: 17243360
+PPO: 1387421
+Segmentacion de la calzada: 52518645
+Detección de carril: 12805661
+LiDAR: 15779193
+PPO: 4296065
+Segmentacion de la calzada: 52144559
+Detección de carril: 12747772
+LiDAR: 24272923
+PPO: 2817086
+Segmentacion de la calzada: 52560346
+Detección de carril: 12622362
+LiDAR: 27947658
+PPO: 1139045
+Segmentacion de la calzada: 50517122
+Detección de carril: 12764387
+LiDAR: 14879901
+PPO: 2595039
+Segmentacion de la calzada: 52082311
+Detección de carril: 13699564
+LiDAR: 18834439
+PPO: 1038142
+Segmentacion de la calzada: 52231408
+Detección de carril: 12809907
+LiDAR: 16001099
+PPO: 2392022
+Segmentacion de la calzada: 55660960
+Detección de carril: 12938892
+LiDAR: 12324792
+PPO: 1053435
+Segmentacion de la calzada: 52468897
+Detección de carril: 12835265
+LiDAR: 13007386
+PPO: 1038893
+Segmentacion de la calzada: 52898828
+Detección de carril: 13106105
+LiDAR: 17032070
+PPO: 1542145
+Segmentacion de la calzada: 52548819
+Detección de carril: 12531565
+LiDAR: 12440928
+PPO: 4583079
+Segmentacion de la calzada: 53068756
+Detección de carril: 12990370
+LiDAR: 22240226
+PPO: 2438842
+Segmentacion de la calzada: 52595995
+Detección de carril: 13130238
+LiDAR: 22584400
+PPO: 1406900
+Segmentacion de la calzada: 52422532
+Detección de carril: 12727158
+LiDAR: 33024725
+PPO: 1393579
+Segmentacion de la calzada: 53850474
+Detección de carril: 13184740
+LiDAR: 12348164
+PPO: 1041256
+Segmentacion de la calzada: 51918900
+Detección de carril: 13026862
+LiDAR: 18662853
+PPO: 1341491
+Segmentacion de la calzada: 51368857
+Detección de carril: 13050667
+LiDAR: 12489748
+PPO: 1243172
+Segmentacion de la calzada: 53476448
+Detección de carril: 13057949
+LiDAR: 11439268
+PPO: 1068367
+Segmentacion de la calzada: 52427830
+Detección de carril: 12798987
+LiDAR: 13438965
+PPO: 1097001
+Segmentacion de la calzada: 52868036
+Detección de carril: 12851245
+LiDAR: 12067770
+PPO: 1151233
+Segmentacion de la calzada: 54497554
+Detección de carril: 12974592
+LiDAR: 17940631
+PPO: 1043430
+Segmentacion de la calzada: 51025838
+Detección de carril: 12667817
+LiDAR: 14378378
+PPO: 1560393
+Segmentacion de la calzada: 53269174
+Detección de carril: 12607026
+LiDAR: 23290239
+PPO: 1603737
+Segmentacion de la calzada: 51876396
+Detección de carril: 12919909
+LiDAR: 24045773
+PPO: 2340303
+Segmentacion de la calzada: 52726543
+Detección de carril: 12790263
+LiDAR: 13194656
+PPO: 1198134
+Segmentacion de la calzada: 56317529
+Detección de carril: 13016096
+LiDAR: 19613032
+PPO: 1406319
+Segmentacion de la calzada: 52582865
+Detección de carril: 12647046
+LiDAR: 12933499
+PPO: 1611790
+Segmentacion de la calzada: 52712541
+Detección de carril: 12727788
+LiDAR: 13539938
+PPO: 981937
+Segmentacion de la calzada: 50486891
+Detección de carril: 12731885
+LiDAR: 15340114
+PPO: 3942759
+Segmentacion de la calzada: 50464017
+Detección de carril: 12831015
+LiDAR: 22737843
+PPO: 2924678
+Segmentacion de la calzada: 51992191
+Detección de carril: 12695399
+LiDAR: 22047197
+PPO: 1050830
+Segmentacion de la calzada: 51856485
+Detección de carril: 12993440
+LiDAR: 16700463
+PPO: 2370639
+Segmentacion de la calzada: 54750957
+Detección de carril: 12905959
+LiDAR: 24514673
+PPO: 3479708
+Segmentacion de la calzada: 51793370
+Detección de carril: 12779287
+LiDAR: 20951959
+PPO: 1044431
+Segmentacion de la calzada: 52003789
+Detección de carril: 12781650
+LiDAR: 18095525
+PPO: 1444307
+Segmentacion de la calzada: 53666124
+Detección de carril: 13761874
+LiDAR: 12094489
+PPO: 1167247
+Segmentacion de la calzada: 53633015
+Detección de carril: 12762381
+LiDAR: 14230734
+PPO: 1014926
+Segmentacion de la calzada: 49959314
+Detección de carril: 12841450
+LiDAR: 15694169
+PPO: 1527783
+Segmentacion de la calzada: 50786205
+Detección de carril: 13045239
+LiDAR: 13810347
+PPO: 1287499
+Segmentacion de la calzada: 50437207
+Detección de carril: 12796603
+LiDAR: 16170030
+PPO: 1550177
+Segmentacion de la calzada: 51822053
+Detección de carril: 12628017
+LiDAR: 24755558
+PPO: 1109900
+Segmentacion de la calzada: 51199391
+Detección de carril: 12615980
+LiDAR: 25994233
+PPO: 2438351
+Segmentacion de la calzada: 53155872
+Detección de carril: 13265903
+LiDAR: 13199934
+PPO: 1288611
+Segmentacion de la calzada: 52436674
+Detección de carril: 12731053
+LiDAR: 14586352
+PPO: 1081367
+Segmentacion de la calzada: 50835820
+Detección de carril: 13019050
+LiDAR: 19953258
+PPO: 1268471
+Segmentacion de la calzada: 53358018
+Detección de carril: 13309289
+LiDAR: 20764856
+PPO: 1079785
+Segmentacion de la calzada: 50142711
+Detección de carril: 13052881
+LiDAR: 15899119
+PPO: 4063010
+Segmentacion de la calzada: 47924053
+Detección de carril: 12883444
+LiDAR: 27705423
+PPO: 2403859
+Segmentacion de la calzada: 49487780
+Detección de carril: 12655720
+LiDAR: 32952477
+PPO: 4073938
+Segmentacion de la calzada: 47580843
+Detección de carril: 12592473
+LiDAR: 22573524
+PPO: 2228383
+Segmentacion de la calzada: 50726856
+Detección de carril: 12834230
+LiDAR: 15238370
+PPO: 2268184
+Segmentacion de la calzada: 52828547
+Detección de carril: 13467939
+LiDAR: 38179670
+PPO: 1303583
+Segmentacion de la calzada: 52461802
+Detección de carril: 12602679
+LiDAR: 14978987
+PPO: 1227579
+Segmentacion de la calzada: 53884335
+Detección de carril: 12982103
+LiDAR: 28134022
+PPO: 2386172
+Segmentacion de la calzada: 48887390
+Detección de carril: 15341806
+LiDAR: 37925626
+PPO: 1045844
+Segmentacion de la calzada: 50521134
+Detección de carril: 13104379
+LiDAR: 17377228
+PPO: 1551609
+Segmentacion de la calzada: 50418609
+Detección de carril: 13746090
+LiDAR: 16281829
+PPO: 1056389
+Segmentacion de la calzada: 48143614
+Detección de carril: 12837285
+LiDAR: 15984830
+PPO: 2904597
+Segmentacion de la calzada: 51150477
+Detección de carril: 12561917
+LiDAR: 21958724
+PPO: 1644380
+Segmentacion de la calzada: 53643161
+Detección de carril: 12720046
+LiDAR: 18938361
+PPO: 1022378
+Segmentacion de la calzada: 52125983
+Detección de carril: 12695630
+LiDAR: 16470634
+PPO: 1021066
+Segmentacion de la calzada: 50270444
+Detección de carril: 12768390
+LiDAR: 15602361
+PPO: 957099
+Segmentacion de la calzada: 49425525
+Detección de carril: 12796423
+LiDAR: 21456282
+PPO: 3423794
+Segmentacion de la calzada: 48048651
+Detección de carril: 13198270
+LiDAR: 22695378
+PPO: 2970187
+Segmentacion de la calzada: 49992363
+Detección de carril: 12879027
+LiDAR: 13966273
+PPO: 2538283
+Segmentacion de la calzada: 50855260
+Detección de carril: 12874591
+LiDAR: 16466588
+PPO: 979172
+Segmentacion de la calzada: 52941899
+Detección de carril: 12967201
+LiDAR: 19749158
+PPO: 920093
+Segmentacion de la calzada: 53772617
+Detección de carril: 12865487
+LiDAR: 12415806
+PPO: 5342297
+Segmentacion de la calzada: 54206874
+Detección de carril: 13008323
+LiDAR: 15016964
+PPO: 975076
+Segmentacion de la calzada: 52958644
+Detección de carril: 12961403
+LiDAR: 18365995
+PPO: 1941930
+Segmentacion de la calzada: 48578313
+Detección de carril: 12883605
+LiDAR: 14204655
+PPO: 1430325
+Segmentacion de la calzada: 50891434
+Detección de carril: 12844816
+LiDAR: 33965861
+PPO: 1191914
+Segmentacion de la calzada: 50614675
+Detección de carril: 12789072
+LiDAR: 25546665
+PPO: 1034376
+Segmentacion de la calzada: 50746074
+Detección de carril: 13979253
+LiDAR: 15879320
+PPO: 1215500
+Segmentacion de la calzada: 52505919
+Detección de carril: 12818887
+LiDAR: 15492764
+PPO: 1045984
+Segmentacion de la calzada: 51521618
+Detección de carril: 12962875
+LiDAR: 14425860
+PPO: 2498773
+Segmentacion de la calzada: 51496721
+Detección de carril: 12996416
+LiDAR: 24653172
+PPO: 3964972
+Segmentacion de la calzada: 49170629
+Detección de carril: 12716422
+LiDAR: 23266183
+PPO: 1890112
+Segmentacion de la calzada: 47303673
+Detección de carril: 13534771
+LiDAR: 32606633
+PPO: 2431581
+Segmentacion de la calzada: 44221296
+Detección de carril: 13042615
+LiDAR: 20794781
+PPO: 3715284
+Segmentacion de la calzada: 46678877
+Detección de carril: 12926349
+LiDAR: 25164095
+PPO: 2359863
+Segmentacion de la calzada: 48218027
+Detección de carril: 12782372
+LiDAR: 33789604
+PPO: 2329637
+Segmentacion de la calzada: 50033896
+Detección de carril: 12919909
+LiDAR: 32883292
+PPO: 1082980
+Segmentacion de la calzada: 51703363
+Detección de carril: 12914421
+LiDAR: 13673070
+PPO: 1151363
+Segmentacion de la calzada: 49131330
+Detección de carril: 12806658
+LiDAR: 13095095
+PPO: 2291349
+Segmentacion de la calzada: 46447297
+Detección de carril: 12661468
+LiDAR: 31211842
+PPO: 3267487
+Segmentacion de la calzada: 46902135
+Detección de carril: 13055825
+LiDAR: 27232087
+PPO: 3910099
+Segmentacion de la calzada: 46797207
+Detección de carril: 14757271
+LiDAR: 22663761
+PPO: 1015978
+Segmentacion de la calzada: 44916449
+Detección de carril: 12827600
+LiDAR: 15906230
+PPO: 2090565
+Segmentacion de la calzada: 48300021
+Detección de carril: 12827009
+LiDAR: 30633556
+PPO: 4849302
+Segmentacion de la calzada: 50643078
+Detección de carril: 12600997
+LiDAR: 24351395
+PPO: 3929168
+Segmentacion de la calzada: 50099917
+Detección de carril: 12551452
+LiDAR: 24977233
+PPO: 4725344
+Segmentacion de la calzada: 47090760
+Detección de carril: 12343597
+LiDAR: 23805830
+PPO: 983429
+Segmentacion de la calzada: 45987140
+Detección de carril: 12819587
+LiDAR: 13530664
+PPO: 1058032
+Segmentacion de la calzada: 46453005
+Detección de carril: 12862202
+LiDAR: 31201817
+PPO: 1106194
+Segmentacion de la calzada: 48293591
+Detección de carril: 12954542
+LiDAR: 13503743
+PPO: 1070490
+Segmentacion de la calzada: 48808611
+Detección de carril: 13202497
+LiDAR: 14049230
+PPO: 1094758
+Segmentacion de la calzada: 52193326
+Detección de carril: 13376902
+LiDAR: 15173881
+PPO: 4925847
+Segmentacion de la calzada: 52724280
+Detección de carril: 12658934
+LiDAR: 23671276
+PPO: 5434848
+Segmentacion de la calzada: 47646201
+Detección de carril: 13008032
+LiDAR: 22684512
+PPO: 1095498
+Segmentacion de la calzada: 47454812
+Detección de carril: 12446432
+LiDAR: 13020481
+PPO: 2437520
+Segmentacion de la calzada: 48280001
+Detección de carril: 12647077
+LiDAR: 32591680
+PPO: 1095549
+Segmentacion de la calzada: 46877077
+Detección de carril: 12777073
+LiDAR: 32635347
+PPO: 2678244
+Segmentacion de la calzada: 48252379
+Detección de carril: 12677984
+LiDAR: 14005783
+PPO: 1189160
+Segmentacion de la calzada: 50893308
+Detección de carril: 13099441
+LiDAR: 13093743
+PPO: 1060756
+Segmentacion de la calzada: 47784591
+Detección de carril: 12917445
+LiDAR: 33506235
+PPO: 2173811
+Segmentacion de la calzada: 47182750
+Detección de carril: 12903564
+LiDAR: 33716824
+PPO: 2219260
+Segmentacion de la calzada: 46312883
+Detección de carril: 12820820
+LiDAR: 29075328
+PPO: 1264945
+Segmentacion de la calzada: 47279216
+Detección de carril: 12728960
+LiDAR: 25838787
+PPO: 912742
+Segmentacion de la calzada: 46193643
+Detección de carril: 13107884
+LiDAR: 13925111
+PPO: 957759
+Segmentacion de la calzada: 49727884
+Detección de carril: 12876353
+LiDAR: 13604376
+PPO: 2652035
+Segmentacion de la calzada: 50416826
+Detección de carril: 13163428
+LiDAR: 14342804
+PPO: 1078993
+Segmentacion de la calzada: 49516342
+Detección de carril: 12873619
+LiDAR: 12602239
+PPO: 3492939
+Segmentacion de la calzada: 48946880
+Detección de carril: 13820383
+LiDAR: 23925181
+PPO: 1443675
+Segmentacion de la calzada: 46951360
+Detección de carril: 12475627
+LiDAR: 36250029
+PPO: 2290608
+Segmentacion de la calzada: 45736561
+Detección de carril: 13296570
+LiDAR: 19433921
+PPO: 5288526
+Segmentacion de la calzada: 46717937
+Detección de carril: 13362139
+LiDAR: 30944336
+PPO: 2489259
+Segmentacion de la calzada: 49591316
+Detección de carril: 13099222
+LiDAR: 24986928
+PPO: 1181128
+Segmentacion de la calzada: 50494785
+Detección de carril: 13334607
+LiDAR: 15053570
+PPO: 986113
+Segmentacion de la calzada: 52239826
+Detección de carril: 12851496
+LiDAR: 14051712
+PPO: 2177626
+Segmentacion de la calzada: 51199150
+Detección de carril: 12931517
+LiDAR: 14421963
+PPO: 1178944
+Segmentacion de la calzada: 49356160
+Detección de carril: 13502050
+LiDAR: 34234808
+PPO: 2167101
+Segmentacion de la calzada: 47626512
+Detección de carril: 13514279
+LiDAR: 25346472
+PPO: 1166967
+Segmentacion de la calzada: 48877976
+Detección de carril: 13416471
+LiDAR: 14994721
+PPO: 1153056
+Segmentacion de la calzada: 50308232
+Detección de carril: 13518686
+LiDAR: 27134168
+PPO: 1945866
+Segmentacion de la calzada: 53648568
+Detección de carril: 13212122
+LiDAR: 23968446
+PPO: 1772774
+Segmentacion de la calzada: 53058785
+Detección de carril: 13354688
+LiDAR: 19585120
+PPO: 1126546
+Segmentacion de la calzada: 49297682
+Detección de carril: 13034953
+LiDAR: 15927352
+PPO: 3912914
+Segmentacion de la calzada: 48152388
+Detección de carril: 12861070
+LiDAR: 20940923
+PPO: 1114417
+Segmentacion de la calzada: 50361082
+Detección de carril: 13338864
+LiDAR: 12881832
+PPO: 2076894
+Segmentacion de la calzada: 47230412
+Detección de carril: 13686350
+LiDAR: 18990109
+PPO: 2530651
+Segmentacion de la calzada: 53481465
+Detección de carril: 13233625
+LiDAR: 14504288
+PPO: 1074597
+Segmentacion de la calzada: 53698223
+Detección de carril: 12955964
+LiDAR: 27534415
+PPO: 2235204
+Segmentacion de la calzada: 57257703
+Detección de carril: 13084539
+LiDAR: 13766922
+PPO: 1276763
+Segmentacion de la calzada: 50306179
+Detección de carril: 12834921
+LiDAR: 25013147
+PPO: 4958126
+Segmentacion de la calzada: 51773560
+Detección de carril: 12728810
+LiDAR: 25352652
+PPO: 2716302
+Segmentacion de la calzada: 51045047
+Detección de carril: 12658935
+LiDAR: 22682579
+PPO: 1520923
+Segmentacion de la calzada: 52032622
+Detección de carril: 12978999
+LiDAR: 14160958
+PPO: 1107206
+Segmentacion de la calzada: 51423891
+Detección de carril: 13052490
+LiDAR: 16506069
+PPO: 1504157
+Segmentacion de la calzada: 51237348
+Detección de carril: 13162837
+LiDAR: 15933642
+PPO: 1120156
+Segmentacion de la calzada: 51714821
+Detección de carril: 13900544
+LiDAR: 14875340
+PPO: 1133696
+Segmentacion de la calzada: 51074752
+Detección de carril: 13029315
+LiDAR: 13614521
+PPO: 1067436
+Segmentacion de la calzada: 49876639
+Detección de carril: 13025540
+LiDAR: 16399527
+PPO: 2600527
+Segmentacion de la calzada: 51699819
+Detección de carril: 13821524
+LiDAR: 25074120
+PPO: 2144897
+Segmentacion de la calzada: 53236655
+Detección de carril: 12992840
+LiDAR: 28767741
+PPO: 2322035
+Segmentacion de la calzada: 53043493
+Detección de carril: 12786267
+LiDAR: 13770607
+PPO: 1790130
+Segmentacion de la calzada: 51732197
+Detección de carril: 13149807
+LiDAR: 24657449
+PPO: 3453899
+Segmentacion de la calzada: 51320865
+Detección de carril: 13004477
+LiDAR: 22233730
+PPO: 1292016
+Segmentacion de la calzada: 47763649
+Detección de carril: 12599114
+LiDAR: 31654352
+PPO: 1203302
+Segmentacion de la calzada: 50680856
+Detección de carril: 12807299
+LiDAR: 12966350
+PPO: 2344088
+Segmentacion de la calzada: 51776926
+Detección de carril: 12845988
+LiDAR: 13583404
+PPO: 1185715
+Segmentacion de la calzada: 53104195
+Detección de carril: 12679265
+LiDAR: 13314257
+PPO: 2587197
+Segmentacion de la calzada: 51900052
+Detección de carril: 12726267
+LiDAR: 21124210
+PPO: 5201504
+Segmentacion de la calzada: 53412160
+Detección de carril: 13955307
+LiDAR: 13275618
+PPO: 1508594
+Segmentacion de la calzada: 50405489
+Detección de carril: 12739296
+LiDAR: 14220959
+PPO: 2190857
+Segmentacion de la calzada: 53893900
+Detección de carril: 12824315
+LiDAR: 12874530
+PPO: 4320390
+Segmentacion de la calzada: 53954081
+Detección de carril: 13897049
+LiDAR: 12826989
+PPO: 1472640
+Segmentacion de la calzada: 54052190
+Detección de carril: 14079655
+LiDAR: 20456169
+PPO: 3081455
+Segmentacion de la calzada: 52977633
+Detección de carril: 14096922
+LiDAR: 12340282
+PPO: 3029427
+Segmentacion de la calzada: 52948219
+Detección de carril: 15679697
+LiDAR: 19964825
+PPO: 1115359
+Segmentacion de la calzada: 52957974
+Detección de carril: 13066191
+LiDAR: 14947008
+PPO: 1293718
+Segmentacion de la calzada: 51670354
+Detección de carril: 13241226
+LiDAR: 13674813
+PPO: 4437157
+Segmentacion de la calzada: 51995275
+Detección de carril: 12918207
+LiDAR: 25223576
+PPO: 4099156
+Segmentacion de la calzada: 52102869
+Detección de carril: 12837695
+LiDAR: 24847396
+PPO: 4244966
+Segmentacion de la calzada: 52911402
+Detección de carril: 12983907
+LiDAR: 23904269
+PPO: 1271745
+Segmentacion de la calzada: 51326693
+Detección de carril: 12960501
+LiDAR: 23339433
+PPO: 2845338
+Segmentacion de la calzada: 55066916
+Detección de carril: 12887811
+LiDAR: 12923455
+PPO: 1186617
+Segmentacion de la calzada: 55302704
+Detección de carril: 13350581
+LiDAR: 16337623
+PPO: 1192165
+Segmentacion de la calzada: 53945809
+Detección de carril: 13224470
+LiDAR: 12584873
+PPO: 4000196
+Segmentacion de la calzada: 53117705
+Detección de carril: 13442150
+LiDAR: 24670339
+PPO: 1479489
+Segmentacion de la calzada: 52316132
+Detección de carril: 13205642
+LiDAR: 23739760
+PPO: 1352097
+Segmentacion de la calzada: 52547903
+Detección de carril: 13119882
+LiDAR: 12697373
+PPO: 2301895
+Segmentacion de la calzada: 54048054
+Detección de carril: 13448419
+LiDAR: 13246584
+PPO: 3658429
+Segmentacion de la calzada: 53218107
+Detección de carril: 14092184
+LiDAR: 25239020
+PPO: 1181929
+Segmentacion de la calzada: 53877886
+Detección de carril: 13486888
+LiDAR: 14622296
+PPO: 3972233
+Segmentacion de la calzada: 52957372
+Detección de carril: 15702592
+LiDAR: 28691426
+PPO: 2066929
+Segmentacion de la calzada: 54537365
+Detección de carril: 13125951
+LiDAR: 13902597
+PPO: 1022828
+Segmentacion de la calzada: 50938386
+Detección de carril: 13160153
+LiDAR: 18355699
+PPO: 2128252
+Segmentacion de la calzada: 51624855
+Detección de carril: 13168947
+LiDAR: 26163389
+PPO: 3039892
+Segmentacion de la calzada: 51567979
+Detección de carril: 14239377
+LiDAR: 23206612
+PPO: 1051642
+Segmentacion de la calzada: 51972502
+Detección de carril: 12960401
+LiDAR: 14781218
+PPO: 1555585
+Segmentacion de la calzada: 50974240
+Detección de carril: 12691143
+LiDAR: 12754439
+PPO: 977840
+Segmentacion de la calzada: 52079434
+Detección de carril: 12998138
+LiDAR: 14652242
+PPO: 1277574
+Segmentacion de la calzada: 51001831
+Detección de carril: 13104700
+LiDAR: 14482234
+PPO: 2726318
+Segmentacion de la calzada: 52136389
+Detección de carril: 13141545
+LiDAR: 31520830
+PPO: 2083194
+Segmentacion de la calzada: 52978384
+Detección de carril: 15433805
+LiDAR: 31520229
+PPO: 1172165
+Segmentacion de la calzada: 52043890
+Detección de carril: 13518716
+LiDAR: 30068911
+PPO: 1143622
+Segmentacion de la calzada: 51370590
+Detección de carril: 13159672
+LiDAR: 13724998
+PPO: 1196832
+Segmentacion de la calzada: 52244844
+Detección de carril: 13100894
+LiDAR: 14179297
+PPO: 1384606
+Segmentacion de la calzada: 52307778
+Detección de carril: 12939729
+LiDAR: 12710893
+PPO: 1152935
+Segmentacion de la calzada: 53665194
+Detección de carril: 12961973
+LiDAR: 36995838
+PPO: 991131
+Segmentacion de la calzada: 51961124
+Detección de carril: 12992850
+LiDAR: 15127542
+PPO: 1360530
+Segmentacion de la calzada: 52139164
+Detección de carril: 12923976
+LiDAR: 11616106
+PPO: 2005617
+Segmentacion de la calzada: 53102172
+Detección de carril: 13105421
+LiDAR: 12194061
+PPO: 1006243
+Segmentacion de la calzada: 54359165
+Detección de carril: 13010426
+LiDAR: 18311612
+PPO: 1284314
+Segmentacion de la calzada: 52456164
+Detección de carril: 12868632
+LiDAR: 12019236
+PPO: 2868052
+Segmentacion de la calzada: 53193560
+Detección de carril: 13017397
+LiDAR: 21394810
+PPO: 5054873
+Segmentacion de la calzada: 53637862
+Detección de carril: 13243349
+LiDAR: 13163979
+PPO: 1798263
+Segmentacion de la calzada: 52501011
+Detección de carril: 13132362
+LiDAR: 13449942
+PPO: 1535374
+Segmentacion de la calzada: 53259559
+Detección de carril: 13334437
+LiDAR: 13843848
+PPO: 2833500
+Segmentacion de la calzada: 51476741
+Detección de carril: 13020551
+LiDAR: 17717573
+PPO: 1118924
+Segmentacion de la calzada: 54151080
+Detección de carril: 13390622
+LiDAR: 13648613
+PPO: 1454161
+Segmentacion de la calzada: 51993283
+Detección de carril: 13448299
+LiDAR: 12770133
+PPO: 2467766
+Segmentacion de la calzada: 52641554
+Detección de carril: 13140684
+LiDAR: 18651106
+PPO: 1068717
+Segmentacion de la calzada: 53532974
+Detección de carril: 13154975
+LiDAR: 14377697
+PPO: 2161813
+Segmentacion de la calzada: 54881536
+Detección de carril: 12919099
+LiDAR: 12940010
+PPO: 1080796
+Segmentacion de la calzada: 54049115
+Detección de carril: 13516072
+LiDAR: 11952646
+PPO: 5104988
+Segmentacion de la calzada: 53166599
+Detección de carril: 12790985
+LiDAR: 18218582
+PPO: 1068568
+Segmentacion de la calzada: 56200582
+Detección de carril: 13173743
+LiDAR: 12333581
+PPO: 1241259
+Segmentacion de la calzada: 52676818
+Detección de carril: 13066661
+LiDAR: 12965589
+PPO: 2549720
+Segmentacion de la calzada: 52057851
+Detección de carril: 12829663
+LiDAR: 12293030
+PPO: 888645
+Segmentacion de la calzada: 52211523
+Detección de carril: 12941121
+LiDAR: 17140599
+PPO: 965892
+Segmentacion de la calzada: 51085659
+Detección de carril: 12749081
+LiDAR: 23884138
+PPO: 1807787
+Segmentacion de la calzada: 53198588
+Detección de carril: 13045379
+LiDAR: 11738131
+PPO: 1829419
+Segmentacion de la calzada: 52078672
+Detección de carril: 12860610
+LiDAR: 11519580
+PPO: 963279
+Segmentacion de la calzada: 51023585
+Detección de carril: 12885348
+LiDAR: 13019881
+PPO: 1214759
+Segmentacion de la calzada: 51854844
+Detección de carril: 12725285
+LiDAR: 21631548
+PPO: 4061008
+Segmentacion de la calzada: 50819806
+Detección de carril: 12771755
+LiDAR: 19918995
+PPO: 1219386
+Segmentacion de la calzada: 49947767
+Detección de carril: 12520125
+LiDAR: 13547510
+PPO: 2020889
+Segmentacion de la calzada: 52126564
+Detección de carril: 12995384
+LiDAR: 31545807
+PPO: 1879124
+Segmentacion de la calzada: 52213326
+Detección de carril: 12930716
+LiDAR: 11902780
+PPO: 1034526
+Segmentacion de la calzada: 50938847
+Detección de carril: 12909764
+LiDAR: 15082874
+PPO: 2255194
+Segmentacion de la calzada: 53090785
+Detección de carril: 12853339
+LiDAR: 12506724
+PPO: 978151
+Segmentacion de la calzada: 50259458
+Detección de carril: 13067122
+LiDAR: 12584532
+PPO: 1207067
+Segmentacion de la calzada: 52068027
+Detección de carril: 13162818
+LiDAR: 19353640
+PPO: 1123081
+Segmentacion de la calzada: 52379648
+Detección de carril: 13010847
+LiDAR: 12298228
+PPO: 1417325
+Segmentacion de la calzada: 51703384
+Detección de carril: 12938228
+LiDAR: 15150767
+PPO: 2349877
+Segmentacion de la calzada: 51057196
+Detección de carril: 12890856
+LiDAR: 23097889
+PPO: 1114738
+Segmentacion de la calzada: 51461648
+Detección de carril: 13031007
+LiDAR: 20718296
+PPO: 1253257
+Segmentacion de la calzada: 52447170
+Detección de carril: 13115575
+LiDAR: 13083687
+PPO: 2589641
+Segmentacion de la calzada: 52963131
+Detección de carril: 13270841
+LiDAR: 13511856
+PPO: 1843862
+Segmentacion de la calzada: 53754089
+Detección de carril: 12858727
+LiDAR: 14714566
+PPO: 2215224
+Segmentacion de la calzada: 52696097
+Detección de carril: 13133583
+LiDAR: 13757768
+PPO: 1344355
+Segmentacion de la calzada: 52649226
+Detección de carril: 13809396
+LiDAR: 14256113
+PPO: 1197032
+Segmentacion de la calzada: 53920341
+Detección de carril: 13053221
+LiDAR: 26477084
+PPO: 1019924
+Segmentacion de la calzada: 52259917
+Detección de carril: 13118080
+LiDAR: 14564420
+PPO: 2855403
+Segmentacion de la calzada: 50449636
+Detección de carril: 13258893
+LiDAR: 15989828
+PPO: 2332812
+Segmentacion de la calzada: 50644822
+Detección de carril: 12744934
+LiDAR: 31898170
+PPO: 3110249
+Segmentacion de la calzada: 51679718
+Detección de carril: 13117298
+LiDAR: 31877499
+PPO: 3614322
+Segmentacion de la calzada: 53657413
+Detección de carril: 12688689
+LiDAR: 22119406
+PPO: 2562750
+Segmentacion de la calzada: 53271208
+Detección de carril: 13164180
+LiDAR: 13841205
+PPO: 1068408
+Segmentacion de la calzada: 53957487
+Detección de carril: 12864976
+LiDAR: 13303711
+PPO: 2144887
+Segmentacion de la calzada: 51220323
+Detección de carril: 12863214
+LiDAR: 13722214
+PPO: 1454071
+Segmentacion de la calzada: 49869347
+Detección de carril: 13161435
+LiDAR: 31692930
+PPO: 1706022
+Segmentacion de la calzada: 49142708
+Detección de carril: 14335763
+LiDAR: 15602371
+PPO: 1037961
+Segmentacion de la calzada: 47716378
+Detección de carril: 12988904
+LiDAR: 15484192
+PPO: 1140807
+Segmentacion de la calzada: 55191124
+Detección de carril: 13379906
+LiDAR: 13036045
+PPO: 2645935
+Segmentacion de la calzada: 51883036
+Detección de carril: 13005078
+LiDAR: 31063187
+PPO: 1889431
+Segmentacion de la calzada: 52499169
+Detección de carril: 12725436
+LiDAR: 31657357
+PPO: 2867331
+Segmentacion de la calzada: 47794187
+Detección de carril: 12789922
+LiDAR: 31995789
+PPO: 1199175
+Segmentacion de la calzada: 45334322
+Detección de carril: 12874531
+LiDAR: 33193652
+PPO: 1559561
+Segmentacion de la calzada: 48917747
+Detección de carril: 12455927
+LiDAR: 22381293
+PPO: 2270348
+Segmentacion de la calzada: 51104307
+Detección de carril: 13583464
+LiDAR: 27504429
+PPO: 2434666
+Segmentacion de la calzada: 50761759
+Detección de carril: 13344613
+LiDAR: 19595957
+PPO: 2658535
+Segmentacion de la calzada: 52641144
+Detección de carril: 13241176
+LiDAR: 13320356
+PPO: 2264448
+Segmentacion de la calzada: 47628465
+Detección de carril: 12463349
+LiDAR: 31659640
+PPO: 2571082
+Segmentacion de la calzada: 47307910
+Detección de carril: 13395730
+LiDAR: 20083425
+PPO: 1193126
+Segmentacion de la calzada: 47386609
+Detección de carril: 13305363
+LiDAR: 13642914
+PPO: 1180707
+Segmentacion de la calzada: 52777030
+Detección de carril: 13682665
+LiDAR: 13594932
+PPO: 1471878
+Segmentacion de la calzada: 53149464
+Detección de carril: 13114524
+LiDAR: 13483753
+PPO: 3098481
+Segmentacion de la calzada: 53581747
+Detección de carril: 13186563
+LiDAR: 13974447
+PPO: 2525063
+Segmentacion de la calzada: 53608869
+Detección de carril: 12834600
+LiDAR: 31805060
+PPO: 2411631
+Segmentacion de la calzada: 51555230
+Detección de carril: 12978639
+LiDAR: 30266772
+PPO: 2386403
+Segmentacion de la calzada: 50774838
+Detección de carril: 12818325
+LiDAR: 27870944
+PPO: 1513331
+Segmentacion de la calzada: 50631732
+Detección de carril: 12801120
+LiDAR: 29722417
+PPO: 2390579
+Segmentacion de la calzada: 51824698
+Detección de carril: 12893089
+LiDAR: 12109663
+PPO: 1158393
+Segmentacion de la calzada: 51394616
+Detección de carril: 13309520
+LiDAR: 13535842
+PPO: 1463466
+Segmentacion de la calzada: 52175519
+Detección de carril: 13975978
+LiDAR: 14173708
+PPO: 2937597
+Segmentacion de la calzada: 50743191
+Detección de carril: 12905037
+LiDAR: 12683181
+PPO: 1392528
+Segmentacion de la calzada: 51233984
+Detección de carril: 12609870
+LiDAR: 12474154
+PPO: 2023484
+Segmentacion de la calzada: 51961264
+Detección de carril: 12625504
+LiDAR: 12726046
+PPO: 2210747
+Segmentacion de la calzada: 52255140
+Detección de carril: 13019841
+LiDAR: 12390268
+PPO: 1099394
+Segmentacion de la calzada: 51690034
+Detección de carril: 13014784
+LiDAR: 12777975
+PPO: 1328762
+Segmentacion de la calzada: 50799046
+Detección de carril: 12661698
+LiDAR: 12008730
+PPO: 1108668
+Segmentacion de la calzada: 51808353
+Detección de carril: 12777163
+LiDAR: 30636471
+PPO: 1941860
+Segmentacion de la calzada: 51196417
+Detección de carril: 13445736
+LiDAR: 12957477
+PPO: 1185305
+Segmentacion de la calzada: 53087320
+Detección de carril: 16317283
+LiDAR: 13192282
+PPO: 1367571
+Segmentacion de la calzada: 50305227
+Detección de carril: 13023236
+LiDAR: 13196759
+PPO: 1032102
+Segmentacion de la calzada: 49539298
+Detección de carril: 12848882
+LiDAR: 12477039
+PPO: 1553812
+Segmentacion de la calzada: 51182035
+Detección de carril: 12545133
+LiDAR: 13039982
+PPO: 973935
+Segmentacion de la calzada: 51792930
+Detección de carril: 12731645
+LiDAR: 12442667
+PPO: 2135723
+Segmentacion de la calzada: 51169947
+Detección de carril: 12928512
+LiDAR: 12711144
+PPO: 2381845
+Segmentacion de la calzada: 46020862
+Detección de carril: 13116597
+LiDAR: 28828184
+PPO: 1160396
+Segmentacion de la calzada: 48884426
+Detección de carril: 13078350
+LiDAR: 18639498
+PPO: 2048341
+Segmentacion de la calzada: 50490277
+Detección de carril: 12897165
+LiDAR: 18170789
+PPO: 2667238
+Segmentacion de la calzada: 52603927
+Detección de carril: 12959710
+LiDAR: 12677052
+PPO: 1222741
+Segmentacion de la calzada: 51661651
+Detección de carril: 12973230
+LiDAR: 13432185
+PPO: 1051161
+Segmentacion de la calzada: 51232211
+Detección de carril: 12972670
+LiDAR: 12235143
+PPO: 1311796
+Segmentacion de la calzada: 51022814
+Detección de carril: 12720618
+LiDAR: 12560766
+PPO: 2438792
+Segmentacion de la calzada: 51971931
+Detección de carril: 13190960
+LiDAR: 13182767
+PPO: 2237076
+Segmentacion de la calzada: 52572340
+Detección de carril: 12820309
+LiDAR: 13322198
+PPO: 1466290
+Segmentacion de la calzada: 53470880
+Detección de carril: 13037668
+LiDAR: 13386666
+PPO: 1006073
+Segmentacion de la calzada: 55107478
+Detección de carril: 12764405
+LiDAR: 12717453
+PPO: 2215274
+Segmentacion de la calzada: 50884195
+Detección de carril: 14004271
+LiDAR: 13771388
+PPO: 1515144
+Segmentacion de la calzada: 51600248
+Detección de carril: 13529653
+LiDAR: 14250975
+PPO: 1174829
+Segmentacion de la calzada: 48374414
+Detección de carril: 13011678
+LiDAR: 34009458
+PPO: 2423840
+Segmentacion de la calzada: 50048659
+Detección de carril: 13616153
+LiDAR: 22933620
+PPO: 1197253
+Segmentacion de la calzada: 48721420
+Detección de carril: 13275087
+LiDAR: 17939899
+PPO: 1027395
+Segmentacion de la calzada: 50134729
+Detección de carril: 13735374
+LiDAR: 15150166
+PPO: 1120587
+Segmentacion de la calzada: 50667055
+Detección de carril: 13101094
+LiDAR: 13148065
+PPO: 1081898
+Segmentacion de la calzada: 49402982
+Detección de carril: 14096160
+LiDAR: 13315489
+PPO: 1645161
+Segmentacion de la calzada: 51456791
+Detección de carril: 13249428
+LiDAR: 32370476
+PPO: 1097982
+Segmentacion de la calzada: 48522248
+Detección de carril: 13428920
+LiDAR: 27791363
+PPO: 991060
+Segmentacion de la calzada: 47023529
+Detección de carril: 13512687
+LiDAR: 12592464
+PPO: 1083751
+Segmentacion de la calzada: 52610899
+Detección de carril: 14180939
+LiDAR: 14514924
+PPO: 2533164
+Segmentacion de la calzada: 54338834
+Detección de carril: 13194165
+LiDAR: 13715364
+PPO: 1278536
+Segmentacion de la calzada: 53416729
+Detección de carril: 13502732
+LiDAR: 15074402
+PPO: 1565661
+Segmentacion de la calzada: 63072927
+Detección de carril: 13185522
+LiDAR: 13761263
+PPO: 2626156
+Segmentacion de la calzada: 50414413
+Detección de carril: 13097939
+LiDAR: 21214036
+PPO: 1099004
+Segmentacion de la calzada: 49717959
+Detección de carril: 13399947
+LiDAR: 11963973
+PPO: 4261091
+Segmentacion de la calzada: 52951284
+Detección de carril: 13428520
+LiDAR: 18581201
+PPO: 2284629
+Segmentacion de la calzada: 52326227
+Detección de carril: 13258943
+LiDAR: 12685465
+PPO: 1118233
+Segmentacion de la calzada: 54169879
+Detección de carril: 13003265
+LiDAR: 14179386
+PPO: 2504302
+Segmentacion de la calzada: 51677506
+Detección de carril: 12623941
+LiDAR: 13507439
+PPO: 1278054
+Segmentacion de la calzada: 51401077
+Detección de carril: 13012389
+LiDAR: 13385033
+PPO: 1634485
+Segmentacion de la calzada: 52886686
+Detección de carril: 13325203
+LiDAR: 12823894
+PPO: 2468296
+Segmentacion de la calzada: 50473443
+Detección de carril: 13140945
+LiDAR: 16874206
+PPO: 2350779
+Segmentacion de la calzada: 52275250
+Detección de carril: 12852938
+LiDAR: 12687117
+PPO: 1100996
+Segmentacion de la calzada: 51739229
+Detección de carril: 12884697
+LiDAR: 12671334
+PPO: 1653513
+Segmentacion de la calzada: 51661882
+Detección de carril: 13241947
+LiDAR: 12419762
+PPO: 1186165
+Segmentacion de la calzada: 51410001
+Detección de carril: 12813478
+LiDAR: 13259734
+PPO: 2085868
+Segmentacion de la calzada: 52061146
+Detección de carril: 13006010
+LiDAR: 13736827
+PPO: 1128970
+Segmentacion de la calzada: 52409313
+Detección de carril: 13036647
+LiDAR: 12824525
+PPO: 1276302
+Segmentacion de la calzada: 50450248
+Detección de carril: 12874211
+LiDAR: 14070312
+PPO: 2136735
+Segmentacion de la calzada: 53661579
+Detección de carril: 13075885
+LiDAR: 14287731
+PPO: 1109349
+Segmentacion de la calzada: 50555087
+Detección de carril: 12846929
+LiDAR: 13605658
+PPO: 1048798
+Segmentacion de la calzada: 55387802
+Detección de carril: 13183028
+LiDAR: 13585918
+PPO: 1061768
+Segmentacion de la calzada: 52474452
+Detección de carril: 13784138
+LiDAR: 15662202
+PPO: 1379809
+Segmentacion de la calzada: 52109469
+Detección de carril: 13071750
+LiDAR: 15574298
+PPO: 1175429
+Segmentacion de la calzada: 52049178
+Detección de carril: 12990397
+LiDAR: 32304136
+PPO: 1695677
+Segmentacion de la calzada: 51415228
+Detección de carril: 12934862
+LiDAR: 24887998
+PPO: 1058502
+Segmentacion de la calzada: 50924345
+Detección de carril: 12730933
+LiDAR: 13962618
+PPO: 2484842
+Segmentacion de la calzada: 51599517
+Detección de carril: 12636951
+LiDAR: 19443876
+PPO: 1728216
+Segmentacion de la calzada: 53919891
+Detección de carril: 12970336
+LiDAR: 14797662
+PPO: 1447251
+Segmentacion de la calzada: 52593823
+Detección de carril: 13065179
+LiDAR: 13212563
+PPO: 1122280
+Segmentacion de la calzada: 53424860
+Detección de carril: 12671083
+LiDAR: 13413898
+PPO: 1474913
+Segmentacion de la calzada: 51760881
+Detección de carril: 12864095
+LiDAR: 12448356
+PPO: 1687415
+Segmentacion de la calzada: 51788033
+Detección de carril: 12693698
+LiDAR: 14493942
+PPO: 986604
+Segmentacion de la calzada: 52615104
+Detección de carril: 13252093
+LiDAR: 14411748
+PPO: 4918216
+Segmentacion de la calzada: 53036883
+Detección de carril: 13160133
+LiDAR: 13312934
+PPO: 1308421
+Segmentacion de la calzada: 51968505
+Detección de carril: 13056617
+LiDAR: 12994532
+PPO: 5086991
+Segmentacion de la calzada: 51596472
+Detección de carril: 13484043
+LiDAR: 22623160
+PPO: 5615482
+Segmentacion de la calzada: 51215746
+Detección de carril: 13047393
+LiDAR: 19767847
+PPO: 1814537
+Segmentacion de la calzada: 52727605
+Detección de carril: 13102647
+LiDAR: 26168527
+PPO: 2288845
+Segmentacion de la calzada: 51793481
+Detección de carril: 12897917
+LiDAR: 19247739
+PPO: 1092635
+Segmentacion de la calzada: 50936013
+Detección de carril: 13023957
+LiDAR: 20816885
+PPO: 2352141
+Segmentacion de la calzada: 52899986
+Detección de carril: 13121194
+LiDAR: 11766694
+PPO: 1023710
+Segmentacion de la calzada: 50179037
+Detección de carril: 13067814
+LiDAR: 12463158
+PPO: 2659396
+Segmentacion de la calzada: 51442829
+Detección de carril: 13275738
+LiDAR: 18288367
+PPO: 1107346
+Segmentacion de la calzada: 52365877
+Detección de carril: 12999230
+LiDAR: 11918203
+PPO: 1784492
+Segmentacion de la calzada: 52010359
+Detección de carril: 13153032
+LiDAR: 13059962
+PPO: 1068217
+Segmentacion de la calzada: 51664536
+Detección de carril: 13016966
+LiDAR: 12183085
+PPO: 2350027
+Segmentacion de la calzada: 52403274
+Detección de carril: 13166212
+LiDAR: 21133214
+PPO: 1089579
+Segmentacion de la calzada: 50768349
+Detección de carril: 13001152
+LiDAR: 13402250
+PPO: 1082429
+Segmentacion de la calzada: 52600923
+Detección de carril: 13125341
+LiDAR: 23156647
+PPO: 2254093
+Segmentacion de la calzada: 51611506
+Detección de carril: 13196989
+LiDAR: 20733139
+PPO: 2087962
+Segmentacion de la calzada: 53665625
+Detección de carril: 13450452
+LiDAR: 14381833
+PPO: 1053895
+Segmentacion de la calzada: 52517667
+Detección de carril: 13016496
+LiDAR: 11400049
+PPO: 1423715
+Segmentacion de la calzada: 53973621
+Detección de carril: 13326175
+LiDAR: 13358604
+PPO: 2047560
+Segmentacion de la calzada: 53086018
+Detección de carril: 13078169
+LiDAR: 29288180
+PPO: 1248621
+Segmentacion de la calzada: 52209231
+Detección de carril: 13887144
+LiDAR: 14188971
+PPO: 1410385
+Segmentacion de la calzada: 52748427
+Detección de carril: 13077799
+LiDAR: 12458801
+PPO: 1164042
+Segmentacion de la calzada: 52397916
+Detección de carril: 13409141
+LiDAR: 17403607
+PPO: 1828979
+Segmentacion de la calzada: 53180681
+Detección de carril: 13474279
+LiDAR: 13902157
+PPO: 1760695
+Segmentacion de la calzada: 52988560
+Detección de carril: 12839598
+LiDAR: 14221079
+PPO: 1426640
+Segmentacion de la calzada: 52682056
+Detección de carril: 12888632
+LiDAR: 14342263
+PPO: 2117336
+Segmentacion de la calzada: 52399218
+Detección de carril: 12663691
+LiDAR: 29741496
+PPO: 1162510
+Segmentacion de la calzada: 53312862
+Detección de carril: 13089877
+LiDAR: 23544053
+PPO: 2729102
+Segmentacion de la calzada: 52694796
+Detección de carril: 13065901
+LiDAR: 12891667
+PPO: 2727369
+Segmentacion de la calzada: 53565854
+Detección de carril: 12665725
+LiDAR: 19949251
+PPO: 988927
+Segmentacion de la calzada: 49471425
+Detección de carril: 12716933
+LiDAR: 15408588
+PPO: 4069340
+Segmentacion de la calzada: 53678936
+Detección de carril: 12767209
+LiDAR: 20451402
+PPO: 1432228
+Segmentacion de la calzada: 53835503
+Detección de carril: 13013521
+LiDAR: 13096367
+PPO: 1027686
+Segmentacion de la calzada: 51518044
+Detección de carril: 12674438
+LiDAR: 12784645
+PPO: 5055664
+Segmentacion de la calzada: 52370043
+Detección de carril: 13475420
+LiDAR: 20477742
+PPO: 5145690
+Segmentacion de la calzada: 51147422
+Detección de carril: 12947251
+LiDAR: 19273929
+PPO: 2910406
+Segmentacion de la calzada: 52578159
+Detección de carril: 13159032
+LiDAR: 13330571
+PPO: 3025771
+Segmentacion de la calzada: 51635492
+Detección de carril: 12968223
+LiDAR: 19218495
+PPO: 2250196
+Segmentacion de la calzada: 51533438
+Detección de carril: 13216649
+LiDAR: 13320706
+PPO: 1140977
+Segmentacion de la calzada: 52832554
+Detección de carril: 13150168
+LiDAR: 14042450
+PPO: 1544898
+Segmentacion de la calzada: 52588835
+Detección de carril: 13223279
+LiDAR: 16191783
+PPO: 1043059
+Segmentacion de la calzada: 49791620
+Detección de carril: 13019750
+LiDAR: 13765790
+PPO: 5089695
+Segmentacion de la calzada: 52466490
+Detección de carril: 13027222
+LiDAR: 21607682
+PPO: 1078363
+Segmentacion de la calzada: 49967466
+Detección de carril: 13209418
+LiDAR: 13572928
+PPO: 3490615
+Segmentacion de la calzada: 50502397
+Detección de carril: 12849733
+LiDAR: 17437549
+PPO: 2342757
+Segmentacion de la calzada: 53041260
+Detección de carril: 12953972
+LiDAR: 19986018
+PPO: 1269402
+Segmentacion de la calzada: 53776303
+Detección de carril: 12737564
+LiDAR: 12571813
+PPO: 2129424
+Segmentacion de la calzada: 53204166
+Detección de carril: 13973365
+LiDAR: 13085090
+PPO: 1653142
+Segmentacion de la calzada: 52923582
+Detección de carril: 12898638
+LiDAR: 12281253
+PPO: 1099594
+Segmentacion de la calzada: 51414487
+Detección de carril: 13134224
+LiDAR: 14243564
+PPO: 1073586
+Segmentacion de la calzada: 51672447
+Detección de carril: 12913640
+LiDAR: 14105584
+PPO: 1277884
+Segmentacion de la calzada: 53765917
+Detección de carril: 13559908
+LiDAR: 15234754
+PPO: 2997317
+Segmentacion de la calzada: 52208789
+Detección de carril: 12726647
+LiDAR: 18779270
+PPO: 1065743
+Segmentacion de la calzada: 53263867
+Detección de carril: 12873370
+LiDAR: 13943039
+PPO: 981275
+Segmentacion de la calzada: 49753953
+Detección de carril: 12787168
+LiDAR: 12751715
+PPO: 921165
+Segmentacion de la calzada: 51107693
+Detección de carril: 12297548
+LiDAR: 15480356
+PPO: 1776880
+Segmentacion de la calzada: 50962403
+Detección de carril: 12864215
+LiDAR: 22145707
+PPO: 1018041
+Segmentacion de la calzada: 49765491
+Detección de carril: 13224290
+LiDAR: 12960310
+PPO: 1808398
+Segmentacion de la calzada: 51046230
+Detección de carril: 13139432
+LiDAR: 20793179
+PPO: 993164
+Segmentacion de la calzada: 50702930
+Detección de carril: 12875282
+LiDAR: 13432856
+PPO: 1965216
+Segmentacion de la calzada: 49486539
+Detección de carril: 12814000
+LiDAR: 14085634
+PPO: 1462233
+Segmentacion de la calzada: 50285758
+Detección de carril: 12768580
+LiDAR: 11962971
+PPO: 912522
+Segmentacion de la calzada: 49882338
+Detección de carril: 12709001
+LiDAR: 14337546
+PPO: 2484522
+Segmentacion de la calzada: 50934861
+Detección de carril: 12925558
+LiDAR: 21283621
+PPO: 1032313
+Segmentacion de la calzada: 49584637
+Detección de carril: 12918497
+LiDAR: 13908276
+PPO: 2441987
+Segmentacion de la calzada: 52185114
+Detección de carril: 12943576
+LiDAR: 13035144
+PPO: 1819093
+Segmentacion de la calzada: 52345647
+Detección de carril: 13081425
+LiDAR: 12711344
+PPO: 1152805
+Segmentacion de la calzada: 51477773
+Detección de carril: 13252212
+LiDAR: 13598146
+PPO: 5655422
+Segmentacion de la calzada: 52102038
+Detección de carril: 13499738
+LiDAR: 24381091
+PPO: 4559363
+Segmentacion de la calzada: 52001667
+Detección de carril: 12798085
+LiDAR: 24912144
+PPO: 1824513
+Segmentacion de la calzada: 52828358
+Detección de carril: 12825827
+LiDAR: 12112788
+PPO: 2418502
+Segmentacion de la calzada: 52149170
+Detección de carril: 13432806
+LiDAR: 13210139
+PPO: 4954330
+Segmentacion de la calzada: 53922634
+Detección de carril: 13473959
+LiDAR: 11930893
+PPO: 1067967
+Segmentacion de la calzada: 52637679
+Detección de carril: 13121725
+LiDAR: 12475757
+PPO: 2178448
+Segmentacion de la calzada: 52945716
+Detección de carril: 13333736
+LiDAR: 13778810
+PPO: 989227
+Segmentacion de la calzada: 50043511
+Detección de carril: 12933330
+LiDAR: 12937406
+PPO: 4514966
+Segmentacion de la calzada: 54164260
+Detección de carril: 12441766
+LiDAR: 12658534
+PPO: 2639816
+Segmentacion de la calzada: 52905896
+Detección de carril: 12677162
+LiDAR: 15724606
+PPO: 1329362
+Segmentacion de la calzada: 52093114
+Detección de carril: 13400627
+LiDAR: 14231285
+PPO: 1520381
+Segmentacion de la calzada: 54555663
+Detección de carril: 13109757
+LiDAR: 30383388
+PPO: 2209455
+Segmentacion de la calzada: 52123541
+Detección de carril: 13013962
+LiDAR: 21547110
+PPO: 1303253
+Segmentacion de la calzada: 52962131
+Detección de carril: 13232673
+LiDAR: 14184875
+PPO: 1416685
+Segmentacion de la calzada: 52227778
+Detección de carril: 13944160
+LiDAR: 13970971
+PPO: 3533770
+Segmentacion de la calzada: 51184689
+Detección de carril: 13325934
+LiDAR: 17883775
+PPO: 2331860
+Segmentacion de la calzada: 52663178
+Detección de carril: 13178451
+LiDAR: 21423824
+PPO: 1209551
+Segmentacion de la calzada: 52608926
+Detección de carril: 13017928
+LiDAR: 13853283
+PPO: 1187057
+Segmentacion de la calzada: 52624339
+Detección de carril: 12857555
+LiDAR: 14956694
+PPO: 1971756
+Segmentacion de la calzada: 57040965
+Detección de carril: 12772747
+LiDAR: 14284055
+PPO: 1735487
+Segmentacion de la calzada: 52954730
+Detección de carril: 13651918
+LiDAR: 14167929
+PPO: 997340
+Segmentacion de la calzada: 50134439
+Detección de carril: 12927522
+LiDAR: 15512755
+PPO: 5005107
+Segmentacion de la calzada: 52918975
+Detección de carril: 13498896
+LiDAR: 24683779
+PPO: 1204703
+Segmentacion de la calzada: 52045453
+Detección de carril: 13232683
+LiDAR: 11968500
+PPO: 1002408
+Segmentacion de la calzada: 50134770
+Detección de carril: 12905588
+LiDAR: 14457768
+PPO: 2513014
+Segmentacion de la calzada: 51446696
+Detección de carril: 13109887
+LiDAR: 13029485
+PPO: 1341881
+Segmentacion de la calzada: 52624840
+Detección de carril: 13106112
+LiDAR: 13220605
+PPO: 1419799
+Segmentacion de la calzada: 51686509
+Detección de carril: 13097569
+LiDAR: 12767789
+PPO: 1055498
+Segmentacion de la calzada: 49664458
+Detección de carril: 12959180
+LiDAR: 12277167
+PPO: 3286154
+Segmentacion de la calzada: 53537772
+Detección de carril: 12775131
+LiDAR: 11428001
+PPO: 1203502
+Segmentacion de la calzada: 52594474
+Detección de carril: 12925298
+LiDAR: 11860436
+PPO: 3955218
+Segmentacion de la calzada: 53756843
+Detección de carril: 14472630
+LiDAR: 12658774
+PPO: 1343684
+Segmentacion de la calzada: 52448272
+Detección de carril: 13674462
+LiDAR: 12612194
+PPO: 5153072
+Segmentacion de la calzada: 53324990
+Detección de carril: 13203839
+LiDAR: 12525172
+PPO: 2092658
+Segmentacion de la calzada: 53176375
+Detección de carril: 13057799
+LiDAR: 11915869
+PPO: 1076770
+Segmentacion de la calzada: 51635131
+Detección de carril: 13033371
+LiDAR: 13558346
+PPO: 1121968
+Segmentacion de la calzada: 53052428
+Detección de carril: 13448581
+LiDAR: 15494067
+PPO: 1543417
+Segmentacion de la calzada: 51554359
+Detección de carril: 12945518
+LiDAR: 13076927
+PPO: 1671461
+Segmentacion de la calzada: 50420944
+Detección de carril: 12793709
+LiDAR: 12410228
+PPO: 1150742
+Segmentacion de la calzada: 50610931
+Detección de carril: 13163509
+LiDAR: 13794684
+PPO: 2111887
+Segmentacion de la calzada: 50798816
+Detección de carril: 14061028
+LiDAR: 13190409
+PPO: 1520412
+Segmentacion de la calzada: 52252887
+Detección de carril: 12752667
+LiDAR: 12207872
+PPO: 1129350
+Segmentacion de la calzada: 49126534
+Detección de carril: 13565858
+LiDAR: 12261242
+PPO: 1096570
+Segmentacion de la calzada: 56857558
+Detección de carril: 14052093
+LiDAR: 23132471
+PPO: 1702657
+Segmentacion de la calzada: 55046506
+Detección de carril: 12956215
+LiDAR: 26387479
+PPO: 1273668
+Segmentacion de la calzada: 51595682
+Detección de carril: 13121175
+LiDAR: 23086681
+PPO: 1140006
+Segmentacion de la calzada: 52953237
+Detección de carril: 12941542
+LiDAR: 24679042
+PPO: 2807941
+Segmentacion de la calzada: 52284685
+Detección de carril: 13174064
+LiDAR: 12430869
+PPO: 1380139
+Segmentacion de la calzada: 51344732
+Detección de carril: 13250741
+LiDAR: 14522977
+PPO: 2086349
+Segmentacion de la calzada: 51547118
+Detección de carril: 13018348
+LiDAR: 30970507
+PPO: 1258996
+Segmentacion de la calzada: 49605098
+Detección de carril: 12908662
+LiDAR: 23891841
+PPO: 1119345
+Segmentacion de la calzada: 53234333
+Detección de carril: 13113192
+LiDAR: 16688685
+PPO: 1060095
+Segmentacion de la calzada: 49060224
+Detección de carril: 12847520
+LiDAR: 13440868
+PPO: 3267957
+Segmentacion de la calzada: 49869137
+Detección de carril: 12922804
+LiDAR: 21995209
+PPO: 1033725
+Segmentacion de la calzada: 49878552
+Detección de carril: 13214586
+LiDAR: 13244251
+PPO: 1092043
+Segmentacion de la calzada: 50989814
+Detección de carril: 12958478
+LiDAR: 12945449
+PPO: 1256252
+Segmentacion de la calzada: 47917834
+Detección de carril: 12926409
+LiDAR: 13217290
+PPO: 1057601
+Segmentacion de la calzada: 50640906
+Detección de carril: 13012841
+LiDAR: 12723152
+PPO: 4556639
+Segmentacion de la calzada: 51184920
+Detección de carril: 12813318
+LiDAR: 20752047
+PPO: 948436
+Segmentacion de la calzada: 50249634
+Detección de carril: 12736932
+LiDAR: 12672316
+PPO: 4902101
+Segmentacion de la calzada: 52737841
+Detección de carril: 12965629
+LiDAR: 22512392
+PPO: 1079404
+Segmentacion de la calzada: 51269328
+Detección de carril: 12800069
+LiDAR: 13010026
+PPO: 2284348
+Segmentacion de la calzada: 52568574
+Detección de carril: 12763393
+LiDAR: 13182737
+PPO: 1784942
+Segmentacion de la calzada: 51675733
+Detección de carril: 13680431
+LiDAR: 15575040
+PPO: 1141068
+Segmentacion de la calzada: 52359197
+Detección de carril: 13112021
+LiDAR: 13956278
+PPO: 2417079
+Segmentacion de la calzada: 52494874
+Detección de carril: 12825326
+LiDAR: 12770504
+PPO: 977199
+Segmentacion de la calzada: 51307055
+Detección de carril: 13158060
+LiDAR: 14203784
+PPO: 1443805
+Segmentacion de la calzada: 51987335
+Detección de carril: 13260706
+LiDAR: 13711227
+PPO: 1610589
+Segmentacion de la calzada: 52714396
+Detección de carril: 13061243
+LiDAR: 13780533
+PPO: 1057581
+Segmentacion de la calzada: 51777728
+Detección de carril: 13267827
+LiDAR: 13529042
+PPO: 1092965
+Segmentacion de la calzada: 50684973
+Detección de carril: 13913374
+LiDAR: 30737915
+PPO: 1672011
+Segmentacion de la calzada: 52185935
+Detección de carril: 12952258
+LiDAR: 24447562
+PPO: 4513883
+Segmentacion de la calzada: 55787378
+Detección de carril: 14077211
+LiDAR: 24426209
+PPO: 2494857
+Segmentacion de la calzada: 52871693
+Detección de carril: 12644533
+LiDAR: 27157805
+PPO: 1307880
+Segmentacion de la calzada: 52520993
+Detección de carril: 12978368
+LiDAR: 24614585
+PPO: 5104999
+Segmentacion de la calzada: 51031678
+Detección de carril: 13124760
+LiDAR: 18176147
+PPO: 1018351
+Segmentacion de la calzada: 50623600
+Detección de carril: 13783447
+LiDAR: 25598605
+PPO: 1297734
+Segmentacion de la calzada: 54209409
+Detección de carril: 12881202
+LiDAR: 14615917
+PPO: 1341862
+Segmentacion de la calzada: 52168740
+Detección de carril: 13177339
+LiDAR: 14679484
+PPO: 1093805
+Segmentacion de la calzada: 50599533
+Detección de carril: 13543734
+LiDAR: 16280367
+PPO: 1050551
+Segmentacion de la calzada: 52144513
+Detección de carril: 13022415
+LiDAR: 15133732
+PPO: 1441693
+Segmentacion de la calzada: 52514112
+Detección de carril: 12700948
+LiDAR: 15318351
+PPO: 2174862
+Segmentacion de la calzada: 55570459
+Detección de carril: 13533368
+LiDAR: 33796325
+PPO: 2494527
+Segmentacion de la calzada: 53234633
+Detección de carril: 13040383
+LiDAR: 15650553
+PPO: 2249857
+Segmentacion de la calzada: 54211762
+Detección de carril: 12922604
+LiDAR: 14353260
+PPO: 1118273
+Segmentacion de la calzada: 51504323
+Detección de carril: 13915017
+LiDAR: 13957611
+PPO: 3030418
+Segmentacion de la calzada: 51896707
+Detección de carril: 12948933
+LiDAR: 23812540
+PPO: 976408
+Segmentacion de la calzada: 51927704
+Detección de carril: 12933000
+LiDAR: 16056558
+PPO: 2630392
+Segmentacion de la calzada: 51884189
+Detección de carril: 12695330
+LiDAR: 24794657
+PPO: 1189341
+Segmentacion de la calzada: 53207422
+Detección de carril: 12755490
+LiDAR: 25432553
+PPO: 2288064
+Segmentacion de la calzada: 53395707
+Detección de carril: 13350993
+LiDAR: 14583849
+PPO: 997029
+Segmentacion de la calzada: 51239413
+Detección de carril: 12901662
+LiDAR: 18726039
+PPO: 1774947
+Segmentacion de la calzada: 51823877
+Detección de carril: 12850504
+LiDAR: 27251937
+PPO: 2239321
+Segmentacion de la calzada: 51530574
+Detección de carril: 13032680
+LiDAR: 17223285
+PPO: 1763149
+Segmentacion de la calzada: 52053525
+Detección de carril: 12868061
+LiDAR: 24221229
+PPO: 955767
+Segmentacion de la calzada: 52658531
+Detección de carril: 13020352
+LiDAR: 14118444
+PPO: 1258255
+Segmentacion de la calzada: 53395626
+Detección de carril: 12772015
+LiDAR: 13590355
+PPO: 1657019
+Segmentacion de la calzada: 53347614
+Detección de carril: 13669505
+LiDAR: 14052876
+PPO: 922657
+Segmentacion de la calzada: 52100115
+Detección de carril: 13157950
+LiDAR: 13000281
+PPO: 1001917
+Segmentacion de la calzada: 51199492
+Detección de carril: 12657612
+LiDAR: 12296676
+PPO: 1949842
+Segmentacion de la calzada: 53285450
+Detección de carril: 12583380
+LiDAR: 13238002
+PPO: 1087777
+Segmentacion de la calzada: 51425114
+Detección de carril: 13534830
+LiDAR: 14278937
+PPO: 2009502
+Segmentacion de la calzada: 52109520
+Detección de carril: 13677097
+LiDAR: 26681454
+PPO: 4777723
+Segmentacion de la calzada: 51754612
+Detección de carril: 13881636
+LiDAR: 22378479
+PPO: 3132353
+Segmentacion de la calzada: 49079142
+Detección de carril: 13647061
+LiDAR: 20439904
+PPO: 1228980
+Segmentacion de la calzada: 52871193
+Detección de carril: 12733308
+LiDAR: 29752202
+PPO: 2373884
+Segmentacion de la calzada: 52937414
+Detección de carril: 13794744
+LiDAR: 29033284
+PPO: 1741947
+Segmentacion de la calzada: 54058791
+Detección de carril: 12903485
+LiDAR: 24572040
+PPO: 1040526
+Segmentacion de la calzada: 51259383
+Detección de carril: 12986791
+LiDAR: 13806673
+PPO: 1314980
+Segmentacion de la calzada: 51297140
+Detección de carril: 12806137
+LiDAR: 31060383
+PPO: 2353593
+Segmentacion de la calzada: 53726258
+Detección de carril: 12938037
+LiDAR: 27195472
+PPO: 5120963
+Segmentacion de la calzada: 51671757
+Detección de carril: 13055104
+LiDAR: 25162985
+PPO: 2708430
+Segmentacion de la calzada: 51455930
+Detección de carril: 12810154
+LiDAR: 28052169
+PPO: 1467852
+Segmentacion de la calzada: 51791609
+Detección de carril: 12751395
+LiDAR: 25647989
+PPO: 1019764
+Segmentacion de la calzada: 50998788
+Detección de carril: 13112481
+LiDAR: 15381416
+PPO: 5192812
+Segmentacion de la calzada: 52415683
+Detección de carril: 12843114
+LiDAR: 25032708
+PPO: 937509
+Segmentacion de la calzada: 52221940
+Detección de carril: 12514106
+LiDAR: 14848930
+PPO: 1458758
+Segmentacion de la calzada: 53203406
+Detección de carril: 12809162
+LiDAR: 14086937
+PPO: 2849063
+Segmentacion de la calzada: 53676782
+Detección de carril: 12712706
+LiDAR: 24587343
+PPO: 940304
+Segmentacion de la calzada: 53418142
+Detección de carril: 13005559
+LiDAR: 14416986
+PPO: 1179406
+Segmentacion de la calzada: 54181808
+Detección de carril: 13010287
+LiDAR: 31318254
+PPO: 1491078
+Segmentacion de la calzada: 54339956
+Detección de carril: 13305714
+LiDAR: 31423703
+PPO: 1089680
+Segmentacion de la calzada: 53658335
+Detección de carril: 12986370
+LiDAR: 14963353
+PPO: 1366369
+Segmentacion de la calzada: 51150248
+Detección de carril: 13234626
+LiDAR: 14977585
+PPO: 1096270
+Segmentacion de la calzada: 50657952
+Detección de carril: 13026011
+LiDAR: 16442332
+PPO: 986404
+Segmentacion de la calzada: 53115713
+Detección de carril: 13075115
+LiDAR: 29888660
+PPO: 2711996
+Segmentacion de la calzada: 53907042
+Detección de carril: 12956435
+LiDAR: 29598320
+PPO: 1413069
+Segmentacion de la calzada: 54505357
+Detección de carril: 13062916
+LiDAR: 29335251
+PPO: 4271647
+Segmentacion de la calzada: 53397850
+Detección de carril: 13338393
+LiDAR: 32596639
+PPO: 1111423
+Segmentacion de la calzada: 50639815
+Detección de carril: 12933020
+LiDAR: 18593960
+PPO: 1398868
+Segmentacion de la calzada: 51908836
+Detección de carril: 13061244
+LiDAR: 33947514
+PPO: 3715996
+Segmentacion de la calzada: 53103735
+Detección de carril: 13079881
+LiDAR: 33182505
+PPO: 3114155
+Segmentacion de la calzada: 53105357
+Detección de carril: 13332455
+LiDAR: 32897825
+PPO: 1134547
+Segmentacion de la calzada: 53680218
+Detección de carril: 13060783
+LiDAR: 27180760
+PPO: 2195103
+Segmentacion de la calzada: 54294598
+Detección de carril: 13031118
+LiDAR: 16800374
+PPO: 4134329
+Segmentacion de la calzada: 52677249
+Detección de carril: 13064930
+LiDAR: 27533583
+PPO: 2035382
+Segmentacion de la calzada: 52986948
+Detección de carril: 13773162
+LiDAR: 26200676
+PPO: 1424487
+Segmentacion de la calzada: 55414724
+Detección de carril: 13441199
+LiDAR: 17436798
+PPO: 1056219
+Segmentacion de la calzada: 53628399
+Detección de carril: 13096027
+LiDAR: 35852658
+PPO: 1072153
+Segmentacion de la calzada: 53058566
+Detección de carril: 12726897
+LiDAR: 15907202
+PPO: 1092744
+Segmentacion de la calzada: 57154627
+Detección de carril: 12795191
+LiDAR: 15394265
+PPO: 961515
+Segmentacion de la calzada: 53179200
+Detección de carril: 13083668
+LiDAR: 19354671
+PPO: 1040025
+Segmentacion de la calzada: 53879120
+Detección de carril: 13017387
+LiDAR: 18193323
+PPO: 1071552
+Segmentacion de la calzada: 54012030
+Detección de carril: 12989715
+LiDAR: 17570991
+PPO: 1371387
+Segmentacion de la calzada: 54946104
+Detección de carril: 12823744
+LiDAR: 28989508
+PPO: 2287042
+Segmentacion de la calzada: 55066567
+Detección de carril: 13089747
+LiDAR: 34195139
+PPO: 1087066
+Segmentacion de la calzada: 55279098
+Detección de carril: 12935183
+LiDAR: 19675958
+PPO: 3842157
+Segmentacion de la calzada: 55972598
+Detección de carril: 12950456
+LiDAR: 29532220
+PPO: 2866780
+Segmentacion de la calzada: 56821263
+Detección de carril: 12959540
+LiDAR: 17018365
+PPO: 1015438
+Segmentacion de la calzada: 54095988
+Detección de carril: 15090737
+LiDAR: 19304566
+PPO: 2830215
+Segmentacion de la calzada: 57757050
+Detección de carril: 13726221
+LiDAR: 17257666
+PPO: 2421216
+Segmentacion de la calzada: 54896519
+Detección de carril: 13107784
+LiDAR: 22862572
+PPO: 2950036
+Segmentacion de la calzada: 56584705
+Detección de carril: 13172853
+LiDAR: 23934646
+PPO: 1954439
+Segmentacion de la calzada: 55805716
+Detección de carril: 13044378
+LiDAR: 21650988
+PPO: 996248
+Segmentacion de la calzada: 59819772
+Detección de carril: 12797585
+LiDAR: 24739283
+PPO: 2168423
+Segmentacion de la calzada: 57155750
+Detección de carril: 12804555
+LiDAR: 14646003
+PPO: 1294210
+Segmentacion de la calzada: 57966236
+Detección de carril: 12883014
+LiDAR: 16119493
+PPO: 2190366
+Segmentacion de la calzada: 59481651
+Detección de carril: 12993461
+LiDAR: 16603567
+PPO: 1351757
+Segmentacion de la calzada: 58092227
+Detección de carril: 13145050
+LiDAR: 17846488
+PPO: 1058472
+Segmentacion de la calzada: 62018712
+Detección de carril: 13291152
+LiDAR: 15619576
+PPO: 1266958
+Segmentacion de la calzada: 62765262
+Detección de carril: 12609480
+LiDAR: 17678825
+PPO: 1387260
+Segmentacion de la calzada: 60999970
+Detección de carril: 13131841
+LiDAR: 15427506
+PPO: 1122840
+Segmentacion de la calzada: 62159966
+Detección de carril: 12987362
+LiDAR: 15833170
+PPO: 1111363
+Segmentacion de la calzada: 63473394
+Detección de carril: 13135355
+LiDAR: 16456624
+PPO: 1833286
+Segmentacion de la calzada: 63733187
+Detección de carril: 13116908
+LiDAR: 17443408
+PPO: 1117792
+Segmentacion de la calzada: 62681786
+Detección de carril: 12754059
+LiDAR: 16023589
+PPO: 1103070
+Segmentacion de la calzada: 64022545
+Detección de carril: 13112962
+LiDAR: 14961971
+PPO: 1572340
+Segmentacion de la calzada: 63327313
+Detección de carril: 13198031
+LiDAR: 16776728
+PPO: 2308595
+Segmentacion de la calzada: 64594502
+Detección de carril: 13081775
+LiDAR: 16762217
+PPO: 1142430
+Segmentacion de la calzada: 62397235
+Detección de carril: 12978468
+LiDAR: 15860081
+PPO: 1574103
+Segmentacion de la calzada: 62249130
+Detección de carril: 12861441
+LiDAR: 15492695
+PPO: 1187087
+Segmentacion de la calzada: 62324645
+Detección de carril: 13102016
+LiDAR: 16171823
+PPO: 2514507
+Segmentacion de la calzada: 62646422
+Detección de carril: 12956785
+LiDAR: 15299162
+PPO: 1352717
+Segmentacion de la calzada: 70065885
+Detección de carril: 12799377
+LiDAR: 15744255
+PPO: 2936676
+Segmentacion de la calzada: 63725145
+Detección de carril: 12901321
+LiDAR: 18742405
+PPO: 1335942
+Segmentacion de la calzada: 62442704
+Detección de carril: 12891566
+LiDAR: 17671624
+PPO: 2813680
+Segmentacion de la calzada: 62748296
+Detección de carril: 13203359
+LiDAR: 20968665
+PPO: 1077181
+Segmentacion de la calzada: 61529141
+Detección de carril: 12859718
+LiDAR: 15430230
+PPO: 1691030
+Segmentacion de la calzada: 62585470
+Detección de carril: 12990687
+LiDAR: 15634690
+PPO: 2460114
+Segmentacion de la calzada: 63413724
+Detección de carril: 12952369
+LiDAR: 16721745
+PPO: 1094477
+Segmentacion de la calzada: 63233901
+Detección de carril: 12794320
+LiDAR: 22055170
+PPO: 1109760
+Segmentacion de la calzada: 61005258
+Detección de carril: 13193203
+LiDAR: 17848080
+PPO: 2109003
+Segmentacion de la calzada: 64034984
+Detección de carril: 14326840
+LiDAR: 34874528
+PPO: 2461376
+Segmentacion de la calzada: 56147053
+Detección de carril: 12737064
+LiDAR: 16301058
+PPO: 1050019
+Segmentacion de la calzada: 53029182
+Detección de carril: 13042155
+LiDAR: 17573865
+PPO: 2155013
+Segmentacion de la calzada: 56409350
+Detección de carril: 13112912
+LiDAR: 28851899
+PPO: 1223012
+Segmentacion de la calzada: 53351971
+Detección de carril: 12850255
+LiDAR: 30337329
+PPO: 4761118
+Segmentacion de la calzada: 51464123
+Detección de carril: 12991698
+LiDAR: 31184822
+PPO: 1069960
+Segmentacion de la calzada: 52175140
+Detección de carril: 12546174
+LiDAR: 20449399
+PPO: 2654909
+Segmentacion de la calzada: 51478004
+Detección de carril: 13664157
+LiDAR: 33589252
+PPO: 2493225
+Segmentacion de la calzada: 51996980
+Detección de carril: 12956876
+LiDAR: 27893639
+PPO: 1203442
+Segmentacion de la calzada: 51210289
+Detección de carril: 15619266
+LiDAR: 32211596
+PPO: 1214899
+Segmentacion de la calzada: 52906597
+Detección de carril: 13042045
+LiDAR: 20658075
+PPO: 1962771
+Segmentacion de la calzada: 52672833
+Detección de carril: 12855292
+LiDAR: 30287894
+PPO: 2114121
+Segmentacion de la calzada: 53373593
+Detección de carril: 12559384
+LiDAR: 32064894
+PPO: 1733244
+Segmentacion de la calzada: 50751324
+Detección de carril: 12883275
+LiDAR: 28783005
+PPO: 958841
+Segmentacion de la calzada: 51612408
+Detección de carril: 12928442
+LiDAR: 21206445
+PPO: 2449238
+Segmentacion de la calzada: 52961880
+Detección de carril: 13073432
+LiDAR: 17100258
+PPO: 1035738
+Segmentacion de la calzada: 52694055
+Detección de carril: 12741059
+LiDAR: 24440702
+PPO: 1622156
+Segmentacion de la calzada: 53808682
+Detección de carril: 12750924
+LiDAR: 17935773
+PPO: 1053375
+Segmentacion de la calzada: 50366061
+Detección de carril: 12977127
+LiDAR: 17609670
+PPO: 1138784
+Segmentacion de la calzada: 50948682
+Detección de carril: 13522793
+LiDAR: 27025285
+PPO: 4910234
+Segmentacion de la calzada: 50633976
+Detección de carril: 12846148
+LiDAR: 27478230
+PPO: 1221148
+Segmentacion de la calzada: 50620195
+Detección de carril: 12736332
+LiDAR: 17617221
+PPO: 4428685
+Segmentacion de la calzada: 52535766
+Detección de carril: 12579865
+LiDAR: 30063614
+PPO: 1056800
+Segmentacion de la calzada: 51706771
+Detección de carril: 12715360
+LiDAR: 28868344
+PPO: 1547803
+Segmentacion de la calzada: 53609281
+Detección de carril: 12953852
+LiDAR: 14822861
+PPO: 1164323
+Segmentacion de la calzada: 52981681
+Detección de carril: 12856424
+LiDAR: 17224356
+PPO: 1092444
+Segmentacion de la calzada: 52000485
+Detección de carril: 13141395
+LiDAR: 35689221
