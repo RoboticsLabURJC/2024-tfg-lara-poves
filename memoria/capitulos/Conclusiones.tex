@@ -10,7 +10,7 @@ En esta sección se analizan los objetivos cumplidos y las competencias obtenida
 Los objetivos presentados en la sección \ref{sec:descripcion} se han alcanzado con éxito.
 
 \begin{enumerate}
-\item Se han obtenido varios modelos basados en \ac{DQN} y \ac{PPO} capaces de seguir el carril de forma precisa y a velocidades óptimas. 
+\item Se han obtenido varios modelos basados en \ac{DQN} y \ac{PPO} capaces de seguir el carril de forma precisa y a velocidades dentro de los márgenes legales permitidos. 
 \item Se ha conseguido un modelo basado en \ac{PPO} capaz de adaptarse a la velocidad del coche delantero basándose en las mediciones de la zona frontal del \ac{LiDAR}, manteniendo el seguimiento efectivo del carril.
 \item Se ha diseñado un modelo basado en \ac{PPO} capaz de realizar maniobras completas de adelantamiento, utilizando la información proporcionada por todos los elementos de percepción: detección de carril, obstáculo de alrededor y segmentación de la calzada.
 \item Se ha llevado a cabo un análisis y comparación de cada uno de los comportamientos de conducción autónomos obtenidos.
@@ -25,6 +25,7 @@ En la sección \ref{sec:requisitos} se propusieron los requisitos de este \ac{TF
 \item Se han empleado los algoritmos de \ac{PPO} y \ac{DQN} para la toma de decisiones, mientras que, para la percepción, se ha utilizado un modelo basado en \ac{DL} para la detección de carril y la red neuronal de segmentación EfficientVit semántica para comprender la calzada.
 \item Se ha obtenido un modelo capaz de seguir el carril de forma fluida, alcanzando velocidades entorno a los 72 km/h.
 \item El modelo de control de crucero adaptativo además de ajustar su velocidad a la del vehículo delantero, lograr también regular automáticamente la distancia de seguridad, aumentando la separación si la velocidad del vehículo aumenta. Además, se ha comprobado que respeta las distancias mínimas de seguridad marcadas por la \ac{DGT}.
+\item El modelo de adelantamiento ejecuta la maniobra de forma segura, verificando con la red neuronal EfficientVit la existencia de un carril a la izquierda al que desplazarse y utilizando el \ac{LiDAR} para asegurase de que está a más de 9 metros del otro vehículo antes de regresar al carril inicial.
 \end{enumerate}
 
 \section{Balance global y competencias adquiridas}
@@ -53,5 +54,6 @@ A pesar de que se han obtenido resultados eficientes y satisfactorios en el desa
 \item \textbf{Mejorar el adelantamiento (dependiendo un poco de lo que me dé tiempo a hacer).}
 \item Adaptar los diferentes comportamientos autónomos a escenarios menos controlados y condiciones adversas, climas menos favorables, circuitos más complejos o situaciones de tráfico más elaboradas.
 \item Fusionar los datos de todos los sensores para las diferentes habilidades de percepción, con el objetivo de obtener comportamientos más robustos del sistema autónomo. Si un sensor falla o proporciona mediciones con mucho ruido, se podrá contrastar la información entre los ellos para detectar y corregir posibles errores, mejorando la fiabilidad del sistema.
+\item Evaluar el modelo de adelantamiento en condiciones no favorables, como visibilidad reducida u obstáculos inesperados.
 \end{itemize}
 
