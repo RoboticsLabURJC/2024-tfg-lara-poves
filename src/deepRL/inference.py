@@ -60,9 +60,11 @@ def main(args):
 
     obs, info = env.reset()
 
+    t = time.time()
+
     try:
         while True:
-            t = time.time_ns()
+            #t = time.time_ns()
             action, _ = model.predict(obs, deterministic=True)
             if args.alg == 'DQN':
                 throttle, steer = env.action_to_control[action.item()]
@@ -102,6 +104,11 @@ def main(args):
                                  dist_right_back])        
 
             if terminated or truncated:
+                print("Finish route!")
+                break
+
+            if args.time and time.time() - t > 40:
+                print("Time exceed!")
                 break
     except KeyboardInterrupt:
         return
@@ -118,7 +125,7 @@ if __name__ == "__main__":
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + \
             "} --n <model_number> [--port <port_number>] [--num_cir <num_cir>] [--port_tm <port_tm]"
-            " [--lane_network <lane_network>] [--target_vel <target_vel>] [--scene <scene>]"
+            " [--lane_network <lane_network>] [--target_vel <target_vel>] [--scene <scene>] [--time <time>]"
     )
     parser.add_argument(
         '--env', 
@@ -183,6 +190,14 @@ if __name__ == "__main__":
         default=2,
         choices=[0, 1, 2],
         help='Types of model you want to test: 0 = lane, 1 = obstacle, 2 = passing. By default 2.'
+    )
+    parser.add_argument(
+        '--time', 
+        type=int, 
+        required=False, 
+        default=0,
+        choices=[0, 1],
+        help='Execute only 30 s'
     )
 
     main(parser.parse_args())

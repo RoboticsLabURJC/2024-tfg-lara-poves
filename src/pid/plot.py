@@ -35,6 +35,7 @@ def main(args):
             'color': 'blue',
             'bin_width': 0.5,
             'xlim': (0, 25),
+            'ylim': (0, 250),
             'index': 0
         },
         'deviation': {
@@ -43,6 +44,7 @@ def main(args):
             'color': 'red',
             'bin_width': 2,
             'xlim': (-50, 50),  # Fijamos el rango de la desviación
+            'ylim': (0, 1000),
             'index': 1
         }
     }
@@ -59,6 +61,13 @@ def main(args):
             ax.set_xlabel(cfg["xlabel"], fontsize=16, fontweight='bold')
             ax.set_ylabel('Frecuencia', fontsize=16, fontweight='bold')
             ax.set_xlim(cfg["xlim"])  # Aplicar límites del eje X
+            ax.set_ylim(cfg["ylim"])
+            ax.grid(axis='y', linestyle='--', alpha=0.7, zorder=0)  # Grid horizontal
+
+            # Calcular la desviación estándar para 'deviation'
+            if key == 'deviation':
+                std_dev = np.std(values)
+                print(f"Desviación estándar de la desviación del carril ({key}): {std_dev:.2f} píxeles")
 
     plt.tight_layout()
     plt.show()

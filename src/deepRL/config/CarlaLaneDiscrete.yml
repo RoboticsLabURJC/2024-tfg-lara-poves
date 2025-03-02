@@ -1,6 +1,6 @@
 DQN:
   learning_rate: 0.0005
-  buffer_size: 1_000_00
+  buffer_size: 1_000_000
   batch_size: 1024
   learning_starts: 0
   gamma: 0.85

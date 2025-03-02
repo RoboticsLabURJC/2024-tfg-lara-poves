@@ -54,8 +54,27 @@ def plot_data(data_csv:list[dict], key:str, sub_plot:int, title:str, num_rows:in
             else:
                 label='ep rew mean'
 
-            cumulative_avg = np.cumsum(data) / np.arange(1, len(data) + 1)
-            plt.plot(range(len(data)), cumulative_avg, label=label, linewidth=2.5, color='orange')
+            window = 100
+
+            # Calcular la convolución con el modo 'valid'
+            cumulative_avg_valid = np.convolve(data, np.ones(window)/window, mode='valid')
+
+            # Calcular el padding necesario para que la longitud sea igual a la de 'data'
+            pad_size = (window - 1) // 2  # Tamaño de relleno en ambos bordes (izquierdo y derecho)
+
+            # Rellenar los bordes para igualar la longitud de 'data'
+            cumulative_avg = np.pad(cumulative_avg_valid, (pad_size, pad_size), mode='edge')
+
+            x_values = np.arange(0, len(data), window)  # 0, 50, 100, 150, ...
+
+            # Asegurarse de que el último valor se incluya también
+            if len(cumulative_avg) % window != 0:
+                x_values = np.append(x_values, len(data)-1)
+                cumulative_avg_sampled = np.append(cumulative_avg[::window], cumulative_avg[-1])
+            else:
+                cumulative_avg_sampled = cumulative_avg[::window]  # Tomamos un punto cada 'window'
+
+            plt.plot(x_values, cumulative_avg_sampled, label=label, linewidth=2.5, color='orange')
             plt.legend()
 
     plt.ylabel(key)

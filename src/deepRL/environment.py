@@ -21,7 +21,7 @@ MAX_DEV_CHANGE = 120
 MAX_DIST_LASER = 19.5
 MIN_DIST_LASER = 4
 MAX_VEL = 60
-MAX_COUNTER_SEEN = 200
+MAX_COUNTER_SEEN = 300
 
 KEY_LASER = "laser"
 KEY_LASER_RIGHT_FRONT = "Distance right front"
@@ -1678,9 +1678,8 @@ class CarlaOvertaken(CarlaBase):
                 w_dev = 0.6
                 w_throttle = 0.2
                 w_steer = 0.0
-                w_laser = 0.15
-                w_seen = 0.05
-                print("counter seen:", self._counter_seen, "reward:", r_seen)
+                w_laser = 0.2
+                w_seen = 0.00
                 print("reward changing left, dev:", self._dev, "reward:", r_dev, "w:", w_dev, "dist", self._dist_laser)
             elif self._overtaken_in_progress and self._change_lane_left and not self._change_lane_right and self._return:
                 # Changing to right lane

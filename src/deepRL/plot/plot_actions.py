@@ -21,7 +21,6 @@ def histogram(data_csv:list[dict], key:str, subplot:int):
         data.append(value)
 
     plt.subplot(NUM_ROWS, NUM_COLUMNS, subplot)
-    plt.title(key)
     
     # Draw histogram
     extra = 0.05
@@ -32,13 +31,17 @@ def histogram(data_csv:list[dict], key:str, subplot:int):
         bins = np.linspace(0.0, 1.0, 11)
      
     counts, edges, _ = plt.hist(data, bins=bins, edgecolor='black', zorder=1)
+    '''
     if key != KEY_STEER:
         for count, edge in zip(counts, edges):
             plt.text(edge + extra, count, str(int(count)), ha='center', va='bottom')
+    '''
 
-    plt.xticks(bins, rotation=90)
-    plt.ylabel('Frecuency')
-    plt.xlabel('Value')
+    plt.xticks(bins, rotation=90, fontsize=12)  
+    plt.yticks(fontsize=12) 
+    plt.ylabel('Frecuencia', fontsize=14)  
+    plt.xlabel(key, fontsize=14, labelpad=10)  
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
 
 def main(args):
     os.chdir(current_dir)

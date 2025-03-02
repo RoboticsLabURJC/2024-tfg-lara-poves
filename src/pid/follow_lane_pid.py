@@ -56,6 +56,8 @@ def main(args):
         writer_csv = csv.writer(csv_file)
         writer_csv.writerow(['velocity', 'deviation', 'throttle', 'steer'])
 
+    t_exec = time.time()
+
     try:
         while True:
             for event in pygame.event.get():
@@ -81,6 +83,10 @@ def main(args):
             #t = time.time_ns()
             control = pid.controll_vehicle(error_road)
             #print("PID:", time.time_ns() - t)
+
+            if time.time() - t_exec > 30:
+                print("Time exceed!")
+                break
 
             if args.record:
                 vel = ego_vehicle.get_velocity()
