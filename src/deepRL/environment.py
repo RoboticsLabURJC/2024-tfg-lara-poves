@@ -1207,7 +1207,7 @@ class CarlaOvertaken(CarlaBase):
                          num_cir=num_cir, config=config, passing=True, lane_network=lane_network,
                          back_lidar=True, seg=True, target_vel=target_vel)
         
-        self._max_vel = 15
+        self._max_vel = 20
 
         # Add velocity to observations
         new_space_vel = spaces.Box(
@@ -1352,6 +1352,8 @@ class CarlaOvertaken(CarlaBase):
         self._return = False
         self._middle = False
         self._per_over = False 
+        self._seen = False
+        self._counter_seen = 0 # Factor de tiempo en la recompensa
         return super().reset(seed)
 
     def _get_obs_env(self):
@@ -1441,8 +1443,17 @@ class CarlaOvertaken(CarlaBase):
                     if self._overtaken_in_progress != self._per_over:
                         if self._overtaken_in_progress:
                             print("\033[91mEMPIEZA EL ADELANTAMIENTO\033[0m")
+                            self._seen = True
                         else:
                             print("CORTO ADELANTAMIENTO")
+                            self._seen = False
+
+                # Cortar si tarda mucho
+                if self._seen:
+                    self._counter_seen += 1
+
+                    if self._change_lane_left:
+                        assert self._counter_seen <= MAX_COUNTER_SEEN, "Exceed time to return"    
 
                 # If can't' overtake, check if it's too close to the front vehicle
                 if not self._overtaken_in_progress and num_carriles == 1:# not self._camera.check_lane_left():
@@ -1648,6 +1659,8 @@ class CarlaOvertaken(CarlaBase):
         else:
             if "Distance" or "crashed" in error:
                 reward = -60
+            elif "time" in error:
+                reward = -20
             else:
                 reward = -40
 

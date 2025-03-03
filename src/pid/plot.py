@@ -35,7 +35,7 @@ def main(args):
             'color': 'blue',
             'bin_width': 0.5,
             'xlim': (0, 25),
-            'ylim': (0, 250),
+            'ylim': (0, 225),
             'index': 0
         },
         'deviation': {
@@ -44,7 +44,7 @@ def main(args):
             'color': 'red',
             'bin_width': 2,
             'xlim': (-50, 50),  # Fijamos el rango de la desviación
-            'ylim': (0, 1000),
+            'ylim': (0, 850),
             'index': 1
         }
     }

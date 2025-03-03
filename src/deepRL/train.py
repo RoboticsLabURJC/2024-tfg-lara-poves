@@ -110,7 +110,7 @@ def main(args):
         save_vecnormalize=True,
     )
 
-    model = alg_class.load(dir + 'model/CarlaOvertaken/' + args.alg + '-' + args.env + '_16', env=env, tensorboard_log=log_dir, **model_params)
+    model = alg_class.load(dir + 'model/CarlaOvertaken/' + args.alg + '-' + args.env + '_7', env=env, tensorboard_log=log_dir, **model_params)
 
     model.learn(total_timesteps=n_timesteps, log_interval=args.log_interval, tb_log_name=log_name,
                 progress_bar=True, callback=checkpoint_callback)
