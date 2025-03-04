@@ -1,7 +1,7 @@
 \chapter{Plataformas de desarrollo}
 \label{cap:capitulo3}
 
-En este capítulo se describen en detalle las tecnologías y herramientas empleadas durante el desarrollo de este \ac{TFG}, incluyendo el simulador, las herramientas de percepción, el editor, el lenguaje de programación y las librerías utilizadas. Además, se expone el hardware empleado para llevar a cabo los entrenamientos y pruebas de modelos.
+En este capítulo se describen en detalle las tecnologías y herramientas empleadas durante el desarrollo de este \ac{TFG}, incluyendo el simulador, las herramientas de percepción, el editor, el lenguaje de programación y las librerías utilizadas. Además, se expone el hardware empleado para llevar a cabo los entrenamientos y pruebas de los modelos.
 
 \section{Lenguajes de programación}
 \label{sec:programación}
@@ -87,7 +87,7 @@ if points:
 	plt.legend(handles=[red_patch, green_patch])  
 else:
 	plt.plot(range(len(data)), data, linewidth=1, label=key)
-	cumulative_avg = np.cumsum(data) / np.arange(1, len(data) + 1)
+	cumulative_avg = np.convolve(data, np.ones(window)/window, mode='valid')
 	plt.plot(range(len(data)), cumulative_avg, label=label, linewidth=2.5)
 	plt.legend()
 
@@ -101,7 +101,7 @@ plt.title(title)
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=12cm]{figs/Plataformas_Desarollo/plot.png}
+    \includegraphics[width=14cm]{figs/Diseño/passing/train.png}
   \end{center}
   \caption{Ejemplo de gráficas de datos de entrenamiento con Matplotlib.}
   \label{foto_plot}
@@ -110,7 +110,7 @@ plt.title(title)
 \subsubsection{Gymnasium}
 \label{sec:gymnasium}
 
-Gymnasium\footnote{\url{https://pypi.org/project/gymnasium/}} es una biblioteca de Python desarrollada por OpenAI\footnote{\url{https://openai.com//}} que proporciona herramientas para crear una amplia variedad de entornos, diseñados específicamente para aplicar y probar algoritmos de aprendizaje por refuerzo.
+Gymnasium\footnote{\url{https://pypi.org/project/gymnasium/}} es una biblioteca de Python, desarrollada por OpenAI\footnote{\url{https://openai.com//}}, que proporciona herramientas para crear una amplia variedad de entornos, diseñados específicamente para aplicar y probar algoritmos de aprendizaje por refuerzo.
 
 En nuestro proyecto de conducción autónoma, se ha utilizado la biblioteca Gymnasium, combinada con el simulador CARLA, para crear los entornos de entrenamiento y prueba de nuestros modelos. Para ello, es necesario definir una clase personalizada que herede de la clase base \textit{Env} proporcionada por Gymnasium. En esta clase configuramos las variables necesarias, como el espacio de observaciones, e implementamos los métodos fundamentales para el entrenamiento: \textit{step}, \textit{reset} y \textit{close}. En el fragmento de código \ref{cod:gym}, se muestra un ejemplo básico de implementación en Python.
 
@@ -146,7 +146,7 @@ class CarlaBase(gym.Env):
 \label{cod:gym}
 \end{code}
 
-El espacio de observaciones es una descripción formal que define el tipo, la estructura y los límites de los datos que el agente puede recibir del entorno en cada momento. Funciona como un marco que delimita la información accesible para el agente. En Gymnasium, este espacio se configura mediante clases predefinidas: \textit{Box}, \textit{Discrete} o \textit{Dict}, estableciendo el rango permitido y la estructura de los datos. Esta configuración debe ser compatible con la política del modelo de aprendizaje utilizado, ya que define la entrada del algoritmo de decisión del agente. En nuestro caso, como utilizaremos una política basada en diccionarios, crearemos un espacio de observaciones continuo mediante la clase \textit{Dict}, que combina múltiples espacios de observación en una estructura organizada.
+El espacio de observaciones es una descripción formal que define el tipo, la estructura y los límites de los datos que el agente puede recibir del entorno en cada momento. Funciona como un marco que delimita la información accesible para el agente. En Gymnasium este espacio se configura mediante clases predefinidas: \textit{Box}, \textit{Discrete} o \textit{Dict}. Esta configuración debe ser compatible con la política del modelo de aprendizaje utilizado, ya que define la entrada del algoritmo de decisión del agente. En nuestro caso, como utilizaremos una política basada en diccionarios, crearemos un espacio de observaciones continuo mediante la clase \textit{Dict}, que combina múltiples espacios de observación en una estructura organizada.
 
 \begin{code}[H]
 \begin{lstlisting}[language=Python]
@@ -178,7 +178,7 @@ self.observation_space = spaces.Dict(
 
 Stable-Baselines3\footnote{\url{https://stable-baselines3.readthedocs.io/en/master/}} es una librería de Python que proporciona implementaciones estables y fáciles de usar de algoritmos de aprendizaje por refuerzo basados en PyTorch\footnote{\url{https://pytorch.org/}}. Además, incluye compatibilidad con TensorBoard\footnote{\url{https://www.tensorflow.org/tensorboard?hl=es-419}}, el cual nos permite visualizar métricas del entrenamiento en tiempo real y analizar el rendimiento de los modelos. 
 
-De esta librería utilizaremos algunos algoritmos basados en \ac{DRL}. Es un enfoque en el que los agentes de aprendizaje por refuerzo utilizan redes neuronales para tomar decisiones. Esta combinación les permite adaptarse mejor a entornos complejos donde las reglas no son evidentes ni fácilmente definibles, como es el caso de la conducción autónoma. Dentro de los algoritmos de \ac{DRL} existen dos tipos claramente diferenciados:
+De esta librería utilizaremos algoritmos basados en \ac{DRL}. Es un enfoque en el que los agentes de aprendizaje por refuerzo utilizan redes neuronales para tomar decisiones. Esta combinación les permite adaptarse mejor a entornos complejos donde las reglas no son evidentes ni fácilmente definibles, como es el caso de la conducción autónoma. Dentro de los algoritmos de \ac{DRL} existen dos tipos claramente diferenciados:
 
 \begin{itemize}
 \item \textit{On-policy:} Son aquellos que actualizan el modelo solo con datos de la política actual, una vez que la política cambia, los datos anteriores se vuelven inservibles y se descartan.
@@ -187,21 +187,21 @@ De esta librería utilizaremos algunos algoritmos basados en \ac{DRL}. Es un enf
 
 En concreto, en este \ac{TFG} utilizaremos los algoritmos de \ac{DQN} y \ac{PPO}. \ac{DQN} es un algoritmo de \ac{DRL} que soportar un espacio de observaciones continuo, pero el espacio de acciones es discreto. Las acciones en un espacio discreto son predefinidas y limitadas, es decir, no existe una continuidad entre ellas, sino que están representadas por un número finito de opciones que el agente puede elegir en cada estado.
 
-\ac{DQN} es un algoritmo \textit{off-policy} porque incluye una \textit{replay memory}, lo cual consiste en crear una memoria de reproducción de experiencias que almacena las \textit{k} experiencias más recientes que el agente ha recopilado para así poder reutilizarlas. Si la memoria está llena, se descarta la experiencia más antigua para dar espacio a la más actual y, por lo tanto, más significativa. En cada paso de entrenamiento, se muestrea uno o más lotes de datos de forma aleatoria de la memoria para actualizar los parámetros de la red. El tamaño de la memoria debe ser lo suficientemente grande como para contener experiencias de diferentes episodios y políticas, lo que ayuda a estabilizar y mejorar el entrenamiento. Al actualizar en cada paso del entrenamiento la red neuronal, la minimización del error entre las predicciones de la red y los valores reales se vuelve complicada ya que no existe un objetivo fijo. Para abordar este problema se introduce una nueva red neural, \textit{target network}, diseñada para aportar estabilidad al proceso de entrenamiento. La nueva red es una réplica de la red principal, \textit{policy network}, pero en lugar de actualizarla en cada paso, la igualamos a la red original cada cierto número de pasos, manteniendo un objetivo de entrenamiento constante \cite{drl}.
+\ac{DQN} es un algoritmo \textit{off-policy} porque incluye una \textit{replay memory}, lo cual consiste en crear una memoria de reproducción de experiencias que almacena las \textit{k} experiencias más recientes que el agente ha recopilado para así poder reutilizarlas. Si la memoria está llena, se descarta la experiencia más antigua para dar espacio a la más actual y, por lo tanto, más significativa. En cada paso de entrenamiento, se muestrea uno o más lotes de datos de forma aleatoria de la memoria para actualizar los parámetros de la red. El tamaño de la memoria debe ser lo suficientemente grande como para contener experiencias de diferentes episodios y políticas, lo que ayuda a estabilizar y mejorar el entrenamiento. Al actualizar en cada paso del entrenamiento la red neuronal, la minimización del error entre las predicciones de la red y los valores reales se vuelve complicada ya que no existe un objetivo fijo. Para abordar este problema se introduce una nueva red neuronal, \textit{target network}, diseñada para aportar estabilidad al proceso de entrenamiento. La nueva red es una réplica de la red principal, \textit{policy network}, pero en lugar de actualizarla en cada paso, la igualamos a la red original cada cierto número de pasos, manteniendo un objetivo de entrenamiento constante \cite{drl}.
 
-En un algoritmo \textit{Actor-Critic} el agente consta de dos elementos que aprenden de manera conjunta, cada uno con su propia red neuronal: \textit{actor}, encargado de aprender la política óptima, y \textit{critic}, responsable de aprender la función de valor y proporcionar una señal de refuerzo a la política. El algoritmo \ac{A2C} se forma a partir de la unión del \textit{actor} y el \textit{critic} y es un algoritmo \textit{on-policy}. 
+En un algoritmo \textit{Actor-Critic} el agente consta de dos elementos que aprenden de manera conjunta, cada uno con su propia red neuronal: \textit{actor}, encargado de aprender la política óptima, y \textit{critic}, responsable de aprender la función de valor y proporcionar una señal de refuerzo a la política. El algoritmo \ac{A2C} se forma a partir de la unión del \textit{actor} y el \textit{critic}. 
 
-\ac{PPO} es un algoritmo \textit{on-policy} que puede considerarse como una extensión de \ac{A2C}, cuyo objetivo principal es evitar el deterioro del rendimiento. En los algoritmos basados en políticas, ajustar la tasa de aprendizaje puede ser una labor complicada. Un valor pequeño puede llevar a entrenamientos prolongados sin alcanzar la solución óptima, mientras que uno grande puede causar un colapso en el rendimiento. Con el objetivo de resolver esto, \ac{PPO} introduce un objetivo sustituto que asegura una mejora monótona del rendimiento, evitando cambios drásticos y arriesgados en la política que puedan afectar negativamente al despeño. Para lograrlo, \ac{PPO} mide cuánto ha cambiado la política después de cada actualización, garantizando que esta diferencia no crezca o disminuya demasiado dentro de un umbral controlado por un hiperparámetro (\textit{clip\_range}) \cite{drl}, asegurando así una mejora continua en el rendimiento. 
+\ac{PPO} es un algoritmo \textit{on-policy} que puede considerarse como una extensión de \ac{A2C}, cuyo objetivo principal es evitar el deterioro del rendimiento. En los algoritmos basados en políticas, ajustar la tasa de aprendizaje puede ser una labor complicada. Un valor pequeño puede llevar a entrenamientos prolongados sin alcanzar la solución óptima, mientras que uno grande puede causar un colapso en el rendimiento. Con el objetivo de resolver esto, \ac{PPO} introduce un objetivo sustituto que asegura una mejora monótona del rendimiento, evitando cambios drásticos y arriesgados en la política que puedan afectar negativamente al desempeño. Para lograrlo, \ac{PPO} mide cuánto ha cambiado la política después de cada actualización, garantizando que esta diferencia no crezca o disminuya demasiado dentro de un umbral controlado por el hiperparámetro \textit{clip\_range}, asegurando así una mejora continua en el rendimiento  \cite{drl}. 
 
 Dependiendo del escenario, puede ser necesario utilizar diferentes estructuras de datos para proporcionar las observaciones al modelo. Stable-Baselines3 ofrece tres tipos de políticas que permiten adaptar el modelo a distintas formas de entrega de los datos:
 
 \begin{itemize} 
-\item \textit{MlpPolicy:} Diseñada para trabajar con observaciones en forma de vectores, como en el entorno \textit{CartPole}\footnote{\url{https://gymnasium.farama.org/environments/classic_control/cart_pole/}}. Consiste en un carro que sostiene un poste cuyo objetivo es mantener dicho poste dentro de un cierto ángulo tanto tiempo como sea posible, moviéndose hacia la izquierda o hacia la derecha. 
+\item \textit{MlpPolicy:} Diseñada para trabajar con observaciones en forma de vectores, como en el entorno de \textit{CartPole}\footnote{\url{https://gymnasium.farama.org/environments/classic_control/cart_pole/}}, el cual consiste en un carro que sostiene un poste cuyo objetivo es mantener dicho poste dentro de un cierto ángulo tanto tiempo como sea posible, moviéndose hacia la izquierda o hacia la derecha. 
 \item \textit{CnnPolicy:} Diseñada para procesar observaciones en forma de imágenes, siendo ideal para aplicaciones como videojuegos.
 \item \textit{MultiInputPolicy:} Permite manejar observaciones más complejas organizadas en diccionarios. Esta política es adecuada si tenemos datos combinados. 
 \end{itemize}
 
-Para entrenar un modelo basado en un algoritmo de \ac{DRL} implementado en la librería Stable-Baselines3, debemos seguir los siguientes pasos: instanciar el entorno deseado, crear y configurar el modelo de aprendizaje, entrenarlo, cerrar el entorno y, por último, guardar el modelo.
+Para entrenar un modelo basado en un algoritmo \ac{DRL} implementado en la librería Stable-Baselines3, debemos seguir los siguientes pasos: instanciar el entorno deseado, crear y configurar el modelo de aprendizaje, entrenarlo, cerrar el entorno y, por último, guardar el modelo.
 \begin{code}[h] \begin{lstlisting}[language=Python] 
 from stable_baselines3.common.env_util import make_vec_env, PPO
 
@@ -218,12 +218,12 @@ env.close()
 model.save(model_name)  # Save the model
 model = PPO.load(model_file, env=env, **new_model_params)  # Load the model
 \end{lstlisting}
-\caption[Ejemplo de código con Stable-Baselines3]{Entrenamiento de un modelo \ac{PPO} con la biblioteca Stable-Baselines3.} 
+\caption[Ejemplo de código con Stable-Baselines3]{Entrenamiento de un modelo basado en \ac{PPO} con la biblioteca Stable-Baselines3.} 
 \label{cod:sb3} \end{code} 
 
-El flujo general del entrenamiento con Stable-Baselines3 sigue una serie de pasos bien definidos: creación del entorno, configuración del modelo y entrenamiento. En primer lugar, debemos establecer la clase del entorno y el número de instancias (\textit{n\_env}), que en este caso será sola una. A continuación, creamos el modelo indicando el entorno utilizado, la política, el número total de \textit{steps} que durará el entrenamiento y otros parámetros de entrenamiento que se deseen ajustar. Si no se establecen valores específicos, se utilizarán los predeterminados.
+El flujo de entrenamiento con Stable-Baselines3, en primer lugar, debemos establecer la clase del entorno y el número de instancias (\textit{n\_env}), que en este caso será sola una. A continuación, creamos el modelo indicando el entorno utilizado, la política, el número total de \textit{steps} que durará el entrenamiento y otros hiperparámetros de entrenamiento que se deseen ajustar. Si no se establecen valores específicos, se utilizarán los predeterminados.
 
-El entrenamiento del modelo se lleva a cabo mediante la función \textit{learn}. En primer lugar, ejecuta la función \textit{reset} definida en el entorno, posteriormente ejecuta el método \textit{step} hasta que se completa un episodio y se vuelve a llamar a \textit{reset}. Este proceso se repite hasta que finaliza el entrenamiento. Una vez completado, podemos guardar el modelo con la función \textit{save} y cargarlo para futuros reentrenamientos o pruebas con la función \textit{load}.
+El entrenamiento del modelo se lleva a cabo mediante la función \textit{learn}. En primer lugar, ejecuta la función \textit{reset} definida en el entorno, posteriormente ejecuta el método \textit{step} de forma continuada hasta que se completa un episodio y se vuelve a llamar a \textit{reset}. Este proceso se repite hasta que finaliza el entrenamiento. Una vez completado, podemos guardar el modelo con la función \textit{save} y cargarlo para futuros reentrenamientos o pruebas con la función \textit{load}.
 
 Los parámetros \textit{verbose} y \textit{progress\_bar} permiten configurar la visualización de los datos de entrenamiento. Los parámetros adicionales están relacionados con la ubicación de almacenamiento y la frecuencia con la que se recopilan los datos de entrenamiento para su posterior visualización con TensorBoard.
 
@@ -241,7 +241,7 @@ tensorboard --logdir=$DIR
   \begin{center}
     \includegraphics[width=7cm]{figs/Plataformas_Desarollo/TensorBoard.png}
   \end{center}
-  \caption{Visualización de datos en TensorBoard.}
+  \caption{Visualización de datos de entrenamiento en TensorBoard.}
   \label{tensorboard}
 \end{figure}
 
@@ -284,9 +284,9 @@ En este \ac{TFG}, se utiliza Visual Studio Code como el editor principal para el
 \section{Herramientas para la detección de carril}
 \label{sec:herramientas_carril}
 
-Para la detección de carril, se ha utilizado la herramienta \textit{carla\_lane\_detector} desarrollada por RoboticsLabURJC. Este recurso permite identificar con precisión las líneas que delimitan el carril dentro del simulador CARLA, proporcionando información crucial para la toma de decisiones del vehículo autónomo, permitiéndole ajustar su trayectoria en función de la información obtenida. Existen dos técnicas principales para llevar a cabo esta detección: una basada en \ac{DL} y otra en información de CARLA.
+Para la detección de carril, se ha utilizado la herramienta \textit{carla\_lane\_detector} desarrollada por RoboticsLabURJC. Este recurso permite identificar con precisión las líneas que delimitan el carril dentro del simulador CARLA, proporcionando información crucial para la toma de decisiones del vehículo autónomo, permitiéndole ajustar su trayectoria en función de la información obtenida. Existen dos técnicas principales para llevar a cabo esta detección: una basada en \ac{DL} y otra en información de CARLA (\textit{ground truth}).
 
-\subsection{Detección \ac{DL}}
+\subsection{Detección basada en \ac{DL}}
 \label{sec:carril_dl3}
 
 El modelo basado en \ac{DL} ha sido entrenado con imágenes tomadas del simulador CARLA y se ha implementado utilizando la librería PyTorch. Este modelo de segmentación está diseñado para identificar las líneas del carril en entornos simulados, aprendiendo patrones a partir de un conjunto amplio de datos y generando una máscara que indica la probabilidad de que cada píxel pertenezca a una de las líneas de carril. Sin embargo, este enfoque presenta algunas limitaciones, por ejemplo, si un vehículo está delante y oculta las líneas del carril, el modelo no es capaz de resolver esta situación, llevando a una detección del carril imprecisa o incluso nula.
@@ -299,10 +299,10 @@ El modelo basado en \ac{DL} ha sido entrenado con imágenes tomadas del simulado
   \label{dl_lane}
 \end{figure}
 
-\subsection{Detección ground truth}
+\subsection{Detección basada en \textit{ground truth}}
 \label{sec:gt}
 
-Por otro lado, la detección de carril basada en \textit{ground truth} aprovecha la ubicación del vehículo y la cámara dentro de CARLA para realizar la detección del carril. Gracias a la transformación de coordenadas entre el vehículo y la cámara, junto con la posición del vehículo, es posible obtener los límites del carril en 3D, visión global en CARLA. Además, disponemos de la matriz intrínseca K, que permite la conversión de coordenadas de 2D a 3D, utilizándola podemos proyectar a 2D los límites del carril. A diferencia de la solución basada en \ac{DL}, este enfoque no depende de la visibilidad directa de las líneas del carril, si hay elementos que obstruyen la visión, la detección sigue siendo precisa, ya que se basa en información global del entorno de CARLA y no en una imagen.
+Por otro lado, la detección de carril basada en \textit{ground truth} aprovecha la ubicación del vehículo y la cámara dentro de CARLA para realizar la detección del carril. Gracias a la transformación de coordenadas entre el vehículo y la cámara, junto con la posición del vehículo, es posible obtener los límites del carril en 3D (visión global en CARLA). Además, disponemos de la matriz intrínseca K, que permite la conversión de coordenadas de 2D a 3D, utilizándola podemos proyectar a 2D los límites del carril. A diferencia de la solución basada en \ac{DL}, este enfoque no depende de la visibilidad directa de las líneas del carril, si hay elementos que obstruyen la visión, la detección sigue siendo precisa, ya que se basa en información global del entorno de CARLA y no en una imagen.
 
 \begin{figure}[ht]
   \begin{center}
@@ -315,32 +315,32 @@ Por otro lado, la detección de carril basada en \textit{ground truth} aprovecha
 \section{EfficientVit}
 \label{sec:ef}
 
-EfficientViT es un innovador módulo dentro de la familia de \textit{Vision Transformers}\footnote{\url{https://arxiv.org/pdf/1706.03762}}, utilizado con éxito en tareas como segmentación semántica, superresolución de imágenes y modelos de segmentación generalizados. Su principal ventaja es la significativa reducción de latencias sin perder rendimiento, haciendo posible su uso en aplicaciones de tiempo real. A diferencia de los modelos tradicionales que dependen de mecanismos de atención computacionalmente costosos o convoluciones de gran tamaño, EfficientViT emplea una atención lineal multiescala\footnote{\textbf{Multiescala:} enfoque que procesa información en distintos niveles de detalle simultáneamente para mejorar la eficiencia y precisión} ligera \cite{efficientvit}.
+EfficientViT es un módulo dentro de la familia de \textit{Vision Transformers}\cite{vt}, utilizado con éxito en tareas como segmentación semántica, superresolución de imágenes y modelos de segmentación generalizados. Su principal ventaja es la significativa reducción de latencias sin perder rendimiento, haciendo posible su uso en aplicaciones de tiempo real. A diferencia de los modelos tradicionales que dependen de mecanismos de atención computacionalmente costosos o convoluciones de gran tamaño, EfficientViT emplea una atención lineal multiescala\footnote{\textbf{Multiescala:} enfoque que procesa información en distintos niveles de detalle simultáneamente para mejorar la eficiencia y precisión} ligera \cite{efficientvit}.
 
 La segmentación es el proceso de dividir una imagen en regiones significativas para identificar objetos, y se divide en dos tipos principales: segmentación semántica y segmentación de instancias. La segmentación semántica asigna una clase a cada píxel de la imagen, pero no se distingue entre diferentes instancias de una misma clase. En cambio, la segmentación de instancias, no solo clasifica los píxeles en categorías, sino que también identifica y distingue las instancias individuales de un objeto. Por ejemplo, en una imagen con varios vehículos, la segmentación de instancias, además de clasificar los píxeles como vehículos, es capaz de diferenciar entre cada vehículo de forma individual.
 
-En este \ac{TFG}, se utiliza el modelo EfficientViT Segmentation\footnote{\url{https://github.com/mit-han-lab/efficientvit/blob/master/applications/efficientvit_seg}} para detectar la calzada. Este modelo ha sido entrenado con \textit{Cityscapes Dataset}\footnote{\url{https://www.cityscapes-dataset.com/}}, diseñado para la comprensión semántica de escenas urbanas, centrándose en la segmentación de calles y objetos en entornos urbanos. Este \textit{dataset} incluye anotaciones poligonales, que marcan con precisión los límites de cada objeto en las imágenes, realizando una segmentación semántica densa, asignando una etiqueta a cada píxel de la imagen. Además, para objetos como vehículos y personas, se emplea segmentación de instancias.
+En este \ac{TFG}, se utiliza el modelo EfficientViT Segmentation\footnote{\url{https://github.com/mit-han-lab/efficientvit/blob/master/applications/efficientvit_seg}} para detectar la calzada. Este modelo ha sido entrenado con \textit{Cityscapes Dataset}\footnote{\url{https://www.cityscapes-dataset.com/}}, diseñado para la comprensión semántica de escenas urbanas, centrándose en la segmentación de calles y objetos. Este \textit{dataset} incluye anotaciones poligonales, que marcan con precisión los límites de cada objeto en las imágenes, realizando una segmentación semántica densa, asignando una etiqueta a cada píxel de la imagen. Además, para objetos como vehículos y personas, se emplea segmentación de instancias.
 
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=7cm]{figs/Plataformas_Desarollo/resultado_ef.png}
 \end{center}
-\caption{Resultado de segmentación semántica con EfficientViT \cite{efficientvit-gif}.}
-\label{foto_ef}
+\caption{Resultado de segmentación semántica con EfficientViT.}
+\label{fig:foto_ef}
 \end{figure}
 
-Este conjunto de datos contiene imágenes reales tomadas en 50 ciudades durante diferentes estaciones del año, condiciones meteorológicas variadas y horas del día. Las imágenes fueron seleccionadas manualmente asegurando una gran cantidad de objetos dinámicos, así como variación en el fondo y en la disposición de las escenas. \textit{Cityscapes Dataset} incluye un total de 5.000 imágenes con anotaciones detalladas y 20.000 con anotaciones más generales, cubriendo 30 clases de objetos urbanos. Esto lo convierte en un recurso muy útil para entrenar modelos de visión computacional en entornos urbanos con muchos elementos.
+Este conjunto de datos contiene imágenes reales tomadas en 50 ciudades durante diferentes estaciones del año, condiciones meteorológicas y horas del día. Las imágenes fueron seleccionadas manualmente asegurando una gran cantidad de objetos dinámicos, así como variación en el fondo y en la disposición de las escenas. \textit{Cityscapes Dataset} incluye un total de 5.000 imágenes con anotaciones detalladas y 20.000 con anotaciones más generales, cubriendo 30 clases de objetos urbanos. Esto lo convierte en un recurso muy útil para entrenar modelos de visión computacional en entornos urbanos con muchos elementos.
 \begin{figure}[ht]
 \begin{center}
 % Imagen con datos detallados del dataset
 \includegraphics[width=15cm]{figs/Plataformas_Desarollo/detallado-ef.png}
-\caption{Ejemplo de imagen con datos detallados de \textit{Cityscapes Dataset} \cite{cityscapes}.}
-\label{foto_ef_detallado}
+\caption{Ejemplo de imagen con datos detallados de \textit{Cityscapes Dataset}.}
+\label{fig:foto_ef_detallado}
 \vspace{0.5cm} % Espacio entre las dos imágenes
 % Imagen con datos más generales del dataset
 \includegraphics[width=15cm]{figs/Plataformas_Desarollo/no_detallado_ef.png}
-\caption{Ejemplo de imagen con datos más generales de \textit{Cityscapes Dataset} \cite{cityscapes}.}
-\label{foto_ef_general}
+\caption{Ejemplo de imagen con datos más generales de \textit{Cityscapes Dataset}.}
+\label{fig:foto_ef_general}
 \end{center}
 \end{figure}
 
@@ -349,7 +349,7 @@ Este conjunto de datos contiene imágenes reales tomadas en 50 ciudades durante 
 \subsection{CARLA}
 \label{sec:carla}
 
-CARLA\footnote{\url{https://github.com/carla-simulator/carla}} es un entorno de simulación de código abierto que se emplea en aplicaciones de conducción autónoma. CARLA se basa en \textit{Unreal Engine de Epic Games}\footnote{\url{https://www.unrealengine.com/en-US}}, lo que le permite generar entornos urbanos y rurales altamente detallados y realistas. Los cuales son ideales para simular la interacción de los vehículos autónomos con el entorno, probando su capacidad de navegación, toma de decisiones y respuesta ante situaciones imprevistas.
+CARLA\footnote{\url{https://github.com/carla-simulator/carla}} es un entorno de simulación de código abierto que se emplea en aplicaciones de conducción autónoma. CARLA se basa en \textit{Unreal Engine de Epic Games}\footnote{\url{https://www.unrealengine.com/en-US}}, lo que le permite generar entornos urbanos y rurales altamente detallados y realistas, los cuales son ideales para simular la interacción de los vehículos autónomos con el entorno, probando su capacidad de navegación, toma de decisiones y respuesta ante situaciones imprevistas.
 
 \begin{code}[h]
 \begin{lstlisting}[language=bash]
@@ -368,8 +368,10 @@ Este simulador destaca por su capacidad de recrear escenarios dinámicos con una
 \includegraphics[width=9cm]{figs/Plataformas_Desarollo/carla.png}
 \end{center}
 \caption{Simulador CARLA.}
-\label{carla}
+\label{fig:carla}
 \end{figure}
+
+\newpage
 
 En CARLA, los mapas son modelos tridimensionales detallados de ciudades y sus infraestructuras viales, que no solo incluyen la geometría de las carreteras y edificios, sino también objetos interactivos como semáforos, señales de tráfico y otros elementos estáticos, los cuales pueden activarse o desactivarse según las necesidades del usuario. CARLA ofrece una amplia selección de mapas predefinidos que se pueden cargar directamente. Por otro lado, un mundo en CARLA se refiere al entorno completo de la simulación, que incluye el mapa, el clima, el tiempo, los vehículos, los peatones y otros elementos dinámicos, permitiendo crear una simulación realista y modificable en tiempo real para ajustar factores como la hora del día, las condiciones climáticas o el tráfico.
 
@@ -393,7 +395,7 @@ Los actores en CARLA son los elementos que realizan acciones dentro de la simula
 	\end{code}
 
 
-\item \textit{Espectador.} El espectador proporciona un punto de vista dentro de la simulación. Puede utilizarse para mover la vista en la ventana del simulador.
+\item \textit{Espectador.} El espectador proporciona un punto de vista dentro de la simulación. Puede utilizarse para mover la perspectiva en la ventana del simulador.
 \item \textit{Señales de tráfico y semáforos.} En CARLA, solo las señales de \textit{stop}, ceda el paso y los semáforos son considerados actores.
 
 \item \textit{Vehículos.} Los vehículos en CARLA son un tipo especial de actor que simula la física de los vehículos de ruedas real. Utilizan un controlador que define los atributos físicos del vehículo y otro que gestiona los comandos de conducción: aceleración, dirección y freno. CARLA ofrece varios tipos de vehículos (coches, motocicletas y camiones...\footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/}}), además de una gran variedad de modelos. El vehículo que se desea controlar, al que se le añaden los sensores, conocido como \textit{Ego Vehicle}, será el agente en el proceso de aprendizaje. Si indicamos esta condición al simulador, este renderiza solo la zona cercana a este vehículo para optimizar recursos.
@@ -413,7 +415,7 @@ Los actores en CARLA son los elementos que realizan acciones dentro de la simula
     \item \textit{Peatones.} Los peatones funcionan de manera similar a los vehículos. El control sobre ellos se proporciona mediante controladores.
 \end{itemize}
 
-En este \ac{TFG} se utiliza como \textit{Ego Vehicle} el modelo \textit{Lincoln MKZ 2020}\footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/\#lincoln-mkz-2020}}. Tanto el freno (\textit{brake}) como el acelerador (\textit{throttle}) tiene un rango de 0 a 1, mientras que el giro (\textit{steer}) varía entre -1 y 1, donde -1 significa giro a la izquierda y 1 a la derecha. Para simular el tráfico se emplea un camión\footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/\#carla-motors-carlacola}} controlado por el autopiloto de CARLA, ya que, al no contar con cristales en la parte trasera, facilita la detección mediante el \ac{LiDAR}.
+En este \ac{TFG} se utiliza como \textit{Ego Vehicle} el modelo \textit{Lincoln MKZ 2020}\footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/\#lincoln-mkz-2020}}. Tanto el freno (\textit{brake}) como el acelerador (\textit{throttle}) tiene un rango de 0 a 1, mientras que el giro (\textit{steer}) varía entre -1 y 1, donde -1 significa giro a la izquierda y 1 a la derecha. Para simular el tráfico se emplea un camión\footnote{\url{https://carla.readthedocs.io/en/latest/catalogue_vehicles/\#carla-motors-carlacola}} controlado por el autopiloto de CARLA, ya que, al no contar con cristales en la parte trasera y su tamaño, facilita la detección mediante el \ac{LiDAR}.
 
 Al vehículo principal se le añaden tres tipos de sensores:
 
@@ -422,14 +424,14 @@ Al vehículo principal se le añaden tres tipos de sensores:
 
 \item \textit{Cámara RGB}\footnote{\url{https://carla.readthedocs.io/en/latest/ref_sensors/\#rgb-camera}}. La cámara RGB actúa como una cámara convencional capturando imágenes de la escena. Se pueden configurar distintos parámetros, como las dimensiones de la imagen y el campo de visión. En este caso, se establecen dimensiones de 512 × 512 píxeles para garantizar compatibilidad con EfficientVit. Para consultar la matriz que define la imagen debemos mirar en los datos de salida el atributo \textit{raw\_data}.
 
-\item \textit{Sensor \ac{LiDAR}}\footnote{\url{https://carla.readthedocs.io/en/latest/ref_sensors/\#lidar}}. Este sensor simula un \ac{LiDAR} rotativo mediante \textit{ray-casting}, generando puntos al agregar un \ac{LiDAR} por cada canal distribuido en el campo visual vertical. Los datos se codifican en cuatro dimensiones: las primeras tres corresponden a la posición en \textit{x, y, z}, y la cuarta representa la intensidad de la señal reflejada. Se pueden configurar parámetros como los ángulos del campo de visión superior, inferior y horizontal, siendo en nuestro caso un láser de 360º, mientras que el resto de los atributos se mantienen con los valores por defecto. Además, es posible ajustar la frecuencia de rotación y la cantidad de puntos por segundo, lo cual adaptaremos dependiendo de los \ac{FPS} alcanzados en CARLA. Al igual que en la cámara, los datos de salida que incluyen la nube de puntos completa se almacenan en el atributo \textit{raw\_data}.
+\item \textit{Sensor \ac{LiDAR}}\footnote{\url{https://carla.readthedocs.io/en/latest/ref_sensors/\#lidar}}. Este sensor simula un \ac{LiDAR} rotativo mediante \textit{ray-casting}, generando puntos al agregar un \ac{LiDAR} por cada canal distribuido en el campo visual vertical. Los datos se codifican en cuatro dimensiones: las primeras tres corresponden a la posición en \textit{x, y, z}, y la cuarta representa la intensidad de la señal reflejada. Se pueden configurar parámetros como los ángulos del campo de visión superior, inferior y horizontal, siendo en nuestro caso un \ac{LiDAR} de 360º, mientras que el resto de los atributos se mantienen con los valores por defecto. Además, es posible ajustar la frecuencia de rotación y la cantidad de puntos por segundo, lo cual adaptaremos dependiendo de los \ac{FPS} alcanzados en CARLA. Al igual que en la cámara, los datos de salida que incluyen la nube de puntos completa se almacenan en el atributo \textit{raw\_data}.
 \end{itemize}
 
 \subsubsection{Traffic Manager}
 
-El \ac{TM} es el módulo encargado de controlar los vehículos en modo piloto automático dentro de la simulación de CARLA. Su propósito principal es recrear condiciones de tráfico urbano realistas en el entorno simulado. Los usuarios tienen la posibilidad de personalizar ciertos comportamientos para configurar escenarios específicos de aprendizaje.
+El \ac{TM} es el módulo encargado de controlar los vehículos en modo autopiloto dentro de la simulación de CARLA. Su propósito principal es recrear condiciones de tráfico realistas en el entorno simulado. Los usuarios tienen la posibilidad de personalizar ciertos comportamientos para configurar escenarios específicos de aprendizaje.
 
-El \ac{TM} está integrado en el lado cliente de CARLA, siendo necesario especificar el puerto de conexión para su funcionamiento. Los usuarios pueden ajustar parámetros del flujo de tráfico, permitiendo, forzando o incentivando comportamientos específicos. Por ejemplo, se puede configurar que los vehículos ignoren los límites de velocidad, cambien de carril de forma obligatoria o adopten otros comportamientos personalizados. Estas capacidades permiten experimentar y simular situaciones para el entrenamiento y evaluación de sistemas de conducción autónoma.
+El \ac{TM} está integrado en el lado cliente de CARLA, siendo necesario especificar el puerto de conexión para su funcionamiento. Los usuarios pueden ajustar parámetros del flujo de tráfico, permitiendo, forzando o incentivando comportamientos específicos. Por ejemplo, se puede configurar que los vehículos ignoren los límites de velocidad o cambien de carril de forma obligatoria. Estas capacidades permiten experimentar y simular situaciones para el entrenamiento y evaluación de sistemas de conducción autónoma.
 
 En nuestro caso, los entrenamientos estarán limitados al uso del autopiloto para el coche delantero con una velocidad fija e ignorando completamente las señales de tráfico para realizar el control de crucero adaptativo y el adelantamiento. 
 
@@ -450,13 +452,13 @@ En nuestro caso, los entrenamientos estarán limitados al uso del autopiloto par
 \subsection{Servidor Thor}
 \label{sec:thor}
 
-CARLA es un simulador que requiere una gran capacidad computacional. La ejecución de algoritmos de aprendizaje por refuerzo, combinados con diversas redes neuronales para la percepción, incrementa aún más esta demanda de potencia. Para satisfacer estos requisitos, es fundamental disponer de los recursos de hardware adecuados. Lo ideal es contar con una o varias \ac{GPU}, ya que están optimizadas para el procesamiento paralelo masivo, lo que, en nuestro caso, aceleraría significativamente tanto la simulación como el entrenamiento de modelos de \ac{IA}. 
+CARLA es un simulador que requiere una gran capacidad computacional. La ejecución de algoritmos basados en \ac{DRL} y diversas redes neuronales para la percepción, incrementa aún más esta demanda de potencia. Para satisfacer estos requisitos, es fundamental disponer de los recursos de hardware adecuados. Lo ideal es contar con una o varias \ac{GPU}, ya que están optimizadas para el procesamiento paralelo masivo, lo que aceleraría significativamente la simulación y el entrenamiento de modelos de \ac{IA}. 
 
-El servidor Thor, ubicado en la Escuela de Ingeniería Superior de Fuenlabrada de la \ac{URJC}, forma parte de la granja de servidores con \ac{GPU} de RoboticsLabURJC. Su arquitectura \textit{x86\_64} y su potente procesador\textit{AMD Ryzen Threadripper 7960X} lo hacen perfecto para ejecutar tareas que requieren un alto rendimiento. Además, el servidor está equipado con una \ac{GPU} NVIDIA GeForce RTX 4090 con 24 GB de memoria, lo que permite no solo gestionar cargas computacionales intensivas, sino también facilitar el entrenamiento e inferencia de modelos en tiempo real. Esta capacidad es crucial para el desarrollo y las pruebas de este \ac{TFG} como se puede observar en la Figura \ref{fig:thor_nvidia}.
+El servidor Thor, ubicado en la Escuela de Ingeniería Superior de Fuenlabrada de la \ac{URJC}, forma parte de la granja de servidores con \ac{GPU} de RoboticsLabURJC. Su arquitectura \textit{x86\_64} y su potente procesador lo hacen perfecto para ejecutar tareas que requieren un alto rendimiento. Además, el servidor está equipado con una \ac{GPU} NVIDIA GeForce RTX 4090, como se puede observar en la Figura \ref{fig:thor_nvidia}, lo que le permite gestionar cargas computacionales intensas y facilitar el entrenamiento e inferencia de modelos en tiempo real.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=7cm]{figs/Plataformas_Desarollo/thor.png}
+  \includegraphics[width=6cm]{figs/Plataformas_Desarollo/thor.png}
   \caption{Servidor Thor equipado con una \ac{GPU}.}
   \label{fig:thor_nvidia}
 \end{figure}

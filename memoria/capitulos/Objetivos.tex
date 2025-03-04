@@ -1,7 +1,7 @@
 \chapter{Objetivos}
 \label{cap:capitulo2}
 
-En esta sección del documento se describe el problema a resolver, marcando los objetivos y requisitos pautados en el desarrollo del \ac{TFG}.
+En esta sección del documento se describe el problema a resolver, marcando los objetivos y requisitos pautados en el desarrollo de este \ac{TFG}.
 
 \section{Descripción del problema}
 \label{sec:descripcion}
@@ -11,9 +11,9 @@ El objetivo principal de este \ac{TFG} es desarrollar un primer paso para un sis
 A continuación, se definen los siguientes sub-objetivos: 
 
 \begin{enumerate}
-\item Implementación de un módulo de percepción basado en el \ac{LiDAR} para identificar obstáculos en la carretera y en cámaras RGB, combinadas con técnicas de \ac{DL} para el post-procesado, para la segmentación de la calzada y detección del carril.
+\item Implementación de un módulo de percepción basado en el \ac{LiDAR}, para identificar obstáculos en la carretera, y en cámaras RGB que, combinadas con técnicas de \ac{DL} para el post-procesado, permiten segmentar de la calzada y detectar del carril.
 \item Desarrollo de un comportamiento de sigue-carril.
-\item Ampliación del comportamiento de seguimiento de carril para incorporar una respuesta adaptativa al tráfico, manteniendo una velocidad de crucero ajustada al vehículo que circula delante del coche autónomo.
+\item Ampliación del comportamiento sigue-carril para incorporar un control de crucero adaptativo, el cual se centra en ajustar la velocidad del coche autónomo a la del vehículo que circula delante.
 \item Desarrollo de un modelo capaz de ejecutar maniobras completas de adelantamiento, incluyendo el cambio de carril y la vuelta al mismo.
 \item Análisis y comparación de los diferentes comportamientos de conducción autónomos desarrollados.
 \end{enumerate}
@@ -26,7 +26,7 @@ Los requisitos que han de cumplirse en este trabajo son:
 \item Uso del entorno de simulación CARLA\footnote{\url{https://carla.org/}}, el cual permite la simulación de escenarios realistas, diversos comportamientos de vehículos y la prueba de modelos. Al ser un simulador ampliamente reconocido en el ámbito de la conducción autónoma, garantiza la reutilización del proyecto en aplicaciones futuras de este campo.
 \item Usar modelos de \ac{DL} para la percepción visual y algoritmos de \ac{DRL} para la toma de decisiones.
 \item Lograr un comportamiento sigue-carril estable y sin oscilaciones, alcanzando velocidades en torno a los 70 km/h.
-\item Mantener un control de crucero adaptativo respecto al vehículo delantero, asegurando una distancia de seguridad adecuada respecto al vehículo delantero, de acuerdo con las normas de la \ac{DGT}\footnote{\url{https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/conoce-el-estado-del-trafico/operaciones-especiales/4_O.-E.-Primero-de-Mayo-2023_Consejos-y-normas-de-Seguridad-Vial_V-I.pdf}}.
+\item Mantener un control de crucero adaptativo respecto al vehículo delantero, asegurando una distancia de seguridad adecuada conforme a las normas de la \ac{DGT}\footnote{\url{https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/conoce-el-estado-del-trafico/operaciones-especiales/4_O.-E.-Primero-de-Mayo-2023_Consejos-y-normas-de-Seguridad-Vial_V-I.pdf}}.
 \item Llevar a cabo un adelantamiento seguro en todo momento, comprobando si existe un carril al que podamos desplazarnos y asegurando que la maniobra de retorno al carril inicial no pone en peligro al otro agente en la vía.
 \end{enumerate}
 
@@ -48,7 +48,7 @@ Este TFG comenzó en febrero de 2024 y finalizó en marzo de 2025. La metodolog�
 \label{fig:github}
 \end{figure}
 
-\item Mantenimiento de un \textit{blog}\footnote{\url{https://roboticslaburjc.github.io/2024-tfg-lara-poves/}} con el propósito de documentar problemas, avances e investigaciones realizadas durante el desarrollo del proyecto, asegurando un registro del progreso y soluciones a los desafíos plateados.
+\item Mantenimiento de un \textit{blog}\footnote{\url{https://roboticslaburjc.github.io/2024-tfg-lara-poves/}} para documentar problemas, avances e investigaciones realizadas durante el desarrollo del proyecto, asegurando un registro del progreso y soluciones a los desafíos plateados.
 
 \end{itemize}
 
@@ -60,7 +60,7 @@ Finalmente, los pasos a seguir fueron:
 \begin{enumerate}
 \item Comienzo del trabajo:
 \begin{itemize}
-\item Desde el inicio, el tema del proyecto estuvo claro, centrado en la conducción autónoma en el simulador CARLA y algoritmos de \ac{DRL}.
+\item Desde el inicio, el tema del proyecto estuvo claro, centrado en la conducción autónoma en el simulador CARLA y algoritmos basados en \ac{DRL}.
 \item Se gestionó el acceso al servidor donde se desarrollaría el proyecto, el cual ya contaba con el simulador CARLA instalado. 
 \item Se creó un entorno \textit{Anaconda} y se procedió a la instalación de las librerías necesarias para el desarrollo del proyecto.
 \end{itemize}
