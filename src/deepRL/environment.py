@@ -1396,26 +1396,7 @@ class CarlaOvertaken(CarlaBase):
     def _get_control(self, action:np.ndarray):
         assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
         self._throttle, self._steer = action
-
-        # Trampitas 
-        if self._overtaken_in_progress and self._change_lane_left and self._return:
-            if self._steer < 0:
-                self._steer = -self._steer
         
-        if self._overtaken_in_progress and self._change_lane_left and not self._return:
-            self._steer *= 0.7
-        '''
-        elif not self._overtaken_in_progress:
-            self._steer *= 0.9
-
-        #if self._overtaken_in_progress and self._change_lane_left:
-        if not self._overtaken_in_progress and not self._change_lane_left:
-            self._throttle *= 1.07
-        #else:
-        #    self._throttle *= 1.05
-        if self._throttle > 0.48:
-            self._throttle = 0.48 + random.uniform(20, 100) / 10000
-        '''
         control = carla.VehicleControl()
         control.steer = self._steer 
         control.throttle = self._throttle
