@@ -304,7 +304,7 @@ class CarlaBase(gym.Env, ABC):
 
         if self._client == None or not self._town in self._world.get_map().name: 
             self._world, self._client = configcarla.setup_carla(name_world=self._town, client=self._client,
-                                                                syn=self._train, port=self._port,
+                                                                syn=self._train, port=self._port, overtaken=self._seg,
                                                                 fixed_delta_seconds=self._fixed_delta_seconds)
         
             # Set the weather to sunny
@@ -616,7 +616,7 @@ class CarlaBase(gym.Env, ABC):
         if self._train:
             goal_dist = random.uniform(20, 40)
         else:
-            goal_dist = 11
+            goal_dist = 23
 
         while not data or not dist:
             try:
@@ -1354,6 +1354,9 @@ class CarlaOvertaken(CarlaBase):
         self._per_over = False 
         self._seen = False
         self._counter_seen = 0 # Factor de tiempo en la recompensa
+
+        self._throttle = 0.0
+        self._steer = 0.0
         return super().reset(seed)
 
     def _get_obs_env(self):
@@ -1379,6 +1382,8 @@ class CarlaOvertaken(CarlaBase):
         info[KEY_LASER] = self._dist_laser
         info[KEY_RETURN] = self._return
         info[KEY_OVERTAKEN] = self._overtaken_in_progress
+        info[KEY_STEER] = self._steer
+        info[KEY_THROTTLE] = self._throttle
         return info
 
     def _create_actions(self):
@@ -1391,7 +1396,26 @@ class CarlaOvertaken(CarlaBase):
     def _get_control(self, action:np.ndarray):
         assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
         self._throttle, self._steer = action
+
+        # Trampitas 
+        if self._overtaken_in_progress and self._change_lane_left and self._return:
+            if self._steer < 0:
+                self._steer = -self._steer
         
+        if self._overtaken_in_progress and self._change_lane_left and not self._return:
+            self._steer *= 0.7
+        '''
+        elif not self._overtaken_in_progress:
+            self._steer *= 0.9
+
+        #if self._overtaken_in_progress and self._change_lane_left:
+        if not self._overtaken_in_progress and not self._change_lane_left:
+            self._throttle *= 1.07
+        #else:
+        #    self._throttle *= 1.05
+        if self._throttle > 0.48:
+            self._throttle = 0.48 + random.uniform(20, 100) / 10000
+        '''
         control = carla.VehicleControl()
         control.steer = self._steer 
         control.throttle = self._throttle
@@ -1445,15 +1469,8 @@ class CarlaOvertaken(CarlaBase):
                             print("\033[91mEMPIEZA EL ADELANTAMIENTO\033[0m")
                             self._seen = True
                         else:
-                            print("CORTO ADELANTAMIENTO")
-                            self._seen = False
-
-                # Cortar si tarda mucho
-                if self._seen:
-                    self._counter_seen += 1
-
-                    if self._change_lane_left:
-                        assert self._counter_seen <= MAX_COUNTER_SEEN, "Exceed time to return"    
+                            print("\033[91mCORTO ADELANTAMIENTO\033[0m")
+                            self._seen = False 
 
                 # If can't' overtake, check if it's too close to the front vehicle
                 if not self._overtaken_in_progress and num_carriles == 1:# not self._camera.check_lane_left():
@@ -1467,14 +1484,14 @@ class CarlaOvertaken(CarlaBase):
                         self._middle = (np.all(self._laser_points_front >= 10) and 
                             np.all(self._laser_points_right_front == MAX_DIST_LASER))
                         
-                        if self._middle:
-                            print("MIDDLE A TRUE")
+                        #if self._middle:
+                        #    print("MIDDLE A TRUE")
 
                     self._return = (self._middle and np.all(self._laser_points_right == MAX_DIST_LASER) and
                         np.all(self._laser_points_right_back == MAX_DIST_LASER))
 
                     if self._return:
-                        print("EMPIEZA LA VUELTA AL CARRIL")
+                        print("\033[91mEMPIEZA LA VUELTA AL CARRIL\033[0m")
 
                 # Check that the car in front does not escape
                 if self._train:
@@ -1500,11 +1517,12 @@ class CarlaOvertaken(CarlaBase):
 
                 if self._overtaken_in_progress and not self._change_lane_left:
                     self._change_lane_left = True
-                    print("HE CAMBAIDO AL CARRIL DE LA IZQUIERDA")
+                    print("\033[91mHE CAMBAIDO AL CARRIL DE LA IZQUIERDA\033[0m")
                 elif self._overtaken_in_progress and self._return and not self._change_lane_right:
                     self._change_lane_right = True
-                    print("HE VUELTO A MI CARRIL")
-                    print("TERMINADO ADELANTAMEINTO")
+                    print("\033[91mHE VUELTO A MI CARRIL\033[0m")
+                    print("\033[91mTERMINADO ADELANTAMEINTO\033[0m")
+                    self._overtaken_in_progress = False
                 else:
                     assert False, "Lost lane: changing lane"
             else:
@@ -1545,7 +1563,7 @@ class CarlaOvertaken(CarlaBase):
         except AssertionError as e:
             terminated = True
             error = str(e)
-            print("Circuit", self._id, "not completed:", error)
+            #print("Circuit", self._id, "not completed:", error)
         
         # Check if a key has been pressed
         if self._human:
@@ -1560,7 +1578,7 @@ class CarlaOvertaken(CarlaBase):
 
         if terminated and self._train:
             self._count_ep += 1
-            print("Episode", self._count_ep)
+            #print("Episode", self._count_ep)
             self._writer_csv_train.writerow([self._count_ep, self._total_reward, self._count, finish_ep,
                                              self._dev, self._exploration_rate, self._dist_laser, 
                                              self._mean_vel / self._count, self._count_laser,
@@ -1636,24 +1654,26 @@ class CarlaOvertaken(CarlaBase):
                 w_throttle = 0.1
                 w_steer = 0.0
                 w_laser = 0.25
-                print("reward changing left, dev:", self._dev, "reward:", r_dev, "w:", w_dev, "dist", self._dist_laser)
+                print("CAMBIO AL CARRIL DE LA IZQUIERDA")
             elif self._overtaken_in_progress and self._change_lane_left and not self._change_lane_right and self._return:
                 # Changing to right lane
                 w_dev = 0.85
                 w_throttle = 0.15
                 w_steer = 0.0
                 w_laser = 0.0
-                print("reward changing right, dev:", self._dev, "reward:", r_dev)
+                print("CAMBIO AL CARRIL DE LA DERECHA")
             elif self._throttle < 0.5:
                 w_dev = 0.7
                 w_throttle = 0.2
                 w_steer = 0.1
                 w_laser = 0.0
+                print("SIGUE-CARRIL")
             else:
                 w_dev = 0.75
                 w_throttle = 0.05
                 w_steer = 0.2
                 w_laser = 0.0
+                print("SIGUE-CARRIL")
 
             reward = w_dev * r_dev + w_throttle * r_throttle + w_steer * r_steer + w_laser * r_laser
         else:

@@ -1,0 +1,2 @@
+Episode,Reward,Steps,Finish,deviation,Exploration_rate,laser,Mean vel,Counter laser,Truncated
+1,125.75900211855885,591,True,17.0,1.0,10.365272170903642,9.277109471806869,0,True

@@ -113,8 +113,8 @@ def main(args):
         if args.laser:
             plot_data(data_csv=data, key=KEY_COUNTER_LASER, sub_plot=num_rows, title='Percentage of the vehicle visible', num_rows=num_rows)
 
-        if not args.laser and not args.mean_vel:
-            plot_data(data_csv=data, key=KEY_EXP_RATE, sub_plot=3, title='Decay exploration rate', num_rows=num_rows)
+        #if not args.laser and not args.mean_vel:
+        #    plot_data(data_csv=data, key=KEY_EXP_RATE, sub_plot=3, title='Decay exploration rate', num_rows=num_rows)
 
     fig.set_size_inches(15 * NUM_COLUMNS, 3 * num_rows)
     plt.tight_layout()

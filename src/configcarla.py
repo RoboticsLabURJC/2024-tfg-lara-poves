@@ -1182,7 +1182,7 @@ class PID:
         return control
 
 def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:float=0.0, 
-                client:carla.Client=None, syn:bool=False):
+                client:carla.Client=None, syn:bool=False, overtaken:bool=False):
     if client == None:
         client = carla.Client('localhost', port)
 
@@ -1191,7 +1191,7 @@ def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:floa
 
     settings = world.get_settings()
     settings.fixed_delta_seconds = fixed_delta_seconds
-    if fixed_delta_seconds > 0.1:
+    if fixed_delta_seconds > 0.1 or overtaken:
         settings.max_substep_delta_time = 0.05
         settings.max_substeps = 4
 
