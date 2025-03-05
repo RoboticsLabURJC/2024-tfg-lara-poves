@@ -1,6 +1,6 @@
 ---
 title: "Autopiloto"
-last_modified_at: 2024-10-19T17:51:00
+last_modified_at: 2025-03-05T18:33:00
 categories:
   - Blog
 tags:
@@ -22,37 +22,42 @@ Una vez habituados con las funciones básicas de CARLA y realizado el teleoperad
 
 ## Traffic manager
 
-Hemos implementado una función llamada ***traffic_manager*** para controlar el tráfico de vehículos. Esta función activa el piloto automático en los vehículos proporcionados como entrada, para su correcto funcionamiento, es necesario habilitar el modo síncrono al configurar CARLA. Además, hemos definido varios parámetros para controlar la conducción y la relación entre los diferentes vehículos.
+Hemos implementado una función llamada ***traffic_manager*** para controlar el tráfico de vehículos. Esta función activa el piloto automático en los vehículos proporcionados como entrada.
 ```python
-tm.set_global_distance_to_leading_vehicle(2.0)
-tm.global_percentage_speed_difference(speed) 
+tm = client.get_trafficmanager(port)
+for v in vehicles:
+  v.set_autopilot(True, tm_port)
 ```
+
+También se pueden configurar más parámetros referentes a la conducción para diseñar comportamientos específicos, como una velocidad crucero, ingorar señales de tráfico...
 
 ## LIDAR
 
-Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva clase ***Lidar*** heredada de la clase *Sensor*. Al igual que en la implementación de la cámara, hemos agregado nuevos parámetros en el constructor para la visualización y sobrescrito la función *process_data()*. Esta función se encarga de visualizar el láser y actualizar las estadísticas relevantes a la zona frontal del láser, las cuales nos serán útiles para la detección de obstáculos. El parámetro *time_show* determina si los datos del sensor láser deben actualizarse de forma continua o una vez por segundo.
-
+Para visualizar adecuadamente los datos del láser, hemos desarrollado una nueva clase ***Lidar*** heredada de la clase *Sensor*. Al igual que en la implementación de la cámara, hemos agregado nuevos parámetros en el constructor para la visualización y sobrescrito la función *process_data()*. Se han agregado funciones para configurar filtros del LiDAR y obtener las métricas.
 ```python
 class Vehicle_sensors:
-  def add_lidar(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None, scale:int=25, time_show=True,
-                transform:carla.Transform=carla.Transform(), front_angle:int=150, show_stats:bool=True)
+  def add_lidar(self, ...)
 
 class Lidar(Sensor): 
-  def __init__(self, size:Tuple[int, int], init:Tuple[int, int], sensor:carla.Sensor, time_show=True,
-                scale:int, front_angle:int, yaw:float, screen:pygame.Surface, show_stats:bool)
+  def __init__(self, ...)
 
   def process_data(self)
-  def get_stat_zones(self)
-  def get_meas_zones(self)
   
   def set_i_threshold(self, i:float)
   def get_i_threshold(self)
-  
-  def set_z_threshold(self, z:float)
+
+  def set_z_threshold(self, z_down:float=None, z_up:float=None)
   def get_z_threshold(self)
+    
+  def get_dist_threshold(self)
+  def set_dist_threshold(self, dist:float, zone:int):
+    
+  def get_stat_zones(self)  
+  def get_min(self, zone:int)  
+  def get_mean(self, zone:int)
 ```
 
-En primer lugar, es necesario transformar los datos del láser en una matriz de matrices, donde cada submatriz almacena las coordenadas *x*, *y*, *z* y la intensidad respectivamente. Cada una de estas submatrices representa un punto.
+En primer lugar, es necesario transformar los datos del LiDAR en una matriz de matrices, donde cada submatriz almacena las coordenadas *x*, *y*, *z* y la intensidad respectivamente. Cada una de estas submatrices representa un punto.
 ```python
 lidar_data = np.copy(np.frombuffer(self.data.raw_data, dtype=np.dtype('f4')))
 lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
@@ -60,14 +65,14 @@ lidar_data = np.reshape(lidar_data, (int(lidar_data.shape[0] / 4), 4))
 
 ### Visualización
 
-Para la representación del láser, dibujamos cada unos de estos puntos en 2D (x, y). Para mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño según su altura.
+Para la representación del LiDAR, dibujamos cada unos de estos puntos en 2D (x, y). Para mejorar la percepción visual, hemos interpolado el color de cada punto según su intensidad y el tamaño según su altura.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/interpolate.png" alt="">
 </figure>
 
 ### Zona frontal
 
-Con el fin de realizar adelantamientos, nos enfocaremos en la detección de obstáculos en la parte frontal del vehículo. Por lo tanto, examinaremos el ángulo frontal del láser, cuya amplitud es indicada por el usuario, por defecto es 150º.
+Con el fin de realizar adelantamientos, nos enfocaremos en la detección de obstáculos en la parte frontal del vehículo. Por lo tanto, examinaremos el ángulo frontal del LiDAR, cuya amplitud es indicada por el usuario, por defecto es 150º.
 <figure class="align-center" style="max-width: 100%">
   <img src="{{ site.url }}{{ site.baseurl }}/images/autopilot/front_angle.png" alt="">
 </figure>
