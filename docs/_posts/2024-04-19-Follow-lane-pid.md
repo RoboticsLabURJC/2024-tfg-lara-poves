@@ -1,6 +1,6 @@
 ---
 title: "Sigue carril: PID"
-last_modified_at: 2024-12-08T15:21:00
+last_modified_at: 2025-03-05T19:13:00
 categories:
   - Blog
 tags:
@@ -63,34 +63,33 @@ Una vez que hemos determinado el área del carril, empleamos la red de segmentac
 
 ## Controlador PID
 
-La desviación en el eje *x* representa el error que recibe nuestro controlador, el cual es principalmente un controlador PD para el giro del volante (*steer*). El componente proporcional normaliza el error en un rango de 0.0 a 1.0, que es el rango de control proporcionado por Carla. Sin embargo, si el error supera cierto umbral, lo incrementamos ligeramente para mejorar el rendimiento en las curvas. Respecto al componente derivativo, lo hemos incorporado para prevenir movimientos oscilatorios al salir de las curvas, ya que resta el error anterior reducido. Por lo tanto, solo consideramos el error anterior si su signo difiere del error actual, ya que, de lo contrario, podría afectar negativamente la conducción en las curvas.
+La desviación en el eje *x* representa el error que recibe nuestro controlador, el cual es principalmente un controlador PD para el giro del volante (*steer*). El componente proporcional normaliza el error en un rango de 0.0 a 1.0, que es el rango de control proporcionado por Carla. Sin embargo, si el error supera cierto umbral, lo incrementamos ligeramente para mejorar el rendimiento en las curvas.
 
-En lo referente al control de los pedales, mantenemos el acelerador contante en 0.5, mientras que con el freno regulamos la velocidad para mantenerla en aproximadamente de 10m/s.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kCaoGD_Ywy4?si=pXhUP3VCoc1wYmfB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Respecto al componente derivativo, lo hemos incorporado para prevenir movimientos oscilatorios al salir de las curvas, ya que resta el error anterior reducido. Por lo tanto, solo consideramos el error anterior si su signo difiere del error actual, ya que, de lo contrario, podría afectar negativamente la conducción en las curvas.
+
+Para controlar el acelerador, primero calculamos la diferencia entre la velocidad actual y la velocidad objetivo, en este caso 10 m/s. Luego, normalizamos dicho error y aplicamos un controlador P. Su valor se limita siempre en el rango de 0.0 a 0.5.
+
+### Vídeo en un circuito ajustado:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Me3KQ3X_n-0?si=ACPnjRiE342TEuG4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Vídeo en un circuito no ajustado:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ygVov8ERqFI?si=grK1J0Kdku4LjXnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Profiling
 
-Hemos dividido el código en secciones para evaluar las latencias y determinar dónde estamos consumiendo más tiempo en nuestro programa, con el objetivo de mejorar su eficiencia. Como se puede observar en la siguiente imagen, la mayor parte del tiempo se destina a realizar la prediccion con el modelo de segmentación. El resto de secciones presentan latencias acordes a su carga computacional, sin presenta una desventaja significativa para nuestro programa.
+Hemos dividido el código en secciones para evaluar las latencias y determinar dónde estamos consumiendo más tiempo en nuestro programa, con el objetivo de mejorar su eficiencia. Como se puede observar en la siguiente imagen, la mayor parte del tiempo se destina a realizar la predicción con el modelo de segmentación. El resto de las secciones presentan latencias acordes a su carga computacional, sin representar una desventaja significativa para nuestro programa.
+
 <figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_pid/profiling.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_pid/profiling.png" alt="Profiling del programa">
 </figure>
 
-Como consecuencia de estos resultados, se ha decidido hacer opcional la funcionalidad de obtener el canvas con el color de cada píxel según indica la red de segmentación semántica (parámetro canvas_seg), dado que esta función solo es útil para la visualización. De esta manera, logramos mejorar la velocidad en el seguimiento del carril.
-```python
-class CameraRGB(Sensor):      
-  def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor,
-                text:str, screen:pygame.Surface, seg:bool, init_extra:tuple[int, int], 
-                lane:bool, canvas_seg:bool, transform:carla.Transform, vehicle:carla.Vehicle,
-                world:carla.World)
-```
+Como consecuencia de estos resultados, se ha decidido hacer opcional la funcionalidad de obtener el *canvas* con el color de cada píxel según indica la red de segmentación semántica (parámetro *canvas_seg*), dado que esta función solo es útil para la visualización. De esta manera, logramos mejorar la velocidad en el seguimiento del carril.
 
 ## Puntos del carril
 
-En la clase *CameraRGB*, hemos implementado una función que extrae un número específico de puntos en cada línea del carril y devuelve un *np.array* con sus coordendas (*x*, *y*). Dividimos la altura total del carril (eje *y*) en ese número de puntos, obteniendo así las coordenadas *y*, posteriormente calculamos las coordenadas *x* correspondientes a dichas alturas. Esta función está diseñada para ser utilizada en la siguiente etapa, donde entrenaremos un modelo de *deep* RL.
+En la clase *CameraRGB*, hemos implementado una función que extrae un número específico de puntos en cada línea del carril y devuelve un *np.array* con sus coordenadas (*x*, *y*). Dividimos la altura total del carril (eje *y*) en ese número de puntos, obteniendo así las coordenadas *y*, y posteriormente calculamos las coordenadas *x* correspondientes a dichas alturas. Esta función está diseñada para ser utilizada en la siguiente etapa, donde entrenaremos un modelo de *deep* RL.
+
 ```python
-def get_lane_points(self, num_points:int=5, show:bool=False):
-  return [left_points, right_points]
+def get_lane_points(self, num_points: int = 5, show: bool = False):
+    return [left_points, right_points]
 ```
-<figure class="align-center" style="max-width: 100%">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/follow_lane_pid/points_lane.png" alt="">
-</figure>

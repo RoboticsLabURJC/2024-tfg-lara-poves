@@ -98,7 +98,7 @@ assert abs(self._dev - dev_prev) <= 5, "Lost lane: changing lane"
 Para entrenar, hemos utilizado un *fixed_delta_seconds* de **50ms**, lo que equivale a entrenar a **20 FPS**. Por lo tanto, en la fase de inferencia, necesitamos operar al menos a esta velocidad. Los entrenamientos tuvieron una duración de 1 día y un par de horas. Tras realizar diversas pruebas experimentales, identificamos los hiperparámetros que proporcionaron los mejores resultados:
 ```yaml
 learning_rate: 0.0005
-buffer_size: 20_000
+buffer_size: 1_000_000
 batch_size: 1024
 learning_starts: 0
 gamma: 0.85
