@@ -1,6 +1,6 @@
 % !TEX root = memoria.tex
 
-\input{estilo.tex} % archivo de configuración de estilo
+\input{estilo.tex} % Archivo de configuración de estilo
 
 \makeindex
 
@@ -14,15 +14,9 @@
   sensitive=false,
   morecomment=[l]{\#},
   morestring=[b]',
-  morestring=[b]"
-}
+  morestring=[b]"} 
 
-\input{portada/indice.tex} % aqui se cargan todas las "primeras paginas"
-
-% Bibliografia
-\let\OLDthebibliography=\thebibliography
-\def\thebibliography#1{\OLDthebibliography{#1}
-\addcontentsline{toc}{chapter}{\bibname}}
+\input{portada/indice.tex} % Aquí se cargan todas las "primeras páginas"
 
 \mainmatter
 
@@ -33,14 +27,20 @@
 \input{capitulos/Plataforma_desarollo}
 \input{capitulos/Diseño}
 \input{capitulos/Conclusiones}
-%\input{portada/Anexo}
-%\input{portada/AnexoII}
 
-\clearpage
-\thispagestyle{empty}
-
-\printindex \nocite{*}
+% Ajustar numeración de anexos
+\renewcommand{\thechapter}{\arabic{chapter}}  
 \appendix
-\bibliographystyle{apalike} \bibliography{bibliografia}
+
+\input{portada/Anexo}
+
+\backmatter  % Para que la bibliografía no tenga numeración de apéndice
+
+\printindex 
+\nocite{*}
+
+% Bibliografía
+\bibliographystyle{unsrt}
+\bibliography{bibliografia}
 
 \end{document}
