@@ -3,11 +3,10 @@ import numpy as np
 import csv
 import argparse
 
-# Configurar fuente similar a LaTeX
 plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["Computer Modern"],
-    "text.usetex": False,  # Si tienes LaTeX instalado, ponlo en True
+    "text.usetex": False, 
     "axes.titlesize": 16,
     "axes.labelsize": 20,
     "xtick.labelsize": 15,
@@ -25,7 +24,7 @@ def main(args):
                     data[key] = []
                 data[key].append(float(value))
 
-    fig, axes = plt.subplots(1, 2, figsize=(12, 6))  # 2 gráficos en la misma fila
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6)) 
 
     # Diccionario para personalizar cada variable
     config = {
@@ -43,7 +42,7 @@ def main(args):
             'xlabel': 'Desviación en píxeles',
             'color': 'red',
             'bin_width': 2,
-            'xlim': (-50, 50),  # Fijamos el rango de la desviación
+            'xlim': (-50, 50), 
             'ylim': (0, 850),
             'index': 1
         }
@@ -64,7 +63,6 @@ def main(args):
             ax.set_ylim(cfg["ylim"])
             ax.grid(axis='y', linestyle='--', alpha=0.7, zorder=0)  # Grid horizontal
 
-            # Calcular la desviación estándar para 'deviation'
             if key == 'deviation':
                 std_dev = np.std(values)
                 print(f"Desviación estándar de la desviación del carril ({key}): {std_dev:.2f} píxeles")

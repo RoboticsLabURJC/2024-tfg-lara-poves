@@ -31,9 +31,8 @@ def get_data(file:str):
 
 def main(args):
     np.random.seed(4)
-
+    
     all_tasks, data = get_data(args.file)
-
     _, means = list(data.items())[0]  
 
     sorted_tasks = sorted(all_tasks)

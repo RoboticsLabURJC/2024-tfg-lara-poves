@@ -1,0 +1,3369 @@
+LiDAR: 16053061
+EfficientVit - Predicción: 820969594
+Carril basado en DL - Predicción: 315828569
+Carril basado en DL - Post-procesado: 8846137
+EfficientVit - Post-procesado: 8875066
+LiDAR: 13090906
+EfficientVit - Predicción: 40579803
+Carril basado en DL - Predicción: 10935116
+Carril basado en DL - Post-procesado: 8836417
+EfficientVit - Post-procesado: 9157305
+LiDAR: 14644689
+EfficientVit - Predicción: 34306842
+Carril basado en DL - Predicción: 13473964
+Carril basado en DL - Post-procesado: 8832647
+EfficientVit - Post-procesado: 9004936
+LiDAR: 14501349
+EfficientVit - Predicción: 35484406
+Carril basado en DL - Predicción: 14200022
+Carril basado en DL - Post-procesado: 13701643
+EfficientVit - Post-procesado: 11849292
+LiDAR: 14841478
+EfficientVit - Predicción: 32359303
+Carril basado en DL - Predicción: 10960866
+Carril basado en DL - Post-procesado: 11947442
+EfficientVit - Post-procesado: 11491603
+LiDAR: 13708003
+EfficientVit - Predicción: 32998149
+Carril basado en DL - Predicción: 11979701
+Carril basado en DL - Post-procesado: 8688688
+EfficientVit - Post-procesado: 10382309
+LiDAR: 13269186
+EfficientVit - Predicción: 33355587
+Carril basado en DL - Predicción: 12648398
+Carril basado en DL - Post-procesado: 8295290
+EfficientVit - Post-procesado: 9380804
+LiDAR: 14123301
+EfficientVit - Predicción: 33222118
+Carril basado en DL - Predicción: 14367050
+Carril basado en DL - Post-procesado: 8210050
+EfficientVit - Post-procesado: 8921296
+LiDAR: 13415254
+EfficientVit - Predicción: 34760620
+Carril basado en DL - Predicción: 12372740
+Carril basado en DL - Post-procesado: 8662187
+EfficientVit - Post-procesado: 9659143
+LiDAR: 13874852
+EfficientVit - Predicción: 32320863
+Carril basado en DL - Predicción: 11156556
+Carril basado en DL - Post-procesado: 8397739
+EfficientVit - Post-procesado: 9515024
+LiDAR: 14027932
+EfficientVit - Predicción: 33974833
+Carril basado en DL - Predicción: 15158686
+Carril basado en DL - Post-procesado: 9061956
+EfficientVit - Post-procesado: 9044515
+LiDAR: 13563103
+EfficientVit - Predicción: 34918970
+Carril basado en DL - Predicción: 12068621
+Carril basado en DL - Post-procesado: 10718948
+EfficientVit - Post-procesado: 9932062
+LiDAR: 13588083
+EfficientVit - Predicción: 33123898
+Carril basado en DL - Predicción: 10386629
+Carril basado en DL - Post-procesado: 10013021
+EfficientVit - Post-procesado: 9288585
+LiDAR: 15480104
+EfficientVit - Predicción: 34199223
+Carril basado en DL - Predicción: 13783283
+Carril basado en DL - Post-procesado: 8414299
+EfficientVit - Post-procesado: 9673603
+LiDAR: 14192881
+EfficientVit - Predicción: 33257408
+Carril basado en DL - Predicción: 10471539
+Carril basado en DL - Post-procesado: 8299229
+EfficientVit - Post-procesado: 9367984
+LiDAR: 13630164
+EfficientVit - Predicción: 36670841
+Carril basado en DL - Predicción: 12659848
+Carril basado en DL - Post-procesado: 8137321
+EfficientVit - Post-procesado: 10123201
+LiDAR: 21190388
+EfficientVit - Predicción: 40935940
+Carril basado en DL - Predicción: 10253870
+Carril basado en DL - Post-procesado: 9077856
+EfficientVit - Post-procesado: 9045946
+LiDAR: 14532429
+EfficientVit - Predicción: 31571007
+Carril basado en DL - Predicción: 10738318
+Carril basado en DL - Post-procesado: 8312929
+EfficientVit - Post-procesado: 12324219
+LiDAR: 13592744
+EfficientVit - Predicción: 32876310
+Carril basado en DL - Predicción: 14226411
+Carril basado en DL - Post-procesado: 8512608
+EfficientVit - Post-procesado: 12234620
+LiDAR: 13802523
+EfficientVit - Predicción: 33274847
+Carril basado en DL - Predicción: 13811362
+Carril basado en DL - Post-procesado: 8342239
+EfficientVit - Post-procesado: 12659519
+LiDAR: 13120956
+EfficientVit - Predicción: 37773356
+Carril basado en DL - Predicción: 12126341
+Carril basado en DL - Post-procesado: 10327189
+EfficientVit - Post-procesado: 9472354
+LiDAR: 14089971
+EfficientVit - Predicción: 31302277
+Carril basado en DL - Predicción: 11783542
+Carril basado en DL - Post-procesado: 8318529
+EfficientVit - Post-procesado: 9236325
+LiDAR: 14083011
+EfficientVit - Predicción: 31923984
+Carril basado en DL - Predicción: 14204740
+Carril basado en DL - Post-procesado: 10375329
+EfficientVit - Post-procesado: 10500550
+LiDAR: 16151681
+EfficientVit - Predicción: 34754290
+Carril basado en DL - Predicción: 13638994
+Carril basado en DL - Post-procesado: 8458289
+EfficientVit - Post-procesado: 11761272
+LiDAR: 14939587
+EfficientVit - Predicción: 36211194
+Carril basado en DL - Predicción: 14439860
+Carril basado en DL - Post-procesado: 8462988
+EfficientVit - Post-procesado: 9798532
+LiDAR: 13729563
+EfficientVit - Predicción: 33706575
+Carril basado en DL - Predicción: 13451694
+Carril basado en DL - Post-procesado: 9168775
+EfficientVit - Post-procesado: 10798368
+LiDAR: 15908642
+EfficientVit - Predicción: 34601692
+Carril basado en DL - Predicción: 11526653
+Carril basado en DL - Post-procesado: 9222825
+EfficientVit - Post-procesado: 9897652
+LiDAR: 16719528
+EfficientVit - Predicción: 34378272
+Carril basado en DL - Predicción: 10735197
+Carril basado en DL - Post-procesado: 8517658
+EfficientVit - Post-procesado: 9787662
+LiDAR: 15930613
+EfficientVit - Predicción: 32465681
+Carril basado en DL - Predicción: 10887657
+Carril basado en DL - Post-procesado: 8626668
+EfficientVit - Post-procesado: 10376410
+LiDAR: 15899072
+EfficientVit - Predicción: 35152198
+Carril basado en DL - Predicción: 10222411
+Carril basado en DL - Post-procesado: 8183750
+EfficientVit - Post-procesado: 8982907
+LiDAR: 15864072
+EfficientVit - Predicción: 33128699
+Carril basado en DL - Predicción: 12590229
+Carril basado en DL - Post-procesado: 8345349
+EfficientVit - Post-procesado: 10766197
+LiDAR: 13486454
+EfficientVit - Predicción: 34239312
+Carril basado en DL - Predicción: 11365095
+Carril basado en DL - Post-procesado: 9221155
+EfficientVit - Post-procesado: 10669879
+LiDAR: 14428409
+EfficientVit - Predicción: 33484646
+Carril basado en DL - Predicción: 13610494
+Carril basado en DL - Post-procesado: 8885006
+EfficientVit - Post-procesado: 9709713
+LiDAR: 16636368
+EfficientVit - Predicción: 34062254
+Carril basado en DL - Predicción: 12553899
+Carril basado en DL - Post-procesado: 8520798
+EfficientVit - Post-procesado: 11429584
+LiDAR: 13901642
+EfficientVit - Predicción: 35179028
+Carril basado en DL - Predicción: 9994931
+Carril basado en DL - Post-procesado: 8278580
+EfficientVit - Post-procesado: 9710962
+LiDAR: 13799983
+EfficientVit - Predicción: 32109134
+Carril basado en DL - Predicción: 14128981
+Carril basado en DL - Post-procesado: 8391520
+EfficientVit - Post-procesado: 11402994
+LiDAR: 15363375
+EfficientVit - Predicción: 34070624
+Carril basado en DL - Predicción: 11824372
+Carril basado en DL - Post-procesado: 8406729
+EfficientVit - Post-procesado: 10557619
+LiDAR: 17240486
+EfficientVit - Predicción: 36410972
+Carril basado en DL - Predicción: 11365354
+Carril basado en DL - Post-procesado: 8349089
+EfficientVit - Post-procesado: 10534638
+LiDAR: 13572895
+EfficientVit - Predicción: 34747250
+Carril basado en DL - Predicción: 10369199
+Carril basado en DL - Post-procesado: 8311280
+EfficientVit - Post-procesado: 9514834
+LiDAR: 13607663
+EfficientVit - Predicción: 32640231
+Carril basado en DL - Predicción: 16775758
+Carril basado en DL - Post-procesado: 12344729
+EfficientVit - Post-procesado: 14446059
+LiDAR: 17507084
+EfficientVit - Predicción: 32736730
+Carril basado en DL - Predicción: 13122306
+Carril basado en DL - Post-procesado: 8496908
+EfficientVit - Post-procesado: 9945712
+LiDAR: 14804818
+EfficientVit - Predicción: 32931669
+Carril basado en DL - Predicción: 12977437
+Carril basado en DL - Post-procesado: 8247550
+EfficientVit - Post-procesado: 11626383
+LiDAR: 13743693
+EfficientVit - Predicción: 32056305
+Carril basado en DL - Predicción: 10973106
+Carril basado en DL - Post-procesado: 8272880
+EfficientVit - Post-procesado: 9614203
+LiDAR: 15062337
+EfficientVit - Predicción: 32806689
+Carril basado en DL - Predicción: 11306984
+Carril basado en DL - Post-procesado: 8274130
+EfficientVit - Post-procesado: 9817052
+LiDAR: 13723353
+EfficientVit - Predicción: 33002228
+Carril basado en DL - Predicción: 10540469
+Carril basado en DL - Post-procesado: 8282520
+EfficientVit - Post-procesado: 9392234
+LiDAR: 13561583
+EfficientVit - Predicción: 33694726
+Carril basado en DL - Predicción: 11231445
+Carril basado en DL - Post-procesado: 8278619
+EfficientVit - Post-procesado: 9094715
+LiDAR: 14385420
+EfficientVit - Predicción: 32141693
+Carril basado en DL - Predicción: 10271050
+Carril basado en DL - Post-procesado: 8213920
+EfficientVit - Post-procesado: 9594883
+LiDAR: 13398394
+EfficientVit - Predicción: 32893329
+Carril basado en DL - Predicción: 11375694
+Carril basado en DL - Post-procesado: 8296680
+EfficientVit - Post-procesado: 9755113
+LiDAR: 14094482
+EfficientVit - Predicción: 33938234
+Carril basado en DL - Predicción: 12002542
+Carril basado en DL - Post-procesado: 8125780
+EfficientVit - Post-procesado: 9922482
+LiDAR: 13411064
+EfficientVit - Predicción: 32118013
+Carril basado en DL - Predicción: 14623568
+Carril basado en DL - Post-procesado: 8287100
+EfficientVit - Post-procesado: 9264885
+LiDAR: 13405555
+EfficientVit - Predicción: 33190538
+Carril basado en DL - Predicción: 11588293
+Carril basado en DL - Post-procesado: 8233900
+EfficientVit - Post-procesado: 9766153
+LiDAR: 13946192
+EfficientVit - Predicción: 33319438
+Carril basado en DL - Predicción: 10882817
+Carril basado en DL - Post-procesado: 8391189
+EfficientVit - Post-procesado: 9471953
+LiDAR: 13469294
+EfficientVit - Predicción: 37435758
+Carril basado en DL - Predicción: 11338144
+Carril basado en DL - Post-procesado: 8207380
+EfficientVit - Post-procesado: 10318680
+LiDAR: 14226751
+EfficientVit - Predicción: 38038474
+Carril basado en DL - Predicción: 10908757
+Carril basado en DL - Post-procesado: 8174560
+EfficientVit - Post-procesado: 9866342
+LiDAR: 13309195
+EfficientVit - Predicción: 34790171
+Carril basado en DL - Predicción: 10596008
+Carril basado en DL - Post-procesado: 8291169
+EfficientVit - Post-procesado: 9425114
+LiDAR: 15183566
+EfficientVit - Predicción: 32921920
+Carril basado en DL - Predicción: 12406790
+Carril basado en DL - Post-procesado: 8171580
+EfficientVit - Post-procesado: 10282270
+LiDAR: 14165601
+EfficientVit - Predicción: 33628145
+Carril basado en DL - Predicción: 13522333
+Carril basado en DL - Post-procesado: 8474600
+EfficientVit - Post-procesado: 10350290
+LiDAR: 14292500
+EfficientVit - Predicción: 32323393
+Carril basado en DL - Predicción: 11621263
+Carril basado en DL - Post-procesado: 9023076
+EfficientVit - Post-procesado: 10430409
+LiDAR: 13155336
+EfficientVit - Predicción: 33870655
+Carril basado en DL - Predicción: 10949287
+Carril basado en DL - Post-procesado: 11182565
+EfficientVit - Post-procesado: 9609053
+LiDAR: 16018123
+EfficientVit - Predicción: 33016449
+Carril basado en DL - Predicción: 11162235
+Carril basado en DL - Post-procesado: 9257616
+EfficientVit - Post-procesado: 9509463
+LiDAR: 13436695
+EfficientVit - Predicción: 33963375
+Carril basado en DL - Predicción: 20714728
+Carril basado en DL - Post-procesado: 11774373
+EfficientVit - Post-procesado: 12770918
+LiDAR: 13764873
+EfficientVit - Predicción: 34416412
+Carril basado en DL - Predicción: 12970776
+Carril basado en DL - Post-procesado: 8282520
+EfficientVit - Post-procesado: 10790277
+LiDAR: 14424000
+EfficientVit - Predicción: 31733495
+Carril basado en DL - Predicción: 10248020
+Carril basado en DL - Post-procesado: 8536798
+EfficientVit - Post-procesado: 11501314
+LiDAR: 15829562
+EfficientVit - Predicción: 33481277
+Carril basado en DL - Predicción: 10947236
+Carril basado en DL - Post-procesado: 8113010
+EfficientVit - Post-procesado: 10144170
+LiDAR: 14103002
+EfficientVit - Predicción: 31081958
+Carril basado en DL - Predicción: 10347879
+Carril basado en DL - Post-procesado: 8144661
+EfficientVit - Post-procesado: 10674527
+LiDAR: 13691473
+EfficientVit - Predicción: 31822155
+Carril basado en DL - Predicción: 11110285
+Carril basado en DL - Post-procesado: 8150100
+EfficientVit - Post-procesado: 11070596
+LiDAR: 14034621
+EfficientVit - Predicción: 36992160
+Carril basado en DL - Predicción: 12113871
+Carril basado en DL - Post-procesado: 13156506
+EfficientVit - Post-procesado: 11699773
+LiDAR: 14303660
+EfficientVit - Predicción: 36149443
+Carril basado en DL - Predicción: 16186781
+Carril basado en DL - Post-procesado: 8601948
+EfficientVit - Post-procesado: 12203160
+LiDAR: 17411615
+EfficientVit - Predicción: 34212793
+Carril basado en DL - Predicción: 13372984
+Carril basado en DL - Post-procesado: 8291640
+EfficientVit - Post-procesado: 9973841
+LiDAR: 13967882
+EfficientVit - Predicción: 35710646
+Carril basado en DL - Predicción: 14088472
+Carril basado en DL - Post-procesado: 8588858
+EfficientVit - Post-procesado: 13868283
+LiDAR: 15025196
+EfficientVit - Predicción: 33627206
+Carril basado en DL - Predicción: 10368479
+Carril basado en DL - Post-procesado: 8167901
+EfficientVit - Post-procesado: 10209731
+LiDAR: 13622554
+EfficientVit - Predicción: 32353761
+Carril basado en DL - Predicción: 10835557
+Carril basado en DL - Post-procesado: 9475864
+EfficientVit - Post-procesado: 9983132
+LiDAR: 14835258
+EfficientVit - Predicción: 33252828
+Carril basado en DL - Predicción: 12928737
+Carril basado en DL - Post-procesado: 10011511
+EfficientVit - Post-procesado: 9356544
+LiDAR: 15161386
+EfficientVit - Predicción: 31747965
+Carril basado en DL - Predicción: 13870193
+Carril basado en DL - Post-procesado: 8760867
+EfficientVit - Post-procesado: 10449859
+LiDAR: 15370656
+EfficientVit - Predicción: 33209188
+Carril basado en DL - Predicción: 10984377
+Carril basado en DL - Post-procesado: 8430129
+EfficientVit - Post-procesado: 11511724
+LiDAR: 14962937
+EfficientVit - Predicción: 31962345
+Carril basado en DL - Predicción: 11710243
+Carril basado en DL - Post-procesado: 9023335
+EfficientVit - Post-procesado: 10711578
+LiDAR: 14095002
+EfficientVit - Predicción: 40921670
+Carril basado en DL - Predicción: 11949502
+Carril basado en DL - Post-procesado: 8229700
+EfficientVit - Post-procesado: 10687628
+LiDAR: 13474204
+EfficientVit - Predicción: 34546952
+Carril basado en DL - Predicción: 14664729
+Carril basado en DL - Post-procesado: 8391709
+EfficientVit - Post-procesado: 10601068
+LiDAR: 12982657
+EfficientVit - Predicción: 40192163
+Carril basado en DL - Predicción: 13090796
+Carril basado en DL - Post-procesado: 8537758
+EfficientVit - Post-procesado: 10345800
+LiDAR: 13714523
+EfficientVit - Predicción: 36342353
+Carril basado en DL - Predicción: 12670358
+Carril basado en DL - Post-procesado: 8407519
+EfficientVit - Post-procesado: 10961197
+LiDAR: 14221811
+EfficientVit - Predicción: 31035748
+Carril basado en DL - Predicción: 11892122
+Carril basado en DL - Post-procesado: 9158765
+EfficientVit - Post-procesado: 10672898
+LiDAR: 14937578
+EfficientVit - Predicción: 33174568
+Carril basado en DL - Predicción: 11706103
+Carril basado en DL - Post-procesado: 8485079
+EfficientVit - Post-procesado: 9672873
+LiDAR: 14256560
+EfficientVit - Predicción: 32725391
+Carril basado en DL - Predicción: 10970787
+Carril basado en DL - Post-procesado: 8241029
+EfficientVit - Post-procesado: 9370714
+LiDAR: 13848113
+EfficientVit - Predicción: 32776879
+Carril basado en DL - Predicción: 11314675
+Carril basado en DL - Post-procesado: 8522559
+EfficientVit - Post-procesado: 10026232
+LiDAR: 14086272
+EfficientVit - Predicción: 36709341
+Carril basado en DL - Predicción: 11896522
+Carril basado en DL - Post-procesado: 8262190
+EfficientVit - Post-procesado: 9539623
+LiDAR: 13587224
+EfficientVit - Predicción: 31963984
+Carril basado en DL - Predicción: 11400044
+Carril basado en DL - Post-procesado: 8306290
+EfficientVit - Post-procesado: 9246685
+LiDAR: 12695659
+EfficientVit - Predicción: 35030118
+Carril basado en DL - Predicción: 10917417
+Carril basado en DL - Post-procesado: 8296569
+EfficientVit - Post-procesado: 10961596
+LiDAR: 14725978
+EfficientVit - Predicción: 35534247
+Carril basado en DL - Predicción: 10816377
+Carril basado en DL - Post-procesado: 8512658
+EfficientVit - Post-procesado: 10269370
+LiDAR: 14133851
+EfficientVit - Predicción: 35957424
+Carril basado en DL - Predicción: 11615673
+Carril basado en DL - Post-procesado: 9840982
+EfficientVit - Post-procesado: 12101962
+LiDAR: 16285411
+EfficientVit - Predicción: 36033044
+Carril basado en DL - Predicción: 11986191
+Carril basado en DL - Post-procesado: 8539368
+EfficientVit - Post-procesado: 11919481
+LiDAR: 15542184
+EfficientVit - Predicción: 39646646
+Carril basado en DL - Predicción: 11550423
+Carril basado en DL - Post-procesado: 10954307
+EfficientVit - Post-procesado: 12754108
+LiDAR: 15392174
+EfficientVit - Predicción: 39269689
+Carril basado en DL - Predicción: 11568184
+Carril basado en DL - Post-procesado: 9313744
+EfficientVit - Post-procesado: 11312944
+LiDAR: 15011166
+EfficientVit - Predicción: 31375197
+Carril basado en DL - Predicción: 14778678
+Carril basado en DL - Post-procesado: 9095205
+EfficientVit - Post-procesado: 13549605
+LiDAR: 14529539
+EfficientVit - Predicción: 36610832
+Carril basado en DL - Predicción: 11615363
+Carril basado en DL - Post-procesado: 8733367
+EfficientVit - Post-procesado: 10126581
+LiDAR: 14752618
+EfficientVit - Predicción: 32105933
+Carril basado en DL - Predicción: 12241100
+Carril basado en DL - Post-procesado: 8558098
+EfficientVit - Post-procesado: 11294996
+LiDAR: 13984362
+EfficientVit - Predicción: 32804159
+Carril basado en DL - Predicción: 11489544
+Carril basado en DL - Post-procesado: 8254179
+EfficientVit - Post-procesado: 11443014
+LiDAR: 14312690
+EfficientVit - Predicción: 31743256
+Carril basado en DL - Predicción: 11498904
+Carril basado en DL - Post-procesado: 8268799
+EfficientVit - Post-procesado: 11219145
+LiDAR: 15340066
+EfficientVit - Predicción: 33556316
+Carril basado en DL - Predicción: 11975612
+Carril basado en DL - Post-procesado: 8230740
+EfficientVit - Post-procesado: 12024262
+LiDAR: 13928451
+EfficientVit - Predicción: 35548327
+Carril basado en DL - Predicción: 11282275
+Carril basado en DL - Post-procesado: 8608768
+EfficientVit - Post-procesado: 11107466
+LiDAR: 14911917
+EfficientVit - Predicción: 32448782
+Carril basado en DL - Predicción: 11591944
+Carril basado en DL - Post-procesado: 9158415
+EfficientVit - Post-procesado: 10750859
+LiDAR: 13298065
+EfficientVit - Predicción: 34361233
+Carril basado en DL - Predicción: 12341570
+Carril basado en DL - Post-procesado: 8652608
+EfficientVit - Post-procesado: 10924676
+LiDAR: 14770328
+EfficientVit - Predicción: 33055959
+Carril basado en DL - Predicción: 10980576
+Carril basado en DL - Post-procesado: 8127730
+EfficientVit - Post-procesado: 9678892
+LiDAR: 13604554
+EfficientVit - Predicción: 32614830
+Carril basado en DL - Predicción: 12612729
+Carril basado en DL - Post-procesado: 11722273
+EfficientVit - Post-procesado: 14977746
+LiDAR: 15433245
+EfficientVit - Predicción: 36154634
+Carril basado en DL - Predicción: 10174260
+Carril basado en DL - Post-procesado: 9928021
+EfficientVit - Post-procesado: 11155375
+LiDAR: 17246706
+EfficientVit - Predicción: 34793210
+Carril basado en DL - Predicción: 11668724
+Carril basado en DL - Post-procesado: 10030201
+EfficientVit - Post-procesado: 9770572
+LiDAR: 17943652
+EfficientVit - Predicción: 35153949
+Carril basado en DL - Predicción: 11513504
+Carril basado en DL - Post-procesado: 8320609
+EfficientVit - Post-procesado: 13831292
+LiDAR: 15182967
+EfficientVit - Predicción: 31714735
+Carril basado en DL - Predicción: 10837878
+Carril basado en DL - Post-procesado: 10965736
+EfficientVit - Post-procesado: 12914596
+LiDAR: 13831412
+EfficientVit - Predicción: 32401442
+Carril basado en DL - Predicción: 10598948
+Carril basado en DL - Post-procesado: 8578219
+EfficientVit - Post-procesado: 10590239
+LiDAR: 17165437
+EfficientVit - Predicción: 34686830
+Carril basado en DL - Predicción: 11394955
+Carril basado en DL - Post-procesado: 8163811
+EfficientVit - Post-procesado: 9734563
+LiDAR: 14191721
+EfficientVit - Predicción: 33609807
+Carril basado en DL - Predicción: 11702522
+Carril basado en DL - Post-procesado: 8034101
+EfficientVit - Post-procesado: 10112820
+LiDAR: 13721763
+EfficientVit - Predicción: 32722900
+Carril basado en DL - Predicción: 11673653
+Carril basado en DL - Post-procesado: 8328890
+EfficientVit - Post-procesado: 11167076
+LiDAR: 14293100
+EfficientVit - Predicción: 32215403
+Carril basado en DL - Predicción: 10749888
+Carril basado en DL - Post-procesado: 8083490
+EfficientVit - Post-procesado: 10513569
+LiDAR: 13357655
+EfficientVit - Predicción: 32453572
+Carril basado en DL - Predicción: 11284845
+Carril basado en DL - Post-procesado: 8063990
+EfficientVit - Post-procesado: 10657828
+LiDAR: 13534985
+EfficientVit - Predicción: 32500951
+Carril basado en DL - Predicción: 14816947
+Carril basado en DL - Post-procesado: 8221201
+EfficientVit - Post-procesado: 10671458
+LiDAR: 14268411
+EfficientVit - Predicción: 32672641
+Carril basado en DL - Predicción: 11658753
+Carril basado en DL - Post-procesado: 8398369
+EfficientVit - Post-procesado: 11767573
+LiDAR: 14669729
+EfficientVit - Predicción: 32799719
+Carril basado en DL - Predicción: 10363129
+Carril basado en DL - Post-procesado: 8202840
+EfficientVit - Post-procesado: 10260131
+LiDAR: 13995031
+EfficientVit - Predicción: 34976269
+Carril basado en DL - Predicción: 12219090
+Carril basado en DL - Post-procesado: 8551619
+EfficientVit - Post-procesado: 10203170
+LiDAR: 14761428
+EfficientVit - Predicción: 43029481
+Carril basado en DL - Predicción: 10619078
+Carril basado en DL - Post-procesado: 8281619
+EfficientVit - Post-procesado: 9878863
+LiDAR: 17274315
+EfficientVit - Predicción: 34940800
+Carril basado en DL - Predicción: 10984057
+Carril basado en DL - Post-procesado: 8314009
+EfficientVit - Post-procesado: 10285710
+LiDAR: 14967337
+EfficientVit - Predicción: 33764295
+Carril basado en DL - Predicción: 10929657
+Carril basado en DL - Post-procesado: 8258279
+EfficientVit - Post-procesado: 11146177
+LiDAR: 14374479
+EfficientVit - Predicción: 32657070
+Carril basado en DL - Predicción: 11459015
+Carril basado en DL - Post-procesado: 9051495
+EfficientVit - Post-procesado: 10385909
+LiDAR: 14271081
+EfficientVit - Predicción: 34161313
+Carril basado en DL - Predicción: 14438589
+Carril basado en DL - Post-procesado: 9850812
+EfficientVit - Post-procesado: 10165990
+LiDAR: 14665889
+EfficientVit - Predicción: 32633111
+Carril basado en DL - Predicción: 12499970
+Carril basado en DL - Post-procesado: 8467609
+EfficientVit - Post-procesado: 11489414
+LiDAR: 13673133
+EfficientVit - Predicción: 34103594
+Carril basado en DL - Predicción: 11085276
+Carril basado en DL - Post-procesado: 8401899
+EfficientVit - Post-procesado: 10052941
+LiDAR: 13659924
+EfficientVit - Predicción: 33202508
+Carril basado en DL - Predicción: 11107616
+Carril basado en DL - Post-procesado: 8570149
+EfficientVit - Post-procesado: 10585828
+LiDAR: 14057712
+EfficientVit - Predicción: 32914700
+Carril basado en DL - Predicción: 11103835
+Carril basado en DL - Post-procesado: 8438609
+EfficientVit - Post-procesado: 10057211
+LiDAR: 14087252
+EfficientVit - Predicción: 33244457
+Carril basado en DL - Predicción: 11186855
+Carril basado en DL - Post-procesado: 8295460
+EfficientVit - Post-procesado: 9708642
+LiDAR: 14569069
+EfficientVit - Predicción: 35041999
+Carril basado en DL - Predicción: 11109266
+Carril basado en DL - Post-procesado: 8155380
+EfficientVit - Post-procesado: 10092481
+LiDAR: 14321360
+EfficientVit - Predicción: 33055149
+Carril basado en DL - Predicción: 13490864
+Carril basado en DL - Post-procesado: 9477225
+EfficientVit - Post-procesado: 12603588
+LiDAR: 13505334
+EfficientVit - Predicción: 32536782
+Carril basado en DL - Predicción: 10599628
+Carril basado en DL - Post-procesado: 7116265
+EfficientVit - Post-procesado: 11816922
+LiDAR: 14477059
+EfficientVit - Predicción: 33101748
+Carril basado en DL - Predicción: 12673408
+Carril basado en DL - Post-procesado: 6700557
+EfficientVit - Post-procesado: 9837952
+LiDAR: 13583504
+EfficientVit - Predicción: 35330668
+Carril basado en DL - Predicción: 10765057
+Carril basado en DL - Post-procesado: 6062850
+EfficientVit - Post-procesado: 9959401
+LiDAR: 13906912
+EfficientVit - Predicción: 33064079
+Carril basado en DL - Predicción: 12361260
+Carril basado en DL - Post-procesado: 6524708
+EfficientVit - Post-procesado: 11132306
+LiDAR: 13266025
+EfficientVit - Predicción: 32261632
+Carril basado en DL - Predicción: 11870883
+Carril basado en DL - Post-procesado: 6462538
+EfficientVit - Post-procesado: 12587169
+LiDAR: 20551479
+EfficientVit - Predicción: 32906979
+Carril basado en DL - Predicción: 11290085
+Carril basado en DL - Post-procesado: 8704508
+EfficientVit - Post-procesado: 10006022
+LiDAR: 13540643
+EfficientVit - Predicción: 38102284
+Carril basado en DL - Predicción: 11473694
+Carril basado en DL - Post-procesado: 7664163
+EfficientVit - Post-procesado: 11547954
+LiDAR: 14272690
+EfficientVit - Predicción: 40279773
+Carril basado en DL - Predicción: 11096027
+Carril basado en DL - Post-procesado: 8211090
+EfficientVit - Post-procesado: 10877747
+LiDAR: 16746698
+EfficientVit - Predicción: 41740347
+Carril basado en DL - Predicción: 11300845
+Carril basado en DL - Post-procesado: 8454839
+EfficientVit - Post-procesado: 11230306
+LiDAR: 13947942
+EfficientVit - Predicción: 45441258
+Carril basado en DL - Predicción: 11697343
+Carril basado en DL - Post-procesado: 9010506
+EfficientVit - Post-procesado: 11440124
+LiDAR: 13813793
+EfficientVit - Predicción: 35170508
+Carril basado en DL - Predicción: 11476793
+Carril basado en DL - Post-procesado: 8434380
+EfficientVit - Post-procesado: 10753878
+LiDAR: 13666003
+EfficientVit - Predicción: 33758705
+Carril basado en DL - Predicción: 11769663
+Carril basado en DL - Post-procesado: 8437849
+EfficientVit - Post-procesado: 9784603
+LiDAR: 13775212
+EfficientVit - Predicción: 33298607
+Carril basado en DL - Predicción: 10354569
+Carril basado en DL - Post-procesado: 9328945
+EfficientVit - Post-procesado: 11000107
+LiDAR: 13991151
+EfficientVit - Predicción: 34556712
+Carril basado en DL - Predicción: 12161120
+Carril basado en DL - Post-procesado: 9562063
+EfficientVit - Post-procesado: 10582579
+LiDAR: 13778453
+EfficientVit - Predicción: 34961139
+Carril basado en DL - Predicción: 11849812
+Carril basado en DL - Post-procesado: 9496594
+EfficientVit - Post-procesado: 10208750
+LiDAR: 13793543
+EfficientVit - Predicción: 34619012
+Carril basado en DL - Predicción: 14773198
+Carril basado en DL - Post-procesado: 9163805
+EfficientVit - Post-procesado: 10230700
+LiDAR: 13880542
+EfficientVit - Predicción: 34514991
+Carril basado en DL - Predicción: 12038292
+Carril basado en DL - Post-procesado: 9526584
+EfficientVit - Post-procesado: 11004666
+LiDAR: 14068191
+EfficientVit - Predicción: 33972635
+Carril basado en DL - Predicción: 11877522
+Carril basado en DL - Post-procesado: 8652428
+EfficientVit - Post-procesado: 11376135
+LiDAR: 14603090
+EfficientVit - Predicción: 34648651
+Carril basado en DL - Predicción: 13377106
+Carril basado en DL - Post-procesado: 12876107
+EfficientVit - Post-procesado: 9844082
+LiDAR: 13502114
+EfficientVit - Predicción: 37639646
+Carril basado en DL - Predicción: 11649253
+Carril basado en DL - Post-procesado: 8030361
+EfficientVit - Post-procesado: 9859752
+LiDAR: 15626464
+EfficientVit - Predicción: 35524267
+Carril basado en DL - Predicción: 16320561
+Carril basado en DL - Post-procesado: 12255640
+EfficientVit - Post-procesado: 11839602
+LiDAR: 16067851
+EfficientVit - Predicción: 34508871
+Carril basado en DL - Predicción: 14106051
+Carril basado en DL - Post-procesado: 8705328
+EfficientVit - Post-procesado: 9638172
+LiDAR: 15532945
+EfficientVit - Predicción: 33685476
+Carril basado en DL - Predicción: 15281426
+Carril basado en DL - Post-procesado: 10864817
+EfficientVit - Post-procesado: 11247655
+LiDAR: 15328436
+EfficientVit - Predicción: 36182523
+Carril basado en DL - Predicción: 11319306
+Carril basado en DL - Post-procesado: 8657977
+EfficientVit - Post-procesado: 12940876
+LiDAR: 14628189
+EfficientVit - Predicción: 34246693
+Carril basado en DL - Predicción: 12091451
+Carril basado en DL - Post-procesado: 8965136
+EfficientVit - Post-procesado: 9910892
+LiDAR: 13413745
+EfficientVit - Predicción: 35170319
+Carril basado en DL - Predicción: 14051221
+Carril basado en DL - Post-procesado: 8380119
+EfficientVit - Post-procesado: 10039981
+LiDAR: 14157811
+EfficientVit - Predicción: 34324623
+Carril basado en DL - Predicción: 14727808
+Carril basado en DL - Post-procesado: 9064106
+EfficientVit - Post-procesado: 10369500
+LiDAR: 16029272
+EfficientVit - Predicción: 32080714
+Carril basado en DL - Predicción: 11223895
+Carril basado en DL - Post-procesado: 8935126
+EfficientVit - Post-procesado: 10521278
+LiDAR: 15258415
+EfficientVit - Predicción: 34230223
+Carril basado en DL - Predicción: 12836167
+Carril basado en DL - Post-procesado: 11699074
+EfficientVit - Post-procesado: 13960542
+LiDAR: 15972871
+EfficientVit - Predicción: 32421222
+Carril basado en DL - Predicción: 11743293
+Carril basado en DL - Post-procesado: 8867796
+EfficientVit - Post-procesado: 11818252
+LiDAR: 14300501
+EfficientVit - Predicción: 35032449
+Carril basado en DL - Predicción: 11713823
+Carril basado en DL - Post-procesado: 8597848
+EfficientVit - Post-procesado: 10189670
+LiDAR: 13245135
+EfficientVit - Predicción: 34084854
+Carril basado en DL - Predicción: 13712103
+Carril basado en DL - Post-procesado: 10768157
+EfficientVit - Post-procesado: 10860147
+LiDAR: 13425404
+EfficientVit - Predicción: 35567417
+Carril basado en DL - Predicción: 12257861
+Carril basado en DL - Post-procesado: 8623767
+EfficientVit - Post-procesado: 10951246
+LiDAR: 14729179
+EfficientVit - Predicción: 41308878
+Carril basado en DL - Predicción: 15368496
+Carril basado en DL - Post-procesado: 9068256
+EfficientVit - Post-procesado: 11915052
+LiDAR: 16801428
+EfficientVit - Predicción: 33523816
+Carril basado en DL - Predicción: 14429610
+Carril basado en DL - Post-procesado: 9415584
+EfficientVit - Post-procesado: 11302435
+LiDAR: 14227061
+EfficientVit - Predicción: 36119984
+Carril basado en DL - Predicción: 12577149
+Carril basado en DL - Post-procesado: 8880916
+EfficientVit - Post-procesado: 9799892
+LiDAR: 14156851
+EfficientVit - Predicción: 36164453
+Carril basado en DL - Predicción: 11851693
+Carril basado en DL - Post-procesado: 8654958
+EfficientVit - Post-procesado: 10152630
+LiDAR: 13711253
+EfficientVit - Predicción: 35167349
+Carril basado en DL - Predicción: 11017027
+Carril basado en DL - Post-procesado: 8492948
+EfficientVit - Post-procesado: 10608009
+LiDAR: 14568199
+EfficientVit - Predicción: 34245333
+Carril basado en DL - Predicción: 10759408
+Carril basado en DL - Post-procesado: 8545338
+EfficientVit - Post-procesado: 10424459
+LiDAR: 14463019
+EfficientVit - Predicción: 32207633
+Carril basado en DL - Predicción: 14851778
+Carril basado en DL - Post-procesado: 8818787
+EfficientVit - Post-procesado: 10406010
+LiDAR: 15381895
+EfficientVit - Predicción: 33095719
+Carril basado en DL - Predicción: 10642768
+Carril basado en DL - Post-procesado: 8564228
+EfficientVit - Post-procesado: 10874557
+LiDAR: 14262451
+EfficientVit - Predicción: 30671450
+Carril basado en DL - Predicción: 12233610
+Carril basado en DL - Post-procesado: 10096181
+EfficientVit - Post-procesado: 10959936
+LiDAR: 14297320
+EfficientVit - Predicción: 33467527
+Carril basado en DL - Predicción: 14484099
+Carril basado en DL - Post-procesado: 11464234
+EfficientVit - Post-procesado: 12534649
+LiDAR: 17444705
+EfficientVit - Predicción: 33457968
+Carril basado en DL - Predicción: 11869182
+Carril basado en DL - Post-procesado: 8381909
+EfficientVit - Post-procesado: 9574003
+LiDAR: 13900602
+EfficientVit - Predicción: 40216223
+Carril basado en DL - Predicción: 11331385
+Carril basado en DL - Post-procesado: 8544089
+EfficientVit - Post-procesado: 9675632
+LiDAR: 13634034
+EfficientVit - Predicción: 37467928
+Carril basado en DL - Predicción: 10579028
+Carril basado en DL - Post-procesado: 8392899
+EfficientVit - Post-procesado: 11008896
+LiDAR: 16676179
+EfficientVit - Predicción: 36584261
+Carril basado en DL - Predicción: 10774648
+Carril basado en DL - Post-procesado: 8341059
+EfficientVit - Post-procesado: 10495149
+LiDAR: 15233905
+EfficientVit - Predicción: 34860010
+Carril basado en DL - Predicción: 11344265
+Carril basado en DL - Post-procesado: 8355929
+EfficientVit - Post-procesado: 14345330
+LiDAR: 12821657
+EfficientVit - Predicción: 33273748
+Carril basado en DL - Predicción: 13445655
+Carril basado en DL - Post-procesado: 9637683
+EfficientVit - Post-procesado: 11641783
+LiDAR: 13487845
+EfficientVit - Predicción: 33950984
+Carril basado en DL - Predicción: 16427600
+Carril basado en DL - Post-procesado: 8282850
+EfficientVit - Post-procesado: 9349235
+LiDAR: 13155446
+EfficientVit - Predicción: 35967125
+Carril basado en DL - Predicción: 11711702
+Carril basado en DL - Post-procesado: 8071951
+EfficientVit - Post-procesado: 10220431
+LiDAR: 14396171
+EfficientVit - Predicción: 33631096
+Carril basado en DL - Predicción: 11914152
+Carril basado en DL - Post-procesado: 8223710
+EfficientVit - Post-procesado: 10687108
+LiDAR: 13601163
+EfficientVit - Predicción: 33667626
+Carril basado en DL - Predicción: 11332394
+Carril basado en DL - Post-procesado: 8094801
+EfficientVit - Post-procesado: 10174981
+LiDAR: 13046606
+EfficientVit - Predicción: 38737542
+Carril basado en DL - Predicción: 11275035
+Carril basado en DL - Post-procesado: 7995171
+EfficientVit - Post-procesado: 9714443
+LiDAR: 12853947
+EfficientVit - Predicción: 35963515
+Carril basado en DL - Predicción: 12923826
+Carril basado en DL - Post-procesado: 7950852
+EfficientVit - Post-procesado: 10371430
+LiDAR: 14742508
+EfficientVit - Predicción: 33716605
+Carril basado en DL - Predicción: 12727547
+Carril basado en DL - Post-procesado: 7389784
+EfficientVit - Post-procesado: 10420549
+LiDAR: 13715314
+EfficientVit - Predicción: 35226038
+Carril basado en DL - Predicción: 11439944
+Carril basado en DL - Post-procesado: 8331330
+EfficientVit - Post-procesado: 10205990
+LiDAR: 13936442
+EfficientVit - Predicción: 35361657
+Carril basado en DL - Predicción: 14024642
+Carril basado en DL - Post-procesado: 7115025
+EfficientVit - Post-procesado: 10601899
+LiDAR: 17137367
+EfficientVit - Predicción: 39384198
+Carril basado en DL - Predicción: 12836308
+Carril basado en DL - Post-procesado: 11071136
+EfficientVit - Post-procesado: 10325500
+LiDAR: 13733494
+EfficientVit - Predicción: 36014954
+Carril basado en DL - Predicción: 13414825
+Carril basado en DL - Post-procesado: 6134220
+EfficientVit - Post-procesado: 9478294
+LiDAR: 13786243
+EfficientVit - Predicción: 33722296
+Carril basado en DL - Predicción: 11574204
+Carril basado en DL - Post-procesado: 5690752
+EfficientVit - Post-procesado: 10403130
+LiDAR: 13509324
+EfficientVit - Predicción: 35725806
+Carril basado en DL - Predicción: 17738213
+Carril basado en DL - Post-procesado: 3658582
+EfficientVit - Post-procesado: 9906342
+LiDAR: 13828022
+EfficientVit - Predicción: 40821220
+Carril basado en DL - Predicción: 16894508
+Carril basado en DL - Post-procesado: 5597683
+EfficientVit - Post-procesado: 13860423
+LiDAR: 16713219
+EfficientVit - Predicción: 32511652
+Carril basado en DL - Predicción: 11839432
+EfficientVit - Predicción: 36038444
+Carril basado en DL - Predicción: 11484493
+Carril basado en DL - Post-procesado: 4405909
+EfficientVit - Post-procesado: 10247430
+LiDAR: 13838213
+EfficientVit - Predicción: 33993294
+Carril basado en DL - Predicción: 14324120
+Carril basado en DL - Post-procesado: 5297894
+EfficientVit - Post-procesado: 10092580
+LiDAR: 15497785
+EfficientVit - Predicción: 34591831
+Carril basado en DL - Predicción: 11082116
+Carril basado en DL - Post-procesado: 6494988
+EfficientVit - Post-procesado: 12808518
+LiDAR: 14183901
+EfficientVit - Predicción: 31851205
+Carril basado en DL - Predicción: 11925102
+Carril basado en DL - Post-procesado: 8646198
+EfficientVit - Post-procesado: 9582183
+LiDAR: 14414790
+EfficientVit - Predicción: 32846110
+Carril basado en DL - Predicción: 11520584
+Carril basado en DL - Post-procesado: 6668137
+EfficientVit - Post-procesado: 10896307
+LiDAR: 13871933
+EfficientVit - Predicción: 32345483
+Carril basado en DL - Predicción: 10832707
+Carril basado en DL - Post-procesado: 8654578
+EfficientVit - Post-procesado: 9992682
+LiDAR: 14806217
+EfficientVit - Predicción: 34140533
+Carril basado en DL - Predicción: 10650988
+Carril basado en DL - Post-procesado: 5663973
+EfficientVit - Post-procesado: 10090181
+LiDAR: 13586993
+EfficientVit - Predicción: 35484398
+Carril basado en DL - Predicción: 11375584
+Carril basado en DL - Post-procesado: 5524253
+EfficientVit - Post-procesado: 10214831
+LiDAR: 15543724
+EfficientVit - Predicción: 35202828
+Carril basado en DL - Predicción: 11536234
+Carril basado en DL - Post-procesado: 6256499
+EfficientVit - Post-procesado: 11597823
+LiDAR: 15097327
+EfficientVit - Predicción: 34570312
+Carril basado en DL - Predicción: 10823267
+Carril basado en DL - Post-procesado: 5288455
+EfficientVit - Post-procesado: 12685439
+LiDAR: 13885853
+EfficientVit - Predicción: 33068639
+Carril basado en DL - Predicción: 12240910
+Carril basado en DL - Post-procesado: 7760992
+EfficientVit - Post-procesado: 11357104
+LiDAR: 13030667
+EfficientVit - Predicción: 33022429
+Carril basado en DL - Predicción: 10384180
+Carril basado en DL - Post-procesado: 6255419
+EfficientVit - Post-procesado: 10878058
+LiDAR: 15611364
+EfficientVit - Predicción: 37886666
+Carril basado en DL - Predicción: 11519854
+Carril basado en DL - Post-procesado: 7557963
+EfficientVit - Post-procesado: 10261509
+LiDAR: 14482900
+EfficientVit - Predicción: 34121084
+Carril basado en DL - Predicción: 12483769
+Carril basado en DL - Post-procesado: 11690853
+EfficientVit - Post-procesado: 12210010
+LiDAR: 17017917
+EfficientVit - Predicción: 36533901
+Carril basado en DL - Predicción: 11806353
+Carril basado en DL - Post-procesado: 9167226
+EfficientVit - Post-procesado: 9965611
+LiDAR: 14339360
+EfficientVit - Predicción: 34144494
+Carril basado en DL - Predicción: 12979787
+Carril basado en DL - Post-procesado: 8305029
+EfficientVit - Post-procesado: 9288425
+LiDAR: 14620198
+EfficientVit - Predicción: 33121179
+Carril basado en DL - Predicción: 10317740
+Carril basado en DL - Post-procesado: 8395469
+EfficientVit - Post-procesado: 9839342
+LiDAR: 15780593
+EfficientVit - Predicción: 35311308
+Carril basado en DL - Predicción: 12429860
+Carril basado en DL - Post-procesado: 9232314
+EfficientVit - Post-procesado: 10845977
+LiDAR: 16420590
+EfficientVit - Predicción: 34029654
+Carril basado en DL - Predicción: 11550693
+Carril basado en DL - Post-procesado: 7922772
+EfficientVit - Post-procesado: 12617929
+LiDAR: 15257485
+EfficientVit - Predicción: 37476048
+Carril basado en DL - Predicción: 11314535
+Carril basado en DL - Post-procesado: 8675827
+EfficientVit - Post-procesado: 10582259
+LiDAR: 15969562
+EfficientVit - Predicción: 33032049
+Carril basado en DL - Predicción: 11796922
+Carril basado en DL - Post-procesado: 8280309
+EfficientVit - Post-procesado: 9804942
+LiDAR: 14502959
+EfficientVit - Predicción: 32809850
+Carril basado en DL - Predicción: 11933782
+Carril basado en DL - Post-procesado: 8739908
+EfficientVit - Post-procesado: 10026171
+LiDAR: 14257830
+EfficientVit - Predicción: 34741421
+Carril basado en DL - Predicción: 11188336
+Carril basado en DL - Post-procesado: 8679447
+EfficientVit - Post-procesado: 9938051
+LiDAR: 13560225
+EfficientVit - Predicción: 36875220
+Carril basado en DL - Predicción: 14647879
+Carril basado en DL - Post-procesado: 8749337
+EfficientVit - Post-procesado: 9736023
+LiDAR: 15716653
+EfficientVit - Predicción: 38033784
+Carril basado en DL - Predicción: 12584000
+Carril basado en DL - Post-procesado: 8919716
+EfficientVit - Post-procesado: 10172151
+LiDAR: 14457660
+EfficientVit - Predicción: 34130364
+Carril basado en DL - Predicción: 12930147
+Carril basado en DL - Post-procesado: 9258135
+EfficientVit - Post-procesado: 10592699
+LiDAR: 24856209
+EfficientVit - Predicción: 34845651
+Carril basado en DL - Predicción: 13217225
+Carril basado en DL - Post-procesado: 9043416
+EfficientVit - Post-procesado: 19238017
+LiDAR: 15172186
+EfficientVit - Predicción: 38483483
+Carril basado en DL - Predicción: 15236746
+Carril basado en DL - Post-procesado: 9564413
+EfficientVit - Post-procesado: 9888302
+LiDAR: 15028677
+EfficientVit - Predicción: 35648556
+Carril basado en DL - Predicción: 17104867
+Carril basado en DL - Post-procesado: 8859907
+EfficientVit - Post-procesado: 9734722
+LiDAR: 14635629
+EfficientVit - Predicción: 33699356
+Carril basado en DL - Predicción: 11785392
+Carril basado en DL - Post-procesado: 8854858
+EfficientVit - Post-procesado: 15422535
+LiDAR: 19891103
+EfficientVit - Predicción: 34486792
+Carril basado en DL - Predicción: 11473903
+Carril basado en DL - Post-procesado: 8519130
+EfficientVit - Post-procesado: 10070490
+LiDAR: 14657448
+EfficientVit - Predicción: 33920194
+Carril basado en DL - Predicción: 11222175
+Carril basado en DL - Post-procesado: 8358519
+EfficientVit - Post-procesado: 11357564
+LiDAR: 15116167
+EfficientVit - Predicción: 33204099
+Carril basado en DL - Predicción: 11538114
+Carril basado en DL - Post-procesado: 10900746
+EfficientVit - Post-procesado: 10350390
+LiDAR: 13599673
+EfficientVit - Predicción: 36531071
+Carril basado en DL - Predicción: 13232015
+Carril basado en DL - Post-procesado: 9967902
+EfficientVit - Post-procesado: 12900467
+LiDAR: 14704028
+EfficientVit - Predicción: 39848826
+Carril basado en DL - Predicción: 14283971
+Carril basado en DL - Post-procesado: 14667009
+EfficientVit - Post-procesado: 18183202
+LiDAR: 26786450
+EfficientVit - Predicción: 34115213
+Carril basado en DL - Predicción: 10493999
+Carril basado en DL - Post-procesado: 8710317
+EfficientVit - Post-procesado: 9528663
+LiDAR: 13747583
+EfficientVit - Predicción: 33429327
+Carril basado en DL - Predicción: 12280730
+Carril basado en DL - Post-procesado: 11086406
+EfficientVit - Post-procesado: 14226532
+LiDAR: 20501170
+EfficientVit - Predicción: 37017969
+Carril basado en DL - Predicción: 10741977
+Carril basado en DL - Post-procesado: 8734867
+EfficientVit - Post-procesado: 10651218
+LiDAR: 16570560
+EfficientVit - Predicción: 32397282
+Carril basado en DL - Predicción: 15647374
+Carril basado en DL - Post-procesado: 8763667
+EfficientVit - Post-procesado: 11531394
+LiDAR: 13777583
+EfficientVit - Predicción: 34048454
+Carril basado en DL - Predicción: 10800488
+Carril basado en DL - Post-procesado: 10474749
+EfficientVit - Post-procesado: 9822452
+LiDAR: 14012622
+EfficientVit - Predicción: 31636866
+Carril basado en DL - Predicción: 11701703
+Carril basado en DL - Post-procesado: 8854047
+EfficientVit - Post-procesado: 9893341
+LiDAR: 13645254
+EfficientVit - Predicción: 38648711
+Carril basado en DL - Predicción: 15841514
+Carril basado en DL - Post-procesado: 8379219
+EfficientVit - Post-procesado: 10016811
+LiDAR: 15062166
+EfficientVit - Predicción: 34980469
+Carril basado en DL - Predicción: 10841587
+Carril basado en DL - Post-procesado: 8688018
+EfficientVit - Post-procesado: 10957838
+LiDAR: 15327685
+EfficientVit - Predicción: 37221709
+Carril basado en DL - Predicción: 11886942
+Carril basado en DL - Post-procesado: 9695932
+EfficientVit - Post-procesado: 10614818
+LiDAR: 14397990
+EfficientVit - Predicción: 35340507
+Carril basado en DL - Predicción: 16819028
+Carril basado en DL - Post-procesado: 9243625
+EfficientVit - Post-procesado: 9493913
+LiDAR: 14322560
+EfficientVit - Predicción: 33491646
+Carril basado en DL - Predicción: 14401230
+Carril basado en DL - Post-procesado: 10868998
+EfficientVit - Post-procesado: 9830542
+LiDAR: 13475425
+EfficientVit - Predicción: 33288108
+Carril basado en DL - Predicción: 11622083
+Carril basado en DL - Post-procesado: 8338649
+EfficientVit - Post-procesado: 10668408
+LiDAR: 13570584
+EfficientVit - Predicción: 33184069
+Carril basado en DL - Predicción: 10589108
+Carril basado en DL - Post-procesado: 8335949
+EfficientVit - Post-procesado: 9962821
+LiDAR: 13125496
+EfficientVit - Predicción: 43800186
+Carril basado en DL - Predicción: 11971682
+Carril basado en DL - Post-procesado: 8675818
+EfficientVit - Post-procesado: 9832402
+LiDAR: 16375470
+EfficientVit - Predicción: 33748075
+Carril basado en DL - Predicción: 10447379
+Carril basado en DL - Post-procesado: 8454609
+EfficientVit - Post-procesado: 11670414
+LiDAR: 14880857
+EfficientVit - Predicción: 31807005
+Carril basado en DL - Predicción: 13207855
+Carril basado en DL - Post-procesado: 8656598
+EfficientVit - Post-procesado: 9749452
+LiDAR: 14100002
+EfficientVit - Predicción: 33491147
+Carril basado en DL - Predicción: 10164951
+Carril basado en DL - Post-procesado: 8340609
+EfficientVit - Post-procesado: 10043761
+LiDAR: 14329160
+EfficientVit - Predicción: 34289554
+Carril basado en DL - Predicción: 10516299
+Carril basado en DL - Post-procesado: 9097575
+EfficientVit - Post-procesado: 10403820
+LiDAR: 14471719
+EfficientVit - Predicción: 35604927
+Carril basado en DL - Predicción: 11791832
+Carril basado en DL - Post-procesado: 8897126
+EfficientVit - Post-procesado: 9560693
+LiDAR: 13360776
+EfficientVit - Predicción: 36153963
+Carril basado en DL - Predicción: 13389595
+Carril basado en DL - Post-procesado: 8477908
+EfficientVit - Post-procesado: 10250680
+LiDAR: 13267245
+EfficientVit - Predicción: 33540286
+Carril basado en DL - Predicción: 10369309
+Carril basado en DL - Post-procesado: 8337379
+EfficientVit - Post-procesado: 9652953
+LiDAR: 14006881
+EfficientVit - Predicción: 33625316
+Carril basado en DL - Predicción: 10896327
+Carril basado en DL - Post-procesado: 8348040
+EfficientVit - Post-procesado: 10203120
+LiDAR: 14242491
+EfficientVit - Predicción: 38429092
+Carril basado en DL - Predicción: 11163255
+Carril basado en DL - Post-procesado: 8426679
+EfficientVit - Post-procesado: 9785032
+LiDAR: 13120416
+EfficientVit - Predicción: 33018539
+Carril basado en DL - Predicción: 10546188
+Carril basado en DL - Post-procesado: 8473549
+EfficientVit - Post-procesado: 10585139
+LiDAR: 13699283
+EfficientVit - Predicción: 33778626
+Carril basado en DL - Predicción: 10433889
+Carril basado en DL - Post-procesado: 8392709
+EfficientVit - Post-procesado: 9958302
+LiDAR: 13746074
+EfficientVit - Predicción: 33843755
+Carril basado en DL - Predicción: 11189426
+Carril basado en DL - Post-procesado: 8454349
+EfficientVit - Post-procesado: 9926781
+LiDAR: 13039196
+EfficientVit - Predicción: 40541703
+Carril basado en DL - Predicción: 15051026
+Carril basado en DL - Post-procesado: 8302031
+EfficientVit - Post-procesado: 9900962
+LiDAR: 13378465
+EfficientVit - Predicción: 34383473
+Carril basado en DL - Predicción: 10535099
+Carril basado en DL - Post-procesado: 8438619
+EfficientVit - Post-procesado: 10311640
+LiDAR: 14804659
+EfficientVit - Predicción: 32000994
+Carril basado en DL - Predicción: 15544124
+Carril basado en DL - Post-procesado: 8362160
+EfficientVit - Post-procesado: 10049411
+LiDAR: 13714753
+EfficientVit - Predicción: 32283762
+Carril basado en DL - Predicción: 10954956
+Carril basado en DL - Post-procesado: 8295010
+EfficientVit - Post-procesado: 12151361
+LiDAR: 13985721
+EfficientVit - Predicción: 31726575
+Carril basado en DL - Predicción: 13881272
+Carril basado en DL - Post-procesado: 10701198
+EfficientVit - Post-procesado: 10218511
+LiDAR: 13031117
+EfficientVit - Predicción: 32493482
+Carril basado en DL - Predicción: 12494379
+Carril basado en DL - Post-procesado: 8057931
+EfficientVit - Post-procesado: 9351554
+LiDAR: 13707713
+EfficientVit - Predicción: 39417687
+Carril basado en DL - Predicción: 11967993
+Carril basado en DL - Post-procesado: 8160900
+EfficientVit - Post-procesado: 9335974
+LiDAR: 13622953
+EfficientVit - Predicción: 34226604
+Carril basado en DL - Predicción: 11748453
+Carril basado en DL - Post-procesado: 8452388
+EfficientVit - Post-procesado: 10113092
+LiDAR: 13191176
+EfficientVit - Predicción: 33345418
+Carril basado en DL - Predicción: 13741783
+Carril basado en DL - Post-procesado: 9024416
+EfficientVit - Post-procesado: 9636043
+LiDAR: 13486764
+EfficientVit - Predicción: 42973841
+Carril basado en DL - Predicción: 14575039
+Carril basado en DL - Post-procesado: 9890072
+EfficientVit - Post-procesado: 10883737
+LiDAR: 14369840
+EfficientVit - Predicción: 34338622
+Carril basado en DL - Predicción: 10841358
+Carril basado en DL - Post-procesado: 9790912
+EfficientVit - Post-procesado: 11706603
+LiDAR: 14323010
+EfficientVit - Predicción: 33728215
+Carril basado en DL - Predicción: 11906852
+Carril basado en DL - Post-procesado: 8733147
+EfficientVit - Post-procesado: 10277150
+LiDAR: 13833363
+EfficientVit - Predicción: 34215993
+Carril basado en DL - Predicción: 11308235
+Carril basado en DL - Post-procesado: 8966016
+EfficientVit - Post-procesado: 10460800
+LiDAR: 15324975
+EfficientVit - Predicción: 32962469
+Carril basado en DL - Predicción: 10545748
+Carril basado en DL - Post-procesado: 9717293
+EfficientVit - Post-procesado: 9389424
+LiDAR: 14010482
+EfficientVit - Predicción: 33752806
+Carril basado en DL - Predicción: 11421075
+Carril basado en DL - Post-procesado: 8513368
+EfficientVit - Post-procesado: 9938951
+LiDAR: 13768072
+EfficientVit - Predicción: 33331297
+Carril basado en DL - Predicción: 12879607
+Carril basado en DL - Post-procesado: 8370740
+EfficientVit - Post-procesado: 9196995
+LiDAR: 13577444
+EfficientVit - Predicción: 33565946
+Carril basado en DL - Predicción: 11810372
+Carril basado en DL - Post-procesado: 8653048
+EfficientVit - Post-procesado: 9373474
+LiDAR: 13518845
+EfficientVit - Predicción: 32254973
+Carril basado en DL - Predicción: 11866572
+Carril basado en DL - Post-procesado: 8417078
+EfficientVit - Post-procesado: 10116431
+LiDAR: 13581314
+EfficientVit - Predicción: 32572571
+Carril basado en DL - Predicción: 10756677
+Carril basado en DL - Post-procesado: 8338350
+EfficientVit - Post-procesado: 9758252
+LiDAR: 14456239
+EfficientVit - Predicción: 45328830
+Carril basado en DL - Predicción: 11726292
+Carril basado en DL - Post-procesado: 8555249
+EfficientVit - Post-procesado: 10756418
+LiDAR: 14656069
+EfficientVit - Predicción: 33933065
+Carril basado en DL - Predicción: 10750497
+Carril basado en DL - Post-procesado: 8664398
+EfficientVit - Post-procesado: 9792182
+LiDAR: 15455125
+EfficientVit - Predicción: 36301354
+Carril basado en DL - Predicción: 11112816
+Carril basado en DL - Post-procesado: 8661358
+EfficientVit - Post-procesado: 9673983
+LiDAR: 14046332
+EfficientVit - Predicción: 32787739
+Carril basado en DL - Predicción: 14637569
+Carril basado en DL - Post-procesado: 8186490
+EfficientVit - Post-procesado: 8917056
+LiDAR: 13278285
+EfficientVit - Predicción: 32741561
+Carril basado en DL - Predicción: 10918036
+Carril basado en DL - Post-procesado: 8376969
+EfficientVit - Post-procesado: 10783368
+LiDAR: 13712893
+EfficientVit - Predicción: 32474622
+Carril basado en DL - Predicción: 10534619
+Carril basado en DL - Post-procesado: 8229589
+EfficientVit - Post-procesado: 9655123
+LiDAR: 14658640
+EfficientVit - Predicción: 33860834
+Carril basado en DL - Predicción: 16342000
+Carril basado en DL - Post-procesado: 8408689
+EfficientVit - Post-procesado: 10591678
+LiDAR: 12723908
+EfficientVit - Predicción: 32977629
+Carril basado en DL - Predicción: 10929967
+Carril basado en DL - Post-procesado: 8286830
+EfficientVit - Post-procesado: 9254555
+LiDAR: 12640698
+EfficientVit - Predicción: 32902570
+Carril basado en DL - Predicción: 15905722
+Carril basado en DL - Post-procesado: 8254140
+EfficientVit - Post-procesado: 9919252
+LiDAR: 13647503
+EfficientVit - Predicción: 35296168
+Carril basado en DL - Predicción: 10724968
+Carril basado en DL - Post-procesado: 8572208
+EfficientVit - Post-procesado: 10052271
+LiDAR: 13281055
+EfficientVit - Predicción: 34122394
+Carril basado en DL - Predicción: 12558190
+Carril basado en DL - Post-procesado: 9544483
+EfficientVit - Post-procesado: 9243894
+LiDAR: 13528174
+EfficientVit - Predicción: 38904700
+Carril basado en DL - Predicción: 11756223
+Carril basado en DL - Post-procesado: 10084130
+EfficientVit - Post-procesado: 9333584
+LiDAR: 13454794
+EfficientVit - Predicción: 33291748
+Carril basado en DL - Predicción: 16347980
+Carril basado en DL - Post-procesado: 10326440
+EfficientVit - Post-procesado: 9389875
+LiDAR: 13311535
+EfficientVit - Predicción: 32821881
+Carril basado en DL - Predicción: 11011146
+Carril basado en DL - Post-procesado: 8115181
+EfficientVit - Post-procesado: 9502554
+LiDAR: 12854828
+EfficientVit - Predicción: 38906611
+Carril basado en DL - Predicción: 11595204
+Carril basado en DL - Post-procesado: 8210180
+EfficientVit - Post-procesado: 9550154
+LiDAR: 13039387
+EfficientVit - Predicción: 33683005
+Carril basado en DL - Predicción: 16925678
+Carril basado en DL - Post-procesado: 8490929
+EfficientVit - Post-procesado: 10309619
+LiDAR: 13497834
+EfficientVit - Predicción: 33001379
+Carril basado en DL - Predicción: 10242570
+Carril basado en DL - Post-procesado: 8085771
+EfficientVit - Post-procesado: 9655583
+LiDAR: 12667458
+EfficientVit - Predicción: 32200853
+Carril basado en DL - Predicción: 16489680
+Carril basado en DL - Post-procesado: 8278219
+EfficientVit - Post-procesado: 9645262
+LiDAR: 13101247
+EfficientVit - Predicción: 32194443
+Carril basado en DL - Predicción: 11723783
+Carril basado en DL - Post-procesado: 8494878
+EfficientVit - Post-procesado: 10114081
+LiDAR: 13570204
+EfficientVit - Predicción: 34148473
+Carril basado en DL - Predicción: 11162296
+Carril basado en DL - Post-procesado: 8060070
+EfficientVit - Post-procesado: 9614853
+LiDAR: 13367345
+EfficientVit - Predicción: 34280873
+Carril basado en DL - Predicción: 16421630
+Carril basado en DL - Post-procesado: 8127930
+EfficientVit - Post-procesado: 10120371
+LiDAR: 13797273
+EfficientVit - Predicción: 33282808
+Carril basado en DL - Predicción: 11146595
+Carril basado en DL - Post-procesado: 9574223
+EfficientVit - Post-procesado: 10211470
+LiDAR: 13628334
+EfficientVit - Predicción: 37168389
+Carril basado en DL - Predicción: 11366774
+Carril basado en DL - Post-procesado: 8102841
+EfficientVit - Post-procesado: 10295690
+LiDAR: 13263676
+EfficientVit - Predicción: 34313303
+Carril basado en DL - Predicción: 11455845
+Carril basado en DL - Post-procesado: 8074970
+EfficientVit - Post-procesado: 9629893
+LiDAR: 13395034
+EfficientVit - Predicción: 33107018
+Carril basado en DL - Predicción: 16697138
+Carril basado en DL - Post-procesado: 8285880
+EfficientVit - Post-procesado: 9771152
+LiDAR: 13921112
+EfficientVit - Predicción: 33045510
+Carril basado en DL - Predicción: 12002251
+Carril basado en DL - Post-procesado: 8993826
+EfficientVit - Post-procesado: 10302869
+LiDAR: 13906512
+EfficientVit - Predicción: 33762076
+Carril basado en DL - Predicción: 13432814
+Carril basado en DL - Post-procesado: 9146485
+EfficientVit - Post-procesado: 11330666
+LiDAR: 12859887
+EfficientVit - Predicción: 33908785
+Carril basado en DL - Predicción: 11562933
+Carril basado en DL - Post-procesado: 8540589
+EfficientVit - Post-procesado: 10450459
+LiDAR: 13455325
+EfficientVit - Predicción: 33899314
+Carril basado en DL - Predicción: 11903762
+Carril basado en DL - Post-procesado: 8606508
+EfficientVit - Post-procesado: 9934111
+LiDAR: 13474164
+EfficientVit - Predicción: 34575461
+Carril basado en DL - Predicción: 14742178
+Carril basado en DL - Post-procesado: 8643818
+EfficientVit - Post-procesado: 10785067
+LiDAR: 13618423
+EfficientVit - Predicción: 33380247
+Carril basado en DL - Predicción: 11272785
+Carril basado en DL - Post-procesado: 8582369
+EfficientVit - Post-procesado: 10132150
+LiDAR: 13905452
+EfficientVit - Predicción: 34266953
+Carril basado en DL - Predicción: 9941791
+Carril basado en DL - Post-procesado: 8471919
+EfficientVit - Post-procesado: 9904682
+LiDAR: 13136257
+EfficientVit - Predicción: 34078964
+Carril basado en DL - Predicción: 14082551
+Carril basado en DL - Post-procesado: 8610878
+EfficientVit - Post-procesado: 10418269
+LiDAR: 13715394
+EfficientVit - Predicción: 38358983
+Carril basado en DL - Predicción: 9905672
+Carril basado en DL - Post-procesado: 8230580
+EfficientVit - Post-procesado: 9678833
+LiDAR: 13410225
+EfficientVit - Predicción: 41018860
+Carril basado en DL - Predicción: 11014807
+Carril basado en DL - Post-procesado: 8476669
+EfficientVit - Post-procesado: 9923771
+LiDAR: 13587164
+EfficientVit - Predicción: 35549687
+Carril basado en DL - Predicción: 12027921
+Carril basado en DL - Post-procesado: 8502089
+EfficientVit - Post-procesado: 10200150
+LiDAR: 13296265
+EfficientVit - Predicción: 33452097
+Carril basado en DL - Predicción: 15327995
+Carril basado en DL - Post-procesado: 8861267
+EfficientVit - Post-procesado: 10207441
+LiDAR: 13648434
+EfficientVit - Predicción: 33286508
+Carril basado en DL - Predicción: 11867592
+Carril basado en DL - Post-procesado: 8317649
+EfficientVit - Post-procesado: 11043526
+LiDAR: 15375356
+EfficientVit - Predicción: 31489256
+Carril basado en DL - Predicción: 11808292
+Carril basado en DL - Post-procesado: 9061566
+EfficientVit - Post-procesado: 10036730
+LiDAR: 14473899
+EfficientVit - Predicción: 32327122
+Carril basado en DL - Predicción: 13564294
+Carril basado en DL - Post-procesado: 9921112
+EfficientVit - Post-procesado: 10163880
+LiDAR: 13879892
+EfficientVit - Predicción: 36504242
+Carril basado en DL - Predicción: 11718473
+Carril basado en DL - Post-procesado: 8941247
+EfficientVit - Post-procesado: 10120401
+LiDAR: 14322910
+EfficientVit - Predicción: 34363462
+Carril basado en DL - Predicción: 12273760
+Carril basado en DL - Post-procesado: 8495769
+EfficientVit - Post-procesado: 9866462
+LiDAR: 13823843
+EfficientVit - Predicción: 32541152
+Carril basado en DL - Predicción: 10362710
+Carril basado en DL - Post-procesado: 8250219
+EfficientVit - Post-procesado: 10013002
+LiDAR: 13841962
+EfficientVit - Predicción: 31792055
+Carril basado en DL - Predicción: 12125441
+Carril basado en DL - Post-procesado: 8335429
+EfficientVit - Post-procesado: 10413859
+LiDAR: 19815704
+EfficientVit - Predicción: 34747711
+Carril basado en DL - Predicción: 12532168
+Carril basado en DL - Post-procesado: 8558329
+EfficientVit - Post-procesado: 9196485
+LiDAR: 13319785
+EfficientVit - Predicción: 33665936
+Carril basado en DL - Predicción: 11520204
+Carril basado en DL - Post-procesado: 8755597
+EfficientVit - Post-procesado: 9914301
+LiDAR: 14166250
+EfficientVit - Predicción: 33704496
+Carril basado en DL - Predicción: 11380324
+Carril basado en DL - Post-procesado: 8297370
+EfficientVit - Post-procesado: 9266555
+LiDAR: 13975492
+EfficientVit - Predicción: 35573387
+Carril basado en DL - Predicción: 11436794
+Carril basado en DL - Post-procesado: 8205970
+EfficientVit - Post-procesado: 9734283
+LiDAR: 14370829
+EfficientVit - Predicción: 34213324
+Carril basado en DL - Predicción: 11825372
+Carril basado en DL - Post-procesado: 8346340
+EfficientVit - Post-procesado: 9805612
+LiDAR: 13783503
+EfficientVit - Predicción: 34415343
+Carril basado en DL - Predicción: 11196125
+Carril basado en DL - Post-procesado: 8200750
+EfficientVit - Post-procesado: 9679062
+LiDAR: 13518373
+EfficientVit - Predicción: 33656286
+Carril basado en DL - Predicción: 11971822
+Carril basado en DL - Post-procesado: 8261269
+EfficientVit - Post-procesado: 10037841
+LiDAR: 14527549
+EfficientVit - Predicción: 34148643
+Carril basado en DL - Predicción: 10601598
+Carril basado en DL - Post-procesado: 8365599
+EfficientVit - Post-procesado: 11129786
+LiDAR: 13467574
+EfficientVit - Predicción: 35430767
+Carril basado en DL - Predicción: 11280355
+Carril basado en DL - Post-procesado: 8605118
+EfficientVit - Post-procesado: 9860843
+LiDAR: 13865083
+EfficientVit - Predicción: 34765251
+Carril basado en DL - Predicción: 10914247
+Carril basado en DL - Post-procesado: 8281960
+EfficientVit - Post-procesado: 9978231
+LiDAR: 12996957
+EfficientVit - Predicción: 36197214
+Carril basado en DL - Predicción: 10346680
+Carril basado en DL - Post-procesado: 8156640
+EfficientVit - Post-procesado: 9180985
+LiDAR: 12636969
+EfficientVit - Predicción: 33684115
+Carril basado en DL - Predicción: 10702248
+Carril basado en DL - Post-procesado: 8102180
+EfficientVit - Post-procesado: 9775482
+LiDAR: 12610328
+EfficientVit - Predicción: 33808815
+Carril basado en DL - Predicción: 14640678
+Carril basado en DL - Post-procesado: 8983447
+EfficientVit - Post-procesado: 9104016
+LiDAR: 13707663
+EfficientVit - Predicción: 32450872
+Carril basado en DL - Predicción: 10685098
+Carril basado en DL - Post-procesado: 9034285
+EfficientVit - Post-procesado: 9184775
+LiDAR: 13363656
+EfficientVit - Predicción: 33449718
+Carril basado en DL - Predicción: 10889077
+Carril basado en DL - Post-procesado: 8139910
+EfficientVit - Post-procesado: 9592244
+LiDAR: 14021662
+EfficientVit - Predicción: 33293937
+Carril basado en DL - Predicción: 11299936
+Carril basado en DL - Post-procesado: 8341419
+EfficientVit - Post-procesado: 9376255
+LiDAR: 13479044
+EfficientVit - Predicción: 36033725
+Carril basado en DL - Predicción: 11502263
+Carril basado en DL - Post-procesado: 8319970
+EfficientVit - Post-procesado: 9077116
+LiDAR: 12349370
+EfficientVit - Predicción: 37860786
+Carril basado en DL - Predicción: 9401644
+Carril basado en DL - Post-procesado: 8054221
+EfficientVit - Post-procesado: 8893738
+LiDAR: 12552019
+EfficientVit - Predicción: 32145153
+Carril basado en DL - Predicción: 12020732
+Carril basado en DL - Post-procesado: 8460048
+EfficientVit - Post-procesado: 8969946
+LiDAR: 14895257
+EfficientVit - Predicción: 44551193
+Carril basado en DL - Predicción: 13065456
+Carril basado en DL - Post-procesado: 8614838
+EfficientVit - Post-procesado: 10626788
+LiDAR: 13880492
+EfficientVit - Predicción: 37976735
+Carril basado en DL - Predicción: 11192736
+Carril basado en DL - Post-procesado: 8128431
+EfficientVit - Post-procesado: 9084735
+LiDAR: 13418985
+EfficientVit - Predicción: 35157438
+Carril basado en DL - Predicción: 10250661
+Carril basado en DL - Post-procesado: 8299579
+EfficientVit - Post-procesado: 9273584
+LiDAR: 13482724
+EfficientVit - Predicción: 34827891
+Carril basado en DL - Predicción: 11294345
+Carril basado en DL - Post-procesado: 8158241
+EfficientVit - Post-procesado: 9322844
+LiDAR: 13133876
+EfficientVit - Predicción: 34012305
+Carril basado en DL - Predicción: 13392435
+Carril basado en DL - Post-procesado: 8217150
+EfficientVit - Post-procesado: 9189056
+LiDAR: 14347210
+EfficientVit - Predicción: 33798595
+Carril basado en DL - Predicción: 11820652
+Carril basado en DL - Post-procesado: 8884987
+EfficientVit - Post-procesado: 12031271
+LiDAR: 13982302
+EfficientVit - Predicción: 34154944
+Carril basado en DL - Predicción: 10977746
+Carril basado en DL - Post-procesado: 8146071
+EfficientVit - Post-procesado: 9929312
+LiDAR: 13467025
+EfficientVit - Predicción: 32457581
+Carril basado en DL - Predicción: 11247576
+Carril basado en DL - Post-procesado: 8301499
+EfficientVit - Post-procesado: 9561363
+LiDAR: 13167735
+EfficientVit - Predicción: 33266178
+Carril basado en DL - Predicción: 11011296
+Carril basado en DL - Post-procesado: 10052312
+EfficientVit - Post-procesado: 9769593
+LiDAR: 12866547
+EfficientVit - Predicción: 34418833
+Carril basado en DL - Predicción: 13823243
+Carril basado en DL - Post-procesado: 8437608
+EfficientVit - Post-procesado: 9259755
+LiDAR: 12756607
+LiDAR: 11805042
+LiDAR: 8248280
+EfficientVit - Predicción: 905813779
+Ground truth - Predicción: 305868
+Ground truth - Post-procesado: 29866375
+EfficientVit - Post-procesado: 8344609
+LiDAR: 7500863
+EfficientVit - Predicción: 33614596
+Ground truth - Predicción: 193619
+Ground truth - Post-procesado: 27032519
+EfficientVit - Post-procesado: 8109521
+LiDAR: 7959431
+EfficientVit - Predicción: 31693926
+Ground truth - Predicción: 190858
+Ground truth - Post-procesado: 26755121
+EfficientVit - Post-procesado: 8007581
+LiDAR: 7721822
+EfficientVit - Predicción: 33760566
+Ground truth - Predicción: 166570
+Ground truth - Post-procesado: 27875815
+EfficientVit - Post-procesado: 7733582
+LiDAR: 8097632
+EfficientVit - Predicción: 34642092
+Ground truth - Predicción: 185139
+Ground truth - Post-procesado: 29019659
+EfficientVit - Post-procesado: 9407644
+LiDAR: 8942667
+EfficientVit - Predicción: 32865351
+Ground truth - Predicción: 192198
+Ground truth - Post-procesado: 32227484
+EfficientVit - Post-procesado: 7831111
+LiDAR: 8860278
+EfficientVit - Predicción: 40046745
+Ground truth - Predicción: 210320
+Ground truth - Post-procesado: 31633735
+EfficientVit - Post-procesado: 10024982
+LiDAR: 9669853
+EfficientVit - Predicción: 35041020
+Ground truth - Predicción: 166130
+Ground truth - Post-procesado: 32841009
+EfficientVit - Post-procesado: 8212451
+LiDAR: 10318190
+EfficientVit - Predicción: 35796076
+Ground truth - Predicción: 197130
+Ground truth - Post-procesado: 35600787
+EfficientVit - Post-procesado: 9586233
+LiDAR: 11323635
+EfficientVit - Predicción: 41167811
+Ground truth - Predicción: 172799
+Ground truth - Post-procesado: 42142296
+EfficientVit - Post-procesado: 11792522
+LiDAR: 12464690
+EfficientVit - Predicción: 35292699
+Ground truth - Predicción: 188919
+Ground truth - Post-procesado: 46614453
+EfficientVit - Post-procesado: 9901272
+LiDAR: 12901068
+EfficientVit - Predicción: 32193724
+Ground truth - Predicción: 352828
+Ground truth - Post-procesado: 53904217
+EfficientVit - Post-procesado: 9212515
+LiDAR: 15763493
+EfficientVit - Predicción: 36619542
+Ground truth - Predicción: 181149
+Ground truth - Post-procesado: 56710465
+EfficientVit - Post-procesado: 12965796
+LiDAR: 13511845
+EfficientVit - Predicción: 35139479
+Ground truth - Predicción: 241018
+Ground truth - Post-procesado: 58241537
+EfficientVit - Post-procesado: 9225725
+LiDAR: 13610813
+EfficientVit - Predicción: 36892231
+Ground truth - Predicción: 185870
+Ground truth - Post-procesado: 56357815
+EfficientVit - Post-procesado: 12821508
+LiDAR: 13673603
+EfficientVit - Predicción: 33065489
+Ground truth - Predicción: 340399
+Ground truth - Post-procesado: 65254712
+EfficientVit - Post-procesado: 10467619
+LiDAR: 16376321
+EfficientVit - Predicción: 40699782
+Ground truth - Predicción: 288028
+Ground truth - Post-procesado: 55982128
+EfficientVit - Post-procesado: 13956022
+LiDAR: 18384280
+EfficientVit - Predicción: 33714426
+Ground truth - Predicción: 219189
+Ground truth - Post-procesado: 52802505
+EfficientVit - Post-procesado: 13437315
+LiDAR: 14448350
+EfficientVit - Predicción: 34202404
+Ground truth - Predicción: 212169
+Ground truth - Post-procesado: 56765074
+EfficientVit - Post-procesado: 9777383
+LiDAR: 13569524
+EfficientVit - Predicción: 34007235
+Ground truth - Predicción: 254009
+Ground truth - Post-procesado: 54922933
+EfficientVit - Post-procesado: 10423719
+LiDAR: 18344281
+EfficientVit - Predicción: 34960591
+Ground truth - Predicción: 232639
+Ground truth - Post-procesado: 59853709
+EfficientVit - Post-procesado: 10436420
+LiDAR: 13925782
+EfficientVit - Predicción: 32912620
+Ground truth - Predicción: 199488
+Ground truth - Post-procesado: 52966544
+EfficientVit - Post-procesado: 9376564
+LiDAR: 15634514
+EfficientVit - Predicción: 35458388
+Ground truth - Predicción: 169419
+Ground truth - Post-procesado: 53379450
+EfficientVit - Post-procesado: 9960001
+LiDAR: 14660909
+EfficientVit - Predicción: 32762601
+Ground truth - Predicción: 192649
+Ground truth - Post-procesado: 52914382
+EfficientVit - Post-procesado: 9012307
+LiDAR: 14851427
+EfficientVit - Predicción: 32971930
+Ground truth - Predicción: 164610
+Ground truth - Post-procesado: 54486435
+EfficientVit - Post-procesado: 9856452
+LiDAR: 14020663
+EfficientVit - Predicción: 33267129
+Ground truth - Predicción: 176139
+Ground truth - Post-procesado: 53078652
+EfficientVit - Post-procesado: 9329374
+LiDAR: 18150412
+EfficientVit - Predicción: 33420848
+Ground truth - Predicción: 191419
+Ground truth - Post-procesado: 56312756
+EfficientVit - Post-procesado: 11539214
+LiDAR: 14252371
+EfficientVit - Predicción: 33550467
+Ground truth - Predicción: 167880
+Ground truth - Post-procesado: 52271246
+EfficientVit - Post-procesado: 31248708
+LiDAR: 13535294
+EfficientVit - Predicción: 34453482
+Ground truth - Predicción: 205108
+Ground truth - Post-procesado: 56165378
+EfficientVit - Post-procesado: 10287820
+LiDAR: 13586004
+EfficientVit - Predicción: 33511907
+Ground truth - Predicción: 172309
+Ground truth - Post-procesado: 52940393
+EfficientVit - Post-procesado: 12549339
+LiDAR: 14859948
+EfficientVit - Predicción: 33762635
+Ground truth - Predicción: 164778
+Ground truth - Post-procesado: 55795960
+EfficientVit - Post-procesado: 9973341
+LiDAR: 13706414
+EfficientVit - Predicción: 33948116
+Ground truth - Predicción: 172530
+Ground truth - Post-procesado: 53133661
+EfficientVit - Post-procesado: 12068371
+LiDAR: 13435775
+EfficientVit - Predicción: 33859895
+Ground truth - Predicción: 187049
+Ground truth - Post-procesado: 56588315
+EfficientVit - Post-procesado: 10924417
+LiDAR: 14080701
+EfficientVit - Predicción: 33204889
+Ground truth - Predicción: 164158
+Ground truth - Post-procesado: 52954784
+EfficientVit - Post-procesado: 10998576
+LiDAR: 14492660
+EfficientVit - Predicción: 34097515
+Ground truth - Predicción: 179218
+Ground truth - Post-procesado: 52487446
+EfficientVit - Post-procesado: 9969132
+LiDAR: 14052921
+EfficientVit - Predicción: 33781076
+Ground truth - Predicción: 183429
+Ground truth - Post-procesado: 52735654
+EfficientVit - Post-procesado: 9768362
+LiDAR: 16742759
+EfficientVit - Predicción: 33983156
+Ground truth - Predicción: 189009
+Ground truth - Post-procesado: 62407827
+EfficientVit - Post-procesado: 10589038
+LiDAR: 15348516
+EfficientVit - Predicción: 34456363
+Ground truth - Predicción: 157610
+Ground truth - Post-procesado: 53544840
+EfficientVit - Post-procesado: 14486930
+LiDAR: 14377540
+EfficientVit - Predicción: 39042020
+Ground truth - Predicción: 192680
+Ground truth - Post-procesado: 55317472
+EfficientVit - Post-procesado: 10710898
+LiDAR: 13742273
+EfficientVit - Predicción: 34609332
+Ground truth - Predicción: 194920
+Ground truth - Post-procesado: 52382255
+EfficientVit - Post-procesado: 11424684
+LiDAR: 14709218
+EfficientVit - Predicción: 33714316
+Ground truth - Predicción: 168319
+Ground truth - Post-procesado: 56204857
+EfficientVit - Post-procesado: 9666253
+LiDAR: 16095102
+EfficientVit - Predicción: 35693227
+Ground truth - Predicción: 164478
+Ground truth - Post-procesado: 54718985
+EfficientVit - Post-procesado: 10211010
+LiDAR: 15615704
+EfficientVit - Predicción: 35012340
+Ground truth - Predicción: 191098
+Ground truth - Post-procesado: 54658645
+EfficientVit - Post-procesado: 9658493
+LiDAR: 14389870
+EfficientVit - Predicción: 32653152
+Ground truth - Predicción: 148628
+Ground truth - Post-procesado: 51546210
+EfficientVit - Post-procesado: 9412884
+LiDAR: 14309681
+EfficientVit - Predicción: 34357674
+Ground truth - Predicción: 168449
+Ground truth - Post-procesado: 55556180
+EfficientVit - Post-procesado: 10495710
+LiDAR: 15461785
+EfficientVit - Predicción: 39778246
+Ground truth - Predicción: 224749
+Ground truth - Post-procesado: 54890094
+EfficientVit - Post-procesado: 10081551
+LiDAR: 15341085
+EfficientVit - Predicción: 33416908
+Ground truth - Predicción: 178600
+Ground truth - Post-procesado: 53891708
+EfficientVit - Post-procesado: 10108991
+LiDAR: 14381610
+EfficientVit - Predicción: 38266735
+Ground truth - Predicción: 196440
+Ground truth - Post-procesado: 54697773
+EfficientVit - Post-procesado: 9711633
+LiDAR: 14615798
+EfficientVit - Predicción: 33327978
+Ground truth - Predicción: 183309
+Ground truth - Post-procesado: 56370318
+EfficientVit - Post-procesado: 9623853
+LiDAR: 14098102
+EfficientVit - Predicción: 39628547
+Ground truth - Predicción: 158219
+Ground truth - Post-procesado: 52123747
+EfficientVit - Post-procesado: 9763463
+LiDAR: 16504500
+EfficientVit - Predicción: 33578017
+Ground truth - Predicción: 186419
+Ground truth - Post-procesado: 56028408
+EfficientVit - Post-procesado: 9589964
+LiDAR: 13722764
+EfficientVit - Predicción: 33838205
+Ground truth - Predicción: 194109
+Ground truth - Post-procesado: 52740674
+EfficientVit - Post-procesado: 11238916
+LiDAR: 16089872
+EfficientVit - Predicción: 34396263
+Ground truth - Predicción: 362028
+Ground truth - Post-procesado: 71046246
+EfficientVit - Post-procesado: 12453429
+LiDAR: 16329741
+EfficientVit - Predicción: 36328974
+Ground truth - Predicción: 188439
+Ground truth - Post-procesado: 54950303
+EfficientVit - Post-procesado: 10022401
+LiDAR: 14828948
+EfficientVit - Predicción: 35271949
+Ground truth - Predicción: 182148
+Ground truth - Post-procesado: 53881790
+EfficientVit - Post-procesado: 10495619
+LiDAR: 13874233
+EfficientVit - Predicción: 35168739
+Ground truth - Predicción: 176850
+Ground truth - Post-procesado: 52425185
+EfficientVit - Post-procesado: 10086710
+LiDAR: 15562824
+EfficientVit - Predicción: 33717857
+Ground truth - Predicción: 191638
+Ground truth - Post-procesado: 69769802
+EfficientVit - Post-procesado: 14255151
+LiDAR: 21803744
+EfficientVit - Predicción: 33631536
+Ground truth - Predicción: 219279
+Ground truth - Post-procesado: 55312462
+EfficientVit - Post-procesado: 10327449
+LiDAR: 13430086
+EfficientVit - Predicción: 33230258
+Ground truth - Predicción: 196900
+Ground truth - Post-procesado: 56512364
+EfficientVit - Post-procesado: 11495294
+LiDAR: 14670179
+EfficientVit - Predicción: 35692007
+Ground truth - Predicción: 179240
+Ground truth - Post-procesado: 55203551
+EfficientVit - Post-procesado: 10055261
+LiDAR: 14901827
+EfficientVit - Predicción: 33678626
+Ground truth - Predicción: 211899
+Ground truth - Post-procesado: 55136863
+EfficientVit - Post-procesado: 10743758
+LiDAR: 14098942
+EfficientVit - Predicción: 33219649
+Ground truth - Predicción: 153060
+Ground truth - Post-procesado: 52664113
+EfficientVit - Post-procesado: 9241796
+LiDAR: 14200931
+EfficientVit - Predicción: 33184819
+Ground truth - Predicción: 202799
+Ground truth - Post-procesado: 55331951
+EfficientVit - Post-procesado: 10082441
+LiDAR: 14227161
+EfficientVit - Predicción: 33771786
+Ground truth - Predicción: 215949
+Ground truth - Post-procesado: 53418331
+EfficientVit - Post-procesado: 9479104
+LiDAR: 15341956
+EfficientVit - Predicción: 34435922
+Ground truth - Predicción: 220049
+Ground truth - Post-procesado: 53737310
+EfficientVit - Post-procesado: 9889422
+LiDAR: 14584349
+EfficientVit - Predicción: 33293069
+Ground truth - Predicción: 201849
+Ground truth - Post-procesado: 54721144
+EfficientVit - Post-procesado: 9506283
+LiDAR: 16436270
+EfficientVit - Predicción: 35655467
+Ground truth - Predicción: 227289
+Ground truth - Post-procesado: 56494867
+EfficientVit - Post-procesado: 11554623
+LiDAR: 14106622
+EfficientVit - Predicción: 32706771
+Ground truth - Predicción: 186459
+Ground truth - Post-procesado: 54217166
+EfficientVit - Post-procesado: 10138231
+LiDAR: 15518054
+EfficientVit - Predicción: 33577567
+Ground truth - Predicción: 183270
+Ground truth - Post-procesado: 53585569
+EfficientVit - Post-procesado: 10315550
+LiDAR: 14614800
+EfficientVit - Predicción: 33262119
+Ground truth - Predicción: 186968
+Ground truth - Post-procesado: 53146253
+EfficientVit - Post-procesado: 9501294
+LiDAR: 16539550
+EfficientVit - Predicción: 33573257
+Ground truth - Predicción: 166259
+Ground truth - Post-procesado: 55270421
+EfficientVit - Post-procesado: 12542909
+LiDAR: 12947857
+EfficientVit - Predicción: 35438058
+Ground truth - Predicción: 183829
+Ground truth - Post-procesado: 52921033
+EfficientVit - Post-procesado: 9979011
+LiDAR: 14626438
+EfficientVit - Predicción: 32790021
+Ground truth - Predicción: 151639
+Ground truth - Post-procesado: 53747508
+EfficientVit - Post-procesado: 10080821
+LiDAR: 14605249
+EfficientVit - Predicción: 32945100
+Ground truth - Predicción: 164010
+Ground truth - Post-procesado: 52270725
+EfficientVit - Post-procesado: 9683584
+LiDAR: 14584689
+EfficientVit - Predicción: 33487887
+Ground truth - Predicción: 186178
+Ground truth - Post-procesado: 53879320
+EfficientVit - Post-procesado: 10435679
+LiDAR: 14151201
+EfficientVit - Predicción: 36203215
+Ground truth - Predicción: 181919
+Ground truth - Post-procesado: 58224148
+EfficientVit - Post-procesado: 10209961
+LiDAR: 13819213
+EfficientVit - Predicción: 32122644
+Ground truth - Predicción: 185770
+Ground truth - Post-procesado: 55813039
+EfficientVit - Post-procesado: 12665398
+LiDAR: 13639014
+EfficientVit - Predicción: 32103314
+Ground truth - Predicción: 174970
+Ground truth - Post-procesado: 53168461
+EfficientVit - Post-procesado: 11725733
+LiDAR: 14006322
+EfficientVit - Predicción: 38882201
+Ground truth - Predicción: 186588
+Ground truth - Post-procesado: 55659880
+EfficientVit - Post-procesado: 9968472
+LiDAR: 14028162
+EfficientVit - Predicción: 39117330
+Ground truth - Predicción: 158120
+Ground truth - Post-procesado: 52336405
+EfficientVit - Post-procesado: 10266760
+LiDAR: 13937931
+EfficientVit - Predicción: 33355228
+Ground truth - Predicción: 185179
+Ground truth - Post-procesado: 54889843
+EfficientVit - Post-procesado: 71302064
+LiDAR: 22070673
+EfficientVit - Predicción: 35167240
+Ground truth - Predicción: 152819
+Ground truth - Post-procesado: 52293825
+EfficientVit - Post-procesado: 22180183
+LiDAR: 14804538
+EfficientVit - Predicción: 37023671
+Ground truth - Predicción: 219190
+Ground truth - Post-procesado: 53787488
+EfficientVit - Post-procesado: 74064370
+LiDAR: 14620499
+EfficientVit - Predicción: 37952295
+Ground truth - Predicción: 176050
+Ground truth - Post-procesado: 59277512
+EfficientVit - Post-procesado: 76551908
+LiDAR: 13513744
+EfficientVit - Predicción: 40223665
+Ground truth - Predicción: 169700
+Ground truth - Post-procesado: 54475844
+EfficientVit - Post-procesado: 10674538
+LiDAR: 14513060
+EfficientVit - Predicción: 33470908
+Ground truth - Predicción: 170408
+Ground truth - Post-procesado: 52851215
+EfficientVit - Post-procesado: 9172055
+LiDAR: 13184746
+EfficientVit - Predicción: 32421552
+Ground truth - Predicción: 169778
+Ground truth - Post-procesado: 52400796
+EfficientVit - Post-procesado: 11172566
+LiDAR: 14097881
+EfficientVit - Predicción: 35191739
+Ground truth - Predicción: 174538
+Ground truth - Post-procesado: 55470952
+EfficientVit - Post-procesado: 10056881
+LiDAR: 13841072
+EfficientVit - Predicción: 33427327
+Ground truth - Predicción: 174459
+Ground truth - Post-procesado: 52033117
+EfficientVit - Post-procesado: 9719093
+LiDAR: 16908018
+EfficientVit - Predicción: 33925835
+Ground truth - Predicción: 333088
+Ground truth - Post-procesado: 54172076
+EfficientVit - Post-procesado: 10300451
+LiDAR: 18442640
+EfficientVit - Predicción: 34747382
+Ground truth - Predicción: 187300
+Ground truth - Post-procesado: 54668603
+EfficientVit - Post-procesado: 12472580
+LiDAR: 14778647
+EfficientVit - Predicción: 34552302
+Ground truth - Predicción: 182299
+Ground truth - Post-procesado: 54166207
+EfficientVit - Post-procesado: 10346680
+LiDAR: 14707309
+EfficientVit - Predicción: 33792936
+Ground truth - Predicción: 163889
+Ground truth - Post-procesado: 52738624
+EfficientVit - Post-procesado: 10526739
+LiDAR: 15342505
+EfficientVit - Predicción: 35646097
+Ground truth - Predicción: 190908
+Ground truth - Post-procesado: 54153858
+EfficientVit - Post-procesado: 9591803
+LiDAR: 13462765
+EfficientVit - Predicción: 33147259
+Ground truth - Predicción: 186369
+Ground truth - Post-procesado: 53608880
+EfficientVit - Post-procesado: 10080401
+LiDAR: 13759373
+EfficientVit - Predicción: 32408433
+Ground truth - Predicción: 188730
+Ground truth - Post-procesado: 54438425
+EfficientVit - Post-procesado: 9406874
+LiDAR: 17529734
+EfficientVit - Predicción: 36437342
+Ground truth - Predicción: 189518
+Ground truth - Post-procesado: 55470772
+EfficientVit - Post-procesado: 10253190
+LiDAR: 14010832
+EfficientVit - Predicción: 34841071
+Ground truth - Predicción: 183439
+Ground truth - Post-procesado: 54935914
+EfficientVit - Post-procesado: 10487999
+LiDAR: 15101676
+EfficientVit - Predicción: 34259734
+Ground truth - Predicción: 150338
+Ground truth - Post-procesado: 56463926
+EfficientVit - Post-procesado: 10924137
+LiDAR: 14809608
+EfficientVit - Predicción: 34238564
+Ground truth - Predicción: 178228
+Ground truth - Post-procesado: 53710931
+EfficientVit - Post-procesado: 10341019
+LiDAR: 14159452
+EfficientVit - Predicción: 32851181
+Ground truth - Predicción: 171029
+Ground truth - Post-procesado: 53571380
+EfficientVit - Post-procesado: 9993621
+LiDAR: 14015001
+EfficientVit - Predicción: 33443748
+Ground truth - Predicción: 165399
+Ground truth - Post-procesado: 52217046
+EfficientVit - Post-procesado: 10523008
+LiDAR: 15327305
+EfficientVit - Predicción: 40865762
+Ground truth - Predicción: 183149
+Ground truth - Post-procesado: 55430760
+EfficientVit - Post-procesado: 10598139
+LiDAR: 14501080
+EfficientVit - Predicción: 33532398
+Ground truth - Predicción: 169518
+Ground truth - Post-procesado: 53748419
+EfficientVit - Post-procesado: 37348099
+LiDAR: 14078402
+EfficientVit - Predicción: 41731657
+Ground truth - Predicción: 194179
+Ground truth - Post-procesado: 55355871
+EfficientVit - Post-procesado: 36322213
+LiDAR: 14308961
+EfficientVit - Predicción: 37866027
+Ground truth - Predicción: 259070
+Ground truth - Post-procesado: 56250476
+EfficientVit - Post-procesado: 24476651
+LiDAR: 13527664
+EfficientVit - Predicción: 34332334
+Ground truth - Predicción: 187578
+Ground truth - Post-procesado: 52804924
+EfficientVit - Post-procesado: 23108638
+LiDAR: 14620329
+EfficientVit - Predicción: 32943020
+Ground truth - Predicción: 201270
+Ground truth - Post-procesado: 54872152
+EfficientVit - Post-procesado: 96485751
+LiDAR: 13698523
+EfficientVit - Predicción: 32841150
+Ground truth - Predicción: 207519
+Ground truth - Post-procesado: 54512567
+EfficientVit - Post-procesado: 104745391
+LiDAR: 14609739
+EfficientVit - Predicción: 33701756
+Ground truth - Predicción: 179368
+Ground truth - Post-procesado: 54563886
+EfficientVit - Post-procesado: 14116371
+LiDAR: 15449405
+EfficientVit - Predicción: 32269773
+Ground truth - Predicción: 192900
+Ground truth - Post-procesado: 58339996
+EfficientVit - Post-procesado: 11236015
+LiDAR: 15391886
+EfficientVit - Predicción: 36236524
+Ground truth - Predicción: 200519
+Ground truth - Post-procesado: 57777270
+EfficientVit - Post-procesado: 9663413
+LiDAR: 14346670
+EfficientVit - Predicción: 35622987
+Ground truth - Predicción: 184448
+Ground truth - Post-procesado: 52865785
+EfficientVit - Post-procesado: 10355310
+LiDAR: 17030968
+EfficientVit - Predicción: 32952510
+Ground truth - Predicción: 193470
+Ground truth - Post-procesado: 53457390
+EfficientVit - Post-procesado: 9714393
+LiDAR: 14502360
+EfficientVit - Predicción: 32311613
+Ground truth - Predicción: 155880
+Ground truth - Post-procesado: 57379160
+EfficientVit - Post-procesado: 10742198
+LiDAR: 14897267
+EfficientVit - Predicción: 33288578
+Ground truth - Predicción: 187189
+Ground truth - Post-procesado: 54762484
+EfficientVit - Post-procesado: 9240805
+LiDAR: 15421166
+EfficientVit - Predicción: 34815951
+Ground truth - Predicción: 158089
+Ground truth - Post-procesado: 53622820
+EfficientVit - Post-procesado: 10172711
+LiDAR: 15363345
+EfficientVit - Predicción: 38944301
+Ground truth - Predicción: 173039
+Ground truth - Post-procesado: 52659844
+EfficientVit - Post-procesado: 10132801
+LiDAR: 14074951
+EfficientVit - Predicción: 33852275
+Ground truth - Predicción: 206739
+Ground truth - Post-procesado: 52420825
+EfficientVit - Post-procesado: 12208900
+LiDAR: 15553815
+EfficientVit - Predicción: 35465308
+Ground truth - Predicción: 275248
+Ground truth - Post-procesado: 54615925
+EfficientVit - Post-procesado: 9145226
+LiDAR: 14432490
+EfficientVit - Predicción: 34501802
+Ground truth - Predicción: 185910
+Ground truth - Post-procesado: 53777558
+EfficientVit - Post-procesado: 9857702
+LiDAR: 13298235
+EfficientVit - Predicción: 34330183
+Ground truth - Predicción: 173110
+Ground truth - Post-procesado: 51805238
+EfficientVit - Post-procesado: 8722518
+LiDAR: 15923163
+EfficientVit - Predicción: 33565578
+Ground truth - Predicción: 180289
+Ground truth - Post-procesado: 58389436
+EfficientVit - Post-procesado: 10537339
+LiDAR: 13677534
+EfficientVit - Predicción: 33625077
+Ground truth - Predicción: 197309
+Ground truth - Post-procesado: 55456540
+EfficientVit - Post-procesado: 49539440
+LiDAR: 12464610
+EfficientVit - Predicción: 38911761
+Ground truth - Predicción: 182919
+Ground truth - Post-procesado: 53410780
+EfficientVit - Post-procesado: 13699913
+LiDAR: 13154596
+EfficientVit - Predicción: 34928211
+Ground truth - Predicción: 169038
+Ground truth - Post-procesado: 54937294
+EfficientVit - Post-procesado: 9727034
+LiDAR: 13688113
+EfficientVit - Predicción: 34232364
+Ground truth - Predicción: 162318
+Ground truth - Post-procesado: 53418302
+EfficientVit - Post-procesado: 12215381
+LiDAR: 13479755
+EfficientVit - Predicción: 33646467
+Ground truth - Predicción: 165559
+Ground truth - Post-procesado: 53907078
+EfficientVit - Post-procesado: 9801293
+LiDAR: 13208765
+EfficientVit - Predicción: 32734001
+Ground truth - Predicción: 189819
+Ground truth - Post-procesado: 54050208
+EfficientVit - Post-procesado: 9377224
+LiDAR: 13749883
+EfficientVit - Predicción: 34883051
+Ground truth - Predicción: 153209
+Ground truth - Post-procesado: 52898743
+EfficientVit - Post-procesado: 9302585
+LiDAR: 13082326
+EfficientVit - Predicción: 35072160
+Ground truth - Predicción: 172659
+Ground truth - Post-procesado: 56249457
+EfficientVit - Post-procesado: 9407134
+LiDAR: 15697034
+EfficientVit - Predicción: 33374928
+Ground truth - Predicción: 170819
+Ground truth - Post-procesado: 55104362
+EfficientVit - Post-procesado: 9827643
+LiDAR: 13533985
+EfficientVit - Predicción: 33794886
+Ground truth - Predicción: 170009
+Ground truth - Post-procesado: 51921358
+EfficientVit - Post-procesado: 9853422
+LiDAR: 14179332
+EfficientVit - Predicción: 37804765
+Ground truth - Predicción: 189299
+Ground truth - Post-procesado: 54697875
+EfficientVit - Post-procesado: 10140361
+LiDAR: 13950933
+EfficientVit - Predicción: 36138754
+Ground truth - Predicción: 162529
+Ground truth - Post-procesado: 51795040
+EfficientVit - Post-procesado: 11231256
+LiDAR: 16286762
+EfficientVit - Predicción: 34863491
+Ground truth - Predicción: 163899
+Ground truth - Post-procesado: 55480411
+EfficientVit - Post-procesado: 9909622
+LiDAR: 14043432
+EfficientVit - Predicción: 33022750
+Ground truth - Predicción: 355958
+Ground truth - Post-procesado: 53190521
+EfficientVit - Post-procesado: 10583779
+LiDAR: 14371430
+EfficientVit - Predicción: 40490444
+Ground truth - Predicción: 158990
+Ground truth - Post-procesado: 55919228
+EfficientVit - Post-procesado: 9483544
+LiDAR: 13000947
+EfficientVit - Predicción: 33903645
+Ground truth - Predicción: 235658
+Ground truth - Post-procesado: 52842253
+EfficientVit - Post-procesado: 9732343
+LiDAR: 13655953
+EfficientVit - Predicción: 39337959
+Ground truth - Predicción: 181449
+Ground truth - Post-procesado: 54199117
+EfficientVit - Post-procesado: 11994982
+LiDAR: 13358975
+EfficientVit - Predicción: 36175974
+Ground truth - Predicción: 149499
+Ground truth - Post-procesado: 52770045
+EfficientVit - Post-procesado: 10165330
+LiDAR: 13713014
+EfficientVit - Predicción: 32482532
+Ground truth - Predicción: 152078
+Ground truth - Post-procesado: 52392207
+EfficientVit - Post-procesado: 9843372
+LiDAR: 15984093
+EfficientVit - Predicción: 32047855
+Ground truth - Predicción: 149438
+Ground truth - Post-procesado: 53878800
+EfficientVit - Post-procesado: 10100852
+LiDAR: 13455304
+EfficientVit - Predicción: 32839330
+Ground truth - Predicción: 160209
+Ground truth - Post-procesado: 52608366
+EfficientVit - Post-procesado: 9134085
+LiDAR: 13577284
+EfficientVit - Predicción: 39292509
+Ground truth - Predicción: 150740
+Ground truth - Post-procesado: 54156697
+EfficientVit - Post-procesado: 9816412
+LiDAR: 14009502
+EfficientVit - Predicción: 31968265
+Ground truth - Predicción: 143080
+Ground truth - Post-procesado: 56926473
+EfficientVit - Post-procesado: 9075906
+LiDAR: 14898518
+EfficientVit - Predicción: 33425098
+Ground truth - Predicción: 159059
+Ground truth - Post-procesado: 53796628
+EfficientVit - Post-procesado: 10657949
+LiDAR: 14168802
+EfficientVit - Predicción: 33548467
+Ground truth - Predicción: 155010
+Ground truth - Post-procesado: 55777089
+EfficientVit - Post-procesado: 10478600
+LiDAR: 16280841
+EfficientVit - Predicción: 35104490
+Ground truth - Predicción: 180529
+Ground truth - Post-procesado: 53866959
+EfficientVit - Post-procesado: 10038961
+LiDAR: 14277310
+EfficientVit - Predicción: 34536042
+Ground truth - Predicción: 204859
+Ground truth - Post-procesado: 53625919
+EfficientVit - Post-procesado: 9779673
+LiDAR: 13232836
+EfficientVit - Predicción: 35938866
+Ground truth - Predicción: 181670
+Ground truth - Post-procesado: 53389940
+EfficientVit - Post-procesado: 11275786
+LiDAR: 13742074
+EfficientVit - Predicción: 33564997
+Ground truth - Predicción: 174460
+Ground truth - Post-procesado: 54719455
+EfficientVit - Post-procesado: 10070911
+LiDAR: 13635373
+EfficientVit - Predicción: 33294868
+Ground truth - Predicción: 170200
+Ground truth - Post-procesado: 51865588
+EfficientVit - Post-procesado: 10661048
+LiDAR: 13644984
+EfficientVit - Predicción: 36086075
+Ground truth - Predicción: 174100
+Ground truth - Post-procesado: 56350917
+EfficientVit - Post-procesado: 11727142
+LiDAR: 13970833
+EfficientVit - Predicción: 34064684
+Ground truth - Predicción: 165269
+Ground truth - Post-procesado: 55787790
+EfficientVit - Post-procesado: 11408924
+LiDAR: 15454405
+EfficientVit - Predicción: 37110390
+Ground truth - Predicción: 180359
+Ground truth - Post-procesado: 56967524
+EfficientVit - Post-procesado: 10306539
+LiDAR: 13460765
+EfficientVit - Predicción: 35425548
+Ground truth - Predicción: 161450
+Ground truth - Post-procesado: 54392635
+EfficientVit - Post-procesado: 10689989
+LiDAR: 14052222
+EfficientVit - Predicción: 35812876
+Ground truth - Predicción: 157288
+Ground truth - Post-procesado: 56524956
+EfficientVit - Post-procesado: 9691083
+LiDAR: 13276585
+EfficientVit - Predicción: 34782201
+Ground truth - Predicción: 179830
+Ground truth - Post-procesado: 54829864
+EfficientVit - Post-procesado: 9836812
+LiDAR: 14356051
+EfficientVit - Predicción: 35032420
+Ground truth - Predicción: 143190
+Ground truth - Post-procesado: 52635043
+EfficientVit - Post-procesado: 9652973
+LiDAR: 13994622
+EfficientVit - Predicción: 33040200
+Ground truth - Predicción: 166639
+Ground truth - Post-procesado: 52654095
+EfficientVit - Post-procesado: 9548283
+LiDAR: 14983167
+EfficientVit - Predicción: 32273563
+Ground truth - Predicción: 218290
+Ground truth - Post-procesado: 54871924
+EfficientVit - Post-procesado: 10207350
+LiDAR: 14580149
+EfficientVit - Predicción: 32505602
+Ground truth - Predicción: 160960
+Ground truth - Post-procesado: 53554769
+EfficientVit - Post-procesado: 10273450
+LiDAR: 16124202
+EfficientVit - Predicción: 32944160
+Ground truth - Predicción: 167098
+Ground truth - Post-procesado: 54177899
+EfficientVit - Post-procesado: 10279200
+LiDAR: 15107697
+EfficientVit - Predicción: 35132760
+Ground truth - Predicción: 176199
+Ground truth - Post-procesado: 53796509
+EfficientVit - Post-procesado: 12493199
+LiDAR: 14546770
+EfficientVit - Predicción: 35899685
+Ground truth - Predicción: 191109
+Ground truth - Post-procesado: 54423666
+EfficientVit - Post-procesado: 9462183
+LiDAR: 13910863
+EfficientVit - Predicción: 33801856
+Ground truth - Predicción: 200409
+Ground truth - Post-procesado: 52375836
+EfficientVit - Post-procesado: 11268745
+LiDAR: 14784948
+EfficientVit - Predicción: 38389324
+Ground truth - Predicción: 157679
+Ground truth - Post-procesado: 60465736
+EfficientVit - Post-procesado: 12374000
+LiDAR: 14656609
+EfficientVit - Predicción: 37648327
+Ground truth - Predicción: 177129
+Ground truth - Post-procesado: 55339951
+EfficientVit - Post-procesado: 11570253
+LiDAR: 13214386
+EfficientVit - Predicción: 34467603
+Ground truth - Predicción: 152460
+Ground truth - Post-procesado: 54941162
+EfficientVit - Post-procesado: 11437125
+LiDAR: 13920353
+EfficientVit - Predicción: 33991726
+Ground truth - Predicción: 272279
+Ground truth - Post-procesado: 50786683
+EfficientVit - Post-procesado: 9698273
+LiDAR: 13264736
+EfficientVit - Predicción: 34822881
+Ground truth - Predicción: 167808
+Ground truth - Post-procesado: 54392927
+EfficientVit - Post-procesado: 10920256
+LiDAR: 13568635
+EfficientVit - Predicción: 34164724
+Ground truth - Predicción: 200099
+Ground truth - Post-procesado: 54519935
+EfficientVit - Post-procesado: 10188041
+LiDAR: 13052507
+EfficientVit - Predicción: 34322174
+Ground truth - Predicción: 174349
+Ground truth - Post-procesado: 54746233
+EfficientVit - Post-procesado: 10379740
+LiDAR: 13654294
+EfficientVit - Predicción: 33866196
+Ground truth - Predicción: 168509
+Ground truth - Post-procesado: 54858063
+EfficientVit - Post-procesado: 10314950
+LiDAR: 13441575
+EfficientVit - Predicción: 33128229
+Ground truth - Predicción: 152470
+Ground truth - Post-procesado: 53789458
+EfficientVit - Post-procesado: 10476340
+LiDAR: 12873468
+EfficientVit - Predicción: 33952525
+Ground truth - Predicción: 137870
+Ground truth - Post-procesado: 53681609
+EfficientVit - Post-procesado: 9806422
+LiDAR: 12857808
+EfficientVit - Predicción: 32688821
+Ground truth - Predicción: 177079
+Ground truth - Post-procesado: 54056478
+EfficientVit - Post-procesado: 11408704
+LiDAR: 13180796
+EfficientVit - Predicción: 34591102
+Ground truth - Predicción: 134919
+Ground truth - Post-procesado: 54460026
+EfficientVit - Post-procesado: 11112655
+LiDAR: 13277866
+EfficientVit - Predicción: 34740972
+Ground truth - Predicción: 149670
+Ground truth - Post-procesado: 52030976
+EfficientVit - Post-procesado: 10153891
+LiDAR: 13219275
+EfficientVit - Predicción: 33593216
+Ground truth - Predicción: 169759
+Ground truth - Post-procesado: 53099972
+EfficientVit - Post-procesado: 10869967
+LiDAR: 12850067
+EfficientVit - Predicción: 33201929
+Ground truth - Predicción: 137899
+Ground truth - Post-procesado: 51791279
+EfficientVit - Post-procesado: 10320150
+LiDAR: 12757339
+EfficientVit - Predicción: 32938160
+Ground truth - Predicción: 150529
+Ground truth - Post-procesado: 53562040
+EfficientVit - Post-procesado: 9998311
+LiDAR: 12461540
+EfficientVit - Predicción: 33275279
+Ground truth - Predicción: 180238
+Ground truth - Post-procesado: 52589905
+EfficientVit - Post-procesado: 10251691
+LiDAR: 13549684
+EfficientVit - Predicción: 33017730
+Ground truth - Predicción: 171478
+Ground truth - Post-procesado: 52873854
+EfficientVit - Post-procesado: 10261681
+LiDAR: 12968327
+EfficientVit - Predicción: 32899130
+Ground truth - Predicción: 178809
+Ground truth - Post-procesado: 52997113
+EfficientVit - Post-procesado: 10924027
+LiDAR: 14589019
+EfficientVit - Predicción: 34705821
+Ground truth - Predicción: 170739
+Ground truth - Post-procesado: 54699226
+EfficientVit - Post-procesado: 10419280
+LiDAR: 17840473
+EfficientVit - Predicción: 32838270
+Ground truth - Predicción: 200360
+Ground truth - Post-procesado: 52883923
+EfficientVit - Post-procesado: 10653138
+LiDAR: 14015342
+EfficientVit - Predicción: 34151184
+Ground truth - Predicción: 184949
+Ground truth - Post-procesado: 53351611
+EfficientVit - Post-procesado: 10713859
+LiDAR: 14689049
+EfficientVit - Predicción: 34370114
+Ground truth - Predicción: 140259
+Ground truth - Post-procesado: 54806494
+EfficientVit - Post-procesado: 10195721
+LiDAR: 13693034
+EfficientVit - Predicción: 35480618
+Ground truth - Predicción: 137310
+Ground truth - Post-procesado: 53136072
+EfficientVit - Post-procesado: 10294891
+LiDAR: 14031511
+EfficientVit - Predicción: 35173089
+Ground truth - Predicción: 176619
+Ground truth - Post-procesado: 56623295
+EfficientVit - Post-procesado: 10180621
+LiDAR: 14502939
+EfficientVit - Predicción: 35854525
+Ground truth - Predicción: 172329
+Ground truth - Post-procesado: 53243022
+EfficientVit - Post-procesado: 11890272
+LiDAR: 13245425
+EfficientVit - Predicción: 36063635
+Ground truth - Predicción: 179609
+Ground truth - Post-procesado: 58302207
+EfficientVit - Post-procesado: 12246531
+LiDAR: 13735743
+EfficientVit - Predicción: 35275748
+Ground truth - Predicción: 195349
+Ground truth - Post-procesado: 55092372
+EfficientVit - Post-procesado: 12107242
+LiDAR: 13317625
+EfficientVit - Predicción: 34287044
+Ground truth - Predicción: 185640
+Ground truth - Post-procesado: 56909654
+EfficientVit - Post-procesado: 11173836
+LiDAR: 16787019
+EfficientVit - Predicción: 37741756
+Ground truth - Predicción: 177249
+Ground truth - Post-procesado: 56441645
+EfficientVit - Post-procesado: 10413710
+LiDAR: 13001696
+EfficientVit - Predicción: 35444847
+Ground truth - Predicción: 176120
+Ground truth - Post-procesado: 53852738
+EfficientVit - Post-procesado: 9796012
+LiDAR: 13745013
+EfficientVit - Predicción: 31735355
+Ground truth - Predicción: 151199
+Ground truth - Post-procesado: 53204452
+EfficientVit - Post-procesado: 10150241
+LiDAR: 12685489
+EfficientVit - Predicción: 32661911
+Ground truth - Predicción: 170829
+Ground truth - Post-procesado: 53978739
+EfficientVit - Post-procesado: 10364730
+LiDAR: 12592229
+EfficientVit - Predicción: 31227938
+Ground truth - Predicción: 166629
+Ground truth - Post-procesado: 52790553
+EfficientVit - Post-procesado: 10551959
+LiDAR: 12941348
+EfficientVit - Predicción: 33036280
+Ground truth - Predicción: 167439
+Ground truth - Post-procesado: 53695679
+EfficientVit - Post-procesado: 10470989
+LiDAR: 12877667
+EfficientVit - Predicción: 35409968
+Ground truth - Predicción: 174968
+Ground truth - Post-procesado: 54148747
+EfficientVit - Post-procesado: 10165721
+LiDAR: 13393864
+EfficientVit - Predicción: 35864816
+Ground truth - Predicción: 168759
+Ground truth - Post-procesado: 53649109
+EfficientVit - Post-procesado: 11474084
+LiDAR: 12397230
+EfficientVit - Predicción: 37712977
+Ground truth - Predicción: 237949
+Ground truth - Post-procesado: 55930368
+EfficientVit - Post-procesado: 10221611
+LiDAR: 13798663
+EfficientVit - Predicción: 36870832
+Ground truth - Predicción: 207599
+Ground truth - Post-procesado: 55770249
+EfficientVit - Post-procesado: 11724633
+LiDAR: 12392570
+EfficientVit - Predicción: 37212019
+Ground truth - Predicción: 171079
+Ground truth - Post-procesado: 56767144
+EfficientVit - Post-procesado: 12866377
+LiDAR: 12632259
+EfficientVit - Predicción: 34697172
+Ground truth - Predicción: 151439
+Ground truth - Post-procesado: 53850798
+EfficientVit - Post-procesado: 11443984
+LiDAR: 13521604
+EfficientVit - Predicción: 34700471
+Ground truth - Predicción: 190459
+Ground truth - Post-procesado: 53375391
+EfficientVit - Post-procesado: 10286189
+LiDAR: 13500244
+EfficientVit - Predicción: 31860215
+Ground truth - Predicción: 178379
+Ground truth - Post-procesado: 55352021
+EfficientVit - Post-procesado: 10169530
+LiDAR: 13514195
+EfficientVit - Predicción: 32862610
+Ground truth - Predicción: 179559
+Ground truth - Post-procesado: 52806403
+EfficientVit - Post-procesado: 13396905
+LiDAR: 15159126
+EfficientVit - Predicción: 35828297
+Ground truth - Predicción: 160720
+Ground truth - Post-procesado: 56913993
+EfficientVit - Post-procesado: 10439539
+LiDAR: 13392936
+EfficientVit - Predicción: 34475753
+Ground truth - Predicción: 168989
+Ground truth - Post-procesado: 52439795
+EfficientVit - Post-procesado: 9978302
+LiDAR: 14904748
+EfficientVit - Predicción: 35051460
+Ground truth - Predicción: 145890
+Ground truth - Post-procesado: 53623699
+EfficientVit - Post-procesado: 10787988
+LiDAR: 13085226
+EfficientVit - Predicción: 32790211
+Ground truth - Predicción: 167279
+Ground truth - Post-procesado: 54390586
+EfficientVit - Post-procesado: 9615254
+LiDAR: 12640669
+EfficientVit - Predicción: 35066360
+Ground truth - Predicción: 185138
+Ground truth - Post-procesado: 54329567
+EfficientVit - Post-procesado: 10904037
+LiDAR: 12858708
+EfficientVit - Predicción: 32922170
+Ground truth - Predicción: 161370
+Ground truth - Post-procesado: 53764210
+EfficientVit - Post-procesado: 11222165
+LiDAR: 14077912
+EfficientVit - Predicción: 45106202
+Ground truth - Predicción: 179439
+Ground truth - Post-procesado: 56798844
+EfficientVit - Post-procesado: 13840803
+LiDAR: 13198996
+EfficientVit - Predicción: 34149005
+Ground truth - Predicción: 169640
+Ground truth - Post-procesado: 54369505
+EfficientVit - Post-procesado: 10241060
+LiDAR: 14944337
+EfficientVit - Predicción: 35733307
+Ground truth - Predicción: 190370
+Ground truth - Post-procesado: 52107956
+EfficientVit - Post-procesado: 11611384
+LiDAR: 13827643
+EfficientVit - Predicción: 34473452
+Ground truth - Predicción: 144049
+Ground truth - Post-procesado: 54179378
+EfficientVit - Post-procesado: 10909957
+LiDAR: 14137042
+EfficientVit - Predicción: 31338057
+Ground truth - Predicción: 158469
+Ground truth - Post-procesado: 54142039
+EfficientVit - Post-procesado: 14131871
+LiDAR: 13218866
+EfficientVit - Predicción: 32756601
+Ground truth - Predicción: 174858
+Ground truth - Post-procesado: 54057508
+EfficientVit - Post-procesado: 12222450
+LiDAR: 12686889
+EfficientVit - Predicción: 36048905
+Ground truth - Predicción: 168519
+Ground truth - Post-procesado: 53652549
+EfficientVit - Post-procesado: 11543023
+LiDAR: 12325191
+EfficientVit - Predicción: 34842071
+Ground truth - Predicción: 176898
+Ground truth - Post-procesado: 55281332
+EfficientVit - Post-procesado: 10610989
+LiDAR: 13404385
+EfficientVit - Predicción: 33772486
+Ground truth - Predicción: 215559
+Ground truth - Post-procesado: 54110077
+EfficientVit - Post-procesado: 12702618
+LiDAR: 17304436
+EfficientVit - Predicción: 33459837
+Ground truth - Predicción: 187299
+Ground truth - Post-procesado: 66146049
+EfficientVit - Post-procesado: 13456075
+LiDAR: 17294126
+EfficientVit - Predicción: 33775036
+Ground truth - Predicción: 388388
+Ground truth - Post-procesado: 58119070
+EfficientVit - Post-procesado: 10685978
+LiDAR: 13540474
+EfficientVit - Predicción: 35822416
+Ground truth - Predicción: 206560
+Ground truth - Post-procesado: 56943043
+EfficientVit - Post-procesado: 11228916
+LiDAR: 13422455
+EfficientVit - Predicción: 33249748
+Ground truth - Predicción: 221749
+Ground truth - Post-procesado: 59788180
+EfficientVit - Post-procesado: 10454659
+LiDAR: 13479104
+EfficientVit - Predicción: 34279323
+Ground truth - Predicción: 170149
+Ground truth - Post-procesado: 52698474
+EfficientVit - Post-procesado: 9497343
+LiDAR: 17681054
+EfficientVit - Predicción: 34339863
+Ground truth - Predicción: 181499
+Ground truth - Post-procesado: 53986308
+EfficientVit - Post-procesado: 9795762
+LiDAR: 13417535
+EfficientVit - Predicción: 31865785
+Ground truth - Predicción: 186649
+Ground truth - Post-procesado: 56429997
+EfficientVit - Post-procesado: 9994152
+LiDAR: 13114196
+EfficientVit - Predicción: 33119519
+Ground truth - Predicción: 181240
+Ground truth - Post-procesado: 55988518
+EfficientVit - Post-procesado: 11630313
+LiDAR: 13750633
+EfficientVit - Predicción: 33920235
+Ground truth - Predicción: 167130
+Ground truth - Post-procesado: 54626815
+EfficientVit - Post-procesado: 10246340
+LiDAR: 13252295
+EfficientVit - Predicción: 33226438
+Ground truth - Predicción: 164220
+Ground truth - Post-procesado: 52623134
+EfficientVit - Post-procesado: 11725883
+LiDAR: 15374316
+EfficientVit - Predicción: 34274464
+Ground truth - Predicción: 172759
+Ground truth - Post-procesado: 52678534
+EfficientVit - Post-procesado: 10876497
+LiDAR: 14317310
+EfficientVit - Predicción: 34403663
+Ground truth - Predicción: 193419
+Ground truth - Post-procesado: 54997164
+EfficientVit - Post-procesado: 10460879
+LiDAR: 13458715
+EfficientVit - Predicción: 33581677
+Ground truth - Predicción: 157450
+Ground truth - Post-procesado: 53112493
+EfficientVit - Post-procesado: 10544428
+LiDAR: 12449370
+EfficientVit - Predicción: 33014470
+Ground truth - Predicción: 172609
+Ground truth - Post-procesado: 53190162
+EfficientVit - Post-procesado: 10520849
+LiDAR: 13021737
+EfficientVit - Predicción: 31502646
+Ground truth - Predicción: 174768
+Ground truth - Post-procesado: 53420132
+EfficientVit - Post-procesado: 11067286
+LiDAR: 13596273
+EfficientVit - Predicción: 42776662
+Ground truth - Predicción: 196419
+Ground truth - Post-procesado: 61685990
+EfficientVit - Post-procesado: 13521724
+LiDAR: 15666544
+EfficientVit - Predicción: 34584532
+Ground truth - Predicción: 188819
+Ground truth - Post-procesado: 58907764
+EfficientVit - Post-procesado: 11711643
+LiDAR: 13986342
+EfficientVit - Predicción: 32935650
+Ground truth - Predicción: 170739
+Ground truth - Post-procesado: 59395552
+EfficientVit - Post-procesado: 11353015
+LiDAR: 13336015
+EfficientVit - Predicción: 33613106
+Ground truth - Predicción: 166490
+Ground truth - Post-procesado: 52125437
+EfficientVit - Post-procesado: 11543264
+LiDAR: 13116436
+EfficientVit - Predicción: 32253523
+Ground truth - Predicción: 185619
+Ground truth - Post-procesado: 53727769
+EfficientVit - Post-procesado: 10375889
+LiDAR: 13196796
+EfficientVit - Predicción: 35587507
+Ground truth - Predicción: 154899
+Ground truth - Post-procesado: 54175978
+EfficientVit - Post-procesado: 10976036
+LiDAR: 13164127
+EfficientVit - Predicción: 33812056
+Ground truth - Predicción: 159080
+Ground truth - Post-procesado: 51937158
+EfficientVit - Post-procesado: 9973451
+LiDAR: 14084432
+EfficientVit - Predicción: 35913706
+Ground truth - Predicción: 138409
+Ground truth - Post-procesado: 54505765
+EfficientVit - Post-procesado: 10998816
+LiDAR: 17984123
+EfficientVit - Predicción: 35287938
+Ground truth - Predicción: 217029
+Ground truth - Post-procesado: 54551126
+EfficientVit - Post-procesado: 10878707
+LiDAR: 13792762
+EfficientVit - Predicción: 33128729
+Ground truth - Predicción: 215879
+Ground truth - Post-procesado: 53750768
+EfficientVit - Post-procesado: 10393740
+LiDAR: 12271640
+EfficientVit - Predicción: 33186779
+Ground truth - Predicción: 181610
+Ground truth - Post-procesado: 53209562
+EfficientVit - Post-procesado: 10122671
+LiDAR: 13434825
+EfficientVit - Predicción: 32808040
+Ground truth - Predicción: 198449
+Ground truth - Post-procesado: 54995363
+EfficientVit - Post-procesado: 9587424
+LiDAR: 12649908
+EfficientVit - Predicción: 32468582
+Ground truth - Predicción: 188350
+Ground truth - Post-procesado: 54050607
+EfficientVit - Post-procesado: 11164225
+LiDAR: 12843128
+EfficientVit - Predicción: 34031855
+Ground truth - Predicción: 227080
+Ground truth - Post-procesado: 53625099
+EfficientVit - Post-procesado: 11133876
+LiDAR: 13825622
+EfficientVit - Predicción: 38040236
+Ground truth - Predicción: 176079
+Ground truth - Post-procesado: 53343101
+EfficientVit - Post-procesado: 11006947
+LiDAR: 13627194
+EfficientVit - Predicción: 33100149
+Ground truth - Predicción: 162320
+Ground truth - Post-procesado: 52866513
+EfficientVit - Post-procesado: 10021211
+LiDAR: 14778008
+EfficientVit - Predicción: 35413628
+Ground truth - Predicción: 157909
+Ground truth - Post-procesado: 52142467
+EfficientVit - Post-procesado: 9889932
+LiDAR: 13089866
+EfficientVit - Predicción: 35626387
+Ground truth - Predicción: 180119
+Ground truth - Post-procesado: 53970858
+EfficientVit - Post-procesado: 9560613
+LiDAR: 12457310
+EfficientVit - Predicción: 37030970
+Ground truth - Predicción: 173669
+Ground truth - Post-procesado: 54861064
+EfficientVit - Post-procesado: 9593094
+LiDAR: 12818858
+EfficientVit - Predicción: 38573173
+Ground truth - Predicción: 155369
+Ground truth - Post-procesado: 53401251
+EfficientVit - Post-procesado: 9996022
+LiDAR: 13874572
+EfficientVit - Predicción: 32615901
+Ground truth - Predicción: 156408
+Ground truth - Post-procesado: 52927743
+EfficientVit - Post-procesado: 10177730
+LiDAR: 13240535
+EfficientVit - Predicción: 33818775
+Ground truth - Predicción: 152970
+Ground truth - Post-procesado: 53309533
+EfficientVit - Post-procesado: 9485064
+LiDAR: 12490119
+EfficientVit - Predicción: 32089244
+Ground truth - Predicción: 154379
+Ground truth - Post-procesado: 53957068
+EfficientVit - Post-procesado: 10568058
+LiDAR: 13633564
+EfficientVit - Predicción: 34541071
+Ground truth - Predicción: 177999
+Ground truth - Post-procesado: 53817289
+EfficientVit - Post-procesado: 10781917
+LiDAR: 13042577
+EfficientVit - Predicción: 33104499
+Ground truth - Predicción: 177989
+Ground truth - Post-procesado: 61676741
+EfficientVit - Post-procesado: 10031892
+LiDAR: 12805477
+EfficientVit - Predicción: 32626471
+Ground truth - Predicción: 165989
+Ground truth - Post-procesado: 50845924
+EfficientVit - Post-procesado: 10044571
+LiDAR: 12791958
+EfficientVit - Predicción: 32625371
+Ground truth - Predicción: 172630
+Ground truth - Post-procesado: 53570659
+EfficientVit - Post-procesado: 10573859
+LiDAR: 13487865
+EfficientVit - Predicción: 34435632
+Ground truth - Predicción: 157509
+Ground truth - Post-procesado: 53179082
+EfficientVit - Post-procesado: 9577913
+LiDAR: 12249661
+EfficientVit - Predicción: 33165309
+Ground truth - Predicción: 171820
+Ground truth - Post-procesado: 51236741
+EfficientVit - Post-procesado: 9821932
+LiDAR: 15602385
+EfficientVit - Predicción: 34022235
+Ground truth - Predicción: 181559
+Ground truth - Post-procesado: 54966093
+EfficientVit - Post-procesado: 10814157
+LiDAR: 13019157
+EfficientVit - Predicción: 31274168
+Ground truth - Predicción: 155619
+Ground truth - Post-procesado: 52896714
+EfficientVit - Post-procesado: 10035101
+LiDAR: 13360296
+EfficientVit - Predicción: 33917825
+Ground truth - Predicción: 159450
+Ground truth - Post-procesado: 51996237
+EfficientVit - Post-procesado: 9911802
+LiDAR: 12627728
+EfficientVit - Predicción: 33136139
+Ground truth - Predicción: 166840
+Ground truth - Post-procesado: 53491830
+EfficientVit - Post-procesado: 10888668
+LiDAR: 12580029
+EfficientVit - Predicción: 31542337
+Ground truth - Predicción: 159839
+Ground truth - Post-procesado: 51977929
+EfficientVit - Post-procesado: 10606168
+LiDAR: 12979247
+EfficientVit - Predicción: 32785300
+Ground truth - Predicción: 153029
+Ground truth - Post-procesado: 55977218
+EfficientVit - Post-procesado: 12375020
+LiDAR: 12809037
+EfficientVit - Predicción: 35500107
+Ground truth - Predicción: 182768
+Ground truth - Post-procesado: 54982845
+EfficientVit - Post-procesado: 12334511
+LiDAR: 13485494
+EfficientVit - Predicción: 43161161
+Ground truth - Predicción: 156748
+Ground truth - Post-procesado: 53658310
+EfficientVit - Post-procesado: 12907257
+LiDAR: 12528619
+EfficientVit - Predicción: 33421398
+Ground truth - Predicción: 156689
+Ground truth - Post-procesado: 54731045
+EfficientVit - Post-procesado: 10889857
+LiDAR: 13477135
+EfficientVit - Predicción: 32814441
+Ground truth - Predicción: 146619
+Ground truth - Post-procesado: 52355726
+EfficientVit - Post-procesado: 9846492
+LiDAR: 12032352
+EfficientVit - Predicción: 32958390
+Ground truth - Predicción: 163339
+Ground truth - Post-procesado: 53726310
+EfficientVit - Post-procesado: 9392454
+LiDAR: 12443839
+EfficientVit - Predicción: 33381008
+Ground truth - Predicción: 154738
+Ground truth - Post-procesado: 51893738
+EfficientVit - Post-procesado: 10402579
+LiDAR: 14615209
+EfficientVit - Predicción: 33093050
+Ground truth - Predicción: 289778
+Ground truth - Post-procesado: 57470141
+EfficientVit - Post-procesado: 10129871
+LiDAR: 12716628
+EfficientVit - Predicción: 35139829
+Ground truth - Predicción: 291799
+Ground truth - Post-procesado: 56718836
+EfficientVit - Post-procesado: 10739417
+LiDAR: 12337290
+EfficientVit - Predicción: 33550557
+Ground truth - Predicción: 197649
+Ground truth - Post-procesado: 55068125
+EfficientVit - Post-procesado: 10986327
+LiDAR: 12772298
+EfficientVit - Predicción: 32292893
+Ground truth - Predicción: 174409
+Ground truth - Post-procesado: 55292311
+EfficientVit - Post-procesado: 10523349
+LiDAR: 12516219
+EfficientVit - Predicción: 32162674
+Ground truth - Predicción: 172229
+Ground truth - Post-procesado: 50826223
+EfficientVit - Post-procesado: 11229345
+LiDAR: 11953331
+EfficientVit - Predicción: 32243473
+Ground truth - Predicción: 152810
+Ground truth - Post-procesado: 53651330
+EfficientVit - Post-procesado: 10078961
+LiDAR: 11902602
+EfficientVit - Predicción: 32510192
+Ground truth - Predicción: 204428
+Ground truth - Post-procesado: 57254133
+EfficientVit - Post-procesado: 10533589
+LiDAR: 12143181
+EfficientVit - Predicción: 31511967
+Ground truth - Predicción: 180679
+Ground truth - Post-procesado: 55555311
+EfficientVit - Post-procesado: 9682933
+LiDAR: 11873972
+EfficientVit - Predicción: 34615392
+Ground truth - Predicción: 164109
+Ground truth - Post-procesado: 53061042
+EfficientVit - Post-procesado: 9194646
+LiDAR: 16856347
+EfficientVit - Predicción: 33493217
+Ground truth - Predicción: 168879
+Ground truth - Post-procesado: 54870934
+EfficientVit - Post-procesado: 9030536
+LiDAR: 11774722
+EfficientVit - Predicción: 32551541
+Ground truth - Predicción: 195649
+Ground truth - Post-procesado: 58553297
+EfficientVit - Post-procesado: 12299821
+LiDAR: 14164062
+EfficientVit - Predicción: 32680962
+Ground truth - Predicción: 191559
+Ground truth - Post-procesado: 58551585
+EfficientVit - Post-procesado: 11094656
+LiDAR: 14601689
+EfficientVit - Predicción: 34059705
+Ground truth - Predicción: 190759
+Ground truth - Post-procesado: 59595721
+EfficientVit - Post-procesado: 12071621
+LiDAR: 11942862
+EfficientVit - Predicción: 34456573
+Ground truth - Predicción: 196379
+Ground truth - Post-procesado: 61289282
+EfficientVit - Post-procesado: 9301266
+LiDAR: 11640723
+EfficientVit - Predicción: 37213339
+Ground truth - Predicción: 177358
+Ground truth - Post-procesado: 51202142
+EfficientVit - Post-procesado: 9446994
+LiDAR: 11724902
+EfficientVit - Predicción: 34298794
+Ground truth - Predicción: 148818
+Ground truth - Post-procesado: 51807059
+EfficientVit - Post-procesado: 9479344
+LiDAR: 11365065
+EfficientVit - Predicción: 36114985
+Ground truth - Predicción: 217819
+Ground truth - Post-procesado: 55760809
+EfficientVit - Post-procesado: 11265815
+LiDAR: 12182921
+EfficientVit - Predicción: 33189319
+Ground truth - Predicción: 172538
+Ground truth - Post-procesado: 52160858
+EfficientVit - Post-procesado: 9576544
+LiDAR: 11519535
+EfficientVit - Predicción: 33210879
+Ground truth - Predicción: 198029
+Ground truth - Post-procesado: 55085904
+EfficientVit - Post-procesado: 8824447
+LiDAR: 12010682
+EfficientVit - Predicción: 33270419
+Ground truth - Predicción: 184958
+Ground truth - Post-procesado: 51572201
+EfficientVit - Post-procesado: 9333325
+LiDAR: 12141061
+EfficientVit - Predicción: 34733991
+Ground truth - Predicción: 166049
+Ground truth - Post-procesado: 51150492
+EfficientVit - Post-procesado: 9791802
+LiDAR: 11847503
+EfficientVit - Predicción: 32836580
+Ground truth - Predicción: 166259
+Ground truth - Post-procesado: 56466726
+EfficientVit - Post-procesado: 11970621
+LiDAR: 12595739
+EfficientVit - Predicción: 33242449
+Ground truth - Predicción: 170379
+Ground truth - Post-procesado: 51089152
+EfficientVit - Post-procesado: 9846961
+LiDAR: 11935572
+EfficientVit - Predicción: 32588702
+Ground truth - Predicción: 258549
+Ground truth - Post-procesado: 52739024
+EfficientVit - Post-procesado: 10713437
+LiDAR: 12515149
+EfficientVit - Predicción: 34077734
+Ground truth - Predicción: 194160
+Ground truth - Post-procesado: 51475470
+EfficientVit - Post-procesado: 11139535
+LiDAR: 12301790
+EfficientVit - Predicción: 33833185
+Ground truth - Predicción: 200590
+Ground truth - Post-procesado: 53100312
+EfficientVit - Post-procesado: 9457534
+LiDAR: 14980147
+EfficientVit - Predicción: 32650011
+Ground truth - Predicción: 169680
+Ground truth - Post-procesado: 51611179
+EfficientVit - Post-procesado: 12238371
+LiDAR: 12533208
+EfficientVit - Predicción: 34200704
+Ground truth - Predicción: 173329
+Ground truth - Post-procesado: 52144117
+EfficientVit - Post-procesado: 9923552
+LiDAR: 11933791
+EfficientVit - Predicción: 32759391
+Ground truth - Predicción: 145779
+Ground truth - Post-procesado: 52066217
+EfficientVit - Post-procesado: 11317536
+LiDAR: 12638759
+EfficientVit - Predicción: 33011949
+Ground truth - Predicción: 150189
+Ground truth - Post-procesado: 51847609
+EfficientVit - Post-procesado: 10065851
+LiDAR: 12069702
+EfficientVit - Predicción: 32700401
+Ground truth - Predicción: 154839
+Ground truth - Post-procesado: 55440140
+EfficientVit - Post-procesado: 11356025
+LiDAR: 11927521
+EfficientVit - Predicción: 34540992
+Ground truth - Predicción: 159589
+Ground truth - Post-procesado: 54251406
+EfficientVit - Post-procesado: 9779773
+LiDAR: 12930547
+EfficientVit - Predicción: 33894276
+Ground truth - Predicción: 177979
+Ground truth - Post-procesado: 54865684
+EfficientVit - Post-procesado: 12875428
+LiDAR: 12902998
+EfficientVit - Predicción: 33463357
+Ground truth - Predicción: 195219
+Ground truth - Post-procesado: 57546651
+EfficientVit - Post-procesado: 9758392
+LiDAR: 12452440
+EfficientVit - Predicción: 33313798
+Ground truth - Predicción: 187888
+Ground truth - Post-procesado: 55673431
+EfficientVit - Post-procesado: 11026987
+LiDAR: 11619674
+EfficientVit - Predicción: 34819521
+Ground truth - Predicción: 188309
+Ground truth - Post-procesado: 55036903
+EfficientVit - Post-procesado: 10677777
+LiDAR: 12164931
+EfficientVit - Predicción: 34200224
+Ground truth - Predicción: 167749
+Ground truth - Post-procesado: 53213992
+EfficientVit - Post-procesado: 9942752
+LiDAR: 15859323
+EfficientVit - Predicción: 31886654
+Ground truth - Predicción: 161559
+Ground truth - Post-procesado: 54690905
+EfficientVit - Post-procesado: 9267945
+LiDAR: 12766088
+EfficientVit - Predicción: 34728461
+Ground truth - Predicción: 172169
+Ground truth - Post-procesado: 52859465
+EfficientVit - Post-procesado: 10551199
+LiDAR: 12504749
+EfficientVit - Predicción: 36310074
+Ground truth - Predicción: 307499
+Ground truth - Post-procesado: 55454029
+EfficientVit - Post-procesado: 10610179
+LiDAR: 12977977
+EfficientVit - Predicción: 33523488
+Ground truth - Predicción: 214499
+Ground truth - Post-procesado: 54214826
+EfficientVit - Post-procesado: 10417189
+LiDAR: 12794088
+EfficientVit - Predicción: 33854055
+Ground truth - Predicción: 192818
+Ground truth - Post-procesado: 55158623
+EfficientVit - Post-procesado: 9192175
+LiDAR: 12390950
+EfficientVit - Predicción: 34118614
+Ground truth - Predicción: 165099
+Ground truth - Post-procesado: 58388396
+EfficientVit - Post-procesado: 11317766
+LiDAR: 12932117
+EfficientVit - Predicción: 38594643
+Ground truth - Predicción: 181678
+Ground truth - Post-procesado: 57509282
+EfficientVit - Post-procesado: 13951112
+LiDAR: 14362080
+EfficientVit - Predicción: 35550727
+Ground truth - Predicción: 196499
+Ground truth - Post-procesado: 59767019
+EfficientVit - Post-procesado: 11431075
+LiDAR: 14319330
+EfficientVit - Predicción: 34278924
+Ground truth - Predicción: 172338
+Ground truth - Post-procesado: 52406206
+EfficientVit - Post-procesado: 9554424
