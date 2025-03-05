@@ -60,10 +60,6 @@ Para **eliminar los outliers** de cada máscara, solo conservaremos los puntos q
 ### Red neuronal de segmentación semántica
 
 Una vez que hemos determinado el área del carril, empleamos la red de segmentación para calcular el porcentaje de ese área que corresponde realmente a la carretera. Este cálculo nos permite discernir si hemos perdido el carril aunque continuamos detectando líneas, las cuales podrían ser, por ejemplo, de la acera. Si el porcentaje de área correspondiente al carril es inferior a un umbral durante varias iteraciones seguidas, detenemos la ejecución del programa. Esto será útil sobre todo en la próxima etapa, el seguimiento del carril mediante *deep reinforcement learning*. Después de realizar todas las verificaciones, determinamos el centro de masas del carril y evaluamos su desviación con respecto al centro de la pantalla en el eje *x*, donde se encuentra nuestro vehículo.
-```python
-class Camera(Sensor):      
-  def get_road_percentage(self)
-```
 
 ## Controlador PID
 

@@ -304,7 +304,8 @@ class CarlaBase(gym.Env, ABC):
 
         if self._client == None or not self._town in self._world.get_map().name: 
             self._world, self._client = configcarla.setup_carla(name_world=self._town, client=self._client,
-                                                                syn=self._train, port=self._port, overtaken=self._seg,
+                                                                syn=self._train, port=self._port,
+                                                                overtaken=isinstance(self, CarlaOvertaken),
                                                                 fixed_delta_seconds=self._fixed_delta_seconds)
         
             # Set the weather to sunny
@@ -1439,10 +1440,9 @@ class CarlaOvertaken(CarlaBase):
                     if self._overtaken_in_progress != self._per_over:
                         if self._overtaken_in_progress:
                             print("\033[91mEMPIEZA EL ADELANTAMIENTO\033[0m")
-                            self._seen = True
                         else:
                             print("\033[91mCORTO ADELANTAMIENTO\033[0m")
-                            self._seen = False 
+
 
                 # If can't overtake, check if it's too close to the front vehicle
                 if not self._overtaken_in_progress and self._camera.check_lane_left():
