@@ -1,9 +1,10 @@
 import pygame
 import carla
 import argparse
-import sys
-import os
+import time
 import csv
+import os
+import sys
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, src_path)
@@ -34,8 +35,8 @@ def main(args):
 
     driver_transform = carla.Transform(carla.Location(x=0.5, z=1.7292))
     camera = sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), transform=driver_transform,
-                                    seg=True, text='Driver view', init_extra=(SIZE_CAMERA, 0), 
-                                    lane=True, canvas_seg=False, check_area_lane=args.new == 0)
+                                    seg=False, text='Driver view', init_extra=(SIZE_CAMERA, 0),
+                                    lane=True, canvas_seg=False, check_area_lane=True)
     
     world_transform = carla.Transform(carla.Location(z=2.5, x=-4.75))
     sensors.add_camera_rgb(size_rect=(SIZE_CAMERA, SIZE_CAMERA), init=(0, 0), 
@@ -53,8 +54,10 @@ def main(args):
         num_files = len(files) + 1
         csv_file = open(dir_csv + 'data_' + str(num_files) + '.csv', mode='w', newline='')
         writer_csv = csv.writer(csv_file)
-        writer_csv.writerow(['velocity', 'deviation'])
-    
+        writer_csv.writerow(['velocity', 'deviation', 'throttle', 'steer'])
+
+    t_exec = time.time()
+
     try:
         while True:
             for event in pygame.event.get():
@@ -77,11 +80,17 @@ def main(args):
             
             # Control vehicle
             error_road = camera.get_deviation()
-            pid.controll_vehicle(error_road)
+            #t = time.time_ns()
+            control = pid.controll_vehicle(error_road)
+            #print("PID:", time.time_ns() - t)
+
+            if time.time() - t_exec > 30:
+                print("Time exceed!")
+                break
 
             if args.record:
                 vel = ego_vehicle.get_velocity()
-                writer_csv.writerow([carla.Vector3D(vel).length(), error_road])
+                writer_csv.writerow([carla.Vector3D(vel).length(), error_road, control.throttle, control.steer])
 
     except KeyboardInterrupt:
         return

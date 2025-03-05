@@ -11,7 +11,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")
 
 from deepRL.environment import KEY_DEV, KEY_THROTTLE, KEY_STEPS, KEY_STEER, KEY_REWARD, KEY_VEL, KEY_ACC_REWARD, KEY_DISTANCE, KEY_LASER_RIGHT
 
-NUM_COLUMNS = 4
+NUM_COLUMNS = 2 # 4
 NUM_ROWS = 2
 
 def extract_data(key:str, data_csv:list[dict], val_abs:bool=False):
@@ -70,6 +70,7 @@ def plot_data(data_csv:list[dict], num_rows:int, key:str, init:tuple[int, int], 
         ax.set_xticks(bins_ticks)
         ax.set_xticklabels([f'{tick:.2f}' for tick in bins_ticks], rotation=90)
         ax.set_ylabel('Frequency')
+        ax.grid(axis='y', linestyle='--', alpha=0.7, zorder=0)
         ax.set_xlabel(key)
 
 def main(args):
@@ -99,26 +100,26 @@ def main(args):
         pass
     
     csv_file = args.file.split('/')[-1].rsplit('_', 1)[0]
-    plt.figure(figsize=(6 * NUM_COLUMNS, 8))
+    plt.figure(figsize=(6 * NUM_COLUMNS, 5)) # 8
+
+    num_rows = 1 # Para solo hacer los histogramas
+
     gs = gridspec.GridSpec(num_rows, NUM_COLUMNS)
    
     # Plots
-    plot_data(data_csv=data, key=KEY_REWARD, init=(0, 0), title='Reward per step', label=csv_file,
-              num_rows=num_rows)
-    plot_data(data_csv=data, key=KEY_DEV, init=(1, 0), title='Deviation in absolute value',
-              label=csv_file, num_rows=num_rows)
-    plot_data(data_csv=data, key=KEY_VEL, init=(0, 2), title='Velocity of the vehicle',
-              label=csv_file, num_rows=num_rows, size=2)
-    plot_data(data_csv=data, key=KEY_THROTTLE, init=(1, 2), title='Throttle of the vehicle',
-              label=csv_file, num_rows=num_rows, size=2, file=args.file)
+    #plot_data(data_csv=data, key=KEY_REWARD, init=(0, 0), title='Reward per step', label=csv_file, num_rows=num_rows)
+    #plot_data(data_csv=data, key=KEY_DEV, init=(1, 0), title='Deviation in absolute value',label=csv_file, num_rows=num_rows)
+    #plot_data(data_csv=data, key=KEY_VEL, init=(0, 2), title='Velocity of the vehicle', label=csv_file, num_rows=num_rows, size=2)
+    #plot_data(data_csv=data, key=KEY_THROTTLE, init=(1, 2), title='Throttle of the vehicle',label=csv_file, num_rows=num_rows, size=2, file=args.file)
 
     # Histograms
-    plot_data(data_csv=data, key=KEY_THROTTLE, init=(1, 1), title='Histogram throttle actions',
-                hist=True, label=csv_file, num_rows=num_rows)
+    plot_data(data_csv=data, key=KEY_THROTTLE, init=(0, 0), title='Histogram throttle actions',
+                hist=True, label=csv_file, num_rows=num_rows) # (1,1)
     plot_data(data_csv=data, key=KEY_STEER, init=(0, 1), title='Histogram steer actions', hist=True,
-                label=csv_file, num_rows=num_rows)
+                label=csv_file, num_rows=num_rows) # (0, 1)
     
     # Extra row
+    '''
     if num_rows > NUM_ROWS:    
         if dist:
             plot_data(data_csv=data, key=KEY_DISTANCE, init=(2, 2), label=csv_file,
@@ -135,7 +136,7 @@ def main(args):
 
         plot_data(data_csv=data, key=KEY_ACC_REWARD, init=(2, 0), label=csv_file, title=KEY_ACC_REWARD,
                   num_rows=num_rows)
-    
+    '''
     plt.tight_layout()
     plt.show()
 

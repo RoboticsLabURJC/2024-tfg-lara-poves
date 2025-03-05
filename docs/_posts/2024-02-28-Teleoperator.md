@@ -1,6 +1,6 @@
 ---
 title: "Teleoperador"
-last_modified_at: 2024-12-14T12:42:00
+last_modified_at: 2025-03-05T18:24:00
 categories:
   - Blog
 tags:
@@ -22,7 +22,7 @@ Durante las primeras semanas, nuestro objetivo principal ha sido adentrarnos en 
 
 ## Anaconda
 
-Para trabajar, crearemos un entorno Anaconda que nos permita utilizar la versión deseada de Python, en este caso, utilizaremos la versión 3.10, ya que es la que necesitaremos para usar la red neuronal de segmentación en futuros apartados.
+Para trabajar, crearemos un entorno Anaconda que nos permita utilizar la versión deseada de Python, en este caso, utilizaremos la versión 3.10, ya que es la que necesitaremos para usar EfficientVit.
 
 ```bash
 conda create -n tfg python=3.10
@@ -35,14 +35,6 @@ pip install pygame numpy==1.26.4 carla Pillow
 Para iniciar el simulador CARLA, usamos el siguiente comando:
 ```bash
 /opt/carla/CarlaUE4.sh -world-port=2000 -RenderOffScreen
-```
-
-Hemos estado investigando cómo realizar acciones básicas en CARLA: la apertura de distintos entornos, el desplazamiento del observador y la colocación de uno o varios vehículos con la opción de seleccionar su modelo. Después, nos centramos en definir el vehículo que queríamos controlar, conocido como ***Ego Vehicle*** en CARLA, al que añadiremos los sensores. Para esta funcionalidad hemos integrado dos cámaras: una para simular la perspectiva del conductor y otra para visualizar el vehículo en su entorno.
-```python
-def setup_carla(port:int=2000, name_world:str='Town01', delta_seconds=0.05, client:carla.Client=None)
-def add_one_vehicle(world:carla.World, ego_vehicle:bool=False, vehicle_type:str=None, 
-                    transform:carla.Transform=None)
-def add_vehicles_randomly(world:carla.World, number:int) # Spawn Points
 ```
 
 En el modo asíncrono de CARLA, el servidor se ejecuta a máxima velocidad, mientras que en el modo síncrono, el cliente indica al servidor cuándo ejecutar (*world.tick()*) y durante cuanto tiempo **simulado** debe hacerlo (*fixed delta seconds*), luego detiene la simulación hasta un nuevo *tick*. El modo síncrono se emplea comúnmente en entrenamientos de modelos, permitiendo detener la simulación durante el procesamiento. Sin embargo, la inferencia se realiza en modo asíncrono, replicando así condiciones más cercanas a la realidad.
@@ -62,16 +54,6 @@ También hemos incluido un par de botones para aumentar o disminuir el *throttle
 ## Manejo de sensores
 
 Hemos creado la clase ***Vehicle_sensors***, la cual nos permite almacenar el vehículo, en nuestro caso *ego vehicle*, y una lista de sus sensores.
-```python
-class Vehicle_sensors:
-    def __init__(self, vehicle:carla.Vehicle, world:carla.World, screen:pygame.Surface)
-
-    def add_sensor(self, sensor_type:str, transform:carla.Transform=carla.Transform())    
-    def add_camera_rgb(self, size_rect:tuple[int, int], init:tuple[int, int]=None, 
-                       transform:carla.Transform=carla.Transform())
-
-    def destroy(self)
-```
 
 Cada sensor pertenece a la clase abstracta ***Sensor***, la cual guarda la instancia del sensor en CARLA y contiene el *callback* que almacena la última medida recogida del entorno en un atributo de la clase. La función ***process_data()*** debe ser implementada en cada subclase de acuerdo al tipo de sensor, permitiéndonos actualizar su información y mostrarla en la pantalla si es necesario.
 ```python
@@ -100,7 +82,7 @@ class Vehicle_sensors:
 Para el manejo de la cámara, hemos desarrollado una clase ***Camera*** que hereda de *Sensor*, la cual incorpora nuevos parámetros en el constructor y sobrescribe la función *process_data()*, que simplemente muestra la imagen capturada. Además, hemos añadido una nueva función ***add_camera_rgb*** en la clase *Vehicle_sensors*, que requiere los parámetros del constructor de esta nueva clase y la ubicación de la cámara respecto al coche. Además, hemos añadido un sensor de colisión para detectar si el coche choca contra algún objeto, en caso de impacto, se eleva una excepción.
 ```python
 class Camera(Sensor):      
-    def __init__(self, size:tuple[int, int], init:tuple[int, int], sensor:carla.Sensor, screen:pygame.Surface, text:str=None)
+    def __init__(self, ...)
     def process_data(self)
 
 class Collision(Sensor):
@@ -109,8 +91,7 @@ class Collision(Sensor):
             assert False # El vehículo ha chocado
 
 class Vehicle_sensors:
-    def add_camera_rgb(self, size_rect:tuple[int, int]=None, init:tuple[int, int]=None,
-                       text:str=None, transform:carla.Transform=carla.Transform())
+    def add_camera_rgb(self, ...)
     def add_collision(self)
 ```
 

@@ -60,6 +60,8 @@ def main(args):
 
     obs, info = env.reset()
 
+    t = time.time()
+
     try:
         while True:
             #t = time.time_ns()
@@ -78,15 +80,19 @@ def main(args):
             except KeyError:
                 dist_front = np.nan
 
-            print(f"Throttle: {throttle:.6f}\t||\tSteer: {steer:.7f}\t||\tDist front: {dist_front:.2f}")
+            try:
+                # Truncated throttle
+                throttle = info[environment.KEY_THROTTLE]
+                steer = info[environment.KEY_STEER]
+            except KeyError:
+                pass
+
+            print(f"\033[92mThrottle: {throttle:.6f}\t||\tSteer: {steer:.7f}\t||\tDist front: {dist_front:.2f}\033[0m")
 
             try:
                 dist_right_front = info[environment.KEY_LASER_RIGHT_FRONT]
                 dist_right = info[environment.KEY_LASER_RIGHT]
                 dist_right_back = info[environment.KEY_LASER_RIGHT_BACK]
-
-                print(f"Dist right front: {dist_right_front:.2f}\t||\tDist right: {dist_right:.2f}" 
-                      f"\t||\tDist right back: {dist_right_back:.2f}\n")
             except KeyError:
                 dist_right_front = environment.MAX_DIST_LASER
                 dist_right = environment.MAX_DIST_LASER
@@ -99,6 +105,11 @@ def main(args):
                                  dist_right_back])        
 
             if terminated or truncated:
+                print("Finish route!")
+                break
+
+            if args.time and time.time() - t > 40:
+                print("Time exceed!")
                 break
     except KeyboardInterrupt:
         return
@@ -115,7 +126,7 @@ if __name__ == "__main__":
         usage="python3 %(prog)s --env {" + ",".join(possible_envs) + \
             "} --alg {" + ",".join(possible_algs) + \
             "} --n <model_number> [--port <port_number>] [--num_cir <num_cir>] [--port_tm <port_tm]"
-            " [--lane_network <lane_network>] [--target_vel <target_vel>] [--scene <scene>]"
+            " [--lane_network <lane_network>] [--target_vel <target_vel>] [--scene <scene>] [--time <time>]"
     )
     parser.add_argument(
         '--env', 
@@ -149,7 +160,7 @@ if __name__ == "__main__":
         type=int, 
         required=False, 
         default=0,
-        choices=[0, 1, 2, 3, 4, 5, 6],
+        choices=[0, 1, 2, 3, 4, 5, 6, 7],
         help='Number of the circuit for the enviroment. By default 0.'
     )
     parser.add_argument(
@@ -180,6 +191,14 @@ if __name__ == "__main__":
         default=2,
         choices=[0, 1, 2],
         help='Types of model you want to test: 0 = lane, 1 = obstacle, 2 = passing. By default 2.'
+    )
+    parser.add_argument(
+        '--time', 
+        type=int, 
+        required=False, 
+        default=0,
+        choices=[0, 1],
+        help='Execute only 30 s'
     )
 
     main(parser.parse_args())

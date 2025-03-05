@@ -18,18 +18,22 @@ def main(args):
     if KEY_VEL not in data.columns:
         raise ValueError("The CSV file must contain a column named 'velocity'.")
     
-    plt.figure(figsize=(10, 8)) 
+    plt.figure(figsize=(15, 12))
 
     velocities = data[KEY_VEL]
     bins = [5, 6, 7, 8, 9, 10, 11, 12]
+    labels = ["vel 5 m/s", "vel 6 m/s", "vel 7 m/s", "vel 8 m/s", 
+              "vel 9 m/s", "vel 10 m/s", "not seen car", ""]
 
-    labels = ["vel 5", "vel 6", "vel 7", "vel 8", "vel 9", "vel 9", "not seen car", ""]
-    plt.xticks(bins, labels, rotation=45) 
+    # Ajuste de tamaño de fuente
+    plt.xticks(bins, labels, rotation=0, fontsize=17)
+    plt.yticks(fontsize=17)
 
     plt.hist(velocities, bins=bins, edgecolor='black', align='left', rwidth=0.8, color='skyblue')
-    plt.title("Histogram of Velocities")
-    plt.ylabel("Frequency")
-    plt.xticks(bins)
+
+    plt.xlabel("Velocity (m/s)", fontsize=20)
+    plt.ylabel("Frequency", fontsize=20)
+
     plt.show()
 
 if __name__ == "__main__":

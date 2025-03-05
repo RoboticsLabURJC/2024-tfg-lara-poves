@@ -466,6 +466,7 @@ class CameraRGB(Sensor):
         canvas = image_data
         text_extra = self.text
 
+        t = time.time_ns()
         if self._seg:
             if self.text != None:
                 text_extra = "Segmented " + self.text
@@ -483,7 +484,10 @@ class CameraRGB(Sensor):
                 self._mask = pred
                 if (SIZE_CAMERA, SIZE_CAMERA) != self._mask.shape:
                     self._mask = cv2.resize(self._mask, dsize=(SIZE_CAMERA, SIZE_CAMERA), interpolation=cv2.INTER_NEAREST)
+        #if self._seg:
+        #    print("Segmentacion de la calzada:", time.time_ns() - t)
 
+        t = time.time_ns()
         if self._lane:
             canvas = self._detect_lane(canvas, self._mask)
     
@@ -504,6 +508,8 @@ class CameraRGB(Sensor):
                             point=(SIZE_CAMERA, SIZE_CAMERA - self.size_text))          
 
             self.show_surface(surface=self._extra_surface, pos=self.init_extra, text=text_extra)  
+        #if self._lane:
+        #    print("Detección de carril:", time.time_ns() - t)
 
     def get_seg_data(self, num_points:int, show=False):
         if len(self._mask) <= 0 or len(self._lane_left) <= 0 or len(self._lane_right) <= 0:
@@ -1021,7 +1027,7 @@ class Vehicle_sensors:
         dist_lidar = np.nan
 
         for sensor in self.sensors:
-            t = time.time_ns()
+            #t = time.time_ns()
             sensor.update_screen = self.update_screen
             sensor.process_data()
 
@@ -1114,38 +1120,69 @@ class Teleoperator:
 class PID:
     def __init__(self, vehicle:carla.Vehicle):
         self._vehicle = vehicle
-        self._kp = 1 / (SIZE_CAMERA / 2)
-        self._kd = -self._kp / 1.7
-        self._throttle = 0.5
 
-        self._error = 0
-        self._prev_error = 0
+        # Deviation
+        self._kp_dev = 1 / (SIZE_CAMERA / 2)
+        self._kd_dev = -self._kp_dev / 1.7
 
-    def controll_vehicle(self, error:float):
+        self._error_dev = 0
+        self._prev_error_dev = 0
+
+        # Velocity
+        self._vel_target = 10
+        self._max_error_vel = 5
+
+        self._kp_vel = 1.75
+        #self._kd_dev = -self._kp / 1.7
+    
+        self._error_vel = 0
+        self._prev_error_vel = 0
+
+    def _scale_value(self, value:float):
+        old_min = -self._max_error_vel
+        old_max = self._max_error_vel
+        new_min = 0.0
+        new_max = 0.5
+
+        return ((value - old_min) / (old_max - old_min)) * (new_max - new_min) + new_min
+
+    def controll_vehicle(self, dev:float):
         control = carla.VehicleControl()
-        self._prev_error = self._error
-        self._error = error
 
-        # Different sign
-        if (self._error > 0 and self._prev_error < 0) or (self._error < 0 and self._prev_error > 0):
-            self._prev_error = 0        
+        # Deviation error
+        self._prev_error_dev = self._error_dev
+        self._error_dev = dev
 
+        # Get velocity
         v = self._vehicle.get_velocity()
         v = carla.Vector3D(v).length()
-        if v > 10:
-            control.brake = self._throttle / 2
-        elif v > 7:
-            control.brake = self._throttle / 5
-        control.throttle = self._throttle
 
-        if error > 20:
-           error *= 1.15
+        # Velocity error
+        self._prev_error_vel = self._error_vel
+        self._error_vel = np.clip(self._vel_target - v, -self._max_error_vel, self._max_error_vel)
+        self._error_vel = self._scale_value(self._error_vel)
 
-        control.steer = self._kp * error + self._kd * self._prev_error
+        # Control vel
+        control.throttle = np.clip(self._kp_vel * self._error_vel, 0.1, 0.5)
+
+        # Control steer
+        if (self._error_dev > 0 and self._prev_error_dev < 0) or (self._error_dev < 0 and self._prev_error_dev > 0):
+            self._prev_error_dev = 0        
+
+        if self._error_dev > 20:
+           self._error_dev *= 1.15
+
+        # Control steer
+        control.steer = self._kp_dev * self._error_dev + self._kd_dev * self._prev_error_dev
+
+        # Apply control
+        print("Throttle:", control.throttle, "\t||\tSteer:", control.steer)
         self._vehicle.apply_control(control)
 
+        return control
+
 def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:float=0.0, 
-                client:carla.Client=None, syn:bool=False):
+                client:carla.Client=None, syn:bool=False, overtaken:bool=False):
     if client == None:
         client = carla.Client('localhost', port)
 
@@ -1154,7 +1191,7 @@ def setup_carla(port:int=2000, name_world:str='Town01', fixed_delta_seconds:floa
 
     settings = world.get_settings()
     settings.fixed_delta_seconds = fixed_delta_seconds
-    if fixed_delta_seconds > 0.1:
+    if fixed_delta_seconds > 0.1 or overtaken:
         settings.max_substep_delta_time = 0.05
         settings.max_substeps = 4
 

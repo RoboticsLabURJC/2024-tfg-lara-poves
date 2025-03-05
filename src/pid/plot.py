@@ -3,6 +3,16 @@ import numpy as np
 import csv
 import argparse
 
+plt.rcParams.update({
+    "font.family": "serif",
+    "font.serif": ["Computer Modern"],
+    "text.usetex": False, 
+    "axes.titlesize": 16,
+    "axes.labelsize": 20,
+    "xtick.labelsize": 15,
+    "ytick.labelsize": 15
+})
+
 def main(args):
     data = {}
 
@@ -14,41 +24,48 @@ def main(args):
                     data[key] = []
                 data[key].append(float(value))
 
-    num_columns = 2
-    fig, axes = plt.subplots(1, num_columns, figsize=(6 * num_columns, 6))
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6)) 
 
-    if num_columns == 1:
-        axes = [axes]
+    # Diccionario para personalizar cada variable
+    config = {
+        'velocity': {
+            'title': 'las velocidades',
+            'xlabel': 'Velocidad en m/s',
+            'color': 'blue',
+            'bin_width': 0.5,
+            'xlim': (0, 25),
+            'ylim': (0, 225),
+            'index': 0
+        },
+        'deviation': {
+            'title': 'la desviación del carril',
+            'xlabel': 'Desviación en píxeles',
+            'color': 'red',
+            'bin_width': 2,
+            'xlim': (-50, 50), 
+            'ylim': (0, 850),
+            'index': 1
+        }
+    }
 
-    for i, (key, values) in enumerate(data.items()):
-        if key == 'velocity':
-            key_tittle = 'las velocidades'
-            key = 'Velocidad en m/s'
-            color = 'blue'
-            index = 0
-            bin_width = 0.5
-        elif key == 'deviation':
-            key_tittle = 'la desviación del carril'
-            key = 'Desviación en píxeles'
-            color = 'red'
-            index = 1
-            bin_width = 2
-        else:
-            key_tittle = ''
-        
-        if len(key_tittle) > 1:
+    for key, values in data.items():
+        if key in config:
+            cfg = config[key]
+
             values = np.array(values)
+            bins = np.arange(min(values), max(values) + cfg['bin_width'], cfg['bin_width'])
 
-            bins = np.arange(min(values), max(values) + bin_width, bin_width) 
-            axes[index].hist(values, bins=bins, edgecolor='black', alpha=0.7, color=color)
-            axes[index].set_title(f'Histograma de {key_tittle}')
-            axes[index].set_xlabel(key)
-            axes[index].set_ylabel('Frecuencia')
+            ax = axes[cfg['index']]
+            ax.hist(values, bins=bins, edgecolor='black', alpha=0.7, color=cfg['color'])
+            ax.set_xlabel(cfg["xlabel"], fontsize=16, fontweight='bold')
+            ax.set_ylabel('Frecuencia', fontsize=16, fontweight='bold')
+            ax.set_xlim(cfg["xlim"])  # Aplicar límites del eje X
+            ax.set_ylim(cfg["ylim"])
+            ax.grid(axis='y', linestyle='--', alpha=0.7, zorder=0)  # Grid horizontal
 
-            if 'vel' in key.lower():
-                axes[index].set_xlim(0, 25)
-            elif 'des' in key.lower():
-                axes[index].set_xlim(-50, 50)
+            if key == 'deviation':
+                std_dev = np.std(values)
+                print(f"Desviación estándar de la desviación del carril ({key}): {std_dev:.2f} píxeles")
 
     plt.tight_layout()
     plt.show()
