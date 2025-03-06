@@ -1,6 +1,6 @@
 ---
-title: "Sigue carril: DRL"
-last_modified_at: 2025-03-06T18:36:00
+title: "Comportamientos: DRL"
+last_modified_at: 2025-03-06T19:11:00
 categories:
   - Blog
 tags:
@@ -16,25 +16,20 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 ```
 
 ## Índice
-- [Entornos](#entornos)
-  - [CarlaLaneDiscrete](#carlalanediscrete)
-  - [CarlaLaneContinuous](#carlalanecontinuous)
-  - [CarlaPassing](#carlapassing)
-  - [CarlaOvertaken](#carlaovertaken)
+- [Sigue carril DQN](#sigue-carril-dqm)
+- [Sigue carril PPO](#sigue-carril-ppo)
+- [Control de crucero adaptativo](#control-de-crucero-adaptativo)
+- [Adelantamiento](#adelantamiento)
 
-## Descripción del Entorno y Entrenamiento
+## Sigue carril DQN
 
-El **espacio de observaciones** es continuo y coincide con el espacio de estados. Este espacio se normaliza en todos los entrenamientos y está compuesto por múltiples elementos, por lo que utilizamos un espacio de estados basado en un **diccionario**. Los elementos del espacio de observaciones son:
+El **espacio de observaciones** es continuo y coincide con el espacio de estados. Este espacio se normaliza en todos los entrenamientos y está compuesto por múltiples elementos, por lo que utilizamos un espacio de estados basado en un **diccionario**. Para manejar este espacio, en nuestros algoritmos emplearemos la política *MultiInputPolicy*. Los elementos del espacio de observaciones son:
 
 - Desviación del carril
 - Área del carril
 - 5 puntos de la línea izquierda del carril
 - 5 puntos de la línea derecha del carril
 - Centro de masas
-
-Para manejar este espacio, en nuestros algoritmos emplearemos la política *MultiInputPolicy*.
-
-### Espacio de Acciones
 
 Este entorno tiene un **espacio de acciones discreto**, por lo que lo entrenaremos utilizando un algoritmo **DQN**. Para combinar las acciones de aceleración y giro, seguimos la regla de que a mayor aceleración, menor es el giro; aún no hemos incluido el freno. En total, contamos con 21 acciones disponibles:
 
@@ -113,7 +108,7 @@ En la gráfica siguiente, se puede observar cómo el modelo finalmente converge:
 #### Video en un circuito no visto durante el entrenamiento
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QT0PQfs9-m8?si=IZeDuQfLjTQYj3tt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### CarlaLaneContinuous
+## Sigue carril PPO
 
 Como hemos comprobado con DQN, el espacio de acciones está restringido. Para conseguir un mejor comportamiento y mayor velocidad, debemos utilizar un algoritmo que permita un **espacio de acciones continuo**, como **PPO**. Seguiremos controlando dos elementos: el acelerador y el giro. Permitimos el rango completo para el acelerador (0-1) y limitamos el rango del giro a (-0.2, 0.2):
 ```python
@@ -250,7 +245,7 @@ Hemos evaluado si el modelo entrenado utilizando la percepción del carril basad
 También se han obtenido buenos resultados al usar otro vehículos:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DRmLNmMDAms?si=ISqjmCiuIC3mMNv7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### CarlaPassing
+## Control de crucero adaptativo 
 
 En este entorno, el objetivo es que el coche siga el carril mientras mantiene una velocidad de crucero definida por otro vehículo que circula delante a una velocidad constante durante todo el episodio.
 
@@ -365,4 +360,4 @@ Estos son los videos que ilustran los comportamientos logrados:
 - Otro vehículo delantero
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RmD8-avcwvU?si=QC3jXQLLI1mobcdl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### CarlaOvertaken
+## Adelantamiento
