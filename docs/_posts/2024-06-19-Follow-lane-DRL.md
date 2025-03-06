@@ -361,3 +361,46 @@ Estos son los videos que ilustran los comportamientos logrados:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RmD8-avcwvU?si=QC3jXQLLI1mobcdl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Adelantamiento
+
+Al igual que para el control de crucero adaptativo, primero hemos entrenado el modelo para seguir el carril. Las observaciones son:
+- Velocidad del propio agente, es decir, del *Ego Vehicle*.
+- Desviación del carril.
+- Centro de masas del carril.
+- Área del carril.
+- 10 puntos de la línea de carril izquierda.
+- 10 puntos de la línea del carril derecha.
+- 10 puntos de la subzona frontal del LiDAR.
+- 10 puntos de la subzona frontal derecha del LiDAR.
+- 10 puntos de la subzona derecha del LiDAR.
+- 10 puntos de la subzona trasera derecha del LiDAR.
+- Centro de masas de la calzada.
+- Área de la calzada.
+- 16 puntos del límite izquierdo de la calzada.
+- 16 puntos del límite derecho de la calzada.
+
+1. *Inicio del adelantamiento: sigue-carril.*  
+   El agente circula por su carril hasta que detecta con el LIDAR al vehículo que circula delante suyo (alcance de 20 metros). Durante este tramo, recibe la recompensa referente al seguimiento de carril, especificada en el código `rew_ppo_lane_overtaken`.
+
+2. *Cambio al carril izquierdo.*  
+   Una vez detectado el vehículo delantero, se inicia la maniobra de adelantamiento y la recompensa cambia para incentivar al agente a cambiar al carril de la izquierda, si lo hay, lo cual se comprueba con la red de segmentación EfficientVit. Si el vehículo delantero deja de ser percibido, se interrumpe el adelantamiento y se vuelve al modo sigue-carril.
+
+3. *Adelantamiento: sigue-carril.*  
+   Una vez el agente está en el carril izquierdo, se retoma la recompensa del seguimiento de carril hasta que el agente detecta con el LIDAR que ha sobrepasado al otro vehículo y que es seguro volver al carril inicial (9 metros).
+
+4. *Vuelta al carril inicial.*  
+   En este momento, la función de recompensa cambia para que el modelo aprenda que debe desplazarse al carril de la derecha.
+
+5. *Fin del adelantamiento: sigue-carril.*  
+   Una vez realizado el cambio de carril, la maniobra de adelantamiento ha finalizado y se reanuda la recompensa sigue-carril hasta finalizar el recorrido.
+
+###### Diseño de Recompensas para los Cambios de Carril
+
+Para diseñar las recompensas para los cambios de carril, hemos modificado la normalización de la desviación, permitiendo al modelo que aprenda de manera eficiente sin necesidad de indicaciones explícitas sobre cuándo y con qué magnitud realizar el giro, solamente especificamos en qué dirección debe moverse.
+
+- Si queremos que el agente se desplace al carril de la izquierda (desviación positiva), cuanto mayor sea la desviación, mayor será la recompensa. Si la desviación es negativa, la recompensa será cero.
+- Si el objetivo es volver al carril de la derecha (desviación negativa), cuanto más negativa sea la desviación, mayor será la recompensa. Si la desviación es positiva, la recompensa es nula.
+
+Una vez normalizada la desviación, aplicamos la función *sigmoide*, expuesta en la Figura \ref{fig:sigmoide}, para acentuar la diferencia entre grandes desviaciones y aquellas más centradas. Esto permite al modelo aprender más rápido cuáles son las acciones óptimas.
+
+Finalmente se consigue este comportamiento en inferencia:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MOkeUKRlw9o?si=SSntc8PW1xanVtxb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
