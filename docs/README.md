@@ -15,4 +15,4 @@ Para la función de recompensa, se tiene en cuenta la velocidad y la desviación
 reward = 0.8 * r_dev + 0.2 * r_vel
  ```
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rzy2Vg57zA8?si=oH7c07nUywLPjcv-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Ver en YouTube](https://img.youtube.com/vi/rzy2Vg57zA8/0.jpg)](https://www.youtube.com/watch?v=rzy2Vg57zA8)
