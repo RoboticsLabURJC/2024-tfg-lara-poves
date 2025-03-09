@@ -1,27 +1,18 @@
-# Minimal Mistakes remote theme starter
+# Conducción Autónoma en Entornos Urbanos enfocado en Maniobras de Adelantamiento usando Deep Reinforcement Learning
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+El sistema dispone de sensores LiDAR, para la detección de obstáculos en la carretera, y de cámaras RGB, para la detección del carril y segmentación de la calzada. A esta información se le aplica un post-procesado inteligente basado en modelos de DL, cuyo objetivo es extraer los datos relevantes y simplificados, que servirán como observaciones para los modelos de toma de decisiones, los cuales actuarán en el giro y el acelerador.
 
-Contains basic configuration to get you a site with:
+## Sigue carril basado en DQN
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+Este algoritmo permite un espacio de observaciones continuo, pero un espacio de acciones discreto. Por lo tanto, se han definido 21 acciones, combinando acelerador y giro, siguiendo la regla de que a mayor giro, menor aceleración. Las observaciones que recibe el modelo son:
+- 5 puntos de cada línea del carril  
+- Centro de masas del carril  
+- Desviación con respecto al centro del carril  
+- Área del carril  
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+Para la función de recompensa, se tiene en cuenta la velocidad y la desviación del coche.  
+```python
+reward = 0.8 * r_dev + 0.2 * r_vel
+ ```
 
----
-
-## Troubleshooting
-
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
-
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rzy2Vg57zA8?si=oH7c07nUywLPjcv-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
