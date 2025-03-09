@@ -43,3 +43,11 @@ Para construir el entorno de entrenamiento, se establece que el vehículo delant
 [![Ver en YouTube](https://img.youtube.com/vi/mN0Y2q6ny5w/0.jpg)](https://www.youtube.com/watch?v=mN0Y2q6ny5w)
 
 ## Adelantamiento basado en PPO
+
+Se añaden a las observaciones 10 puntos de cada subzona derecha del LiDAR y la versión simplificada de la calzada (16 puntos de cada lado de la calzada, área y centro de masas). Además, se utiliza la segmentación de la calzada para comprobar la existencia de un carril a la izquierda al que desplazarse. Se construye una máquina de este tipo que nos permita modificar la función de recompensa, siguiendo el siguiente esquema:
+
+![Diagrama de adelantamiento](https://raw.githubusercontent.com/RoboticsLabURJC/2024-tfg-lara-poves/main/memoria/figs/Dise%C3%B1o/overtaken/diagrama.jpg)
+
+Para el cambio de carril, además de normalizar la desviación, se ha aplicado la función sigmoide para permitir que el modelo aprenda más rápidamente cuáles son las acciones óptimas.
+
+[![Ver en YouTube](https://img.youtube.com/vi/MOkeUKRlw9o/0.jpg)](https://www.youtube.com/watch?v=MOkeUKRlw9o)
